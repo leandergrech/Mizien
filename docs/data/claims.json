@@ -81,14 +81,15 @@
       "id": "CC-004",
       "title": "'Strong progress' in waste separation",
       "category": "Waste",
-      "claim": "Ministry (Jan 2026): mixed waste is down over 30% (to 95.5 million kg) and about 412 million kg has been diverted from landfill over five years.",
-      "counter": "The EU Environmental Implementation Review 2025 says Malta missed the 2020 recycling target by a wide margin and is on course to miss 2025. ERA's '68% recycled' figure covers mostly inert construction material.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Ministry for the Environment (19 Jan 2026): Malta continues to make strong progress in waste management; mixed waste down over 30% to 95.5 million kg; about 412 million kg diverted from landfill over five years; the Long-Term Waste Management Plan is working.",
+      "counter": "Municipal recycling rate 16.7% in 2024 (EU 48.1%; 2025 target 55%); 79% of treated municipal waste landfilled. The EU Environmental Implementation Review 2025 says Malta missed the 2020 target by a large margin and is on course to miss 2025. The 412 million kg cannot be reconciled with Eurostat (271 kt recycled or recovered, 2020-24); the 141 million kg baseline has no year. (ERA's 68% figure is explicitly for construction waste and is not part of this claim.)",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [
-        "Selective metric"
+        "Selective metric",
+        "Input-as-outcome"
       ],
-      "priority": "Start first",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found"
     },
     {

@@ -1,0 +1,18 @@
+check,value,unit,source,note
+Malta municipal recycling rate 2019,9.1,%,"Eurostat, retrieved 2 Oct 2026 cei_wm011",EU-27: 47.2%
+Malta municipal recycling rate 2020,10.9,%,"Eurostat, retrieved 2 Oct 2026 cei_wm011",EU-27: 48.5%
+Malta municipal recycling rate 2024,16.7,%,"Eurostat, retrieved 2 Oct 2026 cei_wm011",EU-27: 48.1%
+Gap to 2020 target (50%) in 2020,-39.1,pp,calculated; Directive 2008/98/EC Art 11(2)(a),
+Gap to 2025 target (55%) in 2024,-38.3,pp,calculated; Directive (EU) 2018/851 Art 11(2)(c),
+"Average gain in recycling rate per year, 2019-2024",1.52,pp/yr,calculated,
+Years to reach 55% at 2019-2024 pace,25.0,years,calculated,"linear extrapolation, illustrative only"
+Share of treated municipal waste landfilled 2024,79.2,%,"Eurostat, retrieved 2 Oct 2026 env_wasmun",NSO reports 79.2% for 2024
+Municipal waste landfilled change 2019-2024,-20.6,%,"Eurostat, retrieved 2 Oct 2026",321 -> 255 thousand t
+Municipal waste generated change 2019-2024,0.9,%,"Eurostat, retrieved 2 Oct 2026",351 -> 354 thousand t
+Municipal waste recycled 2020-2024 (sum),237.0,thousand t,"Eurostat, retrieved 2 Oct 2026",
+Municipal waste energy-recovered 2020-2024 (sum),34.0,thousand t,"Eurostat, retrieved 2 Oct 2026",
+Ministry: waste diverted from landfill over five years,412,thousand t,"Ministry press release PR260072en, 19 Jan 2026",412 million kg
+Ministry figure minus Eurostat recycled + recovered,141.0,thousand t,calculated,unexplained difference; scope of the 412 figure not stated
+Ministry: mixed waste change,-32.3,%,"Ministry press release PR260072en, 19 Jan 2026",141 -> 95.5 million kg; start year not stated
+Ministry: organic waste 2025 as share of 2024 municipal generation,8.5,%,calculated,"30 million kg vs Eurostat 2024 generation; years differ, indicative only"
+Malta packaging recycling rate 2023,43.4,%,"Eurostat, retrieved 2 Oct 2026 cei_wm020",2025 target 65%
