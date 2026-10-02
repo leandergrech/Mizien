@@ -16,7 +16,8 @@
          font: 16px/1.55 "Liberation Sans", Arial, Helvetica, sans-serif; }
   a { color: var(--amber); }
   header.top { padding: 28px 24px 8px; max-width: 1100px; margin: 0 auto; }
-  .brand { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 13px; flex-wrap: wrap; }
+  .brand-mark { width: 46px; height: 46px; flex: none; filter: drop-shadow(0 0 8px rgba(227,167,47,.22)); }
   .brand h1 { margin: 0; font: 700 clamp(34px, 6vw, 56px)/1.05 "Liberation Serif", Georgia, serif; letter-spacing: .5px; }
   .brand .dot { display: inline-block; width: 38px; height: 4px; background: var(--amber); margin-bottom: 14px; }
   .tag { color: var(--muted); font: italic 18px "Liberation Serif", Georgia, serif; margin: 6px 0 0; }
@@ -117,11 +118,22 @@
   #doc-viewer img { display: block; max-width: 100%; max-height: calc(100% - 54px); margin: 0 auto; object-fit: contain; }
   td .chip { margin: 0; }
   td .muted { color: var(--muted); font-size: 12px; }
+
+  /* Botanical is the live map style; the other presets are retained in the local design preview. */
+  html[data-map-theme="botanical"] #stage { background: radial-gradient(ellipse at 40% 42%, #1b553b 0%, #0e2a1f 72%); }
+  html[data-map-theme="botanical"] #stage::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.13; background:radial-gradient(ellipse at 12% 20%, transparent 0 28px, #7fa88b 29px 30px, transparent 31px 62px), radial-gradient(ellipse at 90% 75%, transparent 0 36px, #7fa88b 37px 38px, transparent 39px 72px); }
+  html[data-map-theme="field-atlas"] #stage { background-color:#0e2a1f; background-image:linear-gradient(rgba(207,226,212,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(207,226,212,.055) 1px,transparent 1px),radial-gradient(ellipse at 50% 40%,#174c35 0%,#0e2a1f 70%); background-size:32px 32px,32px 32px,auto; }
+  html[data-map-theme="field-atlas"] #stage { border-radius:5px; border-color:#7fa88b; }
+  html[data-map-theme="civic-clarity"] #stage { background:radial-gradient(ellipse at 50% 40%,#174c35 0%,#091d15 76%); border:2px solid #7fa88b; border-radius:8px; }
+  html[data-map-theme="civic-clarity"] #legend, html[data-map-theme="civic-clarity"] button.ctl { border-color:#7fa88b; }
+  html[data-map-theme="civic-clarity"] #hint { color:#eef3ef; text-shadow:0 1px 4px #000; }
+
 </style>
+<script>(function(){var t=new URLSearchParams(location.search).get("previewTheme");document.documentElement.dataset.mapTheme=["botanical","field-atlas","civic-clarity"].indexOf(t)>=0?t:"botanical";})();</script>
 </head>
 <body>
 <header class="top">
-  <div class="brand"><span class="dot"></span><h1>Miżien</h1></div>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="Miżien balance mark"><circle cx="32" cy="32" r="28" fill="none" stroke="#7fa88b" stroke-width="2"/><path d="M32 12V51M14 22H50M32 17L14 22M32 17L50 22M14 22L7 37H21L14 22ZM50 22L43 37H57L50 22ZM23 52H41" fill="none" stroke="#eef3ef" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="17" r="4" fill="#e3a72f"/></svg><h1>Miżien</h1></div>
   <p class="tag">Weighing public claims against the evidence.</p>
   <p class="meaning">Miżien is Maltese for a scale or balance.</p>
 </header>
@@ -193,6 +205,7 @@
   var sel = null;      // {kind: "claim"|"hub"|"edge"|"theme", ...}
   var hover = null;    // same shape
   var W = 0, H = 0, dpr = 1, R = 250, t0 = performance.now();
+  var MAP_THEME = document.documentElement.getAttribute("data-map-theme") || "botanical";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduce) spinning = false;
 
@@ -221,6 +234,43 @@
   }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function rgba(hex, a) { var n = parseInt(hex.slice(1), 16); return "rgba(" + (n >> 16) + "," + ((n >> 8) & 255) + "," + (n & 255) + "," + a + ")"; }
+  function glyphPath(x, y, r) {
+    ctx.beginPath();
+    if (MAP_THEME === "field-atlas") {
+      ctx.moveTo(x, y - r); ctx.lineTo(x + r, y); ctx.lineTo(x, y + r); ctx.lineTo(x - r, y); ctx.closePath();
+    } else if (MAP_THEME === "civic-clarity") {
+      for (var i = 0; i < 6; i++) { var a = -Math.PI / 6 + i * Math.PI / 3; var px = x + Math.cos(a) * r, py = y + Math.sin(a) * r; if (!i) ctx.moveTo(px, py); else ctx.lineTo(px, py); }
+      ctx.closePath();
+    } else ctx.arc(x, y, r, 0, 6.283);
+  }
+  function traceEdge(a, b, c) {
+    ctx.beginPath(); ctx.moveTo(a.sx, a.sy);
+    if (MAP_THEME === "civic-clarity") { var mx = (a.sx + b.sx) / 2; ctx.lineTo(mx, a.sy); ctx.lineTo(mx, b.sy); ctx.lineTo(b.sx, b.sy); }
+    else if (MAP_THEME === "field-atlas") { ctx.lineTo((a.sx + c.x) / 2, (a.sy + c.y) / 2); ctx.lineTo((c.x + b.sx) / 2, (c.y + b.sy) / 2); ctx.lineTo(b.sx, b.sy); }
+    else ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy);
+  }
+  function drawLeaf(x, y, angle, size) {
+    ctx.save(); ctx.translate(x, y); ctx.rotate(angle); ctx.beginPath(); ctx.moveTo(-size, 0);
+    ctx.quadraticCurveTo(-size * .3, -size * .8, size, 0); ctx.quadraticCurveTo(-size * .3, size * .8, -size, 0);
+    ctx.fill(); ctx.stroke(); ctx.restore();
+  }
+  function reviewAgeDays(dateText) {
+    var stamp = Date.parse(dateText + "T00:00:00Z");
+    return Number.isFinite(stamp) ? Math.max(0, Math.floor((Date.now() - stamp) / 86400000)) : 0;
+  }
+  function reviewLeafColor(age) {
+    var t = Math.max(0, Math.min(1, age / 365));
+    var fresh = [76, 164, 97], due = [145, 84, 48];
+    return "rgb(" + fresh.map(function (v, i) { return Math.round(v + (due[i] - v) * t); }).join(",") + ")";
+  }
+  function legendLeaf(color) {
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 24 24"); svg.setAttribute("aria-hidden", "true");
+    var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M3 19C4 8 11 3 21 3c0 10-5 17-16 18M5 18l10-10");
+    path.setAttribute("fill", "none"); path.setAttribute("stroke", color); path.setAttribute("stroke-width", "2.5"); path.setAttribute("stroke-linecap", "round");
+    svg.appendChild(path); return svg;
+  }
 
   function resize() {
     dpr = window.devicePixelRatio || 1;
@@ -244,6 +294,10 @@
       var node = { kind: "claim", id: c.id, data: c, hub: hub, color: hub.color, phase: rnd() * 6.28,
                    x: hub.x + Math.cos(t) * s * d, y: hub.y + u * d, z: hub.z + Math.sin(t) * s * d };
       claims.push(node); byId[c.id] = node; hub.claims = (hub.claims || []).concat([node]);
+      if (c.last_reviewed && c.outputs && (c.outputs.report || c.outputs.report_pdf) && (c.status === "Drafted" || c.status === "Published")) {
+        node.reviewAgeDays = reviewAgeDays(c.last_reviewed); node.reviewLeafColor = reviewLeafColor(node.reviewAgeDays);
+        hub.reviewLeaves = (hub.reviewLeaves || []).concat([node]);
+      }
     });
     // parallel edges between the same pair are bent apart so each stays clickable
     var pairCount = {};
@@ -266,7 +320,8 @@
     hubs.forEach(function (h) {
       var b = el("button", "row"); b.type = "button";
       var s = el("span", "sw"); s.style.background = h.color; s.appendChild(iconSvg(h.name));
-      b.appendChild(s); b.appendChild(el("span", null, h.name + " (" + (h.claims || []).length + ")"));
+      var reviewed = (h.reviewLeaves || []).length;
+      b.appendChild(s); b.appendChild(el("span", null, h.name + " (" + (h.claims || []).length + " claims · " + reviewed + " reviewed)"));
       b.onclick = function () { selectHub(h); }; lg.appendChild(b);
     });
     lg.appendChild(el("h4", null, "THEMES LINKING CLAIMS")).style.marginTop = "8px";
@@ -276,11 +331,15 @@
       b.appendChild(l); b.appendChild(el("span", null, t.name)); b.onclick = function () { selectTheme(t.id); };
       lg.appendChild(b);
     });
-    lg.appendChild(el("h4", null, "VERDICT RING")).style.marginTop = "8px";
+    lg.appendChild(el("h4", null, "CLAIM CENTRE · VERDICT")).style.marginTop = "8px";
     Object.keys(VC).concat(["Not yet checked"]).forEach(function (v) {
       var r = el("div", "vrow"), s = el("span", "vdot" + (VC[v] ? "" : " open"));
-      if (VC[v]) s.style.borderColor = VC[v]; r.appendChild(s); r.appendChild(el("span", null, v)); lg.appendChild(r);
+      s.style.background = VC[v] || "#294739"; s.style.borderColor = VC[v] || "rgba(255,255,255,.65)";
+      r.appendChild(s); r.appendChild(el("span", null, v)); lg.appendChild(r);
     });
+    lg.appendChild(el("h4", null, "REVIEW FRESHNESS")).style.marginTop = "8px";
+    var fresh = el("div", "vrow"); fresh.appendChild(legendLeaf("#4ca461")); fresh.appendChild(el("span", null, "Recently reviewed")); lg.appendChild(fresh);
+    var due = el("div", "vrow"); due.appendChild(legendLeaf("#915430")); due.appendChild(el("span", null, "12 months · refresh due")); lg.appendChild(due);
   }
 
   function iconSvg(name) {
@@ -340,20 +399,30 @@
     var t = (now - t0) / 1000;
     if (spinning) yaw += 0.0024;
     ctx.clearRect(0, 0, W, H);
-    stars.forEach(function (s) {
+    if (MAP_THEME !== "civic-clarity") stars.forEach(function (s) {
       ctx.globalAlpha = s.a * (0.7 + 0.3 * Math.sin(t * 0.8 + s.tw));
-      ctx.fillStyle = "#cfe2d4"; ctx.beginPath(); ctx.arc(s.x * W, s.y * H, s.r, 0, 6.283); ctx.fill();
+      ctx.fillStyle = MAP_THEME === "field-atlas" ? "#e3a72f" : "#cfe2d4";
+      if (MAP_THEME === "field-atlas") { ctx.fillRect(s.x * W, s.y * H, Math.max(1, s.r * 1.6), Math.max(1, s.r * 1.6)); }
+      else { ctx.beginPath(); ctx.arc(s.x * W, s.y * H, s.r, 0, 6.283); ctx.fill(); }
     });
     ctx.globalAlpha = 1;
     var P = new Map(); hubs.concat(claims).forEach(function (n) { P.set(n, project(n)); });
     var F = focusSet();
+    if (MAP_THEME === "field-atlas") {
+      hubs.forEach(function (h) { var p = P.get(h); ctx.save(); ctx.strokeStyle = "rgba(207,226,212,.16)"; ctx.lineWidth = 1; ctx.setLineDash([2, 6]);
+        [44, 76, 108].forEach(function (r) { ctx.beginPath(); ctx.ellipse(p.sx, p.sy, r * p.s, r * .44 * p.s, -.18, 0, 6.283); ctx.stroke(); }); ctx.restore(); });
+    }
     // hub spokes
     claims.forEach(function (c) {
       var a = P.get(c.hub), b = P.get(c);
       var on = F && (F.hub === c.hub || F.ids[c.id]);
       var g = ctx.createLinearGradient(a.sx, a.sy, b.sx, b.sy);
       g.addColorStop(0, rgba(c.color, on ? 0.55 : 0.28)); g.addColorStop(1, rgba(c.color, on ? 0.25 : 0.06));
-      ctx.strokeStyle = g; ctx.lineWidth = on ? 1.6 : 1; ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke();
+      ctx.strokeStyle = g; ctx.lineWidth = MAP_THEME === "civic-clarity" ? (on ? 2 : 1.3) : (MAP_THEME === "botanical" ? 1.7 : 1.1);
+      ctx.beginPath(); ctx.moveTo(a.sx, a.sy);
+      if (MAP_THEME === "botanical") ctx.quadraticCurveTo((a.sx + b.sx) / 2 + Math.sin(t + c.phase) * 9, (a.sy + b.sy) / 2 - 7, b.sx, b.sy);
+      else ctx.lineTo(b.sx, b.sy);
+      ctx.stroke();
     });
     // theme edges, curved
     edges.forEach(function (e, i) {
@@ -362,12 +431,13 @@
       var hi = F && F.es[i], hv = hover && hover.kind === "edge" && hover.index === i;
       var depth = Math.max(0.3, Math.min(1, 1 - (a.z + b.z) / 1400));
       var col = themeColor(e.theme);
-      ctx.setLineDash(isWeak(e.strength) ? [6, 5] : []);
-      if (hi || hv) { ctx.strokeStyle = rgba(col, 0.25); ctx.lineWidth = 7; ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke(); }
-      ctx.strokeStyle = col; ctx.globalAlpha = hi || hv ? 1 : (F ? 0.1 : 0.55 * depth);
-      ctx.lineWidth = hi || hv ? 2.6 : 1.4;
+      ctx.setLineDash(isWeak(e.strength) ? (MAP_THEME === "field-atlas" ? [2, 5] : [6, 5]) : []);
+      if (MAP_THEME === "botanical" || hi || hv) { ctx.strokeStyle = rgba(col, hi || hv ? 0.42 : 0.12); ctx.lineWidth = hi || hv ? 11 : 6; traceEdge(a, b, c); ctx.stroke(); }
+      ctx.strokeStyle = col; ctx.globalAlpha = hi || hv ? 1 : (F ? 0.1 : (MAP_THEME === "civic-clarity" ? 0.78 : 0.68 * depth));
+      ctx.lineWidth = hi || hv ? 3.2 : (MAP_THEME === "civic-clarity" ? 2 : 1.8);
       if (hi && isWeak(e.strength)) ctx.lineDashOffset = -t * 18;
-      ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke();
+      traceEdge(a, b, c); ctx.stroke();
+      if (MAP_THEME === "field-atlas") { ctx.setLineDash([]); ctx.fillStyle = col; ctx.beginPath(); ctx.arc(c.x, c.y, 2.5, 0, 6.283); ctx.fill(); }
       ctx.lineDashOffset = 0; ctx.globalAlpha = 1;
     });
     ctx.setLineDash([]);
@@ -385,12 +455,20 @@
         g.addColorStop(0, rgba(n.color, 0.45)); g.addColorStop(1, rgba(n.color, 0));
         ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.sx, p.sy, r * 2.4, 0, 6.283); ctx.fill();
         var g2 = ctx.createRadialGradient(p.sx - r * 0.35, p.sy - r * 0.35, r * 0.1, p.sx, p.sy, r);
-        g2.addColorStop(0, rgba("#ffffff", 0.35)); g2.addColorStop(0.35, n.color); g2.addColorStop(1, n.color);
-        ctx.fillStyle = g2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r, 0, 6.283); ctx.fill();
-        ctx.strokeStyle = isSel ? "#e3a72f" : "rgba(255,255,255,0.55)"; ctx.lineWidth = isSel ? 3 : 1.5; ctx.stroke();
+        g2.addColorStop(0, rgba("#ffffff", 0.22)); g2.addColorStop(0.32, "#174c35"); g2.addColorStop(1, "#0e2a1f");
+        ctx.fillStyle = g2; glyphPath(p.sx, p.sy, r); ctx.fill();
+        ctx.strokeStyle = isSel ? "#e3a72f" : n.color; ctx.lineWidth = isSel ? 3.5 : (MAP_THEME === "civic-clarity" ? 3.2 : 2.8); glyphPath(p.sx, p.sy, r); ctx.stroke();
+        if (MAP_THEME === "field-atlas") { ctx.save(); ctx.strokeStyle = "rgba(246,244,238,.75)"; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(p.sx - r * .65, p.sy); ctx.lineTo(p.sx + r * .65, p.sy); ctx.moveTo(p.sx, p.sy - r * .65); ctx.lineTo(p.sx, p.sy + r * .65); ctx.stroke(); ctx.restore(); }
         var ip = ICON_PATHS[n.name];
         if (ip) { ctx.save(); var sc = r * 1.15 / 24; ctx.translate(p.sx - 12 * sc, p.sy - 12 * sc); ctx.scale(sc, sc);
           ctx.strokeStyle = "#fff"; ctx.lineWidth = 2.1; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.stroke(ip); ctx.restore(); }
+        if (MAP_THEME === "botanical") { for (var li = 0; li < 3; li++) { var la = t * .18 + li * 2.094, lx = p.sx + Math.cos(la) * r * 1.8, ly = p.sy + Math.sin(la) * r * 1.8; ctx.fillStyle = rgba("#7fa88b", .75); ctx.strokeStyle = rgba("#d4e4d9", .65); ctx.lineWidth = 1; drawLeaf(lx, ly, la, 5 + 1.2 * Math.sin(t + li)); } }
+        (n.reviewLeaves || []).forEach(function (review, ri) {
+          var count = n.reviewLeaves.length, angle = -Math.PI / 2 + (ri - (count - 1) / 2) * .48;
+          var lx = p.sx + Math.cos(angle) * r * 1.62, ly = p.sy + Math.sin(angle) * r * 1.62;
+          ctx.fillStyle = review.reviewLeafColor; ctx.strokeStyle = "rgba(246,244,238,.82)"; ctx.lineWidth = 1.1;
+          drawLeaf(lx, ly, angle + Math.PI / 2, 6.5);
+        });
         n._p = { x: p.sx, y: p.sy, r: r };
         ctx.font = "700 12px Arial, sans-serif"; ctx.textAlign = "center";
         ctx.fillStyle = "rgba(14,42,31,.75)"; var tw = ctx.measureText(n.name).width;
@@ -398,22 +476,24 @@
         ctx.fillStyle = "#eef3ef"; ctx.fillText(n.name, p.sx, p.sy + r + 18.5);
       } else {
         var d = n.data, pulse = d.verdict && !reduce ? 1 + 0.06 * Math.sin(t * 2 + n.phase) : 1;
-        var r2 = 8.5 * k * (isHov || isSel ? 1.25 : 1);
+        var r2 = (MAP_THEME === "civic-clarity" ? 10.5 : 9.5) * k * (isHov || isSel ? 1.25 : 1);
         if (d.verdict) { // verdict halo
           var gh = ctx.createRadialGradient(p.sx, p.sy, r2, p.sx, p.sy, r2 * 2.6 * pulse);
           gh.addColorStop(0, rgba(VC[d.verdict], 0.5)); gh.addColorStop(1, rgba(VC[d.verdict], 0));
           ctx.fillStyle = gh; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 * 2.6 * pulse, 0, 6.283); ctx.fill();
         }
+        var verdictFill = d.verdict ? VC[d.verdict] : "#294739";
         var g3 = ctx.createRadialGradient(p.sx - r2 * 0.4, p.sy - r2 * 0.4, r2 * 0.1, p.sx, p.sy, r2);
-        g3.addColorStop(0, rgba("#ffffff", 0.5)); g3.addColorStop(0.4, n.color); g3.addColorStop(1, n.color);
-        ctx.fillStyle = g3; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2, 0, 6.283); ctx.fill();
-        if (d.verdict) { ctx.strokeStyle = VC[d.verdict]; ctx.lineWidth = 3.2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 2.4, 0, 6.283); ctx.stroke(); }
-        else { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,0.5)"; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 2, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
+        g3.addColorStop(0, rgba("#ffffff", 0.42)); g3.addColorStop(0.35, verdictFill); g3.addColorStop(1, verdictFill);
+        ctx.fillStyle = g3; glyphPath(p.sx, p.sy, r2); ctx.fill();
+        ctx.strokeStyle = n.color; ctx.lineWidth = MAP_THEME === "civic-clarity" ? 3.6 : 3.2; glyphPath(p.sx, p.sy, r2 + 1); ctx.stroke();
+        if (!d.verdict) { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,0.82)"; ctx.lineWidth = 1.3; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 4.5, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
         if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 6, 0, 6.283); ctx.stroke(); }
         n._p = { x: p.sx, y: p.sy, r: r2 + 3 };
-        if (p.s > 0.5 || isHov || isSel || (F && F.ids[n.id])) {
-          ctx.font = "600 11px Arial, sans-serif"; ctx.textAlign = "center"; ctx.fillStyle = "#d4e4d9";
-          ctx.fillText(n.id, p.sx, p.sy + r2 + 15);
+        if (MAP_THEME === "civic-clarity" || p.s > 0.5 || isHov || isSel || (F && F.ids[n.id])) {
+          ctx.font = MAP_THEME === "civic-clarity" ? "700 10px Arial, sans-serif" : "600 11px Arial, sans-serif"; ctx.textAlign = "center";
+          if (MAP_THEME === "civic-clarity") { var iw = ctx.measureText(n.id).width + 10; ctx.fillStyle = "rgba(7,29,21,.9)"; roundRect(p.sx - iw / 2, p.sy + r2 + 5, iw, 16, 4); ctx.fill(); }
+          ctx.fillStyle = MAP_THEME === "field-atlas" ? "#e3a72f" : "#eef3ef"; ctx.fillText(n.id, p.sx, p.sy + r2 + 16);
         }
       }
       ctx.globalAlpha = 1;
@@ -431,9 +511,9 @@
     if (best) return best.kind === "hub" ? { kind: "hub", hub: best } : { kind: "claim", id: best.id };
     var be = -1; bd = 7;
     edges.forEach(function (e, i) { if (!e._g) return; var g = e._g;
-      for (var k = 0; k <= 24; k++) { var s = k / 24, u = 1 - s;
-        var px = u * u * g.a.sx + 2 * u * s * g.c.x + s * s * g.b.sx, py = u * u * g.a.sy + 2 * u * s * g.c.y + s * s * g.b.sy;
-        var d = Math.hypot(px - x, py - y); if (d < bd) { bd = d; be = i; } } });
+      ctx.save(); ctx.setLineDash([]); ctx.lineWidth = 14; traceEdge(g.a, g.b, g.c);
+      var hit = ctx.isPointInStroke(x, y); ctx.restore();
+      if (hit) { var d = Math.hypot((g.a.sx + g.b.sx) / 2 - x, (g.a.sy + g.b.sy) / 2 - y); if (d < bd) { bd = d; be = i; } } });
     return be >= 0 ? { kind: "edge", index: be, edge: edges[be] } : null;
   }
 
@@ -484,6 +564,11 @@
     if (d.confidence) chips.appendChild(el("span", "chip soft", d.confidence + " confidence"));
     if (d.verdict) chips.appendChild(el("span", "chip soft", d.status + (d.status === "Drafted" ? ", pending right of reply" : "")));
     (d.tags || []).forEach(function (t) { chips.appendChild(el("span", "chip soft", t)); }); panel.appendChild(chips);
+    if (d.last_reviewed) {
+      var days = c.reviewAgeDays || 0, remaining = Math.max(0, 365 - days);
+      label("STUDY FRESHNESS");
+      panel.appendChild(el("p", "small", "Evidence last reviewed " + d.last_reviewed + " · " + (days >= 365 ? "refresh due" : remaining + " days until refresh due") + "."));
+    }
     if (d.counter) { label("CONTEXT AND EVIDENCE"); panel.appendChild(el("p", null, d.counter)); }
     var mine = edges.map(function (e, i) { return { e: e, i: i }; }).filter(function (o) { return o.e.from === id || o.e.to === id; });
     if (mine.length) {
@@ -509,7 +594,16 @@
   function selectHub(h) {
     sel = { kind: "hub", hub: h }; openPanel("TOPIC", h.name, h.color);
     var list = h.claims || [], done = list.filter(function (c) { return c.data.verdict; }).length;
-    panel.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " checked."));
+    var reviewed = h.reviewLeaves || [];
+    panel.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " with a verdict, " + reviewed.length + " completed evidence reviews."));
+    if (reviewed.length) {
+      label("LEAVES · ONE PER COMPLETED REVIEW"); var freshness = el("div", "links");
+      reviewed.forEach(function (c) {
+        var age = c.reviewAgeDays || 0, line = el("p", "small", c.id + " · last reviewed " + c.data.last_reviewed + " · " + (age >= 365 ? "refresh due" : Math.max(0, 365 - age) + " days until due"));
+        var leaf = legendLeaf(c.reviewLeafColor); leaf.style.width = "16px"; leaf.style.height = "16px"; line.prepend(leaf); freshness.appendChild(line);
+      });
+      panel.appendChild(freshness);
+    }
     label("CLAIMS IN THIS TOPIC"); var box = el("div", "links");
     list.forEach(function (c) { claimLink(c.id, box); }); panel.appendChild(box);
   }
@@ -539,7 +633,10 @@
     if (!h) { tip.style.display = "none"; return; }
     var txt;
     if (h.kind === "claim") { var d = byId[h.id].data; txt = d.id + " · " + d.title + (d.verdict ? " — " + d.verdict : ""); }
-    else if (h.kind === "hub") { var nc = (h.hub.claims || []).length; txt = h.hub.name + " · " + nc + (nc === 1 ? " claim" : " claims"); }
+    else if (h.kind === "hub") {
+      var nc = (h.hub.claims || []).length, rl = h.hub.reviewLeaves || [], oldest = rl.reduce(function (max, c) { return Math.max(max, c.reviewAgeDays || 0); }, 0);
+      txt = h.hub.name + " · " + nc + (nc === 1 ? " claim" : " claims") + " · " + rl.length + " completed reviews" + (rl.length ? " · oldest " + oldest + " days" + (oldest >= 365 ? " · refresh due" : "") : "");
+    }
     else { var th = themeById[h.edge.theme] || {}; txt = (th.name || h.edge.theme) + ": " + h.edge.from + " ↔ " + h.edge.to; }
     tip.textContent = txt; tip.style.display = "block";
     tip.style.left = Math.min(x + 14, W - tip.offsetWidth - 8) + "px"; tip.style.top = (y + 14) + "px";
@@ -574,9 +671,14 @@
   window.addEventListener("resize", resize);
   if (reduce) document.getElementById("spin").textContent = "Resume rotation";
 
-  fetch("data/claims.json").then(function (r) { return r.json(); }).then(init).catch(function () {
-    stage.appendChild(el("p", null, "Could not load data/claims.json. If you opened this file directly, serve the docs folder instead (python -m http.server -d docs).")).style.cssText = "padding:24px;color:#e3a72f";
-  });
+  var previewPayload = new URLSearchParams(location.search).get("previewData");
+  if (previewPayload) {
+    try { init(JSON.parse(previewPayload)); } catch (e) { stage.appendChild(el("p", null, "The embedded map data could not be read.")).style.cssText = "padding:24px;color:#e3a72f"; }
+  } else {
+    fetch("data/claims.json").then(function (r) { return r.json(); }).then(init).catch(function () {
+      stage.appendChild(el("p", null, "Could not load data/claims.json. If you opened this file directly, serve the docs folder instead (python -m http.server -d docs)." )).style.cssText = "padding:24px;color:#e3a72f";
+    });
+  }
 })();
 </script>
 </body>

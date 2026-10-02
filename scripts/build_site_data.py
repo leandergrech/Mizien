@@ -7,6 +7,7 @@ Run from the repository root:  python scripts/build_site_data.py
 import csv
 import json
 import pathlib
+import re
 import shutil
 import sys
 
@@ -50,6 +51,7 @@ def main() -> int:
             "date": str(d["claim"].get("date") or ""),
             "quote": d["claim"].get("quote", ""),
             "version": d.get("version"),
+            **({"last_reviewed": str(d["last_reviewed"])} if d.get("last_reviewed") else {}),
             "outputs": {k: f"claim-files/{d['id']}/{pathlib.Path(v).name}" for k, v in (d.get("outputs") or {}).items()},
             "record": f"{REPO}/blob/main/claims/{d['id']}/claim.yml",
         })
@@ -72,6 +74,16 @@ def main() -> int:
     for target in (ROOT / "data" / "claims.json", ROOT / "docs" / "data" / "claims.json"):
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(text, encoding="utf-8")
+    preview = ROOT / "docs" / "design-preview.html"
+    if preview.is_file():
+        page = preview.read_text(encoding="utf-8")
+        page, count = re.subn(
+            r'(<script id="map-data" type="application/json">).*?(</script>)',
+            lambda m: m.group(1) + text.replace("<", "\\u003c") + m.group(2),
+            page, count=1, flags=re.S,
+        )
+        if count:
+            preview.write_text(page, encoding="utf-8")
     # GitHub Pages publishes only /docs. Copy claim deliverables there so the
     # same-page viewer and explicit downloads use the same-origin site files.
     files_root = ROOT / "docs" / "claim-files"

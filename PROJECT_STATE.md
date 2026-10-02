@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 2 October 2026 (CC-006 report and flyer integrated into main; 2026 supervision data remain incomplete).*
+*Last updated: 2 October 2026 (Botanical map and evidence-review freshness cues introduced).*
 
 ## What the project is
 
@@ -95,6 +95,8 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commit `2110846`). CC-006's report, flyer and site metadata are integrated on `main` at `e0552b9` (fast-forward from `codex/cc-006-spring-hunting`). Right of reply and the missing 2026 outcome data remain with the maintainer / WBRU.
 
 ## Notes for the next session
+
+- The homepage map now uses the Botanical style and circular balance wordmark. `last_reviewed` dates anchor one leaf per completed evidence review; leaves move from green to brown over 365 days. Update the date after a fresh evidence review and rebuild site data.
 
 - Eurostat API (`ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/...`) works from scripts; see
   `tools/cc-003-report/calc.py` and the helper pattern in the CC-003/004 data files.

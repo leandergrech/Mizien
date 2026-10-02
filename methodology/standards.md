@@ -11,6 +11,12 @@
 9. **Check every side.** Governments, opposition parties, NGOs, developers and agencies are held to the same standard.
 10. **Be fair about trade-offs.** Say when a goal is legitimate (for example protecting heritage tunnels from flooding) and keep the check to the factual statement.
 
+## Evidence review freshness
+
+- Record the date the evidence was last reviewed in `claim.yml` as `last_reviewed: YYYY-MM-DD` when a report is complete.
+- A botanical map leaf represents one completed evidence review in its topic group. Its colour moves from green to brown over 365 days; brown indicates that the evidence review is due for refresh.
+- After refreshing a review, update `last_reviewed` and run `python scripts/build_site_data.py` so the map and preview use the new date.
+
 ## Right of reply (proposed procedure; edit as needed)
 
 - Send the draft to the body concerned with a fixed deadline (suggested: 14 days).
