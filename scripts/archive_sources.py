@@ -72,10 +72,14 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--no-save", action="store_true", help="only look up existing snapshots")
+    ap.add_argument("--claim-id", action="append", default=[], help="archive sources for this claim only (repeatable)")
     args = ap.parse_args()
 
     with open(ROOT / "data" / "sources.csv", newline="", encoding="utf-8") as f:
         sources = [r for r in csv.DictReader(f) if str(r.get("URL", "")).startswith("http")]
+    if args.claim_id:
+        wanted = set(args.claim_id)
+        sources = [r for r in sources if wanted.intersection(x.strip() for x in r.get("Claim IDs", "").split(","))]
     manifest_path = ROOT / "archive" / "manifest.csv"
     done = {}
     if manifest_path.exists():
@@ -89,7 +93,11 @@ def main() -> int:
         url = s["URL"]
         prev = done.get(url)
         if prev and prev.get("sha256") and prev.get("archived_url"):
-            rows.append(prev)
+            merged = dict(prev)
+            claim_ids = set(merged.get("claim_ids", "").split(","))
+            claim_ids.update(x.strip() for x in s.get("Claim IDs", "").split(",") if x.strip())
+            merged["claim_ids"] = ", ".join(sorted(x for x in claim_ids if x))
+            rows.append(merged)
             continue
         row = {"claim_ids": s["Claim IDs"], "title": s["Source"], "url": url, "status": "", "http_status": "",
                "sha256": "", "retrieved_utc": "", "archived_url": "", "notes": ""}
@@ -112,6 +120,8 @@ def main() -> int:
         print(f"[{i + 1}/{len(sources)}] {row['status']:>18}  {url[:80]}")
         time.sleep(4)
 
+    if args.claim_id:
+        rows = list({**done, **{r["url"]: r for r in rows}}.values())
     manifest_path.parent.mkdir(exist_ok=True)
     with open(manifest_path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS)

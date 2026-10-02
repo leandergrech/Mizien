@@ -16,13 +16,9 @@ CC-004,CC-002,T5,Waste and construction,Shared material flow,Weak (indicative)
 CC-004,CC-008,T5,Waste and construction,Shared material flow,Weak (indicative)
 CC-002,CC-008,T5,Waste and construction,Shared material flow,Weak (indicative)
 CC-003,CC-004,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
-CC-003,CC-005,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
 CC-003,CC-007,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
 CC-003,CC-010,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
-CC-004,CC-005,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
 CC-004,CC-007,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
 CC-004,CC-010,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
-CC-005,CC-007,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
-CC-005,CC-010,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
 CC-007,CC-010,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
 CC-003,CC-011,T7,2030 carbon target,Shared target,Strong
