@@ -3,6 +3,7 @@
 **Status:** draft for maintainer review
 **Verdict:** Largely supported (moderate confidence)
 **Cut-off:** 3 October 2026
+**Version:** 1.1
 
 ## The claim
 
@@ -40,6 +41,8 @@ A field study of mature olive trees followed eight transplants and eight control
 
 Restoration can benefit native communities when alien vegetation is removed, but effects depend on what is removed and what follows. A controlled Azores study found later gains in several native-seed and food-web indicators, alongside immediate disturbance and some responses favouring alien seedlings. It does not establish that removal of any particular Comino specimen will restore habitat.
 
+HV Hospitality says it has been growing mother plants propagated from seeds native to Comino and Gozo in an on-site nursery since 2023, and that transplanted specimens will be cared for there. This is the developer's account, not an independently verified inventory. Its public page does not give a stock list, specimen-level condition records or survival results, so it does not close the outcome-evidence gap.
+
 ## Verdict
 
 **Largely supported (moderate confidence).** The arithmetic and intervention categories in ERA's public account are consistent: 624 + 54 = 678; the non-protected share rounds to 92%; and ten new indigenous trees for each of 54 protected removals gives 540. The separate transplant group contains 348 specimens, of which ERA says 341 are protected.
@@ -67,5 +70,6 @@ That supports the claim as a description of ERA's announced plan. It does not es
 6. Heleno et al., [Evaluation of restoration effectiveness: community response to the removal of alien plants](https://doi.org/10.1890/09-1384.1), *Ecological Applications* 20(5) (2010), 1191–1203.
 7. MaltaToday, [Fact-check: What the Comino hotel project means for the island's trees](https://www.maltatoday.com.mt/news/national/143679/factcheck_what_the_comino_hotel_project_means_for_the_islands_trees), 8 August 2026. Secondary report; used only to flag the unresolved species-count difference.
 8. MaltaToday, [ERA approval paves way for uprooting of 800 trees](https://www.maltatoday.com.mt/environment/planning/143667/era_approves_preliminary_works_for_proposed_comino_hotel), 7 August 2026. Secondary report of stakeholder positions.
+9. HV Hospitality, [Comino project page](https://hilihospitality.com/comino/). Developer's account of nursery propagation and planned care; no public inventory or outcome data.
 
-*Version 1.0 · 3 October 2026 · Draft pending right of reply · Calculations: `data/cc-002/checks.csv` · Generators: `tools/cc-002-report/`*
+*Version 1.1 · 3 October 2026 · Draft pending right of reply · Calculations: `data/cc-002/checks.csv` · Generators: `tools/cc-002-report/`*

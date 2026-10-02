@@ -23,11 +23,11 @@ build_flyer(Flyer(
         ("348", AMBER, "trees to transplant", "Separate from removal; ERA says 341 are protected. Failures trigger a further 10:1 condition."),
         ("Not shown", RED, "ecological offset", "No public survival or habitat-recovery results for these Comino trees were available at review."),
     ],
-    fair="The counts and ratios in ERA's published plan reconcile. That supports the factual description, while leaving species-level ecological replacement and transplant success to be measured.",
+    fair="ERA's counts and ratios reconcile. The developer reports nursery propagation since 2023, but publishes no stock or survival data. Ecological replacement remains unmeasured.",
     asks=["Publish the complete species and condition schedule.",
           "Publish the final species, provenance and aftercare plan.",
           "Report transplant and planting survival at years 1, 3 and 5.",
           "Monitor native biodiversity and habitat function, not counts alone."],
-    footer="Version 1.0  ·  3 October 2026  ·  Draft pending right of reply",
+    footer="Version 1.1  ·  3 October 2026  ·  Draft pending right of reply",
     pdf_title="Claim Check 002 – What do the tree numbers prove?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

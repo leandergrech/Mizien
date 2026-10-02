@@ -72,13 +72,13 @@
         "Input-as-outcome",
         "Selective metric"
       ],
-      "priority": "Done (v1.0)",
+      "priority": "Done (v1.1)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Environment and Resources Authority (ERA)",
       "date": "2026-08-11",
       "quote": "“54 protected trees will be removed ... 540 new indigenous trees”",
-      "version": null,
+      "version": "1.1",
       "outputs": {
         "report_pdf": "claim-files/CC-002/report.pdf",
         "flyer_pdf": "claim-files/CC-002/flyer.pdf",

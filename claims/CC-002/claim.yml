@@ -37,6 +37,11 @@ claim:
     publisher: Ecological Applications
     date: 2010
     url: https://doi.org/10.1890/09-1384.1
+  - title: Comino project page
+    publisher: HV Hospitality
+    date: '2026-10-03'
+    url: https://hilihospitality.com/comino/
+    note: Developer says native mother plants are being propagated in an on-site nursery; no public stock or survival inventory is provided. Stakeholder account, not independently verified.
 counter_evidence: The published figures describe proposed interventions and planting conditions, not completed
   work or measured ecological replacement. Studies show that transplant outcomes vary with species, source,
   site suitability and aftercare; tree counts alone do not establish survival, habitat recovery or equivalent
@@ -50,11 +55,12 @@ tags:
 - Input-as-outcome
 - Selective metric
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: Medium
 caveats: 'This check assesses the scientific meaning of the reported tree counts and proposed mitigation only.
   It does not assess permit validity or any tribunal proceedings. The tree works and planting had not been
-  independently verified as completed at the 3 October 2026 cut-off. ERA and secondary reporting differ by one
+  independently verified as completed at the 3 October 2026 cut-off. HV Hospitality reports nursery propagation
+  since 2023, but no public stock or survival inventory was available. ERA and secondary reporting differ by one
   oleander in the breakdown of the 624 non-protected specimens (467 versus 468); the permit annex should be
   checked before treating that species count as settled.'
 right_of_reply:
@@ -71,3 +77,4 @@ outputs:
   report_pdf: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
+version: '1.1'

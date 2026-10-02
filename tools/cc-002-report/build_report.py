@@ -63,6 +63,8 @@ S += [PageBreak(), SectionHeading(3, "What ecological compensation means"),
       Spacer(1, 3 * mm),
       P("The public data also do not yet provide a reconciled, species-level inventory for the 624 non-protected specimens. For that reason, this report does not treat all of them as invasive, disposable, or equivalent in ecological function.")]
 
+S += [P("HV Hospitality says it has been growing mother plants propagated from seeds native to Comino and Gozo in an on-site nursery since 2023, and that the transplanted specimens will be cared for there [9]. This is relevant evidence of the developer's stated preparation, but the page gives no public stock list, specimen-level condition record, survival data or independently verified nursery inventory. It therefore does not close the outcome-evidence gap.")]
+
 S += [PageBreak(), SectionHeading(4, "What the science can transfer"),
       P("A review of plant-translocation records in Italy analysed 178 cases. Survival data were available for only about 40% of them. Outcomes varied with source material, site protection and suitability, planting approach, preparation and aftercare [4]. This supports the need for well-designed methods and monitoring; it is not a survival estimate for the 348 Comino specimens."),
       P("A controlled field comparison followed eight transplanted mature olive trees and eight controls over two years. Even after heavy pruning, irrigation and fertilisation, the transplanted trees showed substantially lower photosynthesis and transpiration and other physiological changes [5]. The small study involved olive trees in another environment. It shows that survival alone may conceal stress, not what proportion of Comino trees will survive."),
@@ -73,7 +75,7 @@ S += [Spacer(1, 2 * mm), SectionHeading(5, "Verdict, limits and evidence needed"
       verdict_box("Largely supported", "ERA's published counts check out; ecological replacement remains unmeasured."),
       Spacer(1, 3 * mm),
       P("The figures in ERA's August statements reconcile: 624 + 54 = 678, 624/678 rounds to 92%, and 54 × 10 = 540. The 348 transplant group is separately described, with all but seven protected. That supports the claim as a description of the plan. Confidence is moderate because we have not inspected the complete permit annex, and because the source reports intended conditions rather than observed outcomes."),
-      P("This verdict does not say the scheme will fail. It says the arithmetic and promise are not outcome evidence. The ecological effect could be better or worse than the count suggests, depending on species, transplant success, site, aftercare and habitat response."),
+      P("This verdict does not say the scheme will fail. It says the arithmetic and promise are not outcome evidence. The ecological effect could be better or worse than the count suggests, depending on species, transplant success, site, aftercare and habitat response. The developer reports nursery propagation since 2023, but its public page does not publish stock or survival records [9]."),
       P("Evidence that would settle the ecological question", h2),
       requests_list([
           "The full species-level schedule, including condition, size and location for removal and transplant groups.",
@@ -94,8 +96,9 @@ S += [Spacer(1, 2 * mm), SectionHeading(5, "Verdict, limits and evidence needed"
           (6, "Heleno, R. et al. (2010), Ecological Applications 20(5):1191–1203, doi:10.1890/09-1384.1.", "https://doi.org/10.1890/09-1384.1"),
           (7, "MaltaToday, Fact-check: What the Comino hotel project means for the island's trees, 8 August 2026 (secondary; 468 oleanders).", "https://www.maltatoday.com.mt/news/national/143679/factcheck_what_the_comino_hotel_project_means_for_the_islands_trees"),
           (8, "MaltaToday, ERA approval paves way for uprooting of 800 trees for proposed Comino hotel, 7 August 2026 (secondary account of stakeholder statements).", "https://www.maltatoday.com.mt/environment/planning/143667/era_approves_preliminary_works_for_proposed_comino_hotel"),
+          (9, "HV Hospitality, Comino project page (stakeholder account of nursery propagation and planned transplant care; no public inventory or outcome data).", "https://hilihospitality.com/comino/"),
       ]),
-      Spacer(1, 3 * mm), P("Version 1.0 · 3 October 2026 · Draft pending right of reply · Calculations: data/cc-002/checks.csv · Generator: tools/cc-002-report/build_report.py", cap)]
+      Spacer(1, 3 * mm), P("Version 1.1 · 3 October 2026 · Draft pending right of reply · Calculations: data/cc-002/checks.csv · Generator: tools/cc-002-report/build_report.py", cap)]
 
 build_report(Report(
     number="002", out=str(OUT / "report.pdf"), kicker="Land and trees, Malta",
@@ -106,7 +109,7 @@ build_report(Report(
     context="Comino hotel site · planned removal and transplantation",
     verdict="Largely supported", verdict_note="Plan maths checks out; ecological outcome is open.",
     footer_lines=["Miżien · independent, science-first fact-checking", "Draft for review · right of reply remains with the maintainer"],
-    running_head="Comino tree compensation", version="1.0", date="3 October 2026",
+    running_head="Comino tree compensation", version="1.1", date="3 October 2026",
     pdf_title="Miżien Claim Check 002 – What does ten trees compensate?",
     pdf_subject="Comino tree-removal counts, transplanting and ecological compensation",
     story=S,
