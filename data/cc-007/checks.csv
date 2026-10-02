@@ -1,0 +1,16 @@
+check,value,formula_or_method,source,retrieved_date
+Available station-years,23,count of reported numeric observations,Parliamentary Question 29696 annex,2026-10-02
+Missing station-years,2,count of n/a observations,Parliamentary Question 29696 annex,2026-10-02
+Above WHO annual guideline,23,count(value > 5 µg/m³),WHO 2021 annual guideline 5 µg/m³; PQ 29696 values,2026-10-02
+At or below historical EU annual limit,23,count(value <= 25 µg/m³),Directive 2024/2881 Annex I Table 2; PQ 29696 values,2026-10-02
+Above EU 2030 annual limit,14,count(value > 10 µg/m³),Directive 2024/2881 Annex I Table 1; contextual comparison only,2026-10-02
+Minimum annual station value,7.4,min(value),Parliamentary Question 29696 annex,2026-10-02
+Maximum annual station value,13.9,max(value),Parliamentary Question 29696 annex,2026-10-02
+"Mean, Attard",11.16,arithmetic mean of reported annual station means; missing years excluded,Parliamentary Question 29696 annex,2026-10-02
+"Mean, Msida",12.12,arithmetic mean of reported annual station means; missing years excluded,Parliamentary Question 29696 annex,2026-10-02
+"Mean, St Paul's Bay",9.866666666666667,arithmetic mean of reported annual station means; missing years excluded,Parliamentary Question 29696 annex,2026-10-02
+"Mean, Żejtun",10.34,arithmetic mean of reported annual station means; missing years excluded,Parliamentary Question 29696 annex,2026-10-02
+"Mean, Għarb",8.5,arithmetic mean of reported annual station means; missing years excluded,Parliamentary Question 29696 annex,2026-10-02
+EEA cross-check station-years available,11,count of station-years with at least one valid EEA daily aggregate,EEA E1a validated PM2.5 Parquet files; URLs and SHA-256 in eea_station_file_manifest.csv,2026-10-03
+EEA cross-check values matching PQ to 0.1 µg/m³,10,round EEA mean of valid daily aggregates to one decimal and compare with annex,EEA E1a validated PM2.5 Parquet files and PQ 29696 annex,2026-10-03
+Attard 2024 EEA minus PQ annex,0.222222,EEA mean of valid daily aggregates minus PQ annex value (µg/m³),EEA E1a validated data; Attard 2024; PQ 29696 annex,2026-10-03

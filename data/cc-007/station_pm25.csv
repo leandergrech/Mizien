@@ -1,0 +1,26 @@
+year,station,annual_pm25_ug_m3,source,retrieved_date,availability
+2020,Attard,9.8,PQ 29696 annex,2026-10-02,reported
+2021,Attard,11.9,PQ 29696 annex,2026-10-02,reported
+2022,Attard,10.8,PQ 29696 annex,2026-10-02,reported
+2023,Attard,11.4,PQ 29696 annex,2026-10-02,reported
+2024,Attard,11.9,PQ 29696 annex,2026-10-02,reported
+2020,Msida,11.0,PQ 29696 annex,2026-10-02,reported
+2021,Msida,12.4,PQ 29696 annex,2026-10-02,reported
+2022,Msida,11.7,PQ 29696 annex,2026-10-02,reported
+2023,Msida,13.9,PQ 29696 annex,2026-10-02,reported
+2024,Msida,11.6,PQ 29696 annex,2026-10-02,reported
+2020,St Paul's Bay,,PQ 29696 annex,2026-10-02,not reported (n/a)
+2021,St Paul's Bay,,PQ 29696 annex,2026-10-02,not reported (n/a)
+2022,St Paul's Bay,10.6,PQ 29696 annex,2026-10-02,reported
+2023,St Paul's Bay,9.5,PQ 29696 annex,2026-10-02,reported
+2024,St Paul's Bay,9.5,PQ 29696 annex,2026-10-02,reported
+2020,Żejtun,9.6,PQ 29696 annex,2026-10-02,reported
+2021,Żejtun,10.7,PQ 29696 annex,2026-10-02,reported
+2022,Żejtun,10.1,PQ 29696 annex,2026-10-02,reported
+2023,Żejtun,10.9,PQ 29696 annex,2026-10-02,reported
+2024,Żejtun,10.4,PQ 29696 annex,2026-10-02,reported
+2020,Għarb,7.4,PQ 29696 annex,2026-10-02,reported
+2021,Għarb,8.6,PQ 29696 annex,2026-10-02,reported
+2022,Għarb,8.9,PQ 29696 annex,2026-10-02,reported
+2023,Għarb,8.9,PQ 29696 annex,2026-10-02,reported
+2024,Għarb,8.7,PQ 29696 annex,2026-10-02,reported

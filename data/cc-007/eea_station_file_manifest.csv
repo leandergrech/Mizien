@@ -1,0 +1,6 @@
+station,eoi_code,url,retrieved_date,bytes,sha256,source_note
+Attard,MT00008,https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_06001_100.parquet,2026-10-03,42640,0832ce4eaa916c4bd4885fdac844f12774bfee2cfca363b807ca758e7cc6e5af,EEA Air Quality download service; E1a validated station data
+Msida,MT00011,https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_06001_103.parquet,2026-10-03,12757,16a939f9a14c9ac9d8ae81e20096be12ff48cc013bbc341c0b92abd7b29089cb,EEA Air Quality download service; E1a validated station data
+St Paul's Bay,MT00009,https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_06001_101.parquet,2026-10-03,22117,b2d89f76afa40be292a326c5db7ce76ec00762776ccb69f48e3f54a62da5a2dc,EEA Air Quality download service; E1a validated station data
+Żejtun,MT00004,https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_06001_101.parquet,2026-10-03,59835,684b419e7f47204900d75e760ae992da423a2b0792ee255166e1fb5e95f04838,EEA Air Quality download service; E1a validated station data
+Għarb,MT00007,https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00007_06001_100.parquet,2026-10-03,13401,76f4c017f3ef89e7451baf579991f4d400720d41248359010521f22fd0041c59,EEA Air Quality download service; E1a validated station data

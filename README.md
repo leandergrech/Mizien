@@ -36,13 +36,13 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-004 | Waste | 'Strong progress' in waste separation | Drafted | Not substantiated |
 | CC-005 | Water | '92% excellent' bathing water | Drafted | Supported |
 | CC-006 | Nature & Wildlife | Spring hunting derogation | Drafted | Not substantiated |
-| CC-007 | Air | Within EU limits vs WHO guideline | Not started | - |
+| CC-007 | Air | Within EU limits vs WHO guideline | Drafted | Largely supported |
 | CC-008 | Transport | Flyovers and congestion | Drafted | Not substantiated |
 | CC-009 | Water | Reverse osmosis and groundwater | Not started | - |
 | CC-010 | Land & Trees | Tree-planting counts | Not started | - |
 | CC-011 | Governance & Promises | 2026 manifesto pledges | Drafted | Not substantiated |
 
-The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Candidates are numbered CC-001 to CC-011. Report drafts are available for CC-001 to CC-006, CC-008 and CC-011; CC-007, CC-009 and CC-010 remain in progress. Right of reply remains for the maintainer where not yet handled.
+The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Candidates are numbered CC-001 to CC-011. Report drafts are available for CC-001 to CC-008 and CC-011; CC-009 and CC-010 remain in progress. Right of reply remains for the maintainer where not yet handled.
 
 ## Repository map
 

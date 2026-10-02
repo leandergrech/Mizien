@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 3 October 2026 (CC-002 report, flyer and viewer metadata merged into `main` at `61147dd`; archive and site-specific outcome gaps remain).*
+*Last updated: 3 October 2026 (CC-002 merged into `main` at `ade9e4b`; CC-007 report and flyer updated with an EEA cross-check on `codex/cc-007-air-quality`).*
 
 ## What the project is
 
@@ -48,7 +48,7 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 | CC-005 Bathing water | Styled report and flyer drafted in the shared CC-001 design. The Commission's exact 92% statement matches the EEA 2023 result (80/87); latest 2025 season is 88.5%. Balluta Bay closure and the CJEU wastewater-treatment case are contextual and do not refute the dated statistic. Draft verdict: Supported (high). Right of reply not sought, per maintainer direction. Viewer metadata uses the same Report / Flyer PDF / Flyer image actions as completed checks. |
 | CC-011 Manifesto pledges | Report v1.0 and flyer drafted. Verdict: Not substantiated (moderate) for both. Labour's pledge is "open or green" space (not "green space"): 99.9% already within reach on a broad reading, 55-68% for parks of at least 0.5 ha. PN's is a plan for a Net-Zero Gozo by 2040 with afforestation as one of several measures (news said "through afforestation"); no Gozo inventory; afforestation alone would need 1.5-8.5x Gozo's area. Pending right of reply. |
 | CC-006 Spring hunting | Report and flyer v1.0 integrated into main. The report tests both Article 9 conditions. Quota-to-statutory-benchmark ratios are 99.3% for Quail and 59.8% for Turtle-dove. Draft verdict: Not substantiated (moderate): the statutory arithmetic is within the benchmark, but the 2026 enforcement outcome and ecological impact are not established. The 30 March 2026 Ornis minutes were not listed in the WBRU archive; latest season outcome report listed was for 2025. Right of reply remains for the maintainer. |
-| CC-007 | Air | Local draft in the original checkout: report/flyer and source transcription drafted; Saint Paul's Bay 2020–21 readings and ERA validation series remain incomplete. Not committed or pushed. |
+| CC-007 Within EU limits vs WHO guideline | Report and flyer v1.1 drafted on `codex/cc-007-air-quality`. PQ 29696 supplied by the maintainer; the Minister's answer is procedural, not a compliance claim. All 23 reported values are below the 25 µg/m³ EU limit and above the WHO 5 µg/m³ guideline. EEA validated files cross-check 11 station-years: ten match to 0.1 µg/m³; Attard 2024 differs (12.122 vs 11.9). Two St Paul's Bay values are n/a. Verdict: Largely supported (moderate), pending full series reconciliation. Right of reply remains with the maintainer. |
 | CC-008 | Transport | Report v1.0 and flyer merged into `main` at `6e1f342`. Verdict: Not substantiated (moderate). Marsa's 2021 travel-time and emissions percentages are agency-reported; the underlying survey/calculation was not found. Msida wording was prospective; the flyover entered use in December 2025 while the broader project continued. No local before/after noise series located. Pending maintainer right of reply. |
 | CC-009 to CC-010 | Candidates only. |
 
@@ -74,7 +74,7 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 - [ ] CC-004: verify COM(2023) 304 early-warning report directly (cited second-hand).
 - [ ] Send CC-001 draft to Ambjent Malta and Fondazzjoni Wirt Artna; record dates in `claims/CC-001/claim.yml`.
 - [ ] CC-006: locate and archive the 30 March 2026 Ornis Committee minutes; obtain the 2026 WBRU season outcome report, final 2019–2024 Article 12 data, and FKNK survey methods/results. Right of reply remains for the maintainer.
-- [ ] CC-007: obtain the two missing St Paul's Bay 2020–21 values and ERA's validated series with coverage/quality notes; full-text verification of the Newsbook report remains unavailable. Right of reply is for the maintainer.
+- [ ] CC-007: reconcile the Attard 2024 difference between the PQ annex (11.9) and EEA mean of valid daily aggregates (12.122); obtain ERA's validated annual series and coverage/quality notes. The EEA files retrieved do not supply 14/25 station-years, including the two St Paul's Bay n/a cells. The Newsbook page was not retrievable for full-text review; an archived snapshot is recorded. Right of reply is for the maintainer.
 - [x] CC-008: locate primary wording for Msida and Marsa; draft report/flyer and add evidence notes. Remaining: obtain the Marsa surveys/calculations and comparable local traffic, air and noise series; right of reply remains for the maintainer. Four earlier MaltaToday sources plus the OPM and Times of Malta pages are robots-disallowed and need browser archiving; ERA's source page also blocks automated access. The AEA publisher returned HTTP 403 to the archiver.
 - [x] CC-005: locate Commission wording; compare EEA bathing-water seasons 2023–2025; confirm Balluta Bay warning from the EHD primary report; distinguish CJEU wastewater ruling from bathing-water classification.
 - [x] CC-005: add sources to `archive/manifest.csv`. Commission page and CJEU judgment have archived snapshots; EEA 2025 is fetched and hashed. EEA 2024 and the EHD Balluta report are robots-disallowed with no snapshot; archive manually if needed. News leads are robots-disallowed but existing snapshots are recorded.
@@ -95,7 +95,7 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 ## Branches (3 October 2026)
 
 `archive-manifest`, `cc-003-climate`, `cc-004-waste` and `cc-011-manifestos` have been merged into `main` (PRs #1–4).
-CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commit `2110846`). CC-006's report, flyer and site metadata are integrated on `main` at `e0552b9` (fast-forward from `codex/cc-006-spring-hunting`). CC-008 was fast-forwarded and pushed to `main` at `6e1f342`. CC-002's report, flyer, viewer metadata and evidence notes were merged from `codex/cc-002-comino` at `61147dd`; the archive and site-specific outcome gaps remain, and right of reply is for the maintainer.
+CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commit `2110846`). CC-006's report, flyer and site metadata are integrated on `main` at `e0552b9` (fast-forward from `codex/cc-006-spring-hunting`). CC-008 was fast-forwarded and pushed to `main` at `6e1f342`. CC-002's report, flyer, viewer metadata and evidence notes were merged from `codex/cc-002-comino` at `ade9e4b`; the archive and site-specific outcome gaps remain, and right of reply is for the maintainer. CC-007 v1.1 is being prepared on `codex/cc-007-air-quality`; an EEA cross-check found one unresolved Attard 2024 difference.
 
 ## Notes for the next session
 
@@ -104,6 +104,7 @@ CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commi
 - CC-008 editable draft: `claims/CC-008/report.md`; generated outputs: `claims/CC-008/report.pdf`, `flyer.pdf`, `flyer.png`. Do not present Marsa's percentages as independently reproduced. No survey file was located. Msida's PDS observations are from 2019 and are not a post-opening counterfactual. The national licensed-fleet figure in the original candidate is not a junction traffic measure and was not used.
 - `archive/manifest.csv` records CC-008 source-fetch results. Manual browser archiving is still needed for the four earlier MaltaToday sources, the Office of the Prime Minister and Times of Malta; ERA blocks automated access and the AEA publisher returned HTTP 403. The three Infrastructure Malta pages were fetched and have Wayback snapshots.
 - CC-002 direct ERA release URLs and most newly added sources remain unarchived because the archive script encountered temporary DNS resolution failures on 3 October 2026. The existing generic ERA press-releases URL is marked robots-disallowed. Do not describe the new URL failures as robots restrictions.
+- CC-007 editable source transcription: `literature/CC-007/primary-source.md`; generated outputs: `claims/CC-007/report.pdf`, `flyer.pdf`, `flyer.png`. EEA validated-data comparison files and hashes are in `data/cc-007/`. The EEA daily mean for Attard 2024 is 12.122 µg/m³ versus 11.9 in the PQ annex; do not silently reconcile the difference. EEA files retrieved do not cover 14 of 25 possible station-years.
 
 - Eurostat API (`ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/...`) works from scripts; see
   `tools/cc-003-report/calc.py` and the helper pattern in the CC-003/004 data files.

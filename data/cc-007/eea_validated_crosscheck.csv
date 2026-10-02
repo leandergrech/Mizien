@@ -1,0 +1,26 @@
+station,eoi_code,year,pq_annex_ug_m3,eea_mean_of_valid_daily_aggregates_ug_m3,eea_valid_days,calendar_days,eea_day_coverage_pct,comparison,source_retrieved_date
+Attard,MT00008,2020,9.8,9.846433,365,366,99.7,matches to 0.1,2026-10-03
+Attard,MT00008,2021,11.9,,0,365,,No validated daily series in the retrieved EEA station file,2026-10-03
+Attard,MT00008,2022,10.8,,0,365,,No validated daily series in the retrieved EEA station file,2026-10-03
+Attard,MT00008,2023,11.4,,0,365,,No validated daily series in the retrieved EEA station file,2026-10-03
+Attard,MT00008,2024,11.9,12.122222,351,366,95.9,does not match to 0.1,2026-10-03
+Msida,MT00011,2020,11.0,,0,366,,No validated daily series in the retrieved EEA station file,2026-10-03
+Msida,MT00011,2021,12.4,,0,365,,No validated daily series in the retrieved EEA station file,2026-10-03
+Msida,MT00011,2022,11.7,,0,365,,No validated daily series in the retrieved EEA station file,2026-10-03
+Msida,MT00011,2023,13.9,,0,365,,No validated daily series in the retrieved EEA station file,2026-10-03
+Msida,MT00011,2024,11.6,11.593948,347,366,94.8,matches to 0.1,2026-10-03
+St Paul's Bay,MT00009,2020,,,0,366,,No validated daily series in the retrieved EEA station file,2026-10-03
+St Paul's Bay,MT00009,2021,,,0,365,,No validated daily series in the retrieved EEA station file,2026-10-03
+St Paul's Bay,MT00009,2022,10.6,10.604420,362,365,99.2,matches to 0.1,2026-10-03
+St Paul's Bay,MT00009,2023,9.5,9.529945,364,365,99.7,matches to 0.1,2026-10-03
+St Paul's Bay,MT00009,2024,9.5,9.521530,353,366,96.4,matches to 0.1,2026-10-03
+Żejtun,MT00004,2020,9.6,9.607886,360,366,98.4,matches to 0.1,2026-10-03
+Żejtun,MT00004,2021,10.7,10.681215,362,365,99.2,matches to 0.1,2026-10-03
+Żejtun,MT00004,2022,10.1,10.088462,364,365,99.7,matches to 0.1,2026-10-03
+Żejtun,MT00004,2023,10.9,10.927348,362,365,99.2,matches to 0.1,2026-10-03
+Żejtun,MT00004,2024,10.4,10.360833,360,366,98.4,matches to 0.1,2026-10-03
+Għarb,MT00007,2020,7.4,,0,366,,No validated daily series in the retrieved EEA station file,2026-10-03
+Għarb,MT00007,2021,8.6,,0,365,,No validated daily series in the retrieved EEA station file,2026-10-03
+Għarb,MT00007,2022,8.9,,0,365,,No validated daily series in the retrieved EEA station file,2026-10-03
+Għarb,MT00007,2023,8.9,,0,365,,No validated daily series in the retrieved EEA station file,2026-10-03
+Għarb,MT00007,2024,8.7,,0,366,,No validated daily series in the retrieved EEA station file,2026-10-03
