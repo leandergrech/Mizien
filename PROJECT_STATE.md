@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 2 October 2026 (CC-005 drafted; claim document viewer and download actions added).*
+*Last updated: 2 October 2026 (CC-006 report and flyer drafted in the shared design; 2026 supervision data remain incomplete).*
 
 ## What the project is
 
@@ -45,9 +45,10 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 | CC-002 Comino | Candidate. Sub judice: science only. |
 | CC-003 Per-capita emissions vs 2030 | Report v1.0 and flyer drafted. **Verdict: Misleading (high).** CAA press release 13 Nov 2025 cites the -44% per-capita figure from the Commission's CAPR 2025 but omits its projection: effort-sharing emissions +41% in 2024, +30% to +42% by 2030 vs -19% target (largest gap in the EU). Half the per-capita fall is population growth. Pending right of reply; **must not be published before the reply deadline.** |
 | CC-004 Waste separation | Report v1.0 and flyer drafted. Verdict: Not substantiated (moderate). Separation up; recycling rate 16.7% (2024) vs 55% 2025 target; 79% landfilled; 412 million kg 'diverted' not reconcilable with Eurostat (271 kt). Pending right of reply. |
-| CC-005 Bathing water | Report drafted. The Commission's exact 92% statement matches the EEA 2023 result (80/87); latest 2025 season is 88.5%. Balluta Bay closure and the CJEU wastewater-treatment case are contextual and do not refute the dated statistic. Draft verdict: Supported (high). Right of reply not sought, per maintainer direction. |
+| CC-005 Bathing water | Styled report and flyer drafted in the shared CC-001 design. The Commission's exact 92% statement matches the EEA 2023 result (80/87); latest 2025 season is 88.5%. Balluta Bay closure and the CJEU wastewater-treatment case are contextual and do not refute the dated statistic. Draft verdict: Supported (high). Right of reply not sought, per maintainer direction. Viewer metadata uses the same Report / Flyer PDF / Flyer image actions as completed checks. |
 | CC-011 Manifesto pledges | Report v1.0 and flyer drafted. Verdict: Not substantiated (moderate) for both. Labour's pledge is "open or green" space (not "green space"): 99.9% already within reach on a broad reading, 55-68% for parks of at least 0.5 ha. PN's is a plan for a Net-Zero Gozo by 2040 with afforestation as one of several measures (news said "through afforestation"); no Gozo inventory; afforestation alone would need 1.5-8.5x Gozo's area. Pending right of reply. |
-| CC-006 to CC-010 | Candidates only. |
+| CC-006 Spring hunting | Report and flyer v1.0 drafted from the exact statutory “small numbers” definition in L.N. 80/2026 and L.N. 81/2026. The quota-to-statutory-benchmark ratios are 99.3% for Quail and 59.8% for Turtle-dove. Draft verdict: Not substantiated (moderate) for the broader claim of small numbers and strict supervision: the statutory arithmetic is within the benchmark, but the 2026 enforcement outcome and ecological impact are not established. The 30 March 2026 Ornis minutes were not listed in the WBRU archive; latest season outcome report listed was for 2025. Right of reply remains for the maintainer. |
+| CC-007 to CC-010 | Candidates only. |
 
 ## Outstanding
 
@@ -70,10 +71,11 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 - [ ] CC-003: obtain the CAA "Facts: emissions (June 2026)" factsheet (blocked).
 - [ ] CC-004: verify COM(2023) 304 early-warning report directly (cited second-hand).
 - [ ] Send CC-001 draft to Ambjent Malta and Fondazzjoni Wirt Artna; record dates in `claims/CC-001/claim.yml`.
-- [ ] Locate verbatim primary-source wording for CC-006 to CC-010 before any report.
+- [ ] CC-006: locate and archive the 30 March 2026 Ornis Committee minutes; obtain the 2026 WBRU season outcome report, final 2019–2024 Article 12 data, and FKNK survey methods/results. Right of reply remains for the maintainer.
+- [ ] Locate verbatim primary-source wording for CC-007 to CC-010 before any report.
 - [x] CC-005: locate Commission wording; compare EEA bathing-water seasons 2023–2025; confirm Balluta Bay warning from the EHD primary report; distinguish CJEU wastewater ruling from bathing-water classification.
 - [x] CC-005: add sources to `archive/manifest.csv`. Commission page and CJEU judgment have archived snapshots; EEA 2025 is fetched and hashed. EEA 2024 and the EHD Balluta report are robots-disallowed with no snapshot; archive manually if needed. News leads are robots-disallowed but existing snapshots are recorded.
-- [ ] CC-005: review drafted verdict/report; reply process remains for maintainer.
+- [ ] CC-005: review drafted verdict, styled report and flyer; reply process remains for maintainer.
 - [ ] Obtain open-access full text for the CC-001 A and B studies; fill gaps noted in `literature/CC-001/notes.md`.
 - [ ] Collect literature for CC-002 and CC-006 to CC-010 (each folder lists what to collect).
 - [ ] Verify and fix `literature/CC-001/references.bib` (first task 2 in CLAUDE.md; not done this session).
@@ -90,8 +92,7 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 ## Branches (2 October 2026)
 
 `archive-manifest`, `cc-003-climate`, `cc-004-waste` and `cc-011-manifestos` have been merged into `main` (PRs #1–4).
-Current work is on `codex/cc-005-bathing-water`, based on the merged `main` commit. Do not push or open a PR until
-the maintainer has reviewed the report and confirmed the desired handling of draft claims.
+CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commit `2110846`). Current CC-006 work is on `codex/cc-006-spring-hunting`; merge it onto the latest main before finalising.
 
 ## Notes for the next session
 
@@ -103,3 +104,4 @@ the maintainer has reviewed the report and confirmed the desired handling of dra
 - CC-003 and CC-011 are linked by theme T7: the CAA and Labour's manifesto both state a 40% cut by 2030 vs 2005
   with no scope. Worth a follow-up check.
 - Claim files exposed by the site builder are copied into `docs/claim-files/`; the map panel offers an on-page viewer and adjacent download action for each output.
+- Completed claim outputs share one `addFileAction` implementation. Use `report_pdf`, `flyer_pdf` and `flyer_png` in `claim.yml` for the standard Report / Flyer PDF / Flyer image viewer and download pairs.

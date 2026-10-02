@@ -35,7 +35,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-003 | Climate & Energy | Per-capita emissions vs 2030 projection | Drafted | Misleading |
 | CC-004 | Waste | 'Strong progress' in waste separation | Drafted | Not substantiated |
 | CC-005 | Water | '92% excellent' bathing water | Drafted | Supported |
-| CC-006 | Nature & Wildlife | Spring hunting derogation | Not started | - |
+| CC-006 | Nature & Wildlife | Spring hunting derogation | Drafted | Not substantiated |
 | CC-007 | Air | Within EU limits vs WHO guideline | Not started | - |
 | CC-008 | Transport | Flyovers and congestion | Not started | - |
 | CC-009 | Water | Reverse osmosis and groundwater | Not started | - |
@@ -43,7 +43,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-011 | Governance & Promises | 2026 manifesto pledges | Drafted | Not substantiated |
 
 The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Candidates are numbered CC-001 to CC-011. CC-001, CC-003,
-CC-004, CC-005 and CC-011 are drafted; right of reply remains pending for the claims where the maintainer has not yet handled it.
+CC-004, CC-005, CC-006 and CC-011 are drafted; right of reply remains pending for the claims where the maintainer has not yet handled it.
 
 ## Repository map
 

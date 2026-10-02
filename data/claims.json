@@ -151,7 +151,9 @@
       "quote": "Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.",
       "version": "1.0",
       "outputs": {
-        "report": "claim-files/CC-005/report.md"
+        "report_pdf": "claim-files/CC-005/report.pdf",
+        "flyer_pdf": "claim-files/CC-005/flyer.pdf",
+        "flyer_png": "claim-files/CC-005/flyer.png"
       },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-005/claim.yml"
     },
@@ -159,21 +161,25 @@
       "id": "CC-006",
       "title": "Spring hunting derogation",
       "category": "Nature & Wildlife",
-      "claim": "The Ornis committee recommended a 2026 spring season (quail 13 Apr-3 May; turtle dove 20 Apr-3 May) with bag limits of 1,500 turtle doves and 2,400 quail. Hunters describe it as strictly supervised and very small.",
-      "counter": "A peer-reviewed analysis finds more birds are taken in autumn than spring, and the spring take equals about 2.4-4.4% of Europe's turtle doves. EU Court rulings (2018, 2024) concern illegal trapping and hunting.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Malta’s 2026 spring-hunting derogation met the Birds Directive’s “small numbers” and strict-supervision conditions, with quotas of 2,400 Quail and 1,500 Turtle-doves.",
+      "counter": "The 2025 WBRU outcome report documents enforcement activity and offences, but it cannot establish how the 2026 season was supervised. The 2026 season outcome report was not available at review.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [
-        "Selective metric"
+        "Conditional-turned-unconditional"
       ],
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Ornis Committee; WBRU; FKNK; BirdLife Malta",
-      "date": "2026-04",
-      "quote": "",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Government of Malta, applying Directive 2009/147/EC",
+      "date": "2026-03-30",
+      "quote": "“Under strictly supervised conditions and on a selective basis ... in small numbers.”",
       "version": null,
-      "outputs": {},
+      "outputs": {
+        "report_pdf": "claim-files/CC-006/report.pdf",
+        "flyer_pdf": "claim-files/CC-006/flyer.pdf",
+        "flyer_png": "claim-files/CC-006/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-006/claim.yml"
     },
     {

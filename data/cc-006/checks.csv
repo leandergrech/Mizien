@@ -1,0 +1,3 @@
+species,annual_mortality,statutory_1pct_benchmark,quota,quota_pct_mortality,quota_pct_benchmark,source,retrieved_date,formula
+Common Quail,241638,2416,2400,0.993221,99.337748,"L.N. 80/2026, reg. 4",2026-10-02,quota / annual_mortality * 100; quota / statutory_1pct_benchmark * 100
+European Turtle-dove,251032,2510,1500,0.597533,59.760956,"L.N. 81/2026, reg. 4",2026-10-02,quota / annual_mortality * 100; quota / statutory_1pct_benchmark * 100
