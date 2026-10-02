@@ -52,6 +52,7 @@
       "date": "2026-10-01",
       "quote": "Given its temporary nature, it will not cause damage to the tree.",
       "version": "1.1",
+      "last_reviewed": "2026-10-02",
       "outputs": {
         "report": "claim-files/CC-001/report.pdf",
         "flyer_pdf": "claim-files/CC-001/flyer.pdf",
@@ -103,6 +104,7 @@
       "date": "2025-11-13",
       "quote": "Emissions per capita have fallen by 44% since 2005, well above the EU average of 34%.",
       "version": "1.0",
+      "last_reviewed": "2026-10-02",
       "outputs": {
         "report": "claim-files/CC-003/report.pdf",
         "flyer_pdf": "claim-files/CC-003/flyer.pdf",
@@ -129,6 +131,7 @@
       "date": "2026-01-19",
       "quote": "Malta continues to make strong progress in waste management",
       "version": "1.0",
+      "last_reviewed": "2026-10-02",
       "outputs": {
         "report": "claim-files/CC-004/report.pdf",
         "flyer_pdf": "claim-files/CC-004/flyer.pdf",
@@ -154,6 +157,7 @@
       "date": "2025",
       "quote": "Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.",
       "version": "1.0",
+      "last_reviewed": "2026-10-02",
       "outputs": {
         "report_pdf": "claim-files/CC-005/report.pdf",
         "flyer_pdf": "claim-files/CC-005/flyer.pdf",
@@ -179,6 +183,7 @@
       "date": "2026-03-30",
       "quote": "“Under strictly supervised conditions and on a selective basis ... in small numbers.”",
       "version": null,
+      "last_reviewed": "2026-10-02",
       "outputs": {
         "report_pdf": "claim-files/CC-006/report.pdf",
         "flyer_pdf": "claim-files/CC-006/flyer.pdf",
@@ -293,6 +298,7 @@
       "date": "2026-05",
       "quote": "Kull persuna f'pajjiżna ma tkunx aktar minn għaxar minuti mixi 'l bogħod minn spazju miftuħ jew aħdar. (PL) / Infasslu pjan ċar u realistiku biex sal-2040, Għawdex isir Net-Zero Island (PN)",
       "version": "1.0",
+      "last_reviewed": "2026-10-02",
       "outputs": {
         "report": "claim-files/CC-011/report.pdf",
         "flyer_pdf": "claim-files/CC-011/flyer.pdf",

@@ -61,3 +61,4 @@ outputs:
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
 version: '1.0'
+last_reviewed: '2026-10-02'
