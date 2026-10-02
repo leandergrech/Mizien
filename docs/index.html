@@ -101,6 +101,20 @@
     padding: 6px 10px; font: 700 12px Arial; text-decoration: none; cursor: pointer; }
   #panel .btn.ghost { background: #fff; color: #14452f; }
   #panel .btn:hover { border-color: #e3a72f; }
+  #panel .file-action { display: inline-flex; gap: 4px; align-items: stretch; }
+  #panel .file-action .btn { border-radius: 8px 0 0 8px; }
+  #panel .file-action .btn + .btn { border-radius: 0 8px 8px 0; margin-left: -5px; }
+  #doc-viewer { width: min(1100px, calc(100vw - 32px)); height: min(88vh, 900px); max-width: none; max-height: none;
+    padding: 0; border: 1px solid #7fa88b; border-radius: 14px; color: #2b3a42; background: #f6f4ee;
+    box-shadow: 0 20px 70px rgba(0,0,0,.6); }
+  #doc-viewer::backdrop { background: rgba(4,18,12,.82); backdrop-filter: blur(3px); }
+  #doc-viewer .viewer-head { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    min-height: 54px; padding: 8px 12px 8px 18px; border-bottom: 1px solid #d9e2db; }
+  #doc-viewer h2 { margin: 0; padding: 0; border: 0; font: 700 16px "Liberation Serif", Georgia, serif; color: #14452f; }
+  #doc-viewer h2::after { display: none; }
+  #doc-viewer .viewer-close { border: 0; border-radius: 8px; padding: 7px 11px; background: #14452f; color: white; cursor: pointer; }
+  #doc-viewer iframe { display: block; width: 100%; height: calc(100% - 54px); border: 0; background: #fff; }
+  #doc-viewer img { display: block; max-width: 100%; max-height: calc(100% - 54px); margin: 0 auto; object-fit: contain; }
   td .chip { margin: 0; }
   td .muted { color: var(--muted); font-size: 12px; }
 </style>
@@ -124,6 +138,10 @@
   <div id="tip" role="tooltip"></div>
   <div id="panel" aria-live="polite"></div>
 </div>
+<dialog id="doc-viewer" aria-labelledby="viewer-title">
+  <div class="viewer-head"><h2 id="viewer-title">Claim document</h2><button class="viewer-close" type="button">Close</button></div>
+  <iframe title="Claim document viewer" hidden></iframe><img alt="Claim flyer" hidden>
+</dialog>
 <noscript>This map needs JavaScript. The full list of claims is in the repository: data/claims.csv.</noscript>
 
 <main>
@@ -169,6 +187,7 @@
   "use strict";
   var canvas = document.getElementById("map"), ctx = canvas.getContext("2d");
   var stage = document.getElementById("stage"), panel = document.getElementById("panel"), tip = document.getElementById("tip");
+  var viewer = document.getElementById("doc-viewer"), viewerFrame = viewer.querySelector("iframe"), viewerImage = viewer.querySelector("img");
   var DATA = null, hubs = [], claims = [], edges = [], byId = {}, themeById = {}, stars = [];
   var yaw = 0.6, pitch = -0.25, zoom = 1, spinning = true;
   var sel = null;      // {kind: "claim"|"hub"|"edge"|"theme", ...}
@@ -433,6 +452,27 @@
     b.onclick = function () { selectClaim(id); }; box.appendChild(b);
   }
 
+  function openDocument(title, url) {
+    document.getElementById("viewer-title").textContent = title;
+    viewerFrame.removeAttribute("src"); viewerImage.removeAttribute("src");
+    var isImage = /\.(png|jpe?g|webp|gif)$/i.test(url);
+    viewerImage.hidden = !isImage; viewerFrame.hidden = isImage;
+    if (isImage) viewerImage.src = url; else viewerFrame.src = url;
+    if (typeof viewer.showModal === "function") viewer.showModal(); else window.open(url, "_blank", "noopener");
+  }
+  viewer.querySelector(".viewer-close").addEventListener("click", function () { viewer.close(); });
+  viewer.addEventListener("click", function (event) { if (event.target === viewer) viewer.close(); });
+  viewer.addEventListener("close", function () { viewerFrame.removeAttribute("src"); viewerImage.removeAttribute("src"); });
+
+  function addFileAction(box, title, url) {
+    var group = el("span", "file-action");
+    var open = el("button", "btn", "Open " + title); open.type = "button";
+    open.onclick = function () { openDocument(title, url); };
+    var download = el("a", "btn ghost", "Download"); download.href = url; download.download = url.split("/").pop();
+    download.setAttribute("aria-label", "Download " + title);
+    group.appendChild(open); group.appendChild(download); box.appendChild(group);
+  }
+
   function selectClaim(id) {
     var c = byId[id]; if (!c) return; sel = { kind: "claim", id: id };
     var d = c.data; openPanel(d.id + " · " + d.category.toUpperCase(), d.title, c.color);
@@ -457,8 +497,10 @@
       panel.appendChild(box);
     }
     var acts = el("div", "acts");
-    if (d.outputs && d.outputs.report) { var a = el("a", "btn", "Read the report"); a.href = d.outputs.report; a.target = "_blank"; a.rel = "noopener"; acts.appendChild(a); }
-    if (d.outputs && d.outputs.flyer_png) { var f = el("a", "btn ghost", "Flyer"); f.href = d.outputs.flyer_png; f.target = "_blank"; f.rel = "noopener"; acts.appendChild(f); }
+    var outputLabels = { report: "Report", report_pdf: "Report", flyer_pdf: "Flyer PDF", flyer_png: "Flyer image", document: "Document", appendix: "Appendix" };
+    Object.keys(d.outputs || {}).forEach(function (key) {
+      addFileAction(acts, outputLabels[key] || key.replace(/[_-]+/g, " "), d.outputs[key]);
+    });
     var rec = el("a", "btn ghost", "Claim record"); rec.href = d.record; rec.target = "_blank"; rec.rel = "noopener"; acts.appendChild(rec);
     var hb = el("button", "btn ghost", c.hub.name); hb.onclick = function () { selectHub(c.hub); }; acts.appendChild(hb);
     panel.appendChild(acts);

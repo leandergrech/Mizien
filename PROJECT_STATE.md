@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 2 October 2026 (evening session: CC-003, CC-004, CC-011 drafted).*
+*Last updated: 2 October 2026 (CC-005 drafted; claim document viewer and download actions added).*
 
 ## What the project is
 
@@ -13,9 +13,8 @@ grouped by topic with links between them. The repository is public and doubles a
 
 ## Repository
 
-https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ once Pages is enabled
-(Settings, Pages, deploy from `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
-As of 2 October 2026 the repository was created but still empty; the starter package is the first commit.
+https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
+`main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
 
 ## Conventions
 
@@ -46,8 +45,9 @@ As of 2 October 2026 the repository was created but still empty; the starter pac
 | CC-002 Comino | Candidate. Sub judice: science only. |
 | CC-003 Per-capita emissions vs 2030 | Report v1.0 and flyer drafted. **Verdict: Misleading (high).** CAA press release 13 Nov 2025 cites the -44% per-capita figure from the Commission's CAPR 2025 but omits its projection: effort-sharing emissions +41% in 2024, +30% to +42% by 2030 vs -19% target (largest gap in the EU). Half the per-capita fall is population growth. Pending right of reply; **must not be published before the reply deadline.** |
 | CC-004 Waste separation | Report v1.0 and flyer drafted. Verdict: Not substantiated (moderate). Separation up; recycling rate 16.7% (2024) vs 55% 2025 target; 79% landfilled; 412 million kg 'diverted' not reconcilable with Eurostat (271 kt). Pending right of reply. |
-| CC-005 to CC-010 | Candidates only. |
+| CC-005 Bathing water | Report drafted. The Commission's exact 92% statement matches the EEA 2023 result (80/87); latest 2025 season is 88.5%. Balluta Bay closure and the CJEU wastewater-treatment case are contextual and do not refute the dated statistic. Draft verdict: Supported (high). Right of reply not sought, per maintainer direction. |
 | CC-011 Manifesto pledges | Report v1.0 and flyer drafted. Verdict: Not substantiated (moderate) for both. Labour's pledge is "open or green" space (not "green space"): 99.9% already within reach on a broad reading, 55-68% for parks of at least 0.5 ha. PN's is a plan for a Net-Zero Gozo by 2040 with afforestation as one of several measures (news said "through afforestation"); no Gozo inventory; afforestation alone would need 1.5-8.5x Gozo's area. Pending right of reply. |
+| CC-006 to CC-010 | Candidates only. |
 
 ## Outstanding
 
@@ -70,9 +70,12 @@ As of 2 October 2026 the repository was created but still empty; the starter pac
 - [ ] CC-003: obtain the CAA "Facts: emissions (June 2026)" factsheet (blocked).
 - [ ] CC-004: verify COM(2023) 304 early-warning report directly (cited second-hand).
 - [ ] Send CC-001 draft to Ambjent Malta and Fondazzjoni Wirt Artna; record dates in `claims/CC-001/claim.yml`.
-- [ ] Locate verbatim primary-source wording for CC-005 to CC-010 before any report.
+- [ ] Locate verbatim primary-source wording for CC-006 to CC-010 before any report.
+- [x] CC-005: locate Commission wording; compare EEA bathing-water seasons 2023–2025; confirm Balluta Bay warning from the EHD primary report; distinguish CJEU wastewater ruling from bathing-water classification.
+- [x] CC-005: add sources to `archive/manifest.csv`. Commission page and CJEU judgment have archived snapshots; EEA 2025 is fetched and hashed. EEA 2024 and the EHD Balluta report are robots-disallowed with no snapshot; archive manually if needed. News leads are robots-disallowed but existing snapshots are recorded.
+- [ ] CC-005: review drafted verdict/report; reply process remains for maintainer.
 - [ ] Obtain open-access full text for the CC-001 A and B studies; fill gaps noted in `literature/CC-001/notes.md`.
-- [ ] Collect literature for CC-002 and CC-005 to CC-010 (each folder lists what to collect).
+- [ ] Collect literature for CC-002 and CC-006 to CC-010 (each folder lists what to collect).
 - [ ] Verify and fix `literature/CC-001/references.bib` (first task 2 in CLAUDE.md; not done this session).
 - [ ] Check the name and a domain are free; enable GitHub Pages (main, /docs).
 - [ ] CC-002 (Comino) is before a planning tribunal: keep to the science.
@@ -84,12 +87,11 @@ As of 2 October 2026 the repository was created but still empty; the starter pac
 3. Collect literature into `literature/CC-NNN/`, then build the report from `methodology/report-outline.md`.
 4. Work on a branch per claim and open a pull request for the maintainer.
 
-## Branches (2 October 2026, local only, not pushed)
+## Branches (2 October 2026)
 
-`archive-manifest` (from main), then stacked: `cc-003-climate` (from main) -> `cc-004-waste` -> `cc-011-manifestos`.
-Each later branch contains the earlier ones. Merge in that order, or merge `cc-011-manifestos` alone to take all three.
-They were not pushed because the repository is public and CC-003 carries a Misleading verdict that must not be
-published before the right-of-reply deadline.
+`archive-manifest`, `cc-003-climate`, `cc-004-waste` and `cc-011-manifestos` have been merged into `main` (PRs #1–4).
+Current work is on `codex/cc-005-bathing-water`, based on the merged `main` commit. Do not push or open a PR until
+the maintainer has reviewed the report and confirmed the desired handling of draft claims.
 
 ## Notes for the next session
 
@@ -100,3 +102,4 @@ published before the right-of-reply deadline.
 - Malta's population growth (+41% since 2005) distorts any per-capita metric; check that first in future claims.
 - CC-003 and CC-011 are linked by theme T7: the CAA and Labour's manifesto both state a 40% cut by 2030 vs 2005
   with no scope. Worth a follow-up check.
+- Claim files exposed by the site builder are copied into `docs/claim-files/`; the map panel offers an on-page viewer and adjacent download action for each output.

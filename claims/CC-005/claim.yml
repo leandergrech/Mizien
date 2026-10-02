@@ -1,41 +1,55 @@
 id: CC-005
-title: '''92% excellent'' bathing water'
+title: '“92% excellent” bathing water'
 category: Water
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
-  text: 92% of Malta's bathing waters are rated excellent (government, repeated by the EU review).
-  speaker: Ministry; WSC; ERA
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  text: 'Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.'
+  speaker: European Commission
+  date: '2025'
+  wording_status: Verbatim found
   sources:
   - title: 'Environmental Implementation Review 2025: Malta'
-    publisher: European Commission (OP)
+    publisher: European Commission
     date: '2025'
     url: https://op.europa.eu/webpub/env/eir-country-reports-summaries/en/malta.html
-  - title: EU Court finds Malta in breach of its wastewater treatment obligations
-    publisher: MaltaToday
-    date: n/d
-    url: https://maltatoday.com.mt/news/europe/131800/eu_court_finds_malta_in_breach_of_its_wastewater_treatment_obligations
-  - title: Malta beaches waters (relaying Malta Independent)
-    publisher: TravelMole
-    date: n/d
-    url: https://travelmole.com/news/malta-beaches-waters/
-counter_evidence: The EU Court of Justice found sewage-treatment capacity insufficient. Bays have been
-  closed, including one hours after receiving a Blue Flag.
-tests: What the EEA classification does and does not measure; closure logs; sewage-discharge data.
-why_low_hanging: Both statements are true; the gap between them is the finding.
+    note: Exact wording in Highlights. The page separately notes that urban wastewater is not being properly treated as required by EU law.
+  - title: 'Bathing water quality in the season of 2025: Malta'
+    publisher: European Environment Agency
+    date: '2026'
+    url: https://www.eea.europa.eu/en/topics/in-depth/bathing-water/state-of-bathing-water/bathing-water-country-factsheets-2025/mt-bathing-water-country-factsheet-2025.pdf/@@download/file
+    note: 2022–2025 results; 77/87 excellent in 2025 and 80/87 in 2023 and 2024.
+  - title: 'Bathing water quality in the season of 2024: Malta'
+    publisher: European Environment Agency
+    date: '2025'
+    url: https://environmentalhealth.gov.mt/wp-content/uploads/2025/07/Malta_bathing_water_2024.pdf
+    note: 80/87 excellent; 2,107 samples; two microbiological parameters.
+  - title: 'Report on the temporary closure at B08 and B09 Balluta Bay'
+    publisher: Environmental Health Directorate
+    date: '2024'
+    url: https://environmentalhealth.gov.mt/wp-content/uploads/2024/09/Report-for-Balluta-Bay-the-Bathing-Prohibition-Period-and-Short-Term-Pollution-Period.pdf
+    note: Primary closure report; warning lifted on 12 August 2024.
+  - title: 'Commission v Malta, Case C-304/23, ECLI:EU:C:2024:906'
+    publisher: Court of Justice of the European Union
+    date: '2024-10-17'
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62023CJ0304
+    note: Urban wastewater treatment obligations for named agglomerations; separate from bathing-water classification.
+  quote: 'Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.'
+counter_evidence: 'The latest EEA season (2025) classified 77 of 87 sites (88.5%) as excellent, down from 80 of 87 (92%) in 2023 and 2024. Malta also had a documented sewage-related bathing warning at Balluta Bay (B08/B09) from May to 12 August 2024, and the CJEU found failures to comply with urban wastewater treatment obligations in named agglomerations. These are important context, but they do not refute the Commission’s dated 2023 bathing-water statistic.'
+tests: 'Confirm the Commission’s exact wording and reference-year data; establish what the Bathing Water Directive classification measures; distinguish long-term national classification from short-term local warnings and urban wastewater treatment compliance.'
+why_low_hanging: 'The Commission’s precise 2023 indicator is verifiable, while the omission of its reference year and the newer 2025 result can make it sound current.'
 tags:
-- Selective metric
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: Closure reports come partly via a travel-news relay of a Malta Independent story. Confirm in
-  primary sources.
+- Compliance-not-health
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: 'Supported applies to the quoted 2023 Bathing Water Directive result. The 2025 annual classification is 88.5%. This indicator uses E. coli and intestinal enterococci and is not a general assessment of marine ecological or chemical status. Right of reply has not been sought, as directed by the maintainer.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown: 'EEA country factsheets for 2023, 2024 and 2025; Environmental Health Directorate Balluta Bay closure report; CJEU Case C-304/23 judgment. All cited in the report and available at the linked primary sources.'
+outputs:
+  report: report.md
+version: '1.0'

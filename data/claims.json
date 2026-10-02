@@ -53,9 +53,9 @@
       "quote": "Given its temporary nature, it will not cause damage to the tree.",
       "version": "1.1",
       "outputs": {
-        "report": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-001/report.pdf",
-        "flyer_pdf": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-001/flyer.pdf",
-        "flyer_png": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-001/flyer.png"
+        "report": "claim-files/CC-001/report.pdf",
+        "flyer_pdf": "claim-files/CC-001/flyer.pdf",
+        "flyer_png": "claim-files/CC-001/flyer.png"
       },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-001/claim.yml"
     },
@@ -100,9 +100,9 @@
       "quote": "Emissions per capita have fallen by 44% since 2005, well above the EU average of 34%.",
       "version": "1.0",
       "outputs": {
-        "report": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-003/report.pdf",
-        "flyer_pdf": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-003/flyer.pdf",
-        "flyer_png": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-003/flyer.png"
+        "report": "claim-files/CC-003/report.pdf",
+        "flyer_pdf": "claim-files/CC-003/flyer.pdf",
+        "flyer_png": "claim-files/CC-003/flyer.png"
       },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-003/claim.yml"
     },
@@ -126,31 +126,33 @@
       "quote": "Malta continues to make strong progress in waste management",
       "version": "1.0",
       "outputs": {
-        "report": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/report.pdf",
-        "flyer_pdf": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/flyer.pdf",
-        "flyer_png": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/flyer.png"
+        "report": "claim-files/CC-004/report.pdf",
+        "flyer_pdf": "claim-files/CC-004/flyer.pdf",
+        "flyer_png": "claim-files/CC-004/flyer.png"
       },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/claim.yml"
     },
     {
       "id": "CC-005",
-      "title": "'92% excellent' bathing water",
+      "title": "“92% excellent” bathing water",
       "category": "Water",
-      "claim": "92% of Malta's bathing waters are rated excellent (government, repeated by the EU review).",
-      "counter": "The EU Court of Justice found sewage-treatment capacity insufficient. Bays have been closed, including one hours after receiving a Blue Flag.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.",
+      "counter": "The latest EEA season (2025) classified 77 of 87 sites (88.5%) as excellent, down from 80 of 87 (92%) in 2023 and 2024. Malta also had a documented sewage-related bathing warning at Balluta Bay (B08/B09) from May to 12 August 2024, and the CJEU found failures to comply with urban wastewater treatment obligations in named agglomerations. These are important context, but they do not refute the Commission’s dated 2023 bathing-water statistic.",
+      "status": "Drafted",
+      "verdict": "Supported",
       "tags": [
-        "Selective metric"
+        "Compliance-not-health"
       ],
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Ministry; WSC; ERA",
-      "date": "",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
+      "speaker": "European Commission",
+      "date": "2025",
+      "quote": "Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.",
+      "version": "1.0",
+      "outputs": {
+        "report": "claim-files/CC-005/report.md"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-005/claim.yml"
     },
     {
@@ -278,9 +280,9 @@
       "quote": "Kull persuna f'pajjiżna ma tkunx aktar minn għaxar minuti mixi 'l bogħod minn spazju miftuħ jew aħdar. (PL) / Infasslu pjan ċar u realistiku biex sal-2040, Għawdex isir Net-Zero Island (PN)",
       "version": "1.0",
       "outputs": {
-        "report": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/report.pdf",
-        "flyer_pdf": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/flyer.pdf",
-        "flyer_png": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/flyer.png"
+        "report": "claim-files/CC-011/report.pdf",
+        "flyer_pdf": "claim-files/CC-011/flyer.pdf",
+        "flyer_png": "claim-files/CC-011/flyer.png"
       },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/claim.yml"
     }
@@ -407,13 +409,6 @@
     },
     {
       "from": "CC-003",
-      "to": "CC-005",
-      "theme": "T6",
-      "link_type": "Rhetorical pattern",
-      "strength": "Pattern, not causal"
-    },
-    {
-      "from": "CC-003",
       "to": "CC-007",
       "theme": "T6",
       "link_type": "Rhetorical pattern",
@@ -428,13 +423,6 @@
     },
     {
       "from": "CC-004",
-      "to": "CC-005",
-      "theme": "T6",
-      "link_type": "Rhetorical pattern",
-      "strength": "Pattern, not causal"
-    },
-    {
-      "from": "CC-004",
       "to": "CC-007",
       "theme": "T6",
       "link_type": "Rhetorical pattern",
@@ -442,20 +430,6 @@
     },
     {
       "from": "CC-004",
-      "to": "CC-010",
-      "theme": "T6",
-      "link_type": "Rhetorical pattern",
-      "strength": "Pattern, not causal"
-    },
-    {
-      "from": "CC-005",
-      "to": "CC-007",
-      "theme": "T6",
-      "link_type": "Rhetorical pattern",
-      "strength": "Pattern, not causal"
-    },
-    {
-      "from": "CC-005",
       "to": "CC-010",
       "theme": "T6",
       "link_type": "Rhetorical pattern",
@@ -558,7 +532,6 @@
       "members": [
         "CC-003",
         "CC-004",
-        "CC-005",
         "CC-007",
         "CC-010"
       ]
