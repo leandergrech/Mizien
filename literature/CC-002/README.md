@@ -1,13 +1,10 @@
 # CC-002: Comino tree compensation
 
-**Status:** literature not yet collected.
+**Status:** draft evidence review; right of reply remains for the maintainer.
 
-## To collect
+The review separates the ERA's stated intervention counts and conditions from ecological outcomes. The main gaps
+are the final species-level permit schedule, transplant survival and condition monitoring, and follow-up evidence
+that any habitat restoration improves native biodiversity at the affected sites.
 
-Tree-transplant survival and compensation-ratio literature; whether removing invasive species restores habitat; reconciling the two sides' counts.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-002) for the news, government and EU sources found so far. Those locate the claim and its context; they are not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+See `notes.md` for access and limitations and `references.bib` for verified bibliographic records. No paywalled
+article PDF is included.

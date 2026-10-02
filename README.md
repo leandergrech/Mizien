@@ -31,7 +31,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | ID | Topic | Claim | Status | Verdict |
 |---|---|---|---|---|
 | CC-001 | Land & Trees | Upper Barrakka concrete | Drafted | Not substantiated |
-| CC-002 | Land & Trees | Comino tree compensation | Not started | - |
+| CC-002 | Land & Trees | Comino tree compensation | Drafted | Largely supported |
 | CC-003 | Climate & Energy | Per-capita emissions vs 2030 projection | Drafted | Misleading |
 | CC-004 | Waste | 'Strong progress' in waste separation | Drafted | Not substantiated |
 | CC-005 | Water | '92% excellent' bathing water | Drafted | Supported |
@@ -42,8 +42,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-010 | Land & Trees | Tree-planting counts | Not started | - |
 | CC-011 | Governance & Promises | 2026 manifesto pledges | Drafted | Not substantiated |
 
-The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Candidates are numbered CC-001 to CC-011. CC-001, CC-003,
-CC-004, CC-005, CC-006, CC-008 and CC-011 are drafted; right of reply remains pending for the claims where the maintainer has not yet handled it.
+The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Candidates are numbered CC-001 to CC-011. Report drafts are available for CC-001 to CC-006, CC-008 and CC-011; CC-007, CC-009 and CC-010 remain in progress. Right of reply remains for the maintainer where not yet handled.
 
 ## Repository map
 
