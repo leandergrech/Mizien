@@ -51,5 +51,7 @@ right_of_reply:
   response: null
 evidence_shown: 'EEA country factsheets for 2023, 2024 and 2025; Environmental Health Directorate Balluta Bay closure report; CJEU Case C-304/23 judgment. All cited in the report and available at the linked primary sources.'
 outputs:
-  report: report.md
+  report_pdf: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 version: '1.0'

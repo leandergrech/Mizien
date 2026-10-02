@@ -151,7 +151,9 @@
       "quote": "Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.",
       "version": "1.0",
       "outputs": {
-        "report": "claim-files/CC-005/report.md"
+        "report_pdf": "claim-files/CC-005/report.pdf",
+        "flyer_pdf": "claim-files/CC-005/flyer.pdf",
+        "flyer_png": "claim-files/CC-005/flyer.png"
       },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-005/claim.yml"
     },
