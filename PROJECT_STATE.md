@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 3 October 2026 (mobile Botanical map refinements merged to `main` at `d4a60fd`; CC-002 merged at `ade9e4b`; CC-007 report and flyer v1.1 with EEA cross-check prepared on `codex/cc-007-air-quality`).*
+*Last updated: 3 October 2026 (mobile Botanical map refinements merged to `main` at `d4a60fd`; CC-002 merged at `ade9e4b`; CC-007 report and flyer v1.1 with EEA cross-check merged into `main` at `f9c9acb`).*
 
 ## What the project is
 
@@ -95,7 +95,7 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 ## Branches (3 October 2026)
 
 `archive-manifest`, `cc-003-climate`, `cc-004-waste` and `cc-011-manifestos` have been merged into `main` (PRs #1–4).
-CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commit `2110846`). CC-006's report, flyer and site metadata are integrated on `main` at `e0552b9` (fast-forward from `codex/cc-006-spring-hunting`). CC-008 was fast-forwarded and pushed to `main` at `6e1f342`. CC-002's report, flyer, viewer metadata and evidence notes were merged from `codex/cc-002-comino` at `ade9e4b`; the archive and site-specific outcome gaps remain, and right of reply is for the maintainer. CC-007 v1.1 is being prepared on `codex/cc-007-air-quality`; an EEA cross-check found one unresolved Attard 2024 difference.
+CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commit `2110846`). CC-006's report, flyer and site metadata are integrated on `main` at `e0552b9` (fast-forward from `codex/cc-006-spring-hunting`). CC-008 was fast-forwarded and pushed to `main` at `6e1f342`. CC-002's report, flyer, viewer metadata and evidence notes were merged from `codex/cc-002-comino` at `ade9e4b`; the archive and site-specific outcome gaps remain, and right of reply is for the maintainer. CC-007 v1.1 with EEA cross-check was merged into `main` at `f9c9acb`; the Attard 2024 difference and 14 missing EEA station-years remain unresolved.
 
 ## Notes for the next session
 
