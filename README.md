@@ -40,10 +40,10 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-008 | Transport | Flyovers and congestion | Not started | - |
 | CC-009 | Water | Reverse osmosis and groundwater | Not started | - |
 | CC-010 | Land & Trees | Tree-planting counts | Not started | - |
-| CC-011 | Governance & Promises | 2026 manifesto pledges | Not started | - |
+| CC-011 | Governance & Promises | 2026 manifesto pledges | Drafted | Not substantiated |
 
-The interactive 3D map is the homepage of the site (`docs/`). Candidates are numbered CC-001 to CC-011; all but
-CC-001 are still to be checked.
+The interactive 3D map is the homepage of the site (`docs/`). Candidates are numbered CC-001 to CC-011. CC-001, CC-003,
+CC-004 and CC-011 are drafted and pending right of reply; the rest are still to be checked.
 
 ## Repository map
 
@@ -55,7 +55,7 @@ literature/CC-NNN/   references.bib, notes.md, open-access PDFs only
 archive/             manifest.csv of archived claim sources (links and hashes)
 docs/                the GitHub Pages site with the 3D mind map
 scripts/             validate_claims.py, build_site_data.py, archive_sources.py
-tools/               generators for the CC-001 report and flyer
+tools/               mizien_report.py (shared report and flyer design) and per-claim generators
 PROJECT_STATE.md     working notes: conventions, design tokens, status and next steps
 ```
 

@@ -279,7 +279,8 @@
     panel.appendChild(x); panel.appendChild(el("div", "id", d.id + " · " + d.category.toUpperCase()));
     panel.appendChild(el("h3", null, d.title)); panel.appendChild(el("p", null, d.claim));
     var chips = el("div"); var st = el("span", "chip", d.verdict ? d.verdict : d.status);
-    st.style.background = d.verdict ? "#d9772b" : "#7fa88b"; chips.appendChild(st);
+    var VC = {"Supported": "#2e7d4f", "Largely supported": "#8db36b", "Not substantiated": "#d9772b", "Misleading": "#c85a3a", "Contradicted": "#8e2f25"};
+    st.style.background = d.verdict ? (VC[d.verdict] || "#d9772b") : "#7fa88b"; chips.appendChild(st);
     (d.tags || []).forEach(function (t) { chips.appendChild(el("span", "chip soft", t)); }); panel.appendChild(chips);
     if (d.counter) { panel.appendChild(el("div", "label", "CONTEXT")); panel.appendChild(el("p", null, d.counter)); }
     var ls = edges.filter(function (e) { return e.from === id || e.to === id; }).map(function (e) { return e.from === id ? e.to : e.from; });

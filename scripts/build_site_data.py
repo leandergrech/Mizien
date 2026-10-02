@@ -24,7 +24,7 @@ CATEGORY_COLORS = {
     "Governance & Promises": "#e3a72f",
 }
 THEME_COLORS = {
-    "T1": "#e3a72f", "T2": "#6fcf97", "T3": "#56b4e9", "T4": "#f2994a", "T5": "#bdbdbd", "T6": "#bb86fc",
+    "T1": "#e3a72f", "T2": "#6fcf97", "T3": "#56b4e9", "T4": "#f2994a", "T5": "#bdbdbd", "T6": "#bb86fc", "T7": "#4fc3c8",
 }
 
 

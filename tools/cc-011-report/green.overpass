@@ -1,0 +1,10 @@
+[out:json][timeout:180];
+area["ISO3166-1"="MT"][admin_level=2]->.mt;
+(
+  nwr["leisure"~"^(park|garden|nature_reserve|playground|recreation_ground|common|dog_park)$"](area.mt);
+  nwr["landuse"~"^(village_green|recreation_ground|forest|grass|meadow)$"](area.mt);
+  nwr["natural"~"^(wood|scrub|heath|grassland|beach|garrigue)$"](area.mt);
+  nwr["place"="square"](area.mt);
+  way["highway"="pedestrian"]["area"="yes"](area.mt);
+);
+out geom tags;

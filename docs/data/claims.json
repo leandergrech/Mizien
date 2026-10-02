@@ -181,14 +181,14 @@
       "id": "CC-011",
       "title": "2026 manifesto pledges",
       "category": "Governance & Promises",
-      "claim": "Labour: every citizen within a 10-minute walk of a green space. PN: a net-zero Gozo through afforestation.",
-      "counter": "Election held 30 May 2026; Labour won.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Labour manifesto 2026, priority 19: every person no more than ten minutes' walk from an open or green space. PN programme 2026: a clear and realistic plan for Gozo to become a Net-Zero Island by 2040, with afforestation among several measures.",
+      "counter": "Election held 30 May 2026; Labour won. Neither pledge defines its terms or gives a baseline. Our open-data analysis: 99.7-99.9% of residents already within ten minutes of any green or open space, but only 55-68% of a public park of at least 0.5 ha. No Gozo emissions inventory; afforestation alone would need 1.5-8.5 times Gozo's area.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [
         "Promise-without-baseline"
       ],
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found"
     }
   ],
@@ -374,6 +374,13 @@
       "theme": "T6",
       "link_type": "Rhetorical pattern",
       "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-011",
+      "theme": "T7",
+      "link_type": "Shared target",
+      "strength": "Strong"
     }
   ],
   "themes": [
@@ -412,6 +419,12 @@
       "name": "Selective-metric pattern",
       "color": "#bb86fc",
       "dashed": true
+    },
+    {
+      "id": "T7",
+      "name": "2030 carbon target",
+      "color": "#4fc3c8",
+      "dashed": false
     }
   ]
 }
