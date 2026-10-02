@@ -1,0 +1,37 @@
+id: CC-007
+title: Within EU limits vs WHO guideline
+category: Air
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: Figures given to Parliament by the Environment Minister show all five monitoring stations within
+    EU PM2.5 limits (2020-2024).
+  speaker: Ministry for the Environment; ERA
+  date: '2025'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Air pollution exceeds WHO guidelines throughout Maltese islands
+    publisher: Newsbook
+    date: '2025'
+    url: https://newsbook.com.mt/en/air-pollution-exceeds-who-guidelines-throughout-maltese-islands/
+  - title: 'arja.mt: real-time air quality for Malta'
+    publisher: arja.mt
+    date: Live
+    url: https://arja.mt/
+counter_evidence: All stations exceed the WHO annual PM2.5 guideline (5 ug/m3). The EU limit falls to
+  10 ug/m3 by 2030.
+tests: ERA station data and arja.mt; WHO 2021 guideline; health-impact estimates.
+why_low_hanging: '''Compliant'' is not ''healthy''. Data is open.'
+tags:
+- Compliance-not-health
+tags_provisional: true
+priority: Queue
+data_readiness: High
+caveats: Locate the exact parliamentary reply for the quote.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

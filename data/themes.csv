@@ -1,0 +1,7 @@
+Theme ID,Theme,Linked claim IDs,Link type,Strength,What connects them,Edges generated
+T1,Sealed soil and concrete,"CC-001, CC-002, CC-008",Shared mechanism,Strong,"Excavation, concrete and sealed surfaces around trees. The EU review notes sealed or degraded soil keeps increasing in Malta.",3
+T2,Replanting as currency,"CC-001, CC-002, CC-008, CC-010",Shared mechanism,Strong,"Tree losses are justified by promised replacement or transplanting. Test survival and net canopy, not planting counts.",6
+T3,"Water chain: farm waste, sewage, sea, aquifer","CC-005, CC-009",Shared cause,Strong,The Commission blames farm waste in the sewers for poor treatment; agricultural nitrates are behind groundwater failure. Treated water also feeds 'new water' irrigation.,1
+T4,"Transport, air and climate","CC-003, CC-007, CC-008",Shared driver,Strong,"Fleet growth links traffic claims, air quality and emissions. The climate report names transport and buildings as the lagging sectors.",3
+T5,Waste and construction,"CC-004, CC-002, CC-008",Shared material flow,Weak (indicative),"Inert mineral waste dominates Malta's recycling statistics, which ties waste claims to development projects. Confirm with NSO breakdowns before relying on this link.",3
+T6,Selective-metric pattern,"CC-003, CC-004, CC-005, CC-007, CC-010",Rhetorical pattern,"Pattern, not causal","A favourable metric is cited while the regulator-relevant metric looks worse. Useful for tagging, not for implying a common cause.",10

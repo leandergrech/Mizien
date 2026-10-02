@@ -1,0 +1,51 @@
+id: CC-002
+title: Comino tree compensation
+category: Land & Trees
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'ERA (11 Aug 2026): 54 protected trees will be removed, with 10 planted for each (540). Of 678
+    trees and shrubs removed, 92% are unprotected; 348 more will be transplanted.'
+  speaker: ERA; HV Hospitality (Hili Group); Moviment Graffitti
+  date: '2026-08-11'
+  wording_status: Verbatim found
+  sources:
+  - title: ERA clarifies environmental measures linked to the Comino Hotel project
+    publisher: ERA press releases
+    date: 11 Aug 2026
+    url: https://era.org.mt/press-releases/
+  - title: 'Comino trees: ERA says its decisions based on expert advice, Maltese law'
+    publisher: Newsbook
+    date: 11 Aug 2026
+    url: https://newsbook.com.mt/en/comino-trees-era-says-its-decisions-based-on-expert-advice-maltese-law/
+  - title: ERA urged to refuse permit for removal of 800 trees from Comino
+    publisher: Newsbook
+    date: 5 Aug 2026
+    url: https://newsbook.com.mt/en/era-urged-to-refuse-permit-for-removal-of-800-trees-from-comino/
+  - title: ERA approves preliminary works for proposed Comino hotel
+    publisher: MaltaToday
+    date: Aug 2026
+    url: https://www.maltatoday.com.mt/environment/planning/143667/era_approves_preliminary_works_for_proposed_comino_hotel
+  - title: Excavation and tree uprooting on Comino suspended following crowdfunded NGO appeal
+    publisher: Moviment Graffitti
+    date: 30 Sep 2026
+    url: https://mail.movimentgraffitti.org/2026/09/30/excavation-and-tree-uprooting-on-comino-suspended-following-crowdfunded-ngo-appeal-but-the-fight-to-save-comino-continues/
+counter_evidence: An NGO (Moviment Graffitti) says about 800 trees are at stake. A planning tribunal has
+  temporarily suspended the uprooting (late Sept 2026).
+tests: Tree-transplant survival and compensation-ratio literature; whether removing invasive species restores
+  habitat; reconciling the two sides' counts.
+why_low_hanging: Direct sequel to CC-001; the two sides' numbers conflict; live issue.
+tags:
+- Input-as-outcome
+- Selective metric
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Sub judice: keep to the science, not the legal merits.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

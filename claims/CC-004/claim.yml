@@ -1,0 +1,51 @@
+id: CC-004
+title: '''Strong progress'' in waste separation'
+category: Waste
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Ministry (Jan 2026): mixed waste is down over 30% (to 95.5 million kg) and about 412 million
+    kg has been diverted from landfill over five years.'
+  speaker: Ministry for the Environment; WasteServ; ERA
+  date: '2026-01-19'
+  wording_status: Verbatim found
+  sources:
+  - title: Malta records strong progress in waste separation
+    publisher: gov.mt press release
+    date: 19 Jan 2026
+    url: https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/2026/01/19/PR260072en.aspx
+  - title: Malta records strong progress in waste separation (Public Service)
+    publisher: publicservice.gov.mt
+    date: 23 Jan 2026
+    url: https://publicservice.gov.mt/en/news/malta-records-strong-progress-in-waste-separation
+  - title: 'Environmental Implementation Review 2025: Malta'
+    publisher: European Commission (OP)
+    date: '2025'
+    url: https://op.europa.eu/webpub/env/eir-country-reports-summaries/en/malta.html
+  - title: ERA welcomes progress in recycling (2023 NSO data)
+    publisher: ERA
+    date: 19 Feb 2025
+    url: https://era.org.mt/?p=53057
+  - title: Solid Waste Management 2024
+    publisher: NSO
+    date: 17 Feb 2026
+    url: https://nso.gov.mt/solid-waste-management-2024/
+counter_evidence: The EU Environmental Implementation Review 2025 says Malta missed the 2020 recycling
+  target by a wide margin and is on course to miss 2025. ERA's '68% recycled' figure covers mostly inert
+  construction material.
+tests: NSO and Eurostat recycling rates (kg separated is not a recycling rate); composition of the 68%
+  figure.
+why_low_hanging: Different metrics under the same word.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Start first
+data_readiness: High
+caveats: ''
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

@@ -1,0 +1,48 @@
+id: CC-006
+title: Spring hunting derogation
+category: Nature & Wildlife
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: The Ornis committee recommended a 2026 spring season (quail 13 Apr-3 May; turtle dove 20 Apr-3
+    May) with bag limits of 1,500 turtle doves and 2,400 quail. Hunters describe it as strictly supervised
+    and very small.
+  speaker: Ornis Committee; WBRU; FKNK; BirdLife Malta
+  date: 2026-04
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Environmental Implementation Review 2025: Malta'
+    publisher: European Commission (OP)
+    date: '2025'
+    url: https://op.europa.eu/webpub/env/eir-country-reports-summaries/en/malta.html
+  - title: Malta greenlights 2026 spring hunting season
+    publisher: CABS (Committee Against Bird Slaughter)
+    date: 1 Apr 2026
+    url: https://www.komitee.de/en/latest-news/news/malta-green-light-spring-hunting/
+  - title: Spring hunting for turtle dove set to return after Ornis votes in favour
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/environment/environment/115708/spring_hunting_for_turtle_dove_set_to_return_after_ornis_votes_in_favour
+  - title: The importance of spring hunting in Malta on European Turtle-Dove and Common Quail populations
+    publisher: Humboldt-Universität zu Berlin (edoc)
+    date: n/d
+    url: https://edoc.hu-berlin.de/18452/26405
+counter_evidence: A peer-reviewed analysis finds more birds are taken in autumn than spring, and the spring
+  take equals about 2.4-4.4% of Europe's turtle doves. EU Court rulings (2018, 2024) concern illegal trapping
+  and hunting.
+tests: The legal 'no satisfactory alternative' and 'small numbers' tests against IUCN and population data.
+why_low_hanging: Rich peer-reviewed literature; recurs every spring. Publish before the 2027 decision.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'The study uses hunter-provided figures with wide error margins. Seasonal dates and limits come
+  from a campaign-group summary: confirm in WBRU documents.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

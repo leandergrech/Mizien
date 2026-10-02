@@ -1,0 +1,48 @@
+id: CC-001
+title: Upper Barrakka concrete
+category: Land & Trees
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Moderate
+claim:
+  text: Ambjent Malta told the Times of Malta (1 Oct 2026) that because the concrete in the tree planters
+    is temporary, it will not damage the tree.
+  speaker: Ambjent Malta; Fondazzjoni Wirt Artna
+  date: '2026-10-01'
+  wording_status: Verbatim found
+  sources:
+  - title: Concrete layer won't damage Upper Barrakka trees, Ambjent Malta says (N. Meilak)
+    publisher: Times of Malta
+    date: 1 Oct 2026
+    url: null
+    note: Full text read from a supplied PDF. Add the article URL and archive it.
+  - title: Wirt Artna explains concrete around Upper Barrakka tree
+    publisher: Newsbook
+    date: 1 Oct 2026
+    url: https://newsbook.com.mt/en/wirt-artna-explains-concrete-around-upper-barrakka-tree-it-is-protecting-historic-tunnels/
+  - title: Parts of Upper Barrakka have been cemented over, but don't panic just yet...
+    publisher: MaltaToday
+    date: c. Dec 2025
+    url: https://www.maltatoday.com.mt/environment/environment/138909/parts_of_upper_barrakka_have_been_cemented_over_but_dont_panic_just_yet
+  quote: Given its temporary nature, it will not cause damage to the tree.
+counter_evidence: Ambjent itself says prolonged cover would be a concern. No duration for 'temporary'
+  is given; soil removal and root exposure are not addressed; no tree-specific evidence published.
+tests: Soil-sealing and construction-damage literature; guidance on exposed roots.
+why_low_hanging: 'Done: Claim Check 001 report and flyer.'
+tags:
+- Conditional-turned-unconditional
+tags_provisional: false
+priority: Done (v1.1)
+data_readiness: High
+caveats: 'Draft pending right of reply. Verdict is plausible-but-unproven: no study found on short-term
+  concrete contact with roots; Ambjent''s own reasoning is consistent with the literature.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.1'

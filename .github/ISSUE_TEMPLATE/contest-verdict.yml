@@ -1,0 +1,29 @@
+name: Contest a verdict or correct an error
+description: Challenge a published verdict or point out a mistake
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: input
+    id: claim
+    attributes:
+      label: Claim ID (for example CC-001)
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong or contested?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Links, documents or data. Corrections need evidence.
+    validations:
+      required: true
+  - type: input
+    id: who
+    attributes:
+      label: Your relationship to the claim (optional)
+      description: For example, the body that made the statement.

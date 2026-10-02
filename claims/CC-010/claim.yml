@@ -1,0 +1,38 @@
+id: CC-010
+title: Tree-planting counts
+category: Land & Trees
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government: over 8,000 trees and 25,000 shrubs planted in 2024. A 2022 Labour manifesto pledged
+    100,000 trees in five years.'
+  speaker: Project Green; Ambjent Malta; Ministry; Labour Party
+  date: '2024'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Project Green: 2024 tree planting'
+    publisher: projectgreen.mt
+    date: '2024'
+    url: https://projectgreen.mt/?p=952
+  - title: 'PL manifesto: new mechanism to replace COLA, raft of planning reforms, new green areas'
+    publisher: The Malta Independent
+    date: 11 Mar 2022
+    url: https://www.independent.com.mt/articles/2022-03-11/local-news/PL-manifesto-new-mechanism-to-replace-COLA-raft-of-planning-reforms-new-green-areas-6736241368
+counter_evidence: Planted is an input, not an outcome. Survival rates, removals (Msida, Comino) and net
+  canopy are not reported.
+tests: MapMyTree register; survival rates; removals; satellite canopy change.
+why_low_hanging: Satellite imagery does the heavy lifting.
+tags:
+- Input-as-outcome
+- Promise-without-baseline
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: Pledge scope and counting basis need confirming before comparing.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

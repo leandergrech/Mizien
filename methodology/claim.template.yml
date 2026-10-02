@@ -1,0 +1,31 @@
+# Copy to claims/CC-NNN/claim.yml and fill in. Validate with: python scripts/validate_claims.py
+id: CC-000
+title: Short title
+category: Land & Trees        # Land & Trees | Climate & Energy | Waste | Water | Nature & Wildlife | Air | Transport | Governance & Promises
+status: Not started           # Not started | In progress | Drafted | Right of reply | Published
+verdict: null                 # Supported | Largely supported | Not substantiated | Misleading | Contradicted
+verdict_confidence: null      # High | Moderate | Low
+claim:
+  text: What was said, and by whom.
+  speaker: Body or person
+  date: "2026-01-01"
+  wording_status: Paraphrase: locate quote   # or: Verbatim found
+  sources:
+    - title: Source title
+      publisher: Outlet
+      date: 1 Jan 2026
+      url: https://example.org
+counter_evidence: Context or conflicting evidence.
+tests: What to test it against.
+why_low_hanging: Why it is easy to check.
+tags: []                      # see methodology/pattern-tags.md
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: ""
+right_of_reply:
+  sent: null                  # date sent
+  deadline: null
+  response: null
+evidence_shown: null          # required for Misleading or Contradicted: list the documents or data
+outputs: {}

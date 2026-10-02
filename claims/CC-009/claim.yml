@@ -1,0 +1,41 @@
+id: CC-009
+title: Reverse osmosis and groundwater
+category: Water
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'WSC: reverse osmosis supplies about 64% of tap water, reducing reliance on groundwater. A new
+    Għar Lapsi plant was tendered in Aug 2026.'
+  speaker: Water Services Corporation; Ministry; ERA
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Nearly two-thirds of your tap water comes from the sea
+    publisher: MaltaToday
+    date: 2022 data
+    url: https://www.maltatoday.com.mt/news/national/123510/nearly_twothirds_of_your_tap_water_comes_from_the_sea_
+  - title: Malta water table 'fails' test due to high nitrates
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/news/national/125093/malta_water_table_fails_test_due_to_high_nitrates
+  - title: '35 million tender launched: new Għar Lapsi reverse osmosis plant'
+    publisher: Chambers (WH Partners)
+    date: Aug 2026
+    url: https://chambers.com/articles/35-million-tender-launched-new-għar-lapsi-reverse-osmosis-plant
+counter_evidence: Studies report all groundwater bodies fail good status on nitrates, and private extraction
+  is unquantified.
+tests: Total abstraction (including private boreholes) versus recharge; current river-basin plan data.
+why_low_hanging: Cutting public extraction does not mean the aquifer recovers.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: Several figures are older (2022 or earlier) and need updating.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

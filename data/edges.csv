@@ -1,0 +1,27 @@
+From,To,Theme ID,Theme,Link type,Strength
+CC-001,CC-002,T1,Sealed soil and concrete,Shared mechanism,Strong
+CC-001,CC-008,T1,Sealed soil and concrete,Shared mechanism,Strong
+CC-002,CC-008,T1,Sealed soil and concrete,Shared mechanism,Strong
+CC-001,CC-002,T2,Replanting as currency,Shared mechanism,Strong
+CC-001,CC-008,T2,Replanting as currency,Shared mechanism,Strong
+CC-001,CC-010,T2,Replanting as currency,Shared mechanism,Strong
+CC-002,CC-008,T2,Replanting as currency,Shared mechanism,Strong
+CC-002,CC-010,T2,Replanting as currency,Shared mechanism,Strong
+CC-008,CC-010,T2,Replanting as currency,Shared mechanism,Strong
+CC-005,CC-009,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared cause,Strong
+CC-003,CC-007,T4,"Transport, air and climate",Shared driver,Strong
+CC-003,CC-008,T4,"Transport, air and climate",Shared driver,Strong
+CC-007,CC-008,T4,"Transport, air and climate",Shared driver,Strong
+CC-004,CC-002,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-004,CC-008,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-002,CC-008,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-003,CC-004,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-003,CC-005,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-003,CC-007,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-003,CC-010,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-004,CC-005,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-004,CC-007,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-004,CC-010,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-005,CC-007,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-005,CC-010,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-007,CC-010,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"

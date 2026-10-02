@@ -1,0 +1,416 @@
+{
+  "categories": [
+    {
+      "name": "Land & Trees",
+      "color": "#3d8b5a"
+    },
+    {
+      "name": "Climate & Energy",
+      "color": "#d9772b"
+    },
+    {
+      "name": "Waste",
+      "color": "#9a7b45"
+    },
+    {
+      "name": "Water",
+      "color": "#3c8fbf"
+    },
+    {
+      "name": "Nature & Wildlife",
+      "color": "#9a76c8"
+    },
+    {
+      "name": "Air",
+      "color": "#9fb3c0"
+    },
+    {
+      "name": "Transport",
+      "color": "#c85a3a"
+    },
+    {
+      "name": "Governance & Promises",
+      "color": "#e3a72f"
+    }
+  ],
+  "claims": [
+    {
+      "id": "CC-001",
+      "title": "Upper Barrakka concrete",
+      "category": "Land & Trees",
+      "claim": "Ambjent Malta told the Times of Malta (1 Oct 2026) that because the concrete in the tree planters is temporary, it will not damage the tree.",
+      "counter": "Ambjent itself says prolonged cover would be a concern. No duration for 'temporary' is given; soil removal and root exposure are not addressed; no tree-specific evidence published.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
+      "tags": [
+        "Conditional-turned-unconditional"
+      ],
+      "priority": "Done (v1.1)",
+      "wording_status": "Verbatim found"
+    },
+    {
+      "id": "CC-002",
+      "title": "Comino tree compensation",
+      "category": "Land & Trees",
+      "claim": "ERA (11 Aug 2026): 54 protected trees will be removed, with 10 planted for each (540). Of 678 trees and shrubs removed, 92% are unprotected; 348 more will be transplanted.",
+      "counter": "An NGO (Moviment Graffitti) says about 800 trees are at stake. A planning tribunal has temporarily suspended the uprooting (late Sept 2026).",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Input-as-outcome",
+        "Selective metric"
+      ],
+      "priority": "Queue",
+      "wording_status": "Verbatim found"
+    },
+    {
+      "id": "CC-003",
+      "title": "Per-capita emissions vs 2030 projection",
+      "category": "Climate & Energy",
+      "claim": "Climate Action Authority: per-capita emissions are down 44% since 2005, versus 34% for the EU.",
+      "counter": "The same Commission report projects Malta's emissions 30% above 2005 by 2030, against a 19% cut target: the largest shortfall in the EU. Renewables remain roughly 10-11% of electricity.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Selective metric"
+      ],
+      "priority": "Start first",
+      "wording_status": "Verbatim found"
+    },
+    {
+      "id": "CC-004",
+      "title": "'Strong progress' in waste separation",
+      "category": "Waste",
+      "claim": "Ministry (Jan 2026): mixed waste is down over 30% (to 95.5 million kg) and about 412 million kg has been diverted from landfill over five years.",
+      "counter": "The EU Environmental Implementation Review 2025 says Malta missed the 2020 recycling target by a wide margin and is on course to miss 2025. ERA's '68% recycled' figure covers mostly inert construction material.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Selective metric"
+      ],
+      "priority": "Start first",
+      "wording_status": "Verbatim found"
+    },
+    {
+      "id": "CC-005",
+      "title": "'92% excellent' bathing water",
+      "category": "Water",
+      "claim": "92% of Malta's bathing waters are rated excellent (government, repeated by the EU review).",
+      "counter": "The EU Court of Justice found sewage-treatment capacity insufficient. Bays have been closed, including one hours after receiving a Blue Flag.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Selective metric"
+      ],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote"
+    },
+    {
+      "id": "CC-006",
+      "title": "Spring hunting derogation",
+      "category": "Nature & Wildlife",
+      "claim": "The Ornis committee recommended a 2026 spring season (quail 13 Apr-3 May; turtle dove 20 Apr-3 May) with bag limits of 1,500 turtle doves and 2,400 quail. Hunters describe it as strictly supervised and very small.",
+      "counter": "A peer-reviewed analysis finds more birds are taken in autumn than spring, and the spring take equals about 2.4-4.4% of Europe's turtle doves. EU Court rulings (2018, 2024) concern illegal trapping and hunting.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Selective metric"
+      ],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote"
+    },
+    {
+      "id": "CC-007",
+      "title": "Within EU limits vs WHO guideline",
+      "category": "Air",
+      "claim": "Figures given to Parliament by the Environment Minister show all five monitoring stations within EU PM2.5 limits (2020-2024).",
+      "counter": "All stations exceed the WHO annual PM2.5 guideline (5 ug/m3). The EU limit falls to 10 ug/m3 by 2030.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Compliance-not-health"
+      ],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote"
+    },
+    {
+      "id": "CC-008",
+      "title": "Flyovers and congestion",
+      "category": "Transport",
+      "claim": "Infrastructure Malta says junction flyovers (Msida, Marsa) cut congestion, noise and air pollution.",
+      "counter": "Msida involves removal of 430 trees and shrubs (313 replanted). The licensed fleet grew by 3,086 in Q2 2026, about 34 a day.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Promise-without-baseline"
+      ],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote"
+    },
+    {
+      "id": "CC-009",
+      "title": "Reverse osmosis and groundwater",
+      "category": "Water",
+      "claim": "WSC: reverse osmosis supplies about 64% of tap water, reducing reliance on groundwater. A new Għar Lapsi plant was tendered in Aug 2026.",
+      "counter": "Studies report all groundwater bodies fail good status on nitrates, and private extraction is unquantified.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Selective metric"
+      ],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote"
+    },
+    {
+      "id": "CC-010",
+      "title": "Tree-planting counts",
+      "category": "Land & Trees",
+      "claim": "Government: over 8,000 trees and 25,000 shrubs planted in 2024. A 2022 Labour manifesto pledged 100,000 trees in five years.",
+      "counter": "Planted is an input, not an outcome. Survival rates, removals (Msida, Comino) and net canopy are not reported.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Input-as-outcome",
+        "Promise-without-baseline"
+      ],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote"
+    },
+    {
+      "id": "CC-011",
+      "title": "2026 manifesto pledges",
+      "category": "Governance & Promises",
+      "claim": "Labour: every citizen within a 10-minute walk of a green space. PN: a net-zero Gozo through afforestation.",
+      "counter": "Election held 30 May 2026; Labour won.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Promise-without-baseline"
+      ],
+      "priority": "Queue",
+      "wording_status": "Verbatim found"
+    }
+  ],
+  "edges": [
+    {
+      "from": "CC-001",
+      "to": "CC-002",
+      "theme": "T1",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-001",
+      "to": "CC-008",
+      "theme": "T1",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-002",
+      "to": "CC-008",
+      "theme": "T1",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-001",
+      "to": "CC-002",
+      "theme": "T2",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-001",
+      "to": "CC-008",
+      "theme": "T2",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-001",
+      "to": "CC-010",
+      "theme": "T2",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-002",
+      "to": "CC-008",
+      "theme": "T2",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-002",
+      "to": "CC-010",
+      "theme": "T2",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-008",
+      "to": "CC-010",
+      "theme": "T2",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-005",
+      "to": "CC-009",
+      "theme": "T3",
+      "link_type": "Shared cause",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-007",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-008",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-007",
+      "to": "CC-008",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-002",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-008",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-002",
+      "to": "CC-008",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-004",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-005",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-007",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-010",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-005",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-007",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-010",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-005",
+      "to": "CC-007",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-005",
+      "to": "CC-010",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-007",
+      "to": "CC-010",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    }
+  ],
+  "themes": [
+    {
+      "id": "T1",
+      "name": "Sealed soil and concrete",
+      "color": "#e3a72f",
+      "dashed": false
+    },
+    {
+      "id": "T2",
+      "name": "Replanting as currency",
+      "color": "#6fcf97",
+      "dashed": false
+    },
+    {
+      "id": "T3",
+      "name": "Water chain: farm waste, sewage, sea, aquifer",
+      "color": "#56b4e9",
+      "dashed": false
+    },
+    {
+      "id": "T4",
+      "name": "Transport, air and climate",
+      "color": "#f2994a",
+      "dashed": false
+    },
+    {
+      "id": "T5",
+      "name": "Waste and construction",
+      "color": "#bdbdbd",
+      "dashed": true
+    },
+    {
+      "id": "T6",
+      "name": "Selective-metric pattern",
+      "color": "#bb86fc",
+      "dashed": true
+    }
+  ]
+}

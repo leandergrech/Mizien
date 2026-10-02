@@ -1,0 +1,44 @@
+id: CC-008
+title: Flyovers and congestion
+category: Transport
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: Infrastructure Malta says junction flyovers (Msida, Marsa) cut congestion, noise and air pollution.
+  speaker: Infrastructure Malta; Transport Malta; ERA
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: No social impact assessment yet for Msida flyovers
+    publisher: MaltaToday
+    date: Earlier years
+    url: https://www.maltatoday.com.mt/environment/townscapes/107316/no_social_impact_assessment_yet_for_msida_flyovers
+  - title: No EIA needed for Msida flyover project, ERA says
+    publisher: MaltaToday
+    date: Earlier years
+    url: https://www.maltatoday.com.mt/environment/planning/108072/no_eia_needed_for_msida_flyover_project_era_says
+  - title: All Marsa Junction Project flyovers now open
+    publisher: MaltaToday
+    date: Earlier years
+    url: https://www.maltatoday.com.mt/news/national/105894/all_marsa_junction_project_flyovers_now_open
+  - title: Over 3,000 vehicles added to Malta's roads in three months
+    publisher: MaltaToday (NSO figures)
+    date: Q2 2026
+    url: https://www.maltatoday.com.mt/news/national/143850/over_3000_vehicles_added_to_maltas_roads_in_three_months
+counter_evidence: Msida involves removal of 430 trees and shrubs (313 replanted). The licensed fleet grew
+  by 3,086 in Q2 2026, about 34 a day.
+tests: Induced-demand research; before-and-after traffic counts; air data near Marsa and Msida.
+why_low_hanging: Before-and-after data exists.
+tags:
+- Promise-without-baseline
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: IM statements found are from earlier years; locate current wording.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

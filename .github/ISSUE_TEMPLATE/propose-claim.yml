@@ -1,0 +1,33 @@
+name: Propose a claim
+description: Suggest a public claim in Malta for Miżien to check
+title: "[Claim] "
+labels: ["proposed-claim"]
+body:
+  - type: markdown
+    attributes:
+      value: "We check claims from every side: governments, opposition parties, NGOs, agencies and companies. Focus is quality of life and the environment."
+  - type: textarea
+    id: wording
+    attributes:
+      label: Exact wording
+      description: What was said, word for word.
+    validations:
+      required: true
+  - type: input
+    id: speaker
+    attributes:
+      label: Who said it, and when
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link to the original statement
+    validations:
+      required: true
+  - type: textarea
+    id: testable
+    attributes:
+      label: Why can it be tested against science or data?
+    validations:
+      required: true

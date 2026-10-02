@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Miżien: weighing public claims against the evidence"
+type: dataset
+authors:
+  - name: "Miżien contributors"
+date-released: 2026-10-02
+license: CC-BY-4.0
+url: "https://leandergrech.github.io/Mizien/"
+repository-code: "https://github.com/leandergrech/Mizien"
+abstract: "Independent, science-first checks of public claims made in Malta, focused on quality of life and the environment."

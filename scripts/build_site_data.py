@@ -1,0 +1,69 @@
+#!/usr/bin/env python3
+"""Build data/claims.json and docs/data/claims.json from the single source of truth:
+claims/*/claim.yml plus data/edges.csv and data/themes.csv.
+
+Run from the repository root:  python scripts/build_site_data.py
+"""
+import csv
+import json
+import pathlib
+import sys
+
+import yaml
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+
+CATEGORY_COLORS = {
+    "Land & Trees": "#3d8b5a",
+    "Climate & Energy": "#d9772b",
+    "Waste": "#9a7b45",
+    "Water": "#3c8fbf",
+    "Nature & Wildlife": "#9a76c8",
+    "Air": "#9fb3c0",
+    "Transport": "#c85a3a",
+    "Governance & Promises": "#e3a72f",
+}
+THEME_COLORS = {
+    "T1": "#e3a72f", "T2": "#6fcf97", "T3": "#56b4e9", "T4": "#f2994a", "T5": "#bdbdbd", "T6": "#bb86fc",
+}
+
+
+def main() -> int:
+    claims = []
+    for path in sorted((ROOT / "claims").glob("CC-*/claim.yml")):
+        d = yaml.safe_load(path.read_text(encoding="utf-8"))
+        claims.append({
+            "id": d["id"],
+            "title": d["title"],
+            "category": d["category"],
+            "claim": d["claim"]["text"],
+            "counter": d.get("counter_evidence", ""),
+            "status": d.get("status", "Not started"),
+            "verdict": d.get("verdict"),
+            "tags": d.get("tags", []),
+            "priority": d.get("priority", ""),
+            "wording_status": d["claim"].get("wording_status", ""),
+        })
+    cats = []
+    for c in claims:
+        if c["category"] not in [x["name"] for x in cats]:
+            cats.append({"name": c["category"], "color": CATEGORY_COLORS.get(c["category"], "#7fa88b")})
+
+    with open(ROOT / "data" / "edges.csv", newline="", encoding="utf-8") as f:
+        edges = [{"from": r["From"], "to": r["To"], "theme": r["Theme ID"], "link_type": r["Link type"],
+                  "strength": r["Strength"]} for r in csv.DictReader(f)]
+    with open(ROOT / "data" / "themes.csv", newline="", encoding="utf-8") as f:
+        themes = [{"id": r["Theme ID"], "name": r["Theme"], "color": THEME_COLORS.get(r["Theme ID"], "#7fa88b"),
+                   "dashed": r["Strength"].startswith(("Weak", "Pattern"))} for r in csv.DictReader(f)]
+
+    out = {"categories": cats, "claims": claims, "edges": edges, "themes": themes}
+    text = json.dumps(out, ensure_ascii=False, indent=2)
+    for target in (ROOT / "data" / "claims.json", ROOT / "docs" / "data" / "claims.json"):
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(text, encoding="utf-8")
+    print(f"Wrote {len(claims)} claims, {len(edges)} edges, {len(themes)} themes.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

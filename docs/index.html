@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miżien: weighing public claims against the evidence</title>
+<meta name="description" content="Independent, science-first checks of public claims made by authorities, institutions, parties and NGOs in Malta, focused on quality of life and the environment.">
+<style>
+  :root {
+    --bg: #0e2a1f; --bg2: #14452f; --ink: #eef3ef; --muted: #a9c2b1; --sage: #7fa88b;
+    --amber: #e3a72f; --card: #f6f4ee; --slate: #2b3a42; --orange: #d9772b;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 16px/1.55 "Liberation Sans", Arial, Helvetica, sans-serif; }
+  a { color: var(--amber); }
+  header.top { padding: 28px 24px 8px; max-width: 1100px; margin: 0 auto; }
+  .brand { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  .brand h1 { margin: 0; font: 700 clamp(34px, 6vw, 56px)/1.05 "Liberation Serif", Georgia, serif; letter-spacing: .5px; }
+  .brand .dot { display: inline-block; width: 38px; height: 4px; background: var(--amber); margin-bottom: 14px; }
+  .tag { color: var(--muted); font: italic 18px "Liberation Serif", Georgia, serif; margin: 6px 0 0; }
+  .meaning { color: var(--sage); font-size: 13px; margin: 4px 0 0; }
+  #stage { position: relative; max-width: 1100px; margin: 14px auto 0; height: min(72vh, 640px); min-height: 420px;
+           border: 1px solid #1f5a40; border-radius: 14px; overflow: hidden;
+           background: radial-gradient(ellipse at 50% 40%, #174c35 0%, #0e2a1f 70%); }
+  canvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  canvas.dragging { cursor: grabbing; }
+  #hint { position: absolute; left: 14px; bottom: 12px; font-size: 12px; color: var(--muted); pointer-events: none; }
+  #controls { position: absolute; right: 12px; top: 12px; display: flex; gap: 8px; }
+  button.ctl { background: rgba(14,42,31,.8); color: var(--ink); border: 1px solid #2b6b4c; border-radius: 8px;
+               padding: 6px 10px; font: 12px Arial, sans-serif; cursor: pointer; }
+  button.ctl:hover { border-color: var(--amber); }
+  #legend { position: absolute; left: 12px; top: 12px; font-size: 12px; background: rgba(14,42,31,.82);
+            border: 1px solid #2b6b4c; border-radius: 10px; padding: 8px 10px; max-width: 230px; }
+  #legend h4 { margin: 0 0 4px; font-size: 11px; letter-spacing: .08em; color: var(--amber); }
+  #legend .row { display: flex; align-items: center; gap: 7px; margin: 2px 0; }
+  #legend .sw { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+  #legend .ln { width: 18px; height: 0; border-top: 2px solid; flex: none; }
+  #panel { position: absolute; right: 12px; bottom: 12px; width: min(380px, calc(100% - 24px)); max-height: 66%;
+           overflow: auto; background: var(--card); color: var(--slate); border-radius: 12px; padding: 14px 16px;
+           box-shadow: 0 8px 30px rgba(0,0,0,.4); display: none; }
+  #panel h3 { margin: 0 0 2px; font: 700 17px "Liberation Serif", Georgia, serif; color: #14452f; }
+  #panel .id { font: 700 11px Arial; letter-spacing: .08em; color: #8a9399; }
+  #panel p { margin: 8px 0; font-size: 14px; }
+  #panel .label { font: 700 10px Arial; letter-spacing: .1em; color: #8a9399; margin-top: 10px; }
+  .chip { display: inline-block; font: 700 11px Arial; padding: 3px 9px; border-radius: 999px; color: #fff; margin: 2px 4px 2px 0; }
+  .chip.soft { background: #e6efe8; color: #14452f; }
+  #panel button.link { background: none; border: 0; padding: 0; color: #3c6e8f; text-decoration: underline; cursor: pointer; font: 13px Arial; margin-right: 10px; }
+  #panel .x { position: absolute; right: 10px; top: 8px; background: none; border: 0; font-size: 20px; color: #8a9399; cursor: pointer; }
+  main { max-width: 1100px; margin: 0 auto; padding: 8px 24px 60px; }
+  section { margin-top: 38px; }
+  h2 { font: 700 24px "Liberation Serif", Georgia, serif; border-bottom: 1px solid #1f5a40; padding-bottom: 6px; }
+  h2::after { content: ""; display: block; width: 60px; height: 3px; background: var(--amber); margin-top: 6px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .card { background: #123826; border: 1px solid #1f5a40; border-radius: 10px; padding: 14px 16px; }
+  .card h3 { margin: 0 0 4px; font-size: 15px; color: var(--amber); }
+  .card p { margin: 0; font-size: 14px; color: #d4e4d9; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; font: 700 11px Arial; letter-spacing: .08em; color: var(--amber); padding: 8px 8px; border-bottom: 1px solid #2b6b4c; }
+  td { padding: 9px 8px; border-bottom: 1px solid #1a4a35; vertical-align: top; }
+  tr.click { cursor: pointer; }
+  tr.click:hover td { background: #123826; }
+  .scale { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
+  .scale span { flex: 1 1 140px; padding: 10px 8px; border-radius: 8px; text-align: center; font: 700 11px Arial; color: #fff; }
+  footer { max-width: 1100px; margin: 0 auto; padding: 24px; color: var(--muted); font-size: 13px; border-top: 1px solid #1f5a40; }
+  noscript { display: block; padding: 20px; color: var(--amber); }
+  .sr { position: absolute; left: -9999px; }
+  #lgbtn { display: none; }
+  @media (max-width: 700px) {
+    #lgbtn { display: inline-block; }
+    #legend { display: none; top: 50px; }
+    #legend.open { display: block; z-index: 3; }
+    #controls { left: 12px; right: 12px; justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="dot"></span><h1>Miżien</h1></div>
+  <p class="tag">Weighing public claims against the evidence.</p>
+  <p class="meaning">Miżien is Maltese for a scale or balance.</p>
+</header>
+
+<div id="stage" role="img" aria-label="Interactive 3D map of fact-checked claims, grouped by topic and linked by shared themes. A table of the same claims follows below.">
+  <canvas id="map"></canvas>
+  <div id="legend"></div>
+  <div id="controls">
+    <button class="ctl" id="lgbtn">Legend</button>
+    <button class="ctl" id="spin">Pause rotation</button>
+    <button class="ctl" id="reset">Reset view</button>
+  </div>
+  <div id="hint">Drag to rotate · scroll or pinch to zoom · click a node</div>
+  <div id="panel" aria-live="polite"></div>
+</div>
+<noscript>This map needs JavaScript. The full list of claims is in the repository: data/claims.csv.</noscript>
+
+<main>
+  <section>
+    <h2>What this is</h2>
+    <p>An open record of checks on public claims made in Malta by authorities, institutions, parties, NGOs and others,
+       focused on quality of life and the environment. Each claim is tested against scientific sources first, then
+       official data. Every source is archived so the record of what was said survives edits and deletions.</p>
+    <div class="grid">
+      <div class="card"><h3>Science first</h3><p>Peer-reviewed literature and independent datasets come before press releases.</p></div>
+      <div class="card"><h3>Every side</h3><p>Governments, opposition parties, NGOs and developers are held to the same standard.</p></div>
+      <div class="card"><h3>Right of reply</h3><p>Each draft goes to the body concerned before wider circulation, and its response is published.</p></div>
+      <div class="card"><h3>Evidence, not inference</h3><p>A verdict of Misleading or Contradicted requires documents or data that can be shown.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Verdict scale</h2>
+    <div class="scale">
+      <span style="background:#2e7d4f">SUPPORTED</span>
+      <span style="background:#8db36b">LARGELY SUPPORTED</span>
+      <span style="background:#d9772b">NOT SUBSTANTIATED</span>
+      <span style="background:#c85a3a">MISLEADING</span>
+      <span style="background:#8e2f25">CONTRADICTED</span>
+    </div>
+    <p style="color:var(--muted);font-size:14px">Definitions and evidence grades are in the <a href="https://github.com/leandergrech/Mizien/tree/main/methodology">methodology folder</a> of the repository.</p>
+  </section>
+
+  <section>
+    <h2>Claims</h2>
+    <table id="claims"><thead><tr><th>ID</th><th>Topic</th><th>Claim</th><th>Status</th></tr></thead><tbody></tbody></table>
+  </section>
+</main>
+
+<footer>
+  Miżien is independent and not affiliated with any party, authority or institution. Drafts are marked as pending
+  right of reply until the body concerned has had the chance to respond. Content is licensed CC BY 4.0; site code is MIT.
+  Corrections are welcome: see <a href="https://github.com/leandergrech/Mizien/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> or open an issue at <a href="https://github.com/leandergrech/Mizien">github.com/leandergrech/Mizien</a>.
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var canvas = document.getElementById("map"), ctx = canvas.getContext("2d");
+  var stage = document.getElementById("stage"), panel = document.getElementById("panel");
+  var DATA = null, hubs = [], claims = [], edges = [], byId = {};
+  var yaw = 0.6, pitch = -0.25, zoom = 1, spinning = true, selected = null, hover = null;
+  var W = 0, H = 0, dpr = 1, R = 250;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) spinning = false;
+
+  function rng(seed) { // mulberry32 over a string hash
+    var h = 1779033703 ^ seed.length;
+    for (var i = 0; i < seed.length; i++) { h = Math.imul(h ^ seed.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); }
+    var a = h >>> 0;
+    return function () { a |= 0; a = (a + 0x6D2B79F5) | 0; var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  function resize() {
+    dpr = window.devicePixelRatio || 1;
+    W = stage.clientWidth; H = stage.clientHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function init(data) {
+    DATA = data;
+    var cats = data.categories, n = cats.length;
+    cats.forEach(function (c, i) {
+      var y = n > 1 ? 1 - (i / (n - 1)) * 2 : 0, r = Math.sqrt(Math.max(0, 1 - y * y)), th = Math.PI * (3 - Math.sqrt(5)) * i;
+      hubs.push({ kind: "hub", name: c.name, color: c.color, x: Math.cos(th) * r * R, y: y * R * 0.85, z: Math.sin(th) * r * R });
+    });
+    var hubByName = {}; hubs.forEach(function (h) { hubByName[h.name] = h; });
+    data.claims.forEach(function (c) {
+      var hub = hubByName[c.category] || hubs[0], rnd = rng(c.id);
+      var u = rnd() * 2 - 1, t = rnd() * Math.PI * 2, s = Math.sqrt(1 - u * u), d = 78 + rnd() * 36;
+      var node = { kind: "claim", id: c.id, data: c, hub: hub, color: hub.color,
+                   x: hub.x + Math.cos(t) * s * d, y: hub.y + u * d, z: hub.z + Math.sin(t) * s * d };
+      claims.push(node); byId[c.id] = node;
+    });
+    edges = data.edges.filter(function (e) { return byId[e.from] && byId[e.to]; });
+    buildLegend(); buildTable(); resize(); requestAnimationFrame(frame);
+  }
+
+  function themeColor(id) { var t = DATA.themes.filter(function (x) { return x.id === id; })[0]; return t ? t.color : "#7fa88b"; }
+
+  function buildLegend() {
+    var lg = document.getElementById("legend"); lg.textContent = "";
+    lg.appendChild(el("h4", null, "TOPICS"));
+    hubs.forEach(function (h) { var r = el("div", "row"), s = el("span", "sw"); s.style.background = h.color; r.appendChild(s); r.appendChild(el("span", null, h.name)); lg.appendChild(r); });
+    lg.appendChild(el("h4", null, "LINKS")).style.marginTop = "8px";
+    DATA.themes.forEach(function (t) {
+      var r = el("div", "row"), l = el("span", "ln"); l.style.borderColor = t.color;
+      if (t.dashed) l.style.borderTopStyle = "dashed";
+      r.appendChild(l); r.appendChild(el("span", null, t.name)); lg.appendChild(r);
+    });
+  }
+
+  function buildTable() {
+    var tb = document.querySelector("#claims tbody"); tb.textContent = "";
+    DATA.claims.forEach(function (c) {
+      var tr = el("tr", "click"); tr.tabIndex = 0;
+      tr.appendChild(el("td", null, c.id)); tr.appendChild(el("td", null, c.category));
+      tr.appendChild(el("td", null, c.title));
+      tr.appendChild(el("td", null, c.verdict ? c.verdict + " (" + c.status + ")" : c.status));
+      var go = function () { select(c.id); stage.scrollIntoView({ behavior: "smooth", block: "center" }); };
+      tr.addEventListener("click", go); tr.addEventListener("keydown", function (e) { if (e.key === "Enter") go(); });
+      tb.appendChild(tr);
+    });
+  }
+
+  function project(p) {
+    var cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+    var x1 = p.x * cy - p.z * sy, z1 = p.x * sy + p.z * cy;
+    var y2 = p.y * cp - z1 * sp, z2 = p.y * sp + z1 * cp;
+    var F = 760, s = F / (F + z2 + 260);
+    var base = Math.min(W, H) / 520 * zoom;
+    return { sx: W / 2 + x1 * s * base, sy: H / 2 + y2 * s * base, z: z2, s: s * base };
+  }
+
+  function frame() {
+    if (spinning) yaw += 0.0028;
+    ctx.clearRect(0, 0, W, H);
+    var P = new Map(); hubs.concat(claims).forEach(function (n) { P.set(n, project(n)); });
+    // hub spokes
+    claims.forEach(function (c) {
+      var a = P.get(c.hub), b = P.get(c);
+      ctx.strokeStyle = "rgba(169,194,177,0.16)"; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke();
+    });
+    // theme edges
+    edges.forEach(function (e) {
+      var a = P.get(byId[e.from]), b = P.get(byId[e.to]);
+      var hi = selected && (selected === e.from || selected === e.to);
+      var depth = Math.max(0.25, Math.min(1, 1 - (a.z + b.z) / 1400));
+      ctx.strokeStyle = themeColor(e.theme); ctx.globalAlpha = hi ? 0.95 : (selected ? 0.12 : 0.5 * depth);
+      ctx.lineWidth = hi ? 2.4 : 1.3;
+      var weak = e.strength && (e.strength.indexOf("Weak") === 0 || e.strength.indexOf("Pattern") === 0);
+      ctx.setLineDash(weak ? [5, 4] : []);
+      ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke();
+    });
+    ctx.setLineDash([]); ctx.globalAlpha = 1;
+    // nodes, far to near
+    var items = hubs.concat(claims).sort(function (m, n) { return P.get(n).z - P.get(m).z; });
+    items.forEach(function (n) {
+      var p = P.get(n), isHub = n.kind === "hub";
+      var r = (isHub ? 15 : 8.5) * Math.max(0.55, p.s * 1.15);
+      var dim = selected && !isHub && n.id !== selected && !linked(n.id, selected);
+      ctx.globalAlpha = dim ? 0.3 : 1;
+      ctx.beginPath(); ctx.arc(p.sx, p.sy, r, 0, Math.PI * 2);
+      ctx.fillStyle = n.color; ctx.fill();
+      if (isHub) { ctx.strokeStyle = "rgba(255,255,255,0.35)"; ctx.lineWidth = 2; ctx.stroke(); }
+      else {
+        var done = n.data.status !== "Not started";
+        ctx.strokeStyle = n.id === selected ? "#fff" : (done ? "#f6f4ee" : "rgba(255,255,255,0.35)");
+        ctx.lineWidth = n.id === selected ? 3 : (done ? 2.5 : 1); ctx.stroke();
+      }
+      n._p = { x: p.sx, y: p.sy, r: r };
+      var label = isHub ? n.name : n.id;
+      if (isHub || p.s > 0.5 || hover === n || selected === n.id) {
+        ctx.font = (isHub ? "700 12px " : "600 11px ") + "Arial, sans-serif";
+        ctx.textAlign = "center"; ctx.fillStyle = isHub ? "#eef3ef" : "#d4e4d9";
+        ctx.fillText(label, p.sx, p.sy + r + 13);
+      }
+      ctx.globalAlpha = 1;
+    });
+    requestAnimationFrame(frame);
+  }
+
+  function linked(a, b) { return edges.some(function (e) { return (e.from === a && e.to === b) || (e.from === b && e.to === a); }); }
+
+  function pick(x, y) {
+    var best = null, bd = 1e9;
+    claims.concat(hubs).forEach(function (n) { if (!n._p) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
+      if (d < n._p.r + 7 && d < bd) { bd = d; best = n; } });
+    return best;
+  }
+
+  function select(id) {
+    selected = id; var c = byId[id]; if (!c) { panel.style.display = "none"; return; }
+    var d = c.data; panel.textContent = ""; panel.style.display = "block";
+    var x = el("button", "x", "×"); x.setAttribute("aria-label", "Close"); x.onclick = function () { selected = null; panel.style.display = "none"; };
+    panel.appendChild(x); panel.appendChild(el("div", "id", d.id + " · " + d.category.toUpperCase()));
+    panel.appendChild(el("h3", null, d.title)); panel.appendChild(el("p", null, d.claim));
+    var chips = el("div"); var st = el("span", "chip", d.verdict ? d.verdict : d.status);
+    st.style.background = d.verdict ? "#d9772b" : "#7fa88b"; chips.appendChild(st);
+    (d.tags || []).forEach(function (t) { chips.appendChild(el("span", "chip soft", t)); }); panel.appendChild(chips);
+    if (d.counter) { panel.appendChild(el("div", "label", "CONTEXT")); panel.appendChild(el("p", null, d.counter)); }
+    var ls = edges.filter(function (e) { return e.from === id || e.to === id; }).map(function (e) { return e.from === id ? e.to : e.from; });
+    ls = ls.filter(function (v, i) { return ls.indexOf(v) === i; });
+    if (ls.length) { panel.appendChild(el("div", "label", "LINKED CLAIMS")); var box = el("div");
+      ls.forEach(function (o) { var b = el("button", "link", o + " " + byId[o].data.title); b.onclick = function () { select(o); }; box.appendChild(b); });
+      panel.appendChild(box); }
+  }
+
+  // interaction
+  var down = null, moved = 0;
+  canvas.addEventListener("pointerdown", function (e) { down = { x: e.clientX, y: e.clientY }; moved = 0; canvas.setPointerCapture(e.pointerId); canvas.classList.add("dragging"); });
+  canvas.addEventListener("pointermove", function (e) {
+    var r = canvas.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+    if (down) { var dx = e.clientX - down.x, dy = e.clientY - down.y; moved += Math.abs(dx) + Math.abs(dy);
+      yaw += dx * 0.006; pitch = Math.max(-1.35, Math.min(1.35, pitch + dy * 0.006)); down = { x: e.clientX, y: e.clientY }; }
+    else { hover = pick(mx, my); canvas.style.cursor = hover ? "pointer" : "grab"; }
+  });
+  canvas.addEventListener("pointerup", function (e) {
+    canvas.classList.remove("dragging");
+    if (moved < 6) { var r = canvas.getBoundingClientRect(); var n = pick(e.clientX - r.left, e.clientY - r.top);
+      if (n && n.kind === "claim") select(n.id); else { selected = null; panel.style.display = "none"; } }
+    else spinning = false, document.getElementById("spin").textContent = "Resume rotation";
+    down = null;
+  });
+  canvas.addEventListener("wheel", function (e) { e.preventDefault(); zoom = Math.max(0.5, Math.min(2.6, zoom * (e.deltaY < 0 ? 1.08 : 0.92))); }, { passive: false });
+  document.getElementById("spin").onclick = function () { spinning = !spinning; this.textContent = spinning ? "Pause rotation" : "Resume rotation"; };
+  document.getElementById("lgbtn").onclick = function () { document.getElementById("legend").classList.toggle("open"); };
+  document.getElementById("reset").onclick = function () { yaw = 0.6; pitch = -0.25; zoom = 1; selected = null; panel.style.display = "none"; };
+  window.addEventListener("resize", resize);
+  if (reduce) document.getElementById("spin").textContent = "Resume rotation";
+
+  fetch("data/claims.json").then(function (r) { return r.json(); }).then(init).catch(function () {
+    stage.appendChild(el("p", null, "Could not load data/claims.json. If you opened this file directly, serve the docs folder instead (python -m http.server -d docs).")).style.cssText = "padding:24px;color:#e3a72f";
+  });
+})();
+</script>
+</body>
+</html>

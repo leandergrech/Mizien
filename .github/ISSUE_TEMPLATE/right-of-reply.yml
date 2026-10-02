@@ -1,0 +1,22 @@
+name: Right of reply
+description: Respond to a draft check as the body concerned
+title: "[Reply] "
+labels: ["right-of-reply"]
+body:
+  - type: input
+    id: claim
+    attributes:
+      label: Claim ID (for example CC-001)
+    validations:
+      required: true
+  - type: textarea
+    id: response
+    attributes:
+      label: Your response
+      description: We publish responses alongside the report.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence

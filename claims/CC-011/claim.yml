@@ -1,0 +1,39 @@
+id: CC-011
+title: 2026 manifesto pledges
+category: Governance & Promises
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Labour: every citizen within a 10-minute walk of a green space. PN: a net-zero Gozo through afforestation.'
+  speaker: Labour Party; Nationalist Party
+  date: 2026-05
+  wording_status: Verbatim found
+  sources:
+  - title: 'Labour publishes its manifesto: here is a breakdown'
+    publisher: MaltaToday
+    date: May 2026
+    url: https://www.maltatoday.com.mt/news/election-2026/141840/labour_publishes_its_manifesto_here_is_a_breakdown
+  - title: PN approves its electoral manifesto
+    publisher: MaltaToday
+    date: May 2026
+    url: https://www.maltatoday.com.mt/news/election-2026/141891/pn_approves_its_electoral_manifesto
+  - title: 'Clean energy for EU islands: Malta'
+    publisher: European Commission
+    date: n/d
+    url: https://clean-energy-islands.ec.europa.eu/countries/malta
+counter_evidence: Election held 30 May 2026; Labour won.
+tests: Walkability analysis on open map data; carbon arithmetic for Gozo's 67 km2.
+why_low_hanging: One claim per main party, both computable.
+tags:
+- Promise-without-baseline
+tags_provisional: true
+priority: Queue
+data_readiness: High
+caveats: Define 'green space' and the walking-speed assumption up front, for both claims.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

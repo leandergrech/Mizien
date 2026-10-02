@@ -1,0 +1,45 @@
+id: CC-003
+title: Per-capita emissions vs 2030 projection
+category: Climate & Energy
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Climate Action Authority: per-capita emissions are down 44% since 2005, versus 34% for the EU.'
+  speaker: Climate Action Authority; Ministry for the Environment
+  date: 2025-11
+  wording_status: Verbatim found
+  sources:
+  - title: Malta set to increase emissions as EU cuts carbon output (citing EC 2025 Climate Action Progress
+      Report)
+    publisher: Italpress / MNA
+    date: Nov 2025
+    url: https://www.italpress.com/?p=605399
+  - title: Malta cuts emissions faster than EU average, report shows
+    publisher: MaltaToday
+    date: Nov 2025
+    url: https://www.maltatoday.com.mt/news/national/138271/malta_cuts_emissions_faster_than_eu_average_report_shows
+  - title: 'Facts: emissions (June 2026)'
+    publisher: Climate Action Authority
+    date: Jun 2026
+    url: https://climateaction.gov.mt/wp-content/uploads/2026/06/FACTS-EMISSIONS-JUNE-26.pdf
+  - title: 'Renewable Energy 2026: Malta'
+    publisher: Chambers Practice Guides
+    date: 11 Sep 2026
+    url: https://practiceguides.chambers.com/practice-guides/renewable-energy-2026/malta
+counter_evidence: 'The same Commission report projects Malta''s emissions 30% above 2005 by 2030, against
+  a 19% cut target: the largest shortfall in the EU. Renewables remain roughly 10-11% of electricity.'
+tests: Eurostat and EEA inventories; per-capita versus absolute; population growth; renewables data.
+why_low_hanging: Both numbers come from one report.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Start first
+data_readiness: High
+caveats: ''
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
