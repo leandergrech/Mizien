@@ -46,7 +46,18 @@
         "Conditional-turned-unconditional"
       ],
       "priority": "Done (v1.1)",
-      "wording_status": "Verbatim found"
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Ambjent Malta; Fondazzjoni Wirt Artna",
+      "date": "2026-10-01",
+      "quote": "Given its temporary nature, it will not cause damage to the tree.",
+      "version": "1.1",
+      "outputs": {
+        "report": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-001/report.pdf",
+        "flyer_pdf": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-001/flyer.pdf",
+        "flyer_png": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-001/flyer.png"
+      },
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-001/claim.yml"
     },
     {
       "id": "CC-002",
@@ -61,7 +72,14 @@
         "Selective metric"
       ],
       "priority": "Queue",
-      "wording_status": "Verbatim found"
+      "wording_status": "Verbatim found",
+      "confidence": null,
+      "speaker": "ERA; HV Hospitality (Hili Group); Moviment Graffitti",
+      "date": "2026-08-11",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-002/claim.yml"
     },
     {
       "id": "CC-003",
@@ -75,7 +93,18 @@
         "Selective metric"
       ],
       "priority": "Done (v1.0)",
-      "wording_status": "Verbatim found"
+      "wording_status": "Verbatim found",
+      "confidence": "High",
+      "speaker": "Climate Action Authority; Ministry for the Environment",
+      "date": "2025-11-13",
+      "quote": "Emissions per capita have fallen by 44% since 2005, well above the EU average of 34%.",
+      "version": "1.0",
+      "outputs": {
+        "report": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-003/report.pdf",
+        "flyer_pdf": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-003/flyer.pdf",
+        "flyer_png": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-003/flyer.png"
+      },
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-003/claim.yml"
     },
     {
       "id": "CC-004",
@@ -90,7 +119,18 @@
         "Input-as-outcome"
       ],
       "priority": "Done (v1.0)",
-      "wording_status": "Verbatim found"
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Ministry for the Environment, Energy and Public Cleanliness (Minister Dalli); WasteServ",
+      "date": "2026-01-19",
+      "quote": "Malta continues to make strong progress in waste management",
+      "version": "1.0",
+      "outputs": {
+        "report": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/report.pdf",
+        "flyer_pdf": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/flyer.pdf",
+        "flyer_png": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/flyer.png"
+      },
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/claim.yml"
     },
     {
       "id": "CC-005",
@@ -104,7 +144,14 @@
         "Selective metric"
       ],
       "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote"
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Ministry; WSC; ERA",
+      "date": "",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-005/claim.yml"
     },
     {
       "id": "CC-006",
@@ -118,7 +165,14 @@
         "Selective metric"
       ],
       "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote"
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Ornis Committee; WBRU; FKNK; BirdLife Malta",
+      "date": "2026-04",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-006/claim.yml"
     },
     {
       "id": "CC-007",
@@ -132,7 +186,14 @@
         "Compliance-not-health"
       ],
       "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote"
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Ministry for the Environment; ERA",
+      "date": "2025",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-007/claim.yml"
     },
     {
       "id": "CC-008",
@@ -146,7 +207,14 @@
         "Promise-without-baseline"
       ],
       "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote"
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Infrastructure Malta; Transport Malta; ERA",
+      "date": "",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-008/claim.yml"
     },
     {
       "id": "CC-009",
@@ -160,7 +228,14 @@
         "Selective metric"
       ],
       "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote"
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Water Services Corporation; Ministry; ERA",
+      "date": "",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-009/claim.yml"
     },
     {
       "id": "CC-010",
@@ -175,7 +250,14 @@
         "Promise-without-baseline"
       ],
       "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote"
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Project Green; Ambjent Malta; Ministry; Labour Party",
+      "date": "2024",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-010/claim.yml"
     },
     {
       "id": "CC-011",
@@ -189,7 +271,18 @@
         "Promise-without-baseline"
       ],
       "priority": "Done (v1.0)",
-      "wording_status": "Verbatim found"
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Labour Party; Nationalist Party",
+      "date": "2026-05",
+      "quote": "Kull persuna f'pajjiżna ma tkunx aktar minn għaxar minuti mixi 'l bogħod minn spazju miftuħ jew aħdar. (PL) / Infasslu pjan ċar u realistiku biex sal-2040, Għawdex isir Net-Zero Island (PN)",
+      "version": "1.0",
+      "outputs": {
+        "report": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/report.pdf",
+        "flyer_pdf": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/flyer.pdf",
+        "flyer_png": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/flyer.png"
+      },
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/claim.yml"
     }
   ],
   "edges": [
@@ -388,43 +481,100 @@
       "id": "T1",
       "name": "Sealed soil and concrete",
       "color": "#e3a72f",
-      "dashed": false
+      "dashed": false,
+      "link_type": "Shared mechanism",
+      "strength": "Strong",
+      "description": "Excavation, concrete and sealed surfaces around trees. The EU review notes sealed or degraded soil keeps increasing in Malta.",
+      "members": [
+        "CC-001",
+        "CC-002",
+        "CC-008"
+      ]
     },
     {
       "id": "T2",
       "name": "Replanting as currency",
       "color": "#6fcf97",
-      "dashed": false
+      "dashed": false,
+      "link_type": "Shared mechanism",
+      "strength": "Strong",
+      "description": "Tree losses are justified by promised replacement or transplanting. Test survival and net canopy, not planting counts.",
+      "members": [
+        "CC-001",
+        "CC-002",
+        "CC-008",
+        "CC-010"
+      ]
     },
     {
       "id": "T3",
       "name": "Water chain: farm waste, sewage, sea, aquifer",
       "color": "#56b4e9",
-      "dashed": false
+      "dashed": false,
+      "link_type": "Shared cause",
+      "strength": "Strong",
+      "description": "The Commission blames farm waste in the sewers for poor treatment; agricultural nitrates are behind groundwater failure. Treated water also feeds 'new water' irrigation.",
+      "members": [
+        "CC-005",
+        "CC-009"
+      ]
     },
     {
       "id": "T4",
       "name": "Transport, air and climate",
       "color": "#f2994a",
-      "dashed": false
+      "dashed": false,
+      "link_type": "Shared driver",
+      "strength": "Strong",
+      "description": "Fleet growth links traffic claims, air quality and emissions. The climate report names transport and buildings as the lagging sectors.",
+      "members": [
+        "CC-003",
+        "CC-007",
+        "CC-008"
+      ]
     },
     {
       "id": "T5",
       "name": "Waste and construction",
       "color": "#bdbdbd",
-      "dashed": true
+      "dashed": true,
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)",
+      "description": "Inert mineral waste dominates Malta's recycling statistics, which ties waste claims to development projects. ERA and NSO confirm construction waste was about 2.2 of 2.9 Mt generated in 2023; the link to specific projects is still indicative.",
+      "members": [
+        "CC-004",
+        "CC-002",
+        "CC-008"
+      ]
     },
     {
       "id": "T6",
       "name": "Selective-metric pattern",
       "color": "#bb86fc",
-      "dashed": true
+      "dashed": true,
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal",
+      "description": "A favourable metric is cited while the regulator-relevant metric looks worse. Useful for tagging, not for implying a common cause.",
+      "members": [
+        "CC-003",
+        "CC-004",
+        "CC-005",
+        "CC-007",
+        "CC-010"
+      ]
     },
     {
       "id": "T7",
       "name": "2030 carbon target",
       "color": "#4fc3c8",
-      "dashed": false
+      "dashed": false,
+      "link_type": "Shared target",
+      "strength": "Strong",
+      "description": "The Climate Action Authority and the 2026 Labour manifesto (priority 18) both state a 40% cut in carbon emissions by 2030 against 2005, without saying whether it covers total or effort-sharing emissions.",
+      "members": [
+        "CC-003",
+        "CC-011"
+      ]
     }
   ]
 }
