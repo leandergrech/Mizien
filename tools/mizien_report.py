@@ -597,7 +597,8 @@ def build_flyer(F: Flyer):
     c.setFillColor(colors.white)
     c.setFont("Sans-B", 8)
     c.drawString(M + 7 * mm, vt - 7 * mm, "VERDICT")
-    c.setFont("Sans-B", 25)
+    # Leave a clear gutter before the right-hand summary for longer verdicts.
+    c.setFont("Sans-B", 20 if len(F.verdict) > 13 else 25)
     c.drawString(M + 7 * mm, vt - 17.5 * mm, F.verdict.upper())
     c.setFont("Serif-BI", 14)
     c.drawRightString(W - M - 7 * mm, vt - 11 * mm, F.verdict_right[0])

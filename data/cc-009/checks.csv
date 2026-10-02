@@ -1,0 +1,13 @@
+check,value,unit,source,note
+2022 RO share of WSC potable production,64.3232,%,WSC Annual Report 2025 Figure 20,Calculated as RO production / (RO + WSC groundwater production).
+2022 total WSC potable production,35529130,m3,WSC Annual Report 2025 Figure 20,RO plus groundwater production.
+2023 RO share of WSC potable production,64.3041,%,WSC Annual Report 2025 Figure 20,Calculated as RO production / (RO + WSC groundwater production).
+2023 total WSC potable production,36859385,m3,WSC Annual Report 2025 Figure 20,RO plus groundwater production.
+2024 RO share of WSC potable production,66.2777,%,WSC Annual Report 2025 Figure 20,Calculated as RO production / (RO + WSC groundwater production).
+2024 total WSC potable production,38829917,m3,WSC Annual Report 2025 Figure 20,RO plus groundwater production.
+2025 RO share of WSC potable production,70.7494,%,WSC Annual Report 2025 Figure 20,Calculated as RO production / (RO + WSC groundwater production).
+2025 total WSC potable production,39456477,m3,WSC Annual Report 2025 Figure 20,RO plus groundwater production.
+WSC groundwater production change 2022 to 2025,-8.9495,%,WSC Annual Report 2025 Figure 20,"Calculated from the annual report chart values; WSC production series, not all-user national abstraction."
+WSC groundwater production change 2024 to 2025 from chart,-11.8606,%,WSC Annual Report 2025 Figure 20,"WSC narrative states -11.4%; chart values imply -11.86%, a small internal difference retained rather than reconciled."
+WSC groundwater production change 2024 to 2025 as reported,-11.4,%,WSC Annual Report 2025 p.43,Directly stated by WSC; separate from calculation using chart values.
+Groundwater bodies failing nitrate standard,12,of 15 bodies,"ERA/EWA 3rd River Basin Management Plan, Chapter 6","Three exceptions are named; 14 bodies fail overall chemical status, which is broader than nitrate alone."

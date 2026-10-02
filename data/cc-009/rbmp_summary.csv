@@ -1,0 +1,6 @@
+indicator,value,unit,period,source,note
+Groundwater bodies assessed,15,bodies,3rd RBMP 2021-2027,ERA/EWA 3rd RBMP chapter 6,Count of groundwater-body entries in the published status tables.
+Poor overall status,15,bodies,3rd RBMP assessment,ERA/EWA 3rd RBMP chapter 6,Overall good status requires both quantitative and qualitative status to pass.
+Poor quantitative status,2,bodies,3rd RBMP assessment,ERA/EWA 3rd RBMP chapter 6,Malta and Gozo Mean Sea Level aquifer systems.
+Poor chemical status,14,bodies,3rd RBMP assessment,ERA/EWA 3rd RBMP chapter 6,Nitrate is the main failing parameter; chemical status is not synonymous with nitrate-only failure.
+Nitrate above 50 mg/L standard,12,bodies,3rd RBMP assessment,ERA/EWA 3rd RBMP chapter 6,Text states all except Gozo Mean Sea Level, Comino Mean Sea Level and Mellieħa Perched bodies exceed the nitrate standard.
