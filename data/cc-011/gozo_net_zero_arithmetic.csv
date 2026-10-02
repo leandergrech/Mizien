@@ -1,0 +1,10 @@
+emissions_case,per_capita_t,gozo_emissions_t,sequestration_case,t_co2_per_ha_yr,forest_needed_ha,forest_needed_km2,multiple_of_gozo_area
+low,2.5,103132,measured semi-arid pine (Yatir),3.62,28490,284.9,4.3
+low,2.5,103132,optimistic upper bound,10.0,10313,103.1,1.5
+central,3.81,157174,measured semi-arid pine (Yatir),3.62,43418,434.2,6.5
+central,3.81,157174,optimistic upper bound,10.0,15717,157.2,2.3
+high,5.0,206265,measured semi-arid pine (Yatir),3.62,56979,569.8,8.5
+high,5.0,206265,optimistic upper bound,10.0,20626,206.3,3.1
+central,3.81,157174,afforest 5% of Gozo at Yatir rate,3.62,335,3.4,offsets 0.8% of emissions
+central,3.81,157174,afforest 10% of Gozo at Yatir rate,3.62,670,6.7,offsets 1.5% of emissions
+central,3.81,157174,afforest 20% of Gozo at Yatir rate,3.62,1340,13.4,offsets 3.1% of emissions

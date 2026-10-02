@@ -12,6 +12,7 @@ import sys
 import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+REPO = "https://github.com/leandergrech/Mizien"
 
 CATEGORY_COLORS = {
     "Land & Trees": "#3d8b5a",
@@ -24,7 +25,7 @@ CATEGORY_COLORS = {
     "Governance & Promises": "#e3a72f",
 }
 THEME_COLORS = {
-    "T1": "#e3a72f", "T2": "#6fcf97", "T3": "#56b4e9", "T4": "#f2994a", "T5": "#bdbdbd", "T6": "#bb86fc",
+    "T1": "#e3a72f", "T2": "#6fcf97", "T3": "#56b4e9", "T4": "#f2994a", "T5": "#bdbdbd", "T6": "#bb86fc", "T7": "#4fc3c8",
 }
 
 
@@ -43,6 +44,13 @@ def main() -> int:
             "tags": d.get("tags", []),
             "priority": d.get("priority", ""),
             "wording_status": d["claim"].get("wording_status", ""),
+            "confidence": d.get("verdict_confidence"),
+            "speaker": d["claim"].get("speaker", ""),
+            "date": str(d["claim"].get("date") or ""),
+            "quote": d["claim"].get("quote", ""),
+            "version": d.get("version"),
+            "outputs": {k: f"{REPO}/blob/main/claims/{d['id']}/{v}" for k, v in (d.get("outputs") or {}).items()},
+            "record": f"{REPO}/blob/main/claims/{d['id']}/claim.yml",
         })
     cats = []
     for c in claims:
@@ -54,7 +62,9 @@ def main() -> int:
                   "strength": r["Strength"]} for r in csv.DictReader(f)]
     with open(ROOT / "data" / "themes.csv", newline="", encoding="utf-8") as f:
         themes = [{"id": r["Theme ID"], "name": r["Theme"], "color": THEME_COLORS.get(r["Theme ID"], "#7fa88b"),
-                   "dashed": r["Strength"].startswith(("Weak", "Pattern"))} for r in csv.DictReader(f)]
+                   "dashed": r["Strength"].startswith(("Weak", "Pattern")), "link_type": r["Link type"],
+                   "strength": r["Strength"], "description": r["What connects them"],
+                   "members": [x.strip() for x in r["Linked claim IDs"].split(",")]} for r in csv.DictReader(f)]
 
     out = {"categories": cats, "claims": claims, "edges": edges, "themes": themes}
     text = json.dumps(out, ensure_ascii=False, indent=2)
