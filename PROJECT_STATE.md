@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 3 October 2026 (CC-008 merged into main; CC-002 report, flyer and literature notes drafted on `codex/cc-002-comino`).*
+*Last updated: 3 October 2026 (CC-002 report, flyer and viewer metadata merged into `main` at `61147dd`; archive and site-specific outcome gaps remain).*
 
 ## What the project is
 
@@ -95,7 +95,7 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 ## Branches (3 October 2026)
 
 `archive-manifest`, `cc-003-climate`, `cc-004-waste` and `cc-011-manifestos` have been merged into `main` (PRs #1–4).
-CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commit `2110846`). CC-006's report, flyer and site metadata are integrated on `main` at `e0552b9` (fast-forward from `codex/cc-006-spring-hunting`). CC-008 was fast-forwarded and pushed to `main` at `6e1f342`. CC-002 is being prepared on `codex/cc-002-comino`; right of reply remains with the maintainer.
+CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commit `2110846`). CC-006's report, flyer and site metadata are integrated on `main` at `e0552b9` (fast-forward from `codex/cc-006-spring-hunting`). CC-008 was fast-forwarded and pushed to `main` at `6e1f342`. CC-002's report, flyer, viewer metadata and evidence notes were merged from `codex/cc-002-comino` at `61147dd`; the archive and site-specific outcome gaps remain, and right of reply is for the maintainer.
 
 ## Notes for the next session
 
