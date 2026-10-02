@@ -12,7 +12,7 @@
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--bg); color: var(--ink);
+  body { margin: 0; background: var(--bg); color: var(--ink); overflow-x: hidden;
          font: 16px/1.55 "Liberation Sans", Arial, Helvetica, sans-serif; }
   a { color: var(--amber); }
   header.top { padding: 28px 24px 8px; max-width: 1100px; margin: 0 auto; }
@@ -28,13 +28,22 @@
   canvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
   canvas.dragging { cursor: grabbing; }
   #hint { position: absolute; left: 14px; bottom: 12px; font-size: 12px; color: var(--muted); pointer-events: none; }
-  #controls { position: absolute; right: 12px; top: 12px; display: flex; gap: 8px; }
+  .mobile-hint { display: none; }
+  #controls { position: absolute; right: 12px; top: 12px; display: flex; gap: 6px; z-index: 2;
+              padding: 4px; border: 1px solid rgba(127,168,139,.28); border-radius: 12px;
+              background: rgba(8,32,22,.82); backdrop-filter: blur(10px); }
   button.ctl { background: rgba(14,42,31,.8); color: var(--ink); border: 1px solid #2b6b4c; border-radius: 8px;
-               padding: 6px 10px; font: 12px Arial, sans-serif; cursor: pointer; }
+               min-width: 38px; min-height: 38px; padding: 6px 10px; font: 12px Arial, sans-serif; cursor: pointer; }
   button.ctl:hover { border-color: var(--amber); }
+  button.ctl:focus-visible, #legend button:focus-visible, #panel button:focus-visible, #panel a:focus-visible {
+    outline: 3px solid var(--amber); outline-offset: 2px; }
   #legend { position: absolute; left: 12px; top: 12px; font-size: 12px; background: rgba(14,42,31,.82);
             border: 1px solid #2b6b4c; border-radius: 10px; padding: 8px 10px; max-width: 230px; }
   #legend h4 { margin: 0 0 4px; font-size: 11px; letter-spacing: .08em; color: var(--amber); }
+  #legend .legend-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: sticky; top: -8px;
+    margin: -8px -10px 6px; padding: 8px 10px 4px; background: #123a29; z-index: 1; }
+  #legend .legend-close { display: none; border: 1px solid #47745a; border-radius: 8px; padding: 6px 10px;
+    background: #1c5238; color: var(--ink); font: 700 12px Arial, sans-serif; }
   #legend .row { display: flex; align-items: center; gap: 7px; margin: 2px 0; }
   #legend .sw { width: 11px; height: 11px; border-radius: 50%; flex: none; }
   #legend .ln { width: 18px; height: 0; border-top: 2px solid; flex: none; }
@@ -49,6 +58,7 @@
   .chip.soft { background: #e6efe8; color: #14452f; }
   #panel button.link { background: none; border: 0; padding: 0; color: #3c6e8f; text-decoration: underline; cursor: pointer; font: 13px Arial; margin-right: 10px; }
   #panel .x { position: absolute; right: 10px; top: 8px; background: none; border: 0; font-size: 20px; color: #8a9399; cursor: pointer; }
+  #panel .x { min-width: 40px; min-height: 40px; }
   main { max-width: 1100px; margin: 0 auto; padding: 8px 24px 60px; }
   section { margin-top: 38px; }
   h2 { font: 700 24px "Liberation Serif", Georgia, serif; border-bottom: 1px solid #1f5a40; padding-bottom: 6px; }
@@ -68,13 +78,6 @@
   noscript { display: block; padding: 20px; color: var(--amber); }
   .sr { position: absolute; left: -9999px; }
   #lgbtn { display: none; }
-  @media (max-width: 700px) {
-    #lgbtn { display: inline-block; }
-    #legend { display: none; top: 50px; }
-    #legend.open { display: block; z-index: 3; }
-    #controls { left: 12px; right: 12px; justify-content: flex-start; }
-  }
-
   /* map v2: icons, clickable legend, richer panels */
   #legend { max-height: calc(100% - 24px); overflow: auto; }
   #legend button.row { display: flex; align-items: center; gap: 8px; width: 100%; margin: 1px 0; padding: 3px 4px;
@@ -118,6 +121,65 @@
   #doc-viewer img { display: block; max-width: 100%; max-height: calc(100% - 54px); margin: 0 auto; object-fit: contain; }
   td .chip { margin: 0; }
   td .muted { color: var(--muted); font-size: 12px; }
+  @media (max-width: 700px) {
+    header.top { padding: max(16px, env(safe-area-inset-top)) 18px 4px; text-align: center; }
+    .brand { justify-content: center; gap: 10px; }
+    .brand h1 { font-size: clamp(36px, 10vw, 48px); }
+    .brand .dot { width: 28px; margin-bottom: 11px; }
+    .tag { font-size: 16px; margin-top: 5px; }
+    .meaning { margin-top: 1px; font-size: 12px; }
+    #stage { width: auto; margin: 8px 10px 0; height: min(70vh, 640px); height: clamp(460px, 70svh, 640px); min-height: 460px; border-radius: 18px; }
+    #controls { left: 50%; right: auto; top: 10px; transform: translateX(-50%); max-width: calc(100% - 16px);
+      justify-content: center; gap: 4px; padding: 4px; border-radius: 13px; }
+    button.ctl { min-width: 42px; min-height: 42px; padding: 7px 9px; border-radius: 9px; font-size: 12px; }
+    #lgbtn { display: inline-block; }
+    #legend { display: none; top: auto; bottom: max(8px, env(safe-area-inset-bottom)); left: 8px; right: 8px;
+      width: auto; max-width: none; max-height: min(55%, 390px); padding: 10px 12px 12px; border-radius: 16px;
+      background: rgba(10,39,27,.97); box-shadow: 0 12px 36px rgba(0,0,0,.45); }
+    #legend.open { display: block; z-index: 7; }
+    #legend .legend-head { margin: -10px -12px 8px; padding: 10px 12px 7px; }
+    #legend .legend-close { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; }
+    #legend button.row { min-height: 42px; }
+    #legend .vrow { min-height: 26px; }
+    #panel { left: 8px; right: 8px; bottom: max(8px, env(safe-area-inset-bottom)); width: auto; max-height: 58%;
+      padding: 15px 16px 18px; border-radius: 17px; box-shadow: 0 14px 40px rgba(0,0,0,.5); }
+    #panel h3 { padding-right: 34px; font-size: 19px; }
+    #panel p { font-size: 15px; line-height: 1.5; }
+    #panel .btn { min-height: 42px; align-items: center; padding: 9px 12px; }
+    #panel button.link, #panel button.tchip { min-height: 42px; }
+    #panel .acts { gap: 8px; }
+    #panel .file-action { min-height: 42px; }
+    #panel .file-action .btn + .btn { margin-left: -8px; }
+    .desktop-hint { display: none; }
+    .mobile-hint { display: inline; }
+    #hint { left: 12px; right: 12px; bottom: 12px; text-align: center; font-size: 11px;
+      padding: 5px 8px; border-radius: 999px; width: fit-content; margin: auto; background: rgba(8,32,22,.72); }
+    main { padding: 10px 18px 48px; }
+    section { margin-top: 30px; }
+    h2 { font-size: 22px; }
+    .grid { grid-template-columns: 1fr; gap: 10px; }
+    .card { padding: 13px 14px; }
+    .scale { gap: 5px; }
+    .scale span { flex: 1 1 44%; min-height: 42px; display: grid; place-items: center; font-size: 10px; }
+    table { font-size: 13px; }
+    #claims th:nth-child(2), #claims td:nth-child(2) { display: none; }
+    #claims th, #claims td { padding: 8px 5px; }
+    #claims td:first-child { white-space: nowrap; }
+    footer { padding: 22px 18px max(24px, env(safe-area-inset-bottom)); }
+  }
+  @media (max-width: 360px) {
+    #controls { gap: 2px; }
+    button.ctl { min-width: 39px; padding-inline: 7px; }
+    #panel .file-action .btn { padding-inline: 8px; font-size: 11px; }
+  }
+  @media (max-width: 700px) and (max-height: 500px) {
+    #stage { height: max(270px, calc(100svh - 150px)); min-height: 270px; }
+    header.top { padding-top: max(10px, env(safe-area-inset-top)); }
+    .brand h1 { font-size: 34px; }
+    .tag { margin-top: 2px; font-size: 14px; }
+    .meaning { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
   /* Botanical is the live map style; the other presets are retained in the local design preview. */
   html[data-map-theme="botanical"] #stage { background: radial-gradient(ellipse at 40% 42%, #1b553b 0%, #0e2a1f 72%); }
@@ -138,15 +200,17 @@
   <p class="meaning">Miżien is Maltese for a scale or balance.</p>
 </header>
 
-<div id="stage" role="img" aria-label="Interactive 3D map of fact-checked claims, grouped by topic and linked by shared themes. A table of the same claims follows below.">
+<div id="stage" role="region" aria-label="Interactive 3D map of fact-checked claims" aria-describedby="hint">
   <canvas id="map"></canvas>
   <div id="legend"></div>
   <div id="controls">
-    <button class="ctl" id="lgbtn">Legend</button>
-    <button class="ctl" id="spin">Pause rotation</button>
-    <button class="ctl" id="reset">Reset view</button>
+    <button class="ctl" id="lgbtn" type="button" aria-controls="legend" aria-expanded="false">Legend</button>
+    <button class="ctl" id="zoomout" type="button" aria-label="Zoom out" title="Zoom out">−</button>
+    <button class="ctl" id="zoomin" type="button" aria-label="Zoom in" title="Zoom in">+</button>
+    <button class="ctl" id="spin" type="button" aria-label="Pause map rotation">Pause</button>
+    <button class="ctl" id="reset" type="button" aria-label="Reset map view">Reset</button>
   </div>
-  <div id="hint">Drag to rotate · scroll or pinch to zoom · click a topic, claim or link</div>
+  <div id="hint"><span class="desktop-hint">Drag to rotate · scroll or pinch to zoom · click a topic, claim or link</span><span class="mobile-hint">Drag to turn · pinch or use + / − to zoom · tap a node</span></div>
   <div id="tip" role="tooltip"></div>
   <div id="panel" aria-live="polite"></div>
 </div>
@@ -316,6 +380,9 @@
 
   function buildLegend() {
     var lg = document.getElementById("legend"); lg.textContent = "";
+    var head = el("div", "legend-head"), title = el("h4", null, "MAP KEY");
+    var close = el("button", "legend-close", "Done"); close.type = "button"; close.setAttribute("aria-label", "Close map key");
+    close.onclick = closeLegend; head.appendChild(title); head.appendChild(close); lg.appendChild(head);
     lg.appendChild(el("h4", null, "TOPICS"));
     hubs.forEach(function (h) {
       var b = el("button", "row"); b.type = "button";
@@ -490,7 +557,7 @@
         if (!d.verdict) { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,0.82)"; ctx.lineWidth = 1.3; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 4.5, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
         if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 6, 0, 6.283); ctx.stroke(); }
         n._p = { x: p.sx, y: p.sy, r: r2 + 3 };
-        if (MAP_THEME === "civic-clarity" || p.s > 0.5 || isHov || isSel || (F && F.ids[n.id])) {
+        if (MAP_THEME === "civic-clarity" || p.s > (W < 700 ? 0.62 : 0.5) || isHov || isSel || (F && F.ids[n.id])) {
           ctx.font = MAP_THEME === "civic-clarity" ? "700 10px Arial, sans-serif" : "600 11px Arial, sans-serif"; ctx.textAlign = "center";
           if (MAP_THEME === "civic-clarity") { var iw = ctx.measureText(n.id).width + 10; ctx.fillStyle = "rgba(7,29,21,.9)"; roundRect(p.sx - iw / 2, p.sy + r2 + 5, iw, 16, 4); ctx.fill(); }
           ctx.fillStyle = MAP_THEME === "field-atlas" ? "#e3a72f" : "#eef3ef"; ctx.fillText(n.id, p.sx, p.sy + r2 + 16);
@@ -507,7 +574,8 @@
   function pick(x, y) {
     var best = null, bd = 1e9;
     claims.concat(hubs).forEach(function (n) { if (!n._p) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
-      if (d < n._p.r + 5 && d < bd) { bd = d; best = n; } });
+      var hit = Math.max(n._p.r + 5, W < 700 ? 16 : 0);
+      if (d < hit && d < bd) { bd = d; best = n; } });
     if (best) return best.kind === "hub" ? { kind: "hub", hub: best } : { kind: "claim", id: best.id };
     var be = -1; bd = 7;
     edges.forEach(function (e, i) { if (!e._g) return; var g = e._g;
@@ -519,6 +587,7 @@
 
   // ------------------------------------------------------------ panels
   function openPanel(kicker, title, accent) {
+    closeLegend();
     panel.textContent = ""; panel.style.display = "block"; panel.scrollTop = 0;
     panel.style.borderTopColor = accent || "#e3a72f";
     var x = el("button", "x", "×"); x.setAttribute("aria-label", "Close"); x.onclick = clearSel; panel.appendChild(x);
@@ -643,9 +712,25 @@
   }
 
   // ------------------------------------------------------------ interaction
-  var down = null, moved = 0, pinch = null;
-  canvas.addEventListener("pointerdown", function (e) { down = { x: e.clientX, y: e.clientY }; moved = 0; canvas.setPointerCapture(e.pointerId); canvas.classList.add("dragging"); });
+  var down = null, moved = 0, pinch = null, activePointers = {}, multiGesture = false;
+  function pointerCount() { return Object.keys(activePointers).length; }
+  function pointerDistance() {
+    var pts = Object.keys(activePointers).map(function (id) { return activePointers[id]; });
+    return pts.length > 1 ? Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y) : 0;
+  }
+  canvas.addEventListener("pointerdown", function (e) {
+    activePointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+    canvas.setPointerCapture(e.pointerId); canvas.classList.add("dragging");
+    if (pointerCount() > 1) { multiGesture = true; moved = 100; down = null; pinch = pointerDistance(); }
+    else { down = { x: e.clientX, y: e.clientY }; moved = 0; }
+  });
   canvas.addEventListener("pointermove", function (e) {
+    if (activePointers[e.pointerId]) activePointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+    if (multiGesture && pointerCount() > 1) {
+      var distance = pointerDistance();
+      if (pinch && distance) zoom = Math.max(0.5, Math.min(2.6, zoom * distance / pinch));
+      pinch = distance; down = null; showTip(null); return;
+    }
     var r = canvas.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
     if (down) { var dx = e.clientX - down.x, dy = e.clientY - down.y; moved += Math.abs(dx) + Math.abs(dy);
       yaw += dx * 0.006; pitch = Math.max(-1.35, Math.min(1.35, pitch + dy * 0.006)); down = { x: e.clientX, y: e.clientY }; showTip(null); }
@@ -653,23 +738,38 @@
   });
   canvas.addEventListener("pointerleave", function () { hover = null; showTip(null); });
   canvas.addEventListener("pointerup", function (e) {
+    delete activePointers[e.pointerId];
+    if (multiGesture) {
+      down = null; pinch = null;
+      if (!pointerCount()) { multiGesture = false; canvas.classList.remove("dragging"); }
+      return;
+    }
     canvas.classList.remove("dragging");
     if (moved < 6) { var r = canvas.getBoundingClientRect(); var h = pick(e.clientX - r.left, e.clientY - r.top);
       if (!h) clearSel(); else if (h.kind === "claim") selectClaim(h.id); else if (h.kind === "hub") selectHub(h.hub); else selectEdge(h.index); }
-    else { spinning = false; document.getElementById("spin").textContent = "Resume rotation"; }
+    else { spinning = false; document.getElementById("spin").textContent = "Resume"; document.getElementById("spin").setAttribute("aria-label", "Resume map rotation"); }
     down = null;
   });
+  canvas.addEventListener("pointercancel", function (e) {
+    activePointers = {}; down = null; pinch = null; multiGesture = false;
+    canvas.classList.remove("dragging");
+  });
   canvas.addEventListener("wheel", function (e) { e.preventDefault(); zoom = Math.max(0.5, Math.min(2.6, zoom * (e.deltaY < 0 ? 1.08 : 0.92))); }, { passive: false });
-  canvas.addEventListener("touchmove", function (e) { if (e.touches.length === 2) { e.preventDefault();
-    var d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
-    if (pinch) zoom = Math.max(0.5, Math.min(2.6, zoom * d / pinch)); pinch = d; } }, { passive: false });
-  canvas.addEventListener("touchend", function () { pinch = null; });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") clearSel(); });
-  document.getElementById("spin").onclick = function () { spinning = !spinning; this.textContent = spinning ? "Pause rotation" : "Resume rotation"; };
-  document.getElementById("lgbtn").onclick = function () { document.getElementById("legend").classList.toggle("open"); };
+  document.getElementById("spin").onclick = function () {
+    spinning = !spinning; this.textContent = spinning ? "Pause" : "Resume";
+    this.setAttribute("aria-label", spinning ? "Pause map rotation" : "Resume map rotation");
+  };
+  document.getElementById("lgbtn").onclick = function () {
+    var open = document.getElementById("legend").classList.toggle("open");
+    this.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+  function closeLegend() { document.getElementById("legend").classList.remove("open"); document.getElementById("lgbtn").setAttribute("aria-expanded", "false"); }
+  document.getElementById("zoomout").onclick = function () { zoom = Math.max(0.5, zoom / 1.18); };
+  document.getElementById("zoomin").onclick = function () { zoom = Math.min(2.6, zoom * 1.18); };
   document.getElementById("reset").onclick = function () { yaw = 0.6; pitch = -0.25; zoom = 1; clearSel(); };
   window.addEventListener("resize", resize);
-  if (reduce) document.getElementById("spin").textContent = "Resume rotation";
+  if (reduce) { document.getElementById("spin").textContent = "Resume"; document.getElementById("spin").setAttribute("aria-label", "Resume map rotation"); }
 
   var previewPayload = new URLSearchParams(location.search).get("previewData");
   if (previewPayload) {
