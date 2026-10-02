@@ -1,0 +1,25 @@
+# CC-008 literature and evidence notes
+
+Review cut-off: 2 October 2026.
+
+## Primary wording and project records
+
+- Infrastructure Malta, [Msida Creek: enhancing connectivity and community spaces](https://www.infrastructuremalta.com/news/msida-creek-enhancing-connectivity-and-community-spaces), 28 October 2024. Primary, verbatim wording. Its claim that the flyover is a “critical move to reduce delays, emissions, and noise pollution” is prospective.
+- Infrastructure Malta, [Marsa Junction completion release](https://www.infrastructuremalta.com/news/infrastructure-malta-completes-marsa-junction-project), 15 April 2021. Primary agency statement, asserting 79% less travel time and reductions in particulate matter (up to 70%), NOx (52%) and CO2 (50%). No survey report, monitoring series, calculation, or uncertainty is linked in the release.
+- Office of the Prime Minister, [Msida Creek flyover inauguration](https://primeminister.gov.mt/latest-news/pr252279/), 17 December 2025. Primary government record, in Maltese. It says the flyover was inaugurated and would enter vehicle use the following day; it also says the project's benefits would become clearer in later phases. The full project remained in progress in 2026.
+- ERA, [planning record PA/02053/20 and PA/06425/20](https://era.org.mt/era-project/pa02053-20_pa06425-20/). Regulatory record, accessed 2 October 2026. The project description statement uses 2019 traffic counts and predicts benefits; these are not after-opening results. EIA screening concluded that a full EIA was not required. That procedural decision does not establish that impacts are absent.
+- Infrastructure Malta, [Msida Creek project page](https://www.infrastructuremalta.com/mcp). Primary status update: commencement in November 2024, completion targeted for 2027 (dated 21 October 2024). The site reports the flyover and public-space phases separately.
+- Times of Malta, [Marsa surveys and complaints](https://timesofmalta.com/article/roads-agency-insists-marsa-junction-cuts-travel-time-by-70-despite.913440), 29 November 2021. Secondary reporting quotes an IM spokesperson saying periodic surveys confirm time and air-quality benefits, while vehicle volumes were over 19% higher than in 2013. The survey itself and method are not published in the article. Not used as independent outcome data.
+
+## Induced travel literature
+
+- Duranton & Turner (2011), “The Fundamental Law of Road Congestion: Evidence from US Cities”, *American Economic Review* 101(6), 2616–2652. DOI and bibliographic metadata checked against the American Economic Association publisher record. Full text is offered by the publisher. Observational instrumental-variable analysis of US city road lane-kilometres and vehicle-kilometres travelled. Grade B for the study design; it supports induced traffic as a system-level mechanism, not a numerical forecast for either Maltese junction.
+- This literature cannot determine whether a particular flyover initially cuts queue delay or emissions at the junction. Nor does it show that such local effects persist after demand, trip timing, route choice and network conditions respond.
+
+## Evidence access and gaps
+
+- No project-level before-and-after traffic flow / travel-time dataset, Marsa emissions monitoring report, or post-opening noise series was located in the cited public records.
+- The Marsa completion figures should be treated as claims by the implementing agency pending the survey files: define the route and time periods, provide pre/post measurement dates, adjust for demand and construction/season effects, and report uncertainty.
+- For Msida, collect a comparable post-opening baseline after all road phases are complete. The 2019 counts in the PDS are old and cannot serve alone as a current counterfactual.
+- The national licensed-vehicle count is not a junction traffic count and is omitted from the report's outcome analysis.
+- The removal / replanting numbers from the candidate summary are not relevant to whether road performance and local pollution changed; discuss separately under CC-010 if needed.

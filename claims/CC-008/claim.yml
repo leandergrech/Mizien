@@ -1,14 +1,18 @@
 id: CC-008
 title: Flyovers and congestion
 category: Transport
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Moderate
 claim:
-  text: Infrastructure Malta says junction flyovers (Msida, Marsa) cut congestion, noise and air pollution.
-  speaker: Infrastructure Malta; Transport Malta; ERA
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  text: Infrastructure Malta says the Msida Creek flyover will reduce delays, emissions and noise, and that the Marsa Junction Project has reduced travel time and air pollution.
+  speaker: Infrastructure Malta
+  date: '2024-10-28'
+  wording_status: Verbatim found
+  quote: >-
+    Msida has long been a traffic bottleneck, with congestion impacting air quality, noise levels, and overall
+    accessibility. A cornerstone of this project is the construction of a new flyover, which will be a critical
+    move to reduce delays, emissions, and noise pollution.
   sources:
   - title: No social impact assessment yet for Msida flyovers
     publisher: MaltaToday
@@ -26,19 +30,61 @@ claim:
     publisher: MaltaToday (NSO figures)
     date: Q2 2026
     url: https://www.maltatoday.com.mt/news/national/143850/over_3000_vehicles_added_to_maltas_roads_in_three_months
-counter_evidence: Msida involves removal of 430 trees and shrubs (313 replanted). The licensed fleet grew
-  by 3,086 in Q2 2026, about 34 a day.
-tests: Induced-demand research; before-and-after traffic counts; air data near Marsa and Msida.
-why_low_hanging: Before-and-after data exists.
+  - title: 'Msida Creek: enhancing connectivity and community spaces'
+    publisher: Infrastructure Malta
+    date: 28 October 2024
+    url: https://www.infrastructuremalta.com/news/msida-creek-enhancing-connectivity-and-community-spaces
+  - title: Infrastructure Malta completes the Marsa Junction Project
+    publisher: Infrastructure Malta
+    date: 15 April 2021
+    url: https://www.infrastructuremalta.com/news/infrastructure-malta-completes-marsa-junction-project
+  - title: Inawgurata l-flyover tal-Imsida Creek
+    publisher: Office of the Prime Minister
+    date: 17 December 2025
+    url: https://primeminister.gov.mt/latest-news/pr252279/
+  - title: ERA planning record PA/02053/20 and PA/06425/20
+    publisher: Environment and Resources Authority
+    date: Accessed 2 October 2026
+    url: https://era.org.mt/era-project/pa02053-20_pa06425-20/
+  - title: 'The Fundamental Law of Road Congestion: Evidence from US Cities'
+    publisher: American Economic Association
+    date: 2011
+    url: https://doi.org/10.1257/aer.101.6.2616
+  - title: Roads agency insists Marsa junction cuts travel time by 70%, despite complaints
+    publisher: Times of Malta
+    date: 29 November 2021
+    url: https://timesofmalta.com/article/roads-agency-insists-marsa-junction-cuts-travel-time-by-70-despite.913440
+counter_evidence: The Msida Creek flyover only entered vehicle use in December 2025, and the wider project remained
+  under construction in 2026. The public Marsa release does not link the surveys behind its percentage claims;
+  there is no project-level before-and-after series here for traffic, ambient air pollution, or noise.
+tests: Separate forecasts from measured outcomes for Msida and Marsa; inspect the planning baseline and public
+  monitoring record; assess what induced-demand research can and cannot infer for these individual junctions.
+why_low_hanging: Official wording and project dates are available; outcome data need to be requested or located.
 tags:
 - Promise-without-baseline
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0 draft)
 data_readiness: Medium
-caveats: IM statements found are from earlier years; locate current wording.
+caveats: The 79% travel-time and emissions reductions are Infrastructure Malta’s reported figures; their underlying
+  survey design, time windows, calculation methods and raw results were not located. Msida traffic benefits remain
+  provisional because the project was still being completed during the review period. No post-project noise dataset
+  was found for either site. The induced-demand literature cited is from US urban road networks and is not a direct
+  estimate for Malta.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - >-
+    Infrastructure Malta, 15 April 2021 completion release: published 79% travel-time, up-to-70% particulate-matter,
+    52% NOx and 50% CO2 reduction claims for Marsa Junction; the release does not link the underlying surveys or data.
+  - >-
+    Infrastructure Malta, 28 October 2024 Msida Creek statement: future-tense claims to reduce delays, emissions and
+    noise; the PM release of 17 December 2025 records the flyover's opening, with the wider project still in progress.
+  - >-
+    ERA planning record for PA/02053/20 and PA/06425/20, including the 2023 Project Description Statement, which
+    records 2019 traffic counts and anticipated benefits, not post-opening outcomes.
+outputs:
+  report_pdf: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
