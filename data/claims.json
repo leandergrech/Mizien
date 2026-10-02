@@ -67,14 +67,14 @@
       "id": "CC-003",
       "title": "Per-capita emissions vs 2030 projection",
       "category": "Climate & Energy",
-      "claim": "Climate Action Authority: per-capita emissions are down 44% since 2005, versus 34% for the EU.",
-      "counter": "The same Commission report projects Malta's emissions 30% above 2005 by 2030, against a 19% cut target: the largest shortfall in the EU. Renewables remain roughly 10-11% of electricity.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Climate Action Authority (13 Nov 2025): emissions per capita have fallen 44% since 2005, well above the EU average of 34%, showing Malta is reducing emissions at household level and across the economy.",
+      "counter": "The same Commission report shows effort-sharing emissions 41% above 2005 in 2024 and projects +42% (existing measures) or +30% (planned measures) by 2030 against a -19% target: the largest gap in the EU in percentage points. Total emissions fell 27% (EU 33%); population grew 41%, explaining about half the per-person fall. Transport +49%, F-gases about six-fold.",
+      "status": "Drafted",
+      "verdict": "Misleading",
       "tags": [
         "Selective metric"
       ],
-      "priority": "Start first",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found"
     },
     {

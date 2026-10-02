@@ -32,7 +32,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 |---|---|---|---|---|
 | CC-001 | Land & Trees | Upper Barrakka concrete | Drafted | Not substantiated |
 | CC-002 | Land & Trees | Comino tree compensation | Not started | - |
-| CC-003 | Climate & Energy | Per-capita emissions vs 2030 projection | Not started | - |
+| CC-003 | Climate & Energy | Per-capita emissions vs 2030 projection | Drafted | Misleading |
 | CC-004 | Waste | 'Strong progress' in waste separation | Not started | - |
 | CC-005 | Water | '92% excellent' bathing water | Not started | - |
 | CC-006 | Nature & Wildlife | Spring hunting derogation | Not started | - |
