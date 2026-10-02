@@ -7,6 +7,7 @@ Exit code is non-zero if any record is invalid.
 import pathlib
 import re
 import sys
+from datetime import date
 
 import yaml
 
@@ -52,6 +53,14 @@ def check(path: pathlib.Path) -> list:
         errs.append("status needs right_of_reply.sent date")
     if d["status"] == "Published" and c.get("wording_status") != "Verbatim found":
         errs.append("cannot publish without a verbatim, archived claim wording")
+    reviewed = d.get("last_reviewed")
+    if reviewed:
+        try:
+            date.fromisoformat(str(reviewed))
+        except ValueError:
+            errs.append("last_reviewed must be a YYYY-MM-DD date")
+        if not (d.get("outputs") or {}).get("report") and not (d.get("outputs") or {}).get("report_pdf"):
+            errs.append("last_reviewed requires a report output")
     return errs
 
 

@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 2 October 2026 (CC-008 report and flyer drafted on branch; outcome series and reply process remain open).*
+*Last updated: 3 October 2026 (Botanical map and evidence-review freshness cues introduced; CC-008 report and flyer drafted on branch; outcome series and reply process remain open).*
 
 ## What the project is
 
@@ -99,6 +99,7 @@ CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commi
 
 ## Notes for the next session
 
+- The homepage map now uses the Botanical style and circular balance wordmark. `last_reviewed` dates anchor one leaf per completed evidence review; leaves move from green to brown over 365 days. Update the date after a fresh evidence review and rebuild site data.
 - CC-008 editable draft: `claims/CC-008/report.md`; generated outputs: `claims/CC-008/report.pdf`, `flyer.pdf`, `flyer.png`. Do not present Marsa's percentages as independently reproduced. No survey file was located. Msida's PDS observations are from 2019 and are not a post-opening counterfactual. The national licensed-fleet figure in the original candidate is not a junction traffic measure and was not used.
 - `archive/manifest.csv` records CC-008 source-fetch results. Manual browser archiving is still needed for the four earlier MaltaToday sources, the Office of the Prime Minister and Times of Malta; ERA blocks automated access and the AEA publisher returned HTTP 403. The three Infrastructure Malta pages were fetched and have Wayback snapshots.
 
