@@ -1,15 +1,27 @@
 id: CC-003
 title: Per-capita emissions vs 2030 projection
 category: Climate & Energy
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Misleading
+verdict_confidence: High
 claim:
-  text: 'Climate Action Authority: per-capita emissions are down 44% since 2005, versus 34% for the EU.'
+  text: 'Climate Action Authority (13 Nov 2025): emissions per capita have fallen 44% since 2005, well
+    above the EU average of 34%, showing Malta is reducing emissions at household level and across the
+    economy.'
   speaker: Climate Action Authority; Ministry for the Environment
-  date: 2025-11
+  date: '2025-11-13'
   wording_status: Verbatim found
   sources:
+  - title: Malta strengthens its contribution toward the EU's climate goals
+    publisher: Climate Action Authority
+    date: 13 Nov 2025
+    url: https://climateaction.gov.mt/press/malta-strengthens-its-contribution-toward-the-eus-climate-goals/
+    note: The claim. Read in full from Wayback copy of 15 Apr 2026 (live site blocks automated access).
+  - title: Climate Action Progress Report 2025, Commission Staff Working Document
+    publisher: European Commission
+    date: Nov 2025
+    url: https://climate.ec.europa.eu/document/download/35f83a2d-f77d-4895-b616-d579069b23d3_en?filename=capr2025_swd_en.pdf
+    note: 'Primary evidence: ESR table p. 115, AEA balance p. 126.'
   - title: Malta set to increase emissions as EU cuts carbon output (citing EC 2025 Climate Action Progress
       Report)
     publisher: Italpress / MNA
@@ -23,23 +35,37 @@ claim:
     publisher: Climate Action Authority
     date: Jun 2026
     url: https://climateaction.gov.mt/wp-content/uploads/2026/06/FACTS-EMISSIONS-JUNE-26.pdf
+    note: 'Not read: blocked by the gov.mt network and no archived copy. Archive by hand.'
   - title: 'Renewable Energy 2026: Malta'
     publisher: Chambers Practice Guides
     date: 11 Sep 2026
     url: https://practiceguides.chambers.com/practice-guides/renewable-energy-2026/malta
-counter_evidence: 'The same Commission report projects Malta''s emissions 30% above 2005 by 2030, against
-  a 19% cut target: the largest shortfall in the EU. Renewables remain roughly 10-11% of electricity.'
-tests: Eurostat and EEA inventories; per-capita versus absolute; population growth; renewables data.
-why_low_hanging: Both numbers come from one report.
+  quote: Emissions per capita have fallen by 44% since 2005, well above the EU average of 34%.
+counter_evidence: 'The same Commission report shows effort-sharing emissions 41% above 2005 in 2024 and
+  projects +42% (existing measures) or +30% (planned measures) by 2030 against a -19% target: the largest
+  gap in the EU in percentage points. Total emissions fell 27% (EU 33%); population grew 41%, explaining
+  about half the per-person fall. Transport +49%, F-gases about six-fold.'
+tests: Eurostat env_air_gge and nama_10_pe; Commission CAPR 2025 SWD; Eurostat nrg_ind_ren.
+why_low_hanging: 'Done: Claim Check 003 report and flyer.'
 tags:
 - Selective metric
-tags_provisional: true
-priority: Start first
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: High
-caveats: ''
+caveats: Draft pending right of reply (Climate Action Authority; Environment Ministry). Misleading must
+  not be published before the reply deadline passes. Figures accurate; verdict rests on omission of the
+  2030 projection from the report the authority cites.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- European Commission, Climate Action Progress Report 2025 SWD, p. 115 (Malta ESR +41% in 2024; 2030 projections
+  +42%/+30% vs -19% target) and p. 126 (AEA balance -2.1 Mt by 2030)
+- European Commission, CAPR 2025 chapter 3 web page (Germany, Ireland and Malta largest projected gaps)
+- Eurostat env_air_gge and nama_10_pe, retrieved 2 Oct 2026 (data/cc-003/)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
