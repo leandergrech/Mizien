@@ -1,6 +1,6 @@
 # CC-008: Flyovers and congestion
 
-**Status:** literature not yet collected.
+**Status (2 October 2026):** primary wording located; literature and outcome evidence reviewed; report and flyer drafted. Marsa's headline percentages are attributed to Infrastructure Malta because the underlying surveys and calculations were not found. Msida's statement was prospective and the wider project was still underway at the review cut-off. See `notes.md` for evidence limits and `references.bib` for the checked peer-reviewed citation.
 
 ## To collect
 

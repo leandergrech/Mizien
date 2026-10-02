@@ -212,21 +212,25 @@
       "id": "CC-008",
       "title": "Flyovers and congestion",
       "category": "Transport",
-      "claim": "Infrastructure Malta says junction flyovers (Msida, Marsa) cut congestion, noise and air pollution.",
-      "counter": "Msida involves removal of 430 trees and shrubs (313 replanted). The licensed fleet grew by 3,086 in Q2 2026, about 34 a day.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Infrastructure Malta says the Msida Creek flyover will reduce delays, emissions and noise, and that the Marsa Junction Project has reduced travel time and air pollution.",
+      "counter": "The Msida Creek flyover only entered vehicle use in December 2025, and the wider project remained under construction in 2026. The public Marsa release does not link the surveys behind its percentage claims; there is no project-level before-and-after series here for traffic, ambient air pollution, or noise.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [
         "Promise-without-baseline"
       ],
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Infrastructure Malta; Transport Malta; ERA",
-      "date": "",
-      "quote": "",
+      "priority": "Done (v1.0 draft)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Infrastructure Malta",
+      "date": "2024-10-28",
+      "quote": "Msida has long been a traffic bottleneck, with congestion impacting air quality, noise levels, and overall accessibility. A cornerstone of this project is the construction of a new flyover, which will be a critical move to reduce delays, emissions, and noise pollution.",
       "version": null,
-      "outputs": {},
+      "outputs": {
+        "report_pdf": "claim-files/CC-008/report.pdf",
+        "flyer_pdf": "claim-files/CC-008/flyer.pdf",
+        "flyer_png": "claim-files/CC-008/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-008/claim.yml"
     },
     {

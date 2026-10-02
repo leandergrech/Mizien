@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 2 October 2026 (Botanical map and evidence-review freshness cues introduced).*
+*Last updated: 3 October 2026 (Botanical map and evidence-review freshness cues introduced; CC-008 report and flyer drafted on branch; outcome series and reply process remain open).*
 
 ## What the project is
 
@@ -48,7 +48,9 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 | CC-005 Bathing water | Styled report and flyer drafted in the shared CC-001 design. The Commission's exact 92% statement matches the EEA 2023 result (80/87); latest 2025 season is 88.5%. Balluta Bay closure and the CJEU wastewater-treatment case are contextual and do not refute the dated statistic. Draft verdict: Supported (high). Right of reply not sought, per maintainer direction. Viewer metadata uses the same Report / Flyer PDF / Flyer image actions as completed checks. |
 | CC-011 Manifesto pledges | Report v1.0 and flyer drafted. Verdict: Not substantiated (moderate) for both. Labour's pledge is "open or green" space (not "green space"): 99.9% already within reach on a broad reading, 55-68% for parks of at least 0.5 ha. PN's is a plan for a Net-Zero Gozo by 2040 with afforestation as one of several measures (news said "through afforestation"); no Gozo inventory; afforestation alone would need 1.5-8.5x Gozo's area. Pending right of reply. |
 | CC-006 Spring hunting | Report and flyer v1.0 integrated into main. The report tests both Article 9 conditions. Quota-to-statutory-benchmark ratios are 99.3% for Quail and 59.8% for Turtle-dove. Draft verdict: Not substantiated (moderate): the statutory arithmetic is within the benchmark, but the 2026 enforcement outcome and ecological impact are not established. The 30 March 2026 Ornis minutes were not listed in the WBRU archive; latest season outcome report listed was for 2025. Right of reply remains for the maintainer. |
-| CC-007 to CC-010 | Candidates only. |
+| CC-007 | Air | Local draft in the original checkout: report/flyer and source transcription drafted; Saint Paul's Bay 2020–21 readings and ERA validation series remain incomplete. Not committed or pushed. |
+| CC-008 | Transport | Report v1.0 and flyer drafted on `codex/cc-008-flyovers`. Verdict: Not substantiated (moderate). Marsa's 2021 travel-time and emissions percentages are agency-reported; the underlying survey/calculation was not found. Msida wording was prospective; the flyover entered use in December 2025 while the broader project continued. No local before/after noise series located. Pending maintainer right of reply. |
+| CC-009 to CC-010 | Candidates only. |
 
 ## Outstanding
 
@@ -72,12 +74,13 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 - [ ] CC-004: verify COM(2023) 304 early-warning report directly (cited second-hand).
 - [ ] Send CC-001 draft to Ambjent Malta and Fondazzjoni Wirt Artna; record dates in `claims/CC-001/claim.yml`.
 - [ ] CC-006: locate and archive the 30 March 2026 Ornis Committee minutes; obtain the 2026 WBRU season outcome report, final 2019–2024 Article 12 data, and FKNK survey methods/results. Right of reply remains for the maintainer.
-- [ ] Locate verbatim primary-source wording for CC-007 to CC-010 before any report.
+- [ ] CC-007: obtain the two missing St Paul's Bay 2020–21 values and ERA's validated series with coverage/quality notes; full-text verification of the Newsbook report remains unavailable. Right of reply is for the maintainer.
+- [x] CC-008: locate primary wording for Msida and Marsa; draft report/flyer and add evidence notes. Remaining: obtain the Marsa surveys/calculations and comparable local traffic, air and noise series; right of reply remains for the maintainer. Four earlier MaltaToday sources plus the OPM and Times of Malta pages are robots-disallowed and need browser archiving; ERA's source page also blocks automated access. The AEA publisher returned HTTP 403 to the archiver.
 - [x] CC-005: locate Commission wording; compare EEA bathing-water seasons 2023–2025; confirm Balluta Bay warning from the EHD primary report; distinguish CJEU wastewater ruling from bathing-water classification.
 - [x] CC-005: add sources to `archive/manifest.csv`. Commission page and CJEU judgment have archived snapshots; EEA 2025 is fetched and hashed. EEA 2024 and the EHD Balluta report are robots-disallowed with no snapshot; archive manually if needed. News leads are robots-disallowed but existing snapshots are recorded.
 - [ ] CC-005: review drafted verdict, styled report and flyer; reply process remains for maintainer.
 - [ ] Obtain open-access full text for the CC-001 A and B studies; fill gaps noted in `literature/CC-001/notes.md`.
-- [ ] Collect literature for CC-002 and CC-007 to CC-010 (each folder lists what to collect).
+- [ ] Collect literature for CC-002 and CC-009 to CC-010 (each folder lists what to collect).
 - [ ] Verify and fix `literature/CC-001/references.bib` (first task 2 in CLAUDE.md; not done this session).
 - [ ] Check the name and a domain are free; enable GitHub Pages (main, /docs).
 - [ ] CC-002 (Comino) is before a planning tribunal: keep to the science.
@@ -97,6 +100,8 @@ CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commi
 ## Notes for the next session
 
 - The homepage map now uses the Botanical style and circular balance wordmark. `last_reviewed` dates anchor one leaf per completed evidence review; leaves move from green to brown over 365 days. Update the date after a fresh evidence review and rebuild site data.
+- CC-008 editable draft: `claims/CC-008/report.md`; generated outputs: `claims/CC-008/report.pdf`, `flyer.pdf`, `flyer.png`. Do not present Marsa's percentages as independently reproduced. No survey file was located. Msida's PDS observations are from 2019 and are not a post-opening counterfactual. The national licensed-fleet figure in the original candidate is not a junction traffic measure and was not used.
+- `archive/manifest.csv` records CC-008 source-fetch results. Manual browser archiving is still needed for the four earlier MaltaToday sources, the Office of the Prime Minister and Times of Malta; ERA blocks automated access and the AEA publisher returned HTTP 403. The three Infrastructure Malta pages were fetched and have Wayback snapshots.
 
 - Eurostat API (`ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/...`) works from scripts; see
   `tools/cc-003-report/calc.py` and the helper pattern in the CC-003/004 data files.
