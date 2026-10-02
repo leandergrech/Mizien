@@ -64,22 +64,26 @@
       "id": "CC-002",
       "title": "Comino tree compensation",
       "category": "Land & Trees",
-      "claim": "ERA (11 Aug 2026): 54 protected trees will be removed, with 10 planted for each (540). Of 678 trees and shrubs removed, 92% are unprotected; 348 more will be transplanted.",
-      "counter": "An NGO (Moviment Graffitti) says about 800 trees are at stake. A planning tribunal has temporarily suspended the uprooting (late Sept 2026).",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "ERA (11 Aug 2026): 54 protected trees will be removed, with 10 new indigenous trees planted for each (540). Of 678 trees and shrubs to be removed, 92% are classified as non-protected; 348 more are to be transplanted.",
+      "counter": "The published figures describe proposed interventions and planting conditions, not completed work or measured ecological replacement. Studies show that transplant outcomes vary with species, source, site suitability and aftercare; tree counts alone do not establish survival, habitat recovery or equivalent ecological function.",
+      "status": "Drafted",
+      "verdict": "Largely supported",
       "tags": [
         "Input-as-outcome",
         "Selective metric"
       ],
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
-      "speaker": "ERA; HV Hospitality (Hili Group); Moviment Graffitti",
+      "confidence": "Moderate",
+      "speaker": "Environment and Resources Authority (ERA)",
       "date": "2026-08-11",
-      "quote": "",
+      "quote": "“54 protected trees will be removed ... 540 new indigenous trees”",
       "version": null,
-      "outputs": {},
+      "outputs": {
+        "report_pdf": "claim-files/CC-002/report.pdf",
+        "flyer_pdf": "claim-files/CC-002/flyer.pdf",
+        "flyer_png": "claim-files/CC-002/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-002/claim.yml"
     },
     {
