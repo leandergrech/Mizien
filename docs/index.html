@@ -8,57 +8,134 @@
 <style>
   :root {
     --bg: #0e2a1f; --bg2: #14452f; --ink: #eef3ef; --muted: #a9c2b1; --sage: #7fa88b;
-    --amber: #e3a72f; --card: #f6f4ee; --slate: #2b3a42; --orange: #d9772b;
+    --amber: #e3a72f; --card: #f6f4ee; --slate: #2b3a42; --orange: #d9772b; --line: rgba(127,168,139,.22);
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { margin: 0; background: var(--bg); color: var(--ink); overflow-x: hidden;
          font: 16px/1.55 "Liberation Sans", Arial, Helvetica, sans-serif; }
   a { color: var(--amber); }
-  header.top { padding: 28px 24px 8px; max-width: 1100px; margin: 0 auto; }
+  header.top { padding: 26px 28px 6px; max-width: 1400px; margin: 0 auto; display: flex; align-items: flex-end;
+               justify-content: space-between; gap: 16px; flex-wrap: wrap; }
   .brand { display: flex; align-items: center; gap: 13px; flex-wrap: wrap; }
   .brand-mark { width: 46px; height: 46px; flex: none; filter: drop-shadow(0 0 8px rgba(227,167,47,.22)); }
   .brand h1 { margin: 0; font: 700 clamp(34px, 6vw, 56px)/1.05 "Liberation Serif", Georgia, serif; letter-spacing: .5px; }
-  .brand .dot { display: inline-block; width: 38px; height: 4px; background: var(--amber); margin-bottom: 14px; }
   .tag { color: var(--muted); font: italic 18px "Liberation Serif", Georgia, serif; margin: 6px 0 0; }
   .meaning { color: var(--sage); font-size: 13px; margin: 4px 0 0; }
-  #stage { position: relative; max-width: 1100px; margin: 14px auto 0; height: min(72vh, 640px); min-height: 420px;
-           border: 1px solid #1f5a40; border-radius: 14px; overflow: hidden;
-           background: radial-gradient(ellipse at 50% 40%, #174c35 0%, #0e2a1f 70%); }
+  .stats { display: flex; gap: 22px; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+  .stats b { display: block; color: var(--ink); font: 700 26px/1.1 "Liberation Serif", Georgia, serif; letter-spacing: 0; text-transform: none; }
+
+  /* ---------------------------------------------------------------- map, full width */
+  #mapwrap { position: relative; margin-top: 10px;
+    background: radial-gradient(ellipse 70% 80% at 58% 46%, #1d5a3f 0%, #133d2b 38%, #0b2419 78%);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  #mapwrap::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+    background: radial-gradient(circle at 15% 85%, rgba(227,167,47,.06), transparent 40%),
+                radial-gradient(circle at 90% 10%, rgba(86,180,233,.06), transparent 35%); }
+  #stage { position: relative; width: 100%; height: clamp(560px, calc(100vh - 120px), 1040px); overflow: hidden; }
   canvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
   canvas.dragging { cursor: grabbing; }
-  #hint { position: absolute; left: 14px; bottom: 12px; font-size: 12px; color: var(--muted); pointer-events: none; }
-  .mobile-hint { display: none; }
-  #controls { position: absolute; right: 12px; top: 12px; display: flex; gap: 6px; z-index: 2;
-              padding: 4px; border: 1px solid rgba(127,168,139,.28); border-radius: 12px;
-              background: rgba(8,32,22,.82); backdrop-filter: blur(10px); }
-  button.ctl { background: rgba(14,42,31,.8); color: var(--ink); border: 1px solid #2b6b4c; border-radius: 8px;
-               min-width: 38px; min-height: 38px; padding: 6px 10px; font: 12px Arial, sans-serif; cursor: pointer; }
+  .tx { text-shadow: 0 1px 3px rgba(0,0,0,.65); }
+  .kicker { font: 700 10.5px Arial, sans-serif; letter-spacing: .14em; color: var(--amber); margin: 0 0 7px; }
+
+  /* left column: part of the background, no box */
+  #legend { position: absolute; left: 26px; top: 22px; bottom: 76px; width: 236px; z-index: 2; display: flex;
+            flex-direction: column; gap: 16px; pointer-events: none; }
+  #legend > * { pointer-events: auto; }
+  #groupby { display: flex; flex-wrap: wrap; gap: 6px; }
+  #groupby button { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px;
+    border: 1px solid rgba(207,226,212,.28); background: rgba(8,30,21,.35); color: var(--ink);
+    font: 600 12px Arial, sans-serif; cursor: pointer; transition: all .2s; }
+  #groupby button svg { width: 14px; height: 14px; }
+  #groupby button:hover { border-color: var(--amber); }
+  #groupby button[aria-pressed="true"] { background: var(--amber); border-color: var(--amber); color: #13301f; }
+  #groupby button[aria-pressed="true"] svg path { stroke: #13301f; }
+  #groups { display: flex; flex-direction: column; gap: 1px; }
+  #groups button { display: flex; align-items: center; gap: 9px; width: 100%; padding: 4px 6px 4px 0; border: 0;
+    background: none; color: var(--ink); font: 13px Arial, sans-serif; text-align: left; cursor: pointer; border-radius: 6px; }
+  #groups button:hover { background: rgba(127,168,139,.12); }
+  #groups .sw { width: 22px; height: 22px; border-radius: 50%; flex: none; display: inline-flex; align-items: center;
+    justify-content: center; box-shadow: 0 0 10px rgba(0,0,0,.35); }
+  #groups .sw svg { width: 13px; height: 13px; }
+  #groups .n { margin-left: auto; color: var(--muted); font-size: 11.5px; }
+  #groupnote { color: var(--muted); font-size: 12px; margin: 6px 0 0; max-width: 230px; }
+  .keyrow { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 11.5px; color: #d4e4d9; }
+  .keyrow span { display: inline-flex; align-items: center; gap: 6px; }
+  .vdot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+  .vdot.open { border: 1.5px dashed rgba(255,255,255,.75); }
+
+  /* bottom bar: line filters */
+  #linkbar { position: absolute; left: 26px; right: 200px; bottom: 14px; z-index: 2; display: flex; align-items: center;
+             gap: 6px; flex-wrap: wrap; }
+  #linkbar .kicker { margin: 0 6px 0 0; }
+  #linkbar button { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px;
+    border: 1px solid rgba(207,226,212,.2); background: rgba(8,30,21,.45); color: var(--ink);
+    font: 11.5px Arial, sans-serif; cursor: pointer; transition: opacity .2s, border-color .2s; }
+  #linkbar button:hover { border-color: var(--amber); }
+  #linkbar button.off { opacity: .42; text-decoration: line-through; }
+  #linkbar button .ln { width: 14px; height: 0; border-top: 2.5px solid; }
+  #linkbar button.mini { padding: 5px 9px; color: var(--muted); }
+  #linkbar .sep { width: 1px; height: 20px; background: var(--line); margin: 0 4px; }
+
+  #controls { position: absolute; right: 22px; top: 18px; display: flex; gap: 4px; z-index: 3; }
+  button.ctl { background: rgba(8,30,21,.45); color: var(--ink); border: 1px solid rgba(207,226,212,.22); border-radius: 999px;
+               min-width: 36px; min-height: 36px; padding: 6px 12px; font: 12px Arial, sans-serif; cursor: pointer; }
   button.ctl:hover { border-color: var(--amber); }
-  button.ctl:focus-visible, #legend button:focus-visible, #panel button:focus-visible, #panel a:focus-visible {
-    outline: 3px solid var(--amber); outline-offset: 2px; }
-  #legend { position: absolute; left: 12px; top: 12px; font-size: 12px; background: rgba(14,42,31,.82);
-            border: 1px solid #2b6b4c; border-radius: 10px; padding: 8px 10px; max-width: 230px; }
-  #legend h4 { margin: 0 0 4px; font-size: 11px; letter-spacing: .08em; color: var(--amber); }
-  #legend .legend-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: sticky; top: -8px;
-    margin: -8px -10px 6px; padding: 8px 10px 4px; background: #123a29; z-index: 1; }
-  #legend .legend-close { display: none; border: 1px solid #47745a; border-radius: 8px; padding: 6px 10px;
-    background: #1c5238; color: var(--ink); font: 700 12px Arial, sans-serif; }
-  #legend .row { display: flex; align-items: center; gap: 7px; margin: 2px 0; }
-  #legend .sw { width: 11px; height: 11px; border-radius: 50%; flex: none; }
-  #legend .ln { width: 18px; height: 0; border-top: 2px solid; flex: none; }
-  #panel { position: absolute; right: 12px; bottom: 12px; width: min(380px, calc(100% - 24px)); max-height: 66%;
-           overflow: auto; background: var(--card); color: var(--slate); border-radius: 12px; padding: 14px 16px;
-           box-shadow: 0 8px 30px rgba(0,0,0,.4); display: none; }
-  #panel h3 { margin: 0 0 2px; font: 700 17px "Liberation Serif", Georgia, serif; color: #14452f; }
+  button:focus-visible, #panel a:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+  #hint { position: absolute; right: 24px; bottom: 20px; font-size: 11.5px; color: var(--muted); pointer-events: none; z-index: 1; }
+  .mobile-hint { display: none; }
+  #modeTitle { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); z-index: 1; pointer-events: none;
+    text-align: center; transition: opacity .4s; }
+  #modeTitle .t { font: 700 22px "Liberation Serif", Georgia, serif; color: var(--ink); }
+  #modeTitle .s { font-size: 12.5px; color: var(--muted); }
+
+  #tip { position: absolute; display: none; pointer-events: none; max-width: 300px; padding: 6px 10px; border-radius: 8px; z-index: 5;
+    background: rgba(246,244,238,.97); color: #14452f; font: 600 12px Arial, sans-serif; box-shadow: 0 6px 18px rgba(0,0,0,.4); }
+
+  /* detail panel */
+  #panel { position: absolute; right: 22px; top: 66px; bottom: 66px; width: min(400px, calc(100% - 44px)); z-index: 4;
+           overflow: auto; background: var(--card); color: var(--slate); border-radius: 14px; padding: 16px 18px;
+           box-shadow: 0 18px 50px rgba(0,0,0,.5); display: none; border-top: 5px solid var(--amber); }
+  #panel.fit { bottom: auto; max-height: calc(100% - 132px); }
+  #panel h3 { margin: 0 0 2px; font: 700 18px "Liberation Serif", Georgia, serif; color: #14452f; padding-right: 30px; }
   #panel .id { font: 700 11px Arial; letter-spacing: .08em; color: #8a9399; }
   #panel p { margin: 8px 0; font-size: 14px; }
-  #panel .label { font: 700 10px Arial; letter-spacing: .1em; color: #8a9399; margin-top: 10px; }
+  #panel .label { font: 700 10px Arial; letter-spacing: .1em; color: #8a9399; margin-top: 12px; }
   .chip { display: inline-block; font: 700 11px Arial; padding: 3px 9px; border-radius: 999px; color: #fff; margin: 2px 4px 2px 0; }
   .chip.soft { background: #e6efe8; color: #14452f; }
-  #panel button.link { background: none; border: 0; padding: 0; color: #3c6e8f; text-decoration: underline; cursor: pointer; font: 13px Arial; margin-right: 10px; }
-  #panel .x { position: absolute; right: 10px; top: 8px; background: none; border: 0; font-size: 20px; color: #8a9399; cursor: pointer; }
-  #panel .x { min-width: 40px; min-height: 40px; }
+  #panel .x { position: absolute; right: 8px; top: 6px; min-width: 40px; min-height: 40px; background: none; border: 0;
+    font-size: 22px; color: #8a9399; cursor: pointer; }
+  #panel blockquote { margin: 8px 0; padding: 6px 10px; border-left: 3px solid #e3a72f; background: #fbf1d9;
+    font: italic 14px/1.45 "Liberation Serif", Georgia, serif; color: #14452f; }
+  #panel p.small { font-size: 12px; color: #6b767c; margin: 4px 0; }
+  #panel .links { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+  #panel .lrow { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  #panel button.link { display: inline-flex; align-items: center; gap: 6px; text-align: left; background: none; border: 0;
+    padding: 0; color: #3c6e8f; cursor: pointer; font: 13px Arial; margin: 0; }
+  #panel button.link:hover { text-decoration: underline; }
+  #panel .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  #panel button.tchip { background: #fff; border: 2px solid; border-radius: 999px; padding: 1px 8px; font: 700 10px Arial; color: #2b3a42; cursor: pointer; }
+  #panel .acts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+  #panel .btn { display: inline-block; background: #14452f; color: #fff; border: 1px solid #14452f; border-radius: 8px;
+    padding: 6px 10px; font: 700 12px Arial; text-decoration: none; cursor: pointer; }
+  #panel .btn.ghost { background: #fff; color: #14452f; }
+  #panel .btn:hover { border-color: #e3a72f; }
+  #panel .file-action { display: inline-flex; gap: 4px; align-items: stretch; }
+  #panel .file-action .btn { border-radius: 8px 0 0 8px; }
+  #panel .file-action .btn + .btn { border-radius: 0 8px 8px 0; margin-left: -5px; }
+
+  #doc-viewer { width: min(1100px, calc(100vw - 32px)); height: min(88vh, 900px); max-width: none; max-height: none;
+    padding: 0; border: 1px solid #7fa88b; border-radius: 14px; color: #2b3a42; background: #f6f4ee;
+    box-shadow: 0 20px 70px rgba(0,0,0,.6); }
+  #doc-viewer::backdrop { background: rgba(4,18,12,.82); backdrop-filter: blur(3px); }
+  #doc-viewer .viewer-head { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    min-height: 54px; padding: 8px 12px 8px 18px; border-bottom: 1px solid #d9e2db; }
+  #doc-viewer h2 { margin: 0; padding: 0; border: 0; font: 700 16px "Liberation Serif", Georgia, serif; color: #14452f; }
+  #doc-viewer h2::after { display: none; }
+  #doc-viewer .viewer-close { border: 0; border-radius: 8px; padding: 7px 11px; background: #14452f; color: white; cursor: pointer; }
+  #doc-viewer iframe { display: block; width: 100%; height: calc(100% - 54px); border: 0; background: #fff; }
+  #doc-viewer img { display: block; max-width: 100%; max-height: calc(100% - 54px); margin: 0 auto; object-fit: contain; }
+
   main { max-width: 1100px; margin: 0 auto; padding: 8px 24px 60px; }
   section { margin-top: 38px; }
   h2 { font: 700 24px "Liberation Serif", Georgia, serif; border-bottom: 1px solid #1f5a40; padding-bottom: 6px; }
@@ -72,147 +149,72 @@
   td { padding: 9px 8px; border-bottom: 1px solid #1a4a35; vertical-align: top; }
   tr.click { cursor: pointer; }
   tr.click:hover td { background: #123826; }
+  td .chip { margin: 0; }
+  td .muted { color: var(--muted); font-size: 12px; }
   .scale { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
   .scale span { flex: 1 1 140px; padding: 10px 8px; border-radius: 8px; text-align: center; font: 700 11px Arial; color: #fff; }
   footer { max-width: 1100px; margin: 0 auto; padding: 24px; color: var(--muted); font-size: 13px; border-top: 1px solid #1f5a40; }
   noscript { display: block; padding: 20px; color: var(--amber); }
-  .sr { position: absolute; left: -9999px; }
-  #lgbtn { display: none; }
-  /* map v2: icons, clickable legend, richer panels */
-  #legend { max-height: calc(100% - 24px); overflow: auto; }
-  #legend button.row { display: flex; align-items: center; gap: 8px; width: 100%; margin: 1px 0; padding: 3px 4px;
-    background: none; border: 0; border-radius: 6px; color: var(--ink); font: 12px Arial, sans-serif; text-align: left; cursor: pointer; }
-  #legend button.row:hover, #legend button.row:focus-visible { background: rgba(127,168,139,.18); outline: none; }
-  #legend .sw { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; }
-  #legend .sw svg { width: 12px; height: 12px; }
-  #legend .vrow { display: flex; align-items: center; gap: 8px; padding: 1px 4px; font-size: 11.5px; color: #d4e4d9; }
-  #legend .vdot { width: 12px; height: 12px; border-radius: 50%; border: 3px solid; background: #2b6b4c; }
-  #legend .vdot.open { border: 1.5px dashed rgba(255,255,255,.6); }
-  #tip { position: absolute; display: none; pointer-events: none; max-width: 280px; padding: 5px 9px; border-radius: 7px;
-    background: rgba(246,244,238,.96); color: #14452f; font: 600 12px Arial, sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,.35); }
-  #panel { border-top: 5px solid var(--amber); }
-  #panel blockquote { margin: 8px 0; padding: 6px 10px; border-left: 3px solid #e3a72f; background: #fbf1d9;
-    font: italic 14px/1.45 "Liberation Serif", Georgia, serif; color: #14452f; }
-  #panel p.small { font-size: 12px; color: #6b767c; margin: 4px 0; }
-  #panel .links { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
-  #panel .lrow { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-  #panel button.link { display: inline-flex; align-items: center; gap: 6px; text-align: left; text-decoration: none; margin: 0; }
-  #panel button.link:hover { text-decoration: underline; }
-  #panel .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
-  #panel button.tchip { background: #fff; border: 2px solid; border-radius: 999px; padding: 1px 8px; font: 700 10px Arial; color: #2b3a42; cursor: pointer; }
-  #panel .acts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
-  #panel .btn { display: inline-block; background: #14452f; color: #fff; border: 1px solid #14452f; border-radius: 8px;
-    padding: 6px 10px; font: 700 12px Arial; text-decoration: none; cursor: pointer; }
-  #panel .btn.ghost { background: #fff; color: #14452f; }
-  #panel .btn:hover { border-color: #e3a72f; }
-  #panel .file-action { display: inline-flex; gap: 4px; align-items: stretch; }
-  #panel .file-action .btn { border-radius: 8px 0 0 8px; }
-  #panel .file-action .btn + .btn { border-radius: 0 8px 8px 0; margin-left: -5px; }
-  #doc-viewer { width: min(1100px, calc(100vw - 32px)); height: min(88vh, 900px); max-width: none; max-height: none;
-    padding: 0; border: 1px solid #7fa88b; border-radius: 14px; color: #2b3a42; background: #f6f4ee;
-    box-shadow: 0 20px 70px rgba(0,0,0,.6); }
-  #doc-viewer::backdrop { background: rgba(4,18,12,.82); backdrop-filter: blur(3px); }
-  #doc-viewer .viewer-head { display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    min-height: 54px; padding: 8px 12px 8px 18px; border-bottom: 1px solid #d9e2db; }
-  #doc-viewer h2 { margin: 0; padding: 0; border: 0; font: 700 16px "Liberation Serif", Georgia, serif; color: #14452f; }
-  #doc-viewer h2::after { display: none; }
-  #doc-viewer .viewer-close { border: 0; border-radius: 8px; padding: 7px 11px; background: #14452f; color: white; cursor: pointer; }
-  #doc-viewer iframe { display: block; width: 100%; height: calc(100% - 54px); border: 0; background: #fff; }
-  #doc-viewer img { display: block; max-width: 100%; max-height: calc(100% - 54px); margin: 0 auto; object-fit: contain; }
-  td .chip { margin: 0; }
-  td .muted { color: var(--muted); font-size: 12px; }
-  @media (max-width: 700px) {
-    header.top { padding: max(16px, env(safe-area-inset-top)) 18px 4px; text-align: center; }
+
+  /* ---------------------------------------------------------------- narrow screens: key flows below the map */
+  @media (max-width: 900px) {
+    header.top { padding: max(16px, env(safe-area-inset-top)) 18px 4px; justify-content: center; text-align: center; }
     .brand { justify-content: center; gap: 10px; }
     .brand h1 { font-size: clamp(36px, 10vw, 48px); }
-    .brand .dot { width: 28px; margin-bottom: 11px; }
-    .tag { font-size: 16px; margin-top: 5px; }
-    .meaning { margin-top: 1px; font-size: 12px; }
-    #stage { width: auto; margin: 8px 10px 0; height: min(70vh, 640px); height: clamp(460px, 70svh, 640px); min-height: 460px; border-radius: 18px; }
-    #controls { left: 50%; right: auto; top: 10px; transform: translateX(-50%); max-width: calc(100% - 16px);
-      justify-content: center; gap: 4px; padding: 4px; border-radius: 13px; }
-    button.ctl { min-width: 42px; min-height: 42px; padding: 7px 9px; border-radius: 9px; font-size: 12px; }
-    #lgbtn { display: inline-block; }
-    #legend { display: none; top: auto; bottom: max(8px, env(safe-area-inset-bottom)); left: 8px; right: 8px;
-      width: auto; max-width: none; max-height: min(55%, 390px); padding: 10px 12px 12px; border-radius: 16px;
-      background: rgba(10,39,27,.97); box-shadow: 0 12px 36px rgba(0,0,0,.45); }
-    #legend.open { display: block; z-index: 7; }
-    #legend .legend-head { margin: -10px -12px 8px; padding: 10px 12px 7px; }
-    #legend .legend-close { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; }
-    #legend button.row { min-height: 42px; }
-    #legend .vrow { min-height: 26px; }
-    #panel { left: 8px; right: 8px; bottom: max(8px, env(safe-area-inset-bottom)); width: auto; max-height: 58%;
-      padding: 15px 16px 18px; border-radius: 17px; box-shadow: 0 14px 40px rgba(0,0,0,.5); }
-    #panel h3 { padding-right: 34px; font-size: 19px; }
-    #panel p { font-size: 15px; line-height: 1.5; }
-    #panel .btn { min-height: 42px; align-items: center; padding: 9px 12px; }
-    #panel button.link, #panel button.tchip { min-height: 42px; }
-    #panel .acts { gap: 8px; }
-    #panel .file-action { min-height: 42px; }
-    #panel .file-action .btn + .btn { margin-left: -8px; }
+    .stats { display: none; }
+    #stage { height: clamp(440px, 68svh, 640px); }
+    #legend, #linkbar { position: static; width: auto; padding: 14px 18px 4px; }
+    #legend { gap: 14px; }
+    #groups { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px; }
+    #linkbar { padding-bottom: 18px; }
+    #controls { right: 10px; top: 10px; }
+    #modeTitle { top: 14px; left: 18px; transform: none; text-align: left; }
+    #modeTitle .t { font-size: 18px; }
+    #modeTitle .s { display: none; }
+    #panel { left: 8px; right: 8px; top: auto; bottom: max(8px, env(safe-area-inset-bottom)); width: auto; max-height: 62%; }
+    #panel.fit { max-height: 62%; }
     .desktop-hint { display: none; }
     .mobile-hint { display: inline; }
-    #hint { left: 12px; right: 12px; bottom: 12px; text-align: center; font-size: 11px;
-      padding: 5px 8px; border-radius: 999px; width: fit-content; margin: auto; background: rgba(8,32,22,.72); }
+    #hint { left: 12px; right: 12px; bottom: 10px; text-align: center; }
     main { padding: 10px 18px 48px; }
-    section { margin-top: 30px; }
-    h2 { font-size: 22px; }
     .grid { grid-template-columns: 1fr; gap: 10px; }
-    .card { padding: 13px 14px; }
-    .scale { gap: 5px; }
-    .scale span { flex: 1 1 44%; min-height: 42px; display: grid; place-items: center; font-size: 10px; }
-    table { font-size: 13px; }
     #claims th:nth-child(2), #claims td:nth-child(2) { display: none; }
-    #claims th, #claims td { padding: 8px 5px; }
-    #claims td:first-child { white-space: nowrap; }
-    footer { padding: 22px 18px max(24px, env(safe-area-inset-bottom)); }
   }
-  @media (max-width: 360px) {
-    #controls { gap: 2px; }
-    button.ctl { min-width: 39px; padding-inline: 7px; }
-    #panel .file-action .btn { padding-inline: 8px; font-size: 11px; }
-  }
-  @media (max-width: 700px) and (max-height: 500px) {
-    #stage { height: max(270px, calc(100svh - 150px)); min-height: 270px; }
-    header.top { padding-top: max(10px, env(safe-area-inset-top)); }
-    .brand h1 { font-size: 34px; }
-    .tag { margin-top: 2px; font-size: 14px; }
-    .meaning { display: none; }
-  }
+  @media (max-width: 480px) { #groups { grid-template-columns: 1fr; } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-  /* Botanical is the live map style; the other presets are retained in the local design preview. */
-  html[data-map-theme="botanical"] #stage { background: radial-gradient(ellipse at 40% 42%, #1b553b 0%, #0e2a1f 72%); }
-  html[data-map-theme="botanical"] #stage::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.13; background:radial-gradient(ellipse at 12% 20%, transparent 0 28px, #7fa88b 29px 30px, transparent 31px 62px), radial-gradient(ellipse at 90% 75%, transparent 0 36px, #7fa88b 37px 38px, transparent 39px 72px); }
-  html[data-map-theme="field-atlas"] #stage { background-color:#0e2a1f; background-image:linear-gradient(rgba(207,226,212,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(207,226,212,.055) 1px,transparent 1px),radial-gradient(ellipse at 50% 40%,#174c35 0%,#0e2a1f 70%); background-size:32px 32px,32px 32px,auto; }
-  html[data-map-theme="field-atlas"] #stage { border-radius:5px; border-color:#7fa88b; }
-  html[data-map-theme="civic-clarity"] #stage { background:radial-gradient(ellipse at 50% 40%,#174c35 0%,#091d15 76%); border:2px solid #7fa88b; border-radius:8px; }
-  html[data-map-theme="civic-clarity"] #legend, html[data-map-theme="civic-clarity"] button.ctl { border-color:#7fa88b; }
-  html[data-map-theme="civic-clarity"] #hint { color:#eef3ef; text-shadow:0 1px 4px #000; }
-
 </style>
 <script>(function(){var t=new URLSearchParams(location.search).get("previewTheme");document.documentElement.dataset.mapTheme=["botanical","field-atlas","civic-clarity"].indexOf(t)>=0?t:"botanical";})();</script>
 </head>
 <body>
 <header class="top">
-  <div class="brand"><svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="Miżien balance mark"><circle cx="32" cy="32" r="28" fill="none" stroke="#7fa88b" stroke-width="2"/><path d="M32 12V51M14 22H50M32 17L14 22M32 17L50 22M14 22L7 37H21L14 22ZM50 22L43 37H57L50 22ZM23 52H41" fill="none" stroke="#eef3ef" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="17" r="4" fill="#e3a72f"/></svg><h1>Miżien</h1></div>
-  <p class="tag">Weighing public claims against the evidence.</p>
-  <p class="meaning">Miżien is Maltese for a scale or balance.</p>
+  <div>
+    <div class="brand"><svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="Miżien balance mark"><circle cx="32" cy="32" r="28" fill="none" stroke="#7fa88b" stroke-width="2"/><path d="M32 12V51M14 22H50M32 17L14 22M32 17L50 22M14 22L7 37H21L14 22ZM50 22L43 37H57L50 22ZM23 52H41" fill="none" stroke="#eef3ef" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="17" r="4" fill="#e3a72f"/></svg><h1>Miżien</h1></div>
+    <p class="tag">Weighing public claims against the evidence.</p>
+    <p class="meaning">Miżien is Maltese for a scale or balance.</p>
+  </div>
+  <div class="stats" id="stats" aria-live="polite"></div>
 </header>
 
-<div id="stage" role="region" aria-label="Interactive 3D map of fact-checked claims" aria-describedby="hint">
-  <canvas id="map"></canvas>
-  <div id="legend"></div>
-  <div id="controls">
-    <button class="ctl" id="lgbtn" type="button" aria-controls="legend" aria-expanded="false">Legend</button>
-    <button class="ctl" id="zoomout" type="button" aria-label="Zoom out" title="Zoom out">−</button>
-    <button class="ctl" id="zoomin" type="button" aria-label="Zoom in" title="Zoom in">+</button>
-    <button class="ctl" id="spin" type="button" aria-label="Pause map rotation">Pause</button>
-    <button class="ctl" id="reset" type="button" aria-label="Reset map view">Reset</button>
+<div id="mapwrap">
+  <div id="stage" role="region" aria-label="Interactive 3D map of fact-checked claims" aria-describedby="hint">
+    <canvas id="map"></canvas>
+    <div id="modeTitle" class="tx"><div class="t"></div><div class="s"></div></div>
+    <div id="controls">
+      <button class="ctl" id="zoomout" type="button" aria-label="Zoom out" title="Zoom out">−</button>
+      <button class="ctl" id="zoomin" type="button" aria-label="Zoom in" title="Zoom in">+</button>
+      <button class="ctl" id="spin" type="button" aria-label="Pause map rotation">Pause</button>
+      <button class="ctl" id="reset" type="button" aria-label="Reset map view">Reset</button>
+    </div>
+    <div id="hint" class="tx"><span class="desktop-hint">Drag to rotate · scroll to zoom · click any node, hub or line</span><span class="mobile-hint">Drag to turn · pinch to zoom · tap a node</span></div>
+    <div id="tip" role="tooltip"></div>
+    <div id="panel" aria-live="polite"></div>
   </div>
-  <div id="hint"><span class="desktop-hint">Drag to rotate · scroll or pinch to zoom · click a topic, claim or link</span><span class="mobile-hint">Drag to turn · pinch or use + / − to zoom · tap a node</span></div>
-  <div id="tip" role="tooltip"></div>
-  <div id="panel" aria-live="polite"></div>
+  <div id="legend" class="tx">
+    <div><p class="kicker">GROUP CLAIMS BY</p><div id="groupby" role="group" aria-label="Group claims by"></div></div>
+    <div><p class="kicker" id="groupsTitle">GROUPS</p><div id="groups"></div><p id="groupnote"></p></div>
+    <div><p class="kicker">CLAIM COLOUR · VERDICT</p><div class="keyrow" id="vkey"></div></div>
+  </div>
+  <div id="linkbar" class="tx" role="group" aria-label="Show or hide lines"></div>
 </div>
 <dialog id="doc-viewer" aria-labelledby="viewer-title">
   <div class="viewer-head"><h2 id="viewer-title">Claim document</h2><button class="viewer-close" type="button">Close</button></div>
@@ -264,19 +266,23 @@
   var canvas = document.getElementById("map"), ctx = canvas.getContext("2d");
   var stage = document.getElementById("stage"), panel = document.getElementById("panel"), tip = document.getElementById("tip");
   var viewer = document.getElementById("doc-viewer"), viewerFrame = viewer.querySelector("iframe"), viewerImage = viewer.querySelector("img");
-  var DATA = null, hubs = [], claims = [], edges = [], byId = {}, themeById = {}, stars = [];
-  var yaw = 0.6, pitch = -0.25, zoom = 1, spinning = true;
-  var sel = null;      // {kind: "claim"|"hub"|"edge"|"theme", ...}
-  var hover = null;    // same shape
-  var W = 0, H = 0, dpr = 1, R = 250, t0 = performance.now();
+  var DATA = null, claims = [], edges = [], byId = {}, themeById = {}, stars = [];
+  var hubPool = {}, hubs = [];            // hubPool: every hub ever made (key = mode|value); hubs: those of the current mode
+  var mode = "topic";
+  var showSpokes = true, themeOn = {};
+  var cam = { yaw: 0.6, pitch: -0.22, zoom: 1, tyaw: null, tpitch: -0.22 };
+  var spinning = true, sway = false;
+  var sel = null, hover = null;
+  var W = 0, H = 0, dpr = 1, R = 250, t0 = performance.now(), lastT = 0;
   var MAP_THEME = document.documentElement.getAttribute("data-map-theme") || "botanical";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduce) spinning = false;
 
   var VC = { "Supported": "#2e7d4f", "Largely supported": "#8db36b", "Not substantiated": "#d9772b",
              "Misleading": "#c85a3a", "Contradicted": "#8e2f25" };
-  // 24x24 stroke icons, one per topic
+  var NOT_YET = "Not yet checked", NOT_YET_COL = "#5d7468";
   var ICONS = {
+    // topics
     "Land & Trees": "M12 2.5 L5.5 11 H9 L5 16.5 H19 L15 11 H18.5 Z M12 16.5 V21.5",
     "Climate & Energy": "M13.5 2.5 L5 13.5 H11 L10 21.5 L19 10 H13 Z",
     "Waste": "M4 6.5 H20 M9.5 6.5 V4 H14.5 V6.5 M6 6.5 L7 20.5 H17 L18 6.5 M10 10 V17 M14 10 V17",
@@ -286,10 +292,89 @@
     "Transport": "M3 13.5 L5.5 7.5 H18.5 L21 13.5 V18 H3 Z M3 13.5 H21 M6 18 V20 M18 18 V20 M7 15.8 H8.5 M15.5 15.8 H17",
     "Governance & Promises": "M12 3 V20.5 M7.5 20.5 H16.5 M4.5 6.5 H19.5 M4.5 6.5 L2 12.5 H7 Z M19.5 6.5 L17 12.5 H22 Z",
     "Planning & Housing": "M3 11 L12 3.5 L21 11 M5.5 9 V20.5 H18.5 V9 M10 20.5 V14.5 H14 V20.5",
-    "Noise": "M3.5 9.5 H7.5 L12.5 5 V19 L7.5 14.5 H3.5 Z M16 9 C17.3 10.5 17.3 13.5 16 15 M18.8 6.5 C21.4 9.5 21.4 14.5 18.8 17.5"
+    "Noise": "M3.5 9.5 H7.5 L12.5 5 V19 L7.5 14.5 H3.5 Z M16 9 C17.3 10.5 17.3 13.5 16 15 M18.8 6.5 C21.4 9.5 21.4 14.5 18.8 17.5",
+    // verdicts
+    "Supported": "M5 12.5 L10 17.5 L19 7",
+    "Largely supported": "M4 13 L8.5 17.5 L15.5 9 M12.5 17 L14 18.5 L21 10",
+    "Not substantiated": "M8.8 9 A3.3 3.3 0 1 1 13.6 12 C12.4 12.6 12 13.3 12 14.6 M12 18 V18.1",
+    "Misleading": "M12 3.5 L21.5 20 H2.5 Z M12 10 V14.5 M12 17 V17.1",
+    "Contradicted": "M6 6 L18 18 M18 6 L6 18",
+    "Not yet checked": "M5.5 12 V12.1 M12 12 V12.1 M18.5 12 V12.1",
+    // patterns
+    "Selective metric": "M10.5 4 A6.5 6.5 0 1 0 10.51 4 M15.2 15.2 L20.5 20.5",
+    "Input-as-outcome": "M3.5 5 H20.5 L14 12.5 V19.5 L10 17.5 V12.5 Z",
+    "Compliance-not-health": "M12 3 L19 6 V11 C19 15.5 16 19 12 21 C8 19 5 15.5 5 11 V6 Z M9 12 L11 14 L15 10",
+    "Conditional-turned-unconditional": "M6 3.5 V20.5 M6 12 C11 12 12 6 18 6 M15 3 L18 6 L15 9",
+    "Promise-without-baseline": "M5.5 21 V3.5 M5.5 4 H17.5 L15 8 L17.5 12 H5.5",
+    "No pattern tag": "M12 8 A4 4 0 1 0 12.01 8",
+    // stages
+    "Not started": "M12 3 A9 9 0 1 0 12.01 3 M12 7 V12 L15.5 14",
+    "In progress": "M4 12 H19 M13 6 L19 12 L13 18",
+    "Drafted": "M4 20 L8.5 19 L19.5 8 L16 4.5 L5 15.5 Z M14 6.5 L17.5 10",
+    "Right of reply": "M4 4.5 H20 V15 H10.5 L6.5 19.5 V15 H4 Z",
+    "Published": "M3.5 5 H10.5 C11.4 5 12 5.6 12 6.5 V20 C12 19.2 11.4 18.6 10.5 18.6 H3.5 Z M20.5 5 H13.5 C12.6 5 12 5.6 12 6.5 V20 C12 19.2 12.6 18.6 13.5 18.6 H20.5 Z",
+    // speakers
+    "Government": "M3 9 L12 4 L21 9 Z M5.5 9.5 V17.5 M10 9.5 V17.5 M14 9.5 V17.5 M18.5 9.5 V17.5 M3 20 H21",
+    "Regulators & agencies": "M8.5 3.5 H15.5 V6.5 H8.5 Z M6.5 5 H4.5 V21 H19.5 V5 H17.5 M8 11.5 H16 M8 15.5 H13",
+    "Political parties": "M4.5 10 H19.5 V20.5 H4.5 Z M8.5 10 L12 4 L15.5 10 M9 15 H15",
+    "Business & developers": "M4 8 H20 V19.5 H4 Z M9 8 V5 H15 V8 M4 13 H20",
+    "NGOs & civil society": "M8 7.5 A2.8 2.8 0 1 0 8.01 7.5 M16 7.5 A2.8 2.8 0 1 0 16.01 7.5 M2.5 19.5 C2.5 15 13.5 15 13.5 19.5 M10.5 19.5 C10.5 15 21.5 15 21.5 19.5",
+    "Media": "M4 5 H17 V19.5 H6 C4.9 19.5 4 18.6 4 17.5 Z M17 9 H20 V17.5 C20 18.6 19.1 19.5 18 19.5 M7 8.5 H14 M7 12 H14 M7 15.5 H11",
+    "EU & international": "M12 3 A9 9 0 1 0 12.01 3 M3 12 H21 M12 3 C15.5 6.5 15.5 17.5 12 21 C8.5 17.5 8.5 6.5 12 3",
+    // grouping buttons
+    "mode:topic": "M12 3 A9 9 0 1 0 12.01 3 M7 9 A1.5 1.5 0 1 0 7.01 9 M16 8 A1.5 1.5 0 1 0 16.01 8 M11 16 A1.5 1.5 0 1 0 11.01 16",
+    "mode:verdict": "M12 3 V20.5 M7.5 20.5 H16.5 M4.5 6.5 H19.5 M4.5 6.5 L2 12.5 H7 Z M19.5 6.5 L17 12.5 H22 Z",
+    "mode:pattern": "M12 3 A9 9 0 1 0 12.01 3 M12 7 A5 5 0 1 0 12.01 7 M12 11 A1 1 0 1 0 12.01 11",
+    "mode:status": "M3 12 H21 M5 12 A1.5 1.5 0 1 0 5.01 12 M12 12 A1.5 1.5 0 1 0 12.01 12 M19 12 A1.5 1.5 0 1 0 19.01 12",
+    "mode:speaker": "M4 5 H20 V15 H10.5 L6.5 19 V15 H4 Z",
+    "mode:network": "M5 6 A2 2 0 1 0 5.01 6 M19 7 A2 2 0 1 0 19.01 7 M12 18 A2 2 0 1 0 12.01 18 M6.5 7.5 L11 16 M17.5 8.5 L13 16 M7 6.2 L17 6.8"
   };
   var ICON_PATHS = {};
   Object.keys(ICONS).forEach(function (k) { ICON_PATHS[k] = new Path2D(ICONS[k]); });
+
+  var PALETTE = ["#e3a72f", "#56b4e9", "#6fcf97", "#f2994a", "#bb86fc", "#f06292", "#4fc3c8", "#9fa8da", "#cfd8dc"];
+  var SPEAKER_RULES = [
+    ["Media", /newsbook|amphora|times of malta|maltatoday|independent|shift news/i],
+    ["EU & international", /european commission|european parliament|\bimf\b|\beu\b/i],
+    ["Regulators & agencies", /planning authority|environment and resources|\bera\b|transport malta|ornis|wild birds/i],
+    ["Political parties", /partit|labour party|nationalist|\bpn\b|\bpl\b|momentum/i],
+    ["Business & developers", /developers|\bmda\b|hili|hospitality|chamber/i],
+    ["NGOs & civil society", /graffitti|birdlife|din l-art|friends of the earth|ngo/i],
+    ["Government", /minist|government|prime minister|authority|project green|infrastructure malta|water services|ambjent|wasteserv/i]
+  ];
+  function speakerGroup(s) {
+    var first = (s || "").split(";")[0];
+    for (var i = 0; i < SPEAKER_RULES.length; i++) if (SPEAKER_RULES[i][1].test(first)) return SPEAKER_RULES[i][0];
+    for (i = 0; i < SPEAKER_RULES.length; i++) if (SPEAKER_RULES[i][1].test(s || "")) return SPEAKER_RULES[i][0];
+    return "Other";
+  }
+
+  // ------------------------------------------------------------ groupings
+  var MODES = {
+    topic: { label: "Topic", title: "Claims by topic", sub: "Each hub is a topic; coloured lines are themes that link claims across topics.",
+             layout: "sphere", key: function (c) { return [c.category]; },
+             order: function () { return DATA.categories.map(function (c) { return c.name; }); },
+             color: function (v) { var c = DATA.categories.filter(function (x) { return x.name === v; })[0]; return c ? c.color : "#7fa88b"; } },
+    verdict: { label: "Verdict", title: "Claims by verdict", sub: "From supported to contradicted, left to right.",
+             layout: "arc", key: function (c) { return [c.verdict || NOT_YET]; },
+             order: function () { return Object.keys(VC).concat([NOT_YET]); },
+             color: function (v) { return VC[v] || NOT_YET_COL; } },
+    pattern: { label: "Pattern", title: "Claims by pattern", sub: "Recurring ways a claim can mislead. Faint spokes show a claim's second pattern.",
+             layout: "ring", key: function (c) { return c.tags && c.tags.length ? c.tags : ["No pattern tag"]; },
+             order: function () { return ["Selective metric", "Input-as-outcome", "Compliance-not-health", "Conditional-turned-unconditional", "Promise-without-baseline", "No pattern tag"]; },
+             color: function (v, i) { return v === "No pattern tag" ? NOT_YET_COL : PALETTE[i % PALETTE.length]; } },
+    status: { label: "Stage", title: "Claims by stage", sub: "Where each check stands, from candidate to published.",
+             layout: "line", key: function (c) { return [c.status]; },
+             order: function () { return ["Not started", "In progress", "Drafted", "Right of reply", "Published"]; },
+             color: function (v) { return { "Not started": "#5d7468", "In progress": "#56b4e9", "Drafted": "#e3a72f", "Right of reply": "#f2994a", "Published": "#6fcf97" }[v] || "#7fa88b"; } },
+    speaker: { label: "Who said it", title: "Claims by who made them", sub: "Every side is held to the same standard.",
+             layout: "ring", key: function (c) { return [speakerGroup(c.speaker)]; },
+             order: function () { return ["Government", "Regulators & agencies", "Political parties", "Business & developers", "NGOs & civil society", "Media", "EU & international", "Other"]; },
+             color: function (v, i) { return PALETTE[i % PALETTE.length]; } },
+    network: { label: "Links only", title: "The web of links", sub: "No groups: claims are pulled together by the themes that connect them.",
+             layout: "force", key: function () { return []; }, order: function () { return []; }, color: function () { return "#7fa88b"; } }
+  };
+  var MODE_ORDER = ["topic", "verdict", "pattern", "status", "speaker", "network"];
 
   function rng(seed) {
     var h = 1779033703 ^ seed.length;
@@ -300,20 +385,11 @@
   }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function rgba(hex, a) { var n = parseInt(hex.slice(1), 16); return "rgba(" + (n >> 16) + "," + ((n >> 8) & 255) + "," + (n & 255) + "," + a + ")"; }
-  function glyphPath(x, y, r) {
-    ctx.beginPath();
-    if (MAP_THEME === "field-atlas") {
-      ctx.moveTo(x, y - r); ctx.lineTo(x + r, y); ctx.lineTo(x, y + r); ctx.lineTo(x - r, y); ctx.closePath();
-    } else if (MAP_THEME === "civic-clarity") {
-      for (var i = 0; i < 6; i++) { var a = -Math.PI / 6 + i * Math.PI / 3; var px = x + Math.cos(a) * r, py = y + Math.sin(a) * r; if (!i) ctx.moveTo(px, py); else ctx.lineTo(px, py); }
-      ctx.closePath();
-    } else ctx.arc(x, y, r, 0, 6.283);
-  }
-  function traceEdge(a, b, c) {
-    ctx.beginPath(); ctx.moveTo(a.sx, a.sy);
-    if (MAP_THEME === "civic-clarity") { var mx = (a.sx + b.sx) / 2; ctx.lineTo(mx, a.sy); ctx.lineTo(mx, b.sy); ctx.lineTo(b.sx, b.sy); }
-    else if (MAP_THEME === "field-atlas") { ctx.lineTo((a.sx + c.x) / 2, (a.sy + c.y) / 2); ctx.lineTo((c.x + b.sx) / 2, (c.y + b.sy) / 2); ctx.lineTo(b.sx, b.sy); }
-    else ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy);
+  function iconSvg(name, color) {
+    var ns = "http://www.w3.org/2000/svg", svg = document.createElementNS(ns, "svg"), p = document.createElementNS(ns, "path");
+    svg.setAttribute("viewBox", "0 0 24 24"); svg.setAttribute("aria-hidden", "true"); p.setAttribute("d", ICONS[name] || "M12 12 h0");
+    p.setAttribute("fill", "none"); p.setAttribute("stroke", color || "#fff"); p.setAttribute("stroke-width", "2.2");
+    p.setAttribute("stroke-linecap", "round"); p.setAttribute("stroke-linejoin", "round"); svg.appendChild(p); return svg;
   }
   function drawLeaf(x, y, angle, size) {
     ctx.save(); ctx.translate(x, y); ctx.rotate(angle); ctx.beginPath(); ctx.moveTo(-size, 0);
@@ -325,18 +401,11 @@
     return Number.isFinite(stamp) ? Math.max(0, Math.floor((Date.now() - stamp) / 86400000)) : 0;
   }
   function reviewLeafColor(age) {
-    var t = Math.max(0, Math.min(1, age / 365));
-    var fresh = [76, 164, 97], due = [145, 84, 48];
+    var t = Math.max(0, Math.min(1, age / 365)), fresh = [76, 164, 97], due = [145, 84, 48];
     return "rgb(" + fresh.map(function (v, i) { return Math.round(v + (due[i] - v) * t); }).join(",") + ")";
   }
-  function legendLeaf(color) {
-    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svg.setAttribute("viewBox", "0 0 24 24"); svg.setAttribute("aria-hidden", "true");
-    var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttribute("d", "M3 19C4 8 11 3 21 3c0 10-5 17-16 18M5 18l10-10");
-    path.setAttribute("fill", "none"); path.setAttribute("stroke", color); path.setAttribute("stroke-width", "2.5"); path.setAttribute("stroke-linecap", "round");
-    svg.appendChild(path); return svg;
-  }
+  function roundRect(x, y, w, h, r) { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
 
   function resize() {
     dpr = window.devicePixelRatio || 1;
@@ -345,86 +414,207 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
+  // ------------------------------------------------------------ init
   function init(data) {
     DATA = data;
-    data.themes.forEach(function (t) { themeById[t.id] = t; });
-    var cats = data.categories, n = cats.length;
-    cats.forEach(function (c, i) {
-      var y = n > 1 ? 1 - (i / (n - 1)) * 2 : 0, r = Math.sqrt(Math.max(0, 1 - y * y)), th = Math.PI * (3 - Math.sqrt(5)) * i;
-      hubs.push({ kind: "hub", name: c.name, color: c.color, x: Math.cos(th) * r * R, y: y * R * 0.85, z: Math.sin(th) * r * R });
-    });
-    var hubByName = {}; hubs.forEach(function (h) { hubByName[h.name] = h; });
+    data.themes.forEach(function (t) { themeById[t.id] = t; themeOn[t.id] = true; });
     data.claims.forEach(function (c) {
-      var hub = hubByName[c.category] || hubs[0], rnd = rng(c.id);
-      var u = rnd() * 2 - 1, t = rnd() * Math.PI * 2, s = Math.sqrt(1 - u * u), d = 78 + rnd() * 36;
-      var node = { kind: "claim", id: c.id, data: c, hub: hub, color: hub.color, phase: rnd() * 6.28,
-                   x: hub.x + Math.cos(t) * s * d, y: hub.y + u * d, z: hub.z + Math.sin(t) * s * d };
-      claims.push(node); byId[c.id] = node; hub.claims = (hub.claims || []).concat([node]);
+      var rnd = rng(c.id);
+      var node = { kind: "claim", id: c.id, data: c, phase: rnd() * 6.28, x: (rnd() - .5) * 60, y: (rnd() - .5) * 60, z: (rnd() - .5) * 60,
+                   tx: 0, ty: 0, tz: 0, hub: null, extra: [] };
       if (c.last_reviewed && c.outputs && (c.outputs.report || c.outputs.report_pdf) && (c.status === "Drafted" || c.status === "Published")) {
         node.reviewAgeDays = reviewAgeDays(c.last_reviewed); node.reviewLeafColor = reviewLeafColor(node.reviewAgeDays);
-        hub.reviewLeaves = (hub.reviewLeaves || []).concat([node]);
       }
+      claims.push(node); byId[c.id] = node;
     });
-    // parallel edges between the same pair are bent apart so each stays clickable
     var pairCount = {};
     edges = data.edges.filter(function (e) { return byId[e.from] && byId[e.to]; }).map(function (e) {
       var key = [e.from, e.to].sort().join("|"); var k = pairCount[key] = (pairCount[key] || 0) + 1;
       return { kind: "edge", from: e.from, to: e.to, theme: e.theme, link_type: e.link_type, strength: e.strength,
-               bend: 0.12 + 0.13 * (k - 1) * (k % 2 ? 1 : -1) };
+               bend: 0.1 + 0.12 * (k - 1) * (k % 2 ? 1 : -1) };
     });
     var sr = rng("stars");
-    for (var i = 0; i < 140; i++) stars.push({ x: sr(), y: sr(), r: sr() * 1.2 + 0.2, a: sr() * 0.35 + 0.05, tw: sr() * 6.28 });
-    buildLegend(); buildTable(); resize(); requestAnimationFrame(frame);
+    for (var i = 0; i < 220; i++) stars.push({ x: sr(), y: sr(), r: sr() * 1.3 + 0.2, a: sr() * 0.32 + 0.04, tw: sr() * 6.28, d: sr() });
+    buildStats(); buildGroupBy(); buildLinkBar(); buildKey(); buildTable(); resize();
+    setMode(new URLSearchParams(location.search).get("group") || "topic", true);
+    requestAnimationFrame(frame);
   }
 
-  function themeColor(id) { return themeById[id] ? themeById[id].color : "#7fa88b"; }
-  function isWeak(s) { return s && (s.indexOf("Weak") === 0 || s.indexOf("Pattern") === 0); }
+  function buildStats() {
+    var s = document.getElementById("stats"); s.textContent = "";
+    var withV = DATA.claims.filter(function (c) { return c.verdict; }).length;
+    [[DATA.claims.length, "claims"], [withV, "with a verdict"], [DATA.edges.length, "links"], [DATA.themes.length, "themes"]].forEach(function (p) {
+      var d = el("div"); d.appendChild(el("b", null, String(p[0]))); d.appendChild(document.createTextNode(p[1])); s.appendChild(d);
+    });
+  }
 
-  function buildLegend() {
-    var lg = document.getElementById("legend"); lg.textContent = "";
-    var head = el("div", "legend-head"), title = el("h4", null, "MAP KEY");
-    var close = el("button", "legend-close", "Done"); close.type = "button"; close.setAttribute("aria-label", "Close map key");
-    close.onclick = closeLegend; head.appendChild(title); head.appendChild(close); lg.appendChild(head);
-    lg.appendChild(el("h4", null, "TOPICS"));
+  // ------------------------------------------------------------ layouts
+  function hubKey(m, v) { return m + "|" + v; }
+  function getHub(m, v, i) {
+    var k = hubKey(m, v);
+    if (!hubPool[k]) hubPool[k] = { kind: "hub", key: k, mode: m, name: v, color: MODES[m].color(v, i), x: 0, y: 0, z: 0, tx: 0, ty: 0, tz: 0, alpha: 0, talpha: 0, claims: [] };
+    return hubPool[k];
+  }
+  function spiral(n, i, r) { // even points on a sphere
+    if (n === 1) return { x: 0, y: 0, z: 0 };
+    var y = 1 - (i / (n - 1)) * 2, rad = Math.sqrt(Math.max(0, 1 - y * y)), th = Math.PI * (3 - Math.sqrt(5)) * i;
+    return { x: Math.cos(th) * rad * r, y: y * r, z: Math.sin(th) * rad * r };
+  }
+  function clusterRadius(n) { return n <= 1 ? 0 : 34 + 15 * Math.sqrt(n); }
+
+  function setMode(m, instant) {
+    if (!MODES[m]) m = "topic";
+    mode = m; var M = MODES[m];
+    Object.keys(hubPool).forEach(function (k) { hubPool[k].talpha = 0; });
+    claims.forEach(function (c) { c.hub = null; c.extra = []; });
+    var order = M.order(), groups = {};
+    claims.forEach(function (c) {
+      var keys = M.key(c.data);
+      keys.forEach(function (v, j) { (groups[v] = groups[v] || []).push({ c: c, primary: j === 0 }); });
+    });
+    // unseen values (e.g. a new status) go at the end
+    Object.keys(groups).forEach(function (v) { if (order.indexOf(v) < 0) order.push(v); });
+    hubs = [];
+    order.forEach(function (v, i) {
+      var h = getHub(m, v, i); h.color = M.color(v, i); h.claims = []; h.reviewLeaves = [];
+      var members = groups[v] || [];
+      members.forEach(function (o) { if (o.primary) { o.c.hub = h; h.claims.push(o.c); if (o.c.reviewLeafColor) h.reviewLeaves.push(o.c); } else o.c.extra.push(h); });
+      h.count = h.claims.length; h.empty = h.count === 0;
+      if (M.layout === "force") return;
+      if (h.empty && (m === "topic" || m === "speaker" || m === "pattern")) return; // hide empty groups where order is not meaningful
+      hubs.push(h);
+    });
+    // hub targets
+    var n = hubs.length;
+    if (M.layout === "sphere") {
+      hubs.forEach(function (h, i) { var p = spiral(n, i, R * 1.05); h.tx = p.x; h.ty = p.y * 0.78; h.tz = p.z; });
+    } else if (M.layout === "ring") {
+      hubs.forEach(function (h, i) { var a = (i / n) * Math.PI * 2; h.tx = Math.cos(a) * R * 1.12; h.tz = Math.sin(a) * R * 1.12; h.ty = (i % 2 ? 1 : -1) * 34; });
+    } else if (M.layout === "arc" || M.layout === "line") {
+      var widths = hubs.map(function (h) { return Math.max(60, clusterRadius(h.count) + 46); });
+      var total = widths.reduce(function (a, b) { return a + b * 2; }, 0) + (n - 1) * 22, x = -total / 2;
+      hubs.forEach(function (h, i) {
+        x += widths[i]; h.tx = x; x += widths[i] + 22;
+        var u = n > 1 ? i / (n - 1) - 0.5 : 0;
+        h.ty = M.layout === "arc" ? -60 * Math.cos(u * Math.PI) + 40 : (i % 2 ? 26 : -26);
+        h.tz = M.layout === "arc" ? 120 * Math.cos(u * Math.PI) - 60 : 0;
+        if (h.name === NOT_YET) { h.ty += 60; }
+      });
+      var scale = Math.min(1, (R * 3.5) / total); hubs.forEach(function (h) { h.tx *= scale; });
+    }
     hubs.forEach(function (h) {
-      var b = el("button", "row"); b.type = "button";
-      var s = el("span", "sw"); s.style.background = h.color; s.appendChild(iconSvg(h.name));
-      var reviewed = (h.reviewLeaves || []).length;
-      b.appendChild(s); b.appendChild(el("span", null, h.name + " (" + (h.claims || []).length + ((h.claims || []).length === 1 ? " claim · " : " claims · ") + reviewed + " reviewed)"));
-      b.onclick = function () { selectHub(h); }; lg.appendChild(b);
+      if (h.alpha < 0.05) { // a new hub grows out of its members' current centroid
+        var cs = h.claims.length ? h.claims : claims, sx = 0, sy = 0, sz = 0;
+        cs.forEach(function (c) { sx += c.x; sy += c.y; sz += c.z; });
+        h.x = sx / cs.length; h.y = sy / cs.length; h.z = sz / cs.length;
+      }
+      h.talpha = 1;
+      var r = clusterRadius(h.count);
+      h.claims.slice().sort(function (a, b) { return a.id < b.id ? -1 : 1; }).forEach(function (c, i) {
+        var p = spiral(h.claims.length, i, r); c.tx = h.tx + p.x; c.ty = h.ty + p.y; c.tz = h.tz + p.z;
+        if (h.claims.length === 1) { c.tx += 0; c.ty += 46; }
+      });
     });
-    lg.appendChild(el("h4", null, "THEMES LINKING CLAIMS")).style.marginTop = "8px";
+    if (M.layout === "force") forceLayout();
+    // camera: carousels spin, spectra and pipelines face the viewer and sway
+    sway = M.layout === "arc" || M.layout === "line";
+    if (sway) { cam.tyaw = 0; cam.tpitch = -0.12; } else { cam.tyaw = null; cam.tpitch = M.layout === "ring" ? -0.38 : -0.22; }
+    if (instant) { claims.concat(hubs).forEach(function (n) { n.x = n.tx; n.y = n.ty; n.z = n.tz; }); hubs.forEach(function (h) { h.alpha = 1; }); }
+    clearSel();
+    var mt = document.getElementById("modeTitle"); mt.querySelector(".t").textContent = M.title; mt.querySelector(".s").textContent = M.sub;
+    document.querySelectorAll("#groupby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.mode === m ? "true" : "false"); });
+    buildGroups();
+    var u = new URL(location.href); if (m === "topic") u.searchParams.delete("group"); else u.searchParams.set("group", m);
+    history.replaceState(null, "", u);
+  }
+
+  function forceLayout() {
+    var rnd = rng("force"), n = claims.length, P = claims.map(function (c) { return { x: c.x + rnd() * 4, y: c.y + rnd() * 4, z: c.z + rnd() * 4, vx: 0, vy: 0, vz: 0 }; });
+    var idx = {}; claims.forEach(function (c, i) { idx[c.id] = i; });
+    for (var it = 0; it < 420; it++) {
+      var cool = 1 - it / 420;
+      for (var i = 0; i < n; i++) for (var j = i + 1; j < n; j++) {
+        var dx = P[i].x - P[j].x, dy = P[i].y - P[j].y, dz = P[i].z - P[j].z, d2 = dx * dx + dy * dy + dz * dz + 25, f = 5200 / d2;
+        var d = Math.sqrt(d2); dx /= d; dy /= d; dz /= d;
+        P[i].vx += dx * f; P[i].vy += dy * f; P[i].vz += dz * f; P[j].vx -= dx * f; P[j].vy -= dy * f; P[j].vz -= dz * f;
+      }
+      edges.forEach(function (e) {
+        var a = P[idx[e.from]], b = P[idx[e.to]], dx = b.x - a.x, dy = b.y - a.y, dz = b.z - a.z, d = Math.sqrt(dx * dx + dy * dy + dz * dz) + .01;
+        var f = (d - 105) * 0.012; dx /= d; dy /= d; dz /= d;
+        a.vx += dx * f * d * .02; a.vy += dy * f * d * .02; a.vz += dz * f * d * .02;
+        b.vx -= dx * f * d * .02; b.vy -= dy * f * d * .02; b.vz -= dz * f * d * .02;
+      });
+      P.forEach(function (p) { p.vx -= p.x * 0.012; p.vy -= p.y * 0.012; p.vz -= p.z * 0.012;
+        p.x += p.vx * 0.5 * cool; p.y += p.vy * 0.5 * cool; p.z += p.vz * 0.5 * cool; p.vx *= .55; p.vy *= .55; p.vz *= .55; });
+    }
+    var mx = 0; P.forEach(function (p) { mx = Math.max(mx, Math.hypot(p.x, p.y, p.z)); });
+    var s = (R * 1.35) / (mx || 1);
+    claims.forEach(function (c, i) { c.tx = P[i].x * s; c.ty = P[i].y * s * 0.8; c.tz = P[i].z * s; });
+  }
+
+  // ------------------------------------------------------------ chrome
+  function buildGroupBy() {
+    var g = document.getElementById("groupby"); g.textContent = "";
+    MODE_ORDER.forEach(function (m) {
+      var b = el("button"); b.type = "button"; b.dataset.mode = m; b.appendChild(iconSvg("mode:" + m, "#eef3ef"));
+      b.appendChild(document.createTextNode(MODES[m].label)); b.onclick = function () { setMode(m); }; g.appendChild(b);
+    });
+  }
+  function buildGroups() {
+    var g = document.getElementById("groups"), note = document.getElementById("groupnote"); g.textContent = ""; note.textContent = "";
+    document.getElementById("groupsTitle").textContent = mode === "network" ? "ISOLATED CLAIMS" : MODES[mode].label.toUpperCase() + " GROUPS";
+    if (mode === "network") {
+      var lone = claims.filter(function (c) { return !edges.some(function (e) { return e.from === c.id || e.to === c.id; }); });
+      lone.forEach(function (c) { var b = el("button"); b.type = "button"; var s = el("span", "sw"); s.style.background = c.data.verdict ? VC[c.data.verdict] : NOT_YET_COL;
+        b.appendChild(s); b.appendChild(el("span", null, c.id + " " + c.data.title)); b.onclick = function () { selectClaim(c.id); }; g.appendChild(b); });
+      note.textContent = lone.length ? "Not yet linked to any other claim." : "Every claim is linked to at least one other.";
+      return;
+    }
+    hubs.forEach(function (h) {
+      var b = el("button"); b.type = "button"; var s = el("span", "sw"); s.style.background = h.color; s.appendChild(iconSvg(h.name));
+      b.appendChild(s); b.appendChild(el("span", null, h.name)); b.appendChild(el("span", "n", String(h.count)));
+      b.onclick = function () { selectHub(h); }; g.appendChild(b);
+    });
+    if (mode === "pattern") note.textContent = "Tags are provisional until a report is finished.";
+    if (mode === "speaker") note.textContent = "Grouped by the first body named as speaker.";
+  }
+  function buildLinkBar() {
+    var bar = document.getElementById("linkbar"); bar.textContent = "";
+    bar.appendChild(el("span", "kicker", "LINES"));
+    var sp = el("button"); sp.type = "button"; sp.appendChild(el("span", "ln")).style.borderColor = "rgba(207,226,212,.55)";
+    sp.appendChild(document.createTextNode("Group spokes")); sp.setAttribute("aria-pressed", "true");
+    sp.onclick = function () { showSpokes = !showSpokes; sp.classList.toggle("off", !showSpokes); sp.setAttribute("aria-pressed", showSpokes); };
+    bar.appendChild(sp); bar.appendChild(el("span", "sep"));
+    var themeBtns = [];
     DATA.themes.forEach(function (t) {
-      var b = el("button", "row"); b.type = "button";
+      var b = el("button"); b.type = "button"; b.title = t.description || t.name; b.setAttribute("aria-pressed", "true");
       var l = el("span", "ln"); l.style.borderColor = t.color; if (t.dashed) l.style.borderTopStyle = "dashed";
-      b.appendChild(l); b.appendChild(el("span", null, t.name)); b.onclick = function () { selectTheme(t.id); };
-      lg.appendChild(b);
+      b.appendChild(l); b.appendChild(document.createTextNode(t.name));
+      b.onclick = function (e) {
+        if (e.shiftKey || e.altKey) { selectTheme(t.id); return; }
+        themeOn[t.id] = !themeOn[t.id]; b.classList.toggle("off", !themeOn[t.id]); b.setAttribute("aria-pressed", themeOn[t.id]);
+      };
+      b.ondblclick = function () { selectTheme(t.id); };
+      themeBtns.push([t.id, b]); bar.appendChild(b);
     });
-    lg.appendChild(el("h4", null, "CLAIM CENTRE · VERDICT")).style.marginTop = "8px";
-    Object.keys(VC).concat(["Not yet checked"]).forEach(function (v) {
-      var r = el("div", "vrow"), s = el("span", "vdot" + (VC[v] ? "" : " open"));
-      s.style.background = VC[v] || "#294739"; s.style.borderColor = VC[v] || "rgba(255,255,255,.65)";
-      r.appendChild(s); r.appendChild(el("span", null, v)); lg.appendChild(r);
+    bar.appendChild(el("span", "sep"));
+    function all(v) { themeBtns.forEach(function (p) { themeOn[p[0]] = v; p[1].classList.toggle("off", !v); p[1].setAttribute("aria-pressed", v); }); }
+    var on = el("button", "mini", "All"); on.type = "button"; on.onclick = function () { all(true); }; bar.appendChild(on);
+    var off = el("button", "mini", "None"); off.type = "button"; off.onclick = function () { all(false); }; bar.appendChild(off);
+  }
+  function buildKey() {
+    var k = document.getElementById("vkey"); k.textContent = "";
+    Object.keys(VC).concat([NOT_YET]).forEach(function (v) {
+      var s = el("span"), d = el("span", "vdot" + (VC[v] ? "" : " open")); d.style.background = VC[v] || NOT_YET_COL;
+      s.appendChild(d); s.appendChild(document.createTextNode(v)); k.appendChild(s);
     });
-    lg.appendChild(el("h4", null, "REVIEW FRESHNESS")).style.marginTop = "8px";
-    var fresh = el("div", "vrow"); fresh.appendChild(legendLeaf("#4ca461")); fresh.appendChild(el("span", null, "Recently reviewed")); lg.appendChild(fresh);
-    var due = el("div", "vrow"); due.appendChild(legendLeaf("#915430")); due.appendChild(el("span", null, "12 months · refresh due")); lg.appendChild(due);
   }
-
-  function iconSvg(name) {
-    var ns = "http://www.w3.org/2000/svg", svg = document.createElementNS(ns, "svg"), p = document.createElementNS(ns, "path");
-    svg.setAttribute("viewBox", "0 0 24 24"); p.setAttribute("d", ICONS[name] || "M12 12 h0");
-    p.setAttribute("fill", "none"); p.setAttribute("stroke", "#fff"); p.setAttribute("stroke-width", "2.2");
-    p.setAttribute("stroke-linecap", "round"); p.setAttribute("stroke-linejoin", "round"); svg.appendChild(p); return svg;
-  }
-
   function buildTable() {
     var tb = document.querySelector("#claims tbody"); tb.textContent = "";
     DATA.claims.forEach(function (c) {
       var tr = el("tr", "click"); tr.tabIndex = 0;
-      tr.appendChild(el("td", null, c.id)); tr.appendChild(el("td", null, c.category));
-      tr.appendChild(el("td", null, c.title));
-      var td = el("td"); var ch = el("span", "chip", c.verdict ? c.verdict : c.status);
+      tr.appendChild(el("td", null, c.id)); tr.appendChild(el("td", null, c.category)); tr.appendChild(el("td", null, c.title));
+      var td = el("td"), ch = el("span", "chip", c.verdict ? c.verdict : c.status);
       ch.style.background = c.verdict ? VC[c.verdict] : "#4b5e56"; td.appendChild(ch);
       if (c.verdict) td.appendChild(el("span", "muted", " " + c.status));
       tr.appendChild(td);
@@ -434,175 +624,209 @@
     });
   }
 
+  // ------------------------------------------------------------ projection
+  function leftInset() { return W > 900 ? 270 : 0; }
+  function panelInset() { return W > 900 && panel.style.display === "block" ? 420 : 0; }
+  var cxNow = null;
+  function cxTarget() { return leftInset() + (W - leftInset() - panelInset()) / 2; }
   function project(p) {
-    var cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+    var cy = Math.cos(cam.yaw), sy = Math.sin(cam.yaw), cp = Math.cos(cam.pitch), sp = Math.sin(cam.pitch);
     var x1 = p.x * cy - p.z * sy, z1 = p.x * sy + p.z * cy;
     var y2 = p.y * cp - z1 * sp, z2 = p.y * sp + z1 * cp;
-    var F = 760, s = F / (F + z2 + 260);
-    var base = Math.min(W, H) / 520 * zoom;
-    return { sx: cx() + x1 * s * base, sy: H / 2 + y2 * s * base, z: z2, s: s * base };
+    var F = 900, s = F / (F + z2 + 300);
+    var usable = Math.min(W - leftInset() - panelInset(), H - 120);
+    var base = Math.max(0.55, usable / 560) * cam.zoom;
+    return { sx: cxNow + x1 * s * base, sy: H / 2 + 6 + y2 * s * base, z: z2, s: s * base };
   }
-
-  function cx() { // keep the graph clear of the legend on wide screens
-    var lg = document.getElementById("legend");
-    return W > 760 && lg.offsetWidth ? W / 2 + (lg.offsetWidth + 12) / 2 - 20 : W / 2;
-  }
-  function ctrl(a, b, bend) { // quadratic control point, bent away from the centre of the screen
+  function ctrl(a, b, bend) {
     var mx = (a.sx + b.sx) / 2, my = (a.sy + b.sy) / 2, dx = b.sx - a.sx, dy = b.sy - a.sy;
-    var nx = -dy, ny = dx, side = ((mx - cx()) * nx + (my - H / 2) * ny) >= 0 ? 1 : -1;
+    var nx = -dy, ny = dx, side = ((mx - cxNow) * nx + (my - H / 2) * ny) >= 0 ? 1 : -1;
     return { x: mx + nx * bend * side, y: my + ny * bend * side };
   }
+  function qpt(g, s) { var u = 1 - s; return { x: u * u * g.a.sx + 2 * u * s * g.c.x + s * s * g.b.sx, y: u * u * g.a.sy + 2 * u * s * g.c.y + s * s * g.b.sy }; }
 
-  // what is related to the current selection (for highlighting)
   function focusSet() {
     if (!sel) return null;
-    var ids = {}, es = {};
-    if (sel.kind === "claim") { ids[sel.id] = 1; edges.forEach(function (e, i) { if (e.from === sel.id || e.to === sel.id) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } }); }
-    if (sel.kind === "hub") (sel.hub.claims || []).forEach(function (c) { ids[c.id] = 1; });
+    var ids = {}, es = {}, hb = null;
+    if (sel.kind === "claim") { ids[sel.id] = 1; edges.forEach(function (e, i) { if (themeOn[e.theme] && (e.from === sel.id || e.to === sel.id)) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } }); }
+    if (sel.kind === "hub") { hb = sel.hub; (sel.hub.claims || []).forEach(function (c) { ids[c.id] = 1; }); claims.forEach(function (c) { if (c.extra.indexOf(sel.hub) >= 0) ids[c.id] = 1; }); }
     if (sel.kind === "edge") { es[sel.index] = 1; ids[sel.edge.from] = ids[sel.edge.to] = 1; }
     if (sel.kind === "theme") edges.forEach(function (e, i) { if (e.theme === sel.id) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } });
-    return { ids: ids, es: es, hub: sel.kind === "hub" ? sel.hub : null };
+    return { ids: ids, es: es, hub: hb };
   }
 
+  // ------------------------------------------------------------ render loop
   function frame(now) {
-    var t = (now - t0) / 1000;
-    if (spinning) yaw += 0.0024;
+    var t = (now - t0) / 1000, dt = Math.max(0, Math.min(0.4, t - lastT)); lastT = t;
+    var k = reduce ? 1 : 1 - Math.pow(0.04, dt);            // morph easing, frame-rate independent
+    claims.forEach(function (c) { c.x += (c.tx - c.x) * k; c.y += (c.ty - c.y) * k; c.z += (c.tz - c.z) * k; });
+    Object.keys(hubPool).forEach(function (key) { var h = hubPool[key];
+      h.x += (h.tx - h.x) * k; h.y += (h.ty - h.y) * k; h.z += (h.tz - h.z) * k; h.alpha += (h.talpha - h.alpha) * Math.min(1, k * 1.3); });
+    if (cxNow === null) cxNow = cxTarget(); cxNow += (cxTarget() - cxNow) * Math.min(1, k * 1.2);
+    if (sway) { var target = cam.tyaw + (spinning ? 0.32 * Math.sin(t * 0.18) : 0); cam.yaw += (target - cam.yaw) * k * 0.6; }
+    else if (spinning) cam.yaw += 0.13 * Math.min(dt, 0.05);
+    cam.pitch += (cam.tpitch - cam.pitch) * k * 0.5;
+
     ctx.clearRect(0, 0, W, H);
-    if (MAP_THEME !== "civic-clarity") stars.forEach(function (s) {
-      ctx.globalAlpha = s.a * (0.7 + 0.3 * Math.sin(t * 0.8 + s.tw));
-      ctx.fillStyle = MAP_THEME === "field-atlas" ? "#e3a72f" : "#cfe2d4";
-      if (MAP_THEME === "field-atlas") { ctx.fillRect(s.x * W, s.y * H, Math.max(1, s.r * 1.6), Math.max(1, s.r * 1.6)); }
-      else { ctx.beginPath(); ctx.arc(s.x * W, s.y * H, s.r, 0, 6.283); ctx.fill(); }
+    stars.forEach(function (s) {
+      ctx.globalAlpha = s.a * (0.65 + 0.35 * Math.sin(t * 0.7 + s.tw));
+      ctx.fillStyle = s.d > .85 ? "#f6e3b4" : "#cfe2d4";
+      var px = (s.x * W + cam.yaw * 30 * s.d) % W; if (px < 0) px += W;
+      ctx.beginPath(); ctx.arc(px, s.y * H, s.r, 0, 6.283); ctx.fill();
     });
     ctx.globalAlpha = 1;
-    var P = new Map(); hubs.concat(claims).forEach(function (n) { P.set(n, project(n)); });
-    var F = focusSet();
-    if (MAP_THEME === "field-atlas") {
-      hubs.forEach(function (h) { var p = P.get(h); ctx.save(); ctx.strokeStyle = "rgba(207,226,212,.16)"; ctx.lineWidth = 1; ctx.setLineDash([2, 6]);
-        [44, 76, 108].forEach(function (r) { ctx.beginPath(); ctx.ellipse(p.sx, p.sy, r * p.s, r * .44 * p.s, -.18, 0, 6.283); ctx.stroke(); }); ctx.restore(); });
-    }
-    // hub spokes
-    claims.forEach(function (c) {
-      var a = P.get(c.hub), b = P.get(c);
-      var on = F && (F.hub === c.hub || F.ids[c.id]);
-      var g = ctx.createLinearGradient(a.sx, a.sy, b.sx, b.sy);
-      g.addColorStop(0, rgba(c.color, on ? 0.55 : 0.28)); g.addColorStop(1, rgba(c.color, on ? 0.25 : 0.06));
-      ctx.strokeStyle = g; ctx.lineWidth = MAP_THEME === "civic-clarity" ? (on ? 2 : 1.3) : (MAP_THEME === "botanical" ? 1.7 : 1.1);
-      ctx.beginPath(); ctx.moveTo(a.sx, a.sy);
-      if (MAP_THEME === "botanical") ctx.quadraticCurveTo((a.sx + b.sx) / 2 + Math.sin(t + c.phase) * 9, (a.sy + b.sy) / 2 - 7, b.sx, b.sy);
-      else ctx.lineTo(b.sx, b.sy);
-      ctx.stroke();
+
+    var allHubs = Object.keys(hubPool).map(function (k) { return hubPool[k]; }).filter(function (h) { return h.alpha > 0.01; });
+    var P = new Map(); allHubs.concat(claims).forEach(function (n) { P.set(n, project(n)); });
+    var F = focusSet(), labels = [];
+    function fog(p) { return Math.max(0.35, Math.min(1, 1.05 - p.z / 900)); }
+
+    // orbit rings around active hubs
+    allHubs.forEach(function (h) {
+      if (!h.count) return; var p = P.get(h), r = (clusterRadius(h.count) + 10) * p.s;
+      ctx.save(); ctx.globalAlpha = h.alpha * (F && F.hub !== h ? 0.08 : 0.22) * fog(p); ctx.strokeStyle = h.color; ctx.lineWidth = 1;
+      ctx.setLineDash([2, 6]); ctx.beginPath(); ctx.ellipse(p.sx, p.sy, r, r * (0.32 + 0.5 * Math.abs(Math.sin(cam.pitch))), 0, 0, 6.283); ctx.stroke(); ctx.restore();
     });
-    // theme edges, curved
+
+    // spokes: claim to its group (and faint spokes to secondary groups)
+    if (showSpokes && mode !== "network") claims.forEach(function (c) {
+      [c.hub].concat(c.extra).forEach(function (h, j) {
+        if (!h || h.alpha < 0.02) return;
+        var a = P.get(h), b = P.get(c), on = F && (F.hub === h || F.ids[c.id]);
+        var g = ctx.createLinearGradient(a.sx, a.sy, b.sx, b.sy);
+        var al = (j ? 0.18 : 0.42) * h.alpha * (F && !on ? 0.35 : 1);
+        g.addColorStop(0, rgba(h.color, al)); g.addColorStop(1, rgba(h.color, al * 0.25));
+        ctx.strokeStyle = g; ctx.lineWidth = on ? 2 : 1.4; ctx.setLineDash(j ? [3, 5] : []);
+        ctx.beginPath(); ctx.moveTo(a.sx, a.sy);
+        ctx.quadraticCurveTo((a.sx + b.sx) / 2 + Math.sin(t * 0.8 + c.phase) * 7, (a.sy + b.sy) / 2 - 6, b.sx, b.sy); ctx.stroke();
+      });
+    });
+    ctx.setLineDash([]);
+
+    // theme links
     edges.forEach(function (e, i) {
+      e._g = null; if (!themeOn[e.theme]) return;
       var a = P.get(byId[e.from]), b = P.get(byId[e.to]), c = ctrl(a, b, e.bend);
       e._g = { a: a, b: b, c: c };
       var hi = F && F.es[i], hv = hover && hover.kind === "edge" && hover.index === i;
-      var depth = Math.max(0.3, Math.min(1, 1 - (a.z + b.z) / 1400));
-      var col = themeColor(e.theme);
-      ctx.setLineDash(isWeak(e.strength) ? (MAP_THEME === "field-atlas" ? [2, 5] : [6, 5]) : []);
-      if (MAP_THEME === "botanical" || hi || hv) { ctx.strokeStyle = rgba(col, hi || hv ? 0.42 : 0.12); ctx.lineWidth = hi || hv ? 11 : 6; traceEdge(a, b, c); ctx.stroke(); }
-      ctx.strokeStyle = col; ctx.globalAlpha = hi || hv ? 1 : (F ? 0.1 : (MAP_THEME === "civic-clarity" ? 0.78 : 0.68 * depth));
-      ctx.lineWidth = hi || hv ? 3.2 : (MAP_THEME === "civic-clarity" ? 2 : 1.8);
-      if (hi && isWeak(e.strength)) ctx.lineDashOffset = -t * 18;
-      traceEdge(a, b, c); ctx.stroke();
-      if (MAP_THEME === "field-atlas") { ctx.setLineDash([]); ctx.fillStyle = col; ctx.beginPath(); ctx.arc(c.x, c.y, 2.5, 0, 6.283); ctx.fill(); }
+      var depth = Math.min(fog(a), fog(b)), col = (themeById[e.theme] || {}).color || "#7fa88b";
+      var weak = e.strength && (e.strength.indexOf("Weak") === 0 || e.strength.indexOf("Pattern") === 0);
+      ctx.setLineDash(weak ? [6, 5] : []);
+      ctx.strokeStyle = rgba(col, hi || hv ? 0.4 : (F ? 0.03 : 0.1)); ctx.lineWidth = hi || hv ? 12 : 6;
+      ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke();
+      ctx.strokeStyle = col; ctx.globalAlpha = hi || hv ? 1 : (F ? 0.1 : 0.7 * depth); ctx.lineWidth = hi || hv ? 3 : 1.7;
+      if (hi && weak) ctx.lineDashOffset = -t * 18;
+      ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke();
       ctx.lineDashOffset = 0; ctx.globalAlpha = 1;
+      if ((hi || hv) && !reduce) { // particles travelling along highlighted links
+        ctx.setLineDash([]); ctx.fillStyle = "#fff";
+        for (var q = 0; q < 3; q++) { var s = ((t * 0.35 + q / 3 + i * 0.07) % 1), pt = qpt(e._g, s);
+          ctx.globalAlpha = 0.9 * Math.sin(s * Math.PI); ctx.beginPath(); ctx.arc(pt.x, pt.y, 2.4, 0, 6.283); ctx.fill(); }
+        ctx.globalAlpha = 1;
+      }
     });
     ctx.setLineDash([]);
+
     // nodes, far to near
-    var items = hubs.concat(claims).sort(function (m, n) { return P.get(n).z - P.get(m).z; });
+    var items = allHubs.concat(claims).sort(function (m, n) { return P.get(n).z - P.get(m).z; });
     items.forEach(function (n) {
-      var p = P.get(n), isHub = n.kind === "hub", k = Math.max(0.55, p.s * 1.15);
-      var on = !F || (isHub ? F.hub === n || (n.claims || []).some(function (c) { return F.ids[c.id]; }) : F.ids[n.id]);
+      var p = P.get(n), isHub = n.kind === "hub", sc = Math.max(0.6, p.s * 1.1), fg = fog(p);
+      var on = !F || (isHub ? F.hub === n || n.claims.some(function (c) { return F.ids[c.id]; }) : F.ids[n.id]);
       var isSel = sel && ((isHub && sel.hub === n) || (!isHub && sel.kind === "claim" && sel.id === n.id));
       var isHov = hover && ((isHub && hover.hub === n) || (!isHub && hover.kind === "claim" && hover.id === n.id));
-      ctx.globalAlpha = on ? 1 : 0.22;
       if (isHub) {
-        var r = 17 * k * (isHov ? 1.08 : 1);
-        var g = ctx.createRadialGradient(p.sx, p.sy, r * 0.4, p.sx, p.sy, r * 2.4);
-        g.addColorStop(0, rgba(n.color, 0.45)); g.addColorStop(1, rgba(n.color, 0));
-        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.sx, p.sy, r * 2.4, 0, 6.283); ctx.fill();
-        var g2 = ctx.createRadialGradient(p.sx - r * 0.35, p.sy - r * 0.35, r * 0.1, p.sx, p.sy, r);
-        g2.addColorStop(0, rgba("#ffffff", 0.22)); g2.addColorStop(0.32, "#174c35"); g2.addColorStop(1, "#0e2a1f");
-        ctx.fillStyle = g2; glyphPath(p.sx, p.sy, r); ctx.fill();
-        ctx.strokeStyle = isSel ? "#e3a72f" : n.color; ctx.lineWidth = isSel ? 3.5 : (MAP_THEME === "civic-clarity" ? 3.2 : 2.8); glyphPath(p.sx, p.sy, r); ctx.stroke();
-        if (MAP_THEME === "field-atlas") { ctx.save(); ctx.strokeStyle = "rgba(246,244,238,.75)"; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(p.sx - r * .65, p.sy); ctx.lineTo(p.sx + r * .65, p.sy); ctx.moveTo(p.sx, p.sy - r * .65); ctx.lineTo(p.sx, p.sy + r * .65); ctx.stroke(); ctx.restore(); }
+        var a = n.alpha * (on ? 1 : 0.3), r = 23 * sc * (isHov ? 1.08 : 1) * (0.6 + 0.4 * n.alpha);
+        ctx.globalAlpha = a;
+        var g = ctx.createRadialGradient(p.sx, p.sy, r * 0.5, p.sx, p.sy, r * 3);
+        g.addColorStop(0, rgba(n.color, 0.5)); g.addColorStop(1, rgba(n.color, 0));
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.sx, p.sy, r * 3, 0, 6.283); ctx.fill();
+        var g2 = ctx.createRadialGradient(p.sx - r * .35, p.sy - r * .4, r * .1, p.sx, p.sy, r);
+        g2.addColorStop(0, rgba("#ffffff", 0.55)); g2.addColorStop(0.25, n.color); g2.addColorStop(1, rgba(n.color, 0.85));
+        ctx.fillStyle = g2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r, 0, 6.283); ctx.fill();
+        ctx.strokeStyle = isSel ? "#fff" : "rgba(255,255,255,.6)"; ctx.lineWidth = isSel ? 3 : 1.5; ctx.stroke();
         var ip = ICON_PATHS[n.name];
-        if (ip) { ctx.save(); var sc = r * 1.15 / 24; ctx.translate(p.sx - 12 * sc, p.sy - 12 * sc); ctx.scale(sc, sc);
-          ctx.strokeStyle = "#fff"; ctx.lineWidth = 2.1; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.stroke(ip); ctx.restore(); }
-        if (MAP_THEME === "botanical") { for (var li = 0; li < 3; li++) { var la = t * .18 + li * 2.094, lx = p.sx + Math.cos(la) * r * 1.8, ly = p.sy + Math.sin(la) * r * 1.8; ctx.fillStyle = rgba("#7fa88b", .75); ctx.strokeStyle = rgba("#d4e4d9", .65); ctx.lineWidth = 1; drawLeaf(lx, ly, la, 5 + 1.2 * Math.sin(t + li)); } }
-        (n.reviewLeaves || []).forEach(function (review, ri) {
-          var count = n.reviewLeaves.length, angle = -Math.PI / 2 + (ri - (count - 1) / 2) * .48;
-          var lx = p.sx + Math.cos(angle) * r * 1.62, ly = p.sy + Math.sin(angle) * r * 1.62;
-          ctx.fillStyle = review.reviewLeafColor; ctx.strokeStyle = "rgba(246,244,238,.82)"; ctx.lineWidth = 1.1;
-          drawLeaf(lx, ly, angle + Math.PI / 2, 6.5);
+        if (ip) { ctx.save(); var s2 = r * 1.15 / 24; ctx.translate(p.sx - 12 * s2, p.sy - 12 * s2); ctx.scale(s2, s2);
+          ctx.strokeStyle = "rgba(10,30,20,.9)"; ctx.lineWidth = 2.3; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.stroke(ip); ctx.restore(); }
+        (n.reviewLeaves || []).forEach(function (rv, ri) {
+          var count = n.reviewLeaves.length, ang = -Math.PI / 2 + (ri - (count - 1) / 2) * .42;
+          ctx.fillStyle = rv.reviewLeafColor; ctx.strokeStyle = "rgba(246,244,238,.85)"; ctx.lineWidth = 1;
+          drawLeaf(p.sx + Math.cos(ang) * r * 1.5, p.sy + Math.sin(ang) * r * 1.5, ang + Math.PI / 2, 6);
         });
-        n._p = { x: p.sx, y: p.sy, r: r };
-        ctx.font = "700 12px Arial, sans-serif"; ctx.textAlign = "center";
-        ctx.fillStyle = "rgba(14,42,31,.75)"; var tw = ctx.measureText(n.name).width;
-        roundRect(p.sx - tw / 2 - 6, p.sy + r + 6, tw + 12, 17, 8); ctx.fill();
-        ctx.fillStyle = "#eef3ef"; ctx.fillText(n.name, p.sx, p.sy + r + 18.5);
+        n._p = { x: p.sx, y: p.sy, r: r, live: n.alpha > 0.5 };
+        if (n.alpha > 0.3) labels.push({ x: p.sx, y: p.sy + r + 15, text: n.name, sub: n.count + (n.count === 1 ? " claim" : " claims"),
+          hub: true, color: n.color, alpha: a, pri: 3 + (isSel ? 2 : 0) });
+        ctx.globalAlpha = 1;
       } else {
-        var d = n.data, pulse = d.verdict && !reduce ? 1 + 0.06 * Math.sin(t * 2 + n.phase) : 1;
-        var r2 = (MAP_THEME === "civic-clarity" ? 10.5 : 9.5) * k * (isHov || isSel ? 1.25 : 1);
-        if (d.verdict) { // verdict halo
-          var gh = ctx.createRadialGradient(p.sx, p.sy, r2, p.sx, p.sy, r2 * 2.6 * pulse);
-          gh.addColorStop(0, rgba(VC[d.verdict], 0.5)); gh.addColorStop(1, rgba(VC[d.verdict], 0));
-          ctx.fillStyle = gh; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 * 2.6 * pulse, 0, 6.283); ctx.fill();
-        }
-        var verdictFill = d.verdict ? VC[d.verdict] : "#294739";
-        var g3 = ctx.createRadialGradient(p.sx - r2 * 0.4, p.sy - r2 * 0.4, r2 * 0.1, p.sx, p.sy, r2);
-        g3.addColorStop(0, rgba("#ffffff", 0.42)); g3.addColorStop(0.35, verdictFill); g3.addColorStop(1, verdictFill);
-        ctx.fillStyle = g3; glyphPath(p.sx, p.sy, r2); ctx.fill();
-        ctx.strokeStyle = n.color; ctx.lineWidth = MAP_THEME === "civic-clarity" ? 3.6 : 3.2; glyphPath(p.sx, p.sy, r2 + 1); ctx.stroke();
-        if (!d.verdict) { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,0.82)"; ctx.lineWidth = 1.3; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 4.5, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
-        if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 6, 0, 6.283); ctx.stroke(); }
-        n._p = { x: p.sx, y: p.sy, r: r2 + 3 };
-        if (MAP_THEME === "civic-clarity" || p.s > (W < 700 ? 0.62 : 0.5) || isHov || isSel || (F && F.ids[n.id])) {
-          ctx.font = MAP_THEME === "civic-clarity" ? "700 10px Arial, sans-serif" : "600 11px Arial, sans-serif"; ctx.textAlign = "center";
-          if (MAP_THEME === "civic-clarity") { var iw = ctx.measureText(n.id).width + 10; ctx.fillStyle = "rgba(7,29,21,.9)"; roundRect(p.sx - iw / 2, p.sy + r2 + 5, iw, 16, 4); ctx.fill(); }
-          ctx.fillStyle = MAP_THEME === "field-atlas" ? "#e3a72f" : "#eef3ef"; ctx.fillText(n.id, p.sx, p.sy + r2 + 16);
-        }
+        var d = n.data, col = d.verdict ? VC[d.verdict] : NOT_YET_COL, ring = n.hub && mode !== "network" ? n.hub.color : "#cfe2d4";
+        var r2 = 9 * sc * (isHov || isSel ? 1.3 : 1), pulse = d.verdict && !reduce ? 1 + 0.07 * Math.sin(t * 2 + n.phase) : 1;
+        ctx.globalAlpha = (on ? 1 : 0.18) * fg;
+        if (d.verdict) { var gh = ctx.createRadialGradient(p.sx, p.sy, r2, p.sx, p.sy, r2 * 2.8 * pulse);
+          gh.addColorStop(0, rgba(col, 0.55)); gh.addColorStop(1, rgba(col, 0)); ctx.fillStyle = gh;
+          ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 * 2.8 * pulse, 0, 6.283); ctx.fill(); }
+        var g3 = ctx.createRadialGradient(p.sx - r2 * .4, p.sy - r2 * .4, r2 * .1, p.sx, p.sy, r2);
+        g3.addColorStop(0, rgba("#ffffff", 0.5)); g3.addColorStop(0.35, col); g3.addColorStop(1, col);
+        ctx.fillStyle = g3; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2, 0, 6.283); ctx.fill();
+        ctx.strokeStyle = ring; ctx.lineWidth = 2.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 1.6, 0, 6.283); ctx.stroke();
+        if (!d.verdict) { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,.7)"; ctx.lineWidth = 1.1;
+          ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 4.6, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
+        if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
+        n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: true };
+        var focused = F && F.ids[n.id];
+        labels.push({ x: p.sx, y: p.sy + r2 + 13, text: n.id, sub: (isHov || isSel || (focused && F.hub)) ? d.title : "", hub: false,
+          alpha: (on ? 1 : 0.25) * fg, pri: isSel || isHov ? 4 : focused ? 2 : p.s > 0.9 ? 1 : 0 });
+        ctx.globalAlpha = 1;
       }
+    });
+
+    // labels last, highest priority first, skipping overlaps so hub titles always stay readable
+    labels.sort(function (a, b) { return b.pri - a.pri; });
+    var placed = [];
+    labels.forEach(function (L) {
+      ctx.font = L.hub ? "700 13px Arial, sans-serif" : "600 11px Arial, sans-serif";
+      var w = ctx.measureText(L.text).width, w2 = 0;
+      if (L.sub) { ctx.font = L.hub ? "11px Arial, sans-serif" : "italic 11px Arial, sans-serif"; w2 = Math.min(220, ctx.measureText(L.sub).width); }
+      var bw = Math.max(w, w2) + (L.hub ? 18 : 10), bh = L.sub ? 32 : 18, box = { x: L.x - bw / 2, y: L.y - 12, w: bw, h: bh };
+      if (L.pri < 3 && placed.some(function (o) { return box.x < o.x + o.w && box.x + box.w > o.x && box.y < o.y + o.h && box.y + box.h > o.y; })) return;
+      placed.push(box); ctx.globalAlpha = L.alpha;
+      if (L.hub) { ctx.fillStyle = "rgba(7,25,17,.78)"; roundRect(box.x, box.y, box.w, box.h, 9); ctx.fill();
+        ctx.strokeStyle = rgba(L.color, 0.7); ctx.lineWidth = 1; ctx.stroke(); }
+      else if (L.sub) { ctx.fillStyle = "rgba(7,25,17,.8)"; roundRect(box.x, box.y, box.w, box.h, 7); ctx.fill(); }
+      ctx.textAlign = "center"; ctx.fillStyle = "#eef3ef"; ctx.font = L.hub ? "700 13px Arial, sans-serif" : "600 11px Arial, sans-serif";
+      ctx.fillText(L.text, L.x, L.y + 1);
+      if (L.sub) { ctx.font = L.hub ? "11px Arial, sans-serif" : "italic 11px Arial, sans-serif"; ctx.fillStyle = "#a9c2b1";
+        var sub = L.sub; while (ctx.measureText(sub).width > 220 && sub.length > 4) sub = sub.slice(0, -2);
+        ctx.fillText(sub === L.sub ? sub : sub + "…", L.x, L.y + 15); }
       ctx.globalAlpha = 1;
     });
     requestAnimationFrame(frame);
   }
 
-  function roundRect(x, y, w, h, r) { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r);
-    ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
-
   function pick(x, y) {
     var best = null, bd = 1e9;
-    claims.concat(hubs).forEach(function (n) { if (!n._p) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
-      var hit = Math.max(n._p.r + 5, W < 700 ? 16 : 0);
-      if (d < hit && d < bd) { bd = d; best = n; } });
+    claims.concat(hubs).forEach(function (n) { if (!n._p || !n._p.live) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
+      var hit = Math.max(n._p.r + 5, W < 700 ? 16 : 0); if (d < hit && d < bd) { bd = d; best = n; } });
     if (best) return best.kind === "hub" ? { kind: "hub", hub: best } : { kind: "claim", id: best.id };
-    var be = -1; bd = 7;
-    edges.forEach(function (e, i) { if (!e._g) return; var g = e._g;
-      ctx.save(); ctx.setLineDash([]); ctx.lineWidth = 14; traceEdge(g.a, g.b, g.c);
-      var hit = ctx.isPointInStroke(x, y); ctx.restore();
-      if (hit) { var d = Math.hypot((g.a.sx + g.b.sx) / 2 - x, (g.a.sy + g.b.sy) / 2 - y); if (d < bd) { bd = d; be = i; } } });
+    var be = -1; bd = 8;
+    edges.forEach(function (e, i) { if (!e._g) return;
+      for (var q = 0; q <= 24; q++) { var p = qpt(e._g, q / 24), d = Math.hypot(p.x - x, p.y - y); if (d < bd) { bd = d; be = i; } } });
     return be >= 0 ? { kind: "edge", index: be, edge: edges[be] } : null;
   }
 
   // ------------------------------------------------------------ panels
   function openPanel(kicker, title, accent) {
-    closeLegend();
     panel.textContent = ""; panel.style.display = "block"; panel.scrollTop = 0;
     panel.style.borderTopColor = accent || "#e3a72f";
-    var x = el("button", "x", "×"); x.setAttribute("aria-label", "Close"); x.onclick = clearSel; panel.appendChild(x);
+    var x = el("button", "x", "×"); x.type = "button"; x.setAttribute("aria-label", "Close"); x.onclick = clearSel; panel.appendChild(x);
     panel.appendChild(el("div", "id", kicker)); panel.appendChild(el("h3", null, title));
   }
+  function fitPanel() { panel.classList.toggle("fit", panel.scrollHeight < stage.clientHeight - 140); }
   function label(t) { panel.appendChild(el("div", "label", t)); }
   function claimLink(id, box) {
-    var c = byId[id].data, b = el("button", "link");
-    var dot = el("span", "dot"); dot.style.background = c.verdict ? VC[c.verdict] : "#7fa88b";
+    var c = byId[id].data, b = el("button", "link"); b.type = "button";
+    var dot = el("span", "dot"); dot.style.background = c.verdict ? VC[c.verdict] : NOT_YET_COL;
     b.appendChild(dot); b.appendChild(document.createTextNode(c.id + "  " + c.title));
     b.onclick = function () { selectClaim(id); }; box.appendChild(b);
   }
-
   function openDocument(title, url) {
     document.getElementById("viewer-title").textContent = title;
     viewerFrame.removeAttribute("src"); viewerImage.removeAttribute("src");
@@ -614,11 +838,9 @@
   viewer.querySelector(".viewer-close").addEventListener("click", function () { viewer.close(); });
   viewer.addEventListener("click", function (event) { if (event.target === viewer) viewer.close(); });
   viewer.addEventListener("close", function () { viewerFrame.removeAttribute("src"); viewerImage.removeAttribute("src"); });
-
   function addFileAction(box, title, url) {
     var group = el("span", "file-action");
-    var open = el("button", "btn", "Open " + title); open.type = "button";
-    open.onclick = function () { openDocument(title, url); };
+    var open = el("button", "btn", "Open " + title); open.type = "button"; open.onclick = function () { openDocument(title, url); };
     var download = el("a", "btn ghost", "Download"); download.href = url; download.download = url.split("/").pop();
     download.setAttribute("aria-label", "Download " + title);
     group.appendChild(open); group.appendChild(download); box.appendChild(group);
@@ -626,14 +848,15 @@
 
   function selectClaim(id) {
     var c = byId[id]; if (!c) return; sel = { kind: "claim", id: id };
-    var d = c.data; openPanel(d.id + " · " + d.category.toUpperCase(), d.title, c.color);
-    if (d.quote) { var q = el("blockquote", null, "“" + d.quote + "”"); panel.appendChild(q); }
+    var d = c.data; openPanel(d.id + " · " + d.category.toUpperCase(), d.title, d.verdict ? VC[d.verdict] : NOT_YET_COL);
+    if (d.quote) panel.appendChild(el("blockquote", null, "“" + d.quote + "”"));
     panel.appendChild(el("p", null, d.claim));
     if (d.speaker) panel.appendChild(el("p", "small", d.speaker + (d.date ? " · " + d.date : "")));
-    var chips = el("div"); var st = el("span", "chip", d.verdict ? d.verdict : d.status);
+    var chips = el("div"), st = el("span", "chip", d.verdict ? d.verdict : d.status);
     st.style.background = d.verdict ? VC[d.verdict] : "#4b5e56"; chips.appendChild(st);
     if (d.confidence) chips.appendChild(el("span", "chip soft", d.confidence + " confidence"));
     if (d.verdict) chips.appendChild(el("span", "chip soft", d.status + (d.status === "Drafted" ? ", pending right of reply" : "")));
+    if (d.wording_status && !d.verdict) chips.appendChild(el("span", "chip soft", d.wording_status));
     (d.tags || []).forEach(function (t) { chips.appendChild(el("span", "chip soft", t)); }); panel.appendChild(chips);
     if (d.last_reviewed) {
       var days = c.reviewAgeDays || 0, remaining = Math.max(0, 365 - days);
@@ -643,74 +866,66 @@
     if (d.counter) { label("CONTEXT AND EVIDENCE"); panel.appendChild(el("p", null, d.counter)); }
     var mine = edges.map(function (e, i) { return { e: e, i: i }; }).filter(function (o) { return o.e.from === id || o.e.to === id; });
     if (mine.length) {
-      label("LINKED CLAIMS (CLICK A THEME OR A CLAIM)"); var box = el("div", "links");
+      label("LINKED CLAIMS · CLICK A THEME OR A CLAIM"); var box = el("div", "links");
       mine.forEach(function (o) {
         var other = o.e.from === id ? o.e.to : o.e.from, row = el("div", "lrow");
-        var tb = el("button", "tchip", themeById[o.e.theme] ? themeById[o.e.theme].name : o.e.theme);
-        tb.style.borderColor = themeColor(o.e.theme); tb.onclick = function () { selectEdge(o.i); };
+        var tb = el("button", "tchip", themeById[o.e.theme] ? themeById[o.e.theme].name : o.e.theme); tb.type = "button";
+        tb.style.borderColor = (themeById[o.e.theme] || {}).color || "#7fa88b"; tb.onclick = function () { selectEdge(o.i); };
         row.appendChild(tb); claimLink(other, row); box.appendChild(row);
       });
       panel.appendChild(box);
     }
     var acts = el("div", "acts");
     var outputLabels = { report: "Report", report_pdf: "Report", flyer_pdf: "Flyer PDF", flyer_png: "Flyer image", document: "Document", appendix: "Appendix" };
-    Object.keys(d.outputs || {}).forEach(function (key) {
-      addFileAction(acts, outputLabels[key] || key.replace(/[_-]+/g, " "), d.outputs[key]);
-    });
+    Object.keys(d.outputs || {}).forEach(function (key) { addFileAction(acts, outputLabels[key] || key.replace(/[_-]+/g, " "), d.outputs[key]); });
     var rec = el("a", "btn ghost", "Claim record"); rec.href = d.record; rec.target = "_blank"; rec.rel = "noopener"; acts.appendChild(rec);
-    var hb = el("button", "btn ghost", c.hub.name); hb.onclick = function () { selectHub(c.hub); }; acts.appendChild(hb);
-    panel.appendChild(acts);
+    if (c.hub && mode !== "network") { var hb = el("button", "btn ghost", c.hub.name); hb.type = "button"; hb.onclick = function () { selectHub(c.hub); }; acts.appendChild(hb); }
+    panel.appendChild(acts); fitPanel();
   }
-
   function selectHub(h) {
-    sel = { kind: "hub", hub: h }; openPanel("TOPIC", h.name, h.color);
-    var list = h.claims || [], done = list.filter(function (c) { return c.data.verdict; }).length;
-    var reviewed = h.reviewLeaves || [];
+    sel = { kind: "hub", hub: h }; openPanel(MODES[mode].label.toUpperCase(), h.name, h.color);
+    var list = h.claims, done = list.filter(function (c) { return c.data.verdict; }).length, reviewed = h.reviewLeaves || [];
     panel.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " with a verdict, " + reviewed.length + " completed evidence reviews."));
     if (reviewed.length) {
       label("LEAVES · ONE PER COMPLETED REVIEW"); var freshness = el("div", "links");
-      reviewed.forEach(function (c) {
-        var age = c.reviewAgeDays || 0, line = el("p", "small", c.id + " · last reviewed " + c.data.last_reviewed + " · " + (age >= 365 ? "refresh due" : Math.max(0, 365 - age) + " days until due"));
-        var leaf = legendLeaf(c.reviewLeafColor); leaf.style.width = "16px"; leaf.style.height = "16px"; line.prepend(leaf); freshness.appendChild(line);
-      });
+      reviewed.forEach(function (c) { var age = c.reviewAgeDays || 0;
+        freshness.appendChild(el("p", "small", c.id + " · last reviewed " + c.data.last_reviewed + " · " + (age >= 365 ? "refresh due" : Math.max(0, 365 - age) + " days until due"))); });
       panel.appendChild(freshness);
     }
-    label("CLAIMS IN THIS TOPIC"); var box = el("div", "links");
+    label("CLAIMS IN THIS GROUP"); var box = el("div", "links");
     list.forEach(function (c) { claimLink(c.id, box); }); panel.appendChild(box);
+    var also = claims.filter(function (c) { return c.extra.indexOf(h) >= 0; });
+    if (also.length) { label("ALSO TAGGED (SECOND PATTERN)"); var b2 = el("div", "links"); also.forEach(function (c) { claimLink(c.id, b2); }); panel.appendChild(b2); }
+    fitPanel();
   }
-
   function selectEdge(i) {
     var e = edges[i], th = themeById[e.theme] || {}; sel = { kind: "edge", index: i, edge: e };
     openPanel("LINK · " + (th.link_type || e.link_type || "").toUpperCase(), th.name || e.theme, th.color);
     var box = el("div", "links"); claimLink(e.from, box); claimLink(e.to, box); panel.appendChild(box);
     if (th.description) { label("WHAT CONNECTS THEM"); panel.appendChild(el("p", null, th.description)); }
     var chips = el("div"); chips.appendChild(el("span", "chip soft", "Strength: " + (e.strength || th.strength))); panel.appendChild(chips);
-    var all = el("button", "btn ghost", "Show every claim in this theme"); all.onclick = function () { selectTheme(e.theme); };
-    var acts = el("div", "acts"); acts.appendChild(all); panel.appendChild(acts);
+    var acts = el("div", "acts"), all = el("button", "btn ghost", "Show every claim in this theme"); all.type = "button";
+    all.onclick = function () { selectTheme(e.theme); }; acts.appendChild(all); panel.appendChild(acts); fitPanel();
   }
-
   function selectTheme(id) {
     var th = themeById[id]; if (!th) return; sel = { kind: "theme", id: id };
+    if (!themeOn[id]) { themeOn[id] = true; buildLinkBar(); }
     openPanel("THEME · " + (th.link_type || "").toUpperCase(), th.name, th.color);
     if (th.description) panel.appendChild(el("p", null, th.description));
     var chips = el("div"); chips.appendChild(el("span", "chip soft", "Strength: " + th.strength)); panel.appendChild(chips);
     label("CLAIMS LINKED BY THIS THEME"); var box = el("div", "links");
-    (th.members || []).forEach(function (m) { if (byId[m]) claimLink(m, box); }); panel.appendChild(box);
+    (th.members || []).forEach(function (m) { if (byId[m]) claimLink(m, box); }); panel.appendChild(box); fitPanel();
   }
-
   function clearSel() { sel = null; panel.style.display = "none"; }
 
   function showTip(h, x, y) {
     if (!h) { tip.style.display = "none"; return; }
     var txt;
-    if (h.kind === "claim") { var d = byId[h.id].data; txt = d.id + " · " + d.title + (d.verdict ? " — " + d.verdict : ""); }
-    else if (h.kind === "hub") {
-      var nc = (h.hub.claims || []).length, rl = h.hub.reviewLeaves || [], oldest = rl.reduce(function (max, c) { return Math.max(max, c.reviewAgeDays || 0); }, 0);
-      txt = h.hub.name + " · " + nc + (nc === 1 ? " claim" : " claims") + " · " + rl.length + " completed reviews" + (rl.length ? " · oldest " + oldest + " days" + (oldest >= 365 ? " · refresh due" : "") : "");
-    }
+    if (h.kind === "claim") { var d = byId[h.id].data; txt = d.id + " · " + d.title + (d.verdict ? " — " + d.verdict : " — not yet checked"); }
+    else if (h.kind === "hub") txt = h.hub.name + " · " + h.hub.count + (h.hub.count === 1 ? " claim" : " claims");
     else { var th = themeById[h.edge.theme] || {}; txt = (th.name || h.edge.theme) + ": " + h.edge.from + " ↔ " + h.edge.to; }
     tip.textContent = txt; tip.style.display = "block";
-    tip.style.left = Math.min(x + 14, W - tip.offsetWidth - 8) + "px"; tip.style.top = (y + 14) + "px";
+    tip.style.left = Math.min(x + 14, W - tip.offsetWidth - 8) + "px"; tip.style.top = (y + 16) + "px";
   }
 
   // ------------------------------------------------------------ interaction
@@ -720,6 +935,8 @@
     var pts = Object.keys(activePointers).map(function (id) { return activePointers[id]; });
     return pts.length > 1 ? Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y) : 0;
   }
+  function setSpin(v) { spinning = v; var b = document.getElementById("spin"); b.textContent = v ? "Pause" : "Resume";
+    b.setAttribute("aria-label", v ? "Pause map rotation" : "Resume map rotation"); }
   canvas.addEventListener("pointerdown", function (e) {
     activePointers[e.pointerId] = { x: e.clientX, y: e.clientY };
     canvas.setPointerCapture(e.pointerId); canvas.classList.add("dragging");
@@ -728,57 +945,44 @@
   });
   canvas.addEventListener("pointermove", function (e) {
     if (activePointers[e.pointerId]) activePointers[e.pointerId] = { x: e.clientX, y: e.clientY };
-    if (multiGesture && pointerCount() > 1) {
-      var distance = pointerDistance();
-      if (pinch && distance) zoom = Math.max(0.5, Math.min(2.6, zoom * distance / pinch));
-      pinch = distance; down = null; showTip(null); return;
-    }
+    if (multiGesture && pointerCount() > 1) { var distance = pointerDistance();
+      if (pinch && distance) cam.zoom = Math.max(0.5, Math.min(2.8, cam.zoom * distance / pinch));
+      pinch = distance; down = null; showTip(null); return; }
     var r = canvas.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
     if (down) { var dx = e.clientX - down.x, dy = e.clientY - down.y; moved += Math.abs(dx) + Math.abs(dy);
-      yaw += dx * 0.006; pitch = Math.max(-1.35, Math.min(1.35, pitch + dy * 0.006)); down = { x: e.clientX, y: e.clientY }; showTip(null); }
+      cam.yaw += dx * 0.006; if (cam.tyaw !== null) cam.tyaw += dx * 0.006;
+      cam.tpitch = cam.pitch = Math.max(-1.35, Math.min(1.35, cam.pitch + dy * 0.006)); down = { x: e.clientX, y: e.clientY }; showTip(null); }
     else { hover = pick(mx, my); canvas.style.cursor = hover ? "pointer" : "grab"; showTip(hover, mx, my); }
   });
   canvas.addEventListener("pointerleave", function () { hover = null; showTip(null); });
   canvas.addEventListener("pointerup", function (e) {
     delete activePointers[e.pointerId];
-    if (multiGesture) {
-      down = null; pinch = null;
-      if (!pointerCount()) { multiGesture = false; canvas.classList.remove("dragging"); }
-      return;
-    }
+    if (multiGesture) { down = null; pinch = null; if (!pointerCount()) { multiGesture = false; canvas.classList.remove("dragging"); } return; }
     canvas.classList.remove("dragging");
     if (moved < 6) { var r = canvas.getBoundingClientRect(); var h = pick(e.clientX - r.left, e.clientY - r.top);
       if (!h) clearSel(); else if (h.kind === "claim") selectClaim(h.id); else if (h.kind === "hub") selectHub(h.hub); else selectEdge(h.index); }
-    else { spinning = false; document.getElementById("spin").textContent = "Resume"; document.getElementById("spin").setAttribute("aria-label", "Resume map rotation"); }
+    else setSpin(false);
     down = null;
   });
-  canvas.addEventListener("pointercancel", function (e) {
-    activePointers = {}; down = null; pinch = null; multiGesture = false;
-    canvas.classList.remove("dragging");
+  canvas.addEventListener("pointercancel", function () { activePointers = {}; down = null; pinch = null; multiGesture = false; canvas.classList.remove("dragging"); });
+  canvas.addEventListener("wheel", function (e) { e.preventDefault(); cam.zoom = Math.max(0.5, Math.min(2.8, cam.zoom * (e.deltaY < 0 ? 1.08 : 0.92))); }, { passive: false });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") clearSel();
+    if (e.target === document.body && /^[1-6]$/.test(e.key)) setMode(MODE_ORDER[+e.key - 1]);
   });
-  canvas.addEventListener("wheel", function (e) { e.preventDefault(); zoom = Math.max(0.5, Math.min(2.6, zoom * (e.deltaY < 0 ? 1.08 : 0.92))); }, { passive: false });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") clearSel(); });
-  document.getElementById("spin").onclick = function () {
-    spinning = !spinning; this.textContent = spinning ? "Pause" : "Resume";
-    this.setAttribute("aria-label", spinning ? "Pause map rotation" : "Resume map rotation");
-  };
-  document.getElementById("lgbtn").onclick = function () {
-    var open = document.getElementById("legend").classList.toggle("open");
-    this.setAttribute("aria-expanded", open ? "true" : "false");
-  };
-  function closeLegend() { document.getElementById("legend").classList.remove("open"); document.getElementById("lgbtn").setAttribute("aria-expanded", "false"); }
-  document.getElementById("zoomout").onclick = function () { zoom = Math.max(0.5, zoom / 1.18); };
-  document.getElementById("zoomin").onclick = function () { zoom = Math.min(2.6, zoom * 1.18); };
-  document.getElementById("reset").onclick = function () { yaw = 0.6; pitch = -0.25; zoom = 1; clearSel(); };
+  document.getElementById("spin").onclick = function () { setSpin(!spinning); };
+  document.getElementById("zoomout").onclick = function () { cam.zoom = Math.max(0.5, cam.zoom / 1.18); };
+  document.getElementById("zoomin").onclick = function () { cam.zoom = Math.min(2.8, cam.zoom * 1.18); };
+  document.getElementById("reset").onclick = function () { cam.yaw = 0.6; cam.pitch = cam.tpitch; cam.zoom = 1; if (sway) cam.yaw = 0; clearSel(); };
   window.addEventListener("resize", resize);
-  if (reduce) { document.getElementById("spin").textContent = "Resume"; document.getElementById("spin").setAttribute("aria-label", "Resume map rotation"); }
+  if (reduce) setSpin(false);
 
   var previewPayload = new URLSearchParams(location.search).get("previewData");
   if (previewPayload) {
     try { init(JSON.parse(previewPayload)); } catch (e) { stage.appendChild(el("p", null, "The embedded map data could not be read.")).style.cssText = "padding:24px;color:#e3a72f"; }
   } else {
     fetch("data/claims.json").then(function (r) { return r.json(); }).then(init).catch(function () {
-      stage.appendChild(el("p", null, "Could not load data/claims.json. If you opened this file directly, serve the docs folder instead (python -m http.server -d docs)." )).style.cssText = "padding:24px;color:#e3a72f";
+      stage.appendChild(el("p", null, "Could not load data/claims.json. If you opened this file directly, serve the docs folder instead (python -m http.server -d docs).")).style.cssText = "padding:24px;color:#e3a72f";
     });
   }
 })();
