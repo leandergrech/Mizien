@@ -1,0 +1,9 @@
+check,value,unit,source,note
+"Land in Terminal 2 window, 2017-2023 (mean)",45.7,ha,Sentinel-2,
+"New land at Terminal 2, 2023 -> 2026",3.7,ha,Sentinel-2,"stated: about 3.0 ha (30,000 m2), Malta Freeport Corporation"
+"New land at Terminal 2, 2025 -> 2026",3.3,ha,Sentinel-2,
+Fill per hectare of the Terminal 2 reclamation,333333,t/ha,calculated,"about 1 million tonnes of inert material for 30,000 m2 (Malta Freeport Corporation)"
+Natura 2000 sites within 1.5 km of the Freeport,3,sites,EEA Natura 2000,MT0000024 SAC/SCI 1.03 km; MT0000033 SPA 1.03 km; MT0000111 SPA 1.09 km
+Distance to marine SPA Żona fil-Baħar fil-Lbiċ,1.09,km,EEA Natura 2000,256.0 km2
+Land reclamation allocated in budgets 2023 / 2024 / 2025,"500,000 / 100,000 / 10,000",EUR,"MaltaToday analysis, 15 Apr 2025 (second-hand)","EUR 9,500 spent of the 2023 allocation"
+Years since the seabed study was said to be the basis for a Cabinet decision,7,years,calculated,"MaltaToday, Sep 2019; study not published"
