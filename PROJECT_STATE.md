@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 3 October 2026 (CC-009 report and flyer v1.0 merged into `main` at `77091be`; CC-010 primary evidence collection underway on `codex/cc-010-trees`; CC-002 v1.1 follow-up remains on `codex/cc-002-follow-up` at `bc5b516`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 3 October 2026 (CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged into `main` at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -98,7 +98,7 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 ## Branches (3 October 2026)
 
 `archive-manifest`, `cc-003-climate`, `cc-004-waste` and `cc-011-manifestos` have been merged into `main` (PRs #1–4).
-CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commit `2110846`). CC-006's report, flyer and site metadata are integrated on `main` at `e0552b9` (fast-forward from `codex/cc-006-spring-hunting`). CC-008 was fast-forwarded and pushed to `main` at `6e1f342`. CC-002's report, flyer, viewer metadata and evidence notes were merged from `codex/cc-002-comino` at `ade9e4b`; v1.1 follow-up is pushed on `codex/cc-002-follow-up` at `bc5b516`, with the permit annex and ecological outcome gaps still unresolved. CC-007 v1.1 with EEA cross-check and session notes was merged into `main` at `68025d0`; the Attard 2024 difference and 14 missing EEA station-years remain unresolved. CC-009 v1.0 was merged into `main` at `77091be`. CC-010 report and flyer v1.0 are drafted on `codex/cc-010-trees`; reply remains for the maintainer. CC-002 v1.1 follow-up remains on its branch and is not merged; permit annex and ecological outcome gaps remain open.
+CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commit `2110846`). CC-006's report, flyer and site metadata are integrated on `main` at `e0552b9` (fast-forward from `codex/cc-006-spring-hunting`). CC-008 was fast-forwarded and pushed to `main` at `6e1f342`. CC-002's report, flyer, viewer metadata and evidence notes were merged from `codex/cc-002-comino` at `ade9e4b`; v1.1 follow-up is pushed on `codex/cc-002-follow-up` at `bc5b516`, with the permit annex and ecological outcome gaps still unresolved. CC-007 v1.1 with EEA cross-check and session notes was merged into `main` at `68025d0`; the Attard 2024 difference and 14 missing EEA station-years remain unresolved. CC-009 v1.0 was merged into `main` at `77091be`. CC-010 report and flyer v1.0 were merged into `main` at `f638e15`; right of reply and the final pledge-period count remain with the maintainer.
 
 ## Notes for the next session
 
