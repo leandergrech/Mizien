@@ -229,8 +229,16 @@
     #panel.wide { width: auto; }
     #panel.wide .pbody { column-count: 1; }
     #panel .hbtns .wbtn { display: none; }
-    #crumb { top: 52px; }
-    #maphud { left: 10px; right: 10px; width: auto; bottom: 44px; }
+    #crumb { top: 86px; max-width: calc(100% - 16px); white-space: nowrap; font-size: 11.5px; gap: 6px; }
+    #maphud { left: 8px; right: 8px; width: auto; bottom: 34px; padding: 7px 11px 8px; font-size: 11px; }
+    #maphud .lvl b { font-size: 13px; }
+    #maphud .bar { margin: 5px 0 4px; height: 5px; }
+    #maphud details { display: none; }
+    #controls { left: 8px; right: 8px; top: 8px; flex-wrap: nowrap; overflow-x: auto; justify-content: flex-end; scrollbar-width: none; }
+    #controls::-webkit-scrollbar { display: none; }
+    button.ctl { min-height: 32px; min-width: 32px; padding: 5px 10px; font-size: 11.5px; flex: none; }
+    #modeTitle { top: 50px; }
+    #toast { top: 96px; max-width: calc(100% - 24px); }
     .desktop-hint { display: none; }
     .mobile-hint { display: inline; }
     #hint { left: 12px; right: 12px; bottom: 10px; text-align: center; }
@@ -751,7 +759,9 @@
     var y2 = py * cp - z1 * sp, z2 = py * sp + z1 * cp;
     var F = view === "map" ? 5000 : 900, s = view === "map" ? Math.max(0.4, Math.min(2, F / (F + z2))) : F / (F + z2 + 300);
     var usable = Math.min(W - leftInset() - panelInset(), H - 120 - topInset());
-    var base = Math.max(0.6, usable / (view === "map" ? 470 : 400)) * cam.zoom * cam.em;
+    var base = (view === "map"   // fit the archipelago (about 520 x 440 world units) to the free area
+      ? Math.max(0.3, Math.min((W - leftInset() - panelInset()) * 0.92 / 520, (H - 120 - topInset()) * 0.92 / 440))
+      : Math.max(0.6, usable / 400)) * cam.zoom * cam.em;
     return { sx: cxNow + cam.px + x1 * s * base, sy: cyNow + cam.py + y2 * s * base, z: z2, s: s * base };
   }
   function ctrl(a, b, bend) {
@@ -905,7 +915,7 @@
         var focused = F && F.ids[n.id];
         var member = expanded && n.hub === expanded, tagged = labelMode === "tag" || member;
         var hp = member ? P.get(expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
-        if ((!expanded || member || isHov || isSel) && !n.clustered) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: (tagged ? d.title : n.id) + (n.offmap && n.data.location ? "  → " + shortPlace(n.data.location.place) : ""),
+        if ((!expanded || member || isHov || isSel) && !n.clustered) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: (tagged ? d.title : n.id) + (n.offmap && n.data.location && W >= 700 ? "  → " + shortPlace(n.data.location.place) : ""),
           sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (d.verdict ? " · " + d.verdict : " · not yet checked") : d.title) : "",
           hub: false, tag: tagged, color: col, alpha: (on ? 1 : 0.25) * fg, ax: p.sx, ay: p.sy, rr: r2 + 6,
           dir: member && expanded.claims.length > 1 ? { x: ddx / dl, y: ddy / dl } : null,
@@ -979,6 +989,8 @@
   function geoXY(lat, lon) { var O = GEO.origin; return { x: (lon - O.lon) * 111320 * Math.cos(O.lat * Math.PI / 180), y: (lat - O.lat) * 110574 }; }
   function toWorld(mx, my) { return { x: (mx - mapC.x) / MPU * mapZ, y: 0, z: (my - mapC.y) / MPU * mapZ }; }
   function geoReady() {
+    var nl = 0; claims.forEach(function (c) { if (!c.data.location) c.noLocIndex = nl++; });
+    if (nl > claims.length / 2) showToast("Claim locations are still loading; reload the page in a minute if pins look misplaced.");
     GEO.islands.forEach(function (I) { var cx = 0, cy = 0, n = I.coarse.length / 2; for (var i = 0; i < I.coarse.length; i += 2) { cx += I.coarse[i]; cy += I.coarse[i + 1]; } I.cx = cx / n; I.cy = cy / n; });
     claims.forEach(function (c) {
       var L = c.data.location; c.m = null; c.district = null;
@@ -993,7 +1005,7 @@
     var vis = [], places = {};
     claims.forEach(function (c) {
       c.clustered = false; c.offmap = false;
-      var m = c.m || { x: 21000, y: -16000 };                       // no location yet: parked in the sea, south-east
+      var m = c.m || { x: 16000 + (c.noLocIndex || 0) * 900, y: -19000 }; // no location yet: a row in the sea, south-east
       if (!mapLevel && c.district && unlocked(c.district)) {          // bunched into the district badge
         var w = toWorld(c.district.x, c.district.y), a = (claims.indexOf(c) * 2.4);
         c.tx = w.x + Math.cos(a) * 5; c.tz = w.z + Math.sin(a) * 5; c.ty = -10; c.clustered = true; c.anchor = null; return;
@@ -1042,10 +1054,11 @@
       ctx.strokeStyle = detail ? "rgba(227,167,47," + (0.35 + 0.4 * dz) + ")" : "rgba(207,226,212,.55)"; ctx.lineWidth = detail ? 1.4 + dz : 1.1; ctx.stroke();
     });
     // island names
-    if (has("names") && !mapLevel) [["MALTA", "Malta"], ["GĦAWDEX · GOZO", "Gozo"], ["KEMMUNA", "Comino"]].forEach(function (L) {
+    var narrow = W < 700;
+    if (has("names") && !mapLevel) [["MALTA", "Malta"], [narrow ? "GOZO" : "GĦAWDEX · GOZO", "Gozo"]].concat(narrow ? [] : [["KEMMUNA", "Comino"]]).forEach(function (L) {
       var I = GEO.islands.filter(function (x) { return x.name === L[1]; })[0]; if (!I) return;
       var p = project(toWorld(I.cx, I.cy + (L[1] === "Malta" ? 3500 : L[1] === "Gozo" ? 1800 : -900)));
-      ctx.font = "700 " + (L[1] === "Comino" ? 10 : 14) + "px 'Liberation Serif', Georgia, serif"; ctx.textAlign = "center";
+      ctx.font = "700 " + (L[1] === "Comino" ? 10 : narrow ? 11 : 14) + "px 'Liberation Serif', Georgia, serif"; ctx.textAlign = "center";
       ctx.fillStyle = "rgba(238,243,239,.42)"; ctx.fillText(L[0].split("").join(String.fromCharCode(8202)), p.sx, p.sy); });
     // district detail: streets and landmarks
     var V = GEO.districts.filter(function (d) { return d.id === "valletta"; })[0];
@@ -1082,7 +1095,7 @@
       ctx.strokeStyle = open ? "rgba(227,167,47," + (0.65 + 0.25 * Math.sin(t * 2.2)) + ")" : "rgba(207,226,212,.35)"; ctx.lineWidth = open ? 2 : 1.3;
       ctx.beginPath(); ctx.arc(c.sx, c.sy, r, 0, 6.283); ctx.stroke(); ctx.restore();
       var txt = open ? d.name : "🔒 " + d.name, sub = open ? n + (n === 1 ? " claim" : " claims") + " · click to open" : (d.unlock - done) + " more check" + (d.unlock - done === 1 ? "" : "s") + " to unlock";
-      ctx.font = "700 12px Arial, sans-serif"; var w = Math.max(ctx.measureText(txt).width, 120) + 18;
+      ctx.font = (narrow ? "700 11px" : "700 12px") + " Arial, sans-serif"; var w = Math.max(ctx.measureText(txt).width, narrow ? 104 : 120) + 18;
       var bx = c.sx - w / 2, by = c.sy - r - 40; ctx.fillStyle = open ? "rgba(227,167,47,.95)" : "rgba(8,30,21,.8)";
       roundRect(bx, by, w, 32, 9); ctx.fill(); ctx.textAlign = "center"; ctx.fillStyle = open ? "#13301f" : "rgba(238,243,239,.75)";
       ctx.fillText(txt, c.sx, by + 14); ctx.font = "11px Arial, sans-serif"; ctx.fillText(sub, c.sx, by + 27);
@@ -1154,7 +1167,7 @@
     h.querySelector(".mobile-hint").textContent = view === "map" ? "Drag to pan · pinch to zoom · tap a district" : "Drag to turn · two fingers to pan and zoom · tap a node";
   }
   function loadGeo() {
-    fetch("data/geo.json").then(function (r) { return r.json(); }).then(function (g) { GEO = g; geoReady(); })
+    fetch("data/geo.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (g) { GEO = g; geoReady(); })
       .catch(function () { showToast("The map outline could not be loaded."); view = "graph"; });
   }
   function buildViewBy() {
@@ -1435,7 +1448,7 @@
   if (previewPayload) {
     try { init(JSON.parse(previewPayload)); } catch (e) { stage.appendChild(el("p", null, "The embedded map data could not be read.")).style.cssText = "padding:24px;color:#e3a72f"; }
   } else {
-    fetch("data/claims.json").then(function (r) { return r.json(); }).then(init).catch(function () {
+    fetch("data/claims.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(init).catch(function () {
       stage.appendChild(el("p", null, "Could not load data/claims.json. If you opened this file directly, serve the docs folder instead (python -m http.server -d docs).")).style.cssText = "padding:24px;color:#e3a72f";
     });
   }
