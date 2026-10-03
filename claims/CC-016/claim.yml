@@ -39,3 +39,8 @@ right_of_reply:
   response: null
 evidence_shown: null
 outputs: {}
+location:
+  place: Valletta Waterfront cruise terminal, Floriana
+  lat: 35.88994
+  lon: 14.50753
+  scope: site

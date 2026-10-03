@@ -62,3 +62,8 @@ outputs:
   flyer_png: flyer.png
 version: '1.0'
 last_reviewed: '2026-10-02'
+location:
+  place: Parliament House, Valletta
+  lat: 35.89614
+  lon: 14.50978
+  scope: institution

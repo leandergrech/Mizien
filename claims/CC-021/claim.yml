@@ -39,3 +39,8 @@ right_of_reply:
   response: null
 evidence_shown: null
 outputs: {}
+location:
+  place: Ċirkewwa ferry terminal
+  lat: 35.98942
+  lon: 14.32863
+  scope: site

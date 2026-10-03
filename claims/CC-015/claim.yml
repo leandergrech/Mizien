@@ -38,3 +38,8 @@ right_of_reply:
   response: null
 evidence_shown: null
 outputs: {}
+location:
+  place: Planning Authority, St Francis Ravelin, Floriana
+  lat: 35.89
+  lon: 14.50314
+  scope: institution

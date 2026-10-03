@@ -78,3 +78,8 @@ outputs:
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
 version: '1.0'
+location:
+  place: Pembroke reverse osmosis plant
+  lat: 35.93211
+  lon: 14.48285
+  scope: site

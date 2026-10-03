@@ -56,6 +56,7 @@ def main() -> int:
             "verdict": d.get("verdict"),
             "tags": d.get("tags", []),
             **({"subtopic": d["subtopic"]} if d.get("subtopic") else {}),
+            **({"location": d["location"]} if d.get("location") else {}),
             "priority": d.get("priority", ""),
             "wording_status": d["claim"].get("wording_status", ""),
             "confidence": d.get("verdict_confidence"),

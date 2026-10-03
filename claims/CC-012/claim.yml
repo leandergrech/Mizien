@@ -110,3 +110,8 @@ outputs:
   flyer_png: flyer.png
 version: '1.0'
 last_reviewed: '2026-10-03'
+location:
+  place: Ta' Qali picnic area
+  lat: 35.8952
+  lon: 14.4192
+  scope: site

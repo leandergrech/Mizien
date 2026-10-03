@@ -87,3 +87,8 @@ outputs:
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
 last_reviewed: '2026-10-03'
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution

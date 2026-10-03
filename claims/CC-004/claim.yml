@@ -70,3 +70,8 @@ outputs:
   flyer_png: flyer.png
 version: '1.0'
 last_reviewed: '2026-10-02'
+location:
+  place: Magħtab waste complex
+  lat: 35.93923
+  lon: 14.44073
+  scope: site

@@ -58,6 +58,8 @@ Every run therefore starts with `python scripts/net_check.py`:
 - Reviews all claims for recurring patterns and shared mechanisms: new pattern tags go in
   `methodology/pattern-tags.md` (provisional), new themes and link types in `data/themes.csv` and `data/edges.csv`
   (strength `Weak (indicative)` or `Pattern, not causal` until a report confirms them).
+- Gives every new claim a `location` (place, lat, lon from OpenStreetMap or the source; scope `site`, or
+  `institution`/`national` with the institution's address) so it appears on the map view.
 - Never changes a verdict, a finished report, or a claim that has a report.
 
 ## Queue file

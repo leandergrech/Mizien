@@ -72,6 +72,23 @@ go in `data/queue.csv`, and the worker tries its next claim. After 3 blocked att
 `needs maintainer`: supply the verbatim passages in `literature/CC-NNN/primary-source.md` (as for CC-007) and
 clear the Blocker cell. Workers merge `origin/main` into their branch instead of rebasing (no force-pushes).
 
+## Map view prototype (3 October 2026)
+
+- `docs/index.html` has a **Network / Malta map** toggle (also `?view=map`, key M). Network view: larger default
+  scale, right-drag / Shift-drag / two-finger pan, zoom towards the cursor or pinch point, double-click to zoom,
+  arrow keys, +/-, 0 = Fit.
+- Map view: stylised islands from OpenStreetMap (`scripts/build_geo.py` -> `docs/data/geo.json`, ODbL). Claims are
+  pins at `location` (new optional field in claim.yml: place, lat, lon, scope = site | institution | national;
+  validated). National claims sit at the institution (Castille, Parliament, City Gate, PA in Floriana).
+- Districts: Valletta & Floriana opens into a street-level view (click the badge or zoom in); claims elsewhere are
+  parked on an "Elsewhere in Malta" ring so links stay visible. Gozo (Victoria & Ċittadella) and Grand Harbour are
+  defined but locked.
+- Gamification: map layers unlock with completed checks (TIERS in index.html: 0 islands, 3 names/compass, 5 depth
+  lines, 7 site names, 9 Valletta district, 12 streets, 15 Gozo district, 20 Grand Harbour, 30 living sea). A HUD
+  shows level and the next unlock; a toast announces new layers since the visitor's last visit.
+- To do: district geometry for Gozo and Grand Harbour before they unlock (add streets/landmarks in build_geo.py);
+  test on phones; new claims must get a `location` (intake routine updated).
+
 ## Outstanding
 
 - [ ] Decide author or affiliation line for reports and flyer (none yet).
