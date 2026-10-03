@@ -1,44 +1,64 @@
 id: CC-016
 title: 'Shore-to-ship: 90% less harbour pollution'
 category: Air
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Misleading
+verdict_confidence: Moderate
 claim:
-  text: 'Infrastructure Malta / Government: the Grand Harbour shore-to-ship project (EUR 33 million) cuts
-    pollution from cruise liners in the harbour by 90%, with 17,000 families around the harbour benefiting
-    from cleaner air.'
-  speaker: Infrastructure Malta; Ministry for Transport
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  text: 'Infrastructure Malta (Shore-to-Ship project page, 1 Dec 2023): the EUR 33 million Grand Harbour shore-to-ship
+    initiative promises to slash 90% of air pollution in the Grand Harbour. Repeated at the inauguration (10 Jul
+    2024): completion means a 90% reduction, with 17,000 families around the harbour benefiting from cleaner air.'
+  speaker: Infrastructure Malta; Prime Minister Robert Abela; Ministry for Transport
+  date: '2023-12-01'
+  wording_status: Verbatim found
   sources:
-  - title: Grand Harbour shore-to-ship project completed, to cut down emissions by 90%
-    publisher: TVMnews
-    date: n/d
-    url: https://tvmnews.mt/en/news/shore-to-ship-project-in-grand-harbour-completed-to-cut-down-emissions-by-90/
-    note: Relays the 90% and 17,000-families figures; find the Infrastructure Malta release.
   - title: Shore-to-Ship
     publisher: Infrastructure Malta
-    date: n/d
+    date: 1 Dec 2023
     url: https://www.infrastructuremalta.com/projects/shore-ship
-    note: Primary project description.
-counter_evidence: Shore power only cuts emissions while a connected ship is at berth; ships must be equipped
-  and choose to connect, and manoeuvring emissions are unaffected.
-tests: Share of cruise emissions at berth vs manoeuvring (peer-reviewed); number of calls actually connected;
-  ERA monitoring near the harbour before and after; electricity source for the shore supply.
-why_low_hanging: Specific percentages that can be compared with connection logs and air data.
+    note: The claim, verbatim. Read in full 3 Oct 2026.
+  - title: Grand Harbour shore-to-ship project completed, to cut down emissions by 90%
+    publisher: TVMnews
+    date: 10 Jul 2024
+    url: https://tvmnews.mt/en/news/shore-to-ship-project-in-grand-harbour-completed-to-cut-down-emissions-by-90/
+    note: Inauguration; reported speech (90%, 17,000 families, EUR 33m).
+  - title: Cruise Ships Plugged in Grand Harbour Onshore Power Supply Only 9% of Time in First Year
+    publisher: Amphora Media
+    date: 17 Oct 2025
+    url: https://www.amphora.media/2025/10/cruise-ships-shore-to-ship-power-malta
+    note: 67 of 373 berths connected Jul 2024-Jul 2025, from Transport Malta FOI records (second-hand).
+  quote: This initiative promises to slash 90% of air pollution in the Grand Harbour.
+counter_evidence: 'Connection is voluntary until 1 Jan 2030 (Regulation (EU) 2023/1805 Art. 6); Transport Malta:
+  connecting ''remains the prerogative of the shipping line''. Transport Malta FOI records (via Amphora Media):
+  67 of 373 cruise berths (18%) plugged in from Jul 2024 to Jul 2025, 9% of berth time; MSC World Europa made 35
+  of the 67; no stay of 2-4 days plugged in. Cruise calls rose from 357 (2024) to 385 (2025). Hotelling is >90%
+  of cruise CO2 in port (Mocerino et al. 2026), so the 90% is plausible per connected ship; manoeuvring emissions
+  remain (Gagic et al. 2022). No harbour air-quality study before and after.'
+tests: Transport Malta connection records (FOI, via Amphora Media); Valletta Cruise Port traffic; FuelEU Maritime
+  Art. 6; peer-reviewed cruise emission inventories.
+why_low_hanging: 'Done: Claim Check 016 report and flyer.'
 tags:
 - Conditional-turned-unconditional
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: ''
+caveats: Right of reply to Infrastructure Malta and Transport Malta not yet sent. Connection figures second-hand
+  (FOI reply not public); no later data than Jul 2025; no air-quality measurement either way.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Infrastructure Malta project page (literature/CC-016/primary-source.md)
+- Regulation (EU) 2023/1805, Article 6
+- Transport Malta OPS connection records, Jul 2024-Jul 2025, as published by Amphora Media (data/cc-016/)
+- Valletta Cruise Port traffic figures 2024-2025
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-03'
 location:
   place: Valletta Waterfront cruise terminal, Floriana
   lat: 35.88994

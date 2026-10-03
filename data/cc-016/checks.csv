@@ -1,0 +1,12 @@
+check,value,unit,source,note
+"Share of cruise berths that connected, Jul 2024-Jul 2025",18.0,%,Transport Malta FOI via Amphora,67 of 373
+Share of berth time connected,9.0,%,Amphora Media,
+Connections by one ship (MSC World Europa),52,% of all,Transport Malta FOI via Amphora,
+Carnival Corporation calls connected,10,%,Transport Malta FOI via Amphora,6 of 58
+"Upper bound: cut in cruise at-berth emissions, year one",9.0,%,calculated,if a plugged-in ship emits nothing locally
+Claimed cut,90,%,Infrastructure Malta,
+Connected berth time needed for a 90% cut (at 100% removal while plugged in),90,%,calculated,
+Upper bound on cut in all cruise emissions in port (hotelling >90% of CO2),8.1,%,calculated,manoeuvring emissions are not touched by OPS
+Cruise calls 2024 -> 2025,357 -> 385,calls,Valletta Cruise Port,+8%
+Cruise calls 2019 -> 2025,372 -> 385,calls,VCP; 2019 second-hand,+3%
+Unplugged berth time at 2025 traffic vs 2024 with no OPS,-1.9,%,calculated,about level: growth cancels year-one uptake
