@@ -45,7 +45,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-013 | Planning & Housing | Permits keep property prices in check | Drafted | Largely supported |
 | CC-014 | Planning & Housing | Fewer enforcement notices, fewer illegalities | Drafted | Misleading |
 | CC-015 | Governance & Promises | 'Three weeks left' at the PA | Not started | - |
-| CC-016 | Air | Shore-to-ship: 90% less harbour pollution | Not started | - |
+| CC-016 | Air | Shore-to-ship: 90% less harbour pollution | Drafted | Misleading |
 | CC-017 | Planning & Housing | Land reclamation outside the Freeport | Drafted | Not substantiated |
 | CC-018 | Planning & Housing | IMF 'confirms' MDA on housing | Not started | - |
 | CC-019 | Land & Trees | 830,000 m2 of land lost in five years | Not started | - |

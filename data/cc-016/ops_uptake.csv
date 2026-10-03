@@ -1,0 +1,16 @@
+item,value,unit,period,source
+Cruise berths at Valletta Cruise Port,373,berths,2024-07-10 to 2025-07-10,"Amphora Media (17 Oct 2025) from Valletta Cruise Port schedule; second-hand"
+Berths connected to onshore power (OPS),67,connections,2024-07-10 to 2025-07-10,"Amphora Media (17 Oct 2025) from Transport Malta FOI records; second-hand"
+Share of berth time connected,9,% of berth hours,2024-07-10 to 2025-07-10,"Amphora Media calculation; second-hand"
+Connections by MSC World Europa,35,connections,2024-07-10 to 2025-07-10,"Amphora Media from Transport Malta FOI; second-hand"
+MSC World Europa berths not connected,16,berths,2024-07-10 to 2025-07-10,"Amphora Media from Transport Malta FOI; second-hand"
+Carnival Corporation calls connected,6,connections,since shore power agreement to Jul 2025,"Amphora Media from Transport Malta FOI; second-hand"
+Carnival Corporation calls,58,calls,since shore power agreement to Jul 2025,"Amphora Media from Transport Malta FOI; second-hand"
+Berths of 1 day or less connected,19.6,%,2024-07-10 to 2025-07-10,"Amphora Media; second-hand"
+Berths of 1-2 days connected,16.2,%,2024-07-10 to 2025-07-10,"Amphora Media; second-hand"
+Berths of 2-4 days connected,0,%,2024-07-10 to 2025-07-10,"Amphora Media; second-hand"
+OPS connection points,17,points,installed 2023,Infrastructure Malta project page
+Ships that can be supplied at once,5,ships,,Infrastructure Malta / Government press conference (TVM 10 Jul 2024)
+Maximum supply,64,MVA,,Government press conference (TVM 10 Jul 2024)
+Project cost,33,EUR million,,Government press conference (TVM 10 Jul 2024)
+Hotelling share of cruise CO2 at Istanbul Galataport 2024,90,% (more than),2024,"Mocerino et al. 2026, Atmosphere 17(4):360 (abstract)"
