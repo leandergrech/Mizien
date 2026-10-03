@@ -1,38 +1,51 @@
 id: CC-010
 title: Tree-planting counts
 category: Land & Trees
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Government: over 8,000 trees and 25,000 shrubs planted in 2024. A 2022 Labour manifesto pledged
-    100,000 trees in five years.'
-  speaker: Project Green; Ambjent Malta; Ministry; Labour Party
-  date: '2024'
-  wording_status: 'Paraphrase: locate quote'
+  text: 'Project Green reported more than 8,000 trees and more than 25,000 shrubs planted by government entities in 2024. Pledge 305 of the 2022 Labour manifesto commits to 100,000 trees being planted over the next five years; a February 2026 parliamentary answer reports around 60,000 trees and over 100,000 shrubs planted through the end of 2025.'
+  speaker: Project Green; Partit Laburista; Minister for the Environment
+  date: '2024-12-31'
+  wording_status: Verbatim found
   sources:
-  - title: 'Project Green: 2024 tree planting'
-    publisher: projectgreen.mt
-    date: '2024'
-    url: https://projectgreen.mt/?p=952
-  - title: 'PL manifesto: new mechanism to replace COLA, raft of planning reforms, new green areas'
-    publisher: The Malta Independent
-    date: 11 Mar 2022
-    url: https://www.independent.com.mt/articles/2022-03-11/local-news/PL-manifesto-new-mechanism-to-replace-COLA-raft-of-planning-reforms-new-green-areas-6736241368
-counter_evidence: Planted is an input, not an outcome. Survival rates, removals (Msida, Comino) and net
-  canopy are not reported.
-tests: MapMyTree register; survival rates; removals; satellite canopy change.
-why_low_hanging: Satellite imagery does the heavy lifting.
+  - title: Over 8,000 new trees in 2024
+    publisher: Project Green
+    date: '2024-12-31'
+    url: https://projectgreen.mt/over-8000-new-trees-in-2024/
+    note: Primary source for the separate tree and shrub totals.
+  - title: 'Malta Flimkien: Manifest Elettorali 2022, pledge 305'
+    publisher: Partit Laburista
+    date: '2022-03-11'
+    url: https://talk.mt/wp-content/uploads/2022/03/MALTA-FLIMKIEN-MANIFEST-ELETTORALI-2022.pdf
+    note: Party manifesto PDF hosted by Talk.mt; pledge text transcribed from PDF p. 91 (printed p. 89).
+  - title: 'Parliamentary Question 34270: Project Green expenditure on purchasing and planting trees and shrubs'
+    publisher: House of Representatives of Malta
+    date: '2026-02-18'
+    url: https://www.parlament.mt/media/137706/20260218_435o_par.pdf
+    note: 'Ministerial answer: around 60,000 trees and over 100,000 shrubs planted collectively through end-2025.'
+counter_evidence: The reported 2024 and cumulative counts are planting inputs, not survival or canopy outcomes. The 2026 parliamentary answer says about 60,000 trees were planted by the end of 2025, below the 100,000 target at that date; the manifesto's five-year window had not yet elapsed. Tree and shrub totals are separate.
+tests: Check the exact pledge and its timeframe against official planting counts; separate trees from shrubs, trees planted from vouchers or supplied stock, and planted counts from survival, maintenance, removals and canopy change.
+why_low_hanging: The headline totals are easy to check, but they do not show how many trees survived, where they were planted, or whether tree cover increased.
 tags:
 - Input-as-outcome
 - Promise-without-baseline
 tags_provisional: true
-priority: Queue
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: Pledge scope and counting basis need confirming before comparing.
+caveats: The February 2026 answer gives a collective rounded total through end-2025 without project-level methods or a surviving-tree count. The pledge window remains open to 2027. The 2024 Project Green release and parliamentary answer report separate tree and shrub totals; do not combine them or treat them as canopy measures.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown: >
+  Project Green's 31 December 2024 release reports more than 8,000 trees and more than 25,000 shrubs planted in 2024. Pledge 305
+  of the 2022 Labour manifesto commits to planting 100,000 trees over the next five years. A written parliamentary answer
+  from the Environment Minister reports around 60,000 trees and over 100,000 shrubs planted collectively by relevant government
+  entities through end-2025. Around 60% of the pledged tree total had therefore been reported by that checkpoint; the pledge
+  deadline in 2027 had not yet passed. The records do not show final delivery, tree survival or canopy change.
+outputs:
+  report_pdf: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
