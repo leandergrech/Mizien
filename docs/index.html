@@ -268,6 +268,7 @@
     <div id="crumb" role="status"></div>
     <div id="controls">
       <button class="ctl" id="labelmode" type="button" aria-pressed="false" title="Show claim names instead of codes">Names</button>
+      <button class="ctl" id="lenstoggle" type="button" aria-pressed="false" title="Magnifying lens at the centre (L)">Lens</button>
       <button class="ctl" id="texttoggle" type="button" aria-pressed="false" title="Hide all text on the map">Hide text</button>
       <button class="ctl" id="zoomout" type="button" aria-label="Zoom out" title="Zoom out">−</button>
       <button class="ctl" id="zoomin" type="button" aria-label="Zoom in" title="Zoom in">+</button>
@@ -347,6 +348,11 @@
   // map view: claims on a stylised map of the islands; districts open into detailed views
   var view = "graph", GEO = null, mapLevel = null, mapZ = 1, tmapZ = 1, mapC = { x: 0, y: -700 }, tmapC = { x: 0, y: -700 }, MPU = 68, HOME = { x: 0, y: -700 }, badges = [], MAP_PITCH = 1.12;
   var spinBeforeMap = true;
+  // fisheye lens: magnifies the middle of the stage, compresses the rim, leaves the rest untouched
+  var lensPref = null, lensK = 0, LENS_D = 2.2;
+  try { var lp = localStorage.getItem("mizien.lens"); if (lp === "on" || lp === "off") lensPref = lp === "on"; } catch (e) {}
+  function lensWanted() { return lensPref !== null ? lensPref : (view === "map" && W < 700); }
+  function lensR() { return 0.46 * Math.min(W - leftInset() - panelInset(), H - 120 - topInset()); }
   var expanded = null;                    // hub whose sub-graph is opened out
   var labelMode = "code", showText = true;
   try { if (localStorage.getItem("mizien.labels") === "tag") labelMode = "tag"; if (localStorage.getItem("mizien.text") === "off") showText = false; } catch (e) {}
@@ -762,7 +768,11 @@
     var base = (view === "map"   // fit the archipelago (about 520 x 440 world units) to the free area
       ? Math.max(0.3, Math.min((W - leftInset() - panelInset()) * 0.92 / 520, (H - 120 - topInset()) * 0.92 / 440))
       : Math.max(0.6, usable / 400)) * cam.zoom * cam.em;
-    return { sx: cxNow + cam.px + x1 * s * base, sy: cyNow + cam.py + y2 * s * base, z: z2, s: s * base };
+    var sx = cxNow + cam.px + x1 * s * base, sy = cyNow + cam.py + y2 * s * base, sc = s * base;
+    if (lensK > 0.01) { var ldx = sx - cxNow, ldy = sy - cyNow, lr = Math.hypot(ldx, ldy), LR = lensR();
+      if (lr < LR) { var D = LENS_D * lensK, lx = lr / LR, f = (D + 1) / (D * lx + 1), dv = f / (D * lx + 1);
+        sx = cxNow + ldx * f; sy = cyNow + ldy * f; sc *= Math.pow(f * dv, 0.35); } }
+    return { sx: sx, sy: sy, z: z2, s: sc };
   }
   function ctrl(a, b, bend) {
     var mx = (a.sx + b.sx) / 2, my = (a.sy + b.sy) / 2, dx = b.sx - a.sx, dy = b.sy - a.sy;
@@ -785,6 +795,7 @@
   function frame(now) {
     var t = (now - t0) / 1000, dt = Math.max(0, Math.min(0.4, t - lastT)); lastT = t;
     var k = reduce ? 1 : 1 - Math.pow(0.04, dt);            // morph easing, frame-rate independent
+    lensK += ((lensWanted() ? 1 : 0) - lensK) * Math.min(1, k * 1.5);
     cam.px += (cam.tpx - cam.px) * Math.min(1, k * 1.6); cam.py += (cam.tpy - cam.py) * Math.min(1, k * 1.6);
     if (view === "map") { var km = Math.min(1, k * 1.4); mapZ += (tmapZ - mapZ) * km; mapC.x += (tmapC.x - mapC.x) * km; mapC.y += (tmapC.y - mapC.y) * km; mapTargets(); }
     var kc = view === "map" ? Math.min(1, k * 2.4) : k;
@@ -811,6 +822,12 @@
     });
     ctx.globalAlpha = 1;
     if (view === "map") drawMap(t);
+    if (lensK > 0.01) { var LR0 = lensR();
+      ctx.save(); ctx.globalAlpha = lensK; ctx.strokeStyle = "rgba(227,167,47,.45)"; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(cxNow, cyNow, LR0, 0, 6.283); ctx.stroke();
+      var lg = ctx.createRadialGradient(cxNow, cyNow, LR0 * 0.9, cxNow, cyNow, LR0 * 1.04);
+      lg.addColorStop(0, "rgba(227,167,47,0)"); lg.addColorStop(1, "rgba(227,167,47,.12)"); ctx.fillStyle = lg;
+      ctx.beginPath(); ctx.arc(cxNow, cyNow, LR0 * 1.04, 0, 6.283); ctx.fill(); ctx.restore(); }
 
     var allHubs = Object.keys(hubPool).map(function (k) { return hubPool[k]; }).filter(function (h) { return h.alpha > 0.01; });
     var P = new Map(); allHubs.concat(claims).forEach(function (n) { P.set(n, project(n)); });
@@ -1106,9 +1123,9 @@
       ctx.save(); ctx.translate(cxp, cyp); ctx.rotate(-cam.yaw); ctx.strokeStyle = "rgba(238,243,239,.6)"; ctx.fillStyle = "#e3a72f"; ctx.lineWidth = 1.2;
       ctx.beginPath(); ctx.arc(0, 0, 18, 0, 6.283); ctx.stroke(); ctx.beginPath(); ctx.moveTo(0, -16); ctx.lineTo(5, 0); ctx.lineTo(0, 4); ctx.lineTo(-5, 0); ctx.closePath(); ctx.fill();
       ctx.fillStyle = "rgba(238,243,239,.8)"; ctx.font = "700 10px Arial"; ctx.textAlign = "center"; ctx.fillText("N", 0, -22); ctx.restore();
-      var a0 = project(toWorld(mapC.x, mapC.y)), len = mapLevel ? 200 : 5000, a1 = project(toWorld(mapC.x + len, mapC.y)), px = Math.abs(a1.sx - a0.sx);
+      if (lensK < 0.5) { var a0 = project(toWorld(mapC.x, mapC.y)), len = mapLevel ? 200 : 5000, a1 = project(toWorld(mapC.x + len, mapC.y)), px = Math.abs(a1.sx - a0.sx);
       ctx.strokeStyle = "rgba(238,243,239,.6)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(W - 100 - px, H - 46); ctx.lineTo(W - 100, H - 46); ctx.stroke();
-      ctx.font = "11px Arial"; ctx.textAlign = "right"; ctx.fillStyle = "rgba(238,243,239,.7)"; ctx.fillText(mapLevel ? "200 m" : "5 km", W - 100, H - 52); }
+      ctx.font = "11px Arial"; ctx.textAlign = "right"; ctx.fillStyle = "rgba(238,243,239,.7)"; ctx.fillText(mapLevel ? "200 m" : "5 km", W - 100, H - 52); } }
     // living sea (late unlock)
     if (has("sea") && !reduce) { ctx.strokeStyle = "rgba(207,226,212,.12)"; ctx.lineWidth = 1;
       for (var q = 0; q < 6; q++) { var y0 = (H * (q + 0.5) / 6 + t * 8) % H; ctx.beginPath(); ctx.moveTo(0, y0);
@@ -1157,7 +1174,7 @@
     var mt = document.getElementById("modeTitle");
     if (v === "map") { mt.querySelector(".t").textContent = "Claims across the islands"; mt.querySelector(".s").textContent = "Each check reveals more of the map · colours and groups still apply"; }
     else { var M = MODES[mode]; mt.querySelector(".t").textContent = M.title; mt.querySelector(".s").textContent = M.sub; }
-    setHint(); if (instant) { claims.forEach(function (c) { c.x = c.tx; c.y = c.ty; c.z = c.tz; }); if (v === "map") { cam.yaw = 0; cam.pitch = MAP_PITCH; } }
+    syncLens(); setHint(); if (instant) { claims.forEach(function (c) { c.x = c.tx; c.y = c.ty; c.z = c.tz; }); if (v === "map") { cam.yaw = 0; cam.pitch = MAP_PITCH; } }
   }
   function setHint() {
     var h = document.getElementById("hint");
@@ -1424,6 +1441,9 @@
     if ((e.target === document.body || e.target === canvas) && (e.key === "m" || e.key === "M")) setView(view === "map" ? "graph" : "map");
   });
   document.getElementById("spin").onclick = function () { setSpin(!spinning); };
+  function syncLens() { var b = document.getElementById("lenstoggle"); b.setAttribute("aria-pressed", lensWanted() ? "true" : "false"); }
+  document.getElementById("lenstoggle").onclick = function () { lensPref = !lensWanted();
+    try { localStorage.setItem("mizien.lens", lensPref ? "on" : "off"); } catch (e) {} syncLens(); };
   function syncLabelButtons() {
     var lb = document.getElementById("labelmode"), tb = document.getElementById("texttoggle");
     lb.textContent = labelMode === "tag" ? "Codes" : "Names"; lb.setAttribute("aria-pressed", labelMode === "tag" ? "true" : "false");
@@ -1434,13 +1454,14 @@
     try { localStorage.setItem("mizien.labels", labelMode); } catch (e) {} syncLabelButtons(); };
   document.getElementById("texttoggle").onclick = function () { showText = !showText;
     try { localStorage.setItem("mizien.text", showText ? "on" : "off"); } catch (e) {} syncLabelButtons(); };
-  syncLabelButtons();
+  syncLabelButtons(); syncLens(); window.addEventListener("resize", syncLens);
   document.getElementById("zoomout").onclick = function () { zoomAt(1 / 1.25); };
   document.getElementById("zoomin").onclick = function () { zoomAt(1.25); };
   document.getElementById("reset").onclick = function () { fitView(); };
   document.addEventListener("keydown", function (e) { if (e.target !== document.body) return;
     if (e.key === "n" || e.key === "N") document.getElementById("labelmode").click();
-    if (e.key === "t" || e.key === "T") document.getElementById("texttoggle").click(); });
+    if (e.key === "t" || e.key === "T") document.getElementById("texttoggle").click();
+    if (e.key === "l" || e.key === "L") document.getElementById("lenstoggle").click(); });
   window.addEventListener("resize", resize);
   if (reduce) setSpin(false);
 
