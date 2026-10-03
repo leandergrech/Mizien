@@ -1,7 +1,7 @@
 id: CC-013
 title: Permits keep property prices in check
 category: Planning & Housing
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -27,7 +27,13 @@ tags:
 tags_provisional: true
 priority: Queue
 data_readiness: High
-caveats: Assess the statement, not the person.
+caveats: 'Assess the statement, not the person. Run of 3 Oct 2026 was blocked: the sandbox egress policy denied
+  maltatoday.com.mt, web.archive.org, api.crossref.org and ec.europa.eu, so the interview text could not be read
+  and no data or citations could be fetched. Still missing: (1) the interview wording and the question it answers,
+  confirmed against the page or video (the quote and the 91,000 figure come from the candidate record, not read
+  by this run); (2) the primary source of the 91,000 dwellings figure (Planning Authority permit statistics);
+  (3) NSO residential property price index, Eurostat prc_hpi_a and census 2021 vacancy data saved under
+  data/cc-013/; (4) Crossref-verified literature on housing supply and prices. No report or verdict drafted.'
 right_of_reply:
   sent: null
   deadline: null
