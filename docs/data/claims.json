@@ -558,10 +558,10 @@
       "id": "CC-017",
       "title": "Land reclamation outside the Freeport",
       "category": "Planning & Housing",
-      "claim": "Budget 2026 (27 Oct 2025): a large-scale land reclamation project will begin outside the Freeport perimeter, mainly for industrial, maritime and aviation use, relocating commercial activity so other spaces can be enjoyed by families. Earlier statements said an EUR 11 million seabed study identified five or six sites with the least environmental damage.",
-      "counter": "Which activity would move, and which spaces would be freed for families, is not specified. The seabed study's findings and any strategic environmental assessment are not known to be public.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Budget 2026 (27 Oct 2025): a reclamation project is already under way in the Freeport; the government is preparing to launch a large-scale land reclamation project outside the Freeport perimeter next year, for industrial and maritime use and to relocate certain commercial activities so other spaces can be enjoyed by families. In 2019 the Environment Minister said an EUR 11 million seabed study had found five or six sites that are 'possible and environmentally safe'.",
+      "counter": "Existing works confirmed: Sentinel-2 shows +3.7 ha (+/-1) at Terminal 2, 2023-2026 (stated ~30,000 m2, ~1 Mt inert fill). No site, size, cost, fill source, screening or call for the large-scale project found by 3 Oct 2026. Seabed study unpublished since 2019; budget lines EUR 500,000 (2023) -> 10,000 (2025). Three Natura 2000 sites ~1 km from the Freeport incl. marine SPA MT0000111 (256 km2). Posidonia meadows -34% in 50 years (Telesca et al. 2015).",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [
         "Promise-without-baseline"
       ],
@@ -572,14 +572,19 @@
         "scope": "site",
         "icon": "crane"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Government of Malta (Budget 2026); Infrastructure Ministry",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Clyde Caruana, Minister for Finance (Budget Speech 2026); Robert Abela, Prime Minister",
       "date": "2025-10-27",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "A reclamation project is already under way in the Freeport, and now it is time to take the next step. The Government is preparing to launch a large-scale land reclamation project outside the Freeport perimeter next year.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-03",
+      "outputs": {
+        "report": "claim-files/CC-017/report.pdf",
+        "flyer_pdf": "claim-files/CC-017/flyer.pdf",
+        "flyer_png": "claim-files/CC-017/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-017/claim.yml"
     },
     {
