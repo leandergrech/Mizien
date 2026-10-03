@@ -797,6 +797,7 @@
     if (sel.kind === "hub") { hb = sel.hub; (sel.hub.claims || []).forEach(function (c) { ids[c.id] = 1; }); claims.forEach(function (c) { if (c.extra.indexOf(sel.hub) >= 0) ids[c.id] = 1; }); }
     if (sel.kind === "edge") { es[sel.index] = 1; ids[sel.edge.from] = ids[sel.edge.to] = 1; }
     if (sel.kind === "theme") edges.forEach(function (e, i) { if (e.theme === sel.id) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } });
+    if (sel.kind === "place") sel.place.claims.forEach(function (c) { ids[c.id] = 1; edges.forEach(function (e, i) { if (themeOn[e.theme] && (e.from === c.id || e.to === c.id)) es[i] = 1; }); });
     return { ids: ids, es: es, hub: hb };
   }
 
@@ -987,6 +988,8 @@
     claims.concat(hubs).forEach(function (n) { if (!n._p || !n._p.live) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
       var hit = Math.max(n._p.r + 5, W < 700 ? 16 : 0); if (d < hit && d < bd) { bd = d; best = n; } });
     if (best) return best.kind === "hub" ? { kind: "hub", hub: best } : { kind: "claim", id: best.id };
+    if (view === "map") for (var pi = 0; pi < PLACES.length; pi++) { var Q = PLACES[pi]._p;
+      if (Q && Math.hypot(Q.x - x, Q.y - y) < Q.r + 4) return { kind: "place", place: PLACES[pi] }; }
     var be = -1; bd = 8;
     edges.forEach(function (e, i) { if (!e._g) return;
       for (var q = 0; q <= 24; q++) { var p = qpt(e._g, q / 24), d = Math.hypot(p.x - x, p.y - y); if (d < bd) { bd = d; be = i; } } });
@@ -1014,6 +1017,68 @@
   function shortPlace(p) { return String(p || "").split(/[,(]/)[0].trim(); }
   function geoXY(lat, lon) { var O = GEO.origin; return { x: (lon - O.lon) * 111320 * Math.cos(O.lat * Math.PI / 180), y: (lat - O.lat) * 110574 }; }
   function toWorld(mx, my) { return { x: (mx - mapC.x) / MPU * mapZ, y: 0, z: (my - mapC.y) / MPU * mapZ }; }
+  // Landmark emblems (24 x 24 line art) for every place a claim is about. Keys come from claim.yml location.icon.
+  var PLACE_ICONS = {
+    parliament: "M2 20.5 H22 M4 20.5 V9.5 H11 V20.5 M13 20.5 V9.5 H20 V20.5 M3 9.5 H21 M6 12 V18 M8.5 12 V18 M15.5 12 V18 M18 12 V18 M4 7 H20",
+    castille: "M2 20.5 H22 M3 20.5 V10.5 H21 V20.5 M10 20.5 V16 A2 2 0 0 1 14 16 V20.5 M3 10.5 L12 6.5 L21 10.5 M12 6.5 V2.5 L15.5 3.5 L12 4.6 M6 13 V15.5 M18 13 V15.5",
+    citygate: "M2 21 H22 M4.5 21 V5.5 L8.5 4 V21 M15.5 21 V4 L19.5 5.5 V21 M8.5 21 H15.5 M10.5 9 H13.5 M10.5 13 H13.5",
+    barrakka: "M2 20.5 H22 M3 20.5 V11.5 A3 3 0 0 1 9 11.5 V20.5 M9 11.5 A3 3 0 0 1 15 11.5 V20.5 M15 11.5 A3 3 0 0 1 21 11.5 V20.5 M3 8.5 H21 M17 6 L21 4.5",
+    ravelin: "M12 2.5 L21.5 10 L18 20.5 H6 L2.5 10 Z M7.5 17.5 H16.5 M12 6.5 V11 M9.5 11 H14.5",
+    waterfront: "M2 20.5 H22 M3 20.5 V12 H21 V20.5 M5 20.5 V16 A1.5 1.5 0 0 1 8 16 V20.5 M10.5 20.5 V16 A1.5 1.5 0 0 1 13.5 16 V20.5 M16 20.5 V16 A1.5 1.5 0 0 1 19 16 V20.5 M3 12 L12 8 L21 12",
+    tower: "M8 19 V8.5 H15 V19 M7 8.5 H16 M8 5.5 H15 V8.5 M8 5.5 V4 M11.5 5.5 V4 M15 5.5 V4 M10.5 12 H12.5 M2 21.5 C5 20.5 7 22.5 10 21.5 C13 20.5 15 22.5 18 21.5 C19.5 21 20.5 21.2 22 21.5",
+    landfill: "M2 20.5 C5 13 9 10 13 12 C16 13.5 19 16.5 22 20.5 Z M15.5 9.5 V4 H17.5 V10.5 M7 17.5 L9.5 15 M12 17 L14 14.5",
+    flyover: "M2 18 C8 18 10 10 16 10 H22 M2 12 H8 C14 12 15 18 22 18 M6 18 V21.5 M18 10 V21.5 M12 13.5 V21.5",
+    ro_plant: "M6 21 V12.5 H18 V21 Z M6 16 H18 M9.5 12.5 V21 M14.5 12.5 V21 M12 2.5 C12 2.5 9 6.5 9 8.5 A3 3 0 0 0 15 8.5 C15 6.5 12 2.5 12 2.5 Z",
+    park: "M2 20.5 H22 M7 20.5 V13.5 M7 4 C3 6 3 12 7 13.5 C11 12 11 6 7 4 Z M13 15.5 H21 M14 15.5 L13 20.5 M20 15.5 L21 20.5 M14.5 13 H19.5",
+    crane: "M4.5 21 V5.5 H20.5 M4.5 5.5 L8.5 2.5 H18.5 L20.5 5.5 M15 5.5 V10.5 M12.5 10.5 H17.5 V13.5 H12.5 Z M9.5 21 V17 H21 V21 M2 21 H22",
+    ferry: "M3 15 H21 L19 19 H5 Z M6.5 15 V11.5 H16.5 V15 M8.5 11.5 V8.5 H13.5 V11.5 M17.5 8 V11.5 M2 21.5 C5 20.5 7 22.5 10 21.5 C13 20.5 15 22.5 18 21.5 C19.5 21 20.5 21.2 22 21.5",
+    pin: "M12 21 C12 21 5 14 5 9 A7 7 0 0 1 19 9 C19 14 12 21 12 21 Z M12 9 V9.1",
+    unknown: "M9 9 A3 3 0 1 1 13.5 11.6 C12.4 12.2 12 13 12 14.2 M12 17.6 V17.7"
+  };
+  var PLACE_PATHS = {}; Object.keys(PLACE_ICONS).forEach(function (k) { PLACE_PATHS[k] = new Path2D(PLACE_ICONS[k]); });
+  var PLACES = [];
+  function buildPlaces() {
+    var by = {}; PLACES = [];
+    claims.forEach(function (c) { var L = c.data.location; if (!L || !c.m) return;
+      var P = by[L.place]; if (!P) { P = by[L.place] = { kind: "place", name: L.place, short: shortPlace(L.place), m: c.m, icon: L.icon || "pin", district: c.district, claims: [] }; PLACES.push(P); }
+      P.claims.push(c); c.place = P; });
+    PLACES.forEach(function (P) { P.discovered = P.claims.some(function (c) { return c.data.verdict; }); });
+  }
+  function placeVisible(P) { return mapLevel ? P.district === mapLevel : !(P.district && unlocked(P.district)); }
+  function drawPlaces() {
+    var zs = Math.max(1, Math.min(1.5, Math.pow(cam.zoom, 0.3))) * (W < 700 ? 0.85 : 1);
+    PLACES.forEach(function (P) {
+      P._p = null; if (!placeVisible(P)) return;
+      var tp = project(P.t || toWorld(P.m.x, P.m.y)), p = project(P.w || P.t || toWorld(P.m.x, P.m.y)), R = 15 * zs;
+      if (Math.hypot(tp.sx - p.sx, tp.sy - p.sy) > R * 0.6) { ctx.save(); ctx.strokeStyle = P.discovered ? "rgba(227,167,47,.55)" : "rgba(207,226,212,.35)";
+        ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(tp.sx, tp.sy); ctx.lineTo(p.sx, p.sy); ctx.stroke();
+        ctx.fillStyle = ctx.strokeStyle; ctx.beginPath(); ctx.arc(tp.sx, tp.sy, 2.2, 0, 6.283); ctx.fill(); ctx.restore(); }
+      var on = sel && sel.kind === "place" && sel.place === P;
+      var hov = hover && hover.kind === "place" && hover.place === P;
+      ctx.save();
+      if (P.discovered) { var g = ctx.createRadialGradient(p.sx, p.sy, R * 0.6, p.sx, p.sy, R * 2.2); g.addColorStop(0, "rgba(227,167,47,.28)"); g.addColorStop(1, "rgba(227,167,47,0)");
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.sx, p.sy, R * 2.2, 0, 6.283); ctx.fill(); }
+      ctx.fillStyle = "rgba(8,30,21,.9)"; ctx.beginPath(); ctx.arc(p.sx, p.sy, R * (hov || on ? 1.12 : 1), 0, 6.283); ctx.fill();
+      ctx.setLineDash(P.discovered ? [] : [3, 3]); ctx.lineWidth = on ? 2.4 : 1.6;
+      ctx.strokeStyle = P.discovered ? "#e3a72f" : "rgba(207,226,212,.5)"; ctx.stroke(); ctx.setLineDash([]);
+      var path = PLACE_PATHS[P.discovered ? P.icon : "unknown"] || PLACE_PATHS.pin, k = (R * 1.25) / 24;
+      ctx.translate(p.sx - 12 * k, p.sy - 12 * k); ctx.scale(k, k);
+      ctx.strokeStyle = P.discovered ? "#f6e3b4" : "rgba(207,226,212,.75)"; ctx.lineWidth = 1.7; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.stroke(path);
+      ctx.restore();
+      if (has("places") && showText) { ctx.font = "italic 11px 'Liberation Serif', Georgia, serif"; ctx.textAlign = "center";
+        ctx.fillStyle = P.discovered ? "rgba(246,227,180,.9)" : "rgba(207,226,212,.6)"; ctx.fillText(P.discovered ? P.short : "Undiscovered site", p.sx, p.sy + R + 12); }
+      P._p = { x: p.sx, y: p.sy, r: R };
+    });
+  }
+  function selectPlace(P) {
+    sel = { kind: "place", place: P };
+    var done = P.claims.filter(function (c) { return c.data.verdict; }).length;
+    openPanel("PLACE · " + (P.discovered ? "DISCOVERED" : "NOT YET CHECKED"), P.discovered ? P.name : "Undiscovered site", P.discovered ? "#e3a72f" : NOT_YET_COL,
+      [P.claims.length + (P.claims.length === 1 ? " claim" : " claims"), done + " checked"]);
+    pbody.appendChild(el("p", "small", P.discovered ? "Claims about this place. Each completed check adds to the map."
+      : "Complete a check on one of these claims to reveal this site on the map. Located at: " + P.name + "."));
+    label("CLAIMS HERE"); var box = el("div", "links"); P.claims.forEach(function (c) { claimLink(c.id, box); }); pbody.appendChild(box); fitPanel();
+  }
   function geoReady() {
     var nl = 0; claims.forEach(function (c) { if (!c.data.location) c.noLocIndex = nl++; });
     if (nl > claims.length / 2) showToast("Claim locations are still loading; reload the page in a minute if pins look misplaced.");
@@ -1023,7 +1088,7 @@
       if (L) { c.m = geoXY(+L.lat, +L.lon);
         var best = 1e9; GEO.districts.forEach(function (d) { var dd = Math.hypot(c.m.x - d.x, c.m.y - d.y); if (dd <= d.radius_m && dd < best) { best = dd; c.district = d; } }); }
     });
-    buildViewBy(); buildMapHud();
+    buildPlaces(); buildViewBy(); buildMapHud();
     if (view === "map") setView("map", true);
   }
   function mapTargets() {
@@ -1042,9 +1107,20 @@
       c.anchor = { x: W0.x, y: 0, z: W0.z };
       (places[key] = places[key] || []).push(c); vis.push(c);
     });
+    // site medallions: kept apart (they can be metres apart in Valletta), each drawn with a leader to its true spot
+    var vp = PLACES.filter(placeVisible);
+    vp.forEach(function (P) { var w = toWorld(P.m.x, P.m.y); P.t = { x: w.x, y: 0, z: w.z }; P.w = { x: w.x, y: 0, z: w.z }; });
+    var minP = (W < 700 ? 30 : 34) * (mapLevel ? 0.6 + 0.75 * spreadF() : 1);
+    for (var ip = 0; ip < 40; ip++) {
+      for (var a1 = 0; a1 < vp.length; a1++) for (var b1 = a1 + 1; b1 < vp.length; b1++) {
+        var U = vp[a1].w, V2 = vp[b1].w, ex = V2.x - U.x, ez = V2.z - U.z, dl = Math.hypot(ex, ez) || 0.01;
+        if (dl < minP) { var ff = (minP - dl) / 2 / dl; U.x -= ex * ff; U.z -= ez * ff; V2.x += ex * ff; V2.z += ez * ff; } }
+      vp.forEach(function (P) { P.w.x += (P.t.x - P.w.x) * 0.03; P.w.z += (P.t.z - P.w.z) * 0.03; });
+    }
+    vis.forEach(function (c) { if (!c.offmap && c.place && c.place.w && placeVisible(c.place)) c.anchor = { x: c.place.w.x, y: 0, z: c.place.w.z }; });
     Object.keys(places).forEach(function (k) { var g = places[k], n = g.length;
       g.forEach(function (c, i) { var a = (i / n) * Math.PI * 2 - Math.PI / 2, r = n > 1 ? (9 + 4 * n) * spreadF() : 0;
-        c.tx = c.anchor.x + Math.cos(a) * r; c.tz = c.anchor.z + Math.sin(a) * r; c.ty = -22; }); });
+        c.tx = c.anchor.x + Math.cos(a) * r; c.tz = c.anchor.z + Math.sin(a) * r; c.ty = mapLevel ? -64 - 70 * spreadF() : -64; }); });
     for (var it = 0; it < 24; it++) {                               // keep pins apart, pulled back to their sites
       for (var i = 0; i < vis.length; i++) for (var j = i + 1; j < vis.length; j++) {
         var A = vis[i], B = vis[j], dx = B.tx - A.tx, dz = B.tz - A.tz, d = Math.hypot(dx, dz) || 0.01, min = mapLevel ? 26 + 10 * spreadF() : 26;
@@ -1091,7 +1167,8 @@
     if (V && dz > 0.02) {
       if (has("streets")) { V.streets.forEach(function (S) { linePath(S.pts); ctx.strokeStyle = "rgba(238,243,239," + (S.major ? 0.42 : 0.2) * dz + ")";
         ctx.lineWidth = S.major ? 2.2 : 1; ctx.stroke(); }); }
-      V.landmarks.forEach(function (L) { var p = project(toWorld(L.x, L.y)); ctx.globalAlpha = dz;
+      V.landmarks.forEach(function (L) { if (PLACES.some(function (P) { return Math.hypot(P.m.x - L.x, P.m.y - L.y) < 60; })) return;
+        var p = project(toWorld(L.x, L.y)); ctx.globalAlpha = dz;
         ctx.fillStyle = "#e3a72f"; ctx.save(); ctx.translate(p.sx, p.sy); ctx.rotate(Math.PI / 4); ctx.fillRect(-3.5, -3.5, 7, 7); ctx.restore();
         ctx.font = "600 11px Arial, sans-serif"; ctx.textAlign = "left"; ctx.fillStyle = "rgba(238,243,239,.85)"; ctx.fillText(L.name, p.sx + 8, p.sy + 4);
         ctx.globalAlpha = 1; });
@@ -1103,11 +1180,8 @@
       ctx.beginPath(); ctx.ellipse(o0.sx, o0.sy, rx, ry, -cam.yaw * 0, 0, 6.283); ctx.stroke(); ctx.restore();
       ctx.font = "700 10.5px Arial, sans-serif"; ctx.textAlign = "center"; ctx.fillStyle = "rgba(207,226,212,.55)";
       ctx.fillText("ELSEWHERE IN MALTA", o0.sx, o0.sy - ry - 8); }
-    // claim sites outside districts
-    if (has("places")) { var seen = {}; claims.forEach(function (c) {
-      if (!c.m || c.clustered || c.offmap || (mapLevel && c.district === mapLevel)) return; var L = c.data.location, key = L.place; if (seen[key]) return; seen[key] = 1;
-      var p = project(toWorld(c.m.x, c.m.y)); ctx.font = "italic 11px 'Liberation Serif', Georgia, serif"; ctx.textAlign = "left";
-      ctx.fillStyle = "rgba(207,226,212,.7)"; ctx.fillText(shortPlace(L.place), p.sx + 9, p.sy + 14); }); }
+    // landmark medallions for every claim site (discovered once a claim there has a verdict)
+    drawPlaces();
     // district badges (Malta level)
     badges = [];
     if (!mapLevel) GEO.districts.forEach(function (d) {
@@ -1245,7 +1319,8 @@
     var level = TIERS.filter(function (x) { return done >= x.n; }).length, next = TIERS.filter(function (x) { return done < x.n; })[0];
     var prev = TIERS[level - 1] ? TIERS[level - 1].n : 0;
     var top = el("div", "lvl"); top.appendChild(el("b", null, "Map level " + level + " of " + TIERS.length));
-    top.appendChild(el("span", null, done + (done === 1 ? " check" : " checks") + " completed")); hud.appendChild(top);
+    var disc = PLACES.filter(function (P) { return P.discovered; }).length;
+    top.appendChild(el("span", null, done + (done === 1 ? " check" : " checks") + " · " + disc + "/" + PLACES.length + " sites discovered")); hud.appendChild(top);
     var bar = el("div", "bar"), fill = el("i"); fill.style.width = (next ? Math.round(100 * (done - prev) / (next.n - prev)) : 100) + "%"; bar.appendChild(fill); hud.appendChild(bar);
     hud.appendChild(el("div", "next", next ? (next.n - done) + " more check" + (next.n - done === 1 ? "" : "s") + " unlock: " + next.label : "Every layer unlocked."));
     var det = el("details"); det.appendChild(el("summary", null, "What each check unlocks"));
@@ -1399,6 +1474,8 @@
     if (!h) { tip.style.display = "none"; return; }
     var txt;
     if (h.kind === "claim") { var d = byId[h.id].data; txt = d.id + " · " + d.title + (d.verdict ? " — " + d.verdict : " — not yet checked"); }
+    else if (h.kind === "place") { var dn = h.place.claims.filter(function (c) { return c.data.verdict; }).length;
+      txt = (h.place.discovered ? h.place.name : "Undiscovered site") + " · " + h.place.claims.length + (h.place.claims.length === 1 ? " claim" : " claims") + ", " + dn + " checked"; }
     else if (h.kind === "district") txt = h.locked ? lockText(h.d) : h.d.name + " · " + districtClaims(h.d).length + " claims · click to open";
     else if (h.kind === "hub") txt = h.hub.name + " · " + h.hub.count + (h.hub.count === 1 ? " claim" : " claims");
     else { var th = themeById[h.edge.theme] || {}; txt = (th.name || h.edge.theme) + ": " + h.edge.from + " ↔ " + h.edge.to; }
@@ -1459,7 +1536,7 @@
     if (multiGesture) { down = null; pinch = null; lastMid = null; if (!pointerCount()) { multiGesture = false; canvas.classList.remove("dragging"); } return; }
     canvas.classList.remove("dragging");
     if (moved < 6) { var r = canvas.getBoundingClientRect(); var h = pick(e.clientX - r.left, e.clientY - r.top);
-      if (!h) clearSel(); else if (h.kind === "district") { if (!h.locked) enterDistrict(h.d); else showToast(lockText(h.d)); } else if (h.kind === "claim") selectClaim(h.id); else if (h.kind === "hub") selectHub(h.hub); else selectEdge(h.index); }
+      if (!h) clearSel(); else if (h.kind === "district") { if (!h.locked) enterDistrict(h.d); else showToast(lockText(h.d)); } else if (h.kind === "place") selectPlace(h.place); else if (h.kind === "claim") selectClaim(h.id); else if (h.kind === "hub") selectHub(h.hub); else selectEdge(h.index); }
     else if (view === "graph" && dragKind === "orbit") setSpin(false);
     down = null;
   });

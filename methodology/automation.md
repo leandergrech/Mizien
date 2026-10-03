@@ -59,7 +59,10 @@ Every run therefore starts with `python scripts/net_check.py`:
   `methodology/pattern-tags.md` (provisional), new themes and link types in `data/themes.csv` and `data/edges.csv`
   (strength `Weak (indicative)` or `Pattern, not causal` until a report confirms them).
 - Gives every new claim a `location` (place, lat, lon from OpenStreetMap or the source; scope `site`, or
-  `institution`/`national` with the institution's address) so it appears on the map view.
+  `institution`/`national` with the institution's address) so it appears on the map view, and an `icon` for its
+  landmark medallion: one of parliament, castille, citygate, barrakka, ravelin, waterfront, tower, landfill, flyover,
+  ro_plant, park, crane, ferry, or pin (generic). Reuse the place name exactly when a claim shares a site. A new
+  emblem needs a path in PLACE_ICONS (docs/index.html) and the list in scripts/validate_claims.py.
 - Never changes a verdict, a finished report, or a claim that has a report.
 
 ## Queue file
