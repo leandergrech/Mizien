@@ -89,6 +89,8 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
 - Lens: a fisheye focus at the centre of the stage (Lens button, key L; on by default on phones in the map view,
   remembered in localStorage `mizien.lens`). Magnifies up to 3.2x at the centre, compresses the rim; drag the map
   under it. The scale bar hides while it is on.
+- Transitions (district in/out, Fit) fold the camera zoom and pan into the map scale and centre, then animate the
+  scale in log space about the fixed screen point (no jumps). The map view is orthographic so the fold is exact.
 - To do: district geometry for Gozo and Grand Harbour before they unlock (add streets/landmarks in build_geo.py);
   test on phones; new claims must get a `location` (intake routine updated).
 
