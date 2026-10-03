@@ -58,7 +58,7 @@ The interactive 3D map is the homepage of the site (`docs/`). Claim documents op
 
 ```
 claims/CC-NNN/       claim.yml (the record), report.pdf, flyer.pdf, flyer.png
-methodology/         verdict scale, evidence grades, pattern tags, standards, templates
+methodology/         verdict scale, evidence grades, pattern tags, standards, templates, automation
 data/                claims.csv, edges.csv, themes.csv, sources.csv, quick_checks.csv, claims.json, candidates.xlsx
 literature/CC-NNN/   references.bib, notes.md, open-access PDFs only
 archive/             manifest.csv of archived claim sources (links and hashes)

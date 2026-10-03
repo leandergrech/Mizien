@@ -10,3 +10,9 @@ Tags are **provisional** until a report is finished.
 | **Compliance-not-health** | Meeting a legal limit is presented as if it meant a health-protective level. |
 | **Conditional-turned-unconditional** | A statement with a stated condition is reported or repeated without it. |
 | **Promise-without-baseline** | A target or pledge with no stated starting point, scope or counting basis. |
+
+## Adding a pattern
+
+New patterns are proposed by the weekly intake (see `methodology/automation.md`). Add a row to the table above
+with the tag in bold; `scripts/validate_claims.py` reads the allowed tags from this table. A new tag is provisional
+until at least two finished reports confirm it.

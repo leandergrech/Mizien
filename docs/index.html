@@ -360,12 +360,14 @@
     "EU & international": "M12 3 A9 9 0 1 0 12.01 3 M3 12 H21 M12 3 C15.5 6.5 15.5 17.5 12 21 C8.5 17.5 8.5 6.5 12 3",
     // grouping buttons
     "mode:topic": "M12 3 A9 9 0 1 0 12.01 3 M7 9 A1.5 1.5 0 1 0 7.01 9 M16 8 A1.5 1.5 0 1 0 16.01 8 M11 16 A1.5 1.5 0 1 0 11.01 16",
+    "mode:subtopic": "M12 3 A9 9 0 1 0 12.01 3 M12 7.5 A4.5 4.5 0 1 0 12.01 7.5 M12 3 V7.5 M12 16.5 V21 M3 12 H7.5 M16.5 12 H21",
     "mode:verdict": "M12 3 V20.5 M7.5 20.5 H16.5 M4.5 6.5 H19.5 M4.5 6.5 L2 12.5 H7 Z M19.5 6.5 L17 12.5 H22 Z",
     "mode:pattern": "M12 3 A9 9 0 1 0 12.01 3 M12 7 A5 5 0 1 0 12.01 7 M12 11 A1 1 0 1 0 12.01 11",
     "mode:status": "M3 12 H21 M5 12 A1.5 1.5 0 1 0 5.01 12 M12 12 A1.5 1.5 0 1 0 12.01 12 M19 12 A1.5 1.5 0 1 0 19.01 12",
     "mode:speaker": "M4 5 H20 V15 H10.5 L6.5 19 V15 H4 Z",
     "mode:network": "M5 6 A2 2 0 1 0 5.01 6 M19 7 A2 2 0 1 0 19.01 7 M12 18 A2 2 0 1 0 12.01 18 M6.5 7.5 L11 16 M17.5 8.5 L13 16 M7 6.2 L17 6.8"
   };
+  function iconKey(name) { return ICONS[name] ? name : String(name || "").split(" · ")[0]; } // subtopics reuse their topic's icon
   var ICON_PATHS = {};
   Object.keys(ICONS).forEach(function (k) { ICON_PATHS[k] = new Path2D(ICONS[k]); });
 
@@ -392,6 +394,14 @@
              layout: "sphere", key: function (c) { return [c.category]; },
              order: function () { return DATA.categories.map(function (c) { return c.name; }); },
              color: function (v) { var c = DATA.categories.filter(function (x) { return x.name === v; })[0]; return c ? c.color : "#7fa88b"; } },
+    subtopic: { label: "Subtopic", title: "Claims by subtopic", sub: "Topics split into subtopics where a topic has grown large; other topics stay whole.",
+             layout: "sphere", key: function (c) { return [c.subtopic ? c.category + " · " + c.subtopic : c.category]; },
+             order: function () {
+               var cats = DATA.categories.map(function (c) { return c.name; }), seen = {}, out = [];
+               DATA.claims.slice().sort(function (a, b) { return cats.indexOf(a.category) - cats.indexOf(b.category) || String(a.subtopic || "").localeCompare(String(b.subtopic || "")); })
+                 .forEach(function (c) { var k = c.subtopic ? c.category + " · " + c.subtopic : c.category; if (!seen[k]) { seen[k] = 1; out.push(k); } });
+               return out; },
+             color: function (v) { var base = String(v).split(" · ")[0], c = DATA.categories.filter(function (x) { return x.name === base; })[0]; return c ? c.color : "#7fa88b"; } },
     verdict: { label: "Verdict", title: "Claims by verdict", sub: "From supported to contradicted, left to right.",
              layout: "arc", key: function (c) { return [c.verdict || NOT_YET]; },
              order: function () { return Object.keys(VC).concat([NOT_YET]); },
@@ -411,7 +421,7 @@
     network: { label: "Links only", title: "The web of links", sub: "No groups: claims are pulled together by the themes that connect them.",
              layout: "force", key: function () { return []; }, order: function () { return []; }, color: function () { return "#7fa88b"; } }
   };
-  var MODE_ORDER = ["topic", "verdict", "pattern", "status", "speaker", "network"];
+  var MODE_ORDER = ["topic", "subtopic", "verdict", "pattern", "status", "speaker", "network"];
 
   function rng(seed) {
     var h = 1779033703 ^ seed.length;
@@ -424,7 +434,7 @@
   function rgba(hex, a) { var n = parseInt(hex.slice(1), 16); return "rgba(" + (n >> 16) + "," + ((n >> 8) & 255) + "," + (n & 255) + "," + a + ")"; }
   function iconSvg(name, color) {
     var ns = "http://www.w3.org/2000/svg", svg = document.createElementNS(ns, "svg"), p = document.createElementNS(ns, "path");
-    svg.setAttribute("viewBox", "0 0 24 24"); svg.setAttribute("aria-hidden", "true"); p.setAttribute("d", ICONS[name] || "M12 12 h0");
+    svg.setAttribute("viewBox", "0 0 24 24"); svg.setAttribute("aria-hidden", "true"); p.setAttribute("d", ICONS[name] || ICONS[iconKey(name)] || "M12 12 h0");
     p.setAttribute("fill", "none"); p.setAttribute("stroke", color || "#fff"); p.setAttribute("stroke-width", "2.2");
     p.setAttribute("stroke-linecap", "round"); p.setAttribute("stroke-linejoin", "round"); svg.appendChild(p); return svg;
   }
@@ -518,7 +528,7 @@
       members.forEach(function (o) { if (o.primary) { o.c.hub = h; h.claims.push(o.c); if (o.c.reviewLeafColor) h.reviewLeaves.push(o.c); } else o.c.extra.push(h); });
       h.count = h.claims.length; h.empty = h.count === 0;
       if (M.layout === "force") return;
-      if (h.empty && (m === "topic" || m === "speaker" || m === "pattern")) return; // hide empty groups where order is not meaningful
+      if (h.empty && (m === "topic" || m === "subtopic" || m === "speaker" || m === "pattern")) return; // hide empty groups where order is not meaningful
       hubs.push(h);
     });
     // hub targets
@@ -816,7 +826,7 @@
         g2.addColorStop(0, rgba("#ffffff", 0.55)); g2.addColorStop(0.25, n.color); g2.addColorStop(1, rgba(n.color, 0.85));
         ctx.fillStyle = g2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r, 0, 6.283); ctx.fill();
         ctx.strokeStyle = isSel ? "#fff" : "rgba(255,255,255,.6)"; ctx.lineWidth = isSel ? 3 : 1.5; ctx.stroke();
-        var ip = ICON_PATHS[n.name];
+        var ip = ICON_PATHS[iconKey(n.name)];
         if (ip) { ctx.save(); var s2 = r * 1.15 / 24; ctx.translate(p.sx - 12 * s2, p.sy - 12 * s2); ctx.scale(s2, s2);
           ctx.strokeStyle = "rgba(10,30,20,.9)"; ctx.lineWidth = 2.3; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.stroke(ip); ctx.restore(); }
         (n.reviewLeaves || []).forEach(function (rv, ri) {
@@ -1081,7 +1091,7 @@
   canvas.addEventListener("wheel", function (e) { e.preventDefault(); cam.zoom = Math.max(0.5, Math.min(2.8, cam.zoom * (e.deltaY < 0 ? 1.08 : 0.92))); }, { passive: false });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") clearSel();
-    if (e.target === document.body && /^[1-6]$/.test(e.key)) setMode(MODE_ORDER[+e.key - 1]);
+    if (e.target === document.body && /^[1-7]$/.test(e.key)) setMode(MODE_ORDER[+e.key - 1]);
   });
   document.getElementById("spin").onclick = function () { setSpin(!spinning); };
   function syncLabelButtons() {
