@@ -942,7 +942,7 @@
         var focused = F && F.ids[n.id];
         var member = expanded && n.hub === expanded, tagged = labelMode === "tag" || member;
         var hp = member ? P.get(expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
-        if ((!expanded || member || isHov || isSel) && !n.clustered) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: (tagged ? d.title : n.id) + (n.offmap && n.data.location && W >= 700 ? "  → " + shortPlace(n.data.location.place) : ""),
+        if ((!expanded || member || isHov || isSel) && !n.clustered) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: (tagged ? d.title : n.id) + (n.offmap && n.ringFirst && n.data.location && W >= 700 ? "  → " + shortPlace(n.data.location.place) : ""),
           sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (d.verdict ? " · " + d.verdict : " · not yet checked") : d.title) : "",
           hub: false, tag: tagged, color: col, alpha: (on ? 1 : 0.25) * fg, ax: p.sx, ay: p.sy, rr: r2 + 6,
           dir: member && expanded.claims.length > 1 ? { x: ddx / dl, y: ddy / dl } : null,
@@ -1004,8 +1004,8 @@
     { n: 5, key: "contours", label: "Coastal depth lines" },
     { n: 7, key: "places", label: "Claim sites named on the map" },
     { n: 9, key: "valletta", label: "District: Valletta & Floriana" },
-    { n: 12, key: "streets", label: "Valletta street grid" },
-    { n: 15, key: "gozo", label: "District: Victoria & the Ċittadella" },
+    { n: 12, key: "streets", label: "Valletta street grid and bastions" },
+    { n: 15, key: "gozo", label: "District: Victoria & the Ċittadella, with its walls" },
     { n: 20, key: "harbour", label: "District: Grand Harbour & the Three Cities" },
     { n: 30, key: "sea", label: "Living sea: ferries and currents" }
   ];
@@ -1093,9 +1093,9 @@
   }
   function mapTargets() {
     if (!GEO) return;
-    var vis = [], places = {};
+    var vis = [], places = {}, off = [];
     claims.forEach(function (c) {
-      c.clustered = false; c.offmap = false;
+      c.clustered = false; c.offmap = false; c.ringR = 0; c.ringFirst = false;
       var m = c.m || { x: 16000 + (c.noLocIndex || 0) * 900, y: -19000 }; // no location yet: a row in the sea, south-east
       if (!mapLevel && c.district && unlocked(c.district)) {          // bunched into the district badge
         var w = toWorld(c.district.x, c.district.y), a = (claims.indexOf(c) * 2.4);
@@ -1105,8 +1105,22 @@
       if (mapLevel && c.district !== mapLevel) { var dd = Math.hypot(W0.x, W0.z) || 1;   // elsewhere: parked on the outer ring
         W0.x *= OUTER / dd; W0.z *= OUTER / dd; c.offmap = true; }
       c.anchor = { x: W0.x, y: 0, z: W0.z };
+      if (c.offmap) { off.push(c); vis.push(c); return; }
       (places[key] = places[key] || []).push(c); vis.push(c);
     });
+    // elsewhere: one slot per site near its true bearing, slots kept apart, a site's claims stacked outwards
+    if (off.length) {
+      var sg = {}, slots = [];
+      off.forEach(function (c) { var k = c.data.location ? c.data.location.place : "?";
+        if (!sg[k]) { sg[k] = { ang: Math.atan2(c.anchor.z, c.anchor.x), cs: [] }; slots.push(sg[k]); } sg[k].cs.push(c); });
+      slots.sort(function (a, b) { return a.ang - b.ang; });
+      var ns = slots.length, gap = Math.min(0.2, 2 * Math.PI / ns * 0.9);
+      for (var ia = 0; ia < 80; ia++) for (var q = 0; q < ns; q++) {
+        var A0 = slots[q], B0 = slots[(q + 1) % ns], dA = B0.ang - A0.ang + (q === ns - 1 ? 2 * Math.PI : 0);
+        if (ns > 1 && dA < gap) { var push = (gap - dA) / 2; A0.ang -= push; B0.ang += push; } }
+      slots.forEach(function (S) { S.cs.forEach(function (c, i) { c.ringR = OUTER + i * 24; c.ringFirst = i === S.cs.length - 1;
+        c.anchor = { x: Math.cos(S.ang) * c.ringR, y: 0, z: Math.sin(S.ang) * c.ringR }; places["off" + c.id] = [c]; }); });
+    }
     // site medallions: kept apart (they can be metres apart in Valletta), each drawn with a leader to its true spot
     var vp = PLACES.filter(placeVisible);
     vp.forEach(function (P) { var w = toWorld(P.m.x, P.m.y); P.t = { x: w.x, y: 0, z: w.z }; P.w = { x: w.x, y: 0, z: w.z }; });
@@ -1126,7 +1140,7 @@
         var A = vis[i], B = vis[j], dx = B.tx - A.tx, dz = B.tz - A.tz, d = Math.hypot(dx, dz) || 0.01, min = mapLevel ? 26 + 10 * spreadF() : 26;
         if (d < min) { var f = (min - d) / 2 / d; A.tx -= dx * f; A.tz -= dz * f; B.tx += dx * f; B.tz += dz * f; } }
       vis.forEach(function (c) { c.tx += (c.anchor.x - c.tx) * 0.04; c.tz += (c.anchor.z - c.tz) * 0.04;
-        if (c.offmap) { var dd2 = Math.hypot(c.tx, c.tz) || 1; c.tx *= OUTER / dd2; c.tz *= OUTER / dd2; } });
+        if (c.offmap) { var dd2 = Math.hypot(c.tx, c.tz) || 1, rr = c.ringR || OUTER; c.tx *= rr / dd2; c.tz *= rr / dd2; } });
     }
   }
   var OUTER = 255;
@@ -1163,16 +1177,19 @@
       ctx.font = "700 " + (L[1] === "Comino" ? 10 : narrow ? 11 : 14) + "px 'Liberation Serif', Georgia, serif"; ctx.textAlign = "center";
       ctx.fillStyle = "rgba(238,243,239,.42)"; ctx.fillText(L[0].split("").join(String.fromCharCode(8202)), p.sx, p.sy); });
     // district detail: streets and landmarks
-    var V = GEO.districts.filter(function (d) { return d.id === "valletta"; })[0];
-    if (V && dz > 0.02) {
-      if (has("streets")) { V.streets.forEach(function (S) { linePath(S.pts); ctx.strokeStyle = "rgba(238,243,239," + (S.major ? 0.42 : 0.2) * dz + ")";
-        ctx.lineWidth = S.major ? 2.2 : 1; ctx.stroke(); }); }
+    if (dz > 0.02) GEO.districts.forEach(function (V) {
+      if (!unlocked(V)) return;
+      if (V.id !== "valletta" || has("streets")) {                    // Valletta's grid is its own later unlock
+        V.streets.forEach(function (S) { linePath(S.pts); ctx.strokeStyle = "rgba(238,243,239," + (S.major ? 0.42 : 0.2) * dz + ")";
+          ctx.lineWidth = S.major ? 2.2 : 1; ctx.stroke(); });
+        (V.walls || []).forEach(function (Wl) { linePath(Wl); ctx.strokeStyle = "rgba(227,167,47," + 0.42 * dz + ")";   // bastions and citadel walls
+          ctx.lineWidth = 2.6; ctx.lineJoin = "round"; ctx.stroke(); }); }
       V.landmarks.forEach(function (L) { if (PLACES.some(function (P) { return Math.hypot(P.m.x - L.x, P.m.y - L.y) < 60; })) return;
         var p = project(toWorld(L.x, L.y)); ctx.globalAlpha = dz;
         ctx.fillStyle = "#e3a72f"; ctx.save(); ctx.translate(p.sx, p.sy); ctx.rotate(Math.PI / 4); ctx.fillRect(-3.5, -3.5, 7, 7); ctx.restore();
         ctx.font = "600 11px Arial, sans-serif"; ctx.textAlign = "left"; ctx.fillStyle = "rgba(238,243,239,.85)"; ctx.fillText(L.name, p.sx + 8, p.sy + 4);
         ctx.globalAlpha = 1; });
-    }
+    });
     // district level: the rest of Malta is folded onto an outer ring
     if (mapLevel) { var o0 = project({ x: 0, y: 0, z: 0 }), o1 = project({ x: OUTER, y: 0, z: 0 }), o2 = project({ x: 0, y: 0, z: OUTER });
       var rx = Math.abs(o1.sx - o0.sx), ry = Math.abs(o2.sy - o0.sy);
@@ -1196,7 +1213,7 @@
       ctx.beginPath(); ctx.arc(c.sx, c.sy, r, 0, 6.283); ctx.stroke(); ctx.restore();
       var txt = open ? d.name : "🔒 " + d.name, sub = open ? n + (n === 1 ? " claim" : " claims") + " · click to open" : (d.unlock - done) + " more check" + (d.unlock - done === 1 ? "" : "s") + " to unlock";
       ctx.font = (narrow ? "700 11px" : "700 12px") + " Arial, sans-serif"; var w = Math.max(ctx.measureText(txt).width, narrow ? 104 : 120) + 18;
-      var bx = c.sx - w / 2, by = c.sy - r - 40; ctx.fillStyle = open ? "rgba(227,167,47,.95)" : "rgba(8,30,21,.8)";
+      var bx = c.sx - w / 2, by = open ? c.sy - r - 40 : c.sy + r + 8;   // locked teasers hang below, clear of open badges ctx.fillStyle = open ? "rgba(227,167,47,.95)" : "rgba(8,30,21,.8)";
       roundRect(bx, by, w, 32, 9); ctx.fill(); ctx.textAlign = "center"; ctx.fillStyle = open ? "#13301f" : "rgba(238,243,239,.75)";
       ctx.fillText(txt, c.sx, by + 14); ctx.font = "11px Arial, sans-serif"; ctx.fillText(sub, c.sx, by + 27);
       badges.push({ x: c.sx, y: c.sy, r: r, d: d, locked: !open });

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build docs/data/geo.json: stylised outlines of the Maltese islands and the detailed Valletta & Floriana district.
+"""Build docs/data/geo.json: stylised outlines of the Maltese islands and the detailed districts (streets, walls, landmarks).
 
 Data: OpenStreetMap via the Overpass API (network needed), (c) OpenStreetMap contributors, ODbL.
 Coordinates are written in metres east/north of ORIGIN, rounded to 1 m, so the site can draw them without a map
@@ -18,9 +18,9 @@ ISLANDS = {  # OSM ids: relation (r) or way (w)
     "Malta": ("r", 7118334), "Gozo": ("r", 9353903), "Comino": ("w", 23465078), "Cominotto": ("w", 10365739),
     "Filfla": ("w", 10365721), "St Paul's Islands": ("w", 10365736), "Manoel Island": ("w", 127163329),
 }
-VALLETTA_BBOX = (35.886, 14.498, 35.905, 14.525)  # s, w, n, e
 DISTRICTS = [
     {"id": "valletta", "name": "Valletta & Floriana", "lat": 35.8955, "lon": 14.5105, "radius_m": 1100, "unlock": 9,
+     "bbox": (35.886, 14.498, 35.905, 14.525),  # s, w, n, e
      "blurb": "The capital: Parliament, the Prime Minister's office at Castille and the Planning Authority.",
      "landmarks": [
          ["Parliament House", 35.89614, 14.50978], ["Auberge de Castille", 35.8959, 14.51136],
@@ -28,9 +28,17 @@ DISTRICTS = [
          ["Planning Authority", 35.89, 14.50314], ["Valletta Waterfront", 35.88994, 14.50753],
          ["Family Court", 35.89845, 14.51171]]},
     {"id": "gozo", "name": "Victoria & the Ċittadella", "lat": 36.04666, "lon": 14.23947, "radius_m": 900, "unlock": 15,
-     "blurb": "Gozo's capital and its citadel.", "landmarks": []},
+     "bbox": (36.0385, 14.2290, 36.0545, 14.2500),
+     "blurb": "Gozo's capital and its citadel.",
+     "landmarks": [  # OSM: node 11709420806, ways 24318510, 140418382, 15800356, 1369024096
+         ["Ċittadella", 36.04666, 14.23947], ["It-Tokk", 36.04481, 14.23922],
+         ["St George's Basilica", 36.04378, 14.239], ["Villa Rundle Gardens", 36.04339, 14.2432],
+         ["Teatru Astra", 36.04509, 14.24018]]},
     {"id": "harbour", "name": "Grand Harbour & the Three Cities", "lat": 35.8889, "lon": 14.5201, "radius_m": 1300,
-     "unlock": 20, "blurb": "Birgu, Senglea, Cospicua and the docks.", "landmarks": []},
+     "unlock": 20, "bbox": (35.877, 14.505, 35.900, 14.535), "blurb": "Birgu, Senglea, Cospicua and the docks.",
+     "landmarks": [  # OSM: ways 54896162, 404197034, node 293534848, way 345212950
+         ["Fort St Angelo", 35.89182, 14.51821], ["Il-Gardjola", 35.89071, 14.51395],
+         ["Inquisitor's Palace", 35.88719, 14.52248], ["Dock No. 1", 35.88259, 14.52039]]},
 ]
 
 
@@ -124,9 +132,15 @@ def main():
     ids_r = ",".join(str(v[1]) for v in ISLANDS.values() if v[0] == "r")
     ids_w = ",".join(str(v[1]) for v in ISLANDS.values() if v[0] == "w")
     isl = overpass(f"[out:json][timeout:120];(relation(id:{ids_r});way(id:{ids_w}););out geom;", cache, "islands")
-    s, w, n, e = VALLETTA_BBOX
-    streets = overpass(f'[out:json][timeout:120];way["highway"~"primary|secondary|tertiary|residential|pedestrian|'
-                       f'unclassified|living_street"]({s},{w},{n},{e});out geom;', cache, "valletta_streets")
+    streets, walls = {}, {}
+    for d in DISTRICTS:
+        s, w, n, e = d["bbox"]
+        streets[d["id"]] = overpass(f'[out:json][timeout:120];way["highway"~"primary|secondary|tertiary|residential|'
+                                    f'pedestrian|unclassified|living_street"]({s},{w},{n},{e});out geom;', cache,
+                                    f'{d["id"]}_streets')
+        walls[d["id"]] = overpass(f'[out:json][timeout:120];(way["barrier"="city_wall"]({s},{w},{n},{e});'
+                                  f'way["historic"~"^(citywalls|fort|castle)$"]({s},{w},{n},{e}););out geom;', cache,
+                                  f'{d["id"]}_walls')
 
     islands = []
     for name, (typ, oid) in ISLANDS.items():
@@ -145,24 +159,33 @@ def main():
             if area < 2000:
                 continue
             islands.append({"name": name, "area_m2": round(area), "coarse": flat(simplify(m, 30)),
-                            "detail": flat(simplify(m, 4)) if name in ("Malta", "Manoel Island") else None})
+                            "detail": flat(simplify(m, 4)) if name in ("Malta", "Gozo", "Manoel Island") else None})
     major = ("primary", "secondary", "tertiary")
-    st = []
-    for el in streets["elements"]:
-        pts = simplify([xy(p["lat"], p["lon"]) for p in el["geometry"]], 2)
-        if len(pts) > 1:
-            st.append({"major": el["tags"].get("highway") in major, "pts": flat(pts)})
-    dist = []
+    dist, nst = [], 0
     for d in DISTRICTS:
         x, y = xy(d["lat"], d["lon"])
-        dist.append({**{k: v for k, v in d.items() if k not in ("lat", "lon", "landmarks")}, "x": x, "y": y,
+        st, seen = [], set()
+        for el in streets[d["id"]]["elements"]:
+            pts = simplify([xy(p["lat"], p["lon"]) for p in el["geometry"]], 2)
+            if len(pts) > 1:
+                st.append({"major": el["tags"].get("highway") in major, "pts": flat(pts)})
+        wl = []
+        for el in walls[d["id"]]["elements"]:
+            if el["id"] in seen or not el.get("geometry"):
+                continue
+            seen.add(el["id"])
+            pts = simplify([xy(p["lat"], p["lon"]) for p in el["geometry"]], 2)
+            if len(pts) > 1:
+                wl.append(flat(pts))
+        nst += len(st)
+        dist.append({**{k: v for k, v in d.items() if k not in ("lat", "lon", "landmarks", "bbox")}, "x": x, "y": y,
                      "landmarks": [{"name": nm, "x": xy(la, lo)[0], "y": xy(la, lo)[1]} for nm, la, lo in d["landmarks"]],
-                     "streets": st if d["id"] == "valletta" else []})
+                     "streets": st, "walls": wl})
     out = {"origin": {"lat": ORIGIN[0], "lon": ORIGIN[1]}, "units": "metres east (x) and north (y) of origin",
            "attribution": "© OpenStreetMap contributors (ODbL)", "islands": islands, "districts": dist}
     OUT.write_text(json.dumps(out, separators=(",", ":")))
     npts = sum(len(i["coarse"]) // 2 + len(i["detail"] or []) // 2 for i in islands)
-    print(f"{OUT.relative_to(ROOT)}: {len(islands)} rings, {npts} points, {len(st)} streets, "
+    print(f"{OUT.relative_to(ROOT)}: {len(islands)} rings, {npts} points, {nst} streets, "
           f"{OUT.stat().st_size // 1024} KB")
 
 
