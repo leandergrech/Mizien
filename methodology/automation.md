@@ -14,6 +14,8 @@ weekly intake (Sun) ──> data/queue.csv ──> workers A, B, C (nightly) ─
 
 ## Network preflight
 
+Practical notes on sources that work and pitfalls: `methodology/data-sources.md`.
+
 Cloud runs sit behind an egress allowlist. A host the allowlist refuses cannot be read at all, by any tool.
 Every run therefore starts with `python scripts/net_check.py`:
 
