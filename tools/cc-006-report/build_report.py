@@ -39,7 +39,7 @@ S += [SectionHeading(1, "The wording and laws"),
         "“small” and “strictly supervised” description. The Directive permits derogations only under strictly "
         "supervised conditions, on a selective basis, and for birds in small numbers [11]. The exact official "
         "English PDFs for Legal Notices 80 and 81 were opened through Legislation Malta and inspected on "
-        "2 October 2026 [1–2]."),
+        "3 October 2026 [1–2]."),
       callout([P("THE LEGAL WORDING", tag),
                P("The “small numbers” requirement “shall be understood as a sample in the order of one percent (1%) "
                  "of the total annual mortality of the population in question”.", lead),
@@ -52,7 +52,7 @@ S += [SectionHeading(1, "The wording and laws"),
         "The Minister could terminate a season by notice [1–2]. The separate 17 April Gazette notice authorising "
         "research capture and tagging of four Turtle-doves is not the recreational hunting derogation [3]."),
       P("A contemporaneous MaltaToday report states that Ornis voted for these dates and quotas on 30 March [4]. "
-        "The WBRU page lists Ornis minutes only through 2024, so the committee’s original 2026 wording and vote "
+        "The WBRU public minutes archive lists meetings only through 2024 [13], so the committee’s original 2026 wording and vote "
         "could not be checked directly. We therefore attribute the tested wording to the enacted regulations, "
         "not to an unpublished committee minute.")]
 
@@ -102,8 +102,8 @@ S += [Spacer(1, 2 * mm), SectionHeading(4, "Supervision: rules and implementatio
         "enforcement operation in 2025.",
         "The 2025 counts do not establish 2026 supervision. BirdLife Malta’s April/May 2026 reports describe "
         "field observations and suspected illegal targeting; they are stakeholder monitoring accounts, not an "
-        "official or independently audited enforcement total [8–9]. The WBRU archive did not list a 2026 outcome "
-        "report at the 2 October 2026 cut-off.",
+        "official or independently audited enforcement total [8–9]. The WBRU Spring Hunting Derogations page did not list a 2026 outcome "
+        "report at the 3 October 2026 cut-off [12].",
         "Rules and patrol counts describe controls and activity, not whether all hunting was compliant. The 2026 "
         "implementation question remains open until WBRU publishes season data and incident outcomes."),
       Spacer(1, 3 * mm),
@@ -149,10 +149,10 @@ S += [PageBreak(), SectionHeading(5, "Verdict, limits and evidence needed"),
           (9, "BirdLife Malta, “On the Frontlines: May 2026 Newsletter”, 13 May 2026.", "https://birdlifemalta.org/2026/05/on-the-frontlines-may-2026-newsletter/"),
           (10, "FKNK, “Spring hunting season in the Maltese Islands 2026: The FKNK will again carry out scientific studies”, 7 April 2026.", "https://www.huntinginmalta.org.mt/post/spring-hunting-season-in-the-maltese-islands-2026the-fknk-will-again-carry-out-scientific-studies"),
           (11, "Directive 2009/147/EC on the conservation of wild birds, Article 9(1)(c).", "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147"),
+          (12, "WBRU, Spring Hunting Derogations (official reports index; checked 3 October 2026).", "https://wbru.gov.mt/en/resources/reports-and-statistics/sprin-hunting-derogations/"),
+          (13, "WBRU, Ornis Committee (official minutes archive; checked 3 October 2026).", "https://wbru.gov.mt/en/the-department/ornis-committee/"),
       ]),
-      Spacer(1, 4 * mm),
-      P("Version 1.0 · 2 October 2026 · Draft pending right of reply · Calculations: data/cc-006/checks.csv · "
-        "Report generator: tools/cc-006-report/build_report.py", cap)]
+      ]
 
 build_report(Report(
     number="006", out=str(OUT / "report.pdf"), kicker="Nature and wildlife, Malta",
@@ -165,7 +165,7 @@ build_report(Report(
     verdict_note="The arithmetic checks out; wider claims do not.",
     footer_lines=["Miżien · independent, science-first fact-checking", "Draft for review · right of reply remains with the maintainer"],
     running_head="2026 spring-hunting derogation",
-    version="1.0", date="2 October 2026",
+    version="1.1", date="3 October 2026",
     pdf_title="Miżien Claim Check 006 – What does small numbers mean?",
     pdf_subject="The 2026 Malta spring hunting derogation's mortality benchmark, quotas and supervision",
     story=S,

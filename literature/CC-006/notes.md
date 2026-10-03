@@ -1,6 +1,6 @@
 # CC-006 evidence notes
 
-Research cut-off: 2 October 2026. The check assesses whether Malta's 2026 spring-hunting derogation met the Birds Directive's “small numbers” and strict-supervision conditions. The original candidate also paraphrased the Ornis Committee recommendation; no 2026 committee minutes were listed on WBRU's archive (the archive listed minutes through 2024). The contemporaneous MaltaToday account is retained as a lead, not treated as a verbatim primary source.
+Research cut-off: 3 October 2026. The check assesses whether Malta's 2026 spring-hunting derogation met the Birds Directive's “small numbers” and strict-supervision conditions. The original candidate also paraphrased the Ornis Committee recommendation; the WBRU Ornis page lists minutes through 2024 and no 2026 minutes were visible on 3 October. The contemporaneous MaltaToday account is retained as a lead, not treated as a verbatim primary source.
 
 ## Primary wording and legal figures
 
@@ -17,13 +17,13 @@ L.N. 80/2026 sets the Quail period as 13 April–3 May 2026, with the overall ba
 
 ## Conservation status and scientific literature
 
-WBRU's March 2026 assessment reports an 11% Pan-European Turtle-dove decline over 2015–2024 and an 88% decline since 1980; it says the central-eastern flyway continues to decline. It also states that the most recent EU Article 12 submissions were provisional and not yet adopted. These trends make it especially important to distinguish a legal mortality benchmark from a forecast of sustainable harvest.
+WBRU's March 2026 technical assessment was presented to the Malta Ornis Committee on 30 March. It reports an 11% Pan-European Turtle-dove decline over 2015–2024 and an 88% decline since 1980; it says the central-eastern flyway continues to decline. It also states that the most recent EU Article 12 submissions were provisional and not yet adopted. These trends make it especially important to distinguish a legal mortality benchmark from a forecast of sustainable harvest. The report is pre-season conservation-status evidence, not a 2026 harvest or enforcement outcome.
 
 Caruana-Galizia and Fenech (2016) estimate historical spring-hunting impacts using hunter records and independent harvest estimates. Their independent estimates concern 1980–1992 and depend on older population denominators with wide error margins. They are not used to infer 2026 quota impacts. Publisher metadata and DOI were checked against Cambridge University Press; an open repository full text was reviewed. No full text is committed here.
 
 ## Supervision evidence and limits
 
-The WBRU page listed its 2025 outcome report as the latest spring-season outcome report on 2 October 2026. For 2025 it records 1,336 patrols/field inspections, 909 hunter spot-checks and 19 detected offences. The enforcement figure is a count of activity, not a measure of deterrence or full compliance. The 2025 report cannot establish what happened in 2026.
+The WBRU Spring Hunting Derogations page listed its 2025 outcome report as the latest spring-season outcome report on 3 October 2026. For 2025 it records 1,336 patrols/field inspections, 909 hunter spot-checks and 19 detected offences. The enforcement figure is a count of activity, not a measure of deterrence or full compliance. The 2025 report cannot establish what happened in 2026. A search of the official WBRU reports and minutes pages found no 2026 season-outcome report or 2026 Ornis minutes by the cut-off.
 
 The 2026 Legal Notices require compliance with the framework and Special Spring Hunting Licence conditions. The April 2026 Government Gazette contains a separate Turtle-dove research-capture derogation with licence controls; it must not be confused with recreational hunting. FKNK's 7 April statement says it would conduct a survey to estimate a “sustainability index” using voluntary member participation and records of sex of harvested birds. That survey announcement is not an enforcement report or independent outcome assessment.
 

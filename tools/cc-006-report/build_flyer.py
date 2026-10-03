@@ -21,13 +21,13 @@ build_flyer(Flyer(
         ("59.8%", GREEN, "Turtle-dove quota / benchmark", "1,500 quota against the regulation’s 2,510-bird 1% benchmark."),
         ("Declining", RED, "Turtle-dove context", "WBRU reports a continuing central-eastern flyway decline; latest Article 12 data were provisional."),
         ("2025", ORANGE, "Latest outcome report", "WBRU records 1,336 patrols, 909 spot-checks and 19 detected offences for 2025."),
-        ("Not yet", RED, "2026 supervision", "No 2026 season outcome report was listed in the WBRU archive at the 2 October review cut-off."),
+        ("Not yet", RED, "2026 supervision", "No 2026 season outcome report was listed in the WBRU archive at the 3 October review cut-off."),
     ],
     fair="Both quotas are below the legal mortality benchmark. That confirms the formula was followed on the Government’s inputs; it does not prove sustainability or strict supervision in practice.",
     asks=["Publish the 2026 outcome and enforcement data.",
           "Show the final population inputs and mortality method.",
           "Publish the Ornis minutes and vote.",
           "Release and independently validate the FKNK survey results."],
-    footer="Version 1.0  ·  2 October 2026  ·  Draft pending right of reply",
+    footer="Version 1.1  ·  3 October 2026  ·  Draft pending right of reply",
     pdf_title="Claim Check 006 – What does small numbers mean?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

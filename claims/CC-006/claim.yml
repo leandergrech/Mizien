@@ -43,6 +43,21 @@ claim:
     publisher: European Parliament and Council
     date: 30 November 2009
     url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147
+  - title: Conservation Status of Common Quail and European Turtle-dove, March 2026
+    publisher: Wild Birds Regulation Unit
+    date: March 2026
+    url: https://wbru.gov.mt/wp-content/uploads/2026/04/Conservation-Status-of-Common-Quail-and-Turtle-Dove-Mar-2026.pdf
+    note: Official status report presented to the Malta Ornis Committee on 30 March 2026; Article 12 submissions were provisional at publication.
+  - title: Spring Hunting Derogations
+    publisher: Wild Birds Regulation Unit
+    date: '2026-10-03'
+    url: https://wbru.gov.mt/en/resources/reports-and-statistics/sprin-hunting-derogations/
+    note: Checked 3 October 2026; the latest listed season outcome report is for 2025. No 2026 outcome report is listed.
+  - title: Ornis Committee
+    publisher: Wild Birds Regulation Unit
+    date: '2026-10-03'
+    url: https://wbru.gov.mt/en/the-department/ornis-committee/
+    note: Checked 3 October 2026; the public minutes archive lists meetings only through 2024, so 2026 minutes were not available there.
   quote: “Under strictly supervised conditions and on a selective basis ... in small numbers.”
 counter_evidence: The 2025 WBRU outcome report documents enforcement activity and offences, but it cannot
   establish how the 2026 season was supervised. The 2026 season outcome report was not available at review.
@@ -54,8 +69,9 @@ why_low_hanging: 'Drafted: statutory benchmarks recomputed and report/flyer prod
 tags:
 - Conditional-turned-unconditional
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: Medium
+version: '1.1'
 caveats: 'The statutory “small numbers” estimate is a modelled benchmark, not an independent estimate of
   the number of birds migrating through Malta or the effect of the hunt. Right of reply remains for the maintainer.'
 right_of_reply:
@@ -70,4 +86,4 @@ outputs:
   report_pdf: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-last_reviewed: '2026-10-02'
+last_reviewed: '2026-10-03'
