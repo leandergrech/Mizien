@@ -1,11 +1,11 @@
-ID,Worker,Added,Note
-CC-012,A,2026-10-03,initial assignment
-CC-013,B,2026-10-03,initial assignment
-CC-014,C,2026-10-03,initial assignment
-CC-015,A,2026-10-03,initial assignment
-CC-016,B,2026-10-03,initial assignment
-CC-017,C,2026-10-03,initial assignment
-CC-018,A,2026-10-03,initial assignment
-CC-019,B,2026-10-03,initial assignment
-CC-020,C,2026-10-03,initial assignment
-CC-021,C,2026-10-03,initial assignment
+ID,Worker,Added,Note,Attempts,Last attempt,Blocker
+CC-012,A,2026-10-03,initial assignment,1,2026-10-03,"network: Maltese news, pn.org.mt, parlament.mt, Crossref, Wayback refused by proxy"
+CC-013,B,2026-10-03,initial assignment,1,2026-10-03,"network: maltatoday.com.mt, Wayback, Crossref, Eurostat refused by proxy"
+CC-014,C,2026-10-03,initial assignment,1,2026-10-03,"network: independent.com.mt, pa.org.mt, Wayback, Crossref refused by proxy"
+CC-015,A,2026-10-03,initial assignment,0,,
+CC-016,B,2026-10-03,initial assignment,0,,
+CC-017,C,2026-10-03,initial assignment,0,,
+CC-018,A,2026-10-03,initial assignment,0,,
+CC-019,B,2026-10-03,initial assignment,0,,
+CC-020,C,2026-10-03,initial assignment,0,,
+CC-021,C,2026-10-03,initial assignment,0,,

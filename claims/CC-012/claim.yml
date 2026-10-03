@@ -1,7 +1,7 @@
 id: CC-012
 title: Ta' Qali gravel and grass
 category: Land & Trees
-status: In progress
+status: Not started
 verdict: null
 verdict_confidence: null
 claim:
@@ -77,7 +77,9 @@ tags:
 tags_provisional: true
 priority: Queue
 data_readiness: High
-caveats: 'NO VERDICT YET. Verbatim primary wording not located. The PM remark is quoted only as reported (apparently a broadcast interview, Jan 2026; programme and recording not identified). The Momentum report (expert inspection of the 22,000 m2 picnic area) was not retrieved; PN statements of 12 Jan and 6 Feb 2026 relay it. Note attribution: the ''permanently barren'' and ''chokes the grass'' findings originate with Momentum, and PN repeated them. Automated access to Malta Independent, The Shift, Newsbook, pn.org.mt, parlament.mt, Crossref and web.archive.org was blocked in the run environment (3 Oct 2026), so nothing could be verified. Still missing: PM interview recording or transcript; Momentum report PDF; PN press releases; the expert grass report; procurement record for the direct order (Bonnici Brothers Ltd, about EUR 311,000). Check both sides equally once located.'
+caveats: 'Check both sides equally: the government''s restoration promise and the PN/Momentum ''permanently
+  barren'' warning. Locate primary statements (PM speech, PN press release, Momentum report). Attribution:
+  the ''permanently barren'' and ''chokes the grass'' findings originate with Momentum; PN repeated them.'
 right_of_reply:
   sent: null
   deadline: null

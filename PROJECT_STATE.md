@@ -52,13 +52,8 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 | CC-008 | Transport | Report v1.0 and flyer merged into `main` at `6e1f342`. Verdict: Not substantiated (moderate). Marsa's 2021 travel-time and emissions percentages are agency-reported; the underlying survey/calculation was not found. Msida wording was prospective; the flyover entered use in December 2025 while the broader project continued. No local before/after noise series located. Pending maintainer right of reply. |
 | CC-009 Reverse osmosis and groundwater | Report and flyer v1.0 merged into `main` at `77091be`. WSC's 2025 report: 70.7% RO share; 11.5m m³ groundwater production, lowest decade. Chart values imply an 11.86% fall from 2024, while WSC prose says 11.4%. The latest RBMP reports two main aquifers poor quantitatively, 14 bodies poor chemically and 12/15 above the nitrate standard. Għar Lapsi Plant B was tendered, not commissioned. Verdict: Largely supported (moderate) for reduced WSC groundwater production; this is not proof of aquifer recovery. |
 | CC-010 Land & Trees | Report and flyer v1.0 drafted on `codex/cc-010-trees`. Project Green reported >8,000 trees and >25,000 shrubs planted in 2024. Labour pledge 305: 100,000 trees in the next five years (PDF p. 91; printed p. 89). A February 2026 parliamentary answer reports around 60,000 trees and >100,000 shrubs planted collectively by government entities through end-2025. Verdict: Largely supported (moderate) for the reported figures and pledge; the pledge window had not elapsed, and survival/canopy outcomes are unknown. Right of reply remains with the maintainer. |
-<<<<<<< HEAD
-| CC-012 Ta' Qali | **In progress, no verdict (3 Oct 2026, branch `claude/cc-012-taqali-gravel`).** Verbatim primary wording not found: PM quote known only via The Shift/Newsbook (broadcast interview, unidentified); Momentum expert report not retrieved. Attribution note: the 'unsuitable soil / barren' findings are Momentum's, repeated by PN. The run environment blocked the Maltese news sites, pn.org.mt, parlament.mt, Crossref and Wayback; next run needs a browser or manual retrieval of the primaries, then NDVI/rainfall/literature checks. Leads in `literature/CC-012/README.md`. |
 | CC-012 to CC-021 | Candidates added 3 Oct 2026 (records, sources, literature folders, map links). CC-012 Ta' Qali gravel and grass (both sides); CC-013 Buttigieg: permits keep prices in check; CC-014 Buttigieg: fewer enforcement notices (**In progress**: article blocked by egress on 3 Oct, wording unverified, no report; see `literature/CC-014/README.md`); CC-015 Buttigieg: 'three weeks left' (date check only; scope to confirm); CC-016 shore-to-ship 90%; CC-017 land reclamation (Budget 2026); CC-018 MDA on IMF; CC-019 Amphora: 830,000 m2 land lost; CC-020 noise compliance; CC-021 Gozo tunnel (lead only, weakest). Only CC-013, CC-014 and CC-018 have verbatim wording; the rest need primary sources. New topics Planning & Housing and Noise; new themes T8 (planning, housing and land take) and T9 (compliance-not-health). No NGO claim among them yet. |
-=======
-| CC-013 Permits and prices | **In progress (blocked, 3 Oct 2026 worker B run).** Sandbox egress denied maltatoday.com.mt, web.archive.org, api.crossref.org and ec.europa.eu, so the interview wording, 91,000 figure, Eurostat/NSO data and literature were not fetched. No report or verdict. Leads in `literature/CC-013/README.md`; next run should retry with network access. |
-| CC-012 to CC-021 | Candidates added 3 Oct 2026 (records, sources, literature folders, map links). CC-012 Ta' Qali gravel and grass (both sides); CC-013 Buttigieg: permits keep prices in check; CC-014 Buttigieg: fewer enforcement notices; CC-015 Buttigieg: 'three weeks left' (date check only; scope to confirm); CC-016 shore-to-ship 90%; CC-017 land reclamation (Budget 2026); CC-018 MDA on IMF; CC-019 Amphora: 830,000 m2 land lost; CC-020 noise compliance; CC-021 Gozo tunnel (lead only, weakest). Only CC-013, CC-014 and CC-018 have verbatim wording; the rest need primary sources. New topics Planning & Housing and Noise; new themes T8 (planning, housing and land take) and T9 (compliance-not-health). No NGO claim among them yet. |
->>>>>>> origin/main
+| CC-012 to CC-014 | First automated runs (3 Oct 2026) were blocked: the cloud environment's network allowlist refused every source host (Maltese news, gov and party sites, Wayback, Crossref, Eurostat). Status reset to Not started; leads kept in `data/sources.csv` and `literature/CC-0NN/README.md`; blocker recorded in `data/queue.csv`. |
 
 ## Automation (3 October 2026)
 
@@ -66,6 +61,13 @@ Nightly checker routines A, B and C (Sonnet 5.5) take claims from `data/queue.cs
 candidates, rebalances topics/subtopics and proposes patterns and themes. Conventions: `methodology/automation.md`.
 Pattern tags are now read by the validator from `methodology/pattern-tags.md`; claims may carry an optional
 `subtopic`; new topics and themes get colours automatically.
+
+Pipeline hardening (3 October 2026, after the first runs): every run starts with `python scripts/net_check.py`
+(and `net_check.py CC-NNN` per claim). If the network proxy refuses the core research hosts, the run changes
+nothing and reports; if it refuses a claim's source hosts, the claim stays `Not started`, the attempt and blocker
+go in `data/queue.csv`, and the worker tries its next claim. After 3 blocked attempts the blocker reads
+`needs maintainer`: supply the verbatim passages in `literature/CC-NNN/primary-source.md` (as for CC-007) and
+clear the Blocker cell. Workers merge `origin/main` into their branch instead of rebasing (no force-pushes).
 
 ## Outstanding
 
