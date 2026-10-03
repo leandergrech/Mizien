@@ -1,0 +1,37 @@
+id: CC-014
+title: Fewer enforcement notices, fewer illegalities
+category: Planning & Housing
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Planning Authority CEO Johann Buttigieg (Malta Independent, 7 Sep 2025): the PA once issued over
+    1,000 enforcement notices a year and now about 200, which he attributed to fewer illegalities; over
+    5,000 cases await direct action and 1,500 illegalities were removed by direct action in 30 years.'
+  speaker: Johann Buttigieg, Planning Authority CEO
+  date: '2025-09-07'
+  wording_status: Verbatim found
+  sources:
+  - title: CEO will not say PA failed in enforcement duties, but admits it has struggled
+    publisher: The Malta Independent
+    date: 7 Sep 2025
+    url: https://www.independent.com.mt/articles/2025-09-07/local-news/CEO-will-not-say-PA-failed-in-enforcement-duties-but-admits-it-has-struggled-6736272936
+    note: Source of the 1,000 vs 200 notices and 5,000 pending cases.
+  quote: there were too many illegalities for the PA to enforce on everything
+counter_evidence: A fall in notices issued is an input; it can reflect fewer illegalities or less enforcement
+  activity. The CEO himself says clearing the backlog at the current rate would take over 90 years.
+tests: PA annual reports (complaints received, notices issued, direct actions); National Audit Office
+  reports on enforcement; ERA enforcement data.
+why_low_hanging: Counts are in PA annual reports.
+tags:
+- Input-as-outcome
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: Assess the statement, not the person.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

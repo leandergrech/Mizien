@@ -41,8 +41,18 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-009 | Water | Reverse osmosis and groundwater | Drafted | Largely supported |
 | CC-010 | Land & Trees | Tree-planting counts | Drafted | Largely supported |
 | CC-011 | Governance & Promises | 2026 manifesto pledges | Drafted | Not substantiated |
+| CC-012 | Land & Trees | Ta' Qali gravel and grass | Not started | - |
+| CC-013 | Planning & Housing | Permits keep property prices in check | Not started | - |
+| CC-014 | Planning & Housing | Fewer enforcement notices, fewer illegalities | Not started | - |
+| CC-015 | Governance & Promises | 'Three weeks left' at the PA | Not started | - |
+| CC-016 | Air | Shore-to-ship: 90% less harbour pollution | Not started | - |
+| CC-017 | Planning & Housing | Land reclamation outside the Freeport | Not started | - |
+| CC-018 | Planning & Housing | IMF 'confirms' MDA on housing | Not started | - |
+| CC-019 | Land & Trees | 830,000 m2 of land lost in five years | Not started | - |
+| CC-020 | Noise | Noise: compliant on paper | Not started | - |
+| CC-021 | Transport | Malta-Gozo tunnel traffic | Not started | - |
 
-The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Candidates are numbered CC-001 to CC-011. Report drafts are available for CC-001 to CC-011. Right of reply remains for the maintainer where not yet handled.
+The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Claims are numbered CC-001 to CC-021. Report drafts are available for CC-001 to CC-011; CC-012 to CC-021 are candidates (added 3 October 2026). Right of reply remains for the maintainer where not yet handled.
 
 ## Repository map
 

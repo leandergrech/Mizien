@@ -1,0 +1,41 @@
+id: CC-016
+title: 'Shore-to-ship: 90% less harbour pollution'
+category: Air
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Infrastructure Malta / Government: the Grand Harbour shore-to-ship project (EUR 33 million) cuts
+    pollution from cruise liners in the harbour by 90%, with 17,000 families around the harbour benefiting
+    from cleaner air.'
+  speaker: Infrastructure Malta; Ministry for Transport
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Grand Harbour shore-to-ship project completed, to cut down emissions by 90%
+    publisher: TVMnews
+    date: n/d
+    url: https://tvmnews.mt/en/news/shore-to-ship-project-in-grand-harbour-completed-to-cut-down-emissions-by-90/
+    note: Relays the 90% and 17,000-families figures; find the Infrastructure Malta release.
+  - title: Shore-to-Ship
+    publisher: Infrastructure Malta
+    date: n/d
+    url: https://www.infrastructuremalta.com/projects/shore-ship
+    note: Primary project description.
+counter_evidence: Shore power only cuts emissions while a connected ship is at berth; ships must be equipped
+  and choose to connect, and manoeuvring emissions are unaffected.
+tests: Share of cruise emissions at berth vs manoeuvring (peer-reviewed); number of calls actually connected;
+  ERA monitoring near the harbour before and after; electricity source for the shore supply.
+why_low_hanging: Specific percentages that can be compared with connection logs and air data.
+tags:
+- Conditional-turned-unconditional
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: ''
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

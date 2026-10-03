@@ -1,0 +1,39 @@
+id: CC-019
+title: 830,000 m2 of land lost in five years
+category: Land & Trees
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Amphora Media (Sept 2026, ''Green to Grey''): Malta lost over 830,000 square metres of land to
+    development in five years, with nearly 95% of land take between 2018 and 2023 affecting farmland rather
+    than natural areas.'
+  speaker: Amphora Media
+  date: 2026-09
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Green To Grey: Malta Lost Over 830,000 Square Metres Of Land To Development In Five Years'
+    publisher: Amphora Media
+    date: Sep 2026
+    url: https://www.amphora.media/2026/09/green-to-grey-malta-land-loss-development-construction
+    note: Media claim; locate its data source and method.
+  - title: 'Green to Grey: When Development Creeps Up On Agricultural Land'
+    publisher: Amphora Media
+    date: Sep 2026
+    url: https://www.amphora.media/2026/09/green-to-grey-development-agricutlural-land
+    note: Companion piece.
+counter_evidence: 'To be established: the method and data source behind the area figure.'
+tests: Copernicus land monitoring (imperviousness, CLC+), ERA land-take data, 2010 and 2020 agricultural
+  censuses, PA permits outside development zones.
+why_low_hanging: Satellite land-cover data can reproduce or refute the figure.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: High
+caveats: 'A media claim: the press is held to the same standard.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

@@ -1,0 +1,41 @@
+id: CC-021
+title: Malta-Gozo tunnel traffic
+category: Transport
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Lead: past government studies found the Malta-Gozo tunnel would only be economically viable if
+    car trips between the islands roughly tripled. The project was shelved in 2022; check whether it,
+    or a fixed link, has been revived with new claims.'
+  speaker: Infrastructure Malta; Government of Malta
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta-Gozo Tunnel
+    publisher: Wikipedia
+    date: n/d
+    url: https://en.wikipedia.org/wiki/Malta%E2%80%93Gozo_Tunnel
+    note: Lead only; find the primary studies and any current statement.
+  - title: Gozo tunnel must be submitted to SEA impact study, NGOs warn
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/environment/environment/93504/gozo_tunnel_must_be_submitted_to_sea_impact_study_ngos_warn
+    note: NGO position.
+counter_evidence: 'Induced demand: a link designed to triple car trips works against transport-emission
+  targets (see CC-003).'
+tests: Infrastructure Malta traffic and financial studies; induced-demand literature; Gozo traffic counts;
+  ferry ridership.
+why_low_hanging: 'Weakest candidate: replace if no current claim is found.'
+tags:
+- Promise-without-baseline
+tags_provisional: true
+priority: Queue
+data_readiness: Low
+caveats: No current claim located yet.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

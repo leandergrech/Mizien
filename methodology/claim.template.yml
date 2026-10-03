@@ -1,7 +1,7 @@
 # Copy to claims/CC-NNN/claim.yml and fill in. Validate with: python scripts/validate_claims.py
 id: CC-000
 title: Short title
-category: Land & Trees        # Land & Trees | Climate & Energy | Waste | Water | Nature & Wildlife | Air | Transport | Governance & Promises
+category: Land & Trees        # Land & Trees | Climate & Energy | Waste | Water | Nature & Wildlife | Air | Transport | Governance & Promises | Planning & Housing | Noise
 status: Not started           # Not started | In progress | Drafted | Right of reply | Published
 verdict: null                 # Supported | Largely supported | Not substantiated | Misleading | Contradicted
 verdict_confidence: null      # High | Moderate | Low
