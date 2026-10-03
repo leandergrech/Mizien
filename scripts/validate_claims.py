@@ -29,6 +29,11 @@ REQUIRED = ["id", "title", "category", "status", "claim", "tags"]
 STRICT_VERDICTS = {"Misleading", "Contradicted"}
 
 
+# Landmark emblems drawn on the map (docs/index.html PLACE_ICONS); "pin" is the generic fallback.
+PLACE_ICONS = {"parliament", "castille", "citygate", "barrakka", "ravelin", "waterfront", "tower", "landfill",
+               "flyover", "ro_plant", "park", "crane", "ferry", "pin"}
+
+
 def check(path: pathlib.Path) -> list:
     errs = []
     d = yaml.safe_load(path.read_text(encoding="utf-8"))
@@ -82,6 +87,8 @@ def check(path: pathlib.Path) -> list:
                 errs.append("location lat/lon must be numbers")
             if loc.get("scope") not in ("site", "institution", "national"):
                 errs.append("location scope must be site, institution or national")
+            if loc.get("icon") is not None and loc.get("icon") not in PLACE_ICONS:
+                errs.append(f"location icon {loc.get('icon')} unknown (use one of {sorted(PLACE_ICONS)})")
     return errs
 
 

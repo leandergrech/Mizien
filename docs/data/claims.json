@@ -57,7 +57,8 @@
         "place": "Upper Barrakka Gardens, Valletta",
         "lat": 35.89493,
         "lon": 14.51194,
-        "scope": "site"
+        "scope": "site",
+        "icon": "barrakka"
       },
       "priority": "Done (v1.1)",
       "wording_status": "Verbatim found",
@@ -90,7 +91,8 @@
         "place": "Santa Marija Bay, Comino",
         "lat": 36.01724,
         "lon": 14.33717,
-        "scope": "site"
+        "scope": "site",
+        "icon": "tower"
       },
       "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
@@ -121,7 +123,8 @@
         "place": "Auberge de Castille (Office of the Prime Minister), Valletta",
         "lat": 35.8959,
         "lon": 14.51136,
-        "scope": "institution"
+        "scope": "institution",
+        "icon": "castille"
       },
       "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
@@ -154,7 +157,8 @@
         "place": "Magħtab waste complex",
         "lat": 35.93923,
         "lon": 14.44073,
-        "scope": "site"
+        "scope": "site",
+        "icon": "landfill"
       },
       "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
@@ -186,7 +190,8 @@
         "place": "City Gate, Valletta (national claim)",
         "lat": 35.89623,
         "lon": 14.50907,
-        "scope": "national"
+        "scope": "national",
+        "icon": "citygate"
       },
       "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
@@ -218,7 +223,8 @@
         "place": "Auberge de Castille (Office of the Prime Minister), Valletta",
         "lat": 35.8959,
         "lon": 14.51136,
-        "scope": "institution"
+        "scope": "institution",
+        "icon": "castille"
       },
       "priority": "Done (v1.1)",
       "wording_status": "Verbatim found",
@@ -250,7 +256,8 @@
         "place": "Parliament House, Valletta",
         "lat": 35.89614,
         "lon": 14.50978,
-        "scope": "institution"
+        "scope": "institution",
+        "icon": "parliament"
       },
       "priority": "Done (v1.1)",
       "wording_status": "Verbatim found",
@@ -281,7 +288,8 @@
         "place": "Marsa junction",
         "lat": 35.88289,
         "lon": 14.49449,
-        "scope": "site"
+        "scope": "site",
+        "icon": "flyover"
       },
       "priority": "Done (v1.0 draft)",
       "wording_status": "Verbatim found",
@@ -312,7 +320,8 @@
         "place": "Pembroke reverse osmosis plant",
         "lat": 35.93211,
         "lon": 14.48285,
-        "scope": "site"
+        "scope": "site",
+        "icon": "ro_plant"
       },
       "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
@@ -344,7 +353,8 @@
         "place": "Auberge de Castille (Office of the Prime Minister), Valletta",
         "lat": 35.8959,
         "lon": 14.51136,
-        "scope": "institution"
+        "scope": "institution",
+        "icon": "castille"
       },
       "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
@@ -375,7 +385,8 @@
         "place": "Parliament House, Valletta",
         "lat": 35.89614,
         "lon": 14.50978,
-        "scope": "institution"
+        "scope": "institution",
+        "icon": "parliament"
       },
       "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
@@ -407,7 +418,8 @@
         "place": "Ta' Qali picnic area",
         "lat": 35.8952,
         "lon": 14.4192,
-        "scope": "site"
+        "scope": "site",
+        "icon": "park"
       },
       "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
@@ -437,7 +449,8 @@
         "place": "Planning Authority, St Francis Ravelin, Floriana",
         "lat": 35.89,
         "lon": 14.50314,
-        "scope": "institution"
+        "scope": "institution",
+        "icon": "ravelin"
       },
       "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
@@ -469,7 +482,8 @@
         "place": "Planning Authority, St Francis Ravelin, Floriana",
         "lat": 35.89,
         "lon": 14.50314,
-        "scope": "institution"
+        "scope": "institution",
+        "icon": "ravelin"
       },
       "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
@@ -499,7 +513,8 @@
         "place": "Planning Authority, St Francis Ravelin, Floriana",
         "lat": 35.89,
         "lon": 14.50314,
-        "scope": "institution"
+        "scope": "institution",
+        "icon": "ravelin"
       },
       "priority": "Queue",
       "wording_status": "Paraphrase: locate quote",
@@ -526,7 +541,8 @@
         "place": "Valletta Waterfront cruise terminal, Floriana",
         "lat": 35.88994,
         "lon": 14.50753,
-        "scope": "site"
+        "scope": "site",
+        "icon": "waterfront"
       },
       "priority": "Queue",
       "wording_status": "Paraphrase: locate quote",
@@ -553,7 +569,8 @@
         "place": "Malta Freeport, Birżebbuġa",
         "lat": 35.81859,
         "lon": 14.53085,
-        "scope": "site"
+        "scope": "site",
+        "icon": "crane"
       },
       "priority": "Queue",
       "wording_status": "Paraphrase: locate quote",
@@ -578,7 +595,8 @@
         "place": "City Gate, Valletta (national claim)",
         "lat": 35.89623,
         "lon": 14.50907,
-        "scope": "national"
+        "scope": "national",
+        "icon": "citygate"
       },
       "priority": "Queue",
       "wording_status": "Verbatim found",
@@ -603,7 +621,8 @@
         "place": "City Gate, Valletta (national claim)",
         "lat": 35.89623,
         "lon": 14.50907,
-        "scope": "national"
+        "scope": "national",
+        "icon": "citygate"
       },
       "priority": "Queue",
       "wording_status": "Paraphrase: locate quote",
@@ -630,7 +649,8 @@
         "place": "Auberge de Castille (Office of the Prime Minister), Valletta",
         "lat": 35.8959,
         "lon": 14.51136,
-        "scope": "institution"
+        "scope": "institution",
+        "icon": "castille"
       },
       "priority": "Queue",
       "wording_status": "Paraphrase: locate quote",
@@ -657,7 +677,8 @@
         "place": "Ċirkewwa ferry terminal",
         "lat": 35.98942,
         "lon": 14.32863,
-        "scope": "site"
+        "scope": "site",
+        "icon": "ferry"
       },
       "priority": "Queue",
       "wording_status": "Paraphrase: locate quote",

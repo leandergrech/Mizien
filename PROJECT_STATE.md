@@ -91,6 +91,9 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
   under it. The scale bar hides while it is on.
 - Transitions (district in/out, Fit) fold the camera zoom and pan into the map scale and centre, then animate the
   scale in log space about the fixed screen point (no jumps). The map view is orthographic so the fold is exact.
+- Landmark medallions: every claim site has a line-art emblem (claim.yml location.icon; PLACE_ICONS in index.html).
+  A site is 'discovered' (gold emblem) once any claim there has a verdict, otherwise a dashed '?'. Click opens a
+  panel of its claims; the HUD counts sites discovered. Medallions are spread apart with leaders to their true spot.
 - To do: district geometry for Gozo and Grand Harbour before they unlock (add streets/landmarks in build_geo.py);
   test on phones; new claims must get a `location` (intake routine updated).
 
