@@ -351,21 +351,24 @@
       "id": "CC-013",
       "title": "Permits keep property prices in check",
       "category": "Planning & Housing",
-      "claim": "Planning Authority CEO Johann Buttigieg (MaltaToday interview, 2 Mar 2025): continuing to issue permits helps keep property prices in check; he cited about 91,000 dwellings approved over a decade.",
-      "counter": "An MDA-commissioned study reported prices up 59% since 2017 over a period of very high permit volumes. Vacancy, foreign and investment demand and the type of dwellings approved are not addressed.",
-      "status": "Not started",
-      "verdict": null,
-      "tags": [
-        "Selective metric"
-      ],
-      "priority": "Queue",
+      "claim": "Planning Authority CEO Johann Buttigieg (MaltaToday interview, 2 Mar 2025): continuing to issue permits helps keep property prices in check; without them Malta would face the same housing crises as other European countries. The interviewer cited about 91,000 dwellings approved over a decade.",
+      "counter": "Supported in direction by peer-reviewed research on supply constraints (Glaeser et al. 2005; Hilber and Vermeulen 2016; Saiz 2010); Anenberg and Kung (2020) find extra supply alone does little for rent burdens. Malta population +31% 2015-2025 (EU +2%); real house prices +34% (EU +25%). Housing-cost overburden rose from 1.1% (2015) to 6.0% (2025) while the EU fell to 7.7%; overcrowding 4.7% vs EU 16.8%. 27.5% of dwellings not a main residence (Census 2021).",
+      "status": "Drafted",
+      "verdict": "Largely supported",
+      "tags": [],
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "Johann Buttigieg, Planning Authority CEO",
       "date": "2025-03-02",
-      "quote": "continuing to issue permits helps keep property prices in check",
-      "version": null,
-      "outputs": {},
+      "quote": "Had we not issued these permits, Malta would face the same housing crises as other European countries. This is a supply-and-demand issue – continuing to issue permits helps keep property prices in check. Stopping them would drive prices up.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-03",
+      "outputs": {
+        "report": "claim-files/CC-013/report.pdf",
+        "flyer_pdf": "claim-files/CC-013/flyer.pdf",
+        "flyer_png": "claim-files/CC-013/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-013/claim.yml"
     },
     {
