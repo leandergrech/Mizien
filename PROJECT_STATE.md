@@ -86,6 +86,9 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
 - Gamification: map layers unlock with completed checks (TIERS in index.html: 0 islands, 3 names/compass, 5 depth
   lines, 7 site names, 9 Valletta district, 12 streets, 15 Gozo district, 20 Grand Harbour, 30 living sea). A HUD
   shows level and the next unlock; a toast announces new layers since the visitor's last visit.
+- Lens: a fisheye focus at the centre of the stage (Lens button, key L; on by default on phones in the map view,
+  remembered in localStorage `mizien.lens`). Magnifies up to 3.2x at the centre, compresses the rim; drag the map
+  under it. The scale bar hides while it is on.
 - To do: district geometry for Gozo and Grand Harbour before they unlock (add streets/landmarks in build_geo.py);
   test on phones; new claims must get a `location` (intake routine updated).
 
