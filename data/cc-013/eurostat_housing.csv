@@ -1,0 +1,381 @@
+dataset,item,geo,year,value,note
+#,Query base: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/<dataset>,,,,
+demo_gind,Population on 1 January,EU27_2020,1960,354531754,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1961,357404302,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1962,360431043,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1963,364153147,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1964,367355615,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1965,370521157,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1966,373443503,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1967,376321214,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1968,379076041,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1969,381626236,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1970,384326562,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1971,385949080,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1972,388592631,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1973,391211759,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1974,393658199,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1975,395835667,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1976,398037111,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1977,399967581,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1978,401903104,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1979,403662165,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1980,405466907,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1981,407369042,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1982,408894651,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1983,410107692,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1984,411006427,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1985,411907502,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1986,412876239,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1987,414088076,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1988,415218942,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1989,416715205,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1990,418030739,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1991,419504036,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1992,420413536,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1993,421912578,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1994,423104986,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1995,423960534,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1996,424641798,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1997,425273491,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1998,427482962,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,1999,427998269,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2000,428473834,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2001,429240746,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2002,429728905,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2003,431246056,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2004,432878129,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2005,434585887,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2006,436041018,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2007,437514477,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2008,439074280,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2009,440467898,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2010,441160594,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2011,440526112,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2012,441280191,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2013,441739935,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2014,442235565,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2015,442883289,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2016,443954935,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2017,444609939,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2018,445227547,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2019,446060538,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2020,446923963,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2021,445767723,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2022,445999571,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2023,447805685,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2024,449489862,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2025,451284558,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,EU27_2020,2026,451990314,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1960,327200,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1961,325900,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1962,324600,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1963,323200,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1964,321900,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1965,320600,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1966,317000,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1967,313400,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1968,309700,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1969,306100,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1970,302500,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1971,302800,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1972,302600,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1973,302300,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1974,302100,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1975,301892,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1976,306551,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1977,304997,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1978,308942,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1979,311421,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1980,315262,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1981,318028,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1982,319936,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1983,331859,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1984,329189,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1985,331997,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1986,340907,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1987,343334,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1988,345636,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1989,349014,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1990,352430,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1991,361908,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1992,365781,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1993,369455,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1994,373161,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1995,376433,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1996,378404,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1997,381405,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1998,384176,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,1999,386397,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2000,388759,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2001,391415,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2002,394641,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2003,397296,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2004,399867,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2005,402668,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2006,404999,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2007,405616,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2008,407832,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2009,410926,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2010,414027,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2011,414989,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2012,417546,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2013,421464,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2014,428156,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2015,438805,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2016,449635,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2017,459375,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2018,474837,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2019,492968,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2020,514855,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2021,516125,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2022,520174,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2023,542051,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2024,563443,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2025,574250,retrieved 3 Oct 2026
+demo_gind,Population on 1 January,MT,2026,588254,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2010,19.1,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2011,18.4,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2012,18.4,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2013,18.3,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2014,18.1,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2015,18.1,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2016,17.9,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2017,17.5,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2018,17.1,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2019,17.1,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2020,17.4,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2021,17.3,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2022,16.8,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2023,16.8,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2024,16.9,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",EU27_2020,2025,16.8,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2005,3.8,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2006,3.5,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2007,4.2,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2008,3.9,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2009,3.8,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2010,4.0,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2011,4.4,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2012,4.0,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2013,4.5,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2014,4.0,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2015,3.8,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2016,3.0,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2017,3.0,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2018,3.4,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2019,3.7,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2020,4.2,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2021,2.9,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2022,2.8,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2023,2.4,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2024,3.7,retrieved 3 Oct 2026
+ilc_lvho05a,"Overcrowding rate, % of population",MT,2025,4.7,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2010,10.0,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2011,10.6,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2012,11.5,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2013,11.6,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2014,11.5,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2015,11.2,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2016,10.9,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2017,10.1,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2018,9.6,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2019,9.4,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2020,7.8,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2021,8.7,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2022,8.7,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2023,8.8,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2024,8.2,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2025,7.7,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2005,1.7,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2006,1.8,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2007,2.5,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2008,3.3,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2009,2.8,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2010,3.7,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2011,3.0,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2012,2.6,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2013,2.5,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2014,1.6,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2015,1.1,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2016,1.4,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2017,1.4,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2018,1.7,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2019,2.6,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2020,2.8,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2021,2.7,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2022,2.9,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2023,6.0,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2024,5.9,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2025,6.0,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2005,85.85,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2006,94.31,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2007,102.32,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2008,103.67,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2009,99.79,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2010,100.26,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2011,100.88,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2012,98.76,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2013,97.06,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2014,97.75,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2015,100.0,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2016,104.31,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2017,109.31,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2018,114.81,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2019,120.4,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2020,127.15,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2021,137.87,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2022,148.86,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2023,148.44,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2024,153.42,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2025,161.89,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2005,58.46,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2006,70.08,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2007,84.79,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2008,94.14,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2009,90.07,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2010,91.04,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2011,89.8,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2012,92.54,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2013,92.16,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2014,94.51,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2015,100.0,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2016,105.45,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2017,111.03,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2018,117.45,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2019,124.65,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2020,128.86,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2021,135.44,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2022,144.45,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2023,153.42,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2024,163.77,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2025,173.55,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2005,392.1,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2005,294.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2006,423.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2006,292.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2007,387.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2007,274.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2008,243.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2008,202.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2009,164.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2009,147.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2010,138.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2010,134.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2011,134.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2011,132.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2012,113.5,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2012,111.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2013,92.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2013,93.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2014,94.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2014,93.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2015,100.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2015,100.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2016,121.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2016,118.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2017,134.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2017,130.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2018,144.1,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2018,134.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2019,142.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2019,131.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2020,128.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2020,119.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2021,149.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2021,137.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2022,157.5,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2022,136.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2000,45.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2000,38.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2001,93.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2001,44.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2002,127.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2002,81.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2003,148.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2003,98.1,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2004,172.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2004,113.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2005,246.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2005,162.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2006,293.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2006,193.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2007,335.5,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2007,221.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2008,202.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2008,133.5,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2009,151.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2009,99.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2010,122.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2010,79.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2011,107.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2011,75.1,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2012,81.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2012,69.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2013,67.5,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2013,57.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2014,72.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2014,66.5,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2015,100.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2015,100.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2016,206.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2016,144.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2017,254.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2017,183.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2018,366.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2018,249.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2019,351.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2019,246.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2020,220.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2020,157.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2021,211.1,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2021,144.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2022,270.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2022,181.4,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2005,99.51,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2006,106.73,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2007,112.72,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2008,110.61,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2009,108.26,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2010,106.23,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2011,104.31,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2012,100.28,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2013,97.53,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2014,97.98,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2015,100.0,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2016,104.01,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2017,107.32,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2018,111.04,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2019,115.04,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2020,120.84,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2021,127.69,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2022,128.64,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2023,120.46,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2024,121.22,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2025,124.75,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2000,44.22,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2001,47.25,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2002,52.33,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2003,60.32,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2004,68.34,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2005,71.57,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2006,83.61,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2007,99.89,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2008,106.72,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2009,99.99,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2010,98.79,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2011,95.13,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2012,95.5,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2013,94.05,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2014,96.0,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2015,100.0,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2016,104.58,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2017,109.34,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2018,114.5,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2019,119.19,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2020,121.55,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2021,126.3,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2022,128.71,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2023,122.4,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2024,125.99,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2025,134.2,retrieved 3 Oct 2026

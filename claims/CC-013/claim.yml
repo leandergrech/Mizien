@@ -1,12 +1,13 @@
 id: CC-013
 title: Permits keep property prices in check
 category: Planning & Housing
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
   text: 'Planning Authority CEO Johann Buttigieg (MaltaToday interview, 2 Mar 2025): continuing to issue
-    permits helps keep property prices in check; he cited about 91,000 dwellings approved over a decade.'
+    permits helps keep property prices in check; without them Malta would face the same housing crises as
+    other European countries. The interviewer cited about 91,000 dwellings approved over a decade.'
   speaker: Johann Buttigieg, Planning Authority CEO
   date: '2025-03-02'
   wording_status: Verbatim found
@@ -15,22 +16,45 @@ claim:
     publisher: MaltaToday
     date: 2 Mar 2025
     url: https://www.maltatoday.com.mt/news/interview/133858/johann_buttigieg_issuing_permits_helps_keep_property_prices_in_check_
-    note: Speaker's own words in an interview; confirm wording against the video.
-  quote: continuing to issue permits helps keep property prices in check
-counter_evidence: An MDA-commissioned study reported prices up 59% since 2017 over a period of very high
-  permit volumes. Vacancy, foreign and investment demand and the type of dwellings approved are not addressed.
-tests: Peer-reviewed research on housing supply elasticity and prices; NSO residential property price
-  index against PA permits 2015-2025; 2021 census vacant dwellings; price-to-income ratios.
-why_low_hanging: Permit and price series are public; the economics literature is large.
-tags:
-- Selective metric
-tags_provisional: true
-priority: Queue
+    note: The claim. Read in full 3 Oct 2026. The 91,000 figure is in the interviewer's question.
+  - title: Approved Dwelling Units for 2007-2025
+    publisher: Planning Authority
+    date: 2026
+    url: https://www.pa.org.mt/file.aspx?f=37489
+    note: 87,814 units approved 2015-2024.
+  - title: 'Census of Population and Housing 2021: Final Report vol. 2'
+    publisher: National Statistics Office
+    date: 2023
+    url: https://nso.gov.mt/wp-content/uploads/Census-2021-Volume-2.pdf
+    note: 27.5% of dwellings secondary, seasonal or vacant.
+  quote: Had we not issued these permits, Malta would face the same housing crises as other European countries.
+    This is a supply-and-demand issue – continuing to issue permits helps keep property prices in check. Stopping
+    them would drive prices up.
+counter_evidence: 'Supported in direction by peer-reviewed research on supply constraints (Glaeser et al. 2005;
+  Hilber and Vermeulen 2016; Saiz 2010); Anenberg and Kung (2020) find extra supply alone does little for rent
+  burdens. Malta population +31% 2015-2025 (EU +2%); real house prices +34% (EU +25%). Housing-cost overburden
+  rose from 1.1% (2015) to 6.0% (2025) while the EU fell to 7.7%; overcrowding 4.7% vs EU 16.8%. 27.5% of
+  dwellings not a main residence (Census 2021).'
+tests: Eurostat prc_hpi_a, tipsho10, demo_gind, ilc_lvho07a, ilc_lvho05a; PA approved dwellings 2007-2025; NSO
+  Census 2021; housing-supply literature.
+why_low_hanging: 'Done: Claim Check 013 report and flyer.'
+tags: []
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: High
-caveats: Assess the statement, not the person.
+caveats: Right of reply to the Planning Authority not yet sent. Effect size unproven for Malta; affordability
+  worsening; approvals are not completions. Prices only, not environmental costs of the permits.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Eurostat tipsho10, demo_gind, ilc_lvho07a, ilc_lvho05a (data/cc-013/)
+- Planning Authority, Approved Dwelling Units 2007-2025
+- Peer-reviewed literature (literature/CC-013/references.bib)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-03'
