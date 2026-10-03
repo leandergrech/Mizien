@@ -34,6 +34,14 @@ THEME_COLORS = {
 }
 
 
+# colours for topics and themes added later (by the weekly intake routine)
+SPARE = ["#4db6ac", "#ff8a65", "#9575cd", "#aed581", "#f48fb1", "#4fc3f7", "#ffd54f", "#a1887f", "#90a4ae", "#ce93d8"]
+
+
+def spare_colour(key: str) -> str:
+    return SPARE[sum(map(ord, key)) % len(SPARE)]
+
+
 def main() -> int:
     claims = []
     for path in sorted((ROOT / "claims").glob("CC-*/claim.yml")):
@@ -47,6 +55,7 @@ def main() -> int:
             "status": d.get("status", "Not started"),
             "verdict": d.get("verdict"),
             "tags": d.get("tags", []),
+            **({"subtopic": d["subtopic"]} if d.get("subtopic") else {}),
             "priority": d.get("priority", ""),
             "wording_status": d["claim"].get("wording_status", ""),
             "confidence": d.get("verdict_confidence"),
@@ -61,13 +70,13 @@ def main() -> int:
     cats = []
     for c in claims:
         if c["category"] not in [x["name"] for x in cats]:
-            cats.append({"name": c["category"], "color": CATEGORY_COLORS.get(c["category"], "#7fa88b")})
+            cats.append({"name": c["category"], "color": CATEGORY_COLORS.get(c["category"]) or spare_colour(c["category"])})
 
     with open(ROOT / "data" / "edges.csv", newline="", encoding="utf-8") as f:
         edges = [{"from": r["From"], "to": r["To"], "theme": r["Theme ID"], "link_type": r["Link type"],
                   "strength": r["Strength"]} for r in csv.DictReader(f)]
     with open(ROOT / "data" / "themes.csv", newline="", encoding="utf-8") as f:
-        themes = [{"id": r["Theme ID"], "name": r["Theme"], "color": THEME_COLORS.get(r["Theme ID"], "#7fa88b"),
+        themes = [{"id": r["Theme ID"], "name": r["Theme"], "color": THEME_COLORS.get(r["Theme ID"]) or spare_colour(r["Theme ID"]),
                    "dashed": r["Strength"].startswith(("Weak", "Pattern")), "link_type": r["Link type"],
                    "strength": r["Strength"], "description": r["What connects them"],
                    "members": [x.strip() for x in r["Linked claim IDs"].split(",")]} for r in csv.DictReader(f)]

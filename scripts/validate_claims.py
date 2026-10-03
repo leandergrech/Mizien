@@ -17,8 +17,14 @@ STATUSES = {"Not started", "In progress", "Drafted", "Right of reply", "Publishe
 VERDICTS = {None, "Supported", "Largely supported", "Not substantiated", "Misleading", "Contradicted"}
 CONFIDENCE = {None, "High", "Moderate", "Low"}
 WORDING = {"Verbatim found", "Paraphrase: locate quote"}
-TAGS = {"Selective metric", "Input-as-outcome", "Compliance-not-health",
-        "Conditional-turned-unconditional", "Promise-without-baseline"}
+def load_tags() -> set:
+    """Pattern tags are defined in methodology/pattern-tags.md (first column, bold), so new
+    patterns are added in one place: the methodology table."""
+    text = (ROOT / "methodology" / "pattern-tags.md").read_text(encoding="utf-8")
+    return set(re.findall(r"^\|\s*\*\*(.+?)\*\*\s*\|", text, flags=re.M))
+
+
+TAGS = load_tags()
 REQUIRED = ["id", "title", "category", "status", "claim", "tags"]
 STRICT_VERDICTS = {"Misleading", "Contradicted"}
 
@@ -46,7 +52,9 @@ def check(path: pathlib.Path) -> list:
         errs.append(f"unknown wording_status: {c.get('wording_status')}")
     for t in d["tags"]:
         if t not in TAGS:
-            errs.append(f"unknown tag: {t}")
+            errs.append(f"unknown tag: {t} (add it to methodology/pattern-tags.md first)")
+    if "subtopic" in d and d["subtopic"] is not None and not (isinstance(d["subtopic"], str) and d["subtopic"].strip()):
+        errs.append("subtopic must be a non-empty string when present")
     if d.get("verdict") in STRICT_VERDICTS and not d.get("evidence_shown"):
         errs.append("Misleading/Contradicted requires 'evidence_shown' (documents or data that can be shown)")
     if d["status"] in {"Right of reply", "Published"} and not (d.get("right_of_reply") or {}).get("sent"):
@@ -75,7 +83,30 @@ def main() -> int:
             for e in errs:
                 print(f"   - {e}")
     print(f"{len(files) - bad}/{len(files)} claim records valid.")
+    bad += check_queue({p.parent.name for p in files})
     return 1 if bad else 0
+
+
+def check_queue(ids: set) -> int:
+    """data/queue.csv assigns claims to the nightly checker routines (worker A, B or C)."""
+    import csv
+    q = ROOT / "data" / "queue.csv"
+    if not q.exists():
+        return 0
+    errs, seen = [], set()
+    for row in csv.DictReader(open(q, newline="", encoding="utf-8")):
+        cid, worker = (row.get("ID") or "").strip(), (row.get("Worker") or "").strip()
+        if cid not in ids:
+            errs.append(f"queue: {cid} has no claims/{cid}/claim.yml")
+        if worker not in {"A", "B", "C"}:
+            errs.append(f"queue: {cid} has worker '{worker}' (must be A, B or C)")
+        if cid in seen:
+            errs.append(f"queue: {cid} is listed twice")
+        seen.add(cid)
+    for e in errs:
+        print("FAIL " + e)
+    print(f"queue: {len(seen)} claims assigned, {len(errs)} problems.")
+    return 1 if errs else 0
 
 
 if __name__ == "__main__":

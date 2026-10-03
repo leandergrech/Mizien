@@ -60,6 +60,13 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 | CC-012 to CC-021 | Candidates added 3 Oct 2026 (records, sources, literature folders, map links). CC-012 Ta' Qali gravel and grass (both sides); CC-013 Buttigieg: permits keep prices in check; CC-014 Buttigieg: fewer enforcement notices; CC-015 Buttigieg: 'three weeks left' (date check only; scope to confirm); CC-016 shore-to-ship 90%; CC-017 land reclamation (Budget 2026); CC-018 MDA on IMF; CC-019 Amphora: 830,000 m2 land lost; CC-020 noise compliance; CC-021 Gozo tunnel (lead only, weakest). Only CC-013, CC-014 and CC-018 have verbatim wording; the rest need primary sources. New topics Planning & Housing and Noise; new themes T8 (planning, housing and land take) and T9 (compliance-not-health). No NGO claim among them yet. |
 >>>>>>> origin/main
 
+## Automation (3 October 2026)
+
+Nightly checker routines A, B and C (Sonnet 5.5) take claims from `data/queue.csv`; a weekly intake routine adds ten
+candidates, rebalances topics/subtopics and proposes patterns and themes. Conventions: `methodology/automation.md`.
+Pattern tags are now read by the validator from `methodology/pattern-tags.md`; claims may carry an optional
+`subtopic`; new topics and themes get colours automatically.
+
 ## Outstanding
 
 - [ ] Decide author or affiliation line for reports and flyer (none yet).
