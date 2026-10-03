@@ -84,6 +84,7 @@ def main() -> int:
                 print(f"   - {e}")
     print(f"{len(files) - bad}/{len(files)} claim records valid.")
     bad += check_queue({p.parent.name for p in files})
+    bad += check_conflict_markers()
     return 1 if bad else 0
 
 
@@ -102,11 +103,32 @@ def check_queue(ids: set) -> int:
             errs.append(f"queue: {cid} has worker '{worker}' (must be A, B or C)")
         if cid in seen:
             errs.append(f"queue: {cid} is listed twice")
+        attempts = (row.get("Attempts") or "0").strip()
+        if not attempts.isdigit():
+            errs.append(f"queue: {cid} has Attempts '{attempts}' (must be a whole number)")
         seen.add(cid)
     for e in errs:
         print("FAIL " + e)
     print(f"queue: {len(seen)} claims assigned, {len(errs)} problems.")
     return 1 if errs else 0
+
+
+def check_conflict_markers() -> int:
+    """Unresolved merge conflicts must never reach main (automated runs merge concurrently)."""
+    import re
+    marker = re.compile(r"^(<{7}|>{7})( |$)", re.M)
+    bad = []
+    for sub in ("claims", "data", "docs", "literature", "methodology", "scripts", "tools"):
+        for f in (ROOT / sub).rglob("*"):
+            if f.is_file() and f.suffix in {".md", ".csv", ".yml", ".json", ".html", ".py", ".bib"}:
+                if marker.search(f.read_text(encoding="utf-8", errors="ignore")):
+                    bad.append(f.relative_to(ROOT))
+    for f in ROOT.glob("*.md"):
+        if marker.search(f.read_text(encoding="utf-8", errors="ignore")):
+            bad.append(f.relative_to(ROOT))
+    for f in bad:
+        print(f"FAIL conflict markers in {f}")
+    return 1 if bad else 0
 
 
 if __name__ == "__main__":

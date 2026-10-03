@@ -1,7 +1,7 @@
 id: CC-014
 title: Fewer enforcement notices, fewer illegalities
 category: Planning & Housing
-status: In progress
+status: Not started
 verdict: null
 verdict_confidence: null
 claim:
@@ -33,13 +33,7 @@ tags:
 tags_provisional: true
 priority: Queue
 data_readiness: Medium
-caveats: 'Assess the statement, not the person. Run of 3 Oct 2026: the Malta Independent article could not be
-  fetched (egress blocked: www.independent.com.mt, archive.org, pa.org.mt, api.crossref.org all denied), so the
-  verbatim wording of the 1,000 vs 200 notices, 5,000 pending and 1,500 direct-action figures is NOT verified
-  here; only the short quote below and a search-engine snippet of the 30-year/1,500 figure were seen. No report
-  or verdict until the passage is read in full and its date range and definitions (notices issued vs served;
-  which years) are confirmed. Missing: the exact quotation, the years behind 1,000 and 200, PA annual-report
-  enforcement tables, any NAO enforcement audit.'
+caveats: Assess the statement, not the person.
 right_of_reply:
   sent: null
   deadline: null
