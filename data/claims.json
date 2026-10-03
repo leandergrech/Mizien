@@ -373,20 +373,25 @@
       "title": "Fewer enforcement notices, fewer illegalities",
       "category": "Planning & Housing",
       "claim": "Planning Authority CEO Johann Buttigieg (Malta Independent, 7 Sep 2025): the PA once issued over 1,000 enforcement notices a year and now about 200, which he attributed to fewer illegalities; over 5,000 cases await direct action and 1,500 illegalities were removed by direct action in 30 years.",
-      "counter": "A fall in notices issued is an input; it can reflect fewer illegalities or less enforcement activity. The CEO himself says clearing the backlog at the current rate would take over 90 years.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Notices fell 82% (1,033 a year in 2001-2009 to 187 in 2020-2024) while complaints of illegal development fell 11% since 2009 (2,701 to 2,411) and 35% since 2004/05; complaints were 3,313 in 2020. About half of 2024 complaints were confirmed illegal (~1,200). Notices per 100 complaints fell from about 30-40 to 5-10: in 2024, 521 confirmed cases ended in a sanctioning application and 482 in removal by the owner; 162 led to a notice. The PA's 2024 report attributes the fall in notices to persuading contraveners first.",
+      "status": "Drafted",
+      "verdict": "Misleading",
       "tags": [
         "Input-as-outcome"
       ],
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Johann Buttigieg, Planning Authority CEO",
       "date": "2025-09-07",
-      "quote": "there were too many illegalities for the PA to enforce on everything",
-      "version": null,
-      "outputs": {},
+      "quote": "We had times when we issued over 1,000 enforcement notices per year.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-03",
+      "outputs": {
+        "report": "claim-files/CC-014/report.pdf",
+        "flyer_pdf": "claim-files/CC-014/flyer.pdf",
+        "flyer_png": "claim-files/CC-014/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-014/claim.yml"
     },
     {
