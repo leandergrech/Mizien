@@ -758,16 +758,19 @@
   function cyTarget() { var top = topInset(); return top ? (top + H - 40) / 2 : H / 2 + 6; }
   var cxNow = null;
   function cxTarget() { return leftInset() + (W - leftInset() - panelInset()) / 2; }
+  function baseScale() {
+    var usable = Math.min(W - leftInset() - panelInset(), H - 120 - topInset());
+    return view === "map"   // fit the archipelago (about 520 x 440 world units) to the free area
+      ? Math.max(0.3, Math.min((W - leftInset() - panelInset()) * 0.92 / 520, (H - 120 - topInset()) * 0.92 / 440))
+      : Math.max(0.6, usable / 400);
+  }
   function project(p) {
     var cy = Math.cos(cam.yaw), sy = Math.sin(cam.yaw), cp = Math.cos(cam.pitch), sp = Math.sin(cam.pitch);
     var px = p.x - cam.fx, py = p.y - cam.fy, pz = p.z - cam.fz;
     var x1 = px * cy - pz * sy, z1 = px * sy + pz * cy;
     var y2 = py * cp - z1 * sp, z2 = py * sp + z1 * cp;
-    var F = view === "map" ? 5000 : 900, s = view === "map" ? Math.max(0.4, Math.min(2, F / (F + z2))) : F / (F + z2 + 300);
-    var usable = Math.min(W - leftInset() - panelInset(), H - 120 - topInset());
-    var base = (view === "map"   // fit the archipelago (about 520 x 440 world units) to the free area
-      ? Math.max(0.3, Math.min((W - leftInset() - panelInset()) * 0.92 / 520, (H - 120 - topInset()) * 0.92 / 440))
-      : Math.max(0.6, usable / 400)) * cam.zoom * cam.em;
+    var F = 900, s = view === "map" ? 1 : F / (F + z2 + 300);   // the map is orthographic, so transitions fold exactly
+    var base = baseScale() * cam.zoom * cam.em;
     var sx = cxNow + cam.px + x1 * s * base, sy = cyNow + cam.py + y2 * s * base, sc = s * base;
     if (lensK > 0.01) { var ldx = sx - cxNow, ldy = sy - cyNow, lr = Math.hypot(ldx, ldy), LR = lensR();
       if (lr < LR) { var D = LENS_D * lensK, lx = lr / LR, f = (D + 1) / (D * lx + 1), dv = f / (D * lx + 1);
@@ -797,8 +800,8 @@
     var k = reduce ? 1 : 1 - Math.pow(0.04, dt);            // morph easing, frame-rate independent
     lensK += ((lensWanted() ? 1 : 0) - lensK) * Math.min(1, k * 1.5);
     cam.px += (cam.tpx - cam.px) * Math.min(1, k * 1.6); cam.py += (cam.tpy - cam.py) * Math.min(1, k * 1.6);
-    if (view === "map") { var km = Math.min(1, k * 1.4); mapZ += (tmapZ - mapZ) * km; mapC.x += (tmapC.x - mapC.x) * km; mapC.y += (tmapC.y - mapC.y) * km; mapTargets(); }
-    var kc = view === "map" ? Math.min(1, k * 2.4) : k;
+    if (view === "map") { stepMapAnim(dt); mapTargets(); }
+    var kc = view === "map" ? (mapAnim ? 1 : Math.min(1, k * 2.4)) : k;
     claims.forEach(function (c) { c.x += (c.tx - c.x) * kc; c.y += (c.ty - c.y) * kc; c.z += (c.tz - c.z) * kc; });
     Object.keys(hubPool).forEach(function (key) { var h = hubPool[key];
       h.x += (h.tx - h.x) * k; h.y += (h.ty - h.y) * k; h.z += (h.tz - h.z) * k; h.alpha += (h.talpha - h.alpha) * Math.min(1, k * 1.3); });
@@ -1034,11 +1037,11 @@
       (places[key] = places[key] || []).push(c); vis.push(c);
     });
     Object.keys(places).forEach(function (k) { var g = places[k], n = g.length;
-      g.forEach(function (c, i) { var a = (i / n) * Math.PI * 2 - Math.PI / 2, r = n > 1 ? 9 + 4 * n : 0;
+      g.forEach(function (c, i) { var a = (i / n) * Math.PI * 2 - Math.PI / 2, r = n > 1 ? (9 + 4 * n) * spreadF() : 0;
         c.tx = c.anchor.x + Math.cos(a) * r; c.tz = c.anchor.z + Math.sin(a) * r; c.ty = -22; }); });
     for (var it = 0; it < 24; it++) {                               // keep pins apart, pulled back to their sites
       for (var i = 0; i < vis.length; i++) for (var j = i + 1; j < vis.length; j++) {
-        var A = vis[i], B = vis[j], dx = B.tx - A.tx, dz = B.tz - A.tz, d = Math.hypot(dx, dz) || 0.01, min = mapLevel ? 36 : 26;
+        var A = vis[i], B = vis[j], dx = B.tx - A.tx, dz = B.tz - A.tz, d = Math.hypot(dx, dz) || 0.01, min = mapLevel ? 26 + 10 * spreadF() : 26;
         if (d < min) { var f = (min - d) / 2 / d; A.tx -= dx * f; A.tz -= dz * f; B.tx += dx * f; B.tz += dz * f; } }
       vis.forEach(function (c) { c.tx += (c.anchor.x - c.tx) * 0.04; c.tz += (c.anchor.z - c.tz) * 0.04;
         if (c.offmap) { var dd2 = Math.hypot(c.tx, c.tz) || 1; c.tx *= OUTER / dd2; c.tz *= OUTER / dd2; } });
@@ -1135,10 +1138,55 @@
     hubs.forEach(function (h) { h.talpha = 0; }); sway = false;
     cam.tyaw = mapLevel ? cam.tyaw : 0; cam.tpitch = MAP_PITCH;
   }
+  // Smooth transitions. The camera's zoom and pan are first folded into the map scale and centre, so the first
+  // frame is exactly what was on screen; the scale then moves in log space about the one screen point that stays put.
+  var mapAnim = null;
+  function districtScale(d) { return 175 * MPU / d.radius_m; }
+  function spreadF() { if (!mapLevel) return 1; var S1 = districtScale(mapLevel);
+    return Math.max(0, Math.min(1, Math.log(Math.max(1, mapZ)) / Math.log(S1))); }
+  function screenCentreGeo() {
+    var K = baseScale() * cam.zoom * cam.em, cy = Math.cos(cam.yaw), sy = Math.sin(cam.yaw), sp = Math.sin(cam.pitch) || 0.5;
+    var x1 = -cam.px / K, y2 = -cam.py / K, z1 = -y2 / sp;
+    var wx = x1 * cy + z1 * sy, wz = -x1 * sy + z1 * cy;
+    return { x: mapC.x + wx * MPU / mapZ, y: mapC.y + wz * MPU / mapZ };
+  }
+  function foldCamera() {
+    var G = screenCentreGeo(); mapZ = mapZ * cam.zoom; mapC = G; tmapZ = mapZ; tmapC = { x: G.x, y: G.y };
+    cam.zoom = 1; cam.px = cam.tpx = 0; cam.py = cam.tpy = 0;
+  }
+  function animateMap(c1, S1, done) {
+    foldCamera();
+    var c0 = { x: mapC.x, y: mapC.y }, S0 = mapZ, r = S0 / S1, P = null;
+    if (Math.abs(1 - r) > 0.02) P = { x: (c1.x - c0.x * r) / (1 - r), y: (c1.y - c0.y * r) / (1 - r) };
+    mapAnim = { c0: c0, c1: c1, S0: S0, S1: S1, P: P, u: 0, dur: reduce ? 0.01 : 0.95, done: done };
+    tmapZ = S1; tmapC = { x: c1.x, y: c1.y };
+  }
+  window.__mzz = function (mx, my) { // TEST ONLY
+    var g = GEO.districts[0], p0 = project(toWorld(g.x, g.y)); var at = [Math.round(p0.sx), Math.round(p0.sy)];
+    zoomAt(1.5, at[0], at[1]); var p1 = project(toWorld(g.x, g.y));
+    return JSON.stringify({ before: at, after: [Math.round(p1.sx), Math.round(p1.sy)], zoom: cam.zoom, px: cam.px, cx: cxNow, level: mapLevel && mapLevel.id, anim: !!mapAnim });
+  };
+  window.__mzanim = function () { // TEST ONLY
+    var g = GEO.districts[0], pl = [14000, -9000], out = [];
+    function snap(tag) { var a = project(toWorld(g.x, g.y)), b = project(toWorld(pl[0], pl[1]));
+      out.push(tag + " V=" + Math.round(a.sx) + "," + Math.round(a.sy) + " P=" + Math.round(b.sx) + "," + Math.round(b.sy) + " S=" + (mapZ * cam.zoom).toFixed(2)); }
+    var v0 = project(toWorld(g.x, g.y)); for (var i = 0; i < 6; i++) zoomAt(1.2, v0.sx, v0.sy);
+    snap("after wheel"); var f = 0; while (mapAnim && f < 40) { stepMapAnim(0.08); f++; if (f % 2 === 1) snap("f" + f); } snap("end");
+    exitDistrict(); snap("exit start"); f = 0; while (mapAnim && f < 40) { stepMapAnim(0.08); f++; if (f % 3 === 1) snap("x" + f); } snap("exit end level=" + (mapLevel && mapLevel.id));
+    return out.join("\n");
+  };
+  function stepMapAnim(dt) {
+    var A = mapAnim; if (!A) return;
+    A.u = Math.min(1, A.u + dt / A.dur);
+    var e = A.u < 0.5 ? 4 * A.u * A.u * A.u : 1 - Math.pow(-2 * A.u + 2, 3) / 2;   // ease in-out cubic
+    mapZ = Math.exp(Math.log(A.S0) + (Math.log(A.S1) - Math.log(A.S0)) * e);
+    if (A.P) { var q = A.S0 / mapZ; mapC = { x: A.P.x + (A.c0.x - A.P.x) * q, y: A.P.y + (A.c0.y - A.P.y) * q }; }
+    else mapC = { x: A.c0.x + (A.c1.x - A.c0.x) * e, y: A.c0.y + (A.c1.y - A.c0.y) * e };
+    if (A.u >= 1) { mapAnim = null; mapZ = A.S1; mapC = { x: A.c1.x, y: A.c1.y }; if (A.done) A.done(); }
+  }
   function enterDistrict(d) {
-    if (!GEO || !unlocked(d)) return; mapLevel = d;
-    tmapC = { x: d.x, y: d.y }; tmapZ = 175 * MPU / d.radius_m;
-    cam.zoom = 1; cam.tpx = 0; cam.tpy = 0;
+    if (!GEO || !unlocked(d) || mapLevel === d) return; mapLevel = d;
+    animateMap({ x: d.x, y: d.y }, districtScale(d));
     var cr = document.getElementById("crumb"); cr.textContent = "";
     cr.appendChild(document.createTextNode("Malta › ")); cr.appendChild(el("b", null, d.name));
     cr.appendChild(document.createTextNode(" · " + districtClaims(d).length + " claims"));
@@ -1146,18 +1194,21 @@
     cr.style.display = "inline-flex"; setHint();
   }
   function exitDistrict() {
-    mapLevel = null; tmapC = { x: HOME.x, y: HOME.y }; tmapZ = 1; cam.zoom = 1.6; cam.tpx = 0; cam.tpy = 0;
-    document.getElementById("crumb").style.display = "none"; setHint();
+    if (!mapLevel) return;
+    document.getElementById("crumb").style.display = "none";
+    animateMap({ x: HOME.x, y: HOME.y }, 1, function () { mapLevel = null; setHint(); });   // claims regroup as the map shrinks
   }
   function districtZoomCheck(mx, my) {
     if (view !== "map" || !GEO) return;
+    if (mapAnim) return;
     if (mapLevel && cam.zoom < 0.7) { exitDistrict(); return; }
     if (!mapLevel && cam.zoom > 2.6) GEO.districts.forEach(function (d) { if (!unlocked(d) || mapLevel) return;
       var c = project(toWorld(d.x, d.y)); if (Math.hypot(c.sx - mx, c.sy - my) < Math.min(W, H) * 0.3) enterDistrict(d); });
   }
   function fitView() {
-    cam.zoom = 1; cam.tpx = 0; cam.tpy = 0;
-    if (view === "map") { cam.tyaw = 0; cam.tpitch = MAP_PITCH; } else { cam.yaw = 0.6; cam.pitch = cam.tpitch; if (sway) cam.yaw = 0; }
+    if (view === "map") { cam.tyaw = 0; cam.tpitch = MAP_PITCH;       // fold the current zoom and pan, then glide home
+      if (mapLevel) animateMap({ x: mapLevel.x, y: mapLevel.y }, districtScale(mapLevel)); else animateMap({ x: HOME.x, y: HOME.y }, 1); return; }
+    cam.zoom = 1; cam.tpx = 0; cam.tpy = 0; cam.yaw = 0.6; cam.pitch = cam.tpitch; if (sway) cam.yaw = 0;
   }
   function setView(v, instant) {
     if (v === "map" && !GEO) { view = "map"; loadGeo(); return; }
@@ -1165,6 +1216,7 @@
     try { localStorage.setItem("mizien.view", v); } catch (e) {}
     var u = new URL(location.href); if (v === "map") u.searchParams.set("view", "map"); else u.searchParams.delete("view"); history.replaceState(null, "", u);
     collapse(); cam.tpx = 0; cam.tpy = 0; cam.zoom = 1;
+    mapAnim = null;
     if (v === "map") { if (was !== "map") spinBeforeMap = spinning; setSpin(false); mapLevel = null; tmapZ = mapZ = 1; tmapC = { x: HOME.x, y: HOME.y }; mapC = { x: HOME.x, y: HOME.y };
       cam.tyaw = 0; mapifyMode(); document.getElementById("crumb").style.display = "none"; }
     else { mapLevel = null; document.getElementById("crumb").style.display = "none"; claims.forEach(function (c) { c.clustered = false; c.offmap = false; c.anchor = null; });
