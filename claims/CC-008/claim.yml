@@ -88,3 +88,8 @@ outputs:
   report_pdf: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
+location:
+  place: Marsa junction
+  lat: 35.88289
+  lon: 14.49449
+  scope: site

@@ -37,3 +37,8 @@ right_of_reply:
   response: null
 evidence_shown: null
 outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national

@@ -40,3 +40,8 @@ right_of_reply:
   response: null
 evidence_shown: null
 outputs: {}
+location:
+  place: Malta Freeport, Birżebbuġa
+  lat: 35.81859
+  lon: 14.53085
+  scope: site

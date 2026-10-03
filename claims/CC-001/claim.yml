@@ -47,3 +47,8 @@ outputs:
   flyer_png: flyer.png
 version: '1.1'
 last_reviewed: '2026-10-02'
+location:
+  place: Upper Barrakka Gardens, Valletta
+  lat: 35.89493
+  lon: 14.51194
+  scope: site

@@ -69,6 +69,19 @@ def check(path: pathlib.Path) -> list:
             errs.append("last_reviewed must be a YYYY-MM-DD date")
         if not (d.get("outputs") or {}).get("report") and not (d.get("outputs") or {}).get("report_pdf"):
             errs.append("last_reviewed requires a report output")
+    loc = d.get("location")
+    if loc is not None:
+        if not isinstance(loc, dict) or not loc.get("place"):
+            errs.append("location must have a place")
+        else:
+            try:
+                lat, lon = float(loc.get("lat")), float(loc.get("lon"))
+                if not (35.7 <= lat <= 36.15 and 14.1 <= lon <= 14.65):
+                    errs.append(f"location {lat},{lon} is outside the Maltese islands")
+            except (TypeError, ValueError):
+                errs.append("location lat/lon must be numbers")
+            if loc.get("scope") not in ("site", "institution", "national"):
+                errs.append("location scope must be site, institution or national")
     return errs
 
 

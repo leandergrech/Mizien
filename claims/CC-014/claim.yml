@@ -65,3 +65,8 @@ outputs:
   flyer_png: flyer.png
 version: '1.0'
 last_reviewed: '2026-10-03'
+location:
+  place: Planning Authority, St Francis Ravelin, Floriana
+  lat: 35.89
+  lon: 14.50314
+  scope: institution

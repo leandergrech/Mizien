@@ -56,3 +56,8 @@ outputs:
   flyer_png: flyer.png
 version: '1.0'
 last_reviewed: '2026-10-02'
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national

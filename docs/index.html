@@ -144,6 +144,29 @@
   #panel .btn.ghost { background: #fff; color: var(--p-link); }
   #panel .btn:hover { border-color: #e3a72f; }
   .ctl[aria-pressed="true"] { background: var(--amber) !important; color: #13301f !important; border-color: var(--amber) !important; }
+  .seg { display: flex; flex-wrap: wrap; gap: 6px; }
+  .seg button { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px;
+    border: 1px solid rgba(207,226,212,.28); background: rgba(8,30,21,.35); color: var(--ink);
+    font: 600 12px Arial, sans-serif; cursor: pointer; transition: all .2s; }
+  .seg button svg { width: 14px; height: 14px; }
+  .seg button:hover { border-color: var(--amber); }
+  .seg button[aria-pressed="true"] { background: var(--amber); border-color: var(--amber); color: #13301f; }
+  .seg button[aria-pressed="true"] svg path { stroke: #13301f; }
+  #maphud { position: absolute; left: 290px; bottom: 58px; z-index: 3; display: none; width: min(360px, calc(100% - 320px));
+    padding: 10px 14px 12px; border-radius: 14px; background: rgba(8,30,21,.72); border: 1px solid rgba(207,226,212,.22);
+    backdrop-filter: blur(6px); font: 12px Arial, sans-serif; color: var(--ink); }
+  #maphud .lvl { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  #maphud .lvl b { font: 700 15px "Liberation Serif", Georgia, serif; color: var(--amber); }
+  #maphud .bar { height: 7px; border-radius: 99px; background: rgba(207,226,212,.15); margin: 7px 0 6px; overflow: hidden; }
+  #maphud .bar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, #7fa88b, #e3a72f); transition: width .8s; }
+  #maphud .next { color: var(--muted); }
+  #maphud details summary { cursor: pointer; color: var(--sage); margin-top: 6px; font-size: 11.5px; }
+  #maphud ul { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 3px; }
+  #maphud li { display: flex; gap: 8px; align-items: center; color: var(--muted); }
+  #maphud li.on { color: var(--ink); }
+  #maphud li span:first-child { width: 16px; text-align: center; }
+  #toast { position: absolute; left: 50%; top: 110px; transform: translateX(-50%); z-index: 6; display: none; padding: 10px 16px;
+    border-radius: 12px; background: #e3a72f; color: #13301f; font: 700 13px Arial, sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,.45); }
   #crumb { position: absolute; left: 50%; top: 66px; transform: translateX(-50%); z-index: 3; display: none;
     padding: 6px 8px 6px 14px; border-radius: 999px; background: rgba(8,30,21,.7); border: 1px solid rgba(207,226,212,.25);
     font: 12.5px Arial, sans-serif; color: var(--ink); align-items: center; gap: 10px; backdrop-filter: blur(6px); }
@@ -207,6 +230,7 @@
     #panel.wide .pbody { column-count: 1; }
     #panel .hbtns .wbtn { display: none; }
     #crumb { top: 52px; }
+    #maphud { left: 10px; right: 10px; width: auto; bottom: 44px; }
     .desktop-hint { display: none; }
     .mobile-hint { display: inline; }
     #hint { left: 12px; right: 12px; bottom: 10px; text-align: center; }
@@ -231,7 +255,7 @@
 
 <div id="mapwrap">
   <div id="stage" role="region" aria-label="Interactive 3D map of fact-checked claims" aria-describedby="hint">
-    <canvas id="map"></canvas>
+    <canvas id="map" tabindex="0" aria-label="Claims map; arrow keys move, plus and minus zoom, 0 fits"></canvas>
     <div id="modeTitle" class="tx"><div class="t"></div><div class="s"></div></div>
     <div id="crumb" role="status"></div>
     <div id="controls">
@@ -240,13 +264,16 @@
       <button class="ctl" id="zoomout" type="button" aria-label="Zoom out" title="Zoom out">−</button>
       <button class="ctl" id="zoomin" type="button" aria-label="Zoom in" title="Zoom in">+</button>
       <button class="ctl" id="spin" type="button" aria-label="Pause map rotation">Pause</button>
-      <button class="ctl" id="reset" type="button" aria-label="Reset map view">Reset</button>
+      <button class="ctl" id="reset" type="button" aria-label="Reset view: centre and zoom" title="Centre and fit (0)">Fit</button>
     </div>
-    <div id="hint" class="tx"><span class="desktop-hint">Drag to rotate · scroll to zoom · click any node, hub or line</span><span class="mobile-hint">Drag to turn · pinch to zoom · tap a node</span></div>
+    <div id="hint" class="tx"><span class="desktop-hint"></span><span class="mobile-hint"></span></div>
+    <div id="maphud" aria-live="polite"></div>
+    <div id="toast" role="status"></div>
     <div id="tip" role="tooltip"></div>
     <div id="panel" aria-live="polite"></div>
   </div>
   <div id="legend" class="tx">
+    <div><p class="kicker">VIEW</p><div id="viewby" class="seg" role="group" aria-label="View"></div></div>
     <div><p class="kicker">GROUP CLAIMS BY</p><div id="groupby" role="group" aria-label="Group claims by"></div></div>
     <div><p class="kicker" id="groupsTitle">GROUPS</p><div id="groups"></div><p id="groupnote"></p></div>
     <div><p class="kicker">CLAIM COLOUR · VERDICT</p><div class="keyrow" id="vkey"></div></div>
@@ -307,7 +334,11 @@
   var hubPool = {}, hubs = [];            // hubPool: every hub ever made (key = mode|value); hubs: those of the current mode
   var mode = "topic";
   var showSpokes = true, themeOn = {};
-  var cam = { yaw: 0.6, pitch: -0.22, zoom: 1, tyaw: null, tpitch: -0.22, fx: 0, fy: 0, fz: 0, em: 1, tem: 1 };
+  var cam = { yaw: 0.6, pitch: -0.22, zoom: 1, tyaw: null, tpitch: -0.22, fx: 0, fy: 0, fz: 0, em: 1, tem: 1, px: 0, py: 0, tpx: 0, tpy: 0 };
+  var ZMIN = 0.4, ZMAX = 5;
+  // map view: claims on a stylised map of the islands; districts open into detailed views
+  var view = "graph", GEO = null, mapLevel = null, mapZ = 1, tmapZ = 1, mapC = { x: 0, y: -700 }, tmapC = { x: 0, y: -700 }, MPU = 68, HOME = { x: 0, y: -700 }, badges = [], MAP_PITCH = 1.12;
+  var spinBeforeMap = true;
   var expanded = null;                    // hub whose sub-graph is opened out
   var labelMode = "code", showText = true;
   try { if (localStorage.getItem("mizien.labels") === "tag") labelMode = "tag"; if (localStorage.getItem("mizien.text") === "off") showText = false; } catch (e) {}
@@ -487,6 +518,10 @@
     for (var i = 0; i < 220; i++) stars.push({ x: sr(), y: sr(), r: sr() * 1.3 + 0.2, a: sr() * 0.32 + 0.04, tw: sr() * 6.28, d: sr() });
     buildStats(); buildGroupBy(); buildLinkBar(); buildKey(); buildTable(); resize();
     setMode(new URLSearchParams(location.search).get("group") || "topic", true);
+    buildViewBy(); setHint();
+    var wantMap = new URLSearchParams(location.search).get("view") === "map";
+    try { if (!new URLSearchParams(location.search).get("view") && localStorage.getItem("mizien.view") === "map") wantMap = true; } catch (e) {}
+    if (wantMap) { view = "map"; } loadGeo();
     requestAnimationFrame(frame);
   }
 
@@ -566,6 +601,7 @@
     sway = M.layout === "arc" || M.layout === "line";
     if (sway) { cam.tyaw = 0; cam.tpitch = -0.12; } else { cam.tyaw = null; cam.tpitch = M.layout === "ring" ? -0.38 : -0.22; }
     if (instant) { claims.concat(hubs).forEach(function (n) { n.x = n.tx; n.y = n.ty; n.z = n.tz; }); hubs.forEach(function (h) { h.alpha = 1; }); }
+    if (view === "map") mapifyMode();
     clearSel();
     var mt = document.getElementById("modeTitle"); mt.querySelector(".t").textContent = M.title; mt.querySelector(".s").textContent = M.sub;
     document.querySelectorAll("#groupby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.mode === m ? "true" : "false"); });
@@ -713,10 +749,10 @@
     var px = p.x - cam.fx, py = p.y - cam.fy, pz = p.z - cam.fz;
     var x1 = px * cy - pz * sy, z1 = px * sy + pz * cy;
     var y2 = py * cp - z1 * sp, z2 = py * sp + z1 * cp;
-    var F = 900, s = F / (F + z2 + 300);
+    var F = view === "map" ? 5000 : 900, s = view === "map" ? Math.max(0.4, Math.min(2, F / (F + z2))) : F / (F + z2 + 300);
     var usable = Math.min(W - leftInset() - panelInset(), H - 120 - topInset());
-    var base = Math.max(0.55, usable / 560) * cam.zoom * cam.em;
-    return { sx: cxNow + x1 * s * base, sy: cyNow + y2 * s * base, z: z2, s: s * base };
+    var base = Math.max(0.6, usable / (view === "map" ? 470 : 400)) * cam.zoom * cam.em;
+    return { sx: cxNow + cam.px + x1 * s * base, sy: cyNow + cam.py + y2 * s * base, z: z2, s: s * base };
   }
   function ctrl(a, b, bend) {
     var mx = (a.sx + b.sx) / 2, my = (a.sy + b.sy) / 2, dx = b.sx - a.sx, dy = b.sy - a.sy;
@@ -739,16 +775,20 @@
   function frame(now) {
     var t = (now - t0) / 1000, dt = Math.max(0, Math.min(0.4, t - lastT)); lastT = t;
     var k = reduce ? 1 : 1 - Math.pow(0.04, dt);            // morph easing, frame-rate independent
-    claims.forEach(function (c) { c.x += (c.tx - c.x) * k; c.y += (c.ty - c.y) * k; c.z += (c.tz - c.z) * k; });
+    cam.px += (cam.tpx - cam.px) * Math.min(1, k * 1.6); cam.py += (cam.tpy - cam.py) * Math.min(1, k * 1.6);
+    if (view === "map") { var km = Math.min(1, k * 1.4); mapZ += (tmapZ - mapZ) * km; mapC.x += (tmapC.x - mapC.x) * km; mapC.y += (tmapC.y - mapC.y) * km; mapTargets(); }
+    var kc = view === "map" ? Math.min(1, k * 2.4) : k;
+    claims.forEach(function (c) { c.x += (c.tx - c.x) * kc; c.y += (c.ty - c.y) * kc; c.z += (c.tz - c.z) * kc; });
     Object.keys(hubPool).forEach(function (key) { var h = hubPool[key];
       h.x += (h.tx - h.x) * k; h.y += (h.ty - h.y) * k; h.z += (h.tz - h.z) * k; h.alpha += (h.talpha - h.alpha) * Math.min(1, k * 1.3); });
     if (cxNow === null) cxNow = cxTarget(); cxNow += (cxTarget() - cxNow) * Math.min(1, k * 1.2);
     if (cyNow === null) cyNow = cyTarget(); cyNow += (cyTarget() - cyNow) * Math.min(1, k * 1.2);
     var fxT = expanded ? expanded.x : 0, fyT = expanded ? expanded.y : 0, fzT = expanded ? expanded.z : 0;
-    if (expanded) { var avail = Math.min(W - leftInset() - panelInset(), H - 120 - topInset()), b0 = Math.max(0.55, avail / 560) * cam.zoom;
+    if (expanded) { var avail = Math.min(W - leftInset() - panelInset(), H - 120 - topInset()), b0 = Math.max(0.6, avail / 400) * cam.zoom;
       cam.tem = Math.max(1, Math.min(3.4, 0.34 * avail / ((expanded.openR || 110) * b0 * 0.75))); }
     cam.fx += (fxT - cam.fx) * k; cam.fy += (fyT - cam.fy) * k; cam.fz += (fzT - cam.fz) * k; cam.em += (cam.tem - cam.em) * k;
-    if (sway) { var target = cam.tyaw + (spinning ? 0.32 * Math.sin(t * 0.18) : 0); cam.yaw += (target - cam.yaw) * k * 0.6; }
+    if (view === "map") { if (cam.tyaw !== null) cam.yaw += (cam.tyaw - cam.yaw) * k * 0.6; }
+    else if (sway) { var target = cam.tyaw + (spinning ? 0.32 * Math.sin(t * 0.18) : 0); cam.yaw += (target - cam.yaw) * k * 0.6; }
     else if (spinning) cam.yaw += (expanded ? 0.04 : 0.13) * Math.min(dt, 0.05);
     cam.pitch += (cam.tpitch - cam.pitch) * k * 0.5;
 
@@ -760,6 +800,7 @@
       ctx.beginPath(); ctx.arc(px, s.y * H, s.r, 0, 6.283); ctx.fill();
     });
     ctx.globalAlpha = 1;
+    if (view === "map") drawMap(t);
 
     var allHubs = Object.keys(hubPool).map(function (k) { return hubPool[k]; }).filter(function (h) { return h.alpha > 0.01; });
     var P = new Map(); allHubs.concat(claims).forEach(function (n) { P.set(n, project(n)); });
@@ -774,7 +815,7 @@
     });
 
     // spokes: claim to its group (and faint spokes to secondary groups)
-    if (showSpokes && mode !== "network") claims.forEach(function (c) {
+    if (showSpokes && mode !== "network" && view === "graph") claims.forEach(function (c) {
       [c.hub].concat(c.extra).forEach(function (h, j) {
         if (!h || h.alpha < 0.02) return;
         var a = P.get(h), b = P.get(c), on = F && (F.hub === h || F.ids[c.id]);
@@ -799,7 +840,7 @@
       ctx.setLineDash(weak ? [6, 5] : []);
       ctx.strokeStyle = rgba(col, hi || hv ? 0.4 : (F ? 0.03 : 0.1)); ctx.lineWidth = hi || hv ? 12 : 6;
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke();
-      ctx.strokeStyle = col; ctx.globalAlpha = hi || hv ? 1 : (F ? 0.1 : 0.7 * depth); ctx.lineWidth = hi || hv ? 3 : 1.7;
+      ctx.strokeStyle = col; ctx.globalAlpha = hi || hv ? 1 : (F ? 0.1 : (view === "map" ? 0.38 : 0.7) * depth); ctx.lineWidth = hi || hv ? 3 : (view === "map" ? 1.3 : 1.7);
       if (hi && weak) ctx.lineDashOffset = -t * 18;
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke();
       ctx.lineDashOffset = 0; ctx.globalAlpha = 1;
@@ -843,8 +884,13 @@
         ctx.globalAlpha = 1;
       } else {
         var d = n.data, col = d.verdict ? VC[d.verdict] : NOT_YET_COL, ring = n.hub && mode !== "network" ? n.hub.color : "#cfe2d4";
-        var r2 = 9 * sc * (isHov || isSel ? 1.3 : 1), pulse = d.verdict && !reduce ? 1 + 0.07 * Math.sin(t * 2 + n.phase) : 1;
-        ctx.globalAlpha = (on ? 1 : 0.18) * fg;
+        var r2 = 9 * sc * (isHov || isSel ? 1.3 : 1) * (n.clustered ? 0.55 : 1), pulse = d.verdict && !reduce ? 1 + 0.07 * Math.sin(t * 2 + n.phase) : 1;
+        ctx.globalAlpha = (on ? 1 : 0.18) * fg * (n.offmap ? 0.75 : 1);
+        if (view === "map" && n.anchor) { var gp = project(n.anchor);
+          ctx.fillStyle = "rgba(0,0,0,.35)"; ctx.beginPath(); ctx.ellipse(gp.sx, gp.sy, 5 * gp.s, 2.2 * gp.s, 0, 0, 6.283); ctx.fill();
+          ctx.strokeStyle = n.offmap ? "rgba(207,226,212,.35)" : rgba(col, 0.8); ctx.lineWidth = 1.4; ctx.setLineDash(n.offmap ? [3, 4] : []);
+          ctx.beginPath(); ctx.moveTo(gp.sx, gp.sy); ctx.lineTo(p.sx, p.sy); ctx.stroke(); ctx.setLineDash([]);
+          if (!n.offmap) { ctx.fillStyle = col; ctx.beginPath(); ctx.arc(gp.sx, gp.sy, 2.4, 0, 6.283); ctx.fill(); } }
         if (d.verdict) { var gh = ctx.createRadialGradient(p.sx, p.sy, r2, p.sx, p.sy, r2 * 2.8 * pulse);
           gh.addColorStop(0, rgba(col, 0.55)); gh.addColorStop(1, rgba(col, 0)); ctx.fillStyle = gh;
           ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 * 2.8 * pulse, 0, 6.283); ctx.fill(); }
@@ -855,11 +901,11 @@
         if (!d.verdict) { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,.7)"; ctx.lineWidth = 1.1;
           ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 4.6, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
         if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
-        n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: true };
+        n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: !n.clustered };
         var focused = F && F.ids[n.id];
         var member = expanded && n.hub === expanded, tagged = labelMode === "tag" || member;
         var hp = member ? P.get(expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
-        if (!expanded || member || isHov || isSel) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: tagged ? d.title : n.id,
+        if ((!expanded || member || isHov || isSel) && !n.clustered) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: (tagged ? d.title : n.id) + (n.offmap && n.data.location ? "  → " + shortPlace(n.data.location.place) : ""),
           sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (d.verdict ? " · " + d.verdict : " · not yet checked") : d.title) : "",
           hub: false, tag: tagged, color: col, alpha: (on ? 1 : 0.25) * fg, ax: p.sx, ay: p.sy, rr: r2 + 6,
           dir: member && expanded.claims.length > 1 ? { x: ddx / dl, y: ddy / dl } : null,
@@ -899,6 +945,8 @@
   }
 
   function pick(x, y) {
+    if (view === "map" && !mapLevel) for (var bi = 0; bi < badges.length; bi++) { var B = badges[bi];
+      if (Math.hypot(B.x - x, B.y - y) < Math.max(B.r, 22)) return { kind: "district", d: B.d, locked: B.locked }; }
     var best = null, bd = 1e9;
     claims.concat(hubs).forEach(function (n) { if (!n._p || !n._p.live) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
       var hit = Math.max(n._p.r + 5, W < 700 ? 16 : 0); if (d < hit && d < bd) { bd = d; best = n; } });
@@ -908,6 +956,234 @@
       for (var q = 0; q <= 24; q++) { var p = qpt(e._g, q / 24), d = Math.hypot(p.x - x, p.y - y); if (d < bd) { bd = d; be = i; } } });
     return be >= 0 ? { kind: "edge", index: be, edge: edges[be] } : null;
   }
+
+  // ------------------------------------------------------------ map view
+  // Each completed check unlocks more of the map. Thresholds count claims with a verdict.
+  var TIERS = [
+    { n: 0, key: "islands", label: "Island outlines" },
+    { n: 3, key: "names", label: "Island names, compass and scale" },
+    { n: 5, key: "contours", label: "Coastal depth lines" },
+    { n: 7, key: "places", label: "Claim sites named on the map" },
+    { n: 9, key: "valletta", label: "District: Valletta & Floriana" },
+    { n: 12, key: "streets", label: "Valletta street grid" },
+    { n: 15, key: "gozo", label: "District: Victoria & the Ċittadella" },
+    { n: 20, key: "harbour", label: "District: Grand Harbour & the Three Cities" },
+    { n: 30, key: "sea", label: "Living sea: ferries and currents" }
+  ];
+  function checksDone() { return DATA ? DATA.claims.filter(function (c) { return c.verdict; }).length : 0; }
+  function has(key) { var t = TIERS.filter(function (x) { return x.key === key; })[0]; return t && checksDone() >= t.n; }
+  function unlocked(d) { return d && checksDone() >= d.unlock; }
+  function lockText(d) { var k = d.unlock - checksDone(); return d.name + " unlocks after " + k + " more completed check" + (k === 1 ? "" : "s"); }
+  function districtClaims(d) { return claims.filter(function (c) { return c.district === d; }); }
+  function shortPlace(p) { return String(p || "").split(/[,(]/)[0].trim(); }
+  function geoXY(lat, lon) { var O = GEO.origin; return { x: (lon - O.lon) * 111320 * Math.cos(O.lat * Math.PI / 180), y: (lat - O.lat) * 110574 }; }
+  function toWorld(mx, my) { return { x: (mx - mapC.x) / MPU * mapZ, y: 0, z: (my - mapC.y) / MPU * mapZ }; }
+  function geoReady() {
+    GEO.islands.forEach(function (I) { var cx = 0, cy = 0, n = I.coarse.length / 2; for (var i = 0; i < I.coarse.length; i += 2) { cx += I.coarse[i]; cy += I.coarse[i + 1]; } I.cx = cx / n; I.cy = cy / n; });
+    claims.forEach(function (c) {
+      var L = c.data.location; c.m = null; c.district = null;
+      if (L) { c.m = geoXY(+L.lat, +L.lon);
+        var best = 1e9; GEO.districts.forEach(function (d) { var dd = Math.hypot(c.m.x - d.x, c.m.y - d.y); if (dd <= d.radius_m && dd < best) { best = dd; c.district = d; } }); }
+    });
+    buildViewBy(); buildMapHud();
+    if (view === "map") setView("map", true);
+  }
+  function mapTargets() {
+    if (!GEO) return;
+    var vis = [], places = {};
+    claims.forEach(function (c) {
+      c.clustered = false; c.offmap = false;
+      var m = c.m || { x: 21000, y: -16000 };                       // no location yet: parked in the sea, south-east
+      if (!mapLevel && c.district && unlocked(c.district)) {          // bunched into the district badge
+        var w = toWorld(c.district.x, c.district.y), a = (claims.indexOf(c) * 2.4);
+        c.tx = w.x + Math.cos(a) * 5; c.tz = w.z + Math.sin(a) * 5; c.ty = -10; c.clustered = true; c.anchor = null; return;
+      }
+      var W0 = toWorld(m.x, m.y), key = Math.round(m.x / 25) + "," + Math.round(m.y / 25);
+      if (mapLevel && c.district !== mapLevel) { var dd = Math.hypot(W0.x, W0.z) || 1;   // elsewhere: parked on the outer ring
+        W0.x *= OUTER / dd; W0.z *= OUTER / dd; c.offmap = true; }
+      c.anchor = { x: W0.x, y: 0, z: W0.z };
+      (places[key] = places[key] || []).push(c); vis.push(c);
+    });
+    Object.keys(places).forEach(function (k) { var g = places[k], n = g.length;
+      g.forEach(function (c, i) { var a = (i / n) * Math.PI * 2 - Math.PI / 2, r = n > 1 ? 9 + 4 * n : 0;
+        c.tx = c.anchor.x + Math.cos(a) * r; c.tz = c.anchor.z + Math.sin(a) * r; c.ty = -22; }); });
+    for (var it = 0; it < 24; it++) {                               // keep pins apart, pulled back to their sites
+      for (var i = 0; i < vis.length; i++) for (var j = i + 1; j < vis.length; j++) {
+        var A = vis[i], B = vis[j], dx = B.tx - A.tx, dz = B.tz - A.tz, d = Math.hypot(dx, dz) || 0.01, min = mapLevel ? 36 : 26;
+        if (d < min) { var f = (min - d) / 2 / d; A.tx -= dx * f; A.tz -= dz * f; B.tx += dx * f; B.tz += dz * f; } }
+      vis.forEach(function (c) { c.tx += (c.anchor.x - c.tx) * 0.04; c.tz += (c.anchor.z - c.tz) * 0.04;
+        if (c.offmap) { var dd2 = Math.hypot(c.tx, c.tz) || 1; c.tx *= OUTER / dd2; c.tz *= OUTER / dd2; } });
+    }
+  }
+  var OUTER = 255;
+  function ringPath(arr) { ctx.beginPath(); for (var i = 0; i < arr.length; i += 2) { var p = project(toWorld(arr[i], arr[i + 1]));
+    if (i) ctx.lineTo(p.sx, p.sy); else ctx.moveTo(p.sx, p.sy); } ctx.closePath(); }
+  function linePath(arr) { ctx.beginPath(); for (var i = 0; i < arr.length; i += 2) { var p = project(toWorld(arr[i], arr[i + 1]));
+    if (i) ctx.lineTo(p.sx, p.sy); else ctx.moveTo(p.sx, p.sy); } }
+  function drawMap(t) {
+    if (!GEO) return;
+    var zoomScale = cam.zoom * mapZ, detail = mapZ > 3, dz = Math.max(0, Math.min(1, (mapZ - 3) / 7)), done = checksDone();
+    // graticule
+    ctx.save(); ctx.strokeStyle = "rgba(127,168,139,.08)"; ctx.lineWidth = 1;
+    for (var g = -40000; g <= 40000; g += (mapLevel ? 500 : 5000)) {
+      linePath([g, -40000, g, 40000]); ctx.stroke(); linePath([-40000, g, 40000, g]); ctx.stroke(); }
+    ctx.restore();
+    // coastal depth lines
+    if (has("contours")) GEO.islands.forEach(function (I) { if (I.area_m2 < 1e6) return;
+      [3.2, 2.1, 1.2].forEach(function (wf, i) { ringPath(detail && I.detail ? I.detail : I.coarse); ctx.strokeStyle = "rgba(86,180,233," + ((0.05 + i * 0.025) * (1 - 0.6 * dz)) + ")";
+        ctx.lineWidth = Math.min(34, wf * 9 * Math.sqrt(cam.zoom)); ctx.lineJoin = "round"; ctx.stroke(); }); });
+    // land
+    GEO.islands.forEach(function (I) {
+      var ring = detail && I.detail ? I.detail : I.coarse;
+      ringPath(ring);
+      var g0 = project(toWorld(5000, -2000)), gr = ctx.createRadialGradient(g0.sx - 80, g0.sy - 80, 10, g0.sx, g0.sy, Math.max(W, H) * 0.8);
+      gr.addColorStop(0, "rgba(74,138,98,.78)"); gr.addColorStop(1, "rgba(31,84,58,.82)");
+      ctx.fillStyle = gr; ctx.fill();
+      ctx.strokeStyle = detail ? "rgba(227,167,47," + (0.35 + 0.4 * dz) + ")" : "rgba(207,226,212,.55)"; ctx.lineWidth = detail ? 1.4 + dz : 1.1; ctx.stroke();
+    });
+    // island names
+    if (has("names") && !mapLevel) [["MALTA", "Malta"], ["GĦAWDEX · GOZO", "Gozo"], ["KEMMUNA", "Comino"]].forEach(function (L) {
+      var I = GEO.islands.filter(function (x) { return x.name === L[1]; })[0]; if (!I) return;
+      var p = project(toWorld(I.cx, I.cy + (L[1] === "Malta" ? 3500 : L[1] === "Gozo" ? 1800 : -900)));
+      ctx.font = "700 " + (L[1] === "Comino" ? 10 : 14) + "px 'Liberation Serif', Georgia, serif"; ctx.textAlign = "center";
+      ctx.fillStyle = "rgba(238,243,239,.42)"; ctx.fillText(L[0].split("").join(String.fromCharCode(8202)), p.sx, p.sy); });
+    // district detail: streets and landmarks
+    var V = GEO.districts.filter(function (d) { return d.id === "valletta"; })[0];
+    if (V && dz > 0.02) {
+      if (has("streets")) { V.streets.forEach(function (S) { linePath(S.pts); ctx.strokeStyle = "rgba(238,243,239," + (S.major ? 0.42 : 0.2) * dz + ")";
+        ctx.lineWidth = S.major ? 2.2 : 1; ctx.stroke(); }); }
+      V.landmarks.forEach(function (L) { var p = project(toWorld(L.x, L.y)); ctx.globalAlpha = dz;
+        ctx.fillStyle = "#e3a72f"; ctx.save(); ctx.translate(p.sx, p.sy); ctx.rotate(Math.PI / 4); ctx.fillRect(-3.5, -3.5, 7, 7); ctx.restore();
+        ctx.font = "600 11px Arial, sans-serif"; ctx.textAlign = "left"; ctx.fillStyle = "rgba(238,243,239,.85)"; ctx.fillText(L.name, p.sx + 8, p.sy + 4);
+        ctx.globalAlpha = 1; });
+    }
+    // district level: the rest of Malta is folded onto an outer ring
+    if (mapLevel) { var o0 = project({ x: 0, y: 0, z: 0 }), o1 = project({ x: OUTER, y: 0, z: 0 }), o2 = project({ x: 0, y: 0, z: OUTER });
+      var rx = Math.abs(o1.sx - o0.sx), ry = Math.abs(o2.sy - o0.sy);
+      ctx.save(); ctx.strokeStyle = "rgba(207,226,212,.28)"; ctx.setLineDash([3, 7]); ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.ellipse(o0.sx, o0.sy, rx, ry, -cam.yaw * 0, 0, 6.283); ctx.stroke(); ctx.restore();
+      ctx.font = "700 10.5px Arial, sans-serif"; ctx.textAlign = "center"; ctx.fillStyle = "rgba(207,226,212,.55)";
+      ctx.fillText("ELSEWHERE IN MALTA", o0.sx, o0.sy - ry - 8); }
+    // claim sites outside districts
+    if (has("places")) { var seen = {}; claims.forEach(function (c) {
+      if (!c.m || c.clustered || c.offmap || (mapLevel && c.district === mapLevel)) return; var L = c.data.location, key = L.place; if (seen[key]) return; seen[key] = 1;
+      var p = project(toWorld(c.m.x, c.m.y)); ctx.font = "italic 11px 'Liberation Serif', Georgia, serif"; ctx.textAlign = "left";
+      ctx.fillStyle = "rgba(207,226,212,.7)"; ctx.fillText(shortPlace(L.place), p.sx + 9, p.sy + 14); }); }
+    // district badges (Malta level)
+    badges = [];
+    if (!mapLevel) GEO.districts.forEach(function (d) {
+      var nextLock = GEO.districts.filter(function (x) { return !unlocked(x); }).sort(function (a, b) { return a.unlock - b.unlock; })[0];
+      if (!unlocked(d) && d !== nextLock) return;                      // tease only the next district to unlock
+      var c = project(toWorld(d.x, d.y)), e = project(toWorld(d.x + d.radius_m * 1.35, d.y)), r = Math.max(18, Math.abs(e.sx - c.sx));
+      var open = unlocked(d), n = districtClaims(d).length;
+      ctx.save(); ctx.setLineDash(open ? [] : [4, 5]);
+      if (open) { var gl = ctx.createRadialGradient(c.sx, c.sy, r * 0.4, c.sx, c.sy, r * 1.6); gl.addColorStop(0, "rgba(227,167,47,.22)"); gl.addColorStop(1, "rgba(227,167,47,0)");
+        ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(c.sx, c.sy, r * 1.6, 0, 6.283); ctx.fill(); }
+      ctx.strokeStyle = open ? "rgba(227,167,47," + (0.65 + 0.25 * Math.sin(t * 2.2)) + ")" : "rgba(207,226,212,.35)"; ctx.lineWidth = open ? 2 : 1.3;
+      ctx.beginPath(); ctx.arc(c.sx, c.sy, r, 0, 6.283); ctx.stroke(); ctx.restore();
+      var txt = open ? d.name : "🔒 " + d.name, sub = open ? n + (n === 1 ? " claim" : " claims") + " · click to open" : (d.unlock - done) + " more check" + (d.unlock - done === 1 ? "" : "s") + " to unlock";
+      ctx.font = "700 12px Arial, sans-serif"; var w = Math.max(ctx.measureText(txt).width, 120) + 18;
+      var bx = c.sx - w / 2, by = c.sy - r - 40; ctx.fillStyle = open ? "rgba(227,167,47,.95)" : "rgba(8,30,21,.8)";
+      roundRect(bx, by, w, 32, 9); ctx.fill(); ctx.textAlign = "center"; ctx.fillStyle = open ? "#13301f" : "rgba(238,243,239,.75)";
+      ctx.fillText(txt, c.sx, by + 14); ctx.font = "11px Arial, sans-serif"; ctx.fillText(sub, c.sx, by + 27);
+      badges.push({ x: c.sx, y: c.sy, r: r, d: d, locked: !open });
+    });
+    // compass and scale bar
+    if (has("names")) { var cxp = W - 54, cyp = H - 92;
+      ctx.save(); ctx.translate(cxp, cyp); ctx.rotate(-cam.yaw); ctx.strokeStyle = "rgba(238,243,239,.6)"; ctx.fillStyle = "#e3a72f"; ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.arc(0, 0, 18, 0, 6.283); ctx.stroke(); ctx.beginPath(); ctx.moveTo(0, -16); ctx.lineTo(5, 0); ctx.lineTo(0, 4); ctx.lineTo(-5, 0); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = "rgba(238,243,239,.8)"; ctx.font = "700 10px Arial"; ctx.textAlign = "center"; ctx.fillText("N", 0, -22); ctx.restore();
+      var a0 = project(toWorld(mapC.x, mapC.y)), len = mapLevel ? 200 : 5000, a1 = project(toWorld(mapC.x + len, mapC.y)), px = Math.abs(a1.sx - a0.sx);
+      ctx.strokeStyle = "rgba(238,243,239,.6)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(W - 100 - px, H - 46); ctx.lineTo(W - 100, H - 46); ctx.stroke();
+      ctx.font = "11px Arial"; ctx.textAlign = "right"; ctx.fillStyle = "rgba(238,243,239,.7)"; ctx.fillText(mapLevel ? "200 m" : "5 km", W - 100, H - 52); }
+    // living sea (late unlock)
+    if (has("sea") && !reduce) { ctx.strokeStyle = "rgba(207,226,212,.12)"; ctx.lineWidth = 1;
+      for (var q = 0; q < 6; q++) { var y0 = (H * (q + 0.5) / 6 + t * 8) % H; ctx.beginPath(); ctx.moveTo(0, y0);
+        for (var xq = 0; xq <= W; xq += 40) ctx.lineTo(xq, y0 + Math.sin(xq / 90 + t + q) * 4); ctx.stroke(); } }
+  }
+  function mapifyMode() {
+    hubs.forEach(function (h) { h.talpha = 0; }); sway = false;
+    cam.tyaw = mapLevel ? cam.tyaw : 0; cam.tpitch = MAP_PITCH;
+  }
+  function enterDistrict(d) {
+    if (!GEO || !unlocked(d)) return; mapLevel = d;
+    tmapC = { x: d.x, y: d.y }; tmapZ = 175 * MPU / d.radius_m;
+    cam.zoom = 1; cam.tpx = 0; cam.tpy = 0;
+    var cr = document.getElementById("crumb"); cr.textContent = "";
+    cr.appendChild(document.createTextNode("Malta › ")); cr.appendChild(el("b", null, d.name));
+    cr.appendChild(document.createTextNode(" · " + districtClaims(d).length + " claims"));
+    var back = el("button", null, "Back to Malta"); back.type = "button"; back.onclick = exitDistrict; cr.appendChild(back);
+    cr.style.display = "inline-flex"; setHint();
+  }
+  function exitDistrict() {
+    mapLevel = null; tmapC = { x: HOME.x, y: HOME.y }; tmapZ = 1; cam.zoom = 1.6; cam.tpx = 0; cam.tpy = 0;
+    document.getElementById("crumb").style.display = "none"; setHint();
+  }
+  function districtZoomCheck(mx, my) {
+    if (view !== "map" || !GEO) return;
+    if (mapLevel && cam.zoom < 0.7) { exitDistrict(); return; }
+    if (!mapLevel && cam.zoom > 2.6) GEO.districts.forEach(function (d) { if (!unlocked(d) || mapLevel) return;
+      var c = project(toWorld(d.x, d.y)); if (Math.hypot(c.sx - mx, c.sy - my) < Math.min(W, H) * 0.3) enterDistrict(d); });
+  }
+  function fitView() {
+    cam.zoom = 1; cam.tpx = 0; cam.tpy = 0;
+    if (view === "map") { cam.tyaw = 0; cam.tpitch = MAP_PITCH; } else { cam.yaw = 0.6; cam.pitch = cam.tpitch; if (sway) cam.yaw = 0; }
+  }
+  function setView(v, instant) {
+    if (v === "map" && !GEO) { view = "map"; loadGeo(); return; }
+    var was = view; view = v;
+    try { localStorage.setItem("mizien.view", v); } catch (e) {}
+    var u = new URL(location.href); if (v === "map") u.searchParams.set("view", "map"); else u.searchParams.delete("view"); history.replaceState(null, "", u);
+    collapse(); cam.tpx = 0; cam.tpy = 0; cam.zoom = 1;
+    if (v === "map") { if (was !== "map") spinBeforeMap = spinning; setSpin(false); mapLevel = null; tmapZ = mapZ = 1; tmapC = { x: HOME.x, y: HOME.y }; mapC = { x: HOME.x, y: HOME.y };
+      cam.tyaw = 0; mapifyMode(); document.getElementById("crumb").style.display = "none"; }
+    else { mapLevel = null; document.getElementById("crumb").style.display = "none"; claims.forEach(function (c) { c.clustered = false; c.offmap = false; c.anchor = null; });
+      setMode(mode, false); if (spinBeforeMap && !reduce) setSpin(true); }
+    document.getElementById("maphud").style.display = v === "map" ? "block" : "none";
+    document.querySelectorAll("#viewby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.view === v ? "true" : "false"); });
+    var mt = document.getElementById("modeTitle");
+    if (v === "map") { mt.querySelector(".t").textContent = "Claims across the islands"; mt.querySelector(".s").textContent = "Each check reveals more of the map · colours and groups still apply"; }
+    else { var M = MODES[mode]; mt.querySelector(".t").textContent = M.title; mt.querySelector(".s").textContent = M.sub; }
+    setHint(); if (instant) { claims.forEach(function (c) { c.x = c.tx; c.y = c.ty; c.z = c.tz; }); if (v === "map") { cam.yaw = 0; cam.pitch = MAP_PITCH; } }
+  }
+  function setHint() {
+    var h = document.getElementById("hint");
+    h.querySelector(".desktop-hint").textContent = view === "map"
+      ? (mapLevel ? "Drag to pan · right-drag to tilt · scroll out or Back to leave the district" : "Drag to pan · right-drag to tilt · scroll to zoom · click a district to open it")
+      : "Drag to rotate · right-drag or Shift-drag to pan · scroll to zoom · double-click to zoom in";
+    h.querySelector(".mobile-hint").textContent = view === "map" ? "Drag to pan · pinch to zoom · tap a district" : "Drag to turn · two fingers to pan and zoom · tap a node";
+  }
+  function loadGeo() {
+    fetch("data/geo.json").then(function (r) { return r.json(); }).then(function (g) { GEO = g; geoReady(); })
+      .catch(function () { showToast("The map outline could not be loaded."); view = "graph"; });
+  }
+  function buildViewBy() {
+    var g = document.getElementById("viewby"); g.textContent = "";
+    [["graph", "Network", "mode:network"], ["map", "Malta map", "mode:topic"]].forEach(function (v) {
+      var b = el("button"); b.type = "button"; b.dataset.view = v[0]; b.setAttribute("aria-pressed", view === v[0] ? "true" : "false");
+      if (v[0] === "map") { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 L9 4 L15 6.5 L21 4 V17.5 L15 20 L9 17.5 L3 20 Z M9 4 V17.5 M15 6.5 V20" fill="none" stroke="#cfe2d4" stroke-width="1.8" stroke-linejoin="round"/></svg>'; }
+      else b.appendChild(iconSvg(v[2], "#cfe2d4"));
+      b.appendChild(document.createTextNode(v[1])); b.onclick = function () { setView(v[0]); }; g.appendChild(b);
+    });
+  }
+  function buildMapHud() {
+    var hud = document.getElementById("maphud"), done = checksDone(); hud.textContent = "";
+    var level = TIERS.filter(function (x) { return done >= x.n; }).length, next = TIERS.filter(function (x) { return done < x.n; })[0];
+    var prev = TIERS[level - 1] ? TIERS[level - 1].n : 0;
+    var top = el("div", "lvl"); top.appendChild(el("b", null, "Map level " + level + " of " + TIERS.length));
+    top.appendChild(el("span", null, done + (done === 1 ? " check" : " checks") + " completed")); hud.appendChild(top);
+    var bar = el("div", "bar"), fill = el("i"); fill.style.width = (next ? Math.round(100 * (done - prev) / (next.n - prev)) : 100) + "%"; bar.appendChild(fill); hud.appendChild(bar);
+    hud.appendChild(el("div", "next", next ? (next.n - done) + " more check" + (next.n - done === 1 ? "" : "s") + " unlock: " + next.label : "Every layer unlocked."));
+    var det = el("details"); det.appendChild(el("summary", null, "What each check unlocks"));
+    var ul = el("ul"); TIERS.forEach(function (x) { var li = el("li", done >= x.n ? "on" : null); li.appendChild(el("span", null, done >= x.n ? "✓" : "🔒"));
+      li.appendChild(el("span", null, x.n + " · " + x.label)); ul.appendChild(li); }); det.appendChild(ul); hud.appendChild(det);
+    var seen = 0; try { seen = +(localStorage.getItem("mizien.mapSeen") || 0); localStorage.setItem("mizien.mapSeen", String(done)); } catch (e) {}
+    var fresh = TIERS.filter(function (x) { return x.n > seen && x.n <= done && seen > 0; });
+    if (fresh.length) showToast("New on the map: " + fresh.map(function (x) { return x.label; }).join(", "));
+  }
+  var toastTimer = null;
+  function showToast(msg) { var t = document.getElementById("toast"); t.textContent = msg; t.style.display = "block";
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.style.display = "none"; }, 4200); }
 
   // ------------------------------------------------------------ panels
   // colour helpers for the panel theme
@@ -972,6 +1248,7 @@
     var c = byId[id]; if (!c) return; sel = { kind: "claim", id: id };
     var d = c.data;
     if (expanded && c.hub !== expanded) collapse();
+    if (view === "map") { if (c.district && c.district !== mapLevel && unlocked(c.district)) enterDistrict(c.district); else if (!c.district && mapLevel) exitDistrict(); }
     var pills = d.verdict ? [d.verdict].concat(d.confidence ? [d.confidence + " confidence"] : []) : [d.status, "not yet checked"];
     openPanel(d.id + " · " + d.category.toUpperCase(), d.title, d.verdict ? VC[d.verdict] : NOT_YET_COL, pills);
     if (d.quote) pbody.appendChild(el("blockquote", null, "“" + d.quote + "”"));
@@ -1009,7 +1286,7 @@
     sel = { kind: "hub", hub: h };
     var withV = h.claims.filter(function (c) { return c.data.verdict; }).length;
     openPanel(MODES[mode].label.toUpperCase() + " GROUP", h.name, h.color, [h.count + (h.count === 1 ? " claim" : " claims"), withV + " with a verdict"]);
-    expandHub(h);
+    if (view === "graph") expandHub(h);
     var list = h.claims, done = list.filter(function (c) { return c.data.verdict; }).length, reviewed = h.reviewLeaves || [];
     pbody.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " with a verdict, " + reviewed.length + " completed evidence reviews."));
     if (reviewed.length) {
@@ -1048,6 +1325,7 @@
     if (!h) { tip.style.display = "none"; return; }
     var txt;
     if (h.kind === "claim") { var d = byId[h.id].data; txt = d.id + " · " + d.title + (d.verdict ? " — " + d.verdict : " — not yet checked"); }
+    else if (h.kind === "district") txt = h.locked ? lockText(h.d) : h.d.name + " · " + districtClaims(h.d).length + " claims · click to open";
     else if (h.kind === "hub") txt = h.hub.name + " · " + h.hub.count + (h.hub.count === 1 ? " claim" : " claims");
     else { var th = themeById[h.edge.theme] || {}; txt = (th.name || h.edge.theme) + ": " + h.edge.from + " ↔ " + h.edge.to; }
     tip.textContent = txt; tip.style.display = "block";
@@ -1063,38 +1341,74 @@
   }
   function setSpin(v) { spinning = v; var b = document.getElementById("spin"); b.textContent = v ? "Pause" : "Resume";
     b.setAttribute("aria-label", v ? "Pause map rotation" : "Resume map rotation"); }
+  function zoomAt(f, mx, my) {
+    var z0 = cam.zoom, z1 = Math.max(ZMIN, Math.min(ZMAX, z0 * f)), r = z1 / z0;
+    if (mx == null) { mx = cxNow + cam.px; my = cyNow + cam.py; }
+    cam.tpx = cam.px = (mx - cxNow) - ((mx - cxNow) - cam.px) * r;
+    cam.tpy = cam.py = (my - cyNow) - ((my - cyNow) - cam.py) * r;
+    cam.zoom = z1; districtZoomCheck(mx, my);
+  }
+  function panBy(dx, dy) { cam.tpx = cam.px += dx; cam.tpy = cam.py += dy; }
+  function orbitBy(dx, dy) {
+    cam.yaw += dx * 0.006; if (cam.tyaw !== null) cam.tyaw += dx * 0.006;
+    var lo = view === "map" ? 0.25 : -1.35, hi = view === "map" ? 1.45 : 1.35;
+    cam.tpitch = cam.pitch = Math.max(lo, Math.min(hi, cam.pitch + dy * 0.006));
+  }
+  function midpoint() { var pts = Object.keys(activePointers).map(function (id) { return activePointers[id]; });
+    return { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 }; }
+  var dragKind = null, lastMid = null;
+  canvas.addEventListener("contextmenu", function (e) { e.preventDefault(); });
   canvas.addEventListener("pointerdown", function (e) {
     activePointers[e.pointerId] = { x: e.clientX, y: e.clientY };
     canvas.setPointerCapture(e.pointerId); canvas.classList.add("dragging");
-    if (pointerCount() > 1) { multiGesture = true; moved = 100; down = null; pinch = pointerDistance(); }
-    else { down = { x: e.clientX, y: e.clientY }; moved = 0; }
+    if (pointerCount() > 1) { multiGesture = true; moved = 100; down = null; pinch = pointerDistance(); lastMid = midpoint(); }
+    else { down = { x: e.clientX, y: e.clientY }; moved = 0;
+      var alt = e.button === 2 || e.button === 1 || e.shiftKey || e.ctrlKey || e.metaKey;
+      dragKind = view === "map" ? (alt ? "orbit" : "pan") : (alt ? "pan" : "orbit"); }
   });
   canvas.addEventListener("pointermove", function (e) {
     if (activePointers[e.pointerId]) activePointers[e.pointerId] = { x: e.clientX, y: e.clientY };
-    if (multiGesture && pointerCount() > 1) { var distance = pointerDistance();
-      if (pinch && distance) cam.zoom = Math.max(0.5, Math.min(2.8, cam.zoom * distance / pinch));
-      pinch = distance; down = null; showTip(null); return; }
-    var r = canvas.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+    var r = canvas.getBoundingClientRect();
+    if (multiGesture && pointerCount() > 1) { var distance = pointerDistance(), mid = midpoint();
+      if (lastMid) panBy(mid.x - lastMid.x, mid.y - lastMid.y);
+      if (pinch && distance) zoomAt(distance / pinch, mid.x - r.left, mid.y - r.top);
+      pinch = distance; lastMid = mid; down = null; showTip(null); return; }
+    var mx = e.clientX - r.left, my = e.clientY - r.top;
     if (down) { var dx = e.clientX - down.x, dy = e.clientY - down.y; moved += Math.abs(dx) + Math.abs(dy);
-      cam.yaw += dx * 0.006; if (cam.tyaw !== null) cam.tyaw += dx * 0.006;
-      cam.tpitch = cam.pitch = Math.max(-1.35, Math.min(1.35, cam.pitch + dy * 0.006)); down = { x: e.clientX, y: e.clientY }; showTip(null); }
+      if (dragKind === "pan") panBy(dx, dy); else orbitBy(dx, dy);
+      down = { x: e.clientX, y: e.clientY }; showTip(null); }
     else { hover = pick(mx, my); canvas.style.cursor = hover ? "pointer" : "grab"; showTip(hover, mx, my); }
   });
   canvas.addEventListener("pointerleave", function () { hover = null; showTip(null); });
   canvas.addEventListener("pointerup", function (e) {
     delete activePointers[e.pointerId];
-    if (multiGesture) { down = null; pinch = null; if (!pointerCount()) { multiGesture = false; canvas.classList.remove("dragging"); } return; }
+    if (multiGesture) { down = null; pinch = null; lastMid = null; if (!pointerCount()) { multiGesture = false; canvas.classList.remove("dragging"); } return; }
     canvas.classList.remove("dragging");
     if (moved < 6) { var r = canvas.getBoundingClientRect(); var h = pick(e.clientX - r.left, e.clientY - r.top);
-      if (!h) clearSel(); else if (h.kind === "claim") selectClaim(h.id); else if (h.kind === "hub") selectHub(h.hub); else selectEdge(h.index); }
-    else setSpin(false);
+      if (!h) clearSel(); else if (h.kind === "district") { if (!h.locked) enterDistrict(h.d); else showToast(lockText(h.d)); } else if (h.kind === "claim") selectClaim(h.id); else if (h.kind === "hub") selectHub(h.hub); else selectEdge(h.index); }
+    else if (view === "graph" && dragKind === "orbit") setSpin(false);
     down = null;
   });
-  canvas.addEventListener("pointercancel", function () { activePointers = {}; down = null; pinch = null; multiGesture = false; canvas.classList.remove("dragging"); });
-  canvas.addEventListener("wheel", function (e) { e.preventDefault(); cam.zoom = Math.max(0.5, Math.min(2.8, cam.zoom * (e.deltaY < 0 ? 1.08 : 0.92))); }, { passive: false });
+  canvas.addEventListener("pointercancel", function () { activePointers = {}; down = null; pinch = null; lastMid = null; multiGesture = false; canvas.classList.remove("dragging"); });
+  canvas.addEventListener("wheel", function (e) { e.preventDefault(); var r = canvas.getBoundingClientRect();
+    if (e.ctrlKey || Math.abs(e.deltaY) >= Math.abs(e.deltaX) || view === "graph") zoomAt(Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0018)), e.clientX - r.left, e.clientY - r.top);
+    else panBy(-e.deltaX, 0); }, { passive: false });
+  canvas.addEventListener("dblclick", function (e) { var r = canvas.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+    var h = pick(mx, my); if (h && h.kind === "district" && !h.locked) { enterDistrict(h.d); return; } if (!h) zoomAt(1.7, mx, my); });
+  canvas.addEventListener("keydown", function (e) {
+    var step = 40, used = true;
+    if (e.key === "ArrowLeft") { if (view === "map") panBy(step, 0); else orbitBy(-step, 0); }
+    else if (e.key === "ArrowRight") { if (view === "map") panBy(-step, 0); else orbitBy(step, 0); }
+    else if (e.key === "ArrowUp") { if (view === "map") panBy(0, step); else orbitBy(0, -step); }
+    else if (e.key === "ArrowDown") { if (view === "map") panBy(0, -step); else orbitBy(0, step); }
+    else if (e.key === "+" || e.key === "=") zoomAt(1.2); else if (e.key === "-" || e.key === "_") zoomAt(1 / 1.2);
+    else if (e.key === "0") fitView(); else used = false;
+    if (used) { e.preventDefault(); setSpin(false); }
+  });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") clearSel();
-    if (e.target === document.body && /^[1-7]$/.test(e.key)) setMode(MODE_ORDER[+e.key - 1]);
+    if ((e.target === document.body || e.target === canvas) && /^[1-7]$/.test(e.key)) setMode(MODE_ORDER[+e.key - 1]);
+    if ((e.target === document.body || e.target === canvas) && (e.key === "m" || e.key === "M")) setView(view === "map" ? "graph" : "map");
   });
   document.getElementById("spin").onclick = function () { setSpin(!spinning); };
   function syncLabelButtons() {
@@ -1108,9 +1422,9 @@
   document.getElementById("texttoggle").onclick = function () { showText = !showText;
     try { localStorage.setItem("mizien.text", showText ? "on" : "off"); } catch (e) {} syncLabelButtons(); };
   syncLabelButtons();
-  document.getElementById("zoomout").onclick = function () { cam.zoom = Math.max(0.5, cam.zoom / 1.18); };
-  document.getElementById("zoomin").onclick = function () { cam.zoom = Math.min(2.8, cam.zoom * 1.18); };
-  document.getElementById("reset").onclick = function () { cam.yaw = 0.6; cam.pitch = cam.tpitch; cam.zoom = 1; if (sway) cam.yaw = 0; clearSel(); };
+  document.getElementById("zoomout").onclick = function () { zoomAt(1 / 1.25); };
+  document.getElementById("zoomin").onclick = function () { zoomAt(1.25); };
+  document.getElementById("reset").onclick = function () { fitView(); };
   document.addEventListener("keydown", function (e) { if (e.target !== document.body) return;
     if (e.key === "n" || e.key === "N") document.getElementById("labelmode").click();
     if (e.key === "t" || e.key === "T") document.getElementById("texttoggle").click(); });
