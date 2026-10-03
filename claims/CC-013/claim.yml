@@ -1,0 +1,36 @@
+id: CC-013
+title: Permits keep property prices in check
+category: Planning & Housing
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Planning Authority CEO Johann Buttigieg (MaltaToday interview, 2 Mar 2025): continuing to issue
+    permits helps keep property prices in check; he cited about 91,000 dwellings approved over a decade.'
+  speaker: Johann Buttigieg, Planning Authority CEO
+  date: '2025-03-02'
+  wording_status: Verbatim found
+  sources:
+  - title: 'Johann Buttigieg: ''Issuing permits helps keep property prices in check'''
+    publisher: MaltaToday
+    date: 2 Mar 2025
+    url: https://www.maltatoday.com.mt/news/interview/133858/johann_buttigieg_issuing_permits_helps_keep_property_prices_in_check_
+    note: Speaker's own words in an interview; confirm wording against the video.
+  quote: continuing to issue permits helps keep property prices in check
+counter_evidence: An MDA-commissioned study reported prices up 59% since 2017 over a period of very high
+  permit volumes. Vacancy, foreign and investment demand and the type of dwellings approved are not addressed.
+tests: Peer-reviewed research on housing supply elasticity and prices; NSO residential property price
+  index against PA permits 2015-2025; 2021 census vacant dwellings; price-to-income ratios.
+why_low_hanging: Permit and price series are public; the economics literature is large.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Queue
+data_readiness: High
+caveats: Assess the statement, not the person.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

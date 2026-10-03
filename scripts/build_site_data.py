@@ -25,9 +25,12 @@ CATEGORY_COLORS = {
     "Air": "#9fb3c0",
     "Transport": "#c85a3a",
     "Governance & Promises": "#e3a72f",
+    "Planning & Housing": "#d16ba5",
+    "Noise": "#e8836b",
 }
 THEME_COLORS = {
     "T1": "#e3a72f", "T2": "#6fcf97", "T3": "#56b4e9", "T4": "#f2994a", "T5": "#bdbdbd", "T6": "#bb86fc", "T7": "#4fc3c8",
+    "T8": "#f06292", "T9": "#9fa8da",
 }
 
 

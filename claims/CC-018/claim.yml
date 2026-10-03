@@ -1,0 +1,35 @@
+id: CC-018
+title: IMF 'confirms' MDA on housing
+category: Planning & Housing
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Malta Developers Association (8 Feb 2026): the IMF''s assessment of the Maltese housing market
+    confirms what the MDA has been saying about the strength and stability of the property sector.'
+  speaker: Malta Developers Association
+  date: '2026-02-08'
+  wording_status: Verbatim found
+  sources:
+  - title: Malta Development Association welcomes IMF assessment of housing market
+    publisher: MaltaToday
+    date: 8 Feb 2026
+    url: https://www.maltatoday.com.mt/news/national/139634/malta_development_association_welcomes_imf_assessment_housing_market
+    note: Quotes the MDA; locate the MDA press release and the IMF report.
+  quote: The IMF's assessment of the Maltese housing market confirms what the MDA has been saying
+counter_evidence: As reported, the IMF found no clear overvaluation and a low likelihood of a weakening
+  market; an MDA-commissioned study reported prices up 59% since 2017 and a rising price-to-income ratio.
+tests: The IMF Article IV report text; price-to-income and affordability indicators (Eurostat, NSO, Central
+  Bank of Malta).
+why_low_hanging: One document to read against one statement; may well be largely supported.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: High
+caveats: A developer-side claim; included for balance.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

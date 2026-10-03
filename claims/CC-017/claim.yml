@@ -1,0 +1,42 @@
+id: CC-017
+title: Land reclamation outside the Freeport
+category: Planning & Housing
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Budget 2026 (27 Oct 2025): a large-scale land reclamation project will begin outside the Freeport
+    perimeter, mainly for industrial, maritime and aviation use, relocating commercial activity so other
+    spaces can be enjoyed by families. Earlier statements said an EUR 11 million seabed study identified
+    five or six sites with the least environmental damage.'
+  speaker: Government of Malta (Budget 2026); Infrastructure Ministry
+  date: '2025-10-27'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Budget 2026: Large-scale land reclamation project to begin outside Freeport perimeter'
+    publisher: The Malta Independent
+    date: 27 Oct 2025
+    url: https://www.independent.com.mt/articles/2025-10-27/local-news/Budget-2026-Large-scale-land-reclamation-project-to-begin-outside-Freeport-perimeter-6736284318
+    note: Find the budget speech text.
+  - title: Land reclamation decision informed by EUR 11 million seabed study
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/news/national/98630/land_reclamation_decision_informed_by_11_million_seabed_study
+    note: Source of the 'least environmental damage' sites statement.
+counter_evidence: Which activity would move, and which spaces would be freed for families, is not specified.
+  The seabed study's findings and any strategic environmental assessment are not known to be public.
+tests: Publication status of the seabed study; Posidonia and Natura 2000 marine habitat maps; SEA requirements;
+  source of fill material (construction waste).
+why_low_hanging: Budget text and habitat maps are public.
+tags:
+- Promise-without-baseline
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: ''
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

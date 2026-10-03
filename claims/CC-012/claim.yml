@@ -1,0 +1,57 @@
+id: CC-012
+title: Ta' Qali gravel and grass
+category: Land & Trees
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government (Jan 2026): the gravel spread on the Ta'' Qali picnic area will be dealt with after
+    spring concerts and the grass restored, on advice from a grass expert. PN (Feb 2026), citing a Momentum
+    report: the gravel chokes the grass, has left the soil unsuitable for vegetation and could turn the
+    area permanently barren.'
+  speaker: Prime Minister Robert Abela; Jason Micallef (special delegate); Partit Nazzjonalista; Momentum
+  date: 2026-01
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: PM contradicted over Ta' Qali concerts and green grass
+    publisher: The Shift News
+    date: 15 Jan 2026
+    url: https://theshiftnews.com/2026/01/15/pm-contradicted-over-ta-qali-concerts-and-green-grass/
+    note: Reports the PM's words and ministry sources disputing the spring-concert timeline.
+  - title: 'Ta'' Qali gravel fiasco: more public money needed for grass to grow again, PN says'
+    publisher: The Malta Independent
+    date: 12 Jan 2026
+    url: https://www.independent.com.mt/articles/2026-01-12/local-news/Ta-Qali-gravel-fiasco-more-public-money-needed-for-grass-to-grow-again-PN-says-6736286279
+    note: Opposition position.
+  - title: Gravel used to cover Ta' Qali suppressing grass growth, PN says
+    publisher: The Malta Independent
+    date: 6 Feb 2026
+    url: https://www.independent.com.mt/articles/2026-02-06/local-news/Gravel-used-to-cover-Ta-Qali-suppressing-grass-growth-PN-says-6736287029
+    note: PN statement citing the Momentum report; EUR 310,000 gravel cost.
+  - title: Abela's expert took just three days for 'solution' on Ta' Qali grass
+    publisher: The Shift News
+    date: 3 Feb 2026
+    url: https://theshiftnews.com/2026/02/03/abelas-expert-took-just-three-days-for-solution-on-ta-qali-grass/
+    note: Consultancy dates and rate.
+  quote: We will not be making this intervention now, as from April, the area will be hosting concerts,
+    and it won't be the right time. However, after the concerts are done, the intervention will happen.
+    (PM, as reported)
+counter_evidence: Ministry sources quoted by The Shift said no spring concerts were scheduled. Neither
+  side has published soil or vegetation data; the landscaping expert's report has not been released.
+tests: Sentinel-2 greenness (NDVI) over the picnic area 2024-2026; rainfall records; turfgrass and soil
+  literature on gravel or stone cover; the events calendar; procurement records for the gravel.
+why_low_hanging: Both sides make testable statements about grass regrowth; satellite imagery is free and
+  repeatable.
+tags:
+- Promise-without-baseline
+tags_provisional: true
+priority: Queue
+data_readiness: High
+caveats: 'Check both sides equally: the government''s restoration promise and the PN/Momentum ''permanently
+  barren'' warning. Locate primary statements (PM speech, PN press release, Momentum report).'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}

@@ -31,6 +31,14 @@
     {
       "name": "Governance & Promises",
       "color": "#e3a72f"
+    },
+    {
+      "name": "Planning & Housing",
+      "color": "#d16ba5"
+    },
+    {
+      "name": "Noise",
+      "color": "#e8836b"
     }
   ],
   "claims": [
@@ -317,6 +325,210 @@
         "flyer_png": "claim-files/CC-011/flyer.png"
       },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/claim.yml"
+    },
+    {
+      "id": "CC-012",
+      "title": "Ta' Qali gravel and grass",
+      "category": "Land & Trees",
+      "claim": "Government (Jan 2026): the gravel spread on the Ta' Qali picnic area will be dealt with after spring concerts and the grass restored, on advice from a grass expert. PN (Feb 2026), citing a Momentum report: the gravel chokes the grass, has left the soil unsuitable for vegetation and could turn the area permanently barren.",
+      "counter": "Ministry sources quoted by The Shift said no spring concerts were scheduled. Neither side has published soil or vegetation data; the landscaping expert's report has not been released.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Promise-without-baseline"
+      ],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Prime Minister Robert Abela; Jason Micallef (special delegate); Partit Nazzjonalista; Momentum",
+      "date": "2026-01",
+      "quote": "We will not be making this intervention now, as from April, the area will be hosting concerts, and it won't be the right time. However, after the concerts are done, the intervention will happen. (PM, as reported)",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-012/claim.yml"
+    },
+    {
+      "id": "CC-013",
+      "title": "Permits keep property prices in check",
+      "category": "Planning & Housing",
+      "claim": "Planning Authority CEO Johann Buttigieg (MaltaToday interview, 2 Mar 2025): continuing to issue permits helps keep property prices in check; he cited about 91,000 dwellings approved over a decade.",
+      "counter": "An MDA-commissioned study reported prices up 59% since 2017 over a period of very high permit volumes. Vacancy, foreign and investment demand and the type of dwellings approved are not addressed.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Selective metric"
+      ],
+      "priority": "Queue",
+      "wording_status": "Verbatim found",
+      "confidence": null,
+      "speaker": "Johann Buttigieg, Planning Authority CEO",
+      "date": "2025-03-02",
+      "quote": "continuing to issue permits helps keep property prices in check",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-013/claim.yml"
+    },
+    {
+      "id": "CC-014",
+      "title": "Fewer enforcement notices, fewer illegalities",
+      "category": "Planning & Housing",
+      "claim": "Planning Authority CEO Johann Buttigieg (Malta Independent, 7 Sep 2025): the PA once issued over 1,000 enforcement notices a year and now about 200, which he attributed to fewer illegalities; over 5,000 cases await direct action and 1,500 illegalities were removed by direct action in 30 years.",
+      "counter": "A fall in notices issued is an input; it can reflect fewer illegalities or less enforcement activity. The CEO himself says clearing the backlog at the current rate would take over 90 years.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Input-as-outcome"
+      ],
+      "priority": "Queue",
+      "wording_status": "Verbatim found",
+      "confidence": null,
+      "speaker": "Johann Buttigieg, Planning Authority CEO",
+      "date": "2025-09-07",
+      "quote": "there were too many illegalities for the PA to enforce on everything",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-014/claim.yml"
+    },
+    {
+      "id": "CC-015",
+      "title": "'Three weeks left' at the PA",
+      "category": "Governance & Promises",
+      "claim": "Johann Buttigieg (planning conference, Sept 2026, as reported): when his 2019 chats with Yorgen Fenech took place he only had three weeks left at the Planning Authority. Campaigners say the business exchange dates from March 2019 and his tenure ended in October 2019.",
+      "counter": "Dates of the published chats and of the end of his first PA tenure are matters of record.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Johann Buttigieg, Planning Authority CEO",
+      "date": "2026-09",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-015/claim.yml"
+    },
+    {
+      "id": "CC-016",
+      "title": "Shore-to-ship: 90% less harbour pollution",
+      "category": "Air",
+      "claim": "Infrastructure Malta / Government: the Grand Harbour shore-to-ship project (EUR 33 million) cuts pollution from cruise liners in the harbour by 90%, with 17,000 families around the harbour benefiting from cleaner air.",
+      "counter": "Shore power only cuts emissions while a connected ship is at berth; ships must be equipped and choose to connect, and manoeuvring emissions are unaffected.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Conditional-turned-unconditional"
+      ],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Infrastructure Malta; Ministry for Transport",
+      "date": "",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-016/claim.yml"
+    },
+    {
+      "id": "CC-017",
+      "title": "Land reclamation outside the Freeport",
+      "category": "Planning & Housing",
+      "claim": "Budget 2026 (27 Oct 2025): a large-scale land reclamation project will begin outside the Freeport perimeter, mainly for industrial, maritime and aviation use, relocating commercial activity so other spaces can be enjoyed by families. Earlier statements said an EUR 11 million seabed study identified five or six sites with the least environmental damage.",
+      "counter": "Which activity would move, and which spaces would be freed for families, is not specified. The seabed study's findings and any strategic environmental assessment are not known to be public.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Promise-without-baseline"
+      ],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Government of Malta (Budget 2026); Infrastructure Ministry",
+      "date": "2025-10-27",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-017/claim.yml"
+    },
+    {
+      "id": "CC-018",
+      "title": "IMF 'confirms' MDA on housing",
+      "category": "Planning & Housing",
+      "claim": "Malta Developers Association (8 Feb 2026): the IMF's assessment of the Maltese housing market confirms what the MDA has been saying about the strength and stability of the property sector.",
+      "counter": "As reported, the IMF found no clear overvaluation and a low likelihood of a weakening market; an MDA-commissioned study reported prices up 59% since 2017 and a rising price-to-income ratio.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "priority": "Queue",
+      "wording_status": "Verbatim found",
+      "confidence": null,
+      "speaker": "Malta Developers Association",
+      "date": "2026-02-08",
+      "quote": "The IMF's assessment of the Maltese housing market confirms what the MDA has been saying",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-018/claim.yml"
+    },
+    {
+      "id": "CC-019",
+      "title": "830,000 m2 of land lost in five years",
+      "category": "Land & Trees",
+      "claim": "Amphora Media (Sept 2026, 'Green to Grey'): Malta lost over 830,000 square metres of land to development in five years, with nearly 95% of land take between 2018 and 2023 affecting farmland rather than natural areas.",
+      "counter": "To be established: the method and data source behind the area figure.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Amphora Media",
+      "date": "2026-09",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-019/claim.yml"
+    },
+    {
+      "id": "CC-020",
+      "title": "Noise: compliant on paper",
+      "category": "Noise",
+      "claim": "A 2026 report for the European Parliament's Committee on Petitions finds Malta compliant with EU noise law on paper while construction, fireworks and entertainment noise fall through regulatory gaps; 21% of Maltese rank noise a top environmental priority against 9% across the EU.",
+      "counter": "Legal compliance with the Environmental Noise Directive is not the same as exposure below WHO guideline levels.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Compliance-not-health"
+      ],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Report for the European Parliament Committee on Petitions; Government of Malta (compliance position to locate)",
+      "date": "2026",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-020/claim.yml"
+    },
+    {
+      "id": "CC-021",
+      "title": "Malta-Gozo tunnel traffic",
+      "category": "Transport",
+      "claim": "Lead: past government studies found the Malta-Gozo tunnel would only be economically viable if car trips between the islands roughly tripled. The project was shelved in 2022; check whether it, or a fixed link, has been revived with new claims.",
+      "counter": "Induced demand: a link designed to triple car trips works against transport-emission targets (see CC-003).",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Promise-without-baseline"
+      ],
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Infrastructure Malta; Government of Malta",
+      "date": "",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-021/claim.yml"
     }
   ],
   "edges": [
@@ -480,6 +692,202 @@
       "theme": "T7",
       "link_type": "Shared target",
       "strength": "Strong"
+    },
+    {
+      "from": "CC-001",
+      "to": "CC-012",
+      "theme": "T1",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-001",
+      "to": "CC-019",
+      "theme": "T1",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-002",
+      "to": "CC-012",
+      "theme": "T1",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-002",
+      "to": "CC-019",
+      "theme": "T1",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-008",
+      "to": "CC-012",
+      "theme": "T1",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-008",
+      "to": "CC-019",
+      "theme": "T1",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-012",
+      "to": "CC-019",
+      "theme": "T1",
+      "link_type": "Shared mechanism",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-016",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-021",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-007",
+      "to": "CC-016",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-007",
+      "to": "CC-021",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-008",
+      "to": "CC-016",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-008",
+      "to": "CC-021",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-016",
+      "to": "CC-021",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-017",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-002",
+      "to": "CC-017",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-008",
+      "to": "CC-017",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-013",
+      "to": "CC-014",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-013",
+      "to": "CC-017",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-013",
+      "to": "CC-018",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-013",
+      "to": "CC-019",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-014",
+      "to": "CC-017",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-014",
+      "to": "CC-018",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-014",
+      "to": "CC-019",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-017",
+      "to": "CC-018",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-017",
+      "to": "CC-019",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-018",
+      "to": "CC-019",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-007",
+      "to": "CC-020",
+      "theme": "T9",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
     }
   ],
   "themes": [
@@ -494,7 +902,9 @@
       "members": [
         "CC-001",
         "CC-002",
-        "CC-008"
+        "CC-008",
+        "CC-012",
+        "CC-019"
       ]
     },
     {
@@ -536,7 +946,9 @@
       "members": [
         "CC-003",
         "CC-007",
-        "CC-008"
+        "CC-008",
+        "CC-016",
+        "CC-021"
       ]
     },
     {
@@ -550,7 +962,8 @@
       "members": [
         "CC-004",
         "CC-002",
-        "CC-008"
+        "CC-008",
+        "CC-017"
       ]
     },
     {
@@ -579,6 +992,35 @@
       "members": [
         "CC-003",
         "CC-011"
+      ]
+    },
+    {
+      "id": "T8",
+      "name": "Planning, housing and land take",
+      "color": "#f06292",
+      "dashed": false,
+      "link_type": "Shared driver",
+      "strength": "Strong",
+      "description": "Permit volumes, enforcement and housing demand drive land take. Claims about prices, enforcement, reclamation and land loss rest on the same planning system and the same data (PA permits, NSO prices, land-cover maps).",
+      "members": [
+        "CC-013",
+        "CC-014",
+        "CC-017",
+        "CC-018",
+        "CC-019"
+      ]
+    },
+    {
+      "id": "T9",
+      "name": "Compliance-not-health pattern",
+      "color": "#9fa8da",
+      "dashed": true,
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal",
+      "description": "Meeting an EU legal limit or procedure is presented as if it meant a health-protective level: air (WHO PM2.5 guideline) and noise (WHO noise guidelines).",
+      "members": [
+        "CC-007",
+        "CC-020"
       ]
     }
   ]

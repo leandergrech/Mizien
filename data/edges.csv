@@ -22,3 +22,31 @@ CC-004,CC-007,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causa
 CC-004,CC-010,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
 CC-007,CC-010,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
 CC-003,CC-011,T7,2030 carbon target,Shared target,Strong
+CC-001,CC-012,T1,Sealed soil and concrete,Shared mechanism,Strong
+CC-001,CC-019,T1,Sealed soil and concrete,Shared mechanism,Strong
+CC-002,CC-012,T1,Sealed soil and concrete,Shared mechanism,Strong
+CC-002,CC-019,T1,Sealed soil and concrete,Shared mechanism,Strong
+CC-008,CC-012,T1,Sealed soil and concrete,Shared mechanism,Strong
+CC-008,CC-019,T1,Sealed soil and concrete,Shared mechanism,Strong
+CC-012,CC-019,T1,Sealed soil and concrete,Shared mechanism,Strong
+CC-003,CC-016,T4,"Transport, air and climate",Shared driver,Strong
+CC-003,CC-021,T4,"Transport, air and climate",Shared driver,Strong
+CC-007,CC-016,T4,"Transport, air and climate",Shared driver,Strong
+CC-007,CC-021,T4,"Transport, air and climate",Shared driver,Strong
+CC-008,CC-016,T4,"Transport, air and climate",Shared driver,Strong
+CC-008,CC-021,T4,"Transport, air and climate",Shared driver,Strong
+CC-016,CC-021,T4,"Transport, air and climate",Shared driver,Strong
+CC-004,CC-017,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-002,CC-017,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-008,CC-017,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-013,CC-014,T8,"Planning, housing and land take",Shared driver,Strong
+CC-013,CC-017,T8,"Planning, housing and land take",Shared driver,Strong
+CC-013,CC-018,T8,"Planning, housing and land take",Shared driver,Strong
+CC-013,CC-019,T8,"Planning, housing and land take",Shared driver,Strong
+CC-014,CC-017,T8,"Planning, housing and land take",Shared driver,Strong
+CC-014,CC-018,T8,"Planning, housing and land take",Shared driver,Strong
+CC-014,CC-019,T8,"Planning, housing and land take",Shared driver,Strong
+CC-017,CC-018,T8,"Planning, housing and land take",Shared driver,Strong
+CC-017,CC-019,T8,"Planning, housing and land take",Shared driver,Strong
+CC-018,CC-019,T8,"Planning, housing and land take",Shared driver,Strong
+CC-007,CC-020,T9,Compliance-not-health pattern,Rhetorical pattern,"Pattern, not causal"
