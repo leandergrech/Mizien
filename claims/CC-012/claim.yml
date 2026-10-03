@@ -1,18 +1,24 @@
 id: CC-012
 title: Ta' Qali gravel and grass
 category: Land & Trees
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Contradicted
+verdict_confidence: High
 claim:
-  text: 'Government (Jan 2026): the gravel spread on the Ta'' Qali picnic area will be dealt with after
-    spring concerts and the grass restored, on advice from a grass expert. PN (Feb 2026), citing a Momentum
-    report: the gravel chokes the grass, has left the soil unsuitable for vegetation and could turn the
-    area permanently barren.'
-  speaker: Prime Minister Robert Abela; Jason Micallef (special delegate); Partit Nazzjonalista; Momentum
-  date: 2026-01
-  wording_status: 'Paraphrase: locate quote'
+  text: 'Public Works Ministry (Sept 2025): the sand and gravel laid on the Ta'' Qali picnic area retains moisture,
+    so ''the natural grass grows at a much faster rate well before the rainfall of the winter season''; park unit
+    head Jason Micallef: grass would grow back with the winter rains. PM (Jan 2026): intervention after the spring
+    concerts. PN and Momentum (Feb 2026): the gravel chokes the grass and could leave the area permanently barren.'
+  speaker: Public Works Ministry; Jason Micallef (Ta' Qali park unit); Prime Minister Robert Abela; Partit Nazzjonalista;
+    Momentum
+  date: 2025-09
+  wording_status: Verbatim found
   sources:
+  - title: Use of gravel at Ta' Qali 'sterilises' soil, expert says (updated with Public Works Ministry statement)
+    publisher: MaltaToday
+    date: Sep 2025
+    url: https://www.maltatoday.com.mt/news/national/136863/use_of_gravel_at_ta_qali_sterilises_soil_expert_says_
+    note: Ministry statement and arborist comment. Read in full 3 Oct 2026.
   - title: PM contradicted over Ta' Qali concerts and green grass
     publisher: The Shift News
     date: 15 Jan 2026
@@ -33,56 +39,74 @@ claim:
     date: 3 Feb 2026
     url: https://theshiftnews.com/2026/02/03/abelas-expert-took-just-three-days-for-solution-on-ta-qali-grass/
     note: Consultancy dates and rate.
-  - title: 'Momentum inspection on Ta'' Qali gravel shows soil rendered unsuitable for natural vegetation'
+  - title: Momentum inspection on Ta' Qali gravel shows soil rendered unsuitable for natural vegetation
     publisher: The Malta Independent
     date: 5 Feb 2026
     url: https://www.independent.com.mt/articles/2026-02-05/local-news/Momentum-inspection-on-Ta-Qali-gravel-shows-soil-rendered-unsuitable-for-natural-vegetation-6736286987
-    note: 'Second-hand report of the Momentum-commissioned expert inspection (22,000 m2 picnic area; two layers, sand over compacted fine gravel). Lead to the Momentum report itself; not retrieved.'
-  - title: 'Independent expert confirms Ta'' Qali picnic area was ''deliberately ruined'''
+    note: Second-hand report of the Momentum-commissioned expert inspection (22,000 m2 picnic area; two layers,
+      sand over compacted fine gravel). Lead to the Momentum report itself; not retrieved.
+  - title: Independent expert confirms Ta' Qali picnic area was 'deliberately ruined'
     publisher: Newsbook
     date: Feb 2026
     url: https://newsbook.com.mt/en/independent-expert-confirms-malta-picnic-area-was-deliberately-ruined/
-    note: 'Second-hand report of the Momentum expert findings. Not retrieved.'
-  - title: 'Ta'' Qali gravel ''blunder'' was intentionally designed to squeeze money out of picnic area, parties claim'
+    note: Second-hand report of the Momentum expert findings. Not retrieved.
+  - title: Ta' Qali gravel 'blunder' was intentionally designed to squeeze money out of picnic area, parties claim
     publisher: MaltaToday
     date: Feb 2026
     url: https://www.maltatoday.com.mt/news/national/139796/ta_qali_gravel_blunder_was_intentionally_designed_to_squeeze_money_out_of_picnic_area_parties_claim
-    note: 'Reports Momentum and PN statements. Not retrieved.'
+    note: Reports Momentum and PN statements. Not retrieved.
   - title: 'Ta'' Qali gravel: Momentum says soil covered with construction-grade gravel'
     publisher: MaltaToday
     date: 2025-26
     url: https://www.maltatoday.com.mt/news/national/139585/momentum_says_ta_qali_soil_covered_with_constructiongrade_gravel
-    note: 'Earlier Momentum statement. Not retrieved.'
-  - title: 'Grass consultant paid EUR 50 an hour to fix Ta'' Qali gravel fiasco'
+    note: Earlier Momentum statement. Not retrieved.
+  - title: Grass consultant paid EUR 50 an hour to fix Ta' Qali gravel fiasco
     publisher: Newsbook
     date: Jan-Feb 2026
     url: https://newsbook.com.mt/en/grass-consultant-paid-e50-an-hour-to-fix-ta-qali-gravel-fiasco/
-    note: 'Consultant rate and timeline. Not retrieved.'
-  - title: 'Abela wades into Ta'' Qali row, endorsing gravel decision but criticising ''communication'''
+    note: Consultant rate and timeline. Not retrieved.
+  - title: Abela wades into Ta' Qali row, endorsing gravel decision but criticising 'communication'
     publisher: Newsbook
     date: Jan 2026
     url: https://newsbook.com.mt/en/momentum-backs-green-space-protest-as-ta-qali-chief-cries-fake-news/
-    note: 'Reports the PM''s interview remarks. Not retrieved.'
-  quote: We will not be making this intervention now, as from April, the area will be hosting concerts,
-    and it won't be the right time. However, after the concerts are done, the intervention will happen.
-    (PM, as reported)
-counter_evidence: Ministry sources quoted by The Shift said no spring concerts were scheduled. Neither
-  side has published soil or vegetation data; the landscaping expert's report has not been released.
-tests: Sentinel-2 greenness (NDVI) over the picnic area 2024-2026; rainfall records; turfgrass and soil
-  literature on gravel or stone cover; the events calendar; procurement records for the gravel.
-why_low_hanging: Both sides make testable statements about grass regrowth; satellite imagery is free and
-  repeatable.
+    note: Reports the PM's interview remarks. Not retrieved.
+  - title: Ta' Qali gravel under scrutiny again
+    publisher: MaltaToday
+    date: Nov 2025
+    url: https://www.maltatoday.com.mt/environment/nature/137956/ta_qali_gravel_under_scrutiny_again_
+    note: Micallef's assurance; no regrowth in autumn 2025. Read in full.
+  - title: Sentinel-2 L2A, tile 33SVV, 2023-2026
+    publisher: Copernicus / Microsoft Planetary Computer
+    date: '2026'
+    url: https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a
+    note: 'Primary evidence: tools/cc-012-report/fetch_s2.py; data/cc-012/.'
+  quote: The benefit of this work is that the natural grass grows at a much faster rate well before the rainfall
+    of the winter season. (Public Works Ministry statement, as reported by MaltaToday)
+counter_evidence: 'Sentinel-2: the 2.8 ha gravel zone (Momentum measured ~2.2 ha) greened every winter before the
+  gravel (winter median NDVI 0.37-0.47 in 2023-2025, level with the rest of the park) and stayed bare in winter 2025-26 (0.11)
+  while the rest of the park was at 0.38. Summers were already bare before the gravel (~0.11), as the park
+  management said. Gravel still in place and area bare in the last clear image, 27 Sep 2026. Soil-compaction reviews
+  support the choking mechanism; gravel-sand mulch is a known water-conservation technique.'
+tests: Sentinel-2 NDVI and brightness 2023-2026 against a control area in the same park; soil compaction literature.
+why_low_hanging: 'Done: Claim Check 012 report and flyer.'
 tags:
 - Promise-without-baseline
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: High
-caveats: 'Check both sides equally: the government''s restoration promise and the PN/Momentum ''permanently
-  barren'' warning. Locate primary statements (PM speech, PN press release, Momentum report). Attribution:
-  the ''permanently barren'' and ''chokes the grass'' findings originate with Momentum; PN repeated them.'
+caveats: Draft pending right of reply (Ministry, park unit, OPM, PN, Momentum). Verdict applies to the government
+  assurance that grass would regrow; PN/Momentum description of the current state is supported, 'permanently' not
+  shown. Intent and procurement not assessed. Works after 27 Sep 2026 not covered.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Sentinel-2 L2A NDVI time series 2023-2026, gravel zone vs rest of park (data/cc-012/ndvi_timeseries.csv, checks.csv)
+- True-colour images Feb 2025 vs Feb 2026 (report figure 1)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-03'

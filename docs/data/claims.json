@@ -330,21 +330,26 @@
       "id": "CC-012",
       "title": "Ta' Qali gravel and grass",
       "category": "Land & Trees",
-      "claim": "Government (Jan 2026): the gravel spread on the Ta' Qali picnic area will be dealt with after spring concerts and the grass restored, on advice from a grass expert. PN (Feb 2026), citing a Momentum report: the gravel chokes the grass, has left the soil unsuitable for vegetation and could turn the area permanently barren.",
-      "counter": "Ministry sources quoted by The Shift said no spring concerts were scheduled. Neither side has published soil or vegetation data; the landscaping expert's report has not been released.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Public Works Ministry (Sept 2025): the sand and gravel laid on the Ta' Qali picnic area retains moisture, so 'the natural grass grows at a much faster rate well before the rainfall of the winter season'; park unit head Jason Micallef: grass would grow back with the winter rains. PM (Jan 2026): intervention after the spring concerts. PN and Momentum (Feb 2026): the gravel chokes the grass and could leave the area permanently barren.",
+      "counter": "Sentinel-2: the 2.8 ha gravel zone (Momentum measured ~2.2 ha) greened every winter before the gravel (winter median NDVI 0.37-0.47 in 2023-2025, level with the rest of the park) and stayed bare in winter 2025-26 (0.11) while the rest of the park was at 0.38. Summers were already bare before the gravel (~0.11), as the park management said. Gravel still in place and area bare in the last clear image, 27 Sep 2026. Soil-compaction reviews support the choking mechanism; gravel-sand mulch is a known water-conservation technique.",
+      "status": "Drafted",
+      "verdict": "Contradicted",
       "tags": [
         "Promise-without-baseline"
       ],
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Prime Minister Robert Abela; Jason Micallef (special delegate); Partit Nazzjonalista; Momentum",
-      "date": "2026-01",
-      "quote": "We will not be making this intervention now, as from April, the area will be hosting concerts, and it won't be the right time. However, after the concerts are done, the intervention will happen. (PM, as reported)",
-      "version": null,
-      "outputs": {},
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
+      "speaker": "Public Works Ministry; Jason Micallef (Ta' Qali park unit); Prime Minister Robert Abela; Partit Nazzjonalista; Momentum",
+      "date": "2025-09",
+      "quote": "The benefit of this work is that the natural grass grows at a much faster rate well before the rainfall of the winter season. (Public Works Ministry statement, as reported by MaltaToday)",
+      "version": "1.0",
+      "last_reviewed": "2026-10-03",
+      "outputs": {
+        "report": "claim-files/CC-012/report.pdf",
+        "flyer_pdf": "claim-files/CC-012/flyer.pdf",
+        "flyer_png": "claim-files/CC-012/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-012/claim.yml"
     },
     {
