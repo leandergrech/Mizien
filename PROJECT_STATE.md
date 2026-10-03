@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 3 October 2026 (CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged into `main` at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 3 October 2026 (Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -116,8 +116,7 @@ CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commi
 
 ## Notes for the next session
 
-- The homepage map uses the Botanical style and circular balance wordmark. `last_reviewed` dates anchor one leaf per completed evidence review; leaves move from green to brown over 365 days. Update the date after a fresh evidence review and rebuild site data.
-- The mobile homepage layout uses a taller map, larger touch targets, direct zoom buttons and two-finger pinch, a slide-up map key, and a bottom-sheet claim panel. Map labels simplify at phone widths; the claims table hides its topic column to stay readable.
+- The homepage map uses the Botanical style and circular balance wordmark. Its mobile layout has larger touch targets, direct zoom buttons and two-finger pinch, a slide-up map key, and a bottom-sheet claim panel; labels simplify at phone widths and the claims table hides its topic column. The enlarged balance mark is slightly tilted; `docs/favicon.svg` carries the same mark in browser tabs. `last_reviewed` dates anchor one leaf per completed evidence review; leaves move from green to brown over 365 days. Update the date after a fresh evidence review and rebuild site data.
 - CC-002 editable draft: `claims/CC-002/report.md`; generated outputs: `report.pdf`, `flyer.pdf`, `flyer.png`. Do not treat the 10:1 planting condition as measured ecological equivalence or use cross-study findings as a Comino survival rate. The one-specimen oleander discrepancy remains unresolved.
 - CC-008 editable draft: `claims/CC-008/report.md`; generated outputs: `claims/CC-008/report.pdf`, `flyer.pdf`, `flyer.png`. Do not present Marsa's percentages as independently reproduced. No survey file was located. Msida's PDS observations are from 2019 and are not a post-opening counterfactual. The national licensed-fleet figure in the original candidate is not a junction traffic measure and was not used.
 - `archive/manifest.csv` records CC-008 source-fetch results. Manual browser archiving is still needed for the four earlier MaltaToday sources, the Office of the Prime Minister and Times of Malta; ERA blocks automated access and the AEA publisher returned HTTP 403. The three Infrastructure Malta pages were fetched and have Wayback snapshots.
