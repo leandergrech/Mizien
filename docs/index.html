@@ -1161,20 +1161,6 @@
     mapAnim = { c0: c0, c1: c1, S0: S0, S1: S1, P: P, u: 0, dur: reduce ? 0.01 : 0.95, done: done };
     tmapZ = S1; tmapC = { x: c1.x, y: c1.y };
   }
-  window.__mzz = function (mx, my) { // TEST ONLY
-    var g = GEO.districts[0], p0 = project(toWorld(g.x, g.y)); var at = [Math.round(p0.sx), Math.round(p0.sy)];
-    zoomAt(1.5, at[0], at[1]); var p1 = project(toWorld(g.x, g.y));
-    return JSON.stringify({ before: at, after: [Math.round(p1.sx), Math.round(p1.sy)], zoom: cam.zoom, px: cam.px, cx: cxNow, level: mapLevel && mapLevel.id, anim: !!mapAnim });
-  };
-  window.__mzanim = function () { // TEST ONLY
-    var g = GEO.districts[0], pl = [14000, -9000], out = [];
-    function snap(tag) { var a = project(toWorld(g.x, g.y)), b = project(toWorld(pl[0], pl[1]));
-      out.push(tag + " V=" + Math.round(a.sx) + "," + Math.round(a.sy) + " P=" + Math.round(b.sx) + "," + Math.round(b.sy) + " S=" + (mapZ * cam.zoom).toFixed(2)); }
-    var v0 = project(toWorld(g.x, g.y)); for (var i = 0; i < 6; i++) zoomAt(1.2, v0.sx, v0.sy);
-    snap("after wheel"); var f = 0; while (mapAnim && f < 40) { stepMapAnim(0.08); f++; if (f % 2 === 1) snap("f" + f); } snap("end");
-    exitDistrict(); snap("exit start"); f = 0; while (mapAnim && f < 40) { stepMapAnim(0.08); f++; if (f % 3 === 1) snap("x" + f); } snap("exit end level=" + (mapLevel && mapLevel.id));
-    return out.join("\n");
-  };
   function stepMapAnim(dt) {
     var A = mapAnim; if (!A) return;
     A.u = Math.min(1, A.u + dt / A.dur);
