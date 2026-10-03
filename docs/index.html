@@ -92,34 +92,61 @@
   #tip { position: absolute; display: none; pointer-events: none; max-width: 300px; padding: 6px 10px; border-radius: 8px; z-index: 5;
     background: rgba(246,244,238,.97); color: #14452f; font: 600 12px Arial, sans-serif; box-shadow: 0 6px 18px rgba(0,0,0,.4); }
 
-  /* detail panel */
-  #panel { position: absolute; right: 22px; top: 66px; bottom: 66px; width: min(400px, calc(100% - 44px)); z-index: 4;
-           overflow: auto; background: var(--card); color: var(--slate); border-radius: 14px; padding: 16px 18px;
-           box-shadow: 0 18px 50px rgba(0,0,0,.5); display: none; border-top: 5px solid var(--amber); }
+  /* detail panel: header filled with the verdict (or group) colour, body tinted to match */
+  #panel { --p-head: #14452f; --p-head2: #0e2a1f; --p-head-ink: #fff; --p-bg: #f6f4ee; --p-ink: #2b3a42; --p-soft: #e6efe8;
+           --p-line: #d9e2db; --p-link: #14452f; --p-muted: #6b767c;
+           position: absolute; right: 22px; top: 66px; bottom: 66px; width: min(400px, calc(100% - 44px)); z-index: 4;
+           overflow: auto; background: var(--p-bg); color: var(--p-ink); border-radius: 16px; padding: 0;
+           box-shadow: 0 22px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06); display: none;
+           transition: width .35s ease, background .3s; }
   #panel.fit { bottom: auto; max-height: calc(100% - 132px); }
-  #panel h3 { margin: 0 0 2px; font: 700 18px "Liberation Serif", Georgia, serif; color: #14452f; padding-right: 30px; }
-  #panel .id { font: 700 11px Arial; letter-spacing: .08em; color: #8a9399; }
+  #panel.wide { width: min(1000px, calc(100% - 320px)); bottom: auto; max-height: 46%; }
+  #panel.wide.fit { max-height: 46%; }
+  #panel .phead { position: sticky; top: 0; z-index: 1; padding: 14px 92px 14px 18px; color: var(--p-head-ink);
+    background: linear-gradient(135deg, var(--p-head) 0%, var(--p-head2) 100%); }
+  #panel .phead::after { content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 10px; pointer-events: none;
+    background: linear-gradient(var(--p-bg), transparent); opacity: 0; }
+  #panel h3 { margin: 2px 0 0; font: 700 19px/1.25 "Liberation Serif", Georgia, serif; color: var(--p-head-ink); }
+  #panel .id { font: 700 10.5px Arial; letter-spacing: .12em; color: var(--p-head-ink); opacity: .78; }
+  #panel .verdictline { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  #panel .vpill { display: inline-block; padding: 4px 11px; border-radius: 999px; font: 700 11.5px Arial; letter-spacing: .06em;
+    text-transform: uppercase; background: rgba(255,255,255,.2); color: var(--p-head-ink); border: 1px solid rgba(255,255,255,.35); }
+  #panel .vpill.dark { background: rgba(0,0,0,.12); border-color: rgba(0,0,0,.18); }
+  #panel .hbtns { position: absolute; right: 8px; top: 8px; display: flex; gap: 2px; }
+  #panel .hbtns button { min-width: 36px; min-height: 36px; border: 0; border-radius: 10px; background: rgba(255,255,255,.14);
+    color: var(--p-head-ink); font: 700 16px Arial; cursor: pointer; }
+  #panel .hbtns button:hover { background: rgba(255,255,255,.3); }
+  #panel .pbody { padding: 12px 18px 18px; }
+  #panel.wide .pbody { column-count: 2; column-gap: 34px; column-rule: 1px solid var(--p-line); }
+  #panel.wide .pbody > * { break-inside: avoid; }
+  #panel.wide .pbody > blockquote { column-span: all; font-size: 17px; }
   #panel p { margin: 8px 0; font-size: 14px; }
-  #panel .label { font: 700 10px Arial; letter-spacing: .1em; color: #8a9399; margin-top: 12px; }
+  #panel .label { font: 700 10px Arial; letter-spacing: .12em; color: var(--p-muted); margin-top: 14px; padding-top: 8px;
+    border-top: 1px solid var(--p-line); }
   .chip { display: inline-block; font: 700 11px Arial; padding: 3px 9px; border-radius: 999px; color: #fff; margin: 2px 4px 2px 0; }
   .chip.soft { background: #e6efe8; color: #14452f; }
-  #panel .x { position: absolute; right: 8px; top: 6px; min-width: 40px; min-height: 40px; background: none; border: 0;
-    font-size: 22px; color: #8a9399; cursor: pointer; }
-  #panel blockquote { margin: 8px 0; padding: 6px 10px; border-left: 3px solid #e3a72f; background: #fbf1d9;
-    font: italic 14px/1.45 "Liberation Serif", Georgia, serif; color: #14452f; }
-  #panel p.small { font-size: 12px; color: #6b767c; margin: 4px 0; }
+  #panel .chip.soft { background: var(--p-soft); color: var(--p-ink); }
+  #panel blockquote { margin: 4px 0 8px; padding: 8px 12px; border-left: 4px solid var(--p-head); background: rgba(255,255,255,.6);
+    border-radius: 0 10px 10px 0; font: italic 15px/1.45 "Liberation Serif", Georgia, serif; color: var(--p-ink); }
+  #panel p.small { font-size: 12px; color: var(--p-muted); margin: 4px 0; }
   #panel .links { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
   #panel .lrow { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   #panel button.link { display: inline-flex; align-items: center; gap: 6px; text-align: left; background: none; border: 0;
-    padding: 0; color: #3c6e8f; cursor: pointer; font: 13px Arial; margin: 0; }
+    padding: 0; color: var(--p-link); cursor: pointer; font: 13px Arial; margin: 0; }
   #panel button.link:hover { text-decoration: underline; }
-  #panel .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  #panel .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; box-shadow: 0 0 0 1.5px rgba(255,255,255,.8); }
   #panel button.tchip { background: #fff; border: 2px solid; border-radius: 999px; padding: 1px 8px; font: 700 10px Arial; color: #2b3a42; cursor: pointer; }
-  #panel .acts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
-  #panel .btn { display: inline-block; background: #14452f; color: #fff; border: 1px solid #14452f; border-radius: 8px;
+  #panel .acts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+  #panel .btn { display: inline-block; background: var(--p-link); color: #fff; border: 1px solid var(--p-link); border-radius: 8px;
     padding: 6px 10px; font: 700 12px Arial; text-decoration: none; cursor: pointer; }
-  #panel .btn.ghost { background: #fff; color: #14452f; }
+  #panel .btn.ghost { background: #fff; color: var(--p-link); }
   #panel .btn:hover { border-color: #e3a72f; }
+  .ctl[aria-pressed="true"] { background: var(--amber) !important; color: #13301f !important; border-color: var(--amber) !important; }
+  #crumb { position: absolute; left: 50%; top: 66px; transform: translateX(-50%); z-index: 3; display: none;
+    padding: 6px 8px 6px 14px; border-radius: 999px; background: rgba(8,30,21,.7); border: 1px solid rgba(207,226,212,.25);
+    font: 12.5px Arial, sans-serif; color: var(--ink); align-items: center; gap: 10px; backdrop-filter: blur(6px); }
+  #crumb b { font-weight: 700; }
+  #crumb button { border: 0; border-radius: 999px; padding: 4px 10px; background: var(--amber); color: #13301f; font: 700 11.5px Arial; cursor: pointer; }
   #panel .file-action { display: inline-flex; gap: 4px; align-items: stretch; }
   #panel .file-action .btn { border-radius: 8px 0 0 8px; }
   #panel .file-action .btn + .btn { border-radius: 0 8px 8px 0; margin-left: -5px; }
@@ -173,6 +200,10 @@
     #modeTitle .s { display: none; }
     #panel { left: 8px; right: 8px; top: auto; bottom: max(8px, env(safe-area-inset-bottom)); width: auto; max-height: 62%; }
     #panel.fit { max-height: 62%; }
+    #panel.wide { width: auto; }
+    #panel.wide .pbody { column-count: 1; }
+    #panel .hbtns .wbtn { display: none; }
+    #crumb { top: 52px; }
     .desktop-hint { display: none; }
     .mobile-hint { display: inline; }
     #hint { left: 12px; right: 12px; bottom: 10px; text-align: center; }
@@ -199,7 +230,10 @@
   <div id="stage" role="region" aria-label="Interactive 3D map of fact-checked claims" aria-describedby="hint">
     <canvas id="map"></canvas>
     <div id="modeTitle" class="tx"><div class="t"></div><div class="s"></div></div>
+    <div id="crumb" role="status"></div>
     <div id="controls">
+      <button class="ctl" id="labelmode" type="button" aria-pressed="false" title="Show claim names instead of codes">Names</button>
+      <button class="ctl" id="texttoggle" type="button" aria-pressed="false" title="Hide all text on the map">Hide text</button>
       <button class="ctl" id="zoomout" type="button" aria-label="Zoom out" title="Zoom out">−</button>
       <button class="ctl" id="zoomin" type="button" aria-label="Zoom in" title="Zoom in">+</button>
       <button class="ctl" id="spin" type="button" aria-label="Pause map rotation">Pause</button>
@@ -270,7 +304,10 @@
   var hubPool = {}, hubs = [];            // hubPool: every hub ever made (key = mode|value); hubs: those of the current mode
   var mode = "topic";
   var showSpokes = true, themeOn = {};
-  var cam = { yaw: 0.6, pitch: -0.22, zoom: 1, tyaw: null, tpitch: -0.22 };
+  var cam = { yaw: 0.6, pitch: -0.22, zoom: 1, tyaw: null, tpitch: -0.22, fx: 0, fy: 0, fz: 0, em: 1, tem: 1 };
+  var expanded = null;                    // hub whose sub-graph is opened out
+  var labelMode = "code", showText = true;
+  try { if (localStorage.getItem("mizien.labels") === "tag") labelMode = "tag"; if (localStorage.getItem("mizien.text") === "off") showText = false; } catch (e) {}
   var spinning = true, sway = false;
   var sel = null, hover = null;
   var W = 0, H = 0, dpr = 1, R = 250, t0 = performance.now(), lastT = 0;
@@ -509,11 +546,7 @@
         h.x = sx / cs.length; h.y = sy / cs.length; h.z = sz / cs.length;
       }
       h.talpha = 1;
-      var r = clusterRadius(h.count);
-      h.claims.slice().sort(function (a, b) { return a.id < b.id ? -1 : 1; }).forEach(function (c, i) {
-        var p = spiral(h.claims.length, i, r); c.tx = h.tx + p.x; c.ty = h.ty + p.y; c.tz = h.tz + p.z;
-        if (h.claims.length === 1) { c.tx += 0; c.ty += 46; }
-      });
+      layoutMembers(h, false);
     });
     if (M.layout === "force") forceLayout();
     // camera: carousels spin, spectra and pipelines face the viewer and sway
@@ -526,6 +559,35 @@
     buildGroups();
     var u = new URL(location.href); if (m === "topic") u.searchParams.delete("group"); else u.searchParams.set("group", m);
     history.replaceState(null, "", u);
+  }
+
+  function layoutMembers(h, open) {
+    var n = h.claims.length, r = clusterRadius(n);
+    if (open) r = Math.max(110, r * 2.3);
+    h.claims.slice().sort(function (a, b) { return a.id < b.id ? -1 : 1; }).forEach(function (c, i) {
+      var p;
+      if (open && n > 1) { var a = (i / n) * Math.PI * 2 - Math.PI / 2; p = { x: Math.cos(a) * r, y: Math.sin(a) * r * 0.82, z: Math.sin(a * 2) * r * 0.18 }; }
+      else p = spiral(n, i, r);
+      c.tx = h.tx + p.x; c.ty = h.ty + p.y; c.tz = h.tz + p.z;
+      if (n === 1) c.ty += open ? 90 : 46;
+    });
+    h.openR = r;
+  }
+  function expandHub(h) {
+    if (expanded === h) return;
+    if (expanded) layoutMembers(expanded, false);
+    expanded = h; layoutMembers(h, true);
+    cam.tem = Math.max(1.15, Math.min(2.4, 175 / (h.openR || 110)));
+    var cr = document.getElementById("crumb"); cr.textContent = "";
+    cr.appendChild(document.createTextNode(MODES[mode].label + " · ")); cr.appendChild(el("b", null, h.name));
+    cr.appendChild(document.createTextNode(" · " + h.count + (h.count === 1 ? " claim" : " claims")));
+    var back = el("button", null, "Show all groups"); back.type = "button"; back.onclick = function () { clearSel(); }; cr.appendChild(back);
+    cr.style.display = "inline-flex";
+  }
+  function collapse() {
+    if (!expanded) return;
+    layoutMembers(expanded, false); expanded = null; cam.tem = 1;
+    document.getElementById("crumb").style.display = "none";
   }
 
   function forceLayout() {
@@ -626,21 +688,26 @@
 
   // ------------------------------------------------------------ projection
   function leftInset() { return W > 900 ? 270 : 0; }
-  function panelInset() { return W > 900 && panel.style.display === "block" ? 420 : 0; }
+  function panelOpen() { return W > 900 && panel.style.display === "block"; }
+  function panelInset() { return panelOpen() && !wide ? panel.offsetWidth + 22 : 0; }
+  function topInset() { return panelOpen() && wide ? Math.min(H * 0.55, panel.offsetTop + panel.offsetHeight) : 0; }
+  var cyNow = null;
+  function cyTarget() { var top = topInset(); return top ? (top + H - 40) / 2 : H / 2 + 6; }
   var cxNow = null;
   function cxTarget() { return leftInset() + (W - leftInset() - panelInset()) / 2; }
   function project(p) {
     var cy = Math.cos(cam.yaw), sy = Math.sin(cam.yaw), cp = Math.cos(cam.pitch), sp = Math.sin(cam.pitch);
-    var x1 = p.x * cy - p.z * sy, z1 = p.x * sy + p.z * cy;
-    var y2 = p.y * cp - z1 * sp, z2 = p.y * sp + z1 * cp;
+    var px = p.x - cam.fx, py = p.y - cam.fy, pz = p.z - cam.fz;
+    var x1 = px * cy - pz * sy, z1 = px * sy + pz * cy;
+    var y2 = py * cp - z1 * sp, z2 = py * sp + z1 * cp;
     var F = 900, s = F / (F + z2 + 300);
-    var usable = Math.min(W - leftInset() - panelInset(), H - 120);
-    var base = Math.max(0.55, usable / 560) * cam.zoom;
-    return { sx: cxNow + x1 * s * base, sy: H / 2 + 6 + y2 * s * base, z: z2, s: s * base };
+    var usable = Math.min(W - leftInset() - panelInset(), H - 120 - topInset());
+    var base = Math.max(0.55, usable / 560) * cam.zoom * cam.em;
+    return { sx: cxNow + x1 * s * base, sy: cyNow + y2 * s * base, z: z2, s: s * base };
   }
   function ctrl(a, b, bend) {
     var mx = (a.sx + b.sx) / 2, my = (a.sy + b.sy) / 2, dx = b.sx - a.sx, dy = b.sy - a.sy;
-    var nx = -dy, ny = dx, side = ((mx - cxNow) * nx + (my - H / 2) * ny) >= 0 ? 1 : -1;
+    var nx = -dy, ny = dx, side = ((mx - cxNow) * nx + (my - cyNow) * ny) >= 0 ? 1 : -1;
     return { x: mx + nx * bend * side, y: my + ny * bend * side };
   }
   function qpt(g, s) { var u = 1 - s; return { x: u * u * g.a.sx + 2 * u * s * g.c.x + s * s * g.b.sx, y: u * u * g.a.sy + 2 * u * s * g.c.y + s * s * g.b.sy }; }
@@ -663,8 +730,13 @@
     Object.keys(hubPool).forEach(function (key) { var h = hubPool[key];
       h.x += (h.tx - h.x) * k; h.y += (h.ty - h.y) * k; h.z += (h.tz - h.z) * k; h.alpha += (h.talpha - h.alpha) * Math.min(1, k * 1.3); });
     if (cxNow === null) cxNow = cxTarget(); cxNow += (cxTarget() - cxNow) * Math.min(1, k * 1.2);
+    if (cyNow === null) cyNow = cyTarget(); cyNow += (cyTarget() - cyNow) * Math.min(1, k * 1.2);
+    var fxT = expanded ? expanded.x : 0, fyT = expanded ? expanded.y : 0, fzT = expanded ? expanded.z : 0;
+    if (expanded) { var avail = Math.min(W - leftInset() - panelInset(), H - 120 - topInset()), b0 = Math.max(0.55, avail / 560) * cam.zoom;
+      cam.tem = Math.max(1, Math.min(3.4, 0.34 * avail / ((expanded.openR || 110) * b0 * 0.75))); }
+    cam.fx += (fxT - cam.fx) * k; cam.fy += (fyT - cam.fy) * k; cam.fz += (fzT - cam.fz) * k; cam.em += (cam.tem - cam.em) * k;
     if (sway) { var target = cam.tyaw + (spinning ? 0.32 * Math.sin(t * 0.18) : 0); cam.yaw += (target - cam.yaw) * k * 0.6; }
-    else if (spinning) cam.yaw += 0.13 * Math.min(dt, 0.05);
+    else if (spinning) cam.yaw += (expanded ? 0.04 : 0.13) * Math.min(dt, 0.05);
     cam.pitch += (cam.tpitch - cam.pitch) * k * 0.5;
 
     ctx.clearRect(0, 0, W, H);
@@ -753,8 +825,8 @@
           drawLeaf(p.sx + Math.cos(ang) * r * 1.5, p.sy + Math.sin(ang) * r * 1.5, ang + Math.PI / 2, 6);
         });
         n._p = { x: p.sx, y: p.sy, r: r, live: n.alpha > 0.5 };
-        if (n.alpha > 0.3) labels.push({ x: p.sx, y: p.sy + r + 15, text: n.name, sub: n.count + (n.count === 1 ? " claim" : " claims"),
-          hub: true, color: n.color, alpha: a, pri: 3 + (isSel ? 2 : 0) });
+        if (n.alpha > 0.3 && n !== expanded) labels.push({ x: p.sx, y: p.sy + r + 15, text: n.name, sub: n.count + (n.count === 1 ? " claim" : " claims"),
+          hub: true, color: n.color, alpha: a * (expanded ? 0.45 : 1), pri: expanded ? 1 : 3 + (isSel ? 2 : 0) });
         ctx.globalAlpha = 1;
       } else {
         var d = n.data, col = d.verdict ? VC[d.verdict] : NOT_YET_COL, ring = n.hub && mode !== "network" ? n.hub.color : "#cfe2d4";
@@ -772,25 +844,37 @@
         if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
         n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: true };
         var focused = F && F.ids[n.id];
-        labels.push({ x: p.sx, y: p.sy + r2 + 13, text: n.id, sub: (isHov || isSel || (focused && F.hub)) ? d.title : "", hub: false,
-          alpha: (on ? 1 : 0.25) * fg, pri: isSel || isHov ? 4 : focused ? 2 : p.s > 0.9 ? 1 : 0 });
+        var member = expanded && n.hub === expanded, tagged = labelMode === "tag" || member;
+        var hp = member ? P.get(expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
+        if (!expanded || member || isHov || isSel) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: tagged ? d.title : n.id,
+          sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (d.verdict ? " · " + d.verdict : " · not yet checked") : d.title) : "",
+          hub: false, tag: tagged, color: col, alpha: (on ? 1 : 0.25) * fg, ax: p.sx, ay: p.sy, rr: r2 + 6,
+          dir: member && expanded.claims.length > 1 ? { x: ddx / dl, y: ddy / dl } : null,
+          pri: isSel || isHov ? 4 : member ? 3.5 : focused ? 2 : p.s > 0.9 ? 1 : 0 });
         ctx.globalAlpha = 1;
       }
     });
 
     // labels last, highest priority first, skipping overlaps so hub titles always stay readable
+    if (!showText) labels = [];
     labels.sort(function (a, b) { return b.pri - a.pri; });
     var placed = [];
     labels.forEach(function (L) {
       ctx.font = L.hub ? "700 13px Arial, sans-serif" : "600 11px Arial, sans-serif";
       var w = ctx.measureText(L.text).width, w2 = 0;
       if (L.sub) { ctx.font = L.hub ? "11px Arial, sans-serif" : "italic 11px Arial, sans-serif"; w2 = Math.min(220, ctx.measureText(L.sub).width); }
-      var bw = Math.max(w, w2) + (L.hub ? 18 : 10), bh = L.sub ? 32 : 18, box = { x: L.x - bw / 2, y: L.y - 12, w: bw, h: bh };
-      if (L.pri < 3 && placed.some(function (o) { return box.x < o.x + o.w && box.x + box.w > o.x && box.y < o.y + o.h && box.y + box.h > o.y; })) return;
+      var bw = Math.max(w, w2) + (L.hub ? 18 : 10), bh = L.sub ? 32 : 18;
+      if (L.dir) { // push the label outward from the group centre so an opened group fans its names out
+        var cxl = L.ax + L.dir.x * (L.rr + bw / 2 * Math.abs(L.dir.x)), cyl = L.ay + L.dir.y * (L.rr + bh / 2 * Math.abs(L.dir.y));
+        L.x = cxl; L.y = cyl - bh / 2 + 12;
+      }
+      var box = { x: L.x - bw / 2, y: L.y - 12, w: bw, h: bh };
+      if (L.pri < 3.5 && placed.some(function (o) { return box.x < o.x + o.w && box.x + box.w > o.x && box.y < o.y + o.h && box.y + box.h > o.y; })) return;
       placed.push(box); ctx.globalAlpha = L.alpha;
       if (L.hub) { ctx.fillStyle = "rgba(7,25,17,.78)"; roundRect(box.x, box.y, box.w, box.h, 9); ctx.fill();
         ctx.strokeStyle = rgba(L.color, 0.7); ctx.lineWidth = 1; ctx.stroke(); }
-      else if (L.sub) { ctx.fillStyle = "rgba(7,25,17,.8)"; roundRect(box.x, box.y, box.w, box.h, 7); ctx.fill(); }
+      else if (L.sub || L.tag) { ctx.fillStyle = "rgba(7,25,17,.82)"; roundRect(box.x, box.y, box.w, box.h, 7); ctx.fill();
+        if (L.tag) { ctx.strokeStyle = rgba(L.color, 0.85); ctx.lineWidth = 1.2; ctx.stroke(); } }
       ctx.textAlign = "center"; ctx.fillStyle = "#eef3ef"; ctx.font = L.hub ? "700 13px Arial, sans-serif" : "600 11px Arial, sans-serif";
       ctx.fillText(L.text, L.x, L.y + 1);
       if (L.sub) { ctx.font = L.hub ? "11px Arial, sans-serif" : "italic 11px Arial, sans-serif"; ctx.fillStyle = "#a9c2b1";
@@ -813,14 +897,39 @@
   }
 
   // ------------------------------------------------------------ panels
-  function openPanel(kicker, title, accent) {
-    panel.textContent = ""; panel.style.display = "block"; panel.scrollTop = 0;
-    panel.style.borderTopColor = accent || "#e3a72f";
-    var x = el("button", "x", "×"); x.type = "button"; x.setAttribute("aria-label", "Close"); x.onclick = clearSel; panel.appendChild(x);
-    panel.appendChild(el("div", "id", kicker)); panel.appendChild(el("h3", null, title));
+  // colour helpers for the panel theme
+  function hexRgb(h) { var n = parseInt(h.slice(1), 16); return [n >> 16, (n >> 8) & 255, n & 255]; }
+  function mix(h1, h2, t) { var a = hexRgb(h1), b = hexRgb(h2); return "#" + a.map(function (v, i) { return ("0" + Math.round(v + (b[i] - v) * t).toString(16)).slice(-2); }).join(""); }
+  function lum(h) { var c = hexRgb(h).map(function (v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }); return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]; }
+  function themePanel(col) {
+    var light = lum(col) > 0.36, st = panel.style;
+    st.setProperty("--p-head", col); st.setProperty("--p-head2", mix(col, "#000000", 0.28));
+    st.setProperty("--p-head-ink", light ? mix(col, "#000000", 0.78) : "#ffffff");
+    st.setProperty("--p-bg", mix(col, "#ffffff", 0.9)); st.setProperty("--p-soft", mix(col, "#ffffff", 0.74));
+    st.setProperty("--p-line", mix(col, "#ffffff", 0.62)); st.setProperty("--p-ink", mix(col, "#000000", 0.74));
+    st.setProperty("--p-link", mix(col, "#000000", 0.5)); st.setProperty("--p-muted", mix(col, "#5a6468", 0.55));
+    return light;
   }
-  function fitPanel() { panel.classList.toggle("fit", panel.scrollHeight < stage.clientHeight - 140); }
-  function label(t) { panel.appendChild(el("div", "label", t)); }
+  var pbody = null, wide = false;
+  try { wide = localStorage.getItem("mizien.wide") === "1"; } catch (e) {}
+  function openPanel(kicker, title, accent, pills) {
+    panel.textContent = ""; panel.style.display = "block"; panel.scrollTop = 0;
+    var light = themePanel(accent || "#14452f");
+    panel.classList.toggle("wide", wide);
+    var head = el("div", "phead"), btns = el("div", "hbtns");
+    var w = el("button", "wbtn", wide ? "⤡" : "⤢"); w.type = "button"; w.title = wide ? "Narrow view" : "Wide view";
+    w.setAttribute("aria-label", w.title); w.setAttribute("aria-pressed", wide ? "true" : "false");
+    w.onclick = function () { wide = !wide; try { localStorage.setItem("mizien.wide", wide ? "1" : "0"); } catch (e) {}
+      panel.classList.toggle("wide", wide); w.textContent = wide ? "⤡" : "⤢"; w.title = wide ? "Narrow view" : "Wide view";
+      w.setAttribute("aria-label", w.title); w.setAttribute("aria-pressed", wide ? "true" : "false"); fitPanel(); setTimeout(fitPanel, 400); };
+    var x = el("button", "x", "×"); x.type = "button"; x.setAttribute("aria-label", "Close"); x.onclick = clearSel;
+    btns.appendChild(w); btns.appendChild(x); head.appendChild(btns);
+    head.appendChild(el("div", "id", kicker)); head.appendChild(el("h3", null, title));
+    if (pills && pills.length) { var vl = el("div", "verdictline"); pills.forEach(function (t) { vl.appendChild(el("span", "vpill" + (light ? " dark" : ""), t)); }); head.appendChild(vl); }
+    panel.appendChild(head); pbody = el("div", "pbody"); panel.appendChild(pbody);
+  }
+  function fitPanel() { var need = (panel.firstChild ? panel.firstChild.offsetHeight : 0) + (pbody ? pbody.offsetHeight : 0); panel.classList.toggle("fit", need < stage.clientHeight - 140); }
+  function label(t) { pbody.appendChild(el("div", "label", t)); }
   function claimLink(id, box) {
     var c = byId[id].data, b = el("button", "link"); b.type = "button";
     var dot = el("span", "dot"); dot.style.background = c.verdict ? VC[c.verdict] : NOT_YET_COL;
@@ -848,22 +957,23 @@
 
   function selectClaim(id) {
     var c = byId[id]; if (!c) return; sel = { kind: "claim", id: id };
-    var d = c.data; openPanel(d.id + " · " + d.category.toUpperCase(), d.title, d.verdict ? VC[d.verdict] : NOT_YET_COL);
-    if (d.quote) panel.appendChild(el("blockquote", null, "“" + d.quote + "”"));
-    panel.appendChild(el("p", null, d.claim));
-    if (d.speaker) panel.appendChild(el("p", "small", d.speaker + (d.date ? " · " + d.date : "")));
-    var chips = el("div"), st = el("span", "chip", d.verdict ? d.verdict : d.status);
-    st.style.background = d.verdict ? VC[d.verdict] : "#4b5e56"; chips.appendChild(st);
-    if (d.confidence) chips.appendChild(el("span", "chip soft", d.confidence + " confidence"));
+    var d = c.data;
+    if (expanded && c.hub !== expanded) collapse();
+    var pills = d.verdict ? [d.verdict].concat(d.confidence ? [d.confidence + " confidence"] : []) : [d.status, "not yet checked"];
+    openPanel(d.id + " · " + d.category.toUpperCase(), d.title, d.verdict ? VC[d.verdict] : NOT_YET_COL, pills);
+    if (d.quote) pbody.appendChild(el("blockquote", null, "“" + d.quote + "”"));
+    pbody.appendChild(el("p", null, d.claim));
+    if (d.speaker) pbody.appendChild(el("p", "small", d.speaker + (d.date ? " · " + d.date : "")));
+    var chips = el("div");
     if (d.verdict) chips.appendChild(el("span", "chip soft", d.status + (d.status === "Drafted" ? ", pending right of reply" : "")));
     if (d.wording_status && !d.verdict) chips.appendChild(el("span", "chip soft", d.wording_status));
-    (d.tags || []).forEach(function (t) { chips.appendChild(el("span", "chip soft", t)); }); panel.appendChild(chips);
+    (d.tags || []).forEach(function (t) { chips.appendChild(el("span", "chip soft", t)); }); pbody.appendChild(chips);
     if (d.last_reviewed) {
       var days = c.reviewAgeDays || 0, remaining = Math.max(0, 365 - days);
       label("STUDY FRESHNESS");
-      panel.appendChild(el("p", "small", "Evidence last reviewed " + d.last_reviewed + " · " + (days >= 365 ? "refresh due" : remaining + " days until refresh due") + "."));
+      pbody.appendChild(el("p", "small", "Evidence last reviewed " + d.last_reviewed + " · " + (days >= 365 ? "refresh due" : remaining + " days until refresh due") + "."));
     }
-    if (d.counter) { label("CONTEXT AND EVIDENCE"); panel.appendChild(el("p", null, d.counter)); }
+    if (d.counter) { label("CONTEXT AND EVIDENCE"); pbody.appendChild(el("p", null, d.counter)); }
     var mine = edges.map(function (e, i) { return { e: e, i: i }; }).filter(function (o) { return o.e.from === id || o.e.to === id; });
     if (mine.length) {
       label("LINKED CLAIMS · CLICK A THEME OR A CLAIM"); var box = el("div", "links");
@@ -873,50 +983,53 @@
         tb.style.borderColor = (themeById[o.e.theme] || {}).color || "#7fa88b"; tb.onclick = function () { selectEdge(o.i); };
         row.appendChild(tb); claimLink(other, row); box.appendChild(row);
       });
-      panel.appendChild(box);
+      pbody.appendChild(box);
     }
     var acts = el("div", "acts");
     var outputLabels = { report: "Report", report_pdf: "Report", flyer_pdf: "Flyer PDF", flyer_png: "Flyer image", document: "Document", appendix: "Appendix" };
     Object.keys(d.outputs || {}).forEach(function (key) { addFileAction(acts, outputLabels[key] || key.replace(/[_-]+/g, " "), d.outputs[key]); });
     var rec = el("a", "btn ghost", "Claim record"); rec.href = d.record; rec.target = "_blank"; rec.rel = "noopener"; acts.appendChild(rec);
     if (c.hub && mode !== "network") { var hb = el("button", "btn ghost", c.hub.name); hb.type = "button"; hb.onclick = function () { selectHub(c.hub); }; acts.appendChild(hb); }
-    panel.appendChild(acts); fitPanel();
+    pbody.appendChild(acts); fitPanel();
   }
   function selectHub(h) {
-    sel = { kind: "hub", hub: h }; openPanel(MODES[mode].label.toUpperCase(), h.name, h.color);
+    sel = { kind: "hub", hub: h };
+    var withV = h.claims.filter(function (c) { return c.data.verdict; }).length;
+    openPanel(MODES[mode].label.toUpperCase() + " GROUP", h.name, h.color, [h.count + (h.count === 1 ? " claim" : " claims"), withV + " with a verdict"]);
+    expandHub(h);
     var list = h.claims, done = list.filter(function (c) { return c.data.verdict; }).length, reviewed = h.reviewLeaves || [];
-    panel.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " with a verdict, " + reviewed.length + " completed evidence reviews."));
+    pbody.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " with a verdict, " + reviewed.length + " completed evidence reviews."));
     if (reviewed.length) {
       label("LEAVES · ONE PER COMPLETED REVIEW"); var freshness = el("div", "links");
       reviewed.forEach(function (c) { var age = c.reviewAgeDays || 0;
         freshness.appendChild(el("p", "small", c.id + " · last reviewed " + c.data.last_reviewed + " · " + (age >= 365 ? "refresh due" : Math.max(0, 365 - age) + " days until due"))); });
-      panel.appendChild(freshness);
+      pbody.appendChild(freshness);
     }
     label("CLAIMS IN THIS GROUP"); var box = el("div", "links");
-    list.forEach(function (c) { claimLink(c.id, box); }); panel.appendChild(box);
+    list.forEach(function (c) { claimLink(c.id, box); }); pbody.appendChild(box);
     var also = claims.filter(function (c) { return c.extra.indexOf(h) >= 0; });
-    if (also.length) { label("ALSO TAGGED (SECOND PATTERN)"); var b2 = el("div", "links"); also.forEach(function (c) { claimLink(c.id, b2); }); panel.appendChild(b2); }
+    if (also.length) { label("ALSO TAGGED (SECOND PATTERN)"); var b2 = el("div", "links"); also.forEach(function (c) { claimLink(c.id, b2); }); pbody.appendChild(b2); }
     fitPanel();
   }
   function selectEdge(i) {
     var e = edges[i], th = themeById[e.theme] || {}; sel = { kind: "edge", index: i, edge: e };
-    openPanel("LINK · " + (th.link_type || e.link_type || "").toUpperCase(), th.name || e.theme, th.color);
-    var box = el("div", "links"); claimLink(e.from, box); claimLink(e.to, box); panel.appendChild(box);
-    if (th.description) { label("WHAT CONNECTS THEM"); panel.appendChild(el("p", null, th.description)); }
-    var chips = el("div"); chips.appendChild(el("span", "chip soft", "Strength: " + (e.strength || th.strength))); panel.appendChild(chips);
+    openPanel("LINK · " + (th.link_type || e.link_type || "").toUpperCase(), th.name || e.theme, th.color, [e.from + " ↔ " + e.to]);
+    var box = el("div", "links"); claimLink(e.from, box); claimLink(e.to, box); pbody.appendChild(box);
+    if (th.description) { label("WHAT CONNECTS THEM"); pbody.appendChild(el("p", null, th.description)); }
+    var chips = el("div"); chips.appendChild(el("span", "chip soft", "Strength: " + (e.strength || th.strength))); pbody.appendChild(chips);
     var acts = el("div", "acts"), all = el("button", "btn ghost", "Show every claim in this theme"); all.type = "button";
-    all.onclick = function () { selectTheme(e.theme); }; acts.appendChild(all); panel.appendChild(acts); fitPanel();
+    all.onclick = function () { selectTheme(e.theme); }; acts.appendChild(all); pbody.appendChild(acts); fitPanel();
   }
   function selectTheme(id) {
     var th = themeById[id]; if (!th) return; sel = { kind: "theme", id: id };
     if (!themeOn[id]) { themeOn[id] = true; buildLinkBar(); }
-    openPanel("THEME · " + (th.link_type || "").toUpperCase(), th.name, th.color);
-    if (th.description) panel.appendChild(el("p", null, th.description));
-    var chips = el("div"); chips.appendChild(el("span", "chip soft", "Strength: " + th.strength)); panel.appendChild(chips);
+    openPanel("THEME · " + (th.link_type || "").toUpperCase(), th.name, th.color, [(th.members || []).length + " claims", th.strength]);
+    if (th.description) pbody.appendChild(el("p", null, th.description));
+    var chips = el("div"); chips.appendChild(el("span", "chip soft", "Strength: " + th.strength)); pbody.appendChild(chips);
     label("CLAIMS LINKED BY THIS THEME"); var box = el("div", "links");
-    (th.members || []).forEach(function (m) { if (byId[m]) claimLink(m, box); }); panel.appendChild(box); fitPanel();
+    (th.members || []).forEach(function (m) { if (byId[m]) claimLink(m, box); }); pbody.appendChild(box); fitPanel();
   }
-  function clearSel() { sel = null; panel.style.display = "none"; }
+  function clearSel() { sel = null; panel.style.display = "none"; collapse(); }
 
   function showTip(h, x, y) {
     if (!h) { tip.style.display = "none"; return; }
@@ -971,9 +1084,23 @@
     if (e.target === document.body && /^[1-6]$/.test(e.key)) setMode(MODE_ORDER[+e.key - 1]);
   });
   document.getElementById("spin").onclick = function () { setSpin(!spinning); };
+  function syncLabelButtons() {
+    var lb = document.getElementById("labelmode"), tb = document.getElementById("texttoggle");
+    lb.textContent = labelMode === "tag" ? "Codes" : "Names"; lb.setAttribute("aria-pressed", labelMode === "tag" ? "true" : "false");
+    lb.title = labelMode === "tag" ? "Show claim codes (CC-001)" : "Show claim names instead of codes";
+    tb.textContent = showText ? "Hide text" : "Show text"; tb.setAttribute("aria-pressed", showText ? "false" : "true");
+  }
+  document.getElementById("labelmode").onclick = function () { labelMode = labelMode === "tag" ? "code" : "tag";
+    try { localStorage.setItem("mizien.labels", labelMode); } catch (e) {} syncLabelButtons(); };
+  document.getElementById("texttoggle").onclick = function () { showText = !showText;
+    try { localStorage.setItem("mizien.text", showText ? "on" : "off"); } catch (e) {} syncLabelButtons(); };
+  syncLabelButtons();
   document.getElementById("zoomout").onclick = function () { cam.zoom = Math.max(0.5, cam.zoom / 1.18); };
   document.getElementById("zoomin").onclick = function () { cam.zoom = Math.min(2.8, cam.zoom * 1.18); };
   document.getElementById("reset").onclick = function () { cam.yaw = 0.6; cam.pitch = cam.tpitch; cam.zoom = 1; if (sway) cam.yaw = 0; clearSel(); };
+  document.addEventListener("keydown", function (e) { if (e.target !== document.body) return;
+    if (e.key === "n" || e.key === "N") document.getElementById("labelmode").click();
+    if (e.key === "t" || e.key === "T") document.getElementById("texttoggle").click(); });
   window.addEventListener("resize", resize);
   if (reduce) setSpin(false);
 
