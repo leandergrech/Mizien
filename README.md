@@ -43,7 +43,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-011 | Governance & Promises | 2026 manifesto pledges | Drafted | Not substantiated |
 | CC-012 | Land & Trees | Ta' Qali gravel and grass | Not started | - |
 | CC-013 | Planning & Housing | Permits keep property prices in check | In progress | - |
-| CC-014 | Planning & Housing | Fewer enforcement notices, fewer illegalities | Not started | - |
+| CC-014 | Planning & Housing | Fewer enforcement notices, fewer illegalities | In progress | - |
 | CC-015 | Governance & Promises | 'Three weeks left' at the PA | Not started | - |
 | CC-016 | Air | Shore-to-ship: 90% less harbour pollution | Not started | - |
 | CC-017 | Planning & Housing | Land reclamation outside the Freeport | Not started | - |
