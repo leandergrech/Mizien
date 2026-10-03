@@ -1,42 +1,67 @@
 id: CC-014
 title: Fewer enforcement notices, fewer illegalities
 category: Planning & Housing
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Misleading
+verdict_confidence: Moderate
 claim:
   text: 'Planning Authority CEO Johann Buttigieg (Malta Independent, 7 Sep 2025): the PA once issued over
     1,000 enforcement notices a year and now about 200, which he attributed to fewer illegalities; over
     5,000 cases await direct action and 1,500 illegalities were removed by direct action in 30 years.'
   speaker: Johann Buttigieg, Planning Authority CEO
   date: '2025-09-07'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
   - title: CEO will not say PA failed in enforcement duties, but admits it has struggled
     publisher: The Malta Independent
     date: 7 Sep 2025
     url: https://www.independent.com.mt/articles/2025-09-07/local-news/CEO-will-not-say-PA-failed-in-enforcement-duties-but-admits-it-has-struggled-6736272936
-    note: Source of the 1,000 vs 200 notices and 5,000 pending cases.
+    note: The claim. Read in full 3 Oct 2026. The 'around 200' and 'fewer illegalities' parts are the newspaper's
+      paraphrase; the 1,000 figure and the 'people have recognised' sentence are direct quotes.
+  - title: Planning Authority Annual Report 2024
+    publisher: Planning Authority
+    date: 2025
+    url: https://www.parlament.mt/media/134019/pa-annual-report-2024.pdf
+    note: 'Primary evidence: Compliance Enforcement Directorate, pp. 28-30.'
+  - title: MEPA Annual Reports 2004, 2005, 2006, 2007, 2009, 2010, 2011
+    publisher: Malta Environment and Planning Authority
+    date: 2004-2011
+    url: https://era.org.mt/wp-content/uploads/2019/05/MEPA-Annual-Report-2004.pdf
+    note: 'Primary evidence: notices issued 2001-2011 and complaints; all URLs in literature/CC-014/references.bib.'
   - title: Buttigieg stops short of direct action against Carlo Stivala's new illegal structure
     publisher: The Shift News
     date: 2 Oct 2026
     url: https://theshiftnews.com/2026/10/02/buttigieg-stops-short-of-direct-action-against-carlo-stivalas-new-illegal-structure/
     note: Lead only (current enforcement controversy; not read in full). Context, not the claim.
-  quote: there were too many illegalities for the PA to enforce on everything
-counter_evidence: A fall in notices issued is an input; it can reflect fewer illegalities or less enforcement
-  activity. The CEO himself says clearing the backlog at the current rate would take over 90 years.
-tests: PA annual reports (complaints received, notices issued, direct actions); National Audit Office
-  reports on enforcement; ERA enforcement data.
-why_low_hanging: Counts are in PA annual reports.
+  quote: We had times when we issued over 1,000 enforcement notices per year.
+counter_evidence: 'Notices fell 82% (1,033 a year in 2001-2009 to 187 in 2020-2024) while complaints of illegal
+  development fell 11% since 2009 (2,701 to 2,411) and 35% since 2004/05; complaints were 3,313 in 2020. About
+  half of 2024 complaints were confirmed illegal (~1,200). Notices per 100 complaints fell from about 30-40 to
+  5-10: in 2024, 521 confirmed cases ended in a sanctioning application and 482 in removal by the owner; 162 led
+  to a notice. The PA''s 2024 report attributes the fall in notices to persuading contraveners first.'
+tests: MEPA annual reports 2004-2011; PA Annual Report 2024; reports of PA annual reports 2020 and parliamentary
+  answers 2022-2023; regulatory enforcement literature (context).
+why_low_hanging: 'Done: Claim Check 014 report and flyer.'
 tags:
 - Input-as-outcome
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: Assess the statement, not the person.
+caveats: Draft pending right of reply (Planning Authority). Figures accurate; verdict rests on the omitted
+  change in how cases are handled. Complaints are a proxy for illegal building; 2008 and 2012-2018 missing;
+  2019-2023 figures second-hand. Confirmed cases did fall about a third between 2020 and 2024.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- MEPA Annual Reports 2004-2011 (notices issued 2001-2011; complaints 2004/05, 2009, 2011)
+- Planning Authority Annual Report 2024, pp. 28-30 (2,411 complaints, circa half confirmed; 521 sanctioning
+  applications, 482 removals, 162 notices from complaints; fall attributed to persuasion)
+- data/cc-014/pa_enforcement_series.csv and checks.csv
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-03'

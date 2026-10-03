@@ -1,0 +1,26 @@
+check,value,unit,source,note
+"Years 2001-2009 with over 1,000 notices",5,of 8,MEPA annual reports 2004-2011,"2001: 1369, 2002: 1030, 2003: 760, 2004: 1061, 2005: 1077, 2006: 982, 2007: 865, 2009: 1120"
+"Mean notices a year, 2001-2009",1033,notices,MEPA annual reports 2004-2011,
+"Mean notices a year, 2020-2024",187,notices,PA reports and PQ answers,"2020: 169, 2021: 164, 2022: 180, 2023: 233, 2024: 191"
+"Change in notices, 2001-09 mean to 2020-24 mean",-82,%,calculated,
+"Change in complaints, 2005 (FY 2004/05) to 2024",-35,%,MEPA AR 2005; PA Annual Report 2024,3705 -> 2411
+"Change in complaints, 2009 to 2024",-11,%,MEPA AR 2009; PA Annual Report 2024,2701 -> 2411
+"Change in complaints, 2011 to 2020",57,%,MEPA AR 2011; PA AR 2020 (second-hand),2105 -> 3313
+"Notices per 100 complaints, 2005",29.1,per 100,"MEPA Annual Report 2005, table 3; complaints in the Enforcem",
+"Notices per 100 complaints, 2009",41.5,per 100,"MEPA Annual Report 2009: 880 notices and 1,720 complaints in",
+"Notices per 100 complaints, 2011",29.4,per 100,"MEPA Annual Report 2011: 618 notices; 2,105 complaints on si",
+"Notices per 100 complaints, 2019",7.2,per 100,Derived from PA Annual Report 2020 as reported by MaltaToday,
+"Notices per 100 complaints, 2020",5.1,per 100,PA Annual Report 2020 as reported by MaltaToday; 55% of comp,
+"Notices per 100 complaints, 2023",9.5,per 100,Parliamentary answer as reported by MaltaToday (notices); PA,
+"Notices per 100 complaints, 2024",7.9,per 100,"PA Annual Report 2024, Compliance Enforcement Directorate (p",
+"Complaints confirmed as illegal development, 2024 (about half)",1206,cases,PA Annual Report 2024,"circa half of 2,411"
+  of which: sanctioning application submitted,521,cases,PA Annual Report 2024,
+  of which: removed by contravener before action,482,cases,PA Annual Report 2024,
+"  of which: resolved after persuasion, no notice",87,cases,PA Annual Report 2024,
+  of which: enforcement notice issued,162,cases,PA Annual Report 2024,
+Share of confirmed illegal cases resolved by sanctioning (permit),43,%,PA Annual Report 2024,approximate: denominator is 'circa half'
+"Confirmed illegal cases, 2020 (55% of complaints)",1822,cases,PA AR 2020 (second-hand),
+"Change in confirmed illegal cases, 2020 to 2024",-34,%,calculated,different confirmation shares; approximate
+"Pending notices, end 2021",5382,notices,"PA data to The Malta Independent, 31 Jan 2022",
+"Notices closed by PA direct action, 2020",74,notices,PA AR 2020 (second-hand),
+"Years to clear 5,382 at 2020 direct-action rate",73,years,calculated,consistent with 'more than 90 years' if ~55-60 a year
