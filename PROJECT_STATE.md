@@ -83,8 +83,11 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
   pins at `location` (new optional field in claim.yml: place, lat, lon, scope = site | institution | national;
   validated). National claims sit at the institution (Castille, Parliament, City Gate, PA in Floriana).
 - Districts: Valletta & Floriana opens into a street-level view (click the badge or zoom in); claims elsewhere are
-  parked on an "Elsewhere in Malta" ring so links stay visible. Gozo (Victoria & Ċittadella) and Grand Harbour are
-  defined but locked.
+  parked on an "Elsewhere in Malta" ring so links stay visible: one slot per site near its true bearing, slots
+  kept apart, a site's claims stacked outwards. Every district has its own streets, walls (OSM city_wall / fort) and
+  landmarks in geo.json (`bbox` per district in build_geo.py). Gozo (Victoria & the Ċittadella) unlocked at 15
+  checks (16 on 3 Oct 2026; no Gozo claim yet); Grand Harbour & the Three Cities is built and unlocks at 20. Locked
+  teasers hang below their circle so they do not cover open badges (Grand Harbour overlaps Valletta).
 - Gamification: map layers unlock with completed checks (TIERS in index.html: 0 islands, 3 names/compass, 5 depth
   lines, 7 site names, 9 Valletta district, 12 streets, 15 Gozo district, 20 Grand Harbour, 30 living sea). A HUD
   shows level and the next unlock; a toast announces new layers since the visitor's last visit.
@@ -96,8 +99,8 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
 - Landmark medallions: every claim site has a line-art emblem (claim.yml location.icon; PLACE_ICONS in index.html).
   A site is 'discovered' (gold emblem) once any claim there has a verdict, otherwise a dashed '?'. Click opens a
   panel of its claims; the HUD counts sites discovered. Medallions are spread apart with leaders to their true spot.
-- To do: district geometry for Gozo and Grand Harbour before they unlock (add streets/landmarks in build_geo.py);
-  test on phones; new claims must get a `location` (intake routine updated).
+- To do: a Gozo claim for the Gozo district (none yet; CC-021 Ċirkewwa is on the Malta side); test on phones; new
+  claims must get a `location` (intake routine updated). geo.json is 226 KB with Grand Harbour streets included.
 
 ## Outstanding
 
