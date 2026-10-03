@@ -41,7 +41,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-009 | Water | Reverse osmosis and groundwater | Drafted | Largely supported |
 | CC-010 | Land & Trees | Tree-planting counts | Drafted | Largely supported |
 | CC-011 | Governance & Promises | 2026 manifesto pledges | Drafted | Not substantiated |
-| CC-012 | Land & Trees | Ta' Qali gravel and grass | Not started | - |
+| CC-012 | Land & Trees | Ta' Qali gravel and grass | In progress (primary wording to locate) | - |
 | CC-013 | Planning & Housing | Permits keep property prices in check | In progress | - |
 | CC-014 | Planning & Housing | Fewer enforcement notices, fewer illegalities | In progress | - |
 | CC-015 | Governance & Promises | 'Three weeks left' at the PA | Not started | - |

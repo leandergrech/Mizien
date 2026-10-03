@@ -1,7 +1,7 @@
 id: CC-012
 title: Ta' Qali gravel and grass
 category: Land & Trees
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -33,6 +33,36 @@ claim:
     date: 3 Feb 2026
     url: https://theshiftnews.com/2026/02/03/abelas-expert-took-just-three-days-for-solution-on-ta-qali-grass/
     note: Consultancy dates and rate.
+  - title: 'Momentum inspection on Ta'' Qali gravel shows soil rendered unsuitable for natural vegetation'
+    publisher: The Malta Independent
+    date: 5 Feb 2026
+    url: https://www.independent.com.mt/articles/2026-02-05/local-news/Momentum-inspection-on-Ta-Qali-gravel-shows-soil-rendered-unsuitable-for-natural-vegetation-6736286987
+    note: 'Second-hand report of the Momentum-commissioned expert inspection (22,000 m2 picnic area; two layers, sand over compacted fine gravel). Lead to the Momentum report itself; not retrieved.'
+  - title: 'Independent expert confirms Ta'' Qali picnic area was ''deliberately ruined'''
+    publisher: Newsbook
+    date: Feb 2026
+    url: https://newsbook.com.mt/en/independent-expert-confirms-malta-picnic-area-was-deliberately-ruined/
+    note: 'Second-hand report of the Momentum expert findings. Not retrieved.'
+  - title: 'Ta'' Qali gravel ''blunder'' was intentionally designed to squeeze money out of picnic area, parties claim'
+    publisher: MaltaToday
+    date: Feb 2026
+    url: https://www.maltatoday.com.mt/news/national/139796/ta_qali_gravel_blunder_was_intentionally_designed_to_squeeze_money_out_of_picnic_area_parties_claim
+    note: 'Reports Momentum and PN statements. Not retrieved.'
+  - title: 'Ta'' Qali gravel: Momentum says soil covered with construction-grade gravel'
+    publisher: MaltaToday
+    date: 2025-26
+    url: https://www.maltatoday.com.mt/news/national/139585/momentum_says_ta_qali_soil_covered_with_constructiongrade_gravel
+    note: 'Earlier Momentum statement. Not retrieved.'
+  - title: 'Grass consultant paid EUR 50 an hour to fix Ta'' Qali gravel fiasco'
+    publisher: Newsbook
+    date: Jan-Feb 2026
+    url: https://newsbook.com.mt/en/grass-consultant-paid-e50-an-hour-to-fix-ta-qali-gravel-fiasco/
+    note: 'Consultant rate and timeline. Not retrieved.'
+  - title: 'Abela wades into Ta'' Qali row, endorsing gravel decision but criticising ''communication'''
+    publisher: Newsbook
+    date: Jan 2026
+    url: https://newsbook.com.mt/en/momentum-backs-green-space-protest-as-ta-qali-chief-cries-fake-news/
+    note: 'Reports the PM''s interview remarks. Not retrieved.'
   quote: We will not be making this intervention now, as from April, the area will be hosting concerts,
     and it won't be the right time. However, after the concerts are done, the intervention will happen.
     (PM, as reported)
@@ -47,8 +77,7 @@ tags:
 tags_provisional: true
 priority: Queue
 data_readiness: High
-caveats: 'Check both sides equally: the government''s restoration promise and the PN/Momentum ''permanently
-  barren'' warning. Locate primary statements (PM speech, PN press release, Momentum report).'
+caveats: 'NO VERDICT YET. Verbatim primary wording not located. The PM remark is quoted only as reported (apparently a broadcast interview, Jan 2026; programme and recording not identified). The Momentum report (expert inspection of the 22,000 m2 picnic area) was not retrieved; PN statements of 12 Jan and 6 Feb 2026 relay it. Note attribution: the ''permanently barren'' and ''chokes the grass'' findings originate with Momentum, and PN repeated them. Automated access to Malta Independent, The Shift, Newsbook, pn.org.mt, parlament.mt, Crossref and web.archive.org was blocked in the run environment (3 Oct 2026), so nothing could be verified. Still missing: PM interview recording or transcript; Momentum report PDF; PN press releases; the expert grass report; procurement record for the direct order (Bonnici Brothers Ltd, about EUR 311,000). Check both sides equally once located.'
 right_of_reply:
   sent: null
   deadline: null
