@@ -1,0 +1,8 @@
+check,value,unit,source,note
+Marine Natura 2000 sites,18,sites,EEA,ERA: 18 sites
+"Protected sea area (union, overlaps counted once)",4137.5,km2,EEA,"ERA: over 4,100 km2"
+Sum of site areas (overlaps double-counted),5496.1,km2,EEA,
+Protected share of Fisheries Management Zone (25 nm),36.0,%,calculated,"MiŻien 25 nm buffer gives about 11,650 km2"
+Protected share of Exclusive economic zone (Marine Regions / Protected Planet),7.8,%,calculated,"'just under 53,000 km2'"
+Protected share of Marine waters reported to the EU,5.5,%,calculated,up to 200 nm
+Extra protected area needed for 30% of EU-reported marine waters,18577,km2,calculated,

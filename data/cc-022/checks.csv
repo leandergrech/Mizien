@@ -1,0 +1,19 @@
+check,value,unit,source,note
+"Malta rank, PPS price per kWh, 2024-S2 (1 = cheapest)",1,of 27,Eurostat nrg_pc_204,claim: lowest
+"Malta price 2024-S2, PPS per 100 kWh",14.35,PPS,Eurostat nrg_pc_204,claim: 14.33
+"CZ price 2024-S2, PPS per 100 kWh",41.0,PPS,Eurostat nrg_pc_204,claim: 41.00
+"CY price 2024-S2, PPS per 100 kWh",35.7,PPS,Eurostat nrg_pc_204,claim: 35.70
+"DE price 2024-S2, PPS per 100 kWh",35.23,PPS,Eurostat nrg_pc_204,claim: 35.23
+"Malta rank, nominal EUR price, 2024-S2",3,of 27,Eurostat nrg_pc_204,claim: third lowest
+Malta nominal price 2024-S2,0.1303,EUR/kWh,Eurostat nrg_pc_204,claim: 0.131
+Malta vs EU-27 nominal price 2024-S2,0.45,ratio,Eurostat nrg_pc_204,
+MT nominal price change 2020-S1 -> 2025-S2,-0.2,%,Eurostat nrg_pc_204,
+EU27_2020 nominal price change 2020-S1 -> 2025-S2,35.4,%,Eurostat nrg_pc_204,
+"Malta rank, PPS price, 2025-S2 (latest)",1,of 27,Eurostat nrg_pc_204,
+Energy subsidies 2022,325,EUR million,IMF CR 26/29 x Eurostat GDP,1.8% of GDP
+Energy subsidies 2023,293,EUR million,IMF CR 26/29 x Eurostat GDP,1.4% of GDP
+Energy subsidies 2024,208,EUR million,IMF CR 26/29 x Eurostat GDP,0.9% of GDP
+Energy subsidies 2025,197,EUR million,IMF CR 26/29 x Eurostat GDP,0.8% of GDP
+"Energy subsidies 2022-2025, total",1022,EUR million,calculated,
+"Unable to keep home adequately warm, 2025: Malta vs EU-27",7.6 vs 8.8,% of people,Eurostat ilc_mdes01,
+"Arrears on utility bills, 2025: Malta vs EU-27",4.5 vs 7.0,% of people,Eurostat ilc_mdes07,

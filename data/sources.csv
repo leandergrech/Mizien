@@ -240,3 +240,7 @@ Ref,Claim IDs,Source,Publisher,Date,Type,Reliability note,URL
 230,CC-098,Visit Malta officials filmed telling citizens to leave deckchair-occupied beach in Comino,The Shift News,24 Jun 2026,News / locator,NGO claim with video.,https://theshiftnews.com/2026/06/24/visit-malta-officials-filmed-telling-citizens-to-leave-deckchair-occupied-beach-in-comino/
 231,CC-099,Malta's demographic shift: A growing foreign workforce,Malta Business Weekly,n/d,News / locator,Media claim.,https://maltabusinessweekly.com/maltas-demographic-shift-a-growing-foreign-workforce/29055/
 232,CC-100,Facts and Figures,Malta International Airport,2026,Primary statement,Company figures.,https://maltairport.com/corporate/our-airport/facts-and-figures/
+233,CC-022,nrg_pc_204: Electricity prices for household consumers,Eurostat,2026,Dataset,data/cc-022/,https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table
+234,CC-022,"Malta: 2025 Article IV Consultation (IMF CR 26/29), energy subsidies",International Monetary Fund,Feb 2026,Official assessment,"Table 2, p.33",https://www.imf.org/-/media/files/publications/cr/2026/english/1mltea2026001-source-pdf.pdf
+235,CC-051,"Natura 2000 sites (2024 release), Malta marine sites",European Environment Agency,2025,Dataset,data/cc-051/,https://bio.discomap.eea.europa.eu/arcgis/rest/services/ProtectedSites/Natura2000Sites/MapServer
+236,CC-051,Biodiversity Information System for Europe: Malta,European Commission / EEA,2026,EU dataset page,"Marine area over 75,000 km2",https://biodiversity.europa.eu/countries/malta

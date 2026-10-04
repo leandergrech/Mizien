@@ -2,37 +2,55 @@ id: CC-051
 title: '''Over 30% of our seas protected'''
 category: Nature & Wildlife
 subtopic: Marine protection
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Misleading
+verdict_confidence: Moderate
 claim:
-  text: 'Environment Minister / ERA: Malta protects more than 30% of its maritime zone (ERA: over 35% designated
-    as Marine Protected Areas).'
-  speaker: Environment Minister; Environment and Resources Authority
+  text: 'Environment Minister Miriam Dalli (2025, as quoted by Amphora Media): ''Malta protects more than 30% of
+    its maritime zone''. ERA: the marine Natura 2000 network of 18 sites covers over 4,100 km2, ''more than 35%
+    of Malta''s Fisheries Management Zone''.'
+  speaker: Miriam Dalli, Environment Minister; Environment and Resources Authority (ERA)
   date: '2025'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
+  - title: Marine Protected Areas
+    publisher: Environment and Resources Authority
+    date: n/d
+    url: https://era.org.mt/topic/marine-protected-areas-2/
+    note: ERA's qualified wording (FMZ). Read in a browser 4 Oct 2026.
   - title: 'FATTI: Does Malta protect about one-third of its seas?'
     publisher: Amphora Media
     date: Aug 2025
     url: https://www.amphora.media/2025/08/fatti-malta-protect-sea-marine-environment
-    note: Prior media fact-check; locates both statements.
-counter_evidence: International databases give 5.5-7.8%; the difference is the reference area (Fisheries Management
-  Zone vs EEZ or territorial waters).
-tests: EEA/BISE, Protected Planet, MPAtlas; ERA MPA boundaries.
-why_low_hanging: A specific, attributable statement that public data can test.
+    note: Quotes the minister (second-hand) and ERA 2021; prior fact-check.
+  quote: Malta protects more than 30% of its maritime zone, through Natura 2000 sites, scientific monitoring, and
+    a €2 million conservation programme.
+counter_evidence: 'EEA boundaries: 18 marine Natura 2000 sites, 4,137.5 km2 of sea (union). That is 36.0% of the
+  25-nm Fisheries Management Zone (11,480 km2), 7.8% of the EEZ as mapped internationally (~52,900 km2) and 5.5%
+  of the 75,715 km2 Malta reports to the EU (BISE). Reaching 30% on the EU basis needs ~18,600 km2 more. ERA names
+  the FMZ; the minister''s ''maritime zone'' does not.'
+tests: EEA Natura 2000 boundaries (2024); FMZ, EEZ and EU-reported reference areas; BISE country page.
+why_low_hanging: 'Done: Claim Check 051 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: Right of reply to the Environment Ministry and ERA not yet sent. Minister's words second-hand (Amphora).
+  Designation only; management not assessed.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- EEA Natura 2000 marine site areas (data/cc-051/natura2000_marine.csv)
+- Reference areas (data/cc-051/reference_areas.csv)
+- ERA topic page; BISE Malta page
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-04'
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
   lat: 35.8959
