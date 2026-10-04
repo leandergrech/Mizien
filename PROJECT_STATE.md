@@ -164,6 +164,14 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
 - [ ] Check the name and a domain are free; enable GitHub Pages (main, /docs).
 - [ ] CC-002: obtain the full permit annex/species schedule and follow-up transplant-survival and habitat-monitoring data if publicly available. Keep all analysis to science; do not comment on the tribunal. The 3 October automated archive attempt hit DNS resolution failures for the two direct ERA releases and most other new sources; do not label these failures robots-disallowed. The older generic ERA press-releases entry is robots-disallowed. Archive direct pages manually when available.
 
+- **Foreign and EU claims about Malta (maintainer, 4 Oct 2026):** claims made about Malta by EU institutions,
+  international bodies and foreign speakers are checked like local ones; the intake was skewed towards local
+  speakers and now aims for at least 2 of every 10 new claims from them. CC-020 is the first: its claimant is now
+  the Feb 2026 study for the EP Petitions Committee (Hjerp and Coffey, Ecocentric; doi:10.2861/6278624), with
+  verbatim passages in `literature/CC-020/primary-source.md`. Unblocked for worker C.
+- **Claims waiting on the maintainer** show as `In progress` (queue Blocker `source:` or `needs maintainer`); see
+  `methodology/automation.md`. There is no cap on the number of claims.
+
 ## How to resume a session
 
 1. Clone the repository (it is public) and read this file, `README.md` and `data/claims.csv`.
