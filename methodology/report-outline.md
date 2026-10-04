@@ -12,3 +12,9 @@
 10. **Limitations**, **References**, **Appendices** (scale and standards; revision log).
 
 Design tokens and generators are in `tools/cc-001-report/` and `PROJECT_STATE.md`.
+
+**Web version.** Each claim page carries the full report as HTML, made by `tools/report_html.py` from the same
+content as the PDF (the build script's story) with the figures taken from the published `report.pdf`, and then the
+downloads (report PDF, flyer PDF, flyer image). CI regenerates it on every build; it is not committed. Build with
+the helpers in `tools/mizien_report.py` so the web version gets the same structure (key points, tables, contested
+questions); `python tools/report_html.py CC-NNN` reports the share of the PDF's words present (it must be "ok").

@@ -23,7 +23,7 @@ WORKING METHOD FOR A CLAIM
 2. Split the claim into checkable sub-claims.
 3. Collect literature into literature/CC-NNN/ (references.bib, notes.md noting full text / abstract / second-hand, gaps). Test numbers with formulas or scripts, not by eye; save them in data/ with the source and retrieval date.
 4. Grade the evidence (A to D), show disagreements side by side, state what would change the verdict.
-5. Build the report and flyer from tools/cc-001-report/ and methodology/report-outline.md. Match the CC-001 design. Output to claims/CC-NNN/.
+5. Build the report and flyer from tools/cc-001-report/ and methodology/report-outline.md. Match the CC-001 design. Output to claims/CC-NNN/. The claim page shows the full report as HTML, built from report.pdf and build_report.py by tools/report_html.py (CI does this on every build); run python tools/report_html.py CC-NNN to check it reports "ok".
 6. Update claim.yml (status, verdict, tags, outputs), the Connections themes and edges if the claim links to others, and the README claims table.
 
 FIRST TASKS, IN ORDER
