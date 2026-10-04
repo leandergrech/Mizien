@@ -11,20 +11,22 @@
 <meta name="robots" content="noindex">
 {%- endif %}
 <link rel="canonical" href="{{ page.url | absoluteUrl }}">
+{%- if pager and pager.prev %}
+<link rel="prev" href="{{ pager.prev.path }}">
+{%- endif %}
+{%- if pager and pager.next %}
+<link rel="next" href="{{ pager.next.path }}">
+{%- endif %}
 <meta name="theme-color" content="#0e2a1f">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/tabs.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
   <a class="brand" href="/">{% include "brand-mark.njk" %}<span>{{ site.name }}</span></a>
-  <nav aria-label="Main">
-    <a href="/">Map</a>
-    <a href="/claims/"{% if page.url == "/claims/" %} aria-current="page"{% endif %}>All claims</a>
-    <a href="/methodology/how-a-verdict-is-reached/"{% if page.url == "/methodology/how-a-verdict-is-reached/" %} aria-current="page"{% endif %}>How we check</a>
-    <a href="{{ site.repo }}/blob/main/CORRECTIONS.md">Corrections</a>
-  </nav>
+  {%- include "nav.njk" %}
 </header>
 <main id="main">
 {{ content | safe }}

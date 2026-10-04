@@ -1,0 +1,14 @@
+{#- Main tabs, shared by every page (the map homepage includes it too). -#}
+{%- set tabs = [
+  ["/", "Map", "map"],
+  ["/claims/", "All claims", "list"],
+  ["/methodology/how-a-verdict-is-reached/", "How we check", "scale"],
+  ["/about/disclaimer/", "About the checks", "info"],
+  [site.repo + "/blob/main/CORRECTIONS.md", "Corrections", "pencil"]
+] %}
+<nav class="tabs" aria-label="Main">
+  {%- for t in tabs %}
+  {%- set here = (t[0] == "/" and page.url == "/") or (t[0] != "/" and page.url and page.url.startsWith(t[0])) %}
+  <a class="tab{% if here %} is-current{% endif %}" href="{{ t[0] }}"{% if here %} aria-current="page"{% endif %}>{% icon t[2] %}<span>{{ t[1] }}</span></a>
+  {%- endfor %}
+</nav>
