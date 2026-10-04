@@ -82,6 +82,86 @@ h1, h2 { font-family: var(--serif); line-height: 1.2; }
 .files li, .linked li { margin: 0 0 6px; }
 .check-meta { margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--paper-line); }
 
+/* ---------------------------------------------------------------- reading pages (methodology, about) */
+.prose-page { background: var(--paper); color: var(--paper-ink); border-radius: 16px; padding: 26px 30px 30px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.35); }
+.prose-page > * { max-width: 78ch; }
+.prose-page a { color: var(--paper-link); }
+.prose-page h1 { color: #14452f; margin: 4px 0 10px; font-size: clamp(28px, 5vw, 40px); }
+.prose-page h2 { font-size: 23px; color: #14452f; margin: 30px 0 10px; padding-top: 18px; border-top: 1px solid var(--paper-line); }
+.prose-page h3 { font: 700 17px/1.3 var(--sans); color: #14452f; margin: 18px 0 6px; }
+.prose-page .small { color: var(--paper-muted); }
+.prose-page li { margin-bottom: 6px; }
+.page-head .kicker { margin: 0; font: 700 12px/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--paper-muted); }
+.lead { font: 19px/1.55 var(--serif); }
+.st-draft { --v: #e3a72f; --v-ink: #13301f; }
+.st-published { --v: #7fa88b; --v-ink: #13301f; }
+.st-candidate { --v: #5d7468; --v-ink: #ffffff; }
+
+/* the nine steps: a numbered flow with a connecting line */
+.flow { list-style: none; margin: 14px 0 0; padding: 0; max-width: none; display: grid; gap: 0; counter-reset: none; }
+.flow-step { position: relative; display: grid; grid-template-columns: 52px 1fr; gap: 0 16px; padding: 0 0 18px; margin: 0; }
+.flow-step:not(:last-child)::before { content: ""; position: absolute; left: 25px; top: 52px; bottom: 0; width: 2px;
+  background: linear-gradient(#7fa88b, #d9e2db); }
+.flow-icon { width: 52px; height: 52px; border-radius: 50%; background: #14452f; display: grid; place-items: center;
+  box-shadow: 0 0 0 4px #e6efe8; }
+.flow-icon svg { width: 26px; height: 26px; fill: none; stroke: #f6f4ee; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.flow-step:nth-child(7) .flow-icon { background: #e3a72f; }
+.flow-step:nth-child(7) .flow-icon svg { stroke: #13301f; }
+.flow-text h3 { margin: 4px 0 4px; font-size: 18px; }
+.flow-n { display: inline-block; min-width: 1.6em; color: var(--paper-muted); font-weight: 700; }
+.flow-text p { margin: 0 0 4px; }
+.flow-open { font-size: 14px; color: var(--paper-muted); }
+.flow-open span { font-weight: 700; color: #14452f; }
+@media (min-width: 900px) {
+  .flow { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .flow-step { grid-template-columns: 1fr; padding: 16px; background: #fff; border: 1px solid var(--paper-line); border-radius: 12px; }
+  .flow-step::before { display: none; }
+  .flow-icon { margin-bottom: 10px; }
+}
+
+/* source ladder: higher tiers weigh more */
+.ladder { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; }
+.tier { display: flex; align-items: flex-start; gap: 12px; padding: 10px 14px; border-radius: 10px; background: #e6efe8;
+  border-left: 6px solid #14452f; }
+.tier-2 { margin-left: 3%; border-left-color: #2e7d4f; }
+.tier-3 { margin-left: 6%; border-left-color: #7fa88b; }
+.tier-4 { margin-left: 9%; background: transparent; border: 2px dashed #b9c6bd; border-left-width: 6px; }
+.tier-n { flex: none; width: 28px; height: 28px; border-radius: 50%; background: #14452f; color: #fff; display: grid; place-items: center; font-weight: 700; }
+
+/* evidence grades A-D */
+.grades { list-style: none; padding: 0; margin: 12px 0 8px; display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.grade { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 10px; background: #fff; border: 1px solid var(--paper-line); }
+.grade-letter { flex: none; width: 40px; height: 40px; border-radius: 8px; display: grid; place-items: center; font: 700 22px var(--serif); color: #fff; }
+.grade-a .grade-letter { background: #14452f; } .grade-b .grade-letter { background: #2e7d4f; }
+.grade-c .grade-letter { background: #56636a; } .grade-d .grade-letter { background: #8a6d3b; }
+
+/* verdict spectrum */
+.spectrum { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 8px; max-width: none; }
+.spectrum li { display: grid; grid-template-columns: 170px 1fr; gap: 6px 14px; align-items: start; padding: 12px 14px;
+  border-radius: 12px; background: #fff; border: 1px solid var(--paper-line); border-left: 6px solid var(--v); }
+.spectrum .badge { justify-self: start; font-size: 13px; }
+@media (max-width: 640px) { .spectrum li { grid-template-columns: 1fr; } }
+.rules li { margin-bottom: 8px; }
+
+/* confidence */
+.confidence { list-style: none; padding: 0; }
+.confidence li { display: flex; gap: 10px; align-items: center; }
+.pips { display: inline-flex; gap: 3px; }
+.pips i { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #14452f; }
+.pips i.on { background: #14452f; }
+
+/* illustrative example */
+.example { margin-top: 30px; padding: 18px 20px; border-radius: 14px; background: #fff; border: 2px dashed #b9c6bd; max-width: 78ch; }
+.example h2 { border-top: 0; padding-top: 0; margin-top: 0; }
+.example-note { color: #8a3a12; }
+.outcomes { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 12px 0; }
+.outcome { padding: 12px; border-radius: 10px; border-left: 6px solid var(--v); background: #f6f4ee; }
+.outcome p { margin: 6px 0 0; }
+.outcome .badge { margin: 0; }
+.stages div { display: grid; grid-template-columns: 150px 1fr; gap: 12px; margin-bottom: 12px; }
+@media (max-width: 640px) { .prose-page { padding: 18px 18px 22px; border-radius: 12px; } .stages div { grid-template-columns: 1fr; gap: 4px; } }
+
 /* ---------------------------------------------------------------- claims list */
 .table-wrap { overflow-x: auto; }
 table.claims { width: 100%; border-collapse: collapse; font-size: 15px; }
