@@ -21,9 +21,23 @@ permalink: "/claims/{{ claim.id }}/"
       {%- if c.verdict_confidence %} <span class="pill">{{ c.verdict_confidence }} confidence</span>{% endif %}
       <span class="pill">{{ c.status_label }}</span>
     </p>
+    {%- if c.files.length %}
+    <ul class="head-downloads" aria-label="Download">
+      {%- for f in c.files %}
+      <li><a class="dl-chip" href="{{ f.url }}" download="{{ c.id }}-{{ f.name }}">{% icon "download" %}{{ f.label }}<span>{{ f.type }}{% if f.bytes %} · {{ f.bytes | fileSize }}{% endif %}</span></a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
   </header>
 
   <div class="check-body{% if c.report_html %} has-report{% endif %}">
+    <nav class="page-tabs" aria-label="On this page">
+      {%- if c.report_html %}<a href="#report">{% icon "report" %}<span>Report</span></a>{% else %}<a href="#h-claim">{% icon "report" %}<span>The claim</span></a>{% endif %}
+      <a href="#h-sources">{% icon "sources" %}<span>Sources</span></a>
+      <a href="#h-reply">{% icon "reply" %}<span>Right of reply</span></a>
+      {%- if c.links.length %}<a href="#h-links">{% icon "links" %}<span>Linked claims</span></a>{% endif %}
+      {%- if c.files.length %}<a href="#h-downloads">{% icon "download" %}<span>Downloads</span></a>{% endif %}
+    </nav>
     {%- if c.is_draft and c.verdict %}
     <aside class="notice" aria-label="Draft notice">
       <p><strong>This is a draft check.</strong> The body concerned has not yet had the chance to reply, and the verdict
@@ -33,7 +47,7 @@ permalink: "/claims/{{ claim.id }}/"
     {%- endif %}
 
     {%- if c.report_html %}
-    <section class="report-wrap" aria-label="Full report">
+    <section class="report-wrap" id="report" aria-label="Full report">
       {{ c.report_html | safe }}
     </section>
     {%- else %}
@@ -152,7 +166,7 @@ permalink: "/claims/{{ claim.id }}/"
         <ul class="download-buttons">
           {%- for f in c.files %}
           <li><a class="btn-download" href="{{ f.url }}" download="{{ c.id }}-{{ f.name }}">
-            <span class="dl-label">{{ f.label }}</span>
+            <span class="dl-label">{% icon "download" %}{{ f.label }}</span>
             <span class="dl-meta">{{ f.type }}{% if f.bytes %} · {{ f.bytes | fileSize }}{% endif %}</span></a></li>
           {%- endfor %}
         </ul>
@@ -176,3 +190,41 @@ permalink: "/claims/{{ claim.id }}/"
     </footer>
   </div>
 </article>
+
+{%- if pager %}
+<nav class="pager" aria-label="All claims, by number">
+  {%- if pager.prev %}<a class="pager-step" href="{{ pager.prev.path }}">{% icon "prev" %}<span>Previous</span></a>
+  {%- else %}<span class="pager-step is-off">{% icon "prev" %}<span>Previous</span></span>{% endif %}
+  <ol>
+    {%- for p in pager.pages %}
+    {%- if p.gap %}<li class="pager-gap" aria-hidden="true">…</li>
+    {%- else %}<li><a class="pg v-{{ p.verdict_slug or 'none' }}{% if p.current %} is-current{% endif %}" href="{{ p.path }}" title="{{ p.id }}: {{ p.title }}"{% if p.current %} aria-current="page"{% endif %}>{{ p.n }}</a></li>{% endif %}
+    {%- endfor %}
+  </ol>
+  {%- if pager.next %}<a class="pager-step" href="{{ pager.next.path }}"><span>Next</span>{% icon "next" %}</a>
+  {%- else %}<span class="pager-step is-off"><span>Next</span>{% icon "next" %}</span>{% endif %}
+  <p class="pager-count">Claim {{ pager.index }} of {{ pager.total }} · the dot under each number is its verdict colour<span class="pager-keys"> · ← → keys also work</span></p>
+</nav>
+
+<nav class="claim-flip" aria-label="Previous and next claim">
+  {%- if pager.prev %}
+  <a class="flip flip-prev" href="{{ pager.prev.path }}" aria-label="Previous claim: {{ pager.prev.id }}, {{ pager.prev.title }}">{% icon "prev" %}<span class="flip-label"><b>{{ pager.prev.id }}</b> <span>{{ pager.prev.title }}</span></span></a>
+  {%- endif %}
+  {%- if pager.next %}
+  <a class="flip flip-next" href="{{ pager.next.path }}" aria-label="Next claim: {{ pager.next.id }}, {{ pager.next.title }}"><span class="flip-label"><b>{{ pager.next.id }}</b> <span>{{ pager.next.title }}</span></span>{% icon "next" %}</a>
+  {%- endif %}
+</nav>
+<script>
+  // ← and → move between claims (not while typing, and not with modifier keys).
+  (function () {
+    var prev = document.querySelector(".claim-flip .flip-prev"), next = document.querySelector(".claim-flip .flip-next");
+    document.addEventListener("keydown", function (e) {
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || e.defaultPrevented) return;
+      var t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      if (e.key === "ArrowLeft" && prev) location.href = prev.href;
+      if (e.key === "ArrowRight" && next) location.href = next.href;
+    });
+  })();
+</script>
+{%- endif %}
