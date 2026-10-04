@@ -54,3 +54,6 @@ location:
   lon: 14.51194
   scope: site
   icon: barrakka
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 0 studies
+  caption: of short-term concrete over tree roots

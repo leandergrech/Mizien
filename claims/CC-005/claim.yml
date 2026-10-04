@@ -76,3 +76,6 @@ location:
   lon: 14.50907
   scope: national
   icon: citygate
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 92%
+  caption: of bathing sites rated excellent in 2023 (80 of 87)

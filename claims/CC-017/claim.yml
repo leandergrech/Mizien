@@ -68,3 +68,6 @@ location:
   lon: 14.53085
   scope: site
   icon: crane
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: +3.7 ha
+  caption: new land at Freeport Terminal 2 since 2023

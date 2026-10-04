@@ -56,3 +56,6 @@ location:
   lon: 14.50907
   scope: national
   icon: citygate
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: −10.7%
+  caption: house price-to-income ratio, 2015–2024 (Eurostat)

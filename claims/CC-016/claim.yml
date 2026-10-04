@@ -66,3 +66,6 @@ location:
   lon: 14.50753
   scope: site
   icon: waterfront
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 9%
+  caption: of cruise berth time plugged in, Jul 2024 – Jul 2025

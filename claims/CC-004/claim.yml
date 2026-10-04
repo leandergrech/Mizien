@@ -77,3 +77,6 @@ location:
   lon: 14.44073
   scope: site
   icon: landfill
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 16.7%
+  caption: of municipal waste actually recycled in 2024 (target 55%)

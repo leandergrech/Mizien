@@ -65,3 +65,6 @@ location:
   lon: 14.50314
   scope: institution
   icon: ravelin
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: +34%
+  caption: real house prices, 2015–2025 (EU +25%)

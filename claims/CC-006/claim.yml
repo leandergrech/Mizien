@@ -97,3 +97,6 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 99.3%
+  caption: Quail quota as a share of the legal benchmark

@@ -88,3 +88,6 @@ location:
   lon: 14.48285
   scope: site
   icon: ro_plant
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 70.7%
+  caption: of WSC water from reverse osmosis in 2025

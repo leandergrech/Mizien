@@ -75,3 +75,6 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: −44%
+  caption: emissions per person since 2005, as claimed

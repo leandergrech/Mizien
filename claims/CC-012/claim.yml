@@ -117,3 +117,6 @@ location:
   lon: 14.4192
   scope: site
   icon: park
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: '0.11'
+  caption: winter greenness after the gravel, down from 0.37–0.47
