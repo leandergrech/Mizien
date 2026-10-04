@@ -1,0 +1,160 @@
+---
+layout: base.njk
+pagination:
+  data: mizien.claims
+  size: 1
+  alias: claim
+permalink: "/claims/{{ claim.id }}/"
+---
+{%- set c = claim -%}
+{%- set verdictInfo = mizien.verdicts | findBy("name", c.verdict) -%}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/claims/">Claims</a></li><li aria-current="page">{{ c.id }}</li></ol>
+</nav>
+
+<article class="check v-{{ c.verdict_slug or 'none' }}">
+  <header class="check-head">
+    <p class="kicker">{{ c.id }} · {{ c.category }}{% if c.subtopic %} · {{ c.subtopic }}{% endif %}</p>
+    <h1>{{ c.title }}</h1>
+    <p class="verdictline">
+      <span class="verdict">{{ c.verdict or "Not yet checked" }}</span>
+      {%- if c.verdict_confidence %} <span class="pill">{{ c.verdict_confidence }} confidence</span>{% endif %}
+      <span class="pill">{{ c.status_label }}</span>
+    </p>
+  </header>
+
+  <div class="check-body">
+    {%- if c.is_draft and c.verdict %}
+    <aside class="notice" aria-label="Draft notice">
+      <p><strong>This is a draft check.</strong> The body concerned has not yet had the chance to reply, and the verdict
+         may change in light of its response or new evidence. A verdict applies to the statement as worded on the date
+         it was made; it is not a judgement of anyone's motives.</p>
+    </aside>
+    {%- endif %}
+
+    <section aria-labelledby="h-claim">
+      <h2 id="h-claim">The claim</h2>
+      {%- if c.claim.quote %}
+      <blockquote><p>“{{ c.claim.quote }}”</p></blockquote>
+      {%- endif %}
+      <p>{{ c.claim.text }}</p>
+      <dl class="facts">
+        <div><dt>Who</dt><dd>{{ c.claim.speaker }}</dd></div>
+        {%- if c.claim.date %}<div><dt>When</dt><dd>{{ c.claim.date | ukDate }}</dd></div>{% endif %}
+        <div><dt>Wording</dt><dd>{{ c.claim.wording_status }}</dd></div>
+      </dl>
+    </section>
+
+    {%- if c.verdict %}
+    <section aria-labelledby="h-verdict">
+      <h2 id="h-verdict">Verdict</h2>
+      <p><strong>{{ c.verdict }}</strong>{% if c.verdict_confidence %}, {{ c.verdict_confidence | lower }} confidence{% endif %}.
+         {%- if verdictInfo %} <span class="def">{{ c.verdict }}: {{ verdictInfo.meaning }}</span>{% endif %}</p>
+      <p class="small"><a href="{{ site.repo }}/blob/main/methodology/verdict-scale.md">How verdicts and confidence levels are defined</a></p>
+    </section>
+    {%- endif %}
+
+    {%- if c.counter_evidence %}
+    <section aria-labelledby="h-evidence">
+      <h2 id="h-evidence">{% if c.verdict %}What the evidence shows{% else %}Context{% endif %}</h2>
+      <p>{{ c.counter_evidence }}</p>
+    </section>
+    {%- endif %}
+
+    {%- if c.evidence_shown and c.evidence_shown.length %}
+    <section aria-labelledby="h-shown">
+      <h2 id="h-shown">Documents and data the verdict rests on</h2>
+      <ul>{% for e in c.evidence_shown %}<li>{{ e }}</li>{% endfor %}</ul>
+    </section>
+    {%- endif %}
+
+    {%- if c.limitations %}
+    <section aria-labelledby="h-limits">
+      <h2 id="h-limits">Limitations</h2>
+      <p>{{ c.limitations }}</p>
+    </section>
+    {%- endif %}
+
+    {%- if c.tests %}
+    <section aria-labelledby="h-tests">
+      <h2 id="h-tests">{% if c.verdict %}Tested against{% else %}What it will be tested against{% endif %}</h2>
+      <p>{{ c.tests }}</p>
+    </section>
+    {%- endif %}
+
+    {%- if c.files.length %}
+    <section aria-labelledby="h-files">
+      <h2 id="h-files">Report and flyer</h2>
+      <ul class="files">
+        {%- for f in c.files %}
+        <li><a href="{{ f.url }}">{{ f.label }}</a> <span class="small">{{ f.type }}{% if f.bytes %}, {{ f.bytes | fileSize }}{% endif %}</span></li>
+        {%- endfor %}
+      </ul>
+    </section>
+    {%- endif %}
+
+    <section aria-labelledby="h-sources">
+      <h2 id="h-sources">Sources</h2>
+      {%- if c.sources.length %}
+      <ol class="sources">
+        {%- for s in c.sources %}
+        <li>
+          <cite>{{ s.title }}</cite>{% if s.publisher %}, {{ s.publisher }}{% endif %}{% if s.date %}, {{ s.date }}{% endif %}.
+          <span class="links">
+            {%- if s.archive.state == "offline" %} No public link ({{ s.url }}).
+            {%- else %} <a href="{{ s.url }}" rel="nofollow">Original</a>
+              {%- if s.archive.url %} · <a href="{{ s.archive.url }}" rel="nofollow">Archived copy</a>
+              {%- elif s.archive.state == "hashed" %} · <span class="small">fetched and fingerprinted {{ s.archive.retrieved_utc | truncate(10, true, "") }}; no public snapshot yet</span>
+              {%- else %} · <span class="small">not yet archived</span>{% endif %}
+            {%- endif %}
+          </span>
+          {%- if s.note %}<br><span class="small">{{ s.note }}</span>{% endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+      {%- else %}
+      <p>No sources recorded yet.</p>
+      {%- endif %}
+    </section>
+
+    <section aria-labelledby="h-reply">
+      <h2 id="h-reply">Right of reply</h2>
+      {%- set ror = c.right_of_reply or {} %}
+      {%- if ror.response %}
+      <p>{{ ror.response }}</p>
+      {%- elif ror.sent %}
+      <p>A draft was sent to the body concerned on {{ ror.sent | ukDate }}{% if ror.deadline %}, with a deadline of {{ ror.deadline | ukDate }}{% endif %}. Its response will be published here.</p>
+      {%- elif c.verdict %}
+      <p>The body concerned has not yet been asked to reply. Its response will be published here, beside the verdict.</p>
+      {%- else %}
+      <p>Not applicable until a draft verdict exists.</p>
+      {%- endif %}
+    </section>
+
+    {%- if c.links.length %}
+    <section aria-labelledby="h-links">
+      <h2 id="h-links">Linked claims</h2>
+      <ul class="linked">
+        {%- for l in c.links %}
+        <li><a href="/claims/{{ l.id }}/">{{ l.id }}: {{ l.title }}</a> <span class="small">{{ l.theme }} ({{ l.link_type | lower }}, {{ l.strength | lower }})</span></li>
+        {%- endfor %}
+      </ul>
+    </section>
+    {%- endif %}
+
+    <footer class="check-meta">
+      <dl class="facts">
+        {%- if c.version %}<div><dt>Version</dt><dd>{{ c.version }}</dd></div>{% endif %}
+        {%- if c.last_reviewed %}<div><dt>Evidence last reviewed</dt><dd>{{ c.last_reviewed | ukDate }}</dd></div>{% endif %}
+        {%- if c.tags.length %}
+        <div><dt>Pattern{% if c.tags.length > 1 %}s{% endif %}{% if c.tags_provisional %} (provisional){% endif %}</dt>
+          <dd>{% for t in c.tags %}{% set p = mizien.patterns | findBy("name", t) %}<span title="{{ p.meaning if p }}">{{ t }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+        {%- endif %}
+      </dl>
+      <p class="small">
+        <a href="{{ c.record_url }}">Claim record (claim.yml)</a> ·
+        <a href="{{ site.repo }}/issues/new?template=contest-verdict.yml&amp;title=%5BCorrection%5D%20{{ c.id }}">Report an error or contest this check</a>
+      </p>
+    </footer>
+  </div>
+</article>

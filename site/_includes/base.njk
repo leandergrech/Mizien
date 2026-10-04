@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} · {{ site.name }}</title>
+{%- if description %}
+<meta name="description" content="{{ description }}">
+{%- endif %}
+{%- if noindex %}
+<meta name="robots" content="noindex">
+{%- endif %}
+<link rel="canonical" href="{{ page.url | absoluteUrl }}">
+<meta name="theme-color" content="#0e2a1f">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="/">{% include "brand-mark.njk" %}<span>{{ site.name }}</span></a>
+  <nav aria-label="Main">
+    <a href="/">Map</a>
+    <a href="/claims/"{% if page.url == "/claims/" %} aria-current="page"{% endif %}>All claims</a>
+    <a href="{{ site.repo }}/tree/main/methodology">Methodology</a>
+    <a href="{{ site.repo }}/blob/main/CORRECTIONS.md">Corrections</a>
+  </nav>
+</header>
+<main id="main">
+{{ content | safe }}
+</main>
+<footer class="site-foot">
+  <p>{{ site.name }} is independent and not affiliated with any party, authority or institution. Drafts are marked as
+     pending right of reply until the body concerned has had the chance to respond.</p>
+  <p>Content is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; site code is MIT.
+     Source and data: <a href="{{ site.repo }}">github.com/leandergrech/Mizien</a>.</p>
+</footer>
+</body>
+</html>
