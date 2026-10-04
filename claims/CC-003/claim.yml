@@ -1,13 +1,13 @@
 id: CC-003
 title: Per-capita emissions vs 2030 projection
 category: Climate & Energy
+subtopic: Emissions & targets
 status: Drafted
 verdict: Misleading
 verdict_confidence: High
 claim:
-  text: 'Climate Action Authority (13 Nov 2025): emissions per capita have fallen 44% since 2005, well
-    above the EU average of 34%, showing Malta is reducing emissions at household level and across the
-    economy.'
+  text: 'Climate Action Authority (13 Nov 2025): emissions per capita have fallen 44% since 2005, well above the
+    EU average of 34%, showing Malta is reducing emissions at household level and across the economy.'
   speaker: Climate Action Authority; Ministry for the Environment
   date: '2025-11-13'
   wording_status: Verbatim found
@@ -22,8 +22,7 @@ claim:
     date: Nov 2025
     url: https://climate.ec.europa.eu/document/download/35f83a2d-f77d-4895-b616-d579069b23d3_en?filename=capr2025_swd_en.pdf
     note: 'Primary evidence: ESR table p. 115, AEA balance p. 126.'
-  - title: Malta set to increase emissions as EU cuts carbon output (citing EC 2025 Climate Action Progress
-      Report)
+  - title: Malta set to increase emissions as EU cuts carbon output (citing EC 2025 Climate Action Progress Report)
     publisher: Italpress / MNA
     date: Nov 2025
     url: https://www.italpress.com/?p=605399
@@ -41,10 +40,10 @@ claim:
     date: 11 Sep 2026
     url: https://practiceguides.chambers.com/practice-guides/renewable-energy-2026/malta
   quote: Emissions per capita have fallen by 44% since 2005, well above the EU average of 34%.
-counter_evidence: 'The same Commission report shows effort-sharing emissions 41% above 2005 in 2024 and
-  projects +42% (existing measures) or +30% (planned measures) by 2030 against a -19% target: the largest
-  gap in the EU in percentage points. Total emissions fell 27% (EU 33%); population grew 41%, explaining
-  about half the per-person fall. Transport +49%, F-gases about six-fold.'
+counter_evidence: 'The same Commission report shows effort-sharing emissions 41% above 2005 in 2024 and projects
+  +42% (existing measures) or +30% (planned measures) by 2030 against a -19% target: the largest gap in the EU in
+  percentage points. Total emissions fell 27% (EU 33%); population grew 41%, explaining about half the per-person
+  fall. Transport +49%, F-gases about six-fold.'
 tests: Eurostat env_air_gge and nama_10_pe; Commission CAPR 2025 SWD; Eurostat nrg_ind_ren.
 why_low_hanging: 'Done: Claim Check 003 report and flyer.'
 tags:
@@ -52,9 +51,9 @@ tags:
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: High
-caveats: Draft pending right of reply (Climate Action Authority; Environment Ministry). Misleading must
-  not be published before the reply deadline passes. Figures accurate; verdict rests on omission of the
-  2030 projection from the report the authority cites.
+caveats: Draft pending right of reply (Climate Action Authority; Environment Ministry). Misleading must not be published
+  before the reply deadline passes. Figures accurate; verdict rests on omission of the 2030 projection from the
+  report the authority cites.
 right_of_reply:
   sent: null
   deadline: null

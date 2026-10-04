@@ -1,0 +1,40 @@
+id: CC-084
+title: Tourists tripled in 15 years
+category: Tourism & Population
+subtopic: Tourism numbers & capacity
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'ADPD chairperson Sandra Gauci (2026): Malta welcomed over four million tourists in 2025, triple the number
+    of 15 years ago.'
+  speaker: ADPD - The Green Party (Sandra Gauci)
+  date: '2026'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: ADPD Says Malta's Localities 'Are Not For Sale' Amid Overdevelopment Concerns
+    publisher: Lovin Malta
+    date: '2026'
+    url: https://lovinmalta.com/news/general-election-2026/adpd-marsaskala-jerma-overdevelopment/
+    note: Opposition claim.
+counter_evidence: NSO arrivals 2010 vs 2025; inbound tourists vs cruise passengers.
+tests: NSO inbound tourism series.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Parliament House, Valletta
+  lat: 35.89614
+  lon: 14.50978
+  scope: institution
+  icon: parliament

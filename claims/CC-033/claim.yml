@@ -1,0 +1,41 @@
+id: CC-033
+title: 'Delimara: ''much cleaner air'''
+category: Air
+subtopic: Port & power emissions
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'D3 Power Generation (Delimara 3): after gas conversion the air is much cleaner and emissions are well below
+    EU limits (NOx 35.8 mg/Nm3, SOx 0, PM 2.16 mg/Nm3).'
+  speaker: D3 Power Generation Ltd
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Cleaner air with reduction in emissions from Delimara plant - Chinese D3PG company
+    publisher: TVM
+    date: n/d
+    url: https://www.tvm.com.mt/en/news/cleaner-air-with-reduction-in-emissions-from-delimara-plant-chinese-d3pg-company/
+    note: Company data as reported.
+counter_evidence: Stack concentrations vs permit limits are not ambient air quality; check ERA IPPC monitoring and
+  the Żejtun station.
+tests: ERA IPPC permit reports; ambient NO2/PM data near Marsaxlokk.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Delimara Power Station, Marsaxlokk
+  lat: 35.83193
+  lon: 14.55703
+  scope: site
+  icon: pin

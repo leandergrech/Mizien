@@ -1,0 +1,40 @@
+id: CC-079
+title: 'Waste-to-energy: 4.5% of energy'
+category: Waste
+subtopic: Landfill & treatment
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government / WasteServ (ECOHIVE): the Magħtab waste-to-energy plant will convert 192,000 tonnes of non-recyclable
+    waste into 4.5% of the nation''s energy.'
+  speaker: WasteServ; Ministry for the Environment
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Analysis: Is Burning Waste At Magħtab The Only Way Out Of Malta''s Waste Crisis?'
+    publisher: Amphora Media
+    date: Jun 2025
+    url: https://www.amphora.media/2025/06/waste-energy-maghtab-recycling-sustainable
+    note: Locates the figures.
+counter_evidence: Energy share vs national demand; recycling targets; landfill share still near 79% in 2024.
+tests: ECOHIVE EIA; Enemalta demand; Eurostat env_wasmun.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Magħtab waste complex
+  lat: 35.93923
+  lon: 14.44073
+  scope: site
+  icon: landfill

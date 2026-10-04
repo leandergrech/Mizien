@@ -1,0 +1,40 @@
+id: CC-055
+title: Manoel Island back to the public
+category: Land & Trees
+subtopic: Open spaces & parks
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta (2026): Manoel Island has been returned to public ownership from MIDI and will become
+    a national park.'
+  speaker: Robert Abela, Prime Minister; Owen Bonnici, Lands Minister
+  date: '2026'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Manoel Island officially returned as public land
+    publisher: MaltaToday
+    date: '2026'
+    url: https://www.maltatoday.com.mt/news/national/141742/manoel_island_officially_returned_as_public_land
+    note: Locates the claim.
+counter_evidence: Reports give EUR 43m and EUR 47m for the deal; park plan, funding and timeline not yet public.
+tests: Deed and parliamentary papers; park masterplan.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Manoel Island, Gżira
+  lat: 35.90332
+  lon: 14.50195
+  scope: site
+  icon: park

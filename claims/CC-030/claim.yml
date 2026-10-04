@@ -1,0 +1,41 @@
+id: CC-030
+title: Carbon-neutral airport
+category: Climate & Energy
+subtopic: Emissions & targets
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Malta International Airport: it has reached carbon neutrality (ACA Level 3+) and its EUR 12.5m airfield
+    electrification will avoid 1,000 tonnes of CO2 a year.'
+  speaker: Malta International Airport plc
+  date: '2026-05-25'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Airfield electrification at MIA set to avoid 1,000 tonnes of carbon dioxide emissions every year
+    publisher: The Malta Independent
+    date: 25 May 2026
+    url: https://www.independent.com.mt/articles/2026-05-25/local-news/Airfield-electrification-at-MIA-set-to-avoid-1-000-tonnes-of-carbon-dioxide-emissions-every-year-6736289990
+    note: Locates the claim.
+counter_evidence: Level 3+ relies on carbon credits for residual airport emissions and excludes flights; passengers
+  passed 10 million in 2025.
+tests: ACA scope definitions; MIA sustainability report; flight emissions.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Malta International Airport, Luqa
+  lat: 35.84741
+  lon: 14.49229
+  scope: site
+  icon: pin

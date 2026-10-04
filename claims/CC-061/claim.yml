@@ -1,0 +1,40 @@
+id: CC-061
+title: 260 homes 30% below market
+category: Planning & Housing
+subtopic: Housing & affordability
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Budget 2026: the Affordable Housing Foundation (Government and Church) will build 260 homes at around 30%
+    below market rates.'
+  speaker: Government of Malta (Budget 2026)
+  date: '2025-10-27'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Malta Budget 2026: Key Housing & Property Updates'
+    publisher: Zanzi Homes
+    date: Oct 2025
+    url: https://www.zanzihomes.com/blog/409/malta-budget-2026-key-housing-property-updates
+    note: Locator; confirm in the Budget Speech (literature/CC-017).
+counter_evidence: Delivery date, sites and how 'market rate' is defined.
+tests: Budget speech; Foundation documents; PA applications.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

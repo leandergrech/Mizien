@@ -1,0 +1,40 @@
+id: CC-071
+title: EUR 100m a year for free buses
+category: Transport
+subtopic: Public transport
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'The Shift News (Feb 2026): ''free'' public transport now costs about EUR 100 million a year in subsidies
+    while traffic gridlock worsens.'
+  speaker: The Shift News
+  date: '2026-02-26'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: '''Free'' public transport reaches EUR 100 million a year in subsidies as traffic gridlock worsens'
+    publisher: The Shift News
+    date: 26 Feb 2026
+    url: https://theshiftnews.com/2026/02/26/free-public-transport-reaches-e100-million-a-year-in-subsidies-as-traffic-gridlock-worsens/
+    note: Media claim.
+counter_evidence: Subsidy lines in the budget; congestion indicators.
+tests: Budget estimates; TM traffic counts; TomTom-type indices.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

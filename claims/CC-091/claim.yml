@@ -1,0 +1,41 @@
+id: CC-091
+title: Inspections doubled
+category: Health & Safety
+subtopic: Workplace safety
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Occupational Health and Safety Authority (2026): inspections more than doubled in 2025 and around 74% of
+    construction sites met safety standards; nine workers died in 2025.'
+  speaker: Occupational Health and Safety Authority (OHSA)
+  date: '2026'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Nine workers die on the job in 2025 as OHSA inspections more than double
+    publisher: MaltaToday
+    date: '2026'
+    url: https://www.maltatoday.com.mt/news/national/142928/nine_workers_die_on_the_job_in_2025_as_ohsa_inspections_more_than_double
+    note: Locates the claims.
+counter_evidence: Construction has the highest injury rate (94 per 100,000); more than half of 2025 deaths were
+  migrant workers.
+tests: OHSA annual report; NSO accidents at work.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

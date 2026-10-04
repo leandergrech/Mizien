@@ -1,0 +1,41 @@
+id: CC-038
+title: Saharan dust behind PM10 spikes
+category: Air
+subtopic: Air quality & health
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Meteorological and environmental authorities (2026): extreme PM10 levels, over four times the WHO daily
+    guideline at all five stations, were caused by Saharan dust.'
+  speaker: Malta Meteorological Office; ERA
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Saharan dust takes over Malta's skies, producing dangerous air quality
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/news/national/140947/saharan_dust_takes_over_maltas_skies_producing_dangerous_air_quality_
+    note: Locates the claim.
+counter_evidence: Dust events are real; the question is how many annual exceedances are natural (EU allows subtraction)
+  and how many local.
+tests: ERA natural-source subtraction reports; back-trajectories; station data.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Environment and Resources Authority, Marsa
+  lat: 35.88617
+  lon: 14.49732
+  scope: institution
+  icon: pin

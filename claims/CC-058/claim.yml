@@ -1,0 +1,40 @@
+id: CC-058
+title: 96% of farmland in use
+category: Land & Trees
+subtopic: Land take & agriculture
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Lovin Malta, reporting official statistics: over 96% of Malta''s agricultural land is used for farming.'
+  speaker: Lovin Malta (reporting NSO)
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Over 96% Of Malta's Agricultural Land Is Used For Farming
+    publisher: Lovin Malta
+    date: n/d
+    url: https://lovinmalta.com/news/over-96-of-maltas-agricultural-land-is-used-for-farming/
+    note: Media summary of statistics.
+counter_evidence: 'Census 2020 vs 2010: holdings and utilised agricultural area fell; abandoned fields and land
+  take (CC-019).'
+tests: NSO agricultural census 2010/2020; land-cover change.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

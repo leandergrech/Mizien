@@ -1,0 +1,40 @@
+id: CC-060
+title: 7,000 first-time buyers helped
+category: Planning & Housing
+subtopic: Housing & affordability
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Housing Authority / Government: more than 7,000 people have benefited from the EUR 10,000 first-time buyer
+    grant.'
+  speaker: Housing Authority; Government of Malta
+  date: '2025'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: First-Time Buyer Scheme
+    publisher: Housing Authority
+    date: n/d
+    url: https://housingauthority.gov.mt/scheme/first-time-buyer-scheme/
+    note: Primary scheme page.
+counter_evidence: Grant paid over ten years; whether it changes affordability or capitalises into prices (see CC-013).
+tests: Housing Authority beneficiary data; price and income series.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

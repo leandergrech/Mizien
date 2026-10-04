@@ -1,0 +1,40 @@
+id: CC-039
+title: Net Zero Impact Utility
+category: Water
+subtopic: Water supply & groundwater
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Water Services Corporation: its EU-funded ''Net Zero Impact Utility'' project will cut groundwater abstraction
+    by 4 billion litres a year with no net increase in energy use.'
+  speaker: Water Services Corporation (WSC)
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Towards a Net Zero-Impact Utility
+    publisher: Water Services Corporation
+    date: n/d
+    url: https://www.wsc.com.mt/towards-a-net-zero-impact-utility-new-e100-million-eu-funded-project-set-to-improve-water-quality-to-all-new-highs/
+    note: Primary page.
+counter_evidence: Check abstraction volumes and WSC electricity use before and after; demand growth since the project.
+tests: WSC annual reports; EWA groundwater abstraction data.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Pembroke reverse osmosis plant
+  lat: 35.93211
+  lon: 14.48285
+  scope: site
+  icon: ro_plant

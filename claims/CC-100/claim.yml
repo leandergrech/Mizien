@@ -1,0 +1,39 @@
+id: CC-100
+title: Over 10 million airport passengers
+category: Tourism & Population
+subtopic: Tourism numbers & capacity
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Malta International Airport: it welcomed over 10 million passengers in 2025, a new traffic milestone.'
+  speaker: Malta International Airport plc
+  date: '2026'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Facts and Figures
+    publisher: Malta International Airport
+    date: '2026'
+    url: https://maltairport.com/corporate/our-airport/facts-and-figures/
+    note: Company figures.
+counter_evidence: Passenger movements count each arrival and departure; residents travelling vs tourists.
+tests: MIA traffic reports; NSO arrivals and departures.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Malta International Airport, Luqa
+  lat: 35.84741
+  lon: 14.49229
+  scope: site
+  icon: pin

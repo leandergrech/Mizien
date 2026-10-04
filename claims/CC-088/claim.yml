@@ -1,0 +1,40 @@
+id: CC-088
+title: Population 588,254
+category: Tourism & Population
+subtopic: Population & labour
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'National Statistics Office: Malta''s population rose to 588,254 at the end of 2025 (+2.4%), with net migration
+    of 13,906 the main driver.'
+  speaker: National Statistics Office (NSO)
+  date: 2026-07
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Malta''s population rose to 588,254 by end 2025: NSO'
+    publisher: MaltaToday
+    date: Jul 2026
+    url: https://www.maltatoday.com.mt/news/national/143059/maltas_population_rose_to_588254_by_end_2025_nso
+    note: Locates the NSO release.
+counter_evidence: Check the NSO release; density figures quoted (1,731 vs 1,838 per km2) differ by source.
+tests: NSO World Population Day release; Eurostat demo_gind.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

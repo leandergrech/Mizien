@@ -1,0 +1,39 @@
+id: CC-059
+title: Subsidies are 20% of farm output
+category: Land & Trees
+subtopic: Land take & agriculture
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Newsbook: state and EU subsidies reach 20% of Malta''s agricultural output.'
+  speaker: Newsbook
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: State and EU subsidies reach 20% of Malta's agricultural output
+    publisher: Newsbook
+    date: n/d
+    url: https://newsbook.com.mt/en/state-and-eu-subsidies-reach-20-of-maltas-agricultural-output
+    note: Media claim.
+counter_evidence: Testable against economic accounts for agriculture.
+tests: Eurostat aact_eaa01; CAP strategic plan payments.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

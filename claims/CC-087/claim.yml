@@ -1,0 +1,40 @@
+id: CC-087
+title: 177 illegal short lets
+category: Tourism & Population
+subtopic: Short lets & concessions
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Malta Tourism Authority (PQ answer, 2025): 177 illegal short-let units were identified in 2025.'
+  speaker: Malta Tourism Authority; Minister for Tourism
+  date: '2025'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta to clamp down on unlicensed Airbnb rentals with three-year ban
+    publisher: The Shift News
+    date: 11 Nov 2025
+    url: https://theshiftnews.com/2025/11/11/malta-to-clamp-down-on-unlicensed-airbnb-rentals-with-three-year-ban/
+    note: Locates the PQ figure.
+counter_evidence: Industry estimates put unlicensed units far higher; EU Regulation 2024/1028 data sharing from
+  May 2026.
+tests: PQ text; platform listings vs MTA licence register.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Parliament House, Valletta
+  lat: 35.89614
+  lon: 14.50978
+  scope: institution
+  icon: parliament

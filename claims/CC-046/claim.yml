@@ -1,0 +1,39 @@
+id: CC-046
+title: Gozo water autonomy
+category: Water
+subtopic: Water supply & groundwater
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'WSC / suppliers: the new Gozo reverse osmosis plant (about 9 million litres a day) gives Gozo water autonomy.'
+  speaker: Water Services Corporation
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Maltese island achieves water autonomy with SWRO innovation
+    publisher: Smart Water Magazine
+    date: n/d
+    url: https://smartwatermagazine.com/news/wfi-group/maltese-island-achieves-water-autonomy-swro-innovation
+    note: Locates the claim.
+counter_evidence: Autonomy depends on peak summer demand vs capacity, and on the cross-channel pipeline.
+tests: Gozo demand by month; plant output; pipeline transfers.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Victoria, Gozo
+  lat: 36.04289
+  lon: 14.23985
+  scope: institution
+  icon: pin

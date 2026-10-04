@@ -51,6 +51,85 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-019 | Land & Trees | 830,000 m2 of land lost in five years | Drafted | Largely supported |
 | CC-020 | Noise | Noise: compliant on paper | Not started | - |
 | CC-021 | Transport | Malta-Gozo tunnel traffic | Not started | - |
+| CC-022 | Climate & Energy | 'Lowest electricity burden in the EU' | Not started | - |
+| CC-023 | Climate & Energy | Second interconnector by 2026 | Not started | - |
+| CC-024 | Climate & Energy | Renewables target for 2030 | Not started | - |
+| CC-025 | Climate & Energy | Per-capita emissions down 44% since 2005 | Not started | - |
+| CC-026 | Climate & Energy | EU's largest rise in emissions | Not started | - |
+| CC-027 | Climate & Energy | Power cuts: heat, not generation | Not started | - |
+| CC-028 | Climate & Energy | 76% less network downtime | Not started | - |
+| CC-029 | Climate & Energy | First offshore wind farm | Not started | - |
+| CC-030 | Climate & Energy | Carbon-neutral airport | Not started | - |
+| CC-031 | Climate & Energy | Gozo, first climate-neutral region | Not started | - |
+| CC-032 | Climate & Energy | Solar flowers, first in Europe | Not started | - |
+| CC-033 | Air | Delimara: 'much cleaner air' | Not started | - |
+| CC-034 | Air | Air Quality Plan 'already yielding results' | Not started | - |
+| CC-035 | Air | PM2.5 deaths down two-thirds | Not started | - |
+| CC-036 | Air | Construction dust 'a nuisance, not a health issue' | Not started | - |
+| CC-037 | Air | Highest share reporting pollution | Not started | - |
+| CC-038 | Air | Saharan dust behind PM10 spikes | Not started | - |
+| CC-039 | Water | Net Zero Impact Utility | Not started | - |
+| CC-040 | Water | Low water use per head | Not started | - |
+| CC-041 | Water | Sewage plants compliant by 2026 | Not started | - |
+| CC-042 | Water | 'From Blue Flag to Red Alert' | Not started | - |
+| CC-043 | Water | 13 Blue Flag beaches | Not started | - |
+| CC-044 | Water | 2,400 tonnes from storm tunnels | Not started | - |
+| CC-045 | Water | Tunnels solved flooding | Not started | - |
+| CC-046 | Water | Gozo water autonomy | Not started | - |
+| CC-047 | Water | Nitrates in the aquifer | Not started | - |
+| CC-048 | Nature & Wildlife | Sea urchins recovering | Not started | - |
+| CC-049 | Nature & Wildlife | 242 illegal hunting incidents | Not started | - |
+| CC-050 | Nature & Wildlife | 'Race to weaken hunting laws' | Not started | - |
+| CC-051 | Nature & Wildlife | 'Over 30% of our seas protected' | Not started | - |
+| CC-052 | Nature & Wildlife | Fish-farm slime 'promptly contained' | Not started | - |
+| CC-053 | Nature & Wildlife | Milky Way visible from 13% of Malta | Not started | - |
+| CC-054 | Land & Trees | Project Green: 100,000 m2 a year | Not started | - |
+| CC-055 | Land & Trees | Manoel Island back to the public | Not started | - |
+| CC-056 | Land & Trees | Central Link: 'only 254 trees' | Not started | - |
+| CC-057 | Land & Trees | 1,649 compensation trees | Not started | - |
+| CC-058 | Land & Trees | 96% of farmland in use | Not started | - |
+| CC-059 | Land & Trees | Subsidies are 20% of farm output | Not started | - |
+| CC-060 | Planning & Housing | 7,000 first-time buyers helped | Not started | - |
+| CC-061 | Planning & Housing | 260 homes 30% below market | Not started | - |
+| CC-062 | Planning & Housing | Construction is 9-14% of the economy | Not started | - |
+| CC-063 | Waste | Construction waste: 'standstill' warning | Not started | - |
+| CC-064 | Planning & Housing | Grand Harbour regeneration | Not started | - |
+| CC-065 | Planning & Housing | Ġgantija buffer zone permit | Not started | - |
+| CC-066 | Planning & Housing | Fort Chambray barracks | Not started | - |
+| CC-067 | Planning & Housing | Marsalforn 12 storeys | Not started | - |
+| CC-068 | Planning & Housing | Marsaskala marina shelved | Not started | - |
+| CC-069 | Transport | 82 million bus trips | Not started | - |
+| CC-070 | Transport | 'Only one overcrowded bus' | Not started | - |
+| CC-071 | Transport | EUR 100m a year for free buses | Not started | - |
+| CC-072 | Transport | EUR 15m to take cars off the road | Not started | - |
+| CC-073 | Transport | Cab trips up 68% | Not started | - |
+| CC-074 | Transport | 8,144 EV grants | Not started | - |
+| CC-075 | Transport | Seventh in the EU for cars | Not started | - |
+| CC-076 | Transport | 36 more vehicles a day | Not started | - |
+| CC-077 | Transport | Metro: first section early 2030s | Not started | - |
+| CC-078 | Transport | Gozo Channel: +511,000 passengers | Not started | - |
+| CC-079 | Waste | Waste-to-energy: 4.5% of energy | Not started | - |
+| CC-080 | Waste | EUR 75m organic plant | Not started | - |
+| CC-081 | Waste | Landfill share rising | Not started | - |
+| CC-082 | Waste | 35 quarries for construction waste | Not started | - |
+| CC-083 | Tourism & Population | Record tourism, 'future-proofed' | Not started | - |
+| CC-084 | Tourism & Population | Tourists tripled in 15 years | Not started | - |
+| CC-085 | Tourism & Population | 4.7 million tourists needed | Not started | - |
+| CC-086 | Tourism & Population | Comino kiosks tendered from 2026 | Not started | - |
+| CC-087 | Tourism & Population | 177 illegal short lets | Not started | - |
+| CC-088 | Tourism & Population | Population 588,254 | Not started | - |
+| CC-089 | Tourism & Population | Growth outpacing infrastructure | Not started | - |
+| CC-090 | Health & Safety | 20 heat-linked deaths | Not started | - |
+| CC-091 | Health & Safety | Inspections doubled | Not started | - |
+| CC-092 | Governance & Promises | PN: Gozo net-zero by afforestation | Not started | - |
+| CC-093 | Governance & Promises | PN: buy land for urban parks | Not started | - |
+| CC-094 | Climate & Energy | Commission: Malta off track for 2030 | Not started | - |
+| CC-095 | Climate & Energy | EUR 400m to keep bills low | Not started | - |
+| CC-096 | Nature & Wildlife | Fish farms moved 6 km offshore | Not started | - |
+| CC-097 | Health & Safety | Beach workers left exposed to heat | Not started | - |
+| CC-098 | Tourism & Population | Officials enforce private interests at Blue Lagoon | Not started | - |
+| CC-099 | Tourism & Population | Foreigners are 31% of residents | Not started | - |
+| CC-100 | Tourism & Population | Over 10 million airport passengers | Not started | - |
 
 The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Claims are numbered CC-001 to CC-021. Report drafts are available for CC-001 to CC-011; CC-012 to CC-021 are candidates (added 3 October 2026). Right of reply remains for the maintainer where not yet handled.
 

@@ -1,0 +1,41 @@
+id: CC-068
+title: Marsaskala marina shelved
+category: Planning & Housing
+subtopic: Development & construction
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta: the Marsaskala yacht marina has been shelved (PM Robert Abela), and the PA withdrew
+    the local-plan reference.'
+  speaker: Robert Abela, Prime Minister; Planning Authority
+  date: 2024-05
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Marsaskala yacht marina: Grech vows to repeal current plans, presses on proper consultation'
+    publisher: MaltaToday
+    date: '2021'
+    url: https://www.maltatoday.com.mt/news/national/111714/marsaskala_yacht_marina_grech_abela_noncommital_on_project_1
+    note: Background; locate the 2024 withdrawal notice.
+counter_evidence: A ferry terminal for Marsaskala Bay drew objections in 2025; is the marina reference gone from
+  all plans?
+tests: PA policy withdrawal notice; Transport Malta tenders.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Marsaskala Bay
+  lat: 35.86292
+  lon: 14.55919
+  scope: site
+  icon: pin
