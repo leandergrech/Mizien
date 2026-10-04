@@ -10,6 +10,9 @@
   var subHubs = [];                      // topic view: subtopic hubs orbiting their topic hub (claim.yml `subtopic`)
   var mode = "topic";
   var showSpokes = true, themeOn = {};
+  // Links between claims are off by default (the map is clearer); the reader's choice is remembered.
+  var linksOn = false, themesOpen = false;
+  try { linksOn = localStorage.getItem("mizien.links") === "on"; } catch (e) {}
   var cam = { yaw: 0.6, pitch: -0.22, zoom: 1, tyaw: null, tpitch: -0.22, fx: 0, fy: 0, fz: 0, em: 1, tem: 1, px: 0, py: 0, tpx: 0, tpy: 0 };
   var ZMIN = 0.4, ZMAX = 5;
   // map view: claims on a stylised map of the islands; districts open into detailed views
@@ -221,6 +224,79 @@
     if (!hubPool[k]) hubPool[k] = { kind: "hub", key: k, mode: m, name: v, color: MODES[m].color(v, i), x: 0, y: 0, z: 0, tx: 0, ty: 0, tz: 0, alpha: 0, talpha: 0, claims: [] };
     return hubPool[k];
   }
+  var GROUP_SPREAD = 1.6;     // radius of the sphere of groups, in units of R (was 1.05): more space between groups
+
+  // ------------------------------------------------------------ arranging groups (topology)
+  // Groups sit on fixed slots (points on the sphere or ring). An arrangement pattern scores how strongly two groups
+  // belong together, and the slots are assigned so that strongly related groups sit close: we minimise the sum of
+  // affinity x distance over all pairs (a small quadratic assignment, solved by pairwise swaps). The patterns are
+  // predetermined for now; new ones only need an affinity function.
+  var ARRANGE = {
+    fixed: { label: "Usual order", note: "Groups in their usual order." },
+    links: { label: "Shared links", note: "Groups whose claims share themes sit next to each other." },
+    speakers: { label: "Same speakers", note: "Groups with claims by the same bodies sit next to each other." },
+    verdicts: { label: "Similar verdicts", note: "Groups with similar verdicts sit next to each other." }
+  };
+  var arrange = (function () { var a = new URLSearchParams(location.search).get("arrange"); return ARRANGE[a] ? a : "links"; })();
+  var arrangeGain = 0;
+  function bodiesOf(c) {
+    return String(c.data.speaker || "").split(";").map(function (s) { return s.replace(/\(.*?\)/g, "").trim().toLowerCase(); })
+      .filter(function (s) { return s.length > 2; });
+  }
+  function affinity(hs, kind) {
+    var n = hs.length, A = [], idx = {};
+    for (var i = 0; i < n; i++) { A.push(new Array(n).fill(0)); hs[i].claims.forEach(function (c) { idx[c.id] = i; }); }
+    if (kind === "links") edges.forEach(function (e) { var a = idx[e.from], b = idx[e.to];
+      if (a != null && b != null && a !== b) { A[a][b] += 1; A[b][a] += 1; } });
+    if (kind === "speakers") { var cnt = hs.map(function (h) { var m = {}; h.claims.forEach(function (c) { bodiesOf(c).forEach(function (b) { m[b] = (m[b] || 0) + 1; }); }); return m; });
+      for (i = 0; i < n; i++) for (var j = i + 1; j < n; j++) { var sum = 0;
+        Object.keys(cnt[i]).forEach(function (b) { if (cnt[j][b]) sum += Math.min(cnt[i][b], cnt[j][b]); }); A[i][j] = A[j][i] = sum; } }
+    if (kind === "verdicts") { var keys = Object.keys(VC), vec = hs.map(function (h) { return keys.map(function (k) {
+        return h.claims.filter(function (c) { return c.data.verdict === k; }).length; }); });
+      for (i = 0; i < n; i++) for (j = i + 1; j < n; j++) { var dot = 0, na = 0, nb = 0;
+        for (var k = 0; k < keys.length; k++) { dot += vec[i][k] * vec[j][k]; na += vec[i][k] * vec[i][k]; nb += vec[j][k] * vec[j][k]; }
+        A[i][j] = A[j][i] = na && nb ? dot / Math.sqrt(na * nb) : 0; } }
+    return A;
+  }
+  function arrangeHubs() {
+    arrangeGain = 0;
+    var n = hubs.length; if (n < 3 || arrange === "fixed") return;
+    var slots = hubs.map(function (h) { return { x: h.tx, y: h.ty, z: h.tz }; }), A = affinity(hubs, arrange), D = [];
+    for (var a = 0; a < n; a++) { D.push([]); for (var b = 0; b < n; b++) D[a].push(Math.hypot(slots[a].x - slots[b].x, slots[a].y - slots[b].y, slots[a].z - slots[b].z)); }
+    var perm = hubs.map(function (h, i) { return i; });          // group i sits on slot perm[i]
+    function cost() { var c = 0; for (var i = 0; i < n; i++) for (var j = i + 1; j < n; j++) c += A[i][j] * D[perm[i]][perm[j]]; return c; }
+    var base = cost(), improved = true, guard = 0;
+    while (improved && guard++ < 200) {
+      improved = false;
+      for (var i = 0; i < n; i++) for (var j = i + 1; j < n; j++) {
+        var si = perm[i], sj = perm[j], delta = 0;                   // change in cost if groups i and j swap slots
+        for (var k = 0; k < n; k++) { if (k === i || k === j) continue; var sk = perm[k];
+          delta += (A[i][k] - A[j][k]) * (D[sj][sk] - D[si][sk]); }
+        if (delta < -1e-9) { perm[i] = sj; perm[j] = si; improved = true; }
+      }
+    }
+    hubs.forEach(function (h, i) { var s = slots[perm[i]]; h.tx = s.x; h.ty = s.y; h.tz = s.z; });
+    arrangeGain = base > 0 ? 1 - cost() / base : 0;
+  }
+  function setArrange(k) {
+    arrange = k; var u = new URL(location.href);
+    if (k === "links") u.searchParams.delete("arrange"); else u.searchParams.set("arrange", k);
+    history.replaceState(null, "", u); setMode(mode, false);
+  }
+  function buildArrange() {
+    var box = document.getElementById("arrangebox"); if (!box) return;
+    var M = MODES[mode], show = view === "graph" && (M.layout === "sphere" || M.layout === "ring");
+    box.hidden = !show; if (!show) return;
+    var g = document.getElementById("arrange"); g.textContent = "";
+    Object.keys(ARRANGE).forEach(function (k) {
+      var b = el("button", null, ARRANGE[k].label); b.type = "button"; b.setAttribute("aria-pressed", k === arrange ? "true" : "false");
+      b.onclick = function () { setArrange(k); }; g.appendChild(b);
+    });
+    var note = ARRANGE[arrange].note;
+    if (arrange !== "fixed" && arrangeGain > 0.005) note += " Related groups are " + Math.round(arrangeGain * 100) + "% closer than in the usual order.";
+    document.getElementById("arrangenote").textContent = note;
+  }
+
   function spiral(n, i, r) { // even points on a sphere
     if (n === 1) return { x: 0, y: 0, z: 0 };
     var y = 1 - (i / (n - 1)) * 2, rad = Math.sqrt(Math.max(0, 1 - y * y)), th = Math.PI * (3 - Math.sqrt(5)) * i;
@@ -254,10 +330,11 @@
     // hub targets
     var n = hubs.length;
     if (M.layout === "sphere") {
-      hubs.forEach(function (h, i) { var p = spiral(n, i, R * 1.05); h.tx = p.x; h.ty = p.y * 0.78; h.tz = p.z; });
+      hubs.forEach(function (h, i) { var p = spiral(n, i, R * GROUP_SPREAD); h.tx = p.x; h.ty = p.y * 0.78; h.tz = p.z; });
     } else if (M.layout === "ring") {
-      hubs.forEach(function (h, i) { var a = (i / n) * Math.PI * 2; h.tx = Math.cos(a) * R * 1.12; h.tz = Math.sin(a) * R * 1.12; h.ty = (i % 2 ? 1 : -1) * 34; });
-    } else if (M.layout === "arc" || M.layout === "line") {
+      hubs.forEach(function (h, i) { var a = (i / n) * Math.PI * 2; h.tx = Math.cos(a) * R * 1.12 * GROUP_SPREAD / 1.05; h.tz = Math.sin(a) * R * 1.12 * GROUP_SPREAD / 1.05; h.ty = (i % 2 ? 1 : -1) * 34; });
+    }
+    if (M.layout === "sphere" || M.layout === "ring") arrangeHubs(); else if (M.layout === "arc" || M.layout === "line") {
       var widths = hubs.map(function (h) { return Math.max(60, clusterRadius(h.count) + 46); });
       var total = widths.reduce(function (a, b) { return a + b * 2; }, 0) + (n - 1) * 22, x = -total / 2;
       hubs.forEach(function (h, i) {
@@ -287,7 +364,7 @@
     clearSel();
     var mt = document.getElementById("modeTitle"); mt.querySelector(".t").textContent = M.title; mt.querySelector(".s").textContent = M.sub;
     document.querySelectorAll("#groupby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.mode === m ? "true" : "false"); });
-    buildGroups();
+    buildGroups(); buildArrange();
     var u = new URL(location.href); if (m === "topic") u.searchParams.delete("group"); else u.searchParams.set("group", m);
     history.replaceState(null, "", u);
   }
@@ -418,30 +495,55 @@
     if (mode === "pattern") note.textContent = "Tags are provisional until a report is finished.";
     if (mode === "speaker") note.textContent = "Grouped by the first body named as speaker.";
   }
+  function setLinks(v) { linksOn = v; try { localStorage.setItem("mizien.links", v ? "on" : "off"); } catch (e) {} buildLinkBar(); }
   function buildLinkBar() {
     var bar = document.getElementById("linkbar"); bar.textContent = "";
-    bar.appendChild(el("span", "kicker", "LINES"));
-    var sp = el("button"); sp.type = "button"; sp.appendChild(el("span", "ln")).style.borderColor = "rgba(207,226,212,.55)";
-    sp.appendChild(document.createTextNode("Group spokes")); sp.setAttribute("aria-pressed", "true");
-    sp.onclick = function () { showSpokes = !showSpokes; sp.classList.toggle("off", !showSpokes); sp.setAttribute("aria-pressed", showSpokes); };
-    bar.appendChild(sp); bar.appendChild(el("span", "sep"));
-    var themeBtns = [];
+    var sw = el("button", "switch" + (linksOn ? " on" : "")); sw.type = "button"; sw.setAttribute("role", "switch");
+    sw.setAttribute("aria-checked", linksOn ? "true" : "false");
+    sw.appendChild(el("span", "track")).appendChild(el("span", "knob"));
+    var lab = el("span", "switch-label"); lab.appendChild(el("b", null, "Links between claims"));
+    lab.appendChild(el("span", "state", (linksOn ? "On" : "Off") + " · " + DATA.edges.length + " links, " + DATA.themes.length + " themes"));
+    sw.appendChild(lab); sw.onclick = function () { setLinks(!linksOn); }; bar.appendChild(sw);
+    bar.appendChild(el("p", "hint", linksOn
+      ? "Each colour is a theme: claims that share a cause or a pattern. Tap a theme to hide or show it; double-click to focus on it."
+      : "Hidden to keep the map clear. Switch on, or pick a theme below. Selecting a claim always shows its own links."));
+    var tog = el("button", "themes-toggle", themesOpen ? "Hide themes ▴" : "Choose themes ▾"); tog.type = "button";
+    tog.setAttribute("aria-expanded", themesOpen ? "true" : "false");
+    tog.onclick = function () { themesOpen = !themesOpen; buildLinkBar(); }; bar.appendChild(tog);
+    var chips = el("div", "themes"), themeBtns = []; chips.hidden = !themesOpen;
     DATA.themes.forEach(function (t) {
-      var b = el("button"); b.type = "button"; b.title = t.description || t.name; b.setAttribute("aria-pressed", "true");
+      var on = linksOn && themeOn[t.id];
+      var b = el("button", on ? null : "off"); b.type = "button"; b.title = t.description || t.name; b.setAttribute("aria-pressed", on ? "true" : "false");
       var l = el("span", "ln"); l.style.borderColor = t.color; if (t.dashed) l.style.borderTopStyle = "dashed";
       b.appendChild(l); b.appendChild(document.createTextNode(t.name));
       b.onclick = function (e) {
         if (e.shiftKey || e.altKey) { selectTheme(t.id); return; }
-        themeOn[t.id] = !themeOn[t.id]; b.classList.toggle("off", !themeOn[t.id]); b.setAttribute("aria-pressed", themeOn[t.id]);
+        if (!linksOn) { DATA.themes.forEach(function (x) { themeOn[x.id] = x.id === t.id; }); setLinks(true); return; }  // just this theme
+        themeOn[t.id] = !themeOn[t.id]; buildLinkBar();
       };
       b.ondblclick = function () { selectTheme(t.id); };
-      themeBtns.push([t.id, b]); bar.appendChild(b);
+      themeBtns.push([t.id, b]); chips.appendChild(b);
     });
-    bar.appendChild(el("span", "sep"));
-    function all(v) { themeBtns.forEach(function (p) { themeOn[p[0]] = v; p[1].classList.toggle("off", !v); p[1].setAttribute("aria-pressed", v); }); }
-    var on = el("button", "mini", "All"); on.type = "button"; on.onclick = function () { all(true); }; bar.appendChild(on);
-    var off = el("button", "mini", "None"); off.type = "button"; off.onclick = function () { all(false); }; bar.appendChild(off);
+    if (linksOn) {
+      var all = el("button", "mini", "All"); all.type = "button";
+      all.onclick = function () { DATA.themes.forEach(function (x) { themeOn[x.id] = true; }); buildLinkBar(); }; chips.appendChild(all);
+      var none = el("button", "mini", "None"); none.type = "button";
+      none.onclick = function () { setLinks(false); }; chips.appendChild(none);
+    }
+    bar.appendChild(chips);
+    if (view === "graph" && mode !== "network") {          // spokes join each claim to its group (Għanqbuta only)
+      var sp = el("button", "switch small" + (showSpokes ? " on" : "")); sp.type = "button"; sp.setAttribute("role", "switch");
+      sp.setAttribute("aria-checked", showSpokes ? "true" : "false");
+      sp.appendChild(el("span", "track")).appendChild(el("span", "knob"));
+      sp.appendChild(el("span", "switch-label", "Spokes to groups"));
+      sp.onclick = function () { showSpokes = !showSpokes; buildLinkBar(); }; bar.appendChild(sp);
+    }
+    syncBarHeight();
   }
+  // The links panel sits over the bottom of the stage on wide screens: the map HUD stacks above it, and the
+  // camera centres the web (or the islands) in the space above it.
+  function barInset() { var b = document.getElementById("linkbar"); return W > 900 && b ? b.offsetHeight + 16 : 0; }
+  function syncBarHeight() { var b = document.getElementById("linkbar"); if (b) document.getElementById("mapwrap").style.setProperty("--linkbar-h", b.offsetHeight + "px"); }
   function buildKey() {
     var k = document.getElementById("vkey"); k.textContent = "";
     Object.keys(VC).concat([NOT_YET]).forEach(function (v) {
@@ -477,14 +579,14 @@
   function panelInset() { return panelOpen() && !wide ? panel.offsetWidth + 22 : 0; }
   function topInset() { return panelOpen() && wide ? Math.min(H * 0.55, panel.offsetTop + panel.offsetHeight) : 0; }
   var cyNow = null;
-  function cyTarget() { var top = topInset(); return top ? (top + H - 40) / 2 : (H - sheetInset()) / 2 + 6; }
+  function cyTarget() { var top = topInset(); return top ? (top + H - 40 - barInset()) / 2 : (H - sheetInset() - barInset()) / 2 + 6; }
   var cxNow = null;
   function cxTarget() { return leftInset() + (W - leftInset() - panelInset()) / 2; }
   function baseScale() {
-    var usable = Math.min(W - leftInset() - panelInset(), H - 120 - topInset());
+    var usable = Math.min(W - leftInset() - panelInset(), H - 120 - topInset() - barInset());
     return view === "map"   // fit the archipelago (about 520 x 440 world units) to the free area
-      ? Math.max(0.3, Math.min((W - leftInset() - panelInset()) * 0.92 / 520, (H - 120 - topInset()) * 0.92 / 440))
-      : Math.max(0.6, usable / 400);
+      ? Math.max(0.3, Math.min((W - leftInset() - panelInset()) * 0.92 / 520, (H - 120 - topInset() - barInset()) * 0.92 / 440))
+      : Math.max(0.3, usable / (400 * GROUP_SPREAD / 1.05) * (W < 700 ? 0.78 : 1));   // phones: room for the outer labels
   }
   // Node size: grows only gently with zoom and the lens (zoom^0.3), capped, so pins never blow up on any screen.
   function nodeScale(p) {
@@ -515,11 +617,11 @@
   function focusSet() {
     if (!sel) return null;
     var ids = {}, es = {}, hb = null;
-    if (sel.kind === "claim") { ids[sel.id] = 1; edges.forEach(function (e, i) { if (themeOn[e.theme] && (e.from === sel.id || e.to === sel.id)) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } }); }
+    if (sel.kind === "claim") { ids[sel.id] = 1; edges.forEach(function (e, i) { if (e.from === sel.id || e.to === sel.id) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } }); }
     if (sel.kind === "hub") { hb = sel.hub; (sel.hub.claims || []).forEach(function (c) { ids[c.id] = 1; }); claims.forEach(function (c) { if (c.extra.indexOf(sel.hub) >= 0) ids[c.id] = 1; }); }
     if (sel.kind === "edge") { es[sel.index] = 1; ids[sel.edge.from] = ids[sel.edge.to] = 1; }
     if (sel.kind === "theme") edges.forEach(function (e, i) { if (e.theme === sel.id) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } });
-    if (sel.kind === "place") sel.place.claims.forEach(function (c) { ids[c.id] = 1; edges.forEach(function (e, i) { if (themeOn[e.theme] && (e.from === c.id || e.to === c.id)) es[i] = 1; }); });
+    if (sel.kind === "place") sel.place.claims.forEach(function (c) { ids[c.id] = 1; edges.forEach(function (e, i) { if (e.from === c.id || e.to === c.id) es[i] = 1; }); });
     return { ids: ids, es: es, hub: hb };
   }
 
@@ -596,19 +698,25 @@
 
     // theme links
     edges.forEach(function (e, i) {
-      e._g = null; if (!themeOn[e.theme]) return;
+      e._g = null;
+      var hi = F && F.es[i];
+      if (!hi && !(linksOn && themeOn[e.theme])) return;
       var a = P.get(byId[e.from]), b = P.get(byId[e.to]), c = ctrl(a, b, e.bend);
       e._g = { a: a, b: b, c: c };
-      var hi = F && F.es[i], hv = hover && hover.kind === "edge" && hover.index === i;
+      var hv = hover && hover.kind === "edge" && hover.index === i, strong = hi || hv, dim = F && !strong;
       var depth = Math.min(fog(a), fog(b)), col = (themeById[e.theme] || {}).color || "#7fa88b";
       var weak = e.strength && (e.strength.indexOf("Weak") === 0 || e.strength.indexOf("Pattern") === 0);
-      ctx.setLineDash(weak ? [6, 5] : []);
-      ctx.strokeStyle = rgba(col, hi || hv ? 0.4 : (F ? 0.03 : 0.1)); ctx.lineWidth = hi || hv ? 12 : 6;
+      ctx.lineCap = "round";
+      ctx.setLineDash([]);                                   // dark underlay: the line reads on any background
+      ctx.strokeStyle = "rgba(4,18,12," + (dim ? 0.12 : 0.6) + ")"; ctx.lineWidth = strong ? 7 : 4.4;
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke();
-      ctx.strokeStyle = col; ctx.globalAlpha = hi || hv ? 1 : (F ? 0.1 : (view === "map" ? 0.38 : 0.7) * depth); ctx.lineWidth = hi || hv ? 3 : (view === "map" ? 1.3 : 1.7);
+      if (strong) { ctx.strokeStyle = rgba(col, 0.32); ctx.lineWidth = 13;
+        ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke(); }
+      ctx.setLineDash(weak ? [7, 5] : []);
+      ctx.strokeStyle = col; ctx.globalAlpha = strong ? 1 : (dim ? 0.12 : 0.92 * Math.max(0.6, depth)); ctx.lineWidth = strong ? 3.2 : 2.2;
       if (hi && weak) ctx.lineDashOffset = -t * 18;
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke();
-      ctx.lineDashOffset = 0; ctx.globalAlpha = 1;
+      ctx.lineDashOffset = 0; ctx.globalAlpha = 1; ctx.lineCap = "butt";
       if ((hi || hv) && !reduce) { // particles travelling along highlighted links
         ctx.setLineDash([]); ctx.fillStyle = "#fff";
         for (var q = 0; q < 3; q++) { var s = ((t * 0.35 + q / 3 + i * 0.07) % 1), pt = qpt(e._g, s);
@@ -626,7 +734,7 @@
       var isSel = sel && ((isHub && sel.hub === n) || (!isHub && sel.kind === "claim" && sel.id === n.id));
       var isHov = hover && ((isHub && hover.hub === n) || (!isHub && hover.kind === "claim" && hover.id === n.id));
       if (isHub) {
-        var a = n.alpha * (on ? 1 : 0.3), r = (n.sub ? 12 : 23) * sc * (isHov ? 1.08 : 1) * (0.6 + 0.4 * n.alpha);
+        var a = n.alpha * (on ? 1 : 0.3), r = (n.sub ? 10 : 19) * sc * (isHov ? 1.08 : 1) * (0.6 + 0.4 * n.alpha);
         ctx.globalAlpha = a;
         var g = ctx.createRadialGradient(p.sx, p.sy, r * 0.5, p.sx, p.sy, r * 3);
         g.addColorStop(0, rgba(n.color, n.sub ? 0.32 : 0.5)); g.addColorStop(1, rgba(n.color, 0));
@@ -650,8 +758,8 @@
           hub: true, color: n.color, alpha: a * (expanded ? 0.45 : 1), pri: expanded ? 1 : 3 + (isSel ? 2 : 0) });
         ctx.globalAlpha = 1;
       } else {
-        var d = n.data, col = d.verdict ? VC[d.verdict] : NOT_YET_COL, ring = n.hub && mode !== "network" ? n.hub.color : "#cfe2d4";
-        var r2 = 9 * sc * (isHov || isSel ? 1.3 : 1) * (n.clustered ? 0.55 : 1), pulse = d.verdict && !reduce ? 1 + 0.07 * Math.sin(t * 2 + n.phase) : 1;
+        var d = n.data, col = d.verdict ? VC[d.verdict] : NOT_YET_COL;
+        var r2 = 7 * sc * (isHov || isSel ? 1.3 : 1) * (n.clustered ? 0.55 : 1), pulse = d.verdict && !reduce ? 1 + 0.07 * Math.sin(t * 2 + n.phase) : 1;
         ctx.globalAlpha = (on ? 1 : 0.18) * fg * (n.offmap ? 0.75 : 1);
         if (view === "map" && n.anchor) { var gp = project(n.anchor);
           ctx.fillStyle = "rgba(0,0,0,.35)"; ctx.beginPath(); ctx.ellipse(gp.sx, gp.sy, 4 * sc, 1.8 * sc, 0, 0, 6.283); ctx.fill();
@@ -664,9 +772,9 @@
         var g3 = ctx.createRadialGradient(p.sx - r2 * .4, p.sy - r2 * .4, r2 * .1, p.sx, p.sy, r2);
         g3.addColorStop(0, rgba("#ffffff", 0.5)); g3.addColorStop(0.35, col); g3.addColorStop(1, col);
         ctx.fillStyle = g3; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2, 0, 6.283); ctx.fill();
-        ctx.strokeStyle = ring; ctx.lineWidth = 2.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 1.6, 0, 6.283); ctx.stroke();
+        ctx.strokeStyle = "rgba(246,244,238,.6)"; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 0.6, 0, 6.283); ctx.stroke();
         if (!d.verdict) { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,.7)"; ctx.lineWidth = 1.1;
-          ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 4.6, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
+          ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 3.4, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
         if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
         n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: !n.clustered };
         var focused = F && F.ids[n.id];
@@ -1037,6 +1145,7 @@
       setMode(mode, false); if (spinBeforeMap && !reduce) setSpin(true); }
     document.getElementById("maphud").style.display = v === "map" ? "block" : "none";
     document.querySelectorAll("#viewby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.view === v ? "true" : "false"); });
+    buildLinkBar(); buildArrange();
     var mt = document.getElementById("modeTitle");
     if (v === "map") { mt.querySelector(".t").textContent = "Claims across the islands"; mt.querySelector(".s").textContent = "Each check reveals more of the map · colours and groups still apply"; }
     else { var M = MODES[mode]; mt.querySelector(".t").textContent = M.title; mt.querySelector(".s").textContent = M.sub; }
@@ -1376,7 +1485,7 @@
     if (e.key === "n" || e.key === "N") document.getElementById("labelmode").click();
     if (e.key === "t" || e.key === "T") document.getElementById("texttoggle").click();
     if (e.key === "l" || e.key === "L") document.getElementById("lenstoggle").click(); });
-  window.addEventListener("resize", resize);
+  window.addEventListener("resize", function () { resize(); syncBarHeight(); });
   if (reduce) setSpin(false);
 
   var previewPayload = new URLSearchParams(location.search).get("previewData");
