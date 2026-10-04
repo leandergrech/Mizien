@@ -2,10 +2,13 @@
 // data written by scripts/build_site_data.py. Run `npm run build`.
 import { readFileSync } from "node:fs";
 import { HtmlBasePlugin } from "@11ty/eleventy";
+import markdownIt from "markdown-it";
 
 // GitHub Pages project site lives under /Mizien/. Set PATH_PREFIX=/ for a custom domain or local root.
 const pathPrefix = process.env.PATH_PREFIX ?? "/Mizien/";
 const site = JSON.parse(readFileSync(new URL("./site/_data/site.json", import.meta.url), "utf-8"));
+
+const md = markdownIt({ html: false, linkify: false });
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
   "October", "November", "December"];
@@ -37,6 +40,9 @@ export default function (eleventyConfig) {
   // Absolute URL for canonical links, feeds and social cards.
   eleventyConfig.addFilter("absoluteUrl", (path) =>
     new URL(pathPrefix.replace(/\/$/, "") + path, site.url).href);
+
+  // Inline Markdown from methodology files (**bold**, *italic*, `code`) as HTML.
+  eleventyConfig.addFilter("mdInline", (text) => md.renderInline(String(text ?? "")));
 
   eleventyConfig.addFilter("findBy", (list, key, value) => (list || []).find((x) => x[key] === value));
 }

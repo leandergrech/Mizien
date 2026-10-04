@@ -207,6 +207,16 @@ def bold_table(md_file: str) -> list:
     return re.findall(r"^\|\s*\*\*(.+?)\*\*\s*\|\s*(.+?)\s*\|\s*$", text, flags=re.M)
 
 
+def section_items(md_file: str, heading: str) -> list:
+    """Bulleted or numbered items under '## heading' in a methodology file, inline Markdown kept."""
+    text = (ROOT / "methodology" / md_file).read_text(encoding="utf-8")
+    m = re.search(r"^## " + re.escape(heading) + r"\s*$(.*?)(?=^## |\Z)", text, flags=re.M | re.S)
+    if not m:
+        return []
+    items = re.findall(r"^(?:- |\d+\. )(.+(?:\n(?!- |\d+\. )[^\n]+)*)", m.group(1), flags=re.M)
+    return [re.sub(r"\s+", " ", x).strip() for x in items]
+
+
 def write_site_data(records: list, out: dict) -> None:
     manifest = load_archive()
     titles = {d["id"]: d["title"] for d in records}
@@ -251,6 +261,10 @@ def write_site_data(records: list, out: dict) -> None:
                      for n, m in bold_table("verdict-scale.md")],
         "grades": [{"grade": g, "meaning": m} for g, m in bold_table("evidence-grades.md")],
         "patterns": [{"name": n, "meaning": m} for n, m in bold_table("pattern-tags.md")],
+        "confidence": [{"level": m.group(1), "meaning": m.group(2)} for m in
+                       (re.match(r"\*\*(.+?)\*\*:\s*(.+)", x) for x in section_items("verdict-scale.md", "Confidence")) if m],
+        "verdict_rules": section_items("verdict-scale.md", "Rules"),
+        "source_order": section_items("evidence-grades.md", "Source order"),
     }
     SITE_DATA.parent.mkdir(parents=True, exist_ok=True)
     SITE_DATA.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
