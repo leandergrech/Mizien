@@ -2881,6 +2881,168 @@
       "version": null,
       "outputs": {},
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-100/claim.yml"
+    },
+    {
+      "id": "CC-101",
+      "title": "EU: no permits for water abstraction",
+      "category": "Water",
+      "claim": "European Commission (8 July 2026, letter of formal notice INFR(2026)2115): Malta has not put in place a registration requirement for surface-water abstraction or a prior authorisation regime for surface and groundwater abstraction, and its law does not ensure periodic review of abstraction controls.",
+      "counter": "A letter of formal notice is the first step of an infringement procedure: Malta has two months to reply and the Commission has not issued a reasoned opinion. Malta's reply and the abstraction-licensing rules now in force are not yet read. The Commission frames this as a transposition gap in the Water Framework Directive, not a measured over-abstraction.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Water supply & groundwater",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50907,
+        "scope": "national",
+        "icon": "citygate"
+      },
+      "priority": "Queue",
+      "wording_status": "Verbatim found",
+      "confidence": null,
+      "speaker": "European Commission",
+      "date": "2026-07-08",
+      "quote": "Malta has failed to put in place a registration requirement for surface water abstraction and a prior authorisation regime to control the abstraction of surface and groundwater.",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-101/claim.yml"
+    },
+    {
+      "id": "CC-102",
+      "title": "Ombudsman: 58% of environment recommendations ignored",
+      "category": "Governance & Promises",
+      "claim": "Parliamentary Ombudsman (2025 annual report, reported 2 July 2026): 58% of the justified recommendations of the Commissioner for Environment and Planning went unimplemented in 2025, the highest rate among the Ombudsman's commissioners, and 22 reports were escalated to Parliament.",
+      "counter": "The report text and denominator were not read: a percentage can rest on few cases. Non-implementation may reflect disagreement with a finding as well as inaction; the authorities' stated reasons are in the individual case notes.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Accountability",
+      "location": {
+        "place": "Parliament House, Valletta",
+        "lat": 35.89614,
+        "lon": 14.50978,
+        "scope": "institution",
+        "icon": "parliament"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Parliamentary Ombudsman (Judge Joseph Zammit McKeon)",
+      "date": "2026-07-02",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-102/claim.yml"
+    },
+    {
+      "id": "CC-103",
+      "title": "Heat-death locations \"within three months\"",
+      "category": "Health & Safety",
+      "claim": "Ministry for Health (reported 26 Aug 2026): refused a Freedom of Information request for the localities of the 20 heat-linked deaths of 20-26 July 2026 ('The request is not accepted'), saying the information will be published within three months.",
+      "counter": "Newsbook sought the localities to test whether deaths clustered in areas with simultaneous power outages; Momentum filed a separate request. Health authorities were reported saying heat may also have contributed to deaths certified under another cause. The refusal reason does not say whether the promised publication will include localities.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Heat & health",
+      "location": {
+        "place": "Mater Dei Hospital, Msida",
+        "lat": 35.90189,
+        "lon": 14.4766,
+        "scope": "institution",
+        "icon": "pin"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Ministry for Health",
+      "date": "2026-08-26",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-103/claim.yml"
+    },
+    {
+      "id": "CC-104",
+      "title": "PN: Malta fails EU noise law",
+      "category": "Noise",
+      "claim": "Nationalist Party MP Albert Buttigieg and MEP Peter Agius (petition to the European Parliament, reported 12 Oct 2024): Malta has failed to implement Directive 2002/49/EC, including noise mapping and national action plans, with only a draft Noise Action Plan 2019-2024 and no concrete implementation in St Julian's, Sliema and Valletta.",
+      "counter": "CC-020 records a 2026 report for the European Parliament's Petitions Committee that finds Malta compliant on paper with the noise law while identifying gaps in construction, fireworks and entertainment noise. The petition is older than 60 days (Oct 2024); included because noise is the least-covered topic and the claim is testable against EU reporting.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "location": {
+        "place": "Parliament House, Valletta",
+        "lat": 35.89614,
+        "lon": 14.50978,
+        "scope": "institution",
+        "icon": "parliament"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Albert Buttigieg (PN MP) and Peter Agius (MEP, PN)",
+      "date": "2024-10-12",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-104/claim.yml"
+    },
+    {
+      "id": "CC-105",
+      "title": "ADPD: no study of Freeport and airport noise",
+      "category": "Noise",
+      "claim": "ADPD - The Green Party (deputies Carmel Cacopardo and Melissa Bagley, 26 May 2026): Malta has not yet acknowledged the impact of noise from the Malta Freeport and Malta International Airport on nearby residents, and should commission a study of it (and of entertainment-industry noise).",
+      "counter": "EU noise-mapping rules cover major airports and roads, so some exposure data may already exist; whether Freeport noise is mapped is not yet checked. The article gives no decibel or exposure figures, and the claim is that no study exists, which can be tested by looking for one.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Compliance-not-health"
+      ],
+      "location": {
+        "place": "Malta Freeport, Birżebbuġa",
+        "lat": 35.81859,
+        "lon": 14.53085,
+        "scope": "site",
+        "icon": "crane"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "ADPD - The Green Party",
+      "date": "2026-05-26",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-105/claim.yml"
+    },
+    {
+      "id": "CC-106",
+      "title": "Shearwaters: 10% of the world population",
+      "category": "Nature & Wildlife",
+      "claim": "BirdLife Malta (LIFE Arċipelagu Garnija project page): Malta's Yelkouan shearwater population is estimated at around 1,600-1,800 pairs, about 10% of the global population.",
+      "counter": "The page is undated and the estimate probably rests on 2010s surveys; later national or IUCN/BirdLife International estimates may differ. 'About 10%' depends on the global figure used.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Hunting & birds",
+      "location": {
+        "place": "Għadira Nature Reserve, Mellieħa",
+        "lat": 35.97088,
+        "lon": 14.34888,
+        "scope": "site",
+        "icon": "park"
+      },
+      "priority": "Queue",
+      "wording_status": "Verbatim found",
+      "confidence": null,
+      "speaker": "BirdLife Malta",
+      "date": "n/d",
+      "quote": "Malta's population is estimated to be around 1,600 – 1,800 pairs, constituting approximately 10% of the global population.",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-106/claim.yml"
     }
   ],
   "edges": [
@@ -3464,6 +3626,97 @@
       "theme": "T10",
       "link_type": "Shared driver",
       "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-009",
+      "to": "CC-101",
+      "theme": "T3",
+      "link_type": "Shared cause",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-039",
+      "to": "CC-101",
+      "theme": "T3",
+      "link_type": "Shared cause",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-047",
+      "to": "CC-101",
+      "theme": "T3",
+      "link_type": "Shared cause",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-027",
+      "to": "CC-090",
+      "theme": "T11",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-027",
+      "to": "CC-097",
+      "theme": "T11",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-027",
+      "to": "CC-103",
+      "theme": "T11",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-090",
+      "to": "CC-097",
+      "theme": "T11",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-090",
+      "to": "CC-103",
+      "theme": "T11",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-097",
+      "to": "CC-103",
+      "theme": "T11",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-102",
+      "to": "CC-103",
+      "theme": "T12",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-020",
+      "to": "CC-104",
+      "theme": "T13",
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-020",
+      "to": "CC-105",
+      "theme": "T13",
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-104",
+      "to": "CC-105",
+      "theme": "T13",
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)"
     }
   ],
   "themes": [
@@ -3516,7 +3769,8 @@
         "CC-041",
         "CC-042",
         "CC-043",
-        "CC-047"
+        "CC-047",
+        "CC-101"
       ]
     },
     {
@@ -3642,6 +3896,48 @@
         "CC-089",
         "CC-098",
         "CC-100"
+      ]
+    },
+    {
+      "id": "T11",
+      "name": "Heat, power cuts and health",
+      "color": "#9575cd",
+      "dashed": true,
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)",
+      "description": "The July heatwaves, the power cuts that accompanied them, and the health response: claims about causes (heat vs generation), deaths, worker exposure and disclosure share one event and one data gap (where deaths occurred, and whether outages coincided).",
+      "members": [
+        "CC-027",
+        "CC-090",
+        "CC-097",
+        "CC-103"
+      ]
+    },
+    {
+      "id": "T12",
+      "name": "Oversight and disclosure",
+      "color": "#aed581",
+      "dashed": true,
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal",
+      "description": "How public bodies respond to scrutiny: an Ombudsman finding left unimplemented, and a request for data refused with a promise to publish later. Useful for tracking follow-through; not evidence of a common cause.",
+      "members": [
+        "CC-102",
+        "CC-103"
+      ]
+    },
+    {
+      "id": "T13",
+      "name": "Noise governance",
+      "color": "#f48fb1",
+      "dashed": true,
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)",
+      "description": "Claims about whether Malta maps, plans for and acts on noise under Directive 2002/49/EC and the WHO guidelines: the 2026 EP study, the PN petition and ADPD's call for a Freeport and airport study.",
+      "members": [
+        "CC-020",
+        "CC-104",
+        "CC-105"
       ]
     }
   ]
