@@ -12,7 +12,26 @@ permalink: /claims/
   <h1>All claims</h1>
   <p>{{ mizien.claims.length }} claims recorded; {{ checked }} with a verdict. Drafts carry a verdict that may change
      after the body concerned replies. <a href="/">Explore them on the map</a>.</p>
-  <div class="table-wrap">
+  <div class="view-switch" role="group" aria-label="Show claims as" hidden>
+    <span class="vs-label">Show as</span>
+    <button type="button" data-view="list" aria-pressed="true">{% icon "list" %}<span>List</span></button>
+    <button type="button" data-view="panels" aria-pressed="false">{% icon "panels" %}<span>Panels</span></button>
+  </div>
+  <ul class="panels" id="claims-panels" hidden>
+    {%- for c in mizien.claims %}
+    <li><a class="panel-card" href="{{ c.path }}">
+      {%- if c.thumb %}<img src="{{ c.thumb.url }}" width="640" height="400" alt="{{ c.thumb.alt }}" loading="lazy">{% endif %}
+      <span class="pc-body">
+        <span class="pc-kicker">{{ c.id }} · {{ c.subtopic or c.category }}</span>
+        <span class="pc-title">{{ c.title }}</span>
+        <span class="pc-meta">{{ c.claim.speaker }}{% if c.claim.date %} · {{ c.claim.date | ukDate }}{% endif %}</span>
+        <span class="pc-foot">{% if c.verdict %}<span class="badge v-{{ c.verdict_slug }}">{{ c.verdict }}</span>{% else %}<span class="badge v-none">Not yet checked</span>{% endif %}
+          <span class="pc-status">{{ c.status_label }}</span></span>
+      </span>
+    </a></li>
+    {%- endfor %}
+  </ul>
+  <div class="table-wrap" id="claims-list">
   <table class="claims">
     <caption class="visually-hidden">Claims, verdicts and status</caption>
     <thead><tr><th scope="col">ID</th><th scope="col">Claim</th><th scope="col">Topic</th><th scope="col">Verdict</th><th scope="col">Status</th></tr></thead>
@@ -30,3 +49,19 @@ permalink: /claims/
   </table>
   </div>
 </div>
+<script>
+  // List or panels: remembered between visits; ?view=panels links straight to the panels.
+  (function () {
+    var sw = document.querySelector(".view-switch"), list = document.getElementById("claims-list"), panels = document.getElementById("claims-panels");
+    function show(v) {
+      list.hidden = v !== "list"; panels.hidden = v !== "panels";
+      sw.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.view === v ? "true" : "false"); });
+      try { localStorage.setItem("mizien.claimsView", v); } catch (e) {}
+    }
+    var v = new URLSearchParams(location.search).get("view");
+    if (v !== "list" && v !== "panels") { try { v = localStorage.getItem("mizien.claimsView"); } catch (e) {} }
+    sw.hidden = false;
+    sw.querySelectorAll("button").forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.view); }); });
+    show(v === "panels" ? "panels" : "list");
+  })();
+</script>

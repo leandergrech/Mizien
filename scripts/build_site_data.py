@@ -236,7 +236,9 @@ def flyer_preview(cid: str, outputs: dict):
 
 
 def write_site_data(records: list, out: dict) -> None:
+    import thumbnails  # scripts/thumbnails.py: one scene per subtopic, a specific thumbnail per researched claim
     manifest = load_archive()
+    thumbs = thumbnails.render_all(records, {c["name"]: c["color"] for c in out["categories"]}, ROOT / "build" / "thumbs")
     titles = {d["id"]: d["title"] for d in records}
     theme_names = {t["id"]: t["name"] for t in out["themes"]}
     site_claims = []
@@ -272,6 +274,7 @@ def write_site_data(records: list, out: dict) -> None:
             "files": files,
             "report_html": report.read_text(encoding="utf-8") if report.is_file() else None,
             "flyer_preview": preview,
+            "thumb": thumbs.get(cid),
             "links": links,
             "record_url": f"{REPO}/blob/main/claims/{cid}/claim.yml",
         })
