@@ -6,3 +6,20 @@ Protected share of Fisheries Management Zone (25 nm),36.0,%,calculated,"MiŻien 
 Protected share of Exclusive economic zone (Marine Regions / Protected Planet),7.8,%,calculated,"'just under 53,000 km2'"
 Protected share of Marine waters reported to the EU,5.5,%,calculated,up to 200 nm
 Extra protected area needed for 30% of EU-reported marine waters,18577,km2,calculated,
+Whole Fisheries Management Zone as a share of EU-reported marine waters,15.2,%,calculated,upper limit of protection if every km2 within 25 nm were protected
+EU-reported marine waters beyond 25 nm,64235,km2,calculated,"84.8% of the 75,715 km2"
+"Boundary area: Territorial sea, 12 nm (Marine Regions v4)",3835.5,km2,calculated (UTM 33N),"Marine Regions: 3,838 km2"
+"Protected sea inside: Territorial sea, 12 nm (Marine Regions v4)",2336.0,km2,calculated,
+"Boundary area: Fisheries Management Zone, 25 nm from baselines (rebuilt)",11491.6,km2,calculated (UTM 33N),"official 11,480 km2"
+"Protected sea inside: Fisheries Management Zone, 25 nm from baselines (rebuilt)",3954.3,km2,calculated,
+Boundary area: Exclusive economic zone (Marine Regions v12),52890.5,km2,calculated (UTM 33N),"Marine Regions: 52,923 km2"
+Protected sea inside: Exclusive economic zone (Marine Regions v12),4130.1,km2,calculated,
+"Boundary area: Marine waters reported to the EU (EEA map service, simplified)",75483.5,km2,calculated (UTM 33N),"EEA spokesperson: 75,715 km2"
+"Protected sea inside: Marine waters reported to the EU (EEA map service, simplified)",4121.5,km2,calculated,
+Protected sea more than 25 nm from the baselines,0.0,km2,calculated,0.1-nm tolerance for boundary precision
+Protected sea in internal waters (landward of the baselines),183.2,km2,calculated,the official FMZ area excludes internal waters
+"Protected share of FMZ, internal waters excluded from both",34.4,%,calculated,
+"Protected share of the sea within 25 nm, internal waters included in both",35.4,%,calculated,
+EU-reported marine waters beyond 25 nm (boundaries),64110,km2,calculated,84.9% of the polygon
+EU-reported marine waters outside the EEZ as mapped by Marine Regions,22721,km2,calculated,
+Deepest point inside a protected site,1333,m,EMODnet via EEA,grid cells of about 200 m
