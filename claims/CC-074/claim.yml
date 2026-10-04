@@ -1,0 +1,40 @@
+id: CC-074
+title: 8,144 EV grants
+category: Transport
+subtopic: Cars & traffic
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Transport Malta: over the last three years more than 8,144 grants worth over EUR 69 million were issued
+    for new electric vehicles.'
+  speaker: Transport Malta
+  date: '2025'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 2025 Scheme for New Electric Vehicles and Pedelecs
+    publisher: Transport Malta
+    date: '2025'
+    url: https://www.transport.gov.mt/land/sustainable-transport/grant-schemes-on-new-electric-vehicles-and-pedelecs/2025-scheme-for-new-electric-vehicles-and-pedelecs-7136
+    note: Primary scheme page.
+counter_evidence: Share of EVs in the fleet; emissions effect vs additional cars.
+tests: NSO vehicle stock by fuel; grant data.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

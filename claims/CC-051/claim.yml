@@ -1,0 +1,41 @@
+id: CC-051
+title: '''Over 30% of our seas protected'''
+category: Nature & Wildlife
+subtopic: Marine protection
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Environment Minister / ERA: Malta protects more than 30% of its maritime zone (ERA: over 35% designated
+    as Marine Protected Areas).'
+  speaker: Environment Minister; Environment and Resources Authority
+  date: '2025'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'FATTI: Does Malta protect about one-third of its seas?'
+    publisher: Amphora Media
+    date: Aug 2025
+    url: https://www.amphora.media/2025/08/fatti-malta-protect-sea-marine-environment
+    note: Prior media fact-check; locates both statements.
+counter_evidence: International databases give 5.5-7.8%; the difference is the reference area (Fisheries Management
+  Zone vs EEZ or territorial waters).
+tests: EEA/BISE, Protected Planet, MPAtlas; ERA MPA boundaries.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

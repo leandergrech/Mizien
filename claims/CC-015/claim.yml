@@ -1,13 +1,14 @@
 id: CC-015
 title: '''Three weeks left'' at the PA'
 category: Governance & Promises
+subtopic: Accountability
 status: Not started
 verdict: null
 verdict_confidence: null
 claim:
-  text: 'Johann Buttigieg (planning conference, Sept 2026, as reported): when his 2019 chats with Yorgen
-    Fenech took place he only had three weeks left at the Planning Authority. Campaigners say the business
-    exchange dates from March 2019 and his tenure ended in October 2019.'
+  text: 'Johann Buttigieg (planning conference, Sept 2026, as reported): when his 2019 chats with Yorgen Fenech
+    took place he only had three weeks left at the Planning Authority. Campaigners say the business exchange dates
+    from March 2019 and his tenure ended in October 2019.'
   speaker: Johann Buttigieg, Planning Authority CEO
   date: 2026-09
   wording_status: 'Paraphrase: locate quote'
@@ -23,15 +24,15 @@ claim:
     url: https://movimentgraffitti.org/2026/09/26/kick-out-the-corrupt-integrity-in-planning/
     note: Campaign source; locates the claim, is not evidence.
 counter_evidence: Dates of the published chats and of the end of his first PA tenure are matters of record.
-tests: Dates of the published chat messages against the documented end of his PA contract (2019). A document
-  check only.
+tests: Dates of the published chat messages against the documented end of his PA contract (2019). A document check
+  only.
 why_low_hanging: Two dates.
 tags: []
 tags_provisional: true
 priority: Queue
 data_readiness: Medium
-caveats: 'Governance rather than environment: maintainer to confirm it is in scope. Date check only; no
-  claims about motive or wrongdoing. Locate a recording or transcript of his exact words first.'
+caveats: 'Governance rather than environment: maintainer to confirm it is in scope. Date check only; no claims about
+  motive or wrongdoing. Locate a recording or transcript of his exact words first.'
 right_of_reply:
   sent: null
   deadline: null

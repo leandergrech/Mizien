@@ -1,0 +1,41 @@
+id: CC-090
+title: 20 heat-linked deaths
+category: Health & Safety
+subtopic: Heat & health
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Health Ministry (2025): at least 20 deaths during one week of the July 2025 heatwave were directly or indirectly
+    linked to extreme heat.'
+  speaker: Ministry for Health
+  date: 2025-07
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: At least 20 heat-linked deaths recorded in Malta during July heatwave
+    publisher: Newsbook
+    date: Jul 2025
+    url: https://newsbook.com.mt/en/at-least-20-heat-linked-deaths-recorded-in-malta-during-july-heatwave/
+    note: Locates the figure.
+counter_evidence: Excess-mortality methods usually give higher numbers than attributed deaths; 108 deaths that week
+  in total.
+tests: NSO weekly deaths; excess mortality vs baseline; Met Office temperatures.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Mater Dei Hospital, Msida
+  lat: 35.90189
+  lon: 14.4766
+  scope: institution
+  icon: pin

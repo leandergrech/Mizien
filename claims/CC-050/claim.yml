@@ -1,0 +1,40 @@
+id: CC-050
+title: '''Race to weaken hunting laws'''
+category: Nature & Wildlife
+subtopic: Hunting & birds
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'BirdLife Malta (2026 campaign): Labour and PN are in a ''dangerous race'' to weaken hunting laws ahead
+    of the election.'
+  speaker: BirdLife Malta
+  date: '2026'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: BirdLife Malta accuses Labour, PN of 'dangerous race' to weaken hunting laws ahead of election
+    publisher: Newsbook
+    date: '2026'
+    url: https://newsbook.com.mt/en/birdlife-malta-accuses-labour-pn-of-dangerous-race-to-weaken-hunting-laws-ahead-of-election/
+    note: NGO claim about both parties.
+counter_evidence: Compare both manifestos' hunting pledges with current law (CC-006 context).
+tests: Labour and PN 2026 manifestos; legal notices.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Parliament House, Valletta
+  lat: 35.89614
+  lon: 14.50978
+  scope: institution
+  icon: parliament

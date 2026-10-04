@@ -5,11 +5,11 @@ status: Not started
 verdict: null
 verdict_confidence: null
 claim:
-  text: A 2026 report for the European Parliament's Committee on Petitions finds Malta compliant with
-    EU noise law on paper while construction, fireworks and entertainment noise fall through regulatory
-    gaps; 21% of Maltese rank noise a top environmental priority against 9% across the EU.
-  speaker: Report for the European Parliament Committee on Petitions; Government of Malta (compliance
-    position to locate)
+  text: A 2026 report for the European Parliament's Committee on Petitions finds Malta compliant with EU noise law
+    on paper while construction, fireworks and entertainment noise fall through regulatory gaps; 21% of Maltese
+    rank noise a top environmental priority against 9% across the EU.
+  speaker: Report for the European Parliament Committee on Petitions; Government of Malta (compliance position to
+    locate)
   date: '2026'
   wording_status: 'Paraphrase: locate quote'
   sources:
@@ -23,18 +23,17 @@ claim:
     date: '2022'
     url: https://www.eea.europa.eu/en/analysis/maps-and-charts/malta-noise-fact-sheet-2022
     note: Exposure figures under the Environmental Noise Directive.
-counter_evidence: Legal compliance with the Environmental Noise Directive is not the same as exposure
-  below WHO guideline levels.
-tests: EEA noise exposure data; WHO Environmental Noise Guidelines for the European Region (2018); ERA
-  strategic noise maps; complaint data for construction and entertainment noise.
+counter_evidence: Legal compliance with the Environmental Noise Directive is not the same as exposure below WHO
+  guideline levels.
+tests: EEA noise exposure data; WHO Environmental Noise Guidelines for the European Region (2018); ERA strategic
+  noise maps; complaint data for construction and entertainment noise.
 why_low_hanging: Mirrors CC-007 (EU limits vs WHO guideline) for noise.
 tags:
 - Compliance-not-health
 tags_provisional: true
 priority: Queue
 data_readiness: Medium
-caveats: Locate the government's own compliance statement before any report; otherwise check the EP study's
-  claims.
+caveats: Locate the government's own compliance statement before any report; otherwise check the EP study's claims.
 right_of_reply:
   sent: null
   deadline: null

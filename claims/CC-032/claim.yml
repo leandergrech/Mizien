@@ -1,0 +1,41 @@
+id: CC-032
+title: Solar flowers, first in Europe
+category: Climate & Energy
+subtopic: Renewables
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta: the 15 ''solar flowers'' at Gozo''s Multi-Modal Hub are a first of their kind in Europe
+    and power the charging of electric buses.'
+  speaker: Ministry for Gozo; Ministry for Transport
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Innovative solar flowers installed at Gozo's Multi-Modal Hub
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/news/national/137696/innovative_solar_flowers_installed_at_gozo_multimodal_hub_
+    note: Locates the claim.
+counter_evidence: '''First in Europe'' and the share of bus charging covered are testable against installed capacity
+  and charging load.'
+tests: Installed kWp; bus charging demand; prior European installations.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Victoria, Gozo
+  lat: 36.04289
+  lon: 14.23985
+  scope: institution
+  icon: pin

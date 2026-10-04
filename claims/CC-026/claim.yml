@@ -1,0 +1,41 @@
+id: CC-026
+title: EU's largest rise in emissions
+category: Climate & Energy
+subtopic: Emissions & targets
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Newsbook, reporting Eurostat: Malta recorded the EU''s largest rise in greenhouse gas emissions, an estimated
+    169.4% between 2015 and 2025.'
+  speaker: Newsbook (reporting Eurostat)
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta records EU's largest rise in greenhouse gas emissions
+    publisher: Newsbook
+    date: n/d
+    url: https://newsbook.com.mt/en/malta-records-eus-largest-rise-in-greenhouse-gas-emissions/
+    note: Media claim.
+counter_evidence: Eurostat's air-emission accounts include aircraft registered in Malta wherever they fly; UNFCCC
+  inventories count only territorial emissions.
+tests: Eurostat env_ac_ainah_r2 vs UNFCCC inventory; aviation share.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

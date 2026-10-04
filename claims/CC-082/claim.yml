@@ -1,0 +1,39 @@
+id: CC-082
+title: 35 quarries for construction waste
+category: Waste
+subtopic: Construction waste
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'ERA: 35 quarries are licensed to receive construction and excavation waste.'
+  speaker: Environment and Resources Authority (ERA)
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 35 quarries licensed to receive construction waste
+    publisher: Newsbook
+    date: n/d
+    url: https://newsbook.com.mt/en/35-quarries-licensed-to-receive-construction-waste/
+    note: Locates the claim.
+counter_evidence: MaltaToday found only a handful actually accept waste; many are still extracting stone.
+tests: ERA licence register; quarry intake returns.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Environment and Resources Authority, Marsa
+  lat: 35.88617
+  lon: 14.49732
+  scope: institution
+  icon: pin

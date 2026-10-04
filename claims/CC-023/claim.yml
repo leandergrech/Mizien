@@ -1,0 +1,41 @@
+id: CC-023
+title: Second interconnector by 2026
+category: Climate & Energy
+subtopic: Electricity & grid
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta: the second electricity interconnector to Sicily is on track to be completed by 2026
+    and will let Malta tap renewable energy on the European grid.'
+  speaker: Government of Malta; Interconnect Malta
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Second interconnector to help Malta achieve renewable energy goals
+    publisher: Newsbook
+    date: n/d
+    url: https://newsbook.com.mt/en/second-interconnector-to-help-malta-achieve-renewable-energy-goals/
+    note: Locates the claim.
+counter_evidence: The NECP (Dec 2024) commits to commissioning by 2030; the completion date and the share of imported
+  renewable power are testable.
+tests: Interconnect Malta project milestones; NECP; ENTSO-E.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

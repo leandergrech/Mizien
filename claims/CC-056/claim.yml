@@ -1,0 +1,40 @@
+id: CC-056
+title: 'Central Link: ''only 254 trees'''
+category: Land & Trees
+subtopic: Trees & planting
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Infrastructure Malta: only 254 trees will be destroyed for the Central Link project, and all replacements
+    will be mature trees.'
+  speaker: Infrastructure Malta
+  date: '2019'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Major Malta Central Link Pledge: ''Only 254 Trees Will Be Destroyed, All Replacements Will Be Mature'''
+    publisher: Lovin Malta
+    date: '2019'
+    url: https://lovinmalta.com/news/major-central-link-pledge-only-254-trees-will-be-destroyed-all-replacements-will-be-mature/
+    note: Locates the pledge.
+counter_evidence: The EIA cited 549 trees uprooted and 237 transplanted; ERA required 1,649 compensatory trees.
+tests: EIA; ERA permit conditions; planted-tree audit.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Central Link, Attard
+  lat: 35.89092
+  lon: 14.44301
+  scope: site
+  icon: flyover

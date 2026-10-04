@@ -1,0 +1,40 @@
+id: CC-035
+title: PM2.5 deaths down two-thirds
+category: Air
+subtopic: Air quality & health
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Environment Agency: in Malta the rate of deaths attributable to PM2.5 fell by 67.7% between 2005
+    and 2023, to 172 attributable deaths in 2023.'
+  speaker: European Environment Agency
+  date: '2025'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Health impacts of air pollution: Malta (Europe''s environment 2025)'
+    publisher: European Environment Agency
+    date: '2025'
+    url: https://www.eea.europa.eu/en/europe-environment-2025/countries/malta/health-impacts-of-air-pollution
+    note: Primary country page.
+counter_evidence: Model estimate against the WHO 5 ug/m3 reference; compare with CC-007 station data.
+tests: EEA burden-of-disease method; station PM2.5 trend.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

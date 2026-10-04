@@ -1,0 +1,40 @@
+id: CC-065
+title: Ġgantija buffer zone permit
+category: Planning & Housing
+subtopic: Heritage & character
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'ADPD (May 2026): recent planning decisions endanger Malta''s heritage, including a permit for apartments
+    within the buffer zone of the Ġgantija Temples.'
+  speaker: ADPD - The Green Party (Sandra Gauci)
+  date: 2026-05
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: ADPD slams planning decisions that endanger Malta's heritage
+    publisher: MaltaToday
+    date: May 2026
+    url: https://www.maltatoday.com.mt/news/national/141429/adpd_slams_planning_decisions_that_endanger_maltas_heritage
+    note: Opposition claim.
+counter_evidence: 'PA/00570/21: farmhouse replaced by 22 apartments; UNESCO buffer-zone rules and SCH position.'
+tests: PA file PA/00570/21; UNESCO management plan; SCH consultation reply.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Ġgantija Temples, Xagħra
+  lat: 36.04723
+  lon: 14.26906
+  scope: site
+  icon: pin

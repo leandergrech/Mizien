@@ -1,0 +1,39 @@
+id: CC-073
+title: Cab trips up 68%
+category: Transport
+subtopic: Cars & traffic
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Transport Minister: cab trips surged by 68% as demand for alternative transport rose.'
+  speaker: Chris Bonett, Transport Minister
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Cab trips surge by 68% as alternative transport demand rises, says Transport Minister
+    publisher: Newsbook
+    date: n/d
+    url: https://newsbook.com.mt/en/cab-trips-surge-by-68-as-alternative-transport-demand-rises-says-transport-minister/
+    note: Locates the claim.
+counter_evidence: More cab trips may add traffic rather than replace car trips; licensed cab numbers.
+tests: TM cab licensing and trip data; traffic counts.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille
