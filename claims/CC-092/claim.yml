@@ -1,0 +1,40 @@
+id: CC-092
+title: 'PN: Gozo net-zero by afforestation'
+category: Governance & Promises
+subtopic: Manifestos & pledges
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Nationalist Party (2026 manifesto): Gozo will become a net-zero island through afforestation, alongside
+    a national indigenous-tree strategy.'
+  speaker: Nationalist Party (PN)
+  date: 2026-05
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'PN published its manifesto: Here is a breakdown'
+    publisher: MaltaToday
+    date: May 2026
+    url: https://www.maltatoday.com.mt/news/election-2026/142040/pn_published_its_manifesto_here_is_a_breakdown
+    note: Opposition pledge.
+counter_evidence: Carbon uptake of feasible afforestation area vs Gozo's emissions.
+tests: Gozo emissions estimate; sequestration rates; available land.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Victoria, Gozo
+  lat: 36.04289
+  lon: 14.23985
+  scope: institution
+  icon: pin

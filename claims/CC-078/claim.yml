@@ -1,0 +1,40 @@
+id: CC-078
+title: 'Gozo Channel: +511,000 passengers'
+category: Transport
+subtopic: Ferries & Gozo links
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Ministry for Gozo: Gozo Channel services increased by 1,707 trips and more than 511,000 passengers on the
+    previous year; two new ferries will enter service in early 2029.'
+  speaker: Ministry for Gozo; Gozo Channel
+  date: '2026'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: EUR 130 Million Investment to Strengthen Malta-Gozo Transport
+    publisher: Invest Gozo
+    date: '2026'
+    url: https://investgozo.gov.mt/investment-malta-gozo-sea-transport/
+    note: Primary page.
+counter_evidence: Passenger and vehicle growth vs Gozo population and tourism; ferry emissions.
+tests: Gozo Channel statistics; NSO inter-island transport.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Mġarr Harbour, Gozo
+  lat: 36.02454
+  lon: 14.2964
+  scope: site
+  icon: ferry

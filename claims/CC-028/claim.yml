@@ -1,0 +1,40 @@
+id: CC-028
+title: 76% less network downtime
+category: Climate & Energy
+subtopic: Electricity & grid
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Enemalta: network downtime fell by 76% after its investment programme, days after outages left thousands
+    without power.'
+  speaker: Enemalta
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Enemalta hails 76% drop in network downtime days after outages left thousands in the dark
+    publisher: Newsbook
+    date: n/d
+    url: https://newsbook.com.mt/en/enemalta-hails-76-drop-in-network-downtime-days-after-outages-left-thousands-in-the-dark/
+    note: Locates the claim.
+counter_evidence: Metric and base period not given in the report; outages continued in later heatwaves.
+tests: Enemalta SAIDI/SAIFI series; regulator (REWS) reports.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Enemalta, Marsa
+  lat: 35.88129
+  lon: 14.49686
+  scope: institution
+  icon: pin

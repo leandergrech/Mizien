@@ -1,0 +1,40 @@
+id: CC-049
+title: 242 illegal hunting incidents
+category: Nature & Wildlife
+subtopic: Hunting & birds
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'BirdLife Malta: it recorded 242 incidents of illegal hunting in 2025, and police took an average of 51
+    minutes to respond.'
+  speaker: BirdLife Malta
+  date: 2025-09
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: On the frontlines (September 2025 newsletter)
+    publisher: BirdLife Malta
+    date: Sep 2025
+    url: https://birdlifemalta.org/2025/09/on-the-frontlines-september-2025-newsletter/
+    note: NGO claim.
+counter_evidence: NGO incident logs vs police and WBRU enforcement data; reporting coverage.
+tests: Police/ELU case data; WBRU reports; PQ answers.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Għadira Nature Reserve, Mellieħa
+  lat: 35.97088
+  lon: 14.34888
+  scope: site
+  icon: park

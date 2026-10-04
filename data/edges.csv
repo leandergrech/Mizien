@@ -50,3 +50,35 @@ CC-017,CC-018,T8,"Planning, housing and land take",Shared driver,Strong
 CC-017,CC-019,T8,"Planning, housing and land take",Shared driver,Strong
 CC-018,CC-019,T8,"Planning, housing and land take",Shared driver,Strong
 CC-007,CC-020,T9,Compliance-not-health pattern,Rhetorical pattern,"Pattern, not causal"
+CC-008,CC-056,T2,Replanting as currency,Shared mechanism,Weak (indicative)
+CC-010,CC-057,T2,Replanting as currency,Shared mechanism,Weak (indicative)
+CC-056,CC-057,T2,Replanting as currency,Shared mechanism,Weak (indicative)
+CC-010,CC-054,T2,Replanting as currency,Shared mechanism,Weak (indicative)
+CC-005,CC-041,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared cause,Weak (indicative)
+CC-005,CC-042,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared cause,Weak (indicative)
+CC-005,CC-043,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared cause,Weak (indicative)
+CC-009,CC-047,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared cause,Weak (indicative)
+CC-009,CC-039,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared cause,Weak (indicative)
+CC-008,CC-069,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-008,CC-076,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-008,CC-072,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-007,CC-035,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-004,CC-081,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-004,CC-079,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-017,CC-063,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-063,CC-082,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-025,CC-026,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-022,CC-025,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-022,CC-051,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-003,CC-094,T7,2030 carbon target,Shared target,Weak (indicative)
+CC-003,CC-025,T7,2030 carbon target,Shared target,Weak (indicative)
+CC-011,CC-024,T7,2030 carbon target,Shared target,Weak (indicative)
+CC-013,CC-060,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-018,CC-062,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-019,CC-058,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-007,CC-033,T9,Compliance-not-health pattern,Rhetorical pattern,"Pattern, not causal"
+CC-083,CC-084,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-083,CC-085,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-084,CC-100,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-086,CC-098,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-085,CC-089,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)

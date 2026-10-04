@@ -1,0 +1,42 @@
+id: CC-024
+title: Renewables target for 2030
+category: Climate & Energy
+subtopic: Renewables
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Updated National Energy and Climate Plan (Dec 2024): Malta will reach its 2030 renewable-energy contribution
+    (11.5% of gross final energy consumption in the EU-reported target; 25% cited in summaries) through solar PV
+    and offshore wind.'
+  speaker: Government of Malta (NECP 2021-2030, updated)
+  date: 2024-12
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta's National Energy and Climate Plan (updated, December 2024)
+    publisher: Energy and Water Agency
+    date: Dec 2024
+    url: https://energywateragency.gov.mt/wp-content/uploads/2025/01/MT-%E2%80%93-FINAL-UPDATED-NECP-2021-2030-English.pdf
+    note: Primary plan.
+counter_evidence: Two different percentages circulate (11.5% and 25%); check which the plan commits to and Malta's
+  actual share (Eurostat nrg_ind_ren).
+tests: NECP text; Eurostat nrg_ind_ren trajectory to 2030.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

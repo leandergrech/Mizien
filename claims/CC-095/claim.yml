@@ -1,0 +1,40 @@
+id: CC-095
+title: EUR 400m to keep bills low
+category: Climate & Energy
+subtopic: Electricity & grid
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta: about EUR 400 million in energy subsidies will keep electricity and fuel prices stable
+    through 2027.'
+  speaker: Government of Malta
+  date: '2025'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Malta EUR 400m Energy Subsidies: 2027 Plan Confirmed'
+    publisher: The Malta Post
+    date: '2025'
+    url: https://themaltapost.com/posts/malta-spends-400-million-to-keep-energy-bills-low-through-2027
+    note: Locator; confirm in budget documents.
+counter_evidence: Energy measures were 46% of the rise in public debt 2022-2025 by one estimate; check budget lines.
+tests: Budget estimates; NAO reports; IMF Article IV (literature/CC-018).
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

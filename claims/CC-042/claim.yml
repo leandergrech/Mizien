@@ -1,0 +1,40 @@
+id: CC-042
+title: '''From Blue Flag to Red Alert'''
+category: Water
+subtopic: Bathing water & sewage
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Nationalist Party: the government celebrates Blue Flag beaches while bathing sites close for sewage contamination.'
+  speaker: Nationalist Party (PN)
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: '''From Blue Flag to Red Alert'': PN slams government over beach closures'
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/news/national/135722/from_blue_flag_to_red_alert_pn_slams_government_over_beach_closures
+    note: Opposition claim.
+counter_evidence: Fajtata Bay was closed within 48 hours of its Blue Flag; May 2026 reports put 15 of 87 bathing
+  zones at poor quality.
+tests: Environmental Health Directorate sampling; EU bathing water report.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Parliament House, Valletta
+  lat: 35.89614
+  lon: 14.50978
+  scope: institution
+  icon: parliament

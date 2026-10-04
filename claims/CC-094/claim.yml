@@ -1,0 +1,40 @@
+id: CC-094
+title: 'Commission: Malta off track for 2030'
+category: Climate & Energy
+subtopic: Emissions & targets
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (Climate Action Progress Report 2025): Malta is projected to emit more in 2030 than
+    in 2005 in effort-sharing sectors, missing its target.'
+  speaker: European Commission
+  date: '2025'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: EU Climate Action Progress Report 2025
+    publisher: EUR-Lex
+    date: '2025'
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX%3A52025DC0668
+    note: Primary EU report.
+counter_evidence: Compare with the government's per-capita framing (CC-025) and CC-003.
+tests: ESR projections; national inventory; NECP measures.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

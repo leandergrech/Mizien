@@ -1,0 +1,41 @@
+id: CC-072
+title: EUR 15m to take cars off the road
+category: Transport
+subtopic: Cars & traffic
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta (2025): a EUR 15 million scheme will help tackle congestion by taking vehicles off
+    the road.'
+  speaker: Ministry for Transport
+  date: '2025'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: EUR 15 million traffic plan deemed ineffective within two months
+    publisher: The Shift News
+    date: 21 Apr 2025
+    url: https://theshiftnews.com/2025/04/21/e15-million-traffic-plan-deemed-ineffective-within-two-months/
+    note: Locates the scheme and a critique.
+counter_evidence: Even fully spent, the scheme could remove at most about 3,000 vehicles; the fleet grows by about
+  36 a day.
+tests: Scheme uptake; NSO vehicle stock.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

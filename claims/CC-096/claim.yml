@@ -1,0 +1,40 @@
+id: CC-096
+title: Fish farms moved 6 km offshore
+category: Nature & Wildlife
+subtopic: Marine protection
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta: tuna farms have been relocated from Delimara and Marsaxlokk to the South-East Aquaculture
+    Zone about 6 km offshore, with stricter environmental conditions.'
+  speaker: Government of Malta; Aquaculture Directorate
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Aquaculture - from conflict to blue growth: An example of aquaculture cages re-allocation'
+    publisher: European MSP Platform
+    date: n/d
+    url: https://maritime-spatial-planning.ec.europa.eu/practices/aquaculture-conflict-blue-growth-example-aquaculture-cages-re-allocation
+    note: Locates the relocation.
+counter_evidence: Slime still reached beaches in 2025 (see the ERA claim); farm capacity growth since relocation.
+tests: Permit records; cage positions; slime incident logs.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Marsaxlokk Bay
+  lat: 35.84177
+  lon: 14.54484
+  scope: site
+  icon: pin

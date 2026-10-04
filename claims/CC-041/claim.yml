@@ -1,0 +1,41 @@
+id: CC-041
+title: Sewage plants compliant by 2026
+category: Water
+subtopic: Bathing water & sewage
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta / WSC (after the 2024 EU Court ruling): Ta'' Barkat and Iċ-Ċumnija sewage plants will
+    provide EU-compliant secondary treatment, with compliance expected by 2026.'
+  speaker: Government of Malta; Water Services Corporation
+  date: '2024'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta Is Violating EU Sewage Rules, European Court Finds
+    publisher: Lovin Malta
+    date: '2024'
+    url: https://lovinmalta.com/lifestyle/environment/malta-is-violating-eu-sewage-rules-european-court-finds/
+    note: Locates the ruling and timeline.
+counter_evidence: WSC says suggestions of systemic untreated discharge misrepresent reality; beach closures in 2026
+  (see CC-005).
+tests: The 2024 CJEU judgment; WSC plant upgrade status; ERA effluent monitoring.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Ta' Barkat sewage treatment plant, Xgħajra
+  lat: 35.88133
+  lon: 14.5546
+  scope: site
+  icon: pin

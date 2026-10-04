@@ -1,13 +1,14 @@
 id: CC-009
 title: Reverse osmosis and groundwater
 category: Water
+subtopic: Water supply & groundwater
 status: Drafted
 verdict: Largely supported
 verdict_confidence: Moderate
 claim:
-  text: 'WSC reported that reverse osmosis supplied 70.7% of its potable-water production in 2025, while
-    groundwater production fell to 11.5 million m³, its lowest annual total in a decade. In August 2026,
-    WSC issued a tender for a new 30,000 m³/day reverse-osmosis plant at Għar Lapsi.'
+  text: WSC reported that reverse osmosis supplied 70.7% of its potable-water production in 2025, while groundwater
+    production fell to 11.5 million m³, its lowest annual total in a decade. In August 2026, WSC issued a tender
+    for a new 30,000 m³/day reverse-osmosis plant at Għar Lapsi.
   speaker: Water Services Corporation
   date: '2026-08-25'
   wording_status: Verbatim found
@@ -32,7 +33,8 @@ claim:
     publisher: Environment and Resources Authority and Energy and Water Agency
     date: '2024'
     url: https://era.org.mt/wp-content/uploads/2023/09/3rd-River-Basin-Management-Plan-MALTA-Chapter-6-Assessment-of-Status-Final.pdf
-    note: 'Primary assessment: two main aquifer systems are poor quantitatively; 14 bodies poor chemically; the nitrate standard is exceeded by all except three named bodies.'
+    note: 'Primary assessment: two main aquifer systems are poor quantitatively; 14 bodies poor chemically; the
+      nitrate standard is exceeded by all except three named bodies.'
   - title: Nearly two-thirds of your tap water comes from the sea
     publisher: MaltaToday
     date: 2022 data
@@ -45,10 +47,11 @@ claim:
     publisher: Chambers (WH Partners)
     date: Aug 2026
     url: https://chambers.com/articles/35-million-tender-launched-new-għar-lapsi-reverse-osmosis-plant
-counter_evidence: The latest published River Basin Management Plan classifies both Malta and Gozo Mean Sea Level aquifer
-  systems in poor quantitative status and 14 groundwater bodies in poor chemical status. It reports nitrate above
-  the 50 mg/L standard in 12 of 15 bodies, with three named exceptions; not every body fails for nitrate. WSC's
-  potable-production figures cover its supply system and do not establish a national all-user abstraction total.
+counter_evidence: The latest published River Basin Management Plan classifies both Malta and Gozo Mean Sea Level
+  aquifer systems in poor quantitative status and 14 groundwater bodies in poor chemical status. It reports nitrate
+  above the 50 mg/L standard in 12 of 15 bodies, with three named exceptions; not every body fails for nitrate.
+  WSC's potable-production figures cover its supply system and do not establish a national all-user abstraction
+  total.
 tests: Recalculate RO shares and groundwater-production changes from WSC annual-report data; compare the WSC series
   with the regulator's separate groundwater-body quantity and chemistry assessments; distinguish a tendered plant
   from commissioned capacity and measured aquifer recovery.
@@ -61,18 +64,19 @@ priority: Done (v1.0)
 data_readiness: High
 caveats: WSC's 2025 annual report states that groundwater extraction fell 11.4% from 2024, while the annual-report
   chart values transcribed for 2024 and 2025 imply an 11.9% decline; the discrepancy is retained. WSC production
-  is not a complete national groundwater-abstraction series. The 3rd RBMP assessment period is older than the
-  2025 production figures, and a tender does not establish future operation or aquifer recovery.
+  is not a complete national groundwater-abstraction series. The 3rd RBMP assessment period is older than the 2025
+  production figures, and a tender does not establish future operation or aquifer recovery.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: >
-  WSC's 2025 Annual Report reports 70.7% RO share and 11.5 million m³ of groundwater production; its series shows
-  the groundwater component declined by 8.95% from 2022 to 2025. The report's chart implies an 11.86% 2024–2025
-  decline, versus 11.4% in its narrative. The 3rd RBMP reports two main aquifers in poor quantitative status,
-  14 of 15 bodies in poor chemical status, and nitrate above the standard in 12 of 15. WSC's August 2026 tender
-  notice specifies a planned 30,000 m³/day plant, with bids due 30 October 2026.
+evidence_shown: 'WSC''s 2025 Annual Report reports 70.7% RO share and 11.5 million m³ of groundwater production;
+  its series shows the groundwater component declined by 8.95% from 2022 to 2025. The report''s chart implies an
+  11.86% 2024–2025 decline, versus 11.4% in its narrative. The 3rd RBMP reports two main aquifers in poor quantitative
+  status, 14 of 15 bodies in poor chemical status, and nitrate above the standard in 12 of 15. WSC''s August 2026
+  tender notice specifies a planned 30,000 m³/day plant, with bids due 30 October 2026.
+
+  '
 outputs:
   report_pdf: report.pdf
   flyer_pdf: flyer.pdf

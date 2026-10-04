@@ -1,0 +1,40 @@
+id: CC-081
+title: Landfill share rising
+category: Waste
+subtopic: Landfill & treatment
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'The Shift News (Feb 2026): Malta''s waste management is going in reverse, with the share landfilled rising
+    from 78.6% in 2023 to 79.2% in 2024.'
+  speaker: The Shift News
+  date: '2026-02-19'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta's waste management is going in reverse
+    publisher: The Shift News
+    date: 19 Feb 2026
+    url: https://theshiftnews.com/2026/02/19/maltas-waste-management-is-going-in-reverse/
+    note: Media claim.
+counter_evidence: Compare with CC-004 (government's 'strong progress'); Eurostat municipal waste treatment.
+tests: Eurostat env_wasmun; NSO waste statistics.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Magħtab waste complex
+  lat: 35.93923
+  lon: 14.44073
+  scope: site
+  icon: landfill

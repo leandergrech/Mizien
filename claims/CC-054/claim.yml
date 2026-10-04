@@ -1,0 +1,41 @@
+id: CC-054
+title: 'Project Green: 100,000 m2 a year'
+category: Land & Trees
+subtopic: Open spaces & parks
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Project Green: in two years it opened or refurbished 100,000 square metres of open spaces, with another
+    100,000 square metres delivered this year and the same next year.'
+  speaker: Project Green; Ministry for Public Cleanliness and Regeneration
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Project Green opens thousands of square metres of new public spaces across Malta
+    publisher: TVM
+    date: n/d
+    url: https://tvmnews.mt/en/news/project-green-opens-thousands-of-square-metres-of-new-public-spaces-across-malta/
+    note: Locates the claim.
+counter_evidence: Refurbished vs newly created space; how much was already public; tree cover vs hard landscaping
+  (see CC-010, CC-012).
+tests: Project list with areas; before/after satellite imagery.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Fgura District Park, Fgura
+  lat: 35.87283
+  lon: 14.5208
+  scope: site
+  icon: park

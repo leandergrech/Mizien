@@ -1,0 +1,40 @@
+id: CC-064
+title: Grand Harbour regeneration
+category: Planning & Housing
+subtopic: Development & construction
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'PM Robert Abela (Feb 2026): the four-phase Grand Harbour regeneration will not alter the fundamental character
+    of the harbour, and surrounding localities such as Marsa will benefit directly.'
+  speaker: Robert Abela, Prime Minister
+  date: 2026-02
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Long-term regeneration of Grand Harbour announced in four-phase project
+    publisher: MaltaToday
+    date: Feb 2026
+    url: https://www.maltatoday.com.mt/news/national/139575/longterm_regeneration_of_grand_harbour_announced_in_fourphase_project
+    note: Locates the claim.
+counter_evidence: '''Mixed-use zone of international standard''; plans, heights and public land involved.'
+tests: Grand Harbour Revival Plan; consultation documents; PA applications.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Grand Harbour, Senglea
+  lat: 35.88717
+  lon: 14.51731
+  scope: site
+  icon: waterfront

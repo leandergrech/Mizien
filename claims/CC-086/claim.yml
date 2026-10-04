@@ -1,0 +1,40 @@
+id: CC-086
+title: Comino kiosks tendered from 2026
+category: Tourism & Population
+subtopic: Short lets & concessions
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Tourism Minister Ian Borg (Feb 2025): from 2026 all Comino kiosks and encroached public spaces will be
+    awarded through competitive tenders and their number reduced.'
+  speaker: Ian Borg, then Tourism Minister
+  date: 2025-02
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Watch: No More Vans? Ian Borg Pledges Major Comino Kiosk Revamp'
+    publisher: Lovin Malta
+    date: Feb 2025
+    url: https://lovinmalta.com/news/watch-no-more-vans-ian-borg-pledges-major-comino-kiosk-revamp/
+    note: Locates the pledge.
+counter_evidence: In June 2026 the kiosks remained in place (The Shift, Moviment Graffitti).
+tests: MTA tender notices; site observation; concession records.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Blue Lagoon, Comino
+  lat: 36.01404
+  lon: 14.32338
+  scope: site
+  icon: pin

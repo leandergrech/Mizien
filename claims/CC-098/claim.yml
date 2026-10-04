@@ -1,0 +1,40 @@
+id: CC-098
+title: Officials enforce private interests at Blue Lagoon
+category: Tourism & Population
+subtopic: Short lets & concessions
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Moviment Graffitti (June 2026): public officials were filmed telling people to leave a public beach at
+    the Blue Lagoon occupied by concession deckchairs.'
+  speaker: Moviment Graffitti
+  date: '2026-06-24'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Visit Malta officials filmed telling citizens to leave deckchair-occupied beach in Comino
+    publisher: The Shift News
+    date: 24 Jun 2026
+    url: https://theshiftnews.com/2026/06/24/visit-malta-officials-filmed-telling-citizens-to-leave-deckchair-occupied-beach-in-comino/
+    note: NGO claim with video.
+counter_evidence: Concession terms vs public foreshore rights; MTA's response.
+tests: Concession contracts; foreshore law; MTA statement.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Blue Lagoon, Comino
+  lat: 36.01404
+  lon: 14.32338
+  scope: site
+  icon: pin
