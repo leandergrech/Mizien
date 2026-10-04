@@ -477,7 +477,7 @@
   function panelInset() { return panelOpen() && !wide ? panel.offsetWidth + 22 : 0; }
   function topInset() { return panelOpen() && wide ? Math.min(H * 0.55, panel.offsetTop + panel.offsetHeight) : 0; }
   var cyNow = null;
-  function cyTarget() { var top = topInset(); return top ? (top + H - 40) / 2 : H / 2 + 6; }
+  function cyTarget() { var top = topInset(); return top ? (top + H - 40) / 2 : (H - sheetInset()) / 2 + 6; }
   var cxNow = null;
   function cxTarget() { return leftInset() + (W - leftInset() - panelInset()) / 2; }
   function baseScale() {
@@ -537,7 +537,7 @@
     if (cxNow === null) cxNow = cxTarget(); cxNow += (cxTarget() - cxNow) * Math.min(1, k * 1.2);
     if (cyNow === null) cyNow = cyTarget(); cyNow += (cyTarget() - cyNow) * Math.min(1, k * 1.2);
     var fxT = expanded ? expanded.x : 0, fyT = expanded ? expanded.y : 0, fzT = expanded ? expanded.z : 0;
-    if (expanded) { var avail = Math.min(W - leftInset() - panelInset(), H - 120 - topInset()), b0 = Math.max(0.6, avail / 400) * cam.zoom;
+    if (expanded) { var avail = Math.min(W - leftInset() - panelInset(), H - 120 - topInset() - sheetInset()), b0 = Math.max(0.6, avail / 400) * cam.zoom;
       cam.tem = Math.max(1, Math.min(3.4, 0.34 * avail / ((expanded.openR || 110) * b0 * 0.75))); }
     cam.fx += (fxT - cam.fx) * k; cam.fy += (fyT - cam.fy) * k; cam.fz += (fzT - cam.fz) * k; cam.em += (cam.tem - cam.em) * k;
     if (view === "map") { if (cam.tyaw !== null) cam.yaw += (cam.tyaw - cam.yaw) * k * 0.6; }
@@ -1111,10 +1111,48 @@
       panel.classList.toggle("wide", wide); w.textContent = wide ? "⤡" : "⤢"; w.title = wide ? "Narrow view" : "Wide view";
       w.setAttribute("aria-label", w.title); w.setAttribute("aria-pressed", wide ? "true" : "false"); fitPanel(); setTimeout(fitPanel, 400); };
     var x = el("button", "x", "×"); x.type = "button"; x.setAttribute("aria-label", "Close"); x.onclick = clearSel;
-    btns.appendChild(w); btns.appendChild(x); head.appendChild(btns);
+    // phones: lower the card to a peek bar; the selection stays highlighted underneath
+    var pb = el("button", "pbtn", "▾"); pb.type = "button"; pb.onclick = function () { setPeek(!panel.classList.contains("peek")); };
+    btns.appendChild(w); btns.appendChild(pb); btns.appendChild(x); head.appendChild(btns);
+    head.appendChild(el("div", "grab")); sheetGestures(head); setPeek(false);
     head.appendChild(el("div", "id", kicker)); head.appendChild(el("h3", null, title));
     if (pills && pills.length) { var vl = el("div", "verdictline"); pills.forEach(function (t) { vl.appendChild(el("span", "vpill" + (light ? " dark" : ""), t)); }); head.appendChild(vl); }
     panel.appendChild(head); pbody = el("div", "pbody"); panel.appendChild(pbody);
+  }
+  // ------------------------------------------------------------ phone bottom sheet
+  // On phones the panel is a bottom sheet. It can be lowered (button, or swipe down on its header) to a peek bar
+  // without clearing the selection, so the highlighted group can be panned and zoomed; tap or swipe up to restore.
+  function isSheet() { return W <= 900; }
+  function sheetInset() {
+    if (!isSheet() || panel.style.display !== "block") return 0;
+    return Math.min(panel.offsetHeight, H * 0.62) + 8;
+  }
+  function setPeek(on) {
+    panel.classList.toggle("peek", !!on);
+    var b = panel.querySelector(".pbtn");
+    if (b) { b.textContent = on ? "▴" : "▾"; b.setAttribute("aria-expanded", on ? "false" : "true");
+      b.setAttribute("aria-label", on ? "Show the details again" : "Lower the card to see the map"); b.title = b.getAttribute("aria-label"); }
+    if (on) panel.scrollTop = 0;
+  }
+  function sheetGestures(head) {
+    var drag = null;
+    head.addEventListener("pointerdown", function (e) {
+      if (!isSheet() || e.target.closest("button")) return;
+      drag = { y: e.clientY, id: e.pointerId, moved: 0 }; head.setPointerCapture(e.pointerId);
+    });
+    head.addEventListener("pointermove", function (e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      var dy = e.clientY - drag.y; drag.moved = Math.max(drag.moved, Math.abs(dy));
+      if (!panel.classList.contains("peek") && dy > 0) panel.style.transform = "translateY(" + dy + "px)";
+    });
+    function end(e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      var dy = e.clientY - drag.y, tap = drag.moved < 6; drag = null; panel.style.transform = "";
+      if (panel.classList.contains("peek")) { if (tap || dy < -24) setPeek(false); }
+      else if (dy > 48) setPeek(true);
+    }
+    head.addEventListener("pointerup", end);
+    head.addEventListener("pointercancel", function () { drag = null; panel.style.transform = ""; });
   }
   function fitPanel() { var need = (panel.firstChild ? panel.firstChild.offsetHeight : 0) + (pbody ? pbody.offsetHeight : 0); panel.classList.toggle("fit", need < stage.clientHeight - 140); }
   function label(t) { pbody.appendChild(el("div", "label", t)); }
@@ -1223,7 +1261,7 @@
     label("CLAIMS LINKED BY THIS THEME"); var box = el("div", "links");
     (th.members || []).forEach(function (m) { if (byId[m]) claimLink(m, box); }); pbody.appendChild(box); fitPanel();
   }
-  function clearSel() { sel = null; panel.style.display = "none"; collapse(); }
+  function clearSel() { sel = null; panel.classList.remove("peek"); panel.style.display = "none"; collapse(); }
 
   function showTip(h, x, y) {
     if (!h) { tip.style.display = "none"; return; }
