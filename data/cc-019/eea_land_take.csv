@@ -1,0 +1,4 @@
+item,value,unit,source,note
+Malta land take 2012-2018 (low reading),2900,m2 per km2 of country area,"EEA, Country comparison: land take and land recultivation in EEA39, 2012-2018 (static chart, modified 20 Sep 2024)","read from the chart by pixel measurement; highest bar of EEA39"
+Malta land take 2012-2018 (high reading),3000,m2 per km2 of country area,"EEA, same chart",
+Malta rank among EEA39 countries 2012-2018,1,rank,"EEA, same chart","Malta has the tallest land-take bar; United Kingdom and Cyprus next"

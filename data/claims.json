@@ -627,10 +627,10 @@
       "id": "CC-019",
       "title": "830,000 m2 of land lost in five years",
       "category": "Land & Trees",
-      "claim": "Amphora Media (Sept 2026, 'Green to Grey'): Malta lost over 830,000 square metres of land to development in five years, with nearly 95% of land take between 2018 and 2023 affecting farmland rather than natural areas.",
-      "counter": "To be established: the method and data source behind the area figure.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Amphora Media (Green to Grey, 11-12 Sep 2026): nearly 830,000 square metres of nature and cropland were built up in Malta between 2018 and 2023 (headline: 'over 830,000'), 0.26% of land; in nearly 95% of the take-up, farmland rather than natural area was affected.",
+      "counter": "Independent check with Impact Observatory/Esri 10 m land cover (2017-2023): consistent new built-up 1.9 km2 gross, 1.4 km2 net (3-year rule); 5.0 / 3.0 km2 (2-year rule), so 0.83 km2 is plausible and conservative. Arithmetic (0.26%, 116 pitches, 1.94 km2 since 2006) checks out. Previous cover: 65% crops, 31% rangeland, 4% bare, so the 'nearly 95% farmland' share is not reproduced. EEA chart (2012-2018): about 0.91-0.94 km2, highest land take of EEA39, matching the 920,000 m2 quoted; 2006-2012 figure not seen.",
+      "status": "Drafted",
+      "verdict": "Largely supported",
       "tags": [],
       "location": {
         "place": "City Gate, Valletta (national claim)",
@@ -639,14 +639,19 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Amphora Media",
-      "date": "2026-09",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "date": "2026-09-11",
+      "quote": "nearly 830,000 square metres of nature and cropland have been built up in Malta between 2018 and 2023",
+      "version": "1.0",
+      "last_reviewed": "2026-10-04",
+      "outputs": {
+        "report": "claim-files/CC-019/report.pdf",
+        "flyer_pdf": "claim-files/CC-019/flyer.pdf",
+        "flyer_png": "claim-files/CC-019/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-019/claim.yml"
     },
     {
