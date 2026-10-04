@@ -1,13 +1,14 @@
 id: CC-018
 title: IMF 'confirms' MDA on housing
 category: Planning & Housing
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Malta Developers Association (8 Feb 2026): the IMF''s assessment of the Maltese housing market
-    confirms what the MDA has been saying about the strength and stability of the property sector.'
-  speaker: Malta Developers Association
+  text: 'Malta Developers Association (statement quoted by MaltaToday, 8 Feb 2026): ''The IMF''s assessment of the
+    Maltese housing market confirms what the MDA has been saying for several years'', i.e. the strength and stability
+    of the property sector.'
+  speaker: Malta Developers Association (MDA)
   date: '2026-02-08'
   wording_status: Verbatim found
   sources:
@@ -15,24 +16,39 @@ claim:
     publisher: MaltaToday
     date: 8 Feb 2026
     url: https://www.maltatoday.com.mt/news/national/139634/malta_development_association_welcomes_imf_assessment_housing_market
-    note: Quotes the MDA; locate the MDA press release and the IMF report.
-  quote: The IMF's assessment of the Maltese housing market confirms what the MDA has been saying
-counter_evidence: As reported, the IMF found no clear overvaluation and a low likelihood of a weakening
-  market; an MDA-commissioned study reported prices up 59% since 2017 and a rising price-to-income ratio.
-tests: The IMF Article IV report text; price-to-income and affordability indicators (Eurostat, NSO, Central
-  Bank of Malta).
-why_low_hanging: One document to read against one statement; may well be largely supported.
+    note: The claim in direct speech. Read in full 4 Oct 2026. MDA's own release not found.
+  - title: 'Malta: 2025 Article IV Consultation (IMF Country Report No. 26/29)'
+    publisher: International Monetary Fund
+    date: Feb 2026
+    url: https://www.imf.org/-/media/files/publications/cr/2026/english/1mltea2026001-source-pdf.pdf
+    note: Read in full 4 Oct 2026; housing findings pp. 3, 8, 11, 12, 19, 20.
+  quote: The IMF's assessment of the Maltese housing market confirms what the MDA has been saying for several years.
+counter_evidence: 'IMF CR 26/29: prices ''aligned with fundamentals'', price-to-income and price-to-rent stable,
+  weakening ''currently low'' (supports). Eurostat tipsho60: Malta price-to-income -10.7% 2015-2024, 92.9% of long-term
+  average (EU 98.9). But IMF calls banks'' real-estate exposure (72% of private loans, from 61%) ''a vulnerability'',
+  urges vigilance and enhanced monitoring given rapid price growth; affordability not assessed (overburden 1.1%
+  -> 6.0% 2015-2025). MDA-commissioned study (as reported) found prices outpacing incomes.'
+tests: IMF Country Report 26/29 read in full; Eurostat tipsho60, tipsho10, ilc_lvho07a.
+why_low_hanging: 'Done: Claim Check 018 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: High
-caveats: A developer-side claim; included for balance.
+caveats: Right of reply to the MDA not yet sent. Statement known through MaltaToday; MDA release and commissioned
+  study not seen.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- IMF Country Report 26/29 (data/cc-018/imf_extracts.csv)
+- Eurostat tipsho60 (data/cc-018/eurostat_tipsho60.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-04'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
