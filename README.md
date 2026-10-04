@@ -49,7 +49,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-017 | Planning & Housing | Land reclamation outside the Freeport | Drafted | Not substantiated |
 | CC-018 | Planning & Housing | IMF 'confirms' MDA on housing | Drafted | Largely supported |
 | CC-019 | Land & Trees | 830,000 m2 of land lost in five years | Drafted | Largely supported |
-| CC-020 | Noise | Noise: compliant on paper | Not started | - |
+| CC-020 | Noise | EP study: noise law not the cause | Not started | - |
 | CC-021 | Transport | Malta-Gozo tunnel traffic | Not started | - |
 | CC-022 | Climate & Energy | 'Lowest electricity burden in the EU' | Drafted | Largely supported |
 | CC-023 | Climate & Energy | Second interconnector by 2026 | Not started | - |
