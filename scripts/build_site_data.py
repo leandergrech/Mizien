@@ -123,6 +123,7 @@ def main() -> int:
 # ---------------------------------------------------------------- build/site-data.json for the Eleventy site
 
 SITE_DATA = ROOT / "build" / "site-data.json"
+PREVIEWS = ROOT / "build" / "claim-previews"     # small flyer previews, copied into the site as claim-files/
 VERDICT_RATING = {"Supported": 5, "Largely supported": 4, "Not substantiated": 3, "Misleading": 2, "Contradicted": 1}
 STATUS_LABELS = {
     "Not started": "Not yet checked",
@@ -131,7 +132,7 @@ STATUS_LABELS = {
     "Right of reply": "Sent to the body concerned for reply",
     "Published": "Published",
 }
-OUTPUT_LABELS = {"report": "Report", "report_pdf": "Report", "flyer_pdf": "Flyer (PDF)", "flyer_png": "Flyer (image)",
+OUTPUT_LABELS = {"report": "Full report", "report_pdf": "Full report", "flyer_pdf": "Flyer", "flyer_png": "Flyer image",
                  "document": "Document", "appendix": "Appendix"}
 
 
@@ -217,6 +218,23 @@ def section_items(md_file: str, heading: str) -> list:
     return [re.sub(r"\s+", " ", x).strip() for x in items]
 
 
+def flyer_preview(cid: str, outputs: dict):
+    """A 600 px wide WebP of the flyer for the claim page (the full PNG stays a download). Returns its site path."""
+    name = outputs.get("flyer_png")
+    src = ROOT / "claims" / cid / pathlib.Path(name).name if name else None
+    if not src or not src.is_file():
+        return None
+    from PIL import Image  # Pillow is installed with reportlab
+    dest = PREVIEWS / cid / "flyer-preview.webp"
+    if not dest.is_file() or dest.stat().st_mtime < src.stat().st_mtime:
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        im = Image.open(src).convert("RGB")
+        im.thumbnail((600, 1000))
+        im.save(dest, "WEBP", quality=82, method=6)
+    w, h = Image.open(dest).size
+    return {"url": f"/claim-files/{cid}/flyer-preview.webp", "width": w, "height": h}
+
+
 def write_site_data(records: list, out: dict) -> None:
     manifest = load_archive()
     titles = {d["id"]: d["title"] for d in records}
@@ -238,6 +256,8 @@ def write_site_data(records: list, out: dict) -> None:
                 links.append({"id": other, "title": titles.get(other, other), "theme_id": e["theme"],
                               "theme": theme_names.get(e["theme"], e["theme"]), "link_type": e["link_type"],
                               "strength": e["strength"]})
+        report = ROOT / "claims" / cid / "report.html"   # web version of the report (tools/report_html.py)
+        preview = flyer_preview(cid, d.get("outputs") or {})
         site_claims.append({
             **rec,
             "path": f"/claims/{cid}/",
@@ -250,6 +270,8 @@ def write_site_data(records: list, out: dict) -> None:
             "sources": [{**jsonable(s), "archive": archive_entry(s.get("url"), manifest)}
                         for s in (d["claim"].get("sources") or [])],
             "files": files,
+            "report_html": report.read_text(encoding="utf-8") if report.is_file() else None,
+            "flyer_preview": preview,
             "links": links,
             "record_url": f"{REPO}/blob/main/claims/{cid}/claim.yml",
         })

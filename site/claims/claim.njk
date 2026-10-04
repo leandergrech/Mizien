@@ -23,7 +23,7 @@ permalink: "/claims/{{ claim.id }}/"
     </p>
   </header>
 
-  <div class="check-body">
+  <div class="check-body{% if c.report_html %} has-report{% endif %}">
     {%- if c.is_draft and c.verdict %}
     <aside class="notice" aria-label="Draft notice">
       <p><strong>This is a draft check.</strong> The body concerned has not yet had the chance to reply, and the verdict
@@ -32,6 +32,11 @@ permalink: "/claims/{{ claim.id }}/"
     </aside>
     {%- endif %}
 
+    {%- if c.report_html %}
+    <section class="report-wrap" aria-label="Full report">
+      {{ c.report_html | safe }}
+    </section>
+    {%- else %}
     <section aria-labelledby="h-claim">
       <h2 id="h-claim">The claim</h2>
       {%- if c.claim.quote %}
@@ -82,20 +87,10 @@ permalink: "/claims/{{ claim.id }}/"
       <p>{{ c.tests }}</p>
     </section>
     {%- endif %}
-
-    {%- if c.files.length %}
-    <section aria-labelledby="h-files">
-      <h2 id="h-files">Report and flyer</h2>
-      <ul class="files">
-        {%- for f in c.files %}
-        <li><a href="{{ f.url }}">{{ f.label }}</a> <span class="small">{{ f.type }}{% if f.bytes %}, {{ f.bytes | fileSize }}{% endif %}</span></li>
-        {%- endfor %}
-      </ul>
-    </section>
     {%- endif %}
 
     <section aria-labelledby="h-sources">
-      <h2 id="h-sources">Sources</h2>
+      <h2 id="h-sources">{% if c.report_html %}Sources and archived copies{% else %}Sources{% endif %}</h2>
       {%- if c.sources.length %}
       <ol class="sources">
         {%- for s in c.sources %}
@@ -140,6 +135,28 @@ permalink: "/claims/{{ claim.id }}/"
         <li><a href="/claims/{{ l.id }}/">{{ l.id }}: {{ l.title }}</a> <span class="small">{{ l.theme }} ({{ l.link_type | lower }}, {{ l.strength | lower }})</span></li>
         {%- endfor %}
       </ul>
+    </section>
+    {%- endif %}
+
+    {%- if c.files.length %}
+    <section class="downloads" aria-labelledby="h-downloads">
+      <h2 id="h-downloads">Download the report and flyer</h2>
+      <div class="download-grid">
+        {%- set flyer = c.files | findBy("key", "flyer_png") %}
+        {%- if c.flyer_preview and flyer %}
+        <a class="flyer-preview" href="{{ flyer.url }}" title="Open the full-size flyer image">
+          <img src="{{ c.flyer_preview.url }}" width="{{ c.flyer_preview.width }}" height="{{ c.flyer_preview.height }}"
+               alt="Flyer for {{ c.id }}: {{ c.title }}" loading="lazy">
+        </a>
+        {%- endif %}
+        <ul class="download-buttons">
+          {%- for f in c.files %}
+          <li><a class="btn-download" href="{{ f.url }}" download="{{ c.id }}-{{ f.name }}">
+            <span class="dl-label">{{ f.label }}</span>
+            <span class="dl-meta">{{ f.type }}{% if f.bytes %} · {{ f.bytes | fileSize }}{% endif %}</span></a></li>
+          {%- endfor %}
+        </ul>
+      </div>
     </section>
     {%- endif %}
 

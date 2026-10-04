@@ -8,7 +8,7 @@
     "node": ">=24"
   },
   "scripts": {
-    "data": "python3 scripts/validate_claims.py && python3 scripts/build_site_data.py",
+    "data": "python3 scripts/validate_claims.py && python3 tools/report_html.py --all --warn && python3 scripts/build_site_data.py",
     "build": "npm run data && eleventy",
     "serve": "npm run data && eleventy --serve"
   },

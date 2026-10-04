@@ -45,6 +45,12 @@ jobs:
       - name: Validate claim records
         run: python scripts/validate_claims.py
 
+      - name: Report tools (poppler and the report fonts)
+        run: sudo apt-get update -q && sudo apt-get install -y -q poppler-utils fonts-liberation fonts-dejavu-core
+
+      - name: Web versions of the reports
+        run: python tools/report_html.py --all --warn
+
       - name: Build site data
         run: python scripts/build_site_data.py
 
