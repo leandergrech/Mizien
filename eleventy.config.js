@@ -1,21 +1,48 @@
 // Eleventy builds the public site into _site/ from site/ (templates) and the
 // data written by scripts/build_site_data.py. Run `npm run build`.
+import { readFileSync } from "node:fs";
 import { HtmlBasePlugin } from "@11ty/eleventy";
 
+// GitHub Pages project site lives under /Mizien/. Set PATH_PREFIX=/ for a custom domain or local root.
+const pathPrefix = process.env.PATH_PREFIX ?? "/Mizien/";
+const site = JSON.parse(readFileSync(new URL("./site/_data/site.json", import.meta.url), "utf-8"));
+
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+  "October", "November", "December"];
+
 export default function (eleventyConfig) {
-  // Root-relative links in templates ("/claims/CC-001/") get the path prefix
-  // (e.g. /Mizien/ on GitHub Pages) added at build time.
+  // Root-relative links in templates ("/claims/CC-001/") get the path prefix added at build time.
   eleventyConfig.addPlugin(HtmlBasePlugin);
 
-  // Transition: the hand-written site in docs/ is copied through unchanged, so
-  // the built site matches what GitHub Pages serves from /docs today. Pages move
-  // into site/ one at a time; docs/ is retired once the Actions deploy is live.
+  // Transition: the hand-written site in docs/ is copied through unchanged, so the built
+  // site still matches what GitHub Pages serves from /docs. Pages move into site/ one at a
+  // time; docs/ is retired once the Actions deploy is live.
   eleventyConfig.addPassthroughCopy({ docs: "/" });
+  eleventyConfig.addPassthroughCopy({ "site/assets": "assets" });
+
+  // "2025-11-13" -> "13 November 2025"; "2025-09" -> "September 2025"; anything else unchanged.
+  eleventyConfig.addFilter("ukDate", (value) => {
+    const m = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(String(value ?? "").trim());
+    if (!m) return value;
+    const [, y, mo, d] = m;
+    if (!mo) return y;
+    return (d ? `${Number(d)} ` : "") + `${MONTHS[Number(mo) - 1]} ${y}`;
+  });
+
+  eleventyConfig.addFilter("fileSize", (bytes) => {
+    if (!bytes) return "";
+    return bytes >= 1e6 ? `${(bytes / 1e6).toFixed(1)} MB` : `${Math.round(bytes / 1e3)} KB`;
+  });
+
+  // Absolute URL for canonical links, feeds and social cards.
+  eleventyConfig.addFilter("absoluteUrl", (path) =>
+    new URL(pathPrefix.replace(/\/$/, "") + path, site.url).href);
+
+  eleventyConfig.addFilter("findBy", (list, key, value) => (list || []).find((x) => x[key] === value));
 }
 
 export const config = {
   dir: { input: "site", output: "_site", includes: "_includes", data: "_data" },
-  // GitHub Pages project site lives under /Mizien/. Set PATH_PREFIX=/ for a custom domain or local root.
-  pathPrefix: process.env.PATH_PREFIX ?? "/Mizien/",
+  pathPrefix,
   templateFormats: ["njk", "md", "11ty.js"],
 };
