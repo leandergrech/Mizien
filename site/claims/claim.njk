@@ -6,7 +6,9 @@ pagination:
   alias: claim
 permalink: "/claims/{{ claim.id }}/"
 ---
+{%- import "macros.njk" as m -%}
 {%- set c = claim -%}
+{%- set cn = c.connections -%}
 {%- set verdictInfo = mizien.verdicts | findBy("name", c.verdict) -%}
 <nav class="crumbs" aria-label="Breadcrumb">
   <ol><li><a href="/">Home</a></li><li><a href="/claims/">Claims</a></li><li aria-current="page">{{ c.id }}</li></ol>
@@ -35,7 +37,7 @@ permalink: "/claims/{{ claim.id }}/"
       {%- if c.report_html %}<a href="#report">{% icon "report" %}<span>Report</span></a>{% else %}<a href="#h-claim">{% icon "report" %}<span>The claim</span></a>{% endif %}
       <a href="#h-sources">{% icon "sources" %}<span>Sources</span></a>
       <a href="#h-reply">{% icon "reply" %}<span>Right of reply</span></a>
-      {%- if c.links.length %}<a href="#h-links">{% icon "links" %}<span>Linked claims</span></a>{% endif %}
+      <a href="#h-links">{% icon "links" %}<span>Connections</span></a>
       {%- if c.files.length %}<a href="#h-downloads">{% icon "download" %}<span>Downloads</span></a>{% endif %}
     </nav>
     {%- if c.is_draft and c.verdict %}
@@ -141,16 +143,84 @@ permalink: "/claims/{{ claim.id }}/"
       {%- endif %}
     </section>
 
-    {%- if c.links.length %}
-    <section aria-labelledby="h-links">
-      <h2 id="h-links">Linked claims</h2>
-      <ul class="linked">
-        {%- for l in c.links %}
-        <li><a href="/claims/{{ l.id }}/">{{ l.id }}: {{ l.title }}</a> <span class="small">{{ l.theme }} ({{ l.link_type | lower }}, {{ l.strength | lower }})</span></li>
+    <section class="connections" aria-labelledby="h-links">
+      <h2 id="h-links">Connections</h2>
+      <p class="conn-intro">How this claim relates to the others: who made it, the themes it shares with other claims,
+        and the patterns it shows. A connection is a reason to read two checks side by side. It does not make either one
+        right or wrong. <a href="/methodology/connections/">How connections are found</a>.</p>
+
+      <div class="conn-block">
+        <h3>{% icon "people" %}Who made it</h3>
+        <p class="conn-bodies">{% for b in c.bodies %}{{ m.body(b) }}{% if b.kind == "person" and b.parent %}<span class="small"> for {{ m.body(b.parent) }}</span>{% endif %}{% if not loop.last %} {% endif %}{% endfor %}</p>
+        {%- for g in cn.same_body %}
+        <p class="conn-lead">Other claims by <a href="{{ g.body.path }}">{{ g.body.name }}</a> <span class="count">{{ g.claims.length }}</span></p>
+        <ul class="cref-list">{% for x in g.claims %}<li>{{ m.claim(x) }}</li>{% endfor %}</ul>
+        {%- else %}
+        <p class="small">No other claim by {% if c.bodies.length > 1 %}these bodies{% else %}this body{% endif %} is listed yet.</p>
         {%- endfor %}
-      </ul>
+      </div>
+
+      <div class="conn-block">
+        <h3>{% icon "links" %}Linked directly <span class="count">{{ c.links.length }}</span></h3>
+        {%- if c.links.length %}
+        <p class="conn-lead">Claims that share a theme with this one. A theme is a cause, a mechanism, a target or a way of
+          presenting figures that the editors have found in several claims; its strength says how close the link is.</p>
+        {%- for tid, items in c.links | groupby("theme_id") %}
+        {%- set th = mizien.themes | findBy("id", tid) %}
+        <div class="theme-card" style="--t: {{ th.color if th else '#7fa88b' }}">
+          <p class="theme-name">{{ th.name if th else tid }} <span class="theme-kind">{{ items[0].link_type }} · {{ items[0].strength }}</span></p>
+          {%- if th and th.description %}<p class="theme-desc">{{ th.description }}</p>{% endif %}
+          <ul class="cref-list">{% for l in items %}{% set x = mizien.claims | findBy("id", l.id) %}<li>{{ m.claim(x) }}</li>{% endfor %}</ul>
+        </div>
+        {%- endfor %}
+        {%- else %}
+        <p class="small">Not yet linked to another claim by a theme.</p>
+        {%- endif %}
+      </div>
+
+      {%- if cn.patterns.length %}
+      <div class="conn-block">
+        <h3>{% icon "pattern" %}Same pattern</h3>
+        <p class="conn-lead">Pattern tags name a recurring way a claim can mislead. They describe the statement, not the
+          speaker{% if c.tags_provisional %}, and this claim's tags are provisional until its report is finished{% endif %}.</p>
+        {%- for t in cn.patterns %}
+        <div class="theme-card is-pattern">
+          <p class="theme-name">{{ t.tag }}</p>
+          {%- if t.meaning %}<p class="theme-desc">{{ t.meaning | mdInline | safe }}</p>{% endif %}
+          {%- if t.claims.length %}
+          <ul class="cref-list">{% for x in t.claims %}<li>{{ m.claim(x) }}</li>{% endfor %}</ul>
+          {%- else %}<p class="small">No other claim carries this tag yet.</p>{% endif %}
+        </div>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+
+      {%- if cn.second.length %}
+      <div class="conn-block">
+        <h3>{% icon "route" %}Two steps away <span class="count">{{ cn.second.length }}</span></h3>
+        <p class="conn-lead">Not linked to this claim directly, but linked to a claim that is. These are found by following
+          the links, not chosen by the editors, so they are looser: they show where one theme meets another.</p>
+        <ul class="cref-list is-routes">
+          {%- for x in cn.second %}
+          <li>{{ m.claim(x) }}<span class="via">through {% for p in x.via %}{{ m.route(p, mizien.themes) }}{% if not loop.last %} or {% endif %}{% endfor %}</span></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
+
+      {%- if cn.third.length %}
+      <details class="conn-block conn-more">
+        <summary><span class="h3">{% icon "route" %}Three steps away <span class="count">{{ cn.third.length }}</span></span></summary>
+        <p class="conn-lead">One step further again. At this distance a connection says more about how the themes fit
+          together than about this claim.</p>
+        <ul class="cref-list is-routes">
+          {%- for x in cn.third %}
+          <li>{{ m.claim(x) }}<span class="via">through {{ m.route(x.via[0], mizien.themes) }}</span></li>
+          {%- endfor %}
+        </ul>
+      </details>
+      {%- endif %}
     </section>
-    {%- endif %}
 
     {%- if c.files.length %}
     <section class="downloads" aria-labelledby="h-downloads">
@@ -198,7 +268,7 @@ permalink: "/claims/{{ claim.id }}/"
   <ol>
     {%- for p in pager.pages %}
     {%- if p.gap %}<li class="pager-gap" aria-hidden="true">…</li>
-    {%- else %}<li><a class="pg v-{{ p.verdict_slug or 'none' }}{% if p.current %} is-current{% endif %}" href="{{ p.path }}" title="{{ p.id }}: {{ p.title }}"{% if p.current %} aria-current="page"{% endif %}>{{ p.n }}</a></li>{% endif %}
+    {%- else %}<li><a class="pg v-{{ p.verdict_slug or 'none' }}{% if p.current %} is-current{% endif %}" href="{{ p.path }}" aria-label="{{ p.id }}: {{ p.title }}"{% if p.current %} aria-current="page"{% endif %}>{{ p.n }}</a></li>{% endif %}
     {%- endfor %}
   </ol>
   {%- if pager.next %}<a class="pager-step" href="{{ pager.next.path }}"><span>Next</span>{% icon "next" %}</a>

@@ -25,9 +25,43 @@ const ICONS = {
   prev: "M15 5l-7 7 7 7",
   next: "M9 5l7 7-7 7",
   panels: "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z",
+  people: "M9 11a3.5 3.5 0 1 0 0-7a3.5 3.5 0 1 0 0 7M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M15.5 4.3a3.5 3.5 0 0 1 0 6.4M17.5 14.3c2.3.6 4 2.6 4 5.7",
+  pattern: "M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7a5 5 0 1 0 0 10a5 5 0 1 0 0-10M12 11a1 1 0 1 0 0 2a1 1 0 1 0 0-2",
+  route: "M6 19a2 2 0 1 0 0-4a2 2 0 1 0 0 4M18 9a2 2 0 1 0 0-4a2 2 0 1 0 0 4M6 15V9.5C6 7.6 7.6 6 9.5 6H16M18 9v5.5c0 1.9-1.6 3.5-3.5 3.5H8",
 };
 const icon = (name, cls = "ico") =>
   `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${ICONS[name] || ""}"/></svg>`;
+
+// Claim numbers ("CC-012") mentioned anywhere in a page's text become links to that claim. assets/claimrefs.js then
+// shows a short summary with the verdict on a long hover or keyboard focus. Text inside links, buttons, code, scripts
+// and the page head is left alone, as is a claim's mention of itself.
+const CLAIM_ID = /\bCC-\d{3}\b/g;
+const NO_LINKS = new Set(["a", "button", "code", "pre", "kbd", "samp", "head", "title", "summary", "label", "option",
+  "select", "svg", "math", "time"]);
+const TOKEN = /<!--[\s\S]*?-->|<(script|style|textarea)\b[\s\S]*?<\/\1\s*>|<\/?([a-zA-Z][\w-]*)\b[^>]*>|<![^>]*>/g;
+let knownClaims = null;
+function linkClaimMentions(html, selfId, prefix) {
+  if (!knownClaims) {
+    const file = "build/site-data.json";
+    knownClaims = new Set(existsSync(file) ? JSON.parse(readFileSync(file, "utf-8")).claims.map((c) => c.id) : []);
+  }
+  const depth = {};
+  let blocked = 0, last = 0, out = "";
+  const text = (t) => (blocked ? t : t.replace(CLAIM_ID, (id) => (id === selfId || !knownClaims.has(id) ? id
+    : `<a class="claimref" href="${prefix}claims/${id}/" data-claim="${id}">${id}</a>`)));
+  html.replace(TOKEN, (tag, raw, name, at) => {
+    out += text(html.slice(last, at)) + tag;
+    last = at + tag.length;
+    const n = (name || "").toLowerCase();
+    if (!raw && NO_LINKS.has(n) && !tag.endsWith("/>")) {
+      const d = tag[1] === "/" ? -1 : 1;
+      depth[n] = Math.max(0, (depth[n] || 0) + d);
+      blocked = Object.values(depth).reduce((a, b) => a + b, 0);
+    }
+    return tag;
+  });
+  return out + text(html.slice(last));
+}
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
   "October", "November", "December"];
@@ -74,7 +108,18 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addShortcode("icon", icon);
 
+  eleventyConfig.addTransform("claim-mentions", function (content) {
+    if (!(this.page.outputPath || "").endsWith(".html")) return content;
+    const self = /\/claims\/(CC-\d{3})\/$/.exec(this.page.url || "");
+    return linkClaimMentions(content, self && self[1], pathPrefix);
+  });
+
   eleventyConfig.addFilter("findBy", (list, key, value) => (list || []).find((x) => x[key] === value));
+  eleventyConfig.addFilter("without", (list, key, value) => (list || []).filter((x) => x[key] !== value));
+  eleventyConfig.addFilter("where", (list, key, value) => (list || []).filter((x) => x[key] === value));
+  eleventyConfig.addFilter("having", (list, path) =>
+    (list || []).filter((x) => path.split(".").reduce((o, k) => (o == null ? o : o[k]), x)));
+  eleventyConfig.addFilter("tagged", (list, tag) => (list || []).filter((x) => (x.tags || []).includes(tag)));
 }
 
 export const config = {

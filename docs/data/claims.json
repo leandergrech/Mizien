@@ -75,8 +75,6 @@
       "speaker": "Ambjent Malta; Fondazzjoni Wirt Artna",
       "bodies": [
         "ambjent-malta",
-        "ambjent-malta",
-        "wirt-artna",
         "wirt-artna"
       ],
       "date": "2026-10-01",
@@ -115,7 +113,6 @@
       "confidence": "Moderate",
       "speaker": "Environment and Resources Authority (ERA)",
       "bodies": [
-        "era",
         "era"
       ],
       "date": "2026-08-11",
@@ -153,8 +150,6 @@
       "speaker": "Climate Action Authority; Ministry for the Environment",
       "bodies": [
         "climate-action-authority",
-        "climate-action-authority",
-        "ministry-environment",
         "ministry-environment"
       ],
       "date": "2025-11-13",
@@ -195,7 +190,6 @@
       "bodies": [
         "ministry-environment",
         "miriam-dalli",
-        "wasteserv",
         "wasteserv"
       ],
       "date": "2026-01-19",
@@ -233,7 +227,6 @@
       "confidence": "High",
       "speaker": "European Commission",
       "bodies": [
-        "european-commission",
         "european-commission"
       ],
       "date": "2025",
@@ -345,7 +338,6 @@
       "confidence": "Moderate",
       "speaker": "Infrastructure Malta",
       "bodies": [
-        "infrastructure-malta",
         "infrastructure-malta"
       ],
       "date": "2024-10-28",
@@ -382,7 +374,6 @@
       "confidence": "Moderate",
       "speaker": "Water Services Corporation",
       "bodies": [
-        "wsc",
         "wsc"
       ],
       "date": "2026-08-25",
@@ -420,7 +411,6 @@
       "confidence": "Moderate",
       "speaker": "Project Green; Partit Laburista; Minister for the Environment",
       "bodies": [
-        "project-green",
         "project-green",
         "pl",
         "ministry-environment"
@@ -498,12 +488,10 @@
       "speaker": "Public Works Ministry; Jason Micallef (Ta' Qali park unit); Prime Minister Robert Abela; Partit Nazzjonalista; Momentum",
       "bodies": [
         "public-works-ministry",
-        "public-works-ministry",
         "ta-qali-park-unit",
         "jason-micallef",
         "robert-abela",
         "pn",
-        "momentum",
         "momentum"
       ],
       "date": "2025-09",
@@ -644,9 +632,7 @@
       "speaker": "Infrastructure Malta; Prime Minister Robert Abela; Ministry for Transport",
       "bodies": [
         "infrastructure-malta",
-        "infrastructure-malta",
         "robert-abela",
-        "ministry-transport",
         "ministry-transport"
       ],
       "date": "2023-12-01",
@@ -720,7 +706,6 @@
       "confidence": "Moderate",
       "speaker": "Malta Developers Association (MDA)",
       "bodies": [
-        "mda",
         "mda"
       ],
       "date": "2026-02-08",
@@ -756,7 +741,6 @@
       "confidence": "Moderate",
       "speaker": "Amphora Media",
       "bodies": [
-        "amphora-media",
         "amphora-media"
       ],
       "date": "2026-09-11",
@@ -826,8 +810,6 @@
       "speaker": "Infrastructure Malta; Government of Malta",
       "bodies": [
         "infrastructure-malta",
-        "infrastructure-malta",
-        "government-of-malta",
         "government-of-malta"
       ],
       "date": "",
@@ -894,8 +876,6 @@
       "speaker": "Government of Malta; Interconnect Malta",
       "bodies": [
         "government-of-malta",
-        "government-of-malta",
-        "interconnect-malta",
         "interconnect-malta"
       ],
       "date": "",
@@ -956,7 +936,6 @@
       "confidence": null,
       "speaker": "Government of Malta",
       "bodies": [
-        "government-of-malta",
         "government-of-malta"
       ],
       "date": "2025-11",
@@ -1048,7 +1027,6 @@
       "confidence": null,
       "speaker": "Enemalta",
       "bodies": [
-        "enemalta",
         "enemalta"
       ],
       "date": "",
@@ -1080,8 +1058,6 @@
       "speaker": "Government of Malta; Interconnect Malta",
       "bodies": [
         "government-of-malta",
-        "government-of-malta",
-        "interconnect-malta",
         "interconnect-malta"
       ],
       "date": "2025-07",
@@ -1112,7 +1088,6 @@
       "confidence": null,
       "speaker": "Malta International Airport plc",
       "bodies": [
-        "malta-airport",
         "malta-airport"
       ],
       "date": "2026-05-25",
@@ -1174,8 +1149,6 @@
       "speaker": "Ministry for Gozo; Ministry for Transport",
       "bodies": [
         "ministry-gozo",
-        "ministry-gozo",
-        "ministry-transport",
         "ministry-transport"
       ],
       "date": "",
@@ -1206,7 +1179,6 @@
       "confidence": null,
       "speaker": "D3 Power Generation Ltd",
       "bodies": [
-        "d3-power",
         "d3-power"
       ],
       "date": "",
@@ -1237,7 +1209,6 @@
       "confidence": null,
       "speaker": "Environment and Resources Authority (ERA)",
       "bodies": [
-        "era",
         "era"
       ],
       "date": "2025",
@@ -1268,7 +1239,6 @@
       "confidence": null,
       "speaker": "European Environment Agency",
       "bodies": [
-        "eea",
         "eea"
       ],
       "date": "2025",
@@ -1299,7 +1269,6 @@
       "confidence": null,
       "speaker": "Environment and Resources Authority (ERA)",
       "bodies": [
-        "era",
         "era"
       ],
       "date": "2018",
@@ -1360,7 +1329,6 @@
       "confidence": null,
       "speaker": "Malta Meteorological Office; ERA",
       "bodies": [
-        "malta-met-office",
         "malta-met-office",
         "era"
       ],
@@ -1454,8 +1422,6 @@
       "speaker": "Government of Malta; Water Services Corporation",
       "bodies": [
         "government-of-malta",
-        "government-of-malta",
-        "wsc",
         "wsc"
       ],
       "date": "2024",
@@ -1517,8 +1483,6 @@
       "speaker": "Government of Malta; FEE Malta",
       "bodies": [
         "government-of-malta",
-        "government-of-malta",
-        "fee-malta",
         "fee-malta"
       ],
       "date": "2026",
@@ -1549,7 +1513,6 @@
       "confidence": null,
       "speaker": "Parliamentary Secretariat for Public Works",
       "bodies": [
-        "parl-sec-public-works",
         "parl-sec-public-works"
       ],
       "date": "2025-07-04",
@@ -1581,8 +1544,6 @@
       "speaker": "Public Works Department; Government of Malta",
       "bodies": [
         "public-works-department",
-        "public-works-department",
-        "government-of-malta",
         "government-of-malta"
       ],
       "date": "",
@@ -1613,7 +1574,6 @@
       "confidence": null,
       "speaker": "Water Services Corporation",
       "bodies": [
-        "wsc",
         "wsc"
       ],
       "date": "",
@@ -1644,7 +1604,6 @@
       "confidence": null,
       "speaker": "MaltaToday",
       "bodies": [
-        "maltatoday",
         "maltatoday"
       ],
       "date": "",
@@ -1676,8 +1635,6 @@
       "speaker": "Ministry for the Environment; Ministry for Agriculture, Fisheries and Animal Rights",
       "bodies": [
         "ministry-environment",
-        "ministry-environment",
-        "ministry-agriculture",
         "ministry-agriculture"
       ],
       "date": "2025-07-09",
@@ -1708,7 +1665,6 @@
       "confidence": null,
       "speaker": "BirdLife Malta",
       "bodies": [
-        "birdlife",
         "birdlife"
       ],
       "date": "2025-09",
@@ -1739,7 +1695,6 @@
       "confidence": null,
       "speaker": "BirdLife Malta",
       "bodies": [
-        "birdlife",
         "birdlife"
       ],
       "date": "2026",
@@ -1771,7 +1726,6 @@
       "speaker": "Miriam Dalli, Environment Minister; Environment and Resources Authority (ERA)",
       "bodies": [
         "miriam-dalli",
-        "era",
         "era"
       ],
       "date": "2025",
@@ -1807,7 +1761,6 @@
       "confidence": null,
       "speaker": "Environment and Resources Authority (ERA)",
       "bodies": [
-        "era",
         "era"
       ],
       "date": "2025-08",
@@ -1838,7 +1791,6 @@
       "confidence": null,
       "speaker": "University of Malta researchers",
       "bodies": [
-        "um-researchers",
         "um-researchers"
       ],
       "date": "2020",
@@ -1870,8 +1822,6 @@
       "speaker": "Project Green; Ministry for Public Cleanliness and Regeneration",
       "bodies": [
         "project-green",
-        "project-green",
-        "ministry-cleanliness",
         "ministry-cleanliness"
       ],
       "date": "",
@@ -1933,7 +1883,6 @@
       "confidence": null,
       "speaker": "Infrastructure Malta",
       "bodies": [
-        "infrastructure-malta",
         "infrastructure-malta"
       ],
       "date": "2019",
@@ -1964,7 +1913,6 @@
       "confidence": null,
       "speaker": "Environment and Resources Authority (ERA)",
       "bodies": [
-        "era",
         "era"
       ],
       "date": "2019",
@@ -2025,7 +1973,6 @@
       "confidence": null,
       "speaker": "Newsbook",
       "bodies": [
-        "newsbook",
         "newsbook"
       ],
       "date": "",
@@ -2057,8 +2004,6 @@
       "speaker": "Housing Authority; Government of Malta",
       "bodies": [
         "housing-authority",
-        "housing-authority",
-        "government-of-malta",
         "government-of-malta"
       ],
       "date": "2025",
@@ -2120,7 +2065,6 @@
       "speaker": "Malta Developers Association; KPMG",
       "bodies": [
         "mda",
-        "kpmg",
         "kpmg"
       ],
       "date": "2025-12",
@@ -2243,8 +2187,6 @@
       "speaker": "Superintendence of Cultural Heritage; Environment and Planning Review Tribunal",
       "bodies": [
         "cultural-heritage",
-        "cultural-heritage",
-        "eprt",
         "eprt"
       ],
       "date": "2026-04",
@@ -2275,7 +2217,6 @@
       "confidence": null,
       "speaker": "Momentum",
       "bodies": [
-        "momentum",
         "momentum"
       ],
       "date": "2026-01-09",
@@ -2307,7 +2248,6 @@
       "speaker": "Robert Abela, Prime Minister; Planning Authority",
       "bodies": [
         "robert-abela",
-        "planning-authority",
         "planning-authority"
       ],
       "date": "2024-05",
@@ -2339,8 +2279,6 @@
       "speaker": "Malta Public Transport; Ministry for Transport",
       "bodies": [
         "malta-public-transport",
-        "malta-public-transport",
-        "ministry-transport",
         "ministry-transport"
       ],
       "date": "2026",
@@ -2371,7 +2309,6 @@
       "confidence": null,
       "speaker": "Transport Malta",
       "bodies": [
-        "transport-malta",
         "transport-malta"
       ],
       "date": "2026-07",
@@ -2402,7 +2339,6 @@
       "confidence": null,
       "speaker": "The Shift News",
       "bodies": [
-        "the-shift",
         "the-shift"
       ],
       "date": "2026-02-26",
@@ -2433,7 +2369,6 @@
       "confidence": null,
       "speaker": "Ministry for Transport",
       "bodies": [
-        "ministry-transport",
         "ministry-transport"
       ],
       "date": "2025",
@@ -2494,7 +2429,6 @@
       "confidence": null,
       "speaker": "Transport Malta",
       "bodies": [
-        "transport-malta",
         "transport-malta"
       ],
       "date": "2025",
@@ -2555,7 +2489,6 @@
       "confidence": null,
       "speaker": "National Statistics Office (NSO)",
       "bodies": [
-        "nso",
         "nso"
       ],
       "date": "2026",
@@ -2587,7 +2520,6 @@
       "speaker": "Chris Bonett, Transport Minister; Transport Malta",
       "bodies": [
         "chris-bonett",
-        "transport-malta",
         "transport-malta"
       ],
       "date": "2026-04-23",
@@ -2619,8 +2551,6 @@
       "speaker": "Ministry for Gozo; Gozo Channel",
       "bodies": [
         "ministry-gozo",
-        "ministry-gozo",
-        "gozo-channel",
         "gozo-channel"
       ],
       "date": "2026",
@@ -2652,8 +2582,6 @@
       "speaker": "WasteServ; Ministry for the Environment",
       "bodies": [
         "wasteserv",
-        "wasteserv",
-        "ministry-environment",
         "ministry-environment"
       ],
       "date": "",
@@ -2684,7 +2612,6 @@
       "confidence": null,
       "speaker": "WasteServ",
       "bodies": [
-        "wasteserv",
         "wasteserv"
       ],
       "date": "2026-04-13",
@@ -2715,7 +2642,6 @@
       "confidence": null,
       "speaker": "The Shift News",
       "bodies": [
-        "the-shift",
         "the-shift"
       ],
       "date": "2026-02-19",
@@ -2746,7 +2672,6 @@
       "confidence": null,
       "speaker": "Environment and Resources Authority (ERA)",
       "bodies": [
-        "era",
         "era"
       ],
       "date": "",
@@ -2838,7 +2763,6 @@
       "confidence": null,
       "speaker": "Malta Hotels and Restaurants Association (MHRA)",
       "bodies": [
-        "mhra",
         "mhra"
       ],
       "date": "2022",
@@ -2900,7 +2824,6 @@
       "speaker": "Malta Tourism Authority; Minister for Tourism",
       "bodies": [
         "malta-tourism-authority",
-        "malta-tourism-authority",
         "ministry-tourism"
       ],
       "date": "2025",
@@ -2931,7 +2854,6 @@
       "confidence": null,
       "speaker": "National Statistics Office (NSO)",
       "bodies": [
-        "nso",
         "nso"
       ],
       "date": "2026-07",
@@ -2962,7 +2884,6 @@
       "confidence": null,
       "speaker": "The Malta Chamber of Commerce, Enterprise and Industry",
       "bodies": [
-        "malta-chamber",
         "malta-chamber"
       ],
       "date": "",
@@ -2993,7 +2914,6 @@
       "confidence": null,
       "speaker": "Ministry for Health",
       "bodies": [
-        "ministry-health",
         "ministry-health"
       ],
       "date": "2025-07",
@@ -3024,7 +2944,6 @@
       "confidence": null,
       "speaker": "Occupational Health and Safety Authority (OHSA)",
       "bodies": [
-        "ohsa",
         "ohsa"
       ],
       "date": "2026",
@@ -3115,7 +3034,6 @@
       "confidence": null,
       "speaker": "European Commission",
       "bodies": [
-        "european-commission",
         "european-commission"
       ],
       "date": "2025",
@@ -3146,7 +3064,6 @@
       "confidence": null,
       "speaker": "Government of Malta",
       "bodies": [
-        "government-of-malta",
         "government-of-malta"
       ],
       "date": "2025",
@@ -3178,8 +3095,6 @@
       "speaker": "Government of Malta; Aquaculture Directorate",
       "bodies": [
         "government-of-malta",
-        "government-of-malta",
-        "aquaculture-directorate",
         "aquaculture-directorate"
       ],
       "date": "",
@@ -3210,7 +3125,6 @@
       "confidence": null,
       "speaker": "General Workers' Union (GWU)",
       "bodies": [
-        "gwu",
         "gwu"
       ],
       "date": "2026",
@@ -3241,7 +3155,6 @@
       "confidence": null,
       "speaker": "Moviment Graffitti",
       "bodies": [
-        "graffitti",
         "graffitti"
       ],
       "date": "2026-06-24",
@@ -3272,7 +3185,6 @@
       "confidence": null,
       "speaker": "Malta Business Weekly",
       "bodies": [
-        "malta-business-weekly",
         "malta-business-weekly"
       ],
       "date": "",
@@ -3303,7 +3215,6 @@
       "confidence": null,
       "speaker": "Malta International Airport plc",
       "bodies": [
-        "malta-airport",
         "malta-airport"
       ],
       "date": "2026",
@@ -3334,7 +3245,6 @@
       "confidence": null,
       "speaker": "European Commission",
       "bodies": [
-        "european-commission",
         "european-commission"
       ],
       "date": "2026-07-08",
@@ -3396,7 +3306,6 @@
       "confidence": null,
       "speaker": "Ministry for Health",
       "bodies": [
-        "ministry-health",
         "ministry-health"
       ],
       "date": "2026-08-26",
@@ -3459,7 +3368,6 @@
       "confidence": null,
       "speaker": "ADPD - The Green Party",
       "bodies": [
-        "adpd",
         "adpd"
       ],
       "date": "2026-05-26",
@@ -3490,7 +3398,6 @@
       "confidence": null,
       "speaker": "BirdLife Malta",
       "bodies": [
-        "birdlife",
         "birdlife"
       ],
       "date": "n/d",

@@ -36,7 +36,9 @@ def alias_index(reg):
     idx = {}
     for b in reg.values():
         for a in b["aliases"] + [b["name"]]:
-            idx.setdefault(_norm(a), []).append(b["id"])
+            hits = idx.setdefault(_norm(a), [])
+            if b["id"] not in hits:
+                hits.append(b["id"])
     return idx
 
 
@@ -50,7 +52,7 @@ def resolve(claim, reg, idx):
             continue
         hits = idx.get(_norm(part)) or idx.get(_norm(re.sub(r"\(.*?\)", "", part)))
         if hits:
-            found += [h for h in hits if h not in found]
+            found += [h for h in hits if h not in found]   # a body named twice counts once
         else:
             unknown.append(part.strip())
     return found, unknown
