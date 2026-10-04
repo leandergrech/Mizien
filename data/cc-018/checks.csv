@@ -1,0 +1,13 @@
+check,value,unit,source,note
+"Malta: price-to-income ratio, 2015 -> 2024",-10.7,% change,Eurostat tipsho60,
+"Malta: price-to-income ratio vs long-term average, 2024",92.9,index (100 = average),Eurostat tipsho60,
+Malta: years 2020-2024 with a rising ratio,1,of 5,Eurostat tipsho60,
+"EU-27: price-to-income ratio, 2015 -> 2024",5.7,% change,Eurostat tipsho60,
+"EU-27: price-to-income ratio vs long-term average, 2024",98.94,index (100 = average),Eurostat tipsho60,
+EU-27: years 2020-2024 with a rising ratio,3,of 5,Eurostat tipsho60,
+Malta: peak of price-to-income ratio since 2010,2010,year,Eurostat tipsho60,
+Banks: real estate and construction share of private loans,61 -> 72,%,IMF CR 26/29 p.19,
+Banks: residential mortgages share of private lending,44 -> 57,%,IMF CR 26/29 p.19,
+Malta: housing-cost overburden 2015 -> 2025,1.1 -> 6.0,% of people,Eurostat ilc_lvho07a,"affordability, not covered by the IMF assessment"
+Malta: real house prices 2015 -> 2025,34,%,Eurostat tipsho10,
+MDA-commissioned study: price-to-income 2024 -> 2025,14.0 -> 14.5,ratio,"MaltaToday, 8 Feb 2026 (second-hand)",different measure from Eurostat's; method not seen
