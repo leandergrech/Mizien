@@ -33,10 +33,13 @@ Every run therefore starts with `python scripts/net_check.py`:
   with `network`, it has no open PR or live remote branch from another run, and (if `Attempts` > 0) its
   `Last attempt` is at least 6 days old.
 - A worker may try up to three eligible claims in one run, stopping at the first it completes.
-- **Blocked claim:** do not change its status or caveats. Increment `Attempts`, set `Last attempt` to today and
-  `Blocker` to a short reason (`network: host1, host2` or `source: what is missing`). Useful leads found on the
+- **Blocked claim:** do not change its caveats or wording status. Increment `Attempts`, set `Last attempt` to today
+  and `Blocker` to a short reason (`network: host1, host2` or `source: what is missing`). Useful leads found on the
   way go in `data/sources.csv` (marked not retrieved) and `literature/CC-NNN/README.md`. At 3 attempts set
   `Blocker` to `needs maintainer: <what to supply>`; workers then skip the claim.
+- **Waiting on the maintainer:** when the `Blocker` starts with `source:` or `needs maintainer` (browser-only
+  sources included), set the claim's status to `In progress` in `claim.yml` and `data/claims.csv`, so the site
+  shows it as started. A `network:` blocker leaves the status unchanged, since no work could be done.
 - **Maintainer unblock:** paste the verbatim passages (with URL, outlet, date and date read) into
   `literature/CC-NNN/primary-source.md`, as for CC-007, and clear the `Blocker` cell. Workers treat that file as
   the archived primary wording.
