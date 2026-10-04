@@ -27,3 +27,19 @@ Annual PM2.5 concentration, µg/m³:
 | 2024 | 11.9 | 11.6 | 9.5 | 10.4 | 8.7 |
 
 The annex reports no St Paul's Bay value for 2020 or 2021. The 23 reported annual means range from 7.4 to 13.9 µg/m³. All 23 exceed the WHO 2021 annual guideline of 5 µg/m³ and are below the EU annual limit of 25 µg/m³ applicable during the reported years. Fourteen are above the recast EU annual limit of 10 µg/m³ that is to be attained by 2030; that is a future-standard comparison, not a finding of non-compliance in 2020–2024.
+
+## Newsbook, 18 July 2025 (the claim), read in full 4 October 2026
+
+Wayback snapshot of 20 July 2025: http://web.archive.org/web/20250720183305/https://newsbook.com.mt/en/air-pollution-exceeds-who-guidelines-throughout-maltese-islands/
+(raw capture sha256 `9b831873e39a1912effdaa24d412e5d7039919461840db002859bdd081aa63ef`; datePublished 2025-07-18).
+
+Standfirst: "All monitoring stations well above stringent WHO guidelines, though within present EU limits".
+
+> "However, the measurements taken between 2020 and 2024 in the five monitoring stations operated by the Environment
+> and Resources Authority – at Attard, Msida, St Paul’s Bay, Żejtun and Għarb – are well within the considerably less
+> stringent annual limits set by the EU for fine particulate matter (PM2.5)."
+
+Figures quoted for 2024 (Attard 11.9, Msida 11.6, Żejtun 10.4, St Paul’s Bay 9.5, Għarb 8.7 µg/m³) and the statement
+that Msida had the highest level in the previous four years all match the tabled annex above. The article states the
+WHO guideline (5 µg/m³) and the EU limit (25, falling to 10 by 2030) correctly. It does not mention the two St Paul’s
+Bay n/a values for 2020 and 2021.

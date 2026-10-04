@@ -1,6 +1,6 @@
 # CC-007: Within EU limits vs WHO guideline
 
-**Status (3 October 2026):** PQ 29696 and its tabled annex were supplied by the maintainer; exact Maltese question and answer, annex values and PDF hashes are transcribed in [`primary-source.md`](primary-source.md). A separate cross-check of the EEA's validated daily files matched 10 of 11 available station-years to the annex at one decimal place. Attard 2024 differs (12.122 µg/m³ from the mean of EEA valid daily aggregates versus 11.9 in the annex). The Minister's answer is procedural and does not state that the values meet EU limits. The report and flyer distinguish that inference from the Minister's words.
+**Status (4 October 2026, v1.2):** Newsbook's article (18 Jul 2025) was read in full from its Wayback snapshot and quoted verbatim; its figures match the annex; confidence raised to high. **Earlier (3 October 2026):** PQ 29696 and its tabled annex were supplied by the maintainer; exact Maltese question and answer, annex values and PDF hashes are transcribed in [`primary-source.md`](primary-source.md). A separate cross-check of the EEA's validated daily files matched 10 of 11 available station-years to the annex at one decimal place. Attard 2024 differs (12.122 µg/m³ from the mean of EEA valid daily aggregates versus 11.9 in the annex). The Minister's answer is procedural and does not state that the values meet EU limits. The report and flyer distinguish that inference from the Minister's words.
 
 ## Evidence covered
 

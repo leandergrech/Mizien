@@ -3,24 +3,27 @@ title: Within EU limits vs WHO guideline
 category: Air
 status: Drafted
 verdict: Largely supported
-verdict_confidence: Moderate
+verdict_confidence: High
 claim:
-  text: Newsbook reported that annual PM2.5 values for Malta's five monitoring stations (2020-2024) were above
-    the WHO guideline but within EU limits.
+  text: 'Newsbook (18 Jul 2025), reporting Parliamentary Question 29696: measurements taken between 2020 and 2024
+    at ERA''s five PM2.5 monitoring stations are well above the WHO guideline but well within the less stringent
+    EU annual limits.'
   speaker: Newsbook, summarising Parliamentary Question 29696
-  date: '2025-07-19'
+  date: '2025-07-18'
   wording_status: Verbatim found
   sources:
   - title: Air pollution exceeds WHO guidelines throughout Maltese islands
     publisher: Newsbook
-    date: '2025-07-19'
+    date: '2025-07-18'
     url: https://newsbook.com.mt/en/air-pollution-exceeds-who-guidelines-throughout-maltese-islands/
-    note: Headline and secondary report locate the claim; the Newsbook page itself was not retrievable during this check.
+    note: The claim. Read in full 4 Oct 2026 from the Wayback snapshot of 20 Jul 2025 (http://web.archive.org/web/20250720183305/https://newsbook.com.mt/en/air-pollution-exceeds-who-guidelines-throughout-maltese-islands/);
+      its 2024 station figures match the PQ annex.
   - title: Malta News Briefing – Saturday 19 July 2023
     publisher: CDE News
     date: '2025-07-19'
     url: https://cde.news/malta-news-briefing-saturday-19-july-2023/
-    note: Secondary clipping reproduces Newsbook's five-station comparison and attributes it to Newsbook; it is a locator, not primary evidence.
+    note: Secondary clipping reproduces Newsbook's five-station comparison and attributes it to Newsbook; it is
+      a locator, not primary evidence.
   - title: Parliamentary Question 29696, oral question and tabled annex
     publisher: House of Representatives of Malta
     date: '2025-07-16'
@@ -38,40 +41,50 @@ claim:
     publisher: European Environment Agency
     date: '2026-10-03'
     url: https://air.discomap.eea.europa.eu/arcgis/rest/services/AirQuality/AirQualityDownloadServiceEUMonitoringStations/MapServer/0
-    note: Partial independent cross-check; 11 of 25 possible station-years have valid daily aggregates in retrieved station files; one differs from the annex.
+    note: Partial independent cross-check; 11 of 25 possible station-years have valid daily aggregates in retrieved
+      station files; one differs from the annex.
+  quote: However, the measurements taken between 2020 and 2024 in the five monitoring stations operated by the Environment
+    and Resources Authority – at Attard, Msida, St Paul's Bay, Żejtun and Għarb – are well within the considerably
+    less stringent annual limits set by the EU for fine particulate matter (PM2.5).
 counter_evidence: All 23 reported station-year values exceed the WHO annual PM2.5 guideline of 5 µg/m³ and are below
   the EU annual limit of 25 µg/m³ applicable in 2020-2024. The annex marks St Paul's Bay as n/a for 2020 and 2021.
-  Fourteen of 23 values exceed the EU limit of 10 µg/m³ due by 2030; this future standard does not establish past non-compliance.
-  EEA validated daily data independently cross-check 11 station-years; ten match the annex to 0.1 µg/m³. Attard 2024 differs
-  (12.122 µg/m³ from the EEA valid-day mean versus 11.9 in the annex), though both remain below 25 µg/m³.
-tests: Parliamentary station means against the WHO 2021 annual guideline, the EU annual limit applicable in each data year,
-  and the separate EU 2030 standard. Missing values and the Minister's exact answer are checked explicitly. Cross-check valid EEA
-  daily aggregates against the rounded annex values and report completeness for available station-years.
-why_low_hanging: '''Within EU limits'' is a legal comparison, not a general health assessment; the official table is directly testable.'
+  Fourteen of 23 values exceed the EU limit of 10 µg/m³ due by 2030; this future standard does not establish past
+  non-compliance. EEA validated daily data independently cross-check 11 station-years; ten match the annex to 0.1
+  µg/m³. Attard 2024 differs (12.122 µg/m³ from the EEA valid-day mean versus 11.9 in the annex), though both remain
+  below 25 µg/m³.
+tests: Parliamentary station means against the WHO 2021 annual guideline, the EU annual limit applicable in each
+  data year, and the separate EU 2030 standard. Missing values and the Minister's exact answer are checked explicitly.
+  Cross-check valid EEA daily aggregates against the rounded annex values and report completeness for available
+  station-years.
+why_low_hanging: '''Within EU limits'' is a legal comparison, not a general health assessment; the official table
+  is directly testable.'
 tags:
 - Compliance-not-health
 tags_provisional: false
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: High
-caveats: The PQ answer only says the table is being laid before Parliament; it does not claim the table demonstrates compliance. Newsbook's report page
-  was not retrievable for full-text review, though an archived snapshot is listed in archive/manifest.csv. St Paul's Bay has no reported value
-  for 2020 or 2021. The EEA validated data cross-check reproduces 10 of 11 available values to one decimal; Attard 2024 is 12.122 µg/m³
-  in the retrieved daily series versus 11.9 in the annex. Both remain below the applicable EU limit. The result does not show the air is
-  healthy, infer individual health effects, or treat the 2030 EU standard as a limit for prior years.
+caveats: The PQ answer only says the table is being laid before Parliament; it does not claim the table demonstrates
+  compliance. Newsbook's report was read in full from its Wayback snapshot (4 Oct 2026). St Paul's Bay has no reported
+  value for 2020 or 2021. The EEA validated data cross-check reproduces 10 of 11 available values to one decimal;
+  Attard 2024 is 12.122 µg/m³ in the retrieved daily series versus 11.9 in the annex. Both remain below the applicable
+  EU limit. The result does not show the air is healthy, infer individual health effects, or treat the 2030 EU standard
+  as a limit for prior years.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: >
-  The PQ 29696 annex and transcribed dataset show 23 annual means, all below the 25 µg/m³ EU limit applicable in 2020-2024 and above
-  the WHO 5 µg/m³ guideline; two St Paul's Bay entries are n/a. EEA validated station files independently cross-check 11 station-years:
-  ten match the annex to one decimal and Attard 2024 differs (12.122 vs 11.9 µg/m³). The data, formulas, valid-day coverage and source
-  file hashes are included.
+evidence_shown: 'The PQ 29696 annex and transcribed dataset show 23 annual means, all below the 25 µg/m³ EU limit
+  applicable in 2020-2024 and above the WHO 5 µg/m³ guideline; two St Paul''s Bay entries are n/a. EEA validated
+  station files independently cross-check 11 station-years: ten match the annex to one decimal and Attard 2024 differs
+  (12.122 vs 11.9 µg/m³). The data, formulas, valid-day coverage and source file hashes are included.
+
+  '
 outputs:
   report_pdf: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.1'
+version: '1.2'
+last_reviewed: '2026-10-04'
 location:
   place: Parliament House, Valletta
   lat: 35.89614

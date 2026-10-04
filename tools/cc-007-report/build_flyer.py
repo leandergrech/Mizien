@@ -11,8 +11,8 @@ build_flyer(Flyer(
     number="007", out=str(OUT / "flyer.pdf"), kicker="Air quality, Malta",
     title_lines=["Within limits,", "above the guideline"],
     subtitle="Five years of annual PM2.5 readings, checked against EU and WHO standards",
-    quote_lines=["Annual PM2.5 values: above WHO guidance,", "below the applicable EU limit"],
-    attribution="CDE reproduces Newsbook’s summary · 19 July 2025",
+    quote_lines=["“…well within the considerably less stringent", "annual limits set by the EU for PM2.5.”"],
+    attribution="Newsbook, 18 July 2025",
     context="The underlying figures were tabled in Parliamentary Question 29696.",
     note="The Minister’s answer tables data; it does not itself state that they comply.",
     verdict="Largely supported", verdict_right=["23 below 25", "10 EEA match"],
@@ -28,6 +28,6 @@ build_flyer(Flyer(
           "An explanation of the Attard 2024 difference.",
           "The missing St Paul’s Bay values for 2020 and 2021, if available.",
           "Keep the 2030 EU standard distinct from past compliance."],
-    footer="Version 1.1 · 3 October 2026 · Draft for maintainer review · Reply process to be handled by maintainer",
+    footer="Version 1.2 · 4 October 2026 · Draft for maintainer review · Reply process to be handled by maintainer",
     pdf_title="Claim Check 007 – Within limits, above the guideline"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
