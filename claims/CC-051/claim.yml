@@ -25,15 +25,19 @@ claim:
     note: Quotes the minister (second-hand) and ERA 2021; prior fact-check.
   quote: Malta protects more than 30% of its maritime zone, through Natura 2000 sites, scientific monitoring, and
     a €2 million conservation programme.
-counter_evidence: 'EEA boundaries: 18 marine Natura 2000 sites, 4,137.5 km2 of sea (union). That is 36.0% of the
-  25-nm Fisheries Management Zone (11,480 km2), 7.8% of the EEZ as mapped internationally (~52,900 km2) and 5.5%
-  of the 75,715 km2 Malta reports to the EU (BISE). Reaching 30% on the EU basis needs ~18,600 km2 more. ERA names
-  the FMZ; the minister''s ''maritime zone'' does not.'
-tests: EEA Natura 2000 boundaries (2024); FMZ, EEZ and EU-reported reference areas; BISE country page.
-why_low_hanging: 'Done: Claim Check 051 report and flyer.'
+counter_evidence: 'Mapped from EEA boundaries, Malta''s 18 marine Natura 2000 sites cover 4,137.5 km2 of sea, and
+  all of it lies within 25 nautical miles of the coast. That is 36.0% of the 25-nm Fisheries Management Zone (11,480
+  km2), which ERA names, but 7.8% of the EEZ as mapped internationally (52,923 km2) and 5.5% of the 75,715 km2 of
+  sea Malta reports to the EU. Beyond 25 nm, about 64,000 km2 (85% of the waters reported to the EU) contains no
+  marine protected site; even protecting the whole 25-nm zone would cover 15% of those waters. The deep sea (over
+  1,000 m, a quarter of the waters) is 0.6% protected. Reaching 30% on the EU basis needs ~18,600 km2 more. The
+  minister''s ''maritime zone'' does not name the 25-nm zone.'
+tests: EEA Natura 2000 boundaries (2024); Fisheries Management Zone rebuilt from the Marine Regions 12-nm limit; Marine
+  Regions EEZ v12; EEA map of the marine waters reported under the MSFD; EMODnet depth grid; BISE country page.
+why_low_hanging: 'Done: Claim Check 051 report and flyer (v1.1 adds maps of all of Malta''s reported waters).'
 tags: []
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: Medium
 caveats: Right of reply to the Environment Ministry and ERA not yet sent. Minister's words second-hand (Amphora).
   Designation only; management not assessed.
@@ -44,12 +48,14 @@ right_of_reply:
 evidence_shown:
 - EEA Natura 2000 marine site areas (data/cc-051/natura2000_marine.csv)
 - Reference areas (data/cc-051/reference_areas.csv)
+- Boundaries of the protected sites and the reference zones (data/cc-051/boundaries.geojson)
+- Protected share by depth band (data/cc-051/depth_bands.csv)
 - ERA topic page; BISE Malta page
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
+version: '1.1'
 last_reviewed: '2026-10-04'
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta

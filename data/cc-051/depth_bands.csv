@@ -1,0 +1,10 @@
+zone,depth_band,area_km2,share_of_zone_pct,protected_km2,protected_pct
+Within 25 nm (incl. internal waters),"Shelf, 0-200 m",4736,40.8,1661,35.1
+Within 25 nm (incl. internal waters),"Slope, 200-1,000 m",6234,53.7,2322,37.2
+Within 25 nm (incl. internal waters),"Deep sea, over 1,000 m",646,5.6,119,18.4
+All waters reported to the EU (incl. internal waters),"Shelf, 0-200 m",11874,15.7,1661,14.0
+All waters reported to the EU (incl. internal waters),"Slope, 200-1,000 m",44076,58.4,2322,5.3
+All waters reported to the EU (incl. internal waters),"Deep sea, over 1,000 m",19505,25.8,119,0.6
+Protected sea (18 sites),"Shelf, 0-200 m",1661,40.5,1661,100.0
+Protected sea (18 sites),"Slope, 200-1,000 m",2322,56.6,2322,100.0
+Protected sea (18 sites),"Deep sea, over 1,000 m",119,2.9,119,100.0
