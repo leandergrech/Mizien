@@ -203,3 +203,31 @@ CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commi
 - 30 weak links (Weak (indicative) or Pattern, not causal) added to existing themes T2-T9 and a new theme T10 (tourism pressure).
 - Queue: new claims spread across workers A/B/C (open loads 28/27/27). Several claims overlap earlier ones by design (CC-025/CC-094 with CC-003; CC-081 with CC-004; CC-041-043 with CC-005).
 - Site and UI changes (Għanqbuta rename, subtopic sub-hubs, Eleventy build) are owned by the mizien-60 session; do not edit docs/index.html or scripts without checking with it.
+
+## Weekly intake 2026-10-04 (CC-101 to CC-106)
+
+Second intake of the day (the 79-claim bulk intake ran earlier). Six candidates added, not ten: searches turned up few specific, checkable, non-duplicate statements, and padding was avoided. All are `Not started`, verdict null.
+
+| ID | Topic / subtopic | Side | Claim | Wording |
+|---|---|---|---|---|
+| CC-101 | Water / Water supply & groundwater | EU | Commission formal notice INFR(2026)2115: no abstraction registration or prior authorisation regime (8 Jul 2026) | Verbatim found (Commission page) |
+| CC-102 | Governance & Promises / Accountability | Oversight body | Ombudsman: 58% of Commissioner for Environment and Planning recommendations unimplemented in 2025 | Paraphrase: locate quote |
+| CC-103 | Health & Safety / Heat & health | Government | Health Ministry refused heat-death localities, promising publication within three months (26 Aug 2026) | Paraphrase: locate quote |
+| CC-104 | Noise | Party (PN) | Malta fails Directive 2002/49/EC (petition, Oct 2024; older than 60 days, noise is least covered) | Paraphrase: locate quote |
+| CC-105 | Noise | Party (ADPD) | No study of Freeport and airport noise on residents (26 May 2026) | Paraphrase: locate quote |
+| CC-106 | Nature & Wildlife / Hunting & birds | NGO (BirdLife Malta) | Malta holds 1,600-1,800 pairs of Yelkouan shearwater, ~10% of world population (undated page) | Verbatim found (BirdLife page) |
+
+- **Queue:** CC-101, 102, 105 to worker A; CC-103, 106 to B; CC-104 to C (open unblocked loads before 25/26/26 A/B/C, after 28/28/27).
+- **Taxonomy:** no category added or renamed. Noise now has 3 claims and, as before, no subtopics. Governance & Promises has 5 claims (subtopics Accountability, Manifestos & pledges).
+- **Patterns:** no new pattern tag. CC-105 provisionally tagged Compliance-not-health.
+- **Themes:** CC-101 added to T3 (three edges to groundwater/abstraction claims CC-009, CC-039, CC-047 only, not to every member). New T11 Heat, power cuts and health (CC-027, 090, 097, 103), T12 Oversight and disclosure (CC-102, 103; pattern, not causal), T13 Noise governance (CC-020, 104, 105). All Weak (indicative) or Pattern, not causal. 13 edges added (96 total). `Linked claims (count)` was recounted for every claim from edges.csv; 49 older rows changed because their stored counts were stale.
+- **Coverage (claims per topic, before to after):** Water 15 to 16, Governance & Promises 4 to 5, Health & Safety 3 to 4, Noise 1 to 3, Nature & Wildlife 8 to 9; all others unchanged. Sides by speaker keyword (approximate): Government 25 to 26, Regulators and agencies 37 to 38, Parties 9 to 11, NGOs 6 to 7, EU 4 to 5, Business 8, Media 11.
+- **Candidates for retagging or follow-up (not changed):** CC-090 and CC-103 should be read together; CC-103's deadline (about late November 2026) falls after this intake, so workers should not mark it before then. CC-104 and CC-020 point in opposite directions on compliance and should be checked against the same EEA noise submissions.
+- **Considered and excluded:** PN wastewater ranking (duplicate of CC-042), Isla shore-to-ship underuse (near-duplicate of CC-016), 6,000 trees planted (overlaps CC-010/CC-054), EU recycling reasoned opinion (overlaps CC-004/CC-081), Noel Farrugia 'Evergreen Beaches' (no checkable figure), Momentum Gozo enforcement petition and Independent Gozo roads opinion (page unreadable, 403).
+- **Network:** net_check reported Wayback unreachable (connection reset); Crossref, Eurostat, EEA ok. Several Newsbook/Independent pages return 403 to WebFetch; wording for CC-102 to CC-105 comes from search summaries and page summaries, hence 'Paraphrase: locate quote'.
+
+### Needs maintainer
+- CC-015: exact words of the PA chief's remark (recording/transcript) into `literature/CC-015/primary-source.md`.
+- CC-023: 'on track by 2026' wording not found; supply the source passage.
+- CC-025: UNFCCC document is browser-only; paste the passage.
+- New claims CC-102 to CC-105: ombudsman.org.mt, the EP Petitions portal, ADPD and ERA pages are likely browser-only; supply wording if a worker is blocked.

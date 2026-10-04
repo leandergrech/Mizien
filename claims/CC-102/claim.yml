@@ -1,0 +1,51 @@
+id: CC-102
+title: 'Ombudsman: 58% of environment recommendations ignored'
+category: Governance & Promises
+subtopic: Accountability
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Parliamentary Ombudsman (2025 annual report, reported 2 July 2026): 58% of the justified recommendations
+    of the Commissioner for Environment and Planning went unimplemented in 2025, the highest rate among the Ombudsman''s
+    commissioners, and 22 reports were escalated to Parliament.'
+  speaker: Parliamentary Ombudsman (Judge Joseph Zammit McKeon)
+  date: '2026-07-02'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Public entities ignore Ombudsman as defiance reaches record high
+    publisher: Newsbook
+    date: '2026-07-02'
+    url: https://newsbook.com.mt/en/public-entities-ignore-ombudsman-as-defiance-reaches-record-high/
+    note: Locates the 58% figure; the Ombudsman is quoted only on general frustration. Read the annual report itself.
+  - title: Ombudsman presents 2025 Annual Report to Speaker
+    publisher: The Malta Independent
+    date: '2026-06-05'
+    url: https://www.independent.com.mt/articles/2026-06-05/local-news/Ombudsman-presents-2025-Annual-Report-to-Speaker-of-the-House-of-Representatives-6736290260
+    note: Locator (HTTP 403 to automated fetch); reports the 22 escalated reports.
+counter_evidence: 'The report text and denominator were not read: a percentage can rest on few cases. Non-implementation
+  may reflect disagreement with a finding as well as inaction; the authorities'' stated reasons are in the individual
+  case notes.'
+tests: Ombudsman 2025 annual report (case tables for the Commissioner for Environment and Planning, 2023-2025);
+  individual case notes; number of cases behind the 58%.
+why_low_hanging: A single annual-report table can confirm or correct the number, and the trend over three years
+  is published.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: ombudsman.org.mt may be browser-only; Newsbook and Independent are news locators.'
+caveats: 'Candidate from the weekly intake of 4 Oct 2026 (second run of the day): Statement about public bodies''
+  conduct; hold to the same standard as any other claim and name the authorities only as the report does. Wording
+  is from a locator source unless marked verbatim; read the primary text before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Parliament House, Valletta
+  lat: 35.89614
+  lon: 14.50978
+  scope: institution
+  icon: parliament

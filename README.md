@@ -130,6 +130,12 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-098 | Tourism & Population | Officials enforce private interests at Blue Lagoon | Not started | - |
 | CC-099 | Tourism & Population | Foreigners are 31% of residents | Not started | - |
 | CC-100 | Tourism & Population | Over 10 million airport passengers | Not started | - |
+| CC-101 | Water | EU: no permits for water abstraction | Not started | - |
+| CC-102 | Governance & Promises | Ombudsman: 58% of environment recommendations ignored | Not started | - |
+| CC-103 | Health & Safety | Heat-death locations "within three months" | Not started | - |
+| CC-104 | Noise | PN: Malta fails EU noise law | Not started | - |
+| CC-105 | Noise | ADPD: no study of Freeport and airport noise | Not started | - |
+| CC-106 | Nature & Wildlife | Shearwaters: 10% of the world population | Not started | - |
 
 The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Claims are numbered CC-001 to CC-021. Report drafts are available for CC-001 to CC-011; CC-012 to CC-021 are candidates (added 3 October 2026). Right of reply remains for the maintainer where not yet handled.
 

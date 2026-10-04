@@ -1,0 +1,46 @@
+id: CC-105
+title: 'ADPD: no study of Freeport and airport noise'
+category: Noise
+subtopic: null
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'ADPD - The Green Party (deputies Carmel Cacopardo and Melissa Bagley, 26 May 2026): Malta has not yet acknowledged
+    the impact of noise from the Malta Freeport and Malta International Airport on nearby residents, and should
+    commission a study of it (and of entertainment-industry noise).'
+  speaker: ADPD - The Green Party
+  date: '2026-05-26'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Air and noise pollution are harming our health: ADPD'
+    publisher: Newsbook
+    date: '2026-05-26'
+    url: https://newsbook.com.mt/en/air-and-noise-pollution-are-harming-our-health-adpd/
+    note: Locator. The article states the call for a study; read the party press statement for exact wording.
+counter_evidence: EU noise-mapping rules cover major airports and roads, so some exposure data may already exist;
+  whether Freeport noise is mapped is not yet checked. The article gives no decibel or exposure figures, and the
+  claim is that no study exists, which can be tested by looking for one.
+tests: Strategic noise maps and action plans (Directive 2002/49/EC) for Malta International Airport; ERA/TM noise
+  reports; Freeport environmental permits and monitoring; WHO 2018 Environmental Noise Guidelines for Europe.
+why_low_hanging: '''No study exists'' is falsifiable by finding one; exposure data can then be set against WHO guidelines.'
+tags:
+- Compliance-not-health
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: EEA noise data reachable; ADPD and ERA pages may be browser-only.'
+caveats: 'Candidate from the weekly intake of 4 Oct 2026 (second run of the day): Wording of the ''not acknowledged''
+  part is not confirmed: the article reads as a call for a study. Confirm in the party statement before any check.
+  Wording is from a locator source unless marked verbatim; read the primary text before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Malta Freeport, Birżebbuġa
+  lat: 35.81859
+  lon: 14.53085
+  scope: site
+  icon: crane
