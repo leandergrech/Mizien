@@ -25,9 +25,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none;
   font: 700 26px/1 var(--serif); }
 .brand .brand-mark { width: 38px; height: 38px; flex: none; }
-.site-head nav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 15px; }
-.site-head nav a { color: var(--ink); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
-.site-head nav a:hover, .site-head nav a[aria-current="page"] { border-bottom-color: var(--amber); }
+@media (min-width: 701px) { .site-head .tabs { justify-content: flex-end; } }
 main { max-width: 1100px; margin: 0 auto; padding: 0 20px 56px; }
 .site-foot { max-width: 1100px; margin: 0 auto; padding: 22px 20px 40px; color: var(--muted); font-size: 13.5px;
   border-top: 1px solid var(--line); }
@@ -264,9 +262,64 @@ h1, h2 { font-family: var(--serif); line-height: 1.2; }
 .check .btn-download { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 10px 16px;
   border-radius: 10px; background: #14452f; color: #fff; text-decoration: none; font: 700 15px/1.3 var(--sans); }
 .check .btn-download:hover { background: #1d5a3f; }
-.btn-download .dl-label::before { content: "↓ "; }
+.btn-download .dl-label { display: inline-flex; align-items: center; gap: 8px; }
+.btn-download .ico { stroke: #e3a72f; }
 .btn-download .dl-meta { font-weight: 400; font-size: 13.5px; color: #cfe2d4; white-space: nowrap; }
 @media (max-width: 640px) { .downloads .download-grid { grid-template-columns: 1fr; } .flyer-preview { max-width: 260px; } }
+
+/* ---------------------------------------------------------------- claim page: downloads in the header, section tabs */
+.ico { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.head-downloads { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; }
+.dl-chip { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 7px 13px 7px 10px; border-radius: 9px;
+  background: #fff; color: #14452f; text-decoration: none; font: 700 14px/1.2 var(--sans); box-shadow: 0 1px 3px rgba(0,0,0,.18); }
+.dl-chip span { font-weight: 400; font-size: 12.5px; color: #56636a; margin-left: 2px; }
+.dl-chip:hover { background: #f6f4ee; }
+@media (max-width: 520px) { .head-downloads { gap: 6px; } .dl-chip { min-height: 38px; padding: 6px 10px 6px 8px; font-size: 13.5px; } .dl-chip span { display: none; } }
+.page-tabs { position: sticky; top: 0; z-index: 5; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none;
+  margin: 0 -26px 6px; padding: 8px 22px; background: rgba(246,244,238,.96); border-bottom: 1px solid var(--paper-line);
+  backdrop-filter: blur(4px); }
+.page-tabs::-webkit-scrollbar { display: none; }
+.check .page-tabs a { flex: none; display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 8px;
+  color: #14452f; text-decoration: none; font: 600 14px/1.2 var(--sans); }
+.check .page-tabs a:hover { background: #e6efe8; }
+.page-tabs .ico { stroke: #2e7d4f; }
+:target { scroll-margin-top: 64px; }
+
+/* ---------------------------------------------------------------- claim numbers (Google-style) and previous / next */
+.pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 10px; margin: 26px auto 8px; text-align: center; }
+.pager ol { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin: 0; padding: 0; }
+.pager .pg { position: relative; display: inline-grid; place-items: center; min-width: 40px; height: 40px; padding: 0 6px; border-radius: 10px;
+  color: var(--ink); text-decoration: none; font: 700 15px var(--sans); border: 1px solid transparent; }
+.pager .pg::after { content: ""; position: absolute; bottom: 5px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: var(--v); }
+.pager .pg:hover { border-color: var(--amber); }
+.pager .pg.is-current { background: var(--amber); color: #13301f; }
+.pager .pg.is-current::after { box-shadow: 0 0 0 1.5px #13301f; }
+.pager-gap { color: var(--muted); padding: 0 4px; }
+.pager-step { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 999px;
+  border: 1px solid rgba(207,226,212,.3); color: var(--ink); text-decoration: none; font: 600 15px var(--sans); }
+.pager-step:hover { border-color: var(--amber); }
+.pager-step.is-off { opacity: .45; }
+.pager-count { flex-basis: 100%; margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+@media (hover: none) { .pager-keys { display: none; } }
+.claim-flip .flip { position: fixed; top: 50%; z-index: 20; display: flex; align-items: center; gap: 8px; height: 56px; min-width: 56px;
+  padding: 0 16px; border-radius: 999px; background: rgba(20,69,47,.92); color: #fff; text-decoration: none;
+  border: 1px solid rgba(227,167,47,.55); box-shadow: 0 8px 24px rgba(0,0,0,.35); transform: translateY(-50%); transition: background .15s; }
+.claim-flip .flip .ico { width: 22px; height: 22px; stroke: #e3a72f; stroke-width: 2.4; }
+.claim-flip .flip:hover, .claim-flip .flip:focus-visible { background: #14452f; }
+.flip-prev { left: 14px; } .flip-next { right: 14px; }
+.flip-label { display: none; max-width: 260px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font: 14px/1.2 var(--sans); }
+.flip-label b { color: #e3a72f; }
+.flip:hover .flip-label, .flip:focus-visible .flip-label { display: inline; }
+@media (max-width: 1239px) {      /* not enough margin beside the card: a floating bar centred at the bottom */
+  .claim-flip { position: fixed; left: 50%; bottom: max(12px, env(safe-area-inset-bottom)); z-index: 20; transform: translateX(-50%);
+    display: flex; gap: 2px; padding: 4px; border-radius: 999px; background: rgba(14,42,31,.94); border: 1px solid rgba(227,167,47,.5);
+    box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+  .claim-flip .flip { position: static; transform: none; height: 46px; min-width: 46px; padding: 0 14px; box-shadow: none; border: 0; background: transparent; }
+  .claim-flip .flip-label { display: inline; max-width: 34vw; font-size: 13.5px; }
+  .claim-flip .flip-label { white-space: nowrap; }
+  body:has(.claim-flip) { padding-bottom: 80px; }
+}
+@media (max-width: 480px) { .claim-flip .flip-label { max-width: 26vw; } .claim-flip .flip-label > :not(b) { display: none; } }
 
 /* ---------------------------------------------------------------- claims list */
 .table-wrap { overflow-x: auto; }

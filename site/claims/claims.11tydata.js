@@ -8,8 +8,29 @@ const isoMonth = (s) => {
   return (m[3] ? `${+m[3]} ` : "") + `${month} ${m[1]}`;
 };
 
+// Previous/next claim and a Google-style window of claim numbers (first, last, current ±3), in list order.
+const brief = (x) => x && { id: x.id, title: x.title, path: x.path, verdict: x.verdict,
+  verdict_slug: x.verdict_slug, n: Number(x.id.replace(/\D/g, "")) };
+
+function pager(data) {
+  const all = data.mizien?.claims || [];
+  const i = all.findIndex((x) => x.id === data.claim?.id);
+  if (i < 0) return null;
+  const keep = new Set([0, all.length - 1]);
+  for (let k = i - 3; k <= i + 3; k++) if (k >= 0 && k < all.length) keep.add(k);
+  const pages = [];
+  let last = -1;
+  [...keep].sort((a, b) => a - b).forEach((k) => {
+    if (last >= 0 && k - last > 1) pages.push({ gap: true });
+    pages.push({ ...brief(all[k]), current: k === i });
+    last = k;
+  });
+  return { prev: brief(all[i - 1]), next: brief(all[i + 1]), pages, index: i + 1, total: all.length };
+}
+
 export default {
   eleventyComputed: {
+    pager: (data) => (data.claim ? pager(data) : null),
     title: (data) => (data.claim ? `${data.claim.id}: ${data.claim.title}` : data.title),
     noindex: (data) => {
       if (data.site.index_drafts) return false;
