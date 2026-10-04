@@ -11,3 +11,6 @@ National inventory 1990-2024 (UNFCCC); Eurostat population and GDP.
 See `data/sources.csv` (filter on CC-025) for the source that located this claim. It locates the claim and its context; it is not the scientific evidence.
 
 Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+
+## Attempt log
+- 4 Oct 2026 (worker A): blocked. The UNFCCC statement PDF is behind an Incapsula bot wall (browser-only). Maintainer: paste the paragraph with the 44% / 80% wording into `primary-source.md`. MaltaToday reports the same figures from an EU progress report (different speaker).

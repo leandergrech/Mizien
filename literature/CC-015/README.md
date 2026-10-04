@@ -11,3 +11,6 @@ Dates of the published chat messages against the documented end of his PA contra
 See `data/sources.csv` (filter on CC-015) for the news, government and EU sources found so far. Those locate the claim and its context; they are not the scientific evidence.
 
 Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+
+## Attempt log
+- 4 Oct 2026 (worker A): blocked. Newsbook (24 Sep 2026) reports the remark only as paraphrase; the Maltese Herald video report returned 403 and Wayback was unreachable. Needed: his exact words (recording or transcript) in `primary-source.md`. A recording/transcript would settle the wording; the dates are then a document check.
