@@ -1,6 +1,8 @@
 """Shared design for Miżien claim-check reports and flyers.
 
 Extracted from tools/cc-001-report/ so that new checks match the CC-001 design without copying 1,000 lines.
+Helpers tag what they build (`obj._mz`) so tools/report_html.py can publish the same report as web HTML;
+the tags do not change the PDF.
 CC-001's own generators are left unchanged. A claim's build script fills a `Report` / `Flyer` config
 (see tools/cc-003-report/build_report.py for an example) and calls build_report() / build_flyer().
 """
@@ -173,6 +175,7 @@ def callout(paras, bg=PALE, bar=GREEN, pad=7, width=CW):
     t.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), bg), ("LINEBEFORE", (0, 0), (0, -1), 3.2, bar),
                            ("LEFTPADDING", (0, 0), (-1, -1), pad + 3), ("RIGHTPADDING", (0, 0), (-1, -1), pad),
                            ("TOPPADDING", (0, 0), (-1, -1), pad - 1), ("BOTTOMPADDING", (0, 0), (-1, -1), pad - 1)]))
+    t._mz = ("callout", paras, hexs(bg), hexs(bar))
     return t
 
 
@@ -184,23 +187,31 @@ def chip(text, bg, fg=colors.white, w=34 * mm):
                            ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
                            ("LEFTPADDING", (0, 0), (-1, -1), 3), ("RIGHTPADDING", (0, 0), (-1, -1), 3),
                            ("ROUNDEDCORNERS", [3, 3, 3, 3])]))
+    t._mz = ("chip", text, hexs(bg), hexs(fg))
     return t
 
 
 def fig(path, width=CW):
     from PIL import Image as PI
     w, h = PI.open(path).size
-    return Image(path, width=width, height=width * h / w)
+    im = Image(path, width=width, height=width * h / w)
+    im._mz = ("fig", str(path))
+    return im
 
 
 def grade_tag(g):
-    return Table([[Paragraph(f'<font color="#2B3A42">{g}</font>',
+    return _tag(("grade", g), Table([[Paragraph(f'<font color="#2B3A42">{g}</font>',
                              ParagraphStyle("g", fontName="Sans-B", fontSize=8, alignment=TA_CENTER))]],
                  colWidths=[6 * mm], style=TableStyle([("BACKGROUND", (0, 0), (-1, -1), GRADE_BG.get(g, GREY_PALE)),
                                                        ("TOPPADDING", (0, 0), (-1, -1), 1),
                                                        ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
                                                        ("LEFTPADDING", (0, 0), (-1, -1), 0),
-                                                       ("RIGHTPADDING", (0, 0), (-1, -1), 0)]))
+                                                       ("RIGHTPADDING", (0, 0), (-1, -1), 0)])))
+
+
+def _tag(mz, obj):
+    obj._mz = mz
+    return obj
 
 
 def std_table(rows, widths, header=True, valign="TOP", zebra=True, extra=None):
@@ -213,6 +224,7 @@ def std_table(rows, widths, header=True, valign="TOP", zebra=True, extra=None):
     if zebra:
         st.append(("ROWBACKGROUNDS", (0, 1 if header else 0), (-1, -1), [colors.white, CREAM]))
     t.setStyle(TableStyle(st + (extra or [])))
+    t._mz = ("table", rows, header)
     return t
 
 
@@ -235,7 +247,8 @@ def contested(title, status, status_col, side_a, side_b, why, label_a="EVIDENCE 
     foot.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), GREY_PALE),
                               ("LEFTPADDING", (0, 0), (-1, -1), 8), ("RIGHTPADDING", (0, 0), (-1, -1), 8),
                               ("TOPPADDING", (0, 0), (-1, -1), 6), ("BOTTOMPADDING", (0, 0), (-1, -1), 7)]))
-    return KeepTogether([head, inner, foot, Spacer(1, 5 * mm)])
+    return _tag(("contested", title, status, hexs(status_col), side_a, side_b, why, label_a, label_b, label_why),
+                KeepTogether([head, inner, foot, Spacer(1, 5 * mm)]))
 
 
 def key_points(kp):
@@ -253,7 +266,7 @@ def key_points(kp):
     kt = Table(rows, colWidths=[10 * mm, CW - 10 * mm - 20 * mm])
     kt.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("TOPPADDING", (0, 0), (-1, -1), 2.8),
                             ("BOTTOMPADDING", (0, 0), (-1, -1), 2.8), ("LEFTPADDING", (0, 0), (-1, -1), 0)]))
-    return callout([kt], bg=PALE, bar=GREEN, pad=8)
+    return _tag(("keypoints", kp), callout([kt], bg=PALE, bar=GREEN, pad=8))
 
 
 def tiles(items):
@@ -270,7 +283,7 @@ def tiles(items):
                             ("TOPPADDING", (0, 0), (-1, 0), 7), ("BOTTOMPADDING", (0, 0), (-1, 0), 1),
                             ("TOPPADDING", (0, 1), (-1, 1), 0), ("BOTTOMPADDING", (0, 1), (-1, 1), 7),
                             ("VALIGN", (0, 0), (-1, -1), "TOP")]))
-    return tt
+    return _tag(("tiles", [(b, hexs(col), cp) for b, col, cp in items]), tt)
 
 
 def up_down(up, down):
@@ -281,7 +294,7 @@ def up_down(up, down):
                             ("LEFTPADDING", (0, 0), (-1, -1), 8), ("RIGHTPADDING", (0, 0), (-1, -1), 8),
                             ("TOPPADDING", (0, 0), (-1, -1), 6), ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
                             ("VALIGN", (0, 0), (-1, -1), "TOP")]))
-    return wc
+    return _tag(("updown", up, down), wc)
 
 
 def toc(items):
@@ -293,7 +306,7 @@ def toc(items):
     t = Table([[cells[i], cells[i + half]] for i in range(half)], colWidths=[CW / 2, CW / 2])
     t.setStyle(TableStyle([("TOPPADDING", (0, 0), (-1, -1), 2.2), ("BOTTOMPADDING", (0, 0), (-1, -1), 2.2),
                            ("LEFTPADDING", (0, 0), (-1, -1), 0), ("LINEBELOW", (0, 0), (-1, -1), 0.3, RULE)]))
-    return [P("IN THIS REPORT", tag), t]
+    return [P("IN THIS REPORT", tag), _tag(("toc", items), t)]
 
 
 def verdict_box(verdict, subline):
@@ -307,7 +320,7 @@ def verdict_box(verdict, subline):
     vb.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), VERDICT_COLS[i]), ("LEFTPADDING", (0, 0), (-1, -1), 12),
                             ("RIGHTPADDING", (0, 0), (-1, -1), 12), ("TOPPADDING", (0, 0), (-1, -1), 9),
                             ("BOTTOMPADDING", (0, 0), (-1, -1), 10), ("ROUNDEDCORNERS", [4, 4, 4, 4])]))
-    return vb
+    return _tag(("verdictbox", verdict, subline), vb)
 
 
 def requests_list(reqs):
@@ -315,14 +328,14 @@ def requests_list(reqs):
     rq = Table([[Paragraph(box, cell), C(r)] for r in reqs], colWidths=[8 * mm, CW - 8 * mm])
     rq.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("TOPPADDING", (0, 0), (-1, -1), 3.2),
                             ("BOTTOMPADDING", (0, 0), (-1, -1), 3.2), ("LINEBELOW", (0, 0), (-1, -1), 0.3, RULE)]))
-    return rq
+    return _tag(("requests", reqs), rq)
 
 
 def references(refs):
     out = []
     for n, t, u in refs:
         link = f' <link href="{u}" color="#3C6E8F">{u.replace("&", "&amp;")}</link>' if u else ""
-        out.append(Paragraph(f"<b>[{n}]</b> {t}{link}", ref))
+        out.append(_tag(("ref", n, t, u), Paragraph(f"<b>[{n}]</b> {t}{link}", ref)))
     return out
 
 
