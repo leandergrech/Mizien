@@ -196,6 +196,7 @@ eleventyExcludeFromCollections: true
   #doc-viewer .viewer-close { border: 0; border-radius: 8px; padding: 7px 11px; background: #14452f; color: white; cursor: pointer; }
   #doc-viewer iframe { display: block; width: 100%; height: calc(100% - 54px); border: 0; background: #fff; }
   #doc-viewer img { display: block; max-width: 100%; max-height: calc(100% - 54px); margin: 0 auto; object-fit: contain; }
+  #doc-viewer [hidden] { display: none !important; }  /* the rules above would otherwise show the unused frame over the flyer */
 
   main { max-width: 1100px; margin: 0 auto; padding: 8px 24px 60px; }
   section { margin-top: 38px; }

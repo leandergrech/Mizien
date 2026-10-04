@@ -80,6 +80,12 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
 
 ## Site build (4 October 2026)
 
+- Each claim page shows the full report as HTML, then download buttons (report PDF, flyer PDF, flyer image) and a
+  flyer preview. `tools/report_html.py` builds the HTML from each `build_report.py` story, with figures taken from
+  the committed `report.pdf`, and checks that the PDF's words are all present. CI (and `npm run build`) regenerate
+  it; `claims/*/report.html` and `report-figures/` are git-ignored. Fixed the map viewer showing a blank frame
+  instead of the flyer image.
+
 - The site is being moved to a static build: Eleventy 3 on Node 24, with `eleventy.config.js`, `package.json` and
   templates in `site/`. CI (`.github/workflows/site.yml`) validates claims, rebuilds data and builds `_site/` on
   every PR.

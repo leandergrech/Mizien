@@ -8,3 +8,6 @@ literature/**/*.pdf
 node_modules/
 _site/
 build/
+# web versions of the reports: built from report.pdf by tools/report_html.py (CI and npm run build)
+claims/*/report.html
+claims/*/report-figures/

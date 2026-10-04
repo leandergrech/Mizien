@@ -1,6 +1,6 @@
 // Eleventy builds the public site into _site/ from site/ (templates) and the
 // data written by scripts/build_site_data.py. Run `npm run build`.
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { HtmlBasePlugin } from "@11ty/eleventy";
 import markdownIt from "markdown-it";
 
@@ -22,6 +22,13 @@ export default function (eleventyConfig) {
   // time; docs/ is retired once the Actions deploy is live.
   eleventyConfig.addPassthroughCopy({ docs: "/" });
   eleventyConfig.addPassthroughCopy({ "site/assets": "assets" });
+  // Figures of each report's web version (tools/report_html.py), next to the claim's PDFs.
+  // Flyer previews made by scripts/build_site_data.py (build/ is not committed).
+  if (existsSync("build/claim-previews")) eleventyConfig.addPassthroughCopy({ "build/claim-previews": "claim-files" });
+  for (const id of readdirSync("claims")) {
+    const dir = `claims/${id}/report-figures`;
+    if (existsSync(dir)) eleventyConfig.addPassthroughCopy({ [dir]: `claim-files/${id}/report-figures` });
+  }
 
   // "2025-11-13" -> "13 November 2025"; "2025-09" -> "September 2025"; anything else unchanged.
   eleventyConfig.addFilter("ukDate", (value) => {
