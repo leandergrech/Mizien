@@ -1,0 +1,55 @@
+id: CC-103
+title: Heat-death locations "within three months"
+category: Health & Safety
+subtopic: Heat & health
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Ministry for Health (reported 26 Aug 2026): refused a Freedom of Information request for the localities
+    of the 20 heat-linked deaths of 20-26 July 2026 (''The request is not accepted''), saying the information will
+    be published within three months.'
+  speaker: Ministry for Health
+  date: '2026-08-26'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Government refuses to disclose where heat-related deaths occurred
+    publisher: Newsbook
+    date: '2026-08-26'
+    url: https://newsbook.com.mt/en/government-refuses-to-disclose-where-heat-related-deaths-occurred/
+    note: Locator; read the FOI reply itself for the Ministry's exact wording.
+  - title: At least 20 heat-linked deaths recorded in Malta during July heatwave
+    publisher: Newsbook
+    date: 2026-08
+    url: https://newsbook.com.mt/en/at-least-20-heat-linked-deaths-recorded-in-malta-during-july-heatwave/
+    note: 'Context: 20 of 108 deaths in week 30; about 179 emergency attendances in July, 89 needing admission or
+      specialist care.'
+counter_evidence: Newsbook sought the localities to test whether deaths clustered in areas with simultaneous power
+  outages; Momentum filed a separate request. Health authorities were reported saying heat may also have contributed
+  to deaths certified under another cause. The refusal reason does not say whether the promised publication will
+  include localities.
+tests: Whether a locality breakdown is published by about late November 2026 (deadline implied by 'three months');
+  Malta Environment Health Directorate and NSO mortality releases; heatwave-mortality methods (excess deaths vs
+  certified causes).
+why_low_hanging: A dated promise with a checkable deadline; the outcome is public or it is not.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Low until the deadline: the check needs a publication that does not yet exist. Re-check from late
+  November 2026. Newsbook is a news locator.'
+caveats: 'Candidate from the weekly intake of 4 Oct 2026 (second run of the day): Not a verdict on motives. Related
+  to CC-027, CC-090 and CC-097 (theme T11). The deadline falls after this intake, so a worker should not mark the
+  claim until it has passed. Wording is from a locator source unless marked verbatim; read the primary text before
+  any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Mater Dei Hospital, Msida
+  lat: 35.90189
+  lon: 14.4766
+  scope: institution
+  icon: pin

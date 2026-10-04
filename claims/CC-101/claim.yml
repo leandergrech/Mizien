@@ -1,0 +1,49 @@
+id: CC-101
+title: 'EU: no permits for water abstraction'
+category: Water
+subtopic: Water supply & groundwater
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (8 July 2026, letter of formal notice INFR(2026)2115): Malta has not put in place a
+    registration requirement for surface-water abstraction or a prior authorisation regime for surface and groundwater
+    abstraction, and its law does not ensure periodic review of abstraction controls.'
+  speaker: European Commission
+  date: '2026-07-08'
+  wording_status: Verbatim found
+  sources:
+  - title: 'July infringements package: key decisions'
+    publisher: European Commission Representation in Malta
+    date: '2026-07-08'
+    url: https://malta.representation.ec.europa.eu/news/july-infringements-package-key-decisions-2026-07-08_en
+    note: Commission wording of the Malta item (read 4 Oct 2026). A letter of formal notice is an opening step,
+      not a finding by the Court.
+  quote: Malta has failed to put in place a registration requirement for surface water abstraction and a prior authorisation
+    regime to control the abstraction of surface and groundwater.
+counter_evidence: 'A letter of formal notice is the first step of an infringement procedure: Malta has two months
+  to reply and the Commission has not issued a reasoned opinion. Malta''s reply and the abstraction-licensing rules
+  now in force are not yet read. The Commission frames this as a transposition gap in the Water Framework Directive,
+  not a measured over-abstraction.'
+tests: Water Framework Directive Art. 11(3)(e) and (5); Maltese water-policy and borehole-licensing legislation;
+  EWA and WSC abstraction data; Malta's River Basin Management Plan; groundwater-body status (EEA/WISE).
+why_low_hanging: The text of the directive and of Maltese law can be compared directly; no model needed.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Commission page reachable (EU host); Maltese legislation on legislation.mt may be browser-only.'
+caveats: 'Candidate from the weekly intake of 4 Oct 2026 (second run of the day): Shares the groundwater-abstraction
+  question with CC-009, CC-039 and CC-040. Do not read the notice as evidence of actual over-abstraction without
+  data. Wording is from a locator source unless marked verbatim; read the primary text before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

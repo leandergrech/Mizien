@@ -1,0 +1,48 @@
+id: CC-104
+title: 'PN: Malta fails EU noise law'
+category: Noise
+subtopic: null
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Nationalist Party MP Albert Buttigieg and MEP Peter Agius (petition to the European Parliament, reported
+    12 Oct 2024): Malta has failed to implement Directive 2002/49/EC, including noise mapping and national action
+    plans, with only a draft Noise Action Plan 2019-2024 and no concrete implementation in St Julian''s, Sliema
+    and Valletta.'
+  speaker: Albert Buttigieg (PN MP) and Peter Agius (MEP, PN)
+  date: '2024-10-12'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: EU urged to pressure Malta over noise pollution
+    publisher: Newsbook
+    date: '2024-10-12'
+    url: https://newsbook.com.mt/en/eu-urged-to-pressure-malta-over-noise-pollution/
+    note: Locator for the petition. Read the petition text on the European Parliament Petitions portal.
+counter_evidence: CC-020 records a February 2026 study for the European Parliament's Petitions Committee that finds
+  only two meaningful gaps in Malta's transposition of the noise law and places most complaints (construction,
+  entertainment, neighbourhood noise) outside its scope.
+  The petition is older than 60 days (Oct 2024); included because noise is the least-covered topic and the claim
+  is testable against EU reporting.
+tests: Directive 2002/49/EC Arts 7-8 and Malta's noise-mapping and action-plan submissions (EEA Noise Observation
+  and Information Service / Reportnet); EP Petitions Committee study (2026); ERA Noise Action Plan documents.
+why_low_hanging: Whether maps and plans were submitted and adopted is a matter of record.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: EEA and EU hosts reachable; ERA pages browser-only.'
+caveats: 'Candidate from the weekly intake of 4 Oct 2026 (second run of the day): Party-political petition: read
+  the petition text before treating Newsbook''s summary as the claim. Interacts with CC-020. Wording is from a locator
+  source unless marked verbatim; read the primary text before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Parliament House, Valletta
+  lat: 35.89614
+  lon: 14.50978
+  scope: institution
+  icon: parliament

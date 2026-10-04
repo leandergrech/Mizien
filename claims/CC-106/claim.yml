@@ -1,0 +1,45 @@
+id: CC-106
+title: 'Shearwaters: 10% of the world population'
+category: Nature & Wildlife
+subtopic: Hunting & birds
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'BirdLife Malta (LIFE Arċipelagu Garnija project page): Malta''s Yelkouan shearwater population is estimated
+    at around 1,600-1,800 pairs, about 10% of the global population.'
+  speaker: BirdLife Malta
+  date: n/d
+  wording_status: Verbatim found
+  sources:
+  - title: LIFE Arċipelagu Garnija
+    publisher: BirdLife Malta
+    date: n/d
+    url: https://birdlifemalta.org/arcipelagugarnija/
+    note: Primary text read 4 Oct 2026. The page is undated; the project ran 2016-2020.
+  quote: Malta's population is estimated to be around 1,600 – 1,800 pairs, constituting approximately 10% of the
+    global population.
+counter_evidence: The page is undated and the estimate probably rests on 2010s surveys; later national or IUCN/BirdLife
+  International estimates may differ. 'About 10%' depends on the global figure used.
+tests: Peer-reviewed Yelkouan shearwater population studies; BirdLife International/IUCN Red List global estimate;
+  Malta's Article 12 Birds Directive report (ERA); Malta breeding-colony surveys.
+why_low_hanging: A specific figure and share that the literature and the Article 12 reporting can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: IUCN, Crossref and EU reporting hosts reachable; the claim page is readable.'
+caveats: 'Candidate from the weekly intake of 4 Oct 2026 (second run of the day): A conservation-science statement
+  from an NGO, held to the same standard as government figures. Undated: record the date read (4 Oct 2026). Wording
+  is from a locator source unless marked verbatim; read the primary text before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Għadira Nature Reserve, Mellieħa
+  lat: 35.97088
+  lon: 14.34888
+  scope: site
+  icon: park
