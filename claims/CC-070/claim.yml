@@ -1,0 +1,39 @@
+id: CC-070
+title: '''Only one overcrowded bus'''
+category: Transport
+subtopic: Public transport
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Transport Malta (July 2026): only one bus was overcrowded in the incident under scrutiny.'
+  speaker: Transport Malta
+  date: 2026-07
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Packed like sardines: Why Transport Malta''s ''one overcrowded bus claim'' doesn''t add up'
+    publisher: The Malta Independent
+    date: 15 Jul 2026
+    url: https://www.independent.com.mt/articles/2026-07-15/local-news/Packed-like-sardines-Why-Transport-Malta-s-one-overcrowded-bus-claim-doesn-t-add-up-6736291358
+    note: Locates the claim and a challenge.
+counter_evidence: Load factors by route and hour; complaints data.
+tests: Automatic passenger counts; TM inspection data.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Valletta bus terminus, Floriana
+  lat: 35.89563
+  lon: 14.50827
+  scope: site
+  icon: pin

@@ -1,0 +1,41 @@
+id: CC-034
+title: Air Quality Plan 'already yielding results'
+category: Air
+subtopic: Air quality & health
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Environment and Resources Authority (Air Quality Plan 2025): actions already taken have yielded positive
+    results for Malta''s air quality.'
+  speaker: Environment and Resources Authority (ERA)
+  date: '2025'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Air Quality Plan for Malta 2025
+    publisher: ERA
+    date: '2025'
+    url: https://era.org.mt/air-quality-plan-for-malta-2024/
+    note: Primary plan page.
+counter_evidence: Msida exceeded the PM10 daily-limit count in 2018 and 2023; trends need station data, not plan
+  text.
+tests: ERA station series; EEA E1a data; exceedance counts by year.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Environment and Resources Authority, Marsa
+  lat: 35.88617
+  lon: 14.49732
+  scope: institution
+  icon: pin

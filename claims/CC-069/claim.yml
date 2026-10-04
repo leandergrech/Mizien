@@ -1,0 +1,41 @@
+id: CC-069
+title: 82 million bus trips
+category: Transport
+subtopic: Public transport
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Malta Public Transport / Government: buses carried a record 82 million passengers in 2025 (226,918 a day,
+    +9.6%), 112% more than in 2013.'
+  speaker: Malta Public Transport; Ministry for Transport
+  date: '2026'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta's free transport in doubt despite record-breaking numbers
+    publisher: Cities Today
+    date: '2026'
+    url: https://cities-today.com/maltas-free-transport-in-doubt-despite-record-breaking-numbers/
+    note: Locates the figures.
+counter_evidence: Population and tourists also grew; car fleet still rising (see CC-008); subsidy cost about EUR
+  100m a year.
+tests: Ridership by user type; NSO population; car registrations.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Valletta bus terminus, Floriana
+  lat: 35.89563
+  lon: 14.50827
+  scope: site
+  icon: pin

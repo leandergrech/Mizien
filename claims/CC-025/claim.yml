@@ -1,0 +1,41 @@
+id: CC-025
+title: Per-capita emissions down 44% since 2005
+category: Climate & Energy
+subtopic: Emissions & targets
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta (COP30 national statement): Malta has reduced per-capita emissions by over 44% since
+    2005 and emissions per unit of GDP by more than 80%.'
+  speaker: Government of Malta
+  date: 2025-11
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Statement of Malta, COP30 High-Level Segment
+    publisher: UNFCCC
+    date: Nov 2025
+    url: https://unfccc.int/sites/default/files/resource/MALTA_cop30cmp20cma7_HLS_ENG.pdf
+    note: Primary statement.
+counter_evidence: Per-capita and per-GDP falls can coexist with rising absolute effort-sharing emissions (see CC-003);
+  population grew about a third.
+tests: National inventory 1990-2024 (UNFCCC); Eurostat population and GDP.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

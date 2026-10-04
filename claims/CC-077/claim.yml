@@ -1,0 +1,41 @@
+id: CC-077
+title: 'Metro: first section early 2030s'
+category: Transport
+subtopic: Roads & mass transit
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Transport Minister Chris Bonett (Apr 2026): the first section of the ''La Valette'' rapid-transit line
+    will be operating in the early 2030s; the single 24 km line is costed at about EUR 2.8 billion.'
+  speaker: Chris Bonett, Transport Minister; Transport Malta
+  date: '2026-04-23'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: First section of La Vallette line to be operational in early 2030s, Transport Minister says
+    publisher: The Malta Independent
+    date: 23 Apr 2026
+    url: https://www.independent.com.mt/articles/2026-04-23/local-news/First-section-of-La-Vallette-line-to-be-operational-in-early-2030s-Transport-Minister-says-6736289100
+    note: Locates the claim.
+counter_evidence: 'Construction to start in five to ten years plus three to four years to build, as reported: is
+  ''early 2030s'' consistent?'
+tests: Malta in Motion plan; procurement timeline.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Malta International Airport, Luqa
+  lat: 35.84741
+  lon: 14.49229
+  scope: site
+  icon: pin

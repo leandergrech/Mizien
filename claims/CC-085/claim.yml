@@ -1,0 +1,40 @@
+id: CC-085
+title: 4.7 million tourists needed
+category: Tourism & Population
+subtopic: Tourism numbers & capacity
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Malta Hotels and Restaurants Association: if all planned hotels are built, Malta would need about 4.7 million
+    tourists a year to keep occupancy at 80%.'
+  speaker: Malta Hotels and Restaurants Association (MHRA)
+  date: '2022'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta would need 4.7m tourists a year if planned hotels are built
+    publisher: Newsbook
+    date: n/d
+    url: https://newsbook.com.mt/en/malta-would-need-4-7m-tourists-a-year-if-planned-hotels-are-built/
+    note: Industry claim.
+counter_evidence: Bed-stock pipeline vs arrivals; 2025 arrivals already above 4 million.
+tests: MTA bed-stock data; PA hotel approvals; NSO arrivals.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

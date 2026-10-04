@@ -169,3 +169,12 @@ CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commi
   with no scope. Worth a follow-up check.
 - Claim files exposed by the site builder are copied into `docs/claim-files/`; the map panel offers an on-page viewer and adjacent download action for each output.
 - Completed claim outputs share one `addFileAction` implementation. Use `report_pdf`, `flyer_pdf` and `flyer_png` in `claim.yml` for the standard Report / Flyer PDF / Flyer image viewer and download pairs.
+
+## Intake of 4 October 2026 (CC-022 to CC-100)
+
+- 79 candidate claims added from web searches, bringing the list to 100. All are `Not started`, wording `Paraphrase: locate quote`, one locator source each in `data/sources.csv`; nothing verified yet. Sides covered: government and agencies, PN, ADPD, Momentum, NGOs (BirdLife, Moviment Graffitti), business (MDA, MHRA, Malta Chamber), unions (GWU), media (Amphora, The Shift, Newsbook, Lovin Malta, Malta Business Weekly) and EU bodies (Commission, EEA).
+- Two new topics: Tourism & Population, Health & Safety. Every claim now has a `subtopic` (2-5 per topic, names reused exactly; CC-020 Noise left null) for the planned sub-hubs in the Għanqbuta (formerly Network) view.
+- Map places geocoded with OpenStreetMap Nominatim (4 Oct 2026); Sant'Antnin did not resolve and its claims use Magħtab or Marsaskala.
+- 30 weak links (Weak (indicative) or Pattern, not causal) added to existing themes T2-T9 and a new theme T10 (tourism pressure).
+- Queue: new claims spread across workers A/B/C (open loads 28/27/27). Several claims overlap earlier ones by design (CC-025/CC-094 with CC-003; CC-081 with CC-004; CC-041-043 with CC-005).
+- Site and UI changes (Għanqbuta rename, subtopic sub-hubs, Eleventy build) are owned by the mizien-60 session; do not edit docs/index.html or scripts without checking with it.

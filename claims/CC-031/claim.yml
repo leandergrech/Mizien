@@ -1,0 +1,40 @@
+id: CC-031
+title: Gozo, first climate-neutral region
+category: Climate & Energy
+subtopic: Emissions & targets
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Gozo Minister Clint Camilleri (Sept 2026): Gozo is on course to become Malta''s first climate-neutral region
+    and already has a fully electric public transport fleet.'
+  speaker: Clint Camilleri, Minister for Gozo
+  date: '2026-09-25'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Gozo climate neutrality plan enters implementation phase
+    publisher: Gozo Today
+    date: 25 Sep 2026
+    url: https://gozotoday.com.mt/2026/09/25/gozo-climate-neutrality-plan-enters-implementation-phase/
+    note: Locates the claim.
+counter_evidence: Check the bus fleet composition and Gozo's emissions baseline; the plan's targets and dates.
+tests: Malta Public Transport fleet data; Gozo climate neutrality plan.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Victoria, Gozo
+  lat: 36.04289
+  lon: 14.23985
+  scope: institution
+  icon: pin

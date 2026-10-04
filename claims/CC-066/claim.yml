@@ -1,0 +1,40 @@
+id: CC-066
+title: Fort Chambray barracks
+category: Planning & Housing
+subtopic: Heritage & character
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Superintendence of Cultural Heritage and the planning tribunal (2026): the Fort Chambray scheme can dismantle
+    the British barracks interior while keeping and relocating its arcade and facade.'
+  speaker: Superintendence of Cultural Heritage; Environment and Planning Review Tribunal
+  date: 2026-04
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: NGO calls for 'immediate' resignation of heritage chief after approval of Fort Chambray barracks demolition
+    publisher: The Shift News
+    date: 1 May 2026
+    url: https://theshiftnews.com/2026/05/01/ngo-calls-for-immediate-resignation-of-heritage-chief-after-approval-of-fort-chambray-barracks-demolition/
+    note: Locates both sides.
+counter_evidence: Europa Nostra listed the barracks among Europe's most endangered sites (Feb 2026).
+tests: EPRT decision; SCH report; scheduling status.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Fort Chambray, Għajnsielem
+  lat: 36.02339
+  lon: 14.29207
+  scope: site
+  icon: pin

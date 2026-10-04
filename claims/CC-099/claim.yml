@@ -1,0 +1,40 @@
+id: CC-099
+title: Foreigners are 31% of residents
+category: Tourism & Population
+subtopic: Population & labour
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Malta Business Weekly: foreign residents now make up 31% of Malta''s population, potentially rising to
+    about 38% by 2030.'
+  speaker: Malta Business Weekly
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Malta''s demographic shift: A growing foreign workforce'
+    publisher: Malta Business Weekly
+    date: n/d
+    url: https://maltabusinessweekly.com/maltas-demographic-shift-a-growing-foreign-workforce/29055/
+    note: Media claim.
+counter_evidence: NSO population by citizenship; projection assumptions.
+tests: NSO demographic review; Eurostat migr_pop1ctz.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

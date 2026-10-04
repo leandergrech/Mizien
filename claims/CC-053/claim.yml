@@ -1,0 +1,41 @@
+id: CC-053
+title: Milky Way visible from 13% of Malta
+category: Nature & Wildlife
+subtopic: Dark skies
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Researchers (University of Malta photometric mapping): the Milky Way is visible from only about 13% of
+    the Maltese Islands, and 87% of the area has high light pollution.'
+  speaker: University of Malta researchers
+  date: '2020'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Milky Way only visible from 13% of Malta
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/news/national/100416/milky_way_only_visible_from_13_of_malta
+    note: Locates the study.
+counter_evidence: Peer-reviewed study (J. Environ. Manage., 2020); ERA/PA 2020 light guidelines still draft. Check
+  trend data since.
+tests: The study's data; VIIRS night lights trend; status of the guidelines.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Ta' Ċenċ, Sannat
+  lat: 36.01889
+  lon: 14.24934
+  scope: site
+  icon: pin

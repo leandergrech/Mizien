@@ -1,0 +1,40 @@
+id: CC-093
+title: 'PN: buy land for urban parks'
+category: Governance & Promises
+subtopic: Manifestos & pledges
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Nationalist Party (2026 manifesto): it will purchase private land in urban cores to convert into public
+    parks and gardens.'
+  speaker: Nationalist Party (PN)
+  date: 2026-05
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'PN published its manifesto: Here is a breakdown'
+    publisher: MaltaToday
+    date: May 2026
+    url: https://www.maltatoday.com.mt/news/election-2026/142040/pn_published_its_manifesto_here_is_a_breakdown
+    note: Opposition pledge.
+counter_evidence: Costing and land availability; compare with Project Green (CC-054).
+tests: Manifesto costings; land values.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Parliament House, Valletta
+  lat: 35.89614
+  lon: 14.50978
+  scope: institution
+  icon: parliament

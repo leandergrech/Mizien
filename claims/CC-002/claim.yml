@@ -1,13 +1,13 @@
 id: CC-002
 title: Comino tree compensation
 category: Land & Trees
+subtopic: Trees & planting
 status: Drafted
 verdict: Largely supported
 verdict_confidence: Moderate
 claim:
-  text: 'ERA (11 Aug 2026): 54 protected trees will be removed, with 10 new indigenous trees planted
-    for each (540). Of 678 trees and shrubs to be removed, 92% are classified as non-protected; 348
-    more are to be transplanted.'
+  text: 'ERA (11 Aug 2026): 54 protected trees will be removed, with 10 new indigenous trees planted for each (540).
+    Of 678 trees and shrubs to be removed, 92% are classified as non-protected; 348 more are to be transplanted.'
   speaker: Environment and Resources Authority (ERA)
   date: '2026-08-11'
   wording_status: Verbatim found
@@ -29,7 +29,8 @@ claim:
     publisher: Conservation Biology
     date: 2024
     url: https://doi.org/10.1111/cobi.14233
-  - title: Physiological effects of mature tree transplanting characterize the roles of the soil-root interface in the field
+  - title: Physiological effects of mature tree transplanting characterize the roles of the soil-root interface
+      in the field
     publisher: Agricultural and Forest Meteorology
     date: 2020
     url: https://doi.org/10.1016/j.agrformet.2020.108192
@@ -37,36 +38,40 @@ claim:
     publisher: Ecological Applications
     date: 2010
     url: https://doi.org/10.1890/09-1384.1
-counter_evidence: The published figures describe proposed interventions and planting conditions, not completed
-  work or measured ecological replacement. Studies show that transplant outcomes vary with species, source,
-  site suitability and aftercare; tree counts alone do not establish survival, habitat recovery or equivalent
-  ecological function.
-tests: Recalculate ERA's count and ratio; distinguish the removal, transplantation and pruning categories;
-  compare species-level local ecological evidence with plant-translocation and mature-tree studies; identify
-  what monitoring would demonstrate survival and recovery. Do not assess the permit's legal merits.
-why_low_hanging: ERA's direct statement gives verifiable counts; the ecological outcome needs independent,
-  species-specific follow-up data.
+counter_evidence: The published figures describe proposed interventions and planting conditions, not completed work
+  or measured ecological replacement. Studies show that transplant outcomes vary with species, source, site suitability
+  and aftercare; tree counts alone do not establish survival, habitat recovery or equivalent ecological function.
+tests: Recalculate ERA's count and ratio; distinguish the removal, transplantation and pruning categories; compare
+  species-level local ecological evidence with plant-translocation and mature-tree studies; identify what monitoring
+  would demonstrate survival and recovery. Do not assess the permit's legal merits.
+why_low_hanging: ERA's direct statement gives verifiable counts; the ecological outcome needs independent, species-specific
+  follow-up data.
 tags:
 - Input-as-outcome
 - Selective metric
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'This check assesses the scientific meaning of the reported tree counts and proposed mitigation only.
-  It does not assess permit validity or any tribunal proceedings. The tree works and planting had not been
-  independently verified as completed at the 3 October 2026 cut-off. ERA and secondary reporting differ by one
-  oleander in the breakdown of the 624 non-protected specimens (467 versus 468); the permit annex should be
-  checked before treating that species count as settled.'
+caveats: This check assesses the scientific meaning of the reported tree counts and proposed mitigation only. It
+  does not assess permit validity or any tribunal proceedings. The tree works and planting had not been independently
+  verified as completed at the 3 October 2026 cut-off. ERA and secondary reporting differ by one oleander in the
+  breakdown of the 624 non-protected specimens (467 versus 468); the permit annex should be checked before treating
+  that species count as settled.
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown:
-- ERA's 7 and 11 August 2026 clarifications: 624 non-protected and 54 protected specimens scheduled for removal; 348 scheduled for transplant; 540 new indigenous trees stipulated for the 54 protected trees removed.
-- Mifsud, Pavon and Médail (2026), Comino flora inventory: local species, endemic and protected plant context, and evidence that some introduced woody species can affect native habitats.
-- D'Agostino et al. (2024): review of 178 plant-translocation cases analysed in Italy; success varied with site, material, methods and aftercare. This is not an estimate for the Comino trees.
-- Dror et al. (2020): controlled field comparison of eight transplanted mature olive trees and eight controls over two years; transplanting produced measurable physiological stress despite pruning, irrigation and fertilisation.
-- Heleno et al. (2010): controlled restoration study on the Azores showing alien-plant removal can benefit native food-web indicators, with immediate disturbance effects and context-dependent outcomes.
+- ERA's 7 and 11 August 2026 clarifications: 624 non-protected and 54 protected specimens scheduled for removal;
+    348 scheduled for transplant; 540 new indigenous trees stipulated for the 54 protected trees removed.
+- Mifsud, Pavon and Médail (2026), Comino flora inventory: local species, endemic and protected plant context, and
+    evidence that some introduced woody species can affect native habitats.
+- D'Agostino et al. (2024): review of 178 plant-translocation cases analysed in Italy; success varied with site,
+    material, methods and aftercare. This is not an estimate for the Comino trees.
+- Dror et al. (2020): controlled field comparison of eight transplanted mature olive trees and eight controls over
+    two years; transplanting produced measurable physiological stress despite pruning, irrigation and fertilisation.
+- Heleno et al. (2010): controlled restoration study on the Azores showing alien-plant removal can benefit native
+    food-web indicators, with immediate disturbance effects and context-dependent outcomes.
 outputs:
   report_pdf: report.pdf
   flyer_pdf: flyer.pdf

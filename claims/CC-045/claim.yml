@@ -1,0 +1,40 @@
+id: CC-045
+title: Tunnels solved flooding
+category: Water
+subtopic: Flood relief
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Public Works / National Flood Relief Project: some 20 km of underground tunnels have helped Malta manage
+    its flooding problems.'
+  speaker: Public Works Department; Government of Malta
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 20 kilometres of underground tunnel helped Malta manage its flooding problems
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/environment/nature/107804/20_kilometres_of_underground_tunnel_helped_malta_manage_its_flooding_problems
+    note: Locates the claim.
+counter_evidence: Flooding persists in some localities; rainfall intensity vs design capacity.
+tests: Flood incident records before and after; rainfall data.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Flood relief tunnel outlet, Ta' Xbiex
+  lat: 35.89911
+  lon: 14.4949
+  scope: site
+  icon: pin

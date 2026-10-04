@@ -1,0 +1,40 @@
+id: CC-043
+title: 13 Blue Flag beaches
+category: Water
+subtopic: Bathing water & sewage
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta (2026): Malta was awarded 13 Blue Flag beaches, a mark of clean, well-managed bathing
+    sites.'
+  speaker: Government of Malta; FEE Malta
+  date: '2026'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta beset in a contamination controversy over beaches safety
+    publisher: TravelMole
+    date: '2026'
+    url: https://www.travelmole.com/news/malta-beaches-waters/
+    note: Locates the award and the Fajtata closure.
+counter_evidence: Blue Flag criteria require excellent water quality; one awarded beach closed within two days.
+tests: FEE Blue Flag criteria; EHD sampling results at awarded beaches.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

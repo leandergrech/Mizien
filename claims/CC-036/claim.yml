@@ -1,0 +1,40 @@
+id: CC-036
+title: Construction dust 'a nuisance, not a health issue'
+category: Air
+subtopic: Air quality & health
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'ERA (State of the Environment Report 2018): dust from construction is a coarser fraction and more of a
+    nuisance than a health-related issue.'
+  speaker: Environment and Resources Authority (ERA)
+  date: '2018'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'State of the Environment Report 2018, Chapter 2: Ambient Air'
+    publisher: ERA
+    date: '2018'
+    url: https://era.org.mt/wp-content/uploads/2019/05/3_Chapter2_AmbientAir_9Aug18.pdf
+    note: Primary report.
+counter_evidence: Peer-reviewed work links construction-site PM10 and PM2.5 to health effects; Malta's PM10 exceedances.
+tests: Literature on construction dust health effects; PM10/PM2.5 ratios at Msida.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Environment and Resources Authority, Marsa
+  lat: 35.88617
+  lon: 14.49732
+  scope: institution
+  icon: pin

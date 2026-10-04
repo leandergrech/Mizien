@@ -1,0 +1,40 @@
+id: CC-063
+title: 'Construction waste: ''standstill'' warning'
+category: Waste
+subtopic: Construction waste
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Malta Developers Association: unless an enduring solution is found for dumping construction waste, development
+    will come to an almost complete standstill.'
+  speaker: Malta Developers Association
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Developers again call for enduring solution to dumping of construction waste
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/news/national/110023/developers_again_call_for_enduring_solution_to_dumping_of_construction_waste
+    note: Locates the claim.
+counter_evidence: Construction is over 80% of waste generated; 32-35 quarries licensed but few accept waste.
+tests: ERA licences and intake volumes; NSO waste statistics.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate
