@@ -1,42 +1,53 @@
 id: CC-019
 title: 830,000 m2 of land lost in five years
 category: Land & Trees
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Amphora Media (Sept 2026, ''Green to Grey''): Malta lost over 830,000 square metres of land to
-    development in five years, with nearly 95% of land take between 2018 and 2023 affecting farmland rather
-    than natural areas.'
+  text: 'Amphora Media (Green to Grey, 11-12 Sep 2026): nearly 830,000 square metres of nature and cropland were
+    built up in Malta between 2018 and 2023 (headline: ''over 830,000''), 0.26% of land; in nearly 95% of the take-up,
+    farmland rather than natural area was affected.'
   speaker: Amphora Media
-  date: 2026-09
-  wording_status: 'Paraphrase: locate quote'
+  date: '2026-09-11'
+  wording_status: Verbatim found
   sources:
   - title: 'Green To Grey: Malta Lost Over 830,000 Square Metres Of Land To Development In Five Years'
     publisher: Amphora Media
     date: Sep 2026
     url: https://www.amphora.media/2026/09/green-to-grey-malta-land-loss-development-construction
-    note: Media claim; locate its data source and method.
+    note: Media claim; locate its data source and method. Read in full 4 Oct 2026 (print copy supplied by maintainer).
   - title: 'Green to Grey: When Development Creeps Up On Agricultural Land'
     publisher: Amphora Media
     date: Sep 2026
     url: https://www.amphora.media/2026/09/green-to-grey-development-agricutlural-land
-    note: Companion piece.
-counter_evidence: 'To be established: the method and data source behind the area figure.'
-tests: Copernicus land monitoring (imperviousness, CLC+), ERA land-take data, 2010 and 2020 agricultural
-  censuses, PA permits outside development zones.
-why_low_hanging: Satellite land-cover data can reproduce or refute the figure.
+    note: Companion piece. Read in full 4 Oct 2026 (print copy supplied by maintainer).
+  quote: nearly 830,000 square metres of nature and cropland have been built up in Malta between 2018 and 2023
+counter_evidence: 'Independent check with Impact Observatory/Esri 10 m land cover (2017-2023): consistent new built-up
+  1.9 km2 gross, 1.4 km2 net (3-year rule); 5.0 / 3.0 km2 (2-year rule), so 0.83 km2 is plausible and conservative.
+  Arithmetic (0.26%, 116 pitches, 1.94 km2 since 2006) checks out. Previous cover: 65% crops, 31% rangeland, 4%
+  bare, so the ''nearly 95% farmland'' share is not reproduced. EEA figures second-hand.'
+tests: Impact Observatory LULC v2 (Planetary Computer); OSM island areas; Amphora articles read in full.
+why_low_hanging: 'Done: Claim Check 019 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: High
-caveats: 'A media claim: the press is held to the same standard.'
+caveats: Right of reply to Amphora Media not yet sent. Amphora polygons and EEA land-take table not obtained; class
+  definitions differ between land-cover models.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Impact Observatory/Esri land cover change (data/cc-019/io_lulc_change.csv)
+- Amphora Media articles (literature/CC-019/primary-source.md)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-04'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
