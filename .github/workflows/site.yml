@@ -25,6 +25,16 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
+      # The homepage now lives in site/, so Pages must serve the built site, not main:/docs.
+      - name: Pages deploys from Actions
+        env:
+          PAGES_SOURCE: ${{ vars.PAGES_SOURCE }}
+        run: |
+          if [ ! -f docs/index.html ] && [ "$PAGES_SOURCE" != "actions" ]; then
+            echo "::error::The homepage has moved from docs/ to site/. Before merging, set Settings > Pages > Source to 'GitHub Actions' and add the repository variable PAGES_SOURCE=actions; otherwise the live site loses its homepage."
+            exit 1
+          fi
+
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"

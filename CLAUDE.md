@@ -3,7 +3,7 @@ You are joining Miżien, an independent, science-first fact-checking project on 
 START HERE
 1. Read PROJECT_STATE.md first (conventions, design tokens, status, outstanding tasks), then README.md, methodology/*.md and data/claims.csv.
 2. Run: pip install -r scripts/requirements.txt && python scripts/validate_claims.py && python scripts/build_site_data.py. Both must pass before and after any change.
-3. Check the site loads (python -m http.server -d docs).
+3. Check the site builds and loads: npm ci && npm run build, then PATH_PREFIX=/ npx eleventy --serve (Node 24). Without Node, rely on the PR's "Site" check, which builds every PR.
 
 NON-NEGOTIABLE RULES
 - claims/CC-NNN/claim.yml is the source of truth. After changing any claim record, regenerate data/claims.json and docs/data/claims.json with scripts/build_site_data.py and commit both.
