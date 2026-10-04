@@ -428,6 +428,12 @@ a.claimref { text-decoration-style: dotted; text-underline-offset: 3px; font-wei
 .pattern-list dd { margin: 2px 0 0; }
 .pattern-claims { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 4px; }
 .bridge-list li { margin-bottom: 8px; }
+.body-claims .cref { display: inline; }
+.body-claims .cref-dot { display: inline-block; margin-right: 6px; }
+@media (max-width: 640px) {
+  .body-claims th:nth-child(2), .body-claims td:nth-child(2) { display: none; }
+  .body-stats li { font-size: 13px; padding: 5px 10px; }
+}
 
 @media (max-width: 640px) {
   .site-head { padding: 14px 16px 6px; }

@@ -28,6 +28,7 @@ permalink: "/bodies/{{ body.id }}/"
       <li><b>{{ withVerdict }}</b> with a verdict</li>
       <li><b>{{ b.links.length }}</b> linked bod{% if b.links.length == 1 %}y{% else %}ies{% endif %}</li>
     </ul>
+    <p class="small"><a href="/?group=speaker&amp;sel=body:{{ b.id }}">See {{ b.name }} on the map</a>, with the bodies its claims link to.</p>
   </header>
 
   <aside class="notice" aria-label="What this page shows">
@@ -48,6 +49,7 @@ permalink: "/bodies/{{ body.id }}/"
 
   <section aria-labelledby="h-claims">
     <h2 id="h-claims">Claims</h2>
+    <div class="table-scroll">
     <table class="claims body-claims">
       <thead><tr><th scope="col">Claim</th><th scope="col">Topic</th><th scope="col">Date</th><th scope="col">Verdict</th></tr></thead>
       <tbody>
@@ -59,6 +61,7 @@ permalink: "/bodies/{{ body.id }}/"
       {%- endfor %}
       </tbody>
     </table>
+    </div>
   </section>
 
   <section aria-labelledby="h-about">
