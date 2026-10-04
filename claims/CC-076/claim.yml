@@ -1,0 +1,40 @@
+id: CC-076
+title: 36 more vehicles a day
+category: Transport
+subtopic: Cars & traffic
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'National Statistics Office: the licensed vehicle fleet grew to 460,648 in Q1 2026, a net increase of about
+    36 vehicles a day.'
+  speaker: National Statistics Office (NSO)
+  date: '2026'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta's roads grow more congested as vehicle fleet tops 454,000
+    publisher: Newsbook
+    date: n/d
+    url: https://newsbook.com.mt/en/maltas-roads-grow-more-congested-as-vehicle-fleet-tops-454000/
+    note: Locates the NSO figures.
+counter_evidence: Check the NSO release directly; gross registrations vs net growth.
+tests: NSO motor vehicles quarterly releases.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

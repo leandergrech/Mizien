@@ -1,0 +1,40 @@
+id: CC-097
+title: Beach workers left exposed to heat
+category: Health & Safety
+subtopic: Heat & health
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'General Workers'' Union (2026): workers stationed on beaches for ERA services were left exposed to extreme
+    heat with no adequate response from their contractor.'
+  speaker: General Workers' Union (GWU)
+  date: '2026'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: GWU registers industrial dispute with Securital over beach workers' heat exposure
+    publisher: Newsbook
+    date: '2026'
+    url: https://newsbook.com.mt/en/gwu-registers-industrial-dispute-with-securital-over-beach-workers-heat-exposure/
+    note: Union claim.
+counter_evidence: Heat-stress rules for outdoor work; OHSA guidance and contract conditions.
+tests: OHSA heat guidance; contract terms; heat-alert days.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Environment and Resources Authority, Marsa
+  lat: 35.88617
+  lon: 14.49732
+  scope: institution
+  icon: pin

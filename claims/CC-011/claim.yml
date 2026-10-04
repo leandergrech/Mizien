@@ -1,13 +1,14 @@
 id: CC-011
 title: 2026 manifesto pledges
 category: Governance & Promises
+subtopic: Manifestos & pledges
 status: Drafted
 verdict: Not substantiated
 verdict_confidence: Moderate
 claim:
-  text: 'Labour manifesto 2026, priority 19: every person no more than ten minutes'' walk from an open
-    or green space. PN programme 2026: a clear and realistic plan for Gozo to become a Net-Zero Island
-    by 2040, with afforestation among several measures.'
+  text: 'Labour manifesto 2026, priority 19: every person no more than ten minutes'' walk from an open or green
+    space. PN programme 2026: a clear and realistic plan for Gozo to become a Net-Zero Island by 2040, with afforestation
+    among several measures.'
   speaker: Labour Party; Nationalist Party
   date: 2026-05
   wording_status: Verbatim found
@@ -34,23 +35,22 @@ claim:
     publisher: European Commission
     date: n/d
     url: https://clean-energy-islands.ec.europa.eu/countries/malta
-  quote: Kull persuna f'pajjiżna ma tkunx aktar minn għaxar minuti mixi 'l bogħod minn spazju miftuħ jew
-    aħdar. (PL) / Infasslu pjan ċar u realistiku biex sal-2040, Għawdex isir Net-Zero Island (PN)
-counter_evidence: 'Election held 30 May 2026; Labour won. Neither pledge defines its terms or gives a
-  baseline. Our open-data analysis: 99.7-99.9% of residents already within ten minutes of any green or
-  open space, but only 55-68% of a public park of at least 0.5 ha. No Gozo emissions inventory; afforestation
-  alone would need 1.5-8.5 times Gozo''s area.'
-tests: WorldPop 2025 + OpenStreetMap access analysis; Gozo carbon arithmetic with measured sequestration
-  rates.
+  quote: Kull persuna f'pajjiżna ma tkunx aktar minn għaxar minuti mixi 'l bogħod minn spazju miftuħ jew aħdar.
+    (PL) / Infasslu pjan ċar u realistiku biex sal-2040, Għawdex isir Net-Zero Island (PN)
+counter_evidence: 'Election held 30 May 2026; Labour won. Neither pledge defines its terms or gives a baseline.
+  Our open-data analysis: 99.7-99.9% of residents already within ten minutes of any green or open space, but only
+  55-68% of a public park of at least 0.5 ha. No Gozo emissions inventory; afforestation alone would need 1.5-8.5
+  times Gozo''s area.'
+tests: WorldPop 2025 + OpenStreetMap access analysis; Gozo carbon arithmetic with measured sequestration rates.
 why_low_hanging: 'Done: Claim Check 011 report and flyer.'
 tags:
 - Promise-without-baseline
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: High
-caveats: Draft pending right of reply (Partit Laburista / Government; Partit Nazzjonalista). Access analysis
-  is a straight-line screening estimate. Manifesto translations are ours. News summaries narrowed both
-  pledges; the parties' own texts are assessed.
+caveats: Draft pending right of reply (Partit Laburista / Government; Partit Nazzjonalista). Access analysis is
+  a straight-line screening estimate. Manifesto translations are ours. News summaries narrowed both pledges; the
+  parties' own texts are assessed.
 right_of_reply:
   sent: null
   deadline: null

@@ -1,0 +1,40 @@
+id: CC-089
+title: Growth outpacing infrastructure
+category: Tourism & Population
+subtopic: Population & labour
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'The Malta Chamber: Malta''s rapid population growth creates an urgent need to focus on infrastructure demands.'
+  speaker: The Malta Chamber of Commerce, Enterprise and Industry
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta's rapid population growth creates urgent need to focus on the country's infrastructure demands
+      for the future
+    publisher: The Malta Chamber
+    date: n/d
+    url: https://maltachamber.org.mt/maltas-rapid-population-growth-creates-urgent-need-to-focus-on-the-countrys-infrastructure-demands-for-the-future/
+    note: Business claim.
+counter_evidence: Projections of 636,000 by 2030 are cited elsewhere; compare infrastructure capacity indicators.
+tests: NSO projections; utility and road capacity data.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

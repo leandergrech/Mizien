@@ -1,0 +1,40 @@
+id: CC-047
+title: Nitrates in the aquifer
+category: Water
+subtopic: Water supply & groundwater
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'MaltaToday (2025): intensive farming is a slow-moving threat to Malta''s groundwater, with nitrate levels
+    of 100-200 mg/L in the eastern main aquifer, two to four times the EU limit.'
+  speaker: MaltaToday
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Potatoes and intensive farming: A slow-moving threat to Malta''s groundwater'
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/news/national/139611/potatoes_and_intensive_farming_a_slowmoving_threat_to_maltas_groundwater
+    note: Media claim.
+counter_evidence: Testable against EWA monitoring and the 3rd River Basin Management Plan status assessment.
+tests: EWA nitrate monitoring; RBMP 2022-2027 status tables.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

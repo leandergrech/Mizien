@@ -1,0 +1,40 @@
+id: CC-062
+title: Construction is 9-14% of the economy
+category: Planning & Housing
+subtopic: Development & construction
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Malta Developers Association (KPMG report, Dec 2025): construction and real estate account for about 9%
+    of gross value added, 14% including indirect effects.'
+  speaker: Malta Developers Association; KPMG
+  date: 2025-12
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Construction Industry and Property Market Report 2025
+    publisher: KPMG for the MDA
+    date: Dec 2025
+    url: https://assets.kpmg.com/content/dam/kpmgsites/mt/pdf/2025/12/kpmg-mda-construction-industry-and-property-market-report-2025.pdf
+    note: Commissioned report.
+counter_evidence: Check against NSO national accounts by NACE section; indirect multipliers.
+tests: NSO GVA by industry (F and L); input-output tables.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

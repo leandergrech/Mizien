@@ -1,0 +1,41 @@
+id: CC-027
+title: 'Power cuts: heat, not generation'
+category: Climate & Energy
+subtopic: Electricity & grid
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Energy Minister Miriam Dalli and PM Robert Abela (July 2024): the widespread power cuts were caused by
+    extreme heat and record demand straining the distribution network, not by a lack of generation capacity; EUR
+    161 million had been invested since 2022.'
+  speaker: Miriam Dalli, Energy Minister; Robert Abela, Prime Minister
+  date: 2024-07
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Extreme Heat And Record Electricity Demand Behind Malta's Power Cuts Says Miriam Dalli
+    publisher: Lovin Malta
+    date: Jul 2024
+    url: https://lovinmalta.com/news/local/extreme-heat-and-record-electricity-demand-behind-maltas-power-cuts-says-miriam-dalli/
+    note: Locates the claim.
+counter_evidence: Peak medium-voltage demand rose from 663 MW (Jul 2023) to 741 MW (Jul 2024) as reported.
+tests: Enemalta peak-load and fault logs; investment records.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

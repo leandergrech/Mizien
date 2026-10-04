@@ -1,0 +1,41 @@
+id: CC-040
+title: Low water use per head
+category: Water
+subtopic: Water supply & groundwater
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Energy and Water Agency: per capita water consumption in Malta is around 110 litres a day, relatively low
+    compared with other European countries.'
+  speaker: Energy and Water Agency (Manuel Sapiano)
+  date: '2024'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Water Management in the Maltese Islands (IWRA keynote)
+    publisher: Energy and Water Agency
+    date: '2024'
+    url: https://www.iwra.org/proceedings/congress/resource/IWRA2024_1stIslandWC_0609_HLP_EuroInbo_MSapiano_Keynote.pdf
+    note: Primary presentation.
+counter_evidence: Tourists reportedly use about 296 litres a day; total demand depends on population and tourism
+  growth.
+tests: WSC billed consumption; NSO population and tourist nights; EEA comparisons.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

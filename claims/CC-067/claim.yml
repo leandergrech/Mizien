@@ -1,0 +1,40 @@
+id: CC-067
+title: Marsalforn 12 storeys
+category: Planning & Housing
+subtopic: Heritage & character
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Momentum (Jan 2026): a proposed development of up to twelve storeys on the Calypso Hotel site in Marsalforn
+    would further erode Gozo''s character and skyline.'
+  speaker: Momentum
+  date: '2026-01-09'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Momentum firmly opposes high-rise development in Gozo
+    publisher: The Malta Independent
+    date: 9 Jan 2026
+    url: https://www.independent.com.mt/articles/2026-01-09/local-news/Momentum-firmly-opposes-high-rise-development-in-Gozo-6736286225
+    note: Opposition claim.
+counter_evidence: Gozo was excluded from the 2014 floor-area-ratio high-rise policy; check the application and heights.
+tests: PA application file; FAR policy; Gozo local plan.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Marsalforn, Gozo
+  lat: 36.07089
+  lon: 14.25981
+  scope: site
+  icon: pin

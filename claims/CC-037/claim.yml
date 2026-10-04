@@ -1,0 +1,41 @@
+id: CC-037
+title: Highest share reporting pollution
+category: Air
+subtopic: Air quality & health
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Amphora Media (2026 Election Guidebook): 35% of people in Malta reported exposure to pollution in 2023,
+    the highest share in the EU.'
+  speaker: Amphora Media (citing Eurostat)
+  date: 2026-05
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: '2026 Election Guidebook: The Environment'
+    publisher: Amphora Media
+    date: May 2026
+    url: https://www.amphora.media/2026/05/2026-election-guidebook-the-environment
+    note: Media claim.
+counter_evidence: Eurostat ilc_mddw02 measures reported pollution, grime or other environmental problems; a perception
+  survey.
+tests: Eurostat ilc_mddw02 by country and year.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

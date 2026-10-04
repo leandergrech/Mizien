@@ -1,0 +1,39 @@
+id: CC-075
+title: Seventh in the EU for cars
+category: Transport
+subtopic: Cars & traffic
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Lovin Malta, reporting Eurostat: Malta ranks seventh in the EU with 585 passenger cars per 1,000 inhabitants.'
+  speaker: Lovin Malta (reporting Eurostat)
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta Ranked Number Seven On Eurostat's 'Passenger Cars Per 1,000 Inhabitants' Dataset
+    publisher: Lovin Malta
+    date: n/d
+    url: https://lovinmalta.com/malta/malta-ranked-number-seven-on-eurostats-passenger-cars-per-1000-inhabitants-dataset/
+    note: Media summary.
+counter_evidence: NSO gives 576 per 1,000 for 2024; denominator choice (resident population) matters.
+tests: Eurostat road_eqs_carhab; NSO vehicle stock.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate

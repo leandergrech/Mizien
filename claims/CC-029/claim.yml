@@ -1,0 +1,41 @@
+id: CC-029
+title: First offshore wind farm
+category: Climate & Energy
+subtopic: Renewables
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta: a first floating offshore wind farm of about 300 MW will be developed beyond territorial
+    waters; three developers sought prequalification and the next stage was due early 2026.'
+  speaker: Government of Malta; Interconnect Malta
+  date: 2025-07
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Three Applications Submitted in Malta's First Offshore Wind Tender
+    publisher: offshoreWIND.biz
+    date: 23 Jul 2025
+    url: https://www.offshorewind.biz/2025/07/23/three-applications-submitted-in-maltas-first-offshore-wind-tender
+    note: Locates the timeline.
+counter_evidence: Timeline and capacity are testable against tender documents; a metocean survey tender opened only
+  in April 2026.
+tests: Tender notices; Interconnect Malta updates; NECP wind assumptions.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

@@ -1,0 +1,41 @@
+id: CC-022
+title: '''Lowest electricity burden in the EU'''
+category: Climate & Energy
+subtopic: Electricity & grid
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Ministry for the Environment, Energy and Public Cleanliness (6 May 2025): Maltese households carry the
+    lowest electricity-price burden in the EU.'
+  speaker: Ministry for the Environment, Energy and Public Cleanliness
+  date: '2025-05-06'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Electricity prices in the EU: Maltese households with lowest burden'
+    publisher: Government of Malta (DOI)
+    date: 6 May 2025
+    url: https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/2025/05/06/pr250746en.aspx
+    note: Primary press release.
+counter_evidence: Nominal household prices are second or third lowest (Eurostat, H2 2025); lowest only in purchasing-power
+  terms. Tariffs frozen since 2014 at an estimated fiscal cost of EUR 350-600m a year.
+tests: Eurostat nrg_pc_204 nominal and PPS; subsidy cost in budget documents.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

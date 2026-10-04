@@ -1,0 +1,41 @@
+id: CC-048
+title: Sea urchins recovering
+category: Nature & Wildlife
+subtopic: Marine protection
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Government of Malta (9 Jul 2025): the sea urchin collection moratorium is working, with populations up
+    at about 60% of surveyed locations; it is extended to July 2027.'
+  speaker: Ministry for the Environment; Ministry for Agriculture, Fisheries and Animal Rights
+  date: '2025-07-09'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Moratorium on sea urchin collection extended
+    publisher: Government of Malta (DOI)
+    date: 9 Jul 2025
+    url: https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/2025/07/09/pr251246en.aspx
+    note: Primary press release.
+counter_evidence: Monitoring at 10 sites; recovery uneven; the survey method and baseline are not public in the
+  release.
+tests: ERA monitoring data by site; size-class distributions.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

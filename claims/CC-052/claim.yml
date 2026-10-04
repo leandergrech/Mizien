@@ -1,0 +1,40 @@
+id: CC-052
+title: Fish-farm slime 'promptly contained'
+category: Nature & Wildlife
+subtopic: Marine protection
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'ERA (Aug 2025): whenever fish slime is detected, often before it reaches the shore, ERA promptly instructs
+    tuna-farm operators to contain and collect it; farms have been moved about 6 km offshore.'
+  speaker: Environment and Resources Authority (ERA)
+  date: 2025-08
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Maltese Environmental Watchdog Pushes Bluefin Farms To Clean Up Slime
+    publisher: Atuna
+    date: Aug 2025
+    url: https://www.atuna.com/news/maltese-environmental-watchdog-pushes-bluefin-farms-to-clean-up-slime/
+    note: Locates the claim.
+counter_evidence: Recurring slime episodes on beaches; permit conditions and enforcement records.
+tests: ERA permit conditions; incident and enforcement logs.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Marsaxlokk Bay
+  lat: 35.84177
+  lon: 14.54484
+  scope: site
+  icon: pin

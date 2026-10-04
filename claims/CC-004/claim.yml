@@ -1,13 +1,14 @@
 id: CC-004
 title: '''Strong progress'' in waste separation'
 category: Waste
+subtopic: Recycling & separation
 status: Drafted
 verdict: Not substantiated
 verdict_confidence: Moderate
 claim:
-  text: 'Ministry for the Environment (19 Jan 2026): Malta continues to make strong progress in waste
-    management; mixed waste down over 30% to 95.5 million kg; about 412 million kg diverted from landfill
-    over five years; the Long-Term Waste Management Plan is working.'
+  text: 'Ministry for the Environment (19 Jan 2026): Malta continues to make strong progress in waste management;
+    mixed waste down over 30% to 95.5 million kg; about 412 million kg diverted from landfill over five years; the
+    Long-Term Waste Management Plan is working.'
   speaker: Ministry for the Environment, Energy and Public Cleanliness (Minister Dalli); WasteServ
   date: '2026-01-19'
   wording_status: Verbatim found
@@ -44,11 +45,11 @@ claim:
     date: retrieved 2 Oct 2026
     url: https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table
   quote: Malta continues to make strong progress in waste management
-counter_evidence: Municipal recycling rate 16.7% in 2024 (EU 48.1%; 2025 target 55%); 79% of treated municipal
-  waste landfilled. The EU Environmental Implementation Review 2025 says Malta missed the 2020 target
-  by a large margin and is on course to miss 2025. The 412 million kg cannot be reconciled with Eurostat
-  (271 kt recycled or recovered, 2020-24); the 141 million kg baseline has no year. (ERA's 68% figure
-  is explicitly for construction waste and is not part of this claim.)
+counter_evidence: Municipal recycling rate 16.7% in 2024 (EU 48.1%; 2025 target 55%); 79% of treated municipal waste
+  landfilled. The EU Environmental Implementation Review 2025 says Malta missed the 2020 target by a large margin
+  and is on course to miss 2025. The 412 million kg cannot be reconciled with Eurostat (271 kt recycled or recovered,
+  2020-24); the 141 million kg baseline has no year. (ERA's 68% figure is explicitly for construction waste and
+  is not part of this claim.)
 tests: Eurostat cei_wm011, env_wasmun, cei_wm020; NSO releases; Directive (EU) 2018/851 Art 11a.
 why_low_hanging: 'Done: Claim Check 004 report and flyer.'
 tags:
@@ -57,8 +58,8 @@ tags:
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: High
-caveats: Draft pending right of reply (Environment Ministry; WasteServ). The ministry may hold operational
-  data that explain the 412 figure; 2025 statistics not yet published.
+caveats: Draft pending right of reply (Environment Ministry; WasteServ). The ministry may hold operational data
+  that explain the 412 figure; 2025 statistics not yet published.
 right_of_reply:
   sent: null
   deadline: null

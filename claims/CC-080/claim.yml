@@ -1,0 +1,40 @@
+id: CC-080
+title: EUR 75m organic plant
+category: Waste
+subtopic: Recycling & separation
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'WasteServ (Apr 2026): the new EUR 75 million organic processing plant will treat about 74,000 tonnes of
+    organic waste a year into renewable electricity and compost.'
+  speaker: WasteServ
+  date: '2026-04-13'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: WasteServ announces EUR 75 million organic waste plant
+    publisher: Newsbook
+    date: Apr 2026
+    url: https://newsbook.com.mt/en/wasteserv-announces-e75-million-organic-waste-plant/
+    note: Locates the claim.
+counter_evidence: 2025 organic collection was about 36,700 tonnes; capacity vs supply and contamination rates.
+tests: WasteServ intake data; EIA for the plant.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Magħtab waste complex
+  lat: 35.93923
+  lon: 14.44073
+  scope: site
+  icon: landfill

@@ -1,0 +1,40 @@
+id: CC-057
+title: 1,649 compensation trees
+category: Land & Trees
+subtopic: Trees & planting
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'ERA: Infrastructure Malta must plant 1,649 trees as compensation for the 549 trees removed for the Central
+    Link, or pay EUR 500 per tree not planted.'
+  speaker: Environment and Resources Authority (ERA)
+  date: '2019'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: As 549 Maltese Trees Face The Axe, Environment Authority Promises A Silver Lining
+    publisher: Lovin Malta
+    date: '2019'
+    url: https://lovinmalta.com/news/as-549-maltese-trees-face-the-axe-environment-authority-promises-a-silver-lining/
+    note: Locates the condition.
+counter_evidence: Were the trees planted, where, and did they survive? How much was paid instead?
+tests: ERA compliance records; Environment Fund receipts; site survey.
+why_low_hanging: A specific, attributable statement that public data can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: Medium
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
+  before any report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Central Link, Attard
+  lat: 35.89092
+  lon: 14.44301
+  scope: site
+  icon: flyover
