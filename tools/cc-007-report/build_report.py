@@ -11,10 +11,11 @@ OUT = HERE / "out"
 S = []
 
 S += [SectionHeading(None, "TL;DR"), Spacer(1, mm),
-      P("A CDE briefing dated 19 July 2025 reproduces Newsbook’s summary that five Maltese monitoring stations "
-        "were above the World Health Organization’s PM2.5 guideline but within the EU limit. The source behind the comparison is Parliamentary "
-        "Question 29696: the Minister tabled annual station values for 2020–2024. The answer itself is procedural; "
-        "the numbers, not a ministerial statement of compliance, are what this check tests.", lead)]
+      P("On 18 July 2025 Newsbook reported that measurements taken between 2020 and 2024 at ERA’s five monitoring "
+        "stations “are well within the considerably less stringent annual limits set by the EU for fine particulate "
+        "matter (PM2.5)”, while all stations are “well above stringent WHO guidelines”. The source behind the report is "
+        "Parliamentary Question 29696: the Minister tabled annual station values for 2020–2024. The answer itself is "
+        "procedural; the numbers, not a ministerial statement of compliance, are what this check tests.", lead)]
 S.append(key_points([
     ("The historical EU comparison holds for reported values.",
      "All 23 values supplied are below the 25 µg/m³ annual EU limit applicable during 2020–2024."),
@@ -26,8 +27,10 @@ S.append(key_points([
      "Fourteen of 23 values exceed the 10 µg/m³ annual limit the EU requires states to attain by 2030. This is context, not a breach during 2020–2024."),
     ("An independent EEA cross-check is mostly consistent.",
      "The EEA validated daily files cover 11 station-years in 2020–2024. Ten match the annex when rounded to one decimal; Attard 2024 does not."),
-    ("Verdict: largely supported (moderate confidence).",
-     "The comparison holds for all 23 annex values. Two entries are missing, and one current EEA cross-check differs from the annex."),
+    ("Newsbook’s figures match the table.",
+     "Every station value Newsbook quotes for 2024, and its note that Msida was highest in the previous four years, match the annex."),
+    ("Verdict: largely supported (high confidence).",
+     "The comparison holds for all 23 annex values and is confirmed independently by EEA data. Two St Paul’s Bay entries are missing."),
 ]))
 S += [Spacer(1, 4 * mm), VerdictMeter(1), Spacer(1, 1 * mm),
       tiles([("23/23", GREEN, "reported values above WHO’s 5 µg/m³ guideline"),
@@ -53,8 +56,9 @@ S += [SectionHeading(1, "What was asked and answered"),
                  "the Table of the House.” This does not state that the values comply with an EU standard. The "
                  "compliance statement is an interpretation of the table.", small)], bg=PALE, bar=GREEN),
       Spacer(1, 3 * mm),
-      P("The proposition assessed is Newsbook’s reported comparison, reproduced by CDE, that the recorded station means were above WHO’s "
-        "guideline and within the EU limit. It is not presented as a direct quotation from the Minister. The "
+      P("The proposition assessed is Newsbook’s report of 18 July 2025, read in full from an archived copy [7]: the 2020–2024 "
+        "measurements at the five ERA stations “are well within the considerably less stringent annual limits set by the EU” "
+        "and above WHO’s guideline. It is not presented as a direct quotation from the Minister. The "
         "parliamentary portal lists the question as Legislature XIV, Sitting 368, question 29696, 16 July 2025 [1]."),
       std_table([
           [C("Year", cellh), C("Attard", cellh), C("Msida", cellh), C("St Paul’s Bay", cellh), C("Żejtun", cellh), C("Għarb", cellh)],
@@ -132,14 +136,16 @@ S += [SectionHeading(4, "Interpretation and limitations"),
         "station-years unverified.")]
 
 S += [SectionHeading(5, "Verdict and evidence needed"),
-      verdict_box("Largely supported", "All reported values meet the applicable EU limit and exceed WHO’s guideline; two station-years are missing."),
+      verdict_box("Largely supported", "All reported values meet the applicable EU limit and exceed WHO’s guideline; two station-years are missing. Confidence: high."),
       Spacer(1, 4 * mm),
       P("The reported comparison is supported for all 23 numeric observations in the annex: each is below the "
         "EU annual limit of 25 µg/m³ in force for 2020–2024, and each exceeds the WHO annual guideline of "
         "5 µg/m³. The EEA check independently supports this broad comparison for 11 station-years, although "
-        "one rounded table value differs. Confidence remains moderate because 14 station-years were unavailable "
-        "in the retrieved EEA files, the annex marks two St Paul’s Bay values n/a, and Attard’s 2024 value needs "
-        "reconciliation. The Minister’s answer tables figures but does not herself claim compliance."),
+        "one rounded table value differs. Newsbook’s article, now read in full, quotes the 2024 station values "
+        "exactly as tabled. Confidence is high because the official table and the EEA data agree; the verdict stops short of "
+        "Supported because the annex marks two St Paul’s Bay values n/a, so “all five stations” is not shown for 2020 and "
+        "2021. Attard’s 2024 value still needs reconciliation. The Minister’s answer tables figures but does not herself "
+        "claim compliance."),
       P("A complete comparison needs ERA’s validated annual series with completeness and quality-control notes, "
         "the missing St Paul’s Bay results if they exist, and an explanation for the Attard 2024 difference."),
       P("This draft records the maintainers’ current instruction to handle right of reply later. No reply was "
@@ -156,8 +162,8 @@ S += references([
           (3, "European Parliament and Council (2024). Directive (EU) 2024/2881, Annex I: 25 µg/m³ limit through 11 December 2026; 10 µg/m³ to be attained by 1 January 2030.", "https://eur-lex.europa.eu/eli/dir/2024/2881/oj/eng"),
           (4, "Pérez Velasco R., Jarosińska D. (2022). Update of the WHO global air quality guidelines: systematic reviews – An introduction. <i>Environment International</i> 170:107556. doi:10.1016/j.envint.2022.107556. WHO guideline-development context.", "https://doi.org/10.1016/j.envint.2022.107556"),
           (5, "European Environment Agency (accessed 3 October 2026). Air Quality Download Service, verified E1a station data. Annual figures here are means of valid daily aggregates and are used as a partial cross-check.", "https://air.discomap.eea.europa.eu/arcgis/rest/services/AirQuality/AirQualityDownloadServiceEUMonitoringStations/MapServer/0"),
-          (6, "CDE (published 19 July 2025). Malta News Briefing – Saturday 19 July 2023. Reproduces the Newsbook PM2.5 comparison and attributes it to Newsbook; secondary source only.", "https://cde.news/malta-news-briefing-saturday-19-july-2023/"),
-          (7, "Newsbook (19 July 2025). “Air pollution exceeds WHO guidelines throughout Maltese islands.” Original secondary report; a Wayback snapshot is listed in the archive manifest.", "https://newsbook.com.mt/en/air-pollution-exceeds-who-guidelines-throughout-maltese-islands/"),
+          (6, "CDE (published 19 July 2025). Malta News Briefing – Saturday 19 July 2023. Reproduces the Newsbook PM2.5 comparison; secondary source only.", "https://cde.news/malta-news-briefing-saturday-19-july-2023/"),
+          (7, "Newsbook (18 July 2025). “Air pollution exceeds WHO guidelines throughout Maltese islands.” The claim; read in full from the Wayback Machine snapshot of 20 July 2025.", "http://web.archive.org/web/20250720183305/https://newsbook.com.mt/en/air-pollution-exceeds-who-guidelines-throughout-maltese-islands/"),
       ])
 S += [PageBreak()]
 S += appendix_a("A experiment · B observational study with a control or gradient · C review, professional guidance, "
@@ -166,19 +172,20 @@ S += appendix_a("A experiment · B observational study with a control or gradien
                 "or health outcomes beyond those readings.")
 S += [Spacer(1, 5 * mm)]
 S += revision_log([("1.0", "2 Oct 2026", "First draft based on Parliamentary Question 29696 and its tabled annex."),
-                   ("1.1", "3 Oct 2026", "Added an independent partial cross-check against EEA validated station data; documented one unresolved Attard 2024 difference.")])
+                   ("1.1", "3 Oct 2026", "Added an independent partial cross-check against EEA validated station data; documented one unresolved Attard 2024 difference."),
+                   ("1.2", "4 Oct 2026", "Newsbook article read in full (Wayback snapshot): verbatim wording quoted, its figures checked against the annex; confidence raised to high.")])
 
 build_report(Report(
     number="007", out=str(OUT / "report.pdf"), kicker="Air quality, Malta",
     title_lines=["Within limits,", "above the guideline"],
     subtitle_lines=["Five years of annual PM2.5 readings checked against EU and WHO thresholds"],
-    quote_lines=["All available PM2.5 annual means were", "above WHO guidance and below the EU limit"],
-    attribution="CDE reproduces Newsbook’s PQ comparison · 19 July 2025",
+    quote_lines=["“…well within the considerably less", "stringent annual limits set by the EU…”"],
+    attribution="Newsbook, 18 July 2025, on Parliamentary Question 29696",
     context="The Minister tabled the figures; the compliance statement is our test of that table.",
-    verdict="Largely supported", verdict_note="All annex values are under 25; one EEA check differs",
-    footer_lines=["Version 1.1  ·  3 October 2026", "Draft for maintainer review · right of reply to be handled by the maintainer",
+    verdict="Largely supported", verdict_note="All 23 values under 25; two St Paul’s Bay years missing",
+    footer_lines=["Version 1.2  ·  4 October 2026", "Draft for maintainer review · right of reply to be handled by the maintainer",
                   "Official table, standards and reproducible calculations", "Repository: github.com/leandergrech/Mizien"],
-    running_head="PM2.5 · Malta 2020–2024", version="1.1", date="3 October 2026",
+    running_head="PM2.5 · Malta 2020–2024", version="1.2", date="4 October 2026",
     pdf_title="Within EU limits, above WHO’s guideline? Claim Check 007",
     pdf_subject="Malta’s annual PM2.5 station means, 2020–2024, compared with historical EU, WHO and 2030 standards",
     story=S))

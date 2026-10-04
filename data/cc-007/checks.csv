@@ -11,6 +11,3 @@ Maximum annual station value,13.9,max(value),Parliamentary Question 29696 annex,
 "Mean, St Paul's Bay",9.866666666666667,arithmetic mean of reported annual station means; missing years excluded,Parliamentary Question 29696 annex,2026-10-02
 "Mean, Żejtun",10.34,arithmetic mean of reported annual station means; missing years excluded,Parliamentary Question 29696 annex,2026-10-02
 "Mean, Għarb",8.5,arithmetic mean of reported annual station means; missing years excluded,Parliamentary Question 29696 annex,2026-10-02
-EEA cross-check station-years available,11,count of station-years with at least one valid EEA daily aggregate,EEA E1a validated PM2.5 Parquet files; URLs and SHA-256 in eea_station_file_manifest.csv,2026-10-03
-EEA cross-check values matching PQ to 0.1 µg/m³,10,round EEA mean of valid daily aggregates to one decimal and compare with annex,EEA E1a validated PM2.5 Parquet files and PQ 29696 annex,2026-10-03
-Attard 2024 EEA minus PQ annex,0.222222,EEA mean of valid daily aggregates minus PQ annex value (µg/m³),EEA E1a validated data; Attard 2024; PQ 29696 annex,2026-10-03
