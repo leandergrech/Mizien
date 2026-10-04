@@ -80,6 +80,20 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
 
 ## Site build (4 October 2026)
 
+- **Who said it, connections and claim mentions.**
+  - `data/bodies.csv` is the register of bodies and people: 63 organisations and 14 people, with kind, type, parent
+    office, role and the exact speaker wording as aliases. Claims are matched by speaker text (`scripts/bodies.py`),
+    or by an optional `bodies: [id, ...]` in claim.yml. `validate_claims.py` fails on register errors and warns on
+    unmatched speakers: add the wording to `Aliases` rather than guessing.
+  - `scripts/connections.py` works out second- and third-degree connections (shortest routes through
+    `edges.csv`), theme bridges (claims in two themes), and each body's claims (its own and its people's and
+    offices') and linked bodies (named in the same claim, or claims sharing a theme; counted per office).
+  - Pages: `/bodies/` and `/bodies/<id>/` (a record, not a score: no ratings), a Connections section on every claim
+    page, and `/methodology/connections/`. The map's "Who said it" grouping is a constellation: kind of body >
+    body > person, with lines between linked bodies; `?sel=body:<id>`.
+  - Every CC-NNN in page text is linked by a build transform (`eleventy.config.js`); `site/assets/claimrefs.js`
+    shows a summary and verdict on a long hover or keyboard focus, from `/data/claim-briefs.json`.
+
 - Each claim page shows the full report as HTML, then download buttons (report PDF, flyer PDF, flyer image) and a
   flyer preview. `tools/report_html.py` builds the HTML from each `build_report.py` story, with figures taken from
   the committed `report.pdf`, and checks that the PDF's words are all present. CI (and `npm run build`) regenerate

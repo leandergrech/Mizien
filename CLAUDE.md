@@ -24,7 +24,7 @@ WORKING METHOD FOR A CLAIM
 3. Collect literature into literature/CC-NNN/ (references.bib, notes.md noting full text / abstract / second-hand, gaps). Test numbers with formulas or scripts, not by eye; save them in data/ with the source and retrieval date.
 4. Grade the evidence (A to D), show disagreements side by side, state what would change the verdict.
 5. Build the report and flyer from tools/cc-001-report/ and methodology/report-outline.md. Match the CC-001 design. Output to claims/CC-NNN/. The claim page shows the full report as HTML, built from report.pdf and build_report.py by tools/report_html.py (CI does this on every build); run python tools/report_html.py CC-NNN to check it reports "ok".
-6. Update claim.yml (status, verdict, tags, outputs), the Connections themes and edges if the claim links to others, and the README claims table.
+6. Update claim.yml (status, verdict, tags, outputs), the Connections themes and edges if the claim links to others, and the README claims table. If validate_claims.py warns that a speaker matches no body, add the speaker's exact wording to the Aliases of the right row in data/bodies.csv (or add a row: ID, Name, Kind, Type, Parent, Role).
 
 FIRST TASKS, IN ORDER
 1. Run scripts/archive_sources.py (network needed) and commit archive/manifest.csv. Report which sources were robots-disallowed so the maintainer can archive them by hand.
