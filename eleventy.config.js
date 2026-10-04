@@ -24,6 +24,7 @@ const ICONS = {
   download: "M12 4v11M7 10l5 5 5-5M5 20h14",
   prev: "M15 5l-7 7 7 7",
   next: "M9 5l7 7-7 7",
+  panels: "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z",
 };
 const icon = (name, cls = "ico") =>
   `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${ICONS[name] || ""}"/></svg>`;
@@ -43,6 +44,8 @@ export default function (eleventyConfig) {
   // Figures of each report's web version (tools/report_html.py), next to the claim's PDFs.
   // Flyer previews made by scripts/build_site_data.py (build/ is not committed).
   if (existsSync("build/claim-previews")) eleventyConfig.addPassthroughCopy({ "build/claim-previews": "claim-files" });
+  // Claim and subtopic thumbnails (scripts/thumbnails.py).
+  if (existsSync("build/thumbs")) eleventyConfig.addPassthroughCopy({ "build/thumbs": "claim-files/thumbs" });
   for (const id of readdirSync("claims")) {
     const dir = `claims/${id}/report-figures`;
     if (existsSync(dir)) eleventyConfig.addPassthroughCopy({ [dir]: `claim-files/${id}/report-figures` });

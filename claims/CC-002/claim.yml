@@ -83,3 +83,6 @@ location:
   scope: site
   icon: tower
 version: '1.0'
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: '540'
+  caption: new indigenous trees for 54 protected ones removed

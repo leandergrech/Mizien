@@ -72,3 +72,6 @@ location:
   lon: 14.50314
   scope: institution
   icon: ravelin
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: '187'
+  caption: enforcement notices a year, 2020–24 (1,033 in 2001–09)

@@ -57,3 +57,6 @@ location:
   lon: 14.50907
   scope: national
   icon: citygate
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 1.4 km²
+  caption: independent estimate of land built over (0.83 km² claimed)

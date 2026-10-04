@@ -57,3 +57,6 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 5.5%
+  caption: of waters Malta reports to the EU are protected

@@ -94,3 +94,6 @@ location:
   scope: site
   icon: flyover
 version: '1.0'
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 79%
+  caption: travel-time cut reported at Marsa; survey not published

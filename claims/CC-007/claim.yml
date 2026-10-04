@@ -92,3 +92,6 @@ location:
   lon: 14.50978
   scope: institution
   icon: parliament
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 23 / 23
+  caption: readings above WHO’s guideline, all within the EU limit

@@ -29,3 +29,4 @@ right_of_reply:
   response: null
 evidence_shown: null          # required for Misleading or Contradicted: list the documents or data
 outputs: {}
+thumbnail: null               # once checked: {figure: "−44%", caption: "short phrase"} from the flyer's results

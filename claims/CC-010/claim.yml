@@ -68,3 +68,6 @@ location:
   scope: institution
   icon: castille
 version: '1.0'
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: ~60,000
+  caption: trees reported by end-2025, of 100,000 pledged

@@ -84,7 +84,7 @@ steps:
     <h2 id="h-grades">Evidence grades</h2>
     <ul class="grades">
       {%- for g in mizien.grades %}
-      <li class="grade grade-{{ g.grade | lower }}"><span class="grade-letter">{{ g.grade }}</span><span>{{ g.meaning | mdInline | safe }}</span></li>
+      <li class="grade-card gc-{{ g.grade | lower }}"><span class="grade-letter">{{ g.grade }}</span><span>{{ g.meaning | mdInline | safe }}</span></li>
       {%- endfor %}
     </ul>
     <p class="small">A source known only through another paper's summary is marked as second-hand and is not presented as having been read.</p>
