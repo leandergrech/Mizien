@@ -1,0 +1,5 @@
+reference_area,km2,source,note
+Territorial sea (12 nm),3984,"MiŻien calculation: 12 nm buffer of OSM coastline","approximate; straight baselines would enlarge it"
+Fisheries Management Zone (25 nm),11480,"Government figure as reported by Amphora Media, 2025","MiŻien 25 nm buffer gives about 11,650 km2"
+Exclusive economic zone (Marine Regions / Protected Planet),52900,"Amphora Media citing Marine Regions and Protected Planet","'just under 53,000 km2'"
+Marine waters reported to the EU,75715,"EEA spokesperson to Amphora Media; BISE: 'a marine area of over 75,000km2'","up to 200 nm"

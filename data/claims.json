@@ -1526,10 +1526,10 @@
       "id": "CC-051",
       "title": "'Over 30% of our seas protected'",
       "category": "Nature & Wildlife",
-      "claim": "Environment Minister / ERA: Malta protects more than 30% of its maritime zone (ERA: over 35% designated as Marine Protected Areas).",
-      "counter": "International databases give 5.5-7.8%; the difference is the reference area (Fisheries Management Zone vs EEZ or territorial waters).",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Environment Minister Miriam Dalli (2025, as quoted by Amphora Media): 'Malta protects more than 30% of its maritime zone'. ERA: the marine Natura 2000 network of 18 sites covers over 4,100 km2, 'more than 35% of Malta's Fisheries Management Zone'.",
+      "counter": "EEA boundaries: 18 marine Natura 2000 sites, 4,137.5 km2 of sea (union). That is 36.0% of the 25-nm Fisheries Management Zone (11,480 km2), 7.8% of the EEZ as mapped internationally (~52,900 km2) and 5.5% of the 75,715 km2 Malta reports to the EU (BISE). Reaching 30% on the EU basis needs ~18,600 km2 more. ERA names the FMZ; the minister's 'maritime zone' does not.",
+      "status": "Drafted",
+      "verdict": "Misleading",
       "tags": [],
       "subtopic": "Marine protection",
       "location": {
@@ -1539,14 +1539,19 @@
         "scope": "institution",
         "icon": "castille"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Environment Minister; Environment and Resources Authority",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Miriam Dalli, Environment Minister; Environment and Resources Authority (ERA)",
       "date": "2025",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "Malta protects more than 30% of its maritime zone, through Natura 2000 sites, scientific monitoring, and a €2 million conservation programme.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-04",
+      "outputs": {
+        "report": "claim-files/CC-051/report.pdf",
+        "flyer_pdf": "claim-files/CC-051/flyer.pdf",
+        "flyer_png": "claim-files/CC-051/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-051/claim.yml"
     },
     {

@@ -1,0 +1,57 @@
+sitecode,sitename,sitetype,area_km2,sea_km2
+MT0000001,L-Inħawi ta’ Għajn Barrani,B,0.55,0.01
+MT0000002,L-Inħawi ta’ Pembroke,B,0.97,0.01
+MT0000003,Il-Ballut tal-Wardija,B,0.2,0.0
+MT0000004,Il-Maqluba (limiti tal-Qrendi),B,0.03,0.0
+MT0000005,L-Inħawi tar-Ramla,B,0.07,0.0
+MT0000006,Is-Simar (limiti ta’ San Pawl il-Baħar),C,0.58,0.0
+MT0000007,Is-Salini,B,0.24,0.02
+MT0000008,L-Għadira s-Safra u l-Iskoll tal-Għallis,B,0.03,0.01
+MT0000009,L-Inħawi tar-Ramla tat-Torri u tal-Irdum tal-Madonna,C,0.75,0.02
+MT0000010,Ix-Xagħra tal-Kortin,B,0.12,0.0
+MT0000011,Għar Dalam,B,0.0,0.0
+MT0000012,Wied il-Miżieb,B,0.25,0.0
+MT0000013,Iċ-Ċittadella,B,0.02,0.0
+MT0000014,Il-Ballut ta’ Marsaxlokk,B,0.23,0.0
+MT0000015,L-Inħawi tal-Għadira,C,0.98,0.0
+MT0000016,Filfla u l-Gżejjer ta’ Madwarha,C,0.07,0.03
+MT0000017,Kemmuna u l-Gżejjer ta’ Madwarha,C,2.95,0.09
+MT0000018,L-Inħawi tal-Buskett u tal-Girgenti,C,2.45,0.0
+MT0000019,"L-Inħawi tad-Dwejra u tal-Qawra, inkluż Ħaġret il-Ġeneral",B,0.87,0.02
+MT0000020,L-Inħawi tax-Xlendi u tal-Wied tal-Kantra,B,2.96,0.02
+MT0000021,L-Inħawi tal-Imġiebaħ u tal-Miġnuna,B,1.76,0.01
+MT0000022,Il-Gżejjer ta’ San Pawl (Selmunett),B,0.11,0.01
+MT0000023,Il-Magħluq tal-Baħar ta’ Marsaskala,B,0.04,0.0
+MT0000024,Rdumijiet ta’ Malta: Ir-Ramla taċ-Ċirkewwa sal-Ponta ta’ Bengħisa,B,23.15,0.23
+MT0000025,L-Għar tal-Iburdan u l-Inħawi tal-Madwar,B,0.69,0.0
+MT0000026,Il-Qortin tal-Magun u l-Qortin il-Kbir,B,0.53,0.0
+MT0000027,Rdumijiet ta’ Għawdex: Ta’ Ċenċ,A,1.52,0.02
+MT0000028,Rdumijiet ta’ Għawdex: Id-Dawra tas-Sanap sa Tal-Ħajt,A,0.3,0.01
+MT0000029,Rdumijiet ta’ Għawdex: Il-Ponta ta’ Ħarrux sal-Bajja tax-Xlendi,A,0.57,0.01
+MT0000030,Rdumijiet ta’ Għawdex: Il-Ponta ta’ San Dimitri sal-Ponta ta’ Ħarrux,A,0.64,0.01
+MT0000031,Rdumijiet ta’ Malta: Ix-Xaqqa sa Wied Moqbol,A,1.43,0.06
+MT0000032,Rdumijiet ta’ Malta: Ras il-Pellegrin sax-Xaqqa,A,3.77,0.1
+MT0000033,Rdumijiet ta’ Malta: Wied Moqbol sal-Ponta ta’ Bengħisa,A,0.55,0.02
+MT0000034,L-Inħawi ta’ Ta’ Ċenċ,B,1.4,0.02
+MT0000035,L-Inħawi ta’ Ħas-Saptan,B,0.03,0.0
+MT0000036,L-Inħawi tal-Wej,B,0.2,0.0
+MT0000037,Wied il-Mielaħ u l-Inħawi tal-Madwar,C,0.65,0.04
+MT0000101,Żona fil-Baħar bejn Rdum Majjiesa u Għar Lapsi,B,14.6,14.54
+MT0000102,Żona fil-Baħar fl-Inħawi ta’ Għar Lapsi u ta’ Filfla,B,26.29,26.28
+MT0000103,Żona fil-Baħar fl-Inħawi tad-Dwejra (Għawdex),B,2.29,2.26
+MT0000104,Żona fil-Baħar bejn Il-Ponta tal-Ħotba u Tal-Fessej (Għawdex),B,1.69,1.65
+MT0000105,Żona fil-Baħar bejn Il-Ponta ta’ San Dimitri (Għawdex) u Il-Qaliet,B,158.8,158.63
+MT0000106,Żona fil-Baħar fit-Tramuntana,A,318.78,318.78
+MT0000107,Żona fil-Baħar fil-Grigal,A,351.65,351.65
+MT0000108,Żona fil-Baħar fil-Lvant,A,625.1,625.1
+MT0000109,Żona fil-Baħar fix-Xlokk,A,219.16,219.16
+MT0000110,Żona fil-Baħar fin-Nofsinhar,A,834.88,834.88
+MT0000111,Żona fil-Baħar fil-Lbiċ,A,255.96,255.88
+MT0000112,Żona fil-Baħar madwar Għawdex,A,556.34,555.98
+MT0000113,Żona fil-Baħar fil-Punent,B,464.95,464.95
+MT0000114,Żona fil-Baħar fil-Majjistral,A,55.9,55.9
+MT0000115,Żona fil-Baħar fl-inħawi tal-Graben tat-Tramuntana ta’ Għawdex,B,390.01,390.01
+MT0000116,Żona fil-Baħar fl-inħawi tal-Graben ta’ Medina,B,911.95,911.95
+MT0000117,Żona fil-Baħar fl-inħawi tal-Punent tal-Graben ta’ Malta,B,201.28,201.28
+MT0000118,Żona fil-Baħar fl-inħawi tal-Majjistral tal-Graben ta’ Malta,B,107.21,107.21
+UNION,Union of 18 sites with >= 1 km2 of sea,,,4137.5
