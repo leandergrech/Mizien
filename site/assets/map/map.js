@@ -7,6 +7,7 @@
   var viewer = document.getElementById("doc-viewer"), viewerFrame = viewer.querySelector("iframe"), viewerImage = viewer.querySelector("img");
   var DATA = null, claims = [], edges = [], byId = {}, themeById = {}, stars = [];
   var hubPool = {}, hubs = [];            // hubPool: every hub ever made (key = mode|value); hubs: those of the current mode
+  var subHubs = [];                      // topic view: subtopic hubs orbiting their topic hub (claim.yml `subtopic`)
   var mode = "topic";
   var showSpokes = true, themeOn = {};
   var cam = { yaw: 0.6, pitch: -0.22, zoom: 1, tyaw: null, tpitch: -0.22, fx: 0, fy: 0, fz: 0, em: 1, tem: 1, px: 0, py: 0, tpx: 0, tpy: 0 };
@@ -104,7 +105,7 @@
 
   // ------------------------------------------------------------ groupings
   var MODES = {
-    topic: { label: "Topic", title: "Claims by topic", sub: "Each hub is a topic; coloured lines are themes that link claims across topics.",
+    topic: { label: "Topic", title: "Claims by topic", sub: "Each hub is a topic, with its subtopics orbiting it; coloured threads link claims across topics.",
              layout: "sphere", key: function (c) { return [c.category]; },
              order: function () { return DATA.categories.map(function (c) { return c.name; }); },
              color: function (v) { var c = DATA.categories.filter(function (x) { return x.name === v; })[0]; return c ? c.color : "#7fa88b"; } },
@@ -201,7 +202,7 @@
     buildViewBy(); setHint();
     var wantMap = new URLSearchParams(location.search).get("view") === "map";
     try { if (!new URLSearchParams(location.search).get("view") && localStorage.getItem("mizien.view") === "map") wantMap = true; } catch (e) {}
-    if (wantMap) { view = "map"; } loadGeo();
+    if (wantMap) { view = "map"; loadGeo(); }   // the island outlines load only when the map view is used
     requestAnimationFrame(frame);
   }
 
@@ -231,7 +232,7 @@
     if (!MODES[m]) m = "topic";
     mode = m; var M = MODES[m];
     Object.keys(hubPool).forEach(function (k) { hubPool[k].talpha = 0; });
-    claims.forEach(function (c) { c.hub = null; c.extra = []; });
+    claims.forEach(function (c) { c.hub = null; c.extra = []; c.sub = null; });
     var order = M.order(), groups = {};
     claims.forEach(function (c) {
       var keys = M.key(c.data);
@@ -249,6 +250,7 @@
       if (h.empty && (m === "topic" || m === "subtopic" || m === "speaker" || m === "pattern")) return; // hide empty groups where order is not meaningful
       hubs.push(h);
     });
+    buildSubHubs(m);
     // hub targets
     var n = hubs.length;
     if (M.layout === "sphere") {
@@ -280,7 +282,7 @@
     // camera: carousels spin, spectra and pipelines face the viewer and sway
     sway = M.layout === "arc" || M.layout === "line";
     if (sway) { cam.tyaw = 0; cam.tpitch = -0.12; } else { cam.tyaw = null; cam.tpitch = M.layout === "ring" ? -0.38 : -0.22; }
-    if (instant) { claims.concat(hubs).forEach(function (n) { n.x = n.tx; n.y = n.ty; n.z = n.tz; }); hubs.forEach(function (h) { h.alpha = 1; }); }
+    if (instant) { claims.concat(hubs, subHubs).forEach(function (n) { n.x = n.tx; n.y = n.ty; n.z = n.tz; }); hubs.concat(subHubs).forEach(function (h) { h.alpha = 1; }); }
     if (view === "map") mapifyMode();
     clearSel();
     var mt = document.getElementById("modeTitle"); mt.querySelector(".t").textContent = M.title; mt.querySelector(".s").textContent = M.sub;
@@ -290,7 +292,53 @@
     history.replaceState(null, "", u);
   }
 
+  // Topic view: a topic whose claims carry two or more subtopics gets a small hub per subtopic, orbiting it.
+  function getSubHub(h, s) {
+    var k = "topic-sub|" + h.name + " · " + s;
+    if (!hubPool[k]) hubPool[k] = { kind: "hub", sub: true, key: k, mode: "topic", name: s, x: h.x, y: h.y, z: h.z, tx: h.x, ty: h.y, tz: h.z, alpha: 0, talpha: 0, claims: [] };
+    var sh = hubPool[k]; sh.parent = h; sh.color = mix(h.color, "#ffffff", 0.3); return sh;
+  }
+  function buildSubHubs(m) {
+    subHubs = [];
+    hubs.forEach(function (h) {
+      h.subs = [];
+      if (m !== "topic") return;
+      var by = {}, names = [];
+      h.claims.forEach(function (c) { var s = c.data.subtopic; if (!s) return; if (!by[s]) { by[s] = []; names.push(s); } by[s].push(c); });
+      if (names.length < 2) return; // one subtopic adds nothing: the topic stays a single cluster
+      names.sort().forEach(function (s) {
+        var sh = getSubHub(h, s); sh.claims = by[s]; sh.count = sh.claims.length; sh.empty = false; sh.reviewLeaves = [];
+        sh.claims.forEach(function (c) { c.sub = sh; });
+        h.subs.push(sh); subHubs.push(sh);
+      });
+    });
+  }
+  function layoutWithSubs(h, open) {
+    var subs = h.subs, ns = subs.length, byClaimId = function (a, b) { return a.id < b.id ? -1 : 1; };
+    var rs = open ? Math.max(120, 56 + 26 * ns + 6 * Math.sqrt(h.count)) : 24 + 9 * ns + 6 * Math.sqrt(h.count), reach = 0;
+    subs.forEach(function (sh, i) {
+      var a = (i / ns) * Math.PI * 2 - Math.PI / 2;
+      var p = open ? { x: Math.cos(a) * rs, y: Math.sin(a) * rs * 0.82, z: Math.sin(a * 2) * rs * 0.18 } : spiral(ns, i, rs);
+      sh.tx = h.tx + p.x; sh.ty = h.ty + p.y; sh.tz = h.tz + p.z; sh.talpha = 1;
+      var len = Math.hypot(p.x, p.y, p.z) || 1, out = { x: p.x / len, y: p.y / len, z: p.z / len };
+      var m = sh.claims.length, r = open ? Math.max(46, 24 + 18 * Math.sqrt(m)) : 10 + 8 * Math.sqrt(m);
+      sh.claims.slice().sort(byClaimId).forEach(function (c, j) {
+        var q;
+        if (m === 1) q = { x: out.x * r, y: out.y * r, z: out.z * r };       // a lone claim sits just outside its sub-hub
+        else if (open) { var spread = Math.min(Math.PI * 1.15, 0.45 + 0.3 * m), b = a + (j / (m - 1) - 0.5) * spread;
+          q = { x: Math.cos(b) * r, y: Math.sin(b) * r * 0.82, z: 0 }; }     // fan outward, away from the topic centre
+        else q = spiral(m, j, r);
+        c.tx = sh.tx + q.x; c.ty = sh.ty + q.y; c.tz = sh.tz + q.z;
+      });
+      reach = Math.max(reach, r);
+    });
+    var loose = h.claims.filter(function (c) { return !c.sub; }).sort(byClaimId), nl = loose.length, rl = open ? 46 : 16;
+    loose.forEach(function (c, i) { var q = nl === 1 ? { x: 0, y: rl, z: 0 } : spiral(nl, i, rl); c.tx = h.tx + q.x; c.ty = h.ty + q.y; c.tz = h.tz + q.z; });
+    h.ringR = rs; h.openR = rs + reach;
+  }
   function layoutMembers(h, open) {
+    if (h.subs && h.subs.length) return layoutWithSubs(h, open);
+    h.ringR = null;
     var n = h.claims.length, r = clusterRadius(n);
     if (open) r = Math.max(110, r * 2.3);
     h.claims.slice().sort(function (a, b) { return a.id < b.id ? -1 : 1; }).forEach(function (c, i) {
@@ -303,6 +351,7 @@
     h.openR = r;
   }
   function expandHub(h) {
+    if (h.sub) h = h.parent;
     if (expanded === h) return;
     if (expanded) layoutMembers(expanded, false);
     expanded = h; layoutMembers(h, true);
@@ -519,14 +568,20 @@
 
     // orbit rings around active hubs
     allHubs.forEach(function (h) {
-      if (!h.count) return; var p = P.get(h), r = (clusterRadius(h.count) + 10) * p.s;
+      if (!h.count || h.sub) return; var p = P.get(h), r = (h.ringR || clusterRadius(h.count) + 10) * p.s;
       ctx.save(); ctx.globalAlpha = h.alpha * (F && F.hub !== h ? 0.08 : 0.22) * fog(p); ctx.strokeStyle = h.color; ctx.lineWidth = 1;
       ctx.setLineDash([2, 6]); ctx.beginPath(); ctx.ellipse(p.sx, p.sy, r, r * (0.32 + 0.5 * Math.abs(Math.sin(cam.pitch))), 0, 0, 6.283); ctx.stroke(); ctx.restore();
     });
 
     // spokes: claim to its group (and faint spokes to secondary groups)
+    if (showSpokes && mode !== "network" && view === "graph") subHubs.forEach(function (sh) {
+      if (sh.alpha < 0.02 || sh.parent.alpha < 0.02) return;
+      var a = P.get(sh.parent), b = P.get(sh), on = F && (F.hub === sh || F.hub === sh.parent || sh.claims.some(function (c) { return F.ids[c.id]; }));
+      ctx.strokeStyle = rgba(sh.parent.color, 0.5 * sh.alpha * (F && !on ? 0.35 : 1)); ctx.lineWidth = on ? 2.4 : 1.8;
+      ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke();
+    });
     if (showSpokes && mode !== "network" && view === "graph") claims.forEach(function (c) {
-      [c.hub].concat(c.extra).forEach(function (h, j) {
+      [c.sub && c.sub.alpha > 0.02 ? c.sub : c.hub].concat(c.extra).forEach(function (h, j) {
         if (!h || h.alpha < 0.02) return;
         var a = P.get(h), b = P.get(c), on = F && (F.hub === h || F.ids[c.id]);
         var g = ctx.createLinearGradient(a.sx, a.sy, b.sx, b.sy);
@@ -571,16 +626,16 @@
       var isSel = sel && ((isHub && sel.hub === n) || (!isHub && sel.kind === "claim" && sel.id === n.id));
       var isHov = hover && ((isHub && hover.hub === n) || (!isHub && hover.kind === "claim" && hover.id === n.id));
       if (isHub) {
-        var a = n.alpha * (on ? 1 : 0.3), r = 23 * sc * (isHov ? 1.08 : 1) * (0.6 + 0.4 * n.alpha);
+        var a = n.alpha * (on ? 1 : 0.3), r = (n.sub ? 12 : 23) * sc * (isHov ? 1.08 : 1) * (0.6 + 0.4 * n.alpha);
         ctx.globalAlpha = a;
         var g = ctx.createRadialGradient(p.sx, p.sy, r * 0.5, p.sx, p.sy, r * 3);
-        g.addColorStop(0, rgba(n.color, 0.5)); g.addColorStop(1, rgba(n.color, 0));
+        g.addColorStop(0, rgba(n.color, n.sub ? 0.32 : 0.5)); g.addColorStop(1, rgba(n.color, 0));
         ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.sx, p.sy, r * 3, 0, 6.283); ctx.fill();
         var g2 = ctx.createRadialGradient(p.sx - r * .35, p.sy - r * .4, r * .1, p.sx, p.sy, r);
         g2.addColorStop(0, rgba("#ffffff", 0.55)); g2.addColorStop(0.25, n.color); g2.addColorStop(1, rgba(n.color, 0.85));
         ctx.fillStyle = g2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r, 0, 6.283); ctx.fill();
         ctx.strokeStyle = isSel ? "#fff" : "rgba(255,255,255,.6)"; ctx.lineWidth = isSel ? 3 : 1.5; ctx.stroke();
-        var ip = ICON_PATHS[iconKey(n.name)];
+        var ip = ICON_PATHS[iconKey(n.sub ? n.parent.name : n.name)];
         if (ip) { ctx.save(); var s2 = r * 1.15 / 24; ctx.translate(p.sx - 12 * s2, p.sy - 12 * s2); ctx.scale(s2, s2);
           ctx.strokeStyle = "rgba(10,30,20,.9)"; ctx.lineWidth = 2.3; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.stroke(ip); ctx.restore(); }
         (n.reviewLeaves || []).forEach(function (rv, ri) {
@@ -589,7 +644,9 @@
           drawLeaf(p.sx + Math.cos(ang) * r * 1.5, p.sy + Math.sin(ang) * r * 1.5, ang + Math.PI / 2, 6);
         });
         n._p = { x: p.sx, y: p.sy, r: r, live: n.alpha > 0.5 };
-        if (n.alpha > 0.3 && n !== expanded) labels.push({ x: p.sx, y: p.sy + r + 15, text: n.name, sub: n.count + (n.count === 1 ? " claim" : " claims"),
+        if (n.sub) { if (n.alpha > 0.3 && ((expanded ? expanded === n.parent : cam.zoom >= 1.8) || isHov || isSel)) labels.push({ x: p.sx, y: p.sy + r + 13, text: n.name,
+          sub: n.count + (n.count === 1 ? " claim" : " claims"), hub: true, small: true, color: n.color, alpha: a, pri: expanded === n.parent || isSel || isHov ? 3.6 : 1.5 }); }
+        else if (n.alpha > 0.3 && n !== expanded) labels.push({ x: p.sx, y: p.sy + r + 15, text: n.name, sub: n.count + (n.count === 1 ? " claim" : " claims"),
           hub: true, color: n.color, alpha: a * (expanded ? 0.45 : 1), pri: expanded ? 1 : 3 + (isSel ? 2 : 0) });
         ctx.globalAlpha = 1;
       } else {
@@ -614,7 +671,7 @@
         n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: !n.clustered };
         var focused = F && F.ids[n.id];
         var member = expanded && n.hub === expanded, tagged = labelMode === "tag" || member;
-        var hp = member ? P.get(expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
+        var hp = member ? P.get(n.sub && n.sub.alpha > 0.3 ? n.sub : expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
         if ((!expanded || member || isHov || isSel) && !n.clustered) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: (tagged ? d.title : n.id) + (n.offmap && n.ringFirst && n.data.location && W >= 700 ? "  → " + shortPlace(n.data.location.place) : ""),
           sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (d.verdict ? " · " + d.verdict : " · not yet checked") : d.title) : "",
           hub: false, tag: tagged, color: col, alpha: (on ? 1 : 0.25) * fg, ax: p.sx, ay: p.sy, rr: r2 + 6,
@@ -629,7 +686,8 @@
     labels.sort(function (a, b) { return b.pri - a.pri; });
     var placed = [];
     labels.forEach(function (L) {
-      ctx.font = L.hub ? "700 13px Arial, sans-serif" : "600 11px Arial, sans-serif";
+      var titleFont = L.small ? "700 11.5px Arial, sans-serif" : L.hub ? "700 13px Arial, sans-serif" : "600 11px Arial, sans-serif";
+      ctx.font = titleFont;
       var w = ctx.measureText(L.text).width, w2 = 0;
       if (L.sub) { ctx.font = L.hub ? "11px Arial, sans-serif" : "italic 11px Arial, sans-serif"; w2 = Math.min(220, ctx.measureText(L.sub).width); }
       var bw = Math.max(w, w2) + (L.hub ? 18 : 10), bh = L.sub ? 32 : 18;
@@ -644,7 +702,7 @@
         ctx.strokeStyle = rgba(L.color, 0.7); ctx.lineWidth = 1; ctx.stroke(); }
       else if (L.sub || L.tag) { ctx.fillStyle = "rgba(7,25,17,.82)"; roundRect(box.x, box.y, box.w, box.h, 7); ctx.fill();
         if (L.tag) { ctx.strokeStyle = rgba(L.color, 0.85); ctx.lineWidth = 1.2; ctx.stroke(); } }
-      ctx.textAlign = "center"; ctx.fillStyle = "#eef3ef"; ctx.font = L.hub ? "700 13px Arial, sans-serif" : "600 11px Arial, sans-serif";
+      ctx.textAlign = "center"; ctx.fillStyle = "#eef3ef"; ctx.font = titleFont;
       ctx.fillText(L.text, L.x, L.y + 1);
       if (L.sub) { ctx.font = L.hub ? "11px Arial, sans-serif" : "italic 11px Arial, sans-serif"; ctx.fillStyle = "#a9c2b1";
         var sub = L.sub; while (ctx.measureText(sub).width > 220 && sub.length > 4) sub = sub.slice(0, -2);
@@ -658,7 +716,7 @@
     if (view === "map" && !mapLevel) for (var bi = 0; bi < badges.length; bi++) { var B = badges[bi];
       if (Math.hypot(B.x - x, B.y - y) < Math.max(B.r, 22)) return { kind: "district", d: B.d, locked: B.locked }; }
     var best = null, bd = 1e9;
-    claims.concat(hubs).forEach(function (n) { if (!n._p || !n._p.live) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
+    claims.concat(hubs, subHubs).forEach(function (n) { if (!n._p || !n._p.live || (n.kind === "hub" && n.alpha < 0.5)) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
       var hit = Math.max(n._p.r + 5, W < 700 ? 16 : 0); if (d < hit && d < bd) { bd = d; best = n; } });
     if (best) return best.kind === "hub" ? { kind: "hub", hub: best } : { kind: "claim", id: best.id };
     if (view === "map") for (var pi = 0; pi < PLACES.length; pi++) { var Q = PLACES[pi]._p;
@@ -905,7 +963,7 @@
         for (var xq = 0; xq <= W; xq += 40) ctx.lineTo(xq, y0 + Math.sin(xq / 90 + t + q) * 4); ctx.stroke(); } }
   }
   function mapifyMode() {
-    hubs.forEach(function (h) { h.talpha = 0; }); sway = false;
+    hubs.concat(subHubs).forEach(function (h) { h.talpha = 0; }); sway = false;
     cam.tyaw = mapLevel ? cam.tyaw : 0; cam.tpitch = MAP_PITCH;
   }
   // Smooth transitions. The camera's zoom and pan are first folded into the map scale and centre, so the first
@@ -970,7 +1028,7 @@
     if (v === "map" && !GEO) { view = "map"; loadGeo(); return; }
     var was = view; view = v;
     try { localStorage.setItem("mizien.view", v); } catch (e) {}
-    var u = new URL(location.href); if (v === "map") u.searchParams.set("view", "map"); else u.searchParams.delete("view"); history.replaceState(null, "", u);
+    var u = new URL(location.href); u.searchParams.set("view", v === "map" ? "map" : "ghanqbuta"); history.replaceState(null, "", u);
     collapse(); cam.tpx = 0; cam.tpy = 0; cam.zoom = 1;
     mapAnim = null;
     if (v === "map") { if (was !== "map") spinBeforeMap = spinning; setSpin(false); mapLevel = null; tmapZ = mapZ = 1; tmapC = { x: HOME.x, y: HOME.y }; mapC = { x: HOME.x, y: HOME.y };
@@ -997,8 +1055,10 @@
   }
   function buildViewBy() {
     var g = document.getElementById("viewby"); g.textContent = "";
-    [["graph", "Network", "mode:network"], ["map", "Malta map", "mode:topic"]].forEach(function (v) {
-      var b = el("button"); b.type = "button"; b.dataset.view = v[0]; b.setAttribute("aria-pressed", view === v[0] ? "true" : "false");
+    // "Għanqbuta" is Maltese for spider: a web of claims, with topic hubs, spokes and the threads that link them.
+    [["graph", "Għanqbuta", "mode:network", "Għanqbuta (spider): a web of claims, with topic hubs, spokes and the threads that link them"],
+     ["map", "Malta map", "mode:topic", "Claims placed where they happened, across Malta and Gozo"]].forEach(function (v) {
+      var b = el("button"); b.type = "button"; b.dataset.view = v[0]; b.title = v[3]; b.setAttribute("aria-pressed", view === v[0] ? "true" : "false");
       if (v[0] === "map") { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 L9 4 L15 6.5 L21 4 V17.5 L15 20 L9 17.5 L3 20 Z M9 4 V17.5 M15 6.5 V20" fill="none" stroke="#cfe2d4" stroke-width="1.8" stroke-linejoin="round"/></svg>'; }
       else b.appendChild(iconSvg(v[2], "#cfe2d4"));
       b.appendChild(document.createTextNode(v[1])); b.onclick = function () { setView(v[0]); }; g.appendChild(b);
@@ -1125,7 +1185,7 @@
   function selectHub(h) {
     sel = { kind: "hub", hub: h };
     var withV = h.claims.filter(function (c) { return c.data.verdict; }).length;
-    openPanel(MODES[mode].label.toUpperCase() + " GROUP", h.name, h.color, [h.count + (h.count === 1 ? " claim" : " claims"), withV + " with a verdict"]);
+    openPanel(h.sub ? "SUBTOPIC · " + h.parent.name.toUpperCase() : MODES[mode].label.toUpperCase() + " GROUP", h.name, h.color, [h.count + (h.count === 1 ? " claim" : " claims"), withV + " with a verdict"]);
     if (view === "graph") expandHub(h);
     var list = h.claims, done = list.filter(function (c) { return c.data.verdict; }).length, reviewed = h.reviewLeaves || [];
     pbody.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " with a verdict, " + reviewed.length + " completed evidence reviews."));
@@ -1135,8 +1195,12 @@
         freshness.appendChild(el("p", "small", c.id + " · last reviewed " + c.data.last_reviewed + " · " + (age >= 365 ? "refresh due" : Math.max(0, 365 - age) + " days until due"))); });
       pbody.appendChild(freshness);
     }
-    label("CLAIMS IN THIS GROUP"); var box = el("div", "links");
-    list.forEach(function (c) { claimLink(c.id, box); }); pbody.appendChild(box);
+    if (h.subs && h.subs.length) { // a topic lists its claims by subtopic
+      h.subs.forEach(function (sh) { label(sh.name.toUpperCase()); var sb = el("div", "links"); sh.claims.forEach(function (c) { claimLink(c.id, sb); }); pbody.appendChild(sb); });
+      var loose = list.filter(function (c) { return !c.sub; });
+      if (loose.length) { label("NO SUBTOPIC"); var lb = el("div", "links"); loose.forEach(function (c) { claimLink(c.id, lb); }); pbody.appendChild(lb); }
+    } else { label("CLAIMS IN THIS GROUP"); var box = el("div", "links");
+      list.forEach(function (c) { claimLink(c.id, box); }); pbody.appendChild(box); }
     var also = claims.filter(function (c) { return c.extra.indexOf(h) >= 0; });
     if (also.length) { label("ALSO TAGGED (SECOND PATTERN)"); var b2 = el("div", "links"); also.forEach(function (c) { claimLink(c.id, b2); }); pbody.appendChild(b2); }
     fitPanel();
@@ -1168,7 +1232,7 @@
     else if (h.kind === "place") { var dn = h.place.claims.filter(function (c) { return c.data.verdict; }).length;
       txt = (h.place.discovered ? h.place.name : "Undiscovered site") + " · " + h.place.claims.length + (h.place.claims.length === 1 ? " claim" : " claims") + ", " + dn + " checked"; }
     else if (h.kind === "district") txt = h.locked ? lockText(h.d) : h.d.name + " · " + districtClaims(h.d).length + " claims · click to open";
-    else if (h.kind === "hub") txt = h.hub.name + " · " + h.hub.count + (h.hub.count === 1 ? " claim" : " claims");
+    else if (h.kind === "hub") txt = (h.hub.sub ? h.hub.parent.name + " › " : "") + h.hub.name + " · " + h.hub.count + (h.hub.count === 1 ? " claim" : " claims");
     else { var th = themeById[h.edge.theme] || {}; txt = (th.name || h.edge.theme) + ": " + h.edge.from + " ↔ " + h.edge.to; }
     tip.textContent = txt; tip.style.display = "block";
     tip.style.left = Math.min(x + 14, W - tip.offsetWidth - 8) + "px"; tip.style.top = (y + 16) + "px";
