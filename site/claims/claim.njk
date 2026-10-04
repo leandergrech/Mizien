@@ -28,7 +28,7 @@ permalink: "/claims/{{ claim.id }}/"
     <aside class="notice" aria-label="Draft notice">
       <p><strong>This is a draft check.</strong> The body concerned has not yet had the chance to reply, and the verdict
          may change in light of its response or new evidence. A verdict applies to the statement as worded on the date
-         it was made; it is not a judgement of anyone's motives.</p>
+         it was made; it is not a judgement of anyone's motives. <a href="/about/disclaimer/">What a check represents</a>.</p>
     </aside>
     {%- endif %}
 
@@ -50,7 +50,8 @@ permalink: "/claims/{{ claim.id }}/"
       <h2 id="h-verdict">Verdict</h2>
       <p><strong>{{ c.verdict }}</strong>{% if c.verdict_confidence %}, {{ c.verdict_confidence | lower }} confidence{% endif %}.
          {%- if verdictInfo %} <span class="def">{{ c.verdict }}: {{ verdictInfo.meaning }}</span>{% endif %}</p>
-      <p class="small"><a href="{{ site.repo }}/blob/main/methodology/verdict-scale.md">How verdicts and confidence levels are defined</a></p>
+      <p class="small"><a href="/methodology/how-a-verdict-is-reached/">How a verdict is reached</a> ·
+         <a href="/about/disclaimer/">What a check represents</a></p>
     </section>
     {%- endif %}
 

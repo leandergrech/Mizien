@@ -1,0 +1,148 @@
+---
+layout: base.njk
+title: How a verdict is reached
+description: The nine steps every Miżien check follows, from recording a public claim word for word to publishing a verdict with its evidence, a right of reply and a change log.
+permalink: /methodology/how-a-verdict-is-reached/
+steps:
+  - title: Find a public claim
+    icon: "M10.5 4a6.5 6.5 0 1 0 0 13a6.5 6.5 0 1 0 0-13M15.4 15.4L20 20"
+    text: A claim is checked when it is public, attributable to a named body or person, checkable against evidence, and about quality of life or the environment in Malta. Every side is held to the same standard.
+    open: Candidate claims are listed openly, with their status, before any verdict.
+  - title: Record the exact words
+    icon: "M5 7h5v5c0 2.2-1.2 4-3.5 5M14 7h5v5c0 2.2-1.2 4-3.5 5"
+    text: We quote the speaker, not a headline. The original statement is archived so that the record survives later edits. No report starts until the verbatim wording is found.
+    open: Each claim page links the original and its archived copy.
+  - title: Split it into checkable parts
+    icon: "M12 3v6M12 9L6 15M12 9l6 6M6 15v5M18 15v5"
+    text: A sentence often carries several claims, such as a number, a comparison and a cause. Each part is tested on its own, and the wording's conditions are kept.
+    open: The report lists every part with its own finding.
+  - title: Search the evidence, in order
+    icon: "M12 3l9 5-9 5-9-5 9-5M3 13l9 5 9-5"
+    text: Peer-reviewed research comes first, then independent datasets, then regulator and EU reports. News and advocacy material locate claims; they are never the only evidence for a finding.
+    open: Every source is listed on the claim page, with an archived copy where one exists.
+  - title: Grade the evidence
+    icon: "M5 20V11M10 20V6M15 20V13M20 20V16"
+    text: Each source gets a grade from A (controlled experiment) to D (assertion with no data). Where studies disagree, both sides are shown, with why they may differ.
+    open: Grades appear beside the sources in each report.
+  - title: Recompute the numbers
+    icon: "M17 4H7l6 8-6 8h10"
+    text: Figures are recalculated by scripts from data saved with its source and retrieval date, not checked by eye.
+    open: The data and scripts are in the public repository.
+  - title: Weigh it and give a verdict
+    icon: "M12 4v16M8 20h8M4 8h16M4 8l-2.5 5h5zM20 8l-2.5 5h5z"
+    text: One verdict on a five-point scale, with a confidence level. Misleading and Contradicted need documents or data that can be shown; inference alone is not enough.
+    open: The documents behind a strong verdict are listed on the claim page.
+  - title: Offer a right of reply
+    icon: "M4 5h16v10H10l-4 4v-4H4z"
+    text: The body concerned receives the draft and a deadline, and its response is published alongside the check. Until then the check is labelled a draft.
+    open: Each claim page shows where the reply stands.
+  - title: Publish, then keep it current
+    icon: "M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"
+    text: Every check carries a version number and a change log. Errors are corrected openly, and each check records when its evidence was last reviewed.
+    open: Anyone can contest a check, with evidence.
+---
+{%- set scaleOrder = ["Supported", "Largely supported", "Not substantiated", "Misleading", "Contradicted"] %}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li>Methodology</li><li aria-current="page">How a verdict is reached</li></ol>
+</nav>
+
+<article class="page prose-page">
+  <header class="page-head">
+    <p class="kicker">Methodology</p>
+    <h1>How a verdict is reached</h1>
+    <p class="lead">Every check follows the same nine steps. A verdict is about a <strong>statement</strong>, as it
+      was worded on the day it was made. It is not a judgement of a person, an organisation or anyone's motives.</p>
+  </header>
+
+  <section aria-labelledby="h-steps">
+    <h2 id="h-steps">The nine steps</h2>
+    <ol class="flow">
+      {%- for s in steps %}
+      <li class="flow-step">
+        <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="{{ s.icon }}"/></svg></span>
+        <div class="flow-text">
+          <h3><span class="flow-n">{{ loop.index }}</span> {{ s.title }}</h3>
+          <p>{{ s.text }}</p>
+          <p class="flow-open"><span>You can see it:</span> {{ s.open }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+
+  <section aria-labelledby="h-sources">
+    <h2 id="h-sources">Where the evidence comes from</h2>
+    <p>Sources are searched in this order. Higher tiers carry more weight when sources disagree.</p>
+    <ol class="ladder">
+      {%- for item in mizien.source_order %}
+      <li class="tier tier-{{ loop.index }}"><span class="tier-n">{{ loop.index }}</span><span>{{ item | mdInline | safe }}</span></li>
+      {%- endfor %}
+    </ol>
+  </section>
+
+  <section aria-labelledby="h-grades">
+    <h2 id="h-grades">Evidence grades</h2>
+    <ul class="grades">
+      {%- for g in mizien.grades %}
+      <li class="grade grade-{{ g.grade | lower }}"><span class="grade-letter">{{ g.grade }}</span><span>{{ g.meaning | mdInline | safe }}</span></li>
+      {%- endfor %}
+    </ul>
+    <p class="small">A source known only through another paper's summary is marked as second-hand and is not presented as having been read.</p>
+  </section>
+
+  <section aria-labelledby="h-scale">
+    <h2 id="h-scale">The verdict scale</h2>
+    <p>From the strongest support to the strongest evidence against. Not substantiated sits in the middle: the claim
+       may be true, but it has not been shown.</p>
+    <ol class="spectrum">
+      {%- for name in scaleOrder %}{% set v = mizien.verdicts | findBy("name", name) %}
+      <li class="v-{{ v.slug }}"><strong class="badge v-{{ v.slug }}">{{ v.name }}</strong><span>{{ v.meaning | mdInline | safe }}</span></li>
+      {%- endfor %}
+    </ol>
+    <h3>Rules that apply to every verdict</h3>
+    <ul class="rules">
+      {%- for r in mizien.verdict_rules %}<li>{{ r | mdInline | safe }}</li>{% endfor %}
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-confidence">
+    <h2 id="h-confidence">Confidence</h2>
+    <ul class="confidence">
+      {%- for c in mizien.confidence %}{% set filled = 3 - loop.index0 %}
+      <li><span class="pips" aria-hidden="true">{% for i in range(0, 3) %}<i{% if i < filled %} class="on"{% endif %}></i>{% endfor %}</span>
+        <span><strong>{{ c.level }}</strong>: {{ c.meaning | mdInline | safe }}</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-example" class="example">
+    <h2 id="h-example">An illustrative example</h2>
+    <p class="example-note"><strong>Invented to show the method. This is not a real claim.</strong></p>
+    <ol class="example-steps">
+      <li><strong>The claim.</strong> A local council says its new park now has “over 500 trees”.</li>
+      <li><strong>The parts.</strong> (a) Were more than 500 trees planted? (b) Are more than 500 trees there now? The
+        wording “now has” makes (b) the claim being tested.</li>
+      <li><strong>The evidence.</strong> The council's planting invoices, which show trees bought rather than trees
+        standing, and an independent survey that counts the living trees on the site.</li>
+      <li><strong>The numbers.</strong> The survey's tree count is recomputed from its published table.</li>
+    </ol>
+    <div class="outcomes">
+      <div class="outcome v-largely-supported"><p class="badge v-largely-supported">Largely supported</p>
+        <p>If the survey counts about 480–520 living trees: the substance holds, with a minor caveat on “over”.</p></div>
+      <div class="outcome v-not-substantiated"><p class="badge v-not-substantiated">Not substantiated</p>
+        <p>If only invoices exist: planting is shown, but not that the trees are there now.</p></div>
+    </div>
+    <p class="small">Either way, the council would be offered a right of reply before publication, and a later survey
+       would update the check with a new version.</p>
+  </section>
+
+  <section aria-labelledby="h-more">
+    <h2 id="h-more">More detail</h2>
+    <ul>
+      <li><a href="/about/disclaimer/">What a check represents, and what it does not</a></li>
+      <li><a href="{{ site.repo }}/tree/main/methodology">The full methodology in the repository</a> (verdict scale,
+        evidence grades, standards, pattern tags)</li>
+      <li><a href="{{ site.repo }}/blob/main/CORRECTIONS.md">Corrections policy</a></li>
+    </ul>
+  </section>
+</article>
