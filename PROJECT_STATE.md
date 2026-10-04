@@ -76,6 +76,23 @@ go in `data/queue.csv`, and the worker tries its next claim. After 3 blocked att
 `needs maintainer`: supply the verbatim passages in `literature/CC-NNN/primary-source.md` (as for CC-007) and
 clear the Blocker cell. Workers merge `origin/main` into their branch instead of rebasing (no force-pushes).
 
+## Site build (4 October 2026)
+
+- The site is being moved to a static build: Eleventy 3 on Node 24, with `eleventy.config.js`, `package.json` and
+  templates in `site/`. CI (`.github/workflows/site.yml`) validates claims, rebuilds data and builds `_site/` on
+  every PR.
+- During the transition, `docs/` is copied through unchanged, so the build matches what Pages serves today. Pages
+  then move into `site/` one PR at a time.
+- One maintainer-led session owns `docs/index.html`, `site/`, `scripts/build_site_data.py`,
+  `scripts/validate_claims.py` and `.github/`. Other sessions: change these only after checking with it, and keep
+  committing `build_site_data.py` outputs as before until the rules change.
+- Maintainer decisions are recorded in `PLAN.md`, kept local for now on the `claude/mvp-plan` branch of this machine's
+  clone:
+  - Claim pages live at `/claims/CC-NNN/`.
+  - Drafts stay `noindex` until a disclaimer and a visual verdict-process page are approved.
+  - The deploy moves to GitHub Actions.
+  - The network view is renamed "Għanqbuta" (spider; `?view=ghanqbuta`, with `?view=network` kept as an alias) and gets subtopic sub-hubs.
+
 ## Map view prototype (3 October 2026)
 
 - `docs/index.html` has a **Network / Malta map** toggle (also `?view=map`, key M). Network view: larger default
