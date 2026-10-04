@@ -51,7 +51,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-019 | Land & Trees | 830,000 m2 of land lost in five years | Drafted | Largely supported |
 | CC-020 | Noise | Noise: compliant on paper | Not started | - |
 | CC-021 | Transport | Malta-Gozo tunnel traffic | Not started | - |
-| CC-022 | Climate & Energy | 'Lowest electricity burden in the EU' | Not started | - |
+| CC-022 | Climate & Energy | 'Lowest electricity burden in the EU' | Drafted | Largely supported |
 | CC-023 | Climate & Energy | Second interconnector by 2026 | Not started | - |
 | CC-024 | Climate & Energy | Renewables target for 2030 | Not started | - |
 | CC-025 | Climate & Energy | Per-capita emissions down 44% since 2005 | Not started | - |
