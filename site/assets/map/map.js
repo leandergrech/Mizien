@@ -8,6 +8,12 @@
   var DATA = null, claims = [], edges = [], byId = {}, themeById = {}, stars = [];
   var hubPool = {}, hubs = [];            // hubPool: every hub ever made (key = mode|value); hubs: those of the current mode
   var subHubs = [];                      // topic view: subtopic hubs orbiting their topic hub (claim.yml `subtopic`)
+  // Coarse filtering: groups can be hidden from the legend. A hidden group's hub, claims, spokes and links leave the
+  // map (both views) and the other groups spread out. Kept per grouping; the current grouping's set is in ?hide=.
+  var hiddenGroups = {}, legendGroups = [];
+  function hiddenSet(m) { return hiddenGroups[m] || (hiddenGroups[m] = {}); }
+  (function () { var h = new URLSearchParams(location.search).get("hide"), m = new URLSearchParams(location.search).get("group") || "topic";
+    if (h) h.split("|").forEach(function (v) { if (v) hiddenSet(m)[v] = true; }); })();
   var mode = "topic";
   var showSpokes = true, themeOn = {};
   // Links between claims are off by default (the map is clearer); the reader's choice is remembered.
@@ -310,7 +316,8 @@
     if (!MODES[m]) m = "topic";
     mode = m; var M = MODES[m];
     Object.keys(hubPool).forEach(function (k) { hubPool[k].talpha = 0; });
-    claims.forEach(function (c) { c.hub = null; c.extra = []; c.sub = null; });
+    claims.forEach(function (c) { c.hub = null; c.extra = []; c.sub = null; c.hidden = false; });
+    var hid = hiddenSet(m);
     var order = M.order(), groups = {};
     claims.forEach(function (c) {
       var keys = M.key(c.data);
@@ -318,7 +325,7 @@
     });
     // unseen values (e.g. a new status) go at the end
     Object.keys(groups).forEach(function (v) { if (order.indexOf(v) < 0) order.push(v); });
-    hubs = [];
+    hubs = []; legendGroups = [];
     order.forEach(function (v, i) {
       var h = getHub(m, v, i); h.color = M.color(v, i); h.claims = []; h.reviewLeaves = [];
       var members = groups[v] || [];
@@ -326,6 +333,8 @@
       h.count = h.claims.length; h.empty = h.count === 0;
       if (M.layout === "force") return;
       if (h.empty && (m === "topic" || m === "subtopic" || m === "speaker" || m === "pattern")) return; // hide empty groups where order is not meaningful
+      h.hidden = !!hid[v]; legendGroups.push(h);
+      if (h.hidden) { h.claims.forEach(function (c) { c.hidden = true; }); return; }
       hubs.push(h);
     });
     buildSubHubs(m);
@@ -367,6 +376,7 @@
     var mt = document.getElementById("modeTitle"); mt.querySelector(".t").textContent = M.title; mt.querySelector(".s").textContent = M.sub;
     document.querySelectorAll("#groupby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.mode === m ? "true" : "false"); });
     buildGroups(); buildArrange();
+    syncHideParam();
     var u = new URL(location.href); if (m === "topic") u.searchParams.delete("group"); else u.searchParams.set("group", m);
     history.replaceState(null, "", u);
   }
@@ -489,14 +499,50 @@
       note.textContent = lone.length ? "Not yet linked to any other claim." : "Every claim is linked to at least one other.";
       return;
     }
-    hubs.forEach(function (h) {
-      var b = el("button"); b.type = "button"; var s = el("span", "sw"); s.style.background = h.color; s.appendChild(iconSvg(h.name));
-      b.appendChild(s); b.appendChild(el("span", null, h.name)); b.appendChild(el("span", "n", String(h.count)));
-      b.onclick = function () { selectHub(h); }; g.appendChild(b);
+    var nHidden = legendGroups.filter(function (h) { return h.hidden; }).length;
+    var tools = el("div", "gtools");
+    var showAll = el("button", "gtool", "Show all"); showAll.type = "button"; showAll.disabled = !nHidden;
+    showAll.onclick = function () { setHidden(function () { return false; }); };
+    var hideAll = el("button", "gtool", "Hide all"); hideAll.type = "button"; hideAll.disabled = nHidden === legendGroups.length;
+    hideAll.onclick = function () { setHidden(function () { return true; }); };
+    tools.appendChild(showAll); tools.appendChild(hideAll);
+    if (nHidden) tools.appendChild(el("span", "gcount", nHidden + " hidden"));
+    g.appendChild(tools);
+    legendGroups.forEach(function (h) {
+      var row = el("div", "grow" + (h.hidden ? " is-hidden" : ""));
+      var b = el("button", "gsel"); b.type = "button"; var s = el("span", "sw"); s.style.background = h.color; s.appendChild(iconSvg(h.name));
+      b.appendChild(s); b.appendChild(el("span", "gname", h.name)); b.appendChild(el("span", "n", String(h.count)));
+      b.onclick = function () {
+        if (h.hidden) { setHidden(function (x) { return x === h ? false : x.hidden; }, function () { selectHub(h); }); return; }
+        selectHub(h); };
+      var eye = el("button", "geye"); eye.type = "button"; eye.setAttribute("aria-pressed", h.hidden ? "false" : "true");
+      eye.setAttribute("aria-label", (h.hidden ? "Show " : "Hide ") + h.name); eye.title = (h.hidden ? "Show" : "Hide") + " this group (double-click: show only this group)";
+      eye.innerHTML = h.hidden
+        ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 6.2A9.8 9.8 0 0 1 12 6c6 0 9.5 6 9.5 6a17 17 0 0 1-2.7 3.3M6.4 7.6C3.9 9.3 2.5 12 2.5 12s3.5 6 9.5 6c1.6 0 3-.4 4.3-1M9.9 10a3 3 0 0 0 4.1 4.1"/></svg>'
+        : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 6 12 6s9.5 6 9.5 6-3.5 6-9.5 6S2.5 12 2.5 12zM12 9a3 3 0 1 0 0 6a3 3 0 1 0 0-6"/></svg>';
+      var clickTimer = null;
+      eye.onclick = function () { clearTimeout(clickTimer); clickTimer = setTimeout(function () {
+        setHidden(function (x) { return x === h ? !x.hidden : x.hidden; }); }, 220); };
+      eye.ondblclick = function () { clearTimeout(clickTimer); setHidden(function (x) { return x !== h; }); };   // only this group
+      row.appendChild(b); row.appendChild(eye); g.appendChild(row);
     });
+    if (!note.textContent && legendGroups.length > 1) note.textContent = "Hide groups to declutter: their claims and links leave the map.";
     if (mode === "pattern") note.textContent = "Tags are provisional until a report is finished.";
     if (mode === "speaker") note.textContent = "Grouped by the first body named as speaker.";
   }
+  // Apply a hide/show rule to every group of the current grouping, re-lay out the map, keep it in the URL.
+  function setHidden(rule, after) {
+    var hid = hiddenSet(mode), keep = selKey();
+    legendGroups.forEach(function (h) { if (rule(h)) hid[h.name] = true; else delete hid[h.name]; });
+    syncHideParam(); setMode(mode, false); if (view === "map") mapifyMode();
+    applySelKey(keep); if (after) after();
+  }
+  function syncHideParam() {
+    var u = new URL(location.href), names = Object.keys(hiddenSet(mode));
+    if (names.length) u.searchParams.set("hide", names.join("|")); else u.searchParams.delete("hide");
+    history.replaceState(null, "", u);
+  }
+
   function setLinks(v) { linksOn = v; try { localStorage.setItem("mizien.links", v ? "on" : "off"); } catch (e) {} buildLinkBar(); }
   function buildLinkBar() {
     var bar = document.getElementById("linkbar"); bar.textContent = "";
@@ -619,7 +665,7 @@
   function focusSet() {
     if (!sel) return null;
     var ids = {}, es = {}, hb = null;
-    if (sel.kind === "claim") { ids[sel.id] = 1; edges.forEach(function (e, i) { if (e.from === sel.id || e.to === sel.id) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } }); }
+    if (sel.kind === "claim") { ids[sel.id] = 1; edges.forEach(function (e, i) { if ((e.from === sel.id || e.to === sel.id) && !byId[e.from].hidden && !byId[e.to].hidden) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } }); }
     if (sel.kind === "hub") { hb = sel.hub; (sel.hub.claims || []).forEach(function (c) { ids[c.id] = 1; }); claims.forEach(function (c) { if (c.extra.indexOf(sel.hub) >= 0) ids[c.id] = 1; }); }
     if (sel.kind === "edge") { es[sel.index] = 1; ids[sel.edge.from] = ids[sel.edge.to] = 1; }
     if (sel.kind === "theme") edges.forEach(function (e, i) { if (e.theme === sel.id) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } });
@@ -706,6 +752,7 @@
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke();
     });
     if (showSpokes && mode !== "network" && view === "graph") claims.forEach(function (c) {
+      if (c.hidden) return;
       [c.sub && c.sub.alpha > 0.02 ? c.sub : c.hub].concat(c.extra).forEach(function (h, j) {
         if (!h || h.alpha < 0.02) return;
         var a = P.get(h), b = P.get(c), on = F && (F.hub === h || F.ids[c.id]);
@@ -722,6 +769,7 @@
     // theme links
     edges.forEach(function (e, i) {
       e._g = null;
+      if (byId[e.from].hidden || byId[e.to].hidden) return;     // a hidden group takes its links with it
       var hi = F && F.es[i];
       if (!hi && !(linksOn && themeOn[e.theme])) return;
       var a = P.get(byId[e.from]), b = P.get(byId[e.to]), c = ctrl(a, b, e.bend);
@@ -750,7 +798,7 @@
     ctx.setLineDash([]);
 
     // nodes, far to near
-    var items = allHubs.concat(claims).sort(function (m, n) { return P.get(n).z - P.get(m).z; });
+    var items = allHubs.concat(claims.filter(function (c) { return !c.hidden; })).sort(function (m, n) { return P.get(n).z - P.get(m).z; });
     items.forEach(function (n) {
       var p = P.get(n), isHub = n.kind === "hub", sc = nodeScale(p), fg = fog(p);
       var on = !F || (isHub ? F.hub === n || n.claims.some(function (c) { return F.ids[c.id]; }) : F.ids[n.id]);
@@ -847,7 +895,7 @@
     if (view === "map" && !mapLevel) for (var bi = 0; bi < badges.length; bi++) { var B = badges[bi];
       if (Math.hypot(B.x - x, B.y - y) < Math.max(B.r, 22)) return { kind: "district", d: B.d, locked: B.locked }; }
     var best = null, bd = 1e9;
-    claims.concat(hubs, subHubs).forEach(function (n) { if (!n._p || !n._p.live || (n.kind === "hub" && n.alpha < 0.5)) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
+    claims.concat(hubs, subHubs).forEach(function (n) { if (!n._p || !n._p.live || n.hidden || (n.kind === "hub" && n.alpha < 0.5)) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
       var hit = Math.max(n._p.r + 5, W < 700 ? 16 : 0); if (d < hit && d < bd) { bd = d; best = n; } });
     if (best) return best.kind === "hub" ? { kind: "hub", hub: best } : { kind: "claim", id: best.id };
     if (view === "map") for (var pi = 0; pi < PLACES.length; pi++) { var Q = PLACES[pi]._p;
@@ -1409,7 +1457,7 @@
   function applySelKey(k) {
     if (!k) return;
     var i = k.indexOf(":"), kind = k.slice(0, i), v = k.slice(i + 1);
-    if (kind === "claim" && byId[v]) selectClaim(v);
+    if (kind === "claim" && byId[v] && !byId[v].hidden) selectClaim(v);
     else if (kind === "theme" && themeById[v]) selectTheme(v);
     else if (kind === "hub") { var parts = v.split(" › "), h = hubs.filter(function (x) { return x.name === parts[0]; })[0];
       if (h && parts[1]) h = (h.subs || []).filter(function (x) { return x.name === parts[1]; })[0] || h;
