@@ -182,6 +182,7 @@
   // ------------------------------------------------------------ init
   function init(data) {
     DATA = data;
+    var startSel = new URLSearchParams(location.search).get("sel");   // read before the first layout clears it
     data.themes.forEach(function (t) { themeById[t.id] = t; themeOn[t.id] = true; });
     data.claims.forEach(function (c) {
       var rnd = rng(c.id);
@@ -206,6 +207,7 @@
     var wantMap = new URLSearchParams(location.search).get("view") === "map";
     try { if (!new URLSearchParams(location.search).get("view") && localStorage.getItem("mizien.view") === "map") wantMap = true; } catch (e) {}
     if (wantMap) { view = "map"; loadGeo(); }   // the island outlines load only when the map view is used
+    applySelKey(startSel);
     requestAnimationFrame(frame);
   }
 
@@ -625,6 +627,26 @@
     return { ids: ids, es: es, hub: hb };
   }
 
+  // ------------------------------------------------------------ what the camera centres on
+  // In the Għanqbuta view the selection glides to the centre of the free space (between the controls and the card)
+  // and the camera zooms so that it, and what it links to, fills that space.
+  function focusTarget() {
+    if (view !== "graph") return null;
+    if (expanded) return { x: expanded.x, y: expanded.y, z: expanded.z, r: expanded.openR || 110, max: 3.4 };
+    if (!sel) return null;
+    var centre = null, pts = [];
+    if (sel.kind === "claim") { centre = byId[sel.id];
+      edges.forEach(function (e) { if (e.from === sel.id) pts.push(byId[e.to]); else if (e.to === sel.id) pts.push(byId[e.from]); }); }
+    else if (sel.kind === "edge") pts = [byId[sel.edge.from], byId[sel.edge.to]];
+    else if (sel.kind === "theme") edges.forEach(function (e) { if (e.theme === sel.id) pts.push(byId[e.from], byId[e.to]); });
+    else if (sel.kind === "hub") { centre = sel.hub; pts = sel.hub.claims.slice(); }
+    pts = pts.filter(Boolean);
+    if (!centre) { if (!pts.length) return null;
+      centre = { x: 0, y: 0, z: 0 }; pts.forEach(function (p) { centre.x += p.x / pts.length; centre.y += p.y / pts.length; centre.z += p.z / pts.length; }); }
+    var r = 70; pts.forEach(function (p) { r = Math.max(r, Math.hypot(p.x - centre.x, p.y - centre.y, p.z - centre.z) + 45); });
+    return { x: centre.x, y: centre.y, z: centre.z, r: r, max: pts.length ? 3 : 2.4 };
+  }
+
   // ------------------------------------------------------------ render loop
   function frame(now) {
     var t = (now - t0) / 1000, dt = Math.max(0, Math.min(0.4, t - lastT)); lastT = t;
@@ -638,9 +660,10 @@
       h.x += (h.tx - h.x) * k; h.y += (h.ty - h.y) * k; h.z += (h.tz - h.z) * k; h.alpha += (h.talpha - h.alpha) * Math.min(1, k * 1.3); });
     if (cxNow === null) cxNow = cxTarget(); cxNow += (cxTarget() - cxNow) * Math.min(1, k * 1.2);
     if (cyNow === null) cyNow = cyTarget(); cyNow += (cyTarget() - cyNow) * Math.min(1, k * 1.2);
-    var fxT = expanded ? expanded.x : 0, fyT = expanded ? expanded.y : 0, fzT = expanded ? expanded.z : 0;
-    if (expanded) { var avail = Math.min(W - leftInset() - panelInset(), H - 120 - topInset() - sheetInset()), b0 = Math.max(0.6, avail / 400) * cam.zoom;
-      cam.tem = Math.max(1, Math.min(3.4, 0.34 * avail / ((expanded.openR || 110) * b0 * 0.75))); }
+    var foc = focusTarget(), fxT = foc ? foc.x : 0, fyT = foc ? foc.y : 0, fzT = foc ? foc.z : 0;
+    if (foc) { var avail = Math.min(W - leftInset() - panelInset(), H - 120 - topInset() - sheetInset() - barInset()), b0 = Math.max(0.6, avail / 400) * cam.zoom;
+      cam.tem = Math.max(1, Math.min(foc.max, 0.34 * avail / (foc.r * b0 * 0.75))); }
+    else cam.tem = 1;
     cam.fx += (fxT - cam.fx) * k; cam.fy += (fyT - cam.fy) * k; cam.fz += (fzT - cam.fz) * k; cam.em += (cam.tem - cam.em) * k;
     if (view === "map") { if (cam.tyaw !== null) cam.yaw += (cam.tyaw - cam.yaw) * k * 0.6; }
     else if (sway) { var target = cam.tyaw + (spinning ? 0.32 * Math.sin(t * 0.18) : 0); cam.yaw += (target - cam.yaw) * k * 0.6; }
@@ -1142,7 +1165,7 @@
     if (v === "map") { if (was !== "map") spinBeforeMap = spinning; setSpin(false); mapLevel = null; tmapZ = mapZ = 1; tmapC = { x: HOME.x, y: HOME.y }; mapC = { x: HOME.x, y: HOME.y };
       cam.tyaw = 0; mapifyMode(); document.getElementById("crumb").style.display = "none"; }
     else { mapLevel = null; document.getElementById("crumb").style.display = "none"; claims.forEach(function (c) { c.clustered = false; c.offmap = false; c.anchor = null; });
-      setMode(mode, false); if (spinBeforeMap && !reduce) setSpin(true); }
+      var keep = selKey(); setMode(mode, false); applySelKey(keep); if (spinBeforeMap && !reduce) setSpin(true); }
     document.getElementById("maphud").style.display = v === "map" ? "block" : "none";
     document.querySelectorAll("#viewby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.view === v ? "true" : "false"); });
     buildLinkBar(); buildArrange();
@@ -1208,24 +1231,24 @@
     return light;
   }
   var pbody = null, wide = false;
-  try { wide = localStorage.getItem("mizien.wide") === "1"; } catch (e) {}
-  function openPanel(kicker, title, accent, pills) {
+  // Cards give quick information about a node; the full check is on the claim page (opened in a new tab).
+  function openPanel(kicker, title, accent, pills, pageUrl) {
     panel.textContent = ""; panel.style.display = "block"; panel.scrollTop = 0;
+    document.getElementById("mapwrap").classList.add("panel-open");
     var light = themePanel(accent || "#14452f");
-    panel.classList.toggle("wide", wide);
+    panel.classList.remove("wide");
     var head = el("div", "phead"), btns = el("div", "hbtns");
-    var w = el("button", "wbtn", wide ? "⤡" : "⤢"); w.type = "button"; w.title = wide ? "Narrow view" : "Wide view";
-    w.setAttribute("aria-label", w.title); w.setAttribute("aria-pressed", wide ? "true" : "false");
-    w.onclick = function () { wide = !wide; try { localStorage.setItem("mizien.wide", wide ? "1" : "0"); } catch (e) {}
-      panel.classList.toggle("wide", wide); w.textContent = wide ? "⤡" : "⤢"; w.title = wide ? "Narrow view" : "Wide view";
-      w.setAttribute("aria-label", w.title); w.setAttribute("aria-pressed", wide ? "true" : "false"); fitPanel(); setTimeout(fitPanel, 400); };
     var x = el("button", "x", "×"); x.type = "button"; x.setAttribute("aria-label", "Close"); x.onclick = clearSel;
     // phones: lower the card to a peek bar; the selection stays highlighted underneath
     var pb = el("button", "pbtn", "▾"); pb.type = "button"; pb.onclick = function () { setPeek(!panel.classList.contains("peek")); };
-    btns.appendChild(w); btns.appendChild(pb); btns.appendChild(x); head.appendChild(btns);
+    btns.appendChild(pb); btns.appendChild(x); head.appendChild(btns);
     head.appendChild(el("div", "grab")); sheetGestures(head); setPeek(false);
     head.appendChild(el("div", "id", kicker)); head.appendChild(el("h3", null, title));
     if (pills && pills.length) { var vl = el("div", "verdictline"); pills.forEach(function (t) { vl.appendChild(el("span", "vpill" + (light ? " dark" : ""), t)); }); head.appendChild(vl); }
+    if (pageUrl) {
+      var open = el("a", "openpage" + (light ? " dark" : ""), "Open claim page ↗"); open.href = pageUrl; open.target = "_blank"; open.rel = "noopener";
+      open.setAttribute("aria-label", "Open the claim page in a new tab"); head.appendChild(open);
+    }
     panel.appendChild(head); pbody = el("div", "pbody"); panel.appendChild(pbody);
   }
   // ------------------------------------------------------------ phone bottom sheet
@@ -1296,7 +1319,8 @@
     if (expanded && c.hub !== expanded) collapse();
     if (view === "map") { if (c.district && c.district !== mapLevel && unlocked(c.district)) enterDistrict(c.district); else if (!c.district && mapLevel) exitDistrict(); }
     var pills = d.verdict ? [d.verdict].concat(d.confidence ? [d.confidence + " confidence"] : []) : [d.status, "not yet checked"];
-    openPanel(d.id + " · " + d.category.toUpperCase(), d.title, d.verdict ? VC[d.verdict] : NOT_YET_COL, pills);
+    openPanel(d.id + " · " + d.category.toUpperCase(), d.title, d.verdict ? VC[d.verdict] : NOT_YET_COL, pills, "claims/" + d.id + "/");
+    syncSelParam();
     if (d.quote) pbody.appendChild(el("blockquote", null, "“" + d.quote + "”"));
     pbody.appendChild(el("p", null, d.claim));
     if (d.speaker) pbody.appendChild(el("p", "small", d.speaker + (d.date ? " · " + d.date : "")));
@@ -1321,16 +1345,12 @@
       });
       pbody.appendChild(box);
     }
-    var acts = el("div", "acts");
-    var outputLabels = { report: "Report", report_pdf: "Report", flyer_pdf: "Flyer PDF", flyer_png: "Flyer image", document: "Document", appendix: "Appendix" };
-    Object.keys(d.outputs || {}).forEach(function (key) { addFileAction(acts, outputLabels[key] || key.replace(/[_-]+/g, " "), d.outputs[key]); });
-    var page = el("a", "btn", "Claim page"); page.href = "claims/" + d.id + "/"; acts.insertBefore(page, acts.firstChild);
-    var rec = el("a", "btn ghost", "Claim record"); rec.href = d.record; rec.target = "_blank"; rec.rel = "noopener"; acts.appendChild(rec);
-    if (c.hub && mode !== "network") { var hb = el("button", "btn ghost", c.hub.name); hb.type = "button"; hb.onclick = function () { selectHub(c.hub); }; acts.appendChild(hb); }
-    pbody.appendChild(acts); fitPanel();
+    if (c.hub && mode !== "network") { var acts = el("div", "acts"), hb = el("button", "btn ghost", "Show its group: " + c.hub.name); hb.type = "button";
+      hb.onclick = function () { selectHub(c.hub); }; acts.appendChild(hb); pbody.appendChild(acts); }
+    fitPanel();
   }
   function selectHub(h) {
-    sel = { kind: "hub", hub: h };
+    sel = { kind: "hub", hub: h }; setTimeout(syncSelParam, 0);
     var withV = h.claims.filter(function (c) { return c.data.verdict; }).length;
     openPanel(h.sub ? "SUBTOPIC · " + h.parent.name.toUpperCase() : MODES[mode].label.toUpperCase() + " GROUP", h.name, h.color, [h.count + (h.count === 1 ? " claim" : " claims"), withV + " with a verdict"]);
     if (view === "graph") expandHub(h);
@@ -1362,7 +1382,7 @@
     all.onclick = function () { selectTheme(e.theme); }; acts.appendChild(all); pbody.appendChild(acts); fitPanel();
   }
   function selectTheme(id) {
-    var th = themeById[id]; if (!th) return; sel = { kind: "theme", id: id };
+    var th = themeById[id]; if (!th) return; sel = { kind: "theme", id: id }; setTimeout(syncSelParam, 0);
     if (!themeOn[id]) { themeOn[id] = true; buildLinkBar(); }
     openPanel("THEME · " + (th.link_type || "").toUpperCase(), th.name, th.color, [(th.members || []).length + " claims", th.strength]);
     if (th.description) pbody.appendChild(el("p", null, th.description));
@@ -1370,7 +1390,31 @@
     label("CLAIMS LINKED BY THIS THEME"); var box = el("div", "links");
     (th.members || []).forEach(function (m) { if (byId[m]) claimLink(m, box); }); pbody.appendChild(box); fitPanel();
   }
-  function clearSel() { sel = null; panel.classList.remove("peek"); panel.style.display = "none"; collapse(); }
+  function clearSel() { sel = null; panel.classList.remove("peek"); panel.style.display = "none"; collapse();
+    document.getElementById("mapwrap").classList.remove("panel-open"); syncSelParam(); }
+
+  // ------------------------------------------------------------ the selection survives view switches and is in the URL
+  function selKey() {
+    if (!sel) return null;
+    if (sel.kind === "claim") return "claim:" + sel.id;
+    if (sel.kind === "theme") return "theme:" + sel.id;
+    if (sel.kind === "hub") return "hub:" + (sel.hub.sub ? sel.hub.parent.name + " › " + sel.hub.name : sel.hub.name);
+    return null;
+  }
+  function syncSelParam() {
+    var u = new URL(location.href), k = selKey();
+    if (k) u.searchParams.set("sel", k); else u.searchParams.delete("sel");
+    history.replaceState(null, "", u);
+  }
+  function applySelKey(k) {
+    if (!k) return;
+    var i = k.indexOf(":"), kind = k.slice(0, i), v = k.slice(i + 1);
+    if (kind === "claim" && byId[v]) selectClaim(v);
+    else if (kind === "theme" && themeById[v]) selectTheme(v);
+    else if (kind === "hub") { var parts = v.split(" › "), h = hubs.filter(function (x) { return x.name === parts[0]; })[0];
+      if (h && parts[1]) h = (h.subs || []).filter(function (x) { return x.name === parts[1]; })[0] || h;
+      if (h) selectHub(h); }
+  }
 
   function showTip(h, x, y) {
     if (!h) { tip.style.display = "none"; return; }

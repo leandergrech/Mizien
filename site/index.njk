@@ -133,13 +133,20 @@ eleventyExcludeFromCollections: true
   /* detail panel: header filled with the verdict (or group) colour, body tinted to match */
   #panel { --p-head: #14452f; --p-head2: #0e2a1f; --p-head-ink: #fff; --p-bg: #f6f4ee; --p-ink: #2b3a42; --p-soft: #e6efe8;
            --p-line: #d9e2db; --p-link: #14452f; --p-muted: #6b767c;
-           position: absolute; right: 22px; top: 66px; bottom: 66px; width: min(400px, calc(100% - 44px)); z-index: 4;
-           overflow: auto; background: var(--p-bg); color: var(--p-ink); border-radius: 16px; padding: 0;
-           box-shadow: 0 22px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06); display: none;
-           transition: width .35s ease, background .3s; }
-  #panel.fit { bottom: auto; max-height: calc(100% - 132px); }
-  #panel.wide { width: min(1000px, calc(100% - 320px)); bottom: auto; max-height: 46%; }
-  #panel.wide.fit { max-height: 46%; }
+           /* docked as a right-hand column (like the controls on the left); the graph centres in the space between */
+           position: absolute; right: 0; top: 0; bottom: 0; width: min(390px, 34vw); z-index: 4;
+           overflow: auto; background: var(--p-bg); color: var(--p-ink); border-radius: 0; padding: 0;
+           border-left: 1px solid rgba(207,226,212,.22); box-shadow: -12px 0 34px rgba(0,0,0,.32); display: none;
+           transition: background .3s; }
+  @media (min-width: 901px) {
+    #mapwrap.panel-open #controls { right: calc(min(390px, 34vw) + 14px); }
+    #mapwrap.panel-open #modeTitle, #mapwrap.panel-open #crumb, #mapwrap.panel-open #toast { left: calc(50% + 131px - min(390px, 34vw) / 2); }
+    #mapwrap.panel-open #modeTitle { top: 66px; }          /* below the controls, which move left of the card */
+    #mapwrap.panel-open #crumb { top: 124px; }
+    #mapwrap.panel-open #toast { top: 170px; }
+    #mapwrap.panel-open #linkbar { max-width: calc(100% - 314px - min(390px, 34vw)); }
+    #mapwrap.panel-open #hint { right: calc(min(390px, 34vw) + 24px); }
+  }
   #panel .phead { position: sticky; top: 0; z-index: 1; padding: 14px 92px 14px 18px; color: var(--p-head-ink);
     background: linear-gradient(135deg, var(--p-head) 0%, var(--p-head2) 100%); }
   #panel .phead::after { content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 10px; pointer-events: none;
@@ -150,15 +157,16 @@ eleventyExcludeFromCollections: true
   #panel .vpill { display: inline-block; padding: 4px 11px; border-radius: 999px; font: 700 11.5px Arial; letter-spacing: .06em;
     text-transform: uppercase; background: rgba(255,255,255,.2); color: var(--p-head-ink); border: 1px solid rgba(255,255,255,.35); }
   #panel .vpill.dark { background: rgba(0,0,0,.12); border-color: rgba(0,0,0,.18); }
+  #panel .openpage { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; padding: 7px 14px; border-radius: 999px;
+    background: #fff; color: #14452f; font: 700 13px Arial, sans-serif; text-decoration: none; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+  #panel .openpage:hover { background: #f6f4ee; }
+  #panel .openpage:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
   #panel .hbtns { position: absolute; right: 8px; top: 8px; display: flex; gap: 2px; }
   #panel .hbtns button { min-width: 36px; min-height: 36px; border: 0; border-radius: 10px; background: rgba(255,255,255,.14);
     color: var(--p-head-ink); font: 700 16px Arial; cursor: pointer; }
   #panel .hbtns button:hover { background: rgba(255,255,255,.3); }
   #panel .hbtns .pbtn, #panel .grab { display: none; }
   #panel .pbody { padding: 12px 18px 18px; }
-  #panel.wide .pbody { column-count: 2; column-gap: 34px; column-rule: 1px solid var(--p-line); }
-  #panel.wide .pbody > * { break-inside: avoid; }
-  #panel.wide .pbody > blockquote { column-span: all; font-size: 17px; }
   #panel p { margin: 8px 0; font-size: 14px; }
   #panel .label { font: 700 10px Arial; letter-spacing: .12em; color: var(--p-muted); margin-top: 14px; padding-top: 8px;
     border-top: 1px solid var(--p-line); }
@@ -265,11 +273,9 @@ eleventyExcludeFromCollections: true
     #modeTitle { top: 14px; left: 18px; transform: none; text-align: left; }
     #modeTitle .t { font-size: 18px; }
     #modeTitle .s { display: none; }
-    #panel { left: 8px; right: 8px; top: auto; bottom: max(8px, env(safe-area-inset-bottom)); width: auto; max-height: 62%; }
+    #panel { left: 8px; right: 8px; top: auto; bottom: max(8px, env(safe-area-inset-bottom)); width: auto; max-height: 62%;
+             border-radius: 16px; border-left: 0; box-shadow: 0 22px 60px rgba(0,0,0,.55); }
     #panel.fit { max-height: 62%; }
-    #panel.wide { width: auto; }
-    #panel.wide .pbody { column-count: 1; }
-    #panel .hbtns .wbtn { display: none; }
     #panel .hbtns .pbtn { display: inline-block; }
     #panel { transition: transform .2s ease, background .3s; }
     #panel .phead { touch-action: none; padding-top: 18px; }
