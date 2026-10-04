@@ -1,0 +1,134 @@
+unit,unit_label,geo,year,value
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2005,105.15
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2006,110.54
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2007,115.1
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2008,112.0
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2009,108.6
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2010,106.92
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2011,105.41
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2012,103.06
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2013,100.62
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2014,99.9
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2015,100.0
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2016,101.71
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2017,103.25
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2018,105.14
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2019,106.64
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2020,111.09
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2021,113.98
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2022,115.16
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2023,107.56
+PTIR_I15,"Price-to-income ratio, index 2015=100",EU27_2020,2024,105.72
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2000,58.31
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2001,63.12
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2002,68.75
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2003,76.6
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2004,87.6
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2005,90.9
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2006,102.57
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2007,116.08
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2008,126.25
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2009,118.95
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2010,114.16
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2011,107.39
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2012,106.78
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2013,101.05
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2014,100.84
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2015,100.0
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2016,100.21
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2017,99.64
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2018,99.29
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2019,99.49
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2020,98.73
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2021,94.6
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2022,95.43
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2023,93.35
+PTIR_I15,"Price-to-income ratio, index 2015=100",MT,2024,89.29
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2005,98.41
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2006,103.45
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2007,107.71
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2008,104.82
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2009,101.64
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2010,100.06
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2011,98.65
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2012,96.45
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2013,94.17
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2014,93.49
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2015,93.59
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2016,95.19
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2017,96.62
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2018,98.4
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2019,99.8
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2020,103.96
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2021,106.67
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2022,107.78
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2023,100.66
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,EU27_2020,2024,98.94
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2000,60.66
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2001,65.67
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2002,71.52
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2003,79.69
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2004,91.14
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2005,94.58
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2006,106.72
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2007,120.77
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2008,131.35
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2009,123.75
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2010,118.77
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2011,111.73
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2012,111.09
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2013,105.14
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2014,104.91
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2015,104.04
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2016,104.26
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2017,103.67
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2018,103.3
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2019,103.51
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2020,102.73
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2021,98.43
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2022,99.29
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2023,97.12
+PTIR_LT_AVG,Price-to-income ratio relative to long-term average,MT,2024,92.9
+RCH_A_AVG,Annual average rate of change,EU27_2020,2006,5.1
+RCH_A_AVG,Annual average rate of change,EU27_2020,2007,4.1
+RCH_A_AVG,Annual average rate of change,EU27_2020,2008,-2.7
+RCH_A_AVG,Annual average rate of change,EU27_2020,2009,-3.0
+RCH_A_AVG,Annual average rate of change,EU27_2020,2010,-1.6
+RCH_A_AVG,Annual average rate of change,EU27_2020,2011,-1.4
+RCH_A_AVG,Annual average rate of change,EU27_2020,2012,-2.2
+RCH_A_AVG,Annual average rate of change,EU27_2020,2013,-2.4
+RCH_A_AVG,Annual average rate of change,EU27_2020,2014,-0.7
+RCH_A_AVG,Annual average rate of change,EU27_2020,2015,0.1
+RCH_A_AVG,Annual average rate of change,EU27_2020,2016,1.7
+RCH_A_AVG,Annual average rate of change,EU27_2020,2017,1.5
+RCH_A_AVG,Annual average rate of change,EU27_2020,2018,1.8
+RCH_A_AVG,Annual average rate of change,EU27_2020,2019,1.4
+RCH_A_AVG,Annual average rate of change,EU27_2020,2020,4.2
+RCH_A_AVG,Annual average rate of change,EU27_2020,2021,2.6
+RCH_A_AVG,Annual average rate of change,EU27_2020,2022,1.0
+RCH_A_AVG,Annual average rate of change,EU27_2020,2023,-6.6
+RCH_A_AVG,Annual average rate of change,EU27_2020,2024,-1.7
+RCH_A_AVG,Annual average rate of change,MT,2001,8.3
+RCH_A_AVG,Annual average rate of change,MT,2002,8.9
+RCH_A_AVG,Annual average rate of change,MT,2003,11.4
+RCH_A_AVG,Annual average rate of change,MT,2004,14.4
+RCH_A_AVG,Annual average rate of change,MT,2005,3.8
+RCH_A_AVG,Annual average rate of change,MT,2006,12.8
+RCH_A_AVG,Annual average rate of change,MT,2007,13.2
+RCH_A_AVG,Annual average rate of change,MT,2008,8.8
+RCH_A_AVG,Annual average rate of change,MT,2009,-5.8
+RCH_A_AVG,Annual average rate of change,MT,2010,-4.0
+RCH_A_AVG,Annual average rate of change,MT,2011,-5.9
+RCH_A_AVG,Annual average rate of change,MT,2012,-0.6
+RCH_A_AVG,Annual average rate of change,MT,2013,-5.4
+RCH_A_AVG,Annual average rate of change,MT,2014,-0.2
+RCH_A_AVG,Annual average rate of change,MT,2015,-0.8
+RCH_A_AVG,Annual average rate of change,MT,2016,0.2
+RCH_A_AVG,Annual average rate of change,MT,2017,-0.6
+RCH_A_AVG,Annual average rate of change,MT,2018,-0.4
+RCH_A_AVG,Annual average rate of change,MT,2019,0.2
+RCH_A_AVG,Annual average rate of change,MT,2020,-0.8
+RCH_A_AVG,Annual average rate of change,MT,2021,-4.2
+RCH_A_AVG,Annual average rate of change,MT,2022,0.9
+RCH_A_AVG,Annual average rate of change,MT,2023,-2.2
+RCH_A_AVG,Annual average rate of change,MT,2024,-4.4
