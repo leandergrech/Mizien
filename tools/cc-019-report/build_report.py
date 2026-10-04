@@ -19,8 +19,9 @@ S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
         "product.", lead)]
 S.append(key_points([
     ("The arithmetic holds.",
-     "830,000 m² is 0.26% of Malta’s land, 116 football pitches and about 0.3 of Comino, as stated. Adding the EEA "
-     "figures quoted gives the “at least 1.94 km²” since 2006."),
+     "830,000 m² is 0.26% of Malta’s land, 116 football pitches and about 0.3 of Comino, as stated. The EEA’s own chart "
+     "puts Malta’s 2012–2018 land take at about 0.91–0.94 km², the highest share of any of 39 European countries, "
+     "matching the 920,000 m² quoted."),
     ("An independent measurement finds more, not less.",
      "Using Impact Observatory’s 10 m land-cover maps and counting only land that changed consistently, about 1.4 km² "
      "net became built up between 2018 and 2023. Amphora’s figure is lower, consistent with its own description as "
@@ -29,7 +30,7 @@ S.append(key_points([
      "In the independent data, 65% of the new built-up land was cropland and 31% shrub or grassland. Abandoned fields "
      "can fall in either class, and Amphora does not say how it measured the 95% or for which period."),
     ("Some parts could not be checked.",
-     "The EEA figures are quoted second-hand, Amphora’s map polygons were not downloaded, and the “top 5 in Europe” "
+     "Amphora’s map polygons were not downloaded, the 2006–2012 EEA figure was not seen, and the “top 5 in Europe” "
      "ranking rests on the wider Green to Grey network’s data."),
     ("Verdict: largely supported (moderate confidence).",
      "The headline figure stands up and is, if anything, low. The farmland share is not shown, and the headline’s "
@@ -61,7 +62,7 @@ S.append(std_table([
     [C("Total land loss 0.26%, “among the top 5 countries”; “a conservative estimate”"), C("Amphora [1]"),
      C("Read in full")],
     [C("EEA: 920,000 m² (2012–2018) and 190,000 m² (2006–2012); “at least 1.94 square kilometres” since 2006"),
-     C("Amphora [1] ◆"), C("EEA data not seen")],
+     C("Amphora [1]"), C("2012–18 checked [7]")],
     [C("“in nearly 95% of the take-up, farmland rather than natural area was affected”"), C("Amphora [2]"),
      C("Read in full")],
 ], [104 * mm, 34 * mm, 32 * mm]))
@@ -103,6 +104,7 @@ S.append(std_table([
     [C("830,000 m² as a share of Malta’s land (314 km²)"), C("0.264%"), C("0.26%"), grade_tag("C")],
     [C("In FIFA pitches; vs Comino; vs Manoel Island"), C("116; 0.30; 2.7"), C("116; a quarter; two"), grade_tag("C")],
     [C("EEA 2006–12 + 2012–18 + Amphora 2018–23"), C("1.94 km²"), C("at least 1.94 km²"), grade_tag("C")],
+    [C("EEA land take 2012–18, read from chart [7]"), C("0.91–0.94 km²; highest of 39"), C("0.92 km²"), grade_tag("C")],
     [C("New built-up 2018–23, IO, 3-year rule (net)"), C("<b>1.41 km²</b> (gross 1.91)"), C("0.83 km²"), grade_tag("B")],
     [C("New built-up 2018–23, IO, 2-year rule (net)"), C("2.96 km² (gross 4.98)"), C("–"), grade_tag("B")],
     [C("Previously cropland / shrub and grass / bare"), C("65% / 31% / 4%"), C("nearly 95% farmland"), grade_tag("B")],
@@ -144,7 +146,8 @@ S.append(std_table([
        "not two)."), verd("SUPPORTED", GREENC)],
     [C("<b>C.</b> Nearly 95% of take-up was farmland"), C("Independent data: 65% cropland, 31% shrub or grass."),
      verd("NOT SHOWN", GREY)],
-    [C("<b>D.</b> EEA figures and the 1.94 km² total"), C("Sum correct; EEA values not seen."), verd("NOT CHECKED", GREY)],
+    [C("<b>D.</b> EEA figures and the 1.94 km² total"), C("Sum correct; EEA chart gives 0.91–0.94 km² for 2012–18 [7]; "
+       "2006–12 not seen."), verd("SUPPORTED", GREENC)],
 ], [52 * mm, 88 * mm, 30 * mm], valign="MIDDLE"))
 
 # ================================================================== 7
@@ -158,7 +161,7 @@ S.append(P("<b>Why.</b> (1) The figure is consistent with an independent satelli
 S.append(P("Evidence we are asking for", h2))
 S.append(requests_list([
     "Amphora’s polygons (the map layer) and the basis and period of the 95% farmland figure.",
-    "The EEA land-take values for Malta, 2006–2012 and 2012–2018.",
+    "The EEA land-take value for Malta, 2006–2012.",
 ]))
 
 # ================================================================== 8
@@ -182,6 +185,9 @@ S += references([
     ("5", "Impact Observatory and Esri. 10 m Annual Land Use Land Cover (9-class) V2, 2017–2023; Microsoft Planetary "
           "Computer; retrieved 4 Oct 2026.", "https://planetarycomputer.microsoft.com/dataset/io-lulc-annual-v02"),
     ("6", "MiŻien. Data and calculations: data/cc-019/; tools/cc-019-report/.", ""),
+    ("7", "European Environment Agency (2019, modified 2024). Country comparison: land take and land recultivation in "
+          "EEA39 in the period 2012–2018 (in proportion of country area). Value read from the chart.",
+     "https://www.eea.europa.eu/en/analysis/maps-and-charts/country-comparison-land-take-and"),
 ])
 
 S.append(PageBreak())

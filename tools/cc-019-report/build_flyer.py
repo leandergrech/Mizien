@@ -24,14 +24,14 @@ build_flyer(Flyer(
             "Independent data; 31% was shrub or grass. Amphora: nearly 95%."),
            ("Noisy", ORANGE, "Single-year maps mislead",
             "Built-up area swings by 15 km² a year; only consistent change counts."),
-           ("EEA", ORANGE, "Not checked",
-            "EEA figures quoted second-hand; “top 5 in Europe” ranking.")],
+           ("#1", ORANGE, "Highest land take in Europe",
+            "EEA, 2012–2018, as a share of country area: about 0.92 km² in Malta.")],
     fair="Amphora described its figure as conservative, and the independent data agree. The farmland share needs a "
          "stated basis.",
     asks=["Amphora’s map polygons.",
           "Basis of the 95% figure.",
-          "EEA land-take data for Malta.",
-          "Development-zone status."],
+          "Development-zone status.",
+          "The 2006–2012 EEA figure."],
     footer="Version 1.0  ·  4 October 2026  ·  Public data only  ·  Right of reply: Amphora Media (not yet sent)",
     pdf_title="Claim Check 019 – 830,000 m2 of green land built over?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

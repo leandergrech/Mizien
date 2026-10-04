@@ -26,14 +26,15 @@ claim:
 counter_evidence: 'Independent check with Impact Observatory/Esri 10 m land cover (2017-2023): consistent new built-up
   1.9 km2 gross, 1.4 km2 net (3-year rule); 5.0 / 3.0 km2 (2-year rule), so 0.83 km2 is plausible and conservative.
   Arithmetic (0.26%, 116 pitches, 1.94 km2 since 2006) checks out. Previous cover: 65% crops, 31% rangeland, 4%
-  bare, so the ''nearly 95% farmland'' share is not reproduced. EEA figures second-hand.'
+  bare, so the ''nearly 95% farmland'' share is not reproduced. EEA chart (2012-2018): about 0.91-0.94 km2, highest
+  land take of EEA39, matching the 920,000 m2 quoted; 2006-2012 figure not seen.'
 tests: Impact Observatory LULC v2 (Planetary Computer); OSM island areas; Amphora articles read in full.
 why_low_hanging: 'Done: Claim Check 019 report and flyer.'
 tags: []
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: High
-caveats: Right of reply to Amphora Media not yet sent. Amphora polygons and EEA land-take table not obtained; class
+caveats: Right of reply to Amphora Media not yet sent. Amphora polygons and EEA 2006-2012 figure not obtained; class
   definitions differ between land-cover models.
 right_of_reply:
   sent: null
@@ -42,6 +43,7 @@ right_of_reply:
 evidence_shown:
 - Impact Observatory/Esri land cover change (data/cc-019/io_lulc_change.csv)
 - Amphora Media articles (literature/CC-019/primary-source.md)
+- EEA land take 2012-2018 chart (data/cc-019/eea_land_take.csv)
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf

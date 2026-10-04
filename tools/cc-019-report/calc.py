@@ -33,6 +33,12 @@ for rule, lab in (("strict", "3-year rule"), ("two-year", "2-year rule")):
         f"reverse change {r['reverse_km2']} km2; net {r['net_km2']} km2")
     add(f"IO land cover, new built-up from crops / rangeland ({lab})", f"{r['from_crops_pct']} / {r['from_rangeland_pct']}",
         "%", "Impact Observatory LULC v2", "Amphora: nearly 95% farmland")
+T = {r["item"]: float(r["value"]) for r in csv.DictReader(open(D / "eea_land_take.csv"))}
+lo, hi = T["Malta land take 2012-2018 (low reading)"], T["Malta land take 2012-2018 (high reading)"]
+add("EEA chart: Malta land take 2012-2018", f"{lo * land / 1e12:.2f}-{hi * land / 1e12:.2f}", "km2", "EEA chart x land area",
+    "Amphora quotes 920,000 m2 (0.92 km2)")
+add("EEA chart: Malta's rank for land take 2012-2018", int(T["Malta rank among EEA39 countries 2012-2018"]), "of 39",
+    "EEA chart", "proportion of country area")
 s = C["strict"]
 add("Amphora figure vs IO net change (3-year rule)", round(lost / 1e6 / float(s["net_km2"]), 2), "ratio", "calculated",
     "below 1 = Amphora lower than the independent estimate")
