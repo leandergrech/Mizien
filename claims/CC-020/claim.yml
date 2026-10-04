@@ -1,28 +1,38 @@
 id: CC-020
-title: 'Noise: compliant on paper'
+title: 'EP study: noise law not the cause'
 category: Noise
 status: Not started
 verdict: null
 verdict_confidence: null
 claim:
-  text: A 2026 report for the European Parliament's Committee on Petitions finds Malta compliant with EU noise law
-    on paper while construction, fireworks and entertainment noise fall through regulatory gaps; 21% of Maltese
-    rank noise a top environmental priority against 9% across the EU.
-  speaker: Report for the European Parliament Committee on Petitions; Government of Malta (compliance position to
-    locate)
-  date: '2026'
-  wording_status: 'Paraphrase: locate quote'
+  text: 'Study for the European Parliament''s Committee on Petitions (Ecocentric Consulting, February 2026): Malta''s
+    noise problems are not caused by how it transposed and implements the Environmental Noise Directive, with only
+    two meaningful non-conformity issues, because the noise people complain about (construction, entertainment,
+    neighbourhood) falls outside the Directive''s scope; it cites a 2019 survey in which 21% of Maltese ranked noise
+    among their top four environmental issues against an EU28 average of 9%.'
+  speaker: Peter Hjerp and Clare Coffey (Ecocentric Consulting), study for the European Parliament Committee on
+    Petitions (PE 783.089)
+  date: '2026-02'
+  wording_status: Verbatim found
   sources:
+  - title: Analysing Malta's implementation of Directive 2002/49/EC on the Assessment and Management of Environmental
+      Noise (PE 783.089)
+    publisher: European Parliament, Policy Department for Citizens, Equality and Culture
+    date: '2026-02'
+    url: https://doi.org/10.2861/6278624
+    note: Primary text (maintainer-supplied copy; key findings and conclusions read). Key findings of chapters 3 and 6 and the conclusions hold
+      the claim; verbatim passages in literature/CC-020/primary-source.md.
   - title: Malta urged to address construction and entertainment noise
     publisher: MaltaToday
     date: '2026'
     url: https://www.maltatoday.com.mt/news/national/139887/malta_urged_to_address_construction_and_entertainment_noise
-    note: Reports the EP study; locate the study and any government statement of compliance.
+    note: News report of the study; locator only.
   - title: Malta noise fact sheet 2022
     publisher: European Environment Agency
     date: '2022'
     url: https://www.eea.europa.eu/en/analysis/maps-and-charts/malta-noise-fact-sheet-2022
     note: Exposure figures under the Environmental Noise Directive.
+  quote: The transposition and implementation of the END evidently is not the cause of the noise problems in Malta.
 counter_evidence: Legal compliance with the Environmental Noise Directive is not the same as exposure below WHO
   guideline levels.
 tests: EEA noise exposure data; WHO Environmental Noise Guidelines for the European Region (2018); ERA strategic
@@ -33,7 +43,9 @@ tags:
 tags_provisional: true
 priority: Queue
 data_readiness: Medium
-caveats: Locate the government's own compliance statement before any report; otherwise check the EP study's claims.
+caveats: The claimant is an EU body's commissioned study, not a Maltese speaker; the opinions are the authors', not the
+  European Parliament's official position. Check the study's reasoning and figures (transposition table, infringement
+  record, 2019 survey) against EEA END reporting, ERA noise maps and WHO guidelines, and read it alongside CC-104.
 right_of_reply:
   sent: null
   deadline: null
