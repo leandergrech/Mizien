@@ -4355,19 +4355,19 @@
           ]
         },
         {
-          "id": "interconnect-malta",
-          "named": 2,
-          "pairs": 0,
-          "themes": []
-        },
-        {
           "id": "newsbook",
           "named": 0,
-          "pairs": 6,
+          "pairs": 7,
           "themes": [
             "T4",
             "T6"
           ]
+        },
+        {
+          "id": "interconnect-malta",
+          "named": 2,
+          "pairs": 0,
+          "themes": []
         },
         {
           "id": "planning-authority",
@@ -4927,6 +4927,15 @@
           ]
         },
         {
+          "id": "newsbook",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T4",
+            "T6"
+          ]
+        },
+        {
           "id": "pl",
           "named": 1,
           "pairs": 1,
@@ -4953,15 +4962,6 @@
           "named": 1,
           "pairs": 0,
           "themes": []
-        },
-        {
-          "id": "newsbook",
-          "named": 0,
-          "pairs": 3,
-          "themes": [
-            "T4",
-            "T6"
-          ]
         },
         {
           "id": "ministry-health",
@@ -6763,6 +6763,15 @@
           ]
         },
         {
+          "id": "newsbook",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T4",
+            "T6"
+          ]
+        },
+        {
           "id": "pl",
           "named": 0,
           "pairs": 2,
@@ -6785,15 +6794,6 @@
           "pairs": 1,
           "themes": [
             "T4"
-          ]
-        },
-        {
-          "id": "newsbook",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T4",
-            "T6"
           ]
         },
         {
@@ -7887,6 +7887,15 @@
       "role": null,
       "links": [
         {
+          "id": "ministry-environment",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T4",
+            "T6"
+          ]
+        },
+        {
           "id": "infrastructure-malta",
           "named": 0,
           "pairs": 3,
@@ -7895,9 +7904,9 @@
           ]
         },
         {
-          "id": "ministry-environment",
+          "id": "climate-action-authority",
           "named": 0,
-          "pairs": 3,
+          "pairs": 2,
           "themes": [
             "T4",
             "T6"
@@ -7907,15 +7916,6 @@
           "id": "government-of-malta",
           "named": 0,
           "pairs": 2,
-          "themes": [
-            "T4",
-            "T6"
-          ]
-        },
-        {
-          "id": "climate-action-authority",
-          "named": 0,
-          "pairs": 1,
           "themes": [
             "T4",
             "T6"
