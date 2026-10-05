@@ -515,6 +515,16 @@ a.claimref { text-decoration-style: dotted; text-underline-offset: 3px; font-wei
 .cell summary { cursor: pointer; font-weight: 700; color: var(--paper-link); }
 .cell[open] summary { margin-bottom: 4px; }
 .kind-topics { grid-template-columns: 1fr; }
+.notice.is-correction { background: #eee8f8; border-left-color: #6b4aa6; }
+.notice + .notice { margin-top: 8px; }
+.tl-ev.k-correction::before { background: #6b4aa6; border-color: #4b3080; }
+.change-list { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 0; }
+.change-list li { display: grid; grid-template-columns: 150px 1fr; gap: 2px 12px; margin: 0; padding: 9px 0; border-bottom: 1px solid var(--paper-line); }
+.change-what { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.change-text { flex-basis: 100%; font-size: 14.5px; }
+.badge.change-correction { --v: #8e2f25; --v-ink: #fff; }
+.badge.change-clarification { --v: #6b4aa6; --v-ink: #fff; }
+@media (max-width: 640px) { .change-list li { grid-template-columns: 1fr; } }
 
 @media (max-width: 640px) {
   .site-head { padding: 14px 16px 6px; }

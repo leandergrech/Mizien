@@ -1,0 +1,64 @@
+---
+layout: base.njk
+title: Corrections and changes
+description: Every correction, clarification and new version of a Miżien check, dated when the research was done, with what changed. Errors are corrected openly.
+permalink: /corrections/
+---
+{%- import "macros.njk" as m -%}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li aria-current="page">Corrections and changes</li></ol>
+</nav>
+
+<article class="page prose-page corrections-page">
+  <header class="page-head">
+    <p class="kicker">Corrections</p>
+    <h1>Corrections and changes</h1>
+    <p class="lead">Errors are corrected openly, and nothing is changed silently. Every check carries a version
+      number. Each new version, correction and clarification is listed here with the date the research was done and
+      what changed.</p>
+  </header>
+
+  <section aria-labelledby="h-policy">
+    <h2 id="h-policy">How corrections work</h2>
+    <ul>
+      <li>A <strong>correction</strong> fixes something a check got wrong: a figure, a source, an attribution or a
+        verdict. It is shown at the top of the check, in its timeline and below.</li>
+      <li>A <strong>clarification</strong> adds a note where something was right but could mislead.</li>
+      <li>A <strong>new version</strong> of a report adds evidence or changes its reasoning; its revision note says what
+        changed and whether the verdict changed.</li>
+      <li>Dates are those of the research, from each check's research log (<code>history</code> in its claim record),
+        not the date the site was updated. Every change to a record is also public in
+        <a href="{{ site.repo }}/commits/main/claims" rel="nofollow">the repository's history</a>.</li>
+    </ul>
+    <p>Found an error? <a href="{{ site.repo }}/issues/new?template=contest-verdict.yml">Report it or contest a
+      verdict</a>, with the evidence. Updates are also in the <a href="/feed.xml">feed</a>.</p>
+  </section>
+
+  <section aria-labelledby="h-fixes">
+    <h2 id="h-fixes">Corrections and clarifications</h2>
+    {%- set fixlist = mizien.changes | without("step", "version") %}
+    {%- if fixlist.length %}
+    <ol class="change-list">
+      {%- for x in fixlist %}
+      <li class="is-{{ x.step }}"><span class="tl-date">{{ x.date }}</span>
+        <span class="change-what"><span class="badge change-{{ x.step }}">{{ x.label }}</span> {{ m.claim(x.claim) }}
+        <span class="change-text">{{ x.text }}</span></span></li>
+      {%- endfor %}
+    </ol>
+    {%- else %}
+    <p>None so far.</p>
+    {%- endif %}
+  </section>
+
+  <section aria-labelledby="h-versions">
+    <h2 id="h-versions">Versions of each check</h2>
+    <p>Each report's revision log: the first issue of every check and each version after it.</p>
+    <ol class="change-list">
+      {%- for x in mizien.changes | where("step", "version") %}
+      <li><span class="tl-date">{{ x.date }}</span>
+        <span class="change-what"><b>{{ x.label }}</b> {{ m.claim(x.claim) }}{% if x.text %}
+        <span class="change-text">{{ x.text }}</span>{% endif %}</span></li>
+      {%- endfor %}
+    </ol>
+  </section>
+</article>

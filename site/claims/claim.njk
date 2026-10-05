@@ -41,6 +41,11 @@ permalink: "/claims/{{ claim.id }}/"
       <a href="#h-time">{% icon "clock" %}<span>Timeline</span></a>
       {%- if c.files.length %}<a href="#h-downloads">{% icon "download" %}<span>Downloads</span></a>{% endif %}
     </nav>
+    {%- for x in c.corrections | reverse %}
+    <aside class="notice is-correction" aria-label="{{ x.label }}">
+      <p><strong>{{ x.label }}, {{ x.date }}.</strong> {{ x.text }} <a href="/corrections/">All corrections and changes</a>.</p>
+    </aside>
+    {%- endfor %}
     {%- if c.is_draft and c.verdict %}
     <aside class="notice" aria-label="Draft notice">
       <p><strong>This is a draft check.</strong> The body concerned has not yet had the chance to reply, and the verdict
@@ -226,8 +231,8 @@ permalink: "/claims/{{ claim.id }}/"
     <section class="timeline-sec" aria-labelledby="h-time">
       <h2 id="h-time">Timeline</h2>
       <p class="conn-intro">What was said, what was published before and after it, and each step of this check, in date
-        order. Statements and sources carry the date they were published. Check steps carry the date the change was
-        recorded in the public repository, and link to it. Other statements by the same body on the same topic show
+        order. Statements and sources carry the date they were published. The steps of the check carry the date the
+        research was done, from the check's research log. Other statements by the same body on the same topic show
         whether a position was repeated, changed or corrected.</p>
       {%- if not c.claim.date %}<p class="small">The date of the statement is not recorded yet.</p>{% endif %}
       {%- if c.timeline.length %}
@@ -241,7 +246,7 @@ permalink: "/claims/{{ claim.id }}/"
               <span class="tl-what"><span class="tl-kind">{% if e.future %}Coming up: {% endif %}{{ e.label }}</span>
               {%- if e.claim %} {{ m.claim(e.claim) }}
               {%- elif e.self %} <span class="tl-text">{{ c.claim.speaker }} (this claim)</span>
-              {%- elif e.kind == "check" %}{% if e.text %} <span class="tl-text">{{ e.text }}</span>{% endif %}{% if e.url %} <a class="tl-change" href="{{ e.url }}" rel="nofollow">see the change</a>{% endif %}
+              {%- elif e.kind == "check" or e.kind == "correction" %}{% if e.text %} <span class="tl-text">{{ e.text }}</span>{% endif %}{% if e.kind == "correction" %} <a class="tl-change" href="/corrections/">all corrections</a>{% endif %}
               {%- elif e.text %} <span class="tl-text">{% if e.url %}<a href="{{ e.url }}" rel="nofollow">{{ e.text }}</a>{% else %}{{ e.text }}{% endif %}{% if e.by %}, {{ e.by }}{% endif %}</span>
               {%- endif %}</span>
             </li>
@@ -251,6 +256,7 @@ permalink: "/claims/{{ claim.id }}/"
         {%- endfor %}
       </ol>
       {%- endif %}
+      <p class="small">Every change to this claim's record is public: <a href="{{ site.repo }}/commits/main/claims/{{ c.id }}/claim.yml" rel="nofollow">history of the record</a>.</p>
     </section>
 
     {%- if c.files.length %}
