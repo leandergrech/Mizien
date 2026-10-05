@@ -139,7 +139,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-107 | Governance & Promises | A net-zero Gozo by 2040 | Drafted | Pledge: Not measurable |
 | CC-108 | Water | WSC: a net-zero impact on groundwater | Not started | - |
 | CC-109 | Transport | EU: transport is 48% of effort-sharing emissions | Not started | - |
-| CC-110 | Transport | EU: 37.7% of new cars zero-emission | Not started | - |
+| CC-110 | Transport | EU: 37.7% of new cars zero-emission | Drafted | Supported |
 | CC-111 | Waste | EU: 621 kg of waste a head, 74% landfilled | Drafted | Supported |
 | CC-112 | Tourism & Population | IMF: population up 25% in a decade | Not started | - |
 | CC-113 | Climate & Energy | EEA: Malta among highest fossil-fuel subsidies | Not started | - |
