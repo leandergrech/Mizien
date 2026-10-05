@@ -66,7 +66,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-034 | Air | Air Quality Plan 'already yielding results' | Not started | - |
 | CC-035 | Air | PM2.5 deaths down two-thirds | Not started | - |
 | CC-036 | Air | Construction dust 'a nuisance, not a health issue' | Not started | - |
-| CC-037 | Air | Highest share reporting pollution | Not started | - |
+| CC-037 | Air | Highest share reporting pollution | Drafted | Supported |
 | CC-038 | Air | Saharan dust behind PM10 spikes | Not started | - |
 | CC-039 | Water | Net Zero Impact Utility | Not started | - |
 | CC-040 | Water | Low water use per head | Not started | - |
