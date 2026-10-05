@@ -60,15 +60,6 @@ outputs:
   flyer_png: flyer.png
 version: '1.1'
 last_reviewed: '2026-10-05'
-location:
-  place: Planning Authority, St Francis Ravelin, Floriana
-  lat: 35.89
-  lon: 14.50314
-  scope: institution
-  icon: ravelin
-thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
-  figure: +34%
-  caption: real house prices, 2015–2025 (EU +25%)
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
              # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
   - id: CC-013A
@@ -91,6 +82,15 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "87,814 approved 2015–2024 [2]."
     rating: "Close"
     tone: green
+location:
+  place: Planning Authority, St Francis Ravelin, Floriana
+  lat: 35.89
+  lon: 14.50314
+  scope: institution
+  icon: ravelin
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: +34%
+  caption: real house prices, 2015–2025 (EU +25%)
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-03
     step: version

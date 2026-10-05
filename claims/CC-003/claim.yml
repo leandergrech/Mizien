@@ -69,15 +69,6 @@ outputs:
   flyer_png: flyer.png
 version: '1.1'
 last_reviewed: '2026-10-05'
-location:
-  place: Auberge de Castille (Office of the Prime Minister), Valletta
-  lat: 35.8959
-  lon: 14.51136
-  scope: institution
-  icon: castille
-thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
-  figure: −44%
-  caption: emissions per person since 2005, as claimed
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
              # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
   - id: CC-003A
@@ -116,6 +107,15 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "A stated aim, not a result. Scope (total or effort-sharing) not given. Same figure appears in the 2026 Labour manifesto (see CC-011)."
     rating: "Unclear scope"
     tone: grey
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: −44%
+  caption: emissions per person since 2005, as claimed
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-02
     step: version

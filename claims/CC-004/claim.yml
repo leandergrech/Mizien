@@ -71,15 +71,6 @@ outputs:
   flyer_png: flyer.png
 version: '1.0'
 last_reviewed: '2026-10-02'
-location:
-  place: Magħtab waste complex
-  lat: 35.93923
-  lon: 14.44073
-  scope: site
-  icon: landfill
-thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
-  figure: 16.7%
-  caption: of municipal waste actually recycled in 2024 (target 55%)
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
              # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
   - id: CC-004A
@@ -112,6 +103,15 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "Outcome measures: 16.7% recycled, 79% landfilled; 2020 target missed, 2025 on course to be missed [3, 6]. The release does not report them."
     rating: "Not substantiated"
     tone: orange
+location:
+  place: Magħtab waste complex
+  lat: 35.93923
+  lon: 14.44073
+  scope: site
+  icon: landfill
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 16.7%
+  caption: of municipal waste actually recycled in 2024 (target 55%)
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-02
     step: version

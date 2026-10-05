@@ -65,15 +65,6 @@ outputs:
   flyer_png: flyer.png
 version: '1.0'
 last_reviewed: '2026-10-05'
-location:
-  place: Auberge de Castille (Office of the Prime Minister), Valletta
-  lat: 35.8959
-  lon: 14.51136
-  scope: institution
-  icon: castille
-thumbnail:
-  figure: 31.3%
-  caption: of people report street or neighbour noise (EU 18.1%), highest in the EU
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
              # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
   - id: CC-020A
@@ -96,6 +87,15 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "Second-hand via ERA 2023c; not traced; EU28 source unknown."
     rating: "Not verified"
     tone: grey
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille
+thumbnail:
+  figure: 31.3%
+  caption: of people report street or neighbour noise (EU 18.1%), highest in the EU
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-05
     step: version

@@ -58,12 +58,6 @@ thumbnail:
   caption: Malta emissions in Eurostat's accounts, 2015-2025, 98.6% of the rise from air transport
 version: '1.0'
 last_reviewed: '2026-10-05'
-location:
-  place: City Gate, Valletta (national claim)
-  lat: 35.89623
-  lon: 14.50907
-  scope: national
-  icon: citygate
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
              # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
   - id: CC-026A
@@ -91,6 +85,12 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "Second-hand: we did not read the report ◆. Not tested."
     rating: "Not tested"
     tone: grey
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: citygate
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-05
     step: version
