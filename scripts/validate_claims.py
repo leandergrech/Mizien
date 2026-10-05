@@ -55,6 +55,10 @@ def check(path: pathlib.Path) -> list:
     c = d["claim"]
     if c.get("wording_status") not in WORDING:
         errs.append(f"unknown wording_status: {c.get('wording_status')}")
+    if c.get("time") is not None and not re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", str(c["time"])):
+        errs.append("claim.time must be HH:MM (24-hour, Malta time) and only goes with a full claim.date")
+    elif c.get("time") is not None and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(c.get("date"))):
+        errs.append("claim.time needs a full claim.date (YYYY-MM-DD)")
     for t in d["tags"]:
         if t not in TAGS:
             errs.append(f"unknown tag: {t} (add it to methodology/pattern-tags.md first)")
