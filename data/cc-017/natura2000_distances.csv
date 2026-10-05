@@ -1,0 +1,63 @@
+sitecode,sitename,designation,marine,area_km2,km_from_new_land,km_from_t2_window,km_from_reference_point,mostly_inside,retrieved
+MT0000111,Żona fil-Baħar fil-Lbiċ,SPA (Birds Directive),yes,255.96,0.4,0.33,1.09,,2026-10-05
+MT0000024,Rdumijiet ta’ Malta: Ir-Ramla taċ-Ċirkewwa sal-Ponta ta’ Bengħisa,SAC/SCI (Habitats Directive),no,23.15,0.51,0.43,1.03,,2026-10-05
+MT0000033,Rdumijiet ta’ Malta: Wied Moqbol sal-Ponta ta’ Bengħisa,SPA (Birds Directive),no,0.55,0.51,0.43,1.03,MT0000024 SAC/SCI (99.9%),2026-10-05
+MT0000014,Il-Ballut ta’ Marsaxlokk,SAC/SCI (Habitats Directive),no,0.23,1.77,1.37,2.65,,2026-10-05
+MT0000011,Għar Dalam,SAC/SCI (Habitats Directive),no,0.0,1.84,1.35,1.9,,2026-10-05
+MT0000035,L-Inħawi ta’ Ħas-Saptan,SAC/SCI (Habitats Directive),no,0.03,2.44,1.97,2.21,,2026-10-05
+MT0000108,Żona fil-Baħar fil-Lvant,SPA (Birds Directive),yes,625.1,3.04,2.99,4.44,,2026-10-05
+MT0000031,Rdumijiet ta’ Malta: Ix-Xaqqa sa Wied Moqbol,SPA (Birds Directive),no,1.43,3.68,3.45,3.15,MT0000024 SAC/SCI (100.0%),2026-10-05
+MT0000023,Il-Magħluq tal-Baħar ta’ Marsaskala,SAC/SCI (Habitats Directive),no,0.04,4.41,4.02,5.26,,2026-10-05
+MT0000102,Żona fil-Baħar fl-Inħawi ta’ Għar Lapsi u ta’ Filfla,SAC/SCI (Habitats Directive),yes,26.29,6.38,6.2,5.86,MT0000111 SPA (100.0%),2026-10-05
+MT0000004,Il-Maqluba (limiti tal-Qrendi),SAC/SCI (Habitats Directive),no,0.03,7.11,6.87,6.63,,2026-10-05
+MT0000101,Żona fil-Baħar bejn Rdum Majjiesa u Għar Lapsi,SAC/SCI (Habitats Directive),yes,14.6,10.7,10.49,10.2,MT0000111 SPA (95.8%),2026-10-05
+MT0000032,Rdumijiet ta’ Malta: Ras il-Pellegrin sax-Xaqqa,SPA (Birds Directive),no,3.77,10.88,10.65,10.39,MT0000024 SAC/SCI (100.0%),2026-10-05
+MT0000018,L-Inħawi tal-Buskett u tal-Girgenti,SAC/SCI (Habitats Directive),no,2.45,11.65,11.35,11.19,MT0000018 SPA (100.0%),2026-10-05
+MT0000018,L-Inħawi tal-Buskett u tal-Girgenti,SPA (Birds Directive),no,2.45,11.65,11.35,11.19,MT0000018 SAC/SCI (100.0%),2026-10-05
+MT0000016,Filfla u l-Gżejjer ta’ Madwarha,SAC/SCI (Habitats Directive),no,0.07,11.78,11.5,11.26,MT0000016 SPA (100.0%),2026-10-05
+MT0000016,Filfla u l-Gżejjer ta’ Madwarha,SPA (Birds Directive),no,0.07,11.78,11.5,11.26,MT0000016 SAC/SCI (100.0%),2026-10-05
+MT0000105,Żona fil-Baħar bejn Il-Ponta ta’ San Dimitri (Għawdex) u Il-Qaliet,SAC/SCI (Habitats Directive),yes,158.8,11.83,11.43,11.99,MT0000112 SPA (74.9%),2026-10-05
+MT0000002,L-Inħawi ta’ Pembroke,SAC/SCI (Habitats Directive),no,0.97,12.65,12.23,12.76,,2026-10-05
+MT0000036,L-Inħawi tal-Wej,SAC/SCI (Habitats Directive),no,0.2,13.93,13.41,13.71,,2026-10-05
+MT0000025,L-Għar tal-Iburdan u l-Inħawi tal-Madwar,SAC/SCI (Habitats Directive),no,0.69,14.28,13.92,13.86,,2026-10-05
+MT0000112,Żona fil-Baħar madwar Għawdex,SPA (Birds Directive),yes,556.34,14.86,14.4,14.85,,2026-10-05
+MT0000008,L-Għadira s-Safra u l-Iskoll tal-Għallis,SAC/SCI (Habitats Directive),no,0.03,16.54,16.06,16.48,,2026-10-05
+MT0000113,Żona fil-Baħar fil-Punent,SAC/SCI (Habitats Directive),yes,464.95,16.77,16.43,16.29,,2026-10-05
+MT0000007,Is-Salini,SAC/SCI (Habitats Directive),no,0.24,17.14,16.63,16.97,,2026-10-05
+MT0000107,Żona fil-Baħar fil-Grigal,SPA (Birds Directive),yes,351.65,17.38,17.16,17.85,,2026-10-05
+MT0000003,Il-Ballut tal-Wardija,SAC/SCI (Habitats Directive),no,0.2,18.77,18.27,18.5,,2026-10-05
+MT0000110,Żona fil-Baħar fin-Nofsinhar,SPA (Birds Directive),yes,834.88,18.89,18.6,18.78,MT0000116 SAC/SCI (99.9%),2026-10-05
+MT0000116,Żona fil-Baħar fl-inħawi tal-Graben ta’ Medina,SAC/SCI (Habitats Directive),yes,911.95,18.89,18.59,18.77,MT0000110 SPA (91.5%),2026-10-05
+MT0000006,Is-Simar (limiti ta’ San Pawl il-Baħar),SAC/SCI (Habitats Directive),no,0.58,19.41,18.91,19.15,MT0000006 SPA (100.0%),2026-10-05
+MT0000006,Is-Simar (limiti ta’ San Pawl il-Baħar),SPA (Birds Directive),no,0.58,19.41,18.91,19.15,MT0000006 SAC/SCI (100.0%),2026-10-05
+MT0000010,Ix-Xagħra tal-Kortin,SAC/SCI (Habitats Directive),no,0.12,19.78,19.26,19.54,,2026-10-05
+MT0000021,L-Inħawi tal-Imġiebaħ u tal-Miġnuna,SAC/SCI (Habitats Directive),no,1.76,19.87,19.34,19.66,,2026-10-05
+MT0000022,Il-Gżejjer ta’ San Pawl (Selmunett),SAC/SCI (Habitats Directive),no,0.11,19.92,19.41,19.76,,2026-10-05
+MT0000012,Wied il-Miżieb,SAC/SCI (Habitats Directive),no,0.25,20.98,20.48,20.71,,2026-10-05
+MT0000015,L-Inħawi tal-Għadira,SAC/SCI (Habitats Directive),no,0.98,23.13,22.63,22.87,MT0000015 SPA (100.0%),2026-10-05
+MT0000015,L-Inħawi tal-Għadira,SPA (Birds Directive),no,0.98,23.13,22.63,22.87,MT0000015 SAC/SCI (100.0%),2026-10-05
+MT0000009,L-Inħawi tar-Ramla tat-Torri u tal-Irdum tal-Madonna,SAC/SCI (Habitats Directive),no,0.75,23.51,22.99,23.32,MT0000009 SPA (100.0%),2026-10-05
+MT0000009,L-Inħawi tar-Ramla tat-Torri u tal-Irdum tal-Madonna,SPA (Birds Directive),no,0.75,23.51,22.99,23.32,MT0000009 SAC/SCI (100.0%),2026-10-05
+MT0000109,Żona fil-Baħar fix-Xlokk,SPA (Birds Directive),yes,219.16,26.24,26.21,26.53,,2026-10-05
+MT0000017,Kemmuna u l-Gżejjer ta’ Madwarha,SAC/SCI (Habitats Directive),no,2.95,26.73,26.2,26.52,MT0000017 SPA (100.0%),2026-10-05
+MT0000017,Kemmuna u l-Gżejjer ta’ Madwarha,SPA (Birds Directive),no,2.95,26.73,26.2,26.52,MT0000017 SAC/SCI (100.0%),2026-10-05
+MT0000104,Żona fil-Baħar bejn Il-Ponta tal-Ħotba u Tal-Fessej (Għawdex),SAC/SCI (Habitats Directive),yes,1.69,31.58,31.09,31.29,MT0000112 SPA (99.6%),2026-10-05
+MT0000026,Il-Qortin tal-Magun u l-Qortin il-Kbir,SAC/SCI (Habitats Directive),no,0.53,32.17,31.65,31.98,,2026-10-05
+MT0000027,Rdumijiet ta’ Għawdex: Ta’ Ċenċ,SPA (Birds Directive),no,1.52,32.26,31.77,31.98,MT0000034 SAC/SCI (92.2%),2026-10-05
+MT0000034,L-Inħawi ta’ Ta’ Ċenċ,SAC/SCI (Habitats Directive),no,1.4,32.26,31.77,31.98,MT0000027 SPA (100.0%),2026-10-05
+MT0000028,Rdumijiet ta’ Għawdex: Id-Dawra tas-Sanap sa Tal-Ħajt,SPA (Birds Directive),no,0.3,33.95,33.47,33.65,MT0000020 SAC/SCI (91.1%),2026-10-05
+MT0000020,L-Inħawi tax-Xlendi u tal-Wied tal-Kantra,SAC/SCI (Habitats Directive),no,2.96,34.11,33.63,33.81,,2026-10-05
+MT0000005,L-Inħawi tar-Ramla,SAC/SCI (Habitats Directive),no,0.07,34.91,34.39,34.69,,2026-10-05
+MT0000001,L-Inħawi ta’ Għajn Barrani,SAC/SCI (Habitats Directive),no,0.55,35.46,34.94,35.24,,2026-10-05
+MT0000013,Iċ-Ċittadella,SAC/SCI (Habitats Directive),no,0.02,36.62,36.13,36.35,,2026-10-05
+MT0000029,Rdumijiet ta’ Għawdex: Il-Ponta ta’ Ħarrux sal-Bajja tax-Xlendi,SPA (Birds Directive),no,0.57,37.21,36.74,36.9,,2026-10-05
+MT0000106,Żona fil-Baħar fit-Tramuntana,SPA (Birds Directive),yes,318.78,38.01,37.59,38.1,MT0000115 SAC/SCI (100.0%),2026-10-05
+MT0000115,Żona fil-Baħar fl-inħawi tal-Graben tat-Tramuntana ta’ Għawdex,SAC/SCI (Habitats Directive),yes,390.01,38.01,37.59,38.1,MT0000106 SPA (81.7%),2026-10-05
+MT0000019,"L-Inħawi tad-Dwejra u tal-Qawra, inkluż Ħaġret il-Ġeneral",SAC/SCI (Habitats Directive),no,0.87,39.45,38.98,39.14,,2026-10-05
+MT0000037,Wied il-Mielaħ u l-Inħawi tal-Madwar,SAC/SCI (Habitats Directive),no,0.65,39.48,38.97,39.24,MT0000037 SPA (100.0%),2026-10-05
+MT0000037,Wied il-Mielaħ u l-Inħawi tal-Madwar,SPA (Birds Directive),no,0.65,39.48,38.97,39.24,MT0000037 SAC/SCI (100.0%),2026-10-05
+MT0000030,Rdumijiet ta’ Għawdex: Il-Ponta ta’ San Dimitri sal-Ponta ta’ Ħarrux,SPA (Birds Directive),no,0.64,39.65,39.18,39.34,MT0000019 SAC/SCI (65.5%),2026-10-05
+MT0000103,Żona fil-Baħar fl-Inħawi tad-Dwejra (Għawdex),SAC/SCI (Habitats Directive),yes,2.29,39.65,39.19,39.33,MT0000112 SPA (99.8%),2026-10-05
+MT0000117,Żona fil-Baħar fl-inħawi tal-Punent tal-Graben ta’ Malta,SAC/SCI (Habitats Directive),yes,201.28,41.33,41.11,40.8,,2026-10-05
+MT0000118,Żona fil-Baħar fl-inħawi tal-Majjistral tal-Graben ta’ Malta,SAC/SCI (Habitats Directive),yes,107.21,65.4,64.97,65.04,,2026-10-05
+MT0000114,Żona fil-Baħar fil-Majjistral,SPA (Birds Directive),yes,55.9,76.87,76.47,76.48,,2026-10-05

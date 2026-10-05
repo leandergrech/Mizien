@@ -36,15 +36,16 @@ claim:
 counter_evidence: 'Existing works confirmed: Sentinel-2 shows +3.7 ha (+/-1) at Terminal 2, 2023-2026 (stated ~30,000
   m2, ~1 Mt inert fill). No site, size, cost, fill source, screening or call for the large-scale project found by
   3 Oct 2026. Seabed study unpublished since 2019; budget lines EUR 500,000 (2023) -> 10,000 (2025). Three Natura
-  2000 sites ~1 km from the Freeport incl. marine SPA MT0000111 (256 km2). Posidonia meadows -34% in 50 years (Telesca
-  et al. 2015).'
+  2000 designations within ~0.5 km of the new Terminal 2 land, two of them overlapping on the same cliffs (SAC
+  MT0000024, SPA MT0000033); marine SPA MT0000111 (256 km2) ~0.4 km away. Posidonia meadows -34% in 50 years across
+  the Mediterranean (Telesca et al. 2015).'
 tests: Sentinel-2 L2A (2017-2026); EEA Natura 2000 (2024); Budget Speech 2026; Freeport Corporation statements;
   seagrass literature.
 why_low_hanging: 'Done: Claim Check 017 report and flyer.'
 tags:
 - Promise-without-baseline
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: Medium
 caveats: Right of reply to the Ministry for Finance and the Environment Ministry not yet sent. Absence of public
   steps is from searches, not proof. Benthic habitat maps not obtained.
@@ -56,12 +57,13 @@ evidence_shown:
 - Budget Speech 2026 pp. 52-53 (literature/CC-017/primary-source.md)
 - Sentinel-2 land series at Terminal 2 (data/cc-017/s2_land_t2.csv)
 - EEA Natura 2000 sites near the Freeport (data/cc-017/natura2000_near_freeport.csv)
+- Distances from the Terminal 2 reclamation to Natura 2000 sites (data/cc-017/natura2000_distances.csv)
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-03'
+version: '1.1'
+last_reviewed: '2026-10-05'
 location:
   place: Malta Freeport, Birżebbuġa
   lat: 35.81859
