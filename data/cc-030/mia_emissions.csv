@@ -1,0 +1,22 @@
+item,year,value,unit,source,access_note
+Scope 1 GHG emissions,2015,174,t CO2,MIA Sustainability Report 2025 GRI 102-5 (p.124),Read in full (PDF). Base year
+Scope 1 GHG emissions,2024,418,t CO2,MIA Sustainability Report 2025 GRI 102-5,Read in full
+Scope 1 GHG emissions,2025,813,t CO2,MIA Sustainability Report 2025 GRI 102-5,Read in full. Limited assurance by PwC Malta (ISAE 3000)
+Scope 2 GHG emissions (location based),2015,6775,t CO2,MIA Sustainability Report 2025 GRI 102-6,Read in full
+Scope 2 GHG emissions (location based),2024,4557,t CO2,MIA Sustainability Report 2025 GRI 102-6,Read in full
+Scope 2 GHG emissions (location based),2025,4582,t CO2,MIA Sustainability Report 2025 GRI 102-6,Read in full. Limited assurance by PwC Malta
+Scope 2 GHG emissions (market based),2025,4693,t CO2,MIA Sustainability Report 2025 GRI 102-6,Read in full
+Scope 3 Category 6 business travel,2025,49,t CO2,MIA Sustainability Report 2025 GRI 102-7,Read in full. Not covered by the assurance scope
+Scope 3 Category 11 use of sold products (aircraft incl. APU and GPU),2024,92705,t CO2,MIA Sustainability Report 2025 GRI 102-7,"Read in full. 2024 covered the landing and take-off cycle only"
+Scope 3 Category 11 use of sold products (aircraft incl. APU and GPU),2025,673004,t CO2,MIA Sustainability Report 2025 GRI 102-7,"Read in full. 2025 covers the full flight path (method change)"
+Scope 3 total,2024,101538,t CO2,MIA Sustainability Report 2025 GRI 102-7,Read in full
+Scope 3 total,2025,732913,t CO2,MIA Sustainability Report 2025 GRI 102-7,Read in full. Not covered by the assurance scope
+Carbon credits purchased for residual emissions,2025,5450,t CO2,MIA Sustainability Report 2025 p.33,"Read in full. Three projects: Canada 1,670 t, France 2,160 t, Uganda 1,620 t"
+Passengers,2025,10061292,passengers,MIA Sustainability Report 2025 GRI 102-8,Read in full
+Passengers,2024,8957391,passengers,MIA Sustainability Report 2025 GRI 102-8,Read in full
+Aircraft movements,2025,65470,movements,"Search-result summary of MIA 2025 traffic release; not read in the original",Second-hand. Cross-check: Sep 2025 6013 and Nov 2025 4973 movements in MIA company announcements (read)
+Scope 2 emission factor (Enemalta residual mix),2025,0.389,kg CO2/kWh,MIA Sustainability Report 2025 GRI 102 note,Read in full
+Airfield electrification programme cost,2026,12.5,EUR million,MIA press release May 2026,Read in full
+EU AFIF grant,2026,5.4,EUR million,MIA press release May 2026,Read in full
+Avoided CO2 once operational (average),2026,1000,t CO2 per year,MIA press release May 2026,Read in full. Completion 2028; gross or net of grid electricity not stated
+Hatch-pit systems,2026,35,units,MIA press release May 2026,Read in full

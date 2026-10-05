@@ -2,40 +2,96 @@ id: CC-030
 title: Carbon-neutral airport
 category: Climate & Energy
 subtopic: Emissions & targets
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
   text: 'Malta International Airport: it has reached carbon neutrality (ACA Level 3+) and its EUR 12.5m airfield
     electrification will avoid 1,000 tonnes of CO2 a year.'
   speaker: Malta International Airport plc
   date: '2026-05-25'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
   - title: Airfield electrification at MIA set to avoid 1,000 tonnes of carbon dioxide emissions every year
     publisher: The Malta Independent
     date: 25 May 2026
     url: https://www.independent.com.mt/articles/2026-05-25/local-news/Airfield-electrification-at-MIA-set-to-avoid-1-000-tonnes-of-carbon-dioxide-emissions-every-year-6736289990
-    note: Locates the claim.
-counter_evidence: Level 3+ relies on carbon credits for residual airport emissions and excludes flights; passengers
-  passed 10 million in 2025.
-tests: ACA scope definitions; MIA sustainability report; flight emissions.
+    note: Locates the claim (not readable from the cloud network; the company's own release was used).
+  - title: Airfield electrification at MIA set to avoid 1,000 tonnes of CO2 emissions annually
+    publisher: Malta International Airport plc
+    date: 25 May 2026
+    url: https://maltairport.com/corporate-news/airfield-electrification-at-mia-set-to-avoid-1000-tonnes-of-co2-emissions-annually/
+    note: Primary text (press release, read in full 5 Oct 2026).
+  - title: Sustainability Report 2025
+    publisher: Malta International Airport plc
+    date: '2026'
+    url: https://maltairport.com/app/uploads/2026/10/Final_MIA26-Sustaibability.pdf
+    note: Scope 1-3 tables, 5,450 t of credits, PwC Malta limited assurance on Scope 1 and 2 (read, 5 Oct 2026).
+  quote: Malta International Airport is implementing a €12.5 million Airfield Electrification Programme, which is set to avoid the emission of an average of 1,000 tonnes of carbon dioxide annually.
+counter_evidence: Level 3+ covers Scope 1, Scope 2 and business travel only, so 99.3% of the reported 2025 footprint (738,308 t,
+  mostly aircraft) is outside the neutral boundary; credits cover 0.74% of it. Scope 1 + 2 is 22% below 2015 and rose
+  8% in 2025 (company target -65% by 2030). The avoided tonnes fall in Scope 3, and the release gives no method, baseline
+  or grid-emissions treatment, so gross or net is unknown. Padhra (2018) shows the saving depends on what is replaced.
+tests: ACA scope definitions; MIA Sustainability Report 2025 (GRI 102 tables, assurance statement, offset appendix); order-of-magnitude inversion of the 1,000 t figure; Crossref-verified ground-power literature.
 why_low_hanging: A specific, attributable statement that public data can test.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: Company-reported figures; only Scope 1 and 2 carry limited assurance (PwC Malta). The ACA directory and the carbon-credit
+  registries were behind bot walls and not consulted; credit quality not assessed. Aircraft movements for 2025 (65,470) are
+  second-hand. Emission rates in the plausibility figure are illustrative assumptions. The Malta Independent article was not
+  readable from the cloud network.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- MIA Sustainability Report 2025, GRI 102 tables and assurance statement (data/cc-030/)
+- MIA press release, 25 May 2026
+- Padhra (2018), doi:10.1016/j.trd.2018.06.015 (abstract read)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-05'
 location:
   place: Malta International Airport, Luqa
   lat: 35.84741
   lon: 14.49229
   scope: site
   icon: pin
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-030A
+    text: "MIA reached carbon neutrality (ACA Level 3+) in 2025"
+    finding: "5,444 t in scope against 5,450 t of credits; Scope 1–2 limited assurance by PwC [2]. ACA directory and registries not checked."
+    rating: "Supported"
+    tone: green
+  - id: CC-030B
+    text: "A €12.5 million airfield electrification programme"
+    finding: "Described in the release with 35 hatch pits, 20 charging points, five substations; 43% EU-funded [1]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-030C
+    text: "It will avoid an average of 1,000 t CO₂ a year"
+    finding: "Plausible size (about 30 kg per turnaround); method, baseline and grid emissions unpublished; completion 2028."
+    rating: "Not yet testable"
+    tone: amber
+  - id: CC-030D
+    text: "Scope of ‘neutral’"
+    finding: "Scope 3 is 99.3% of the reported footprint; Level 3+ does not cover it [2, 4]."
+    rating: "Needs context"
+    tone: amber
+thumbnail:
+  figure: 99.3%
+  caption: of the airport's reported footprint is Scope 3, outside its carbon-neutral boundary
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: started
+    note: "Primary wording found in MIA's press release; Sustainability Report 2025 read (Scope 1-3, credits, PwC assurance); ACA Level 3+ rules read; Padhra (2018) verified in Crossref."
+  - date: 2026-10-05
+    step: version
+    version: "1.0"
+    note: "First issue. No right of reply needed (Largely supported)."
