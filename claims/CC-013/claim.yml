@@ -33,15 +33,16 @@ claim:
     them would drive prices up.
 counter_evidence: Supported in direction by peer-reviewed research on supply constraints (Glaeser et al. 2005; Hilber
   and Vermeulen 2016; Saiz 2010); Anenberg and Kung (2020) find extra supply alone does little for rent burdens.
-  Malta population +31% 2015-2025 (EU +2%); real house prices +34% (EU +25%). Housing-cost overburden rose from
-  1.1% (2015) to 6.0% (2025) while the EU fell to 7.7%; overcrowding 4.7% vs EU 16.8%. 27.5% of dwellings not a
-  main residence (Census 2021).
+  Malta population +31% 2015-2025 (EU +2%); real house prices +34% (EU +25%; Malta 2025 provisional). Housing-cost
+  overburden rose from 1.1% (2015) to 2.9% (2022) while the EU's fell; Eurostat flags a break in Malta's series in
+  2023, after which it held at about 6% (6.0% in 2025; EU 7.7%). Overcrowding 4.7% vs EU 16.8%. 27.5% of
+  dwellings not a main residence (Census 2021).
 tests: Eurostat prc_hpi_a, tipsho10, demo_gind, ilc_lvho07a, ilc_lvho05a; PA approved dwellings 2007-2025; NSO Census
   2021; housing-supply literature.
 why_low_hanging: 'Done: Claim Check 013 report and flyer.'
 tags: []
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: High
 caveats: Right of reply to the Planning Authority not yet sent. Effect size unproven for Malta; affordability worsening;
   approvals are not completions. Prices only, not environmental costs of the permits.
@@ -57,8 +58,8 @@ outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-03'
+version: '1.1'
+last_reviewed: '2026-10-05'
 location:
   place: Planning Authority, St Francis Ravelin, Floriana
   lat: 35.89

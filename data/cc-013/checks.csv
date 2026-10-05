@@ -5,15 +5,19 @@ check,value,unit,source,note
 "Approved units, 2016-2024 average",9319,units/yr,PA,
 Malta: nominal house prices 2015-2024,64,%,Eurostat prc_hpi_a,
 Malta: real house prices 2015-2024,26,%,Eurostat tipsho10,
+Malta: real house prices 2015-2025,34,%,Eurostat tipsho10,used in the report; Eurostat flag 2025: p (provisional)
 Malta: years 2016-2025 with real price growth,9,of 10,Eurostat tipsho10,
 Malta: population growth 2015-2025,30.9,%,Eurostat demo_gind,
-Malta: housing cost overburden 2015 -> 2025,1.1 -> 6.0,% of pop.,Eurostat ilc_lvho07a,
+Malta: housing cost overburden 2015 -> 2022,1.1 -> 2.9,% of pop.,Eurostat ilc_lvho07a,
+Malta: housing cost overburden 2023 -> 2024 -> 2025,6.0 -> 5.9 -> 6.0,% of pop.,Eurostat ilc_lvho07a,Eurostat flag 2023: b (break in series)
 Malta: overcrowding 2015 -> 2025,3.8 -> 4.7,% of pop.,Eurostat ilc_lvho05a,
 EU-27: nominal house prices 2015-2024,53,%,Eurostat prc_hpi_a,
 EU-27: real house prices 2015-2024,21,%,Eurostat tipsho10,
+EU-27: real house prices 2015-2025,25,%,Eurostat tipsho10,used in the report
 EU-27: years 2016-2025 with real price growth,9,of 10,Eurostat tipsho10,
 EU-27: population growth 2015-2025,1.9,%,Eurostat demo_gind,
-EU-27: housing cost overburden 2015 -> 2025,11.2 -> 7.7,% of pop.,Eurostat ilc_lvho07a,
+EU-27: housing cost overburden 2015 -> 2022,11.2 -> 8.7,% of pop.,Eurostat ilc_lvho07a,Eurostat flag 2015: e (estimated); 2016: e (estimated); 2017: e (estimated); 2018: e (estimated)
+EU-27: housing cost overburden 2023 -> 2024 -> 2025,8.8 -> 8.2 -> 7.7,% of pop.,Eurostat ilc_lvho07a,
 EU-27: overcrowding 2015 -> 2025,18.1 -> 16.8,% of pop.,Eurostat ilc_lvho05a,
 "Malta: mean real price growth in years with >=9,000 approvals",3.8,%/yr,calculated,"2017, 2018, 2019, 2022"
 "Malta: mean real price growth in years with <9,000 approvals",1.7,%/yr,calculated,"2016, 2020, 2021, 2023, 2024"
