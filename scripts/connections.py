@@ -147,7 +147,7 @@ def profiles(claim_bodies, reg, edges, records):
         verdicts, topics, patterns = defaultdict(int), defaultdict(int), defaultdict(int)
         for c in claims:
             d = by_id[c]
-            verdicts[d.get("verdict") or "Not yet checked"] += 1
+            verdicts[d.get("verdict") or (d.get("pledge") or {}).get("status") or "Not yet checked"] += 1
             topics[d["category"]] += 1
             for t in d.get("tags") or []:
                 patterns[t] += 1

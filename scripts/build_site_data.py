@@ -77,6 +77,9 @@ def main() -> int:
             "confidence": d.get("verdict_confidence"),
             "speaker": d["claim"].get("speaker", ""),
             "bodies": claim_bodies[d["id"]],
+            **({"subclaims": [{k: s.get(k) for k in ("id", "text", "finding", "rating", "tone")} for s in d["subclaims"]]}
+               if d.get("subclaims") else {}),
+            **({"pledge": pledge_view(d, reg)} if d.get("pledge") else {}),
             "date": str(d["claim"].get("date") or ""),
             "quote": d["claim"].get("quote", ""),
             "version": d.get("version"),
@@ -104,8 +107,13 @@ def main() -> int:
                    "links": [{"id": l["id"], "named": len(l["named_with"]), "pairs": l["pairs"], "themes": list(l["themes"])}
                              for l in p["links"]]} for p in profiles.values()]
     body_types = [{"id": k, "label": v, "colour": register.TYPE_COLOURS[k]} for k, v in register.TYPES.items()]
+    pledge_labels = [{"name": n, "meaning": m, "slug": "pledge-" + slug(n), "colour": PLEDGE_COLOURS.get(n, "#716f8d")}
+                     for n, m in bold_table("pledge-labels.md")]
+    # Overlapping pledges, for the map's pledge network (each pair once, with the reasons).
+    pledge_links = [{"a": x["id"], "b": o["id"], "why": o["why"]}
+                    for x in pledge_network(records, reg, connections.adjacency(edges)) for o in x["overlaps"] if x["id"] < o["id"]]
     out = {"categories": cats, "claims": claims, "edges": edges, "themes": themes, "bodies": map_bodies,
-           "body_types": body_types}
+           "body_types": body_types, "pledge_labels": pledge_labels, "pledge_links": pledge_links}
     text = json.dumps(out, ensure_ascii=False, indent=2)
     for target in (ROOT / "data" / "claims.json", ROOT / "docs" / "data" / "claims.json"):
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -252,11 +260,68 @@ def flyer_preview(cid: str, outputs: dict):
     return {"url": f"/claim-files/{cid}/flyer-preview.webp", "width": w, "height": h}
 
 
+def label_of(d: dict):
+    """What a claim is rated: its verdict, or for a pure pledge (no verdict) its pledge label. (label, slug, kind)"""
+    if d.get("verdict"):
+        return d["verdict"], slug(d["verdict"]), "verdict"
+    status = (d.get("pledge") or {}).get("status")
+    if status:
+        return status, "pledge-" + slug(status), "pledge"
+    return None, None, None
+
+
 def claim_ref(d: dict) -> dict:
-    """The few fields a list of claims needs: number, title and verdict."""
+    """The few fields a list of claims needs: number, title and verdict (or pledge label)."""
+    label, label_slug, kind = label_of(d)
     return {"id": d["id"], "title": d["title"], "path": f"/claims/{d['id']}/", "verdict": d.get("verdict"),
             "verdict_slug": slug(d["verdict"]) if d.get("verdict") else None, "category": d["category"],
-            "status": d.get("status"), "date": str(d["claim"].get("date") or "")}
+            "status": d.get("status"), "date": str(d["claim"].get("date") or ""),
+            "label": label, "label_slug": label_slug, "label_kind": kind}
+
+
+PLEDGE_COLOURS = {   # pledge labels (methodology/pledge-labels.md): a family of their own, apart from the verdict hues
+    "Not measurable": "#716f8d", "Not yet due": "#5c7689", "On track": "#337f71", "Off track": "#ae5d33",
+    "Met": "#23705f", "Missed": "#7c2d4a",
+}
+
+
+def pledge_view(d: dict, reg: dict) -> dict | None:
+    """A pledge block ready to show: the label with its as-of date, who made it, when, in what, and by when."""
+    p = d.get("pledge")
+    if not p:
+        return None
+    fmt = lambda v: (timeline.parse_date(v) or {}).get("label") if v is not None else None
+    occasion = p.get("occasion") or str(p.get("vehicle") or "").split(",")[0].strip()
+    return {"status": p.get("status"), "slug": "pledge-" + slug(p.get("status") or ""), "colour": PLEDGE_COLOURS.get(p.get("status")),
+            "as_of": fmt(p.get("as_of")), "as_of_iso": str(p.get("as_of") or ""), "made_on": fmt(p.get("made_on")),
+            "deadline": fmt(p.get("deadline")), "term_end": fmt(p.get("term_end")), "target": p.get("target"),
+            "vehicle": p.get("vehicle"), "occasion": occasion,
+            "made_by": [body_ref(reg[b]) for b in p.get("made_by") or [] if b in reg],
+            "made_by_ids": [b for b in p.get("made_by") or [] if b in reg],
+            "pure": not d.get("verdict"), "overlaps": [str(x) for x in p.get("overlaps") or []]}
+
+
+def pledge_network(records: list, reg: dict, adj) -> list:
+    """Every pledge with what links it: who made it, when (the occasion), what (topic), and overlapping pledges."""
+    pledges = {d["id"]: d for d in records if d.get("pledge")}
+    out = []
+    for cid, d in pledges.items():
+        v = pledge_view(d, reg)
+        overlaps = {}
+        for o in v["overlaps"]:
+            if o in pledges and o != cid:
+                overlaps.setdefault(o, []).append("listed as overlapping")
+        for o, themes in adj.get(cid, {}).items():
+            if o in pledges:
+                overlaps.setdefault(o, []).append("share a theme")
+        for o, x in pledges.items():
+            if o != cid and x["category"] == d["category"] and x.get("subtopic") and x.get("subtopic") == d.get("subtopic"):
+                overlaps.setdefault(o, []).append(f"same subtopic ({d['subtopic']})")
+        for o in [o for o, x in pledges.items() if o != cid and cid in [str(y) for y in (x["pledge"].get("overlaps") or [])]]:
+            overlaps.setdefault(o, []).append("listed as overlapping")
+        out.append({**claim_ref(d), "pledge": v, "subtopic": d.get("subtopic"),
+                    "overlaps": [{**claim_ref(pledges[o]), "why": sorted(set(w))} for o, w in sorted(overlaps.items())]})
+    return sorted(out, key=lambda x: x["id"])
 
 
 def body_ref(b: dict) -> dict:
@@ -370,6 +435,8 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
             "is_draft": d.get("status") != "Published",
             "limitations": public_limitations(d.get("caveats")),
             "rating": VERDICT_RATING.get(d.get("verdict")),
+            **dict(zip(("label", "label_slug", "label_kind"), label_of(d))),
+            "pledge_view": pledge_view(d, reg),
             "verdict_slug": slug(d["verdict"]) if d.get("verdict") else None,
             "category_slug": slug(d["category"]),
             "sources": [{**jsonable(s), "archive": archive_entry(s.get("url"), manifest)}
@@ -427,7 +494,10 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
                            for d in records for e in timeline.history_events(d) if e["step"] in ("version", "correction", "clarification")),
                           key=lambda x: (x["iso"], x["claim"]["id"], x["label"]), reverse=True),
         "by_kind": by_kind.build(records, claim_bodies, reg, out["themes"], [n for n, _ in bold_table("pattern-tags.md")],
-                                 [n for n, _ in bold_table("verdict-scale.md")], [c["name"] for c in out["categories"]], claim_ref),
+                                 [n for n, _ in bold_table("verdict-scale.md")], [c["name"] for c in out["categories"]], claim_ref,
+                                 [n for n, _ in bold_table("pledge-labels.md")]),
+        "pledges": pledge_network(records, reg, adj),
+        "pledge_labels": out["pledge_labels"],
         "theme_bridges": [{**x, "a_name": theme_names.get(x["a"]), "b_name": theme_names.get(x["b"]),
                            "claims": [claim_ref(by_id[c]) for c in x["claims"]]} for x in connections.bridges(out["themes"])],
         "categories": [{**c, "slug": slug(c["name"])} for c in out["categories"]],
