@@ -22,8 +22,8 @@ build_flyer(Flyer(
             "No site, size, cost, fill source or assessment for the large project."),
            ("7 yrs", ORANGE, "Seabed study unpublished",
             "Promised for public consultation in 2019; still not public."),
-           ("0.2 km", ORANGE, "To mapped seagrass",
-            "Posidonia meadows mapped 0.2 km from the new land; a marine bird area 0.4 km."),
+           ("72 ha", ORANGE, "Mapped seagrass nearby",
+            "Posidonia mapped within 1 km of the new land (coarse 2016 map); a marine bird area 0.4 km away."),
            ("Stable", GREEN, "Malta’s seagrass overall",
             "Malta reports its Posidonia beds favourable and stable; the 34% loss is Mediterranean-wide.")],
     fair="Moving industry away from homes could help residents, and Malta’s seagrass is in good condition overall. "

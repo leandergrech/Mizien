@@ -4,5 +4,5 @@
 for the wording, `references.bib` and `notes.md` for sources and access levels, `data/cc-017/` for the data.
 
 **v1.2 (5 Oct 2026):** Marsaxlokk Bay map (depth, mapped Posidonia, Natura 2000, new land); Malta's Article 17
-assessment of Posidonia beds; the PM's words quoted from Lovin Malta. Verdict unchanged. UNEP-WCMC seagrass polygons
-are not committed (licence).
+assessment of Posidonia beds; the PM's words quoted from Lovin Malta. Verdict unchanged. Seagrass from EMODnet
+Seabed Habitats only (CC BY 4.0; maintainer decision, 5 Oct 2026); the UNEP-WCMC layer is not used.

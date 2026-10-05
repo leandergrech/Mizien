@@ -1,7 +1,7 @@
 """Figures for Claim Check 017, drawn from data/cc-017/ and docs/data/geo.json (run fetch_data.py first).
 
-Figure 3 (v1.2, the Marsaxlokk Bay map) also needs fetch_bay.py's out/ files: the EMODnet depth grid and the UNEP-WCMC
-seagrass polygons, which are not committed (the UNEP-WCMC licence does not allow redistribution)."""
+Figure 3 (v1.2, the Marsaxlokk Bay map) also needs fetch_bay.py's out/bathymetry_bay.tif (the EMODnet depth grid, not
+committed). Seagrass: EMODnet Seabed Habitats only (data/cc-017/seagrass_emodnet_bay.geojson, CC BY 4.0)."""
 import csv, json, math, pathlib
 import numpy as np
 import matplotlib
@@ -135,10 +135,7 @@ def fig3():
         lat = s.bounds.top - (np.arange(H) + 0.5) * s.res[1]
     GX, GY = P(*np.meshgrid(lon, lat))
     dep = np.where(a < 0, -a, np.nan)
-    wc = json.load(open(OUT / "seagrass_wcmc_bay.geojson"))["features"]
-    sg = unary_union([make_valid(transform(P, shape(f["geometry"]))) for f in wc
-                      if f["properties"]["scientific"] == "Posidonia oceanica"])
-    em = unary_union([make_valid(transform(P, shape(f["geometry"])))
+    sg = unary_union([make_valid(transform(P, shape(f["geometry"])))
                       for f in json.load(open(D / "seagrass_emodnet_bay.geojson"))["features"]])
     n2k = [(f["properties"], make_valid(transform(P, shape(f["geometry"]))))
            for f in json.load(open(D / "natura2000_bay.geojson"))["features"]]
@@ -164,8 +161,7 @@ def fig3():
         x, y = tx.get_position()
         if x < X0 + 900 or y < Y0 + 300 or x > X1 - 200 or y > Y1 - 200:  # crowded at the frame edges
             tx.remove()
-    polys(ax, sg, fc=SAGE, ec=GREEN, lw=0.4, alpha=0.95, zorder=3)
-    lines(ax, em, color=GREEN, lw=0.9, ls=(0, (1.2, 1.4)), zorder=4)
+    polys(ax, sg, fc=SAGE, ec=GREEN, lw=0.6, alpha=0.95, zorder=3)
     ax.add_patch(Polygon(land, closed=True, fc="#EDE9DF", ec=SLATE, lw=0.6, zorder=5))
     for prop, g in n2k:
         ls = "-" if prop["type"] == "SAC" else (0, (4, 2))
@@ -208,8 +204,9 @@ def fig3():
     h = [Patch(fc=c, label=l) for c, l in zip(cols, ["Sea 0–10 m deep", "10–20 m", "20–30 m", "30–50 m",
                                                     "over 50 m"])]
     h += [Patch(fc="white", ec=GREY, lw=0.5, label="No depth in the grid")]
-    h += [Patch(fc=SAGE, ec=GREEN, label="Posidonia mapped by UNEP-WCMC v7.1"),
-          Line2D([], [], color=GREEN, lw=0.9, ls=(0, (1.2, 1.4)), label="Posidonia, EMODnet Seabed Habitats (gridded)"),
+    cell = S["EMODnet seagrass map EUSM16me: grid cell size"]["value"].split(" x ")
+    h += [Patch(fc=SAGE, ec=GREEN, label=f"Posidonia mapped by EMODnet (2016 map, cells of about "
+                                         f"{round(int(cell[0]), -1)} × {round(int(cell[1]), -1)} m)"),
           Line2D([], [], color=RED, lw=1.1, label="Natura 2000: Habitats Directive (SAC)"),
           Line2D([], [], color=RED, lw=1.1, ls=(0, (4, 2)), label="Natura 2000: Birds Directive (SPA)"),
           Patch(fc=ORANGE, label="New land at Terminal 2, 2023–2026")]
@@ -218,13 +215,16 @@ def fig3():
     fig.text(0.125, 0.905, "Marsaxlokk Bay: sea depth, mapped seagrass and protected sites around the Freeport",
              fontsize=9.5, color=GREEN, fontweight="bold")
     d1 = S["Depth of the sea within 1 km of the new land: 10th / 50th / 90th percentile"]["value"].split(" / ")
-    sg1 = S["Mapped P. oceanica within 1 km of the new land: UNEP-WCMC v7.1, all P. oceanica"]["value"]
-    dsg = S["Shortest distance, new land to mapped P. oceanica: UNEP-WCMC v7.1, all P. oceanica"]["value"]
+    EM = "EMODnet Seabed Habitats 2025 (map EUSM16me)"
+    sg1 = S[f"Mapped P. oceanica within 1 km of the new land: {EM}"]["value"]
+    dsg = S[f"Shortest distance, new land to mapped P. oceanica: {EM}"]["value"]
+    near = f"is next to the new land ({float(dsg):.2f} km)" if float(dsg) < 0.05 else f"is {float(dsg):.1f} km from the new land"
     ax.text(0, -0.168, f"Within 1 km of the new land the sea is mostly {d1[0]}–{d1[2]} m deep (median {d1[1]} m), "
-             f"with {float(sg1):.0f} ha of mapped Posidonia; the nearest mapped meadow is {float(dsg):.1f} km away.",
+             f"with {float(sg1):.0f} ha of mapped Posidonia; the nearest mapped cell {near}.",
              fontsize=8.6, color=SLATE, transform=ax.transAxes)
-    ax.text(0, -0.19, "Seagrass: UNEP-WCMC, Short F.T. (2021), Global Distribution of Seagrasses v7.1, "
-             "www.unep-wcmc.org (survey dates 1961–2014; not redistributed); EMODnet Seabed Habitats (2025).\nDepth: "
+    ax.text(0, -0.19, "Seagrass: EMODnet Seabed Habitats (2025). Seagrass cover (Essential Ocean Variable) in Europe and "
+             "the Caribbean, version 2025. Maltese map EUSM16me (2016).\nContains information sourced from multiple "
+             "organisations through EMODnet Seabed Habitats. Licensed under CC BY 4.0; clipped to this map.\nDepth: "
              "EMODnet Bathymetry DTM 2024 (cells of about 100 m). Natura 2000: EEA (2024). New land: Copernicus "
              "Sentinel-2. Coastline © OpenStreetMap contributors.", fontsize=7, color=GREY, va="top",
             transform=ax.transAxes)

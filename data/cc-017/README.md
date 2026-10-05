@@ -24,13 +24,19 @@ Added 5 Oct 2026 for report v1.2, written by `tools/cc-017-report/fetch_bay.py` 
 - `natura2000_bay.geojson`: Natura 2000 sites in the frame, full-resolution boundaries from the EEA service (2024
   release; service copyright "EEA, Copenhagen, 2025"), clipped to the frame, as `natura2000.geojson` since v1.0.
 - `seagrass_emodnet_bay.geojson`: EMODnet Seabed Habitats 'Seagrass cover (EOV)' polygons, version 2025, clipped to the
-  frame (European subset, CC BY 4.0; map EUSM16me, determination 2016; gridded at about 230 m).
-- UNEP-WCMC Global Distribution of Seagrasses v7.1 polygons are NOT committed: the UNEP-WCMC General Data License forbids
-  redistribution. `fetch_bay.py` saves them to `tools/cc-017-report/out/` (git-ignored) to draw the map and compute
-  statistics. Likewise the EMODnet depth grid (DTM 2024) stays in `out/`.
-- `bay_stats.csv`: mapped Posidonia in the frame and within 0.5, 1 and 2 km of the Terminal 2 new land, and the shortest
-  distance, per source (UNEP-WCMC datasets 491 and 493 and their union; EMODnet); depth percentiles of the EMODnet grid
-  within 0.5, 1 and 2 km of the new land and on mapped meadows. Distances and areas in UTM 33N.
+  frame (European subset, CC BY 4.0; map EUSM16me, determination 2016, determiner field 'MV, IFREMER'; gridded at
+  about 190 x 230 m). Six polygons, all Posidonia oceanica (Annex I 1120). Attribution: EMODnet Seabed Habitats (2025).
+  Seagrass cover (Essential Ocean Variable) in Europe and the Caribbean, version 2025. European Marine Observation and
+  Data Network (EMODnet) Seabed Habitats. https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/39746d9c-4220-425c-bc26-7cb3056c36a5.
+  Contains information sourced from multiple organisations through EMODnet Seabed Habitats. Licensed under CC BY 4.0.
+  Since the maintainer's decision of 5 Oct 2026 this is the only seagrass layer used (map and statistics); a re-fetch
+  on 5 Oct 2026 returned the same polygons.
+- The EMODnet depth grid (DTM 2024) stays in `tools/cc-017-report/out/` (not committed).
+- `bay_stats.csv`: EMODnet mapped Posidonia in the frame, on land (grid cells overlapping the OpenStreetMap coastline in
+  `docs/data/geo.json`) and within 0.5, 1 and 2 km of the Terminal 2 new land, the grid cell size and the shortest
+  distance; depth percentiles of the EMODnet bathymetry grid within 0.5, 1 and 2 km of the new land, and on mapped
+  meadows in the frame and within 0.5 and 1 km. Distances and areas in UTM 33N. Recompute offline with
+  `python fetch_bay.py --stats`.
 - `article17_1120_mt.csv`: Malta's Article 17 assessment of habitat 1120 (Posidonia beds), Mediterranean marine region,
   periods 2013-2018 and 2019-2024, parsed from the EEA Article 17 web tool (status codes: FV favourable; trend = or S
   stable).

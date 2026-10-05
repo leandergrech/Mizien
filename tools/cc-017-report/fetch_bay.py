@@ -6,36 +6,36 @@ Needs network and numpy, rasterio, pyproj, shapely. The map frame is FRAME (lon/
                                        (2024 release, layers 0 and 1), clipped to the frame (EEA data, as
                                        natura2000.geojson).
   data/cc-017/seagrass_emodnet_bay.geojson  EMODnet Seabed Habitats 'Seagrass cover (EOV)' polygons, version 2025
-                                       (European subset, CC BY 4.0), clipped to the frame (map EUSM16me; the source
-                                       field is blank for the polygons in the bay).
+                                       (European subset, CC BY 4.0), clipped to the frame (map EUSM16me, 2016, gridded
+                                       at about 230 m; the source field is blank for the polygons in the bay). The only
+                                       seagrass layer used (maintainer decision, 5 Oct 2026).
   data/cc-017/article17_1120_mt.csv    Malta's Article 17 assessment of habitat 1120 (Posidonia beds), periods 2013-2018
                                        and 2019-2024, parsed from the EEA Article 17 web tool.
   data/cc-017/bay_stats.csv            derived statistics (seagrass area and distance, depths) for the report.
-  out/seagrass_wcmc_bay.geojson        UNEP-WCMC Global Distribution of Seagrasses v7.1 polygons in the frame. NOT
-                                       committed: the UNEP-WCMC General Data License forbids redistribution. Used only to
-                                       draw the map (with attribution) and to compute the statistics.
   out/bathymetry_bay.tif               EMODnet Digital Bathymetry (DTM 2024) for the frame, via the EMODnet WCS
-                                       (coverage emodnet__mean, 1/16 arc-minute cells). Not committed (git-ignored).
+                                       (coverage emodnet__mean, 1/16 arc-minute cells). Kept in out/ only.
 New land at Terminal 2 = the Sentinel-2 pixels that are land in summer 2026 and sea in summer 2023, in connected groups
 of at least 20 pixels, placed as in distances.py (data/cc-017/s2_mask_*.csv).
+
+  python fetch_bay.py           fetch everything (network), then compute the statistics
+  python fetch_bay.py --stats   statistics only (offline), from the committed files and out/bathymetry_bay.tif
 """
-import csv, datetime, html, json, pathlib, re, urllib.parse, urllib.request
+import csv, datetime, html, json, math, pathlib, re, sys, urllib.parse, urllib.request
 import numpy as np, pyproj, rasterio, shapely
 from rasterio.warp import transform_bounds
 from scipy import ndimage
 from shapely import make_valid
-from shapely.geometry import box, mapping, shape
+from shapely.geometry import Polygon, box, mapping, shape
 from shapely.ops import transform, unary_union
 
 HERE = pathlib.Path(__file__).resolve().parent
-D = HERE.parents[1] / "data" / "cc-017"
+ROOT = HERE.parents[1]
+D = ROOT / "data" / "cc-017"
 OUT = HERE / "out"
 OUT.mkdir(exist_ok=True)
 TODAY = datetime.date.today().isoformat()
 FRAME = (14.505, 35.795, 14.600, 35.862)
 N2K = "https://bio.discomap.eea.europa.eu/arcgis/rest/services/ProtectedSites/Natura2000Sites/MapServer"
-WCMC = ("https://data-gis.unep-wcmc.org/server/rest/services/HabitatsAndBiotopes/Global_Distribution_of_Seagrasses/"
-        "FeatureServer/1/query")
 SBH = "https://ows.emodnet-seabedhabitats.eu/geoserver/emodnet_open/wfs"
 WCS = "https://ows.emodnet-bathymetry.eu/wcs"
 A17 = "https://nature-art17.eionet.europa.eu/article17/habitat/summary/?period={}&subject=1120"
@@ -80,63 +80,66 @@ r, c = np.nonzero(np.isin(lab, keep))
 NEW = unary_union([box(x0 + j * 10, y0 - (i + 1) * 10, x0 + (j + 1) * 10, y0 - i * 10) for i, j in zip(r, c)])
 print(f"new land {NEW.area / 1e4:.2f} ha")
 
-# ---------------------------------------------------------------- 1. Natura 2000, full resolution
-n2k = []
-for layer, kind in ((0, "SAC"), (1, "SPA")):
-    q = {"geometry": ",".join(map(str, FRAME)), "geometryType": "esriGeometryEnvelope", "inSR": 4326, "outSR": 4326,
-         "spatialRel": "esriSpatialRelIntersects", "where": "MS='MT'", "outFields": "SITECODE,SITENAME",
-         "returnGeometry": "true", "f": "geojson"}
-    for ft in json.loads(get(f"{N2K}/{layer}/query", q))["features"]:
-        p = ft["properties"]
-        n2k.append((shape(ft["geometry"]), {"sitecode": p["SITECODE"], "sitename": p["SITENAME"], "type": kind}))
-json.dump(fc(n2k), open(D / "natura2000_bay.geojson", "w"), ensure_ascii=False, separators=(",", ":"))
-print(len(n2k), "Natura 2000 designations in the frame:", sorted(f"{p['sitecode']} {p['type']}" for _, p in n2k))
 
-# ---------------------------------------------------------------- 2. seagrass: EMODnet (open) and UNEP-WCMC (not to share)
-q = {"service": "WFS", "version": "1.1.0", "request": "GetFeature", "typeName": "emodnet_open:seagrass_eov_poly_2025",
-     "bbox": f"{FRAME[1]},{FRAME[0]},{FRAME[3]},{FRAME[2]},urn:ogc:def:crs:EPSG::4326",
-     "outputFormat": "application/json", "srsName": "EPSG:4326"}
-em = [(shape(f["geometry"]), {k: f["properties"][k] for k in ("habsubtype", "anxi_code", "map_id", "source", "det_date")})
-      for f in json.loads(get(SBH, q))["features"]]
-json.dump(fc(em), open(D / "seagrass_emodnet_bay.geojson", "w"), ensure_ascii=False, separators=(",", ":"))
-q = {"geometry": ",".join(map(str, FRAME)), "geometryType": "esriGeometryEnvelope", "inSR": 4326, "outSR": 4326,
-     "spatialRel": "esriSpatialRelIntersects", "outFields": "datasetid,scientific,habitat,eventdate",
-     "returnGeometry": "true", "f": "geojson"}
-wc = [(shape(f["geometry"]), f["properties"]) for f in json.loads(get(WCMC, q))["features"]]
-json.dump(fc(wc), open(OUT / "seagrass_wcmc_bay.geojson", "w"), separators=(",", ":"))
-print(len(em), "EMODnet seagrass polygons;", len(wc), "UNEP-WCMC polygons in the frame")
+def fetch():
+    # ------------------------------------------------------------ 1. Natura 2000, full resolution
+    n2k = []
+    for layer, kind in ((0, "SAC"), (1, "SPA")):
+        q = {"geometry": ",".join(map(str, FRAME)), "geometryType": "esriGeometryEnvelope", "inSR": 4326, "outSR": 4326,
+             "spatialRel": "esriSpatialRelIntersects", "where": "MS='MT'", "outFields": "SITECODE,SITENAME",
+             "returnGeometry": "true", "f": "geojson"}
+        for ft in json.loads(get(f"{N2K}/{layer}/query", q))["features"]:
+            p = ft["properties"]
+            n2k.append((shape(ft["geometry"]), {"sitecode": p["SITECODE"], "sitename": p["SITENAME"], "type": kind}))
+    json.dump(fc(n2k), open(D / "natura2000_bay.geojson", "w"), ensure_ascii=False, separators=(",", ":"))
+    print(len(n2k), "Natura 2000 designations in the frame:", sorted(f"{p['sitecode']} {p['type']}" for _, p in n2k))
 
-# ---------------------------------------------------------------- 3. depth: EMODnet DTM 2024
-url = (f"{WCS}?service=WCS&version=2.0.1&request=GetCoverage&coverageId=emodnet__mean&subset=Lat({FRAME[1] - 0.01},"
-       f"{FRAME[3] + 0.01})&subset=Long({FRAME[0] - 0.01},{FRAME[2] + 0.01})&format=image/tiff")
-open(OUT / "bathymetry_bay.tif", "wb").write(get(url))
+    # ------------------------------------------------------------ 2. seagrass: EMODnet Seabed Habitats (CC BY 4.0)
+    q = {"service": "WFS", "version": "1.1.0", "request": "GetFeature", "typeName": "emodnet_open:seagrass_eov_poly_2025",
+         "bbox": f"{FRAME[1]},{FRAME[0]},{FRAME[3]},{FRAME[2]},urn:ogc:def:crs:EPSG::4326",
+         "outputFormat": "application/json", "srsName": "EPSG:4326"}
+    em = [(shape(f["geometry"]), {k: f["properties"][k] for k in ("habsubtype", "anxi_code", "map_id", "source",
+                                                                  "det_date")})
+          for f in json.loads(get(SBH, q))["features"]]
+    json.dump(fc(em), open(D / "seagrass_emodnet_bay.geojson", "w"), ensure_ascii=False, separators=(",", ":"))
+    print(len(em), "EMODnet seagrass polygons in the frame")
 
-# ---------------------------------------------------------------- 4. Article 17, habitat 1120, Malta
-a17 = []
-for period, label in ((5, "2013-2018"), (6, "2019-2024")):
-    t = get(A17.format(period)).decode("utf-8", "replace")
-    m = list(re.finditer(r"(?:<span>|>)\s*MT\s*(?:</span>|</a>)\s*</td>", t))[-1]
-    row = t[m.end():t.index("</tr>", m.end())]
-    sec = dict(re.findall(r"<!--\s*([A-Za-z ]+?)\s*-->(.*?)(?=<!--|$)", row, flags=re.S))
-    td = lambda s: [re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", x))).strip()
-                    for x in re.findall(r"<td[^>]*>(.*?)</td>", s, flags=re.S)]
-    concl = lambda s: re.findall(r'class="conclusion[^"]*">\s*([^<]*?)\s*<', s)
-    ar, sf = td(sec["Area"]), td(sec["Structure and functions"])
-    ov = td(sec["Overall assessment"])
-    a17.append({"period": label, "region": "MMED", "range_km2": td(sec["Range"])[0],
-                "range_status": re.search(r'class="(\w+) "\s*>\s*<span class="conclusion', sec["Range"]).group(1),
-                "area_km2": ar[2], "area_method": ar[4],
-                "area_status": re.search(r'class="(\w+) "\s*>\s*<span class="conclusion', sec["Area"]).group(1),
-                "sf_good_km2": sf[0], "sf_not_good_km2": sf[1], "sf_status": concl(sec["Structure and functions"])[0],
-                "future_status": concl(sec["Future prospects"])[0], "overall_status": concl(sec["Overall assessment"])[0],
-                "overall_trend": ov[1], "source": A17.format(period), "retrieved": TODAY})
-    print(a17[-1])
-with open(D / "article17_1120_mt.csv", "w", newline="") as f:
-    w = csv.DictWriter(f, fieldnames=list(a17[0]), lineterminator="\r\n")
-    w.writeheader()
-    w.writerows(a17)
+    # ------------------------------------------------------------ 3. depth: EMODnet DTM 2024
+    url = (f"{WCS}?service=WCS&version=2.0.1&request=GetCoverage&coverageId=emodnet__mean&subset=Lat({FRAME[1] - 0.01},"
+           f"{FRAME[3] + 0.01})&subset=Long({FRAME[0] - 0.01},{FRAME[2] + 0.01})&format=image/tiff")
+    open(OUT / "bathymetry_bay.tif", "wb").write(get(url))
 
-# ---------------------------------------------------------------- 5. statistics
+    # ------------------------------------------------------------ 4. Article 17, habitat 1120, Malta
+    a17 = []
+    for period, label in ((5, "2013-2018"), (6, "2019-2024")):
+        t = get(A17.format(period)).decode("utf-8", "replace")
+        m = list(re.finditer(r"(?:<span>|>)\s*MT\s*(?:</span>|</a>)\s*</td>", t))[-1]
+        row = t[m.end():t.index("</tr>", m.end())]
+        sec = dict(re.findall(r"<!--\s*([A-Za-z ]+?)\s*-->(.*?)(?=<!--|$)", row, flags=re.S))
+        td = lambda s: [re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", x))).strip()
+                        for x in re.findall(r"<td[^>]*>(.*?)</td>", s, flags=re.S)]
+        concl = lambda s: re.findall(r'class="conclusion[^"]*">\s*([^<]*?)\s*<', s)
+        ar, sf = td(sec["Area"]), td(sec["Structure and functions"])
+        ov = td(sec["Overall assessment"])
+        a17.append({"period": label, "region": "MMED", "range_km2": td(sec["Range"])[0],
+                    "range_status": re.search(r'class="(\w+) "\s*>\s*<span class="conclusion', sec["Range"]).group(1),
+                    "area_km2": ar[2], "area_method": ar[4],
+                    "area_status": re.search(r'class="(\w+) "\s*>\s*<span class="conclusion', sec["Area"]).group(1),
+                    "sf_good_km2": sf[0], "sf_not_good_km2": sf[1], "sf_status": concl(sec["Structure and functions"])[0],
+                    "future_status": concl(sec["Future prospects"])[0],
+                    "overall_status": concl(sec["Overall assessment"])[0],
+                    "overall_trend": ov[1], "source": A17.format(period), "retrieved": TODAY})
+        print(a17[-1])
+    with open(D / "article17_1120_mt.csv", "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=list(a17[0]), lineterminator="\r\n")
+        w.writeheader()
+        w.writerows(a17)
+
+
+if "--stats" not in sys.argv:
+    fetch()
+
+# ---------------------------------------------------------------- 5. statistics (from the committed files and out/)
 rows = []
 
 
@@ -145,26 +148,35 @@ def add(item, value, unit, source, note=""):
     print(f"{item:78s} {value!s:>12} {unit:4s} {note}")
 
 
-U = lambda gs: make_valid(unary_union([make_valid(transform(P, g)) for g in gs])).buffer(0).intersection(FRU)
-sets = {"UNEP-WCMC v7.1, all P. oceanica": U([g for g, p in wc if p["scientific"] == "Posidonia oceanica"]),
-        "UNEP-WCMC v7.1, dataset 491 (1961/2014)": U([g for g, p in wc if p["datasetid"] == 491
-                                                      and p["scientific"] == "Posidonia oceanica"]),
-        "UNEP-WCMC v7.1, dataset 493 (2002)": U([g for g, p in wc if p["datasetid"] == 493]),
-        "EMODnet Seabed Habitats 2025 (map EUSM16me)": U([g for g, _ in em])}
-SRC = {k: ("UNEP-WCMC (2021) v7.1" if k.startswith("UNEP") else "EMODnet Seabed Habitats (2025)") for k in sets}
-for k, g in sets.items():
-    add(f"Mapped P. oceanica in the map frame: {k}", round(g.area / 1e4, 1), "ha", SRC[k],
-        f"frame {FRAME}")
-for k, g in sets.items():
-    for km in (0.5, 1, 2):
-        add(f"Mapped P. oceanica within {km} km of the new land: {k}", round(g.intersection(NEW.buffer(km * 1000)).area
-                                                                              / 1e4, 1), "ha", SRC[k])
-    add(f"Shortest distance, new land to mapped P. oceanica: {k}", round(g.distance(NEW) / 1000, 2), "km", SRC[k])
-inter = sets["UNEP-WCMC v7.1, dataset 491 (1961/2014)"].intersection(sets["UNEP-WCMC v7.1, dataset 493 (2002)"]).area
-add("UNEP-WCMC datasets 491 and 493 in the frame: overlap", round(inter / 1e4, 1), "ha", "UNEP-WCMC (2021) v7.1",
-    "the two source datasets map largely the same meadows")
-inter = sets["UNEP-WCMC v7.1, all P. oceanica"].intersection(sets["EMODnet Seabed Habitats 2025 (map EUSM16me)"]).area
-add("UNEP-WCMC (all) and EMODnet in the frame: overlap", round(inter / 1e4, 1), "ha", "both", "")
+EM, SRC = "EMODnet Seabed Habitats 2025 (map EUSM16me)", "EMODnet Seabed Habitats (2025)"
+emf = json.load(open(D / "seagrass_emodnet_bay.geojson"))["features"]
+SG = make_valid(unary_union([make_valid(transform(P, shape(f["geometry"]))) for f in emf])).buffer(0).intersection(FRU)
+# the map's grid: spacing of the polygon vertices (one-cell steps only), in degrees and in metres
+ux = np.diff(sorted({round(x, 6) for f in emf for x, _ in shape(f["geometry"]).exterior.coords}))
+uy = np.diff(sorted({round(y, 6) for f in emf for _, y in shape(f["geometry"]).exterior.coords}))
+dx, dy = ux[(ux > 0.0015) & (ux < 0.0025)].mean(), uy[(uy > 0.0015) & (uy < 0.0025)].mean()
+lat0 = (FRAME[1] + FRAME[3]) / 2
+cw, ch = dx * 111320 * math.cos(math.radians(lat0)), dy * 110574
+# coastline (OpenStreetMap, docs/data/geo.json): how far the grid cells reach onto land
+geo = json.load(open(ROOT / "docs" / "data" / "geo.json"))
+o = geo["origin"]
+k = 111320 * math.cos(math.radians(o["lat"]))
+rr = [i for i in geo["islands"] if i["name"] == "Malta"][0]["detail"]
+LAND = make_valid(Polygon([P(o["lon"] + rr[i] / k, o["lat"] + rr[i + 1] / 110574) for i in range(0, len(rr) - 1, 2)]))
+
+add(f"Mapped P. oceanica in the map frame: {EM}", round(SG.area / 1e4, 1), "ha", SRC,
+    f"frame {FRAME}; {len(emf)} polygons, about {SG.area / (cw * ch):.0f} grid cells")
+add("EMODnet seagrass map EUSM16me: grid cell size", f"{cw:.0f} x {ch:.0f}", "m", SRC,
+    f"east-west x north-south; vertex spacing {dx:.5f} x {dy:.5f} degrees")
+add(f"Mapped P. oceanica on land (OpenStreetMap coastline) in the map frame: {EM}",
+    round(SG.intersection(LAND).area / 1e4, 1), "ha", SRC, "grid cells that overlap the coast")
+for km in (0.5, 1, 2):
+    g = SG.intersection(NEW.buffer(km * 1000))
+    add(f"Mapped P. oceanica within {km} km of the new land: {EM}", round(g.area / 1e4, 1), "ha", SRC,
+        f"of which on land (OpenStreetMap coastline): {g.intersection(LAND).area / 1e4:.1f} ha")
+add(f"Shortest distance, new land to mapped P. oceanica: {EM}", round(SG.distance(NEW) / 1000, 2), "km", SRC,
+    f"to the nearest grid cell; cells about {cw:.0f} x {ch:.0f} m, so the map cannot place a meadow's edge more "
+    "precisely than about one cell")
 
 with rasterio.open(OUT / "bathymetry_bay.tif") as s:
     a = s.read(1).astype(float)
@@ -176,18 +188,21 @@ sea = a < 0
 dep = -a
 add("EMODnet DTM 2024 cell size", f"{s.res[0] * 3600:.2f} arc-seconds", "", "EMODnet Bathymetry Consortium (2024)",
     "about 95 m east-west by 115 m north-south")
+pct = lambda d: " / ".join(f"{v:.0f}" for v in np.percentile(d, [10, 50, 90]))
 for km in (0.5, 1, 2):
     near = sea & shapely.contains_xy(NEW.buffer(km * 1000), GX, GY)
     d = dep[near]
-    add(f"Depth of the sea within {km} km of the new land: 10th / 50th / 90th percentile",
-        " / ".join(f"{v:.0f}" for v in np.percentile(d, [10, 50, 90])), "m", "EMODnet Bathymetry Consortium (2024)",
+    add(f"Depth of the sea within {km} km of the new land: 10th / 50th / 90th percentile", pct(d), "m",
+        "EMODnet Bathymetry Consortium (2024)",
         f"{near.sum()} grid cells; shallower than 10 m: {100 * (d < 10).mean():.0f}%; shallower than 20 m: "
         f"{100 * (d < 20).mean():.0f}%")
-for k in ("UNEP-WCMC v7.1, all P. oceanica", "EMODnet Seabed Habitats 2025 (map EUSM16me)"):
-    on = sea & shapely.contains_xy(sets[k], GX, GY)
-    add(f"Depth of grid cells on mapped P. oceanica in the frame: 10th / 50th / 90th percentile ({k})",
-        " / ".join(f"{v:.0f}" for v in np.percentile(dep[on], [10, 50, 90])), "m",
-        "EMODnet Bathymetry Consortium (2024)", f"{on.sum()} grid cells")
+on = sea & shapely.contains_xy(SG, GX, GY)
+add(f"Depth of grid cells on mapped P. oceanica in the frame: 10th / 50th / 90th percentile ({EM})", pct(dep[on]), "m",
+    "EMODnet Bathymetry Consortium (2024)", f"{on.sum()} grid cells")
+for km in (0.5, 1):
+    on = sea & shapely.contains_xy(SG.intersection(NEW.buffer(km * 1000)), GX, GY)
+    add(f"Depth of grid cells on mapped P. oceanica within {km} km of the new land: 10th / 50th / 90th percentile "
+        f"({EM})", pct(dep[on]), "m", "EMODnet Bathymetry Consortium (2024)", f"{on.sum()} grid cells")
 with open(D / "bay_stats.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\r\n")
     w.writeheader()

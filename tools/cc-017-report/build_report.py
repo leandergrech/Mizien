@@ -30,9 +30,9 @@ S.append(key_points([
      "public consultation, has not been published. Budget lines for reclamation fell from EUR 500,000 (2023) to "
      "EUR 10,000 (2025)."),
     ("The area is close to protected sites and mapped seagrass.",
-     "Three Natura 2000 designations lie within about 0.5 km of the new land; older maps show Posidonia meadows "
-     "0.2 km away. Malta reports its Posidonia beds overall as favourable; the 34% loss often cited is "
-     "Mediterranean-wide."),
+     "Three Natura 2000 designations lie within about 0.5 km of the new land; a coarse 2016 map shows Posidonia "
+     "meadows next to it, about 72 ha within 1 km. Malta reports its Posidonia beds overall as favourable; the 34% "
+     "loss often cited is Mediterranean-wide."),
     ("Verdict: not substantiated (moderate confidence).",
      "The statement is a plan, and its first sentence is accurate. But the 2019 assurance that the sites are "
      "“possible and environmentally safe”, and the benefits for families, rest on documents that have not been shown."),
@@ -40,7 +40,7 @@ S.append(key_points([
 S += [Spacer(1, 4 * mm), VerdictMeter(2), Spacer(1, 3 * mm),
       tiles([("+3.7 ha", GREEN, "New land at Freeport Terminal 2, 2023–2026 (Sentinel-2)"),
              ("0", RED, "Sites, sizes or assessments published for the large-scale project"),
-             ("120 ha", ORANGE, "Of mapped Posidonia within 1 km of the new land"),
+             ("72 ha", ORANGE, "Of mapped Posidonia within 1 km of the new land (coarse 2016 map)"),
              ("7 yrs", GREY, "Since the seabed study was promised for consultation")]),
       Spacer(1, 4 * mm),
       up_down("Publication of the seabed study and a project description naming the site, area, fill source and "
@@ -87,10 +87,9 @@ S.append(P("<b>Questions.</b> (1) Is a reclamation under way at the Freeport? (2
 S.append(P("<b>Evidence.</b> Sentinel-2 satellite imagery over Terminal 2, summers 2017–2026: for each summer, the "
            "per-pixel median of eight clear scenes, with land where the water index (NDWI) is below zero [8]. Natura "
            "2000 boundaries from the European Environment Agency [7]. Freeport operator statements [5, 6]; a press "
-           "analysis of budget allocations [4]; peer-reviewed seagrass studies [9, 10]. New in version 1.2: seagrass "
-           "maps from UNEP-WCMC [12] (whose licence does not allow us to redistribute the polygons, so we keep only "
-           "derived figures) and EMODnet Seabed Habitats [13]; sea depth from EMODnet Bathymetry [14]; and Malta’s own "
-           "assessment of its Posidonia beds under Article 17 of the Habitats Directive [15]. Scripts: "
+           "analysis of budget allocations [4]; peer-reviewed seagrass studies [9, 10]. New in version 1.2: the seagrass "
+           "map of EMODnet Seabed Habitats [12] (open data, CC BY 4.0); sea depth from EMODnet Bathymetry [13]; and "
+           "Malta’s own assessment of its Posidonia beds under Article 17 of the Habitats Directive [14]. Scripts: "
            "<i>tools/cc-017-report/</i>; data: <i>data/cc-017/</i>."))
 S.append(P("<b>Grades.</b> Direct satellite measurement and peer-reviewed observational studies are grade B; official "
            "statements, statistics and reviews grade C. ◆ marks a source known second-hand."))
@@ -106,7 +105,7 @@ S.append(P("Posidonia oceanica meadows, a priority habitat under the EU Habitats
            "the claim cannot be judged without them."))
 S.append(P("The 34% figure is for the whole Mediterranean, not for Malta. Malta’s own reports to the EU assess its "
            "Posidonia beds as favourable overall in both 2013–2018 and 2019–2024: 68.46 km² of meadow, from a complete "
-           "survey in 2018–2019, of which 2.08 km² was not in good condition, with a stable trend [15]. That is a "
+           "survey in 2018–2019, of which 2.08 km² was not in good condition, with a stable trend [14]. That is a "
            "national assessment; it does not report the meadows of any one bay, and it does not test a new project."))
 
 # ================================================================== 4
@@ -127,15 +126,14 @@ S.append(std_table([
     [C("Natura 2000 designations within 1.5 km"), C("3 (two overlap on the same cliffs)"), C("EEA [7]"), grade_tag("C")],
     [C("Marine SPA MT0000111: distance; area"), C("0.4 km; 256 km²"), C("EEA [7]"), grade_tag("C")],
     [C("Cliff SAC MT0000024 and SPA MT0000033"), C("0.5 km"), C("EEA [7]"), grade_tag("C")],
-    [C("Mapped Posidonia: nearest to the new land; within 1 km"), C("0.2 km; 120 ha"), C("UNEP-WCMC [12]"),
-     grade_tag("C")],
-    [C("Mapped Posidonia within 1 km (gridded layer)"), C("72 ha"), C("EMODnet [13]"), grade_tag("C")],
-    [C("Sea depth within 1 km of the new land (10th–90th pct.)"), C("5–30 m (median 18 m)"), C("EMODnet [14]"),
+    [C("Mapped Posidonia: nearest to the new land; within 1&nbsp;km"), C("Next grid cell (0.01 km); 72&nbsp;ha"),
+     C("EMODnet, 2016 map [12]"), grade_tag("C")],
+    [C("Sea depth within 1 km of the new land (10th–90th pct.)"), C("5–30 m (median 18 m)"), C("EMODnet [13]"),
      grade_tag("B")],
-    [C("Depth of mapped meadows in the bay (10th–90th pct.)"), C("8–34 m (median 19 m)"), C("EMODnet [12, 14]"),
-     grade_tag("B")],
+    [C("Depth of mapped meadows: in the bay; within 1 km of the new land (10th–90th pct.)"),
+     C("11–35 m (median 26 m); 21–32 m (median 29 m)"), C("EMODnet [12, 13]"), grade_tag("B")],
     [C("Malta’s Posidonia beds, overall (2013–18; 2019–24)"), C("Favourable; favourable, stable"),
-     C("Article 17 [15]"), grade_tag("C")],
+     C("Article 17 [14]"), grade_tag("C")],
     [C("Reclamation budget 2023 / 2024 / 2025"), C("EUR 500k / 100k / 10k"), C("MaltaToday analysis ◆ [4]"), grade_tag("C")],
     [C("Seabed study published"), C("No"), C("Searches, 3 Oct 2026"), C("–")],
     [C("Project description, screening or call for the new project"), C("None found"), C("Searches, 3 Oct 2026"), C("–")],
@@ -143,11 +141,13 @@ S.append(std_table([
 S.append(P("All values in <i>data/cc-017/checks.csv</i> and <i>bay_stats.csv</i>. Distances are the shortest distance from the new land at "
            "Terminal 2 (Sentinel-2, 2023–2026) to each site boundary; from the edge of the 1.0 × 1.1 km Terminal 2 "
            "window they are 0.3 and 0.4 km (<i>data/cc-017/natura2000_distances.csv</i>). The site of the planned "
-           "project is not known. MT0000033 lies almost wholly inside MT0000024.", cap))
+           "project is not known. MT0000033 lies almost wholly inside MT0000024. The seagrass map’s cells are about "
+           "190 × 230 m, so its distance to the new land is only as precise as one cell.", cap))
 S.append(fig(FIG / "fig3_bay.png"))
 S.append(P("Figure 3. Marsaxlokk Bay. Sea depth from EMODnet (cells of about 100 m; near parts of the shore the grid "
-           "has no depth); Posidonia meadows as mapped by UNEP-WCMC from surveys dated 1961–2014 [12] and, as a gridded "
-           "outline, by EMODnet [13]; Natura 2000 sites [7]; new land at Terminal 2 [8]. The Prime Minister said the sea "
+           "has no depth) [13]; Posidonia meadows as mapped by EMODnet Seabed Habitats (Malta’s map of 2016, gridded "
+           "at about 230 m, so coarse near the shore; CC BY 4.0) [12]; Natura 2000 sites [7]; new land at Terminal 2 "
+           "[8]. The Prime Minister said the sea "
            "near the Freeport is “an ideal depth for these kinds of projects” [2]; the map shows the depths without "
            "judging which depth is ideal.", cap))
 
@@ -164,10 +164,10 @@ S.append(contested(
 S.append(contested(
     "Q2  Are the sites “environmentally safe”?", "NOT SHOWN", RED,
     "A seabed study costing EUR 11 million exists, and ERA’s draft is reported to have aimed to avoid Posidonia and "
-    "protected areas [4]. Malta reports its Posidonia beds overall as favourable and stable [15].",
+    "protected areas [4]. Malta reports its Posidonia beds overall as favourable and stable [14].",
     "The study has not been published or consulted on, seven years after it was promised for consultation [3]. The "
     "new land at Terminal 2 lies about 0.4 km from a marine Natura 2000 site and 0.5 km from protected cliffs [7]; "
-    "mapped meadows lie 0.2 km away, with about 120 ha within 1 km [12].",
+    "a coarse 2016 map shows Posidonia next to it, with about 72 ha within 1 km [12].",
     "<b>For this claim:</b> the environmental assurance rests on a document that has not been shown."))
 S.append(contested(
     "Q3  Will families gain space?", "UNSPECIFIED", GREY,
@@ -186,13 +186,13 @@ S.append(std_table([
     [C("<b>B.</b> A large-scale project outside the perimeter will be launched in 2026"),
      C("No public step found by 3 Oct 2026; no site or size given."), verd("NOT SHOWN", GREY)],
     [C("<b>C.</b> “There are five or six sites where reclamation is possible and environmentally safe” (2019)"),
-     C("Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km and mapped Posidonia ~0.2 km from the "
-       "Terminal 2 works [7, 12]."), verd("NOT SHOWN", RED)],
+     C("Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km from the Terminal 2 works, and Posidonia "
+       "is mapped next to them [7, 12]."), verd("NOT SHOWN", RED)],
     [C("<b>D.</b> Commercial activity will move so families can enjoy the space"),
      C("Activities and spaces not identified."), verd("NOT SHOWN", GREY)],
     [C("<b>E.</b> “The sea near the Freeport is an ideal depth for these kinds of projects” (Prime Minister)"),
-     C("Within 1 km of the Terminal 2 works the sea is mostly 5–30 m deep [14]; “ideal” is not defined. Mapped "
-       "meadows in the bay lie at similar depths, 8–34 m [12]."), verd("NOT TESTED", GREY)],
+     C("Within 1 km of the Terminal 2 works the sea is mostly 5–30 m deep [13]; “ideal” is not defined. Mapped "
+       "meadows near the works lie at 21–32 m (11–35 m across the bay) [12, 13]."), verd("NOT TESTED", GREY)],
 ], [52 * mm, 88 * mm, 30 * mm], valign="MIDDLE"))
 
 # ================================================================== 7
@@ -218,9 +218,11 @@ S.append(requests_list([
 S += [Spacer(1, 6 * mm), SectionHeading(8, "Limitations")]
 for l in ["Searches cannot prove a negative: a step may have been taken without public record.",
           "Satellite land areas are accurate to about ±1 ha (shoreline pixels, moored ships, glint).",
-          "The seagrass maps compile older surveys (1961–2014 and 2002; EMODnet’s Maltese layer is gridded at about "
-          "230 m). They show where meadows were mapped, not their condition now; nearness to meadows or Natura 2000 "
-          "sites is not by itself evidence of harm.",
+          "EMODnet’s Maltese seagrass map (EUSM16me, 2016) is gridded at about 230 m, so it is coarse near the "
+          "shore: its cells overlap the coast in places (about 2.5 ha in the map frame), and distances to it are only "
+          "as precise as one cell. A finer global layer exists but was not used, for licence reasons. The map shows "
+          "where meadows were mapped, not their condition now; nearness to meadows or Natura 2000 sites is not by "
+          "itself evidence of harm.",
           "EMODnet depth cells are about 100 m across; near the shore and in parts of the inner harbour the grid has "
           "no depth.",
           "We tried a bay-wide Sentinel-2 check for new land outside Terminal 2 (MNDWI, green and SWIR bands). It was "
@@ -255,17 +257,17 @@ S += references([
            "<i>Botanica Marina</i> 52(5):395–418. doi:10.1515/BOT.2009.057. (Abstract read.)",
      "https://doi.org/10.1515/BOT.2009.057"),
     ("11", "MiŻien. Data and calculations: data/cc-017/; tools/cc-017-report/.", ""),
-    ("12", "UNEP-WCMC, Short F.T. (2021). Global Distribution of Seagrasses, version 7.1. UN Environment Programme "
-           "World Conservation Monitoring Centre. doi:10.34892/x6r3-d211. Queried 5 Oct 2026 (www.unep-wcmc.org); "
-           "UNEP-WCMC General Data License: shown here as a map, not redistributed.", "https://doi.org/10.34892/x6r3-d211"),
-    ("13", "EMODnet Seabed Habitats (2025). Seagrass cover (Essential Ocean Variable) in Europe and the Caribbean, "
-           "version 2025. CC BY 4.0. Maltese polygons from map EUSM16me (2016); the source field names the Malta "
-           "Environment and Planning Authority for some of them and is blank for those in this bay.",
+    ("12", "EMODnet Seabed Habitats (2025). Seagrass cover (Essential Ocean Variable) in Europe and the Caribbean, "
+           "version 2025. European Marine Observation and Data Network (EMODnet) Seabed Habitats. Contains information "
+           "sourced from multiple organisations through EMODnet Seabed Habitats. Licensed under CC BY 4.0 (European "
+           "subset); queried 5 Oct 2026 and clipped to the map frame. Maltese polygons from map EUSM16me (2016), "
+           "gridded at about 230 m; the source field names the Malta Environment and Planning Authority for some of "
+           "them and is blank for those in this bay.",
      "https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/39746d9c-4220-425c-bc26-7cb3056c36a5"),
-    ("14", "EMODnet Bathymetry Consortium (2024). EMODnet Digital Bathymetry (DTM 2024). "
+    ("13", "EMODnet Bathymetry Consortium (2024). EMODnet Digital Bathymetry (DTM 2024). "
            "doi:10.12770/cf51df64-56f9-4a99-b1aa-36b8d7b743a1. Via the EMODnet WCS, 5 Oct 2026.",
      "https://doi.org/10.12770/cf51df64-56f9-4a99-b1aa-36b8d7b743a1"),
-    ("15", "European Environment Agency. Article 17 web tool: habitat 1120 Posidonia beds, Malta (Mediterranean marine "
+    ("14", "European Environment Agency. Article 17 web tool: habitat 1120 Posidonia beds, Malta (Mediterranean marine "
            "region), periods 2013–2018 and 2019–2024; read 5 Oct 2026.",
      "https://nature-art17.eionet.europa.eu/article17/habitat/summary/?period=6&subject=1120"),
 ])
@@ -286,15 +288,19 @@ S += revision_log([("1.0", "3 Oct 2026", "First issue. Right of reply to the Min
                     "cliffs. (4) Flyer: right of reply now names the Finance and Environment ministries, as the report "
                     "does; the −34% seagrass loss is labelled Mediterranean-wide. Verdict and confidence unchanged."),
                    ("1.2", "5 Oct 2026", "Upgrade. (1) New Figure 3: a map of Marsaxlokk Bay with sea depth "
-                    "(EMODnet), Posidonia meadows as mapped by UNEP-WCMC and EMODnet, full-resolution Natura 2000 "
-                    "boundaries and the new land at Terminal 2. Mapped meadows lie 0.2 km from the new land, about "
-                    "120 ha within 1 km, where the sea is mostly 5–30 m deep. (2) Fairness: Malta’s Article 17 "
+                    "(EMODnet), mapped Posidonia meadows, full-resolution Natura 2000 boundaries and the new land at "
+                    "Terminal 2; within 1 km of the new land the sea is mostly 5–30 m deep. (2) Fairness: Malta’s Article 17 "
                     "reports assess its Posidonia beds as favourable overall (2013–2018; 2019–2024, stable); the −34% "
                     "loss is Mediterranean-wide (section 3, Q2, TL;DR, flyer). (3) The Prime Minister’s words are now "
                     "quoted in full from Lovin Malta, and tested as sub-claim E (not tested: “ideal” is not defined). "
-                    "(4) Tile “0.4 km” → “120 ha” of mapped Posidonia (the 0.4 km stays in the text). (5) A bay-wide "
-                    "Sentinel-2 check for other new land was tried and dropped as not robust (limitations). Verdict "
-                    "and confidence unchanged.")])
+                    "(4) Tile “0.4 km” → mapped Posidonia within 1 km of the new land (the 0.4 km stays in the text). "
+                    "(5) A bay-wide Sentinel-2 check for other new land was tried and dropped as not robust "
+                    "(limitations). Verdict and confidence unchanged."),
+                   ("1.2", "5 Oct 2026", "Maintainer decision (5 Oct 2026): the map and all seagrass statistics now use "
+                    "the EMODnet Seabed Habitats layer only (CC BY 4.0), whose Maltese map (2016) is gridded at about "
+                    "230 m (limitations). Mapped Posidonia lies next to the new land (0.01 km, one grid cell), 72 ha "
+                    "within 1 km; mapped meadows lie at 11–35 m in the bay (median 26 m) and 21–32 m within 1 km "
+                    "(median 29 m). Tile and flyer card “72 ha”. Verdict and confidence unchanged.")])
 
 build_report(Report(
     number="017", out=str(FIG / "report.pdf"), kicker="Planning and the sea",
