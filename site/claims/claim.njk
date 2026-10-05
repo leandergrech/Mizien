@@ -63,14 +63,18 @@ permalink: "/claims/{{ claim.id }}/"
     {%- endfor %}
     {%- if c.is_draft and c.label %}
     <aside class="notice" aria-label="Draft notice">
-      {%- if c.reply_sought %}
-      <p><strong>This is a draft check.</strong> The body concerned has not yet had the chance to reply, and the verdict
-         may change in light of its response or new evidence. A verdict applies to the statement as worded on the date
-         it was made; it is not a judgement of anyone's motives. <a href="/about/disclaimer/">What a check represents</a>.</p>
-      {%- else %}
+      {%- if c.reply == "not-needed" %}
+      <p><strong>This is a draft check.</strong> It finds the claim supported, so no right of reply is needed. The verdict
+         may change in light of new evidence. A verdict applies to the statement as worded on the date it was made; it is
+         not a judgement of anyone's motives. <a href="/about/disclaimer/">What a check represents</a>.</p>
+      {%- elif c.reply == "not-sought" %}
       <p><strong>This is a draft check.</strong> A right of reply was not sought for it, at the maintainer's direction.
          The verdict may change in light of new evidence. A verdict applies to the statement as worded on the date it
          was made; it is not a judgement of anyone's motives. <a href="/about/disclaimer/">What a check represents</a>.</p>
+      {%- else %}
+      <p><strong>This is a draft check.</strong> The body concerned has not yet had the chance to reply, and the verdict
+         may change in light of its response or new evidence. A verdict applies to the statement as worded on the date
+         it was made; it is not a judgement of anyone's motives. <a href="/about/disclaimer/">What a check represents</a>.</p>
       {%- endif %}
     </aside>
     {%- endif %}
@@ -197,7 +201,10 @@ permalink: "/claims/{{ claim.id }}/"
       {%- set ror = c.right_of_reply or {} %}
       {%- if ror.response %}
       <p>{{ ror.response }}</p>
-      {%- elif ror.sought === false %}
+      {%- elif c.reply == "not-needed" %}
+      <p>Not needed: this check finds the claim supported. A right of reply is sought when a check finds a claim Not
+         substantiated, Misleading or Contradicted{% if c.pledge_view %} (for a pledge: Not measurable, Off track or Missed){% endif %}.</p>
+      {%- elif c.reply == "not-sought" %}
       <p>{{ ror.note or "Not sought, at the maintainer's direction." }}</p>
       {%- elif ror.sent %}
       <p>A draft was sent to the body concerned on {{ ror.sent | ukDate }}{% if ror.deadline %}, with a deadline of {{ ror.deadline | ukDate }}{% endif %}. Its response will be published here.</p>
