@@ -34,3 +34,5 @@ Practical notes for anyone (human or routine) checking a claim. Add to this file
 - **Nominal vs real.** Check whether price indices are deflated before comparing growth.
 - **Do not trigger downloads in a browser session**; read PDFs in the page instead.
 - **Cloud routines' network.** Run `python scripts/net_check.py` first; see `methodology/automation.md`.
+
+- **airportcarbonaccreditation.org** returns an `sgcaptcha` wall to scripts (CC-030): browser-only. `maltairport.com` press releases and sustainability reports download with curl (follow redirects, `-L`); MIA's report gives Scope 1-3 in GRI 102 and PwC limited assurance on Scope 1-2.

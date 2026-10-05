@@ -59,7 +59,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-027 | Climate & Energy | Power cuts: heat, not generation | Not started | - |
 | CC-028 | Climate & Energy | 76% less network downtime | Not started | - |
 | CC-029 | Climate & Energy | First offshore wind farm | Not started | - |
-| CC-030 | Climate & Energy | Carbon-neutral airport | Not started | - |
+| CC-030 | Climate & Energy | Carbon-neutral airport | Drafted | Largely supported |
 | CC-031 | Climate & Energy | Gozo, first climate-neutral region | Not started | - |
 | CC-032 | Climate & Energy | Solar flowers, first in Europe | Not started | - |
 | CC-033 | Air | Delimara: 'much cleaner air' | Not started | - |
