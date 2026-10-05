@@ -439,9 +439,15 @@ eleventyExcludeFromCollections: true
   Miżien is independent and not affiliated with any party, authority or institution. Checks that find a claim Not substantiated, Misleading or Contradicted stay drafts, pending
   right of reply, until the body concerned has had the chance to respond. Content is licensed CC BY 4.0; site code is MIT.
   <a href="/about/disclaimer/">What a check represents</a>. Corrections are welcome: see <a href="https://github.com/leandergrech/Mizien/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> or open an issue at <a href="https://github.com/leandergrech/Mizien">github.com/leandergrech/Mizien</a>.
+{%- if site.goatcounter %}
+  Visits are counted with <a href="https://www.goatcounter.com/">GoatCounter</a>: no cookies, no personal data, no tracking across sites.
+{%- endif %}
 </footer>
 
 <script src="/assets/map/map.js" defer></script>
 <script src="/assets/claimrefs.js" defer></script>
+{%- if site.goatcounter %}
+<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{%- endif %}
 </body>
 </html>
