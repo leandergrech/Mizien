@@ -21,9 +21,10 @@ build_flyer(Flyer(
            ("+31%", GREEN, "Huge demand shock",
             "Malta’s population grew 31% in 2015–2025; the EU’s grew 2%."),
            ("+34%", ORANGE, "Prices still rose faster",
-            "Real house prices: Malta +34%, EU +25% (2015–2025)."),
-           ("6.0%", RED, "Affordability worsening",
-            "People overburdened by housing costs: 1.1% in 2015, 6.0% in 2025 (EU 7.7%)."),
+            "Real house prices: Malta +34%, EU +25% (2015–2025; Malta’s 2025 figure provisional)."),
+           ("6.0%", RED, "Affordability worsened",
+            "People overburdened by housing costs: 1.1% (2015) to 2.9% (2022); about 6% since a 2023 "
+            "series break (EU 7.7%)."),
            ("27.5%", ORANGE, "Not all homes are lived in",
             "Share of dwellings that were not a main residence in the 2021 census.")],
     fair="Overcrowding in Malta (4.7%) is a quarter of the EU rate. This check covers prices only, not the "
@@ -32,6 +33,6 @@ build_flyer(Flyer(
           "How many new units become main homes.",
           "Any Malta estimate of the price effect.",
           "The source of the 91,000 figure."],
-    footer="Version 1.0  ·  3 October 2026  ·  Public data only  ·  Right of reply: Planning Authority (not yet sent)",
+    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Right of reply: Planning Authority (not yet sent)",
     pdf_title="Claim Check 013 – Do permits keep prices in check?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

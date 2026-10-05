@@ -9,11 +9,11 @@ from mizien_report import *  # noqa: E402,F401
 
 S = [SectionHeading(None, "TL;DR"), Spacer(1, mm),
      P("Project Green reported more than 8,000 trees and more than 25,000 shrubs planted by government entities in 2024. The 2022 Labour manifesto separately pledged 100,000 trees over five years. In February 2026, the Environment Minister told Parliament that relevant government entities had planted around 60,000 trees and over 100,000 shrubs through the end of 2025.", lead),
-     P("The official figures support the stated planting totals, but they are not a surviving-tree count. The roughly 60,000 trees equal about 60% of the pledge at the end-2025 checkpoint; the five-year pledge period had not elapsed. The record does not establish that the target was ultimately met or that tree canopy increased.", body)]
+     P("The official figures support the stated planting totals, but they are not a surviving-tree count. The roughly 60,000 trees equal about 60% of the pledge at the end-2025 checkpoint, when about three-quarters of the five-year period had passed; Labour's own 2026 manifesto gives a lower figure, more than 57,000. The legislature for which the pledge was made ended with a snap general election on 30 May 2026, and no count for 2026 was located. The record does not establish whether the target was met or that tree canopy increased.", body)]
 S.append(key_points([
     ("The 2024 figures are distinct.", "Project Green reported over 8,000 trees and over 25,000 shrubs. Shrubs are not trees and are not added to the manifesto target."),
-    ("The pledge is real and time-bound.", "Pledge 305 in the Labour manifesto committed to 100,000 trees in the next five years. From its March 2022 publication, the deadline falls in 2027."),
-    ("The latest official progress figure is partial.", "A parliamentary answer reports around 60,000 trees and over 100,000 shrubs by end-2025 across environment and other ministries. It gives no project-level inventory."),
+    ("The pledge is real and time-bound.", "Pledge 305 in the Labour manifesto committed to 100,000 trees in the next five years, from March 2022. The legislature ended early, with a snap general election on 30 May 2026."),
+    ("The latest official progress figure is partial.", "A parliamentary answer reports around 60,000 trees and over 100,000 shrubs by end-2025 across environment and other ministries. It gives no project-level inventory. Labour's 2026 manifesto reports more than 57,000 trees for 2022–2025."),
     ("Planting is not survival.", "Neither source provides a survival rate or a national cohort inventory. Mediterranean field studies show that survival depends on species, site and planting method; their rates cannot be transferred to Malta."),
 ]))
 S += [Spacer(1, 2 * mm), VerdictMeter(1), Spacer(1, 2 * mm),
@@ -21,7 +21,7 @@ S += [Spacer(1, 2 * mm), VerdictMeter(1), Spacer(1, 2 * mm),
              ("~60,000", ORANGE, "trees reported by end-2025"),
              ("100,000", RED, "pledged over five years")]),
       Spacer(1, 3 * mm),
-      up_down("A verified, tree-only planting register through the pledge deadline, with locations, planting dates and replacements.",
+      up_down("A verified, tree-only planting register for the 2022–2026 legislature, with locations, planting dates and replacements.",
               "Evidence that the official planting totals mix shrubs or vouchers into the tree count, or that the published primary records misstate the quantities."),
       Spacer(1, 4 * mm),
       *toc([("1", "What was said"), ("2", "Checking the counts"),
@@ -30,33 +30,35 @@ S += [Spacer(1, 2 * mm), VerdictMeter(1), Spacer(1, 2 * mm),
 S += [SectionHeading(1, "What was said"),
       P("On 31 December 2024, Project Green reported that more than 8,000 trees had been planted during the year through projects coordinated by entities under the Environment Ministry, and separately that more than 25,000 shrubs had been planted by government entities [1]. The release names Project Green, Ambjent Malta, ERA and GreenServ. These are government-reported totals; the release does not publish a site-by-site list."),
       callout([P("THE PLEDGE", tag),
-               P("Pledge 305 of Partit Laburista's 2022 manifesto commits to an action plan for tree planting and afforestation and to 100,000 trees being planted “fil-ħames snin li ġejjin” — in the next five years [2]. The manifesto was published in March 2022, so the deadline falls in 2027.", lead)], bg=PALE, bar=GREEN),
+               P("Pledge 305 of Partit Laburista's 2022 manifesto commits to an action plan for tree planting and afforestation and to 100,000 trees being planted “fil-ħames snin li ġejjin” — in the next five years [2]. The manifesto was published in March 2022, ahead of the general election of 26 March 2022, so five years would run to March 2027. The legislature ended earlier: a snap general election was held on 30 May 2026 [8].", lead)], bg=PALE, bar=GREEN),
       Spacer(1, 3 * mm),
       P("In a written answer to Parliamentary Question 34270, the Environment Minister said that, through the end of 2025, entities under her Ministry and entities under other ministries had together planted around 60,000 trees and more than 100,000 shrubs during the legislature [3]. The answer is broader than Project Green alone and does not break the counts down by agency or project."),
-      P("The two annual/cumulative statements have different periods and scopes. Do not add the 2024 count to the cumulative 60,000, or add shrubs to either tree figure. The separate private-land voucher scheme announced in 2025–26 is also not counted here as planted trees [4].")]
+      P("Labour's 2026 election manifesto gives the party's own count: “Bejn l-2022 u l-2025 tħawlu aktar minn 57,000 siġra” — between 2022 and 2025, more than 57,000 trees were planted [9]. That is lower than the Minister's figure of around 60,000 for a similar period. Both figures are approximate, and neither document reconciles them."),
+      P("The two annual/cumulative statements have different periods and scopes. Do not add the 2024 count to the cumulative 60,000, or add shrubs to either tree figure. The separate private-land voucher scheme announced in 2025–26 is also not counted here: by 13 May 2026, Project Green reported vouchers issued for 23,000 trees to more than 250 beneficiaries, some of them already redeemed [4, 10]. Vouchers issued are not trees planted.")]
 
 S += [PageBreak(), SectionHeading(2, "Checking the counts"),
-      P("The calculation in `data/cc-010/calc.py` divides the Minister's approximate end-2025 tree figure by the manifesto target. It does not assume a straight-line planting schedule or treat the arithmetic balance as a final shortfall."),
+      P("The calculation in <i>data/cc-010/calc.py</i> divides the Minister's approximate end-2025 tree figure by the manifesto target, and computes the share of the five-year period elapsed from the dates in <i>data/cc-010/dates.csv</i>. It does not assume a straight-line planting schedule or treat the arithmetic balance as a final shortfall."),
       std_table([
           [C("Record", cellh), C("Trees", cellh), C("Shrubs", cellh), C("Interpretation", cellh)],
           [C("Project Green, 2024"), C(">8,000"), C(">25,000"), C("Reported annual planting; government entities.")],
           [C("Parliamentary answer, through 2025"), C("about 60,000"), C(">100,000"), C("Collective figure across relevant ministries.")],
+          [C("Labour manifesto, 2026"), C("more than 57,000"), C("—"), C("Party's own count for 2022–2025; lower than the Minister's.")],
           [C("Labour manifesto, 2022"), C("100,000 target"), C("—"), C("Planting commitment over the next five years.")],
       ], [39 * mm, 34 * mm, 34 * mm, CW - 107 * mm]),
       Spacer(1, 3 * mm),
       tiles([("~60%", GREEN, "of the 100,000-tree target reported by end-2025"),
              ("~40,000", ORANGE, "arithmetic difference at that checkpoint"),
-             ("2027", BLUE, "five-year pledge deadline")]),
+             ("~75%", BLUE, "of the five-year period elapsed by end-2025")]),
       Spacer(1, 3 * mm),
-      P("The figures are approximate and stop at the end of 2025. A rounded 60,000 is about 60% of the 100,000 pledge; subtracting it leaves about 40,000 trees. That arithmetic is a checkpoint, not proof of failure: the five-year period had not ended, and the parliamentary answer does not say the final count."),
-      contested("Do the published planting totals show that the pledge has been delivered?", "INTERIM COUNT; DEADLINE STILL OPEN", AMBER,
+      P("The figures are approximate and stop at the end of 2025. A rounded 60,000 is about 60% of the 100,000 pledge; subtracting it leaves about 40,000 trees. Counted from the general election of 26 March 2022, about 75% of the five-year period had passed by the end of 2025, and about 84% by the snap election of 30 May 2026, which ended the legislature [8]. No count for 2026 was located, so this arithmetic is a checkpoint, not a final tally: it shows neither delivery nor a final shortfall."),
+      contested("Do the published planting totals show that the pledge has been delivered?", "INTERIM COUNT; NO FINAL TALLY", AMBER,
         "The Minister reported around 60,000 trees planted collectively through the end of 2025, and Project Green separately reported more than 8,000 trees planted in 2024 [1, 3].",
-        "The reported cumulative count is below 100,000, but it is approximate and precedes the manifesto's five-year deadline in 2027. The response contains no 2026 total or reconciliation to pledge 305 [2, 3].",
+        "The reported cumulative count is below 100,000 and approximate. It stops at the end of 2025, five months before the 30 May 2026 election ended the legislature; no 2026 total or reconciliation to pledge 305 was located [2, 3, 8].",
         "The count establishes interim reported progress, not final delivery or a final shortfall."), PageBreak()]
 
 S += [SectionHeading(3, "What planting totals measure"),
       P("The government records describe numbers planted. They do not report how many trees were alive after establishment, how many were replaced, or how much canopy they produced. Ambjent Malta's 2024 report gives a more detailed but still partial example: it reports 7,380 trees and 13,970 shrubs planted in 2024, and separately 3,209 trees and shrubs in Natura 2000 sites [5]. The protected-site figure is a subset and combines trees with shrubs; it is not a national tree-only total."),
-      P("Peer-reviewed Mediterranean research shows why a planting count cannot stand in for survival. A 20-year *Pinus halepensis* experiment in arid south-eastern Spain found survival differed substantially among shelter treatments; after 20 years, reported survival ranged from 29.5% to 57.5% [6]. A southern Spanish restoration study also found different three-year survival under nurse-based and traditional planting methods [7]. These are evidence that site and method matter, not survival estimates for Malta or for the Government's cohorts."),
+      P("Peer-reviewed Mediterranean research shows why a planting count cannot stand in for survival. A 20-year <i>Pinus halepensis</i> experiment in arid south-eastern Spain found survival differed substantially among shelter treatments; after 20 years, reported survival ranged from 29.5% to 57.5% [6]. A southern Spanish restoration study also found different three-year survival under nurse-based and traditional planting methods [7]. These are evidence that site and method matter, not survival estimates for Malta or for the Government's cohorts."),
       callout([P("WHAT A VERIFIABLE OUTCOME RECORD NEEDS", tag),
                P("For each planting cohort: project and location; species; number planted; planting date; maintenance and replacement; repeated survival checks; and, where the aim is greener public space, measured canopy or habitat change. The sources located for this check do not provide a national linked record of that kind.", lead)], bg=AMBER_PALE, bar=AMBER),
       Spacer(1, 3 * mm),
@@ -65,11 +67,11 @@ S += [SectionHeading(3, "What planting totals measure"),
 S += [PageBreak(), SectionHeading(4, "Verdict and limits"),
       verdict_box("Largely supported", "The reported figures and pledge are confirmed; achievement and tree survival are not established."),
       Spacer(1, 3 * mm),
-      P("Primary records confirm Project Green's 2024 statement of more than 8,000 trees and more than 25,000 shrubs, the 100,000-tree pledge in the 2022 Labour manifesto, and the Minister's approximate cumulative count of around 60,000 trees and more than 100,000 shrubs through end-2025. Confidence is moderate because totals are self-reported, rounded and lack a published project-level inventory."),
-      P("This check does not call the pledge failed: its five-year period extends into 2027, after the latest cumulative count located. It also does not call it achieved. The records do not establish survival, net canopy gain or habitat recovery. The Project Green 2024 and parliamentary figures have different scopes and must not be added together."),
+      P("Primary records confirm Project Green's 2024 statement of more than 8,000 trees and more than 25,000 shrubs, the 100,000-tree pledge in the 2022 Labour manifesto, and the Minister's approximate cumulative count of around 60,000 trees and more than 100,000 shrubs through end-2025 (Labour's 2026 manifesto gives more than 57,000 trees for 2022–2025). Confidence is moderate because totals are self-reported, rounded and lack a published project-level inventory."),
+      P("This check does not call the pledge failed or achieved. The latest cumulative count located stops at the end of 2025, when about three-quarters of the five-year period had passed and about 60% of the trees had been reported; the legislature then ended with the snap election of 30 May 2026, and no count for 2026 was located. The records do not establish survival, net canopy gain or habitat recovery. The Project Green 2024 and parliamentary figures have different scopes and must not be added together."),
       P("Evidence needed to settle delivery and outcomes", h2),
       requests_list([
-          "Publish a tree-only, project-level register through the pledge deadline, including dates, locations, species and responsible entity.",
+          "Publish a tree-only, project-level register for the 2022–2026 legislature, including dates, locations, species and responsible entity.",
           "State whether the 100,000 commitment includes trees planted by other ministries, contractors, private landowners or replacement planting.",
           "Report cohort survival and replacements at comparable intervals; distinguish shrubs and vouchers from planted trees.",
           "Where increased tree cover is the aim, publish comparable canopy measurements rather than using planting totals as a proxy.",
@@ -85,9 +87,22 @@ S += [PageBreak(), SectionHeading(4, "Verdict and limits"),
           (5, "Ambjent Malta, Annual Report 2024, pp. 49–51.", "https://parlament.mt/media/136607/06228.pdf"),
           (6, "Oliet et al., Frontiers in Forests and Global Change 5 (2023), doi:10.3389/ffgc.2022.1092703.", "https://doi.org/10.3389/ffgc.2022.1092703"),
           (7, "Rey et al., Journal of Applied Ecology 46(4) (2009): 937–945, doi:10.1111/j.1365-2664.2009.01680.x.", "https://doi.org/10.1111/j.1365-2664.2009.01680.x"),
+          (8, "IFES ElectionGuide, Malta: Maltese House of Representatives 2026 General (held 30 May 2026; previous election 26 March 2022; results source: Electoral Commission of Malta). Accessed 5 October 2026.", "https://electionguide.org/elections/id/5161/"),
+          (9, "Partit Laburista, Int Malta: Manifest Elettorali 2026, item 43, printed p. 168 (PDF p. 170).", "https://partitlaburista.org/wp-content/uploads/2026/08/Manifest_Elettorali_INT_MALTA_2026.pdf"),
+          (10, "Project Green, ‘Vouchers continue to be issued to beneficiaries of the Tree Planting Initiative’, 13 May 2026.", "https://projectgreen.mt/vouchers-continue-to-be-issued-to-beneficiaries-of-the-tree-planting-initiative/"),
       ]),
       Spacer(1, 4 * mm),
-      P("Version 1.0 · 3 October 2026 · Draft pending right of reply · Calculations: data/cc-010/checks.csv", cap)]
+      P("Version 1.1 · 5 October 2026 · Draft pending right of reply · Calculations: data/cc-010/checks.csv", cap),
+      Spacer(1, 4 * mm),
+      *revision_log([
+          ("1.0", "3 Oct 2026", "First issue. Right of reply not sought, at the maintainer's direction."),
+          ("1.1", "5 Oct 2026", "Corrections: the pledge was framed as open until 2027; it now records that the legislature "
+           "ended with the snap general election of 30 May 2026 [8] and that about 75% of the five-year period had "
+           "passed by end-2025, against about 60% of the trees reported (the “2027 deadline” tile is replaced). Added "
+           "Labour's own 2026 manifesto count, more than 57,000 trees for 2022–2025 [9], alongside the Minister's "
+           "~60,000. Updated the voucher scheme to 23,000 trees in vouchers issued by 13 May 2026 [10]; vouchers are "
+           "not trees planted. Cover note shortened to fit; italics fixed. Verdict and confidence unchanged."),
+      ])]
 
 build_report(Report(
     number="010", out=str(ROOT / "claims" / "CC-010" / "report.pdf"),
@@ -95,9 +110,9 @@ build_report(Report(
     subtitle_lines=["Checking government counts against the", "100,000-tree pledge"],
     quote_lines=["“100,000 siġra fil-ħames snin li ġejjin”"],
     attribution="Partit Laburista, 2022 manifesto, pledge 305",
-    context="2024 annual count · end-2025 parliamentary answer · pledge deadline 2027",
-    verdict="Largely supported", verdict_note="Reported counts confirmed; delivery and survival remain separate questions.",
+    context="2024 annual count · end-2025 parliamentary answer · snap election 30 May 2026",
+    verdict="Largely supported", verdict_note="Counts confirmed; delivery and survival are separate questions.",
     footer_lines=["Miżien · independent, science-first fact-checking", "Draft for review · right of reply remains with the maintainer"],
-    running_head="Tree-planting counts", version="1.0", date="3 October 2026",
+    running_head="Tree-planting counts", version="1.1", date="5 October 2026",
     pdf_title="Miżien Claim Check 010 – How many trees were planted?",
     pdf_subject="Government-reported planting counts and the Labour 100,000-tree pledge", story=S))

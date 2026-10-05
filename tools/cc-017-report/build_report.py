@@ -15,9 +15,9 @@ S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
       P("In the Budget 2026 speech on 27 October 2025, Finance Minister Clyde Caruana said: <b>“A reclamation project is "
         "already under way in the Freeport, and now it is time to take the next step. The Government is preparing to "
         "launch a large-scale land reclamation project outside the Freeport perimeter next year.”</b> The land would serve "
-        "industry and maritime activity and let commercial activities move away from where families live. Earlier, the "
-        "government said a seabed study had found sites where reclamation causes the least environmental damage. We "
-        "tested what can be tested a year later.", lead)]
+        "industry and maritime activity and let commercial activities move away from where families live. In 2019 the then "
+        "Environment Minister said a seabed study had found “five or six sites where reclamation is possible and "
+        "environmentally safe”. We tested what we could a year later.", lead)]
 S.append(key_points([
     ("The existing reclamation is real.",
      "Sentinel-2 imagery shows about 3.7 hectares (±1) of new land at Freeport Terminal 2 between summer 2023 and "
@@ -31,16 +31,17 @@ S.append(key_points([
      "public consultation, has not been published. Budget lines for reclamation fell from EUR 500,000 (2023) to "
      "EUR 10,000 (2025)."),
     ("The area is close to protected sites.",
-     "Three Natura 2000 sites lie about 1 km from the Freeport, including a 256 km² marine bird area to the south. "
-     "Research ties coastal development and dumping to the loss of Mediterranean seagrass meadows."),
+     "Three Natura 2000 designations lie within about 0.5 km of the new land at Terminal 2: a 256 km² marine bird "
+     "area to the south and two overlapping designations on the same cliffs. Research ties coastal development and "
+     "dumping to the loss of Mediterranean seagrass."),
     ("Verdict: not substantiated (moderate confidence).",
-     "The statement is a plan, and its first sentence is accurate. But the claim that the chosen sites do least "
-     "environmental damage, and the benefits for families, rest on documents that have not been shown."),
+     "The statement is a plan, and its first sentence is accurate. But the 2019 assurance that the sites are "
+     "“possible and environmentally safe”, and the benefits for families, rest on documents that have not been shown."),
 ]))
 S += [Spacer(1, 4 * mm), VerdictMeter(2), Spacer(1, 3 * mm),
       tiles([("+3.7 ha", GREEN, "New land at Freeport Terminal 2, 2023–2026 (Sentinel-2)"),
              ("0", RED, "Sites, sizes or assessments published for the large-scale project"),
-             ("1 km", ORANGE, "Distance from the Freeport to three Natura 2000 sites"),
+             ("0.4 km", ORANGE, "From the new land at Terminal 2 to a marine Natura 2000 site"),
              ("7 yrs", GREY, "Since the seabed study was promised for consultation")]),
       Spacer(1, 4 * mm),
       up_down("Publication of the seabed study and a project description naming the site, area, fill source and "
@@ -81,7 +82,8 @@ S += [Spacer(1, 4 * mm),
 # ================================================================== 2
 S.append(SectionHeading(2, "Method"))
 S.append(P("<b>Questions.</b> (1) Is a reclamation under way at the Freeport? (2) Has the large-scale project been "
-           "launched or described? (3) Is there shown evidence that the sites cause the least environmental damage?"))
+           "launched or described? (3) Is there shown evidence that the sites are “possible and environmentally safe”, as "
+           "said in 2019?"))
 S.append(P("<b>Evidence.</b> Sentinel-2 satellite imagery over Terminal 2, summers 2017–2026: for each summer, the "
            "per-pixel median of eight clear scenes, with land where the water index (NDWI) is below zero [8]. Natura "
            "2000 boundaries from the European Environment Agency [7]. Freeport operator statements [5, 6]; a press "
@@ -97,8 +99,8 @@ S.append(P("Posidonia oceanica meadows, a priority habitat under the EU Habitats
            "of their known area across the Mediterranean in fifty years, mainly through the combined effect of local "
            "pressures [9]. A critical review lists coastal development, dredging and dumping among the main human causes "
            "[10]. Land reclamation combines all three: the footprint is lost and the fill and sediment plume can smother "
-           "nearby beds. This is why the location and a habitat survey decide whether a site does “least damage”; the "
-           "claim cannot be judged without them."))
+           "nearby beds. This is why the location and a habitat survey decide whether a site is “environmentally safe”; "
+           "the claim cannot be judged without them."))
 
 # ================================================================== 4
 S.append(CondPageBreak(150 * mm))
@@ -107,20 +109,25 @@ S.append(fig(FIG / "fig1_terminal2.png"))
 S.append(P("Figure 1. Land at Freeport Terminal 2 from Sentinel-2. No change 2017–2023; new land from 2024, about "
            "3.7 ha by summer 2026, close to the stated 30,000 m² [5, 6].", cap))
 S.append(fig(FIG / "fig2_natura.png", width=CW * 0.85))
-S.append(P("Figure 2. Natura 2000 sites around the Freeport. The dashed circle is 1.5 km. The marine bird area "
-           "MT0000111 (Żona fil-Baħar fil-Lbiċ) begins about 1 km south [7].", cap))
+S.append(P("Figure 2. Natura 2000 sites around the Freeport. The square marks the reference point used in version "
+           "1.0, on the shore west of Terminal 2; the dashed circle around it is 1.5 km. The marine bird area MT0000111 "
+           "(Żona fil-Baħar fil-Lbiċ) begins about 1.1 km south of that point and about 0.4 km south of the new land at "
+           "Terminal 2 [7].", cap))
 S.append(std_table([
     [C("Indicator", cellh), C("Value", cellh), C("Source", cellh), C("Grade", cellh)],
     [C("New land at Terminal 2, 2023 → 2026"), C("<b>+3.7 ha (±1)</b>"), C("Sentinel-2 [8]"), grade_tag("B")],
     [C("Stated reclamation at Terminal 2"), C("~30,000 m²; ~1 Mt fill"), C("Freeport Corporation [5]"), grade_tag("C")],
-    [C("Natura 2000 sites within 1.5 km"), C("3"), C("EEA [7]"), grade_tag("C")],
-    [C("Marine SPA MT0000111"), C("1.1 km; 256 km²"), C("EEA [7]"), grade_tag("C")],
+    [C("Natura 2000 designations within 1.5 km"), C("3 (two overlap on the same cliffs)"), C("EEA [7]"), grade_tag("C")],
+    [C("Marine SPA MT0000111: distance; area"), C("0.4 km; 256 km²"), C("EEA [7]"), grade_tag("C")],
+    [C("Cliff SAC MT0000024 and SPA MT0000033"), C("0.5 km"), C("EEA [7]"), grade_tag("C")],
     [C("Reclamation budget 2023 / 2024 / 2025"), C("EUR 500k / 100k / 10k"), C("MaltaToday analysis ◆ [4]"), grade_tag("C")],
     [C("Seabed study published"), C("No"), C("Searches, 3 Oct 2026"), C("–")],
     [C("Project description, screening or call for the new project"), C("None found"), C("Searches, 3 Oct 2026"), C("–")],
 ], [74 * mm, 40 * mm, 44 * mm, 12 * mm]))
-S.append(P("All values in <i>data/cc-017/checks.csv</i>. Distances are from a reference point at the Freeport "
-           "(14.531 E, 35.819 N).", cap))
+S.append(P("All values in <i>data/cc-017/checks.csv</i>. Distances are the shortest distance from the new land at "
+           "Terminal 2 (Sentinel-2, 2023–2026) to each site boundary; from the edge of the 1.0 × 1.1 km Terminal 2 "
+           "window they are 0.3 and 0.4 km (<i>data/cc-017/natura2000_distances.csv</i>). The site of the planned "
+           "project is not known. MT0000033 lies almost wholly inside MT0000024.", cap))
 
 # ================================================================== 5
 S.append(CondPageBreak(120 * mm))
@@ -133,11 +140,11 @@ S.append(contested(
     "Similar announcements since 2005 were not delivered outside ports [4].",
     "<b>For this claim:</b> the launch “next year” is not yet shown."))
 S.append(contested(
-    "Q2  Are the sites the least environmentally damaging?", "NOT SHOWN", RED,
+    "Q2  Are the sites “environmentally safe”?", "NOT SHOWN", RED,
     "A seabed study costing EUR 11 million exists, and ERA’s draft is reported to have aimed to avoid Posidonia and "
     "protected areas [4].",
     "The study has not been published or consulted on, seven years after it was promised for consultation [3]. The "
-    "Freeport area lies about 1 km from three Natura 2000 sites [7].",
+    "new land at Terminal 2 lies about 0.4 km from a marine Natura 2000 site and 0.5 km from protected cliffs [7].",
     "<b>For this claim:</b> the environmental assurance rests on a document that has not been shown."))
 S.append(contested(
     "Q3  Will families gain space?", "UNSPECIFIED", GREY,
@@ -155,8 +162,9 @@ S.append(std_table([
      C("About 3.7 ha of new land at Terminal 2 since 2023 [8], as stated [5, 6]."), verd("SUPPORTED", GREENC)],
     [C("<b>B.</b> A large-scale project outside the perimeter will be launched in 2026"),
      C("No public step found by 3 Oct 2026; no site or size given."), verd("NOT SHOWN", GREY)],
-    [C("<b>C.</b> The sites cause least environmental damage (2019)"),
-     C("Seabed study unpublished; Natura 2000 sites ~1 km away [7]."), verd("NOT SHOWN", RED)],
+    [C("<b>C.</b> “There are five or six sites where reclamation is possible and environmentally safe” (2019)"),
+     C("Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km from the Terminal 2 works [7]."),
+     verd("NOT SHOWN", RED)],
     [C("<b>D.</b> Commercial activity will move so families can enjoy the space"),
      C("Activities and spaces not identified."), verd("NOT SHOWN", GREY)],
 ], [52 * mm, 88 * mm, 30 * mm], valign="MIDDLE"))
@@ -167,7 +175,7 @@ S += [Spacer(1, 6 * mm), SectionHeading(7, "Verdict and requests for evidence"),
                   "assurance have not been shown. Confidence: moderate."), Spacer(1, 4 * mm)]
 S.append(P("<b>Why.</b> (1) The first sentence checks out: land is being reclaimed at the Freeport. (2) The large-scale "
            "project is described only by purpose; nothing public lets anyone check its size, site or effects. (3) The "
-           "claim that the sites are the least environmentally damaging depends on a study that has not been "
+           "2019 statement that the sites are “possible and environmentally safe” depends on a study that has not been "
            "published, in an area close to protected sites. A plan stated more strongly than the evidence offered is "
            "what our scale calls <i>Not substantiated</i>; it may prove sound once the documents are shown."))
 S.append(P("Evidence we are asking for", h2))
@@ -220,7 +228,16 @@ S += appendix_a("A experiment · B observational study with a control or gradien
                 "guidance or official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
 S += revision_log([("1.0", "3 Oct 2026", "First issue. Right of reply to the Ministry for Finance and the Ministry "
-                    "for the Environment not yet sent.")])
+                    "for the Environment not yet sent."),
+                   ("1.1", "5 Oct 2026", "Corrections. (1) The 2019 statement is quoted as said: “least environmental "
+                    "damage” (a paraphrase) → “possible and environmentally safe” (cover, TL;DR, sections 2, 3, 5, 6 and 7); "
+                    "sub-claim C now tests that wording. (2) Distance to Natura 2000: “about 1 km from the Freeport”, "
+                    "measured from an onshore point west of Terminal 2 → 0.4 km from the new land at Terminal 2 to the "
+                    "marine SPA MT0000111 and 0.5 km to the cliff sites (shortest distance to the EEA boundaries; "
+                    "<i>data/cc-017/natura2000_distances.csv</i>); tile “1 km” → “0.4 km”. (3) “Three Natura 2000 "
+                    "sites” → three designations, two of which (SAC MT0000024, SPA MT0000033) overlap on the same "
+                    "cliffs. (4) Flyer: right of reply now names the Finance and Environment ministries, as the report "
+                    "does; the −34% seagrass loss is labelled Mediterranean-wide. Verdict and confidence unchanged.")])
 
 build_report(Report(
     number="017", out=str(FIG / "report.pdf"), kicker="Planning and the sea",
@@ -230,11 +247,11 @@ build_report(Report(
     quote_lines=["“The Government is preparing to launch a", "large-scale land reclamation project",
                  "outside the Freeport perimeter next year.”"], quote_size=15,
     attribution="Clyde Caruana, Minister for Finance, Budget Speech 2026, 27 October 2025.",
-    context="Earlier: a seabed study found sites with least environmental damage.",
+    context="In 2019: a seabed study found sites “possible and environmentally safe” (Environment Minister).",
     verdict="Not substantiated", verdict_note="Existing works confirmed; the new project and its safety not shown",
-    footer_lines=["Version 1.0  ·  3 October 2026", "Status: draft (right of reply: Finance, Environment ministries)",
+    footer_lines=["Version 1.1  ·  5 October 2026", "Status: draft (right of reply: Finance, Environment ministries)",
                   "Prepared from public sources, Sentinel-2 and EEA data.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Land reclamation outside the Freeport – Malta", version="1.0", date="3 October 2026",
+    running_head="Land reclamation outside the Freeport – Malta", version="1.1", date="5 October 2026",
     pdf_title="Reclaiming land outside the Freeport. Claim Check 017",
     pdf_subject="Tests the Budget 2026 statement on a large-scale land reclamation project outside the Malta Freeport",
     story=S))

@@ -27,3 +27,7 @@ https://www.maltatoday.com.mt/news/national/98630/land_reclamation_decision_info
 > "There are five or six sites where reclamation is possible and environmentally safe"
 
 said to be based on an EUR 11 million seabed study; the report was to go to Cabinet and then to public consultation.
+
+Note (5 Oct 2026, v1.1): the article's own introduction paraphrases this as locations where reclamation "causes least
+environmental damage" (seen in a search-engine summary of the article; the page itself returned 403 to automated
+requests). That is the newspaper's wording, not the minister's; the report quotes the minister.

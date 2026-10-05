@@ -26,10 +26,10 @@ S += [Spacer(1, 3 * mm), VerdictMeter(0), Spacer(1, 2 * mm),
              ("92.0%", GREEN, "Excellent in 2024 (80/87 sites)"),
              ("88.5%", ORANGE, "Excellent in 2025 (77/87 sites)")]),
       Spacer(1, 3 * mm),
-      up_down("A different EEA 2023 count or a source showing that the Commission meant another year; evidence "
-              "that its percentage used an incompatible denominator.",
-              "A newer EEA season with 92% or more classified excellent, if someone presents the Commission’s "
-              "2025 highlight as Malta’s current result."), Spacer(1, 4 * mm)]
+      up_down("None: Supported is the top of the scale. Only the date caveat remains; it would fall away if the "
+              "Commission’s text named the 2023 season beside the 92% figure.",
+              "A different EEA count for 2023; a source showing that the Commission meant a later season (the 2025 "
+              "result was 88.5%); or evidence that its percentage used an incompatible denominator."), Spacer(1, 4 * mm)]
 S += toc([("1", "Claim and sources"), ("2", "What the indicator measures"), ("3", "Season results"),
           ("4", "Local pollution and wastewater"), ("5", "Verdict and limits")])
 S.append(PageBreak())
@@ -64,7 +64,7 @@ S += [Spacer(1, 4 * mm),
 S += [PageBreak(), SectionHeading(3, "What the season data show")]
 S.append(std_table([
     [C("Bathing season", cellh), C("Excellent", cellh), C("Other classifications", cellh), C("Sites", cellh), C("Samples", cellh)],
-    [C("2023"), C("<b>80 (92.0%)</b>"), C("3 good; 4 sufficient"), C("87"), C("—")],
+    [C("2023"), C("<b>80 (92.0%)</b>"), C("3 good; 4 sufficient"), C("87"), C("2,021")],
     [C("2024"), C("<b>80 (92.0%)</b>"), C("3 good; 4 sufficient"), C("87"), C("2,107")],
     [C("2025"), C("<b>77 (88.5%)</b>"), C("8 good; 2 sufficient"), C("87"), C("2,100")],
 ], [35 * mm, 31 * mm, 57 * mm, 24 * mm, 33 * mm]))
@@ -74,7 +74,7 @@ S += [Spacer(1, 4 * mm),
         "The 2025 result is the latest annual profile available for this check.", small)], bg=PALE, bar=GREEN),
       SectionHeading(4, "Local pollution and wastewater")]
 S.append(P("The Environmental Health Directorate’s Balluta Bay report records a temporary warning and closure at sites "
-           "B08 and B09 beginning on 31 May 2024. The report describes microbial contamination and foul water from a "
+           "B08 and B09 beginning in late May 2024. The report describes microbial contamination and foul water from a "
            "storm-water tunnel. The warning was lifted on 12 August after three consecutive samples fell below the "
            "relevant thresholds. This was a serious local event over a defined period; it does not alter the count of "
            "sites classified excellent for 2023."))
@@ -96,11 +96,24 @@ S += [SectionHeading(5, "Verdict and limits"),
       Spacer(1, 4 * mm), SectionHeading(None, "References")]
 for n, txt in enumerate([
     "European Commission, <i>Environmental Implementation Review 2025: Malta</i>. Exact claim wording and separate wastewater discussion.",
-    "European Environment Agency, Malta bathing-water profiles for seasons 2023, 2024 and 2025. Site classifications, sample counts and parameters.",
+    "European Environment Agency, Malta bathing-water profiles for seasons 2023, 2024 and 2025. Site classifications, sample counts and parameters. The 2023 sample count is from the EEA’s WISE Bathing Water Directive dataset (DiscoData, retrieved 5 October 2026; data/cc-005/).",
     "Environmental Health Directorate, <i>Report on the temporary closure at B08 and B09 Balluta Bay</i> (2024).",
     "Court of Justice of the European Union, <i>Commission v Malta</i>, Case C-304/23, ECLI:EU:C:2024:906 (17 October 2024).",
 ], 1):
     S.append(P(f"{n}. {txt}", ref))
+
+S += [Spacer(1, 4 * mm)]
+S += revision_log([
+    ("1.0", "2 Oct 2026", "First issue. Right of reply not sought, at the maintainer’s direction."),
+    ("1.1", "5 Oct 2026", "Corrections: (1) the ‘what would move the verdict’ boxes were reversed. ‘Up’ listed conditions "
+     "that would lower the verdict, and ‘down’ cited a newer season at 92% or more. Now: up, none (Supported is the "
+     "top of the scale; naming the 2023 season would remove the date caveat); down, a different 2023 count, a later "
+     "intended season or an incompatible denominator. (2) Balluta Bay warning start: ‘31 May 2024’ → ‘late May "
+     "2024’. Our bibliography gave 21 May, and news reports date the two sites’ warnings ten days apart; the "
+     "primary report could not be re-opened to settle it. "
+     "(3) 2023 sample count: ‘—’ → 2,021 (EEA WISE dataset). (4) Page footer: ‘pending right of reply’ → ‘right "
+     "of reply not sought’, matching the maintainer’s decision. Verdict and confidence unchanged."),
+])
 
 build_report(Report(number="005", out=str(OUT / "report.pdf"), kicker="Bathing water, Malta",
     title_lines=["92% excellent", "bathing water"],
@@ -110,6 +123,7 @@ build_report(Report(number="005", out=str(OUT / "report.pdf"), kicker="Bathing w
     context="The percentage matches 80 of 87 sites in the EEA’s 2023 season data.",
     verdict="Supported", verdict_note="Accurate for 2023; date it.",
     footer_lines=["Draft for maintainer review", "Public data · Right of reply not sought, per maintainer direction"],
-    running_head="92% excellent bathing water", version="1.0", date="2 October 2026",
+    running_head="92% excellent bathing water", version="1.1", date="5 October 2026",
+    status_note="right of reply not sought",
     pdf_title="Claim Check 005 – 92% excellent bathing water",
     pdf_subject="Malta bathing water classification, seasons 2023 to 2025", story=S))

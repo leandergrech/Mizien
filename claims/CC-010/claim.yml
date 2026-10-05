@@ -29,9 +29,29 @@ claim:
     date: '2026-02-18'
     url: https://www.parlament.mt/media/137706/20260218_435o_par.pdf
     note: 'Ministerial answer: around 60,000 trees and over 100,000 shrubs planted collectively through end-2025.'
+  - title: 'Int Malta: Manifest Elettorali 2026, item 43'
+    publisher: Partit Laburista
+    date: '2026'
+    url: https://partitlaburista.org/wp-content/uploads/2026/08/Manifest_Elettorali_INT_MALTA_2026.pdf
+    note: 'Party''s own count, PDF p. 170 (printed p. 168): "Bejn l-2022 u l-2025 tħawlu aktar minn 57,000 siġra".
+      File SHA-256 466a60f920d956bbb30b934606b10dd6ebf7e7d0b9f162702257916a08911ceb.'
+  - title: 'Malta: Maltese House of Representatives 2026 General'
+    publisher: IFES ElectionGuide
+    date: Accessed 5 October 2026
+    url: https://electionguide.org/elections/id/5161/
+    note: Snap general election held 30 May 2026; previous election 26 March 2022. Results source given as the Electoral
+      Commission of Malta.
+  - title: Vouchers continue to be issued to beneficiaries of the Tree Planting Initiative
+    publisher: Project Green
+    date: '2026-05-13'
+    url: https://projectgreen.mt/vouchers-continue-to-be-issued-to-beneficiaries-of-the-tree-planting-initiative/
+    note: Vouchers for 23,000 trees issued to more than 250 beneficiaries under a separate private-land scheme;
+      vouchers are not trees planted.
 counter_evidence: The reported 2024 and cumulative counts are planting inputs, not survival or canopy outcomes.
   The 2026 parliamentary answer says about 60,000 trees were planted by the end of 2025, below the 100,000 target
-  at that date; the manifesto's five-year window had not yet elapsed. Tree and shrub totals are separate.
+  at that date, when about 75% of the five-year window (from the 26 March 2022 election) had elapsed; Labour's 2026
+  manifesto gives a lower count of more than 57,000 trees for 2022-2025. The legislature ended with the snap general
+  election of 30 May 2026, and no count for 2026 was located. Tree and shrub totals are separate.
 tests: Check the exact pledge and its timeframe against official planting counts; separate trees from shrubs, trees
   planted from vouchers or supplied stock, and planted counts from survival, maintenance, removals and canopy change.
 why_low_hanging: The headline totals are easy to check, but they do not show how many trees survived, where they
@@ -40,11 +60,13 @@ tags:
 - Input-as-outcome
 - Promise-without-baseline
 tags_provisional: true
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: Medium
 caveats: The February 2026 answer gives a collective rounded total through end-2025 without project-level methods
-  or a surviving-tree count. The pledge window remains open to 2027. The 2024 Project Green release and parliamentary
-  answer report separate tree and shrub totals; do not combine them or treat them as canopy measures.
+  or a surviving-tree count. The legislature for which the pledge was made ended with the snap general election of
+  30 May 2026; no cumulative count after end-2025 was located. The 2024 Project Green release and parliamentary
+  answer report separate tree and shrub totals; do not combine them or treat them as canopy measures. Vouchers
+  issued under the separate 2026 private-land scheme (23,000 trees by 13 May 2026) are not trees planted.
 right_of_reply:
   sent: null
   deadline: null
@@ -53,8 +75,10 @@ evidence_shown: 'Project Green''s 31 December 2024 release reports more than 8,0
   planted in 2024. Pledge 305 of the 2022 Labour manifesto commits to planting 100,000 trees over the next five
   years. A written parliamentary answer from the Environment Minister reports around 60,000 trees and over 100,000
   shrubs planted collectively by relevant government entities through end-2025. Around 60% of the pledged tree total
-  had therefore been reported by that checkpoint; the pledge deadline in 2027 had not yet passed. The records do
-  not show final delivery, tree survival or canopy change.
+  had therefore been reported by that checkpoint, when about 75% of the five-year period (counted from the 26 March
+  2022 election) had elapsed. Labour''s 2026 manifesto (item 43) gives a lower count of more than 57,000 trees for
+  2022-2025. The legislature ended with the snap general election of 30 May 2026 (IFES ElectionGuide). The records
+  do not show final delivery, tree survival or canopy change.
 
   '
 outputs:
@@ -67,7 +91,8 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
-version: '1.0'
+version: '1.1'
+last_reviewed: '2026-10-05'
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: ~60,000
   caption: trees reported by end-2025, of 100,000 pledged

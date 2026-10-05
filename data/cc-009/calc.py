@@ -34,7 +34,7 @@ def main() -> None:
         {"check": "WSC groundwater production change 2022 to 2025", "value": f"{change_22_25:.4f}", "unit": "%", "source": "WSC Annual Report 2025 Figure 20", "note": "Calculated from the annual report chart values; WSC production series, not all-user national abstraction."},
         {"check": "WSC groundwater production change 2024 to 2025 from chart", "value": f"{change_24_25:.4f}", "unit": "%", "source": "WSC Annual Report 2025 Figure 20", "note": f"WSC narrative states {reported_change:.1f}%; chart values imply {change_24_25:.2f}%, a small internal difference retained rather than reconciled."},
         {"check": "WSC groundwater production change 2024 to 2025 as reported", "value": f"{reported_change:.1f}", "unit": "%", "source": "WSC Annual Report 2025 p.43", "note": "Directly stated by WSC; separate from calculation using chart values."},
-        {"check": "Groundwater bodies failing nitrate standard", "value": "12", "unit": "of 15 bodies", "source": "ERA/EWA 3rd River Basin Management Plan, Chapter 6", "note": "Three exceptions are named; 14 bodies fail overall chemical status, which is broader than nitrate alone."},
+        {"check": "Groundwater bodies failing nitrate standard", "value": "12", "unit": "of 15 bodies", "source": "ERA/EWA 3rd River Basin Management Plan, Chapter 6", "note": "Three exceptions are named; the plan records 14 bodies failing chemical status, which is broader than nitrate alone (Malta's 3rd-cycle EU reporting lists 15; see wise_gwb_status.csv)."},
     ])
     with (DATA / "checks.csv").open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["check", "value", "unit", "source", "note"])
@@ -43,7 +43,8 @@ def main() -> None:
     print(f"2025 RO share: {by_year[2025][3]:.1f}%")
     print(f"WSC groundwater production change 2022-2025: {change_22_25:.2f}%")
     print(f"2024-2025 chart-derived decline: {-change_24_25:.2f}%; WSC prose says 11.4%")
-    print("RBMP: two bodies poor quantitatively; 14 poor chemically; 12 exceed nitrate standard.")
+    print("RBMP chapter 6 (as recorded): Malta and Gozo MSL poor quantitatively; 14 poor chemically; 12 exceed nitrate standard.")
+    print("WISE 3rd-cycle reporting (wise_gwb_status.csv): 4 poor quantitatively; 15 poor chemically.")
 
 
 if __name__ == "__main__":

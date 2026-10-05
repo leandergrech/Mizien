@@ -6,50 +6,63 @@ status: Drafted
 verdict: Largely supported
 verdict_confidence: Moderate
 claim:
-  text: 'Malta Developers Association (statement quoted by MaltaToday, 8 Feb 2026): ''The IMF''s assessment of the
-    Maltese housing market confirms what the MDA has been saying for several years'', i.e. the strength and stability
-    of the property sector.'
+  text: 'Malta Developers Association (release on its website, 8 Feb 2026; quoted by MaltaToday the same day): ''The
+    IMF''s assessment of the Maltese housing market confirms what the Malta Developers Association has been saying
+    for several years'', i.e. (MaltaToday''s summary) the strength and stability of the property sector.'
   speaker: Malta Developers Association (MDA)
   date: '2026-02-08'
   wording_status: Verbatim found
   sources:
+  - title: A strong housing market supported by excellent fundamentals
+    publisher: Malta Developers Association
+    date: 8 Feb 2026
+    url: https://mda.com.mt/a-strong-housing-market-supported-by-excellent-fundamentals/
+    note: The claim, primary wording. Read in full 5 Oct 2026 (via the site's WordPress API, post 1574). Page modified
+      17 Jun 2026, after publication; original text not available. Hashes in literature/CC-018/primary-source.md.
   - title: Malta Development Association welcomes IMF assessment of housing market
     publisher: MaltaToday
     date: 8 Feb 2026
     url: https://www.maltatoday.com.mt/news/national/139634/malta_development_association_welcomes_imf_assessment_housing_market
-    note: The claim in direct speech. Read in full 4 Oct 2026. MDA's own release not found.
+    note: The claim in direct speech (abbreviates the association's name to 'the MDA'). Read in full 4 Oct 2026.
+      The MDA's own release, not found in v1.0, was found on 5 Oct 2026 (above).
   - title: 'Malta: 2025 Article IV Consultation (IMF Country Report No. 26/29)'
     publisher: International Monetary Fund
     date: Feb 2026
     url: https://www.imf.org/-/media/files/publications/cr/2026/english/1mltea2026001-source-pdf.pdf
-    note: Read in full 4 Oct 2026; housing findings pp. 3, 8, 11, 12, 19, 20.
-  quote: The IMF's assessment of the Maltese housing market confirms what the MDA has been saying for several years.
+    note: Read in full 4 Oct 2026; housing findings pp. 3, 8, 11, 12, 19, 20. DOI 10.5089/9798229038249.002
+      (Crossref checked 5 Oct 2026).
+  quote: The IMF's assessment of the Maltese housing market confirms what the Malta Developers Association has been
+    saying for several years.
 counter_evidence: 'IMF CR 26/29: prices ''aligned with fundamentals'', price-to-income and price-to-rent stable,
   weakening ''currently low'' (supports). Eurostat tipsho60: Malta price-to-income -10.7% 2015-2024, 92.9% of long-term
   average (EU 98.9). But IMF calls banks'' real-estate exposure (72% of private loans, from 61%) ''a vulnerability'',
-  urges vigilance and enhanced monitoring given rapid price growth; affordability not assessed (overburden 1.1%
-  -> 6.0% 2015-2025). MDA-commissioned study (as reported) found prices outpacing incomes.'
-tests: IMF Country Report 26/29 read in full; Eurostat tipsho60, tipsho10, ilc_lvho07a.
+  urges vigilance and enhanced monitoring given rapid price growth; affordability not assessed (housing-cost
+  overburden worsened between 2015 and 2022 on Eurostat''s comparable series, 1.1% -> 2.9%; a break in the series in
+  2023, 6.0%, flat since). MDA-commissioned study (as reported) found prices outpacing incomes.'
+tests: MDA release and IMF Country Report 26/29 read in full; Eurostat tipsho60, tipsho10, ilc_lvho07a.
 why_low_hanging: 'Done: Claim Check 018 report and flyer.'
 tags: []
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: High
-caveats: Right of reply to the MDA not yet sent. Statement known through MaltaToday; MDA release and commissioned
-  study not seen.
+caveats: Right of reply to the MDA not yet sent. MDA release read (5 Oct 2026) and matches the quote; the page was
+  modified on 17 Jun 2026 and the original text was not seen. The release does not mention the IMF's 'vulnerability'
+  warning on bank exposure. MDA-commissioned study not seen. Eurostat flags a break in Malta's overburden series in
+  2023. v1.1 (5 Oct 2026) made corrections only; verdict and confidence unchanged.
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown:
+- MDA release of 8 Feb 2026 (literature/CC-018/primary-source.md)
 - IMF Country Report 26/29 (data/cc-018/imf_extracts.csv)
 - Eurostat tipsho60 (data/cc-018/eurostat_tipsho60.csv)
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-04'
+version: '1.1'
+last_reviewed: '2026-10-05'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623

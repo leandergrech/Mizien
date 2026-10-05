@@ -57,7 +57,8 @@ def fig1():
 
 def fig2():
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(9.6, 3.6), dpi=220, gridspec_kw={"width_ratios": [1.2, 1]})
-    labs = ["Amphora\n(Dynamic World,\nchecked by hand)", "IO land cover,\n3-year rule\n(net)", "IO land cover,\n2-year rule\n(net)"]
+    labs = ["Amphora, 2018–23\n(Dynamic World,\nchecked by hand)", "IO, 3-year rule\n(net): first built\nin 2020–21 maps",
+            "IO, 2-year rule\n(net): first built\nin 2019–22 maps"]
     vals = [0.83, float(C["strict"]["net_km2"]), float(C["two-year"]["net_km2"])]
     gross = [None, float(C["strict"]["new_built_km2"]), float(C["two-year"]["new_built_km2"])]
     bars = a1.bar(labs, vals, color=[ORANGE, GREEN, SAGE], width=0.6)
@@ -68,7 +69,7 @@ def fig2():
             a1.plot([r.get_x() + 0.05, r.get_x() + r.get_width() - 0.05], [gross[i]] * 2, color=GREY, ls=":", lw=1.2)
             a1.text(r.get_x() + r.get_width() / 2, gross[i] + 0.08, f"gross {gross[i]:.1f}", ha="center", fontsize=7.5,
                     color=GREY)
-    a1.set_ylabel("km² newly built up, 2018–2023")
+    a1.set_ylabel("km² newly built up (periods differ)")
     a1.set_ylim(0, 5.8)
     a1.set_title("How much green land was built on?", fontsize=9.5, color=GREEN, loc="left", fontweight="bold")
     s = C["strict"]

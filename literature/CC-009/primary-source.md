@@ -23,3 +23,16 @@ The latest plan listed by ERA is Malta's 3rd River Basin Management Plan for 202
 Source: ERA/EWA, *3rd River Basin Management Plan for Malta*, Chapter 6 (final status assessment): https://era.org.mt/wp-content/uploads/2023/09/3rd-River-Basin-Management-Plan-MALTA-Chapter-6-Assessment-of-Status-Final.pdf.
 
 The RBMP is a separate status assessment from WSC's potable-water production series. A reduction in WSC's groundwater component is not by itself evidence that aquifer levels, salinity or chemical status have recovered. Private, agricultural and other abstraction volumes are not included in the WSC production denominator used here; the report does not assert that total national abstraction is unquantified.
+
+## Corrections check, 5 October 2026 (v1.1)
+
+**Groundwater-body status: plan versus EU reporting.** Malta's WFD reporting to the EEA was queried directly from the WISE map services (layer 0, `where=countryCode='MT'`, `outFields=*`, status codes 2 = Good and 3 = Poor per each layer's legend):
+
+- 3rd cycle, `WFD2022_GroundWaterBody_WM` (status assessed 2021): 4 of 15 bodies poor quantitatively (MT001 Malta Mean Sea Level, MT013 Gozo Mean Sea Level, MT005 Pwales Coastal, MT010 Marfa Coastal); 15 of 15 poor chemically.
+- 2nd cycle, `WFD2016_GroundWaterBody_WM` (status assessed 2010–2014): 2 poor quantitatively (MT001, MT013); 12 poor chemically (good: MT006 Miżieb Mean Sea Level, MT009 Mellieħa Coastal, MT012 Comino Mean Sea Level).
+
+Per-body rows, query URLs and the retrieval date are in `data/cc-009/wise_gwb_status.csv`. The Chapter 6 record above names the Malta and Gozo Mean Sea Level systems as poor quantitatively and records 14 bodies poor chemically. It does not say that only those two are quantitatively poor; the earlier "2 poor" count was our inference. The 14 versus 15 chemical count is a real difference between the plan as recorded here and Malta's EU reporting for the same cycle. The plan could not be re-opened (ERA returns 403 to scripts), so the report shows both sources. A search-engine summary of the consolidated plan mentions the plan's objectives for the Pwales and Marfa Coastal bodies, which may mean the plan's tables also treat them as poor. That summary is second-hand and unverified; check Chapter 6's groundwater status tables in a browser.
+
+**"Lowest in a decade".** The record above attributes this to WSC's 2025 report ("the lowest annual total in the preceding decade"; paraphrase, not a verbatim quote). The repo's own series (Figure 20) covers 2022–2025 only, so the outputs now attribute the decade comparison to WSC. The exact wording could not be re-checked: parlament.mt returns 403 to scripts.
+
+**Reference [6].** The WSC Annual Report 2022 is now cited in section 2 for the 486 m³ difference in the 2022 groundwater value (see `data/cc-009/wsc_production.csv`). The difference changes neither the 64.3% share nor the 8.95% change.

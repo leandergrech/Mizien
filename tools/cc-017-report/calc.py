@@ -24,11 +24,24 @@ add("New land at Terminal 2, 2025 -> 2026", round(L["2026"] - L["2025"], 1), "ha
 add("Fill per hectare of the Terminal 2 reclamation", round(1_000_000 / 3.0), "t/ha", "calculated",
     "about 1 million tonnes of inert material for 30,000 m2 (Malta Freeport Corporation)")
 near = [n for n in N if float(n["distance_from_freeport_km"]) <= 1.5]
-add("Natura 2000 sites within 1.5 km of the Freeport", len({n["sitecode"] for n in near}), "sites", "EEA Natura 2000",
+add("Natura 2000 designations within 1.5 km of the v1.0 reference point (14.531 E, 35.819 N)",
+    len({n["sitecode"] for n in near}), "sites", "EEA Natura 2000",
     "; ".join(f"{n['sitecode']} {n['designation'].split()[0]} {n['distance_from_freeport_km']} km" for n in near))
 lbic = next(n for n in N if n["sitecode"] == "MT0000111")
-add("Distance to marine SPA Żona fil-Baħar fil-Lbiċ", float(lbic["distance_from_freeport_km"]), "km", "EEA Natura 2000",
-    f"{lbic['area_km2']} km2")
+add("Distance from the v1.0 reference point to marine SPA Żona fil-Baħar fil-Lbiċ", float(lbic["distance_from_freeport_km"]),
+    "km", "EEA Natura 2000", f"{lbic['area_km2']} km2; onshore point west of Terminal 2, superseded in v1.1")
+# v1.1: shortest distances from the Terminal 2 reclamation itself (distances.py, full-resolution EEA boundaries)
+X = {n["sitecode"] + " " + n["designation"].split()[0]: n for n in csv.DictReader(open(D / "natura2000_distances.csv"))}
+spa, sac, cliff = X["MT0000111 SPA"], X["MT0000024 SAC/SCI"], X["MT0000033 SPA"]
+for frm, lab in (("new_land", "new land at Terminal 2, 2023 -> 2026"), ("t2_window", "the Terminal 2 window")):
+    add(f"Distance from {lab} to marine SPA MT0000111", float(spa[f"km_from_{frm}"]), "km", "EEA Natura 2000",
+        "shortest distance, UTM 33N")
+    add(f"Distance from {lab} to cliff sites MT0000024 / MT0000033", f"{sac[f'km_from_{frm}']} / {cliff[f'km_from_{frm}']}",
+        "km", "EEA Natura 2000", "shortest distance, UTM 33N")
+add("Natura 2000 designations within 1.5 km of the new land at Terminal 2",
+    sum(float(n["km_from_new_land"]) <= 1.5 for n in X.values()), "sites", "EEA Natura 2000",
+    f"MT0000033 SPA lies {cliff['mostly_inside'].split('(')[-1].rstrip(')')} inside MT0000024 SAC: two designations, "
+    "same cliffs")
 add("Land reclamation allocated in budgets 2023 / 2024 / 2025", "500,000 / 100,000 / 10,000", "EUR",
     "MaltaToday analysis, 15 Apr 2025 (second-hand)", "EUR 9,500 spent of the 2023 allocation")
 add("Years since the seabed study was said to be the basis for a Cabinet decision", 2026 - 2019, "years", "calculated",

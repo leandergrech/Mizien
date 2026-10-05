@@ -20,15 +20,19 @@ claim:
     note: The claim. Read in full 4 Oct 2026 in a browser.
   quote: While Malta has the third-lowest nominal electricity price for domestic consumers in the EU at €0.131 per
     unit, when adjusted for PPS ... the burden on Maltese families is the lowest in the EU, at 14.33 PPS per 100kWh.
-counter_evidence: 'Eurostat nrg_pc_204 confirms every figure: Malta 14.35 PPS/100 kWh in 2024-S2, lowest of 27;
-  EUR 0.1303, third lowest; CZ 41.00, CY 35.70, DE 35.23 PPS. Malta''s price -0.2% 2020-25 vs EU +35%. The tariff
-  freeze is financed by energy subsidies of 1.8% of GDP (2022) to 0.8% (2025), about EUR 1.0bn 2022-2025 (IMF CR
-  26/29, electricity and fuel). Energy poverty below EU (7.6% vs 8.8% unable to keep warm).'
+counter_evidence: 'Eurostat nrg_pc_204 confirms every figure for the standard household band (2,500-4,999 kWh):
+  Malta 14.35 PPS/100 kWh in 2024-S2, lowest of 27; EUR 0.1303, third lowest; CZ 41.00, CY 35.70, DE 35.23 PPS.
+  In other bands Malta is not the cheapest (2024-S2: 3rd for 1,000-2,499 kWh, 2nd for 5,000-14,999 kWh, 16th
+  under 1,000 kWh, 23rd of 27 at 15,000 kWh or more; 4th of 26 on the all-band average). Malta''s price -0.2%
+  2020-25 vs EU +35%; EUR 0.169 to 0.125 per kWh in 2014, 0.125-0.133 since. Fixed electricity and fuel prices
+  are financed by energy subsidies of 1.8% of GDP (2022) to 0.8% (2025, projected), about EUR 1.0bn 2022-2025
+  (IMF CR 26/29; electricity and fuel together, electricity share not published). Energy poverty below EU (7.6%
+  vs 8.8% unable to keep warm).'
 tests: Eurostat nrg_pc_204 (EUR, PPS), ilc_mdes01, ilc_mdes07; IMF CR 26/29 energy subsidies.
 why_low_hanging: 'Done: Claim Check 022 report and flyer.'
 tags: []
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: Medium
 caveats: Right of reply to the Energy Ministry not yet sent. IMF subsidy series includes fuel; 2025 projected. 'Burden'
   measured by price only.
@@ -37,15 +41,15 @@ right_of_reply:
   deadline: null
   response: null
 evidence_shown:
-- Eurostat nrg_pc_204 (data/cc-022/eurostat_prices.csv)
+- Eurostat nrg_pc_204 (data/cc-022/eurostat_prices.csv, eurostat_prices_bands.csv, eurostat_prices_mt_history.csv)
 - IMF CR 26/29 Table 2 (data/cc-022/imf_energy_subsidies.csv)
 - Eurostat ilc_mdes01/07
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-04'
+version: '1.1'
+last_reviewed: '2026-10-05'
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
   lat: 35.8959
@@ -54,9 +58,4 @@ location:
   icon: castille
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 1st
-  caption: cheapest electricity in the EU in purchasing power
-history:   # research log: the date each step of the research was done (not when the site changed)
-  - date: 2026-10-04
-    step: version
-    version: "1.0"
-    note: "First issue. Right of reply to the Energy Ministry not yet sent."
+  caption: cheapest electricity in the EU in purchasing power, typical household (2,500–4,999 kWh)

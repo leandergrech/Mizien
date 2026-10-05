@@ -3,7 +3,7 @@
 
 Reads data/cc-003/eurostat_ghg_population.csv (Eurostat env_air_gge and nama_10_pe, retrieved 2 Oct 2026)
 and writes data/cc-003/checks.csv. ESR figures are typed from the Commission's Climate Action Progress
-Report 2025 staff working document (capr2025_swd_en.pdf), pages cited per row.
+Report 2025 staff working document (capr2025_swd_en.pdf), printed page numbers cited per row.
 """
 import csv, pathlib
 from collections import defaultdict
@@ -51,14 +51,33 @@ for item, lab in (("CRF1A1", "energy industries (power)"), ("CRF1A3", "domestic 
     add(f"Malta: {lab} change 2005-2024", round(100 * (s[2024] / s[2005] - 1), 1), "%", ES,
         f"{s[2005]:.3f} -> {s[2024]:.3f} Mt CO2e")
 
+for item, lab in (("CRF1A1", "energy industries (power)"), ("CRF1A3", "domestic transport")):
+    s = v[("EU27_2020", item)]
+    add(f"EU-27: {lab} change 2005-2024", round(100 * (s[2024] / s[2005] - 1), 1), "%", ES,
+        f"{s[2005]:.3f} -> {s[2024]:.3f} Mt CO2e")
+
+# Page numbers are the printed page numbers of the SWD (the PDF page number is one higher).
 SWD = "European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf)"
-add("Malta: ESR target 2030 vs 2005", -19, "%", SWD + " p.115", "Effort Sharing Regulation")
-add("Malta: ESR emissions 2024 vs 2005", 41, "%", SWD + " p.115")
-add("Malta: ESR projection 2030, existing measures (WEM)", 42, "%", SWD + " p.115", "gap -61 pp")
-add("Malta: ESR projection 2030, additional measures (WAM)", 30, "%", SWD + " p.115", "gap -49 pp")
+add("Malta: industrial emissions change 2005-2023", 293, "%", SWD + " p.44",
+    "mainly refrigeration and air-conditioning gases")
+add("EU-27: industrial emissions change 2005-2023", -36, "%", SWD + " p.44", "total industrial emissions")
+add("Malta: buildings emissions change since 2005", 12, "%", SWD + " p.59",
+    "all other Member States fell except Romania (+6%)")
+add("Malta: ESR target 2030 vs 2005", -19, "%", SWD + " p.114 (Table 25)", "Effort Sharing Regulation")
+add("Malta: ESR emissions 2024 vs 2005", 41, "%", SWD + " p.114 (Table 25)")
+add("Malta: ESR projection 2030, existing measures (WEM)", 42, "%", SWD + " p.114 (Table 25)", "gap -61 pp")
+add("Malta: ESR projection 2030, additional measures (WAM)", 30, "%", SWD + " p.114 (Table 25)", "gap -49 pp")
 add("Malta: ESR gap WAM, percentage points", 30 - (-19), "pp", "calculated", "projection minus target")
-add("Next largest WAM gap among EU-27 (Ireland)", -20, "pp", SWD + " p.115", "Malta -49 pp is the largest in pp terms")
-add("Malta: cumulative AEA balance 2030", -2.1, "Mt CO2e", SWD + " p.126", "negative = shortfall before flexibilities")
+add("Next largest WAM gap among EU-27 (Ireland)", -20, "pp", SWD + " p.113 (Table 25)",
+    "Malta -49 pp is the largest in pp terms; Ireland WEM gap -33 pp")
+add("EU-27: ESR target 2030 vs 2005", -40, "%", SWD + " p.115 (Table 25)")
+add("EU-27: ESR emissions 2024 vs 2005", -20, "%", SWD + " p.115 (Table 25)")
+add("EU-27: ESR projection 2030, existing measures (WEM)", -31, "%", SWD + " p.115 (Table 25)", "gap -8 pp")
+add("EU-27: ESR projection 2030, additional measures (WAM)", -38, "%", SWD + " p.115 (Table 25)", "gap -2 pp")
+add("Malta: cumulative AEA balance 2030", -2.1, "Mt CO2e", SWD + " p.125", "negative = shortfall before flexibilities")
+add("Malta: ESR distance to target 2030", -0.5, "Mt CO2e", SWD + " p.125 (Table 26)", "baseline 2005: 1.0 Mt")
+add("Germany: ESR distance to target 2030", -64.0, "Mt CO2e", SWD + " p.118 (Table 26)",
+    "baseline 2005: 484.7 Mt; gap -14 pp (WEM) / -13 pp (WAM): smaller than Malta's in pp, larger in tonnes")
 
 ren = {(r["geo"], r["item"], r["year"]): float(r["value"]) for r in csv.DictReader(open(D / "eurostat_renewables_share.csv"))}
 for item, lab in (("REN", "renewables, gross final energy"), ("REN_ELC", "renewables, electricity")):

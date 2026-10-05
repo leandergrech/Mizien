@@ -3,7 +3,12 @@ check,value,unit,source,note
 "New land at Terminal 2, 2023 -> 2026",3.7,ha,Sentinel-2,"stated: about 3.0 ha (30,000 m2), Malta Freeport Corporation"
 "New land at Terminal 2, 2025 -> 2026",3.3,ha,Sentinel-2,
 Fill per hectare of the Terminal 2 reclamation,333333,t/ha,calculated,"about 1 million tonnes of inert material for 30,000 m2 (Malta Freeport Corporation)"
-Natura 2000 sites within 1.5 km of the Freeport,3,sites,EEA Natura 2000,MT0000024 SAC/SCI 1.03 km; MT0000033 SPA 1.03 km; MT0000111 SPA 1.09 km
-Distance to marine SPA Żona fil-Baħar fil-Lbiċ,1.09,km,EEA Natura 2000,256.0 km2
+"Natura 2000 designations within 1.5 km of the v1.0 reference point (14.531 E, 35.819 N)",3,sites,EEA Natura 2000,MT0000024 SAC/SCI 1.03 km; MT0000033 SPA 1.03 km; MT0000111 SPA 1.09 km
+Distance from the v1.0 reference point to marine SPA Żona fil-Baħar fil-Lbiċ,1.09,km,EEA Natura 2000,"256.0 km2; onshore point west of Terminal 2, superseded in v1.1"
+"Distance from new land at Terminal 2, 2023 -> 2026 to marine SPA MT0000111",0.4,km,EEA Natura 2000,"shortest distance, UTM 33N"
+"Distance from new land at Terminal 2, 2023 -> 2026 to cliff sites MT0000024 / MT0000033",0.51 / 0.51,km,EEA Natura 2000,"shortest distance, UTM 33N"
+Distance from the Terminal 2 window to marine SPA MT0000111,0.33,km,EEA Natura 2000,"shortest distance, UTM 33N"
+Distance from the Terminal 2 window to cliff sites MT0000024 / MT0000033,0.43 / 0.43,km,EEA Natura 2000,"shortest distance, UTM 33N"
+Natura 2000 designations within 1.5 km of the new land at Terminal 2,3,sites,EEA Natura 2000,"MT0000033 SPA lies 99.9% inside MT0000024 SAC: two designations, same cliffs"
 Land reclamation allocated in budgets 2023 / 2024 / 2025,"500,000 / 100,000 / 10,000",EUR,"MaltaToday analysis, 15 Apr 2025 (second-hand)","EUR 9,500 spent of the 2023 allocation"
 Years since the seabed study was said to be the basis for a Cabinet decision,7,years,calculated,"MaltaToday, Sep 2019; study not published"

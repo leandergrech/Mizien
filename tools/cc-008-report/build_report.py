@@ -17,7 +17,7 @@ S += [SectionHeading(None, "TL;DR"), Spacer(1, mm),
 S.append(key_points([
     ("Marsa has reported figures, not a public dataset.", "The completion release reports 79% less travel time, up to 70% less particulate matter, 52% less NOx and 50% less CO2. It does not link the survey series or calculation."),
     ("An interview points to surveys.", "In November 2021, an IM spokesperson said periodic surveys confirmed benefits; the surveys themselves and their methods were not published in the article."),
-    ("Msida's original wording was prospective.", "In October 2024, IM said the flyover would reduce delays, emissions and noise. It opened to vehicles in December 2025; other project works continued in 2026."),
+    ("Msida's statement preceded construction.", "In October 2024, before works began, IM called the new flyover “a critical move to reduce delays, emissions, and noise pollution”. It opened to vehicles in December 2025; other project works continued in 2026."),
     ("Noise is unverified.", "No comparable before-and-after noise measurements were found for either location."),
     ("Verdict: not substantiated.", "The outcomes are plausible and Marsa has agency-reported numbers, but the available public evidence cannot independently verify the combined claim."),
 ]))
@@ -36,14 +36,18 @@ S.append(PageBreak())
 
 S += [SectionHeading(1, "Wording and project stages"),
       P("Infrastructure Malta's 28 October 2024 Msida statement says the area has congestion that affects air "
-        "quality and noise, and calls its new flyover “a critical move to reduce delays, emissions, and noise "
-        "pollution” [1]. This is a forecast, not a report of measured results. The vehicle flyover opened in "
-        "December 2025, but the wider project continued through 2026 [3]."),
-      callout([P("THE MARS AGENCY CLAIM", tag),
+        "quality and noise, and describes building a new flyover to replace the traffic-light-controlled junction "
+        "as “a critical move to reduce delays, emissions, and noise pollution” [1]. The same page says initial "
+        "work “will focus on strengthening the Msida waterfront quay” and gives 2027 for completion: works had not "
+        "begun, so the stated reductions were expected effects, not measured results. The vehicle flyover opened "
+        "in December 2025, but the wider project continued through 2026 [3]."),
+      callout([P("THE MARSA AGENCY CLAIM", tag),
                P("The 15 April 2021 Marsa completion release reports “79%” less travel time and “up to 70%” less "
                  "air pollution. It also lists 52% less nitrogen oxides and 50% less carbon dioxide [2].", lead),
                P("These are Infrastructure Malta's reported project benefits. The source page does not link the "
-                 "underlying traffic surveys, calculation files, pollutant inputs or uncertainty.", small)], bg=PALE, bar=GREEN),
+                 "underlying traffic surveys, calculation files, pollutant inputs or uncertainty. It also says that "
+                 "removing traffic-light waiting times “is resulting in significant air quality improvements in "
+                 "Paola and Marsa”, a statement about local air quality for which it cites no monitoring data.", small)], bg=PALE, bar=GREEN),
       Spacer(1, 3 * mm),
       P("The two cases have different timelines. Marsa is a completed, multi-level project. Msida's road flyover "
         "began operating while other elements, including public spaces and the canal, were still being delivered. "
@@ -105,7 +109,7 @@ S += [PageBreak(), SectionHeading(4, "Verdict and evidence needed"),
       Spacer(1, 3 * mm),
       P("<b>Why.</b> Infrastructure Malta reports large Marsa travel-time and emissions reductions, and a later "
         "news report says the agency cited periodic surveys. The underlying surveys and calculation methods were "
-        "not located. For Msida, the wording found was prospective; although the flyover is in vehicle use, the "
+        "not located. For Msida, the statement was made before works began; although the flyover is in vehicle use, the "
         "broader project remained in progress in 2026 and no comparable post-opening traffic, air or noise series "
         "was found. The combined claim is therefore stronger than the public evidence that can be checked. "
         "Confidence is moderate because relevant agency claims and planning documents exist, but key data are missing."),
@@ -123,7 +127,7 @@ S += [PageBreak(), SectionHeading(4, "Verdict and evidence needed"),
       P("<b>Right of reply.</b> Not sought in this draft, at the maintainer's direction. Handle before wider circulation.", small),
       SectionHeading(5, "Sources"),
       *references([
-          (1, "Infrastructure Malta, Msida Creek: enhancing connectivity and community spaces, 28 October 2024.", "https://www.infrastructuremalta.com/news/msida-creek-enhancing-connectivity-and-community-spaces"),
+          (1, "Infrastructure Malta, Msida Creek: enhancing connectivity and community spaces, 28 October 2024 (wording checked 5 October 2026).", "https://www.infrastructuremalta.com/news/msida-creek-enhancing-connectivity-and-community-spaces"),
           (2, "Infrastructure Malta, Infrastructure Malta completes the Marsa Junction Project, 15 April 2021.", "https://www.infrastructuremalta.com/news/infrastructure-malta-completes-marsa-junction-project"),
           (3, "Office of the Prime Minister, Inawgurata l-flyover tal-Imsida Creek, 17 December 2025 (Maltese).", "https://primeminister.gov.mt/latest-news/pr252279/"),
           (4, "ERA, PA/02053/20 and PA/06425/20 project record and documents.", "https://era.org.mt/era-project/pa02053-20_pa06425-20/"),
@@ -131,7 +135,16 @@ S += [PageBreak(), SectionHeading(4, "Verdict and evidence needed"),
           (6, "Duranton & Turner, The Fundamental Law of Road Congestion: Evidence from US Cities, American Economic Review 101(6), 2616–2652 (2011).", "https://doi.org/10.1257/aer.101.6.2616"),
       ]),
       Spacer(1, 4 * mm),
-      P("Version 1.0 · 2 October 2026 · Draft pending right of reply · Evidence register: data/cc-008/assessment.csv", cap)]
+      P("Version 1.1 · 5 October 2026 · Draft pending right of reply · Evidence register: data/cc-008/assessment.csv", cap),
+      Spacer(1, 4 * mm),
+      *revision_log([
+          ("1.0", "2 Oct 2026", "First issue. Right of reply not sought, at the maintainer's direction."),
+          ("1.1", "5 Oct 2026", "Corrections: the Msida quotation now matches the wording on Infrastructure Malta's page "
+           "(checked 5 October 2026); the earlier quotation included words (“this project”, “which will be”) not on "
+           "the page as checked, and the forecast reading now rests on the statement having been published before "
+           "works began. Added the Marsa release's wording on “significant air quality improvements in Paola and "
+           "Marsa”. Heading typo “Mars” corrected to “Marsa”. Verdict and confidence unchanged."),
+      ])]
 
 build_report(Report(
     number="008", out=str(ROOT / "claims" / "CC-008" / "report.pdf"),
@@ -143,6 +156,6 @@ build_report(Report(
     verdict="Not substantiated",
     verdict_note="Marsa figures reported; underlying surveys unavailable.",
     footer_lines=["Miżien · independent, science-first fact-checking", "Draft for review · right of reply remains with the maintainer"],
-    running_head="Flyovers, traffic and local pollution", version="1.0", date="2 October 2026",
+    running_head="Flyovers, traffic and local pollution", version="1.1", date="5 October 2026",
     pdf_title="Miżien Claim Check 008 – Flyovers and congestion",
     pdf_subject="Published outcome evidence for the Marsa and Msida flyover claims", story=S))

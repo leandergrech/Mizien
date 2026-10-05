@@ -1,3 +1,6 @@
 check,value,unit,source,note
 Approximate share of 2022 pledge reported planted by end-2025,60,%,Manifesto pledge 305; Parliament PQ 34270,Approximate count divided by pledge; not a final outcome and not a linear forecast.
-Approximate tree count still to reach pledge,40000,trees,Manifesto pledge 305; Parliament PQ 34270,Arithmetic difference only; Parliament says around 60000 planted by end-2025 and the five-year period had not expired.
+Approximate tree count still to reach pledge,40000,trees,Manifesto pledge 305; Parliament PQ 34270,Arithmetic difference only; Parliament says around 60000 planted by end-2025; no later cumulative count located.
+"Share of pledge in Labour's own 2026 manifesto count (more than 57,000 trees, 2022-2025)",57,%,Labour 2026 manifesto item 43,"Lower bound ('more than'); the party's figure is lower than the Minister's ~60,000."
+Share of five-year window elapsed by end-2025,75.4,%,Election dates: IFES ElectionGuide,2022-03-26 to 2025-12-31 of 2022-03-26 to 2027-03-26 (1826 days).
+Share of five-year window elapsed at the 30 May 2026 general election,83.6,%,Election dates: IFES ElectionGuide,The legislature for which the 2022 manifesto was written ended with this snap election.

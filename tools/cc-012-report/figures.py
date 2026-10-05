@@ -55,13 +55,13 @@ def fig2():
     ax.plot(d, c, "o-", color=BLUE, ms=3, lw=1, label="Rest of the park (control)")
     ax.plot(d, z, "o-", color=GREEN, ms=3.5, lw=1.6, label="Gravel zone")
     ax.axvline(date(2025, 6, 1), color=RED, lw=1.2)
-    ax.text(date(2025, 6, 10), 0.53, "gravel laid\n(June 2025)", color=RED, fontsize=8)
+    ax.text(date(2025, 6, 10), 0.79, "gravel laid\n(June 2025)", color=RED, fontsize=8)
     ax.axvline(date(2026, 1, 11), color=SLATE, lw=0.8, ls=":")
-    ax.text(date(2026, 1, 18), 0.53, "PM: intervention\nafter the concerts", color=SLATE, fontsize=8)
+    ax.text(date(2026, 1, 18), 0.79, "PM: intervention\nafter the concerts", color=SLATE, fontsize=8)
     ax.set_ylabel("NDVI (greenness)")
-    ax.set_ylim(0, 0.6)
+    ax.set_ylim(0, 0.9)   # NDVI from surface reflectance (BOA_ADD_OFFSET applied in fetch_s2.py)
     ax.legend(frameon=False, fontsize=8, loc="upper left")
-    ax.text(date(2023, 1, 5), -0.11, "Shaded: winter (December–March), when unirrigated grass greens with the rain. Each "
+    ax.text(date(2023, 1, 5), -0.165, "Shaded: winter (December–March), when unirrigated grass greens with the rain. Each "
             "point is the median of clear pixels in one Sentinel-2 scene (< 10% cloud).", fontsize=7, color=GREY)
     fig.savefig(OUT / "fig2_timeseries.png", bbox_inches="tight", facecolor="white")
 

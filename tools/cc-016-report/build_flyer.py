@@ -26,12 +26,12 @@ build_flyer(Flyer(
             "No ship staying two to four days plugged in."),
            ("+8%", ORANGE, "More cruise calls",
             "385 calls in 2025, up from 357 in 2024.")],
-    fair="Shore power is a sound technology and use may grow. The 90% figure has no published basis, and no one has "
-         "measured the harbour’s air before and after.",
+    fair="Shore power is a sound technology and use may grow. The 90% is Infrastructure Malta’s figure for ships "
+         "that plug in; the 2023 page made it harbour-wide. No one has measured the harbour’s air before and after.",
     asks=["Transport Malta’s connection log.",
-          "The basis of the 90% figure.",
+          "The study behind the 90% figure.",
           "ERA’s Senglea shipping study.",
           "Terms of the shore power deals."],
-    footer="Version 1.0  ·  3 October 2026  ·  Public data only  ·  Right of reply: Infrastructure Malta (not yet sent)",
+    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Right of reply: Infrastructure Malta (not yet sent)",
     pdf_title="Claim Check 016 – Does shore power cut pollution by 90%?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

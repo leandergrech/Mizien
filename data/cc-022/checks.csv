@@ -15,5 +15,21 @@ Energy subsidies 2023,293,EUR million,IMF CR 26/29 x Eurostat GDP,1.4% of GDP
 Energy subsidies 2024,208,EUR million,IMF CR 26/29 x Eurostat GDP,0.9% of GDP
 Energy subsidies 2025,197,EUR million,IMF CR 26/29 x Eurostat GDP,0.8% of GDP
 "Energy subsidies 2022-2025, total",1022,EUR million,calculated,
+"Malta rank, PPS price, 2024-S2, band under 1,000 kWh (DA)",16,of 27,Eurostat nrg_pc_204,Malta 39.13 PPS/100 kWh
+"Malta rank, PPS price, 2024-S2, band 1,000-2,499 kWh (DB)",3,of 27,Eurostat nrg_pc_204,Malta 16.70 PPS/100 kWh
+"Malta rank, PPS price, 2024-S2, band 2,500-4,999 kWh (DC, standard household)",1,of 27,Eurostat nrg_pc_204,Malta 14.35 PPS/100 kWh
+"Malta rank, PPS price, 2024-S2, band 5,000-14,999 kWh (DD)",2,of 27,Eurostat nrg_pc_204,Malta 15.75 PPS/100 kWh
+"Malta rank, PPS price, 2024-S2, band 15,000 kWh or more (DE)",23,of 27,Eurostat nrg_pc_204,Malta 31.91 PPS/100 kWh
+"Malta rank, PPS price, 2024-S2, band all bands (Eurostat average)",4,of 26,Eurostat nrg_pc_204,Malta 16.58 PPS/100 kWh
+"Malta rank, PPS price, 2025-S2, band under 1,000 kWh (DA)",9,of 27,Eurostat nrg_pc_204,Malta 34.48 PPS/100 kWh (flag p)
+"Malta rank, PPS price, 2025-S2, band 1,000-2,499 kWh (DB)",2,of 27,Eurostat nrg_pc_204,Malta 15.75 PPS/100 kWh (flag p)
+"Malta rank, PPS price, 2025-S2, band 2,500-4,999 kWh (DC, standard household)",1,of 27,Eurostat nrg_pc_204,Malta 14.09 PPS/100 kWh (flag p)
+"Malta rank, PPS price, 2025-S2, band 5,000-14,999 kWh (DD)",2,of 27,Eurostat nrg_pc_204,Malta 15.57 PPS/100 kWh (flag p)
+"Malta rank, PPS price, 2025-S2, band 15,000 kWh or more (DE)",24,of 27,Eurostat nrg_pc_204,Malta 33.06 PPS/100 kWh (flag p)
+"Malta rank, PPS price, 2025-S2, band all bands (Eurostat average)",3,of 27,Eurostat nrg_pc_204,Malta 16.19 PPS/100 kWh
+"Malta nominal price 2013-S2, band DC",0.1689,EUR/kWh,Eurostat nrg_pc_204,
+"Malta nominal price 2014-S1, band DC",0.1474,EUR/kWh,Eurostat nrg_pc_204,
+"Malta nominal price 2014-S2, band DC",0.1248,EUR/kWh,Eurostat nrg_pc_204,
+"Malta nominal price range 2014-S2 to 2025-S2, band DC",0.1248 to 0.1328,EUR/kWh,Eurostat nrg_pc_204,2025-S2 flag p
 "Unable to keep home adequately warm, 2025: Malta vs EU-27",7.6 vs 8.8,% of people,Eurostat ilc_mdes01,
 "Arrears on utility bills, 2025: Malta vs EU-27",4.5 vs 7.0,% of people,Eurostat ilc_mdes07,

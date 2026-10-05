@@ -21,14 +21,15 @@ S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
         "with three and a half years of Sentinel-2 satellite images.", lead)]
 S.append(key_points([
     ("The grass did not come back.",
-     "Before the gravel, the picnic area greened every winter as much as the rest of the park (winter NDVI 0.37–0.47). In "
-     "winter 2025–26 it stayed brown (0.11) while the rest of the park greened as usual."),
+     "Before the gravel, the picnic area greened every winter, close to the level of the rest of the park (winter NDVI "
+     "0.53–0.67, against 0.65–0.68). In winter 2025–26 it stayed brown (0.15) while the rest of the park greened as "
+     "usual (0.68)."),
     ("The summer dust problem was real.",
-     "In summer the area was already bare before the gravel (NDVI about 0.11 in 2023 and 2024), as the park "
+     "In summer the area was already bare before the gravel (NDVI about 0.15 in 2023 and 2024), as the park "
      "management said. The gravel solved a summer problem by removing the winter grass."),
     ("No intervention is visible yet.",
-     "Summer Daze took place in August 2026. In the last clear image (27 September 2026) the gravel is still in "
-     "place and the area is still bare."),
+     "In the last clear image (27 September 2026) the gravel is still in place and the area is still bare. We could "
+     "not confirm the 2026 concert dates, so whether the intervention is due yet is not established."),
     ("“Permanently barren” cannot be tested.",
      "Satellite greenness shows what grows, not the state of the soil. Whether the damage is permanent depends on "
      "whether the gravel is removed and the soil treated."),
@@ -38,13 +39,14 @@ S.append(key_points([
 ]))
 S += [Spacer(1, 4 * mm), VerdictMeter(4), Spacer(1, 3 * mm),
       tiles([("2.8 ha", GREEN, "Gravel zone found in the images (Momentum: about 2.2 ha)"),
-             ("0.37–0.47", SAGE, "Winter greenness before the gravel (NDVI, 2023–2025)"),
-             ("0.11", RED, "Winter greenness after the gravel (2025–26)"),
+             ("0.53–0.67", SAGE, "Winter greenness before the gravel (NDVI, 2023–2025)"),
+             ("0.15", RED, "Winter greenness after the gravel (2025–26)"),
              ("27 Sep", GREY, "Last clear image: gravel still in place, 2026")]),
       Spacer(1, 4 * mm),
       up_down("Ground evidence that grass grew under or through the gravel in winter 2025–26 but is invisible to "
-              "10 m satellite pixels; or works after 27 September 2026 that restore the grass.",
-              "Soil tests showing the original soil can no longer support grass even after the gravel is removed."),
+              "10 m satellite pixels.",
+              "Nothing: Contradicted is already the lowest rating. Restoration works or soil tests after 27 September "
+              "2026 would bear on what happens next and on the “permanent” warning, not on this verdict."),
       Spacer(1, 5 * mm)]
 S += toc([("1", "The claims and what we could verify"), ("2", "Method"), ("3", "What the science says"),
           ("4", "What the satellite record shows"), ("5", "Where the evidence points different ways"),
@@ -85,7 +87,9 @@ S.append(P("<b>Where.</b> OpenStreetMap does not map the picnic area itself, so 
            "when the gravel was laid. This gives a 2.8 ha zone; Momentum’s inspection independently measured about "
            "2.2 ha. Choosing the zone by <i>brightness</i> rather than greenness keeps the greenness test independent."))
 S.append(P("<b>What.</b> NDVI, a standard index of green vegetation from red and near-infrared reflectance, from every "
-           "Sentinel-2 scene with less than 10% cloud from January 2023 to September 2026, using clear pixels only. The "
+           "Sentinel-2 scene with less than 10% cloud from January 2023 to September 2026, using clear pixels only. "
+           "Stored values are converted to surface reflectance with each scene’s offset (−1000 for processing baseline "
+           "04.00 and later, as its metadata states); version 1.0 omitted this step (Appendix B). The "
            "rest of the park polygon (excluding a 20 m buffer) is the control: same soil, same rain. Scripts: "
            "<i>tools/cc-012-report/fetch_s2.py</i> and <i>calc.py</i>; data in <i>data/cc-012/</i>."))
 S.append(P("<b>Grades.</b> Direct satellite measurement against a control area is grade B; soil-science reviews are "
@@ -104,7 +108,7 @@ S.append(P("The Ministry’s rationale also has a basis: gravel–sand mulch is 
            "grow through it. Whether it does is an empirical question, which the satellite record can answer."))
 
 # ================================================================== 4
-S.append(PageBreak())
+S.append(CondPageBreak(100 * mm))
 S.append(SectionHeading(4, "What the satellite record shows"))
 S.append(fig(FIG / "fig1_map.png"))
 S.append(P("Figure 1. The picnic area in February 2025 (green) and February 2026 (bare), with the gravel zone in amber.",
@@ -113,14 +117,15 @@ S.append(fig(FIG / "fig2_timeseries.png"))
 S.append(P("Figure 2. Greenness of the gravel zone and of the rest of the park, January 2023 to September 2026. Before "
            "June 2025 the zone greened every winter like the rest of the park; after it, it did not.", cap))
 S.append(P("Reading across the data", h2))
-for t in ["• <b>Two normal winters, then none.</b> Winter medians in the zone were 0.37, 0.47 and 0.38 in "
-          "2023–2025, level with the rest of the park (0.39–0.40). In winter 2025–26 the median was 0.11 while the "
-          "rest of the park was at 0.38.",
+for t in ["• <b>Three normal winters, then none.</b> Winter medians in the zone were 0.53, 0.67 and 0.57 in "
+          "2023–2025, close to the rest of the park (0.65–0.68): across those 18 scenes the zone’s NDVI was typically "
+          "0.88 of the park’s. In winter 2025–26 the median was 0.15 while the rest of the park was at 0.68; scene by "
+          "scene, the zone was typically 0.23 of the park’s.",
           "• <b>No early start either.</b> The Ministry said grass would grow “well before the rainfall”. In autumn "
           "and early winter 2025 the zone was browner than in the same months of 2023, before the gravel.",
-          "• <b>The summer problem was real.</b> In July–August 2023 and 2024 the zone was already bare (about 0.11), "
+          "• <b>The summer problem was real.</b> In July–August 2023 and 2024 the zone was already bare (about 0.15), "
           "browner than the rest of the park, consistent with a compacted events ground that turned to dust.",
-          "• <b>No change after the concerts so far.</b> The surface has stayed bright since June 2025 and was still bare "
+          "• <b>No change visible so far.</b> The surface has stayed bright since June 2025 and was still bare "
           "in the last clear images (5, 8, 10 and 27 September 2026)."]:
     S.append(P(t, bul))
 
@@ -138,7 +143,7 @@ S.append(contested(
     "Q2  Could grass be growing that the satellite cannot see?", "UNLIKELY AT THIS SCALE", AMBER,
     "Ten-metre pixels average over small patches; a local mayor reported isolated Bermuda grass where no gravel was "
     "laid [3].",
-    "Across 2.8 ha the zone was as green as the rest of the park in two winters and far below it in the third; a "
+    "Across 2.8 ha the zone was close to the rest of the park in three winters and far below it in the fourth; a "
     "change of that size would show if grass had returned.",
     "<b>For the claims:</b> small patches are possible; a recovered lawn is not."))
 S.append(contested(
@@ -156,10 +161,12 @@ verd = lambda t, c: chip(t, c, w=29 * mm)
 S.append(std_table([
     [C("Claim", cellh), C("What the evidence shows", cellh), C("Rating", cellh)],
     [C("<b>A.</b> Grass would grow faster, before the winter rains (Ministry)"),
-     C("Zone stayed bare through winter 2025–26 (median NDVI 0.11) while the rest of the park greened."), verd("CONTRADICTED", CON)],
+     C("Zone stayed bare through winter 2025–26 (median NDVI 0.15, against 0.53–0.67 in the three winters before) "
+       "while the rest of the park greened."), verd("CONTRADICTED", CON)],
     [C("<b>B.</b> Grass would grow back with the winter rains (park unit head)"), C("As above."), verd("CONTRADICTED", CON)],
     [C("<b>C.</b> Intervention after the concerts (Prime Minister)"),
-     C("No change visible to 27 Sep 2026, after Summer Daze. Not yet due if “after” means autumn."), verd("NOT YET DELIVERED", GREY)],
+     C("No change visible to 27 Sep 2026. The 2026 concert dates were not confirmed, so whether it is due yet is not "
+       "established."), verd("NOT YET DELIVERED", GREY)],
     [C("<b>D.</b> Gravel is choking the grass (PN, Momentum)"), C("Consistent with the satellite record."),
      verd("SUPPORTED", GREENC)],
     [C("<b>E.</b> Could become permanently barren (PN)"), C("A prediction; soil condition not measurable from space."),
@@ -170,8 +177,8 @@ S.append(std_table([
 S += [Spacer(1, 6 * mm), SectionHeading(7, "Verdict and requests for evidence"),
       verdict_box("Contradicted", "The assurance that grass would regrow through the material is contradicted by "
                   "Sentinel-2 data against a control area. Confidence: high."), Spacer(1, 4 * mm)]
-S.append(P("<b>Why.</b> The zone greened normally in the two winters before the gravel and did not green in the winter "
-           "after it, while the surrounding park did. The Ministry’s claim that grass would grow faster, and the park "
+S.append(P("<b>Why.</b> The zone greened in each of the three winters before the gravel, close to the level of the "
+           "surrounding park, and did not green in the winter after it, while the surrounding park did. The Ministry’s claim that grass would grow faster, and the park "
            "unit’s that it would return with the rains, are therefore contradicted. The opposition’s description of "
            "the current state is supported; its warning of permanent damage is not shown either way."))
 S.append(P("<b>What this verdict does not say.</b> It does not say why the gravel was chosen, whether procurement rules "
@@ -214,7 +221,8 @@ S += references([
     ("5", "The Malta Independent (6 Feb 2026). Gravel used to cover Ta’ Qali suppressing grass growth, PN says.",
      "https://www.independent.com.mt/articles/2026-02-06/local-news/Gravel-used-to-cover-Ta-Qali-suppressing-grass-growth-PN-says-6736287029"),
     ("6", "Momentum expert inspection, as reported in [2] ◆. Report not seen.", ""),
-    ("7", "Copernicus Sentinel-2 L2A, tile 33SVV, 2023–2026, via Microsoft Planetary Computer; retrieved 3 Oct 2026.",
+    ("7", "Copernicus Sentinel-2 L2A, tile 33SVV, 2023–2026, via Microsoft Planetary Computer; retrieved 3 Oct 2026, "
+          "re-fetched 5 Oct 2026 with the reflectance offset applied.",
      "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a"),
     ("8", "Nawaz M.F., Bourrié G., Trolard F. (2013). Soil compaction impact and modelling. A review. <i>Agronomy for "
           "Sustainable Development</i> 33(2):291–309. doi:10.1007/s13593-011-0071-8. (Abstract read.)",
@@ -233,7 +241,20 @@ S.append(PageBreak())
 S += appendix_a("A experiment · B observational study with a control or gradient · C review, guidance or "
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
-S += revision_log([("1.0", "3 Oct 2026", "First issue. Draft pending right of reply.")])
+S += revision_log([("1.0", "3 Oct 2026", "First issue. Draft pending right of reply."),
+                   ("1.1", "5 Oct 2026",
+                    "Corrections: (1) Sentinel-2 values recomputed with the reflectance offset (BOA_ADD_OFFSET −1000, "
+                    "processing baseline 04.00 and later) that 1.0 omitted, which had pulled NDVI towards zero. Zone "
+                    "winter NDVI before the gravel 0.37 / 0.47 / 0.38 → 0.53 / 0.67 / 0.57; rest of the park 0.39–0.40 → "
+                    "0.65–0.68; winter 2025–26 zone 0.11 → 0.15, park 0.38 → 0.68; pre-gravel summers about 0.11 → about "
+                    "0.15; winter ratio zone/park 0.99 → 0.88 before and 0.30 → 0.23 after (data/cc-012/checks.csv); "
+                    "zone brightness now in reflectance, May → Aug 2025 0.19 → 0.32 (1.0 gave raw values 2881 → 4191). "
+                    "Figures 1 and 2 redrawn; Figure 1 was washed out. Zone (2.8 ha) and scene set (199) unchanged. "
+                    "(2) “Two normal winters” corrected to three (2023, 2024, 2025); “level with the rest of the park” "
+                    "changed to “close to”. (3) Removed the unsourced statement that Summer Daze took place in August "
+                    "2026. (4) “What would move it down” rewritten: Contradicted is already the lowest rating. (5) "
+                    "Flyer: the 2.8 ha zone was called the “same area” as Momentum’s 2.2 ha; it is about a quarter "
+                    "larger. (6) Layout: removed a near-empty page. Verdict and confidence unchanged.")])
 
 build_report(Report(
     number="012", out=str(FIG / "report.pdf"), kicker="Parks and open space",
@@ -245,10 +266,10 @@ build_report(Report(
     attribution="Public Works Ministry statement, September 2025, as reported by MaltaToday.",
     context="On the sand and gravel laid on the Ta’ Qali picnic area in June 2025.",
     verdict="Contradicted", verdict_note="The grass did not return; the gravel is still there",
-    footer_lines=["Version 1.0  ·  3 October 2026", "Status: draft for right of reply",
+    footer_lines=["Version 1.1  ·  5 October 2026", "Status: draft for right of reply",
                   "Prepared from public sources and Copernicus Sentinel-2 data.",
                   "Repository: github.com/leandergrech/Mizien"],
-    running_head="Ta’ Qali gravel and grass – Malta", version="1.0", date="3 October 2026",
+    running_head="Ta’ Qali gravel and grass – Malta", version="1.1", date="5 October 2026",
     pdf_title="Will the grass come back at Ta' Qali? Claim Check 012",
     pdf_subject="Tests government and opposition claims about grass regrowth at the Ta' Qali picnic area with Sentinel-2",
     story=S))

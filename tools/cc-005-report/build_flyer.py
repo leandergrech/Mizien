@@ -32,6 +32,6 @@ build_flyer(Flyer(
           "Use the latest EEA result when describing current conditions.",
           "Explain that classification uses two microbiological indicators.",
           "Keep local warnings distinct from national multi-year results."],
-    footer="Version 1.0  ·  2 October 2026  ·  Public data only  ·  Draft for maintainer review",
+    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Right of reply not sought  ·  Draft for maintainer review",
     pdf_title="Claim Check 005 – 92% excellent bathing water"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

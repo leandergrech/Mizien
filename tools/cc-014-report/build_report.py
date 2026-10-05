@@ -28,7 +28,7 @@ S.append(key_points([
      "application to sanction the works and 482 in removal by the owner; 162 led to a notice. The Authority’s own "
      "report credits the fall in notices to persuading contraveners first."),
     ("There is some support for “fewer”.",
-     "Confirmed cases appear to have dropped by about a third between 2020 and 2024 (roughly 1,820 to 1,200). "
+     "Confirmed cases appear to have dropped by roughly a third between 2020 and 2024 (about 1,820 to 1,200–1,250). "
      "That is far smaller than the fall in notices, and complaints are an imperfect measure of illegal building."),
     ("Verdict: misleading (moderate confidence).",
      "The figures are accurate, but presenting the fall in notices as a sign of fewer illegalities leaves out the "
@@ -83,7 +83,7 @@ S.append(P("<b>Question.</b> Is the fall from over 1,000 notices a year to about
 S.append(P("<b>Evidence.</b> We read the enforcement sections of the MEPA annual reports for 2004 to 2011 and the "
            "Planning Authority annual report for 2024 [2–9], which give notices issued and complaints received. For "
            "2019–2023 we used news reports of the Authority’s annual reports and of parliamentary answers [10–13], "
-           "marked as second-hand. Every number was transcribed to <i>data/cc-014/pa_enforcement_series.csv</i> and "
+           "marked as second-hand; the 2019 complaint count is from the Authority’s 2019 report [17]. Every number was transcribed to <i>data/cc-014/pa_enforcement_series.csv</i> and "
            "every percentage recomputed with <i>tools/cc-014-report/calc.py</i>. We searched Crossref and OpenAlex for "
            "studies of planning enforcement in Malta and found none; the regulatory literature [14–16] is context."))
 S.append(P("<b>Grades.</b> Annual reports and official answers are grade C (official statistics). News reports of "
@@ -115,10 +115,12 @@ S.append(std_table([
     [C("Complaints of illegal development"), C("2,701 (2009)"), C("2,411 (2024)"), C("−11%"), C("[6, 9]")],
     [C("Complaints, longer run"), C("3,705 (FY 2004/05)"), C("2,411 (2024)"), C("−35%"), C("[3, 9]")],
     [C("Notices per 100 complaints"), C("29–42 (2005–11)"), C("5–10 (2019–24)"), C("about −80%"), C("calculated")],
-    [C("Confirmed illegal cases"), C("~1,820 (2020)"), C("~1,200 (2024)"), C("about −34%"), C("[9, 10]")],
+    [C("Confirmed illegal cases"), C("~1,820 (2020)"), C("~1,200–1,250 (2024)"), C("about −31% to −34%"), C("[9, 10]")],
 ], [52 * mm, 30 * mm, 30 * mm, 22 * mm, 36 * mm]))
 S.append(P("All values in <i>data/cc-014/checks.csv</i>. 2012–2018 are missing: the 2012 and 2014 MEPA reports are "
-           "scanned images and later reports are published only on a page-flip site.", cap))
+           "scanned images and later reports are published only on a page-flip site. For 2024 the Authority reports "
+           "“circa half” of 2,411 complaints as confirmed (about 1,206), but its four outcome categories sum to 1,252 "
+           "(52%); hence the range.", cap))
 S.append(fig(FIG / "fig2_outcomes.png"))
 S.append(P("Figure 2. Outcomes of the 2024 complaints as reported by the Planning Authority [9]. Most confirmed "
            "illegal works ended without a notice: the owner applied to sanction them or removed them.", cap))
@@ -127,8 +129,8 @@ for t in ["• <b>The headline numbers are accurate.</b> “Over 1,000 a year”
           "2009; “around 200” matches every year from 2019 to 2024.",
           "• <b>Complaints did not halve, let alone fall by four-fifths.</b> They were 2,105 in 2011 and 3,313 in "
           "2020, and around 2,400 in 2023 and 2024, even after the Authority stopped accepting anonymous reports [13].",
-          "• <b>The share of cases ending in a notice collapsed.</b> In 2024 more than three times as many confirmed "
-          "cases ended in a sanctioning application or removal as in a notice. In 2020, 818 complaints led to a "
+          "• <b>The share of cases ending in a notice collapsed.</b> In 2024 about six times as many confirmed cases "
+          "ended in a sanctioning application or removal by the owner (521 + 482 = 1,003) as in a notice (162). In 2020, 818 complaints led to a "
           "sanctioning application [10].",
           "• <b>The Authority explains it this way itself.</b> Its 2024 report attributes the 18% fall in notices "
           "that year to a strategy of persuading contraveners to rectify before formal action [9, 13]. MEPA’s 2007 "
@@ -142,7 +144,8 @@ S.append(contested(
     "Q1  Are there fewer illegalities than in the 2000s?", "POSSIBLY SOME; NOT FOUR-FIFTHS FEWER", AMBER,
     "Complaints are lower than in 2004/05 (−35%) and confirmed cases fell by about a third between 2020 and 2024. "
     "Higher daily fines and the sanctioning route may have changed behaviour, as the chief executive says.",
-    "Complaints in 2024 were only 11% below 2009, and in 2020 they were the highest in the series we could read. "
+    "Complaints in 2024 were only 11% below 2009, and in 2020 (3,313) they were the highest we could read after "
+    "FY 2004/05 (3,705, when MEPA counted by financial year). "
     "About 1,200 complaints a year are still confirmed as illegal development.",
     "<b>For this claim:</b> a modest fall in reported illegalities is plausible; a fall of the size implied by "
     "notices (−82%) is not supported by the Authority’s own figures."))
@@ -217,8 +220,9 @@ for l in ["Complaints and confirmed cases are proxies for illegal building. They
           "Authority rules, which changed (anonymous reports stopped in 2024; a reporting app was introduced earlier).",
           "Definitions shift: MEPA reported by financial year until about 2006; the 2011 complaint count excludes sites "
           "already under a notice; the 2009 figures add the Gozo Office.",
-          "2019–2023 figures are second-hand (news reports of annual reports and of parliamentary answers); the 2019 "
-          "notice count is derived from a reported percentage.",
+          "2019–2023 figures are second-hand (news reports of annual reports and of parliamentary answers), except the "
+          "2019 complaint count, read in the Authority’s 2019 report [17]; the 2019 notice count is derived from a "
+          "reported percentage.",
           "2008 and 2012–2018 are missing. A steady decline or a sudden policy change in those years would not change "
           "the comparison of endpoints, but would change how it is explained.",
           "No peer-reviewed study of planning enforcement in Malta was found; the regulatory literature is used for "
@@ -259,14 +263,24 @@ S += references([
      "https://doi.org/10.4337/9781783477685.iv.4"),
     ("16", "Ayres I., Braithwaite J. (1992). <i>Responsive Regulation</i>. Oxford University Press. "
            "doi:10.1093/oso/9780195070705.001.0001. (Cited via [15] ◆.)", ""),
-    ("17", "MiŻien. Data and calculations: data/cc-014/; tools/cc-014-report/calc.py.", ""),
+    ("17", "Planning Authority (2020). Annual Report 2019: Compliance &amp; Enforcement Directorate, pp. 17–18. "
+           "Read as page images on Issuu.", "https://issuu.com/planningauthority/docs/annual_report_2019"),
+    ("18", "MiŻien. Data and calculations: data/cc-014/; tools/cc-014-report/calc.py.", ""),
 ])
 
 S.append(PageBreak())
 S += appendix_a("A experiment · B observational study with a control or gradient · C review, guidance or "
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
-S += revision_log([("1.0", "3 Oct 2026", "First issue. Draft pending right of reply from the Planning Authority.")])
+S += revision_log([("1.0", "3 Oct 2026", "First issue. Draft pending right of reply from the Planning Authority."),
+                   ("1.1", "5 Oct 2026", "Corrections: (1) 2020 complaints were called “the highest in the series”; "
+                    "now “the highest we could read after FY 2004/05 (3,705)”. (2) “More than three times as many” "
+                    "cases ending in a sanctioning application or removal as in a notice → “about six times” "
+                    "((521 + 482) / 162 = 6.2). (3) 2019 complaints 3,174 (derived from a news report) → 3,134 "
+                    "(PA Annual Report 2019, p. 17; Figure 1 redrawn) [17]. (4) 2024 confirmed cases ~1,200 → "
+                    "~1,200–1,250 and the 2020–24 change −34% → −31% to −34%, because the four outcome categories "
+                    "sum to 1,252, more than the “circa half” (1,206) reported. Flyer: “Settled by legalising” → "
+                    "“Applications to legalise” (applications, not permits). Verdict and confidence unchanged.")])
 
 build_report(Report(
     number="014", out=str(FIG / "report.pdf"), kicker="Planning enforcement",
@@ -276,9 +290,9 @@ build_report(Report(
     attribution="Johann Buttigieg, Planning Authority CEO, The Malta Independent, 7 September 2025.",
     context="Now around 200, which he attributed to fewer illegalities.",
     verdict="Misleading", verdict_note="Accurate figures; the explanation leaves out how cases are now handled",
-    footer_lines=["Version 1.0  ·  3 October 2026", "Status: draft for right of reply (Planning Authority)",
+    footer_lines=["Version 1.1  ·  5 October 2026", "Status: draft for right of reply (Planning Authority)",
                   "Prepared from public sources and annual reports.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Enforcement notices and illegalities – Malta", version="1.0", date="3 October 2026",
+    running_head="Enforcement notices and illegalities – Malta", version="1.1", date="5 October 2026",
     pdf_title="Fewer notices, or fewer illegalities? Claim Check 014",
     pdf_subject="Tests the Planning Authority CEO's claim that fewer enforcement notices reflect fewer illegalities",
     story=S))

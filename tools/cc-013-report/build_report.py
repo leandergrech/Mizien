@@ -24,10 +24,12 @@ S.append(key_points([
      "higher prices rather than more homes. Restricting permits would be expected to push prices up."),
     ("Malta absorbed an exceptional demand shock.",
      "Malta’s population grew 31% between 2015 and 2025; the EU’s grew 2%. Real house prices rose 34% in "
-     "Malta and 25% in the EU. Overcrowding (4.7%) and housing-cost overburden (6.0%) remain below EU averages."),
+     "Malta (2025 figure provisional) and 25% in the EU. Overcrowding (4.7%) and housing-cost overburden (6.0%) "
+     "remain below EU averages."),
     ("But prices were not held in check against Europe.",
      "Real prices still rose faster than the EU average, and the share of people overburdened by housing costs "
-     "rose from 1.1% (2015) to 6.0% (2025) while the EU’s fell. Research also finds that extra supply alone "
+     "rose from 1.1% to 2.9% between 2015 and 2022 while the EU’s fell. Eurostat flags a break in Malta’s "
+     "series in 2023; since then the rate has held at about 6%. Research also finds that extra supply alone "
      "does little for affordability."),
     ("The counterfactual cannot be proved.",
      "No study estimates what Maltese prices would have been with fewer permits. Over a quarter of dwellings are "
@@ -39,8 +41,8 @@ S.append(key_points([
 S += [Spacer(1, 4 * mm), VerdictMeter(1), Spacer(1, 3 * mm),
       tiles([("87,814", GREEN, "Dwelling units approved 2015–2024 (Planning Authority)"),
              ("+31%", ORANGE, "Malta population growth 2015–2025 (EU +2%)"),
-             ("+34%", GREY, "Real house prices 2015–2025, Malta (EU +25%)"),
-             ("6.0%", RED, "People overburdened by housing costs, 2025 (1.1% in 2015)")]),
+             ("+34%", GREY, "Real house prices 2015–2025, Malta (EU +25%); 2025 provisional"),
+             ("6.0%", RED, "People overburdened by housing costs, 2025 (2.9% in 2022, before a series break)")]),
       Spacer(1, 4 * mm),
       up_down("A Malta-specific estimate showing that prices respond strongly to approvals (for example, prices "
               "slowing where and when approvals rise, controlling for demand).",
@@ -105,21 +107,24 @@ S.append(SectionHeading(4, "What the Malta data show"))
 S.append(fig(FIG / "fig1_permits_prices.png"))
 S.append(P("Figure 1. Dwelling units approved each year (bars) with real house prices in Malta and the EU and "
            "Malta’s population, indexed to 2015. Approvals more than tripled after 2015 as population growth "
-           "accelerated.", cap))
+           "accelerated. Malta’s 2025 house-price index is provisional.", cap))
 S.append(fig(FIG / "fig2_affordability.png"))
-S.append(P("Figure 2. Housing-cost overburden and overcrowding, Malta and EU-27. Malta remains below the EU on both, "
-           "but its overburden rate has risen while the EU’s fell.", cap))
+S.append(P("Figure 2. Housing-cost overburden and overcrowding, Malta and EU-27. Malta remains below the EU on both. "
+           "Its overburden rate rose from 1.1% to 2.9% in 2015–2022 while the EU’s fell; Eurostat flags a break "
+           "in Malta’s series in 2023, so the step from 2.9% to 6.0% is not a like-for-like change.", cap))
 S.append(std_table([
     [C("Indicator", cellh), C("Malta", cellh), C("EU-27", cellh), C("Source", cellh), C("Grade", cellh)],
     [C("Population change 2015–2025"), C("<b>+31%</b>"), C("+2%"), C("Eurostat demo_gind"), grade_tag("C")],
-    [C("Real house prices 2015–2025"), C("+34%"), C("+25%"), C("Eurostat tipsho10"), grade_tag("C")],
-    [C("Nominal house prices 2015–2024"), C("+64%"), C("+53%"), C("Eurostat prc_hpi_a"), grade_tag("C")],
-    [C("Housing-cost overburden, 2015 → 2025"), C("1.1% → <b>6.0%</b>"), C("11.2% → 7.7%"), C("Eurostat ilc_lvho07a"), grade_tag("C")],
+    [C("Real house prices, 2015–2025"), C("+34% (p)"), C("+25%"), C("Eurostat tipsho10"), grade_tag("C")],
+    [C("Nominal house prices, 2015–2024"), C("+64%"), C("+53%"), C("Eurostat prc_hpi_a"), grade_tag("C")],
+    [C("Housing-cost overburden, 2015 → 2022; 2023 → 2025 (break in Malta’s series in 2023)"), C("1.1% → 2.9%; <b>6.0%</b> → <b>6.0%</b>"), C("11.2% → 8.7%; 8.8% → 7.7%"), C("Eurostat ilc_lvho07a"), grade_tag("C")],
     [C("Overcrowding, 2025"), C("4.7%"), C("16.8%"), C("Eurostat ilc_lvho05a"), grade_tag("C")],
     [C("Dwellings approved 2015–2024"), C("87,814"), C("–"), C("Planning Authority [2]"), grade_tag("C")],
     [C("Dwellings not a main residence, 2021"), C("27.5% (31.8% in 2011)"), C("–"), C("NSO census [4]"), grade_tag("C")],
 ], [62 * mm, 32 * mm, 30 * mm, 34 * mm, 12 * mm]))
-S.append(P("All values in <i>data/cc-013/checks.csv</i>.", cap))
+S.append(P("All values in <i>data/cc-013/checks.csv</i>. Real prices are the house price index deflated by "
+           "consumer prices (HICP), to 2025; nominal prices are not deflated and run to 2024. (p) Malta’s 2025 "
+           "value is provisional.", cap))
 
 # ================================================================== 5
 S.append(CondPageBreak(120 * mm))
@@ -127,7 +132,8 @@ S.append(SectionHeading(5, "Where the evidence points different ways"))
 S.append(contested(
     "Q1  Did permits keep prices in check?", "IN DIRECTION, NOT IN LEVEL", AMBER,
     "Population grew 31% while real prices rose 34%, only 9 points more than the EU with almost no population growth. "
-    "Supply on this scale is the most plausible reason prices did not rise much faster; the research supports this.",
+    "In our reading, supply on this scale is a plausible reason prices did not rise much faster. This is our "
+    "inference: it is consistent with the research but has not been tested for Malta.",
     "Malta’s real prices still outpaced the EU, and grew fastest in the record-approval years (about 3.8% a year in "
     "years with 9,000+ approvals against 1.7% in other years). Approvals respond to demand, so this does not show "
     "permits raised prices, but it does show they did not hold prices down against Europe.",
@@ -137,8 +143,9 @@ S.append(contested(
     "Q2  Would Malta face the same crisis as other European countries?", "PARTLY SUPPORTED NOW; GAP NARROWING", AMBER,
     "Malta’s overcrowding (4.7%) is a quarter of the EU rate and its overburden rate (6.0%) is still below the EU’s "
     "(7.7%).",
-    "Malta’s overburden rate rose more than fivefold since 2015 while the EU’s fell; the jump came in 2023 and may "
-    "partly reflect a survey change we could not check.",
+    "Malta’s overburden rate rose from 1.1% to 2.9% in 2015–2022 while the EU’s fell. The jump to 6.0% in 2023 "
+    "coincides with a break in Eurostat’s series, so it is not a like-for-like change; the rate has held at about "
+    "6% since.",
     "<b>For this claim:</b> on today’s indicators Malta is not in a worse position than the EU average, but "
     "the trend is towards it."))
 S.append(contested(
@@ -174,8 +181,8 @@ S += [Spacer(1, 6 * mm), SectionHeading(7, "Verdict and requests for evidence"),
 S.append(P("<b>Why.</b> (1) The research consistently finds that restricting housing supply raises prices, so issuing "
            "permits plausibly restrains them. (2) Malta absorbed population growth fifteen times the EU’s with real "
            "price growth only moderately above the EU average, and remains below the EU on overcrowding and cost "
-           "overburden. (3) The statement does not show how much permits restrain prices, and affordability has "
-           "worsened since 2015. These caveats limit the claim but do not reverse it, which our scale calls "
+           "overburden. (3) The statement does not show how much permits restrain prices, and affordability worsened "
+           "between 2015 and 2022 on Eurostat’s comparable series. These caveats limit the claim but do not reverse it, which our scale calls "
            "<i>Largely supported</i>."))
 S.append(P("<b>What this verdict does not say.</b> It does not say that more permits are good overall, that the "
            "land, design or environmental costs are justified, or that prices are affordable. It says that, as an "
@@ -191,7 +198,8 @@ S.append(requests_list([
 S += [Spacer(1, 6 * mm), SectionHeading(8, "Limitations")]
 for l in ["The research cited is from the US and England; no peer-reviewed estimate of supply elasticity for Malta was found.",
           "Approvals are not completions; we did not find a completions series.",
-          "Malta’s overburden rate jumps between 2022 and 2023; a break in the survey was not checked.",
+          "Malta’s overburden rate jumps between 2022 and 2023, the year Eurostat flags a break in its series; we "
+          "compare only within 2015–2022 and 2023–2025.",
           "National averages hide differences between localities, tenures and income groups.",
           "Peer-reviewed papers were read as abstracts; findings used are those stated in the abstracts."]:
     S.append(P("• " + l, bul))
@@ -202,7 +210,8 @@ S += references([
           "<i>MaltaToday</i>, interview.",
      "https://www.maltatoday.com.mt/news/interview/133858/johann_buttigieg_issuing_permits_helps_keep_property_prices_in_check_"),
     ("2", "Planning Authority (2026). Approved Dwelling Units for 2007–2025.", "https://www.pa.org.mt/file.aspx?f=37489"),
-    ("3", "Eurostat. prc_hpi_a, tipsho10, sts_cobp_a, demo_gind, ilc_lvho07a, ilc_lvho05a; retrieved 3 Oct 2026.",
+    ("3", "Eurostat. prc_hpi_a, tipsho10, sts_cobp_a, demo_gind, ilc_lvho07a, ilc_lvho05a; retrieved 3 Oct 2026 "
+          "(status flags checked 5 Oct 2026).",
      "https://ec.europa.eu/eurostat/databrowser/"),
     ("4", "National Statistics Office (2023). Census of Population and Housing 2021, Final Report vol. 2: Dwelling "
           "Characteristics.", "https://nso.gov.mt/wp-content/uploads/Census-2021-Volume-2.pdf"),
@@ -226,7 +235,19 @@ S.append(PageBreak())
 S += appendix_a("A experiment · B observational study with a control or gradient · C review, guidance or "
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
-S += revision_log([("1.0", "3 Oct 2026", "First issue. Right of reply to the Planning Authority not yet sent.")])
+S += revision_log([("1.0", "3 Oct 2026", "First issue. Right of reply to the Planning Authority not yet sent."),
+                   ("1.1", "5 Oct 2026",
+                    "Corrections. (1) Housing-cost overburden: Eurostat flags a break in Malta’s series in 2023, "
+                    "so “1.1% (2015) → 6.0% (2025)” and “more than fivefold” → like-for-like runs “1.1% → 2.9% "
+                    "(2015–2022)” and “6.0% → 5.9% → 6.0% (2023–2025)” (TL;DR, tiles, Figure 2 caption, Section 4 "
+                    "table, Q2, Section 7, Limitations, flyer). (2) Real house prices 2015–2025 (+34% Malta, +25% "
+                    "EU) now written to checks.csv by calc.py, which previously held only 2015–2024 (+26%, +21%); "
+                    "Malta’s 2025 value marked provisional (TL;DR, tiles, Figure 1 caption, table “+34%” → “+34% (p)”); "
+                    "table note now states each price row’s basis and period (real, HICP-deflated, to 2025; "
+                    "nominal to 2024). (3) data/cc-013/eurostat_housing.csv: the second sts_cobp_a series each year "
+                    "relabelled as m² of useful floor area (it had the dwellings label); Eurostat flags recorded. "
+                    "(4) Q1: “the most plausible reason … the research supports this” → stated as our inference, "
+                    "not tested for Malta. Verdict and confidence unchanged.")])
 
 build_report(Report(
     number="013", out=str(FIG / "report.pdf"), kicker="Housing and planning",
@@ -237,9 +258,9 @@ build_report(Report(
     attribution="Johann Buttigieg, Planning Authority CEO, MaltaToday interview, 2 March 2025.",
     context="Answering a question on 91,000 dwellings approved in a decade.",
     verdict="Largely supported", verdict_note="Right in direction; the size of the effect is unproven",
-    footer_lines=["Version 1.0  ·  3 October 2026", "Status: draft (right of reply: Planning Authority)",
+    footer_lines=["Version 1.1  ·  5 October 2026", "Status: draft (right of reply: Planning Authority)",
                   "Prepared from public sources, Eurostat and NSO data.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Permits and property prices – Malta", version="1.0", date="3 October 2026",
+    running_head="Permits and property prices – Malta", version="1.1", date="5 October 2026",
     pdf_title="Do permits keep prices in check? Claim Check 013",
     pdf_subject="Tests the Planning Authority CEO's claim that issuing permits keeps property prices in check",
     story=S))
