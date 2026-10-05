@@ -71,15 +71,15 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-039 | Water | Net Zero Impact Utility | Drafted | Pledge: Not measurable |
 | CC-040 | Water | Low water use per head | Not started | - |
 | CC-041 | Water | Sewage plants compliant by 2026 | Not started | - |
-| CC-042 | Water | 'From Blue Flag to Red Alert' | Not started | - |
+| CC-042 | Water | 'From Blue Flag to Red Alert' | Drafted | Largely supported |
 | CC-043 | Water | 13 Blue Flag beaches | Not started | - |
 | CC-044 | Water | 2,400 tonnes from storm tunnels | Not started | - |
 | CC-045 | Water | Tunnels solved flooding | Not started | - |
 | CC-046 | Water | Gozo water autonomy | Not started | - |
-| CC-047 | Water | Nitrates in the aquifer | Not started | - |
+| CC-047 | Water | Nitrates in the aquifer | Drafted | Largely supported |
 | CC-048 | Nature & Wildlife | Sea urchins recovering | Not started | - |
 | CC-049 | Nature & Wildlife | 242 illegal hunting incidents | In progress | - |
-| CC-050 | Nature & Wildlife | 'Race to weaken hunting laws' | Not started | - |
+| CC-050 | Nature & Wildlife | 'Race to weaken hunting laws' | Drafted | Not substantiated |
 | CC-051 | Nature & Wildlife | 'Over 30% of our seas protected' | Drafted | Misleading |
 | CC-052 | Nature & Wildlife | Fish-farm slime 'promptly contained' | Not started | - |
 | CC-053 | Nature & Wildlife | Milky Way visible from 13% of Malta | Drafted | Supported |
@@ -92,7 +92,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-060 | Planning & Housing | 7,000 first-time buyers helped | Not started | - |
 | CC-061 | Planning & Housing | 260 homes 30% below market | Not started | - |
 | CC-062 | Planning & Housing | Construction is 9-14% of the economy | Not started | - |
-| CC-063 | Waste | Construction waste: 'standstill' warning | Not started | - |
+| CC-063 | Waste | Construction waste: 'standstill' warning | Drafted | Not substantiated |
 | CC-064 | Planning & Housing | Grand Harbour regeneration | Not started | - |
 | CC-065 | Planning & Housing | Ġgantija buffer zone permit | Not started | - |
 | CC-066 | Planning & Housing | Fort Chambray barracks | Not started | - |
@@ -105,22 +105,22 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-073 | Transport | Cab trips up 68% | Not started | - |
 | CC-074 | Transport | 8,144 EV grants | Not started | - |
 | CC-075 | Transport | Seventh in the EU for cars | Not started | - |
-| CC-076 | Transport | 36 more vehicles a day | Not started | - |
+| CC-076 | Transport | 36 more vehicles a day | Drafted | Supported |
 | CC-077 | Transport | Metro: first section early 2030s | Not started | - |
 | CC-078 | Transport | Gozo Channel: +511,000 passengers | Not started | - |
 | CC-079 | Waste | Waste-to-energy: 4.5% of energy | Not started | - |
 | CC-080 | Waste | EUR 75m organic plant | Not started | - |
-| CC-081 | Waste | Landfill share rising | Not started | - |
+| CC-081 | Waste | Landfill share rising | In progress | - |
 | CC-082 | Waste | 35 quarries for construction waste | Not started | - |
 | CC-083 | Tourism & Population | Record tourism, 'future-proofed' | Not started | - |
-| CC-084 | Tourism & Population | Tourists tripled in 15 years | Not started | - |
+| CC-084 | Tourism & Population | Tourists tripled in 15 years | In progress | - |
 | CC-085 | Tourism & Population | 4.7 million tourists needed | Not started | - |
 | CC-086 | Tourism & Population | Comino kiosks tendered from 2026 | Not started | - |
 | CC-087 | Tourism & Population | 177 illegal short lets | Not started | - |
-| CC-088 | Tourism & Population | Population 588,254 | Not started | - |
+| CC-088 | Tourism & Population | Population 588,254 | Drafted | Supported |
 | CC-089 | Tourism & Population | Growth outpacing infrastructure | Not started | - |
 | CC-090 | Health & Safety | 20 heat-linked deaths | Not started | - |
-| CC-091 | Health & Safety | Inspections doubled | Not started | - |
+| CC-091 | Health & Safety | Inspections doubled | Drafted | Largely supported |
 | CC-092 | Governance & Promises | PN: Gozo net-zero by afforestation | Not started | - |
 | CC-093 | Governance & Promises | PN: buy land for urban parks | Not started | - |
 | CC-094 | Climate & Energy | Commission: Malta off track for 2030 | Not started | - |
@@ -134,7 +134,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-102 | Governance & Promises | Ombudsman: 58% of environment recommendations ignored | Drafted | Largely supported |
 | CC-103 | Health & Safety | Heat-death locations "within three months" | Not started | - |
 | CC-104 | Noise | PN: Malta fails EU noise law | In progress | - |
-| CC-105 | Noise | ADPD: no study of Freeport and airport noise | Not started | - |
+| CC-105 | Noise | ADPD: no study of Freeport and airport noise | Drafted | Largely supported |
 | CC-106 | Nature & Wildlife | Shearwaters: 10% of the world population | Drafted | Largely supported |
 | CC-107 | Governance & Promises | A net-zero Gozo by 2040 | Drafted | Pledge: Not measurable |
 | CC-108 | Water | WSC: a net-zero impact on groundwater | Not started | - |

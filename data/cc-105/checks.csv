@@ -1,0 +1,18 @@
+check,value,note
+"MIA aircraft noise, Lden, inside agglomeration, people",8054,"round 3, base year 2016; bands from 55 (Lden) / 50 (Lnight) dB"
+"MIA aircraft noise, Lden, outside agglomeration, people",1612,"round 3, base year 2016; bands from 55 (Lden) / 50 (Lnight) dB"
+"MIA aircraft noise, Lden, total people",9666,inside + outside agglomeration
+"MIA aircraft noise, Lnight, inside agglomeration, people",789,"round 3, base year 2016; bands from 55 (Lden) / 50 (Lnight) dB"
+"MIA aircraft noise, Lnight, outside agglomeration, people",38,"round 3, base year 2016; bands from 55 (Lden) / 50 (Lnight) dB"
+"MIA aircraft noise, Lnight, total people",827,inside + outside agglomeration
+"Share of exposed (Lden) living inside the agglomeration, %",83.3,
+Birżebbuġa points whose daytime range reaches above 55 dBA,5 of 5,top of range
+Birżebbuġa points whose daytime range is at or above 55 dBA throughout,5 of 5,bottom of range
+Birżebbuġa points whose night range reaches above 50 dBA,4 of 5,top of range
+Birżebbuġa points whose night range is above 50 dBA throughout,0 of 5,bottom of range
+Highest night average range reported (dBA),70,"Dawret il-Qalb Imqaddsa, 50-70"
+"Search: Round 4 final report (Lemitor, Nov 2024)",Freeport 0; Birżebbuġa 0; airport 30,"72 pages, full text"
+"Search: Noise Action Plan, Malta Agglomeration 2019-2024",Freeport 0; Birżebbuġa 1; airport 63,"124 pages, full text"
+"Search: Noise Action Plan, Major Roads 2019-2024",Freeport 0; Birżebbuġa 0; airport 13,"92 pages, full text"
+"Search: Annex I, consultation responses (Jan 2023)",Freeport 0; Birżebbuġa 0; airport 0,"17 pages, full text"
+"Search: MIA Noise Modelling, round 3 final report (Mar 2019)",Freeport 0; Birżebbuġa 0; airport 99,"55 pages, full text"

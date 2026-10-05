@@ -1,0 +1,29 @@
+check,value,unit,source,note
+Construction production volume index 2019 (2015=100),140.5,index,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+Construction production volume index 2020 (2015=100),145.5,index,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+Construction production volume index 2021 (2015=100),154.0,index,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+Construction production volume index 2022 (2015=100),162.5,index,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",provisional
+"Change in construction volume, 2019 to 2020",3.6,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Change in construction volume, 2020 to 2021",5.8,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Change in construction volume, 2021 to 2022",5.5,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Change in construction volume, 2020 to 2022",11.7,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+Latest year published for Malta in sts_copr_a,2022,year,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",2023-2025 not yet published
+"Waste from construction (NACE F), all waste, 2018",1974801.0,tonnes,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Construction's share of all waste generated in Malta, 2018",76.4,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Mineral C&D waste (W121) from construction, 2018",1866732.0,tonnes,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Waste from construction (NACE F), all waste, 2020",3010732.0,tonnes,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Construction's share of all waste generated in Malta, 2020",84.2,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Mineral C&D waste (W121) from construction, 2020",2958348.0,tonnes,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Waste from construction (NACE F), all waste, 2022",2067957.0,tonnes,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Construction's share of all waste generated in Malta, 2022",77.7,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Mineral C&D waste (W121) from construction, 2022",1990675.0,tonnes,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Change in construction-sector waste, 2020 to 2022",-31.3,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Change in construction-sector waste, 2018 to 2022",4.7,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Mineral C&D waste treated: recycling share, 2020",41.8,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",backfilling is classed as recovery in Eurostat's scheme
+"Mineral C&D waste treated: backfilling share, 2020",58.2,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",backfilling is classed as recovery in Eurostat's scheme
+"Mineral C&D waste treated: landfill (D1, D5, D12) share, 2020",0.0,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",backfilling is classed as recovery in Eurostat's scheme
+"Mineral C&D waste treated, total, 2020",2947811.0,tonnes,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",
+"Mineral C&D waste treated: recycling share, 2022",67.3,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",backfilling is classed as recovery in Eurostat's scheme
+"Mineral C&D waste treated: backfilling share, 2022",32.7,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",backfilling is classed as recovery in Eurostat's scheme
+"Mineral C&D waste treated: landfill (D1, D5, D12) share, 2022",0.0,%,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",backfilling is classed as recovery in Eurostat's scheme
+"Mineral C&D waste treated, total, 2022",2062368.0,tonnes,"Eurostat (sts_copr_a updated 2 Oct 2026; env_wasgen, env_wastrt updated Sep 2025), retrieved 5 Oct 2026",

@@ -2,39 +2,108 @@ id: CC-047
 title: Nitrates in the aquifer
 category: Water
 subtopic: Water supply & groundwater
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'MaltaToday (2025): intensive farming is a slow-moving threat to Malta''s groundwater, with nitrate levels
-    of 100-200 mg/L in the eastern main aquifer, two to four times the EU limit.'
+  text: 'MaltaToday (James Debono, 13 February 2026), quoting Laudi et al. (J. Hydrol.: Regional Studies, 2026): nitrate in
+    the eastern areas of the Mean Sea Level Aquifer ranges from 100 to 200 mg/L, which the article describes as two to four
+    times the EU limit of 50 mg/L.'
   speaker: MaltaToday
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  date: 2026-02-13
+  wording_status: 'Verbatim found'
   sources:
-  - title: 'Potatoes and intensive farming: A slow-moving threat to Malta''s groundwater'
-    publisher: MaltaToday
-    date: n/d
-    url: https://www.maltatoday.com.mt/news/national/139611/potatoes_and_intensive_farming_a_slowmoving_threat_to_maltas_groundwater
-    note: Media claim.
-counter_evidence: Testable against EWA monitoring and the 3rd River Basin Management Plan status assessment.
-tests: EWA nitrate monitoring; RBMP 2022-2027 status tables.
-why_low_hanging: A specific, attributable statement that public data can test.
+    - title: "Potatoes and intensive farming: A slow-moving threat to Malta's groundwater"
+      publisher: MaltaToday
+      date: '2026-02-13'
+      url: https://www.maltatoday.com.mt/news/national/139611/potatoes_and_intensive_farming_a_slowmoving_threat_to_maltas_groundwater
+      note: The claim; quotes the paper in quotation marks. The 'two to four times the EU limit' comparison is the outlet's.
+        Read 5 Oct 2026.
+    - title: Tracing nitrate fate in Malta's hydrogeological system using an intensive vadose-groundwater monitoring network
+      publisher: 'Journal of Hydrology: Regional Studies 64:103162'
+      date: '2026'
+      url: https://doi.org/10.1016/j.ejrh.2026.103162
+      note: The study (open access, CC BY). Crossref verified; abstract read; full text not retrievable, so the quoted sentence
+        is second-hand.
+    - title: Using vadose zone data to determine agricultural impact on groundwater pollution (EGU25-13344)
+      publisher: EGU General Assembly 2025
+      date: '2025'
+      url: https://doi.org/10.5194/egusphere-egu25-13344
+      note: Same team; 75-200 mg/L under potato/forage fields, 25-100 mg/L regional aquifer.
+    - title: 'Member State country fiche, Malta: Nitrates Directive 2020-2023, SWD(2026) 232 final, Part 20/27'
+      publisher: European Commission
+      date: '2026-07-15'
+      url: https://data.consilium.europa.eu/doc/document/ST-12018-2026-ADD-19/en/pdf
+      note: 'Independent: 30 of 44 groundwater points average 50 mg/L or more (2020-2023).'
+  quote: Specifically, the highest concentrations of nitrate are observed in the eastern areas of the MSLA, ranging from 100
+    to 200 mg/L.
+counter_evidence: "Commission fiche (EWA data): 68.2% of 44 groundwater points average 50 mg/L or more in 2020-2023 (63.6%\
+  \ in 2016-2019); 35 hotspots; 83.3% of 5-15 m wells. The same team's 2025 abstract gives 75-200 mg/L under potato and forage\
+  \ fields but 25-100 mg/L in the regional aquifer under the north-west perched aquifer, so levels differ by area. No independent\
+  \ per-aquifer series for the eastern MSLA."
+tests: 100/50 = 2 and 200/50 = 4; Commission 2020-2023 monitoring shares (tools/cc-047-report/calc.py); comparison with the
+  team's 2025 abstract.
+why_low_hanging: 'Done: Claim Check 047 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Largely supported: no right of reply needed. The 100-200 mg/L sentence is second-hand (paper full text blocked).
+  Tap-water levels not tested; the study excluded animal husbandry.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+  - data/cc-047/commission_nitrates_malta_2020_2023.csv, data/cc-047/study_ranges.csv and data/cc-047/checks.csv (read 5 Oct
+    2026)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: citygate
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-047A
+    text: "Nitrate in the eastern areas of the main aquifer is 100–200 mg/L"
+    said_by: "MaltaToday, quoting Laudi et al. [1]"
+    finding: "Matches the team’s 2025 abstract (75–200 mg/L under potato/forage fields). Full text not read."
+    rating: "Likely"
+    tone: lime
+  - id: CC-047B
+    text: "That is two to four times the EU limit of 50 mg/L"
+    said_by: "MaltaToday [1]"
+    finding: "100/50 = 2 and 200/50 = 4; 50 mg/L is the Nitrates Directive and drinking-water threshold."
+    rating: "Accurate"
+    tone: green
+  - id: CC-047C
+    text: "Groundwater nitrate is a widespread problem in Malta"
+    said_by: "MaltaToday [1]"
+    finding: "30 of 44 monitoring points at 50 mg/L or more, 2020–2023; up from 63.6% [4]."
+    rating: "Confirmed"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 68.2%
+  caption: "of 44 groundwater monitoring points averaged 50 mg/L or more in 2020-2023 (claim: eastern aquifer 100-200 mg/L)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: MaltaToday article (13 Feb 2026) read in full; it quotes the paper's sentence 'the highest concentrations of nitrate
+      are observed in the eastern areas of the MSLA, ranging from 100 to 200 mg/L'. The comparison with the EU limit is the
+      outlet's.
+  - date: 2026-10-05
+    step: note
+    note: Paper verified in Crossref and OpenAlex (abstract); full text blocked (ScienceDirect 403, Elsevier API needs key).
+      The same team's EGU 2025 abstract read. Commission SWD(2026) 232 Malta fiche read and section 4 transcribed; arithmetic
+      tested in calc.py.
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.

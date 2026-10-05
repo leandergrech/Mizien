@@ -2,40 +2,108 @@ id: CC-091
 title: Inspections doubled
 category: Health & Safety
 subtopic: Workplace safety
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Occupational Health and Safety Authority (2026): inspections more than doubled in 2025 and around 74% of
-    construction sites met safety standards; nine workers died in 2025.'
+  text: 'The Occupational Health and Safety Authority (Annual Report 2025, tabled in parliament 1 July 2026): inspections
+    more than doubled in 2025 (23,711 against 9,381), around 74% of construction sites were adequately compliant with safety
+    requirements, and nine workers died in 2025.'
   speaker: Occupational Health and Safety Authority (OHSA)
-  date: '2026'
-  wording_status: 'Paraphrase: locate quote'
+  date: 2026-07-01
+  wording_status: 'Verbatim found'
   sources:
-  - title: Nine workers die on the job in 2025 as OHSA inspections more than double
-    publisher: MaltaToday
-    date: '2026'
-    url: https://www.maltatoday.com.mt/news/national/142928/nine_workers_die_on_the_job_in_2025_as_ohsa_inspections_more_than_double
-    note: Locates the claims.
-counter_evidence: Construction has the highest injury rate (94 per 100,000); more than half of 2025 deaths were
-  migrant workers.
-tests: OHSA annual report; NSO accidents at work.
-why_low_hanging: A specific, attributable statement that public data can test.
+    - title: Annual Report 2025
+      publisher: Occupational Health and Safety Authority
+      date: '2026-07-01'
+      url: https://ohsa.mt/sites/default/files/2026-05/AR-OHSA-2025.pdf
+      note: 'The claim, verbatim: s.4.3.1 p.42 (74%), s.8.3 and Table 14 p.67-68 (inspections), s.4.2.6 p.41 (nine deaths).
+        Read 5 Oct 2026.'
+    - title: Nine workers die on the job in 2025 as OHSA inspections more than double
+      publisher: MaltaToday
+      date: '2026-07-01'
+      url: https://www.maltatoday.com.mt/news/national/142928/nine_workers_die_on_the_job_in_2025_as_ohsa_inspections_more_than_double
+      note: "Locator: reports the minister tabling the report; 'more than doubled' is its paraphrase. Read via Internet Archive\
+        \ copy."
+    - title: Annual Reports 2023 and 2024
+      publisher: Occupational Health and Safety Authority
+      date: 2024-2025
+      url: https://www.ohsa.mt/sites/default/files/2025-05/AR-OHSA-2024.pdf
+      note: 'Context: five fatal accidents in each of 2023 and 2024; 9,381 inspections in 2024.'
+    - title: Fatal accidents at work (hsw_n2_02); Population and employment (nama_10_pe)
+      publisher: Eurostat
+      date: updated 25 Sep / 2 Oct 2026
+      url: https://ec.europa.eu/eurostat/databrowser/view/hsw_n2_02/default/table
+      note: Independent data, retrieved 5 Oct 2026 (data/cc-091/). 2025 not yet published.
+  quote: Approximately 74% of sites were found to be adequately compliant with occupational health and safety requirements.
+    … inspection numbers rising by a further 152.8% in 2025 … During 2025, nine fatal workplace accidents were recorded, resulting
+    in the loss of nine workers’ lives.
+counter_evidence: "Inspections: 23,711 in 2025 against 9,381 in 2024 (x2.53, +152.8%) and 2,585 in 2023; divisional totals\
+  \ match. The 74% is OHSA's own rating of construction inspections as 'adequate' (21% orders, 5% stop-work orders); its base\
+  \ and the meaning of 'adequate' are not stated, and 5% of all 19,296 construction inspections (about 965) exceeds the 526\
+  \ stop orders issued in all sectors, so the percentages cannot cover all inspections. Nine deaths confirmed (Tables 1 and\
+  \ 5; four Maltese, five third-country nationals; three construction, four transport and storage, two agriculture) against\
+  \ five in 2023 and 2024; Eurostat's 2024 count is four, 2025 unpublished. Inspection and compliance data exist only from\
+  \ OHSA."
+tests: OHSA Annual Reports 2023-2025; Eurostat hsw_n2_02 and nama_10_pe (tools/cc-091-report/calc.py).
+why_low_hanging: 'Done: Claim Check 091 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Largely supported: no right of reply needed. All inspection and compliance figures are OHSA''s own; the minister''s
+  speech was not read in the parliamentary record; the 94 per 100,000 construction injury rate in the earlier counter-evidence
+  was not found in the OHSA report and was not tested.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
   lat: 35.8959
   lon: 14.51136
   scope: institution
   icon: castille
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-091A
+    text: "Inspections more than doubled in 2025"
+    said_by: "OHSA [2]"
+    finding: "23,711 in 2025 against 9,381 in 2024: 2.53 times (+152.8%). Totals match the divisional tables."
+    rating: "Supported"
+    tone: green
+  - id: CC-091B
+    text: "Around 74% of construction sites met safety standards"
+    said_by: "OHSA [2]"
+    finding: "Report: about 74% of sites “adequately compliant” (Table 6). Accurately reported, but “adequate” is undefined and the base is unstated; 26% needed orders or a stop."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-091C
+    text: "Nine workers died in 2025"
+    said_by: "OHSA [2]"
+    finding: "Nine fatal accidents (Tables 1 and 5). Eurostat's 2025 figure not yet published; 2023 and 2024 agree closely with OHSA's counts."
+    rating: "Supported"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 2.5x
+  caption: "OHSA inspections in 2025 against 2024 (23,711 and 9,381); nine workers died"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: Verbatim wording found in OHSA's Annual Report 2025 (s.4.3.1, s.8.3/Table 14, s.4.2.6), read from ohsa.mt; the intake's
+      MaltaToday source paraphrases the minister.
+  - date: 2026-10-05
+    step: note
+    note: Report tables transcribed (data/cc-091/) and recomputed; Eurostat fatal accidents and employment downloaded. Table
+      6 percentages do not reconcile with Table 17 stop orders (base unstated).
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.

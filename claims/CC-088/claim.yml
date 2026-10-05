@@ -2,39 +2,94 @@ id: CC-088
 title: Population 588,254
 category: Tourism & Population
 subtopic: Population & labour
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
-  text: 'National Statistics Office: Malta''s population rose to 588,254 at the end of 2025 (+2.4%), with net migration
-    of 13,906 the main driver.'
+  text: 'National Statistics Office: Malta''s population rose to 588,254 at the end of 2025 (+2.4%), with net migration of
+    13,906 the main driver.'
   speaker: National Statistics Office (NSO)
-  date: 2026-07
-  wording_status: 'Paraphrase: locate quote'
+  date: 2026-07-09
+  wording_status: 'Verbatim found'
   sources:
-  - title: 'Malta''s population rose to 588,254 by end 2025: NSO'
-    publisher: MaltaToday
-    date: Jul 2026
-    url: https://www.maltatoday.com.mt/news/national/143059/maltas_population_rose_to_588254_by_end_2025_nso
-    note: Locates the NSO release.
-counter_evidence: Check the NSO release; density figures quoted (1,731 vs 1,838 per km2) differ by source.
-tests: NSO World Population Day release; Eurostat demo_gind.
-why_low_hanging: A specific, attributable statement that public data can test.
+    - title: 'World Population Day: 11 July 2026, News Release NR 120/2026'
+      publisher: National Statistics Office, Malta
+      date: '2026-07-09'
+      url: https://nso.gov.mt/world-population-day-11-july-2026/
+      note: The claim. nso.gov.mt refuses scripts; full text read from the Internet Archive copy on 5 Oct 2026. Also says
+        net migration of 13,906 'was the main contributor to population growth in 2025'.
+    - title: Population change - demographic balance (demo_gind)
+      publisher: Eurostat
+      date: updated 30 Sep 2026
+      url: https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table
+      note: Cross-check, retrieved 5 Oct 2026; data supplied by the NSO, so not independent. Extract and checks in data/cc-088/.
+  quote: The estimated total population of Malta and Gozo stood at 588,254 at the end of 2025. This is an increase of 2.4
+    per cent when compared to the previous year.
+counter_evidence: 'Eurostat demo_gind reproduces every figure: population 588,254 on 1 Jan 2026 (574,250 a year earlier, +2.44%),
+  net migration 13,906 (+31.0% on 10,614), natural increase 98 (193 in 2024, -49.2%), births -0.8%, deaths +1.4%. 98 + 13,906
+  = 14,004 = change in stock; migration is 99.3% of growth. Eurostat data come from the NSO, so this is not an independent
+  count. National density figures (1,731 vs 1,838 per km2) are not in the release (locality densities only); Eurostat gives
+  1,817.4 for 2024; source of the other two not found.'
+tests: NSO release NR 120/2026 recomputed against Eurostat demo_gind (tools/cc-088-report/calc.py, data/cc-088/checks.csv).
+why_low_hanging: 'Done: Claim Check 088 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: 'Supported: no right of reply needed. Estimate that may be revised. Eurostat cross-check is not independent of the
+  NSO. Release read from an Internet Archive copy; release tables, immigration/emigration flows and citizenship/age figures
+  not tested.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+  - NSO NR 120/2026 and Eurostat demo_gind, retrieved 5 Oct 2026 (data/cc-088/; checks in data/cc-088/checks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: citygate
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-088A
+    text: "Population reached 588,254 at the end of 2025"
+    said_by: "NSO [1]"
+    finding: "Eurostat demo_gind: 588,254 on 1 January 2026. Reported as an estimate."
+    rating: "Accurate"
+    tone: green
+  - id: CC-088B
+    text: "…an increase of 2.4% on the previous year"
+    said_by: "NSO [1]"
+    finding: "588,254 / 574,250 = +2.44%, which rounds to 2.4%."
+    rating: "Accurate"
+    tone: green
+  - id: CC-088C
+    text: "Net migration was 13,906 in 2025, the main contributor to growth"
+    said_by: "NSO [1]"
+    finding: "Eurostat: 13,906. Natural increase 98. Migration is 99.3% of the 14,004 increase; net migration up 31.0% on 2024."
+    rating: "Accurate"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 588,254
+  caption: "residents at the end of 2025, +2.4% (net migration 13,906 the main driver)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: NSO release NR 120/2026 (9 Jul 2026) read in full from the Internet Archive copy; verbatim wording found. MaltaToday
+      and Lovin Malta are locators only.
+  - date: 2026-10-05
+    step: note
+    note: Eurostat demo_gind downloaded for Malta; all figures in the claim and the release's percentages recomputed (tools/cc-088-report/calc.py).
+      All reproduce.
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Supported (high confidence); no right of reply needed.

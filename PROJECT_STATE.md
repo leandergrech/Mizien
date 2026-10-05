@@ -134,6 +134,16 @@ Proposed next, for user-derived pattern matching (not done; needs a maintainer d
 | CC-049 BirdLife: 242 illegal hunting incidents | Wording found (BirdLife release 10 Oct 2025: Raptor Camp 12 Sep-5 Oct 2025; 51-minute police response). In progress: waiting on the incident log and police/WBRU data (queue blocker). |
 | CC-104 PN: Malta fails EU noise law | Petition 1150/2024 located; only a summary, a paraphrase and general quotes are public. Evidence from EP study PE 783.089 in literature/CC-104/README.md. In progress: waiting on the petition text. |
 | CC-097 GWU: beach workers and heat | Wording found (GWU statement 17 Jul 2026). In progress: waiting on Securital/ERA responses, OHS heat rules and Met Office warnings. |
+| CC-088 NSO: population 588,254 | Report v1.0 and flyer (5 Oct 2026, agent batch 2, PR #75). **Verdict: Supported (high).** NSO NR 120/2026 (Wayback); Eurostat demo_gind reproduces all figures. |
+| CC-076 NSO: 36 more vehicles a day | Report v1.0 and flyer (batch 2). **Verdict: Supported (high).** NSO NR 085/2026 Table 1: 460,648 at end Mar 2026, +36/day; pace recent (8-19/day in 2024-early 2025). |
+| CC-091 OHSA: inspections doubled, 74% compliant | Report v1.0 and flyer (batch 2). **Verdict: Largely supported (moderate).** 23,711 inspections in 2025 vs 9,381; the 74% rating's base is not stated and cannot cover all construction inspections. |
+| CC-047 Nitrates in the aquifer | Report v1.0 and flyer (batch 2). **Verdict: Largely supported (moderate).** Laudi et al. 2026 (abstract only; full text blocked) via MaltaToday; Commission fiche: 68% of groundwater points >= 50 mg/L. |
+| CC-042 PN: 'From Blue Flag to Red Alert' | Report v1.0 and flyer (batch 2). **Verdict: Largely supported (moderate).** Sequence accurate (Fajtata closed 30 Jun-2 Jul 2025); 77/87 sites Excellent; 'systemic failure' not rated (opinion). |
+| CC-105 ADPD: Freeport and airport noise never studied | Report v1.0 and flyer (batch 2). **Verdict: Largely supported (moderate).** Freeport absent from all ERA noise documents; airport noise is mapped (partly contradicts); no health study found. |
+| CC-063 MDA: 'almost complete standstill' | Report v1.0 and flyer (batch 2). **Verdict: Not substantiated (moderate); pending right of reply (MDA).** Construction output +5.8% (2021) and +5.5% (2022); conditional warning, no analysis published. |
+| CC-050 BirdLife: 'race' to weaken hunting enforcement | Report v1.0 and flyer (batch 2). **Verdict: Not substantiated (moderate); pending right of reply (BirdLife Malta).** Labour side documented (ORNIS proposal: fines -40%); PN side not shown. |
+| CC-081 The Shift: landfill share rising | In progress: the article (19 Feb 2026) returns 404 and is not archived; waiting on its text. Data ready (79.2% of treated, 72.1% of generated, 2024). |
+| CC-084 Tourists tripled in 15 years | In progress: no speaker wording for 'tripled' (ADPD's release says '4 miljun turist fis-sena wisq'; the tripling is Newsbook's own sentence). Maintainer to supply a statement or re-scope. |
 
 ## v1.2 upgrades and maintainer decisions (5 October 2026)
 
@@ -346,6 +356,21 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
   so places spread apart while the trees keep their size; icons grow with the scale (iconK). Fit and the place
   search animate the scale in log space about a fixed screen point; the map is orthographic so the fold is exact.
 - To do: test the trees on phones with real use; new claims must get a `location` (intake routine updated).
+
+## Agent batch 2 (5 October 2026, PR #75)
+
+Ten claims checked by Sonnet agents in separate worktrees (shared records written by the lead session from spec files):
+eight completed (statuses above), two wait on the maintainer:
+- **CC-081:** text of The Shift, 19 Feb 2026, "Malta's waste management is going in reverse" (save as
+  literature/CC-081/primary-source.md).
+- **CC-084:** an ADPD/Gauci statement that tourist numbers tripled, or a decision to re-scope the claim to Newsbook's
+  sentence (speaker then Newsbook) or to drop it. The record names PN; the statement found is ADPD's.
+- **Optional:** Laudi et al. (2026) open-access PDF for CC-047; EHD closure reports for CC-042; the 2014-15 Freeport
+  noise study for CC-105.
+- **Right of reply** needed for CC-063 (MDA) and CC-050 (BirdLife Malta). Not sent.
+- **Archive by hand:** CC-076's NSO release (nso.gov.mt blocks scripts; the archive script timed out).
+- **Judgement calls to confirm:** CC-050 Not substantiated vs Largely supported; CC-105 Largely supported with the
+  airport sub-claim partly contradicted; CC-042 'systemic failure' left unrated as opinion.
 
 ## Maintainer-requested batch (5 October 2026, PR #73)
 

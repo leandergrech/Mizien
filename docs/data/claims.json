@@ -2244,10 +2244,11 @@
       "id": "CC-042",
       "title": "'From Blue Flag to Red Alert'",
       "category": "Water",
-      "claim": "Nationalist Party: the government celebrates Blue Flag beaches while bathing sites close for sewage contamination.",
-      "counter": "Fajtata Bay was closed within 48 hours of its Blue Flag; May 2026 reports put 15 of 87 bathing zones at poor quality.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Nationalist Party (PN statement, 1 July 2025): the government celebrates Blue Flag beaches while bathing sites close for sewage contamination (Fajtata Bay, Marsaskala, closed two days after 13 Blue Flags were announced).",
+      "counter": "Fajtata was closed for about two days (30 Jun-2 Jul 2025) after a public-toilet overflow; Qui-si-Sana was closed 18-24 June after a private establishment's drain failed; Xlendi (listed by the PN among sewage spills) was closed for field run-off after rain, which the Water Services Corporation said was not sewage (second-hand). EEA 2025 classification: 77 of 87 bathing waters Excellent (88.5%, 92.0% in 2024), 8 Good, 2 Sufficient, none Poor; Fajtata (A07) Excellent in every season 2015-2025. The Labour Party's 'over 92% excellent' is the 2024 figure.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Bathing water & sewage",
       "location": {
@@ -2257,17 +2258,52 @@
         "scope": "institution",
         "icon": "parliament"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Nationalist Party (PN)",
       "bodies": [
         "pn"
       ],
-      "date": "",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-042A",
+          "text": "The government celebrated 13 Blue Flag beaches, Fajtata among them, on 28 June 2025",
+          "finding": "The Minister for Tourism announced ten Maltese and three Gozitan Blue Flags at Golden Bay, Fajtata Bay included [4] ◆. The Blue Flag itself is awarded by Nature Trust–FEE Malta.",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-042B",
+          "text": "Fajtata was closed to bathers within days (‘48 hours’) of the announcement",
+          "finding": "EHD notice 30 June; lifted 2 July [3][6]. Possibly 28 June per a summary of the EHD record ◆.",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-042C",
+          "text": "Bathing sites close because of sewage contamination in 2025",
+          "finding": "True for Fajtata and Qui-si-Sana. Xlendi was run-off, not sewage ◆. Closures were short; 77 of 87 sites are Excellent for 2025 and none is Poor.",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-042D",
+          "text": "This reflects years of government neglect of infrastructure",
+          "finding": "An opinion about causes and responsibility; a single public-toilet overflow cannot test it.",
+          "rating": "Not rated",
+          "tone": "grey"
+        }
+      ],
+      "date": "2025-07-01",
+      "quote": "The same government that boasts about the 'quality' of our beaches ends up having to close them within days.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-042/report.pdf",
+        "flyer_pdf": "claim-files/CC-042/flyer.pdf",
+        "flyer_png": "claim-files/CC-042/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-042/claim.yml"
     },
     {
@@ -2396,10 +2432,11 @@
       "id": "CC-047",
       "title": "Nitrates in the aquifer",
       "category": "Water",
-      "claim": "MaltaToday (2025): intensive farming is a slow-moving threat to Malta's groundwater, with nitrate levels of 100-200 mg/L in the eastern main aquifer, two to four times the EU limit.",
-      "counter": "Testable against EWA monitoring and the 3rd River Basin Management Plan status assessment.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "MaltaToday (James Debono, 13 February 2026), quoting Laudi et al. (J. Hydrol.: Regional Studies, 2026): nitrate in the eastern areas of the Mean Sea Level Aquifer ranges from 100 to 200 mg/L, which the article describes as two to four times the EU limit of 50 mg/L.",
+      "counter": "Commission fiche (EWA data): 68.2% of 44 groundwater points average 50 mg/L or more in 2020-2023 (63.6% in 2016-2019); 35 hotspots; 83.3% of 5-15 m wells. The same team's 2025 abstract gives 75-200 mg/L under potato and forage fields but 25-100 mg/L in the regional aquifer under the north-west perched aquifer, so levels differ by area. No independent per-aquifer series for the eastern MSLA.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Water supply & groundwater",
       "location": {
@@ -2409,17 +2446,45 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "MaltaToday",
       "bodies": [
         "maltatoday"
       ],
-      "date": "",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-047A",
+          "text": "Nitrate in the eastern areas of the main aquifer is 100–200 mg/L",
+          "finding": "Matches the team’s 2025 abstract (75–200 mg/L under potato/forage fields). Full text not read.",
+          "rating": "Likely",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-047B",
+          "text": "That is two to four times the EU limit of 50 mg/L",
+          "finding": "100/50 = 2 and 200/50 = 4; 50 mg/L is the Nitrates Directive and drinking-water threshold.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-047C",
+          "text": "Groundwater nitrate is a widespread problem in Malta",
+          "finding": "30 of 44 monitoring points at 50 mg/L or more, 2020–2023; up from 63.6% [4].",
+          "rating": "Confirmed",
+          "tone": "green"
+        }
+      ],
+      "date": "2026-02-13",
+      "quote": "Specifically, the highest concentrations of nitrate are observed in the eastern areas of the MSLA, ranging from 100 to 200 mg/L.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-047/report.pdf",
+        "flyer_pdf": "claim-files/CC-047/flyer.pdf",
+        "flyer_png": "claim-files/CC-047/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-047/claim.yml"
     },
     {
@@ -2487,10 +2552,10 @@
       "id": "CC-050",
       "title": "'Race to weaken hunting laws'",
       "category": "Nature & Wildlife",
-      "claim": "BirdLife Malta (2026 campaign): Labour and PN are in a 'dangerous race' to weaken hunting laws ahead of the election.",
-      "counter": "Compare both manifestos' hunting pledges with current law (CC-006 context).",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "BirdLife Malta (press release, 27 May 2026): Labour and the PN are in a 'dangerous political race' to weaken environmental enforcement on hunting and trapping, three days before the general election.",
+      "counter": "Labour's manifesto (items 63-64) commits only to defend EU-permitted derogations and safeguard hunting and trapping; it has nothing on fines or licences. The fine cuts (EUR 5,000 to 3,000 first offence; 10,000 to 6,000 repeat, -40%) and licence reapplication come from a minister's campaign statement and an ORNIS Committee proposal of 23 Sep 2026, known only through Newsbook and BirdLife Malta. For the PN, Alex Borg said hunting and trapping 'will be safeguarded' (Lovin Malta); the 16 chapters of the PN programme have no hunting item, and no PN proposal to cut fines or restore licences was found. The reading that the pledge overrides the Birds Directive is BirdLife Malta's inference. The consolidated S.L. 549.42 has no 2026 amendment.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [],
       "subtopic": "Hunting & birds",
       "location": {
@@ -2500,17 +2565,45 @@
         "scope": "institution",
         "icon": "parliament"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "BirdLife Malta",
       "bodies": [
         "birdlife"
       ],
-      "date": "2026",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-050A",
+          "text": "Labour made commitments to lower penalties and revisit licence bans",
+          "finding": "Minister’s campaign statement and government–federation agreement before the release (Newsbook ◆); an ORNIS proposal four months later (-40% fines; BirdLife screenshot ◆). Not in the manifesto.",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-050B",
+          "text": "The PN would safeguard hunting and trapping even where it conflicts with the Birds Directive",
+          "finding": "Mr Borg: “will be safeguarded” (quoted by Lovin Malta ◆). No Directive reference, no fine or licence proposal, no hunting item in the programme.",
+          "rating": "Not substantiated",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-050C",
+          "text": "The two parties are in a race to outbid each other in weakening enforcement",
+          "finding": "Documented for one party; the other’s side is an inference. Opposite sides making similar pledges to the same voters is plausible, but a “race to weaken” needs both.",
+          "rating": "Not substantiated",
+          "tone": "amber"
+        }
+      ],
+      "date": "2026-05-27",
+      "quote": "BirdLife Malta condemns dangerous political race to weaken environmental enforcement",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-050/report.pdf",
+        "flyer_pdf": "claim-files/CC-050/flyer.pdf",
+        "flyer_png": "claim-files/CC-050/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-050/claim.yml"
     },
     {
@@ -2932,10 +3025,10 @@
       "id": "CC-063",
       "title": "Construction waste: 'standstill' warning",
       "category": "Waste",
-      "claim": "Malta Developers Association: unless an enduring solution is found for dumping construction waste, development will come to an almost complete standstill.",
-      "counter": "Construction is over 80% of waste generated; 32-35 quarries licensed but few accept waste.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Malta Developers Association (statement of 2 June 2021, as reported by MaltaToday): unless an imminent and enduring solution is found to the dumping of construction waste, development will come to an 'almost complete standstill'.",
+      "counter": "A real bottleneck existed: road works were halted in 2020 for lack of dumping space and government fixed a EUR 12 a tonne fee; in June 2021 contractors again reported strain (MaltaToday, BusinessToday). But Malta's construction output (volume, 2015=100) rose from 145.5 (2020) to 154.0 (+5.8%, 2021) and 162.5 (+5.5%, 2022, provisional; latest year published). Construction-sector waste was 3.0 Mt in 2020, 2.1 Mt in 2022 (-31%, +4.7% vs 2018), 78% of all waste (84% in 2020). Mineral C&D waste treated in 2022: 67% recycled, 33% backfilling, landfill negligible (backfilling counts as recovery). The MDA published no analysis behind 'almost complete standstill'; government acted (fee 2020, strategy Oct 2021), so the conditional cannot be tested.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [],
       "subtopic": "Construction waste",
       "location": {
@@ -2945,17 +3038,38 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Malta Developers Association",
       "bodies": [
         "mda"
       ],
-      "date": "",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-063A",
+          "text": "Dumping of construction waste had no enduring solution in June 2021",
+          "finding": "Road works halted in 2020 and strain reported again in 2021; the MDA calls past fixes a “patchwork”.",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-063B",
+          "text": "Without one, development would come to an almost complete standstill",
+          "finding": "No analysis published. Output grew 5.8% (2021) and 5.5% (2022), but government acted, so the counterfactual is untestable.",
+          "rating": "Not substantiated",
+          "tone": "amber"
+        }
+      ],
+      "date": "2021-06-02",
+      "quote": "There has been a patchwork of attempted solutions along the years in a bid to solve the problem. However, none have proved to be effective long term. … development will come to an “almost complete standstill.”",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-063/report.pdf",
+        "flyer_pdf": "claim-files/CC-063/flyer.pdf",
+        "flyer_png": "claim-files/CC-063/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-063/claim.yml"
     },
     {
@@ -3326,10 +3440,11 @@
       "id": "CC-076",
       "title": "36 more vehicles a day",
       "category": "Transport",
-      "claim": "National Statistics Office: the licensed vehicle fleet grew to 460,648 in Q1 2026, a net increase of about 36 vehicles a day.",
-      "counter": "Check the NSO release directly; gross registrations vs net growth.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "National Statistics Office: the licensed vehicle fleet stood at 460,648 at the end of March 2026, a net increase of about 36 vehicles a day over Q1 2026.",
+      "counter": "Table 1 gives 457,403 (end 2025) and 460,648 (end Mar 2026): +3,245 over 90 days = 36.06 a day, by NSO note 7. Categories sum to totals in all 13 quarters. Gross: 5,680 newly licensed (63 a day), 6,963 restricted, 4,140 restrictions ended; NSO's note-6 flow identity gives +2,857 (31.7 a day), 388 below the stock difference (cut-off dates). Pace is recent: 9 and 8 a day in H1 2024, 19 in Q1 2025, then 37, 36, 35, 36; 32 a day over calendar 2025. Commission's 35 matches Q4 2025 (35.5). The claim record's Newsbook link reports Q3 2025 (454,138; also 36 a day).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
       "tags": [],
       "subtopic": "Cars & traffic",
       "location": {
@@ -3339,17 +3454,52 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "National Statistics Office (NSO)",
       "bodies": [
         "nso"
       ],
-      "date": "2026",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-076A",
+          "text": "The stock of licensed motor vehicles stood at 460,648 at the end of March 2026",
+          "finding": "Table 1 total for Q1 2026 is 460,648. The vehicle categories add up to the total in all 13 quarters.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-076B",
+          "text": "The stock rose by 3,245 over the quarter, a net average of 36 vehicles a day",
+          "finding": "460,648 minus 457,403 is 3,245; over 90 days that is 36.06 a day, by the NSO’s stated formula.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-076C",
+          "text": "The figure is a net increase, not a count of new registrations",
+          "finding": "Gross licensing was 63 a day; 6,963 vehicles went under restriction and 4,140 returned. The release gives both.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-076D",
+          "text": "The fleet grows at a net average of 35 vehicles a day",
+          "finding": "Q4 2025: 3,265 over 92 days is 35.5 a day, matching the Commission’s figure and its NSO citation. We derived this from Table 1; we did not retrieve the Q4 release.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
+      "date": "2026-05-13",
+      "quote": "At the end of March 2026, the stock of licensed motor vehicles stood at 460,648. … During the quarter under review, the stock of licensed motor vehicles increased at a net average rate of 36 motor vehicles per day",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-076/report.pdf",
+        "flyer_pdf": "claim-files/CC-076/flyer.pdf",
+        "flyer_png": "claim-files/CC-076/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-076/claim.yml"
     },
     {
@@ -3481,7 +3631,7 @@
       "category": "Waste",
       "claim": "The Shift News (Feb 2026): Malta's waste management is going in reverse, with the share landfilled rising from 78.6% in 2023 to 79.2% in 2024.",
       "counter": "Compare with CC-004 (government's 'strong progress'); Eurostat municipal waste treatment.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Landfill & treatment",
@@ -3571,7 +3721,7 @@
       "category": "Tourism & Population",
       "claim": "ADPD chairperson Sandra Gauci (2026): Malta welcomed over four million tourists in 2025, triple the number of 15 years ago.",
       "counter": "NSO arrivals 2010 vs 2025; inbound tourists vs cruise passengers.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Tourism numbers & capacity",
@@ -3591,7 +3741,7 @@
         "sandra-gauci"
       ],
       "date": "2026",
-      "quote": "",
+      "quote": "4 miljun turist fis-sena wisq (\"4 million tourists a year are too many\", ADPD release, 14 Feb 2026, Maltese; Newsbook translation). No tripling wording in quotation marks.",
       "version": null,
       "outputs": {},
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-084/claim.yml"
@@ -3692,9 +3842,10 @@
       "title": "Population 588,254",
       "category": "Tourism & Population",
       "claim": "National Statistics Office: Malta's population rose to 588,254 at the end of 2025 (+2.4%), with net migration of 13,906 the main driver.",
-      "counter": "Check the NSO release; density figures quoted (1,731 vs 1,838 per km2) differ by source.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Eurostat demo_gind reproduces every figure: population 588,254 on 1 Jan 2026 (574,250 a year earlier, +2.44%), net migration 13,906 (+31.0% on 10,614), natural increase 98 (193 in 2024, -49.2%), births -0.8%, deaths +1.4%. 98 + 13,906 = 14,004 = change in stock; migration is 99.3% of growth. Eurostat data come from the NSO, so this is not an independent count. National density figures (1,731 vs 1,838 per km2) are not in the release (locality densities only); Eurostat gives 1,817.4 for 2024; source of the other two not found.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
       "tags": [],
       "subtopic": "Population & labour",
       "location": {
@@ -3704,17 +3855,45 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "National Statistics Office (NSO)",
       "bodies": [
         "nso"
       ],
-      "date": "2026-07",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-088A",
+          "text": "Population reached 588,254 at the end of 2025",
+          "finding": "Eurostat demo_gind: 588,254 on 1 January 2026. Reported as an estimate.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-088B",
+          "text": "…an increase of 2.4% on the previous year",
+          "finding": "588,254 / 574,250 = +2.44%, which rounds to 2.4%.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-088C",
+          "text": "Net migration was 13,906 in 2025, the main contributor to growth",
+          "finding": "Eurostat: 13,906. Natural increase 98. Migration is 99.3% of the 14,004 increase; net migration up 31.0% on 2024.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
+      "date": "2026-07-09",
+      "quote": "The estimated total population of Malta and Gozo stood at 588,254 at the end of 2025. This is an increase of 2.4 per cent when compared to the previous year.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-088/report.pdf",
+        "flyer_pdf": "claim-files/CC-088/flyer.pdf",
+        "flyer_png": "claim-files/CC-088/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-088/claim.yml"
     },
     {
@@ -3781,10 +3960,11 @@
       "id": "CC-091",
       "title": "Inspections doubled",
       "category": "Health & Safety",
-      "claim": "Occupational Health and Safety Authority (2026): inspections more than doubled in 2025 and around 74% of construction sites met safety standards; nine workers died in 2025.",
-      "counter": "Construction has the highest injury rate (94 per 100,000); more than half of 2025 deaths were migrant workers.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "The Occupational Health and Safety Authority (Annual Report 2025, tabled in parliament 1 July 2026): inspections more than doubled in 2025 (23,711 against 9,381), around 74% of construction sites were adequately compliant with safety requirements, and nine workers died in 2025.",
+      "counter": "Inspections: 23,711 in 2025 against 9,381 in 2024 (x2.53, +152.8%) and 2,585 in 2023; divisional totals match. The 74% is OHSA's own rating of construction inspections as 'adequate' (21% orders, 5% stop-work orders); its base and the meaning of 'adequate' are not stated, and 5% of all 19,296 construction inspections (about 965) exceeds the 526 stop orders issued in all sectors, so the percentages cannot cover all inspections. Nine deaths confirmed (Tables 1 and 5; four Maltese, five third-country nationals; three construction, four transport and storage, two agriculture) against five in 2023 and 2024; Eurostat's 2024 count is four, 2025 unpublished. Inspection and compliance data exist only from OHSA.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Workplace safety",
       "location": {
@@ -3794,17 +3974,45 @@
         "scope": "institution",
         "icon": "castille"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Occupational Health and Safety Authority (OHSA)",
       "bodies": [
         "ohsa"
       ],
-      "date": "2026",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-091A",
+          "text": "Inspections more than doubled in 2025",
+          "finding": "23,711 in 2025 against 9,381 in 2024: 2.53 times (+152.8%). Totals match the divisional tables.",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-091B",
+          "text": "Around 74% of construction sites met safety standards",
+          "finding": "Report: about 74% of sites “adequately compliant” (Table 6). Accurately reported, but “adequate” is undefined and the base is unstated; 26% needed orders or a stop.",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-091C",
+          "text": "Nine workers died in 2025",
+          "finding": "Nine fatal accidents (Tables 1 and 5). Eurostat's 2025 figure not yet published; 2023 and 2024 agree closely with OHSA's counts.",
+          "rating": "Supported",
+          "tone": "green"
+        }
+      ],
+      "date": "2026-07-01",
+      "quote": "Approximately 74% of sites were found to be adequately compliant with occupational health and safety requirements. … inspection numbers rising by a further 152.8% in 2025 … During 2025, nine fatal workplace accidents were recorded, resulting in the loss of nine workers’ lives.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-091/report.pdf",
+        "flyer_pdf": "claim-files/CC-091/flyer.pdf",
+        "flyer_png": "claim-files/CC-091/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-091/claim.yml"
     },
     {
@@ -4255,13 +4463,12 @@
       "id": "CC-105",
       "title": "ADPD: no study of Freeport and airport noise",
       "category": "Noise",
-      "claim": "ADPD - The Green Party (deputies Carmel Cacopardo and Melissa Bagley, 26 May 2026): Malta has not yet acknowledged the impact of noise from the Malta Freeport and Malta International Airport on nearby residents, and should commission a study of it (and of entertainment-industry noise).",
-      "counter": "EU noise-mapping rules cover major airports and roads, so some exposure data may already exist; whether Freeport noise is mapped is not yet checked. The article gives no decibel or exposure figures, and the claim is that no study exists, which can be tested by looking for one.",
-      "status": "Not started",
-      "verdict": null,
-      "tags": [
-        "Compliance-not-health"
-      ],
+      "claim": "ADPD - The Green Party (deputy chairpersons Carmel Cacopardo and Melissa Bagley, press conference in Birżebbuġa, 26 May 2026): Malta has yet to acknowledge the effect of noise pollution on the health of people living near the Malta Freeport and Malta International Airport, and should study the impact of noise from the Freeport and the airport on nearby residents (and of entertainment-industry noise).",
+      "counter": "None of five ERA noise documents (round 4 report, two Noise Action Plans, consultation annex, airport round 3 report) mentions the Freeport; the licensed industrial sites mapped (8 in round 3, 7 in round 4) exclude it. But aircraft noise is mapped and published (round 3: 9,666 people at 55 dB Lden or more, 827 at 50 dB Lnight or more, 2016) and the Noise Action Plan states WHO health levels, and Freeport-area noise was measured in a Freeport-commissioned study (2014-15, second-hand via TVM) and a University of Malta study (2020-21: daytime averages 55 dBA or more at all five Birżebbuġa points; 98% of 477 respondents called noise a problem). No health-outcome study of residents near either site was found.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
+      "tags": [],
       "location": {
         "place": "Malta Freeport, Birżebbuġa",
         "lat": 35.81859,
@@ -4269,17 +4476,45 @@
         "scope": "site",
         "icon": "crane"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "ADPD - The Green Party",
       "bodies": [
         "adpd"
       ],
+      "subclaims": [
+        {
+          "id": "CC-105A",
+          "text": "Malta has yet to acknowledge the effect of Freeport noise on nearby residents' health",
+          "finding": "The Freeport is not mentioned in any ERA noise document and not among the mapped industrial sites, but a Freeport-commissioned study (2014–15 ◆) and a university study (2022) exist.",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-105B",
+          "text": "Malta has yet to acknowledge the effect of airport noise on nearby residents' health",
+          "finding": "Aircraft noise exposure is modelled, mapped and published in three rounds, with WHO levels stated; no health assessment of residents.",
+          "rating": "Overstated",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-105C",
+          "text": "A study of the impact of noise from the Freeport and airport on nearby residents is needed",
+          "finding": "No health-outcome study found; local work is exposure, annoyance and self-reported symptoms.",
+          "rating": "Largely supported",
+          "tone": "lime"
+        }
+      ],
       "date": "2026-05-26",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "This country has yet to acknowledge that noise pollution is having an effect on the health of those who live near the Freeport or the airport, including its points of access.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-105/report.pdf",
+        "flyer_pdf": "claim-files/CC-105/flyer.pdf",
+        "flyer_png": "claim-files/CC-105/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-105/claim.yml"
     },
     {

@@ -2,39 +2,103 @@ id: CC-076
 title: 36 more vehicles a day
 category: Transport
 subtopic: Cars & traffic
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
-  text: 'National Statistics Office: the licensed vehicle fleet grew to 460,648 in Q1 2026, a net increase of about
-    36 vehicles a day.'
+  text: 'National Statistics Office: the licensed vehicle fleet stood at 460,648 at the end of March 2026, a net increase
+    of about 36 vehicles a day over Q1 2026.'
   speaker: National Statistics Office (NSO)
-  date: '2026'
-  wording_status: 'Paraphrase: locate quote'
+  date: 2026-05-13
+  wording_status: 'Verbatim found'
   sources:
-  - title: Malta's roads grow more congested as vehicle fleet tops 454,000
-    publisher: Newsbook
-    date: n/d
-    url: https://newsbook.com.mt/en/maltas-roads-grow-more-congested-as-vehicle-fleet-tops-454000/
-    note: Locates the NSO figures.
-counter_evidence: Check the NSO release directly; gross registrations vs net growth.
-tests: NSO motor vehicles quarterly releases.
-why_low_hanging: A specific, attributable statement that public data can test.
+    - title: 'Motor Vehicles: Q1/2026, News release NR 085/2026'
+      publisher: National Statistics Office, Malta
+      date: '2026-05-13'
+      url: https://nso.gov.mt/motor-vehicles-q1-2026/
+      note: The claim, verbatim. Read from the Internet Archive copy captured 13 May 2026 (nso.gov.mt blocks automated requests),
+        with Table 1 workbook.
+    - title: 2026 Country Report - Malta, SWD(2026) 218 final (Council doc. 10135/26 ADD 1)
+      publisher: European Commission (via Council of the EU)
+      date: '2026-06-03'
+      url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
+      note: "Context: p. 18, 'net average rate of 35 motor vehicles per day', citing NSO Q4/2025."
+    - title: Over 3,200 new vehicles added to Malta's roads in three months
+      publisher: Newsbook
+      date: '2026-05-14'
+      url: https://newsbook.com.mt/en/over-3200-new-vehicles-added-to-maltas-roads-in-three-months/
+      note: Locator for the Q1 2026 release; not evidence.
+  quote: At the end of March 2026, the stock of licensed motor vehicles stood at 460,648. … During the quarter under review,
+    the stock of licensed motor vehicles increased at a net average rate of 36 motor vehicles per day
+counter_evidence: "Table 1 gives 457,403 (end 2025) and 460,648 (end Mar 2026): +3,245 over 90 days = 36.06 a day, by NSO\
+  \ note 7. Categories sum to totals in all 13 quarters. Gross: 5,680 newly licensed (63 a day), 6,963 restricted, 4,140 restrictions\
+  \ ended; NSO's note-6 flow identity gives +2,857 (31.7 a day), 388 below the stock difference (cut-off dates). Pace is recent:\
+  \ 9 and 8 a day in H1 2024, 19 in Q1 2025, then 37, 36, 35, 36; 32 a day over calendar 2025. Commission's 35 matches Q4\
+  \ 2025 (35.5). The claim record's Newsbook link reports Q3 2025 (454,138; also 36 a day)."
+tests: NSO Table 1 stock series, recomputed with tools/cc-076-report/calc.py.
+why_low_hanging: 'Done: Claim Check 076 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: 'Supported: no right of reply needed. Arithmetic tested against the NSO''s own table, not the Transport Malta register.
+  Q4 2025 NSO release not retrieved. NSO data subject to revision.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: citygate
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-076A
+    text: "The stock of licensed motor vehicles stood at 460,648 at the end of March 2026"
+    said_by: "NSO [1]"
+    finding: "Table 1 total for Q1 2026 is 460,648. The vehicle categories add up to the total in all 13 quarters."
+    rating: "Accurate"
+    tone: green
+  - id: CC-076B
+    text: "The stock rose by 3,245 over the quarter, a net average of 36 vehicles a day"
+    said_by: "NSO [1]"
+    finding: "460,648 minus 457,403 is 3,245; over 90 days that is 36.06 a day, by the NSO’s stated formula."
+    rating: "Accurate"
+    tone: green
+  - id: CC-076C
+    text: "The figure is a net increase, not a count of new registrations"
+    said_by: "NSO [1]"
+    finding: "Gross licensing was 63 a day; 6,963 vehicles went under restriction and 4,140 returned. The release gives both."
+    rating: "Accurate"
+    tone: green
+  - id: CC-076D
+    text: "The fleet grows at a net average of 35 vehicles a day"
+    said_by: "Commission [2]"
+    finding: "Q4 2025: 3,265 over 92 days is 35.5 a day, matching the Commission’s figure and its NSO citation. We derived this from Table 1; we did not retrieve the Q4 release."
+    rating: "Accurate"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: '36'
+  caption: "net vehicles added a day to Malta's licensed fleet in Q1 2026 (stock 460,648)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: NSO NR 085/2026 (13 May 2026) read via Internet Archive copy, with Table 1 workbook; verbatim wording found. The
+      claim record's Newsbook link is the Q3 2025 article; the Q1 2026 figures come from the newer release.
+  - date: 2026-10-05
+    step: note
+    note: Table 1 quarterly stock parsed and every figure recomputed (tools/cc-076-report/calc.py); Commission's 35 a day
+      checked against Q4 2025.
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Supported (high confidence); no right of reply needed.

@@ -1,0 +1,11 @@
+round,base_year,scope,indicator,band_dB,people,source
+R3,2016,inside agglomeration,Lden,55-59,7554,"Table 9.2, ERA/Acustica MIA Noise Modelling Final Report 593-14-2/3 (March 2019)"
+R3,2016,inside agglomeration,Lden,60-64,500,same
+R3,2016,inside agglomeration,Lden,65+,0,same
+R3,2016,outside agglomeration,Lden,55-59,1604,same
+R3,2016,outside agglomeration,Lden,60-64,7,same
+R3,2016,outside agglomeration,Lden,65+,1,same
+R3,2016,inside agglomeration,Lnight,50-54,789,same
+R3,2016,inside agglomeration,Lnight,55+,0,same
+R3,2016,outside agglomeration,Lnight,50-54,36,same
+R3,2016,outside agglomeration,Lnight,55+,2,same

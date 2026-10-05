@@ -1,13 +1,7 @@
 # CC-091: Inspections doubled
 
-**Status:** literature not yet collected.
+**Status:** checked 5 Oct 2026 (Largely supported, moderate confidence). Primary source: OHSA Annual Report 2025.
 
-## To collect
+Routes: MaltaToday article via Internet Archive (site 403); OHSA's reports page (https://ohsa.mt/reports) links all annual reports; Annual Reports 2023-2025 downloaded and read. Eurostat hsw_n2_02 and nama_10_pe by API. No peer-reviewed literature is needed to test the figures. The reports are government publications with no stated open licence, so no PDFs are committed (`open-access/` stays empty); URLs are in `references.bib`.
 
-OHSA annual report; NSO accidents at work.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-091) for the source that located this claim. It locates the claim and its context; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+See `notes.md` for what was read and the gaps. Data: `data/cc-091/`; scripts: `tools/cc-091-report/`.
