@@ -653,7 +653,7 @@
       "title": "Land reclamation outside the Freeport",
       "category": "Planning & Housing",
       "claim": "Budget 2026 (27 Oct 2025): a reclamation project is already under way in the Freeport; the government is preparing to launch a large-scale land reclamation project outside the Freeport perimeter next year, for industrial and maritime use and to relocate certain commercial activities so other spaces can be enjoyed by families. In 2019 the Environment Minister said an EUR 11 million seabed study had found five or six sites that are 'possible and environmentally safe'.",
-      "counter": "Existing works confirmed: Sentinel-2 shows +3.7 ha (+/-1) at Terminal 2, 2023-2026 (stated ~30,000 m2, ~1 Mt inert fill). No site, size, cost, fill source, screening or call for the large-scale project found by 3 Oct 2026. Seabed study unpublished since 2019; budget lines EUR 500,000 (2023) -> 10,000 (2025). Three Natura 2000 designations within ~0.5 km of the new Terminal 2 land, two of them overlapping on the same cliffs (SAC MT0000024, SPA MT0000033); marine SPA MT0000111 (256 km2) ~0.4 km away. Posidonia meadows -34% in 50 years across the Mediterranean (Telesca et al. 2015).",
+      "counter": "Existing works confirmed: Sentinel-2 shows +3.7 ha (+/-1) at Terminal 2, 2023-2026 (stated ~30,000 m2, ~1 Mt inert fill). No site, size, cost, fill source, screening or call for the large-scale project found by 3 Oct 2026. Seabed study unpublished since 2019; budget lines EUR 500,000 (2023) -> 10,000 (2025). Three Natura 2000 designations within ~0.5 km of the new Terminal 2 land, two of them overlapping on the same cliffs (SAC MT0000024, SPA MT0000033); marine SPA MT0000111 (256 km2) ~0.4 km away. v1.2: Posidonia meadows mapped by UNEP-WCMC (v7.1; surveys dated 1961-2014 and 2002) lie 0.19 km from the new land, about 120 ha within 1 km (EMODnet gridded layer: 72 ha); EMODnet DTM 2024 depth within 1 km mostly 5-30 m (median 18 m), mapped meadows 8-34 m. Fairness: Malta's Article 17 reports assess Posidonia beds (1120) as favourable overall (2013-2018; 2019-2024, stable; 68.46 km2); the -34% in 50 years (Telesca et al. 2015) is Mediterranean-wide. A bay-wide Sentinel-2 MNDWI check for other new land was not robust and is not used.",
       "status": "Drafted",
       "verdict": "Not substantiated",
       "tags": [
@@ -667,7 +667,7 @@
         "scope": "site",
         "icon": "crane"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Clyde Caruana, Minister for Finance (Budget Speech 2026); Robert Abela, Prime Minister",
@@ -677,7 +677,7 @@
       ],
       "date": "2025-10-27",
       "quote": "A reclamation project is already under way in the Freeport, and now it is time to take the next step. The Government is preparing to launch a large-scale land reclamation project outside the Freeport perimeter next year.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-017/report.pdf",
@@ -726,7 +726,7 @@
       "title": "830,000 m2 of land lost in five years",
       "category": "Land & Trees",
       "claim": "Amphora Media (Green to Grey, 11-12 Sep 2026): nearly 830,000 square metres of nature and cropland were built up in Malta between 2018 and 2023 (headline: 'over 830,000'), 0.26% of land; in nearly 95% of the take-up, farmland rather than natural area was affected.",
-      "counter": "Independent check with Impact Observatory/Esri 10 m land cover (2017-2023 maps): consistent new built-up 1.9 km2 gross, 1.4 km2 net for land first mapped as built in 2020-21 (3-year rule); 5.0 / 3.0 km2 for 2019-22 (2-year rule), so 0.83 km2 for 2018-2023 is plausible and conservative (different model and windows, not like for like). Arithmetic (0.26%, 116 pitches, 1.94 km2 since 2006) checks out; 'roughly a quarter of Comino' fits the 3.5 km2 often quoted (0.30 of the 2.8 km2 OSM outline). Previous cover: 65% crops, 31% rangeland, 4% bare, so the 'nearly 95% farmland' share is not reproduced. EEA chart (2012-2018): about 0.91-0.94 km2, highest land take of EEA39, matching the 920,000 m2 quoted; 2006-2012 figure not seen.",
+      "counter": "v1.2: Amphora's published polygons (397) cover 828,429 m2, so 'nearly 830,000' is reproduced (the headline's 'over' is not). Spatial cross-check with Impact Observatory/Esri 10 m land cover (2017-2025): the model already maps 68% of Amphora's area as built-up in 2018 (61% in all of 2017-19), classes only 6-14% of it as newly built, and only 2-3% of its own new built-up land lies inside Amphora's polygons (5-7% within 20 m); its national net total ranges from -0.06 to 2.96 km2 depending on the rule and years. So the model measures different land and neither confirms nor rules out 0.83 km2 (v1.1 had read it as corroboration). 'Nearly 95%': cropland + grass = 96% (95.3-95.7%) of the area with a known 2018 class in Amphora's own data (our reading of the basis), counting Dynamic World 'grass' (which includes natural meadows) as farmland and leaving out the 37% of the area with no class; cropland alone is 22% of the whole. Two polygons (4,429 m2) were sea in 2018. Arithmetic (0.26%, 116 pitches, 1.94 km2 since 2006) checks out. EEA CORINE change maps: 20.6 ha (2006-12) and 93.7 ha (2012-18) of new artificial land, matching the 190,000 and 920,000 m2 quoted; changes under 5 ha are not mapped.",
       "status": "Drafted",
       "verdict": "Largely supported",
       "tags": [],
@@ -738,7 +738,7 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Amphora Media",
@@ -747,7 +747,7 @@
       ],
       "date": "2026-09-11",
       "quote": "nearly 830,000 square metres of nature and cropland have been built up in Malta between 2018 and 2023",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-019/report.pdf",
