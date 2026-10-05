@@ -78,7 +78,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-046 | Water | Gozo water autonomy | Not started | - |
 | CC-047 | Water | Nitrates in the aquifer | Not started | - |
 | CC-048 | Nature & Wildlife | Sea urchins recovering | Not started | - |
-| CC-049 | Nature & Wildlife | 242 illegal hunting incidents | Not started | - |
+| CC-049 | Nature & Wildlife | 242 illegal hunting incidents | In progress | - |
 | CC-050 | Nature & Wildlife | 'Race to weaken hunting laws' | Not started | - |
 | CC-051 | Nature & Wildlife | 'Over 30% of our seas protected' | Drafted | Misleading |
 | CC-052 | Nature & Wildlife | Fish-farm slime 'promptly contained' | Not started | - |

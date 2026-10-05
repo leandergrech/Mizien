@@ -2327,9 +2327,9 @@
       "id": "CC-049",
       "title": "242 illegal hunting incidents",
       "category": "Nature & Wildlife",
-      "claim": "BirdLife Malta: it recorded 242 incidents of illegal hunting in 2025, and police took an average of 51 minutes to respond.",
+      "claim": "BirdLife Malta (press release, 10 Oct 2025): its 2025 Raptor Camp teams recorded 242 illegal hunting incidents between 12 September and 5 October, and police took an average of 51 minutes to respond to their reports.",
       "counter": "NGO incident logs vs police and WBRU enforcement data; reporting coverage.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Hunting & birds",
@@ -2341,14 +2341,14 @@
         "icon": "park"
       },
       "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
+      "wording_status": "Verbatim found",
       "confidence": null,
       "speaker": "BirdLife Malta",
       "bodies": [
         "birdlife"
       ],
-      "date": "2025-09",
-      "quote": "",
+      "date": "2025-10-10",
+      "quote": "BirdLife Malta’s 2025 Raptor Camp has once again been instrumental in exposing illegal hunting in Malta with a total of 242 illegal hunting incidents recorded in less than a month between the 12th September and 5th October. … their average response time throughout the period reached an astounding 51 minutes",
       "version": null,
       "outputs": {},
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-049/claim.yml"
