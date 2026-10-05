@@ -22,8 +22,14 @@ In answer to PQ 34270, the Minister for the Environment said that by the end of 
 
 Source: [House of Representatives, PQ 34270, sitting 435, 18 February 2026](https://www.parlament.mt/media/137706/20260218_435o_par.pdf), p. 25.
 
+## Labour's 2026 manifesto, item 43
+
+PDF p. 170 (printed p. 168), section “Afforestazzjoni”: “Bejn l-2022 u l-2025 tħawlu aktar minn 57,000 siġra madwar il-pajjiż kollu u saru proġetti ta’ afforestazzjoni f’numru ta’ postijiet, fosthom Ħaż-Żabbar, il-Kalkara, Ħal Qormi u l-Madliena.” Translation: between 2022 and 2025 more than 57,000 trees were planted across the country, and afforestation projects were carried out in several places, including Ħaż-Żabbar, Kalkara, Qormi and Madliena. Checked on 5 October 2026 in the file with SHA-256 466a60f920d956bbb30b934606b10dd6ebf7e7d0b9f162702257916a08911ceb (not committed).
+
+Source: [Partit Laburista, *Int Malta: Manifest Elettorali 2026*](https://partitlaburista.org/wp-content/uploads/2026/08/Manifest_Elettorali_INT_MALTA_2026.pdf).
+
 ## Distinct 2026 private-land scheme
 
-In April 2026 the Ministry reported 13,000 trees' worth of vouchers issued under a separate private-land tree-planting scheme, with distribution ongoing. Issued vouchers are not counted as trees already planted and are not evidence about the 2022 manifesto target.
+In April 2026 the Ministry reported 13,000 trees' worth of vouchers issued under a separate private-land tree-planting scheme, with distribution ongoing. On 13 May 2026 Project Green reported vouchers issued for 23,000 trees “spread over more than 250 beneficiaries”, some already redeemed. Issued vouchers are not counted as trees already planted and are not evidence about the 2022 manifesto target.
 
-Source: [Ministry for the Environment, “Distribution of trees begins to the first beneficiaries”](https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/2026/04/15/PR260616en.aspx), 15 April 2026.
+Sources: [Ministry for the Environment, “Distribution of trees begins to the first beneficiaries”](https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/2026/04/15/PR260616en.aspx), 15 April 2026; [Project Green, “Vouchers continue to be issued to beneficiaries of the Tree Planting Initiative”](https://projectgreen.mt/vouchers-continue-to-be-issued-to-beneficiaries-of-the-tree-planting-initiative/), 13 May 2026.
