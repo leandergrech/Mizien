@@ -35,5 +35,26 @@ EU-27: ESR emissions 2024 vs 2005,-20,%,"European Commission, Climate Action Pro
 Malta: cumulative AEA balance 2030,-2.1,Mt CO2e,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.125",negative = shortfall before flexibilities
 Malta: ESR distance to target 2030,-0.5,Mt CO2e,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.125 (Table 26)",baseline 2005: 1.0 Mt
 Germany: ESR distance to target 2030,-64.0,Mt CO2e,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.118 (Table 26)","baseline 2005: 484.7 Mt; gap -14 pp (WEM) / -13 pp (WAM): smaller than Malta's in pp, larger in tonnes"
+Malta: EU-27 rank on per-person GHG cut 2005-2024 (1 = largest cut),3,of 27,"Eurostat env_air_gge (TOTX4_MEMO) and nama_10_pe (POP_NC), all EU-27, retrieved 5 Oct 2026","Malta -48.5%; ahead: LU -60.4%, DK -51.3%"
+Malta: EU-27 rank on total GHG cut 2005-2024 (1 = largest cut),20,of 27,"Eurostat env_air_gge (TOTX4_MEMO) and nama_10_pe (POP_NC), all EU-27, retrieved 5 Oct 2026","Malta -27.4%; largest: EE -46.6%, EL -46.4%, DK -46.3%"
+Malta: EU-27 rank on population growth 2005-2024,2,of 27,"Eurostat env_air_gge (TOTX4_MEMO) and nama_10_pe (POP_NC), all EU-27, retrieved 5 Oct 2026","Malta +40.9%; first: LU +45.7%; 2024 population provisional (flag p) for BE, CY, DE, EL, ES, FR, HR, NL"
+"Largest falls in EU-27 rank from per-person cut to total cut, 2005-2024","MT 17, IE 12, CY 7",places,"Eurostat env_air_gge (TOTX4_MEMO) and nama_10_pe (POP_NC), all EU-27, retrieved 5 Oct 2026",
+"LU: per-person and total GHG change 2005-2024, rank",-60.4 / -42.4,%,"Eurostat env_air_gge (TOTX4_MEMO) and nama_10_pe (POP_NC), all EU-27, retrieved 5 Oct 2026",ranks 1 and 5 of 27; population +45.7%
+"IE: per-person and total GHG change 2005-2024, rank",-40.6 / -23.1,%,"Eurostat env_air_gge (TOTX4_MEMO) and nama_10_pe (POP_NC), all EU-27, retrieved 5 Oct 2026",ranks 10 and 22 of 27; population +29.4%
+"CY: per-person and total GHG change 2005-2024, rank",-27.5 / -4.3,%,"Eurostat env_air_gge (TOTX4_MEMO) and nama_10_pe (POP_NC), all EU-27, retrieved 5 Oct 2026",ranks 20 and 27 of 27; population +32.0%
+Malta: ESR emissions vs yearly limit 2021,+30 vs +102,% vs 2005,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.114 (Table 25)",73 points under the limit (Table 25)
+Malta: ESR emissions vs yearly limit 2022,+43 vs +21,% vs 2005,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.114 (Table 25)",22 points over the limit (Table 25)
+Malta: ESR emissions vs yearly limit 2023,+42 vs +16,% vs 2005,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.114 (Table 25)",25 points over the limit (Table 25)
+Malta: ESR emissions vs yearly limit 2024,+41 vs +11,% vs 2005,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.114 (Table 25)",30 points over the limit (Table 25)
+Malta: cumulative AEA balance 2021 -> 2024,0.7 -> 0.0,Mt CO2e,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.125 (Table 26)",2021 surplus (allocation 2.1 Mt vs emissions 1.3 Mt) carried forward; cancellations and transfers not counted
+Malta: cumulative AEA balance 2025 (projected),-0.4,Mt CO2e,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.125 (Table 26)",first compliance check in 2027 for 2021-2025 (p.111); ETS flexibility 0.5 Mt for 2021-2030
+Malta: ESR proxy 2005 (total minus power generation),1.01,Mt CO2e,"Eurostat env_air_gge (TOTX4_MEMO minus CRF1A1) and nama_10_pe, retrieved 2 Oct 2026; proxy for ESR scope","Commission 2005 ESR base: 1.0 Mt (Table 26, rounded)"
+Malta: ESR proxy change 2005-2021,30.9,%,"Eurostat env_air_gge (TOTX4_MEMO minus CRF1A1) and nama_10_pe, retrieved 2 Oct 2026; proxy for ESR scope",Commission Table 25: +30%
+Malta: ESR proxy change 2005-2022,44.4,%,"Eurostat env_air_gge (TOTX4_MEMO minus CRF1A1) and nama_10_pe, retrieved 2 Oct 2026; proxy for ESR scope",Commission Table 25: +43%
+Malta: ESR proxy change 2005-2023,39.4,%,"Eurostat env_air_gge (TOTX4_MEMO minus CRF1A1) and nama_10_pe, retrieved 2 Oct 2026; proxy for ESR scope",Commission Table 25: +42%
+Malta: ESR proxy change 2005-2024,41.9,%,"Eurostat env_air_gge (TOTX4_MEMO minus CRF1A1) and nama_10_pe, retrieved 2 Oct 2026; proxy for ESR scope",Commission Table 25: +41%
+Malta: ESR proxy per person 2005,2.50,t CO2e,"Eurostat env_air_gge (TOTX4_MEMO minus CRF1A1) and nama_10_pe, retrieved 2 Oct 2026; proxy for ESR scope",1.010 Mt / 403.9 thousand people
+Malta: ESR proxy per person 2024,2.52,t CO2e,"Eurostat env_air_gge (TOTX4_MEMO minus CRF1A1) and nama_10_pe, retrieved 2 Oct 2026; proxy for ESR scope",1.433 Mt / 569.2 thousand people
+"EU-27: ESR emissions per person, change 2005-2024",-23.0,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.115 (Table 25) and Eurostat nama_10_pe",Commission EU-27 ESR -20% divided by population growth
 "Malta: renewables, gross final energy 2024",17.21,%,"Eurostat nrg_ind_ren, retrieved 2 Oct 2026",EU-27: 25.241%
 "Malta: renewables, electricity 2024",10.655,%,"Eurostat nrg_ind_ren, retrieved 2 Oct 2026",EU-27: 47.503%
