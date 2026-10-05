@@ -89,8 +89,8 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-019A
     text: "About 830,000 m² of green land built up 2018–2023"
-    finding: "Amphora’s polygons add up to 828,429 m² (two, 4,429 m², were sea in 2018). An independent model flags largely different land and can neither confirm nor rule out the figure."
-    rating: "Plausible"
+    finding: "Amphora’s polygons add up to 828,429 m² (two, 4,429 m², were sea in 2018). Imagery confirms green to grey for 72.5% of a random sample of the area (57–84%), 55% by May 2023; 15% was being developed by September 2018. An independent model flags largely different land."
+    rating: "Largely supported"
     tone: lime
   - id: CC-019B
     text: "0.26% of land; comparisons (pitches, Comino, Manoel)"
@@ -99,8 +99,8 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: green
   - id: CC-019C
     text: "Nearly 95% of take-up was farmland"
-    finding: "Cropland + grass = 96% of the area with a known 2018 class (our reading of the basis), but only if all grass is farmland; 37% of the area has no class."
-    rating: "Needs context"
+    finding: "Cropland + grass = 96% of the area with a known 2018 class (our reading of the basis), but only if all grass is farmland; 37% has no class. In imagery, fields were 59% of the sampled land, 64% with orchards."
+    rating: "Partly supported"
     tone: amber
   - id: CC-019D
     text: "EEA figures and the 1.94 km² total"
@@ -123,4 +123,4 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: version
     version: "1.2"
-    note: "Upgrade. (1) Amphora’s published change polygons [8] measured: 397 polygons, 828,429 m², so “nearly 830,000” is reproduced and the headline’s “over” is not. (2) Spatial cross-check with the independent model: “an independent measurement finds more, not less” and “plausible and conservative” → the model already maps 68% of Amphora’s area as built-up in 2018, 6–14% as new, and only 2–3% of its new built-up land lies inside Amphora’s polygons, so it neither confirms nor rules out the figure (TL;DR, tiles, sections 2–8, flyer). (3) The 2024 and 2025 maps added from Esri’s service (identical to the earlier maps for 2017–2023): net totals −0.06 to 2.96 km² by rule. (4) Sub-claim A “supported” → “plausible”; sub-claim C “not shown” → “needs context”: cropland + grass = 96% of the area with a known 2018 class (our reading of the basis of “nearly 95%”). (5) Sub-claim D: the 2006–2012 EEA figure checked with the CORINE change map (20.6 ha; 93.7 ha for 2012–2018). (6) New Figure 1 (Amphora’s polygons over the model’s new built-up land), replacing the map of new built-up pixels; Figure 2 redrawn with four rules and Amphora’s own 2018 classes. Verdict and confidence unchanged."
+    note: "Upgrade. (1) Amphora’s published change polygons [8] measured: 397 polygons, 828,429 m², so “nearly 830,000” is reproduced and the headline’s “over” is not. (2) Spatial cross-check with the independent model: “an independent measurement finds more, not less” and “plausible and conservative” → the model already maps 68% of Amphora’s area as built-up in 2018, 6–14% as new, and only 2–3% of its new built-up land lies inside Amphora’s polygons, so it neither confirms nor rules out the figure (TL;DR, tiles, sections 2–8, flyer). (3) The 2024 and 2025 maps added from Esri’s service (identical to the earlier maps for 2017–2023): net totals −0.06 to 2.96 km² by rule. (4) Sub-claim A “supported” → “plausible”; sub-claim C “not shown” → “needs context”: cropland + grass = 96% of the area with a known 2018 class (our reading of the basis of “nearly 95%”). (5) Sub-claim D: the 2006–2012 EEA figure checked with the CORINE change map (20.6 ha; 93.7 ha for 2012–2018). (6) New Figure 1 (Amphora’s polygons over the model’s new built-up land), replacing the map of new built-up pixels; Figure 2 redrawn with four rules and Amphora’s own 2018 classes. Verdict and confidence unchanged. Maintainer decision (5 Oct 2026): imagery spot-check of Amphora’s polygons, with confidence set by a rule fixed beforehand (moderate if more than half of the sampled area is confirmed, low otherwise). 40 draws by systematic sampling proportional to area (seed 20261005; 39 polygons) checked by eye against Esri World Imagery Wayback [11, 12] from 2015–16, 2018, 2023 and 2025: 72.5% of the sampled area confirmed green to grey (95% interval 57–84%), 7.5% partial, 2.5% already grey, 17.5% unclear (15% being developed by September 2018); 55% grey by May 2023; fields 59% of the land before (64% with orchards). Confidence: moderate. New subsection and table rows in section 4; TL;DR (key points, tiles, what would move the verdict), sections 2, 5 to 8 and the flyer updated; Q1 “plausible, unconfirmed” → “mostly confirmed”; Q2 “depends on definitions” → “overstated”; sub-claim A “plausible” → “largely supported”; sub-claim C “needs context” → “partly supported”. Verdict unchanged."

@@ -1145,7 +1145,7 @@
       "title": "830,000 m2 of land lost in five years",
       "category": "Land & Trees",
       "claim": "Amphora Media (Green to Grey, 11-12 Sep 2026): nearly 830,000 square metres of nature and cropland were built up in Malta between 2018 and 2023 (headline: 'over 830,000'), 0.26% of land; in nearly 95% of the take-up, farmland rather than natural area was affected.",
-      "counter": "v1.2: Amphora's published polygons (397) cover 828,429 m2, so 'nearly 830,000' is reproduced (the headline's 'over' is not). Spatial cross-check with Impact Observatory/Esri 10 m land cover (2017-2025): the model already maps 68% of Amphora's area as built-up in 2018 (61% in all of 2017-19), classes only 6-14% of it as newly built, and only 2-3% of its own new built-up land lies inside Amphora's polygons (5-7% within 20 m); its national net total ranges from -0.06 to 2.96 km2 depending on the rule and years. So the model measures different land and neither confirms nor rules out 0.83 km2 (v1.1 had read it as corroboration). 'Nearly 95%': cropland + grass = 96% (95.3-95.7%) of the area with a known 2018 class in Amphora's own data (our reading of the basis), counting Dynamic World 'grass' (which includes natural meadows) as farmland and leaving out the 37% of the area with no class; cropland alone is 22% of the whole. Two polygons (4,429 m2) were sea in 2018. Arithmetic (0.26%, 116 pitches, 1.94 km2 since 2006) checks out. EEA CORINE change maps: 20.6 ha (2006-12) and 93.7 ha (2012-18) of new artificial land, matching the 190,000 and 920,000 m2 quoted; changes under 5 ha are not mapped.",
+      "counter": "v1.2: Amphora's published polygons (397) cover 828,429 m2, so 'nearly 830,000' is reproduced (the headline's 'over' is not). Spatial cross-check with Impact Observatory/Esri 10 m land cover (2017-2025): the model already maps 68% of Amphora's area as built-up in 2018 (61% in all of 2017-19), classes only 6-14% of it as newly built, and only 2-3% of its own new built-up land lies inside Amphora's polygons (5-7% within 20 m); its national net total ranges from -0.06 to 2.96 km2 depending on the rule and years. So the model measures different land and neither confirms nor rules out 0.83 km2 (v1.1 had read it as corroboration). 'Nearly 95%': cropland + grass = 96% (95.3-95.7%) of the area with a known 2018 class in Amphora's own data (our reading of the basis), counting Dynamic World 'grass' (which includes natural meadows) as farmland and leaving out the 37% of the area with no class; cropland alone is 22% of the whole. Two polygons (4,429 m2) were sea in 2018. Arithmetic (0.26%, 116 pitches, 1.94 km2 since 2006) checks out. EEA CORINE change maps: 20.6 ha (2006-12) and 93.7 ha (2012-18) of new artificial land, matching the 190,000 and 920,000 m2 quoted; changes under 5 ha are not mapped. Imagery spot-check (maintainer decision, 5 Oct 2026): 40 draws by systematic sampling proportional to area (seed 20261005, 39 polygons), checked by eye against Esri World Imagery Wayback (before Jul 2015-Aug 2016, 4 Sep 2018, 6 May 2023, Jun-Sep 2025): 72.5% of the sampled area confirmed open/green to grey (Wilson 95% CI 57-84%), 7.5% partial, 2.5% already grey, 0% still open, 17.5% unclear (15% being developed by Sep 2018); 55% (40-69%) confirmed and mostly grey by May 2023, so part of the figure is 2024-25 change. The imagery contradicts the model's 2018 built-up reading on these parcels. Land before: fields 59% (43-73%), 64% with orchards, the rest scrub, garrigue or rough grass, so 'nearly 95% farmland' is overstated.",
       "status": "Drafted",
       "verdict": "Largely supported",
       "tags": [],
@@ -1168,8 +1168,8 @@
         {
           "id": "CC-019A",
           "text": "About 830,000 m² of green land built up 2018–2023",
-          "finding": "Amphora’s polygons add up to 828,429 m² (two, 4,429 m², were sea in 2018). An independent model flags largely different land and can neither confirm nor rule out the figure.",
-          "rating": "Plausible",
+          "finding": "Amphora’s polygons add up to 828,429 m² (two, 4,429 m², were sea in 2018). Imagery confirms green to grey for 72.5% of a random sample of the area (57–84%), 55% by May 2023; 15% was being developed by September 2018. An independent model flags largely different land.",
+          "rating": "Largely supported",
           "tone": "lime"
         },
         {
@@ -1182,8 +1182,8 @@
         {
           "id": "CC-019C",
           "text": "Nearly 95% of take-up was farmland",
-          "finding": "Cropland + grass = 96% of the area with a known 2018 class (our reading of the basis), but only if all grass is farmland; 37% of the area has no class.",
-          "rating": "Needs context",
+          "finding": "Cropland + grass = 96% of the area with a known 2018 class (our reading of the basis), but only if all grass is farmland; 37% has no class. In imagery, fields were 59% of the sampled land, 64% with orchards.",
+          "rating": "Partly supported",
           "tone": "amber"
         },
         {
