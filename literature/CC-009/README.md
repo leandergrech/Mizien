@@ -2,6 +2,11 @@
 
 **Status (3 October 2026):** primary evidence collected for WSC's 2025 source mix, groundwater production, the August 2026 Għar Lapsi tender and the 3rd River Basin Management Plan. Calculations and source notes are in `data/cc-009/`; exact wording and the WSC 11.4%/chart discrepancy are recorded in [`primary-source.md`](primary-source.md).
 
+**v1.2 (5 October 2026):** national abstraction and recharge added from Eurostat (`data/cc-009/eurostat_water.csv`),
+and peer-reviewed literature verified on Crossref and read where legally accessible (Stuart et al. 2010 as the
+authors' accepted manuscript; Sapiano 2020 open access, copy in `open-access/`; Mangion and Sapiano 2008 not
+accessible). Access levels and findings are in [`notes.md`](notes.md).
+
 ## To collect
 
 The WSC series is its own potable-water production mix, not an all-user national abstraction total. The 3rd RBMP separately assesses water-body status: the two main aquifer systems are poor quantitatively; 14 bodies are poor chemically; the nitrate standard is exceeded in 12 of 15 bodies, with three named exceptions. Malta's 3rd-cycle EU reporting to the EEA (WISE) lists 4 bodies poor quantitatively and all 15 poor chemically; the difference is unresolved (see `primary-source.md`, v1.1 corrections check). The 4th RBMP is scheduled for 2028, so the 3rd RBMP remains the latest completed national plan at this review date.

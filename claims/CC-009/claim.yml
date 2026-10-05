@@ -43,6 +43,25 @@ claim:
     note: Malta's 3rd-cycle EU reporting (status assessed 2021), retrieved 5 October 2026. Lists 4 bodies poor
       quantitatively (Malta and Gozo Mean Sea Level, Pwales Coastal, Marfa Coastal) and all 15 poor chemically. The
       2nd-cycle layer (WFD2016) had 2 and 12. Extract in data/cc-009/wise_gwb_status.csv.
+  - title: Annual freshwater abstraction by source and sector (env_wat_abs); Renewable freshwater resources (env_wat_res)
+    publisher: Eurostat
+    date: retrieved 5 Oct 2026
+    url: https://ec.europa.eu/eurostat/databrowser/view/env_wat_abs/default/table
+    note: Malta, values flagged as estimates (env_wat_abs updated 16 Sep 2026; env_wat_res 3 Jul 2026). 2024 fresh
+      groundwater abstraction 38.46 million m³ (agriculture 21.77, public water supply 14.28); recharge 41.52.
+      Extract in data/cc-009/eurostat_water.csv.
+  - title: Groundwater residence time and movement in the Maltese islands - A geochemical approach
+    publisher: Applied Geochemistry 25(5):609-620 (Stuart et al.)
+    date: '2010'
+    url: https://doi.org/10.1016/j.apgeochem.2009.12.010
+    note: Peer-reviewed; read in full as the authors' accepted manuscript (nora.nerc.ac.uk/id/eprint/9619). Travel
+      times 15-40 years (Malta MSL), 25 to over 60 years (Gozo MSL); nitrate a long-term source.
+  - title: Integrated Water Resources Management in the Maltese Islands
+    publisher: Acque Sotterranee - Italian Journal of Groundwater 9(3):25-32 (Sapiano)
+    date: '2020'
+    url: https://doi.org/10.7343/as-2020-477
+    note: Open access; read in full. Water balance (Table 1) puts available groundwater at about 37 million m³ a year
+      (long-term) against abstraction of 38-41. Energy and Water Agency author; workshop paper.
   - title: Nearly two-thirds of your tap water comes from the sea
     publisher: MaltaToday
     date: 2022 data
@@ -60,25 +79,32 @@ counter_evidence: The latest published River Basin Management Plan classifies bo
   of the same cycle to the EEA lists four bodies in poor quantitative status (adding Pwales Coastal and Marfa
   Coastal) and all 15 in poor chemical status. The plan reports nitrate above the 50 mg/L standard in 12 of 15
   bodies, with three named exceptions; not every body fails for nitrate.
-  WSC's potable-production figures cover its supply system and do not establish a national all-user abstraction
-  total.
+  WSC's potable-production figures cover its supply system, not national abstraction. Eurostat estimates national
+  fresh groundwater abstraction at 38.46 million m³ in 2024 (57% agriculture, up 3.1 million m³ on 2023), so WSC's
+  2025 cut of 1.55 million m³ is about 4% of it; a published water balance (Sapiano 2020) puts available groundwater
+  at about 37 million m³ a year. Tracer ages of 15-40 years (Malta) and up to 60 or more (Gozo) mean water-quality
+  recovery would take years to decades to show (Stuart et al. 2010).
 tests: Recalculate RO shares and groundwater-production changes from WSC annual-report data; compare the WSC series
-  with the regulator's separate groundwater-body quantity and chemistry assessments; distinguish a tendered plant
-  from commissioned capacity and measured aquifer recovery.
+  with national abstraction and recharge (Eurostat env_wat_abs, env_wat_res) and with the regulator's separate
+  groundwater-body quantity and chemistry assessments; read the peer-reviewed literature on Malta's aquifers;
+  distinguish a tendered plant from commissioned capacity and measured aquifer recovery.
 why_low_hanging: A rising desalinated-water share can reduce WSC's groundwater production, but it is not by itself
   proof that groundwater bodies have returned to good quantitative or chemical status.
 tags:
 - Selective metric
 tags_provisional: false
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: High
-caveats: WSC's 2025 annual report states that groundwater extraction fell 11.4% from 2024, while the annual-report
-  chart values transcribed for 2024 and 2025 imply an 11.9% decline; the discrepancy is retained. WSC production
-  is not a complete national groundwater-abstraction series. The 3rd RBMP assessment period is older than the 2025
-  production figures, and a tender does not establish future operation or aquifer recovery. The plan's
-  groundwater-body counts as recorded (Malta and Gozo Mean Sea Level poor quantitatively; 14 poor chemically)
-  differ from Malta's 3rd-cycle EU reporting (4 and 15); the plan could not be re-opened to reconcile them, so the
-  report shows both. "Lowest in a decade" is WSC's statement; the repo series covers 2022–2025 only.
+caveats: Draft pending right of reply (WSC; Energy and Water Agency). WSC's 2025 annual report states that
+  groundwater extraction fell 11.4% from 2024, while the annual-report chart values transcribed for 2024 and 2025
+  imply an 11.9% decline; the discrepancy is retained. WSC production is not a complete national groundwater-
+  abstraction series; national abstraction and recharge are Eurostat estimates, and 2025 national figures are not yet
+  published. The 3rd RBMP assessment period is older than the 2025 production figures, and a tender does not
+  establish future operation or aquifer recovery. The plan's groundwater-body counts as recorded (Malta and Gozo
+  Mean Sea Level poor quantitatively; 14 poor chemically) differ from Malta's 3rd-cycle EU reporting (4 and 15); the
+  plan could not be re-opened to reconcile them, so the report shows both. "Lowest in a decade" is WSC's statement;
+  the repo series covers 2022–2025 only. Stuart et al. (2010) was read as the authors' accepted manuscript; Mangion
+  and Sapiano (2008) could not be read and is not used.
 right_of_reply:
   sent: null
   deadline: null
@@ -95,7 +121,7 @@ outputs:
   report_pdf: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-05'
 location:
   place: Pembroke reverse osmosis plant
