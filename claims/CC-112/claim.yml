@@ -1,0 +1,46 @@
+id: CC-112
+title: 'IMF: population up 25% in a decade'
+category: Tourism & Population
+subtopic: Population & labour
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'International Monetary Fund staff (Selected Issues, Feb 2026): Malta''s population rose by 25 percent over a decade,
+    largely due to immigration.'
+  speaker: International Monetary Fund
+  date: 2026-02
+  wording_status: Verbatim found
+  sources:
+  - title: 'Malta: Selected Issues (IMF Country Report No. 26/30), Growth-at-Risk paper, para. 6'
+    publisher: International Monetary Fund
+    date: Feb 2026
+    url: https://www.imf.org/-/media/files/publications/cr/2026/english/1mltea2026002-source-pdf.pdf
+    note: Primary text read 5 Oct 2026. A background sentence on housing drivers; the window of 'a decade' is not stated.
+      Selected Issues papers carry the views of their authors, not necessarily the IMF's.
+  quote: Malta’s population rose by 25 percent over a decade, largely due to immigration.
+counter_evidence: NSO reports a population of 588,254 at the end of 2025, up 2.4% in the year (CC-088); the 25% depends
+  on the start and end years chosen. Whether 'largely due to immigration' holds depends on net migration versus natural
+  change.
+tests: Eurostat demo_pjan / demo_gind (population and components of change); NSO population statistics; compute growth for
+  each 10-year window up to 2025 and the migration share of change.
+why_low_hanging: A single percentage and a causal share that Eurostat and NSO series test directly.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat and NSO reachable; the IMF PDF was read via WebFetch.'
+caveats: Candidate from the weekly intake of 5 Oct 2026. A background sentence in an IMF staff paper rather than a policy
+  claim; the paper's own source is not given in the sentence. The check is of the figure and of the 'largely immigration'
+  attribution.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: citygate
