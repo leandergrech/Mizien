@@ -2,9 +2,9 @@ id: CC-112
 title: 'IMF: population up 25% in a decade'
 category: Tourism & Population
 subtopic: Population & labour
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
   text: 'International Monetary Fund staff (Selected Issues, Feb 2026): Malta''s population rose by 25 percent over a decade,
     largely due to immigration.'
@@ -12,35 +12,73 @@ claim:
   date: 2026-02
   wording_status: Verbatim found
   sources:
-  - title: 'Malta: Selected Issues (IMF Country Report No. 26/30), Growth-at-Risk paper, para. 6'
-    publisher: International Monetary Fund
-    date: Feb 2026
-    url: https://www.imf.org/-/media/files/publications/cr/2026/english/1mltea2026002-source-pdf.pdf
-    note: Primary text read 5 Oct 2026. A background sentence on housing drivers; the window of 'a decade' is not stated.
-      Selected Issues papers carry the views of their authors, not necessarily the IMF's.
+    - title: 'Malta: Selected Issues (IMF Country Report No. 26/30), Growth-at-Risk paper, para. 6'
+      publisher: International Monetary Fund
+      date: Feb 2026
+      url: https://www.imf.org/-/media/files/publications/cr/2026/english/1mltea2026002-source-pdf.pdf
+      note: The claim. imf.org refuses automated downloads; read in full from the Internet Archive copy of 17 May 2026. Selected
+        Issues papers carry staff views.
+    - title: Population change - demographic balance (demo_gind)
+      publisher: Eurostat
+      date: updated 30 Sep 2026
+      url: https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table
+      note: Primary data, retrieved 5 Oct 2026; extract and checks in data/cc-112/.
   quote: Malta’s population rose by 25 percent over a decade, largely due to immigration.
-counter_evidence: NSO reports a population of 588,254 at the end of 2025, up 2.4% in the year (CC-088); the 25% depends
-  on the start and end years chosen. Whether 'largely due to immigration' holds depends on net migration versus natural
-  change.
-tests: Eurostat demo_pjan / demo_gind (population and components of change); NSO population statistics; compute growth for
-  each 10-year window up to 2025 and the migration share of change.
-why_low_hanging: A single percentage and a causal share that Eurostat and NSO series test directly.
+counter_evidence: 'Eurostat demo_gind: growth was 24.4-24.6% over the decades ending 1 Jan 2020, 2021 and 2022, but 30.9%
+  over 1 Jan 2015-2025 (the latest decade available in Feb 2026) and 30.8% over 2016-2026. The paper gives no years. Net migration
+  was 93-97% of growth in every decade since 2010-2020. EU-27 grew 1.9% over 2015-2025.'
+tests: Eurostat demo_gind for Malta and the EU-27; growth over every ten-year window to 2026 and the migration share (tools/cc-112-report/calc.py).
+why_low_hanging: 'Done: Claim Check 112 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'High: Eurostat and NSO reachable; the IMF PDF was read via WebFetch.'
-caveats: Candidate from the weekly intake of 5 Oct 2026. A background sentence in an IMF staff paper rather than a policy
-  claim; the paper's own source is not given in the sentence. The check is of the figure and of the 'largely immigration'
-  attribution.
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High'
+caveats: 'Largely supported: no right of reply needed. The paper names no decade; 25% is accurate for 2010-2022 windows and
+  low for the latest. Attributed to IMF staff. The paper was read from an Internet Archive copy.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+  - Eurostat demo_gind, retrieved 5 Oct 2026 (data/cc-112/; checks in data/cc-112/checks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: citygate
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-112A
+    text: "Malta’s population rose by 25 percent over a decade"
+    said_by: "IMF staff [1]"
+    finding: "24.4–24.6% for the decades ending 2020–2022; 30.9% for 2015–2025, the latest decade available in Feb 2026. No years given."
+    rating: "Understates recent growth"
+    tone: amber
+  - id: CC-112B
+    text: "…largely due to immigration"
+    said_by: "IMF staff [1]"
+    finding: "Net migration was 93–97% of the growth in every decade since 2010–2020; natural change was small."
+    rating: "Accurate"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: +30.9%
+  caption: "Malta's population growth 2015-2025, the latest decade (IMF: 25%; 2012-2022: 24.6%)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: IMF Selected Issues paper read in full from the Internet Archive copy of 17 May 2026 (imf.org refuses automated
+      access). Para. 6, no years given.
+  - date: 2026-10-05
+    step: note
+    note: Eurostat demo_gind downloaded; growth over every ten-year window to 2026 and the migration share computed (tools/cc-112-report/calc.py).
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (high confidence); no right of reply needed.

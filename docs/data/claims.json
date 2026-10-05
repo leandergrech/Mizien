@@ -4410,9 +4410,10 @@
       "title": "IMF: population up 25% in a decade",
       "category": "Tourism & Population",
       "claim": "International Monetary Fund staff (Selected Issues, Feb 2026): Malta's population rose by 25 percent over a decade, largely due to immigration.",
-      "counter": "NSO reports a population of 588,254 at the end of 2025, up 2.4% in the year (CC-088); the 25% depends on the start and end years chosen. Whether 'largely due to immigration' holds depends on net migration versus natural change.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Eurostat demo_gind: growth was 24.4-24.6% over the decades ending 1 Jan 2020, 2021 and 2022, but 30.9% over 1 Jan 2015-2025 (the latest decade available in Feb 2026) and 30.8% over 2016-2026. The paper gives no years. Net migration was 93-97% of growth in every decade since 2010-2020. EU-27 grew 1.9% over 2015-2025.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Population & labour",
       "location": {
@@ -4422,17 +4423,38 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "International Monetary Fund",
       "bodies": [
         "imf"
       ],
+      "subclaims": [
+        {
+          "id": "CC-112A",
+          "text": "Malta’s population rose by 25 percent over a decade",
+          "finding": "24.4–24.6% for the decades ending 2020–2022; 30.9% for 2015–2025, the latest decade available in Feb 2026. No years given.",
+          "rating": "Understates recent growth",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-112B",
+          "text": "…largely due to immigration",
+          "finding": "Net migration was 93–97% of the growth in every decade since 2010–2020; natural change was small.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
       "date": "2026-02",
       "quote": "Malta’s population rose by 25 percent over a decade, largely due to immigration.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-112/report.pdf",
+        "flyer_pdf": "claim-files/CC-112/flyer.pdf",
+        "flyer_png": "claim-files/CC-112/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-112/claim.yml"
     },
     {
