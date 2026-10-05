@@ -26,16 +26,22 @@ counter_evidence: 'Eurostat nrg_pc_204 confirms every figure for the standard ho
   under 1,000 kWh, 23rd of 27 at 15,000 kWh or more; 4th of 26 on the all-band average). Malta''s price -0.2%
   2020-25 vs EU +35%; EUR 0.169 to 0.125 per kWh in 2014, 0.125-0.133 since. Fixed electricity and fuel prices
   are financed by energy subsidies of 1.8% of GDP (2022) to 0.8% (2025, projected), about EUR 1.0bn 2022-2025
-  (IMF CR 26/29; electricity and fuel together, electricity share not published). Energy poverty below EU (7.6%
-  vs 8.8% unable to keep warm).'
-tests: Eurostat nrg_pc_204 (EUR, PPS), ilc_mdes01, ilc_mdes07; IMF CR 26/29 energy subsidies.
+  (IMF CR 26/29; electricity and fuel together, electricity share not published). Against income (v1.2): a 3,750
+  kWh bill at the 2024 band-DC price is 2.2% of median equivalised income (EU 4.7%), 2nd of 27 after Luxembourg,
+  and 3.5% of the 20th-percentile income (EU 7.3%), also 2nd; the average household''s actual bill (4,617 kWh, 21st
+  of 27 on use; a fifth for space cooling) is 1.26% of disposable income per household (EU 1.91%), 5th of 26;
+  electricity''s share of spending 2.3% in 2020 (joint 7th of 24). Energy poverty below the EU average but not the
+  lowest: arrears 4.5% vs 7.0% (9th of 27); unable to keep warm 7.6% vs 8.8% (17th of 27).'
+tests: Eurostat nrg_pc_204 (EUR, PPS), nrg_pc_204_v, ilc_di03, ilc_di01, nrg_d_hhq, lfst_hhnhtych, nasa_10_nf_tr,
+  hbs_str_t211, ilc_mdes01, ilc_mdes07, ilc_hcmp03; IMF CR 26/29 energy subsidies.
 why_low_hanging: 'Done: Claim Check 022 report and flyer.'
 tags: []
 tags_provisional: false
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: Medium
-caveats: Right of reply to the Energy Ministry not yet sent. IMF subsidy series includes fuel; 2025 projected. 'Burden'
-  measured by price only.
+caveats: Right of reply to the Energy Ministry not yet sent. IMF subsidy series includes fuel; 2025 projected. The
+  release measures 'burden' by price only; v1.2 adds income- and use-based measures (Malta 2nd to 7th, not 1st).
+  Verdict and confidence under maintainer review in light of v1.2.
 right_of_reply:
   sent: null
   deadline: null
@@ -44,11 +50,12 @@ evidence_shown:
 - Eurostat nrg_pc_204 (data/cc-022/eurostat_prices.csv, eurostat_prices_bands.csv, eurostat_prices_mt_history.csv)
 - IMF CR 26/29 Table 2 (data/cc-022/imf_energy_subsidies.csv)
 - Eurostat ilc_mdes01/07
+- Eurostat burden inputs and results (data/cc-022/eurostat_burden_inputs.csv, burden_measures.csv), retrieved 5 Oct 2026
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-05'
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta

@@ -33,3 +33,29 @@ Energy subsidies 2025,197,EUR million,IMF CR 26/29 x Eurostat GDP,0.8% of GDP
 "Malta nominal price range 2014-S2 to 2025-S2, band DC",0.1248 to 0.1328,EUR/kWh,Eurostat nrg_pc_204,2025-S2 flag p
 "Unable to keep home adequately warm, 2025: Malta vs EU-27",7.6 vs 8.8,% of people,Eurostat ilc_mdes01,
 "Arrears on utility bills, 2025: Malta vs EU-27",4.5 vs 7.0,% of people,Eurostat ilc_mdes07,
+Burden M1 bill 2500 kWh / median income (SILC 2025),1.461,,"Eurostat nrg_pc_204, ilc_di03, retrieved 5 Oct 2026",EU-27 3.162; Malta rank 2 of 27
+Burden M1 bill 2500 kWh / median income (SILC 2024),1.634,,"Eurostat nrg_pc_204, ilc_di03, retrieved 5 Oct 2026",EU-27 3.361; Malta rank 2 of 27
+Burden M1 bill 3750 kWh / median income (SILC 2025) (main),2.191,,"Eurostat nrg_pc_204, ilc_di03, retrieved 5 Oct 2026",EU-27 4.743; Malta rank 2 of 27
+Burden M1 bill 3750 kWh / median income (SILC 2024),2.451,,"Eurostat nrg_pc_204, ilc_di03, retrieved 5 Oct 2026",EU-27 5.042; Malta rank 2 of 27
+Burden M1 bill 5000 kWh / median income (SILC 2025),2.922,,"Eurostat nrg_pc_204, ilc_di03, retrieved 5 Oct 2026",EU-27 6.324; Malta rank 2 of 27
+Burden M1 bill 5000 kWh / median income (SILC 2024),3.268,,"Eurostat nrg_pc_204, ilc_di03, retrieved 5 Oct 2026",EU-27 6.722; Malta rank 2 of 27
+Burden M1b bill 3750 kWh at 2025 prices / median income (SILC 2025),2.164,,"Eurostat nrg_pc_204, ilc_di03, retrieved 5 Oct 2026",EU-27 4.720; Malta rank 2 of 27; flags: price 2025-S2 p
+Burden M3 bill 3750 kWh / 20th-percentile income (SILC 2025) (main),3.476,,"Eurostat nrg_pc_204, ilc_di01, ilc_di03, retrieved 5 Oct 2026",EU-27 7.278; Malta rank 2 of 27
+Burden M3c bill 3750 kWh / 20th-percentile income (SILC 2024),3.938,,"Eurostat nrg_pc_204, ilc_di01, ilc_di03, retrieved 5 Oct 2026",EU-27 7.727; Malta rank 2 of 27
+Burden M3b bill 3750 kWh / mean income of first quintile (SILC 2025),4.805,,"Eurostat nrg_pc_204, ilc_di01, ilc_di03, retrieved 5 Oct 2026",EU-27 10.103; Malta rank 2 of 27
+"Burden M2a electricity use per household, kWh (2024)",4616.813,,"Eurostat nrg_d_hhq, lfst_hhnhtych, nrg_pc_204, nrg_pc_204_v, nasa_10_nf_tr, retrieved 5 Oct 2026",EU-27 3523.817; Malta rank 21 of 27
+"Burden M2b consumption-weighted price, EUR/kWh (2024)",0.149,,"Eurostat nrg_d_hhq, lfst_hhnhtych, nrg_pc_204, nrg_pc_204_v, nasa_10_nf_tr, retrieved 5 Oct 2026",EU-27 0.295; Malta rank 3 of 27
+"Burden M2c annual bill, average household, EUR (2024)",689.202,,"Eurostat nrg_d_hhq, lfst_hhnhtych, nrg_pc_204, nrg_pc_204_v, nasa_10_nf_tr, retrieved 5 Oct 2026",EU-27 1041.288; Malta rank 12 of 27
+Burden M2 bill / disposable income per household (2024) (main),1.26,,"Eurostat nrg_d_hhq, lfst_hhnhtych, nrg_pc_204, nrg_pc_204_v, nasa_10_nf_tr, retrieved 5 Oct 2026",EU-27 1.912; Malta rank 5 of 26; flags: hhincome 2024 p
+"Burden M4 electricity share of consumption spending, % (HBS 2020) (main)",2.3,,"Eurostat hbs_str_t211, retrieved 5 Oct 2026",Malta rank joint 7 of 24; flags: spending 2020 e
+"Burden M5 arrears on utility bills, % (all, 2025) (main)",4.5,,"Eurostat ilc_mdes07, ilc_mdes01, ilc_hcmp03, retrieved 5 Oct 2026",EU-27 7.000; Malta rank 9 of 27
+"Burden M5 arrears on utility bills, % (below 60% of median income, 2025)",9.2,,"Eurostat ilc_mdes07, ilc_mdes01, ilc_hcmp03, retrieved 5 Oct 2026",EU-27 16.800; Malta rank 7 of 27
+"Burden M5 unable to keep home warm, % (all, 2025) (main)",7.6,,"Eurostat ilc_mdes07, ilc_mdes01, ilc_hcmp03, retrieved 5 Oct 2026",EU-27 8.800; Malta rank 17 of 27
+"Burden M5 unable to keep home warm, % (below 60% of median income, 2025)",10.9,,"Eurostat ilc_mdes07, ilc_mdes01, ilc_hcmp03, retrieved 5 Oct 2026",EU-27 19.600; Malta rank 9 of 27
+"Burden M5 dwelling not comfortably cool in summer, % (all, 2012)",35.4,,"Eurostat ilc_mdes07, ilc_mdes01, ilc_hcmp03, retrieved 5 Oct 2026",EU-27 21.400; Malta rank 25 of 27
+"Burden M5 dwelling not comfortably cool in summer, % (first quintile, 2012)",41.2,,"Eurostat ilc_mdes07, ilc_mdes01, ilc_hcmp03, retrieved 5 Oct 2026",EU-27 28.200; Malta rank joint 24 of 27
+"Burden M2e share of household electricity used for space cooling, % (2024)",19.486,,"Eurostat nrg_d_hhq, lfst_hhnhtych, nrg_pc_204, nrg_pc_204_v, nasa_10_nf_tr, retrieved 5 Oct 2026",EU-27 3.135; Malta rank not ranked
+"Burden M2e share of household electricity used for water heating, % (2024)",25.829,,"Eurostat nrg_d_hhq, lfst_hhnhtych, nrg_pc_204, nrg_pc_204_v, nasa_10_nf_tr, retrieved 5 Oct 2026",EU-27 11.368; Malta rank not ranked
+"Burden M2e share of household electricity used for space heating, % (2024)",7.981,,"Eurostat nrg_d_hhq, lfst_hhnhtych, nrg_pc_204, nrg_pc_204_v, nasa_10_nf_tr, retrieved 5 Oct 2026",EU-27 15.985; Malta rank not ranked
+"Burden M2e share of household electricity used for lighting and appliances, % (2024)",41.89,,"Eurostat nrg_d_hhq, lfst_hhnhtych, nrg_pc_204, nrg_pc_204_v, nasa_10_nf_tr, retrieved 5 Oct 2026",EU-27 54.902; Malta rank not ranked
+Malta consumption-weighted price 2024 vs Eurostat all-band average 2024-S2,0.1493 vs 0.1505,EUR/kWh,"Eurostat nrg_pc_204, nrg_pc_204_v",cross-check of the weighting
