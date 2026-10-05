@@ -1,13 +1,7 @@
 # CC-047: Nitrates in the aquifer
 
-**Status:** literature not yet collected.
+**Status:** checked 5 October 2026 (Largely supported, moderate confidence). See `notes.md`, `references.bib`,
+`data/cc-047/` and `tools/cc-047-report/`.
 
-## To collect
-
-EWA nitrate monitoring; RBMP 2022-2027 status tables.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-047) for the source that located this claim. It locates the claim and its context; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+Open lead: the paper's full text (open access, CC BY) would confirm the quoted sentence; the Energy and Water Agency's
+station data for the eastern Mean Sea Level Aquifer would test the range independently.

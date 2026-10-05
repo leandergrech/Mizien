@@ -1,0 +1,11 @@
+check,value,unit,note
+100 mg/L as multiple of the 50 mg/L limit,2.0,x,claim: two times
+200 mg/L as multiple of the 50 mg/L limit,4.0,x,claim: four times
+Points with average >=50 mg/L implied (share x 44),30.01,points,integer expected
+Points with average 40-49.99 mg/L implied (share x 44),5.98,points,integer expected
+Points with average 25-39.99 mg/L implied (share x 44),5.98,points,integer expected
+Points with average <25 mg/L implied (share x 44),1.98,points,integer expected
+Shares sum,99.9,%,
+Hotspots / points,79.5,%,Commission: 79.5% at NUTS2
+Previous period >=50 implied points,27.98,points,
+Points >=50 summed from Table 4 by depth class,30.0,points,should equal 30
