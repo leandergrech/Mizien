@@ -72,6 +72,16 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 | CC-022 Electricity burden | Report v1.0 and flyer drafted (4 Oct 2026, branch `cc-022-electricity-burden`). **Verdict: Largely supported (high).** Gov PR read in full (browser). Eurostat confirms all figures (MT lowest in PPS, 3rd nominal). Missing context: energy subsidies ~EUR 1.0bn 2022-25 (IMF). **v1.1 (5 Oct 2026, corrections):** 'lowest' qualified to the typical household band (2,500–4,999 kWh); other bands: 2nd, 3rd, 16th, 23rd of 27; 4th of 26 all-band. 2014 tariff cut sourced (Eurostat); the IMF ~€1bn covers electricity and fuel, 2025 projected. **v1.2 (5 Oct 2026, upgrade):** burden against income and use (typical bill 2.2% of median income vs EU 4.7%, 2nd after Luxembourg; 3.5% of a 20th-percentile income, 2nd; average household's actual bill 1.26% of household income, 5th of 26); price and rank in every band. **Verdict kept Largely supported; confidence lowered to Moderate (maintainer decision).** |
 | CC-051 Marine protection | Report v1.0 and flyer drafted (4 Oct 2026, branch `cc-051-marine-protection`); **v1.1** (4 Oct 2026, branch `ccr-bd076c78-ydx75j`) adds three maps (all waters reported to the EU; the same protected sea against FMZ / EEZ / EU basis; depth bands) and a sharper summary. **Verdict: Misleading (moderate), unchanged.** EEA union of 18 marine sites = 4,137.5 km2: 36% of FMZ, 7.8% of EEZ, 5.5% of EU-reported waters. All of it lies within 25 nm; ~64,000 km2 (85%) of the reported waters beyond 25 nm has no protected site; whole FMZ = 15.2% of the reported waters; deep sea >1,000 m = 26% of the waters, 0.6% protected. Boundaries in `data/cc-051/boundaries.geojson` (FMZ rebuilt from Marine Regions 12 NM + 13 nm = 11,492 km2 vs official 11,480; EU-reported outline is the EEA's simplified web version, 75,484 km2). Note: ~183 km2 of protected sea is internal waters, which the official FMZ excludes, so like-for-like the FMZ share is 34-35% (ERA's 'more than 35%' is borderline; kept Supported). ERA qualifies (FMZ); minister's 'maritime zone' does not (quote via Amphora). Right of reply not yet sent. |
 
+| CC-111 Commission: 621 kg waste, 74% landfilled | Report v1.0 and flyer (5 Oct 2026, maintainer-requested batch, PR #73). **Verdict: Supported (high).** All figures reproduce from Eurostat env_wasmun (landfill as a share of waste generated); The Shift's 79.2% (CC-081) is the share of waste treated. |
+| CC-110 Commission: 37.7% zero-emission new cars | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Supported (high).** Eurostat road_eqr_carpda: 37.65% of 7,683 new cars; Malta 2nd in the EU; EU-27 13.53% (report 13.6%). |
+| CC-112 IMF: population up 25% in a decade | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Largely supported (high).** 25% fits decades ending 2020-2022; the latest decade (2015-2025) is 30.9%; net migration 93-97% of growth. IMF paper read from an Internet Archive copy. |
+| CC-115 Chamber: congestion EUR 770m, 3.4% of GDP | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Not substantiated (moderate); pending right of reply.** Chamber's LEAD PDF quotes the National Transport Master Plan 2030 (p. 124) accurately, but no derivation for 2025 is published; EUR 770m is 3.1% of 2025 GDP at current prices. |
+| CC-100 MIA: over 10 million passengers | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Supported (high).** Company announcement 461/2026: 10,061,969 movements (+12.3%); Eurostat avia_paoc 10,070,972. |
+| CC-106 BirdLife: shearwaters 10% of world population | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Largely supported (moderate).** Malta 1,600-1,800 pairs (ERA plan 1,795-2,635); share 4-13%, central 6-8%. IUCN/BirdLife global figure second-hand (CIESM). |
+| CC-053 Milky Way visible from 13% | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Supported (high).** Caruana et al. (2020): 12.8% (13.5% on the atlas threshold), 87% Bortle 5+; reproduces; data 2017-2019. |
+| CC-049 BirdLife: 242 illegal hunting incidents | Wording found (BirdLife release 10 Oct 2025: Raptor Camp 12 Sep-5 Oct 2025; 51-minute police response). In progress: waiting on the incident log and police/WBRU data (queue blocker). |
+| CC-104 PN: Malta fails EU noise law | Petition 1150/2024 located; only a summary, a paraphrase and general quotes are public. Evidence from EP study PE 783.089 in literature/CC-104/README.md. In progress: waiting on the petition text. |
+| CC-097 GWU: beach workers and heat | Wording found (GWU statement 17 Jul 2026). In progress: waiting on Securital/ERA responses, OHS heat rules and Met Office warnings. |
 
 ## v1.2 upgrades and maintainer decisions (5 October 2026)
 
@@ -282,6 +292,21 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
   so places spread apart while the trees keep their size; icons grow with the scale (iconK). Fit and the place
   search animate the scale in log space about a fixed screen point; the map is orthographic so the fold is exact.
 - To do: test the trees on phones with real use; new claims must get a `location` (intake routine updated).
+
+## Maintainer-requested batch (5 October 2026, PR #73)
+
+Ten claims chosen to balance coverage of finished checks (before: government 7, agencies 5, no NGO, no Tourism or
+Health): CC-049, CC-053, CC-097, CC-100, CC-104, CC-106, CC-110, CC-111, CC-112, CC-115. Seven completed (statuses
+above); three wait on documents for the maintainer's drop-box (literature/unsorted):
+- **CC-049:** BirdLife Raptor Camp 2025 incident log or report table; police/EPU response-time data or a PQ answer for
+  12 Sep-5 Oct 2025; WBRU autumn 2025 report.
+- **CC-104:** full text of petition 1150/2024 (or the PN release of 11-12 Oct 2024); the Commission's reply
+  (PETI-CM-778413).
+- **CC-097:** Securital and ERA responses or the DIER outcome; OHS heat rules and any SOP in force in July 2026; Met
+  Office heat warnings for mid-July 2026.
+- **Right of reply** needed for CC-115 (Malta Chamber; Not substantiated). Not sent.
+- **Archive by hand:** the IMF paper (imf.org 403), the National Transport Master Plan 2030 (infrastructure.gov.mt
+  403), the ERA shearwater plan page (era.org.mt 403).
 
 ## Outstanding
 
