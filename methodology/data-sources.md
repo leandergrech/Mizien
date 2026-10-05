@@ -37,7 +37,8 @@ turned out to have readable sources):
 - **EU Publications Office PDFs** download with curl from `https://op.europa.eu/o/opportal-service/download-handler?identifier=<cellar id>&format=pdf&language=en&productionSystem=cellar` (cellar id is on the doi.org landing page); europarl.europa.eu PDFs return 202 empty (CC-020).
 - **EEA pages:** the *Europe's environment 2025* country pages draw their numbers in JavaScript charts, but the same numbers are often stated in text elsewhere: the *Air pollution country fact sheets 2025: quick country facts* page (`eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2025/quick-country-facts`) has each country's PM2.5 death figures in its HTML (CC-035, 5 Oct 2026). Eurostat `ilc_mddw01` (noise from neighbours or street, EU-SILC, self-reported) works through the API (CC-020).
 
-- **energywateragency.gov.mt** PDFs return an `sgcaptcha` redirect to scripted clients (CC-024): browser-only.
+- **energywateragency.gov.mt** PDFs return an `sgcaptcha` redirect to scripted clients (CC-024): browser-only. The same plan is on **commission.europa.eu** (publication page, then the `document/download/...` link): curl returns an HTML 'Sorry' page without a browser `User-Agent` header and the 5.5 MB PDF with one (CC-024, 5 Oct 2026). Commission staff working documents (SWD extracts) download the same way.
+- **nso.gov.mt** release pages stay 403 even with a browser User-Agent and via Wayback (reset); WebSearch summaries carry the headline figures (second-hand, mark them so).
 
 - **Who said it.** A figure in an interviewer's question is not the speaker's claim (CC-013: the 91,000 dwellings).
 - **Paraphrase vs quote.** Newspapers paraphrase around short quotes; quote only the words inside quotation marks
@@ -47,5 +48,13 @@ turned out to have readable sources):
 - **Nominal vs real.** Check whether price indices are deflated before comparing growth.
 - **Do not trigger downloads in a browser session**; read PDFs in the page instead.
 - **Cloud routines' network.** Run `python scripts/net_check.py` first; see `methodology/automation.md`.
+- **imf.org PDFs** return 403 ("Access Denied") to scripts; Internet Archive copies (`web.archive.org/web/2026/<url>`) work (CC-112).
+- **infrastructure.gov.mt** returns 403; the Internet Archive serves the National Transport Master Plan 2030 as a
+  gzip-encoded file: fetch the `id_` capture and gunzip before reading (CC-115).
+- **WordPress APIs** are readable for maltachamber.org.mt, maltairport.com (company announcements list on
+  `/corporate/shareholder-relations/company-announcements/`) and gwu.org.mt; birdlifemalta.org pages are readable but
+  its API returns 403 (CC-049, CC-097, CC-100, CC-115).
+- **IUCN Red List and BirdLife datazone** refuse scripts or render in JavaScript; EEA discodata did not expose the
+  Article 12 tables under the obvious names (CC-106).
 
 - **airportcarbonaccreditation.org** web pages return an `sgcaptcha` wall, but its WordPress API is readable: `/wp-json/wp/v2/accredited-airport?slug=malta` gives an airport's current level (CC-030 review, 5 Oct 2026). Carbon-credit retirements can be checked in the Gold Standard public API (`public-api.goldstandard.org/credits/<id>`) and other registries' public endpoints. `maltairport.com` press releases and sustainability reports download with curl (follow redirects, `-L`); MIA's report gives Scope 1-3 in GRI 102 and PwC limited assurance on Scope 1-2.

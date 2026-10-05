@@ -2,40 +2,92 @@ id: CC-053
 title: Milky Way visible from 13% of Malta
 category: Nature & Wildlife
 subtopic: Dark skies
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
-  text: 'Researchers (University of Malta photometric mapping): the Milky Way is visible from only about 13% of
-    the Maltese Islands, and 87% of the area has high light pollution.'
+  text: 'University of Malta researchers (Caruana et al., Journal of Environmental Management, 2020): 87% of the area of the
+    Maltese Islands registers Bortle class 5 or brighter night skies, and the Milky Way is visible from only 12.8% of the
+    area (reported as ''about 13%'').'
   speaker: University of Malta researchers
-  date: '2020'
-  wording_status: 'Paraphrase: locate quote'
+  date: '2020-05'
+  wording_status: 'Verbatim found'
   sources:
-  - title: Milky Way only visible from 13% of Malta
-    publisher: MaltaToday
-    date: n/d
-    url: https://www.maltatoday.com.mt/news/national/100416/milky_way_only_visible_from_13_of_malta
-    note: Locates the study.
-counter_evidence: Peer-reviewed study (J. Environ. Manage., 2020); ERA/PA 2020 light guidelines still draft. Check
-  trend data since.
-tests: The study's data; VIIRS night lights trend; status of the guidelines.
-why_low_hanging: A specific, attributable statement that public data can test.
+    - title: A photometric mapping of the night sky brightness of the Maltese islands
+      publisher: Journal of Environmental Management 261:110196
+      date: '2020'
+      url: https://doi.org/10.1016/j.jenvman.2020.110196
+      note: The claim (abstract). Accepted manuscript read in full on arXiv (2002.04435).
+    - title: Milky Way only visible from 13% of Malta
+      publisher: MaltaToday
+      date: n/d
+      url: https://www.maltatoday.com.mt/news/national/100416/milky_way_only_visible_from_13_of_malta
+      note: Locator (news rounding to 13%).
+    - title: The new world atlas of artificial night sky brightness
+      publisher: Science Advances 2:e1600377
+      date: '2016'
+      url: https://doi.org/10.1126/sciadv.1600377
+      note: 'Comparison: 11% for Malta, as cited by Caruana et al.'
+  quote: We show that the vast majority of the area of the Maltese Islands is heavily light polluted, with 87% of the area
+    registering a NSB < 20.39 magSQM/arcsec2 (Bortle Class 5 or higher) and 37.3% < 19.09 magSQM/arcsec2 (Bortle Class 6 or
+    higher), with the Milky Way being visible for only 12.8% of the area
+counter_evidence: The study gives 12.8% (Bortle class 4) or 13.5% (world atlas threshold); 87.2% of the area is in classes
+  5-9. Area-weighting the island results gives 11.6% (the paper weights 347 survey cells). The 2016 world atlas gave 11%.
+  Threshold sensitivity 6.3-25.9%. Data are from 2017-2019; on the island of Malta class 4 fell from 3.9% to 1.6% between
+  the two surveys; no survey since.
+tests: Caruana et al. (2020) Table 1, recomputed with OpenStreetMap island areas (tools/cc-053-report/calc.py); Falchi et
+  al. (2016).
+why_low_hanging: 'Done: Claim Check 053 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: 'Supported: no right of reply needed. Measurements from 2017-2019; no repeat national survey found.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+  - Caruana et al. (2020) Table 1 (data/cc-053/caruana2020_table1.csv); checks in data/cc-053/checks.csv
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Ta' Ċenċ, Sannat
   lat: 36.01889
   lon: 14.24934
   scope: site
   icon: pin
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-053A
+    text: "The Milky Way is visible from only about 13% of the islands"
+    said_by: "UM researchers [1]"
+    finding: "12.8% (class 4) or 13.5% (atlas threshold); 11.6% area-weighted; world atlas 11%."
+    rating: "Accurate"
+    tone: green
+  - id: CC-053B
+    text: "87% of the area has high light pollution"
+    said_by: "UM researchers [1]"
+    finding: "87.2% of the area in Bortle class 5 or brighter, 2017/18."
+    rating: "Accurate"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 12.8%
+  caption: "of the Maltese islands where the Milky Way is visible (2017/18 survey); 87% light-polluted"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: Study located (Caruana et al. 2020, J. Environ. Manage.; Crossref verified) and the accepted manuscript read in
+      full on arXiv; the MaltaToday headline rounds 12.8% to 13%.
+  - date: 2026-10-05
+    step: note
+    note: Table 1 transcribed; shares recomputed with OpenStreetMap island areas (tools/cc-053-report/calc.py); compared with
+      Falchi et al. (2016).
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Supported (high confidence); no right of reply needed.

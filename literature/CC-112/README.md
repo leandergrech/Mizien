@@ -1,13 +1,14 @@
 # CC-112: IMF: population up 25% in a decade
 
-**Status:** literature not yet collected.
+**Status:** checked (report v1.0, 5 Oct 2026). Verdict: Largely supported (high confidence).
 
-## To collect
+## Primary source (the claim)
 
-Eurostat demo_pjan / demo_gind (population and components of change); NSO population statistics; compute growth for each 10-year window up to 2025 and the migration share of change.
+- IMF, Malta: Selected Issues (Country Report No. 26/30, Feb 2026), "Growth-at-Risk in Malta", para. 6. imf.org refuses
+  automated downloads (403 "Access Denied"); read in full from the Internet Archive copy of 17 May 2026:
+  https://web.archive.org/web/20260517154317/https://www.imf.org/-/media/files/publications/cr/2026/english/1mltea2026002-source-pdf.pdf
 
-## Known leads
+## Evidence
 
-See `data/sources.csv` (filter on CC-112) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+- Eurostat demo_gind (updated 30 Sep 2026): data/cc-112/. Calculations: tools/cc-112-report/calc.py; outputs
+  data/cc-112/checks.csv.
