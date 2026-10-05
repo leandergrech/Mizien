@@ -335,7 +335,7 @@ def references(refs):
     out = []
     for n, t, u in refs:
         link = f' <link href="{u}" color="#3C6E8F">{u.replace("&", "&amp;")}</link>' if u else ""
-        out.append(_tag(("ref", n, t, u), Paragraph(f"<b>[{n}]</b> {t}{link}", ref)))
+        out.append(_tag(("ref", n, t, u), Paragraph(f"<b>[{n}]</b> {t.replace('◆', DIAM)}{link}", ref)))
     return out
 
 
