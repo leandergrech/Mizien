@@ -101,7 +101,9 @@ S.append(P("<b>Labour.</b> Items 63 and 64 of the manifesto, under “Hunting an
            "those already revoked, and that the government had agreed this with the hunters’ federation [6]. We could "
            "not find the minister’s own words; the account is Newsbook’s. After the election, on 23 September, a "
            "presentation to the ORNIS Committee by a lawyer commissioned for the purpose proposed lower fines and a "
-           "ministerial route for reapplying; BirdLife Malta was the only dissenting voice [7]."))
+           "ministerial route for reapplying; BirdLife Malta was the only dissenting voice [7]. That proposal came four "
+           "months after BirdLife Malta’s release: it shows that the direction the release described was later taken, "
+           "not what was on record on 27 May."))
 S.append(P("<b>Nationalist Party.</b> Lovin Malta quotes Mr Borg telling the Rabat meeting that hunting and trapping "
            "“will be safeguarded” [4]. The 16 chapters of the PN programme contain no hunting or trapping proposal "
            "[5]. We found no PN statement proposing lower fines or restoring revoked licences. BirdLife Malta’s release "
@@ -134,8 +136,8 @@ verd = lambda t, c: chip(t, c, w=29 * mm)
 S.append(std_table([
     [C("Sub-claim", cellh), C("Said by", cellh), C("What the evidence shows", cellh), C("Rating", cellh)],
     [C("<b>A.</b> Labour made commitments to lower penalties and revisit licence bans"), C("BirdLife Malta [2]"),
-     C("Minister’s campaign statement (Newsbook ◆), government–federation agreement (Newsbook ◆), ORNIS proposal "
-       "(-40% fines; BirdLife screenshot ◆). Not in the manifesto."), verd("LARGELY SUPPORTED", LG)],
+     C("Minister’s campaign statement and government–federation agreement before the release (Newsbook ◆); an ORNIS "
+       "proposal four months later (-40% fines; BirdLife screenshot ◆). Not in the manifesto."), verd("LARGELY SUPPORTED", LG)],
     [C("<b>B.</b> The PN would safeguard hunting and trapping even where it conflicts with the Birds Directive"),
      C("BirdLife Malta [2]"),
      C("Mr Borg: “will be safeguarded” (quoted by Lovin Malta ◆). No Directive reference, no fine or licence "

@@ -137,7 +137,7 @@ S.append(std_table([
     [C("<b>B.</b> Malta has yet to acknowledge the effect of airport noise on nearby residents' health"), C("ADPD [1]"),
      C("Aircraft noise exposure is modelled, mapped and published in three rounds, with WHO levels stated; "
        "no health assessment of residents."),
-     verd("PARTLY CONTRADICTED", ORANGE)],
+     verd("OVERSTATED", AMBER)],
     [C("<b>C.</b> A study of the impact of noise from the Freeport and airport on nearby residents is needed"), C("ADPD [1]"),
      C("No health-outcome study found; local work is exposure, annoyance and self-reported symptoms."),
      verd("LARGELY SUPPORTED", LG)],

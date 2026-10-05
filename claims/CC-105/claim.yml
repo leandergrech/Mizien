@@ -92,8 +92,8 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     text: "Malta has yet to acknowledge the effect of airport noise on nearby residents' health"
     said_by: "ADPD [1]"
     finding: "Aircraft noise exposure is modelled, mapped and published in three rounds, with WHO levels stated; no health assessment of residents."
-    rating: "Partly contradicted"
-    tone: orange
+    rating: "Overstated"
+    tone: amber
   - id: CC-105C
     text: "A study of the impact of noise from the Freeport and airport on nearby residents is needed"
     said_by: "ADPD [1]"

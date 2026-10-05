@@ -95,7 +95,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
   - id: CC-050A
     text: "Labour made commitments to lower penalties and revisit licence bans"
     said_by: "BirdLife Malta [2]"
-    finding: "Minister’s campaign statement (Newsbook ◆), government–federation agreement (Newsbook ◆), ORNIS proposal (-40% fines; BirdLife screenshot ◆). Not in the manifesto."
+    finding: "Minister’s campaign statement and government–federation agreement before the release (Newsbook ◆); an ORNIS proposal four months later (-40% fines; BirdLife screenshot ◆). Not in the manifesto."
     rating: "Largely supported"
     tone: lime
   - id: CC-050B
