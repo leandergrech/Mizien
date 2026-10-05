@@ -100,7 +100,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: grey
   - id: CC-017C
     text: "“There are five or six sites where reclamation is possible and environmentally safe” (2019)"
-    finding: "Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km and mapped Posidonia ~0.2 km from the Terminal 2 works [7, 12]."
+    finding: "Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km from the Terminal 2 works, and Posidonia is mapped next to them [7, 12]."
     rating: "Not shown"
     tone: red
   - id: CC-017D
@@ -110,7 +110,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: grey
   - id: CC-017E
     text: "“The sea near the Freeport is an ideal depth for these kinds of projects” (Prime Minister)"
-    finding: "Within 1 km of the Terminal 2 works the sea is mostly 5–30 m deep [14]; “ideal” is not defined. Mapped meadows in the bay lie at similar depths, 8–34 m [12]."
+    finding: "Within 1 km of the Terminal 2 works the sea is mostly 5–30 m deep [13]; “ideal” is not defined. Mapped meadows near the works lie at 21–32 m (11–35 m across the bay) [12, 13]."
     rating: "Not tested"
     tone: grey
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
@@ -129,4 +129,4 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: version
     version: "1.2"
-    note: "Upgrade. (1) New Figure 3: a map of Marsaxlokk Bay with sea depth (EMODnet), Posidonia meadows as mapped by UNEP-WCMC and EMODnet, full-resolution Natura 2000 boundaries and the new land at Terminal 2. Mapped meadows lie 0.2 km from the new land, about 120 ha within 1 km, where the sea is mostly 5–30 m deep. (2) Fairness: Malta’s Article 17 reports assess its Posidonia beds as favourable overall (2013–2018; 2019–2024, stable); the −34% loss is Mediterranean-wide (section 3, Q2, TL;DR, flyer). (3) The Prime Minister’s words are now quoted in full from Lovin Malta, and tested as sub-claim E (not tested: “ideal” is not defined). (4) Tile “0.4 km” → “120 ha” of mapped Posidonia (the 0.4 km stays in the text). (5) A bay-wide Sentinel-2 check for other new land was tried and dropped as not robust (limitations). Verdict and confidence unchanged."
+    note: "Upgrade. (1) New Figure 3: a map of Marsaxlokk Bay with sea depth (EMODnet), mapped Posidonia meadows, full-resolution Natura 2000 boundaries and the new land at Terminal 2; within 1 km of the new land the sea is mostly 5–30 m deep. (2) Fairness: Malta’s Article 17 reports assess its Posidonia beds as favourable overall (2013–2018; 2019–2024, stable); the −34% loss is Mediterranean-wide (section 3, Q2, TL;DR, flyer). (3) The Prime Minister’s words are now quoted in full from Lovin Malta, and tested as sub-claim E (not tested: “ideal” is not defined). (4) Tile “0.4 km” → mapped Posidonia within 1 km of the new land (the 0.4 km stays in the text). (5) A bay-wide Sentinel-2 check for other new land was tried and dropped as not robust (limitations). Verdict and confidence unchanged. Maintainer decision (5 Oct 2026): the map and all seagrass statistics now use the EMODnet Seabed Habitats layer only (CC BY 4.0), whose Maltese map (2016) is gridded at about 230 m (limitations). Mapped Posidonia lies next to the new land (0.01 km, one grid cell), 72 ha within 1 km; mapped meadows lie at 11–35 m in the bay (median 26 m) and 21–32 m within 1 km (median 29 m). Tile and flyer card “72 ha”. Verdict and confidence unchanged."
