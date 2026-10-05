@@ -34,7 +34,7 @@
 @misc{copernicus_s2,
   author = {{European Space Agency / Copernicus}}, title = {Sentinel-2 Level-2A surface reflectance, tile 33SVV, 2023-2026},
   howpublished = {Microsoft Planetary Computer STAC (sentinel-2-l2a)}, year = {2026},
-  url = {https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a}, note = {Retrieved 3 Oct 2026 by tools/cc-012-report/fetch_s2.py. Grade B (direct measurement with control area).}
+  url = {https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a}, note = {Retrieved 3 Oct 2026 by tools/cc-012-report/fetch_s2.py; re-fetched 5 Oct 2026 after correcting the conversion to reflectance: (DN + BOA_ADD_OFFSET) / 10000, with BOA_ADD_OFFSET = -1000 for processing baseline 04.00 or later (checked in s2:processing_baseline and in MTD_MSIL2A.xml of scenes at baselines 04.00, 05.10, 05.13). Grade B (direct measurement with control area).}
 }
 @article{nawaz2013,
   author = {Nawaz, Muhammad Farrakh and Bourri{\'e}, Guilhem and Trolard, Fabienne}, title = {Soil compaction impact and modelling. A review},

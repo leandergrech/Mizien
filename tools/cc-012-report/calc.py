@@ -48,15 +48,19 @@ post = [float(r["ndvi_gravel_zone"]) / float(r["ndvi_control"]) for r in T
         if season(r) and season(r).startswith("winter") and r["date"] > "2025-10-01"]
 add("Winter ratio zone/rest of park, before gravel (2023-2025)", round(median(pre), 2), "ratio", S2, f"{len(pre)} scenes")
 add("Winter ratio zone/rest of park, after gravel (2025-26)", round(median(post), 2), "ratio", S2, f"{len(post)} scenes")
+# Brightness = mean surface reflectance of B02, B03, B04 (0-1), after the BOA_ADD_OFFSET correction in fetch_s2.py.
+REFL = "surface reflectance (0-1)"
 bz = lambda a, b: median(float(r["brightness_gravel_zone"]) for r in T if a <= r["date"] <= b)
-add("Brightness in zone, May 2025 -> Aug 2025", f"{bz('2025-05-01', '2025-05-31'):.0f} -> {bz('2025-08-01', '2025-08-31'):.0f}",
-    "reflectance x 10^4", S2, "gravel laid June 2025")
+add("Brightness in zone, May 2025 -> Aug 2025", f"{bz('2025-05-01', '2025-05-31'):.2f} -> {bz('2025-08-01', '2025-08-31'):.2f}",
+    REFL, S2, "gravel laid June 2025")
 last = T[-1]
 add("Latest clear scene", last["date"], "date", S2,
     f"NDVI zone {float(last['ndvi_gravel_zone']):.2f} vs rest {float(last['ndvi_control']):.2f}; "
-    f"brightness {last['brightness_gravel_zone']} vs {last['brightness_control']}")
-add("Brightness in zone, Aug-Sep 2026 median", round(bz("2026-08-01", "2026-09-30")), "reflectance x 10^4", S2,
-    "no return to pre-gravel levels (about 2,000-3,000) by end of September 2026")
+    f"brightness {float(last['brightness_gravel_zone']):.2f} vs {float(last['brightness_control']):.2f}")
+pre_b = sorted(float(r["brightness_gravel_zone"]) for r in T if r["date"] < "2025-06-01")
+add("Brightness in zone, Aug-Sep 2026 median", f"{bz('2026-08-01', '2026-09-30'):.2f}", REFL, S2,
+    f"pre-gravel scenes (Jan 2023-May 2025) ranged {pre_b[0]:.2f}-{pre_b[-1]:.2f}; Aug-Sep 2023 and 2024 medians "
+    f"{bz('2023-08-01', '2023-09-30'):.2f} and {bz('2024-08-01', '2024-09-30'):.2f}")
 
 with open(D / "checks.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]))
