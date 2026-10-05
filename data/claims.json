@@ -3900,10 +3900,11 @@
       "id": "CC-100",
       "title": "Over 10 million airport passengers",
       "category": "Tourism & Population",
-      "claim": "Malta International Airport: it welcomed over 10 million passengers in 2025, a new traffic milestone.",
-      "counter": "Passenger movements count each arrival and departure; residents travelling vs tourists.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Malta International Airport plc (company announcement, 14 Jan 2026): full-year traffic for 2025 reached 10,061,969 passenger movements, a 12.3% increase on 2024 and the first time above 10 million.",
+      "counter": "Eurostat avia_paoc: 10,070,972 passengers carried in 2025 (0.09% above the company's figure) and 8,968,239 in 2024: +12.3%. 2025 is the first year above 10 million (7.3 million in 2019). Movements count each arrival and departure, so a return trip counts twice.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
       "tags": [],
       "subtopic": "Tourism numbers & capacity",
       "location": {
@@ -3913,17 +3914,38 @@
         "scope": "site",
         "icon": "pin"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "Malta International Airport plc",
       "bodies": [
         "malta-airport"
       ],
-      "date": "2026",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-100A",
+          "text": "Full-year traffic for 2025 of 10,061,969 passenger movements",
+          "finding": "Eurostat: 10,070,972 passengers carried in 2025 (+0.09%). First year above 10 million.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-100B",
+          "text": "A 12.3% increase over the previous year",
+          "finding": "Eurostat: 8,968,239 in 2024 to 10,070,972 in 2025, +12.3%.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
+      "date": "2026-01-14",
+      "quote": "This figure brought full-year traffic for 2025 up to 10,061,969 passenger movements, marking a 12.3% increase over the previous year.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-100/report.pdf",
+        "flyer_pdf": "claim-files/CC-100/flyer.pdf",
+        "flyer_png": "claim-files/CC-100/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-100/claim.yml"
     },
     {
