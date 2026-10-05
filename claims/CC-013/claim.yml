@@ -33,16 +33,19 @@ claim:
     them would drive prices up.
 counter_evidence: Supported in direction by peer-reviewed research on supply constraints (Glaeser et al. 2005; Hilber
   and Vermeulen 2016; Saiz 2010); Anenberg and Kung (2020) find extra supply alone does little for rent burdens.
-  Malta population +31% 2015-2025 (EU +2%); real house prices +34% (EU +25%; Malta 2025 provisional). Housing-cost
+  Malta population +31% 2015-2025 (EU +2%; highest of 27, about 16 times the EU rate); real house prices +34% (EU
+  +25%; Malta 2025 provisional), which ranks 16th of 27, below the median Member State (+41%); the EU aggregate is
+  weighted towards Germany, France and Italy (49%). Rents (HICP actual rentals) +53% vs EU +21% (8th of 27); house
+  prices +6.9% a year to 2026-Q2 (provisional) vs EU +4.7%. Housing-cost
   overburden rose from 1.1% (2015) to 2.9% (2022) while the EU's fell; Eurostat flags a break in Malta's series in
   2023, after which it held at about 6% (6.0% in 2025; EU 7.7%). Overcrowding 4.7% vs EU 16.8%. 27.5% of
   dwellings not a main residence (Census 2021).
-tests: Eurostat prc_hpi_a, tipsho10, demo_gind, ilc_lvho07a, ilc_lvho05a; PA approved dwellings 2007-2025; NSO Census
-  2021; housing-supply literature.
+tests: Eurostat prc_hpi_a, tipsho10, demo_gind, ilc_lvho07a, ilc_lvho05a; all EU-27 demo_gind, tipsho10,
+  prc_hicp_aind, prc_hpi_q, prc_hpi_cow; PA approved dwellings 2007-2025; NSO Census 2021; housing-supply literature.
 why_low_hanging: 'Done: Claim Check 013 report and flyer.'
 tags: []
 tags_provisional: false
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: High
 caveats: Right of reply to the Planning Authority not yet sent. Effect size unproven for Malta; affordability worsening;
   approvals are not completions. Prices only, not environmental costs of the permits.
@@ -52,13 +55,15 @@ right_of_reply:
   response: null
 evidence_shown:
 - Eurostat tipsho10, demo_gind, ilc_lvho07a, ilc_lvho05a (data/cc-013/)
+- Eurostat all EU-27 population, real house prices, HICP rents, quarterly HPI and HPI weights, retrieved 5 Oct 2026
+  (data/cc-013/eurostat_eu27_pop_prices_rents.csv)
 - Planning Authority, Approved Dwelling Units 2007-2025
 - Peer-reviewed literature (literature/CC-013/references.bib)
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-05'
 location:
   place: Planning Authority, St Francis Ravelin, Floriana
