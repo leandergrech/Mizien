@@ -84,6 +84,10 @@ export default function (eleventyConfig) {
   // time; docs/ is retired once the Actions deploy is live.
   eleventyConfig.addPassthroughCopy({ docs: "/" });
   eleventyConfig.addPassthroughCopy({ "site/assets": "assets" });
+  // The map view's map library and its reader for the self-hosted tile file (npm dependencies, copied as built).
+  for (const f of ["maplibre-gl.mjs", "maplibre-gl-shared.mjs", "maplibre-gl-worker.mjs", "maplibre-gl.css"])
+    eleventyConfig.addPassthroughCopy({ [`node_modules/maplibre-gl/dist/${f}`]: `assets/vendor/maplibre/${f}` });
+  eleventyConfig.addPassthroughCopy({ "node_modules/pmtiles/dist/pmtiles.js": "assets/vendor/pmtiles.js" });
   // Figures of each report's web version (tools/report_html.py), next to the claim's PDFs.
   // Flyer previews made by scripts/build_site_data.py (build/ is not committed).
   if (existsSync("build/claim-previews")) eleventyConfig.addPassthroughCopy({ "build/claim-previews": "claim-files" });

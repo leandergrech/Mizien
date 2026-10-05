@@ -53,6 +53,8 @@ eleventyExcludeFromCollections: true
   #legend { position: absolute; left: 26px; top: 22px; bottom: 76px; width: 236px; z-index: 2; display: flex;
             flex-direction: column; gap: 16px; pointer-events: none; }
   #legend > * { pointer-events: auto; }
+  #legend > *, .moreopts > * { flex-shrink: 0; }
+  @media (min-width: 901px) { #legend { overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: rgba(127,168,139,.4) transparent; } }
   #groupby { display: flex; flex-wrap: wrap; gap: 6px; }
   #groupby button { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px;
     border: 1px solid rgba(207,226,212,.28); background: rgba(8,30,21,.35); color: var(--ink);
@@ -144,8 +146,17 @@ eleventyExcludeFromCollections: true
                min-width: 36px; min-height: 36px; padding: 6px 12px; font: 12px Arial, sans-serif; cursor: pointer; }
   button.ctl:hover { border-color: var(--amber); }
   button:focus-visible, #panel a:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
-  #hint { position: absolute; right: 24px; bottom: 20px; font-size: 11.5px; color: var(--muted); pointer-events: none; z-index: 1; }
+  #hint { position: absolute; right: 24px; bottom: 20px; max-width: 290px; text-align: right; font-size: 11.5px; color: var(--muted); pointer-events: none; z-index: 1; }
   .mobile-hint { display: none; }
+  .dmenu { position: relative; }
+  .dpop { position: absolute; right: 0; top: calc(100% + 6px); display: flex; flex-direction: column; gap: 4px; padding: 6px; min-width: 132px;
+    border-radius: 14px; background: rgba(8,30,21,.94); border: 1px solid rgba(207,226,212,.22); box-shadow: 0 12px 30px rgba(0,0,0,.45); z-index: 7; }
+  .dpop[hidden] { display: none; }
+  .dpop .ctl { text-align: left; width: 100%; }
+  #mapwrap.is-map #displaymenu { display: none; }
+  .moreopts { display: contents; }
+  .moreopts > summary { display: none; }
+  .moreopts > div + div { margin-top: 16px; }
   #modeTitle { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); z-index: 1; pointer-events: none;
     text-align: center; transition: opacity .4s; }
   #modeTitle .t { font: 700 22px "Liberation Serif", Georgia, serif; color: var(--ink); }
@@ -164,8 +175,10 @@ eleventyExcludeFromCollections: true
            transition: background .3s; }
   @media (min-width: 901px) {
     #mapwrap.panel-open #controls { right: calc(min(390px, 34vw) + 14px); }
-    #mapwrap.panel-open #modeTitle, #mapwrap.panel-open #crumb, #mapwrap.panel-open #toast { left: calc(50% + 131px - min(390px, 34vw) / 2); }
-    #mapwrap.panel-open #modeTitle { top: 66px; }          /* below the controls, which move left of the card */
+    #mapwrap.panel-open #crumb, #mapwrap.panel-open #toast { left: calc(50% + 131px - min(390px, 34vw) / 2); }
+    #modeTitle { left: 296px; transform: none; text-align: left; max-width: min(560px, calc(100% - 296px - 300px)); }
+    #mapwrap.panel-open #modeTitle { max-width: calc(100% - 296px - min(390px, 34vw) - 300px); }
+    #mapwrap.panel-open #modeTitle .s { display: none; }
     #mapwrap.panel-open #crumb { top: 124px; }
     #mapwrap.panel-open #toast { top: 170px; }
     #mapwrap.panel-open #linkbar { max-width: calc(100% - 314px - min(390px, 34vw)); }
@@ -239,8 +252,52 @@ eleventyExcludeFromCollections: true
   #placeres .pname { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   #placeres .kind { color: var(--muted); font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; }
   #placeres .n { min-width: 18px; text-align: right; color: var(--amber); font-size: 11.5px; font-weight: 700; }
-  #treekey { margin: 10px 0 0; color: var(--muted); font-size: 12px; line-height: 1.45; max-width: 236px; }
+  #treekey { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.45; max-width: 236px; display: flex; gap: 10px; align-items: flex-start; }
   #treekey b { color: var(--ink); font-weight: 600; }
+  #treekey .gm-key { position: static; flex: none; width: 60px; height: 60px; }
+  #mapwrap.is-map #hint { bottom: 30px; }
+  #placeres button.unplaced { margin-top: 6px; border-top: 1px solid rgba(207,226,212,.14); border-radius: 0 0 6px 6px; color: var(--muted); }
+
+  /* ---------------------------------------------------------------- map view (MapLibre) and its place medallions */
+  #geomap { position: absolute; inset: 0; z-index: 0; background: #0c2c21; }
+  #geomap[hidden] { display: none; }
+  #mapwrap.is-map #modeTitle { pointer-events: none; padding: 6px 16px 7px; border-radius: 14px; background: rgba(8,30,21,.72); backdrop-filter: blur(4px); }
+  @media (min-width: 901px) {
+    #mapwrap.is-map #legend { bottom: auto; max-height: calc(100% - 44px); overflow: auto; padding: 14px 14px 16px; margin: -10px 0 0 -12px; border-radius: 16px;
+      background: rgba(8,30,21,.84); border: 1px solid rgba(207,226,212,.14); box-shadow: 0 10px 30px rgba(0,0,0,.35); backdrop-filter: blur(4px); }
+  }
+  #mapwrap.is-map #modeTitle .t, #mapwrap.is-map #modeTitle .s { text-shadow: 0 1px 4px rgba(4,18,12,.95), 0 0 14px rgba(4,18,12,.8); }
+  #mapwrap.is-map button.ctl { background: rgba(8,30,21,.88); }
+  #mapwrap.is-map #hint { padding: 3px 10px; border-radius: 10px; background: rgba(8,30,21,.72); }
+  .gm-layer { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 2; }
+  .gm-m { position: absolute; left: 0; top: 0; width: var(--s); height: var(--s); padding: 0; border: 0; background: none; cursor: pointer;
+    pointer-events: auto; will-change: transform; -webkit-tap-highlight-color: transparent; }
+  .gm-m.is-new .gm-art { animation: gm-pop .38s cubic-bezier(.2,.9,.3,1.3) both; }
+  @keyframes gm-pop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
+  .gm-art { position: absolute; inset: 0; display: block; transition: transform .15s; filter: drop-shadow(0 3px 6px rgba(0,0,0,.45)); }
+  .gm-art svg { display: block; overflow: visible; }
+  .gm-art .disc { fill: rgba(8,30,21,.93); stroke: #e3a72f; stroke-width: 1.8; }
+  .gm-art .leaf { stroke: rgba(246,244,238,.9); stroke-width: 1; }
+  .gm-art .count { fill: #f6e3b4; font: 700 13px Arial, sans-serif; text-anchor: middle; dominant-baseline: central; }
+  .gm-art .emblem { fill: none; stroke: #f6e3b4; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .gm-m:hover .gm-art, .gm-m:focus-visible .gm-art { transform: scale(1.1); }
+  .gm-m:focus-visible { outline: none; }
+  .gm-m:focus-visible .disc, .gm-m.is-sel .disc { stroke: #fff; stroke-width: 2.6; }
+  .gm-m.is-sel .gm-art { transform: scale(1.14); }
+  .gm-m.is-sel .disc { fill: #14452f; }
+  .gm-badge { position: absolute; left: calc(50% + var(--r) * .55); top: calc(50% - var(--r) - 6px); min-width: 18px; padding: 1px 5px; border-radius: 9px;
+    background: #e3a72f; color: #13301f; font: 700 10.5px/14px Arial, sans-serif; text-align: center; pointer-events: none; }
+  .gm-name { position: absolute; left: 50%; top: calc(50% + var(--r) + 4px); transform: translateX(-50%); max-width: 180px; padding: 2px 8px;
+    border-radius: 999px; background: rgba(8,30,21,.82); border: 1px solid rgba(227,167,47,.45); color: #eef3ef; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis; font: 700 11.5px/1.25 Arial, sans-serif; pointer-events: none; }
+  .gm-m.is-sel .gm-name { border-color: #fff; }
+  .gm-badge[hidden], .gm-name[hidden] { display: none; }
+  #geomap .maplibregl-ctrl-attrib { background: rgba(8,30,21,.72); color: var(--muted); font-size: 11px; }
+  #geomap .maplibregl-ctrl-attrib a { color: #cfe2d4; }
+  #geomap .maplibregl-ctrl-attrib-button { filter: invert(1) hue-rotate(180deg); }
+  #panel .vbar { display: flex; gap: 2px; height: 10px; margin: 10px 0 4px; border-radius: 5px; overflow: hidden; }
+  #panel .vbar span { flex: 1; min-width: 3px; }
+  @media (prefers-reduced-motion: reduce) { .gm-m.is-new .gm-art { animation: none; } .gm-art { transition: none; } }
   #toast { position: absolute; left: 50%; top: 110px; transform: translateX(-50%); z-index: 6; display: none; padding: 10px 16px;
     border-radius: 12px; background: #e3a72f; color: #13301f; font: 700 13px Arial, sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,.45); }
   #crumb { position: absolute; left: 50%; top: 66px; transform: translateX(-50%); z-index: 3; display: none;
@@ -273,13 +330,6 @@ eleventyExcludeFromCollections: true
   .card { background: #123826; border: 1px solid #1f5a40; border-radius: 10px; padding: 14px 16px; }
   .card h3 { margin: 0 0 4px; font-size: 15px; color: var(--amber); }
   .card p { margin: 0; font-size: 14px; color: #d4e4d9; }
-  table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  th { text-align: left; font: 700 11px Arial; letter-spacing: .08em; color: var(--amber); padding: 8px 8px; border-bottom: 1px solid #2b6b4c; }
-  td { padding: 9px 8px; border-bottom: 1px solid #1a4a35; vertical-align: top; }
-  tr.click { cursor: pointer; }
-  tr.click:hover td { background: #123826; }
-  td .chip { margin: 0; }
-  td .muted { color: var(--muted); font-size: 12px; }
   .scale { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
   .scale span { flex: 1 1 140px; padding: 10px 8px; border-radius: 8px; text-align: center; font: 700 11px Arial; color: #fff; }
   footer { max-width: 1100px; margin: 0 auto; padding: 24px; color: var(--muted); font-size: 13px; border-top: 1px solid #1f5a40; }
@@ -304,6 +354,9 @@ eleventyExcludeFromCollections: true
     #modeTitle { top: 14px; left: 18px; transform: none; text-align: left; }
     #modeTitle .t { font-size: 18px; }
     #modeTitle .s { display: none; }
+    .moreopts { display: block; border-top: 1px solid rgba(207,226,212,.16); padding-top: 4px; }
+    .moreopts > summary { display: list-item; cursor: pointer; padding: 10px 0; color: var(--amber); font: 700 13px Arial, sans-serif; }
+    .moreopts[open] > div { margin-top: 14px; }
     #panel { left: 8px; right: 8px; top: auto; bottom: max(8px, env(safe-area-inset-bottom)); width: auto; max-height: 62%;
              border-radius: 16px; border-left: 0; box-shadow: 0 22px 60px rgba(0,0,0,.55); }
     #panel.fit { max-height: 62%; }
@@ -327,7 +380,6 @@ eleventyExcludeFromCollections: true
     #hint { left: 12px; right: 12px; bottom: 10px; text-align: center; }
     main { padding: 10px 18px 48px; }
     .grid { grid-template-columns: 1fr; gap: 10px; }
-    #claims th:nth-child(2), #claims td:nth-child(2) { display: none; }
   }
   @media (max-width: 480px) { #groups { grid-template-columns: 1fr; } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -337,7 +389,6 @@ eleventyExcludeFromCollections: true
     background: var(--amber); color: #13301f; font-weight: 700; text-decoration: none; }
   .skip:focus { top: 12px; }
   .home-tabs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 14px 0 0; }
-  .listlink { font-size: 14px; }
   .chip.v-supported { background: #2e7d4f; color: #fff; }
   .chip.v-largely-supported { background: #8db36b; color: #13301f; }
   .chip.v-not-substantiated { background: #d9772b; color: #13301f; }
@@ -349,13 +400,13 @@ eleventyExcludeFromCollections: true
 <script>(function(){var t=new URLSearchParams(location.search).get("previewTheme");document.documentElement.dataset.mapTheme=["botanical","field-atlas","civic-clarity"].indexOf(t)>=0?t:"botanical";})();</script>
 </head>
 <body>
-<a class="skip" href="#claims-list">Skip the map: list of claims</a>
+<a class="skip" href="/claims/">Skip the map: list of all claims</a>
 <header class="top">
   <div>
     <div class="brand"><svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="Miżien balance mark"><circle cx="32" cy="32" r="28" fill="none" stroke="#7fa88b" stroke-width="2"/><path d="M32 11V52M13 21L51 24M32 17L13 21M32 17L51 24M13 21L9 37M13 21L19 37M8 37H22L19 41Q15 44 11 41ZM51 24L47 40M51 24L57 40M44 40H58L55 44Q51 47 47 44ZM23 53H41" fill="none" stroke="#eef3ef" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="17" r="4" fill="#e3a72f"/></svg><h1>Miżien</h1></div>
     <p class="tag">Weighing public claims against the evidence.</p>
     <p class="meaning">Miżien is Maltese for a scale or balance.</p>
-    <div class="home-tabs">{% include "nav.njk" %}<a class="listlink" href="#claims-list">List view below ↓</a></div>
+    <div class="home-tabs">{% include "nav.njk" %}</div>
   </div>
   <div class="stats" id="stats" aria-live="polite"></div>
 </header>
@@ -366,12 +417,17 @@ eleventyExcludeFromCollections: true
     <div id="modeTitle" class="tx"><div class="t"></div><div class="s"></div></div>
     <div id="crumb" role="status"></div>
     <div id="controls">
-      <button class="ctl" id="labelmode" type="button" aria-pressed="false" title="Show claim names instead of codes">Names</button>
-      <button class="ctl" id="lenstoggle" type="button" aria-pressed="false" title="Magnifying lens at the centre (L)">Lens</button>
-      <button class="ctl" id="texttoggle" type="button" aria-pressed="false" title="Hide all text on the map">Hide text</button>
+      <div class="dmenu" id="displaymenu">
+        <button class="ctl" id="displaybtn" type="button" aria-expanded="false" aria-controls="displaypop" title="Labels, lens and motion">Display ▾</button>
+        <div class="dpop" id="displaypop" role="group" aria-label="Display options" hidden>
+          <button class="ctl" id="labelmode" type="button" aria-pressed="false" title="Show claim names instead of codes (N)">Names</button>
+          <button class="ctl" id="lenstoggle" type="button" aria-pressed="false" title="Magnifying lens at the centre (L)">Lens</button>
+          <button class="ctl" id="texttoggle" type="button" aria-pressed="false" title="Hide all text on the map (T)">Hide text</button>
+          <button class="ctl" id="spin" type="button" aria-label="Pause map rotation">Pause</button>
+        </div>
+      </div>
       <button class="ctl" id="zoomout" type="button" aria-label="Zoom out" title="Zoom out">−</button>
       <button class="ctl" id="zoomin" type="button" aria-label="Zoom in" title="Zoom in">+</button>
-      <button class="ctl" id="spin" type="button" aria-label="Pause map rotation">Pause</button>
       <button class="ctl" id="reset" type="button" aria-label="Reset view: centre and zoom" title="Centre and fit (0)">Fit</button>
     </div>
     <div id="hint" class="tx"><span class="desktop-hint"></span><span class="mobile-hint"></span></div>
@@ -384,11 +440,14 @@ eleventyExcludeFromCollections: true
     <div id="mapsearch" hidden><p class="kicker"><label for="placeq">FIND CLAIMS BY PLACE</label></p>
       <input id="placeq" type="search" placeholder="A town or site, e.g. Marsa" autocomplete="off" spellcheck="false">
       <div id="placeres" aria-live="polite"></div>
-      <p id="treekey">Each place grows a tree: the <b>place</b> on the ground, the <b>body</b> that made the claim, the <b>person</b> who spoke for it, then the <b>claims</b>. Zoom in to open the trees; places outside the window leave the map.</p></div>
+      <p id="treekey"><span class="gm-art gm-key" aria-hidden="true"></span>
+        <span>Each medallion is a <b>place</b>: the number is its claims, and each <b>leaf</b> is a checked claim, coloured by its verdict. Places close together share a medallion until you zoom in. Press a place to list its claims.</span></p></div>
     <div id="groupbox"><p class="kicker">GROUP CLAIMS BY</p><div id="groupby" role="group" aria-label="Group claims by"></div><div id="splitbox"></div></div>
+    <details id="moreopts" class="moreopts"><summary>More options: arrange, show or hide groups, colours</summary>
     <div id="arrangebox"><p class="kicker">ARRANGE GROUPS BY</p><div id="arrange" role="group" aria-label="Arrange groups by"></div><p id="arrangenote"></p></div>
     <div id="groupsbox"><p class="kicker" id="groupsTitle">GROUPS</p><div id="groups"></div><p id="groupnote"></p></div>
     <div><p class="kicker">CLAIM COLOUR · VERDICT</p><div class="keyrow" id="vkey"></div></div>
+    </details>
   </div>
   <div id="linkbar" class="tx" role="group" aria-label="Show or hide lines"></div>
 </div>
@@ -396,7 +455,7 @@ eleventyExcludeFromCollections: true
   <div class="viewer-head"><h2 id="viewer-title">Claim document</h2><button class="viewer-close" type="button">Close</button></div>
   <iframe title="Claim document viewer" hidden></iframe><img alt="Claim flyer" hidden>
 </dialog>
-<noscript>The interactive map needs JavaScript. Every claim is listed below and on the <a href="/claims/">all claims page</a>.</noscript>
+<noscript>The interactive map needs JavaScript. Every claim is listed on the <a href="/claims/">all claims page</a>.</noscript>
 
 <main>
   <section>
@@ -422,16 +481,6 @@ eleventyExcludeFromCollections: true
       <span style="background:#8e2f25">CONTRADICTED</span>
     </div>
     <p style="color:var(--muted);font-size:14px">How each verdict is reached, with the definitions, evidence grades and confidence levels: <a href="/methodology/how-a-verdict-is-reached/">How a verdict is reached</a>. What a verdict means, and what it does not: <a href="/about/disclaimer/">What a check represents</a>.</p>
-  </section>
-
-  <section id="claims-list">
-    <h2>Claims</h2>
-    <table id="claims"><thead><tr><th>ID</th><th>Topic</th><th>Claim</th><th>Status</th></tr></thead><tbody>
-    {%- for c in mizien.claims %}
-      <tr data-id="{{ c.id }}"><td><a href="{{ c.path }}">{{ c.id }}</a></td><td>{{ c.category }}</td><td><a href="{{ c.path }}">{{ c.title }}</a></td>
-        <td>{% if c.label %}<span class="chip v-{{ c.label_slug }}">{% if c.label_kind == "pledge" %}Pledge: {% endif %}{{ c.label }}</span><span class="muted"> {{ c.status }}</span>{% else %}<span class="chip v-none">{{ c.status }}</span>{% endif %}</td></tr>
-    {%- endfor %}
-    </tbody></table>
   </section>
 </main>
 
