@@ -14,3 +14,19 @@ EU-27: housing-cost overburden 2015 -> 2022 (before Malta's series break),11.2 -
 EU-27: housing-cost overburden 2023 -> 2025 (after the break),8.8 / 8.2 / 7.7,% of people,Eurostat ilc_lvho07a,
 Malta: real house prices 2015 -> 2025,34,%,Eurostat tipsho10,
 MDA-commissioned study: price-to-income 2024 -> 2025,14.0 -> 14.5,ratio,"MaltaToday, 8 Feb 2026 (second-hand)",different measure from Eurostat's; method not seen
+EU members on the IMF's 24-month Article IV cycle in their latest staff report (2025-26),1 of 27 (Malta),members,"IMF eLibrary, latest staff reports",all others: 12-month cycle
+Earlier EU member placed on the 24-month cycle,Luxembourg (2000); Luxembourg (2002),,IMF CR 00/65 para. 45; CR 02/118 para. 34,"Luxembourg, an EU member then as now: 2000 and 2002 consultations two years apart"
+IMF: per capita income 2013 -> 2024 (US$ thousand),25 -> 45 (x1.80),ratio,IMF CR 26/29 p.8,the IMF's own 'nearly doubled'
+"Malta: GDP per head, current prices, 2013 -> 2025","19,120 -> 42,390 (x2.22)",EUR,Eurostat nama_10_pc CP_EUR_HAB,2013 -> 2024: x2.12
+"Malta: GDP per head, chain-linked volumes (2020 prices), 2013 -> 2025","22,600 -> 34,360 (x1.52)",EUR (2020 prices),Eurostat nama_10_pc CLV20_EUR_HAB,"real terms: about half again, not nearly double"
+"Malta vs EU-27: GDP per head at market prices, 2025","42,390 vs 41,700 (101.7% of EU)",EUR,Eurostat nama_10_pc,+1.7% above the EU average
+"Malta vs EU-27: GDP per head in purchasing power standards, 2025",110.2,index (EU-27 = 100),Eurostat nama_10_pc PC_EU27_2020_HAB_MPPS_CP,2013: 91
+"Malta: house prices, annual change by quarter, 2024",6.7 / 6.9 / 7 / 6.4,% y/y,Eurostat prc_hpi_q RCH_A,before the IMF's 'moderated in early 2025'
+"Malta: house prices, annual change, 2025-Q1 / Q2",5.9 / 5.6,% y/y,Eurostat prc_hpi_q RCH_A,the IMF's 'moderated in early 2025'
+"Malta: house prices, annual change, 2026-Q1 / 2026-Q2",6.8 / 6.9,% y/y,Eurostat prc_hpi_q RCH_A,"flag p, p (p = provisional)"
+"Malta: house prices, annual average change, 2025",6.0,%,Eurostat prc_hpi_a RCH_A_AVG,flag p
+"Malta: household gross disposable income per head, 2015 -> 2024","12,340 -> 22,605 (index 183.2)",EUR,Eurostat nasa_10_nf_tr B6G S14_S15 / nama_10_pe POP_NC,2024 flagged p; no data after 2024
+Malta: house price index 2024 (2015 = 100),163.77,index,Eurostat prc_hpi_a I15_A_AVG,
+"Malta: house prices relative to income per head, 2015 -> 2024",-10.6,% change,calculated,cross-check of tipsho60 (-10.7%)
+"Malta: house price index, 2026-Q2 (2015 = 100)",183.86,index,Eurostat prc_hpi_q I15_Q,flag p
+Malta: GDP per head index 2025 (2015 = 100),184.3,index,Eurostat nama_10_pc CP_EUR_HAB,proxy for income after the last household-income year

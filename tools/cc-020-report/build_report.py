@@ -242,6 +242,7 @@ build_report(Report(
     footer_lines=["Version 1.0  ·  5 October 2026", "Status: draft",
                   "Prepared from public sources and Eurostat data.", "Repository: github.com/leandergrech/Mizien"],
     running_head="Noise law and noise in Malta", version="1.0", date="5 October 2026",
+    status_note="no right of reply needed",
     pdf_title="Is the noise law the cause of Malta's noise? Claim Check 020",
     pdf_subject="Tests the EP Petitions Committee study's conclusion on Malta's implementation of the Environmental Noise Directive",
     story=S))

@@ -42,14 +42,20 @@ claim:
   quote: Emissions per capita have fallen by 44% since 2005, well above the EU average of 34%.
 counter_evidence: 'The same Commission report shows effort-sharing emissions 41% above 2005 in 2024 and projects
   +42% (existing measures) or +30% (planned measures) by 2030 against a -19% target: the largest gap in the EU in
-  percentage points. Total emissions fell 27% (EU 33%); population grew 41%, explaining about half the per-person
-  fall. Transport +49%, F-gases about six-fold.'
-tests: Eurostat env_air_gge and nama_10_pe; Commission CAPR 2025 SWD; Eurostat nrg_ind_ren.
+  percentage points. Malta was over its yearly ESR limit by 22, 25 and 30 points in 2022-2024 (+43/+42/+41% vs
+  +21/+16/+11%); the 2021 surplus carried forward brings the cumulative balance to 0.0 Mt in 2024, -2.1 Mt projected
+  for 2030 before flexibilities. Total emissions fell 27% (EU 33%); population grew 41%, explaining about half the
+  per-person fall. Among the EU-27 (2005-2024) Malta ranks 3rd on the per-person cut (-48.5%) but 20th on the total
+  cut (-27.4%). Transport +49%, F-gases about six-fold. In the authority''s favour: effort-sharing emissions per
+  person are flat (2.50 t in 2005, 2.52 t in 2024; proxy: total minus power generation), and no compliance
+  shortfall has arisen before the first check in 2027.'
+tests: Eurostat env_air_gge and nama_10_pe (Malta, EU-27 aggregate and all 27 Member States); Commission CAPR 2025
+  SWD Tables 25 and 26; Eurostat nrg_ind_ren.
 why_low_hanging: 'Done: Claim Check 003 report and flyer.'
 tags:
 - Selective metric
 tags_provisional: false
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: High
 caveats: Draft pending right of reply (Climate Action Authority; Environment Ministry). Misleading must not be published
   before the reply deadline passes. Figures accurate; verdict rests on omission of the 2030 projection from the
@@ -61,13 +67,17 @@ right_of_reply:
 evidence_shown:
 - European Commission, Climate Action Progress Report 2025 SWD, printed p. 114 (Malta ESR +41% in 2024; 2030 projections
   +42%/+30% vs -19% target; EU-27 -31%/-38% on p. 115) and p. 125 (AEA balance -2.1 Mt by 2030)
+- 'European Commission, CAPR 2025 SWD Table 25 (p. 114; yearly ESR limits +102/+21/+16/+11% vs emissions
+  +30/+43/+42/+41%, 2021-2024) and Table 26 (p. 125; allocations, emissions and cumulative balance 2021-2030),
+  typed into data/cc-003/capr2025_esr_malta.csv'
 - European Commission, CAPR 2025 chapter 3 web page (Germany, Ireland and Malta largest projected gaps)
-- Eurostat env_air_gge and nama_10_pe, retrieved 2 Oct 2026 (data/cc-003/)
+- Eurostat env_air_gge and nama_10_pe, retrieved 2 Oct 2026 (data/cc-003/); all EU-27 Member States, retrieved
+  5 Oct 2026 (data/cc-003/eurostat_ghg_pop_eu27.csv)
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-05'
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
@@ -86,7 +96,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
   - id: CC-003B
     text: "…well above the EU average of 34%"
     said_by: "CAA [1]"
-    finding: "Reproduced (−34% to 2023). True per person; false in total tonnes (−27% vs −33%)."
+    finding: "Reproduced (−34% to 2023). True per person (3rd of 27 to 2024); not in total tonnes (−27% vs −33%; 20th of 27)."
     rating: "Accurate, partial"
     tone: amber
   - id: CC-003C
@@ -98,13 +108,13 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
   - id: CC-003D
     text: "Malta is reducing emissions at household level"
     said_by: "CAA [1]"
-    finding: "Sectors linked to households rose: transport +49%, buildings +9 to +12%, air-conditioning gases up almost six-fold. A per-person ratio is not a household measure."
+    finding: "In total, sectors linked to households rose: transport +49%, buildings +9 to +12%, air-conditioning gases up almost six-fold. Per person, the target sectors were flat (2.50 t to 2.52 t, our estimate), not falling. A per-person ratio of all emissions is not a household measure."
     rating: "Not supported"
     tone: red
   - id: CC-003E
     text: "Malta’s efforts are showing clear results"
     said_by: "CAA [1]"
-    finding: "True for power generation. The same report projects the largest shortfall in the EU (in percentage points) against Malta’s binding 2030 target, which the release does not mention."
+    finding: "True for power generation. The same report shows Malta over its yearly limits since 2022 and projects the largest shortfall in the EU (in percentage points) against its binding 2030 target; the release mentions neither."
     rating: "Misleading by omission"
     tone: red
   - id: CC-003F
@@ -126,3 +136,7 @@ history:   # research log: the date each step of the research was done (not when
     version: "1.1"
     correction: true   # this version corrects errors in an earlier one
     note: "Corrections. (1) Section 4 table, EU 2030 effort-sharing projection: “−31% / …” → “−31% / −38%” (existing / additional measures, Commission Table 25). (2) EU industrial emissions, 2005–2023: “fell” → “−36%” (Commission p. 44). (3) “Widest margin in the EU” → “widest margin in the EU in percentage points” (TL;DR, Sections 6 and 7, flyer); Section 4 adds that in tonnes Germany’s projected 2030 shortfall (64 Mt) exceeds Malta’s (0.5 Mt). (4) Commission page numbers changed from PDF to printed pages: p. 115 → pp. 114–115 (Figure 2 label → p. 114), p. 126 → 125, p. 45 → 44, p. 52 → 51–52, p. 60 → 59. (5) Flyer title “Emissions down 44%” → “Emissions per person down 44%”; the two “+41%” flyer cards retitled “Population growth since 2005” and “Target-sector emissions, 2024”. (6) data/cc-003/checks.csv now also holds the EU-27 values shown in the Section 4 table. Verdict and confidence unchanged."
+  - date: 2026-10-05
+    step: version
+    version: "1.2"
+    note: "Upgrade: (1) New Figure 2 ranks all 27 Member States on the per-person and the total cut, 2005–2024 (Eurostat): Malta 3rd (−48.5%) and 20th (−27.4%). (2) New Figure 4 and a subsection on Malta’s yearly effort-sharing limits from the Commission’s Tables 25 and 26: 22, 25 and 30 points over in 2022–2024; cumulative balance 0.0 Mt in 2024, −2.1 Mt projected for 2030. (3) Fairness note: per-person emissions in the target sectors are flat (2.50 t to 2.52 t; our estimate, tested against the Commission’s figures), and no shortfall has been incurred before the first compliance check in 2027. (4) TL;DR, key points, tiles, Sections 3–8, flyer and data updated; old Figure 2 is now Figure 3. Verdict and confidence unchanged."

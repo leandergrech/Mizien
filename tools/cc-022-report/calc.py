@@ -72,6 +72,30 @@ for ds, lab in (("ilc_mdes01", "Unable to keep home adequately warm"), ("ilc_mde
     add(f"{lab}, 2025: Malta vs EU-27", f"{POV[(ds, 'MT')][2025]} vs {POV[(ds, 'EU27_2020')][2025]}", "% of people",
         f"Eurostat {ds}")
 
+# v1.2: burden against income and actual use (tools/cc-022-report/burden.py; inputs fetched by fetch_burden.py)
+import sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import burden  # noqa: E402
+BR = burden.measures()
+burden.write(BR)
+BM = {(r["measure"], r["geo"]): r for r in BR}
+SRC = {"M1": "Eurostat nrg_pc_204, ilc_di03", "M3": "Eurostat nrg_pc_204, ilc_di01, ilc_di03",
+       "M2": "Eurostat nrg_d_hhq, lfst_hhnhtych, nrg_pc_204, nrg_pc_204_v, nasa_10_nf_tr",
+       "M4": "Eurostat hbs_str_t211", "M5": "Eurostat ilc_mdes07, ilc_mdes01, ilc_hcmp03"}
+for m in dict.fromkeys(r["measure"] for r in BR):
+    mt, eu = BM.get((m, "MT")), BM.get((m, "EU27_2020"))
+    if mt is None or mt["value"] is None:
+        continue
+    rank = f"{'joint ' if mt['tied'] else ''}{mt['rank']} of {mt['of']}" if mt["rank"] else "not ranked"
+    note = (f"EU-27 {eu['value']:.3f}; " if eu and eu["value"] is not None else "") + f"Malta rank {rank}" + (
+        f"; flags: {mt['flags']}" if mt["flags"] else "")
+    add(f"Burden {m.replace(' MAIN', ' (main)')}", round(mt["value"], 3), "", SRC[m[:2]] + ", retrieved 5 Oct 2026", note)
+# cross-check: consumption-weighted 2024 price vs Eurostat's own all-band average (2024-S2; S1 not published for Malta)
+tk = burden.val("price", "nrg_cons=TOT_KWH", "MT", "2024-S2")
+add("Malta consumption-weighted price 2024 vs Eurostat all-band average 2024-S2",
+    f"{BM[('M2b consumption-weighted price, EUR/kWh (2024)', 'MT')]['value']:.4f} vs {tk:.4f}", "EUR/kWh",
+    "Eurostat nrg_pc_204, nrg_pc_204_v", "cross-check of the weighting")
+
 with open(D / "checks.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\r\n")
     w.writeheader()

@@ -15,7 +15,7 @@ build_flyer(Flyer(
     attribution="Partit Laburista, manifesto 2026, priority 19 (our translation)",
     context="Now a government commitment: Labour won the election of 30 May 2026.",
     note="The PN’s net-zero Gozo pledge, checked here until v1.1, is now Claim Check 107.",
-    verdict="Not substantiated", verdict_right=["No definition,", "no baseline."],
+    verdict="Not measurable", verdict_right=["No definition,", "no baseline."],
     cards=[("99.9%", GREEN, "Any green or open space",
             "Share of residents already within 800 m (straight line). Read broadly, the pledge is already almost met."),
            ("55%", ORANGE, "Parks of at least 0.5 ha",
@@ -32,7 +32,7 @@ build_flyer(Flyer(
           "Today’s baseline, and the method.",
           "A target year.",
           "The scope of the 40% carbon cut (priority 18)."],
-    footer="Version 1.2  ·  5 October 2026  ·  Open data, our analysis  ·  Draft pending right of reply from "
+    footer="Version 1.3  ·  5 October 2026  ·  Label as of 5 Oct 2026  ·  Draft pending right of reply from "
            "the Partit Laburista / Government",
     pdf_title="Claim Check 011 – Ten minutes’ walk to green space?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

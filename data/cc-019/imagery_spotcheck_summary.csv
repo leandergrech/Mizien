@@ -1,0 +1,32 @@
+group,item,draws,polygons,sampled_area_m2,share_of_draws_pct,wilson95_lo_pct,wilson95_hi_pct,seed,note
+class,confirmed,29,28,260150,72.5,57.2,83.9,20261005,share of draws = estimated share of Amphora's area (PPS on area); Wilson 95% interval
+class,partial,3,3,31541,7.5,2.6,19.9,20261005,share of draws = estimated share of Amphora's area (PPS on area); Wilson 95% interval
+class,already grey,1,1,19067,2.5,0.4,12.9,20261005,share of draws = estimated share of Amphora's area (PPS on area); Wilson 95% interval
+class,still open,0,0,0,0.0,0,8.8,20261005,share of draws = estimated share of Amphora's area (PPS on area); Wilson 95% interval
+class,unclear,7,7,43364,17.5,8.7,31.9,20261005,share of draws = estimated share of Amphora's area (PPS on area); Wilson 95% interval
+rule,confirmed + half of partial,30.5,,,76.2,61.1,86.8,20261005,share of draws = estimated share of Amphora's area (PPS on area); Wilson 95% interval
+"class, by number of polygons (weights 1/area; rough)",confirmed,,,,71.1,,,20261005,rough: small polygons weigh heavily
+"class, by number of polygons (weights 1/area; rough)",partial,,,,4.6,,,20261005,rough: small polygons weigh heavily
+"class, by number of polygons (weights 1/area; rough)",already grey,,,,0.3,,,20261005,rough: small polygons weigh heavily
+"class, by number of polygons (weights 1/area; rough)",still open,,,,0.0,,,20261005,rough: small polygons weigh heavily
+"class, by number of polygons (weights 1/area; rough)",unclear,,,,24.0,,,20261005,rough: small polygons weigh heavily
+before land type (draws open in the before image),cultivated field,14,14,112676,35.9,22.7,51.6,20261005,share of the draws in this group (PPS on area); Wilson 95% interval
+before land type (draws open in the before image),fallow field,9,9,65104,23.1,12.6,38.3,20261005,share of the draws in this group (PPS on area); Wilson 95% interval
+before land type (draws open in the before image),orchard,2,2,1532,5.1,1.4,16.9,20261005,share of the draws in this group (PPS on area); Wilson 95% interval
+before land type (draws open in the before image),grass-scrub-garrigue,14,13,155743,35.9,22.7,51.6,20261005,share of the draws in this group (PPS on area); Wilson 95% interval
+before land type (draws open in the before image),trees,0,0,0,0.0,0,9.0,20261005,share of the draws in this group (PPS on area); Wilson 95% interval
+before land type (draws open in the before image),other,0,0,0,0.0,0,9.0,20261005,share of the draws in this group (PPS on area); Wilson 95% interval
+before land type (draws open in the before image),fields (cultivated + fallow),23,23,,59.0,43.4,72.9,20261005,share of the draws in this group (PPS on area); Wilson 95% interval
+before land type (draws open in the before image),farmland (fields + orchards),25,25,,64.1,48.4,77.3,20261005,share of the draws in this group (PPS on area); Wilson 95% interval
+confirmed draws: state on 4 Sep 2018,open,26,25,,89.7,,,20261005,share of the draws in this group (PPS on area)
+confirmed draws: state on 4 Sep 2018,partly cleared,3,3,,10.3,,,20261005,share of the draws in this group (PPS on area)
+confirmed draws: state on 4 Sep 2018,mostly cleared or built,0,0,,0.0,,,20261005,share of the draws in this group (PPS on area)
+unclear draws: state on 4 Sep 2018,open,1,1,,14.3,,,20261005,share of the draws in this group (PPS on area)
+unclear draws: state on 4 Sep 2018,partly cleared,0,0,,0.0,,,20261005,share of the draws in this group (PPS on area)
+unclear draws: state on 4 Sep 2018,mostly cleared or built,6,6,,85.7,,,20261005,share of the draws in this group (PPS on area)
+confirmed draws: mostly grey by 6 May 2023,yes,22,21,,75.9,,,20261005,share of the draws in this group (PPS on area)
+confirmed draws: mostly grey by 6 May 2023,partly,4,4,,13.8,,,20261005,share of the draws in this group (PPS on area)
+confirmed draws: mostly grey by 6 May 2023,no,3,3,,10.3,,,20261005,share of the draws in this group (PPS on area)
+rule,confirmed and mostly grey by 6 May 2023 (article's 2018-2023),22,21,,55.0,39.8,69.3,20261005,share of draws = estimated share of Amphora's area (PPS on area); Wilson 95% interval
+imagery,draws whose before/after dates bracket mid-2018 to 2024+,40,39,,100.0,,,20261005,
+imagery,acquired: before 20150726-20160828; context 20180904; by 2023 20230506; after 20250612-20250925,40,39,,,,,20261005,

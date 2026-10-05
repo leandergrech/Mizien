@@ -5,7 +5,7 @@ Uses the shared design in `tools/mizien_report.py` (same look as CC-001).
 ```
 pip install reportlab matplotlib pillow pyyaml   # plus poppler-utils for the PNG
 python calc.py           # recompute every figure -> data/cc-016/checks.csv
-python figures.py        # out/fig1_uptake.png, out/fig2_calls.png
+python figures.py        # out/fig1_uptake.png, out/fig2_calls.png, out/fig3_scope.png (report Figure 1 from v1.2)
 python build_report.py   # out/report.pdf
 python build_flyer.py    # out/flyer.pdf, out/flyer.png
 ```

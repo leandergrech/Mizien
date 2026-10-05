@@ -18,21 +18,21 @@ build_flyer(Flyer(
     verdict="Misleading", verdict_right=["Accurate numbers,", "incomplete picture."],
     cards=[("−44%", GREEN, "The figure is right",
             "Eurostat data reproduce the per-person fall (EU: −34%). Power-sector emissions fell 63%."),
-           ("+41%", ORANGE, "Population growth since 2005",
-            "About half the per-person fall is more people, not fewer emissions. In total tonnes Malta cut 27%, the EU 33%."),
-           ("+49%", RED, "Transport since 2005",
-            "Buildings and air-conditioning gases rose too: the sectors closest to households went up, not down."),
-           ("+41%", RED, "Target-sector emissions, 2024",
-            "Emissions in the sectors under Malta’s binding 2030 target (−19%) were 41% above 2005 in 2024."),
+           ("3rd / 20th", ORANGE, "Per person vs in total",
+            "Malta’s cut ranks 3rd of 27 per person, 20th in total: population grew 41%. In tonnes, −27% vs EU −33%."),
+           ("+30 pts", RED, "Over the yearly limit, 2024",
+            "Target-sector emissions +41% vs a limit of +11%; over every year since 2022. A 2021 surplus has covered it so far."),
            ("49 pts", RED, "Projected 2030 gap",
-            "Even with planned measures the Commission projects +30%: the EU’s largest gap in percentage points.")],
-    fair="Cutting power-sector emissions by almost two-thirds was a real achievement, and per-person figures are a "
-         "standard indicator. This check is about what the press release leaves out.",
+            "Even with planned measures the Commission projects +30% against −19%: the EU’s largest gap in percentage points."),
+           ("+49%", RED, "Transport since 2005",
+            "Buildings and air-conditioning gases rose too, in total. Per person, the target sectors are flat, not falling.")],
+    fair="Cutting power-sector emissions by almost two-thirds was real. Per person, target-sector emissions are "
+         "flat (2.50 t to 2.52 t, our estimate), and no compliance shortfall has arisen yet.",
     asks=["The source and scope of the 44% and 34% figures.",
           "What “40% by 2030” covers: total or target sectors?",
           "A dated plan taking target-sector emissions from +41% to −19%.",
           "How much Malta expects to rely on buying allocations."],
-    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Draft pending right of reply from the "
+    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  Draft pending right of reply from the "
            "Climate Action Authority and the Environment Ministry",
     pdf_title="Claim Check 003 – Emissions down 44% per person, or off track for 2030?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

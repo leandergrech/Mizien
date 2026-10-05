@@ -18,21 +18,21 @@ build_flyer(Flyer(
     verdict="Largely supported", verdict_right=["Right in direction,", "size of effect unproven."],
     cards=[("Grade B", GREEN, "Research agrees",
             "Peer-reviewed studies: where supply is held back, demand turns into higher prices."),
-           ("+31%", GREEN, "Huge demand shock",
-            "Malta’s population grew 31% in 2015–2025; the EU’s grew 2%."),
-           ("+34%", ORANGE, "Prices still rose faster",
-            "Real house prices: Malta +34%, EU +25% (2015–2025; Malta’s 2025 figure provisional)."),
+           ("+31%", ORANGE, "The EU’s largest demand shock",
+            "Malta’s population grew 31% in 2015–2025, the most in the EU (EU +2%)."),
+           ("16th", GREEN, "Price rise below most states",
+            "Real house prices +34% (provisional): above the EU aggregate (+25%), below the median state (+41%)."),
+           ("+53%", RED, "Rents rose fast",
+            "Rents paid by tenants rose 53% in 2015–2025, against 21% for the EU (8th of 27)."),
            ("6.0%", RED, "Affordability worsened",
             "People overburdened by housing costs: 1.1% (2015) to 2.9% (2022); about 6% since a 2023 "
-            "series break (EU 7.7%)."),
-           ("27.5%", ORANGE, "Not all homes are lived in",
-            "Share of dwellings that were not a main residence in the 2021 census.")],
-    fair="Overcrowding in Malta (4.7%) is a quarter of the EU rate. This check covers prices only, not the "
-         "environmental cost of the permits.",
+            "series break (EU 7.7%).")],
+    fair="Overcrowding in Malta (4.7%) is a quarter of the EU rate, and 27.5% of dwellings were not a main home in "
+         "2021. This check covers prices only, not the environmental cost of the permits.",
     asks=["Completions, not only approvals.",
           "How many new units become main homes.",
           "Any Malta estimate of the price effect.",
           "The source of the 91,000 figure."],
-    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Right of reply: Planning Authority (not yet sent)",
+    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  No right of reply needed",
     pdf_title="Claim Check 013 – Do permits keep prices in check?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

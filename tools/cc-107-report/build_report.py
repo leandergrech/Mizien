@@ -27,10 +27,10 @@ S.append(key_points([
      "Offsetting those emissions with new forest would need 4.9–6.3 times Gozo’s land area at a measured semi-arid "
      "rate (1.5–8.5 times across our wider range). The PN’s own text relies on cutting emissions first; the "
      "“through afforestation” version is a news summary."),
-    ("Verdict: not substantiated (moderate confidence).",
+    ("Pledge label: not measurable (as of 5 October 2026).",
      "A pledge is not a statement of fact, so it is not false; as worded it cannot be shown to be achieved or missed."),
 ]))
-S += [Spacer(1, 4 * mm), VerdictMeter(2), Spacer(1, 3 * mm),
+S += [Spacer(1, 4 * mm), VerdictMeter(0, scale="pledge"), Spacer(1, 3 * mm),
       tiles([("118–154 kt", GREY, "Gozo energy CO₂ a year, 2016–20 (EU islands study)"),
              ("~157 kt", GREY, "Our population-based estimate (no official figure)"),
              ("4.9–6.3×", RED, "Gozo’s area needed as new forest to offset that (measured rate)"),
@@ -39,10 +39,11 @@ S += [Spacer(1, 4 * mm), VerdictMeter(2), Spacer(1, 3 * mm),
       up_down("A Gozo emissions inventory with a stated boundary and a costed 2040 pathway showing the shares from "
               "cuts, afforestation and offsets.",
               "A net-zero claim for Gozo that relies on unspecified offsets, or leaves out ferries or imported "
-              "electricity without saying so."),
+              "electricity without saying so.",
+              heads=("What would make it measurable", "What would count against it")),
       Spacer(1, 5 * mm)]
 S += toc([("1", "The pledge and what we could verify"), ("2", "Method"), ("3", "What “net zero” would have to mean"),
-          ("4", "The arithmetic"), ("5", "Testing the pledge"), ("6", "Verdict and requests for evidence"),
+          ("4", "The arithmetic"), ("5", "Testing the pledge"), ("6", "Pledge label and requests for evidence"),
           ("7", "Limitations")])
 S.append(PageBreak())
 
@@ -149,14 +150,14 @@ S.append(std_table([
 ], [46 * mm, 20 * mm, 70 * mm, 34 * mm], valign="MIDDLE"))
 
 # ================================================================== 6
-S += [Spacer(1, 6 * mm), SectionHeading(6, "Verdict and requests for evidence"),
-      verdict_box("Not substantiated", "A plan promised without a baseline, boundary or pathway; afforestation alone "
-                  "would need 4.9–6.3 times Gozo’s area. Confidence: moderate."), Spacer(1, 4 * mm)]
+S += [Spacer(1, 6 * mm), SectionHeading(6, "Pledge label and requests for evidence"),
+      verdict_box("Not measurable", "As of 5 October 2026. A plan promised without a baseline, boundary or pathway; "
+                  "afforestation alone would need 4.9–6.3 times Gozo’s area."), Spacer(1, 4 * mm)]
 S.append(P("<b>Why.</b> The pledge promises a plan for an outcome whose starting point and boundary are not defined, "
            "and the widely reported version (afforestation) is physically impossible on Gozo’s land area. A pledge is "
-           "not a statement of fact, so we do not call it false; we rate it <i>Not substantiated</i> because, as "
-           "worded, it cannot be shown to be achieved or missed."))
-S.append(P("<b>What this verdict does not say.</b> It does not say the goal is undesirable, or that anyone acted in "
+           "not a statement of fact, so we do not call it false. We label it <i>Not measurable</i>: as worded, it "
+           "cannot be shown to be achieved or missed. Pledges get one of six labels rather than a verdict (Appendix A)."))
+S.append(P("<b>What this label does not say.</b> It does not say the goal is undesirable, or that anyone acted in "
            "bad faith. A checkable version would read: <i>“Gozo’s emissions, on [boundary], were [X] t in [year]; by "
            "2040 we will cut them to [Y] t and offset the rest by [means].”</i>"))
 S.append(CondPageBreak(45 * mm))
@@ -170,7 +171,7 @@ S.append(requests_list([
 S += [Spacer(1, 4 * mm),
       callout([P("RIGHT OF REPLY", tag),
                P("Before wider circulation this draft should be sent to the Partit Nazzjonalista with a fixed deadline "
-                 "(suggested 14 days). Responses will be appended and the verdict revisited.", small)],
+                 "(suggested 14 days). Responses will be appended and the label revisited.", small)],
               bg=AMBER_PALE, bar=AMBER)]
 
 # ================================================================== 7
@@ -208,7 +209,8 @@ S += references([
 
 S.append(PageBreak())
 S += appendix_a("A experiment · B observational study with a control or gradient · C review, guidance or "
-                "official statistics · D assertion or anecdote. Our own arithmetic is an order-of-magnitude estimate.")
+                "official statistics · D assertion or anecdote. Our own arithmetic is an order-of-magnitude estimate.",
+                pledges=True)
 S += [Spacer(1, 5 * mm)]
 S += revision_log([("1.0", "5 Oct 2026", "First issue as a separate check. The analysis first appeared as pledge 2 of "
                                          "Claim Check 011 (v1.0, 2 Oct 2026; v1.1, 5 Oct 2026). New in this issue: the "
@@ -216,7 +218,12 @@ S += revision_log([("1.0", "5 Oct 2026", "First issue as a separate check. The a
                                          "baseline and puts the forest needed at 4.9–6.3 times Gozo’s area at the "
                                          "measured rate (the 1.5–8.5 times range is kept). Verdict as in Claim Check "
                                          "011: not substantiated, moderate confidence. Draft pending right of reply "
-                                         "from the Partit Nazzjonalista.")])
+                                         "from the Partit Nazzjonalista."),
+                   ("1.1", "5 Oct 2026", "Maintainer decision (5 Oct 2026): pledges get one of six pledge labels "
+                                         "instead of a verdict (methodology, Pledges). This pure pledge check is now "
+                                         "labelled “Not measurable” as of 5 October 2026 in place of the verdict "
+                                         "“Not substantiated” (moderate); the analysis and numbers are unchanged. "
+                                         "Appendix A lists the pledge labels.")])
 
 build_report(Report(
     number="107", out=str(FIG / "report.pdf"), kicker="Election pledges, computed",
@@ -225,11 +232,11 @@ build_report(Report(
     quote_lines=["“A clear and realistic plan so that by", "2040 Gozo becomes a Net-Zero Island.”"], quote_size=15,
     attribution="Partit Nazzjonalista, programme Nifs Ġdid 2026, chapter Għawdex (our translation).",
     context="News summaries: Gozo would become net zero “through afforestation”.",
-    verdict="Not substantiated", verdict_note="No baseline, boundary or pathway published",
-    footer_lines=["Version 1.0  ·  5 October 2026",
+    verdict="Not measurable", verdict_note="As of 5 Oct 2026: no baseline, boundary or pathway published",
+    footer_lines=["Version 1.1  ·  5 October 2026",
                   "Status: draft for right of reply (Partit Nazzjonalista)",
                   "Prepared from public sources and open data. No site visits.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="A net-zero Gozo by 2040 – PN programme 2026", version="1.0", date="5 October 2026",
+    running_head="A net-zero Gozo by 2040 – PN programme 2026", version="1.1", date="5 October 2026",
     pdf_title="A net-zero Gozo by 2040? Claim Check 107",
     pdf_subject="Tests the Nationalist Party's 2026 pledge of a plan for a net-zero Gozo by 2040",
     story=S))

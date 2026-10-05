@@ -1,7 +1,9 @@
 # Automation
 
-Scheduled cloud routines (Claude Code) work on this repository. Their prompts live in the routines themselves
-(claude.ai/code/routines); this file records the conventions they share. Rules in `CLAUDE.md` apply in full.
+Scheduled cloud routines (Claude Code) work on this repository. The claim-check workers' instructions live in
+`worker-routine.md` (since 5 Oct 2026); each worker routine's own prompt (claude.ai/code/routines) only names its
+letter and points to that file. The intake routine's prompt still lives in the routine. This file records the
+conventions they share. Rules in `CLAUDE.md` apply in full.
 
 ## Pipeline
 

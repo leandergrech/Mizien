@@ -42,27 +42,42 @@ claim:
     url: https://www.infrastructuremalta.com/news/first-grand-harbour-clean-air-project-frequency-converters-place
     note: Read 5 Oct 2026. Repeats the scoped 90% ("cutting 90% of their air pollution"), EUR 49.9m and the
       per-liner cuts.
+  - title: 'Sustainable cruising: the Cruise Division of MSC Group and Chantiers de l''Atlantique mark a major step
+      forward with the delivery of MSC World Europa'
+    publisher: MSC Cruises
+    date: 24 Oct 2022
+    url: https://www.mscpressarea.com/en_US/press-releases/sustainable-cruising-the-cruise-division-of-msc-group-and-chantiers-de-l-atlantiq/
+    note: 'Read 5 Oct 2026 (v1.2). Owner''s description of the ship that made 35 of the 67 connections: "the world''s
+      largest LNG-powered cruise ship"; five Wärtsilä 14V 46DF dual-fuel engines that run on LNG or low-sulphur
+      marine gasoil; LNG "nearly eliminates" SOx and fine particles vs standard marine fuels (company claim); shore
+      power connectivity. MSC''s release of 12 Apr 2023 lists Valletta among its 2023 ports. Fuel used at berth in
+      Valletta not known.'
   quote: This initiative promises to slash 90% of air pollution in the Grand Harbour.
 counter_evidence: 'Connection is voluntary until 1 Jan 2030 (Regulation (EU) 2023/1805 Art. 6); Transport Malta:
   connecting ''remains the prerogative of the shipping line''. Transport Malta FOI records (via Amphora Media):
-  67 of 373 cruise berths (18%) plugged in from Jul 2024 to Jul 2025, 9% of berth time; MSC World Europa made 35
-  of the 67; no stay of 2-4 days plugged in. Cruise calls rose from 357 (2024) to 385 (2025; calendar years, while
+  67 of 373 cruise berths (18%) plugged in from Jul 2024 to Jul 2025, 9% of berth time; 306 berths not plugged in;
+  MSC World Europa made 35 of the 67 (35 of its 51 calls; all other ships 32 of 322, 10%); no stay of 2-4 days
+  plugged in. MSC World Europa is LNG-powered (dual-fuel LNG / low-sulphur marine gasoil, MSC Cruises 2022), so
+  when it runs on LNG the SOx and PM saving from plugging it in is smaller than the per-liner figures. Cruise calls rose from 357 (2024) to 385 (2025; calendar years, while
   uptake runs Jul-Jul). Infrastructure Malta''s own 2020-2023 pages scope the 90% to the pollution cruise liners and
   Ro-Ro ships produce, with per-liner cuts on shore power of NO2 -93%, PM -92.6%, SO2 -99.6%, CO2 -39.6% (study not
   cited); the 2023 project page dropped that scope. Research context: hotelling is >90% of cruise CO2 in port
   (Mocerino et al. 2026); manoeuvring emissions remain (Gagic et al. 2022). Cost stated as EUR 33m (launch), 37m
   (phase 1) and 49.9m (whole project). No harbour air-quality study before and after.'
 tests: Transport Malta connection records (FOI, via Amphora Media); Valletta Cruise Port traffic; FuelEU Maritime
-  Art. 6; peer-reviewed cruise emission inventories.
+  Art. 6; peer-reviewed cruise emission inventories; MSC Cruises' ship description (v1.2).
 why_low_hanging: 'Done: Claim Check 016 report and flyer.'
 tags:
 - Conditional-turned-unconditional
 tags_provisional: false
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: Medium
-caveats: Right of reply to Infrastructure Malta and Transport Malta not yet sent. Connection figures second-hand
+caveats: 'Right of reply to Infrastructure Malta and Transport Malta not yet sent. Connection figures second-hand
   (FOI reply not public); no later data than Jul 2025; no air-quality measurement either way. The per-liner cuts
-  are Infrastructure Malta's own estimates. v1.1 (5 Oct 2026) made corrections only; verdict unchanged.
+  are Infrastructure Malta''s own estimates. Which fuel MSC World Europa burned at berth in Valletta is not known.
+  v1.2 (5 Oct 2026) added a figure of the 373 berths and the 90% per connected ship vs the 9% harbour-wide, and the
+  ship''s fuel; verdict and confidence unchanged. Maintainer decision (5 Oct 2026): sub-claim A rated Largely
+  supported (was Plausible).'
 right_of_reply:
   sent: null
   deadline: null
@@ -73,11 +88,12 @@ evidence_shown:
 - Regulation (EU) 2023/1805, Article 6
 - Transport Malta OPS connection records, Jul 2024-Jul 2025, as published by Amphora Media (data/cc-016/)
 - Valletta Cruise Port traffic figures 2024-2025
+- MSC Cruises press release of 24 Oct 2022 (MSC World Europa's dual-fuel LNG engines)
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-05'
 location:
   place: Valletta Waterfront cruise terminal, Floriana
@@ -89,9 +105,9 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-016A
     text: "Shore power cuts a connected ship’s emissions at berth by about 90%"
-    finding: "Infrastructure Malta’s per-liner figures: NO2 −93%, PM −92.6%, SO2 −99.6%, CO2 −39.6% [10, 11]; consistent with research [7, 9]. Underlying study not cited."
-    rating: "Plausible"
-    tone: green
+    finding: "True for NOx, PM and SOx per connected liner (NO2 −93%, PM −92.6%, SO2 −99.6%) [10, 11]; CO2 falls only about 40%; consistent with research [7, 9]. Infrastructure Malta’s own study is not public."
+    rating: "Largely supported"
+    tone: lime
   - id: CC-016B
     text: "The project slashes 90% of air pollution in the Grand Harbour"
     finding: "At most about 9% of at-berth cruise emissions in year one; other sources and manoeuvring untouched; no harbour measurement."
@@ -120,3 +136,7 @@ history:   # research log: the date each step of the research was done (not when
     version: "1.1"
     correction: true   # this version corrects errors in an earlier one
     note: "Corrections: (1) “No source gives the basis of the 90%” / “basis not published” → Infrastructure Malta’s 2020 and 2022 pages give it, scoped to the pollution ships produce, with per-liner cuts (NO2 −93%, PM −92.6%, SO2 −99.6%, CO2 −39.6%) [10, 11]; the 2023 page dropped the scope (Section 1). (2) Section 3: the 90% inferred from hotelling’s share of CO2 [7] → Infrastructure Malta’s own per-pollutant figures, research kept as context. (3) Sub-claim D “Consistent” → “Figures vary”: EUR 33m (2024 launch), 37m (phase 1) and 49.9m (whole project); the TL;DR no longer attributes EUR 33m to the project page, which gives no cost. (4) TL;DR point 4 “extra calls roughly cancel the emissions saved” → states that calls are calendar years, uptake July–July and shore power was available from July 2024. (5) 2019 calls: also given by Infrastructure Malta citing the NSO. ‘What would move it down’: removed the clause saying no scoped wording was found. Verdict and confidence unchanged."
+  - date: 2026-10-05
+    step: version
+    version: "1.2"
+    note: "Upgrade: (1) New Figure 1: the 373 berths split into 35 plugged in by MSC World Europa, 32 by all other ships and 306 not plugged in, beside the 90% per connected liner and the 9% of berth time plugged in (counts re-read in [4] and reconciled; second-hand); former Figures 1 and 2 renumbered 2 and 3. (2) MSC World Europa is LNG-powered (dual-fuel LNG / low-sulphur marine gasoil), from its owner’s release [12]: Section 3, Q1 and limitations. (3) Plug-in rates added: MSC World Europa 35 of 51 calls, all other ships 32 of 322. (4) TL;DR point 3, a tile (306 berths not plugged in), Q2 and flyer updated. Verdict and confidence unchanged. Maintainer decision (5 Oct 2026): sub-claim A rated Largely supported (was Plausible); its evidence text and the Q1 label updated to match."

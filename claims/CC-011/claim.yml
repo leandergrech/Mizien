@@ -3,8 +3,8 @@ title: Ten minutes' walk to green space
 category: Governance & Promises
 subtopic: Manifestos & pledges
 status: Drafted
-verdict: Not substantiated
-verdict_confidence: Moderate
+verdict: null   # a pure pledge check: the pledge label below is shown instead of a verdict
+verdict_confidence: null
 claim:
   text: 'Labour manifesto 2026, priority 19: every person no more than ten minutes'' walk from an open or green
     space. (Until v1.1 this check also covered the PN''s net-zero Gozo pledge, now CC-107.)'
@@ -37,7 +37,7 @@ why_low_hanging: 'Done: Claim Check 011 report and flyer (v1.2: split; the PN Go
 tags:
 - Promise-without-baseline
 tags_provisional: false
-priority: Done (v1.2)
+priority: Done (v1.3)
 data_readiness: High
 caveats: Draft pending right of reply (Partit Laburista / Government). Access analysis is a straight-line
   screening estimate. Manifesto translation is ours. The news summary narrowed the pledge to green space; the party's
@@ -51,7 +51,7 @@ outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.2'
+version: '1.3'
 last_reviewed: '2026-10-05'
 location:
   place: Parliament House, Valletta
@@ -82,6 +82,17 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 99.9%
   caption: of residents already near open or green space
+pledge:   # pledge label (methodology/verdict-scale.md, Pledges); shown instead of the verdict
+  status: Not measurable
+  as_of: '2026-10-05'
+  made_by: [pl]
+  made_on: 2026-05
+  vehicle: 'Labour manifesto 2026 (Int Malta), priority 19'
+  deadline: null
+  target: Every person no more than ten minutes' walk from an open or green space
+  note: No definition of "open or green space", no baseline and no date. 99.7-99.9% of residents are already within ten
+    minutes of some open space on a broad reading; 55-68% for parks of at least 0.5 ha. Labour won the 30 May 2026
+    election, so the pledge is a government commitment for the 2026 legislature.
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-02
     step: version
@@ -96,3 +107,7 @@ history:   # research log: the date each step of the research was done (not when
     step: version
     version: "1.2"
     note: "Split at the maintainer’s request: this check now covers Labour’s ten-minute pledge only, under the title “Ten minutes’ walk to green space”. The PN’s net-zero Gozo pledge and its arithmetic are now Claim Check 107. Labour’s analysis and numbers are unchanged; references renumbered. Verdict and confidence unchanged."
+  - date: 2026-10-05
+    step: version
+    version: "1.3"
+    note: "Maintainer decision (5 Oct 2026): pledges get one of six pledge labels instead of a verdict (methodology, Pledges). This pure pledge check is now labelled “Not measurable” as of 5 October 2026 in place of the verdict “Not substantiated” (moderate); the analysis and numbers are unchanged. Appendix A lists the pledge labels."

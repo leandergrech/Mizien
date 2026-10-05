@@ -53,6 +53,29 @@ add("Project cost figures stated", " / ".join(f"{U[k]:g}" for k in ["Project cos
     "Project cost, phase 1 (budget)", "Project cost, whole Grand Harbour Clean Air Project"]), "EUR million",
     "TVM 10 Jul 2024; IM 2020; IM 2020-2022", "launch / phase 1 budget / whole project: figures vary by phase and date")
 
+# ---- v1.2: the berths split for Figure 1 (counts re-read in Amphora Media on 5 Oct 2026; second-hand)
+d1, d2, d4 = (U["Berths of 1 day or less"], U["Berths of 1-2 days"], U["Berths of 2-4 days"])
+add("Berths by length of stay add up to the total", f"{d1:g} + {d2:g} + {d4:g} = {d1 + d2 + d4:g}", "berths",
+    "Amphora Media", "matches 373" if d1 + d2 + d4 == berths else "DOES NOT MATCH")
+c1 = round(d1 * U["Berths of 1 day or less connected"] / 100)
+c2 = round(d2 * U["Berths of 1-2 days connected"] / 100)
+add("Connected berths implied by the shares by length of stay", f"{c1} + {c2} + 0 = {c1 + c2}", "berths",
+    "calculated from Amphora Media shares",
+    f"matches {int(conn)} connections; {c2} of {d2:g} is {100 * c2 / d2:.1f}% (article: "
+    f"{U['Berths of 1-2 days connected']:g}%)")
+msc = U["Connections by MSC World Europa"]
+msc_b = msc + U["MSC World Europa berths not connected"]
+add("Cruise berths not connected, Jul 2024-Jul 2025", int(berths - conn), "berths", "calculated",
+    f"{int(berths)} - {int(conn)}")
+add("Connected berths by ship: MSC World Europa / other ships", f"{int(msc)} / {int(conn - msc)}", "berths",
+    "Transport Malta FOI via Amphora", "MSC World Europa is LNG-powered (dual-fuel LNG / low-sulphur MGO; MSC Cruises)")
+add("Plug-in rate: MSC World Europa / all other ships", f"{100 * msc / msc_b:.0f} / "
+    f"{100 * (conn - msc) / (berths - msc_b):.0f}", "% of berths", "calculated",
+    f"{int(msc)} of {int(msc_b)}; {int(conn - msc)} of {int(berths - msc_b)}")
+add("Harbour-wide cut in at-berth cruise emissions at the per-liner NO2 cut, year one (indicative)",
+    round(t * U["Per-liner cut on shore power: nitrogen dioxide"] / 100, 1), "%", "calculated",
+    "9% of berth time x 93%; same mix of ships assumed")
+
 with open(D / "checks.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\r\n")
     w.writeheader()

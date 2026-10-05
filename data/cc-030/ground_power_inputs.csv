@@ -1,0 +1,11 @@
+item,value,unit,source,access_note,retrieved
+Mobile diesel GPU fuel consumption (Zurich Airport average 2004),7.74,kg diesel per hour,"Padhra (2018) accepted manuscript, section 2.2, citing Fleuti (2006) Ground power unit (GPU) exhaust emissions at Zurich Airport",Second-hand (Fleuti 2006 not read); one airport and one year; indicative only,2026-10-05
+APU fuel flow in single-cycle events (duration-weighted average),103.2,kg jet fuel per hour,"Padhra (2018) accepted manuscript, section 3.3",Full text read (accepted manuscript); 25195 turnarounds of short-haul narrow-body jets at 125 European airports in June 2015,2026-10-05
+APU fuel flow in the arrival cycle,99.6,kg jet fuel per hour,"Padhra (2018) accepted manuscript, section 3.3",Full text read (accepted manuscript),2026-10-05
+APU fuel flow in the departure cycle,104.4,kg jet fuel per hour,"Padhra (2018) accepted manuscript, section 3.3",Full text read (accepted manuscript),2026-10-05
+APU switched off between arrival and departure when external power was used (double-cycle events),22.467,minutes,"Padhra (2018) accepted manuscript, section 3.4 (22 min 28 s)",Full text read (accepted manuscript),2026-10-05
+Diesel (gas/diesel oil) net calorific value,43.0,TJ per Gg,"IPCC 2006 Guidelines for National Greenhouse Gas Inventories, Vol. 2, Ch. 1, Table 1.2",Default value,2026-10-05
+Diesel (gas/diesel oil) CO2 emission factor,74100,kg CO2 per TJ,"IPCC 2006 Guidelines for National Greenhouse Gas Inventories, Vol. 2, Ch. 1, Table 1.4",Default value,2026-10-05
+Jet A-1 CO2 factor used by MIA for aircraft and APU,3.163,kg CO2e per kg fuel,MIA Sustainability Report 2025 Scope 3 Category 11 method (pp.96-97),Read in full,2026-10-05
+Malta grid electricity factor used by MIA (Enemalta residual mix),0.389,kg CO2 per kWh,MIA Sustainability Report 2025 GRI 102 note (p.125),Read in full,2026-10-05
+Aircraft movements 2025,65470,movements,"MIA company announcement 461/2026, Full-Year Traffic Update, 14 Jan 2026",Read in full; a turnaround is taken as one arrival plus one departure,2026-10-05

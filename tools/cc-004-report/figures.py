@@ -81,6 +81,74 @@ def fig2():
     fig.savefig(OUT / "fig2_routes.png", bbox_inches="tight", facecolor="white")
 
 
+NAMES = {"AT": "Austria", "BE": "Belgium", "BG": "Bulgaria", "CY": "Cyprus", "CZ": "Czechia", "DE": "Germany",
+         "DK": "Denmark", "EE": "Estonia", "EL": "Greece", "ES": "Spain", "FI": "Finland", "FR": "France",
+         "HR": "Croatia", "HU": "Hungary", "IE": "Ireland", "IT": "Italy", "LT": "Lithuania", "LU": "Luxembourg",
+         "LV": "Latvia", "MT": "Malta", "NL": "Netherlands", "PL": "Poland", "PT": "Portugal", "RO": "Romania",
+         "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia", "EU27_2020": "EU-27"}
+
+
+def fig3():
+    """EU-27: municipal recycling rate (latest year) and change since 2019, Malta highlighted."""
+    e = defaultdict(dict)
+    for r in csv.DictReader(open(ROOT / "data" / "cc-004" / "eurostat_cei_wm011_eu27.csv")):
+        e[r["geo"]][int(r["year"])] = float(r["value"])
+    rows = sorted(e, key=lambda g: e[g][max(e[g])])  # lowest at the bottom of the chart
+    yy = range(len(rows))
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(8.2, 6.6), dpi=220, sharey=True,
+                                 gridspec_kw={"width_ratios": [1.7, 1], "wspace": 0.08})
+
+    def col(g, latest_year):
+        if g == "MT":
+            return RED
+        if g == "EU27_2020":
+            return BLUE
+        return SAGE if latest_year == 2024 else "#C9D0D4"
+
+    labels = []
+    for i, g in enumerate(rows):
+        y = max(e[g])
+        a1.barh(i, e[g][y], height=0.66, color=col(g, y), zorder=2)
+        a1.text(e[g][y] + 0.7, i, f"{e[g][y]:.1f}", va="center", fontsize=7.8, zorder=3,
+                color=SLATE, fontweight="bold" if g in ("MT", "EU27_2020") else "normal",
+                bbox=dict(boxstyle="square,pad=0.12", fc="white", ec="none"))
+        labels.append(NAMES[g] + ("" if y == 2024 else f" ({y})"))
+        if 2019 in e[g] and 2024 in e[g]:
+            d = e[g][2024] - e[g][2019]
+            a2.barh(i, d, height=0.66, color=col(g, 2024))
+            a2.text(d + (0.35 if d >= 0 else -0.35), i, f"{d:+.1f}".replace("-", "\u2212"), va="center", ha="left" if d >= 0 else "right",
+                    fontsize=7.8, color=SLATE, fontweight="bold" if g in ("MT", "EU27_2020") else "normal")
+        else:
+            a2.text(0.35, i, "no 2024 data", va="center", fontsize=6.8, color=GREY, style="italic")
+    a1.set_yticks(list(yy))
+    a1.set_yticklabels(labels, fontsize=8.6)
+    for t, g in zip(a1.get_yticklabels(), rows):
+        if g in ("MT", "EU27_2020"):
+            t.set_fontweight("bold")
+            t.set_color(RED if g == "MT" else BLUE)
+    a1.axvline(55, color=GREEN, lw=1.6, ls="--", zorder=1)
+    a1.text(55, len(rows) - 0.25, "2025 target 55%", fontsize=8, color=GREEN, fontweight="bold", ha="center",
+            va="bottom", clip_on=False)
+    a1.set_xlim(0, 75)
+    a1.set_ylim(-0.7, len(rows) - 0.3)
+    a1.set_xlabel("Municipal waste recycled, %, 2024 (or 2023 where 2024 is not yet published)", fontsize=8)
+    a1.set_title("Recycling rate", fontsize=9.5, color=GREEN, loc="left", fontweight="bold", pad=14)
+    a2.axvline(0, color=GREY, lw=0.8)
+    a2.set_xlim(-9, 15)
+    a2.set_xlabel("Change 2019–2024, percentage points", fontsize=8)
+    a2.set_title("Change since 2019", fontsize=9.5, color=GREEN, loc="left", fontweight="bold", pad=14)
+    for a in (a1, a2):
+        a.tick_params(axis="x", labelsize=7.6)
+        a.tick_params(axis="y", length=0)
+        a.grid(axis="x", color="#E3E7E5", lw=0.6)
+        a.set_axisbelow(True)
+    fig.text(0.01, 0.045, "Source: Eurostat cei_wm011 (dataset updated 30 Mar 2026; retrieved 5 Oct 2026). Grey bars: "
+             "latest value is for 2023.\nMalta’s rise is the 4th-largest of the 20 states with both years.",
+             fontsize=7.4, color=GREY, va="top")
+    fig.savefig(OUT / "fig3_eu27.png", bbox_inches="tight", facecolor="white")
+
+
 fig1()
 fig2()
+fig3()
 print("figures in", OUT)

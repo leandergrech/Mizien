@@ -10,7 +10,7 @@ OUT = HERE / "out"
 build_flyer(Flyer(
     number="017", out=str(OUT / "flyer.pdf"), kicker="Planning and the sea, Birżebbuġa",
     title_lines=["Reclaiming land", "outside the Freeport"],
-    subtitle="A Budget promise, tested against satellite images, protected-area maps and research",
+    subtitle="A Budget promise, tested against satellite images, seabed and protected-area maps and research",
     quote_lines=["“The Government is preparing to launch a large-scale", "land reclamation project outside the Freeport…”"],
     attribution="Clyde Caruana, Minister for Finance, Budget Speech 2026, 27 October 2025",
     context="“…perimeter next year.” In 2019: a seabed study found “environmentally safe” sites.",
@@ -22,17 +22,17 @@ build_flyer(Flyer(
             "No site, size, cost, fill source or assessment for the large project."),
            ("7 yrs", ORANGE, "Seabed study unpublished",
             "Promised for public consultation in 2019; still not public."),
-           ("0.4 km", ORANGE, "To protected sites",
-            "From the new land to a 256 km² marine bird area; cliff sites 0.5 km."),
-           ("−34%", RED, "Mediterranean seagrass",
-            "Loss of Posidonia meadows across the whole Mediterranean in 50 years (research), not a Malta figure.")],
-    fair="Moving industry away from homes could help residents. The plan may prove sound once the study and a site "
-         "are published.",
+           ("72 ha", ORANGE, "Mapped seagrass nearby",
+            "Posidonia mapped within 1 km of the new land (coarse 2016 map); a marine bird area 0.4 km away."),
+           ("Stable", GREEN, "Malta’s seagrass overall",
+            "Malta reports its Posidonia beds favourable and stable; the 34% loss is Mediterranean-wide.")],
+    fair="Moving industry away from homes could help residents, and Malta’s seagrass is in good condition overall. "
+         "The plan may prove sound once the study and a site are published.",
     asks=["The ERA seabed study.",
           "Site, size and fill source.",
           "Any environmental screening.",
           "Which activities would move."],
-    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Right of reply: Finance and Environment ministries "
+    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  Right of reply: Finance and Environment ministries "
            "(not yet sent)",
     pdf_title="Claim Check 017 – Reclaiming land outside the Freeport"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

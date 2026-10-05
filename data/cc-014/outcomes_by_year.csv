@@ -1,0 +1,8 @@
+year,complaints,confirmed_share,confirmed,sanctioning,removed,removed_how,persuasion,notice,source
+2018,2560,50,1280,541,593,derived as the remainder of confirmed cases,0,146,PA Annual Report 2018
+2019,3134,51,1598,737,824,read,0,141,PA Annual Report 2019
+2020,3313,55,1822,818,820,derived from stated % of confirmed,0,145,PA Annual Report 2020
+2021,3192,59,1883,663,885,derived from stated % of confirmed,0,131,PA Annual Report 2021
+2022,2804,48,1346,558,511,derived from stated % of confirmed,0,153,PA Annual Report 2022
+2023,2463,58,1429,497,508,read,0,185,PA Annual Report 2023
+2024,2411,50,1206,521,482,read,87,162,"PA Annual Report 2024, pp. 28-30"

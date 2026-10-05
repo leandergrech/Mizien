@@ -33,9 +33,29 @@ do not suggest overvaluation" and that the likelihood of a weakening is "current
 local markets show "no signs of financial stress"; growth of about 4%; GDP per head nearly doubled since 2013; and
 that the IMF will now assess Malta every two years, which it calls a "certificate of economic governance". The
 release does not mention the IMF calling banks' exposures to real estate "a vulnerability", the Board's call for
-vigilance, or staff's recommendation of enhanced monitoring. The IMF phrases it quotes that are not in our notes
-on CR 26/29 ("current data do not suggest overvaluation", "price increases have been in line with income growth in
-recent years") were not checked against the IMF PDF in this pass (imf.org returned 403 to scripted download).
+vigilance, or staff's recommendation of enhanced monitoring.
+
+v1.2 (5 Oct 2026): re-read through the API the same day; `content.rendered` SHA-256 unchanged (071f3024...fc05).
+The further statements tested in v1.2, verbatim:
+
+> "Rather than severe shocks, the IMF forecast that the Maltese economy will continue to grow by 4%, a much faster
+> rate than the rest of the EU. This despite the fact that since 2013, GDP per capita in Malta has nearly doubled
+> and now is far higher than the EU average."
+
+> "Finally, one has to welcome the fact that the IMF have decided that Maltese economy is so strong that they do
+> not need to carry out their comprehensive economic assessment every year, but instead will be doing it every two
+> years. Malta is the first EU economy to be given such a certificate of economic governance, and this further
+> cements our reputation as a resilient and dynamic jurisdiction."
+
+The IMF phrases the release quotes as "current data do not suggest overvaluation" and "price increases have been in
+line with income growth in recent years" are not in CR 26/29 (full-text search of the local PDF, 5 Oct 2026). They
+appear, as one sentence, in the IMF Selected Issues Paper 2026/022 (F. Hasanov, "Malta's Growth-at-Risk", published
+13 Mar 2026, doi:10.5089/9798229041652.018; read on the IMF eLibrary): "While current data do not suggest
+overvaluation (price increases have been in line with income growth in recent years) and the probability of a sharp
+correction in house prices appears to be low, such an event could negatively affect construction and wealth and
+strain banks via rising loan delinquencies and weaker consumer confidence." That paper was published five weeks after
+the release's 8 Feb date; the release was modified on 17 Jun 2026, so whether these phrases were in the original
+text cannot be told.
 
 ## Malta Developers Association statement, as quoted by MaltaToday (8 Feb 2026, Juliana Zammit)
 
@@ -66,3 +86,10 @@ Reports vol. 2026 issue 029, February 2026). PDF page numbers:
   61%); "house prices remained aligned with fundamentals and price-to-income and price-to-rent ratios have been stable".
 - p.20: "in view of rapid house price growth, staff recommend enhanced monitoring".
 - p.8, para 1: population density fifteen times the EU average, "straining infrastructure, housing and public services".
+- p.8, para 1 (v1.2): "By 2024, per capita income reached US$45 thousand, higher than the EU average, up from US$25
+  thousand in 2013."
+- p.25, para 34 (v1.2): "Per capita income has nearly doubled since 2013" (also p.5, Key Issues).
+- p.26, para 40 (v1.2): "It is recommended that the next Article IV consultation be held on the 24-month cycle."
+- p.66, Informational Annex (v1.2): "Malta has moved to the 24-month consultation cycle." The previous
+  consultation was concluded on 15 January 2025.
+- The IMF's text was re-searched on 5 Oct 2026 in a local copy with the same SHA-256 (a71cc037...622e).

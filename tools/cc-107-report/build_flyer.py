@@ -15,7 +15,7 @@ build_flyer(Flyer(
     attribution="Partit Nazzjonalista, programme Nifs Ġdid 2026, chapter Għawdex (our translation)",
     context="News summaries said Gozo would become net zero “through afforestation”.",
     note="Until 5 October 2026 this was part of Claim Check 011 (Labour’s green-space pledge).",
-    verdict="Not substantiated", verdict_right=["No baseline,", "no pathway."],
+    verdict="Not measurable", verdict_right=["No baseline,", "no pathway."],
     cards=[("118–154 kt", ORANGE, "Gozo energy CO₂ a year",
             "2016–20, from a 2023 study for the EU islands secretariat. No official inventory."),
            ("~157 kt", ORANGE, "Our estimate",
@@ -32,7 +32,7 @@ build_flyer(Flyer(
           "How much from cuts, forests and offsets.",
           "The area to be afforested, and the rate assumed.",
           "Will the plan start from the 2023 baseline?"],
-    footer="Version 1.0  ·  5 October 2026  ·  Open data, our analysis  ·  Draft pending right of reply from "
+    footer="Version 1.1  ·  5 October 2026  ·  Label as of 5 Oct 2026  ·  Draft pending right of reply from "
            "the Partit Nazzjonalista",
     pdf_title="Claim Check 107 – A net-zero Gozo by 2040?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

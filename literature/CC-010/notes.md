@@ -19,3 +19,9 @@
 - Oliet et al. (2023) followed *Pinus halepensis* for 20 years in an arid restoration experiment in south-eastern Spain. Survival varied by shelter treatment and time; 20-year survival ranged from 29.5% to 57.5% among treatments. This demonstrates why planting and survival are distinct measures, but it is not an estimate for Malta's government planting programmes or species mix.
 - Rey et al. (2009) compared nurse-based and traditional reforestation in southern Spain. After three years, survival differed strongly between the treatments. This supports the importance of site and method for survival; do not transfer its measured rates to Malta.
 - The two selected studies are verified against their publisher records and DOIs. They are contextual evidence only and cannot supply a survival percentage for the Government's 2024/2025 planting cohorts.
+
+## v1.2 (5 October 2026)
+
+- Searched for a count after the 30 May 2026 election. Project Green's WordPress API (posts dated 29 May to 5 October 2026: 16 posts about gardens, open spaces and playgrounds) gives no tree total; web searches found no cumulative count by Parliament, the Ministry or Ambjent Malta. One project-level lead, not read and not used: a Gozo Today headline of 29 September 2026 about 1,000 endemic trees planted at Għammar Hill. parlament.mt returns 403 to scripts, so a new-legislature parliamentary answer could not be searched; check in a browser.
+- New figure (`tools/cc-010-report/figures.py`, from `data/cc-010/government_counts.csv` and `dates.csv`): trees reported against the five-year window, with shrubs and vouchers kept out of the tree series.
+- Maintainer decision (5 Oct 2026): delivery of 100,000 trees within the pledge period rated separately as Not substantiated (sub-claim D); the overall verdict, Largely supported (moderate), applies to the reported counts.

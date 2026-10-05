@@ -1,0 +1,48 @@
+station,name,year,no2_ugm3,valid_hours,coverage_pct,validation,retrieved
+MT00004,Żejtun,2013,13.77,8154,93.1,E1a (validated),2026-10-05
+MT00004,Żejtun,2014,14.35,7731,88.3,E1a (validated),2026-10-05
+MT00004,Żejtun,2015,13.64,7090,80.9,E1a (validated),2026-10-05
+MT00004,Żejtun,2016,14.50,7770,88.5,E1a (validated),2026-10-05
+MT00004,Żejtun,2017,14.49,7942,90.7,E1a (validated),2026-10-05
+MT00004,Żejtun,2018,13.73,7424,84.7,E1a (validated),2026-10-05
+MT00004,Żejtun,2019,14.79,8144,93.0,E1a (validated),2026-10-05
+MT00004,Żejtun,2020,12.77,8065,91.8,E1a (validated),2026-10-05
+MT00004,Żejtun,2021,12.89,8457,96.5,E1a (validated),2026-10-05
+MT00004,Żejtun,2022,13.78,8680,99.1,E1a (validated),2026-10-05
+MT00004,Żejtun,2023,14.43,8632,98.5,E1a (validated),2026-10-05
+MT00004,Żejtun,2024,14.07,8174,93.1,E1a (validated),2026-10-05
+MT00004,Żejtun,2025,14.90,8597,98.1,E1a (validated),2026-10-05
+MT00004,Żejtun,2026,14.28,6496,74.2,E2a (up-to-date; not validated),2026-10-05
+MT00005,Msida (old point),2013,37.52,8683,99.1,E1a (validated),2026-10-05
+MT00005,Msida (old point),2014,30.79,6150,70.2,E1a (validated),2026-10-05
+MT00005,Msida (old point),2015,35.78,7261,82.9,E1a (validated),2026-10-05
+MT00005,Msida (old point),2016,36.39,7957,90.6,E1a (validated),2026-10-05
+MT00005,Msida (old point),2017,37.46,8025,91.6,E1a (validated),2026-10-05
+MT00005,Msida (old point),2018,34.62,8188,93.5,E1a (validated),2026-10-05
+MT00005,Msida (old point),2019,30.32,7293,83.3,E1a (validated),2026-10-05
+MT00005,Msida (old point),2020,24.30,8574,97.6,E1a (validated),2026-10-05
+MT00005,Msida (old point),2021,27.07,8652,98.8,E1a (validated),2026-10-05
+MT00005,Msida (old point),2022,30.17,8597,98.1,E1a (validated),2026-10-05
+MT00005,Msida (old point),2023,28.28,8586,98.0,E1a (validated),2026-10-05
+MT00005,Msida (old point),2024,,0,0.0,E1a (validated),2026-10-05
+MT00008,Attard,2014,5.30,3950,45.1,E1a (validated),2026-10-05
+MT00008,Attard,2015,11.57,6135,70.0,E1a (validated),2026-10-05
+MT00008,Attard,2016,12.00,6360,72.4,E1a (validated),2026-10-05
+MT00008,Attard,2017,11.88,5070,57.9,E1a (validated),2026-10-05
+MT00008,Attard,2018,10.98,8189,93.5,E1a (validated),2026-10-05
+MT00008,Attard,2019,11.65,8088,92.3,E1a (validated),2026-10-05
+MT00008,Attard,2020,9.49,8439,96.1,E1a (validated),2026-10-05
+MT00008,Attard,2021,10.90,8262,94.3,E1a (validated),2026-10-05
+MT00008,Attard,2022,11.63,8422,96.1,E1a (validated),2026-10-05
+MT00008,Attard,2023,11.52,8590,98.1,E1a (validated),2026-10-05
+MT00008,Attard,2024,11.82,8681,98.8,E1a (validated),2026-10-05
+MT00008,Attard,2025,12.59,8621,98.4,E1a (validated),2026-10-05
+MT00008,Attard,2026,11.97,6515,74.4,E2a (up-to-date; not validated),2026-10-05
+MT00009,St Paul's Bay,2022,21.93,7172,81.9,E1a (validated),2026-10-05
+MT00009,St Paul's Bay,2023,20.27,8598,98.2,E1a (validated),2026-10-05
+MT00009,St Paul's Bay,2024,19.50,8062,91.8,E1a (validated),2026-10-05
+MT00009,St Paul's Bay,2025,21.00,7705,88.0,E1a (validated),2026-10-05
+MT00009,St Paul's Bay,2026,20.11,6005,68.6,E2a (up-to-date; not validated),2026-10-05
+MT00011,Msida (new point),2024,23.30,8023,91.3,E1a (validated),2026-10-05
+MT00011,Msida (new point),2025,25.54,8495,97.0,E1a (validated),2026-10-05
+MT00011,Msida (new point),2026,25.43,6099,69.6,E2a (up-to-date; not validated),2026-10-05

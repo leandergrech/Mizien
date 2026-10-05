@@ -1,0 +1,41 @@
+measure,value,unit,note,retrieved
+Amphora polygons: area (UTM 33N geometry),828429,m2,,2026-10-05
+Amphora polygons: pixels whose centre falls inside,8277,pixels,"827,700 m2 at 100 m2 per pixel",2026-10-05
+Amphora area in the 2018 map: water,0.3,%,,2026-10-05
+Amphora area in the 2018 map: crops,16.8,%,,2026-10-05
+Amphora area in the 2018 map: built area,68.3,%,,2026-10-05
+Amphora area in the 2018 map: bare ground,3.3,%,,2026-10-05
+Amphora area in the 2018 map: rangeland,11.3,%,,2026-10-05
+Amphora area in the 2023 map: water,0.4,%,,2026-10-05
+Amphora area in the 2023 map: crops,3.3,%,,2026-10-05
+Amphora area in the 2023 map: built area,88.3,%,,2026-10-05
+Amphora area in the 2023 map: bare ground,4.6,%,,2026-10-05
+Amphora area in the 2023 map: rangeland,3.4,%,,2026-10-05
+Amphora area in the 2025 map: water,0.3,%,,2026-10-05
+Amphora area in the 2025 map: crops,2.6,%,,2026-10-05
+Amphora area in the 2025 map: built area,92.0,%,,2026-10-05
+Amphora area in the 2025 map: bare ground,3.1,%,,2026-10-05
+Amphora area in the 2025 map: rangeland,2.0,%,,2026-10-05
+Amphora polygons: median area,504,m2,"253 of 397 polygons under 1,000 m2, holding 9% of the area",2026-10-05
+Amphora area: built in the 2018 map,68.3,%,8277 pixels,2026-10-05
+"Amphora area: built in all of the 2017, 2018 and 2019 maps",60.8,%,,2026-10-05
+"Amphora area: built in none of the 2017, 2018 and 2019 maps",22.8,%,,2026-10-05
+Amphora area at least 20 m inside a polygon edge: built in the 2018 map,69.1,%,1811 pixels,2026-10-05
+"Amphora area at least 20 m inside a polygon edge: built in all of the 2017, 2018 and 2019 maps",56.9,%,,2026-10-05
+"Amphora area at least 20 m inside a polygon edge: built in none of the 2017, 2018 and 2019 maps",18.8,%,,2026-10-05
+"Amphora area: built, year by year",2017 72%; 2018 68%; 2019 67%; 2020 82%; 2021 80%; 2022 87%; 2023 88%; 2024 85%; 2025 92%,%,,2026-10-05
+strict: share of Amphora's area that IO maps as new built-up,5.9,%,first mapped as built in 2020-21,2026-10-05
+strict: share of IO new built-up inside Amphora's polygons,2.6,%,0.049 of 1.905 km2,2026-10-05
+strict: share of IO new built-up within 20 m of Amphora's polygons,6.2,%,tolerance for misalignment,2026-10-05
+two-year: share of Amphora's area that IO maps as new built-up,13.6,%,first mapped as built in 2019-22,2026-10-05
+two-year: share of IO new built-up inside Amphora's polygons,2.3,%,0.113 of 4.976 km2,2026-10-05
+two-year: share of IO new built-up within 20 m of Amphora's polygons,5.3,%,tolerance for misalignment,2026-10-05
+single-year: share of Amphora's area that IO maps as new built-up,22.7,%,2018 vs 2023 maps only (noisy),2026-10-05
+single-year: share of IO new built-up inside Amphora's polygons,0.8,%,0.188 of 24.227 km2,2026-10-05
+single-year: share of IO new built-up within 20 m of Amphora's polygons,2.1,%,tolerance for misalignment,2026-10-05
+strict-2025: share of Amphora's area that IO maps as new built-up,10.9,%,first mapped as built in 2020-23,2026-10-05
+strict-2025: share of IO new built-up inside Amphora's polygons,2.7,%,0.091 of 3.296 km2,2026-10-05
+strict-2025: share of IO new built-up within 20 m of Amphora's polygons,7.1,%,tolerance for misalignment,2026-10-05
+two-year-2025: share of Amphora's area that IO maps as new built-up,14.1,%,first mapped as built in 2019-24,2026-10-05
+two-year-2025: share of IO new built-up inside Amphora's polygons,2.7,%,0.117 of 4.318 km2,2026-10-05
+two-year-2025: share of IO new built-up within 20 m of Amphora's polygons,6.6,%,tolerance for misalignment,2026-10-05

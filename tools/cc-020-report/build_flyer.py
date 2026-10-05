@@ -32,6 +32,6 @@ build_flyer(Flyer(
           "Complaint data on construction and entertainment noise.",
           "Date of the next Action Plan.",
           "Legal check of the transposition table."],
-    footer="Version 1.0  ·  5 October 2026  ·  Public data only  ·  Right of reply: not yet sent",
+    footer="Version 1.0  ·  5 October 2026  ·  Public data only  ·  No right of reply needed",
     pdf_title="Claim Check 020 – Is the noise law to blame?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

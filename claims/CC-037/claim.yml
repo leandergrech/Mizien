@@ -8,37 +8,55 @@ verdict_confidence: High
 claim:
   text: 'Amphora Media (2026 Election Guidebook): 35% of people in Malta reported exposure to pollution in 2023, the highest
     share in the EU.'
-  speaker: Amphora Media (citing Eurostat)
-  date: 2026-05
+  speaker: Amphora Media
+  date: '2026-05-12'
   wording_status: Verbatim found
   sources:
   - title: '2026 Election Guidebook: The Environment'
     publisher: Amphora Media
     date: 12 May 2026
     url: https://www.amphora.media/2026/05/2026-election-guidebook-the-environment
-    note: The claim. Read in full on 5 Oct 2026.
+    note: The claim. Read in full on 5 Oct 2026. No source named or linked.
   - title: Pollution, grime or other environmental problems (ilc_mddw02)
     publisher: Eurostat
     date: updated 13 Aug 2026
     url: https://ec.europa.eu/eurostat/databrowser/view/ilc_mddw02/default/table
-    note: Primary evidence. Retrieved 5 Oct 2026.
-counter_evidence: Eurostat ilc_mddw02 is a perception survey (pollution, grime or other environmental problems), so the intro
-  wording "exposure to pollution" is looser than the data. No measured-exposure comparison was made. No data exist for 2021
-  and 2022.
-tests: Eurostat ilc_mddw02 (EU-SILC) by country, year and income group, recomputed with tools/cc-037-report/calc.py.
+    note: Primary evidence. Retrieved 5 Oct 2026, with Eurostat's flags.
+  - title: Quality of life indicators – natural and living environment (Statistics Explained)
+    publisher: Eurostat
+    date: last edited 14 Aug 2025
+    url: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Quality_of_life_indicators_-_natural_and_living_environment
+    note: Likely source of Amphora's three statements (34.7%, 'by far the highest share', Malta 5.5 points lower for
+      people at risk of poverty). Read 5 Oct 2026.
+  - title: 12% of EU population reported pollution in their area
+    publisher: Eurostat
+    date: 1 Sep 2025
+    url: https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250901-1
+    note: News release; the 12% EU headline; data from a module 'collected every 3 years'. Read 5 Oct 2026.
+  quote: 35% of people in Malta reported exposure to pollution in 2023 — the highest share in the EU.
+counter_evidence: Eurostat ilc_mddw02 counts people living in households where the respondent reports pollution, grime or
+  other environmental problems in the area; it records reported problems, not measured exposure. "Reporting exposure" is
+  Eurostat's own wording, so this is context, not a flaw in the claim. Amphora's income sentence holds for 2023 (35.6% above
+  vs 30.1% below 60% of median income) but the "above" group is 83.4% of people, the direction reversed in 6 of 17 years, and
+  EU-wide it runs the other way. No data for 2021 and 2022 (three-yearly module since 2021; next 2026).
+tests: Eurostat ilc_mddw02 (EU-SILC) by country, year and income group, with flags, and ilc_li02 (at-risk-of-poverty rate),
+  recomputed with tools/cc-037-report/calc.py; Eurostat's methodology note, 2025 article and news release; Regulation (EU)
+  2019/1700 and Delegated Regulations (EU) 2020/256 and 2022/29 for the survey's periodicity.
 why_low_hanging: 'Done: Claim Check 037 report and flyer.'
 tags: []
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: Medium
-caveats: 'Statement is accurate as a statement about reports. The indicator is self-reported; it does not measure pollution.
-  Amphora does not name its source; the match to Eurostat ilc_mddw02 is ours. Supported verdict: no right of reply needed.'
+caveats: 'Statement is accurate as a statement about reports, in Eurostat''s own words. The indicator is self-reported; it
+  does not measure pollution. Amphora names no source; the match to Eurostat ilc_mddw02 and Eurostat''s 2025 article and
+  release is ours. Supported verdict: no right of reply needed.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown:
-- Eurostat ilc_mddw02, retrieved 5 Oct 2026 (data/cc-037/eurostat_ilc_mddw02.csv; checks in data/cc-037/checks.csv)
+- Eurostat ilc_mddw02, retrieved 5 Oct 2026 with flags (data/cc-037/eurostat_ilc_mddw02.csv; checks in data/cc-037/checks.csv)
+- Eurostat ilc_li02, retrieved 5 Oct 2026 (data/cc-037/eurostat_ilc_li02.csv)
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
@@ -68,26 +86,35 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: green
   - id: CC-037D
     text: "“Exposure to pollution” (intro wording)"
-    finding: "The survey records perceived problems, not measured exposure [2, 3]."
-    rating: "Loose wording"
-    tone: lime
+    finding: "Eurostat’s own wording, shortened: it describes the indicator as people “reporting exposure to pollution, grime or other environmental problems” [5]. The survey records reported problems, not measured exposure [7]."
+    rating: "Accurate (official wording)"
+    tone: green
   - id: CC-037E
     text: "High earners more affected than low earners"
-    finding: "35.6% above vs 30.1% below 60% of median income [2]."
-    rating: "Accurate"
-    tone: green
-quote: 35% of people in Malta reported exposure to pollution in 2023 — the highest share in the EU.
-version: '1.0'
+    finding: "2023: 35.6% above vs 30.1% below 60% of median income [2]. But the “above” group is 83.4% of people, not high earners [11]; the gap reversed in 6 of 17 years; EU-wide it runs the other way."
+    rating: "Largely accurate"
+    tone: lime
+version: '1.1'
 last_reviewed: '2026-10-05'
 thumbnail:
   figure: 34.7%
   caption: of people in Malta reported pollution, grime or other environmental problems in 2023 (EU 12.2%)
-history:
-- date: '2026-10-05'
-  step: wording
-  note: 'Verbatim wording found on the Amphora page. Eurostat ilc_mddw02 downloaded and recomputed: Malta 34.7%, EU-27 12.2%,
-    first of 27, first in 17 of 17 survey years.'
-- date: '2026-10-05'
-  step: version
-  version: '1.0'
-  note: First issue. Verdict Supported (high confidence); no right of reply needed.
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: started
+    note: "Check started. Eurostat ilc_mddw02 downloaded through the dissemination API; Crossref and OpenAlex searched for studies comparing self-reported and measured pollution (Aguilera et al. 2007, conference abstract)."
+  - date: 2026-10-05
+    step: wording
+    note: "Verbatim wording found on the Amphora page. Eurostat ilc_mddw02 downloaded and recomputed: Malta 34.7%, EU-27 12.2%, first of 27, first in 17 of 17 survey years."
+  - date: 2026-10-05
+    step: version
+    version: "1.0"
+    note: "First issue. Verdict Supported (high confidence); no right of reply needed."
+  - date: 2026-10-05
+    step: note
+    note: "Independent review and corrections. Eurostat ilc_mddw02 re-downloaded with Eurostat's flags (2,019 rows, values unchanged; matches the review's own download); ilc_li02 downloaded (Malta at-risk-of-poverty rate 16.6% in 2023). Read Eurostat's Statistics Explained article (last edited 14 Aug 2025), its news release of 1 Sep 2025 and its EU-SILC methodology note on the environment of the dwelling; Regulation (EU) 2019/1700 (Annex IV) and Delegated Regulations (EU) 2020/256 and 2022/29 read via the EU Publications Office (Cellar): the pollution item (HS180) is in the three-yearly module 'Labour market and housing', collected in 2023 and 2026. Amphora page re-fetched (hashes in archive/manifest.csv and literature/CC-037/notes.md); it names no source and links none. A Wayback capture of 16 Jun 2026 is listed but could not be opened from this network."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections: (1) Amphora names no source and links none; the cover, flyer, references and claim record no longer say it cites Eurostat, and section 1 now says that only the income sentence is attributed, to an unnamed “report”. Likely source added: Eurostat’s Statistics Explained article (last edited 14 Aug 2025) and news release (1 Sep 2025) [5, 6]. (2) Sub-claim D re-rated Accurate (official wording): “reporting exposure to pollution” is Eurostat’s own description of the indicator, so the verdict no longer treats it as a caveat. (3) Sub-claim E re-rated Largely accurate: the split is above against below 60% of median income, and the “above” group is 83.4% of people; the direction reversed in 6 of 17 years; EU-wide it runs the other way (14.0% below, 11.8% above). (4) TL;DR point 4 “Not a recent deterioration” replaced: +8.2 points since 2017, the highest since 2014 (37.4%). (5) The 2021–22 gap explained: the question moved to a three-yearly EU-SILC module collected in 2023 and 2026 [8–10]; removed from the requests. (6) “Move the verdict up” box: none (top of the scale); a Eurostat revision or a survey artefact moved to “down”. (7) Unsourced sentence on density and traffic removed; the indicator is now defined precisely (people living in households where the respondent reports the problem) [7]. (8) Eurostat flags kept (EU-27 2010–2020 estimated; Germany 2023 low reliability); Figure 1 no longer bridges 2021–22; Figure 2 labels to one decimal; table note kept with its table; cover status “draft · no right of reply needed”. Verdict and confidence unchanged."

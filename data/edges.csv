@@ -96,3 +96,5 @@ CC-020,CC-104,T13,Noise governance,Shared target,Weak (indicative)
 CC-020,CC-105,T13,Noise governance,Shared target,Weak (indicative)
 CC-104,CC-105,T13,Noise governance,Shared target,Weak (indicative)
 CC-003,CC-026,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-009,CC-108,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared driver,Strong
+CC-101,CC-108,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared driver,Weak (indicative)

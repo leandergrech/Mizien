@@ -23,3 +23,15 @@ EU-27: overcrowding 2015 -> 2025,18.1 -> 16.8,% of pop.,Eurostat ilc_lvho05a,
 "Malta: mean real price growth in years with <9,000 approvals",1.7,%/yr,calculated,"2016, 2020, 2021, 2023, 2024"
 "Malta: approved units per additional resident, 2015-2024",0.65,units/person,calculated,"population +135,445"
 Census 2021: dwellings not used as main residence,81613,dwellings,NSO Census 2021 vol. 2,27.5% of stock (2011: 31.8%)
+"Malta: change in population 2015-2025, EU-27 rank (1 = largest rise)",1,of 27,"Eurostat demo_gind (JAN), all EU-27, retrieved 5 Oct 2026","Malta +30.9%; EU-27 +1.9%; largest: MT +30.9%, LU +21.1%, IE +16.3%; median Member State +3.5%; Eurostat flag 2015: e (estimated); 2025: ep (estimated, provisional)"
+"Malta: change in real house prices 2015-2025, EU-27 rank (1 = largest rise)",16,of 27,"Eurostat tipsho10 (I15_A_AVG), all EU-27, retrieved 5 Oct 2026","Malta +34.2%; EU-27 +24.8%; largest: PT +106.4%, HU +103.8%, HR +66.8%; median Member State +41.2%; Eurostat flag 2025: p (provisional)"
+"Malta: change in actual rentals (HICP) 2015-2025, EU-27 rank (1 = largest rise)",8,of 27,"Eurostat prc_hicp_aind (CP041, INX_A_AVG), all EU-27, retrieved 5 Oct 2026","Malta +53.1%; EU-27 +20.5%; largest: HU +105.4%, LT +83.5%, SI +73.8%; median Member State +30.3%; "
+Malta population growth 2015-2025 as a multiple of the EU-27's,16.3,times,"Eurostat demo_gind (JAN), retrieved 5 Oct 2026",30.87% / 1.90% (v1.1 text said 'fifteen times')
+DE: real house prices 2015-2025,16.5,%,"Eurostat tipsho10, retrieved 5 Oct 2026",population +2.9%; weight in EU-27 HPI 2025: 215.05 per mille 
+FR: real house prices 2015-2025,3.7,%,"Eurostat tipsho10, retrieved 5 Oct 2026",population +3.6%; weight in EU-27 HPI 2025: 146.66 per mille 
+IT: real house prices 2015-2025,-5.4,%,"Eurostat tipsho10, retrieved 5 Oct 2026",population -2.2%; weight in EU-27 HPI 2025: 127.14 per mille 
+PT: real house prices 2015-2025,106.4,%,"Eurostat tipsho10, retrieved 5 Oct 2026",population +9.5%; weight in EU-27 HPI 2025: 20.09 per mille 
+HU: real house prices 2015-2025,103.8,%,"Eurostat tipsho10, retrieved 5 Oct 2026",population -2.8%; weight in EU-27 HPI 2025: 16.44 per mille Eurostat flag 2025: p (provisional)
+LU: real house prices 2015-2025,30.7,%,"Eurostat tipsho10, retrieved 5 Oct 2026",population +21.1%; weight in EU-27 HPI 2025: 3.64 per mille 
+"Germany, France and Italy: combined weight in the EU-27 house price index, 2025",48.9,%,"Eurostat prc_hpi_cow (COWEU27_2020, TOTAL), retrieved 5 Oct 2026",488.9 per mille (2025 weights provisional for several states); Malta 1.38 per mille
+"Malta: house prices, annual change 2026-Q2",6.9,%,"Eurostat prc_hpi_q (TOTAL, RCH_A), retrieved 5 Oct 2026",EU-27 4.7%; Malta rank 14 of 26 (1 = largest rise); nominal; Eurostat flag 2026-Q2: p (provisional)
