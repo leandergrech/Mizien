@@ -1,0 +1,109 @@
+---
+layout: base.njk
+pagination:
+  data: mizien.bodies
+  size: 1
+  alias: body
+permalink: "/bodies/{{ body.id }}/"
+---
+{%- import "macros.njk" as m -%}
+{%- set b = body -%}
+{%- set withVerdict = b.claims | selectattr("verdict") | length -%}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/bodies/">Who said it</a></li>
+    {%- for a in b.ancestors %}<li><a href="{{ a.path }}">{{ a.name }}</a></li>{% endfor %}
+    <li aria-current="page">{{ b.name }}</li></ol>
+</nav>
+
+<article class="page prose-page body-page">
+  <header class="page-head">
+    <p class="kicker">{% if b.kind == "person" %}Person · {% endif %}{{ b.type_label }}</p>
+    <h1>{{ b.name }}</h1>
+    {%- if b.role or (b.kind == "person" and b.parent) %}
+    <p class="lead">{{ b.role }}{% if b.role and b.parent %}, {% endif %}{% if b.kind == "person" and b.parent %}speaking for <a href="{{ b.parent.path }}">{{ b.parent.name }}</a>{% endif %}</p>
+    {%- endif %}
+    {%- if b.note %}<p class="small">{{ b.note }}</p>{% endif %}
+    <ul class="body-stats">
+      <li><b>{{ b.claims.length }}</b> claim{% if b.claims.length != 1 %}s{% endif %} listed</li>
+      <li><b>{{ withVerdict }}</b> with a verdict</li>
+      <li><b>{{ b.links.length }}</b> linked bod{% if b.links.length == 1 %}y{% else %}ies{% endif %}</li>
+    </ul>
+    <p class="small"><a href="/?group=speaker&amp;sel=body:{{ b.id }}">See {{ b.name }} on the map</a>, with the bodies its claims link to.</p>
+  </header>
+
+  <aside class="notice" aria-label="What this page shows">
+    <p><strong>A record, not a score.</strong> This page lists the claims by {{ b.name }} that Miżien has picked up
+      so far. Claims are chosen because they are public and can be checked, not to sample anyone's statements fairly,
+      so the counts below say nothing about how accurate {{ "this person" if b.kind == "person" else "this body" }} is in
+      general. Each verdict is about one statement as worded on its date. <a href="/methodology/connections/#bodies">How
+      claims are matched to bodies</a>.</p>
+  </aside>
+
+  {%- if b.people.length or b.offices.length %}
+  <section aria-labelledby="h-under">
+    <h2 id="h-under">{% if b.offices.length %}Offices and people{% else %}People{% endif %}</h2>
+    <p>Claims made by {% if b.offices.length %}these offices and people{% else %}these people{% endif %} on behalf of {{ b.name }} are counted here too.</p>
+    <p class="conn-bodies">{% for x in b.offices %}{{ m.body(x) }} {% endfor %}{% for x in b.people %}{{ m.body(x) }} {% endfor %}</p>
+  </section>
+  {%- endif %}
+
+  <section aria-labelledby="h-claims">
+    <h2 id="h-claims">Claims</h2>
+    <div class="table-scroll">
+    <table class="claims body-claims">
+      <thead><tr><th scope="col">Claim</th><th scope="col">Topic</th><th scope="col">Date</th><th scope="col">Verdict</th></tr></thead>
+      <tbody>
+      {%- for c in b.claims %}
+        <tr><td>{{ m.claim(c) }}{% set others = c.by | without("id", b.id) %}
+          {%- if others.length %}<br><span class="small">by {% for x in others %}<a href="{{ x.path }}">{{ x.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}</td>
+          <td>{{ c.category }}</td><td>{{ c.date | ukDate }}</td>
+          <td>{% if c.verdict %}<span class="badge v-{{ c.verdict_slug }}">{{ c.verdict }}</span>{% if c.status != "Published" %}<br><span class="small">draft</span>{% endif %}{% else %}<span class="small">not yet checked</span>{% endif %}</td></tr>
+      {%- endfor %}
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-about">
+    <h2 id="h-about">What the claims are about</h2>
+    <dl class="facts body-facts">
+      <div><dt>Topics</dt><dd>{% for k, v in b.topics %}<span class="tally">{{ k }} <b>{{ v }}</b></span>{% endfor %}</dd></div>
+      <div><dt>Verdicts so far</dt><dd>{% for k, v in b.verdicts %}<span class="tally">{{ k }} <b>{{ v }}</b></span>{% endfor %}</dd></div>
+      {%- if b.patterns | length %}
+      <div><dt>Pattern tags</dt><dd>{% for k, v in b.patterns %}<span class="tally">{{ k }} <b>{{ v }}</b></span>{% endfor %}</dd></div>
+      {%- endif %}
+    </dl>
+  </section>
+
+  <section aria-labelledby="h-linked">
+    <h2 id="h-linked">Linked bodies</h2>
+    {%- if b.links.length %}
+    <p>Bodies are linked when they are named in the same claim, or when their claims share a theme (a cause, a
+      mechanism, a target or a way of presenting figures). A link says the claims are worth reading together; it does
+      not say the bodies agree, disagree or act together.</p>
+    {%- set shown = 8 %}
+    <ul class="linked-bodies">
+      {%- for l in b.links %}
+      {%- if loop.index == shown + 1 %}
+    </ul>
+    <details class="more-bodies"><summary>Show {{ b.links.length - shown }} more linked bodies</summary>
+    <ul class="linked-bodies">
+      {%- endif %}
+      <li>
+        <p class="lb-name">{{ m.body(l) }}</p>
+        {%- if l.named_with.length %}
+        <p class="lb-why">Named in the same claim: {% for x in l.named_with %}{{ m.claim(x) }}{% if not loop.last %}, {% endif %}{% endfor %}.</p>
+        {%- endif %}
+        {%- for t in l.themes %}
+        <p class="lb-why">Shares <span class="route-theme" style="--t: {{ (mizien.themes | findBy('id', t.id)).color }}">{{ t.name }}</span>:
+          {% for pr in t.pairs %}{{ m.claim(pr[0], true) }} with {{ m.claim(pr[1], true) }}{% if not loop.last %}; {% endif %}{% endfor %}.</p>
+        {%- endfor %}
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- if b.links.length > shown %}</details>{% endif %}
+    {%- else %}
+    <p>No other body is linked yet: its claims share no theme with claims by others, and no claim names it with another body.</p>
+    {%- endif %}
+  </section>
+</article>

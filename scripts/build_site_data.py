@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build data/claims.json and docs/data/claims.json from the single source of truth:
-claims/*/claim.yml plus data/edges.csv and data/themes.csv.
+claims/*/claim.yml plus data/edges.csv, data/themes.csv and the register of bodies (data/bodies.csv).
 
 Also writes build/site-data.json (git-ignored): the fuller record the Eleventy site
 is built from (claim pages, list, feeds), with sources joined to archive/manifest.csv.
@@ -17,6 +17,9 @@ import unicodedata
 from datetime import date, datetime
 
 import yaml
+
+import bodies as register
+import connections
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REPO = "https://github.com/leandergrech/Mizien"
@@ -49,9 +52,13 @@ def spare_colour(key: str) -> str:
 
 def main() -> int:
     claims, records = [], []
+    reg = register.load()
+    alias = register.alias_index(reg)
+    claim_bodies = {}
     for path in sorted((ROOT / "claims").glob("CC-*/claim.yml")):
         d = yaml.safe_load(path.read_text(encoding="utf-8"))
         records.append(d)
+        claim_bodies[d["id"]] = register.resolve(d, reg, alias)[0]
         claims.append({
             "id": d["id"],
             "title": d["title"],
@@ -67,6 +74,7 @@ def main() -> int:
             "wording_status": d["claim"].get("wording_status", ""),
             "confidence": d.get("verdict_confidence"),
             "speaker": d["claim"].get("speaker", ""),
+            "bodies": claim_bodies[d["id"]],
             "date": str(d["claim"].get("date") or ""),
             "quote": d["claim"].get("quote", ""),
             "version": d.get("version"),
@@ -88,7 +96,14 @@ def main() -> int:
                    "strength": r["Strength"], "description": r["What connects them"],
                    "members": [x.strip() for x in r["Linked claim IDs"].split(",")]} for r in csv.DictReader(f)]
 
-    out = {"categories": cats, "claims": claims, "edges": edges, "themes": themes}
+    profiles = connections.profiles(claim_bodies, reg, edges, records)
+    # The map needs each body's place in the register and its links to other bodies (see scripts/connections.py).
+    map_bodies = [{**{k: p[k] for k in ("id", "name", "kind", "type", "parent", "role")},
+                   "links": [{"id": l["id"], "named": len(l["named_with"]), "pairs": l["pairs"], "themes": list(l["themes"])}
+                             for l in p["links"]]} for p in profiles.values()]
+    body_types = [{"id": k, "label": v} for k, v in register.TYPES.items()]
+    out = {"categories": cats, "claims": claims, "edges": edges, "themes": themes, "bodies": map_bodies,
+           "body_types": body_types}
     text = json.dumps(out, ensure_ascii=False, indent=2)
     for target in (ROOT / "data" / "claims.json", ROOT / "docs" / "data" / "claims.json"):
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -115,7 +130,7 @@ def main() -> int:
                 dest = files_root / row["id"] / filename
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(source, dest)
-    write_site_data(records, out)
+    write_site_data(records, out, reg, claim_bodies, profiles)
     print(f"Wrote {len(claims)} claims, {len(edges)} edges, {len(themes)} themes.")
     return 0
 
@@ -235,12 +250,49 @@ def flyer_preview(cid: str, outputs: dict):
     return {"url": f"/claim-files/{cid}/flyer-preview.webp", "width": w, "height": h}
 
 
-def write_site_data(records: list, out: dict) -> None:
+def claim_ref(d: dict) -> dict:
+    """The few fields a list of claims needs: number, title and verdict."""
+    return {"id": d["id"], "title": d["title"], "path": f"/claims/{d['id']}/", "verdict": d.get("verdict"),
+            "verdict_slug": slug(d["verdict"]) if d.get("verdict") else None, "category": d["category"],
+            "status": d.get("status"), "date": str(d["claim"].get("date") or "")}
+
+
+def body_ref(b: dict) -> dict:
+    return {"id": b["id"], "name": b["name"], "kind": b["kind"], "role": b["role"], "path": f"/bodies/{b['id']}/"}
+
+
+def claim_connections(cid: str, d: dict, by_id: dict, adj, out: dict, reg: dict, claim_bodies: dict, profiles: dict,
+                      patterns: dict) -> dict:
+    """Everything that connects one claim to others: pattern tags, indirect links (second and third degree) and
+    other claims by the same bodies. Direct links are the claim's `links`."""
+    ind = connections.indirect(cid, adj)
+    names = {t["id"]: t["name"] for t in out["themes"]}
+    step = lambda p: [{"id": x, "title": by_id[x]["title"], "theme": t, "theme_name": names.get(t, t)} for x, t in p]
+    second = [{**claim_ref(by_id[x["id"]]), "via": [step(p) for p in x["paths"]]} for x in ind[2]]
+    third = [{**claim_ref(by_id[x["id"]]), "via": [step(x["paths"][0])]} for x in ind[3]]
+    same, listed = [], {cid}
+    for u in connections.units(claim_bodies[cid], reg):
+        for b in [u] + ([reg[u]["parent"]] if reg[u]["kind"] == "person" and reg[u]["parent"] else []):
+            others = [x for x in profiles[b]["claims"] if x not in listed] if b in profiles else []
+            if others:
+                same.append({"body": body_ref(reg[b]), "claims": [claim_ref(by_id[x]) for x in others]})
+                listed.update(others)
+    tags = []
+    for t in d.get("tags") or []:
+        others = [x for x in by_id.values() if x["id"] != cid and t in (x.get("tags") or [])]
+        tags.append({"tag": t, "meaning": patterns.get(t), "claims": [claim_ref(x) for x in others]})
+    return {"second": second, "third": third, "same_body": same, "patterns": tags}
+
+
+def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, profiles: dict) -> None:
     import thumbnails  # scripts/thumbnails.py: one scene per subtopic, a specific thumbnail per researched claim
     manifest = load_archive()
     thumbs = thumbnails.render_all(records, {c["name"]: c["color"] for c in out["categories"]}, ROOT / "build" / "thumbs")
     titles = {d["id"]: d["title"] for d in records}
+    by_id = {d["id"]: d for d in records}
     theme_names = {t["id"]: t["name"] for t in out["themes"]}
+    adj = connections.adjacency(out["edges"])
+    pattern_meanings = dict(bold_table("pattern-tags.md"))
     site_claims = []
     for d in records:
         cid, rec = d["id"], jsonable(d)
@@ -276,10 +328,36 @@ def write_site_data(records: list, out: dict) -> None:
             "flyer_preview": preview,
             "thumb": thumbs.get(cid),
             "links": links,
+            "bodies": [{**body_ref(reg[b]), "parent": body_ref(reg[reg[b]["parent"]]) if reg[b]["parent"] else None}
+                       for b in connections.units(claim_bodies[cid], reg)],
+            "connections": claim_connections(cid, d, by_id, adj, out, reg, claim_bodies, profiles, pattern_meanings),
             "record_url": f"{REPO}/blob/main/claims/{cid}/claim.yml",
         })
+    body_pages = []
+    for bid, p in profiles.items():
+        b = reg[bid]
+        links = [{**body_ref(reg[l["id"]]), "type": reg[l["id"]]["type"], "named_with": [claim_ref(by_id[x]) for x in l["named_with"]],
+                  "themes": [{"id": t, "name": theme_names.get(t, t),
+                              "pairs": [[claim_ref(by_id[a]), claim_ref(by_id[z])] for a, z in pairs]}
+                             for t, pairs in l["themes"].items()], "pairs": l["pairs"]} for l in p["links"]]
+        body_pages.append({
+            **body_ref(b), "type": b["type"], "type_label": register.TYPES[b["type"]], "note": b["note"],
+            "parent": body_ref(reg[b["parent"]]) if b["parent"] else None,
+            "ancestors": [body_ref(reg[x]) for x in reversed(connections.lineage(bid, reg)[1:])],
+            "people": [body_ref(reg[x]) for x in p["people"]], "offices": [body_ref(reg[x]) for x in p["offices"]],
+            "claims": [{**claim_ref(by_id[c]), "by": [body_ref(reg[x]) for x in connections.units(claim_bodies[c], reg)]}
+                       for c in p["claims"]],
+            "direct": p["direct"], "verdicts": p["verdicts"], "topics": p["topics"], "patterns": p["patterns"],
+            "links": links,
+        })
+    body_order = list(register.TYPES)
+    body_pages.sort(key=lambda b: (body_order.index(b["type"]), b["kind"] == "person", b["name"].lower()))
     data = {
         "claims": site_claims,
+        "bodies": body_pages,
+        "body_types": out["body_types"],
+        "theme_bridges": [{**x, "a_name": theme_names.get(x["a"]), "b_name": theme_names.get(x["b"]),
+                           "claims": [claim_ref(by_id[c]) for c in x["claims"]]} for x in connections.bridges(out["themes"])],
         "categories": [{**c, "slug": slug(c["name"])} for c in out["categories"]],
         "themes": out["themes"],
         "verdicts": [{"name": n, "meaning": m, "rating": VERDICT_RATING.get(n), "slug": slug(n)}
