@@ -1,0 +1,71 @@
+---
+layout: base.njk
+title: Timeline
+description: Every claim Miżien has recorded, placed on a line of calendar days. Zoom from months to weeks, days and hours.
+permalink: /timeline/
+styles: [timeline.css]
+---
+{%- set T = timelinePoints -%}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li aria-current="page">Timeline</li></ol>
+</nav>
+
+<div class="page tlv-page">
+  <h1>Timeline</h1>
+  <p>{{ T.points.length }} of {{ mizien.claims.length }} claims have a recorded date, shown here on the day (or month, or
+    year) the statement was made. Claims close together are clumped; zoom in and they separate. A dashed bar means only the
+    month or year is known, so the claim is never placed more precisely than its source allows.</p>
+
+  <div class="tlv-card" id="tl" hidden>
+    <div class="tlv-bar" role="toolbar" aria-label="Timeline zoom and position">
+      <div class="tlv-levels" role="group" aria-label="Group claims by">
+        <button type="button" data-level="month" aria-pressed="false">Months</button>
+        <button type="button" data-level="week" aria-pressed="false">Weeks</button>
+        <button type="button" data-level="day" aria-pressed="false">Days</button>
+        <button type="button" data-level="hour" aria-pressed="false">Hours</button>
+      </div>
+      <div class="tlv-tools">
+        <button type="button" class="tlv-btn" data-act="out" aria-label="Zoom out">−</button>
+        <button type="button" class="tlv-btn" data-act="in" aria-label="Zoom in">+</button>
+        <button type="button" class="tlv-btn tlv-wide" data-act="latest">Latest</button>
+        <button type="button" class="tlv-btn tlv-wide" data-act="all">Show all</button>
+      </div>
+    </div>
+    <p class="tlv-range small" id="tl-range" aria-live="off"></p>
+    <div class="tlv-stage" id="tl-stage" tabindex="0" role="group"
+      aria-label="Timeline of claims. Arrow keys move along the line; plus and minus zoom. The same claims are listed below as text."></div>
+    <div class="tlv-over" id="tl-over" aria-hidden="true"></div>
+    <p class="tlv-hint small">Drag to move. Pinch, or hold Ctrl and scroll, to zoom. Select a marker to read its claims.</p>
+    <div class="tlv-panel" id="tl-panel" aria-live="polite"><p class="small">Select a marker to see its claims.</p></div>
+    <ul class="tlv-legend small" aria-label="Marker colours">
+      {%- for v in mizien.verdicts %}<li><span class="tlv-key v-{{ v.slug }}"></span>{{ v.name }}</li>{% endfor %}
+      <li><span class="tlv-key v-none"></span>Not yet checked</li>
+      <li><span class="tlv-key tlv-key-pledge"></span>Pledge (coloured by its label)</li>
+    </ul>
+  </div>
+
+  <details class="tlv-list" id="tl-list" open>
+    <summary>The same claims as a list, newest first</summary>
+    <div id="tl-list-body">
+    {%- for g in T.years %}
+      <section><h2>{{ g.year }}</h2><ol class="tlv-ol">
+      {%- for p in g.items %}
+        <li><span class="tlv-d">{{ p.date | ukDate }}{% if p.time %}, {{ p.time }}{% endif %}</span>
+          <a href="{{ p.path }}"><b>{{ p.id }}</b> {{ p.title }}</a>
+          <span class="badge v-{{ p.v }}">{% if p.pledge %}Pledge: {% endif %}{{ p.label }}</span></li>
+      {%- endfor %}
+      </ol></section>
+    {%- endfor %}
+    {%- if T.undated.length %}
+      <section><h2>No date recorded</h2><ol class="tlv-ol">
+      {%- for p in T.undated %}
+        <li><span class="tlv-d">undated</span><a href="{{ p.path }}"><b>{{ p.id }}</b> {{ p.title }}</a>
+          <span class="badge v-{{ p.v }}">{% if p.pledge %}Pledge: {% endif %}{{ p.label }}</span></li>
+      {%- endfor %}
+      </ol></section>
+    {%- endif %}
+    </div>
+  </details>
+</div>
+<script type="application/json" id="tl-data">{{ T.points | dump | replace("<", "\\u003c") | safe }}</script>
+<script src="/assets/timeline.js" defer></script>
