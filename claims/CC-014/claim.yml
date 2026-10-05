@@ -29,51 +29,61 @@ claim:
     date: 2004-2011
     url: https://era.org.mt/wp-content/uploads/2019/05/MEPA-Annual-Report-2004.pdf
     note: 'Primary evidence: notices issued 2001-2011 and complaints; all URLs in literature/CC-014/references.bib.'
-  - title: Planning Authority Annual Report 2019
+  - title: Planning Authority Annual Reports 2017-2023 (Compliance and Enforcement Directorate)
     publisher: Planning Authority
-    date: 2020
-    url: https://issuu.com/planningauthority/docs/annual_report_2019
-    note: 'Primary evidence for 2019 complaints (3,134; p. 17), read 5 Oct 2026 as Issuu page images
-      (https://image.isu.pub/200611082658-b4eaf717a2b602b52dbd5e973233f6a3/jpg/page_19.jpg).'
+    date: 2018-2025
+    url: https://issuu.com/planningauthority
+    note: 'Primary evidence for 2017-2023 notices, complaints, confirmed shares and outcomes; read 5 Oct 2026 as Issuu
+      page images (2017 pp. 18-20; 2018 pp. 20-24; 2019 pp. 17-18; 2020 pp. 27-29; 2021 pp. 28-29; 2022 pp. 23-24;
+      2023 pp. 23-24). Every value with page, image URL and SHA-256 in data/cc-014/pa_annual_reports_2017_2023.csv;
+      Issuu links for each year in literature/CC-014/references.bib.'
   - title: Buttigieg stops short of direct action against Carlo Stivala's new illegal structure
     publisher: The Shift News
     date: 2 Oct 2026
     url: https://theshiftnews.com/2026/10/02/buttigieg-stops-short-of-direct-action-against-carlo-stivalas-new-illegal-structure/
     note: Lead only (current enforcement controversy; not read in full). Context, not the claim.
   quote: We had times when we issued over 1,000 enforcement notices per year.
-counter_evidence: 'Notices fell 82% (1,033 a year in 2001-2009 to 187 in 2020-2024) while complaints of illegal
-  development fell 11% since 2009 (2,701 to 2,411) and 35% since 2004/05; complaints were 3,313 in 2020, the most
-  since FY 2004/05. About half of 2024 complaints were confirmed illegal (~1,200-1,250: the PA says circa half, its
-  four outcome categories sum to 1,252). Notices per 100 complaints fell from about 30-40 to 5-10:
-  in 2024, 521 confirmed cases ended in a sanctioning application and 482 in removal by the owner (about six times
-  the 162 that led to a notice). The PA''s 2024 report attributes the fall in notices to persuading contraveners first.'
-tests: MEPA annual reports 2004-2011; PA Annual Reports 2019 (complaints) and 2024; reports of PA annual reports 2020 and parliamentary
-  answers 2022-2023; regulatory enforcement literature (context).
+counter_evidence: 'Notices fell 82% (1,033 a year in 2001-2009 to 187 in 2020-2024; PA annual reports give 164-233 a year
+  in 2018-2024) while complaints of illegal development fell 11% since 2009 (2,701 to 2,411) and 35% since 2004/05, and
+  averaged about 2,860 a year in 2017-2024, more than in 2009 or 2011 (2,105). Complaints confirmed as illegal development
+  were about 1,280 in 2018 and about 1,200-1,250 in 2024; the fall of about a third since 2020 is measured from a
+  2020-21 peak (~1,820-1,880). Notices per 100 complaints fell from 29-41 (2005-2011) to 5-10 (2017-2024), and only
+  7-13 in every 100 confirmed cases ended in a notice in 2018-2024: most ended in a sanctioning application (497-818 a
+  year) or removal by the owner. The PA''s own reports explain the low number of notices as its strategy "to issue
+  notices only where contraveners are uncooperative" (2018 p. 20; 2019 p. 18).'
+tests: MEPA annual reports 2004-2011; PA annual reports 2017-2023 (Issuu page images) and 2024; one news report of PA
+  data (pending notices, end 2021); regulatory enforcement literature (context).
 why_low_hanging: 'Done: Claim Check 014 report and flyer.'
 tags:
 - Input-as-outcome
 tags_provisional: false
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: Medium
 caveats: Draft pending right of reply (Planning Authority). Figures accurate; verdict rests on the omitted change
-  in how cases are handled. Complaints are a proxy for illegal building; 2008 and 2012-2018 missing; 2019-2023 figures
-  second-hand except 2019 complaints (PA Annual Report 2019). Confirmed cases did fall roughly a third (31-34%)
-  between 2020 and 2024. v1.1 (5 Oct 2026) made corrections only; verdict unchanged.
+  in how cases are handled. Complaints are a proxy for illegal building and their definition shifts (construction-site
+  complaints separate in 2018, third-party-damage complaints included in 2019, anonymous reports stopped in 2024);
+  confirmed cases are approximate (stated share x complaints received; the PA's bases differ and outcomes do not always
+  add up). 2008 and 2012-2016 are missing, and notices halved between 2011 and 2017. Daily fines (since 2012) now apply
+  to most notices, which may deter. v1.2 (5 Oct 2026) replaced second-hand 2019-2023 figures with the PA reports and
+  added 2017-2018; verdict unchanged.
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown:
 - MEPA Annual Reports 2004-2011 (notices issued 2001-2011; complaints 2004/05, 2009, 2011)
-- Planning Authority Annual Report 2019, p. 17 (3,134 complaints in 2019)
+- Planning Authority Annual Reports 2017-2023, Compliance and Enforcement Directorate (notices 315, 219, 229, 169, 164,
+  180, 233; complaints c. 3,000, 2,560, 3,134, 3,313, 3,192, 2,804, 2,463; confirmed shares and outcomes; stated policy
+  of notices only where contraveners are uncooperative, 2018 p. 20 and 2019 p. 18; daily fines since 2012, 2023 p. 24)
 - Planning Authority Annual Report 2024, pp. 28-30 (2,411 complaints, circa half confirmed; 521 sanctioning applications,
   482 removals, 162 notices from complaints; fall attributed to persuasion)
-- data/cc-014/pa_enforcement_series.csv and checks.csv
+- data/cc-014/pa_annual_reports_2017_2023.csv (page, image URL and SHA-256 per value), pa_enforcement_series.csv,
+  outcomes_by_year.csv and checks.csv
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-05'
 location:
   place: Planning Authority, St Francis Ravelin, Floriana
