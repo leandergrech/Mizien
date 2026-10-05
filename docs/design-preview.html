@@ -1897,7 +1897,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "category": "Air",
       "claim": "D3 Power Generation (Delimara 3): after gas conversion the air is much cleaner and emissions are well below EU limits (NOx 35.8 mg/Nm3, SOx 0, PM 2.16 mg/Nm3).",
       "counter": "Stack concentrations vs permit limits are not ambient air quality; check ERA IPPC monitoring and the Żejtun station.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Port & power emissions",
@@ -2120,10 +2120,12 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "title": "Net Zero Impact Utility",
       "category": "Water",
       "claim": "Water Services Corporation: its EU-funded 'Net Zero Impact Utility' project will cut groundwater abstraction by 4 billion litres a year with no net increase in energy use.",
-      "counter": "Check abstraction volumes and WSC electricity use before and after; demand growth since the project.",
-      "status": "Not started",
+      "counter": "WSC groundwater production was 13.5 million m3 in 2016 and 11.5 million m3 in 2025 (2.0 million m3, about half of the pledged 4.0, lower); only 0.4 million m3 lower in 2024. Reverse-osmosis output rose about 50% over the same period, so RO electricity is likely higher in total; WSC total electricity use by year was not found.",
+      "status": "Drafted",
       "verdict": null,
-      "tags": [],
+      "tags": [
+        "Promise-without-baseline"
+      ],
       "subtopic": "Water supply & groundwater",
       "location": {
         "place": "Pembroke reverse osmosis plant",
@@ -2132,17 +2134,73 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "site",
         "icon": "ro_plant"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
       "confidence": null,
       "speaker": "Water Services Corporation (WSC)",
       "bodies": [
         "wsc"
       ],
-      "date": "",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-039A",
+          "text": "Groundwater abstraction “will be reduced by 4 billion litres per year”",
+          "finding": "No baseline year or date. Against 2016, WSC groundwater production is lower by 0.4–2.0 million m³ in 2022–25 (10–49% of 4.0), lowest in 2025.",
+          "rating": "No baseline or date",
+          "tone": "orange"
+        },
+        {
+          "id": "CC-039B",
+          "text": "Desalination produces “much more water with less energy”",
+          "finding": "More water: RO output +50% since 2016. Less energy per m³: small at best (4.85 to 4.68 kWh/m³, second-hand); RO electricity use is likely higher in total.",
+          "rating": "Mixed",
+          "tone": "orange"
+        },
+        {
+          "id": "CC-039C",
+          "text": "Extra production without increasing the utility’s overall net power requirements",
+          "finding": "RO alone would need a third lower specific energy to stay flat. No whole-utility kWh found.",
+          "rating": "Not testable as worded",
+          "tone": "grey"
+        }
+      ],
+      "pledge": {
+        "status": "Not measurable",
+        "slug": "pledge-not-measurable",
+        "colour": "#716f8d",
+        "as_of": "5 October 2026",
+        "as_of_iso": "2026-10-05",
+        "made_on": "2 April 2019",
+        "deadline": null,
+        "term_end": null,
+        "target": "Groundwater abstraction reduced by 4 billion litres a year; more water with less energy",
+        "vehicle": "WSC news release, European Commission endorses the Net Zero Impact Utility project",
+        "occasion": "WSC news release",
+        "note": "No baseline year, date or boundary stated. Against 2016, WSC groundwater production was 2.0 million m3 lower in 2025 (about half of 4.0) but only 0.4 million m3 lower in 2024; RO output rose about 50%.",
+        "made_by": [
+          {
+            "id": "wsc",
+            "name": "Water Services Corporation",
+            "kind": "organisation",
+            "role": null,
+            "path": "/bodies/wsc/"
+          }
+        ],
+        "made_by_ids": [
+          "wsc"
+        ],
+        "pure": true,
+        "overlaps": []
+      },
+      "date": "2019-04-02",
+      "quote": "The Corporation's ground water abstraction will be reduced by 4 billion litres per year.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-039/report.pdf",
+        "flyer_pdf": "claim-files/CC-039/flyer.pdf",
+        "flyer_png": "claim-files/CC-039/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-039/claim.yml"
     },
     {
