@@ -65,6 +65,9 @@ Every run therefore starts with `python scripts/net_check.py`:
   exact wording to the `Aliases` of the right row (separated by `|`), or add a row with `ID, Name, Kind`
   (organisation or person), `Type`, `Parent` (a person's office), `Role` (as the source names it) and `Aliases`.
   `scripts/validate_claims.py` warns on any speaker that matches nothing. Never guess a role or affiliation.
+- Follows stances over time: when a body repeats, changes or corrects a claim already listed, add the new statement as a
+  claim of its own if it can be checked; otherwise add it to the existing claim's `timeline:` (date, kind, text, url;
+  kinds: statement, data, reply, correction, note). New data that bears on a finished check goes there too, as `data`.
 - Gives every new claim a `location` (place, lat, lon from OpenStreetMap or the source; scope `site`, or
   `institution`/`national` with the institution's address) so it appears on the map view, and an `icon` for its
   landmark medallion: one of parliament, castille, citygate, barrakka, ravelin, waterfront, tower, landfill, flyover,

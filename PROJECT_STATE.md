@@ -82,6 +82,24 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
 
 ## Site build (4 October 2026)
 
+- **Stance timelines and patterns by kind of body** (5 October 2026).
+  - Every claim page has a Timeline: the statement, sources as published (`data/sources.csv` dates; access dates are
+    ignored), each step of the check read from the git history of its claim.yml (added, check started, verdict
+    recorded or changed, confidence changed, report versions, exact wording found, evidence reviewed; each links to
+    the commit), right of reply, the evidence review due a year after the last review, and earlier or later
+    statements by the same body on the same topic. CI now checks out the full history (`fetch-depth: 0`); without it
+    the check steps are left out rather than misdated.
+  - Optional `timeline:` events in claim.yml (date, kind, text, url) record later statements, new data, replies and
+    corrections that are not claims of their own. `validate_claims.py` checks them.
+  - Body pages: "Statements over time" (a row per topic, dots coloured by verdict, a dashed ring when only the year
+    is known), the topics a body returned to in date order, and an Atom feed (`/bodies/<id>/feed.xml`; site-wide
+    `/feed.xml`) of new claims, verdicts, report versions and replies.
+  - `/bodies/patterns/`: claims, pattern tags, verdicts and topics by kind of body, sentences on where each tag
+    turns up (only from 3 tagged claims, "most" from 60%), and issues over time (each theme's claims by date,
+    coloured by kind of body). Never by person or party; counts, not ratings.
+  - Map: a "When said" grouping (one group per year of the statement).
+  - Data to check: CC-007's source "Malta News Briefing – Saturday 19 July 2023" is dated 19 July 2025 in
+    `data/sources.csv`; 19 July 2025 was a Saturday, so the title probably carries the wrong year.
 - **Who said it, connections and claim mentions.**
   - `data/bodies.csv` is the register of bodies and people: 63 organisations and 14 people, with kind, type, parent
     office, role and the exact speaker wording as aliases. Claims are matched by speaker text (`scripts/bodies.py`),
