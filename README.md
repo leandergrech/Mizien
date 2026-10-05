@@ -82,7 +82,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-050 | Nature & Wildlife | 'Race to weaken hunting laws' | Not started | - |
 | CC-051 | Nature & Wildlife | 'Over 30% of our seas protected' | Drafted | Misleading |
 | CC-052 | Nature & Wildlife | Fish-farm slime 'promptly contained' | Not started | - |
-| CC-053 | Nature & Wildlife | Milky Way visible from 13% of Malta | Not started | - |
+| CC-053 | Nature & Wildlife | Milky Way visible from 13% of Malta | Drafted | Supported |
 | CC-054 | Land & Trees | Project Green: 100,000 m2 a year | Not started | - |
 | CC-055 | Land & Trees | Manoel Island back to the public | Not started | - |
 | CC-056 | Land & Trees | Central Link: 'only 254 trees' | Not started | - |

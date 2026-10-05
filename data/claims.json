@@ -2476,10 +2476,11 @@
       "id": "CC-053",
       "title": "Milky Way visible from 13% of Malta",
       "category": "Nature & Wildlife",
-      "claim": "Researchers (University of Malta photometric mapping): the Milky Way is visible from only about 13% of the Maltese Islands, and 87% of the area has high light pollution.",
-      "counter": "Peer-reviewed study (J. Environ. Manage., 2020); ERA/PA 2020 light guidelines still draft. Check trend data since.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "University of Malta researchers (Caruana et al., Journal of Environmental Management, 2020): 87% of the area of the Maltese Islands registers Bortle class 5 or brighter night skies, and the Milky Way is visible from only 12.8% of the area (reported as 'about 13%').",
+      "counter": "The study gives 12.8% (Bortle class 4) or 13.5% (world atlas threshold); 87.2% of the area is in classes 5-9. Area-weighting the island results gives 11.6% (the paper weights 347 survey cells). The 2016 world atlas gave 11%. Threshold sensitivity 6.3-25.9%. Data are from 2017-2019; on the island of Malta class 4 fell from 3.9% to 1.6% between the two surveys; no survey since.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
       "tags": [],
       "subtopic": "Dark skies",
       "location": {
@@ -2489,17 +2490,38 @@
         "scope": "site",
         "icon": "pin"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "University of Malta researchers",
       "bodies": [
         "um-researchers"
       ],
-      "date": "2020",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-053A",
+          "text": "The Milky Way is visible from only about 13% of the islands",
+          "finding": "12.8% (class 4) or 13.5% (atlas threshold); 11.6% area-weighted; world atlas 11%.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-053B",
+          "text": "87% of the area has high light pollution",
+          "finding": "87.2% of the area in Bortle class 5 or brighter, 2017/18.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
+      "date": "2020-05-01",
+      "quote": "We show that the vast majority of the area of the Maltese Islands is heavily light polluted, with 87% of the area registering a NSB < 20.39 magSQM/arcsec2 (Bortle Class 5 or higher) and 37.3% < 19.09 magSQM/arcsec2 (Bortle Class 6 or higher), with the Milky Way being visible for only 12.8% of the area",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-053/report.pdf",
+        "flyer_pdf": "claim-files/CC-053/flyer.pdf",
+        "flyer_png": "claim-files/CC-053/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-053/claim.yml"
     },
     {
