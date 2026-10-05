@@ -126,7 +126,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-094 | Climate & Energy | Commission: Malta off track for 2030 | Not started | - |
 | CC-095 | Climate & Energy | EUR 400m to keep bills low | Not started | - |
 | CC-096 | Nature & Wildlife | Fish farms moved 6 km offshore | Not started | - |
-| CC-097 | Health & Safety | Beach workers left exposed to heat | Not started | - |
+| CC-097 | Health & Safety | Beach workers left exposed to heat | In progress | - |
 | CC-098 | Tourism & Population | Officials enforce private interests at Blue Lagoon | Not started | - |
 | CC-099 | Tourism & Population | Foreigners are 31% of residents | Not started | - |
 | CC-100 | Tourism & Population | Over 10 million airport passengers | Drafted | Supported |
