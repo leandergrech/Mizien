@@ -110,6 +110,23 @@ location:
   lon: 14.50907
   scope: national
   icon: citygate
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-018A
+    text: "The IMF found the housing market sound (prices aligned with fundamentals, stable ratios)"
+    finding: "Stated in the report [2]; confirmed by Eurostat [3]."
+    rating: "Supported"
+    tone: green
+  - id: CC-018B
+    text: "The assessment confirms the sector’s “strength and stability”"
+    finding: "Yes on valuation; the IMF also lists bank exposure as a vulnerability."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-018C
+    text: "It confirms what the MDA has said for years"
+    finding: "Partly; the MDA’s own study pointed the other way on price-to-income."
+    rating: "Partly"
+    tone: amber
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: −10.7%
   caption: house price-to-income ratio, 2015–2024 (Eurostat)

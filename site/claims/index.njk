@@ -4,7 +4,7 @@ title: All claims
 description: Every claim Miżien has recorded, with its verdict and status.
 permalink: /claims/
 ---
-{%- set checked = mizien.claims | selectattr("verdict") | length %}
+{%- set checked = mizien.claims | selectattr("label") | length %}
 <nav class="crumbs" aria-label="Breadcrumb">
   <ol><li><a href="/">Home</a></li><li aria-current="page">Claims</li></ol>
 </nav>
@@ -25,7 +25,7 @@ permalink: /claims/
         <span class="pc-kicker">{{ c.id }} · {{ c.subtopic or c.category }}</span>
         <span class="pc-title">{{ c.title }}</span>
         <span class="pc-meta">{{ c.claim.speaker }}{% if c.claim.date %} · {{ c.claim.date | ukDate }}{% endif %}</span>
-        <span class="pc-foot">{% if c.verdict %}<span class="badge v-{{ c.verdict_slug }}">{{ c.verdict }}</span>{% else %}<span class="badge v-none">Not yet checked</span>{% endif %}
+        <span class="pc-foot">{% if c.label %}<span class="badge v-{{ c.label_slug }}">{% if c.label_kind == "pledge" %}Pledge: {% endif %}{{ c.label }}</span>{% else %}<span class="badge v-none">Not yet checked</span>{% endif %}
           <span class="pc-status">{{ c.status_label }}</span></span>
       </span>
     </a></li>
@@ -41,7 +41,7 @@ permalink: /claims/
         <td><a href="{{ c.path }}">{{ c.id }}</a></td>
         <td><a href="{{ c.path }}">{{ c.title }}</a><br><span class="small">{{ c.claim.speaker }}{% if c.claim.date %} · {{ c.claim.date | ukDate }}{% endif %}</span></td>
         <td>{{ c.category }}</td>
-        <td>{% if c.verdict %}<span class="badge v-{{ c.verdict_slug }}">{{ c.verdict }}</span>{% else %}<span class="small">Not yet checked</span>{% endif %}</td>
+        <td>{% if c.label %}<span class="badge v-{{ c.label_slug }}">{% if c.label_kind == "pledge" %}Pledge: {% endif %}{{ c.label }}</span>{% else %}<span class="small">Not yet checked</span>{% endif %}</td>
         <td class="small">{{ c.status_label }}</td>
       </tr>
       {%- endfor %}

@@ -76,6 +76,26 @@ location:
   lon: 14.23985
   scope: site
   icon: pin
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-107A
+    text: "A clear and realistic plan for a Net-Zero Gozo by 2040"
+    said_by: "PN [1]"
+    finding: "No plan published; no official inventory or boundary. A 2023 energy baseline exists [6] but the programme does not use or cite it. Cannot be assessed as “realistic”."
+    rating: "No baseline"
+    tone: orange
+  - id: CC-107B
+    text: "Gozo net zero through afforestation (news summary)"
+    said_by: "MaltaToday [2]"
+    finding: "Would need 4.9–6.3 times Gozo’s area as new forest at a measured rate. Not the PN’s own wording."
+    rating: "Not possible as reported"
+    tone: red
+  - id: CC-107C
+    text: "The first island in the Mediterranean where every unit of emissions is reduced or offset"
+    said_by: "PN [1]"
+    finding: "Not tested."
+    rating: "Not tested"
+    tone: grey
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 4.9–6.3×
   caption: Gozo's area needed as forest to offset its emissions

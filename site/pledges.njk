@@ -1,0 +1,73 @@
+---
+layout: base.njk
+title: Pledges
+description: Promises made in Malta's manifestos, budgets and announcements, labelled by whether they can be measured and how they are progressing, with an as-of date, who made them, when, and which pledges overlap.
+permalink: /pledges/
+---
+{%- import "macros.njk" as m -%}
+{%- set P = mizien.pledges -%}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li aria-current="page">Pledges</li></ol>
+</nav>
+
+<article class="page prose-page pledges-page">
+  <header class="page-head">
+    <p class="kicker">Pledges</p>
+    <h1>Pledges</h1>
+    <p class="lead">A pledge is a promise of future action, so it gets a label instead of a verdict: whether it can be
+      measured and, if so, how it is going. Every label carries an <em>as of</em> date, the date of the evidence behind it.</p>
+  </header>
+
+  <p class="see-also">{% icon "links" %}<a href="/?group=pledges">See the pledge network on the map</a>: pledges linked by
+    who made them, when (the manifesto, budget or announcement) and what they are about, with lines between pledges that overlap.</p>
+
+  <section aria-labelledby="h-labels">
+    <h2 id="h-labels">The labels</h2>
+    <dl class="pledge-labels">
+      {%- for l in mizien.pledge_labels %}
+      <div><dt><span class="badge {{ l.slug }} v-{{ l.slug }}">{{ l.name }}</span></dt><dd>{{ l.meaning | mdInline | safe }}</dd></div>
+      {%- endfor %}
+    </dl>
+    <p class="small">A check of a pledge alone shows only its label. A check that also tests factual statements keeps its
+      verdict for those and shows the label beside it. Decided on 5 October 2026; see the Pledges section of
+      <a href="{{ site.repo }}/blob/main/methodology/verdict-scale.md#pledges">the verdict scale</a>.</p>
+  </section>
+
+  <section aria-labelledby="h-list">
+    <h2 id="h-list">Pledges checked so far</h2>
+    {%- if P.length %}
+    <div class="table-scroll">
+    <table class="claims pledge-table">
+      <thead><tr><th scope="col">Pledge</th><th scope="col">Made by</th><th scope="col">Made in</th><th scope="col">Deadline</th><th scope="col">Label</th></tr></thead>
+      <tbody>
+      {%- for x in P %}
+        <tr><td>{{ m.claim(x) }}<br><span class="small">{{ x.pledge.target }}</span></td>
+          <td>{% for b in x.pledge.made_by %}<a href="{{ b.path }}">{{ b.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</td>
+          <td>{{ x.pledge.vehicle }}{% if x.pledge.made_on %}<br><span class="small">{{ x.pledge.made_on }}</span>{% endif %}</td>
+          <td>{{ x.pledge.deadline or "none stated" }}{% if x.pledge.term_end %}<br><span class="small">term ended {{ x.pledge.term_end }}</span>{% endif %}</td>
+          <td><span class="badge v-{{ x.pledge.slug }}">{{ x.pledge.status }}</span><br><span class="small">as of {{ x.pledge.as_of }}</span>
+            {%- if x.verdict %}<br><span class="small">verdict on the facts: {{ x.verdict }}</span>{% endif %}</td></tr>
+      {%- endfor %}
+      </tbody>
+    </table>
+    </div>
+    {%- else %}
+    <p>No pledge is labelled yet.</p>
+    {%- endif %}
+  </section>
+
+  {%- set overlapping = P | having("overlaps.length") %}
+  {%- if overlapping.length %}
+  <section aria-labelledby="h-overlaps">
+    <h2 id="h-overlaps">Overlapping pledges</h2>
+    <p>Pledges overlap when they are listed as overlapping, share a theme, or are on the same subtopic. Overlapping
+      pledges are worth reading together, for example when two parties promise to tackle the same problem.</p>
+    <ul class="linked-bodies">
+      {%- for x in overlapping %}
+      <li><p class="lb-name">{{ m.claim(x) }}</p>
+        {%- for o in x.overlaps %}<p class="lb-why">Overlaps {{ m.claim(o) }}: {{ o.why | join("; ") }}.</p>{% endfor %}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+</article>

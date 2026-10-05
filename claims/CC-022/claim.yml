@@ -64,6 +64,28 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-022A
+    text: "Lowest price in PPS, 2024-S2"
+    finding: "Confirmed by Eurostat for the standard household band (2,500–4,999 kWh), the one the release uses; not the lowest in other bands [2]."
+    rating: "Supported"
+    tone: green
+  - id: CC-022B
+    text: "Third-lowest nominal price; comparison figures"
+    finding: "Confirmed [2]."
+    rating: "Supported"
+    tone: green
+  - id: CC-022C
+    text: "Prices stable since 2020"
+    finding: "−0.2% vs EU +35% [2]."
+    rating: "Supported"
+    tone: green
+  - id: CC-022D
+    text: "Lowest “burden” on families"
+    finding: "True for price; the subsidy cost is not counted [4]."
+    rating: "Largely supported"
+    tone: lime
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 1st
   caption: cheapest electricity in the EU in purchasing power, typical household (2,500–4,999 kWh)

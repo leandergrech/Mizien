@@ -2,6 +2,6 @@
 // search engines until site.index_drafts is switched on (maintainer decision, 4 Oct 2026).
 export default {
   eleventyComputed: {
-    noindex: (data) => !data.site.index_drafts && (data.mizien?.claims || []).some((c) => c.is_draft && c.verdict),
+    noindex: (data) => !data.site.index_drafts && (data.mizien?.claims || []).some((c) => c.is_draft && c.label),
   },
 };

@@ -38,7 +38,7 @@ permalink: /bodies/
     <h2 id="h-{{ t.id }}">{{ t.label }}</h2>
     <ul class="body-grid">
       {%- for o in orgs %}
-      {%- set checked = o.claims | selectattr("verdict") | length %}
+      {%- set checked = o.claims | selectattr("label") | length %}
       <li class="body-card">
         <a class="bc-name" href="{{ o.path }}">{{ o.name }}</a>
         <span class="bc-count">{{ o.claims.length }} claim{% if o.claims.length != 1 %}s{% endif %}{% if checked %} · {{ checked }} with a verdict{% endif %}</span>

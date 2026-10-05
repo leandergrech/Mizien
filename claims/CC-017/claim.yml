@@ -84,6 +84,28 @@ location:
   lon: 14.53085
   scope: site
   icon: crane
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-017A
+    text: "A reclamation project is already under way in the Freeport"
+    finding: "About 3.7 ha of new land at Terminal 2 since 2023 [8], as stated [5, 6]."
+    rating: "Supported"
+    tone: green
+  - id: CC-017B
+    text: "A large-scale project outside the perimeter will be launched in 2026"
+    finding: "No public step found by 3 Oct 2026; no site or size given."
+    rating: "Not shown"
+    tone: grey
+  - id: CC-017C
+    text: "“There are five or six sites where reclamation is possible and environmentally safe” (2019)"
+    finding: "Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km from the Terminal 2 works [7]."
+    rating: "Not shown"
+    tone: red
+  - id: CC-017D
+    text: "Commercial activity will move so families can enjoy the space"
+    finding: "Activities and spaces not identified."
+    rating: "Not shown"
+    tone: grey
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: +3.7 ha
   caption: new land at Freeport Terminal 2 since 2023

@@ -101,6 +101,28 @@ location:
   lon: 14.50753
   scope: site
   icon: waterfront
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-016A
+    text: "Shore power cuts a connected ship’s emissions at berth by about 90%"
+    finding: "Infrastructure Malta’s per-liner figures: NO2 −93%, PM −92.6%, SO2 −99.6%, CO2 −39.6% [10, 11]; consistent with research [7, 9]. Underlying study not cited."
+    rating: "Plausible"
+    tone: green
+  - id: CC-016B
+    text: "The project slashes 90% of air pollution in the Grand Harbour"
+    finding: "At most about 9% of at-berth cruise emissions in year one; other sources and manoeuvring untouched; no harbour measurement."
+    rating: "Not shown"
+    tone: red
+  - id: CC-016C
+    text: "17,000 families benefit from cleaner air"
+    finding: "Basis of the figure not found; any benefit scales with use."
+    rating: "Not shown"
+    tone: grey
+  - id: CC-016D
+    text: "EUR 33 million; 17 points; five liners at once"
+    finding: "17 points and five liners consistent [1–3]. Cost figures vary by phase and date: EUR 49.9m for the whole project and EUR 37m for phase 1 (2020) [10, 11]; EUR 33m at the 2024 launch [2]."
+    rating: "Figures vary"
+    tone: amber
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 9%
   caption: of cruise berth time plugged in, Jul 2024 – Jul 2025

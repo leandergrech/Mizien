@@ -126,6 +126,21 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
 
 ## Site build (4 October 2026)
 
+- **Parts of a claim and pledge labels** (5 October 2026, maintainer decisions).
+  - Sub-claims are numbered parent + letter (CC-017A, B...) and recorded in claim.yml as `subclaims:` (wording,
+    finding, rating and the colour of the report's rating chip). Backfilled from the 15 reports with a sub-claim
+    table. They share their claim's page (a "Parts of this claim" section, anchors `#CC-017A`), are linked wherever
+    their number is mentioned, have their own hover card, and appear in the Għanqbuta view as small satellites of
+    their claim (selectable: `?sel=part:CC-017C`). They are not claims of their own: no groups, links or pages.
+  - Pledges get a label instead of a verdict (the Pledges section of `methodology/verdict-scale.md`, written by the ccr session): Not measurable, Not yet due, On
+    track, Off track, Met, Missed, each with an as-of date, in a `pledge:` block (status, as_of, made_by, made_on,
+    vehicle, deadline, target; optional term_end, occasion, overlaps). A pure pledge has no verdict and shows only
+    its label; a mixed check shows both. The validator checks the block (Missed only after the deadline or term and
+    with evidence_shown; Not yet due only before the deadline). Claim pages have a pledge box; `/pledges/` lists the
+    labels, every pledge and overlapping pledges; the map has a **Pledges** grouping (who, when, what, gold lines
+    between overlapping pledges), shown once a pledge exists. The ccr-bd076c78-ydx75j session adds the blocks for
+    CC-010 (Off track; verdict kept), CC-011 and CC-107 (Not measurable; verdicts removed).
+
 - **Stance timelines and patterns by kind of body** (5 October 2026).
   - Every claim page has a Timeline: the statement, sources as published (`data/sources.csv` dates; access dates are
     ignored), each step of the check from its research log, right of reply, the evidence review due a year after the
