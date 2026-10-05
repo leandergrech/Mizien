@@ -107,3 +107,7 @@ history:   # research log: the date each step of the research was done (not when
     step: version
     version: "1.0"
     note: "First issue. Draft pending right of reply from the Ministry for the Environment, Energy and Public Cleanliness and WasteServ."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    note: "Upgrade: the Commission’s early-warning report [8] and Malta annex [12] read directly (second-hand marker removed); its 2025 review [6] read in full (postponement renounced; biowaste reported as landfilled). New Figure 3 (EU-27); verified fairness points (+7.6 points, 4th of 20; packaging and deposit scheme); new Q4. Maintainer decision (5 Oct 2026): confidence raised from moderate to high, because three Commission documents and Eurostat now agree. Verdict unchanged."
