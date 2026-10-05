@@ -45,7 +45,10 @@ PALETTE = {"#14452f": "green", "#7fa88b": "sage", "#e6efe8": "pale", "#e3a72f": 
            "#b5483a": "red", "#f7e4e0": "redpale", "#2b3a42": "slate", "#8a9399": "grey", "#eef0f1": "greypale",
            "#f6f4ee": "cream", "#d9772b": "orange", "#fbe9da": "orangepale", "#3c6e8f": "blue", "#e3edf3": "bluepale",
            "#2e7d4f": "greenc", "#bfd6c5": "lightgreen", "#8db36b": "lime", "#c85a3a": "brick", "#8e2f25": "maroon",
-           "#ffffff": "white"}
+           "#ffffff": "white", "#5f6b71": "grey"}   # #5f6b71: the PDF's darker grey (pledge "Not measurable", default chip)
+
+
+PLEDGE_HEX = {"#" + c.hexval()[2:].upper() for c in mizien_report.PLEDGE_COLS}
 
 
 def kc(hexcol):
@@ -141,6 +144,13 @@ def verdict_slug(v):
     return slug(v) if v else "none"
 
 
+def pledge_style(label):
+    """Inline colours for a pledge label (the PDF's PLEDGE_COLS), as the --v / --v-ink pair the site styles use."""
+    col = "#" + mizien_report.PLEDGE_COLS[mizien_report.PLEDGES.index(label)].hexval()[2:].upper()
+    ink = "#ffffff"
+    return f"--v: {col}; --v-ink: {ink}"
+
+
 # ------------------------------------------------------------------ story -> HTML
 class Renderer:
     def __init__(self, figures=None):
@@ -219,7 +229,7 @@ class Renderer:
             n = f'<span class="sec-n">{num}</span> ' if num else ""
             return f'<h2 id="{hid}">{n}{html.escape(title)}</h2>'
         if name == "VerdictMeter":
-            return self.meter(getattr(f, "active", None))
+            return self.meter(getattr(f, "active", None), getattr(f, "scale", "verdict"))
         if isinstance(f, Paragraph):
             return self.para(f)
         if isinstance(f, KeepTogether):
@@ -251,8 +261,14 @@ class Renderer:
         return (f'<figure class="report-figure"><img src="{src}" width="{w}" height="{h}" alt="{html.escape(alt[:300])}" '
                 f'loading="lazy">{cap}</figure>')
 
-    def meter(self, active):
+    def meter(self, active, scale="verdict"):
         segs = []
+        if scale == "pledge":   # pledge labels: colours inline, so the page does not depend on stylesheet classes
+            for i, v in enumerate(mizien_report.PLEDGES):
+                on = ' class="on" aria-current="true"' if i == active else ""
+                segs.append(f'<li{on}><span class="badge v-{verdict_slug(v)}" style="{pledge_style(v)}">{v}</span></li>')
+            return ('<ol class="report-meter pledge-meter" aria-label="Pledge labels" '
+                    'style="grid-template-columns: repeat(auto-fit, minmax(96px, 1fr))">' + "".join(segs) + "</ol>")
         for i, v in enumerate(VERDICTS):
             on = ' class="on" aria-current="true"' if i == active else ""
             segs.append(f'<li{on}><span class="badge v-{verdict_slug(v)}">{v}</span></li>')
@@ -362,6 +378,8 @@ class Renderer:
         return f'<div class="callout bg-{kc(bg)} bar-{kc(bar)}">{inner}</div>'
 
     def mz_chip(self, text, bg, fg):
+        if (bg or "").upper() in PLEDGE_HEX:   # pledge labels: the site has no chip classes for them
+            return f'<span class="chip" style="background: {bg}; color: #fff">{inline(text)}</span>'
         return f'<span class="chip bg-{kc(bg)}">{inline(text)}</span>'
 
     def mz_grade(self, g):
@@ -392,9 +410,9 @@ class Renderer:
                         f'<span class="tile-cap">{inline(cp)}</span></div>' for b, col, cp in items)
         return f'<div class="tiles">{tiles}</div>'
 
-    def mz_updown(self, up, down):
-        return ('<div class="updown"><div class="up"><p class="tag">What would move the verdict up</p>'
-                f"<p>{inline(up)}</p></div><div class=\"down\"><p class=\"tag\">What would move it down</p>"
+    def mz_updown(self, up, down, up_head="What would move the verdict up", down_head="What would move it down"):
+        return (f'<div class="updown"><div class="up"><p class="tag">{html.escape(up_head)}</p>'
+                f"<p>{inline(up)}</p></div><div class=\"down\"><p class=\"tag\">{html.escape(down_head)}</p>"
                 f"<p>{inline(down)}</p></div></div>")
 
     def mz_toc(self, items):
@@ -403,6 +421,9 @@ class Renderer:
         return f'<nav class="report-toc" aria-label="In this report"><ol>{li}</ol></nav>'
 
     def mz_verdictbox(self, verdict, subline):
+        if verdict in mizien_report.PLEDGES:
+            return (f'<div class="verdict-box pledge-box v-{verdict_slug(verdict)}" style="{pledge_style(verdict)}">'
+                    f'<span class="vb-label">Pledge</span><strong>{html.escape(verdict)}</strong><p>{inline(subline)}</p></div>')
         return (f'<div class="verdict-box v-{verdict_slug(verdict)}"><span class="vb-label">Verdict</span>'
                 f"<strong>{html.escape(verdict)}</strong><p>{inline(subline)}</p></div>")
 

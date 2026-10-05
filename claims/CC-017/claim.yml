@@ -30,6 +30,12 @@ claim:
     date: 27 Oct 2025
     url: https://www.independent.com.mt/articles/2025-10-27/local-news/Budget-2026-Large-scale-land-reclamation-project-to-begin-outside-Freeport-perimeter-6736284318
     note: News report of the speech.
+  - title: 'Watch: ''Game Changer'' - Robert Abela Discusses Land Reclamation Plans Off Coast Of Birżebbuġa'
+    publisher: Lovin Malta (Tim Diacono)
+    date: 28 Oct 2025
+    url: https://lovinmalta.com/news/watch-game-changer-robert-abela-discusses-land-reclamation-plans-off-cost-of-birzebbuga/
+    note: 'Prime Minister, press conference after the Budget: "The sea near the Freeport is an ideal depth for these
+      kinds of projects, and our idea is to relocate industries that bother people." Read in full 5 Oct 2026.'
   quote: A reclamation project is already under way in the Freeport, and now it is time to take the next step. The
     Government is preparing to launch a large-scale land reclamation project outside the Freeport perimeter next
     year.
@@ -37,18 +43,25 @@ counter_evidence: 'Existing works confirmed: Sentinel-2 shows +3.7 ha (+/-1) at 
   m2, ~1 Mt inert fill). No site, size, cost, fill source, screening or call for the large-scale project found by
   3 Oct 2026. Seabed study unpublished since 2019; budget lines EUR 500,000 (2023) -> 10,000 (2025). Three Natura
   2000 designations within ~0.5 km of the new Terminal 2 land, two of them overlapping on the same cliffs (SAC
-  MT0000024, SPA MT0000033); marine SPA MT0000111 (256 km2) ~0.4 km away. Posidonia meadows -34% in 50 years across
-  the Mediterranean (Telesca et al. 2015).'
-tests: Sentinel-2 L2A (2017-2026); EEA Natura 2000 (2024); Budget Speech 2026; Freeport Corporation statements;
-  seagrass literature.
+  MT0000024, SPA MT0000033); marine SPA MT0000111 (256 km2) ~0.4 km away. v1.2: EMODnet Seabed Habitats (Maltese
+  map of 2016, gridded at about 230 m) maps Posidonia next to the new land (0.01 km, one grid cell) and 72 ha within
+  1 km; EMODnet DTM 2024 depth within 1 km mostly 5-30 m (median 18 m); mapped meadows at 11-35 m in the bay
+  (median 26 m) and 21-32 m within 1 km (median 29 m). Fairness: Malta''s Article 17 reports assess Posidonia beds
+  (1120) as favourable overall (2013-2018; 2019-2024, stable; 68.46 km2); the -34% in 50 years (Telesca et al. 2015) is Mediterranean-wide. A bay-wide Sentinel-2 MNDWI
+  check for other new land was not robust and is not used.'
+tests: Sentinel-2 L2A (2017-2026); EEA Natura 2000 (2024); EMODnet Seabed Habitats seagrass (2025, CC BY 4.0);
+  EMODnet bathymetry DTM 2024; EEA Article 17 web tool (habitat 1120); Budget Speech 2026; Freeport Corporation
+  statements; seagrass literature.
 why_low_hanging: 'Done: Claim Check 017 report and flyer.'
 tags:
 - Promise-without-baseline
 tags_provisional: false
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: Medium
 caveats: Right of reply to the Ministry for Finance and the Environment Ministry not yet sent. Absence of public
-  steps is from searches, not proof. Benthic habitat maps not obtained.
+  steps is from searches, not proof. The seagrass map (EMODnet; Maltese map of 2016) is gridded at about 230 m, so it
+  is coarse near the shore and shows where meadows were mapped, not their condition now; the 2018-2019 national
+  survey map was not found.
 right_of_reply:
   sent: null
   deadline: null
@@ -58,11 +71,14 @@ evidence_shown:
 - Sentinel-2 land series at Terminal 2 (data/cc-017/s2_land_t2.csv)
 - EEA Natura 2000 sites near the Freeport (data/cc-017/natura2000_near_freeport.csv)
 - Distances from the Terminal 2 reclamation to Natura 2000 sites (data/cc-017/natura2000_distances.csv)
+- Seagrass area and distance, sea depth around the Freeport (data/cc-017/bay_stats.csv)
+- Mapped Posidonia in Marsaxlokk Bay, EMODnet Seabed Habitats, CC BY 4.0 (data/cc-017/seagrass_emodnet_bay.geojson)
+- Malta's Article 17 assessment of Posidonia beds (data/cc-017/article17_1120_mt.csv)
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-05'
 location:
   place: Malta Freeport, Birżebbuġa
@@ -84,13 +100,18 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: grey
   - id: CC-017C
     text: "“There are five or six sites where reclamation is possible and environmentally safe” (2019)"
-    finding: "Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km from the Terminal 2 works [7]."
+    finding: "Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km from the Terminal 2 works, and Posidonia is mapped next to them [7, 12]."
     rating: "Not shown"
     tone: red
   - id: CC-017D
     text: "Commercial activity will move so families can enjoy the space"
     finding: "Activities and spaces not identified."
     rating: "Not shown"
+    tone: grey
+  - id: CC-017E
+    text: "“The sea near the Freeport is an ideal depth for these kinds of projects” (Prime Minister)"
+    finding: "Within 1 km of the Terminal 2 works the sea is mostly 5–30 m deep [13]; “ideal” is not defined. Mapped meadows near the works lie at 21–32 m (11–35 m across the bay) [12, 13]."
+    rating: "Not tested"
     tone: grey
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: +3.7 ha
@@ -105,3 +126,7 @@ history:   # research log: the date each step of the research was done (not when
     version: "1.1"
     correction: true   # this version corrects errors in an earlier one
     note: "Corrections. (1) The 2019 statement is quoted as said: “least environmental damage” (a paraphrase) → “possible and environmentally safe” (cover, TL;DR, sections 2, 3, 5, 6 and 7); sub-claim C now tests that wording. (2) Distance to Natura 2000: “about 1 km from the Freeport”, measured from an onshore point west of Terminal 2 → 0.4 km from the new land at Terminal 2 to the marine SPA MT0000111 and 0.5 km to the cliff sites (shortest distance to the EEA boundaries; data/cc-017/natura2000_distances.csv); tile “1 km” → “0.4 km”. (3) “Three Natura 2000 sites” → three designations, two of which (SAC MT0000024, SPA MT0000033) overlap on the same cliffs. (4) Flyer: right of reply now names the Finance and Environment ministries, as the report does; the −34% seagrass loss is labelled Mediterranean-wide. Verdict and confidence unchanged."
+  - date: 2026-10-05
+    step: version
+    version: "1.2"
+    note: "Upgrade. (1) New Figure 3: a map of Marsaxlokk Bay with sea depth (EMODnet), mapped Posidonia meadows, full-resolution Natura 2000 boundaries and the new land at Terminal 2; within 1 km of the new land the sea is mostly 5–30 m deep. (2) Fairness: Malta’s Article 17 reports assess its Posidonia beds as favourable overall (2013–2018; 2019–2024, stable); the −34% loss is Mediterranean-wide (section 3, Q2, TL;DR, flyer). (3) The Prime Minister’s words are now quoted in full from Lovin Malta, and tested as sub-claim E (not tested: “ideal” is not defined). (4) Tile “0.4 km” → mapped Posidonia within 1 km of the new land (the 0.4 km stays in the text). (5) A bay-wide Sentinel-2 check for other new land was tried and dropped as not robust (limitations). Verdict and confidence unchanged. Maintainer decision (5 Oct 2026): the map and all seagrass statistics now use the EMODnet Seabed Habitats layer only (CC BY 4.0), whose Maltese map (2016) is gridded at about 230 m (limitations). Mapped Posidonia lies next to the new land (0.01 km, one grid cell), 72 ha within 1 km; mapped meadows lie at 11–35 m in the bay (median 26 m) and 21–32 m within 1 km (median 29 m). Tile and flyer card “72 ha”. Verdict and confidence unchanged."

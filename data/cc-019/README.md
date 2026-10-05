@@ -9,3 +9,44 @@
   map; the 2-year rule, land first mapped as built in 2019-2022. The `single-year` row (2018 vs 2023, added 5 Oct
   2026 for report v1.1) shows the simple comparison the rules replace.
 - `checks.csv`: written by `tools/cc-019-report/calc.py`.
+
+Added 5 Oct 2026 for report v1.2, written by `tools/cc-019-report/crosscheck.py`:
+
+- `amphora_record.csv`: the record of Amphora Media's change polygons (the GeoJSON behind the Green to Grey map):
+  URL, SHA-256, size, server date and the file's own metadata (generated 30 Aug 2026; 397 features; 162 without a 2018
+  class; year range 2018-2025). The file itself is not committed: its licence is not stated. `crosscheck.py` downloads
+  it to `tools/cc-019-report/out/` (git-ignored).
+- `amphora_classes.csv`: Amphora's polygons by 2018 class (Dynamic World classes as named in the file): number, area
+  from the geometry in UTM 33N, geodesic area, the file's own `area_m2` field (which sums to less than the geometry),
+  and shares of all area and of the area with a known class (by geometry, field and count).
+- `io_esri_series.csv`: Impact Observatory / Esri 10 m land cover 2017-2025 from Esri's Living Atlas image service
+  (Sentinel2_10m_LandCover), exported on the v1.0 pixel grid. For 2017-2023 every pixel is identical to the Planetary
+  Computer maps used in v1.0 (column `identical_to_planetary_computer_pct`); class areas on land (never water or no
+  data in any year).
+- `io_lulc_change_ext.csv`: the persistence rules of `io_lulc_change.csv` recomputed on the 2017-2025 maps, plus two
+  rules that use the 2024 and 2025 maps (`strict-2025`: not built 2017-19, built 2023-25; `two-year-2025`: not built
+  2017-18, built 2024-25).
+- `amphora_io_overlap.csv`: Amphora's polygons rasterised on the 10 m grid (pixel centres) against the land cover: the
+  class of Amphora's area in the 2018, 2023 and 2025 maps; built-up in all / none of 2017-19; the same for pixels at
+  least 20 m inside a polygon edge; and, per rule, the share of Amphora's area the model maps as new built-up, the share
+  of the model's new built-up land inside Amphora's polygons, and the same within 20 m.
+- `corine_change.csv`: EEA CORINE Land Cover change polygons for Malta, 2006-2012 (CHA0612) and 2012-2018 (CHA1218),
+  from the EEA discomap service: CLC codes before and after, area, centroid; `land_take` = change to an artificial
+  class (CLC 1xx) from any other class. The service's layer description gives a 5 ha minimum mapping unit for change
+  layers (25 ha for status layers).
+
+Added 5 Oct 2026 (maintainer decision: imagery spot-check), written by `tools/cc-019-report/spotcheck.py`:
+
+- `imagery_spotcheck.csv`: one row per sampled polygon. 40 draws by systematic sampling with probability
+  proportional to polygon area (UTM 33N; polygons in random order; seed, interval and random start in the columns),
+  so the share of draws in a class estimates the share of Amphora's area in that class; 39 polygons (one drawn twice,
+  `draws` = 2). Columns: polygon index in Amphora's file and its id, area, centroid, Amphora's 2018 class and place
+  label; Esri World Imagery Wayback release and acquisition date (SRC_DATE from that release's metadata layer) of the
+  before image (latest acquired before 1 Jul 2018), the 4 Sep 2018 image, the by-2023 image and the latest image;
+  every imagery version at the polygon centroid; our class (confirmed / partial / already grey / still open /
+  unclear), the land type before, the state on 4 Sep 2018, whether the polygon was mostly grey by 6 May 2023, and a
+  one-line note. Classified by eye by Miżien; the rules are in the script. The imagery itself is not committed
+  (Esri's terms).
+- `imagery_spotcheck_summary.csv`: shares of draws by class with Wilson 95% intervals; confirmed + half of partial;
+  a rough count-based picture (weights 1/area); land type before (fields, orchards, scrub); state on 4 Sep 2018; grey
+  by May 2023; imagery dates.

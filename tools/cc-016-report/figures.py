@@ -64,6 +64,67 @@ def fig2():
     fig.savefig(OUT / "fig2_calls.png", bbox_inches="tight", facecolor="white")
 
 
-fig1()
-fig2()
-print("figures in", OUT)
+def fig3():
+    """v1.2: the 373 berths split by connection, and the 90% per connected ship against the harbour-wide share."""
+    from matplotlib.patches import Rectangle
+    berths = int(U["Cruise berths at Valletta Cruise Port"])
+    conn = int(U["Berths connected to onshore power (OPS)"])
+    msc = int(U["Connections by MSC World Europa"])
+    t = U["Share of berth time connected"]
+    LIGHT = "#D5DBD7"
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(9.6, 4.1), dpi=220, gridspec_kw={"width_ratios": [1.05, 1]})
+    cols, rows = 25, 15
+    kinds = [GREEN] * msc + [SAGE] * (conn - msc) + [LIGHT] * (berths - conn)
+    for i, col in enumerate(kinds):
+        cx, cy = i // rows, rows - 1 - i % rows
+        a1.add_patch(Rectangle((cx + 0.08, cy + 0.08), 0.84, 0.84, facecolor=col, edgecolor="none"))
+    a1.set_xlim(0, cols)
+    a1.set_ylim(-5.2, rows)
+    a1.set_aspect("equal")
+    a1.axis("off")
+    leg = [(GREEN, f"{msc} plugged in: MSC World Europa (LNG-powered)"),
+           (SAGE, f"{conn - msc} plugged in: all other ships"),
+           (LIGHT, f"{berths - conn} not plugged in")]
+    for k, (col, lab) in enumerate(leg):
+        y = -1.4 - k * 1.3
+        a1.add_patch(Rectangle((0.08, y), 0.84, 0.84, facecolor=col, edgecolor="none"))
+        a1.text(1.4, y + 0.42, lab, fontsize=9.5, color=SLATE, va="center")
+    a1.set_title(f"The {berths} cruise berths, Jul 2024 – Jul 2025 (one square each)", fontsize=9.5, color=GREEN,
+                 loc="left", fontweight="bold")
+    labs = ["NO2", "Particulate matter", "SO2", "CO2"]
+    vals = [U[f"Per-liner cut on shore power: {k}"] for k in
+            ["nitrogen dioxide", "particulate matter", "sulphur dioxide", "carbon dioxide"]]
+    ys = [5.4, 4.6, 3.8, 3.0]
+    a2.barh(ys, vals, height=0.62, color=[GREEN, GREEN, GREEN, SAGE])
+    for y, v, lab in zip(ys, vals, labs):
+        a2.text(1.5, y, lab, va="center", fontsize=9, color="white", fontweight="bold")
+        a2.text(v + 1.5, y, f"−{v:g}%", va="center", fontsize=9.5, color=SLATE)
+    a2.text(0, 6.15, "Per connected liner while plugged in (Infrastructure Malta)", fontsize=8.5, color=SLATE,
+            fontweight="bold")
+    a2.barh([1.2], [t], height=0.62, color=RED)
+    a2.text(t + 1.5, 1.2, f"≤{t:g}%", va="center", fontsize=9.5, color=SLATE)
+    a2.text(0, 1.95, "Harbour-wide: share of cruise berth time plugged in, year one", fontsize=8.5, color=SLATE,
+            fontweight="bold")
+    a2.text(0, 0.45, "upper bound on the cut in at-berth cruise emissions", fontsize=8.5, color=GREY)
+    a2.vlines(90, 2.55, 6.55, color=AMBER, ls="--", lw=1.3)
+    a2.text(89, 6.6, "claimed: 90%", fontsize=8.5, color=SLATE, ha="right", va="bottom")
+    a2.set_xlim(0, 112)
+    a2.set_ylim(0, 7.1)
+    a2.set_yticks([])
+    a2.spines["left"].set_visible(False)
+    a2.set_xticks([0, 25, 50, 75, 100])
+    a2.set_xticklabels(["0", "25%", "50%", "75%", "100%"], fontsize=8)
+    a2.set_title("The same 90%, two scopes", fontsize=9.5, color=GREEN, loc="left", fontweight="bold")
+    fig.text(0.01, -0.035, "Berth and connection counts: Amphora Media analysis of Transport Malta FOI records and the "
+             "Valletta Cruise Port schedule, 10 Jul 2024 – 10 Jul 2025 (second-hand; the FOI reply is not public).\n"
+             "Per-liner cuts: Infrastructure Malta, 30 Nov 2020 (study not cited). MSC World Europa's fuel: MSC Cruises, "
+             "24 Oct 2022 (dual-fuel LNG / low-sulphur marine gasoil).", fontsize=7, color=GREY)
+    fig.tight_layout(w_pad=2.5)
+    fig.savefig(OUT / "fig3_scope.png", bbox_inches="tight", facecolor="white")
+
+
+if __name__ == "__main__":
+    import sys
+    for f in sys.argv[1:] or ["fig1", "fig2", "fig3"]:
+        globals()[f]()
+    print("figures in", OUT)

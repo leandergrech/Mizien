@@ -75,6 +75,61 @@ def fig2():
     fig.savefig(OUT / "fig2_bank_exposure.png", bbox_inches="tight", facecolor="white")
 
 
-fig1()
-fig2()
-print("figures in", OUT)
+def fig3():
+    """v1.2: house prices (quarterly) against income per head (annual), Malta, 2015 = 100."""
+    M, FL = defaultdict(dict), {}
+    for r in csv.DictReader(open(ROOT / "data" / "cc-018" / "eurostat_more.csv")):
+        M[(r["dataset"], r["unit"])][r["time"]] = float(r["value"]) if r["geo"] == "MT" else None
+        if r["geo"] == "MT":
+            FL[(r["dataset"], r["unit"], r["time"])] = r["flag"]
+    hq = {k: v for k, v in M[("prc_hpi_q", "I15_Q")].items() if v is not None}
+    inc, pop = M[("nasa_10_nf_tr", "CP_MEUR")], M[("nama_10_pe", "THS_PER")]
+    iph = {y: inc[y] / pop[y] for y in inc if y in pop and inc[y] is not None}
+    iph = {y: 100 * v / iph["2015"] for y, v in iph.items()}
+    gdp = {y: v for y, v in M[("nama_10_pc", "CP_EUR_HAB")].items() if v is not None and y >= "2015"}
+    gdp = {y: 100 * v / gdp["2015"] for y, v in gdp.items()}
+    qx = lambda q: int(q[:4]) + (int(q[-1]) - 1) / 4 + 0.125
+    fig, ax = plt.subplots(figsize=(9.6, 4.0), dpi=220)
+    qs = sorted(hq)
+    fin = [q for q in qs if "p" not in FL[("prc_hpi_q", "I15_Q", q)]]
+    prov = [q for q in qs if "p" in FL[("prc_hpi_q", "I15_Q", q)]]
+    ax.plot([qx(q) for q in fin], [hq[q] for q in fin], color=GREEN, lw=2, label="House prices (quarterly)")
+    ax.plot([qx(q) for q in [fin[-1]] + prov], [hq[q] for q in [fin[-1]] + prov], color=GREEN, lw=2, ls=(0, (2, 1.4)))
+    ys = sorted(iph)
+    ax.plot([int(y) + 0.5 for y in ys], [iph[y] for y in ys], color=BLUE, lw=2, marker="o", ms=4.5,
+            label="Household disposable income per head (annual)")
+    yg = sorted(gdp)
+    ax.plot([int(y) + 0.5 for y in yg], [gdp[y] for y in yg], color=GREY, lw=1.6, ls="--", marker="s", ms=3.5,
+            label="GDP per head, current prices (annual)")
+    lq, ly, lg = qs[-1], ys[-1], yg[-1]
+    ax.annotate(f"{hq[lq]:.0f}  house prices,\n{lq} (provisional)", (qx(lq), hq[lq]), xytext=(8, -4),
+                textcoords="offset points", fontsize=8, color=SLATE, va="top")
+    ax.annotate(f"{iph[ly]:.0f}  income per head, {ly}", (int(ly) + 0.5, iph[ly]), xytext=(-6, 9),
+                textcoords="offset points", fontsize=8, color=SLATE, ha="right")
+    ax.annotate(f"{gdp[lg]:.0f}  GDP per head, {lg}", (int(lg) + 0.5, gdp[lg]), xytext=(8, 4),
+                textcoords="offset points", fontsize=8, color=SLATE)
+    ax.axhline(100, color=GREY, lw=0.7)
+    ax.set_xlim(2015, 2028.4)
+    ax.set_xticks(range(2015, 2027))
+    ax.tick_params(labelsize=8.5)
+    ax.set_ylim(90, 200)
+    ax.set_ylabel("Index, 2015 = 100", fontsize=8.5)
+    ax.grid(axis="y", color="#E3E6E8", lw=0.6)
+    ax.set_axisbelow(True)
+    ax.legend(frameon=False, fontsize=8, loc="upper left")
+    ax.set_title("House prices and incomes per head, Malta", fontsize=9.5, color=GREEN, loc="left",
+                 fontweight="bold")
+    fig.text(0.01, -0.05, "Sources: Eurostat prc_hpi_q (house price index; dashed: provisional), nasa_10_nf_tr "
+             "(households' gross disposable income, B6G, S14_S15) divided by nama_10_pe (population; 2021-24 "
+             "provisional;\nno data after 2024) and nama_10_pc (GDP per head). Retrieved 5 Oct 2026. Annual values "
+             "plotted at mid-year.", fontsize=7, color=GREY)
+    fig.tight_layout()
+    fig.savefig(OUT / "fig3_prices_incomes.png", bbox_inches="tight", facecolor="white")
+
+
+if __name__ == "__main__":
+    import sys
+    todo = sys.argv[1:] or ["fig1", "fig2", "fig3"]
+    for f in todo:
+        globals()[f]()
+    print("figures in", OUT)

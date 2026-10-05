@@ -1,0 +1,3 @@
+period,region,range_km2,range_status,area_km2,area_method,area_status,sf_good_km2,sf_not_good_km2,sf_status,future_status,overall_status,overall_trend,source,retrieved
+2013-2018,MMED,202,FV,68.46,a,FV,66.38 - 68.46,N/A - 2.08,FV,FV,FV,=,https://nature-art17.eionet.europa.eu/article17/habitat/summary/?period=5&subject=1120,2026-10-05
+2019-2024,MMED,202,FV,68.46,estimatePartial,FV,66.38 - 66.38,2.08 - 2.08,FV,FV,FV,S,https://nature-art17.eionet.europa.eu/article17/habitat/summary/?period=6&subject=1120,2026-10-05

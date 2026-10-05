@@ -1,0 +1,542 @@
+station,name,type,month,no2_ugm3,valid_hours,hours_in_month,coverage_pct,validation,source_url,retrieved
+MT00004,Żejtun,urban background,2013-01,17.69,675,744,90.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2013-02,15.42,672,672,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2013-03,11.87,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2013-04,10.94,356,720,49.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2013-05,13.42,742,744,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2013-06,17.64,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2013-07,15.66,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2013-08,14.30,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2013-09,14.07,556,720,77.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2013-10,13.23,742,744,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2013-11,9.79,719,720,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2013-12,10.24,740,744,99.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-01,12.05,393,744,52.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-02,10.64,598,672,89.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-03,8.17,650,744,87.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-04,7.23,560,720,77.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-05,11.01,717,744,96.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-06,16.87,520,720,72.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-07,17.64,730,744,98.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-08,16.03,740,744,99.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-09,18.97,718,720,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-10,14.99,720,744,96.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-11,15.90,660,720,91.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2014-12,19.59,725,744,97.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-01,11.11,739,744,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-02,10.20,587,672,87.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-03,13.51,646,744,86.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-04,11.11,557,720,77.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-05,16.48,661,744,88.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-06,11.24,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-07,16.35,622,744,83.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-08,10.05,617,744,82.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-09,11.28,403,720,56.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-10,11.70,733,744,98.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-11,16.24,229,720,31.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2015-12,26.73,576,744,77.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-01,20.56,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-02,15.50,670,696,96.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-03,15.82,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-04,12.33,503,720,69.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-05,15.06,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-06,16.64,672,720,93.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-07,12.83,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-08,13.26,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-09,8.57,192,720,26.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-10,10.04,742,744,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-11,11.44,719,720,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2016-12,17.85,553,744,74.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-01,18.33,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-02,13.55,671,672,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-03,12.85,649,744,87.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-04,11.88,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-05,13.84,680,744,91.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-06,10.16,493,720,68.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-07,11.37,741,744,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-08,12.87,614,744,82.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-09,15.50,565,720,78.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-10,16.77,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-11,17.50,685,720,95.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2017-12,18.00,636,744,85.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-01,8.67,64,744,8.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-02,15.51,345,672,51.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-03,13.87,731,744,98.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-04,14.26,595,720,82.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-05,12.03,737,744,99.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-06,12.08,693,720,96.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-07,13.58,635,744,85.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-08,10.70,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-09,12.67,719,720,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-10,13.07,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-11,14.99,673,720,93.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2018-12,19.67,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-01,14.61,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-02,16.13,595,672,88.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-03,16.00,600,744,80.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-04,13.54,624,720,86.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-05,11.11,627,744,84.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-06,14.43,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-07,14.37,699,744,94.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-08,10.10,618,744,83.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-09,12.89,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-10,15.92,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-11,21.36,713,720,99.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2019-12,16.12,740,744,99.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-01,18.11,672,744,90.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-02,21.58,696,696,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-03,12.99,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-04,10.12,609,720,84.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-05,8.90,497,744,66.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-06,7.52,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-07,11.43,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-08,9.30,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-09,9.97,623,720,86.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-10,14.06,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-11,17.25,528,720,73.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2020-12,12.04,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-01,11.52,742,744,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-02,11.46,672,672,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-03,9.82,644,744,86.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-04,7.58,658,720,91.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-05,10.96,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-06,21.35,626,720,86.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-07,13.92,737,744,99.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-08,10.52,728,744,97.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-09,10.13,706,720,98.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-10,11.97,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-11,18.89,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2021-12,16.83,737,744,99.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-01,16.50,741,744,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-02,16.02,667,672,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-03,10.67,739,744,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-04,11.18,713,720,99.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-05,12.57,739,744,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-06,16.77,704,720,97.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-07,11.83,739,744,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-08,10.38,737,744,99.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-09,9.38,711,720,98.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-10,15.70,734,744,98.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-11,16.48,715,720,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2022-12,18.06,741,744,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-01,19.33,736,744,98.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-02,18.51,637,672,94.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-03,12.12,737,744,99.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-04,12.49,718,720,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-05,9.51,739,744,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-06,13.02,717,720,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-07,16.10,711,744,95.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-08,12.02,731,744,98.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-09,14.37,714,720,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-10,16.63,738,744,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-11,15.27,714,720,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2023-12,14.30,740,744,99.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-01,14.30,511,744,68.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-02,12.13,534,696,76.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-03,11.56,729,744,98.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-04,10.00,684,720,95.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-05,11.42,698,744,93.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-06,14.97,670,720,93.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-07,15.60,732,744,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-08,13.43,730,744,98.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-09,16.03,713,720,99.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-10,13.50,731,744,98.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-11,19.75,710,720,98.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2024-12,15.55,732,744,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-01,16.41,717,744,96.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-02,14.29,661,672,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-03,11.27,732,744,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-04,11.00,713,720,99.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-05,13.27,733,744,98.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-06,15.83,710,720,98.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-07,13.75,720,744,96.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-08,14.19,741,744,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-09,14.35,712,720,98.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-10,16.82,735,744,98.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-11,20.76,691,720,96.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2025-12,17.10,732,744,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2026-01,11.84,730,744,98.1,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2026-02,13.81,659,672,98.1,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2026-03,13.48,731,744,98.3,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2026-04,15.83,678,720,94.2,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2026-05,14.33,714,744,96.0,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2026-06,13.82,706,720,98.1,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2026-07,14.28,730,744,98.1,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2026-08,15.25,738,744,99.2,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2026-09,16.06,708,720,98.3,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00004,Żejtun,urban background,2026-10,13.76,102,744,13.7,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00004_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-01,35.81,738,744,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-02,36.31,672,672,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-03,33.48,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-04,35.60,695,720,96.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-05,31.43,737,744,99.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-06,38.63,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-07,33.48,718,744,96.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-08,33.05,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-09,33.70,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-10,46.80,731,744,98.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-11,46.75,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2013-12,45.12,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-01,28.52,500,744,67.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-02,33.67,619,672,92.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-03,31.00,741,744,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-04,32.87,10,720,1.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-05,24.97,272,744,36.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-06,30.98,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-07,25.53,729,744,98.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-08,26.76,610,744,82.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-09,26.57,696,720,96.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-10,35.62,203,744,27.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-11,41.49,460,720,63.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2014-12,37.45,590,744,79.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-01,32.59,730,744,98.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-02,32.03,602,672,89.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-03,31.74,505,744,67.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-04,39.65,571,720,79.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-05,36.05,574,744,77.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-06,32.16,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-07,32.41,633,744,85.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-08,27.05,635,744,85.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-09,31.40,658,720,91.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-10,38.08,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-11,44.69,205,720,28.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2015-12,56.13,684,744,91.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-01,40.60,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-02,32.35,675,696,97.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-03,38.17,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-04,34.11,576,720,80.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-05,33.49,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-06,36.48,530,720,73.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-07,35.07,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-08,29.50,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-09,32.23,441,720,61.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-10,36.49,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-11,43.54,527,720,73.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2016-12,44.17,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-01,43.38,706,744,94.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-02,42.78,660,672,98.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-03,39.44,550,744,73.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-04,33.36,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-05,35.47,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-06,34.95,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-07,36.58,741,744,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-08,37.54,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-09,34.57,574,720,79.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-10,40.46,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-11,36.64,379,720,52.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2017-12,34.48,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-01,30.55,571,744,76.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-02,26.88,672,672,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-03,21.82,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-04,31.82,549,720,76.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-05,30.90,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-06,32.14,677,720,94.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-07,35.61,691,744,92.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-08,30.29,660,744,88.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-09,36.51,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-10,45.10,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-11,46.58,673,720,93.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2018-12,45.35,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-01,35.73,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-02,34.46,253,672,37.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-03,22.76,67,744,9.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-04,28.80,448,720,62.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-05,27.74,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-06,37.35,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-07,28.53,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-08,28.96,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-09,30.05,637,720,88.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-10,33.97,734,744,98.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-11,29.67,719,720,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2019-12,21.25,740,744,99.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-01,35.65,687,744,92.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-02,37.86,682,696,98.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-03,23.18,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-04,17.54,668,720,92.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-05,16.19,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-06,17.58,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-07,17.98,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-08,15.99,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-09,17.37,694,720,96.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-10,28.27,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-11,36.39,691,720,96.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2020-12,29.29,715,744,96.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-01,27.39,706,744,94.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-02,31.96,672,672,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-03,23.50,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-04,23.06,695,720,96.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-05,24.85,732,744,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-06,30.48,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-07,23.31,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-08,21.58,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-09,23.41,717,720,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-10,30.65,729,744,98.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-11,36.64,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2021-12,28.54,729,744,98.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-01,29.12,737,744,99.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-02,32.53,669,672,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-03,32.75,742,744,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-04,24.57,708,720,98.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-05,28.90,740,744,99.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-06,32.87,715,720,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-07,24.49,734,744,98.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-08,23.34,732,744,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-09,25.91,712,720,98.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-10,38.26,671,744,90.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-11,34.34,712,720,98.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2022-12,35.75,725,744,97.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-01,34.70,737,744,99.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-02,38.57,567,672,84.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-03,25.87,742,744,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-04,24.96,719,720,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-05,22.25,739,744,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-06,24.69,718,720,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-07,30.14,731,744,98.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-08,22.23,736,744,98.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-09,25.80,710,720,98.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-10,32.69,741,744,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-11,30.74,704,720,97.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2023-12,28.93,742,744,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2024-01,,0,744,0.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00005,Msida (old point),traffic,2024-02,,0,696,0.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00005_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2014-05,5.12,246,744,33.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2014-06,5.60,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2014-07,3.94,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2014-08,4.81,713,744,95.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2014-09,3.79,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2014-10,8.11,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2014-11,8.23,63,720,8.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2014-12,,0,744,0.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-01,,0,744,0.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-02,13.00,452,672,67.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-03,11.12,649,744,87.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-04,11.21,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-05,10.54,739,744,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-06,9.93,648,720,90.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-07,10.03,633,744,85.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-08,9.42,655,744,88.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-09,10.48,657,720,91.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-10,14.84,738,744,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-11,21.56,244,720,33.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2015-12,,0,744,0.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-01,,0,744,0.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-02,10.26,82,696,11.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-03,8.74,483,744,64.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-04,13.90,567,720,78.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-05,10.76,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-06,10.68,529,720,73.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-07,11.78,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-08,8.68,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-09,11.51,455,720,63.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-10,14.06,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-11,13.31,525,720,72.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2016-12,15.93,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-01,14.24,658,744,88.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-02,13.90,668,672,99.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-03,11.85,549,744,73.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-04,10.61,712,720,98.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-05,13.06,450,744,60.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-06,7.59,246,720,34.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-07,,0,744,0.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-08,,0,744,0.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-09,11.21,566,720,78.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-10,12.14,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-11,9.36,324,720,45.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2017-12,8.92,153,744,20.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-01,12.59,636,744,85.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-02,9.08,651,672,96.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-03,6.27,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-04,12.34,548,720,76.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-05,10.17,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-06,9.51,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-07,11.72,576,744,77.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-08,9.23,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-09,10.77,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-10,14.96,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-11,16.27,618,720,85.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2018-12,10.19,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-01,10.05,732,744,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-02,11.73,620,672,92.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-03,10.65,678,744,91.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-04,10.78,572,720,79.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-05,7.67,646,744,86.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-06,14.80,692,720,96.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-07,8.68,492,744,66.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-08,12.67,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-09,12.06,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-10,16.36,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-11,11.67,713,720,99.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2019-12,11.06,735,744,98.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-01,17.71,716,744,96.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-02,10.71,696,696,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-03,7.34,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-04,7.61,663,720,92.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-05,7.29,696,744,93.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-06,5.30,639,720,88.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-07,5.58,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-08,6.00,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-09,7.52,694,720,96.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-10,10.37,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-11,19.34,643,720,89.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2020-12,9.81,716,744,96.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-01,8.84,706,744,94.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-02,12.29,672,672,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-03,9.42,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-04,10.57,697,720,96.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-05,10.65,740,744,99.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-06,11.46,656,720,91.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-07,7.76,727,744,97.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-08,7.57,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-09,9.68,368,720,51.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-10,13.41,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-11,18.16,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2021-12,10.61,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-01,9.41,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-02,10.88,672,672,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-03,10.82,690,744,92.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-04,10.28,717,720,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-05,10.68,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-06,12.22,687,720,95.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-07,9.91,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-08,10.24,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-09,9.67,625,720,86.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-10,16.31,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-11,16.32,570,720,79.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2022-12,13.45,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-01,12.81,738,744,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-02,15.78,644,672,95.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-03,9.35,744,744,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-04,7.37,625,720,86.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-05,9.19,742,744,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-06,10.88,720,720,100.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-07,15.38,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-08,8.92,740,744,99.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-09,11.11,718,720,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-10,16.38,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-11,10.02,719,720,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2023-12,10.90,714,744,96.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-01,9.73,700,744,94.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-02,9.80,690,696,99.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-03,8.31,741,744,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-04,9.85,713,720,99.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-05,12.43,734,744,98.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-06,13.17,715,720,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-07,11.66,736,744,98.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-08,9.52,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-09,10.84,718,720,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-10,16.65,740,744,99.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-11,19.14,712,720,98.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2024-12,10.80,739,744,99.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-01,11.30,723,744,97.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-02,15.29,662,672,98.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-03,9.62,732,744,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-04,9.76,714,720,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-05,9.47,692,744,93.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-06,13.49,714,720,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-07,9.49,738,744,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-08,10.23,740,744,99.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-09,12.95,718,720,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-10,13.68,733,744,98.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-11,14.86,714,720,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2025-12,20.95,741,744,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2026-01,10.78,739,744,99.3,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2026-02,9.06,641,672,95.4,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2026-03,12.11,738,744,99.2,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2026-04,10.70,701,720,97.4,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2026-05,10.84,715,744,96.1,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2026-06,11.29,711,720,98.8,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2026-07,10.24,714,744,96.0,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2026-08,12.37,741,744,99.6,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2026-09,18.07,714,720,99.2,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00008,Attard,urban background,2026-10,25.58,101,744,13.6,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00008_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2022-02,13.36,337,672,50.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2022-03,17.54,732,744,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2022-04,18.27,505,720,70.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2022-05,21.52,737,744,99.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2022-06,24.00,716,720,99.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2022-07,21.07,688,744,92.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2022-08,22.42,584,744,78.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2022-09,27.15,687,720,95.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2022-10,28.73,736,744,98.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2022-11,20.48,708,720,98.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2022-12,21.22,742,744,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-01,19.06,730,744,98.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-02,21.38,670,672,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-03,16.99,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-04,16.36,713,720,99.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-05,17.14,743,744,99.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-06,20.17,627,720,87.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-07,27.14,732,744,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-08,21.81,735,744,98.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-09,22.18,717,720,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-10,27.27,737,744,99.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-11,17.26,713,720,99.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2023-12,16.46,738,744,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-01,17.79,669,744,89.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-02,18.60,630,696,90.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-03,17.49,669,744,89.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-04,16.09,653,720,90.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-05,19.94,667,744,89.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-06,21.69,650,720,90.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-07,20.05,654,744,87.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-08,18.54,675,744,90.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-09,21.28,646,720,89.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-10,24.15,704,744,94.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-11,24.11,718,720,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2024-12,14.10,727,744,97.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-01,21.64,623,744,83.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-02,26.16,587,672,87.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-03,18.74,655,744,88.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-04,19.85,623,720,86.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-05,19.83,595,744,80.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-06,25.86,654,720,90.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-07,18.21,674,744,90.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-08,20.60,646,744,86.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-09,19.23,639,720,88.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-10,17.88,674,744,90.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-11,19.19,657,720,91.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2025-12,25.14,678,744,91.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2026-01,14.17,664,744,89.2,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2026-02,11.57,608,672,90.5,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2026-03,17.83,673,744,90.5,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2026-04,19.89,643,720,89.3,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2026-05,19.49,662,744,89.0,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2026-06,21.77,654,720,90.8,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2026-07,22.62,675,744,90.7,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2026-08,26.35,684,744,91.9,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2026-09,24.62,650,720,90.3,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00009,St Paul's Bay,traffic,2026-10,33.42,92,744,12.4,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00009_00008_100.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-01,26.47,331,744,44.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-02,24.68,640,696,92.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-03,20.24,686,744,92.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-04,15.51,709,720,98.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-05,18.09,723,744,97.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-06,16.83,708,720,98.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-07,17.02,738,744,99.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-08,16.65,697,744,93.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-09,22.07,633,720,87.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-10,32.68,708,744,95.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-11,43.49,718,720,99.7,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2024-12,27.31,732,744,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-01,28.00,696,744,93.5,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-02,28.97,661,672,98.4,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-03,20.49,726,744,97.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-04,19.24,667,720,92.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-05,17.56,721,744,96.9,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-06,22.18,707,720,98.2,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-07,17.66,729,744,98.0,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-08,20.43,730,744,98.1,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-09,24.46,704,720,97.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-10,31.35,713,744,95.8,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-11,35.54,717,720,99.6,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2025-12,40.70,724,744,97.3,E1a (validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p-e1a/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2026-01,28.80,723,744,97.2,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2026-02,24.25,658,672,97.9,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2026-03,30.83,720,744,96.8,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2026-04,28.79,657,720,91.2,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2026-05,21.57,706,744,94.9,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2026-06,18.62,713,720,99.0,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2026-07,22.90,709,744,95.3,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2026-08,21.35,687,744,92.3,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2026-09,32.08,436,720,60.6,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00011_00008_101.parquet,2026-10-05
+MT00011,Msida (new point),traffic,2026-10,42.11,90,744,12.1,E2a (up-to-date; not validated),https://eeadmz1batchservice02.blob.core.windows.net/airquality-p/MT/SPO-MT00011_00008_101.parquet,2026-10-05

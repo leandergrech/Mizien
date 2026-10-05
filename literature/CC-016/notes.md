@@ -16,6 +16,8 @@ Searches run 3 October 2026 (Crossref, OpenAlex, web search).
 | gagic2022 | Gagić et al. 2022 | A | PM spikes during manoeuvring. | B |
 | rogosic2025 | Rogošić et al. 2025 | A | Review of shore power benefits and adoption barriers. | C |
 | murena2018, zis2019, winkel2016 | | metadata only | Not used for findings. | - |
+| msc_2022_world_europa, msc_2023_world_europa_med | MSC Cruises press releases, 24 Oct 2022 and 12 Apr 2023 (read 5 Oct 2026, v1.2) | F | MSC World Europa, which made 35 of the 67 connections, is "the world's largest LNG-powered cruise ship": five dual-fuel engines (LNG or low-sulphur marine gasoil), shore power capable, Valletta among its 2023 ports. If it runs on LNG at berth, plugging in saves less SOx and PM than IM's per-liner figures; fuel at berth in Valletta unknown. | C (spec); D (MSC's emission claims) |
+| amphora_2025_ops (re-read 5 Oct 2026, v1.2) | Amphora Media | F (data S) | Counts verified: 373 berths = 312 (<= 1 day) + 38 (1-2 days) + 23 (2-4 days); 67 connections = 61 + 6 + 0 (19.6% of 312; the 16.2% for 1-2 days implies 6 of 37, 6 of 38 is 15.8%); MSC World Europa 35 connected, 16 not; 306 not connected (calculated). | C (S) |
 
 ## Gaps
 
@@ -29,3 +31,5 @@ Searches run 3 October 2026 (Crossref, OpenAlex, web search).
   2020-2022). Which scope the EUR 33m covers is not stated.
 - Electricity source: the shore supply comes from the national grid (gas-fired Delimara plants and the Sicily
   interconnector); emissions move to the power station and abroad rather than vanishing. Not quantified here.
+- v1.2: which fuel MSC World Europa burns at berth in Valletta (LNG or marine gasoil) is not known; no
+  classification-society record was consulted. The shipbuilder's page returned HTTP 418 to a script.

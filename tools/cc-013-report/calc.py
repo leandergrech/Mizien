@@ -74,6 +74,52 @@ C = {r["item"]: float(r["value"]) for r in csv.DictReader(open(D / "census2021_d
 add("Census 2021: dwellings not used as main residence", int(C["Secondary, seasonally used or vacant 2021"]), "dwellings",
     "NSO Census 2021 vol. 2", f"{C['Secondary, seasonally used or vacant share 2021 (%)']}% of stock (2011: 31.8%)")
 
+# ---- v1.2: all 27 Member States (eurostat_eu27_pop_prices_rents.csv, written by fetch_eu27.py)
+import statistics  # noqa: E402
+EU = "AT BE BG CY CZ DE DK EE EL ES FI FR HR HU IE IT LT LU LV MT NL PL PT RO SE SI SK".split()
+V27, F27 = defaultdict(dict), {}
+for r in csv.DictReader(open(D / "eurostat_eu27_pop_prices_rents.csv")):
+    V27[(r["series"], r["geo"])][r["time"]] = float(r["value"])
+    F27[(r["series"], r["geo"], r["time"])] = r["flag"]
+NAMES = {"b": "break in series", "p": "provisional", "e": "estimated", "ep": "estimated, provisional"}
+
+
+def ch27(s, g):
+    return 100 * (V27[(s, g)]["2025"] / V27[(s, g)]["2015"] - 1)
+
+
+def fl27(s, g, *ts):
+    f = [f"{t}: {F27[(s, g, t)]} ({NAMES.get(F27[(s, g, t)], 'see Eurostat')})" for t in ts if F27.get((s, g, t))]
+    return "Eurostat flag " + "; ".join(f) if f else ""
+
+
+SRC27 = {"pop": "Eurostat demo_gind (JAN)", "real": "Eurostat tipsho10 (I15_A_AVG)",
+         "rent": "Eurostat prc_hicp_aind (CP041, INX_A_AVG)"}
+for s, lab in (("pop", "population"), ("real", "real house prices"), ("rent", "actual rentals (HICP)")):
+    order = sorted(EU, key=lambda g: -ch27(s, g))  # 1 = largest increase
+    top = ", ".join(f"{g} {ch27(s, g):+.1f}%" for g in order[:3])
+    add(f"Malta: change in {lab} 2015-2025, EU-27 rank (1 = largest rise)", order.index("MT") + 1, "of 27",
+        SRC27[s] + ", all EU-27, retrieved 5 Oct 2026",
+        f"Malta {ch27(s, 'MT'):+.1f}%; EU-27 {ch27(s, 'EU27_2020'):+.1f}%; largest: {top}; median Member State "
+        f"{statistics.median(ch27(s, g) for g in EU):+.1f}%" + "; " + "; ".join(
+            x for x in (fl27(s, "MT", "2015", "2025"), fl27(s, "EU27_2020", "2015", "2025")) if x))
+add("Malta population growth 2015-2025 as a multiple of the EU-27's", round(ch27("pop", "MT") / ch27("pop", "EU27_2020"), 1),
+    "times", "Eurostat demo_gind (JAN), retrieved 5 Oct 2026",
+    f"{ch27('pop', 'MT'):.2f}% / {ch27('pop', 'EU27_2020'):.2f}% (v1.1 text said 'fifteen times')")
+for g in ("DE", "FR", "IT", "PT", "HU", "LU"):
+    add(f"{g}: real house prices 2015-2025", round(ch27("real", g), 1), "%", "Eurostat tipsho10, retrieved 5 Oct 2026",
+        f"population {ch27('pop', g):+.1f}%; weight in EU-27 HPI 2025: {V27[('weight', g)]['2025']} per mille " +
+        fl27("real", g, "2015", "2025"))
+w3 = sum(V27[("weight", g)]["2025"] for g in ("DE", "FR", "IT"))
+add("Germany, France and Italy: combined weight in the EU-27 house price index, 2025", round(w3 / 10, 1), "%",
+    "Eurostat prc_hpi_cow (COWEU27_2020, TOTAL), retrieved 5 Oct 2026",
+    f"{w3:.1f} per mille (2025 weights provisional for several states); Malta {V27[('weight', 'MT')]['2025']} per mille")
+q = {g: V27[("hpi_q", g)].get("2026-Q2") for g in EU}
+qs = sorted((g for g in EU if q[g] is not None), key=lambda g: -q[g])
+add("Malta: house prices, annual change 2026-Q2", q["MT"], "%", "Eurostat prc_hpi_q (TOTAL, RCH_A), retrieved 5 Oct 2026",
+    f"EU-27 {V27[('hpi_q', 'EU27_2020')].get('2026-Q2')}%; Malta rank {qs.index('MT') + 1} of {len(qs)} (1 = largest "
+    f"rise); nominal; " + "; ".join(x for x in (fl27("hpi_q", "MT", "2026-Q2"), fl27("hpi_q", "EU27_2020", "2026-Q2")) if x))
+
 with open(D / "checks.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]))
     w.writeheader()

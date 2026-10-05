@@ -47,10 +47,11 @@ tags: []
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: Medium
-caveats: The claimant is an EU body's commissioned study, not a Maltese speaker; the opinions are the authors', not
-  the European Parliament's official position. The verdict covers legal conformity only, not whether Malta is quiet.
-  Transposition table, infringement register and the 21% vs 9% survey figure (via ERA 2023c, not opened) not
-  independently verified; WHO and EEA figures are second-hand via the study. Right of reply not sent.
+caveats: The claimant is an EU body's commissioned study, not a Maltese speaker; the opinions are the authors', not the
+  European Parliament's official position. The verdict covers legal conformity only, not whether Malta is quiet. Transposition
+  table, infringement register and the 21% vs 9% survey figure (via ERA 2023c, not opened) not independently verified;
+  WHO and EEA figures are second-hand via the study. No right of reply needed (verdict Largely supported; a reply is sought
+  only for Not substantiated, Misleading or Contradicted).
 right_of_reply:
   sent: null
   deadline: null
@@ -101,3 +102,6 @@ history:   # research log: the date each step of the research was done (not when
     step: version
     version: "1.0"
     note: "First issue. Right of reply not yet sent."
+  - date: 2026-10-05
+    step: clarification
+    note: "Right-of-reply status brought into line with the 5 Oct 2026 rule: a reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none. Cover, page footer, flyer and the standards appendix now say so. Findings, verdict and confidence unchanged."

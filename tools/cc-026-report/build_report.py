@@ -247,6 +247,7 @@ build_report(Report(
     footer_lines=["Version 1.0  ·  5 October 2026", "Status: draft",
                   "Prepared from public sources and Eurostat data.", "Repository: github.com/leandergrech/Mizien"],
     running_head="Malta greenhouse gas emissions – Eurostat estimate", version="1.0", date="5 October 2026",
+    status_note="no right of reply needed",
     pdf_title="Malta’s 169% rise in emissions? Claim Check 026",
     pdf_subject="Tests Newsbook's report of Eurostat's estimate of Malta's greenhouse gas emissions growth",
     story=S))

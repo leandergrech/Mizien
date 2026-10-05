@@ -1,0 +1,12 @@
+period,id,from_code,to_code,area_ha,land_take,lon,lat,source,retrieved
+2006-2012,EU-173564,323,132,20.6,yes,14.4375,35.9476,https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CHA2006_2012_WM/MapServer/0/query,2026-10-05
+2012-2018,EU-118,112,124,14.73,no,14.4912,35.8413,https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CHA2012_2018_WM/MapServer/0/query,2026-10-05
+2012-2018,EU-70830,243,112,16.43,yes,14.427,35.8913,https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CHA2012_2018_WM/MapServer/0/query,2026-10-05
+2012-2018,EU-70831,243,112,16.53,yes,14.4197,35.9492,https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CHA2012_2018_WM/MapServer/0/query,2026-10-05
+2012-2018,EU-71057,243,121,5.61,yes,14.5187,35.856,https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CHA2012_2018_WM/MapServer/0/query,2026-10-05
+2012-2018,EU-71058,243,121,7.76,yes,14.4352,35.9272,https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CHA2012_2018_WM/MapServer/0/query,2026-10-05
+2012-2018,EU-71427,243,124,15.69,yes,14.4938,35.839,https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CHA2012_2018_WM/MapServer/0/query,2026-10-05
+2012-2018,EU-71430,243,131,10.63,yes,14.4459,35.8525,https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CHA2012_2018_WM/MapServer/0/query,2026-10-05
+2012-2018,EU-71431,243,131,7.97,yes,14.3872,35.8739,https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CHA2012_2018_WM/MapServer/0/query,2026-10-05
+2012-2018,EU-71432,243,131,7.85,yes,14.2031,36.0474,https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CHA2012_2018_WM/MapServer/0/query,2026-10-05
+2012-2018,EU-297844,323,131,5.24,yes,14.353,35.9527,https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CHA2012_2018_WM/MapServer/0/query,2026-10-05

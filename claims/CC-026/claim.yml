@@ -41,7 +41,9 @@ tags:
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: High
-caveats: Right of reply not sent. The figure reports a Eurostat estimate on the residence principle; the territorial inventory shows +1.6% (2015-2024). 2025 is an early estimate. Central Bank of Malta report not read (second-hand). No operator is assessed.
+caveats: No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading
+  or Contradicted). The figure reports a Eurostat estimate on the residence principle; the territorial inventory shows
+  +1.6% (2015-2024). 2025 is an early estimate. Central Bank of Malta report not read (second-hand). No operator is assessed.
 right_of_reply:
   sent: null
   deadline: null
@@ -96,3 +98,6 @@ history:   # research log: the date each step of the research was done (not when
     step: version
     version: "1.0"
     note: "First issue. Right of reply not sent: the claim reports a Eurostat estimate; any reply is for the maintainer to decide."
+  - date: 2026-10-05
+    step: clarification
+    note: "Right-of-reply status brought into line with the 5 Oct 2026 rule: a reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none. Cover, page footer, flyer and the standards appendix now say so. Findings, verdict and confidence unchanged."

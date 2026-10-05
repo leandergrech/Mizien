@@ -1,0 +1,15 @@
+item,value,unit,source,note,retrieved
+Mapped P. oceanica in the map frame: EMODnet Seabed Habitats 2025 (map EUSM16me),195.9,ha,EMODnet Seabed Habitats (2025),"frame (14.505, 35.795, 14.6, 35.862); 6 polygons, about 45 grid cells",2026-10-05
+EMODnet seagrass map EUSM16me: grid cell size,188 x 231,m,EMODnet Seabed Habitats (2025),east-west x north-south; vertex spacing 0.00209 x 0.00209 degrees,2026-10-05
+Mapped P. oceanica on land (OpenStreetMap coastline) in the map frame: EMODnet Seabed Habitats 2025 (map EUSM16me),2.5,ha,EMODnet Seabed Habitats (2025),grid cells that overlap the coast,2026-10-05
+Mapped P. oceanica within 0.5 km of the new land: EMODnet Seabed Habitats 2025 (map EUSM16me),20.8,ha,EMODnet Seabed Habitats (2025),of which on land (OpenStreetMap coastline): 0.7 ha,2026-10-05
+Mapped P. oceanica within 1 km of the new land: EMODnet Seabed Habitats 2025 (map EUSM16me),72.1,ha,EMODnet Seabed Habitats (2025),of which on land (OpenStreetMap coastline): 2.3 ha,2026-10-05
+Mapped P. oceanica within 2 km of the new land: EMODnet Seabed Habitats 2025 (map EUSM16me),148.2,ha,EMODnet Seabed Habitats (2025),of which on land (OpenStreetMap coastline): 2.3 ha,2026-10-05
+"Shortest distance, new land to mapped P. oceanica: EMODnet Seabed Habitats 2025 (map EUSM16me)",0.01,km,EMODnet Seabed Habitats (2025),"to the nearest grid cell; cells about 188 x 231 m, so the map cannot place a meadow's edge more precisely than about one cell",2026-10-05
+EMODnet DTM 2024 cell size,3.75 arc-seconds,,EMODnet Bathymetry Consortium (2024),about 95 m east-west by 115 m north-south,2026-10-05
+Depth of the sea within 0.5 km of the new land: 10th / 50th / 90th percentile,11 / 18 / 27,m,EMODnet Bathymetry Consortium (2024),125 grid cells; shallower than 10 m: 9%; shallower than 20 m: 58%,2026-10-05
+Depth of the sea within 1 km of the new land: 10th / 50th / 90th percentile,5 / 18 / 30,m,EMODnet Bathymetry Consortium (2024),324 grid cells; shallower than 10 m: 20%; shallower than 20 m: 56%,2026-10-05
+Depth of the sea within 2 km of the new land: 10th / 50th / 90th percentile,6 / 25 / 50,m,EMODnet Bathymetry Consortium (2024),807 grid cells; shallower than 10 m: 16%; shallower than 20 m: 38%,2026-10-05
+Depth of grid cells on mapped P. oceanica in the frame: 10th / 50th / 90th percentile (EMODnet Seabed Habitats 2025 (map EUSM16me)),11 / 26 / 35,m,EMODnet Bathymetry Consortium (2024),170 grid cells,2026-10-05
+Depth of grid cells on mapped P. oceanica within 0.5 km of the new land: 10th / 50th / 90th percentile (EMODnet Seabed Habitats 2025 (map EUSM16me)),24 / 28 / 30,m,EMODnet Bathymetry Consortium (2024),14 grid cells,2026-10-05
+Depth of grid cells on mapped P. oceanica within 1 km of the new land: 10th / 50th / 90th percentile (EMODnet Seabed Habitats 2025 (map EUSM16me)),21 / 29 / 32,m,EMODnet Bathymetry Consortium (2024),58 grid cells,2026-10-05

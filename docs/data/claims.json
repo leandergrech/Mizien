@@ -175,7 +175,7 @@
       "title": "Per-capita emissions vs 2030 projection",
       "category": "Climate & Energy",
       "claim": "Climate Action Authority (13 Nov 2025): emissions per capita have fallen 44% since 2005, well above the EU average of 34%, showing Malta is reducing emissions at household level and across the economy.",
-      "counter": "The same Commission report shows effort-sharing emissions 41% above 2005 in 2024 and projects +42% (existing measures) or +30% (planned measures) by 2030 against a -19% target: the largest gap in the EU in percentage points. Total emissions fell 27% (EU 33%); population grew 41%, explaining about half the per-person fall. Transport +49%, F-gases about six-fold.",
+      "counter": "The same Commission report shows effort-sharing emissions 41% above 2005 in 2024 and projects +42% (existing measures) or +30% (planned measures) by 2030 against a -19% target: the largest gap in the EU in percentage points. Malta was over its yearly ESR limit by 22, 25 and 30 points in 2022-2024 (+43/+42/+41% vs +21/+16/+11%); the 2021 surplus carried forward brings the cumulative balance to 0.0 Mt in 2024, -2.1 Mt projected for 2030 before flexibilities. Total emissions fell 27% (EU 33%); population grew 41%, explaining about half the per-person fall. Among the EU-27 (2005-2024) Malta ranks 3rd on the per-person cut (-48.5%) but 20th on the total cut (-27.4%). Transport +49%, F-gases about six-fold. In the authority's favour: effort-sharing emissions per person are flat (2.50 t in 2005, 2.52 t in 2024; proxy: total minus power generation), and no compliance shortfall has arisen before the first check in 2027.",
       "status": "Drafted",
       "verdict": "Misleading",
       "tags": [
@@ -189,7 +189,7 @@
         "scope": "institution",
         "icon": "castille"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "High",
       "speaker": "Climate Action Authority; Ministry for the Environment",
@@ -208,7 +208,7 @@
         {
           "id": "CC-003B",
           "text": "…well above the EU average of 34%",
-          "finding": "Reproduced (−34% to 2023). True per person; false in total tonnes (−27% vs −33%).",
+          "finding": "Reproduced (−34% to 2023). True per person (3rd of 27 to 2024); not in total tonnes (−27% vs −33%; 20th of 27).",
           "rating": "Accurate, partial",
           "tone": "amber"
         },
@@ -222,14 +222,14 @@
         {
           "id": "CC-003D",
           "text": "Malta is reducing emissions at household level",
-          "finding": "Sectors linked to households rose: transport +49%, buildings +9 to +12%, air-conditioning gases up almost six-fold. A per-person ratio is not a household measure.",
+          "finding": "In total, sectors linked to households rose: transport +49%, buildings +9 to +12%, air-conditioning gases up almost six-fold. Per person, the target sectors were flat (2.50 t to 2.52 t, our estimate), not falling. A per-person ratio of all emissions is not a household measure.",
           "rating": "Not supported",
           "tone": "red"
         },
         {
           "id": "CC-003E",
           "text": "Malta’s efforts are showing clear results",
-          "finding": "True for power generation. The same report projects the largest shortfall in the EU (in percentage points) against Malta’s binding 2030 target, which the release does not mention.",
+          "finding": "True for power generation. The same report shows Malta over its yearly limits since 2022 and projects the largest shortfall in the EU (in percentage points) against its binding 2030 target; the release mentions neither.",
           "rating": "Misleading by omission",
           "tone": "red"
         },
@@ -243,7 +243,7 @@
       ],
       "date": "2025-11-13",
       "quote": "Emissions per capita have fallen by 44% since 2005, well above the EU average of 34%.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-003/report.pdf",
@@ -257,7 +257,7 @@
       "title": "'Strong progress' in waste separation",
       "category": "Waste",
       "claim": "Ministry for the Environment (19 Jan 2026): Malta continues to make strong progress in waste management; mixed waste down over 30% to 95.5 million kg; about 412 million kg diverted from landfill over five years; the Long-Term Waste Management Plan is working.",
-      "counter": "Municipal recycling rate 16.7% in 2024 (EU 48.1%; 2025 target 55%); 79% of treated municipal waste landfilled. The EU Environmental Implementation Review 2025 says Malta missed the 2020 target by a large margin and is on course to miss 2025. The 412 million kg cannot be reconciled with Eurostat (271 kt recycled or recovered, 2020-24); the 141 million kg baseline has no year. (ERA's 68% figure is explicitly for construction waste and is not part of this claim.)",
+      "counter": "Municipal recycling rate 16.7% in 2024 (EU 48.1%; 2025 target 55%), second-lowest of the 20 states with 2024 data; 79% of treated municipal waste landfilled. The Commission's 2023 early-warning report lists Malta among 10 states at risk of missing both 2025 targets and 13 far from the 2035 landfill target; its 2025 review says Malta missed the 2020 target by a large margin and is on course to miss 2025. Malta notified a postponement in December 2023 and renounced it in November 2024. Treated biowaste is used for landscaping and landfill remediation and reported as landfilled. The 412 million kg cannot be reconciled with Eurostat (271 kt recycled or recovered, 2020-24); the 141 million kg baseline has no year. In fairness, the rate rose 7.6 points 2019-2024 (4th-largest rise of 20 EU states) and packaging recycling rose from 30.8% to 43.4% in 2023. (ERA's 68% figure is explicitly for construction waste and is not part of this claim.)",
       "status": "Drafted",
       "verdict": "Not substantiated",
       "tags": [
@@ -272,9 +272,9 @@
         "scope": "site",
         "icon": "landfill"
       },
-      "priority": "Done (v1.0)",
+      "priority": "Done (v1.1)",
       "wording_status": "Verbatim found",
-      "confidence": "Moderate",
+      "confidence": "High",
       "speaker": "Ministry for the Environment, Energy and Public Cleanliness (Minister Dalli); WasteServ",
       "bodies": [
         "ministry-environment",
@@ -292,7 +292,7 @@
         {
           "id": "CC-004B",
           "text": "Organic waste a record 30 million kg in 2025",
-          "finding": "2025 data not yet published by NSO. 2024 NSO data show organic-bag collections rising.",
+          "finding": "2025 data not yet published by NSO. 2024 NSO data show organic-bag collections rising. Treated organic waste is reported as landfilled, not recycled [6].",
           "rating": "Plausible",
           "tone": "amber"
         },
@@ -306,22 +306,22 @@
         {
           "id": "CC-004D",
           "text": "Malta records strong progress in waste separation",
-          "finding": "Separated collections and the recycling rate have risen. “Strong” is relative to Malta’s past, not to its targets.",
+          "finding": "Separated collections and the recycling rate have risen, faster than in most EU states. “Strong” is relative to Malta’s past, not to its targets.",
           "rating": "Partly supported",
           "tone": "amber"
         },
         {
           "id": "CC-004E",
           "text": "The Long-Term Waste Management Plan is working; real and measurable outcomes",
-          "finding": "Outcome measures: 16.7% recycled, 79% landfilled; 2020 target missed, 2025 on course to be missed [3, 6]. The release does not report them.",
+          "finding": "Outcome measures: 16.7% recycled, 79% landfilled; 2020 target missed, 2025 on course to be missed, now without postponement [3, 6, 8]. The release does not report them.",
           "rating": "Not substantiated",
           "tone": "orange"
         }
       ],
       "date": "2026-01-19",
       "quote": "Malta continues to make strong progress in waste management",
-      "version": "1.0",
-      "last_reviewed": "2026-10-02",
+      "version": "1.1",
+      "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-004/report.pdf",
         "flyer_pdf": "claim-files/CC-004/flyer.pdf",
@@ -334,7 +334,7 @@
       "title": "“92% excellent” bathing water",
       "category": "Water",
       "claim": "Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.",
-      "counter": "The latest EEA season (2025) classified 77 of 87 sites (88.5%) as excellent, down from 80 of 87 (92%) in 2023 and 2024. Malta also had a documented sewage-related bathing warning at Balluta Bay (B08/B09) from May to 12 August 2024, and the CJEU found failures to comply with urban wastewater treatment obligations in named agglomerations. These are important context, but they do not refute the Commission’s dated 2023 bathing-water statistic.",
+      "counter": "The EEA series shows a decline: 86 of 87 sites were excellent in 2016–2018 (98.9%), then 85, 84, 84, 82, 80, 80 and 77 (88.5%) in 2025, the lowest of the eleven seasons since 2015. Malta's lead over the EU-27 coastal average (88.3% in 2025) fell from about 11 percentage points in 2016 to 0.2. Ten of the 87 sites account for every rating below excellent; in 2025 St George's Bay B03 (St Julian's) and Xlendi D06 and D07 fell from excellent to good. Balluta Bay's two sites (B08, B09) were rated only sufficient in every season 2022–2025, with a sewage-related warning from late May to 12 August 2024 inside that run. The CJEU found failures to comply with urban wastewater treatment obligations in named agglomerations. None of this refutes the Commission's figure, which was correct for 2023 and again for 2024, but the summary sentence gives no year.",
       "status": "Drafted",
       "reply": "not-needed",
       "verdict": "Supported",
@@ -349,7 +349,7 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "High",
       "speaker": "European Commission",
@@ -358,7 +358,7 @@
       ],
       "date": "2025",
       "quote": "Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report_pdf": "claim-files/CC-005/report.pdf",
@@ -447,8 +447,9 @@
       "title": "Flyovers and congestion",
       "category": "Transport",
       "claim": "Infrastructure Malta says the Msida Creek flyover will reduce delays, emissions and noise, and that the Marsa Junction Project has reduced travel time and air pollution.",
-      "counter": "The Msida Creek flyover only entered vehicle use in December 2025, and the wider project remained under construction in 2026. The public Marsa release does not link the surveys behind its percentage claims; there is no project-level before-and-after series here for traffic, ambient air pollution, or noise.",
+      "counter": "The Msida Creek flyover opened to traffic on 18 December 2025, and the wider project remains under construction until 2027. At the only public air monitor near it (EEA sampling point MT00011, about 410 m away), mean NO2 for January–September 2026 was 25.2 µg/m³, against 22.0 in 2025 and 19.2 in 2024 (2026 data not yet validated); urban background stations rose about 4% and St Paul's Bay fell 6%, so the expected improvement has not appeared in the measured data. The Marsa release does not link the surveys behind its percentage claims, and no EEA-reported air monitor has operated within 1.4 km of the Marsa junction since Kordin (Paola) closed at the end of 2016. No project-level before-and-after series was found for traffic or noise at either site.",
       "status": "Drafted",
+      "reply": "not-sought",
       "verdict": "Not substantiated",
       "tags": [
         "Promise-without-baseline"
@@ -461,7 +462,7 @@
         "scope": "site",
         "icon": "flyover"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Infrastructure Malta",
@@ -470,7 +471,7 @@
       ],
       "date": "2024-10-28",
       "quote": "Msida has long been a traffic bottleneck, with congestion impacting air quality, noise levels, and overall accessibility. A cornerstone of the Msida Creek Project is the construction of a new flyover to replace the current traffic-light-controlled junction, a critical move to reduce delays, emissions, and noise pollution, making travel smoother and safer for all road users.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report_pdf": "claim-files/CC-008/report.pdf",
@@ -481,10 +482,10 @@
     },
     {
       "id": "CC-009",
-      "title": "Reverse osmosis and groundwater",
+      "title": "More RO, less WSC groundwater",
       "category": "Water",
       "claim": "WSC reported that reverse osmosis supplied 70.7% of its potable-water production in 2025, while groundwater production fell to 11.5 million m³, its lowest annual total in a decade. In August 2026, WSC issued a tender for a new 30,000 m³/day reverse-osmosis plant at Għar Lapsi.",
-      "counter": "The latest published River Basin Management Plan classifies both Malta and Gozo Mean Sea Level aquifer systems in poor quantitative status and 14 groundwater bodies in poor chemical status. Malta's reporting of the same cycle to the EEA lists four bodies in poor quantitative status (adding Pwales Coastal and Marfa Coastal) and all 15 in poor chemical status. The plan reports nitrate above the 50 mg/L standard in 12 of 15 bodies, with three named exceptions; not every body fails for nitrate. WSC's potable-production figures cover its supply system and do not establish a national all-user abstraction total.",
+      "counter": "The latest published River Basin Management Plan classifies both Malta and Gozo Mean Sea Level aquifer systems in poor quantitative status and 14 groundwater bodies in poor chemical status. Malta's reporting of the same cycle to the EEA lists four bodies in poor quantitative status (adding Pwales Coastal and Marfa Coastal) and all 15 in poor chemical status. The plan reports nitrate above the 50 mg/L standard in 12 of 15 bodies, with three named exceptions; not every body fails for nitrate. WSC's potable-production figures cover its supply system, not national abstraction. Eurostat estimates national fresh groundwater abstraction at 38.46 million m³ in 2024 (57% agriculture, up 3.1 million m³ on 2023), so WSC's 2025 cut of 1.55 million m³ is about 4% of it; a published water balance (Sapiano 2020) puts available groundwater at about 37 million m³ a year. Tracer ages of 15-40 years (Malta) and up to 60 or more (Gozo) mean water-quality recovery would take years to decades to show (Stuart et al. 2010).",
       "status": "Drafted",
       "reply": "not-needed",
       "verdict": "Largely supported",
@@ -499,7 +500,7 @@
         "scope": "site",
         "icon": "ro_plant"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Water Services Corporation",
@@ -508,7 +509,7 @@
       ],
       "date": "2026-08-25",
       "quote": "“70.7% of this amount coming from the four Reverse Osmosis plants”",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report_pdf": "claim-files/CC-009/report.pdf",
@@ -522,9 +523,9 @@
       "title": "Tree-planting counts",
       "category": "Land & Trees",
       "claim": "Project Green reported more than 8,000 trees and more than 25,000 shrubs planted by government entities in 2024. Pledge 305 of the 2022 Labour manifesto commits to 100,000 trees being planted over the next five years; a February 2026 parliamentary answer reports around 60,000 trees and over 100,000 shrubs planted through the end of 2025.",
-      "counter": "The reported 2024 and cumulative counts are planting inputs, not survival or canopy outcomes. The 2026 parliamentary answer says about 60,000 trees were planted by the end of 2025, below the 100,000 target at that date, when about 75% of the five-year window (from the 26 March 2022 election) had elapsed; Labour's 2026 manifesto gives a lower count of more than 57,000 trees for 2022-2025. The legislature ended with the snap general election of 30 May 2026, and no count for 2026 was located. Tree and shrub totals are separate.",
+      "counter": "Counts confirmed; the 100,000 trees were not reached by the end of 2025 (about 60,000), and no later count was found before the legislature ended on 30 May 2026. Maintainer decision (5 Oct 2026): delivery of 100,000 trees within the pledge period is rated separately as Not substantiated (sub-claim D); the overall verdict, on the reported counts, is unchanged. The reported 2024 and cumulative counts are planting inputs, not survival or canopy outcomes. The 2026 parliamentary answer says about 60,000 trees were planted by the end of 2025, below the 100,000 target at that date, when about 75% of the five-year window (from the 26 March 2022 election) had elapsed; Labour's 2026 manifesto gives a lower count of more than 57,000 trees for 2022-2025. The legislature ended with the snap general election of 30 May 2026; no count after 2025 was found (Project Green news to 5 Oct 2026, web searches). Tree and shrub totals are separate; vouchers are not trees planted.",
       "status": "Drafted",
-      "reply": "not-needed",
+      "reply": "not-sought",
       "verdict": "Largely supported",
       "tags": [
         "Input-as-outcome",
@@ -538,7 +539,7 @@
         "scope": "institution",
         "icon": "castille"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Project Green; Partit Laburista; Minister for the Environment",
@@ -547,9 +548,67 @@
         "pl",
         "ministry-environment"
       ],
+      "subclaims": [
+        {
+          "id": "CC-010A",
+          "text": "More than 8,000 trees and more than 25,000 shrubs planted by government entities in 2024",
+          "finding": "Stated in Project Green's release [1]; self-reported, with no site list.",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-010B",
+          "text": "Pledge 305: 100,000 trees in the next five years",
+          "finding": "Wording confirmed in the 2022 manifesto, PDF p. 91 [2].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-010C",
+          "text": "About 60,000 trees and more than 100,000 shrubs planted through end-2025",
+          "finding": "Stated by the Minister in Parliament [3]; rounded, no project list; Labour's own count is lower, more than 57,000 [9].",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-010D",
+          "text": "Delivery of 100,000 trees within the pledge period",
+          "finding": "About 60,000 (Labour: more than 57,000) by end-2025, when about 75% of the window had elapsed; the legislature then ended with the 30 May 2026 election, and no later count was found [3, 8, 9].",
+          "rating": "Not substantiated",
+          "tone": "orange"
+        }
+      ],
+      "pledge": {
+        "status": "Off track",
+        "slug": "pledge-off-track",
+        "colour": "#ae5d33",
+        "as_of": "31 December 2025",
+        "as_of_iso": "2025-12-31",
+        "made_on": "11 March 2022",
+        "deadline": "26 March 2027",
+        "term_end": null,
+        "target": "100,000 trees in the next five years",
+        "vehicle": "Labour manifesto 2022, pledge 305",
+        "occasion": "Labour manifesto 2022",
+        "note": "About 60,000 trees reported by end-2025 with 75% of the five years gone (parliamentary answer, Feb 2026). The deadline is five years from the 26 March 2022 election; the legislature ended early (election 30 May 2026) and no count for January-May 2026 was found, so the label stays Off track rather than Missed.",
+        "made_by": [
+          {
+            "id": "pl",
+            "name": "Partit Laburista (Labour Party)",
+            "kind": "organisation",
+            "role": null,
+            "path": "/bodies/pl/"
+          }
+        ],
+        "made_by_ids": [
+          "pl"
+        ],
+        "pure": false,
+        "overlaps": []
+      },
       "date": "2024-12-31",
       "quote": "",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report_pdf": "claim-files/CC-010/report.pdf",
@@ -565,7 +624,7 @@
       "claim": "Labour manifesto 2026, priority 19: every person no more than ten minutes' walk from an open or green space. (Until v1.1 this check also covered the PN's net-zero Gozo pledge, now CC-107.)",
       "counter": "Election held 30 May 2026; Labour won, so the pledge is now a government commitment. The manifesto defines neither \"open or green space\" nor a baseline or year. Our open-data analysis: 99.7-99.9% of residents already live within ten minutes of some green or open space, so read broadly the pledge is almost met; but only 55-68% live within a ten-minute walk of a public park of at least 0.5 ha (about 240,000 people outside), and 24% within 300 m of one (WHO Europe indicator).",
       "status": "Drafted",
-      "verdict": "Not substantiated",
+      "verdict": null,
       "tags": [
         "Promise-without-baseline"
       ],
@@ -577,9 +636,9 @@
         "scope": "institution",
         "icon": "parliament"
       },
-      "priority": "Done (v1.2)",
+      "priority": "Done (v1.3)",
       "wording_status": "Verbatim found",
-      "confidence": "Moderate",
+      "confidence": null,
       "speaker": "Labour Party",
       "bodies": [
         "pl"
@@ -607,9 +666,37 @@
           "tone": "grey"
         }
       ],
+      "pledge": {
+        "status": "Not measurable",
+        "slug": "pledge-not-measurable",
+        "colour": "#716f8d",
+        "as_of": "5 October 2026",
+        "as_of_iso": "2026-10-05",
+        "made_on": "May 2026",
+        "deadline": null,
+        "term_end": null,
+        "target": "Every person no more than ten minutes' walk from an open or green space",
+        "vehicle": "Labour manifesto 2026 (Int Malta), priority 19",
+        "occasion": "Labour manifesto 2026 (Int Malta)",
+        "note": "No definition of \"open or green space\", no baseline and no date. 99.7-99.9% of residents are already within ten minutes of some open space on a broad reading; 55-68% for parks of at least 0.5 ha. Labour won the 30 May 2026 election, so the pledge is a government commitment for the 2026 legislature.",
+        "made_by": [
+          {
+            "id": "pl",
+            "name": "Partit Laburista (Labour Party)",
+            "kind": "organisation",
+            "role": null,
+            "path": "/bodies/pl/"
+          }
+        ],
+        "made_by_ids": [
+          "pl"
+        ],
+        "pure": true,
+        "overlaps": []
+      },
       "date": "2026-05",
       "quote": "Kull persuna f'pajjiżna ma tkunx aktar minn għaxar minuti mixi 'l bogħod minn spazju miftuħ jew aħdar.",
-      "version": "1.2",
+      "version": "1.3",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-011/report.pdf",
@@ -665,7 +752,7 @@
       "title": "Permits keep property prices in check",
       "category": "Planning & Housing",
       "claim": "Planning Authority CEO Johann Buttigieg (MaltaToday interview, 2 Mar 2025): continuing to issue permits helps keep property prices in check; without them Malta would face the same housing crises as other European countries. The interviewer cited about 91,000 dwellings approved over a decade.",
-      "counter": "Supported in direction by peer-reviewed research on supply constraints (Glaeser et al. 2005; Hilber and Vermeulen 2016; Saiz 2010); Anenberg and Kung (2020) find extra supply alone does little for rent burdens. Malta population +31% 2015-2025 (EU +2%); real house prices +34% (EU +25%; Malta 2025 provisional). Housing-cost overburden rose from 1.1% (2015) to 2.9% (2022) while the EU's fell; Eurostat flags a break in Malta's series in 2023, after which it held at about 6% (6.0% in 2025; EU 7.7%). Overcrowding 4.7% vs EU 16.8%. 27.5% of dwellings not a main residence (Census 2021).",
+      "counter": "Supported in direction by peer-reviewed research on supply constraints (Glaeser et al. 2005; Hilber and Vermeulen 2016; Saiz 2010); Anenberg and Kung (2020) find extra supply alone does little for rent burdens. Malta population +31% 2015-2025 (EU +2%; highest of 27, about 16 times the EU rate); real house prices +34% (EU +25%; Malta 2025 provisional), which ranks 16th of 27, below the median Member State (+41%); the EU aggregate is weighted towards Germany, France and Italy (49%). Rents (HICP actual rentals) +53% vs EU +21% (8th of 27); house prices +6.9% a year to 2026-Q2 (provisional) vs EU +4.7%. Housing-cost overburden rose from 1.1% (2015) to 2.9% (2022) while the EU's fell; Eurostat flags a break in Malta's series in 2023, after which it held at about 6% (6.0% in 2025; EU 7.7%). Overcrowding 4.7% vs EU 16.8%. 27.5% of dwellings not a main residence (Census 2021).",
       "status": "Drafted",
       "reply": "not-needed",
       "verdict": "Largely supported",
@@ -678,7 +765,7 @@
         "scope": "institution",
         "icon": "ravelin"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Johann Buttigieg, Planning Authority CEO",
@@ -703,7 +790,7 @@
         {
           "id": "CC-013C",
           "text": "Without the permits Malta would face the same crises as other European countries",
-          "finding": "Counterfactual. Malta is below the EU on overcrowding and overburden today, but its prices grew faster and overburden is rising.",
+          "finding": "Counterfactual. Malta is below the EU on overcrowding and overburden today, and its real price rise ranks 16th of 27 despite the fastest population growth; but its prices outpaced the EU aggregate, rents rose 53% (EU 21%) and overburden is rising.",
           "rating": "Not shown",
           "tone": "grey"
         },
@@ -717,7 +804,7 @@
       ],
       "date": "2025-03-02",
       "quote": "Had we not issued these permits, Malta would face the same housing crises as other European countries. This is a supply-and-demand issue – continuing to issue permits helps keep property prices in check. Stopping them would drive prices up.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-013/report.pdf",
@@ -731,7 +818,7 @@
       "title": "Fewer enforcement notices, fewer illegalities",
       "category": "Planning & Housing",
       "claim": "Planning Authority CEO Johann Buttigieg (Malta Independent, 7 Sep 2025): the PA once issued over 1,000 enforcement notices a year and now about 200, which he attributed to fewer illegalities; over 5,000 cases await direct action and 1,500 illegalities were removed by direct action in 30 years.",
-      "counter": "Notices fell 82% (1,033 a year in 2001-2009 to 187 in 2020-2024) while complaints of illegal development fell 11% since 2009 (2,701 to 2,411) and 35% since 2004/05; complaints were 3,313 in 2020, the most since FY 2004/05. About half of 2024 complaints were confirmed illegal (~1,200-1,250: the PA says circa half, its four outcome categories sum to 1,252). Notices per 100 complaints fell from about 30-40 to 5-10: in 2024, 521 confirmed cases ended in a sanctioning application and 482 in removal by the owner (about six times the 162 that led to a notice). The PA's 2024 report attributes the fall in notices to persuading contraveners first.",
+      "counter": "Notices fell 82% (1,033 a year in 2001-2009 to 187 in 2020-2024; PA annual reports give 164-233 a year in 2018-2024) while complaints of illegal development fell 11% since 2009 (2,701 to 2,411) and 35% since 2004/05, and averaged about 2,860 a year in 2017-2024, more than in 2009 or 2011 (2,105). Complaints confirmed as illegal development were about 1,280 in 2018 and about 1,200-1,250 in 2024; the fall of about a third since 2020 is measured from a 2020-21 peak (~1,820-1,880). Notices per 100 complaints fell from 29-41 (2005-2011) to 5-10 (2017-2024), and only 7-13 in every 100 confirmed cases ended in a notice in 2018-2024: most ended in a sanctioning application (497-818 a year) or removal by the owner. The PA's own reports explain the low number of notices as its strategy \"to issue notices only where contraveners are uncooperative\" (2018 p. 20; 2019 p. 18).",
       "status": "Drafted",
       "verdict": "Misleading",
       "tags": [
@@ -745,7 +832,7 @@
         "scope": "institution",
         "icon": "ravelin"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Johann Buttigieg, Planning Authority CEO",
@@ -763,35 +850,35 @@
         {
           "id": "CC-014B",
           "text": "Now around 200",
-          "finding": "164–233 a year, 2019–2024; 191 in 2024 [9–12].",
+          "finding": "164–233 a year, 2018–2024 (191 in 2024); 315 in 2017 [9–16].",
           "rating": "Accurate",
           "tone": "green"
         },
         {
           "id": "CC-014C",
           "text": "The fall is due to fewer illegalities",
-          "finding": "Complaints fell 11–35% against an 82% fall in notices; notices per complaint fell about five-fold; the Authority attributes the fall to persuasion.",
+          "finding": "Notices fell 82%; complaints fell 11–35% since 2004–09 and averaged about 2,860 a year in 2017–24. Confirmed cases in 2024 were close to 2018, and only 7–13 in 100 ended in a notice. The Authority attributes the fall to its strategy [9–16].",
           "rating": "Misleading",
           "tone": "red"
         },
         {
           "id": "CC-014D",
           "text": "Over 5,000 cases awaiting direct action; over 90 years to clear",
-          "finding": "5,382 pending notices at end 2021 [11]; 74 closed by direct action in 2020 [10] implies about 73 years. Consistent in size.",
+          "finding": "Pending notices: almost 7,000 (end 2018), 6,119 (2019), almost 5,600 (2020) [11–13]; 5,382 (end 2021) [17]. Notices closed by direct action: 27–135 a year in 2017–2020, mean 72 [10–13], which implies about 75 years. Consistent in size.",
           "rating": "Broadly consistent",
           "tone": "amber"
         },
         {
           "id": "CC-014E",
           "text": "1,500 illegalities removed by direct action in 30 years",
-          "finding": "No annual series found.",
-          "rating": "Not tested",
+          "finding": "Notices closed by direct action: 135, 52, 27 and 74 in 2017–2020 [10–13]. 1,500 in 30 years is 50 a year, the same order. No 30-year series found.",
+          "rating": "Partly tested",
           "tone": "grey"
         }
       ],
       "date": "2025-09-07",
       "quote": "We had times when we issued over 1,000 enforcement notices per year.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-014/report.pdf",
@@ -835,7 +922,7 @@
       "title": "Shore-to-ship: 90% less harbour pollution",
       "category": "Air",
       "claim": "Infrastructure Malta (Shore-to-Ship project page, 1 Dec 2023): the Grand Harbour shore-to-ship initiative promises to slash 90% of air pollution in the Grand Harbour. Repeated at the inauguration (10 Jul 2024, cost given as EUR 33 million): completion means a 90% reduction, with 17,000 families around the harbour benefiting from cleaner air.",
-      "counter": "Connection is voluntary until 1 Jan 2030 (Regulation (EU) 2023/1805 Art. 6); Transport Malta: connecting 'remains the prerogative of the shipping line'. Transport Malta FOI records (via Amphora Media): 67 of 373 cruise berths (18%) plugged in from Jul 2024 to Jul 2025, 9% of berth time; MSC World Europa made 35 of the 67; no stay of 2-4 days plugged in. Cruise calls rose from 357 (2024) to 385 (2025; calendar years, while uptake runs Jul-Jul). Infrastructure Malta's own 2020-2023 pages scope the 90% to the pollution cruise liners and Ro-Ro ships produce, with per-liner cuts on shore power of NO2 -93%, PM -92.6%, SO2 -99.6%, CO2 -39.6% (study not cited); the 2023 project page dropped that scope. Research context: hotelling is >90% of cruise CO2 in port (Mocerino et al. 2026); manoeuvring emissions remain (Gagic et al. 2022). Cost stated as EUR 33m (launch), 37m (phase 1) and 49.9m (whole project). No harbour air-quality study before and after.",
+      "counter": "Connection is voluntary until 1 Jan 2030 (Regulation (EU) 2023/1805 Art. 6); Transport Malta: connecting 'remains the prerogative of the shipping line'. Transport Malta FOI records (via Amphora Media): 67 of 373 cruise berths (18%) plugged in from Jul 2024 to Jul 2025, 9% of berth time; 306 berths not plugged in; MSC World Europa made 35 of the 67 (35 of its 51 calls; all other ships 32 of 322, 10%); no stay of 2-4 days plugged in. MSC World Europa is LNG-powered (dual-fuel LNG / low-sulphur marine gasoil, MSC Cruises 2022), so when it runs on LNG the SOx and PM saving from plugging it in is smaller than the per-liner figures. Cruise calls rose from 357 (2024) to 385 (2025; calendar years, while uptake runs Jul-Jul). Infrastructure Malta's own 2020-2023 pages scope the 90% to the pollution cruise liners and Ro-Ro ships produce, with per-liner cuts on shore power of NO2 -93%, PM -92.6%, SO2 -99.6%, CO2 -39.6% (study not cited); the 2023 project page dropped that scope. Research context: hotelling is >90% of cruise CO2 in port (Mocerino et al. 2026); manoeuvring emissions remain (Gagic et al. 2022). Cost stated as EUR 33m (launch), 37m (phase 1) and 49.9m (whole project). No harbour air-quality study before and after.",
       "status": "Drafted",
       "verdict": "Misleading",
       "tags": [
@@ -849,7 +936,7 @@
         "scope": "site",
         "icon": "waterfront"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Infrastructure Malta; Prime Minister Robert Abela; Ministry for Transport",
@@ -862,9 +949,9 @@
         {
           "id": "CC-016A",
           "text": "Shore power cuts a connected ship’s emissions at berth by about 90%",
-          "finding": "Infrastructure Malta’s per-liner figures: NO2 −93%, PM −92.6%, SO2 −99.6%, CO2 −39.6% [10, 11]; consistent with research [7, 9]. Underlying study not cited.",
-          "rating": "Plausible",
-          "tone": "green"
+          "finding": "True for NOx, PM and SOx per connected liner (NO2 −93%, PM −92.6%, SO2 −99.6%) [10, 11]; CO2 falls only about 40%; consistent with research [7, 9]. Infrastructure Malta’s own study is not public.",
+          "rating": "Largely supported",
+          "tone": "lime"
         },
         {
           "id": "CC-016B",
@@ -890,7 +977,7 @@
       ],
       "date": "2023-12-01",
       "quote": "This initiative promises to slash 90% of air pollution in the Grand Harbour.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-016/report.pdf",
@@ -904,7 +991,7 @@
       "title": "Land reclamation outside the Freeport",
       "category": "Planning & Housing",
       "claim": "Budget 2026 (27 Oct 2025): a reclamation project is already under way in the Freeport; the government is preparing to launch a large-scale land reclamation project outside the Freeport perimeter next year, for industrial and maritime use and to relocate certain commercial activities so other spaces can be enjoyed by families. In 2019 the Environment Minister said an EUR 11 million seabed study had found five or six sites that are 'possible and environmentally safe'.",
-      "counter": "Existing works confirmed: Sentinel-2 shows +3.7 ha (+/-1) at Terminal 2, 2023-2026 (stated ~30,000 m2, ~1 Mt inert fill). No site, size, cost, fill source, screening or call for the large-scale project found by 3 Oct 2026. Seabed study unpublished since 2019; budget lines EUR 500,000 (2023) -> 10,000 (2025). Three Natura 2000 designations within ~0.5 km of the new Terminal 2 land, two of them overlapping on the same cliffs (SAC MT0000024, SPA MT0000033); marine SPA MT0000111 (256 km2) ~0.4 km away. Posidonia meadows -34% in 50 years across the Mediterranean (Telesca et al. 2015).",
+      "counter": "Existing works confirmed: Sentinel-2 shows +3.7 ha (+/-1) at Terminal 2, 2023-2026 (stated ~30,000 m2, ~1 Mt inert fill). No site, size, cost, fill source, screening or call for the large-scale project found by 3 Oct 2026. Seabed study unpublished since 2019; budget lines EUR 500,000 (2023) -> 10,000 (2025). Three Natura 2000 designations within ~0.5 km of the new Terminal 2 land, two of them overlapping on the same cliffs (SAC MT0000024, SPA MT0000033); marine SPA MT0000111 (256 km2) ~0.4 km away. v1.2: EMODnet Seabed Habitats (Maltese map of 2016, gridded at about 230 m) maps Posidonia next to the new land (0.01 km, one grid cell) and 72 ha within 1 km; EMODnet DTM 2024 depth within 1 km mostly 5-30 m (median 18 m); mapped meadows at 11-35 m in the bay (median 26 m) and 21-32 m within 1 km (median 29 m). Fairness: Malta's Article 17 reports assess Posidonia beds (1120) as favourable overall (2013-2018; 2019-2024, stable; 68.46 km2); the -34% in 50 years (Telesca et al. 2015) is Mediterranean-wide. A bay-wide Sentinel-2 MNDWI check for other new land was not robust and is not used.",
       "status": "Drafted",
       "verdict": "Not substantiated",
       "tags": [
@@ -918,7 +1005,7 @@
         "scope": "site",
         "icon": "crane"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Clyde Caruana, Minister for Finance (Budget Speech 2026); Robert Abela, Prime Minister",
@@ -944,7 +1031,7 @@
         {
           "id": "CC-017C",
           "text": "“There are five or six sites where reclamation is possible and environmentally safe” (2019)",
-          "finding": "Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km from the Terminal 2 works [7].",
+          "finding": "Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km from the Terminal 2 works, and Posidonia is mapped next to them [7, 12].",
           "rating": "Not shown",
           "tone": "red"
         },
@@ -954,11 +1041,18 @@
           "finding": "Activities and spaces not identified.",
           "rating": "Not shown",
           "tone": "grey"
+        },
+        {
+          "id": "CC-017E",
+          "text": "“The sea near the Freeport is an ideal depth for these kinds of projects” (Prime Minister)",
+          "finding": "Within 1 km of the Terminal 2 works the sea is mostly 5–30 m deep [13]; “ideal” is not defined. Mapped meadows near the works lie at 21–32 m (11–35 m across the bay) [12, 13].",
+          "rating": "Not tested",
+          "tone": "grey"
         }
       ],
       "date": "2025-10-27",
       "quote": "A reclamation project is already under way in the Freeport, and now it is time to take the next step. The Government is preparing to launch a large-scale land reclamation project outside the Freeport perimeter next year.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-017/report.pdf",
@@ -972,7 +1066,7 @@
       "title": "IMF 'confirms' MDA on housing",
       "category": "Planning & Housing",
       "claim": "Malta Developers Association (release on its website, 8 Feb 2026; quoted by MaltaToday the same day): 'The IMF's assessment of the Maltese housing market confirms what the Malta Developers Association has been saying for several years', i.e. (MaltaToday's summary) the strength and stability of the property sector.",
-      "counter": "IMF CR 26/29: prices 'aligned with fundamentals', price-to-income and price-to-rent stable, weakening 'currently low' (supports). Eurostat tipsho60: Malta price-to-income -10.7% 2015-2024, 92.9% of long-term average (EU 98.9). But IMF calls banks' real-estate exposure (72% of private loans, from 61%) 'a vulnerability', urges vigilance and enhanced monitoring given rapid price growth; affordability not assessed (housing-cost overburden worsened between 2015 and 2022 on Eurostat's comparable series, 1.1% -> 2.9%; a break in the series in 2023, 6.0%, flat since). MDA-commissioned study (as reported) found prices outpacing incomes.",
+      "counter": "IMF CR 26/29: prices 'aligned with fundamentals', price-to-income and price-to-rent stable, weakening 'currently low' (supports). Eurostat tipsho60: Malta price-to-income -10.7% 2015-2024, 92.9% of long-term average (EU 98.9). But IMF calls banks' real-estate exposure (72% of private loans, from 61%) 'a vulnerability', urges vigilance and enhanced monitoring given rapid price growth; affordability not assessed (housing-cost overburden worsened between 2015 and 2022 on Eurostat's comparable series, 1.1% -> 2.9%; a break in the series in 2023, 6.0%, flat since). MDA-commissioned study (as reported) found prices outpacing incomes. House prices +6.8% and +6.9% year on year in 2026 Q1 and Q2 (Eurostat prc_hpi_q, provisional). v1.2, the release's other statements: the IMF did move Malta to a 24-month cycle (supported), but Malta is not 'the first EU economy' on it (contradicted: Luxembourg 2000-2002; Malta is the only EU member on it in the 2025-26 reports); GDP per head 'nearly doubled' since 2013 is the IMF's own phrase (US$, x1.8 to 2024; Eurostat EUR x2.2 to 2025, real x1.5; largely supported); 'far higher than the EU average' is not substantiated (2025: +1.7% at market prices, PPS index 110).",
       "status": "Drafted",
       "reply": "not-needed",
       "verdict": "Largely supported",
@@ -985,9 +1079,9 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
-      "confidence": "Moderate",
+      "confidence": "High",
       "speaker": "Malta Developers Association (MDA)",
       "bodies": [
         "mda"
@@ -1013,11 +1107,39 @@
           "finding": "Partly; the MDA’s own study pointed the other way on price-to-income.",
           "rating": "Partly",
           "tone": "amber"
+        },
+        {
+          "id": "CC-018D",
+          "text": "The IMF will now assess Malta “every two years”",
+          "finding": "The staff report recommends the 24-month cycle, and the annex says Malta “has moved” to it [2].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-018E",
+          "text": "Malta is “the first EU economy to be given such a certificate of economic governance”",
+          "finding": "Not the first: Luxembourg was on the 24-month cycle in 2000–2002 [9]. Malta is the only EU member on it today [8]. The IMF’s criteria are size, low perceived risk and consent, not a certificate [7].",
+          "rating": "Contradicted",
+          "tone": "maroon"
+        },
+        {
+          "id": "CC-018F",
+          "text": "Since 2013 GDP per capita “has nearly doubled”",
+          "finding": "The IMF’s own words (US$25,000 → 45,000, 2013–2024) [2]. In euros it more than doubled (×2.2 to 2025); after inflation it rose by about half (×1.5) [10].",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-018G",
+          "text": "GDP per capita is now “far higher than the EU average”",
+          "finding": "The IMF says “higher”. Eurostat, 2025: 1.7% above the EU average at market prices, 10% above in purchasing power [10].",
+          "rating": "Not substantiated",
+          "tone": "orange"
         }
       ],
       "date": "2026-02-08",
       "quote": "The IMF's assessment of the Maltese housing market confirms what the Malta Developers Association has been saying for several years.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-018/report.pdf",
@@ -1031,10 +1153,9 @@
       "title": "830,000 m2 of land lost in five years",
       "category": "Land & Trees",
       "claim": "Amphora Media (Green to Grey, 11-12 Sep 2026): nearly 830,000 square metres of nature and cropland were built up in Malta between 2018 and 2023 (headline: 'over 830,000'), 0.26% of land; in nearly 95% of the take-up, farmland rather than natural area was affected.",
-      "counter": "Independent check with Impact Observatory/Esri 10 m land cover (2017-2023 maps): consistent new built-up 1.9 km2 gross, 1.4 km2 net for land first mapped as built in 2020-21 (3-year rule); 5.0 / 3.0 km2 for 2019-22 (2-year rule), so 0.83 km2 for 2018-2023 is plausible and conservative (different model and windows, not like for like). Arithmetic (0.26%, 116 pitches, 1.94 km2 since 2006) checks out; 'roughly a quarter of Comino' fits the 3.5 km2 often quoted (0.30 of the 2.8 km2 OSM outline). Previous cover: 65% crops, 31% rangeland, 4% bare, so the 'nearly 95% farmland' share is not reproduced. EEA chart (2012-2018): about 0.91-0.94 km2, highest land take of EEA39, matching the 920,000 m2 quoted; 2006-2012 figure not seen.",
+      "counter": "v1.2: Amphora's published polygons (397) cover 828,429 m2, so 'nearly 830,000' is reproduced (the headline's 'over' is not). Spatial cross-check with Impact Observatory/Esri 10 m land cover (2017-2025): the model already maps 68% of Amphora's area as built-up in 2018 (61% in all of 2017-19), classes only 6-14% of it as newly built, and only 2-3% of its own new built-up land lies inside Amphora's polygons (5-7% within 20 m); its national net total ranges from -0.06 to 2.96 km2 depending on the rule and years. So the model measures different land and neither confirms nor rules out 0.83 km2 (v1.1 had read it as corroboration). 'Nearly 95%': cropland + grass = 96% (95.3-95.7%) of the area with a known 2018 class in Amphora's own data (our reading of the basis), counting Dynamic World 'grass' (which includes natural meadows) as farmland and leaving out the 37% of the area with no class; cropland alone is 22% of the whole. Two polygons (4,429 m2) were sea in 2018. Arithmetic (0.26%, 116 pitches, 1.94 km2 since 2006) checks out. EEA CORINE change maps: 20.6 ha (2006-12) and 93.7 ha (2012-18) of new artificial land, matching the 190,000 and 920,000 m2 quoted; changes under 5 ha are not mapped. Imagery spot-check (maintainer decision, 5 Oct 2026): 40 draws by systematic sampling proportional to area (seed 20261005, 39 polygons), checked by eye against Esri World Imagery Wayback (before Jul 2015-Aug 2016, 4 Sep 2018, 6 May 2023, Jun-Sep 2025): 72.5% of the sampled area confirmed open/green to grey (Wilson 95% CI 57-84%), 7.5% partial, 2.5% already grey, 0% still open, 17.5% unclear (15% being developed by Sep 2018); 55% (40-69%) confirmed and mostly grey by May 2023, so part of the figure is 2024-25 change. The imagery contradicts the model's 2018 built-up reading on these parcels. Land before: fields 59% (43-73%), 64% with orchards, the rest scrub, garrigue or rough grass, so 'nearly 95% farmland' is overstated. Verdict (maintainer decision, 5 Oct 2026): Not substantiated: about 456,000 m2 (330,000-574,000) was grey by May 2023 against 'nearly 830,000' for 2018-2023 (about 600,000 m2 by 2025), and about a third of the land was scrub or garrigue, not farmland.",
       "status": "Drafted",
-      "reply": "not-needed",
-      "verdict": "Largely supported",
+      "verdict": "Not substantiated",
       "tags": [],
       "subtopic": "Land take & agriculture",
       "location": {
@@ -1044,7 +1165,7 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Amphora Media",
@@ -1055,9 +1176,9 @@
         {
           "id": "CC-019A",
           "text": "About 830,000 m² of green land built up 2018–2023",
-          "finding": "Independent estimate 1.4–3.0 km² net, over shorter windows (land first built 2019–22); Amphora’s figure plausible and conservative.",
-          "rating": "Supported",
-          "tone": "green"
+          "finding": "Amphora’s polygons add up to 828,429 m² (two, 4,429 m², were sea in 2018). Imagery confirms green to grey for 72.5% of a random sample of the area (57–84%; about 600,000 m²), but only 55% by May 2023 (about 456,000 m²); 15% was being developed by September 2018. True for 2018–2025, not for the period stated.",
+          "rating": "Partly supported",
+          "tone": "amber"
         },
         {
           "id": "CC-019B",
@@ -1069,21 +1190,21 @@
         {
           "id": "CC-019C",
           "text": "Nearly 95% of take-up was farmland",
-          "finding": "Independent data: 65% cropland, 31% shrub or grass.",
-          "rating": "Not shown",
-          "tone": "grey"
+          "finding": "Cropland + grass = 96% of the area with a known 2018 class (our reading of the basis), but only if all grass is farmland; 37% has no class. In imagery, fields were 59% of the sampled land (43–73%), 64% with orchards; 36% was scrub or garrigue.",
+          "rating": "Not substantiated",
+          "tone": "orange"
         },
         {
           "id": "CC-019D",
           "text": "EEA figures and the 1.94 km² total",
-          "finding": "Sum correct; EEA chart gives 0.91–0.94 km² for 2012–18 [7]; 2006–12 not seen.",
+          "finding": "CORINE change maps: 20.6 ha (2006–12) and 93.7 ha (2012–18) [9]; EEA chart 0.91–0.94 km² [7]; sum correct.",
           "rating": "Supported",
           "tone": "green"
         }
       ],
       "date": "2026-09-11",
       "quote": "nearly 830,000 square metres of nature and cropland have been built up in Malta between 2018 and 2023",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-019/report.pdf",
@@ -1163,7 +1284,7 @@
       "category": "Transport",
       "claim": "Lead: past government studies found the Malta-Gozo tunnel would only be economically viable if car trips between the islands roughly tripled. The project was shelved in 2022; check whether it, or a fixed link, has been revived with new claims.",
       "counter": "Induced demand: a link designed to triple car trips works against transport-emission targets (see CC-003).",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [
         "Promise-without-baseline"
@@ -1195,7 +1316,7 @@
       "title": "'Lowest electricity burden in the EU'",
       "category": "Climate & Energy",
       "claim": "Energy Ministry (press release, 6 May 2025): Malta has the lowest household electricity prices in the EU in purchasing power standards (14.33 PPS per 100 kWh, 2024-S2), the third-lowest nominal price (EUR 0.131), and 'the burden on Maltese families is the lowest in the EU'.",
-      "counter": "Eurostat nrg_pc_204 confirms every figure for the standard household band (2,500-4,999 kWh): Malta 14.35 PPS/100 kWh in 2024-S2, lowest of 27; EUR 0.1303, third lowest; CZ 41.00, CY 35.70, DE 35.23 PPS. In other bands Malta is not the cheapest (2024-S2: 3rd for 1,000-2,499 kWh, 2nd for 5,000-14,999 kWh, 16th under 1,000 kWh, 23rd of 27 at 15,000 kWh or more; 4th of 26 on the all-band average). Malta's price -0.2% 2020-25 vs EU +35%; EUR 0.169 to 0.125 per kWh in 2014, 0.125-0.133 since. Fixed electricity and fuel prices are financed by energy subsidies of 1.8% of GDP (2022) to 0.8% (2025, projected), about EUR 1.0bn 2022-2025 (IMF CR 26/29; electricity and fuel together, electricity share not published). Energy poverty below EU (7.6% vs 8.8% unable to keep warm).",
+      "counter": "Eurostat nrg_pc_204 confirms every figure for the standard household band (2,500-4,999 kWh): Malta 14.35 PPS/100 kWh in 2024-S2, lowest of 27; EUR 0.1303, third lowest; CZ 41.00, CY 35.70, DE 35.23 PPS. In other bands Malta is not the cheapest (2024-S2: 3rd for 1,000-2,499 kWh, 2nd for 5,000-14,999 kWh, 16th under 1,000 kWh, 23rd of 27 at 15,000 kWh or more; 4th of 26 on the all-band average). Malta's price -0.2% 2020-25 vs EU +35%; EUR 0.169 to 0.125 per kWh in 2014, 0.125-0.133 since. Fixed electricity and fuel prices are financed by energy subsidies of 1.8% of GDP (2022) to 0.8% (2025, projected), about EUR 1.0bn 2022-2025 (IMF CR 26/29; electricity and fuel together, electricity share not published). Against income (v1.2): a 3,750 kWh bill at the 2024 band-DC price is 2.2% of median equivalised income (EU 4.7%), 2nd of 27 after Luxembourg, and 3.5% of the 20th-percentile income (EU 7.3%), also 2nd; the average household's actual bill (4,617 kWh, 21st of 27 on use; a fifth for space cooling) is 1.26% of disposable income per household (EU 1.91%), 5th of 26; electricity's share of spending 2.3% in 2020 (joint 7th of 24). Energy poverty below the EU average but not the lowest: arrears 4.5% vs 7.0% (9th of 27); unable to keep warm 7.6% vs 8.8% (17th of 27).",
       "status": "Drafted",
       "reply": "not-needed",
       "verdict": "Largely supported",
@@ -1208,9 +1329,9 @@
         "scope": "institution",
         "icon": "castille"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
-      "confidence": "High",
+      "confidence": "Moderate",
       "speaker": "Ministry for the Environment, Energy and Public Cleanliness",
       "bodies": [
         "ministry-environment"
@@ -1240,14 +1361,14 @@
         {
           "id": "CC-022D",
           "text": "Lowest “burden” on families",
-          "finding": "True for price; the subsidy cost is not counted [4].",
+          "finding": "True for price. Against income, 2nd of 27 for a typical and a low-income household; on actual bills, 5th of 26 (Section 4). The subsidy cost is not counted [4].",
           "rating": "Largely supported",
           "tone": "lime"
         }
       ],
       "date": "2025-05-06",
       "quote": "While Malta has the third-lowest nominal electricity price for domestic consumers in the EU at €0.131 per unit, when adjusted for PPS ... the burden on Maltese families is the lowest in the EU, at 14.33 PPS per 100kWh.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-022/report.pdf",
@@ -1428,7 +1549,7 @@
       "category": "Climate & Energy",
       "claim": "Energy Minister Miriam Dalli and PM Robert Abela (July 2024): the widespread power cuts were caused by extreme heat and record demand straining the distribution network, not by a lack of generation capacity; EUR 161 million had been invested since 2022.",
       "counter": "Peak medium-voltage demand rose from 663 MW (Jul 2023) to 741 MW (Jul 2024) as reported.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Electricity & grid",
@@ -1518,11 +1639,13 @@
       "id": "CC-030",
       "title": "Carbon-neutral airport",
       "category": "Climate & Energy",
-      "claim": "Malta International Airport: it has reached carbon neutrality (ACA Level 3+) and its EUR 12.5m airfield electrification will avoid 1,000 tonnes of CO2 a year.",
-      "counter": "Level 3+ relies on carbon credits for residual airport emissions and excludes flights; passengers passed 10 million in 2025.",
-      "status": "Not started",
-      "verdict": null,
-      "tags": [],
+      "claim": "Malta International Airport plc, across several of its own documents: its EUR 12.5 million Airfield Electrification Programme \"is set to avoid the emission of an average of 1,000 tonnes of carbon dioxide annually\" (press release, 25 May 2026); and it has reached carbon neutrality, moving up to ACA \"Level 3+ (neutrality)\" in 2025 (At a Glance page and company announcements, 2026; Sustainability Report 2025, p. 31), as its Facts and Figures page had set as a target (\"Reaching carbon neutral status in 2025\"). The 25 May release itself does not mention neutrality or ACA.",
+      "counter": "v1.1: Neutrality holds as ACA defines it and is independently confirmed (ACA directory entry and notice; 3,780 of the 5,450 t of credits retired for MIA in the Gold Standard and Rainbow registries; third block not found), but covers Scope 1, Scope 2 and business travel only: 0.7% of the reported 2025 footprint (Scope 3 is 99.3%; 95.3% on the 2024 basis). The 1,000 t a year has no published method, baseline or grid treatment. On the one sourced diesel GPU rate (about 25 kg CO2 an hour; Fleuti 2006 via Padhra 2018, second-hand) it needs about 40,500 GPU-hours a year (74 min at every turnaround); a GPU at every turnaround for 22.5 min gives about 300 t gross. 1,000 t needs APU or e-bus/equipment savings MIA has not shown. Scope 1 + 2 is 22% below 2015 (target -65% by 2030); Scope 1 rose 94% in 2025 while fuel use rose 30%.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
+      "tags": [
+        "Promise-without-baseline"
+      ],
       "subtopic": "Emissions & targets",
       "location": {
         "place": "Malta International Airport, Luqa",
@@ -1531,17 +1654,52 @@
         "scope": "site",
         "icon": "pin"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.1)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Malta International Airport plc",
       "bodies": [
         "malta-airport"
       ],
+      "subclaims": [
+        {
+          "id": "CC-030A",
+          "text": "MIA reached carbon neutrality (ACA Level 3+) in 2025",
+          "finding": "ACA lists MIA at Level 3+ (updated 20 Nov 2025; notice 18 Dec 2025); 3,780 of 5,450 t of credits found retired; credits match the boundary emissions on the location basis [2, 8–11].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-030B",
+          "text": "A €12.5 million airfield electrification programme",
+          "finding": "EU list confirms project 24-MT-TC-AE-MIA: €10.78m eligible costs, €5,391,500 grant; power at 35 stands, charging for 20 battery units, 15 e-buses and other equipment [1, 12].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-030C",
+          "text": "It will avoid an average of 1,000 t CO₂ a year",
+          "finding": "No method, baseline or grid treatment published. Diesel ground power at every turnaround gives about 300 t gross; 1,000 t needs APU or vehicle savings not shown [1, 13].",
+          "rating": "Not substantiated",
+          "tone": "orange"
+        },
+        {
+          "id": "CC-030D",
+          "text": "Scope of ‘neutral’",
+          "finding": "Covers Scope 1, 2 and business travel, 0.7% of the reported 2025 footprint; MIA’s documents and ACA tie it to emissions under the company’s control [2, 4, 7, 9].",
+          "rating": "Needs context",
+          "tone": "amber"
+        }
+      ],
       "date": "2026-05-25",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "Malta International Airport is implementing a €12.5 million Airfield Electrification Programme, which is set to avoid the emission of an average of 1,000 tonnes of carbon dioxide annually.",
+      "version": "1.1",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-030/report.pdf",
+        "flyer_pdf": "claim-files/CC-030/flyer.pdf",
+        "flyer_png": "claim-files/CC-030/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-030/claim.yml"
     },
     {
@@ -1730,9 +1888,10 @@
       "title": "Highest share reporting pollution",
       "category": "Air",
       "claim": "Amphora Media (2026 Election Guidebook): 35% of people in Malta reported exposure to pollution in 2023, the highest share in the EU.",
-      "counter": "Eurostat ilc_mddw02 measures reported pollution, grime or other environmental problems; a perception survey.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Eurostat ilc_mddw02 counts people living in households where the respondent reports pollution, grime or other environmental problems in the area; it records reported problems, not measured exposure. \"Reporting exposure\" is Eurostat's own wording, so this is context, not a flaw in the claim. Amphora's income sentence holds for 2023 (35.6% above vs 30.1% below 60% of median income) but the \"above\" group is 83.4% of people, the direction reversed in 6 of 17 years, and EU-wide it runs the other way. No data for 2021 and 2022 (three-yearly module since 2021; next 2026).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
       "tags": [],
       "subtopic": "Air quality & health",
       "location": {
@@ -1742,17 +1901,59 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Amphora Media (citing Eurostat)",
+      "priority": "Done (v1.1)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
+      "speaker": "Amphora Media",
       "bodies": [
         "amphora-media"
       ],
-      "date": "2026-05",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-037A",
+          "text": "35% of people in Malta reported pollution in 2023",
+          "finding": "Eurostat: 34.7% [2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-037B",
+          "text": "The highest share in the EU",
+          "finding": "First of 27; Greece second at 20.5%; first in all 17 years with data [2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-037C",
+          "text": "Nearly three times the EU average of 12%",
+          "finding": "12.2% EU-27; ratio 2.84 (2.9 on the rounded figures) [2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-037D",
+          "text": "“Exposure to pollution” (intro wording)",
+          "finding": "Eurostat’s own wording, shortened: it describes the indicator as people “reporting exposure to pollution, grime or other environmental problems” [5]. The survey records reported problems, not measured exposure [7].",
+          "rating": "Accurate (official wording)",
+          "tone": "green"
+        },
+        {
+          "id": "CC-037E",
+          "text": "High earners more affected than low earners",
+          "finding": "2023: 35.6% above vs 30.1% below 60% of median income [2]. But the “above” group is 83.4% of people, not high earners [11]; the gap reversed in 6 of 17 years; EU-wide it runs the other way.",
+          "rating": "Largely accurate",
+          "tone": "lime"
+        }
+      ],
+      "date": "2026-05-12",
+      "quote": "35% of people in Malta reported exposure to pollution in 2023 — the highest share in the EU.",
+      "version": "1.1",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-037/report.pdf",
+        "flyer_pdf": "claim-files/CC-037/flyer.pdf",
+        "flyer_png": "claim-files/CC-037/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-037/claim.yml"
     },
     {
@@ -3913,7 +4114,7 @@
       "claim": "PN programme 2026: a clear and realistic plan for Gozo to become a Net-Zero Island by 2040, with afforestation among several measures. News summaries said net zero \"through afforestation\". (Checked as part of CC-011 until 5 Oct 2026.)",
       "counter": "The programme promises a plan but publishes no baseline, boundary or pathway, and there is no official greenhouse-gas inventory for Gozo. A 2023 study for the EU islands secretariat put Gozo's energy-related CO2 at 118,000-154,000 t a year (2016-2020); our population-based estimate is about 157,000 t. Offsetting that by afforestation alone would need 4.9-6.3 times Gozo's land area at a measured semi-arid rate (1.5-8.5 times across a wider range). The PN's text relies on cuts first; \"through afforestation\" is a news summary.",
       "status": "Drafted",
-      "verdict": "Not substantiated",
+      "verdict": null,
       "tags": [
         "Promise-without-baseline"
       ],
@@ -3925,9 +4126,9 @@
         "scope": "site",
         "icon": "pin"
       },
-      "priority": "Done (v1.0)",
+      "priority": "Done (v1.1)",
       "wording_status": "Verbatim found",
-      "confidence": "Moderate",
+      "confidence": null,
       "speaker": "Nationalist Party",
       "bodies": [
         "pn"
@@ -3955,9 +4156,37 @@
           "tone": "grey"
         }
       ],
+      "pledge": {
+        "status": "Not measurable",
+        "slug": "pledge-not-measurable",
+        "colour": "#716f8d",
+        "as_of": "5 October 2026",
+        "as_of_iso": "2026-10-05",
+        "made_on": "May 2026",
+        "deadline": "31 December 2040",
+        "term_end": null,
+        "target": "A clear and realistic plan for Gozo to become a Net-Zero Island by 2040",
+        "vehicle": "PN electoral programme 2026 (Nifs Ġdid), chapter Għawdex",
+        "occasion": "PN electoral programme 2026 (Nifs Ġdid)",
+        "note": "No baseline, boundary or pathway published and no greenhouse-gas inventory for Gozo. The PN lost the 30 May 2026 election, so this is an opposition proposal.",
+        "made_by": [
+          {
+            "id": "pn",
+            "name": "Partit Nazzjonalista (Nationalist Party)",
+            "kind": "organisation",
+            "role": null,
+            "path": "/bodies/pn/"
+          }
+        ],
+        "made_by_ids": [
+          "pn"
+        ],
+        "pure": true,
+        "overlaps": []
+      },
       "date": "2026-05",
       "quote": "Infasslu pjan ċar u realistiku biex sal-2040, Għawdex isir Net-Zero Island",
-      "version": "1.0",
+      "version": "1.1",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-107/report.pdf",
@@ -3965,6 +4194,37 @@
         "flyer_png": "claim-files/CC-107/flyer.png"
       },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-107/claim.yml"
+    },
+    {
+      "id": "CC-108",
+      "title": "WSC: a net-zero impact on groundwater",
+      "category": "Water",
+      "claim": "The Water Services Corporation says its Net Zero Impact Utility project (EU co-financed) will give back to the environment at least as much natural freshwater as it abstracts, minimising its impact on the water environment. Government proposals on groundwater abstraction (reported as the Energy and Water Agency's Green Paper, 2023) exempt WSC's boreholes from new groundwater tariffs because WSC is said to be moving towards a net-zero impact on the groundwater environment, with its abstraction capped at 14 million m3 a year to 2030.",
+      "counter": "Not yet checked. Context from CC-009: WSC's groundwater production fell to about 11.5 million m3 in 2025 while national fresh groundwater abstraction was about 38.5 million m3 in 2024 (Eurostat, estimates), mostly by agriculture; Malta's 3rd-cycle EU reporting lists 4 of 15 groundwater bodies in poor quantitative status and all 15 in poor chemical status. A net-zero impact claim needs a defined balance (what is \"given back\", where, and how it is measured), not only lower WSC abstraction.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Water supply & groundwater",
+      "location": {
+        "place": "Pembroke reverse osmosis plant",
+        "lat": 35.93211,
+        "lon": 14.48285,
+        "scope": "site",
+        "icon": "ro_plant"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Water Services Corporation; Energy and Water Agency",
+      "bodies": [
+        "wsc",
+        "energy-water-agency"
+      ],
+      "date": "2023",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-108/claim.yml"
     }
   ],
   "edges": [
@@ -4646,6 +4906,20 @@
       "theme": "T4",
       "link_type": "Shared driver",
       "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-009",
+      "to": "CC-108",
+      "theme": "T3",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-101",
+      "to": "CC-108",
+      "theme": "T3",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
     }
   ],
   "themes": [
@@ -4699,7 +4973,8 @@
         "CC-042",
         "CC-043",
         "CC-047",
-        "CC-101"
+        "CC-101",
+        "CC-108"
       ]
     },
     {
@@ -6538,10 +6813,16 @@
         {
           "id": "european-commission",
           "named": 0,
-          "pairs": 4,
+          "pairs": 5,
           "themes": [
             "T3"
           ]
+        },
+        {
+          "id": "energy-water-agency",
+          "named": 1,
+          "pairs": 0,
+          "themes": []
         },
         {
           "id": "government-of-malta",
@@ -6823,7 +7104,24 @@
       "type": "agency",
       "parent": null,
       "role": null,
-      "links": []
+      "links": [
+        {
+          "id": "wsc",
+          "named": 1,
+          "pairs": 1,
+          "themes": [
+            "T3"
+          ]
+        },
+        {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T3"
+          ]
+        }
+      ]
     },
     {
       "id": "manuel-sapiano",
@@ -8526,7 +8824,7 @@
         {
           "id": "wsc",
           "named": 0,
-          "pairs": 4,
+          "pairs": 5,
           "themes": [
             "T3"
           ]
@@ -8545,6 +8843,14 @@
           "pairs": 1,
           "themes": [
             "T7"
+          ]
+        },
+        {
+          "id": "energy-water-agency",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T3"
           ]
         },
         {
@@ -8713,6 +9019,51 @@
       "colour": "#a1887f"
     }
   ],
-  "pledge_labels": [],
-  "pledge_links": []
+  "pledge_labels": [
+    {
+      "name": "Not measurable",
+      "meaning": "the pledge as worded has no definition, baseline or date against which delivery could be checked.",
+      "slug": "pledge-not-measurable",
+      "colour": "#716f8d"
+    },
+    {
+      "name": "Not yet due",
+      "meaning": "the pledge is measurable, its deadline or term has not passed, and no progress data have been published yet.",
+      "slug": "pledge-not-yet-due",
+      "colour": "#5c7689"
+    },
+    {
+      "name": "On track",
+      "meaning": "published progress is at or ahead of a straight-line path (or the pledge's own milestones) to the target by the deadline.",
+      "slug": "pledge-on-track",
+      "colour": "#337f71"
+    },
+    {
+      "name": "Off track",
+      "meaning": "published progress is behind that path, and the target has not yet been shown to be met or missed.",
+      "slug": "pledge-off-track",
+      "colour": "#ae5d33"
+    },
+    {
+      "name": "Met",
+      "meaning": "documents or data show the target was reached, by the deadline if one was set.",
+      "slug": "pledge-met",
+      "colour": "#23705f"
+    },
+    {
+      "name": "Missed",
+      "meaning": "the deadline or term has passed, and documents or data that can be shown say the target was not reached.",
+      "slug": "pledge-missed",
+      "colour": "#7c2d4a"
+    }
+  ],
+  "pledge_links": [
+    {
+      "a": "CC-011",
+      "b": "CC-107",
+      "why": [
+        "same subtopic (Manifestos & pledges)"
+      ]
+    }
+  ]
 }

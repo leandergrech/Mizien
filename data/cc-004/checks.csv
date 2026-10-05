@@ -16,3 +16,14 @@ Ministry figure minus Eurostat recycled + recovered,141.0,thousand t,calculated,
 Ministry: mixed waste change,-32.3,%,"Ministry press release PR260072en, 19 Jan 2026",141 -> 95.5 million kg; start year not stated
 Ministry: organic waste 2025 as share of 2024 municipal generation,8.5,%,calculated,"30 million kg vs Eurostat 2024 generation; years differ, indicative only"
 Malta packaging recycling rate 2023,43.4,%,"Eurostat, retrieved 2 Oct 2026 cei_wm020",2025 target 65%
+Malta recycling-rate change 2019-2024,7.6,pp,"Eurostat cei_wm011, retrieved 5 Oct 2026",9.1% -> 16.7%
+Rank of Malta's change among states with 2019 and 2024 data,4,of 20,"Eurostat cei_wm011, retrieved 5 Oct 2026","larger rises: SK +12.2, LV +11.7, LU +8.4; no 2024 value for AT, BG, CZ, EL, IE, IT, RO"
+"Rank of Malta's 2024 rate, lowest first, among states with 2024 data",2,of 20,"Eurostat cei_wm011, retrieved 5 Oct 2026",lowest: CY 15.8%
+States at or below Malta's rate on latest available data (2023 or 2024),3,states,"Eurostat cei_wm011, retrieved 5 Oct 2026",RO 12.4% (2023); CY 15.8% (2024); BG 16.7% (2023)
+"Malta recycling rate, all packaging, 2022 -> 2023",12.6,pp,"Eurostat, retrieved 2 Oct 2026 cei_wm020",30.8% -> 43.4%; link to the deposit refund scheme is our inference
+"Malta recycling rate, plastic packaging, 2022 -> 2023",18.1,pp,"Eurostat, retrieved 2 Oct 2026 cei_wm020",13.8% -> 31.9%; link to the deposit refund scheme is our inference
+"Malta recycling rate, glass packaging, 2022 -> 2023",21.9,pp,"Eurostat, retrieved 2 Oct 2026 cei_wm020",43.3% -> 65.2%; link to the deposit refund scheme is our inference
+Gap to the 2025 packaging target (65%) in 2023,-21.6,pp,calculated; Directive 94/62/EC Art 6(1)(f),
+"Deposit refund scheme: containers collected, 2023",78,% of containers placed on the market,Commission SWD(2025) 318 p. 11 (citing ERA 2024),"reported, not recomputed"
+"Deposit refund scheme: containers recycled, 2023",74,% of containers placed on the market,Commission SWD(2025) 318 p. 11 (citing ERA 2024),"reported, not recomputed"
+Recycling rate if 30 million kg of organic waste were all counted as recycled,25.1,%,calculated,"upper bound, indicative: ministry's 2025 organic tonnage added to Eurostat's 2024 recycled tonnage"

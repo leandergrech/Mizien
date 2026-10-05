@@ -56,23 +56,32 @@ claim:
     publisher: Times of Malta
     date: 29 November 2021
     url: https://timesofmalta.com/article/roads-agency-insists-marsa-junction-cuts-travel-time-by-70-despite.913440
-counter_evidence: The Msida Creek flyover only entered vehicle use in December 2025, and the wider project remained
-  under construction in 2026. The public Marsa release does not link the surveys behind its percentage claims; there
-  is no project-level before-and-after series here for traffic, ambient air pollution, or noise.
+counter_evidence: 'The Msida Creek flyover opened to traffic on 18 December 2025, and the wider project remains under
+  construction until 2027. At the only public air monitor near it (EEA sampling point MT00011, about 410 m away),
+  mean NO2 for January–September 2026 was 25.2 µg/m³, against 22.0 in 2025 and 19.2 in 2024 (2026 data not yet
+  validated); urban background stations rose about 4% and St Paul''s Bay fell 6%, so the expected improvement has
+  not appeared in the measured data. The Marsa release does not link the surveys behind its percentage claims, and
+  no EEA-reported air monitor has operated within 1.4 km of the Marsa junction since Kordin (Paola) closed at the
+  end of 2016. No project-level before-and-after series was found for traffic or noise at either site.'
 tests: Separate forecasts from measured outcomes for Msida and Marsa; inspect the planning baseline and public monitoring
-  record; assess what induced-demand research can and cannot infer for these individual junctions.
+  record; compare hourly EEA NO2 at the Msida monitor with background and traffic stations for January–September
+  2024, 2025 and 2026 (before and after the flyover opened); locate the monitoring points from ERA's station
+  metadata; assess what induced-demand research can and cannot infer for these individual junctions.
 why_low_hanging: Official wording and project dates are available; outcome data need to be requested or located.
 tags:
 - Promise-without-baseline
 tags_provisional: false
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: Medium
 caveats: The 79% travel-time and emissions reductions are Infrastructure Malta’s reported figures; their underlying
-  survey design, time windows, calculation methods and raw results were not located. Msida traffic benefits remain
-  provisional because the project was still being completed during the review period. No post-project noise dataset
-  was found for either site. The induced-demand literature cited is from US urban road networks and is not a direct
-  estimate for Malta.
+  survey design, time windows, calculation methods and raw results were not located. The Msida NO2 comparison rests
+  on one monitor about 410 m from the flyover, a sampling point that replaced the old one (about 300 m west) in
+  January 2024, unvalidated 2026 data, and no adjustment for weather or traffic; works continue until 2027, so it
+  does not show that the flyover raised pollution. No post-project noise dataset was found for either site. The
+  induced-demand literature cited is from US urban road networks and is not a direct estimate for Malta. Right of reply not sought, at the maintainer’s direction.
 right_of_reply:
+  sought: false   # maintainer's direction: no right of reply for this check
+  note: Not sought, at the maintainer's direction.
   sent: null
   deadline: null
   response: null
@@ -88,6 +97,13 @@ evidence_shown:
   progress.'
 - ERA planning record for PA/02053/20 and PA/06425/20, including the 2023 Project Description Statement, which records
   2019 traffic counts and anticipated benefits, not post-opening outcomes.
+- 'EEA air-quality download service, hourly NO2 for Msida (MT00005 to 2023; MT00011 from 17 January 2024), Attard,
+  Żejtun and St Paul''s Bay, retrieved 5 October 2026 (E1a validated to 2025; E2a unvalidated for 2026): monthly,
+  annual and January–September means in data/cc-008/ (no2_monthly.csv, no2_annual.csv, no2_jan_sep.csv), shown in
+  the report''s Figures 1 and 2. Msida January–September mean: 19.2 (2024), 22.0 (2025), 25.2 µg/m³ (2026).'
+- 'ERA station metadata reported to the EEA (Air Quality e-Reporting dataset D, 2025, Eionet CDR): locations and
+  classification of the Msida points and the closure of Kordin (Paola) in 2016 (data/cc-008/aq_stations.csv;
+  Figure 3).'
 outputs:
   report_pdf: report.pdf
   flyer_pdf: flyer.pdf
@@ -98,7 +114,7 @@ location:
   lon: 14.49449
   scope: site
   icon: flyover
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-05'
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 79%
@@ -113,3 +129,7 @@ history:   # research log: the date each step of the research was done (not when
     version: "1.1"
     correction: true   # this version corrects errors in an earlier one
     note: "Corrections: the Msida quotation now matches the wording on Infrastructure Malta's page (checked 5 October 2026); the earlier quotation included words (“this project”, “which will be”) not on the page as checked, and the forecast reading now rests on the statement having been published before works began. Added the Marsa release's wording on “significant air quality improvements in Paola and Marsa”. Heading typo “Mars” corrected to “Marsa”. Verdict and confidence unchanged."
+  - date: 2026-10-05
+    step: version
+    version: "1.2"
+    note: "Upgrade: added EEA hourly NO2 data for Msida and three comparison stations, 2022 to September 2026, with a new section and three figures (monthly series, January–September comparison, map of the monitoring points from ERA's station metadata). New finding: in the nine months after the flyover opened (18 December 2025), NO2 at the Msida monitor was 14.3% higher than a year earlier (unvalidated data), with caveats stated: one site, a new sampling point from January 2024, works continuing until 2027. Added that no EEA-reported monitor has operated near Marsa since 2016. Page footer and cover: “pending right of reply” → “right of reply not sought”, matching the text. Verdict and confidence unchanged."

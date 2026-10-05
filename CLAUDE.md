@@ -7,7 +7,7 @@ START HERE
 
 NON-NEGOTIABLE RULES
 - claims/CC-NNN/claim.yml is the source of truth. After changing any claim record, regenerate data/claims.json and docs/data/claims.json with scripts/build_site_data.py and commit both.
-- Verdicts use the scale in methodology/verdict-scale.md. "Misleading" or "Contradicted" require documents or data that can be shown (evidence_shown field). Never publish either before the right-of-reply deadline has passed.
+- Verdicts use the scale in methodology/verdict-scale.md. "Misleading" or "Contradicted" require documents or data that can be shown (evidence_shown field). A draft verdict may appear on the project's own site, marked as a draft pending right of reply. Do not circulate a "Misleading" or "Contradicted" verdict anywhere else (flyers, social media, press, messages to third parties) before the right-of-reply deadline has passed. Pledges get a pledge label instead of, or as well as, a verdict (methodology/verdict-scale.md, Pledges).
 - Quote the speaker, not the headline. Do not start a report until verbatim primary-source wording is found and archived (wording_status: Verbatim found).
 - Science first: peer-reviewed literature, then independent datasets (Eurostat, EEA, NSO, WHO), then EU/regulator reports, then news. News and advocacy sources locate claims; they are not evidence.
 - Never invent citations, DOIs, figures or quotes. Verify every reference against Crossref or the publisher record. Entries in literature/*/references.bib marked "to verify" must be checked and fixed. Mark second-hand sources as such.

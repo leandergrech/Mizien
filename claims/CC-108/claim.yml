@@ -1,0 +1,70 @@
+id: CC-108
+title: 'WSC: a net-zero impact on groundwater'
+category: Water
+subtopic: Water supply & groundwater
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'The Water Services Corporation says its Net Zero Impact Utility project (EU co-financed) will give back to the
+    environment at least as much natural freshwater as it abstracts, minimising its impact on the water environment.
+    Government proposals on groundwater abstraction (reported as the Energy and Water Agency''s Green Paper, 2023)
+    exempt WSC''s boreholes from new groundwater tariffs because WSC is said to be moving towards a net-zero impact on
+    the groundwater environment, with its abstraction capped at 14 million m3 a year to 2030.'
+  speaker: Water Services Corporation; Energy and Water Agency
+  date: '2023'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: European Commission Endorses WSC's 'Net Zero-Impact' Utility Project
+    publisher: Water Services Corporation
+    date: n/d
+    url: https://www.wsc.com.mt/european-commission-endorses-wscs-net-zero-impact-utility-project/
+    note: 'Wording from a search summary (5 Oct 2026): "giving back to the environment at least an equivalent volume of
+      the abstracted natural freshwater resources". wsc.com.mt shows a bot challenge to scripts; read in a browser.'
+  - title: 'Towards a Net Zero-Impact Utility: new EUR 100 million EU-funded project'
+    publisher: Water Services Corporation
+    date: n/d
+    url: https://www.wsc.com.mt/towards-a-net-zero-impact-utility-new-e100-million-eu-funded-project-set-to-improve-water-quality-to-all-new-highs/
+    note: Project launch page; read in a browser for the project's targets and timeline.
+  - title: Green Paper on the Regulation of Groundwater Abstraction in the Maltese Islands
+    publisher: Energy and Water Agency
+    date: Nov 2023
+    url: https://energywateragency.gov.mt/wp-content/uploads/2023/11/GREEN-PAPER.pdf
+    note: 'Likely primary source for the tariff exemption and the 14 million m3 cap (per a search summary: WSC "is moving
+      towards the achievement of a net-zero impact on the groundwater environment"). The Agency''s site shows a bot
+      challenge to scripts; read in a browser and confirm the wording and page.'
+  - title: 'Free no more: a price tag on groundwater'
+    publisher: MaltaToday
+    date: n/d
+    url: https://www.maltatoday.com.mt/environment/planning/126318/free_no_more_a_price_tag_on_groundwater
+    note: Locator for the tariff exemption and the 14 million m3 cap. Returns 403 to scripts.
+counter_evidence: 'Not yet checked. Context from CC-009: WSC''s groundwater production fell to about 11.5 million m3 in
+  2025 while national fresh groundwater abstraction was about 38.5 million m3 in 2024 (Eurostat, estimates), mostly by
+  agriculture; Malta''s 3rd-cycle EU reporting lists 4 of 15 groundwater bodies in poor quantitative status and all 15 in
+  poor chemical status. A net-zero impact claim needs a defined balance (what is "given back", where, and how it is
+  measured), not only lower WSC abstraction.'
+tests: 'WSC annual reports (groundwater production, New Water volumes supplied and their use in place of groundwater);
+  the project''s own targets and EU (Cohesion Fund) monitoring indicators; the Green Paper and any later abstraction
+  regulation; Eurostat env_wat_abs and env_wat_res; groundwater-body status (EEA WISE); Sapiano 2020 water balance.'
+why_low_hanging: Follows directly from CC-009 (maintainer request, 5 Oct 2026); most data are already in data/cc-009/.
+  The question is whether "net-zero impact" is defined and measured, and whether the balance holds.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: Eurostat and EEA reachable; WSC and EWA pages are browser-only (bot challenge).'
+caveats: 'Candidate added 5 Oct 2026 at the maintainer''s request, as the speaker-level counterpart to CC-009 (no quoted
+  speaker there claims recovery). Wording is from search summaries: read the WSC pages and the Green Paper in a browser
+  and record the verbatim text before any report. Check whether "net-zero impact" is a target (pledge) or a claim of
+  achievement.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Pembroke reverse osmosis plant
+  lat: 35.93211
+  lon: 14.48285
+  scope: site
+  icon: ro_plant

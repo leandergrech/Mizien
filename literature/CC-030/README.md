@@ -1,13 +1,5 @@
 # CC-030: Carbon-neutral airport
 
-**Status:** literature not yet collected.
-
-## To collect
-
-ACA scope definitions; MIA sustainability report; flight emissions.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-030) for the source that located this claim. It locates the claim and its context; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+**Status:** Drafted (v1.1, 5 Oct 2026; verdict Not substantiated, moderate; pending right of reply). See `notes.md` and
+`references.bib`. Data: `data/cc-030/` (company figures, ground-power inputs, ACA and registry records, checks).
+Report build: `tools/cc-030-report/`. Open access: Padhra (2018) accepted manuscript (CC BY-NC-ND) in `open-access/`.

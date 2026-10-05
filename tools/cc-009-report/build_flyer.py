@@ -10,25 +10,25 @@ from mizien_report import Flyer, build_flyer, flyer_png, GREEN, ORANGE, RED, BLU
 OUT = ROOT / "claims" / "CC-009"
 build_flyer(Flyer(
     number="009", out=str(OUT / "flyer.pdf"), kicker="Water, Malta",
-    title_lines=["Does more RO", "mean recovery?"],
-    subtitle="Reverse-osmosis supply, groundwater status and the Għar Lapsi tender",
+    title_lines=["More RO, less", "WSC groundwater"],
+    subtitle="What the Water Services Corporation’s figures show, and what they don’t",
     quote_lines=["“70.7% ... from the four Reverse Osmosis plants”"],
     attribution="Water Services Corporation, Annual Report 2025",
     context="WSC production, 2022–2025 · Plant B tender, August 2026",
     note="A lower WSC groundwater share is not proof of aquifer recovery.",
     verdict="Largely supported", verdict_right=["WSC reliance fell;", "aquifers last assessed as poor."],
     cards=[
-        ("70.7%", GREEN, "WSC production from RO", "In 2025, up from 64.3% in 2022."),
-        ("−8.95%", ORANGE, "WSC groundwater production", "Change from 2022 to 2025; not total national abstraction."),
-        ("2 aquifers", RED, "poor quantitative status", "The latest River Basin Management Plan says Malta and Gozo's main aquifers are over-abstracted; Malta's EU reporting lists four."),
-        ("12 of 15", RED, "above nitrate standard", "The plan names three exceptions; nitrate is not the only cause of poor chemical status."),
+        ("70.7%", GREEN, "WSC production from RO", "In 2025, up from 64.3% in 2022. WSC groundwater production fell to 11.5 million m³."),
+        ("4%", ORANGE, "of national groundwater use", "WSC's 2025 cut (1.55 million m³) against an estimated 38.5 million m³ abstracted in 2024; 57% goes to farming."),
+        ("0 of 15", RED, "bodies in good overall status", "Both main aquifers are over-abstracted; Malta's EU reporting lists all 15 as poor chemically."),
+        ("15–40 yrs", RED, "travel time, Malta's main aquifer", "Peer-reviewed tracer study: changes in water quality take years to decades to show."),
         ("30,000 m³/day", BLUE, "planned Għar Lapsi Plant B", "Tendered in August 2026; not commissioned or measured output."),
     ],
-    fair="RO supplied more of WSC's potable production and its groundwater component fell. The latest national aquifer assessment still reports poor status; a tender does not establish recovery.",
-    asks=["Publish abstraction and recharge by groundwater body and user sector.",
+    fair="RO supplied more of WSC's potable water and its groundwater production fell, to WSC's lowest in a decade. That is real, but small beside national use, and not proof of recovery.",
+    asks=["Publish metered abstraction and recharge by groundwater body and user.",
           "Monitor water levels, salinity and nitrate on a comparable basis.",
           "Reconcile WSC's 11.4% narrative with its 11.86% chart-derived decline.",
           "Report Plant B's actual output and its effect on groundwater production."],
-    footer="Version 1.1  ·  5 October 2026  ·  Draft pending right of reply",
-    pdf_title="Claim Check 009 – Does more RO mean recovery?"))
+    footer="Version 1.2  ·  5 October 2026  ·  No right of reply needed",
+    pdf_title="Claim Check 009 – More RO, less WSC groundwater"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

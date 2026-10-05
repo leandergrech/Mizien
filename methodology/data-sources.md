@@ -16,13 +16,26 @@ Practical notes for anyone (human or routine) checking a claim. Add to this file
 | Planning Authority annual reports | Enforcement, applications | 2024 report is on `parlament.mt/media/134019/`; 2013-2023 only on Issuu. PA `file.aspx` links download files. |
 | PA "Approved Dwelling Units 2007-2025" | Permits by year and type | Transcribed in `data/cc-013/pa_approved_dwellings.csv`. |
 | NSO (nso.gov.mt), Census 2021 | Dwellings, population | Cloudflare blocks curl; browser only. Vacancy figures in `data/cc-013/census2021_dwellings.csv`. |
-| Maltese news (Times of Malta, MaltaToday, Malta Independent, Newsbook, The Shift) | Locating and quoting claims | Usually readable with curl and a browser User-Agent from an unrestricted network; refused by the cloud routines' allowlist. |
-| gov.mt, pa.org.mt, era.org.mt, parlament.mt, pn.org.mt | Primary statements, PQs | Cloudflare: browser only. In a routine, record `source: browser-only (<url>)` as the Blocker rather than spending the run. |
+| Maltese news and other outlets | Locating and quoting claims | Tested from the cloud network on 5 Oct 2026 with curl and a browser User-Agent. **Readable:** tvmnews.mt (public broadcaster; carries most government statements, often with direct quotes), newsbook.com.mt, lovinmalta.com, theshiftnews.com, amphora.media, maltairport.com, partitlaburista.org. **403:** timesofmalta.com, maltatoday.com.mt, independent.com.mt, one.com.mt. When one outlet is refused, search for the same statement elsewhere (WebSearch works even where a host is refused) before recording a blocker. |
+| gov.mt, pa.org.mt, era.org.mt, nso.gov.mt, parlament.mt, pn.org.mt | Primary statements, PQs | 403 to scripts (tested 5 Oct 2026): browser only. Government press releases are usually reported by TVM News with the statement and direct quotes; EU-funded projects often have a European Commission page (reforms-investments.ec.europa.eu) repeating the claim. Record `source: browser-only (<url>)` only after those routes fail. |
+
+## Before you record a blocker
+
+A claim's first source is often not the only one. Before writing `source:` or `network:` in the queue, try and
+note in `literature/CC-NNN/README.md` which of these you tried (5 Oct 2026, after three of five blockers in one night
+turned out to have readable sources):
+
+1. The URL in the claim record, then its Wayback copy.
+2. A web search for the statement's key words: the same statement is usually carried by several outlets, and the
+   readable ones are listed above (TVM News for government statements).
+3. The speaker's own site and, for EU-funded projects, the European Commission's project pages; for EEA, Eurostat or
+   Commission figures, the other pages and datasets of the same body (text pages, APIs, data downloads).
+4. Only then record the blocker, naming the routes tried.
 
 ## Pitfalls seen so far
 
 - **EU Publications Office PDFs** download with curl from `https://op.europa.eu/o/opportal-service/download-handler?identifier=<cellar id>&format=pdf&language=en&productionSystem=cellar` (cellar id is on the doi.org landing page); europarl.europa.eu PDFs return 202 empty (CC-020).
-- **EEA country fact sheets** are JavaScript-rendered: the numbers cannot be read by script. Eurostat `ilc_mddw01` (noise from neighbours or street, EU-SILC, self-reported) works through the API (CC-020).
+- **EEA pages:** the *Europe's environment 2025* country pages draw their numbers in JavaScript charts, but the same numbers are often stated in text elsewhere: the *Air pollution country fact sheets 2025: quick country facts* page (`eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2025/quick-country-facts`) has each country's PM2.5 death figures in its HTML (CC-035, 5 Oct 2026). Eurostat `ilc_mddw01` (noise from neighbours or street, EU-SILC, self-reported) works through the API (CC-020).
 
 - **energywateragency.gov.mt** PDFs return an `sgcaptcha` redirect to scripted clients (CC-024): browser-only.
 
@@ -34,3 +47,5 @@ Practical notes for anyone (human or routine) checking a claim. Add to this file
 - **Nominal vs real.** Check whether price indices are deflated before comparing growth.
 - **Do not trigger downloads in a browser session**; read PDFs in the page instead.
 - **Cloud routines' network.** Run `python scripts/net_check.py` first; see `methodology/automation.md`.
+
+- **airportcarbonaccreditation.org** web pages return an `sgcaptcha` wall, but its WordPress API is readable: `/wp-json/wp/v2/accredited-airport?slug=malta` gives an airport's current level (CC-030 review, 5 Oct 2026). Carbon-credit retirements can be checked in the Gold Standard public API (`public-api.goldstandard.org/credits/<id>`) and other registries' public endpoints. `maltairport.com` press releases and sustainability reports download with curl (follow redirects, `-L`); MIA's report gives Scope 1-3 in GRI 102 and PwC limited assurance on Scope 1-2.

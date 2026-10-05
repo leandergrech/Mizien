@@ -1,0 +1,47 @@
+check,value,unit,source,note
+"Malta: share reporting pollution, grime or other environmental problems, 2023",34.7,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",no Eurostat flag
+"EU-27: same, 2023",12.2,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",no Eurostat flag
+Countries with data for 2023 (EU-27),27,count,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",
+"Malta rank among EU-27, 2023 (1 = highest)",1,rank,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",
+"Second-highest EU-27 country, 2023",20.5,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",EL
+"Third-highest EU-27 country, 2023",16.8,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",DE; flag 'u' (u = low reliability)
+"Fourth-highest EU-27 country, 2023",16.0,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",FR
+"Malta minus second-highest, 2023",14.2,pp,calculated,
+"Malta / EU-27 ratio, 2023",2.84,x,calculated,'nearly three times' tested
+Ratio on Amphora's rounded figures (35 / 12),2.92,x,calculated,
+"Malta rank among every country in the dataset, 2023",1,of 34,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",highest non-EU: TR 19.8%
+"Malta rank among EU-27 with data, 2005",1,of 25,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026","Malta 33.9%; EU-27 n/a; second LV 28.0%; no data for HR, RO"
+"Malta rank among EU-27 with data, 2006",1,of 25,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026","Malta 38.6%; EU-27 n/a; second LV 33.2%; no data for HR, RO"
+"Malta rank among EU-27 with data, 2007",1,of 26,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 35.4%; EU-27 n/a; second LV 34.0%; no data for HR
+"Malta rank among EU-27 with data, 2008",1,of 26,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 35.8%; EU-27 n/a; second LV 34.8%; no data for HR
+"Malta rank among EU-27 with data, 2009",1,of 26,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 38.4%; EU-27 n/a; second LV 30.3%; no data for HR
+"Malta rank among EU-27 with data, 2010",1,of 27,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 41.1%; EU-27 15.2% (flag 'e'); second LV 28.5%
+"Malta rank among EU-27 with data, 2011",1,of 27,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 41.4%; EU-27 15.6% (flag 'e'); second EL 25.3%
+"Malta rank among EU-27 with data, 2012",1,of 27,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 39.6%; EU-27 14.8% (flag 'e'); second EL 25.9%
+"Malta rank among EU-27 with data, 2013",1,of 27,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 40.2%; EU-27 15.1% (flag 'e'); second EL 26.5%
+"Malta rank among EU-27 with data, 2014",1,of 27,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 37.4%; EU-27 15.2% (flag 'e'); second EL 23.2%
+"Malta rank among EU-27 with data, 2015",1,of 27,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 32.4%; EU-27 15.0% (flag 'e'); second DE 23.4%
+"Malta rank among EU-27 with data, 2016",1,of 27,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 30.2%; EU-27 14.7% (flag 'e'); second DE 23.2%
+"Malta rank among EU-27 with data, 2017",1,of 27,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 26.5%; EU-27 14.2% (flag 'e'); second DE 24.5%
+"Malta rank among EU-27 with data, 2018",1,of 27,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 29.7%; EU-27 15.0% (flag 'e'); second DE 24.8%
+"Malta rank among EU-27 with data, 2019",1,of 27,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 33.9%; EU-27 15.1% (flag 'e'); second DE 25.2%
+"Malta rank among EU-27 with data, 2020",1,of 26,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 31.6%; EU-27 13.7% (flag 'e'); second EL 20.2%; no data for PL
+"Malta rank among EU-27 with data, 2023",1,of 27,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Malta 34.7%; EU-27 12.2%; second EL 20.5%
+Malta: survey years 2005-2023 ranked first among EU-27 countries with data,17,years,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",of 17 years with data; 2021 and 2022 not collected
+"Malta: years without data, 2005-2023","2021, 2022",years,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026","item moved to the three-yearly module 'Labour market and housing' (collected 2023, 2026)"
+"Eurostat flags on the Malta series, 2005-2023",none,flags,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",
+Eurostat flags on the EU-27 series,"2010:e, 2011:e, 2012:e, 2013:e, 2014:e, 2015:e, 2016:e, 2017:e, 2018:e, 2019:e, 2020:e",flags,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",e = estimated
+"EU-27 change, 2019 to 2023",15.1 -> 12.2,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Eurostat news release 1 Sep 2025: 15.1% to 12.2%
+Malta: series peak,41.4,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",2011
+Malta: series low,26.5,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",2017
+Malta 2023 vs 2017 (series low),8.2,pp,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",26.5% in 2017
+Malta: latest earlier year with a higher share than 2023,2014,year,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",37.4%; every year 2015-2020 was lower than 2023's 34.7%
+Malta: 2010-2014 range,37.4-41.4,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",
+"Malta: people above 60% of median income, 2023",35.6,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",Amphora: 'high-earning households were more affected'
+"Malta: people below 60% of median income (at risk of poverty), 2023",30.1,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",
+"Malta: above minus below, 2023",5.5,pp,calculated,Eurostat Statistics Explained: Malta 5.5 pp lower for people at risk of poverty
+"Malta: at-risk-of-poverty rate, 2023",16.6,%,"Eurostat ilc_li02 (EU-SILC), retrieved 5 Oct 2026",share of people below 60% of median income
+"Malta: share of people in the 'above 60%' group, 2023",83.4,%,calculated,
+"EU-27: at-risk-of-poverty rate, 2023",16.2,%,"Eurostat ilc_li02 (EU-SILC), retrieved 5 Oct 2026",
+Malta: years in which people below 60% reported more than people above,6 of 17,years,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026","2006, 2007, 2009, 2010, 2016, 2018"
+"EU-27: above / below 60% of median income, 2023",11.8 / 14.0,%,"Eurostat ilc_mddw02 (EU-SILC), retrieved 5 Oct 2026",the opposite direction to Malta

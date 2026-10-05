@@ -11,3 +11,21 @@ WSC groundwater production change 2022 to 2025,-8.9495,%,WSC Annual Report 2025 
 WSC groundwater production change 2024 to 2025 from chart,-11.8606,%,WSC Annual Report 2025 Figure 20,"WSC narrative states -11.4%; chart values imply -11.86%, a small internal difference retained rather than reconciled."
 WSC groundwater production change 2024 to 2025 as reported,-11.4,%,WSC Annual Report 2025 p.43,Directly stated by WSC; separate from calculation using chart values.
 Groundwater bodies failing nitrate standard,12,of 15 bodies,"ERA/EWA 3rd River Basin Management Plan, Chapter 6","Three exceptions are named; the plan records 14 bodies failing chemical status, which is broader than nitrate alone (Malta's 3rd-cycle EU reporting lists 15; see wise_gwb_status.csv)."
+National fresh groundwater abstraction 2024,38.46,million m3,"Eurostat env_wat_abs (updated 2026-09-16), retrieved 2026-10-05",Eurostat flag 'e' (estimated)
+Agricultural groundwater abstraction 2024,21.77,million m3,"Eurostat env_wat_abs (updated 2026-09-16), retrieved 2026-10-05",Eurostat flag 'e' (estimated); 56.6% of the national total
+Agricultural groundwater abstraction change 2023 to 2024,3.10,million m3,"Eurostat env_wat_abs (updated 2026-09-16), retrieved 2026-10-05",18.67 -> 21.77; both estimated
+Public water supply groundwater abstraction 2024,14.28,million m3,"Eurostat env_wat_abs (updated 2026-09-16), retrieved 2026-10-05",Eurostat flag 'e' (estimated); 37.1% of the national total
+"Other groundwater abstraction 2024 (households, industry, services, mining)",2.41,million m3,"Eurostat env_wat_abs (updated 2026-09-16), retrieved 2026-10-05","total minus agriculture minus public water supply; sector values: ABS_HH 1.03, ABS_IND 0.61, ABS_SER 0.76, ABS_MIN 0.01"
+WSC groundwater production cut 2024 to 2025,1.553,million m3,WSC Annual Report 2025 Figure 20,chart values; WSC prose implies 11.4% of 2024
+WSC 2025 cut as share of national groundwater abstraction 2024,4.04,%,calculated,years differ: 2025 national data not yet published
+WSC 2025 cut as share of the 2024 rise in agricultural abstraction,50,%,calculated,"indicative only: different years, and agricultural values are estimates"
+Eurostat public-supply groundwater abstraction minus WSC groundwater production 2022,0.86,million m3,"Eurostat env_wat_abs (updated 2026-09-16), retrieved 2026-10-05; WSC Annual Report 2025 Figure 20",13.54 vs 12.68; different measures (abstraction vs production); difference not explained in either source
+Eurostat public-supply groundwater abstraction minus WSC groundwater production 2023,0.93,million m3,"Eurostat env_wat_abs (updated 2026-09-16), retrieved 2026-10-05; WSC Annual Report 2025 Figure 20",14.09 vs 13.16; different measures (abstraction vs production); difference not explained in either source
+Eurostat public-supply groundwater abstraction minus WSC groundwater production 2024,1.19,million m3,"Eurostat env_wat_abs (updated 2026-09-16), retrieved 2026-10-05; WSC Annual Report 2025 Figure 20",14.28 vs 13.09; different measures (abstraction vs production); difference not explained in either source
+Lowest Eurostat public-supply groundwater abstraction 2015-2024,13.54,million m3,"Eurostat env_wat_abs (updated 2026-09-16), retrieved 2026-10-05",in 2022; no value for 2021
+Estimated recharge into the aquifer 2024,41.52,million m3,"Eurostat env_wat_res (updated 2026-07-03), retrieved 2026-10-05",Eurostat flag 'e' (estimated)
+National groundwater abstraction as share of estimated recharge 2024,92.6,%,calculated,both estimates; recharge is not all available for abstraction (Sapiano 2020 sets aside natural discharge to the sea)
+Lowest estimated recharge 2010-2024,41.17,million m3,"Eurostat env_wat_res (updated 2026-07-03), retrieved 2026-10-05",in 2023
+National groundwater abstraction change 2015 to 2024,-7.6,%,calculated,41.63 -> 38.46; estimates
+"Available groundwater, long-term annual average (published estimate)",37,million m3,"Sapiano 2020, Acque Sotterranee 9(3), Table 1","renewable 65 minus natural subsurface discharge 24 and unrecoverable runoff 4; 35 in 2019; reported, not recomputed"
+"Total abstraction/utilisation, long-term average and 2019 (published estimate)",38; 41,million m3,"Sapiano 2020, Table 1",WEI+ 78% (long-term) and 89% (2019) as published; EU high-stress threshold 40%

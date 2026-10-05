@@ -12,3 +12,13 @@ Distance from the Terminal 2 window to cliff sites MT0000024 / MT0000033,0.43 / 
 Natura 2000 designations within 1.5 km of the new land at Terminal 2,3,sites,EEA Natura 2000,"MT0000033 SPA lies 99.9% inside MT0000024 SAC: two designations, same cliffs"
 Land reclamation allocated in budgets 2023 / 2024 / 2025,"500,000 / 100,000 / 10,000",EUR,"MaltaToday analysis, 15 Apr 2025 (second-hand)","EUR 9,500 spent of the 2023 allocation"
 Years since the seabed study was said to be the basis for a Cabinet decision,7,years,calculated,"MaltaToday, Sep 2019; study not published"
+Mapped P. oceanica within 0.5 km of the new land at Terminal 2 (EMODnet),20.8,ha,EMODnet Seabed Habitats (2025),"map EUSM16me (2016), grid cells about 188 x 231 m; of which on land (OpenStreetMap coastline): 0.7 ha"
+Mapped P. oceanica within 1 km of the new land at Terminal 2 (EMODnet),72.1,ha,EMODnet Seabed Habitats (2025),"map EUSM16me (2016), grid cells about 188 x 231 m; of which on land (OpenStreetMap coastline): 2.3 ha"
+Shortest distance from the new land to mapped P. oceanica (EMODnet),0.01,km,EMODnet Seabed Habitats (2025),"to the nearest grid cell; cells about 188 x 231 m, so the map cannot place a meadow's edge more precisely than about one cell"
+Mapped P. oceanica in the map frame (EMODnet),195.9,ha,EMODnet Seabed Habitats (2025),"frame (14.505, 35.795, 14.6, 35.862); 6 polygons, about 45 grid cells; on land (OpenStreetMap coastline): 2.5 ha"
+"Depth of the sea within 0.5 km of the new land, 10th / 50th / 90th percentile",11 / 18 / 27,m,EMODnet DTM 2024,125 grid cells; shallower than 10 m: 9%; shallower than 20 m: 58%
+"Depth of the sea within 1 km of the new land, 10th / 50th / 90th percentile",5 / 18 / 30,m,EMODnet DTM 2024,324 grid cells; shallower than 10 m: 20%; shallower than 20 m: 56%
+"Depth of mapped P. oceanica in the map frame, 10th / 50th / 90th percentile",11 / 26 / 35,m,EMODnet DTM 2024 x EMODnet seagrass,170 grid cells
+"Depth of mapped P. oceanica within 1 km of the new land, 10th / 50th / 90th percentile",21 / 29 / 32,m,EMODnet DTM 2024 x EMODnet seagrass,58 grid cells
+"Article 17, Malta, Posidonia beds (1120), 2013-2018: overall status / trend",FV / =,,EEA Article 17 web tool,"area 68.46 km2 (method a); good condition 66.38 - 68.46 km2, not good N/A - 2.08 km2; FV = favourable"
+"Article 17, Malta, Posidonia beds (1120), 2019-2024: overall status / trend",FV / S,,EEA Article 17 web tool,"area 68.46 km2 (method estimatePartial); good condition 66.38 - 66.38 km2, not good 2.08 - 2.08 km2; FV = favourable"

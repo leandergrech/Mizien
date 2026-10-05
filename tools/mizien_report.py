@@ -57,12 +57,30 @@ VERDICT_COLS = [GREENC, colors.HexColor("#8DB36B"), ORANGE, colors.HexColor("#C8
                 colors.HexColor("#8E2F25")]
 METER_LABELS = [("SUPPORTED", ""), ("LARGELY", "SUPPORTED"), ("NOT", "SUBSTANTIATED"), ("MISLEADING", ""),
                 ("CONTRADICTED", "")]
+# Pledge labels (methodology/verdict-scale.md, Pledges): a pure pledge check shows one of these instead of a verdict.
+PLEDGES = ["Not measurable", "Not yet due", "On track", "Off track", "Met", "Missed"]
+# The site's pledge palette: every colour passes 4.5:1 with white text and stays apart from the verdict colours.
+PLEDGE_COLS = [colors.HexColor(h) for h in ("#716F8D", "#5C7689", "#337F71", "#AE5D33", "#23705F", "#7C2D4A")]
+PLEDGE_METER_LABELS = [("NOT", "MEASURABLE"), ("NOT YET", "DUE"), ("ON", "TRACK"), ("OFF", "TRACK"), ("MET", ""),
+                       ("MISSED", "")]
+
+
+def scale_of(label):
+    """(kind, labels, colours, meter labels, index) for a verdict or a pledge label."""
+    if label in PLEDGES:
+        return "pledge", PLEDGES, PLEDGE_COLS, PLEDGE_METER_LABELS, PLEDGES.index(label)
+    return "verdict", VERDICTS, VERDICT_COLS, METER_LABELS, VERDICTS.index(label)
+
 
 PW, PH = A4
 LM = RM = 20 * mm
 TM = 24 * mm
 BM = 20 * mm
 CW = PW - LM - RM
+REPO_URL = "https://github.com/leandergrech/Mizien"
+CONTEST_URL = REPO_URL + "/issues/new?template=contest-verdict.yml"   # the repository's 'Contest a verdict' form
+BYLINE = "MIŻIEN  ·  AN INDEPENDENT FACT-CHECKING PROJECT"               # project name only (maintainer, 5 Oct 2026)
+CONTEST = "Contest a verdict, with evidence:  github.com/leandergrech/Mizien/issues"
 
 # ------------------------------------------------------------------ styles
 body = ParagraphStyle("body", fontName="Serif", fontSize=10.2, leading=14.6, textColor=SLATE, spaceAfter=6,
@@ -129,21 +147,23 @@ class SectionHeading(Flowable):
 
 
 class VerdictMeter(Flowable):
-    def __init__(self, active, width=CW):
+    """The verdict scale with this claim's verdict marked; scale="pledge" draws the six pledge labels instead."""
+    def __init__(self, active, width=CW, scale="verdict"):
         super().__init__()
-        self.width, self.active = width, active
+        self.width, self.active, self.scale = width, active, scale
 
     def wrap(self, aw, ah):
         return self.width, 25 * mm
 
     def draw(self):
         c = self.canv
+        labels, cols = (PLEDGE_METER_LABELS, PLEDGE_COLS) if self.scale == "pledge" else (METER_LABELS, VERDICT_COLS)
         gap = 1.6 * mm
-        sw = (self.width - 4 * gap) / 5
+        sw = (self.width - (len(labels) - 1) * gap) / len(labels)
         y, h = 2 * mm, 11 * mm
-        for i, (l1, l2) in enumerate(METER_LABELS):
+        for i, (l1, l2) in enumerate(labels):
             x = i * (sw + gap)
-            c.setFillColor(VERDICT_COLS[i])
+            c.setFillColor(cols[i])
             if i == self.active:
                 c.roundRect(x - 0.6 * mm, y - 0.8 * mm, sw + 1.2 * mm, h + 1.6 * mm, 2 * mm, stroke=0, fill=1)
                 c.setStrokeColor(SLATE)
@@ -286,15 +306,16 @@ def tiles(items):
     return _tag(("tiles", [(b, hexs(col), cp) for b, col, cp in items]), tt)
 
 
-def up_down(up, down):
-    wc = Table([[[P("WHAT WOULD MOVE THE VERDICT UP", tag), P(up, small)],
-                 [P('<font color="#B5483A">WHAT WOULD MOVE IT DOWN</font>', tag), P(down, small)]]],
+def up_down(up, down, heads=("What would move the verdict up", "What would move it down")):
+    """Two boxes: what would raise and what would lower the verdict (a pledge check passes its own headings)."""
+    wc = Table([[[P(heads[0].upper(), tag), P(up, small)],
+                 [P(f'<font color="#B5483A">{heads[1].upper()}</font>', tag), P(down, small)]]],
                colWidths=[CW / 2, CW / 2], hAlign="LEFT")
     wc.setStyle(TableStyle([("BACKGROUND", (0, 0), (0, 0), PALE), ("BACKGROUND", (1, 0), (1, 0), RED_PALE),
                             ("LEFTPADDING", (0, 0), (-1, -1), 8), ("RIGHTPADDING", (0, 0), (-1, -1), 8),
                             ("TOPPADDING", (0, 0), (-1, -1), 6), ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
                             ("VALIGN", (0, 0), (-1, -1), "TOP")]))
-    return _tag(("updown", up, down), wc)
+    return _tag(("updown", up, down, *heads), wc)
 
 
 def toc(items):
@@ -310,14 +331,14 @@ def toc(items):
 
 
 def verdict_box(verdict, subline):
-    i = VERDICTS.index(verdict)
-    vb = Table([[[Paragraph('<font color="white">VERDICT</font>',
+    kind, _, cols, _, i = scale_of(verdict)
+    vb = Table([[[Paragraph(f'<font color="white">{kind.upper()}</font>',
                             ParagraphStyle("v1", fontName="Sans-B", fontSize=8, leading=10)),
                   Paragraph(f'<font color="white">{verdict.upper()}</font>',
                             ParagraphStyle("v2", fontName="Sans-B", fontSize=20, leading=24)),
                   Paragraph(f'<font color="white">{subline}</font>',
                             ParagraphStyle("v3", fontName="Sans", fontSize=8.6, leading=11.4))]]], colWidths=[CW])
-    vb.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), VERDICT_COLS[i]), ("LEFTPADDING", (0, 0), (-1, -1), 12),
+    vb.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), cols[i]), ("LEFTPADDING", (0, 0), (-1, -1), 12),
                             ("RIGHTPADDING", (0, 0), (-1, -1), 12), ("TOPPADDING", (0, 0), (-1, -1), 9),
                             ("BOTTOMPADDING", (0, 0), (-1, -1), 10), ("ROUNDEDCORNERS", [4, 4, 4, 4])]))
     return _tag(("verdictbox", verdict, subline), vb)
@@ -339,7 +360,7 @@ def references(refs):
     return out
 
 
-def appendix_a(evidence_note):
+def appendix_a(evidence_note, pledges=False):
     S = [SectionHeading(None, "Appendix A: series standards and verdict scale"),
          P("Every investigation in this series follows the same rules so that verdicts are comparable and "
            "challengeable.", lead)]
@@ -353,6 +374,21 @@ def appendix_a(evidence_note):
     rows = [[C("Verdict", cellh), C("Meaning", cellh)]] + \
            [[chip(v.upper(), VERDICT_COLS[i], w=36 * mm), C(meanings[i])] for i, v in enumerate(VERDICTS)]
     S.append(std_table(rows, [42 * mm, CW - 42 * mm], valign="MIDDLE", zebra=False))
+    if pledges:
+        pmean = ["The pledge as worded has no definition, baseline or date against which delivery could be checked.",
+                 "Measurable; the deadline or term has not passed and no progress data have been published yet.",
+                 "Published progress is at or ahead of a straight-line path (or the pledge's own milestones) to the "
+                 "target by the deadline.",
+                 "Published progress is behind that path, and the target has not yet been shown to be met or missed.",
+                 "Documents or data show the target was reached, by the deadline if one was set.",
+                 "The deadline or term has passed, and documents or data that can be shown say the target was not "
+                 "reached."]
+        S += [Spacer(1, 3 * mm), P("Pledge labels", h2),
+              P("A pledge is a promise of future action, so it cannot be true or false when it is made. It gets one of "
+                "these labels instead of a verdict, with the date of the evidence behind it.")]
+        S.append(std_table([[C("Pledge label", cellh), C("Meaning", cellh)]] +
+                           [[chip(v.upper(), PLEDGE_COLS[i], w=36 * mm), C(pmean[i])] for i, v in enumerate(PLEDGES)],
+                           [42 * mm, CW - 42 * mm], valign="MIDDLE", zebra=False))
     S += [Spacer(1, 3 * mm), P("Confidence", h2),
           P("<b>High</b>: multiple independent lines of evidence agree. <b>Moderate</b>: evidence is relevant but "
             "incomplete or indirect. <b>Low</b>: evidence is thin, second-hand or conflicting."),
@@ -362,7 +398,8 @@ def appendix_a(evidence_note):
                "<b>Grade the evidence</b> and show differing views side by side where the evidence is unsettled.",
                "<b>State what we could not access or verify,</b> and what would change the verdict either way.",
                "<b>Ask for the missing evidence</b> in specific, answerable requests.",
-               "<b>Offer a right of reply</b> before wider circulation and append responses.",
+               "<b>Offer a right of reply</b> where a check finds a claim Not substantiated, Misleading or Contradicted "
+               "(or a pledge Not measurable, Off track or Missed), before wider circulation, and append responses.",
                "<b>Correct errors openly</b> with a version number and change log.",
                "<b>Whistle-blow only on evidence:</b> a verdict of <i>Misleading</i> or <i>Contradicted</i> requires "
                "documents or data that can be shown, not inference.",
@@ -404,7 +441,7 @@ class Report:
 
 
 def build_report(R: Report):
-    vi = VERDICTS.index(R.verdict)
+    vkind, _, vcols, _, vi = scale_of(R.verdict)
 
     def draw_cover(c, doc):
         c.saveState()
@@ -451,8 +488,8 @@ def build_report(R: Report):
         c.setFont("Sans", 8.2)
         c.drawString(LM + 9 * mm, y0 + 19.5 * mm - (0 if len(R.quote_lines) <= 2 else 1.5 * mm), R.attribution)
         c.drawString(LM + 9 * mm, y0 + 15.3 * mm - (0 if len(R.quote_lines) <= 2 else 1.5 * mm), R.context)
-        c.setFillColor(VERDICT_COLS[vi])
-        pill = f"VERDICT:  {R.verdict.upper()}"
+        c.setFillColor(vcols[vi])
+        pill = f"{vkind.upper()}:  {R.verdict.upper()}"
         pw_ = pdfmetrics.stringWidth(pill, "Sans-B", 9) + 14 * mm
         c.roundRect(LM + 9 * mm, y0 + 4.2 * mm, pw_, 7.6 * mm, 3.8 * mm, stroke=0, fill=1)
         c.setFillColor(colors.white)
@@ -465,6 +502,13 @@ def build_report(R: Report):
         c.setFont("Sans", 8.4)
         for i, line in enumerate(R.footer_lines):
             c.drawString(LM, 36 * mm - i * 4.5 * mm, line)
+        c.setFillColor(AMBER)
+        c.setFont("Sans-B", 7.6)
+        c.drawString(LM, 14.6 * mm, BYLINE)
+        c.setFillColor(LIGHTGREEN)
+        c.setFont("Sans", 8.4)
+        c.drawString(LM, 10.1 * mm, CONTEST)
+        c.linkURL(CONTEST_URL, (LM, 9 * mm, LM + pdfmetrics.stringWidth(CONTEST, "Sans", 8.4), 13 * mm), relative=0)
         c.restoreState()
 
     def draw_body(c, doc):
@@ -495,7 +539,7 @@ def build_report(R: Report):
 
     os.makedirs(os.path.dirname(R.out), exist_ok=True)
     doc = Doc(R.out, pagesize=A4, leftMargin=LM, rightMargin=RM, topMargin=TM, bottomMargin=BM,
-              title=R.pdf_title, author="MiŻien", subject=R.pdf_subject)
+              title=R.pdf_title, author="Miżien", subject=R.pdf_subject)
     cover_frame = Frame(LM, BM, CW, 20, id="cf", leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)
     body_frame = Frame(LM, BM, CW, PH - TM - BM + 4 * mm, id="bf", leftPadding=0, rightPadding=0, topPadding=0,
                        bottomPadding=0)
@@ -530,11 +574,11 @@ def build_flyer(F: Flyer):
     W, H = A4
     M = 20 * mm
     FW = W - 2 * M
-    vi = VERDICTS.index(F.verdict)
+    vkind, _, vcols, mlabels, vi = scale_of(F.verdict)
     os.makedirs(os.path.dirname(F.out), exist_ok=True)
     c = rl_canvas.Canvas(F.out, pagesize=A4)
     c.setTitle(F.pdf_title)
-    c.setAuthor("MiŻien")
+    c.setAuthor("Miżien")
 
     def para(x, y_top, text, font, size, color, width, leading=None):
         leading = leading or size * 1.28
@@ -606,11 +650,11 @@ def build_flyer(F: Flyer):
 
     vt = card_y - 6 * mm
     vh = 25 * mm
-    c.setFillColor(VERDICT_COLS[vi])
+    c.setFillColor(vcols[vi])
     c.roundRect(M, vt - vh, FW, vh, 3 * mm, stroke=0, fill=1)
     c.setFillColor(colors.white)
     c.setFont("Sans-B", 8)
-    c.drawString(M + 7 * mm, vt - 7 * mm, "VERDICT")
+    c.drawString(M + 7 * mm, vt - 7 * mm, vkind.upper())
     # Leave a clear gutter before the right-hand summary for longer verdicts.
     c.setFont("Sans-B", 20 if len(F.verdict) > 13 else 25)
     c.drawString(M + 7 * mm, vt - 17.5 * mm, F.verdict.upper())
@@ -620,11 +664,11 @@ def build_flyer(F: Flyer):
 
     my = vt - vh - 14 * mm
     gap = 1.6 * mm
-    sw = (FW - 4 * gap) / 5
+    sw = (FW - (len(mlabels) - 1) * gap) / len(mlabels)
     mh = 9.5 * mm
-    for i, (l1, l2) in enumerate(METER_LABELS):
+    for i, (l1, l2) in enumerate(mlabels):
         x = M + i * (sw + gap)
-        c.setFillColor(VERDICT_COLS[i])
+        c.setFillColor(vcols[i])
         if i == vi:
             c.roundRect(x - 0.6 * mm, my - 0.7 * mm, sw + 1.2 * mm, mh + 1.4 * mm, 1.8 * mm, stroke=0, fill=1)
             c.setStrokeColor(SLATE)
@@ -705,11 +749,17 @@ def build_flyer(F: Flyer):
     c.setFillColor(GREEN)
     c.rect(0, 0, W, fh, stroke=0, fill=1)
     c.setFillColor(AMBER)
-    c.setFont("Sans-B", 7.8)
-    c.drawString(M, 10.2 * mm, "FULL REPORT, DATA AND REFERENCES:  github.com/leandergrech/Mizien")
+    c.setFont("Sans-B", 7.6)
+    c.drawString(M, 12.4 * mm, BYLINE)
+    contest = "CONTEST A VERDICT:  github.com/leandergrech/Mizien/issues"
+    c.drawRightString(W - M, 12.4 * mm, contest)
+    c.linkURL(CONTEST_URL, (W - M - pdfmetrics.stringWidth(contest, "Sans-B", 7.6), 11.4 * mm, W - M, 15.2 * mm),
+              relative=0)
     c.setFillColor(LIGHTGREEN)
     c.setFont("Sans", 7.2)
-    c.drawString(M, 5.6 * mm, F.footer)
+    c.drawString(M, 8.3 * mm, "Full report, data and references:  github.com/leandergrech/Mizien")
+    c.linkURL(REPO_URL, (M, 7.4 * mm, M + 75 * mm, 10.6 * mm), relative=0)
+    c.drawString(M, 4.4 * mm, F.footer)
     c.showPage()
     c.save()
     print("saved", F.out)

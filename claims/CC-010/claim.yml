@@ -47,11 +47,15 @@ claim:
     url: https://projectgreen.mt/vouchers-continue-to-be-issued-to-beneficiaries-of-the-tree-planting-initiative/
     note: Vouchers for 23,000 trees issued to more than 250 beneficiaries under a separate private-land scheme;
       vouchers are not trees planted.
-counter_evidence: The reported 2024 and cumulative counts are planting inputs, not survival or canopy outcomes.
-  The 2026 parliamentary answer says about 60,000 trees were planted by the end of 2025, below the 100,000 target
-  at that date, when about 75% of the five-year window (from the 26 March 2022 election) had elapsed; Labour's 2026
-  manifesto gives a lower count of more than 57,000 trees for 2022-2025. The legislature ended with the snap general
-  election of 30 May 2026, and no count for 2026 was located. Tree and shrub totals are separate.
+counter_evidence: 'Counts confirmed; the 100,000 trees were not reached by the end of 2025 (about 60,000), and no
+  later count was found before the legislature ended on 30 May 2026. Maintainer decision (5 Oct 2026): delivery of
+  100,000 trees within the pledge period is rated separately as Not substantiated (sub-claim D); the overall verdict,
+  on the reported counts, is unchanged. The reported 2024 and cumulative counts are planting inputs, not survival or
+  canopy outcomes. The 2026 parliamentary answer says about 60,000 trees were planted by the end of 2025, below the
+  100,000 target at that date, when about 75% of the five-year window (from the 26 March 2022 election) had elapsed;
+  Labour''s 2026 manifesto gives a lower count of more than 57,000 trees for 2022-2025. The legislature ended with the
+  snap general election of 30 May 2026; no count after 2025 was found (Project Green news to 5 Oct 2026, web
+  searches). Tree and shrub totals are separate; vouchers are not trees planted.'
 tests: Check the exact pledge and its timeframe against official planting counts; separate trees from shrubs, trees
   planted from vouchers or supplied stock, and planted counts from survival, maintenance, removals and canopy change.
 why_low_hanging: The headline totals are easy to check, but they do not show how many trees survived, where they
@@ -60,14 +64,18 @@ tags:
 - Input-as-outcome
 - Promise-without-baseline
 tags_provisional: true
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: Medium
 caveats: The February 2026 answer gives a collective rounded total through end-2025 without project-level methods
   or a surviving-tree count. The legislature for which the pledge was made ended with the snap general election of
-  30 May 2026; no cumulative count after end-2025 was located. The 2024 Project Green release and parliamentary
-  answer report separate tree and shrub totals; do not combine them or treat them as canopy measures. Vouchers
-  issued under the separate 2026 private-land scheme (23,000 trees by 13 May 2026) are not trees planted.
+  30 May 2026; no cumulative count after end-2025 was located (searched again 5 Oct 2026 for v1.2; parlament.mt
+  returns 403 to scripts). The 2024 Project Green release and parliamentary answer report separate tree and shrub
+  totals; do not combine them or treat them as canopy measures. Vouchers issued under the separate 2026 private-land
+  scheme (23,000 trees by 13 May 2026) are not trees planted. Without a final count, the end-2025 figure does not
+  prove a final shortfall either. Right of reply not sought, at the maintainer’s direction.
 right_of_reply:
+  sought: false   # maintainer's direction: no right of reply for this check
+  note: Not sought, at the maintainer's direction.
   sent: null
   deadline: null
   response: null
@@ -91,11 +99,44 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
-version: '1.1'
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-010A
+    text: "More than 8,000 trees and more than 25,000 shrubs planted by government entities in 2024"
+    finding: "Stated in Project Green's release [1]; self-reported, with no site list."
+    rating: "Supported"
+    tone: green
+  - id: CC-010B
+    text: "Pledge 305: 100,000 trees in the next five years"
+    finding: "Wording confirmed in the 2022 manifesto, PDF p. 91 [2]."
+    rating: "Supported"
+    tone: green
+  - id: CC-010C
+    text: "About 60,000 trees and more than 100,000 shrubs planted through end-2025"
+    finding: "Stated by the Minister in Parliament [3]; rounded, no project list; Labour's own count is lower, more than 57,000 [9]."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-010D
+    text: "Delivery of 100,000 trees within the pledge period"
+    finding: "About 60,000 (Labour: more than 57,000) by end-2025, when about 75% of the window had elapsed; the legislature then ended with the 30 May 2026 election, and no later count was found [3, 8, 9]."
+    rating: "Not substantiated"
+    tone: orange
+version: '1.2'
 last_reviewed: '2026-10-05'
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: ~60,000
   caption: trees reported by end-2025, of 100,000 pledged
+pledge:   # pledge label (methodology/verdict-scale.md, Pledges); the verdict above covers the planting counts
+  status: Off track
+  as_of: '2025-12-31'
+  made_by: [pl]
+  made_on: '2022-03-11'
+  vehicle: Labour manifesto 2022, pledge 305
+  deadline: '2027-03-26'
+  target: 100,000 trees in the next five years
+  note: About 60,000 trees reported by end-2025 with 75% of the five years gone (parliamentary answer, Feb 2026).
+    The deadline is five years from the 26 March 2022 election; the legislature ended early (election 30 May 2026)
+    and no count for January-May 2026 was found, so the label stays Off track rather than Missed.
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-03
     step: version
@@ -106,3 +147,7 @@ history:   # research log: the date each step of the research was done (not when
     version: "1.1"
     correction: true   # this version corrects errors in an earlier one
     note: "Corrections: the pledge was framed as open until 2027; it now records that the legislature ended with the snap general election of 30 May 2026 [8] and that about 75% of the five-year period had passed by end-2025, against about 60% of the trees reported (the “2027 deadline” tile is replaced). Added Labour's own 2026 manifesto count, more than 57,000 trees for 2022–2025 [9], alongside the Minister's ~60,000. Updated the voucher scheme to 23,000 trees in vouchers issued by 13 May 2026 [10]; vouchers are not trees planted. Cover note shortened to fit; italics fixed. Verdict and confidence unchanged."
+  - date: 2026-10-05
+    step: version
+    version: "1.2"
+    note: "Upgrade: (1) New Figure 1, trees reported (more than 8,000 in 2024; about 60,000 and more than 57,000 by end-2025) against the five-year window of pledge 305 (75% elapsed by end-2025; the 30 May 2026 election at 84%), with shrubs and vouchers kept out; it replaces the Section 2 tiles. (2) Searched for a count after the 30 May 2026 election (Project Green’s news to 5 October 2026; web searches): none found. (3) New sub-claim table in Section 4 (A–D); TL;DR, a tile, verdict box, cover note, flyer and claim.yml updated. Version and date added to the cover. Cover, page footer and flyer: “pending right of reply” → “right of reply not sought”, matching the text. Maintainer decision (5 Oct 2026): pledge delivery rated separately as Not substantiated; overall verdict unchanged."
