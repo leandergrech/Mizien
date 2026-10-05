@@ -4,7 +4,7 @@
 27 December 2024, as published by the European Commission ("Malta - Final updated NECP 2021-2030 (submitted in
 2025)", https://commission.europa.eu/publications/malta-final-updated-necp-2021-2030-submitted-2025_en; file
 https://commission.europa.eu/document/download/fa771c65-e790-4e83-a373-5449283bac3c_en?filename=MT%20%E2%80%93%20FINAL%20UPDATED%20NECP%202021-%202030%20%28English%29.pdf).
-Downloaded with a script on 5 October 2026. The Energy and Water Agency's own copy (the URL in the claim record)
+Downloaded with a script on 5 October 2026 (SHA-256 8f323f49ef750de30c4a45c56c0e3dda5760ff726084a06fc0f102b046efc244). The Energy and Water Agency's own copy (the URL in the claim record)
 sits behind an `sgcaptcha` wall; the Commission copy is the same plan as submitted.
 
 Page numbers are the printed page numbers (PDF page in brackets).
