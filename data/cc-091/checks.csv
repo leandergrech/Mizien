@@ -1,0 +1,28 @@
+check,value,unit,source,note
+Inspections 2025 / 2024,2.53,times,"OHSA Annual Report 2025, Table 14",'more than doubled' needs > 2.00
+"Inspections 2025 vs 2024, change",152.8,%,"OHSA Annual Report 2025, Table 14",report states +152.8%
+"Inspections 2024 vs 2023, change",262.9,%,"OHSA Annual Report 2025, Table 14",report states +262.8%
+"Inspections 2023 vs 2022, change",-41.1,%,"OHSA Annual Report 2025, Table 14",report states -41.1%
+Inspections 2025 / 2023,9.17,times,"OHSA Annual Report 2025, Table 14",minister's comparison year in the press report
+Inspections 2025 / 2021-2022 average,5.55,times,"OHSA Annual Report 2025, Table 14",
+Sum of divisions 2025 (Table 18),23711.0,inspections,OHSA AR 2025 Table 18,"should equal 23,711"
+Sum of divisions 2024 (Table 18),9381.0,inspections,OHSA AR 2025 Table 18,"should equal 9,381"
+Construction inspections 2025 / 2024,2.66,times,OHSA AR 2025 Table 18,
+Construction share of 2025 inspections,81.4,%,OHSA AR 2025 Table 18,report: 'approximately 80%'
+Construction outcomes sum (adequate + orders + stop works),100.0,%,OHSA AR 2025 Table 6,
+Construction inspections not rated adequate,26.0,%,OHSA AR 2025 Table 6,
+Stop-work orders implied if 5% applied to all 2025 construction inspections,965,orders (approx.),Table 6 x Table 18,rounded percentage; compare the next row
+"Stop Orders issued in 2025, all sectors (Table 17)",526,orders,OHSA AR 2025 Table 17 (monthly Table 16 also sums to 526),"smaller than the implied figure above, so Table 6's percentages cannot be a share of all 19,296 construction inspections; base unstated"
+Improvement notices + Orders implied for 21% of construction inspections,4052,inspections (approx.),Table 6 x Table 18,"report: 'more than 2,500' orders in construction; Table 17 totals 1,616 notices + 2,759 orders in all sectors"
+Fatal accidents 2025 (Table 1),9.0,deaths,OHSA AR 2025 Table 1,
+"Fatal accidents 2025, by sector (Table 5) sum",9.0,deaths,OHSA AR 2025 Table 5,
+"Fatal accidents 2025, by nationality sum",9.0,deaths,OHSA AR 2025 s.4.2.6,
+"Third-country nationals, share of 2025 deaths",55.6,%,OHSA AR 2025 s.4.2.6,
+"Eurostat fatal accidents at work, Malta, all activities, 2022",15.0,deaths,"Eurostat hsw_n2_02 (fatal accidents at work), retrieved 5 Oct 2026",2025 not yet published by Eurostat
+"Eurostat fatal accidents at work, Malta, all activities, 2023",5.0,deaths,"Eurostat hsw_n2_02 (fatal accidents at work), retrieved 5 Oct 2026",2025 not yet published by Eurostat
+"Eurostat fatal accidents at work, Malta, all activities, 2024",4.0,deaths,"Eurostat hsw_n2_02 (fatal accidents at work), retrieved 5 Oct 2026",2025 not yet published by Eurostat
+"Eurostat fatal accidents at work, Malta, construction, 2024",2.0,deaths,"Eurostat hsw_n2_02 (fatal accidents at work), retrieved 5 Oct 2026",
+"Crude fatality rate per 100,000 persons employed, 2023 (OHSA deaths / Eurostat employment)",1.61,"per 100,000",OHSA AR 2023-2025; Eurostat nama_10_pe EMP_DC,"crude, domestic-concept employment; OHSA's own 2024 figure is 1.22 (denominator unstated)"
+"Crude fatality rate per 100,000 persons employed, 2024 (OHSA deaths / Eurostat employment)",1.54,"per 100,000",OHSA AR 2023-2025; Eurostat nama_10_pe EMP_DC,"crude, domestic-concept employment; OHSA's own 2024 figure is 1.22 (denominator unstated)"
+"Crude fatality rate per 100,000 persons employed, 2025 (OHSA deaths / Eurostat employment)",2.66,"per 100,000",OHSA AR 2023-2025; Eurostat nama_10_pe EMP_DC,"crude, domestic-concept employment; OHSA's own 2024 figure is 1.22 (denominator unstated)"
+Deaths 2025 vs 2024 (OHSA),9 vs 5,deaths,OHSA AR 2024 s.3.2.4; AR 2025 Table 1,up four while inspections rose 2.5 times
