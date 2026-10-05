@@ -1,0 +1,6 @@
+point,location,day_low_dBA,day_high_dBA,night_low_dBA,night_high_dBA,source
+A,Triq il-Gandoffla,55,65,43,48,"Falzon et al. 2022, Int J Sustain Dev Plan 17(7):2309-2318, section 4 (LAeq 10 min averages, Dec 2020-Aug 2021)"
+B,Triq San Patrizju,61,67,50,63,same
+C,Dawret il-Qalb Imqaddsa,58,66,50,70,same
+D,Triq il-Qajjenza,57,64,50,61,same
+E,St Peter's Parish Church area,58,64,47,58,same
