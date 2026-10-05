@@ -47,11 +47,15 @@ claim:
     url: https://projectgreen.mt/vouchers-continue-to-be-issued-to-beneficiaries-of-the-tree-planting-initiative/
     note: Vouchers for 23,000 trees issued to more than 250 beneficiaries under a separate private-land scheme;
       vouchers are not trees planted.
-counter_evidence: The reported 2024 and cumulative counts are planting inputs, not survival or canopy outcomes.
-  The 2026 parliamentary answer says about 60,000 trees were planted by the end of 2025, below the 100,000 target
-  at that date, when about 75% of the five-year window (from the 26 March 2022 election) had elapsed; Labour's 2026
-  manifesto gives a lower count of more than 57,000 trees for 2022-2025. The legislature ended with the snap general
-  election of 30 May 2026, and no count for 2026 was located. Tree and shrub totals are separate.
+counter_evidence: 'Counts confirmed; the 100,000 trees were not reached by the end of 2025 (about 60,000), and no
+  later count was found before the legislature ended on 30 May 2026. Maintainer decision (5 Oct 2026): delivery of
+  100,000 trees within the pledge period is rated separately as Not substantiated (sub-claim D); the overall verdict,
+  on the reported counts, is unchanged. The reported 2024 and cumulative counts are planting inputs, not survival or
+  canopy outcomes. The 2026 parliamentary answer says about 60,000 trees were planted by the end of 2025, below the
+  100,000 target at that date, when about 75% of the five-year window (from the 26 March 2022 election) had elapsed;
+  Labour''s 2026 manifesto gives a lower count of more than 57,000 trees for 2022-2025. The legislature ended with the
+  snap general election of 30 May 2026; no count after 2025 was found (Project Green news to 5 Oct 2026, web
+  searches). Tree and shrub totals are separate; vouchers are not trees planted.'
 tests: Check the exact pledge and its timeframe against official planting counts; separate trees from shrubs, trees
   planted from vouchers or supplied stock, and planted counts from survival, maintenance, removals and canopy change.
 why_low_hanging: The headline totals are easy to check, but they do not show how many trees survived, where they
@@ -60,13 +64,15 @@ tags:
 - Input-as-outcome
 - Promise-without-baseline
 tags_provisional: true
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: Medium
 caveats: The February 2026 answer gives a collective rounded total through end-2025 without project-level methods
   or a surviving-tree count. The legislature for which the pledge was made ended with the snap general election of
-  30 May 2026; no cumulative count after end-2025 was located. The 2024 Project Green release and parliamentary
-  answer report separate tree and shrub totals; do not combine them or treat them as canopy measures. Vouchers
-  issued under the separate 2026 private-land scheme (23,000 trees by 13 May 2026) are not trees planted.
+  30 May 2026; no cumulative count after end-2025 was located (searched again 5 Oct 2026 for v1.2; parlament.mt
+  returns 403 to scripts). The 2024 Project Green release and parliamentary answer report separate tree and shrub
+  totals; do not combine them or treat them as canopy measures. Vouchers issued under the separate 2026 private-land
+  scheme (23,000 trees by 13 May 2026) are not trees planted. Without a final count, the end-2025 figure does not
+  prove a final shortfall either.
 right_of_reply:
   sent: null
   deadline: null
@@ -91,7 +97,7 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-05'
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: ~60,000
