@@ -13,18 +13,30 @@
   var MONL = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   var LEVELS = [
-    { name: "month", rank: 1, from: 0, ppd: 4, noun: "month" },
+    { name: "year", rank: 0, from: 0, ppd: 0.5, noun: "year" },
+    { name: "month", rank: 1, from: 1.2, ppd: 4, noun: "month" },
     { name: "week", rank: 2, from: 10, ppd: 28, noun: "week" },
     { name: "day", rank: 3, from: 70, ppd: 200, noun: "day" },
     { name: "hour", rank: 4, from: 800, ppd: 1600, noun: "hour" }
   ];
-  var MIN_PPD = 0.9, MAX_PPD = 4800;
+  var MIN_PPD = 0.12, MAX_PPD = 4800;
 
   var stage = document.getElementById("tl-stage");
   var panel = document.getElementById("tl-panel");
   var over = document.getElementById("tl-over");
   var rangeEl = document.getElementById("tl-range");
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // The site's root (it is served under /Mizien/ on GitHub Pages): links in the data are root-relative, so they are
+  // resolved against the folder this script is served from.
+  var BASE = (document.currentScript && document.currentScript.src || location.href).replace(/assets\/timeline\.js.*$/, "");
+  function href(path) { return BASE + String(path || "").replace(/^\//, ""); }
+  // Lanes split the line by topic, by the kind of body that spoke, or by verdict; "checked only" hides claims not yet
+  // checked. Both are kept in the address (?lanes=topic&checked=1), so a view can be shared.
+  var q0 = new URLSearchParams(location.search);
+  var lanes = ["topic", "who", "verdict"].indexOf(q0.get("lanes")) >= 0 ? q0.get("lanes") : "none", checkedOnly = q0.get("checked") === "1";
+  var VERDICT_LANES = ["Supported", "Largely supported", "Not substantiated", "Misleading", "Contradicted", "Pledge", "Not yet checked"];
+  function laneOf(p) { return lanes === "topic" ? p.topic : lanes === "who" ? p.who : p.pledge ? "Pledge" : p.label; }
+  function shown(p) { return !checkedOnly || p.v !== "none"; }
 
   // ------------------------------------------------------------ data
   var pts = JSON.parse(dataEl.textContent).map(function (p) {
@@ -137,18 +149,19 @@
   // ------------------------------------------------------------ ticks and axis
   function ticks(level, lo, hi) {
     // Fine ticks (labelled) and coarse periods (sticky heading) for the visible range.
-    var fine = level.name === "month" ? "month" : level.name === "week" ? "week" : level.name === "day" ? "day" : "hour";
-    var coarse = level.name === "month" ? "year" : level.name === "hour" ? "day" : "month";
+    var fine = level.name;
+    var coarse = level.name === "year" ? null : level.name === "month" ? "year" : level.name === "hour" ? "day" : "month";
     var out = { fine: [], coarse: [] }, s, e, n;
     for (s = startOf(fine, lo), n = 0; s < hi && n < 400; s = endOf(fine, s), n++) {
       var d = dt(s), label;
-      if (fine === "month") label = ppd * 30 >= 34 ? MON[d.getUTCMonth()] : (d.getUTCMonth() % 3 === 0 ? MON[d.getUTCMonth()] : "");
+      if (fine === "year") label = String(d.getUTCFullYear());
+      else if (fine === "month") label = ppd * 30 >= 34 ? MON[d.getUTCMonth()] : (d.getUTCMonth() % 3 === 0 ? MON[d.getUTCMonth()] : "");
       else if (fine === "week") label = shortDate(s);
       else if (fine === "day") label = DOW[d.getUTCDay()] + " " + d.getUTCDate();
       else label = pad(d.getUTCHours()) + ":00";
-      out.fine.push({ s: s, label: label, major: fine === "month" ? d.getUTCMonth() === 0 : fine === "hour" ? d.getUTCHours() === 0 : false });
+      out.fine.push({ s: s, label: label, major: fine === "year" ? true : fine === "month" ? d.getUTCMonth() === 0 : fine === "hour" ? d.getUTCHours() === 0 : false });
     }
-    for (s = startOf(coarse, lo), n = 0; s < hi && n < 100; s = e, n++) {
+    if (coarse) for (s = startOf(coarse, lo), n = 0; s < hi && n < 100; s = e, n++) {
       e = endOf(coarse, s);
       out.coarse.push({ s: s, e: e, label: periodName(coarse, s).replace(/^Week of /, "") });
     }
@@ -156,11 +169,20 @@
   }
 
   // ------------------------------------------------------------ render
-  var narrow = false, A = 170;
+  var narrow = false, A = 170, LH = 46, LTOP = 26;
+  function laneList() {
+    if (lanes === "none") return [];
+    var n = {}; pts.forEach(function (p) { if (shown(p)) n[laneOf(p)] = (n[laneOf(p)] || 0) + 1; });
+    var names = Object.keys(n);
+    if (lanes === "verdict") names.sort(function (a, b) { return VERDICT_LANES.indexOf(a) - VERDICT_LANES.indexOf(b); });
+    else names.sort(function (a, b) { return n[b] - n[a] || a.localeCompare(b); });
+    return names.map(function (name) { return { name: name, n: n[name] }; });
+  }
   function render() {
     W = stage.clientWidth || W;
     narrow = W < 560;
-    A = 142;
+    var LN = laneList();
+    A = LN.length ? LTOP + LN.length * LH + 4 : 142;
     var level = levelFor(ppd);
     var margin = 190 / ppd * DAY;
     var lo = t0 - margin, hi = t0 + span() + margin;
@@ -186,8 +208,10 @@
     }
 
     // Exact claims are clumped into one marker per month / week / day / hour; the rest become bars.
+    if (LN.length) return renderLanes(LN, level, lo, hi, html, items, k);
     var buckets = {}, bars = {};
     pts.forEach(function (p) {
+      if (!shown(p)) return;
       if (p.end < lo && p.start < lo) return;
       if (p.start > hi) return;
       if (p.rank >= level.rank) {
@@ -258,14 +282,51 @@
     var H = laneTop + Math.max(rows.length, 0) * 28 + (rows.length ? 10 : 0);
     html += rows.length ? '<span class="tlv-lane" style="top:' + (laneTop - 19) + 'px">Date known only to the month or year</span>' : "";
     H = Math.max(H, A + 72);
+    finish(html, items, H, level);
+  }
+  // Lanes: one line per topic, kind of body or verdict, each with its own clumps. Dates known only to a month or a
+  // year are a dashed stretch on the lane's line.
+  function renderLanes(LN, level, lo, hi, html, items, k) {
+    var idx = {}; LN.forEach(function (L, i) { idx[L.name] = i; });
+    var cells = {}, bars = {};
+    pts.forEach(function (p) {
+      if (!shown(p) || (p.end < lo && p.start < lo) || p.start > hi) return;
+      var li = idx[laneOf(p)];
+      if (p.rank >= level.rank) { var s = startOf(level.name, p.start), key = li + ":" + s;
+        (cells[key] = cells[key] || { li: li, s: s, items: [] }).items.push(p); }
+      else { var bk = li + ":" + p.rank + ":" + p.start; (bars[bk] = bars[bk] || { li: li, s: p.start, e: p.end, rank: p.rank, items: [] }).items.push(p); }
+    });
+    LN.forEach(function (L, i) {
+      var y = LTOP + i * LH + LH / 2;
+      html += '<i class="tlv-lline" style="top:' + y + 'px"></i>' +
+        '<span class="tlv-lname" style="top:' + (y - LH / 2 + 2) + 'px">' + esc(L.name) + ' <b>' + L.n + "</b></span>";
+    });
+    Object.keys(bars).forEach(function (bk) { var b = bars[bk], x0 = xAt(b.s), x1 = xAt(b.e); if (x1 < -4 || x0 > W + 4) return;
+      var y = LTOP + b.li * LH + LH / 2, key = "b" + k++; items[key] = { items: b.items, bar: true, rank: b.rank, s: b.s };
+      var sel = b.items.some(function (i) { return selected[i.id]; });
+      html += '<button type="button" class="tlv-lbar' + (sel ? " is-selected" : "") + '" data-k="' + key + '" style="left:' + x0.toFixed(1) + "px;width:" +
+        Math.max(8, x1 - x0).toFixed(1) + "px;top:" + (y - 5) + 'px" aria-label="' + esc(LN[b.li].name + ": " + b.items.length + (b.items.length === 1 ? " claim" : " claims") +
+        " dated only to " + (b.rank === 0 ? "the year " + dt(b.s).getUTCFullYear() : MONL[dt(b.s).getUTCMonth()] + " " + dt(b.s).getUTCFullYear())) + '"></button>'; });
+    Object.keys(cells).forEach(function (ck) { var c = cells[ck], x = xAt(c.s + (endOf(level.name, c.s) - c.s) / 2); if (x < -20 || x > W + 20) return;
+      var y = LTOP + c.li * LH + LH / 2, single = c.items.length === 1, h = single ? 16 : 24, key = "m" + k++;
+      items[key] = { items: c.items, level: level.name, s: c.s };
+      var sel = c.items.some(function (i) { return selected[i.id]; });
+      var aria = single ? c.items[0].id + ": " + c.items[0].title + ", " + pointDate(c.items[0]) + ", " + c.items[0].label : c.items.length + " claims, " + LN[c.li].name + ", " + periodName(level.name, c.s);
+      html += '<button type="button" class="tlv-m tlv-lm' + (sel ? " is-selected" : "") + (single ? " v-" + c.items[0].v : " is-clump") + '" data-k="' + key +
+        '" style="left:' + (x - h / 2).toFixed(1) + "px;top:" + (y - h / 2) + "px;height:" + h + 'px" aria-label="' + esc(aria) + '">' +
+        '<span class="tlv-head" style="width:' + h + "px;height:" + h + "px" + (single ? "" : ";background:" + ring(c.items)) + '">' + (single ? "" : "<b>" + c.items.length + "</b>") + "</span></button>"; });
+    finish(html, items, A + 52, level);
+  }
+  function finish(html, items, H, level) {
     if (H !== lastH) { stage.style.height = H + "px"; lastH = H; }
     stage.innerHTML = html;
     picks = items;
 
     // Controls and readout.
     root.querySelectorAll("[data-level]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.level === level.name ? "true" : "false"); });
+    root.querySelectorAll("[data-lanes]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.lanes === lanes ? "true" : "false"); });
     rangeEl.textContent = "Showing " + longDate(Math.max(t0, R0)) + " to " + longDate(Math.min(t0 + span(), R1)) +
-      " · grouped by " + level.noun;
+      " · grouped by " + level.noun + (checkedOnly ? " · checked claims only" : "");
     renderOver();
   }
 
@@ -275,7 +336,7 @@
     for (var y = dt(R0).getUTCFullYear() + 1; Date.UTC(y, 0, 1) < R1; y++) {
       html += '<span class="tlv-oy" style="left:' + ((Date.UTC(y, 0, 1) - R0) / total * 100).toFixed(2) + '%">' + y + "</span>";
     }
-    pts.forEach(function (p) {
+    pts.forEach(function (p) { if (!shown(p)) return;
       html += '<i class="tlv-od v-' + p.v + (p.rank < 3 ? " is-rough" : "") + '" style="left:' + (((p.start + p.end) / 2 - R0) / total * 100).toFixed(2) + '%"></i>';
     });
     var l = clamp((t0 - R0) / total, 0, 1), w = clamp(span() / total, 0.006, 1);
@@ -307,9 +368,11 @@
     var html = '<h2 class="tlv-ph">' + esc(title) + ' <span class="small">· ' + it.items.length + (it.items.length === 1 ? " claim" : " claims") + "</span></h2>";
     if (sub) html += '<p class="small">' + esc(sub) + "</p>";
     html += '<ul class="tlv-claims">' + it.items.map(function (i) {
-      return '<li><a class="tlv-cl" href="' + esc(i.path) + '"><span class="tlv-cid">' + esc(i.id) + '</span><span class="tlv-ct">' + esc(i.title) + "</span></a>" +
+      var also = '<span class="tlv-also small">' + (i.place ? '<a href="' + esc(href("/?view=map&sel=claim:" + i.id)) + '">On the map</a> · ' : "") +
+        '<a href="' + esc(href("/?view=ghanqbuta&sel=claim:" + i.id)) + '">In the claims web</a></span>';
+      return '<li><a class="tlv-cl" href="' + esc(href(i.path)) + '"><span class="tlv-cid">' + esc(i.id) + '</span><span class="tlv-ct">' + esc(i.title) + "</span></a>" +
         '<span class="tlv-cm small">' + esc(i.speaker ? i.speaker + " · " : "") + esc(pointDate(i)) + "</span>" +
-        '<span class="badge v-' + esc(i.v) + '">' + (i.pledge ? "Pledge: " : "") + esc(i.label) + "</span></li>";
+        '<span class="badge v-' + esc(i.v) + '">' + (i.pledge ? "Pledge: " : "") + esc(i.label) + "</span>" + also + "</li>";
     }).join("") + "</ul>";
     var next = !it.bar && it.items.length > 1 && it.level !== "hour";
     if (next) html += '<button type="button" class="tlv-btn tlv-wide" data-act="into" data-k="' + key + '">Zoom in on this ' + it.level + "</button>";
@@ -318,7 +381,7 @@
     render();
   }
   function zoomInto(it) {
-    var s = it.s, e = endOf(it.level, s), want = it.level === "month" ? 30 : it.level === "week" ? 7 : it.level === "day" ? 1 : 0.04;
+    var s = it.s, e = endOf(it.level, s), want = it.level === "year" ? 365 : it.level === "month" ? 30 : it.level === "week" ? 7 : it.level === "day" ? 1 : 0.04;
     var next = LEVELS[Math.min(LEVELS.length - 1, LEVELS.map(function (l) { return l.name; }).indexOf(it.level) + 1)];
     goTo(s + (e - s) / 2, Math.max(next.ppd, W * 0.85 / want));
   }
@@ -402,7 +465,16 @@
     else if (b.dataset.act === "latest") latest();
     else if (b.dataset.act === "all") showAll();
     else if (b.dataset.act === "into" && panel._it) zoomInto(panel._it);
+    else if (b.dataset.lanes) { lanes = b.dataset.lanes; syncAddress(); render(); }
   });
+  var chk = document.getElementById("tl-checked");
+  if (chk) { chk.checked = checkedOnly; chk.addEventListener("change", function () { checkedOnly = chk.checked; syncAddress(); render(); }); }
+  function syncAddress() {
+    var u = new URL(location.href);
+    if (lanes === "none") u.searchParams.delete("lanes"); else u.searchParams.set("lanes", lanes);
+    if (checkedOnly) u.searchParams.set("checked", "1"); else u.searchParams.delete("checked");
+    history.replaceState(null, "", u);
+  }
 
   // ------------------------------------------------------------ start
   root.hidden = false;
