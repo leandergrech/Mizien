@@ -14,13 +14,20 @@ permalink: "/claims/{{ claim.id }}/"
   <ol><li><a href="/">Home</a></li><li><a href="/claims/">Claims</a></li><li aria-current="page">{{ c.id }}</li></ol>
 </nav>
 
-<article class="check v-{{ c.verdict_slug or 'none' }}">
+{%- set pv = c.pledge_view -%}
+<article class="check v-{{ c.label_slug or 'none' }}">
   <header class="check-head">
     <p class="kicker">{{ c.id }} · {{ c.category }}{% if c.subtopic %} · {{ c.subtopic }}{% endif %}</p>
     <h1>{{ c.title }}</h1>
     <p class="verdictline">
+      {%- if c.verdict or not pv %}
       <span class="verdict">{{ c.verdict or "Not yet checked" }}</span>
       {%- if c.verdict_confidence %} <span class="pill">{{ c.verdict_confidence }} confidence</span>{% endif %}
+      {%- endif %}
+      {%- if pv %}
+      <span class="{{ 'verdict' if pv.pure else 'pill pledge-pill' }}"{% if not pv.pure %} style="--pl: {{ pv.colour }}"{% endif %}>Pledge: {{ pv.status }}</span>
+      <span class="pill">as of {{ pv.as_of }}</span>
+      {%- endif %}
       <span class="pill">{{ c.status_label }}</span>
     </p>
     {%- if c.files.length %}
@@ -34,6 +41,8 @@ permalink: "/claims/{{ claim.id }}/"
 
   <div class="check-body{% if c.report_html %} has-report{% endif %}">
     <nav class="page-tabs" aria-label="On this page">
+      {%- if pv %}<a href="#h-pledge">{% icon "flag" %}<span>Pledge</span></a>{% endif %}
+      {%- if c.subclaims and c.subclaims.length %}<a href="#h-parts">{% icon "parts" %}<span>Parts</span></a>{% endif %}
       {%- if c.report_html %}<a href="#report">{% icon "report" %}<span>Report</span></a>{% else %}<a href="#h-claim">{% icon "report" %}<span>The claim</span></a>{% endif %}
       <a href="#h-sources">{% icon "sources" %}<span>Sources</span></a>
       <a href="#h-reply">{% icon "reply" %}<span>Right of reply</span></a>
@@ -52,12 +61,47 @@ permalink: "/claims/{{ claim.id }}/"
       {%- endif %}
     </aside>
     {%- endfor %}
-    {%- if c.is_draft and c.verdict %}
+    {%- if c.is_draft and c.label %}
     <aside class="notice" aria-label="Draft notice">
       <p><strong>This is a draft check.</strong> The body concerned has not yet had the chance to reply, and the verdict
          may change in light of its response or new evidence. A verdict applies to the statement as worded on the date
          it was made; it is not a judgement of anyone's motives. <a href="/about/disclaimer/">What a check represents</a>.</p>
     </aside>
+    {%- endif %}
+
+    {%- if pv %}
+    {%- set plabel = mizien.pledge_labels | findBy("name", pv.status) %}
+    <section class="pledge-box" aria-labelledby="h-pledge" style="--pl: {{ pv.colour }}">
+      <h2 id="h-pledge">{% icon "flag" %}The pledge{% if not pv.pure %} in this claim{% endif %}</h2>
+      <p class="pledge-status"><span class="pledge-label">{{ pv.status }}</span> <span class="small">as of {{ pv.as_of }}</span></p>
+      {%- if plabel %}<p class="small">{{ pv.status }}: {{ plabel.meaning | mdInline | safe }}</p>{% endif %}
+      {%- if not pv.pure %}<p class="small">A pledge gets a label, not a verdict. The verdict above ({{ c.verdict }}) is for the factual part of the claim.</p>{% endif %}
+      <dl class="facts">
+        <div><dt>Target</dt><dd>{{ pv.target }}</dd></div>
+        <div><dt>Made by</dt><dd>{% for b in pv.made_by %}{{ m.body(b) }}{% if not loop.last %} {% endif %}{% endfor %}</dd></div>
+        <div><dt>Made in</dt><dd>{{ pv.vehicle }}{% if pv.made_on %} ({{ pv.made_on }}){% endif %}</dd></div>
+        <div><dt>Deadline</dt><dd>{{ pv.deadline or "none stated" }}</dd></div>
+        {%- if pv.term_end %}<div><dt>Term ended</dt><dd>{{ pv.term_end }}</dd></div>{% endif %}
+      </dl>
+      <p class="small"><a href="/pledges/">All pledges and how they are labelled</a> · <a href="/?group=pledges&amp;sel=claim:{{ c.id }}">See it in the pledge network</a></p>
+    </section>
+    {%- endif %}
+
+    {%- if c.subclaims and c.subclaims.length %}
+    <section class="parts" aria-labelledby="h-parts">
+      <h2 id="h-parts">{% icon "parts" %}Parts of this claim</h2>
+      <p class="small">The claim is split into parts that are tested separately{% if c.report_html %}, as in the report below{% endif %}. Each part has its own number.</p>
+      <ol class="part-list">
+        {%- for x in c.subclaims %}
+        <li id="{{ x.id }}" class="part tone-{{ x.tone or 'grey' }}">
+          <dfn class="part-id">{{ x.id }}</dfn>
+          <span class="part-body"><span class="part-text">{{ x.text }}</span>{% if x.said_by %} <span class="small">({{ x.said_by }})</span>{% endif %}
+            {%- if x.finding %}<span class="part-finding">{{ x.finding }}</span>{% endif %}</span>
+          {%- if x.rating %}<span class="part-rating">{{ x.rating }}</span>{% endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+    </section>
     {%- endif %}
 
     {%- if c.report_html %}

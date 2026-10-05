@@ -2,7 +2,7 @@
 
 {#- A link to a claim: verdict dot, number and title. The number alone with short=true. -#}
 {% macro claim(x, short=false) -%}
-<a class="cref v-{{ x.verdict_slug or 'none' }}" href="{{ x.path }}" data-claim="{{ x.id }}"><span class="cref-dot" aria-hidden="true"></span><span class="cref-id">{{ x.id }}</span>{% if not short %} <span class="cref-title">{{ x.title }}</span>{% endif %}<span class="visually-hidden"> ({{ x.verdict or "not yet checked" }})</span></a>
+<a class="cref v-{{ x.label_slug or 'none' }}" href="{{ x.path }}" data-claim="{{ x.id }}"><span class="cref-dot" aria-hidden="true"></span><span class="cref-id">{{ x.id }}</span>{% if not short %} <span class="cref-title">{{ x.title }}</span>{% endif %}<span class="visually-hidden"> ({% if x.label_kind == "pledge" %}pledge: {% endif %}{{ x.label or "not yet checked" }})</span></a>
 {%- endmacro %}
 
 {#- A route from one claim to another through the links: theme, claim, theme, claim. -#}
