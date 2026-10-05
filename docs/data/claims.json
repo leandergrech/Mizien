@@ -1887,7 +1887,7 @@
       "title": "Highest share reporting pollution",
       "category": "Air",
       "claim": "Amphora Media (2026 Election Guidebook): 35% of people in Malta reported exposure to pollution in 2023, the highest share in the EU.",
-      "counter": "Eurostat ilc_mddw02 is a perception survey (pollution, grime or other environmental problems), so the intro wording \"exposure to pollution\" is looser than the data. No measured-exposure comparison was made. No data exist for 2021 and 2022.",
+      "counter": "Eurostat ilc_mddw02 counts people living in households where the respondent reports pollution, grime or other environmental problems in the area; it records reported problems, not measured exposure. \"Reporting exposure\" is Eurostat's own wording, so this is context, not a flaw in the claim. Amphora's income sentence holds for 2023 (35.6% above vs 30.1% below 60% of median income) but the \"above\" group is 83.4% of people, the direction reversed in 6 of 17 years, and EU-wide it runs the other way. No data for 2021 and 2022 (three-yearly module since 2021; next 2026).",
       "status": "Drafted",
       "reply": "not-needed",
       "verdict": "Supported",
@@ -1900,10 +1900,10 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Done (v1.0)",
+      "priority": "Done (v1.1)",
       "wording_status": "Verbatim found",
       "confidence": "High",
-      "speaker": "Amphora Media (citing Eurostat)",
+      "speaker": "Amphora Media",
       "bodies": [
         "amphora-media"
       ],
@@ -1932,21 +1932,21 @@
         {
           "id": "CC-037D",
           "text": "“Exposure to pollution” (intro wording)",
-          "finding": "The survey records perceived problems, not measured exposure [2, 3].",
-          "rating": "Loose wording",
-          "tone": "lime"
+          "finding": "Eurostat’s own wording, shortened: it describes the indicator as people “reporting exposure to pollution, grime or other environmental problems” [5]. The survey records reported problems, not measured exposure [7].",
+          "rating": "Accurate (official wording)",
+          "tone": "green"
         },
         {
           "id": "CC-037E",
           "text": "High earners more affected than low earners",
-          "finding": "35.6% above vs 30.1% below 60% of median income [2].",
-          "rating": "Accurate",
-          "tone": "green"
+          "finding": "2023: 35.6% above vs 30.1% below 60% of median income [2]. But the “above” group is 83.4% of people, not high earners [11]; the gap reversed in 6 of 17 years; EU-wide it runs the other way.",
+          "rating": "Largely accurate",
+          "tone": "lime"
         }
       ],
-      "date": "2026-05",
-      "quote": "",
-      "version": "1.0",
+      "date": "2026-05-12",
+      "quote": "35% of people in Malta reported exposure to pollution in 2023 — the highest share in the EU.",
+      "version": "1.1",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report": "claim-files/CC-037/report.pdf",
