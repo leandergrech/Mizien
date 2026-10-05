@@ -2,39 +2,101 @@ id: CC-039
 title: Net Zero Impact Utility
 category: Water
 subtopic: Water supply & groundwater
-status: Not started
-verdict: null
+status: Drafted
+verdict: null   # a pure pledge check: the pledge label below is shown instead of a verdict
 verdict_confidence: null
 claim:
   text: 'Water Services Corporation: its EU-funded ''Net Zero Impact Utility'' project will cut groundwater abstraction
     by 4 billion litres a year with no net increase in energy use.'
   speaker: Water Services Corporation (WSC)
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  date: '2019-04-02'
+  wording_status: Verbatim found
   sources:
   - title: Towards a Net Zero-Impact Utility
     publisher: Water Services Corporation
     date: n/d
     url: https://www.wsc.com.mt/towards-a-net-zero-impact-utility-new-e100-million-eu-funded-project-set-to-improve-water-quality-to-all-new-highs/
-    note: Primary page.
-counter_evidence: Check abstraction volumes and WSC electricity use before and after; demand growth since the project.
+    note: Project launch page of 16 Apr 2018 (no groundwater volume). Read in the Wayback copy; wsc.com.mt shows a bot challenge to scripts.
+  - title: European Commission Endorses WSC's 'Net Zero-Impact' Utility Project
+    publisher: Water Services Corporation
+    date: '2019-04-02'
+    url: https://www.wsc.com.mt/european-commission-endorses-wscs-net-zero-impact-utility-project/
+    note: Primary wording of the 4 billion litre statement. Read in the Wayback copy of 10 Sep 2024.
+  - title: Integrated Water Resources Management in the Maltese Islands (Sapiano 2020, p. 30)
+    publisher: Acque Sotterranee 9(3)
+    date: '2020'
+    url: https://doi.org/10.7343/as-2020-477
+    note: Describes the framework's energy aim (second-hand description of WSC 2018).
+  quote: The Corporation's ground water abstraction will be reduced by 4 billion litres per year.
+counter_evidence: 'WSC groundwater production was 13.5 million m3 in 2016 and 11.5 million m3 in 2025 (2.0 million m3, about half of the pledged 4.0, lower); only 0.4 million m3 lower in 2024. Reverse-osmosis output rose about 50% over the same period, so RO electricity is likely higher in total; WSC total electricity use by year was not found.'
 tests: WSC annual reports; EWA groundwater abstraction data.
 why_low_hanging: A specific, attributable statement that public data can test.
-tags: []
-tags_provisional: true
-priority: Queue
+tags:
+- Promise-without-baseline
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: Draft pending right of reply (Water Services Corporation). The baseline (2016) is our choice because the statement gives none. The 4.68 kWh/m3 figure for 2024 is second-hand. Claim record's 'no net increase in energy use' is not WSC wording; it paraphrases the framework as Sapiano 2020 describes it. The idea of giving back as much water as is abstracted is CC-108.
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-05'
 location:
   place: Pembroke reverse osmosis plant
   lat: 35.93211
   lon: 14.48285
   scope: site
   icon: ro_plant
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-039A
+    text: "Groundwater abstraction “will be reduced by 4 billion litres per year”"
+    said_by: "WSC [1]"
+    finding: "No baseline year or date. Against 2016, WSC groundwater production is lower by 0.4–2.0 million m³ in 2022–25 (10–49% of 4.0), lowest in 2025."
+    rating: "No baseline or date"
+    tone: orange
+  - id: CC-039B
+    text: "Desalination produces “much more water with less energy”"
+    said_by: "WSC [1]"
+    finding: "More water: RO output +50% since 2016. Less energy per m³: small at best (4.85 to 4.68 kWh/m³, second-hand); RO electricity use is likely higher in total."
+    rating: "Mixed"
+    tone: orange
+  - id: CC-039C
+    text: "Extra production without increasing the utility’s overall net power requirements"
+    said_by: "WSC framework, as described in [3]"
+    finding: "RO alone would need a third lower specific energy to stay flat. No whole-utility kWh found."
+    rating: "Not testable as worded"
+    tone: grey
+thumbnail:
+  figure: +50%
+  caption: more desalinated water than in 2016 (18.6 to 27.9 million m3)
+pledge:
+  status: Not measurable
+  as_of: '2026-10-05'
+  made_by: [wsc]
+  made_on: '2019-04-02'
+  vehicle: WSC news release, European Commission endorses the Net Zero Impact Utility project
+  deadline: null
+  target: Groundwater abstraction reduced by 4 billion litres a year; more water with less energy
+  note: No baseline year, date or boundary stated. Against 2016, WSC groundwater production was 2.0 million m3 lower in 2025 (about half of 4.0) but only 0.4 million m3 lower in 2024; RO output rose about 50%.
+history:
+  - date: 2026-10-05
+    step: started
+    note: 'Candidate taken by worker C; the live WSC site shows a bot challenge, so its pages were read via the Internet Archive.'
+  - date: 2026-10-05
+    step: wording
+    note: Verbatim wording found in WSC's news release of 2 Apr 2019 (Wayback copy of 10 Sep 2024); energy aim read in Sapiano 2020, p. 30.
+  - date: 2026-10-05
+    step: note
+    note: WSC Annual Reports 2016 and 2022 read (Wayback); 2022-25 series from the 2025 report as transcribed for CC-009; Eurostat env_wat_abs; calculations in tools/cc-039-report/calc.py.
+  - date: 2026-10-05
+    step: version
+    version: "1.0"
+    note: "First issue. Pledge label: not measurable. Draft pending right of reply."

@@ -1,13 +1,8 @@
 # CC-039: Net Zero Impact Utility
 
-**Status:** literature not yet collected.
+**Status:** Drafted (v1.0, 5 Oct 2026). See `notes.md`, `references.bib`, `data/cc-039/`, `tools/cc-039-report/`.
 
-## To collect
-
-WSC annual reports; EWA groundwater abstraction data.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-039) for the source that located this claim. It locates the claim and its context; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+## Routes to the wording (5 Oct 2026)
+- Live wsc.com.mt returns a bot challenge (HTTP 202) to scripts; both WSC pages were read in Wayback copies (2024).
+- The verbatim 4 billion litre sentence is in the 2 Apr 2019 release; the 16 Apr 2018 page has no volume.
+- parlament.mt (WSC Annual Report 2024) refuses scripts.
