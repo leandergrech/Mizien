@@ -1,0 +1,40 @@
+check,value,unit,source,note
+Malta: per-person GHG change 2005-2023,-46.1,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",7.40 t -> 3.99 t per person; total excl. LULUCF and international transport
+"Malta: GHG per unit of GDP, chain-linked volumes (2020 prices), change 2005-2023",-70.2,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",0.408 -> 0.122 kt CO2e per MEUR
+"Malta: GHG per unit of GDP, current prices, change 2005-2023",-81.9,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",0.582 -> 0.106 kt CO2e per MEUR
+Malta: total GHG change 2005-2023,-26.1,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",2.987 -> 2.207 Mt CO2e
+Malta: real GDP change 2005-2023,147.8,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026","chain-linked volumes, 2020 prices"
+Malta: nominal GDP change 2005-2023,307.4,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",current prices
+Malta: implied GDP price change 2005-2023,64.4,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",nominal / real GDP: price effect that separates the two intensity measures
+Malta: per-person GHG change 2005-2024,-48.5,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",7.40 t -> 3.81 t per person; total excl. LULUCF and international transport
+"Malta: GHG per unit of GDP, chain-linked volumes (2020 prices), change 2005-2024",-72.2,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",0.408 -> 0.114 kt CO2e per MEUR
+"Malta: GHG per unit of GDP, current prices, change 2005-2024",-83.8,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",0.582 -> 0.094 kt CO2e per MEUR
+Malta: total GHG change 2005-2024,-27.4,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",2.987 -> 2.170 Mt CO2e
+Malta: real GDP change 2005-2024,160.9,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026","chain-linked volumes, 2020 prices"
+Malta: nominal GDP change 2005-2024,349.6,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",current prices
+Malta: implied GDP price change 2005-2024,72.3,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",nominal / real GDP: price effect that separates the two intensity measures
+Malta: population change 2005-2024,40.9,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",403.9 -> 569.2 thousand
+Malta: GHG intensity (volumes) average annual change 2005-2024,-6.51,%/yr,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",
+EU-27: per-person GHG change 2005-2023,-34.3,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",10.45 t -> 6.87 t per person; total excl. LULUCF and international transport
+"EU-27: GHG per unit of GDP, chain-linked volumes (2020 prices), change 2005-2023",-45.9,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",0.379 -> 0.205 kt CO2e per MEUR
+"EU-27: GHG per unit of GDP, current prices, change 2005-2023",-62.2,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",0.473 -> 0.179 kt CO2e per MEUR
+EU-27: total GHG change 2005-2023,-31.9,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",4537.092 -> 3088.347 Mt CO2e
+EU-27: real GDP change 2005-2023,25.9,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026","chain-linked volumes, 2020 prices"
+EU-27: nominal GDP change 2005-2023,80.2,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",current prices
+EU-27: implied GDP price change 2005-2023,43.1,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",nominal / real GDP: price effect that separates the two intensity measures
+EU-27: per-person GHG change 2005-2024,-36.0,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",10.45 t -> 6.69 t per person; total excl. LULUCF and international transport
+"EU-27: GHG per unit of GDP, chain-linked volumes (2020 prices), change 2005-2024",-47.9,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",0.379 -> 0.198 kt CO2e per MEUR
+"EU-27: GHG per unit of GDP, current prices, change 2005-2024",-64.7,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",0.473 -> 0.167 kt CO2e per MEUR
+EU-27: total GHG change 2005-2024,-33.5,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",4537.092 -> 3017.188 Mt CO2e
+EU-27: real GDP change 2005-2024,27.6,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026","chain-linked volumes, 2020 prices"
+EU-27: nominal GDP change 2005-2024,88.6,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",current prices
+EU-27: implied GDP price change 2005-2024,47.8,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",nominal / real GDP: price effect that separates the two intensity measures
+EU-27: population change 2005-2024,3.9,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",434266.3 -> 451249.4 thousand
+EU-27: GHG intensity (volumes) average annual change 2005-2024,-3.37,%/yr,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",
+"Malta: first year with intensity at least 80% below 2005, volumes",none,year,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",no year to 2024 reaches -80% in volumes
+"Malta: first year with intensity at least 80% below 2005, current prices",2023,year,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",
+Malta: first year with per-person emissions at least 44% below 2005,2016,year,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",
+Malta: total GHG change 2016 (low) to 2024,18.0,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",1.840 -> 2.170 Mt CO2e
+Eurostat status flags on the Malta values used,none,flags,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",
+"Cross-check: Malta total GHG 2024, CC-003 file (2 Oct) vs this file (5 Oct)",2.17021 vs 2.17021,Mt CO2e,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",same inventory vintage
+Malta: share of the current-price intensity fall (2005-2024) due to price change,30,%,"Eurostat env_air_gge, nama_10_gdp, nama_10_pe, retrieved 5 Oct 2026",log decomposition: ln(nominal intensity ratio) = ln(real intensity ratio) - ln(GDP price ratio)
