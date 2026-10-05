@@ -1,9 +1,9 @@
 id: CC-020
 title: 'EP study: noise law not the cause'
 category: Noise
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
   text: 'Study for the European Parliament''s Committee on Petitions (Ecocentric Consulting, February 2026): Malta''s
     noise problems are not caused by how it transposed and implements the Environmental Noise Directive, with only
@@ -20,7 +20,7 @@ claim:
     publisher: European Parliament, Policy Department for Citizens, Equality and Culture
     date: '2026-02'
     url: https://doi.org/10.2861/6278624
-    note: Primary text (maintainer-supplied copy; key findings and conclusions read). Key findings of chapters 3 and 6 and the conclusions hold
+    note: Primary text (read in full from the EU Publications Office PDF, 5 Oct 2026; maintainer-supplied copy also; key findings and conclusions read). Key findings of chapters 3 and 6 and the conclusions hold
       the claim; verbatim passages in literature/CC-020/primary-source.md.
   - title: Malta urged to address construction and entertainment noise
     publisher: MaltaToday
@@ -33,28 +33,44 @@ claim:
     url: https://www.eea.europa.eu/en/analysis/maps-and-charts/malta-noise-fact-sheet-2022
     note: Exposure figures under the Environmental Noise Directive.
   quote: The transposition and implementation of the END evidently is not the cause of the noise problems in Malta.
-counter_evidence: Legal compliance with the Environmental Noise Directive is not the same as exposure below WHO
-  guideline levels.
-tests: EEA noise exposure data; WHO Environmental Noise Guidelines for the European Region (2018); ERA strategic
-  noise maps; complaint data for construction and entertainment noise.
-why_low_hanging: Mirrors CC-007 (EU limits vs WHO guideline) for noise.
-tags:
-- Compliance-not-health
-tags_provisional: true
-priority: Queue
+counter_evidence: The conclusion follows from the study's evidence. The Directive sets only reporting thresholds (55 dB
+  Lden and 50 dB Lnight, above the WHO 2018 levels of 53 and 45 dB for roads and 45 and 40 dB for aircraft) and excludes
+  construction, entertainment and neighbourhood noise. Eurostat (ilc_mddw01) puts Malta first in the EU for reported
+  street or neighbour noise, 31.3% against 18.1% in 2023, above the EU average in all 12 available years since 2010.
+  Action-plan delays (plan due January 2025 unpublished at January 2026) are a genuine END implementation issue.
+  Legal compliance is not the same as exposure below WHO levels. The transposition table, infringement record and
+  the 21% vs 9% survey figure were not independently verified.
+tests: Study text and transposition table; Eurostat ilc_mddw01 for Malta, EU-27 and all Member States; END thresholds
+  against WHO 2018 levels as reported in the study; Crossref-verified WHO review literature.
+why_low_hanging: 'Done: Claim Check 020 report and flyer.'
+tags: []
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: The claimant is an EU body's commissioned study, not a Maltese speaker; the opinions are the authors', not the
-  European Parliament's official position. Check the study's reasoning and figures (transposition table, infringement
-  record, 2019 survey) against EEA END reporting, ERA noise maps and WHO guidelines, and read it alongside CC-104.
+caveats: The claimant is an EU body's commissioned study, not a Maltese speaker; the opinions are the authors', not
+  the European Parliament's official position. The verdict covers legal conformity only, not whether Malta is quiet.
+  Transposition table, infringement register and the 21% vs 9% survey figure (via ERA 2023c, not opened) not
+  independently verified; WHO and EEA figures are second-hand via the study. Right of reply not sent.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Eurostat ilc_mddw01 (data/cc-020/)
+- Hjerp and Coffey (2026), PE 783.089, read in full
+- Peer-reviewed literature (literature/CC-020/references.bib)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-05'
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
   lat: 35.8959
   lon: 14.51136
   scope: institution
   icon: castille
+thumbnail:
+  figure: 31.3%
+  caption: of people report street or neighbour noise (EU 18.1%), highest in the EU
