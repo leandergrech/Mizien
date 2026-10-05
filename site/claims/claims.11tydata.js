@@ -9,8 +9,8 @@ const isoMonth = (s) => {
 };
 
 // Previous/next claim and a Google-style window of claim numbers (first, last, current ±3), in list order.
-const brief = (x) => x && { id: x.id, title: x.title, path: x.path, verdict: x.verdict,
-  verdict_slug: x.verdict_slug, n: Number(x.id.replace(/\D/g, "")) };
+const brief = (x) => x && { id: x.id, title: x.title, path: x.path, verdict: x.label,
+  verdict_slug: x.label_slug, n: Number(x.id.replace(/\D/g, "")) };
 
 function pager(data) {
   const all = data.mizien?.claims || [];
@@ -35,15 +35,16 @@ export default {
     noindex: (data) => {
       if (data.site.index_drafts) return false;
       if (data.claim) return data.claim.is_draft;
-      return (data.mizien?.claims || []).some((c) => c.is_draft && c.verdict);
+      return (data.mizien?.claims || []).some((c) => c.is_draft && c.label);
     },
     description: (data) => {
       const c = data.claim;
       if (!c) return data.description;
+      const pledge = c.pledge_view ? `Pledge: ${c.pledge_view.status} (as of ${c.pledge_view.as_of})` : "";
       const verdict = c.verdict
-        ? `${c.verdict}${c.verdict_confidence ? ` (${c.verdict_confidence.toLowerCase()} confidence)` : ""}`
-        : "Not yet checked";
-      const draft = c.is_draft && c.verdict ? "Draft check, right of reply pending. " : "";
+        ? `${c.verdict}${c.verdict_confidence ? ` (${c.verdict_confidence.toLowerCase()} confidence)` : ""}${pledge ? `; ${pledge}` : ""}`
+        : pledge || "Not yet checked";
+      const draft = c.is_draft && c.label ? "Draft check, right of reply pending. " : "";
       const when = c.claim.date ? `, ${isoMonth(c.claim.date)}` : "";
       return `${draft}${verdict}. ${c.claim.speaker}${when}: ${c.title}.`;
     },

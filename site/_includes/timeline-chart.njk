@@ -9,7 +9,7 @@
     <span class="tl-lane-name">{{ l.topic }}</span>
     <div class="tl-track" style="--rows: {{ l.rows or 1 }}" aria-hidden="true">
       {%- for t in T.axis.ticks %}<span class="tl-grid{% if t.major %} is-major{% endif %}" style="--x: {{ t.x }}%"></span>{% endfor %}
-      {%- for i in l.items %}<a class="tl-dot v-{{ i.verdict_slug or 'none' }}{% if colourBy == 'kind' %} kind-{{ i.type }}{% endif %}{% if i.rough %} is-rough{% endif %}" style="--x: {{ i.x }}%; --row: {{ i.row }}" href="{{ i.path }}" data-claim="{{ i.id }}" tabindex="-1"></a>{% endfor %}
+      {%- for i in l.items %}<a class="tl-dot v-{{ i.label_slug or 'none' }}{% if colourBy == 'kind' %} kind-{{ i.type }}{% endif %}{% if i.rough %} is-rough{% endif %}" style="--x: {{ i.x }}%; --row: {{ i.row }}" href="{{ i.path }}" data-claim="{{ i.id }}" tabindex="-1"></a>{% endfor %}
     </div>
   </div>
   {%- endfor %}

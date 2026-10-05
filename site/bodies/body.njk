@@ -8,7 +8,7 @@ permalink: "/bodies/{{ body.id }}/"
 ---
 {%- import "macros.njk" as m -%}
 {%- set b = body -%}
-{%- set withVerdict = b.claims | selectattr("verdict") | length -%}
+{%- set withVerdict = b.claims | selectattr("label") | length -%}
 <nav class="crumbs" aria-label="Breadcrumb">
   <ol><li><a href="/">Home</a></li><li><a href="/bodies/">Who said it</a></li>
     {%- for a in b.ancestors %}<li><a href="{{ a.path }}">{{ a.name }}</a></li>{% endfor %}
@@ -57,7 +57,7 @@ permalink: "/bodies/{{ body.id }}/"
         <tr><td>{{ m.claim(c) }}{% set others = c.by | without("id", b.id) %}
           {%- if others.length %}<br><span class="small">by {% for x in others %}<a href="{{ x.path }}">{{ x.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}</td>
           <td>{{ c.category }}</td><td>{{ c.date | ukDate }}</td>
-          <td>{% if c.verdict %}<span class="badge v-{{ c.verdict_slug }}">{{ c.verdict }}</span>{% if c.status != "Published" %}<br><span class="small">draft</span>{% endif %}{% else %}<span class="small">not yet checked</span>{% endif %}</td></tr>
+          <td>{% if c.label %}<span class="badge v-{{ c.label_slug }}">{% if c.label_kind == "pledge" %}Pledge: {% endif %}{{ c.label }}</span>{% if c.status != "Published" %}<br><span class="small">draft</span>{% endif %}{% else %}<span class="small">not yet checked</span>{% endif %}</td></tr>
       {%- endfor %}
       </tbody>
     </table>

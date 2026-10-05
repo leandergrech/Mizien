@@ -91,6 +91,102 @@ def check(path: pathlib.Path) -> list:
                 errs.append(f"location icon {loc.get('icon')} unknown (use one of {sorted(PLACE_ICONS)})")
     errs += check_timeline(d.get("timeline"))
     errs += check_history(d)
+    errs += check_subclaims(d)
+    errs += check_subclaims_match_report(d)
+    errs += check_pledge(d)
+    return errs
+
+
+TONES = {"green", "lime", "amber", "orange", "red", "maroon", "grey"}
+
+
+def check_subclaims(d) -> list:
+    """`subclaims:` are the parts of a claim tested separately: numbered parent + A, B, C... in order."""
+    subs = d.get("subclaims")
+    if subs is None:
+        return []
+    if not isinstance(subs, list) or not all(isinstance(x, dict) for x in subs):
+        return ["subclaims must be a list of parts (id, text, finding, rating, tone)"]
+    errs = []
+    for i, x in enumerate(subs):
+        want = f"{d['id']}{chr(ord('A') + i)}"
+        if x.get("id") != want:
+            errs.append(f"sub-claim {i + 1} must be numbered {want} (the parent's number plus the next letter)")
+        if not str(x.get("text") or "").strip():
+            errs.append(f"sub-claim {x.get('id') or i + 1}: text is missing")
+        if x.get("tone") is not None and x["tone"] not in TONES:
+            errs.append(f"sub-claim {x.get('id')}: tone must be one of {', '.join(sorted(TONES))}")
+    return errs
+
+
+def check_subclaims_match_report(d) -> list:
+    """A claim's subclaims must match its report's sub-claim table (scripts/subclaims.py keeps them in step)."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import subclaims
+    report = subclaims.from_report(d["id"])
+    if report is None or subclaims.same(d.get("subclaims"), report):
+        return []
+    return [f"subclaims differ from the report's sub-claim table: run python scripts/subclaims.py {d['id']}"]
+
+
+def load_pledge_labels() -> list:
+    """Labels from the 'Pledges' section of methodology/verdict-scale.md: lines '- **Label**: meaning'."""
+    text = (ROOT / "methodology" / "verdict-scale.md").read_text(encoding="utf-8")
+    m = re.search(r"^## Pledges\s*$(.*?)(?=^## |\Z)", text, flags=re.M | re.S)
+    return re.findall(r"^- \*\*(.+?)\*\*:", m.group(1), flags=re.M) if m else []
+
+
+def check_pledge(d) -> list:
+    """`pledge:` gives a pledge its label (methodology/verdict-scale.md, Pledges) instead of, or beside, a verdict."""
+    p = d.get("pledge")
+    if p is None:
+        return []
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import bodies
+    import timeline
+    if not isinstance(p, dict):
+        return ["pledge must be a block with status, as_of, made_by, made_on, vehicle, deadline and target"]
+    errs, labels = [], load_pledge_labels()
+    status = p.get("status")
+    if status not in labels:
+        errs.append(f"pledge status '{status}' must be one of: {', '.join(labels)}" if labels
+                    else "pledge labels are not defined yet: add a 'Pledges' section to methodology/verdict-scale.md")
+    as_of = timeline.parse_date(p.get("as_of"))
+    if not as_of or as_of["precision"] != "day":
+        errs.append("pledge as_of must be a full date (the date of the evidence behind the label)")
+    made_on = timeline.parse_date(p.get("made_on"))
+    if not made_on:
+        errs.append("pledge made_on must be a date (a year or month is enough)")
+    elif as_of and as_of["iso"] < made_on["iso"][:len(as_of["iso"])]:
+        errs.append("pledge as_of is before made_on")
+    reg = bodies.load()
+    made_by = p.get("made_by")
+    if not isinstance(made_by, list) or not made_by:
+        errs.append("pledge made_by must be a list of ids from data/bodies.csv")
+    else:
+        errs += [f"pledge made_by '{b}' is not in data/bodies.csv" for b in made_by if b not in reg]
+    for key in ("vehicle", "target"):
+        if not str(p.get(key) or "").strip():
+            errs.append(f"pledge {key} is missing")
+    if "deadline" not in p:
+        errs.append("pledge deadline is missing (use null if none is stated)")
+    deadline = timeline.parse_date(p.get("deadline")) if p.get("deadline") is not None else None
+    if p.get("deadline") is not None and not deadline:
+        errs.append(f"pledge deadline '{p.get('deadline')}' is not a date")
+    term_end = timeline.parse_date(p.get("term_end")) if p.get("term_end") is not None else None
+    if p.get("term_end") is not None and not term_end:
+        errs.append(f"pledge term_end '{p.get('term_end')}' is not a date")
+    ended = [x["iso"] for x in (deadline, term_end) if x]
+    if as_of and status == "Not yet due" and deadline and deadline["iso"] <= as_of["iso"]:
+        errs.append("pledge cannot be 'Not yet due' after its deadline")
+    if status == "Missed":
+        if not (as_of and any(e <= as_of["iso"] for e in ended)):
+            errs.append("pledge can be 'Missed' only after its deadline or term has passed (set deadline or term_end)")
+        if not d.get("evidence_shown"):
+            errs.append("pledge 'Missed' requires evidence_shown (documents or data that can be shown)")
+    for o in p.get("overlaps") or []:
+        if not re.fullmatch(r"CC-\d{3}", str(o)) or not (ROOT / "claims" / str(o) / "claim.yml").is_file():
+            errs.append(f"pledge overlaps '{o}' is not a claim")
     return errs
 
 

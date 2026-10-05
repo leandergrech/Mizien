@@ -30,6 +30,14 @@ right_of_reply:
 evidence_shown: null          # required for Misleading or Contradicted: list the documents or data
 outputs: {}
 bodies: null                  # optional: register IDs from data/bodies.csv, only if the speaker text cannot be matched
+subclaims: []                 # parts tested separately, as in the report's sub-claim table, e.g.
+                              # - {id: CC-000A, text: "...", said_by: "...", finding: "...", rating: "Supported", tone: green}
+                              # ids are the claim's number plus A, B, C... in order; tone is the report chip's colour
+                              # (green, lime, amber, orange, red, maroon, grey). Parts share the claim's page (#CC-000A).
+pledge: null                  # for a pledge: a label instead of a verdict (methodology/verdict-scale.md, Pledges), e.g.
+                              # {status: Not measurable, as_of: 2026-10-05, made_by: [pl], made_on: 2026,
+                              #  vehicle: "...", deadline: null, target: "...", note: "..."}; a pure pledge has verdict null.
+                              # Optional: term_end (date), occasion (what it was pledged in), overlaps: [CC-NNN]
 history: []                   # research log, oldest first: the date each step of the research was DONE, e.g.
                               # - {date: 2026-10-02, step: added}
                               # - {date: 2026-10-03, step: version, version: "1.0", note: "First issue."}

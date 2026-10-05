@@ -63,6 +63,23 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-051A
+    text: "18 marine sites, over 4,100 km²"
+    finding: "4,138 km² [3]."
+    rating: "Supported"
+    tone: green
+  - id: CC-051B
+    text: "Over 35% of the Fisheries Management Zone"
+    finding: "36.0% as ERA divides it (34–35% if internal waters are treated alike; see Limitations)."
+    rating: "Supported"
+    tone: green
+  - id: CC-051C
+    text: "Over 30% of Malta’s “maritime zone” / waters"
+    finding: "5.5% of the waters reported to the EU; no protected site beyond 25 nm, where 85% of them lie."
+    rating: "Misleading"
+    tone: red
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 5.5%
   caption: of waters Malta reports to the EU are protected

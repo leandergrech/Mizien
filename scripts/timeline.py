@@ -166,6 +166,7 @@ def claim_events(d, sources, added=None):
             due = datetime.date.fromisoformat(reviewed["iso"]) + datetime.timedelta(days=365)
             ev.append({"when": parse_date(due.isoformat()), "kind": "due", "label": "Evidence review due",
                        "text": "Each finished check is reviewed against new evidence within a year.", "url": None})
+    ev += pledge_events(d)
     for t in d.get("timeline") or []:
         when = parse_date(t.get("date"))
         if when:
@@ -174,9 +175,24 @@ def claim_events(d, sources, added=None):
     return ev
 
 
+def pledge_events(d):
+    """A pledge's label (dated by its evidence), the end of its term and its deadline."""
+    p = d.get("pledge") or {}
+    ev = []
+    when = parse_date(p.get("as_of"))
+    if when and p.get("status"):
+        ev.append({"when": when, "kind": "check", "label": f"Pledge label: {p['status']}",
+                   "text": str(p.get("target") or ""), "url": None})
+    for key, label in (("term_end", "The term the pledge was made for ended"), ("deadline", "Pledge deadline")):
+        w = parse_date(p.get(key)) if p.get(key) is not None else None
+        if w:
+            ev.append({"when": w, "kind": "pledge", "label": label, "text": "", "url": None})
+    return ev
+
+
 def sort_events(ev):
     order = {"statement": 0, "said": 1, "same-body": 2, "reported": 3, "evidence": 4, "curated": 5, "check": 6,
-             "correction": 7, "reply": 8, "due": 9}
+             "correction": 7, "pledge": 8, "reply": 9, "due": 10}
     return sorted(ev, key=lambda e: (e["when"]["mid"], order.get(e["kind"], 9)))
 
 

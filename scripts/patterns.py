@@ -24,7 +24,7 @@ def claim_types(ids, reg):
     return first + [t for t in rest if t not in first]
 
 
-def build(records, claim_bodies, reg, themes, pattern_names, verdict_names, categories, claim_ref):
+def build(records, claim_bodies, reg, themes, pattern_names, verdict_names, categories, claim_ref, pledge_names=()):
     by_id = {d["id"]: d for d in records}
     types_of = {cid: claim_types(ids, reg) for cid, ids in claim_bodies.items()}
     present = [t for t in register.TYPES if any(t in ts for ts in types_of.values())]
@@ -45,7 +45,10 @@ def build(records, claim_bodies, reg, themes, pattern_names, verdict_names, cate
         return out
 
     pattern_rows = matrix(pattern_names, lambda d, r: r in (d.get("tags") or []))
-    verdict_rows = matrix(verdict_names + ["Not yet checked"], lambda d, r: (d.get("verdict") or "Not yet checked") == r)
+    pledge_labels = [x for x in pledge_names if any(not d.get("verdict") and (d.get("pledge") or {}).get("status") == x for d in records)]
+    verdict_rows = matrix(verdict_names + [f"Pledge: {x}" for x in pledge_labels] + ["Not yet checked"],
+                          lambda d, r: (d.get("verdict") or (f"Pledge: {d['pledge']['status']}" if (d.get("pledge") or {}).get("status")
+                                                             else "Not yet checked")) == r)
     topic_rows = matrix(categories, lambda d, r: d["category"] == r)
     observations = []
     for row in pattern_rows:

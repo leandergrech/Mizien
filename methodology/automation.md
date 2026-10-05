@@ -44,6 +44,11 @@ Every run therefore starts with `python scripts/net_check.py`:
   `literature/CC-NNN/primary-source.md`, as for CC-007, and clear the `Blocker` cell. Workers treat that file as
   the archived primary wording.
 - **Finished claim:** report, flyer and records as for any claim check; `Blocker` cleared.
+- **Parts and pledges:** copy the report's sub-claim table into `subclaims:` in claim.yml (ids CC-NNNA, CC-NNNB...
+  in order, with text, finding, rating and the chip's colour as `tone`); parts share their claim's page and appear
+  on the map as satellites of it. A pledge gets a `pledge:` block with a label from the Pledges section of `methodology/verdict-scale.md`
+  instead of a verdict: a pure pledge has `verdict: null`; a check that also tests facts keeps its verdict for them.
+  `Missed` needs the deadline or term to have passed and `evidence_shown`.
 - **Research log:** every run that does research on a claim adds a dated entry to its `history:` in `claim.yml`,
   using the date the research was done (today), not a merge or release date: `started` when work first begins,
   `wording` when the verbatim source is found, and `version` (with the version number and a one-line note matching

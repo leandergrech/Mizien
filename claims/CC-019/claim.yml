@@ -59,6 +59,28 @@ location:
   lon: 14.50907
   scope: national
   icon: citygate
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-019A
+    text: "About 830,000 m² of green land built up 2018–2023"
+    finding: "Independent estimate 1.4–3.0 km² net, over shorter windows (land first built 2019–22); Amphora’s figure plausible and conservative."
+    rating: "Supported"
+    tone: green
+  - id: CC-019B
+    text: "0.26% of land; comparisons (pitches, Comino, Manoel)"
+    finding: "Arithmetic checks out (Comino: 0.24 of the 3.5 km² often quoted, 0.30 of the OSM outline; Manoel: 2.7, not two)."
+    rating: "Supported"
+    tone: green
+  - id: CC-019C
+    text: "Nearly 95% of take-up was farmland"
+    finding: "Independent data: 65% cropland, 31% shrub or grass."
+    rating: "Not shown"
+    tone: grey
+  - id: CC-019D
+    text: "EEA figures and the 1.94 km² total"
+    finding: "Sum correct; EEA chart gives 0.91–0.94 km² for 2012–18 [7]; 2006–12 not seen."
+    rating: "Supported"
+    tone: green
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 1.4 km²
   caption: independent estimate of land built over (0.83 km² claimed)
