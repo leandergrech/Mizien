@@ -1,0 +1,20 @@
+item,value,unit,note,page_or_section
+Malta population above END reporting threshold Lden 55 dB,65100,people,"13% of population; roads and air only; EEA 2025a as cited by the study",2.3
+Malta share above END Lden 55 dB (percent of population),13,%,"study section 2.3 (EEA 2025a)",2.3
+Malta population above Lnight 50 dB,37400,people,7% of population,2.3
+Malta road noise above Lden 55 dB,54000,people,,2.3
+Malta road noise above Lnight 50 dB,37000,people,,2.3
+Malta air noise above Lden 55 dB,11100,people,,2.3
+Malta air noise above Lnight 50 dB,400,people,,2.3
+END reporting threshold Lden,55,dB,"no limit value or target in the Directive",2.1
+END reporting threshold Lnight,50,dB,,2.1
+WHO 2018 recommended Lden road,53,dB,as reported by the study (EEA 2025a),2.1
+WHO 2018 recommended Lnight road,45,dB,,2.1
+WHO 2018 recommended Lden rail,54,dB,,2.1
+WHO 2018 recommended Lnight rail,44,dB,,2.1
+WHO 2018 recommended Lden aircraft,45,dB,,2.1
+WHO 2018 recommended Lnight aircraft,40,dB,,2.1
+EEA-32 road population exposed above END thresholds,92,million,,2.1
+EEA-32 road population exposed above WHO levels,116,million,,2.1
+Survey: Malta share ranking noise among top four environmental issues (2019),21,%,"second-hand via ERA 2023c; sample 600 (Marmara 2019)",6
+Survey: EU28 average same question,9,%,second-hand,6

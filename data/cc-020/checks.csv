@@ -1,0 +1,16 @@
+check,value,unit,source,note
+"Malta: population reporting noise from neighbours or street, 2023",31.3,%,Eurostat ilc_mddw01,
+"EU-27: same, 2023",18.1,%,Eurostat ilc_mddw01,
+"Malta minus EU-27, 2023",13.2,points,calculated,
+"Malta / EU-27, 2023",1.73,ratio,calculated,
+"Malta's rank among EU-27, 2023 (1 = most affected)",1,of 27,calculated,next: LU 30.2%
+Years 2010-2023 (available) with Malta above EU-27,12,of 12,calculated,
+Malta change 2010 -> 2023,27.5 -> 31.3,%,Eurostat ilc_mddw01,2015 shows a drop to 24.6 then recovery; possible series effect not checked
+"Malta share above END Lden 55 dB (study, EEA 2025a)",13.0,%,study section 2.3,"roads and air only, major infrastructure"
+Self-reported noise problem vs END-threshold exposure,2.4,times,calculated,different concepts: perception of all sources vs modelled exposure to END sources
+END Lnight threshold minus WHO road Lnight level,5.0,dB,study section 2.1,"END 50 dB, WHO 45 dB"
+END Lden threshold minus WHO road Lden level,2.0,dB,study section 2.1,"END 55 dB, WHO 53 dB"
+END Lden threshold minus WHO aircraft Lden level,10.0,dB,study section 2.1,"END 55 dB, WHO 45 dB"
+EEA-32 road exposure: WHO levels / END thresholds,1.26,ratio,study section 2.1,
+Transposition table rows marked No (approx.),14,of 219,"study Annex 1, our count",6.4%; authors judge 2 meaningful
+Survey: Malta vs EU28 ratio (21% vs 9%),2.33,ratio,"study chapter 6, second-hand",not traced to ERA 2023c (403)

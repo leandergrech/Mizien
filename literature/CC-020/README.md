@@ -1,13 +1,5 @@
-# CC-020: Noise: compliant on paper
+# CC-020: EP study on Malta's noise law
 
-**Status:** literature not yet collected.
+**Status:** drafted. See `notes.md`, `references.bib`, `primary-source.md` and `data/cc-020/`.
 
-## To collect
-
-EEA noise exposure data; WHO Environmental Noise Guidelines for the European Region (2018); ERA strategic noise maps; complaint data for construction and entertainment noise.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-020) for the news, government and EU sources found so far. Those locate the claim and its context; they are not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+Leads not yet retrieved: ERA consultation annex (era.org.mt, 403 to scripts), EEA Malta noise fact sheet 2022 (JavaScript page), WHO 2018 guidelines document, Commission infringement register.
