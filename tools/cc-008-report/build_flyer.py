@@ -19,7 +19,7 @@ build_flyer(Flyer(
     verdict="Not substantiated", verdict_right=["Plausible benefits;", "data not inspectable."],
     cards=[("79%", ORANGE, "Marsa travel-time reduction", "Reported by Infrastructure Malta in its 2021 completion release; underlying survey not linked."),
            ("Up to 70%", ORANGE, "Marsa PM emissions reduction", "Agency-reported estimate; not the same as a measured change in ambient air concentrations."),
-           ("2024", BLUE, "Msida wording was a forecast", "IM said the flyover would reduce delays, emissions and noise; the flyover entered use in December 2025."),
+           ("2024", BLUE, "Msida wording was a forecast", "Before works began, IM called the flyover a move to reduce delays, emissions and noise; it entered use in December 2025."),
            ("No series", RED, "Local noise results", "No comparable before-and-after noise measurements were located for either junction."),
            ("Open", ORANGE, "What would verify the claim", "Publish the traffic surveys, calculation methods and local air/noise measurements."),
     ],
@@ -29,6 +29,6 @@ build_flyer(Flyer(
           "Separate emissions estimates from ambient air-monitor readings.",
           "Measure traffic, air and noise after Msida's full road layout is operating.",
           "Track local and network effects over several years."],
-    footer="Version 1.0  ·  2 October 2026  ·  Draft pending right of reply",
+    footer="Version 1.1  ·  5 October 2026  ·  Draft pending right of reply",
     pdf_title="Claim Check 008 – Flyovers and congestion"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
