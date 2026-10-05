@@ -63,6 +63,10 @@ LM = RM = 20 * mm
 TM = 24 * mm
 BM = 20 * mm
 CW = PW - LM - RM
+REPO_URL = "https://github.com/leandergrech/Mizien"
+CONTEST_URL = REPO_URL + "/issues/new?template=contest-verdict.yml"   # the repository's 'Contest a verdict' form
+BYLINE = "MIŻIEN  ·  AN INDEPENDENT FACT-CHECKING PROJECT"               # project name only (maintainer, 5 Oct 2026)
+CONTEST = "Contest a verdict, with evidence:  github.com/leandergrech/Mizien/issues"
 
 # ------------------------------------------------------------------ styles
 body = ParagraphStyle("body", fontName="Serif", fontSize=10.2, leading=14.6, textColor=SLATE, spaceAfter=6,
@@ -465,6 +469,13 @@ def build_report(R: Report):
         c.setFont("Sans", 8.4)
         for i, line in enumerate(R.footer_lines):
             c.drawString(LM, 36 * mm - i * 4.5 * mm, line)
+        c.setFillColor(AMBER)
+        c.setFont("Sans-B", 7.6)
+        c.drawString(LM, 14.6 * mm, BYLINE)
+        c.setFillColor(LIGHTGREEN)
+        c.setFont("Sans", 8.4)
+        c.drawString(LM, 10.1 * mm, CONTEST)
+        c.linkURL(CONTEST_URL, (LM, 9 * mm, LM + pdfmetrics.stringWidth(CONTEST, "Sans", 8.4), 13 * mm), relative=0)
         c.restoreState()
 
     def draw_body(c, doc):
@@ -495,7 +506,7 @@ def build_report(R: Report):
 
     os.makedirs(os.path.dirname(R.out), exist_ok=True)
     doc = Doc(R.out, pagesize=A4, leftMargin=LM, rightMargin=RM, topMargin=TM, bottomMargin=BM,
-              title=R.pdf_title, author="MiŻien", subject=R.pdf_subject)
+              title=R.pdf_title, author="Miżien", subject=R.pdf_subject)
     cover_frame = Frame(LM, BM, CW, 20, id="cf", leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)
     body_frame = Frame(LM, BM, CW, PH - TM - BM + 4 * mm, id="bf", leftPadding=0, rightPadding=0, topPadding=0,
                        bottomPadding=0)
@@ -534,7 +545,7 @@ def build_flyer(F: Flyer):
     os.makedirs(os.path.dirname(F.out), exist_ok=True)
     c = rl_canvas.Canvas(F.out, pagesize=A4)
     c.setTitle(F.pdf_title)
-    c.setAuthor("MiŻien")
+    c.setAuthor("Miżien")
 
     def para(x, y_top, text, font, size, color, width, leading=None):
         leading = leading or size * 1.28
@@ -705,11 +716,17 @@ def build_flyer(F: Flyer):
     c.setFillColor(GREEN)
     c.rect(0, 0, W, fh, stroke=0, fill=1)
     c.setFillColor(AMBER)
-    c.setFont("Sans-B", 7.8)
-    c.drawString(M, 10.2 * mm, "FULL REPORT, DATA AND REFERENCES:  github.com/leandergrech/Mizien")
+    c.setFont("Sans-B", 7.6)
+    c.drawString(M, 12.4 * mm, BYLINE)
+    contest = "CONTEST A VERDICT:  github.com/leandergrech/Mizien/issues"
+    c.drawRightString(W - M, 12.4 * mm, contest)
+    c.linkURL(CONTEST_URL, (W - M - pdfmetrics.stringWidth(contest, "Sans-B", 7.6), 11.4 * mm, W - M, 15.2 * mm),
+              relative=0)
     c.setFillColor(LIGHTGREEN)
     c.setFont("Sans", 7.2)
-    c.drawString(M, 5.6 * mm, F.footer)
+    c.drawString(M, 8.3 * mm, "Full report, data and references:  github.com/leandergrech/Mizien")
+    c.linkURL(REPO_URL, (M, 7.4 * mm, M + 75 * mm, 10.6 * mm), relative=0)
+    c.drawString(M, 4.4 * mm, F.footer)
     c.showPage()
     c.save()
     print("saved", F.out)

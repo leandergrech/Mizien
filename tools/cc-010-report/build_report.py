@@ -118,7 +118,7 @@ S += [PageBreak(), SectionHeading(4, "Testing the claim, verdict and limits"),
           (10, "Project Green, ‘Vouchers continue to be issued to beneficiaries of the Tree Planting Initiative’, 13 May 2026.", "https://projectgreen.mt/vouchers-continue-to-be-issued-to-beneficiaries-of-the-tree-planting-initiative/"),
       ]),
       Spacer(1, 4 * mm),
-      P("Version 1.2 · 5 October 2026 · Draft pending right of reply · Calculations: data/cc-010/checks.csv", cap),
+      P("Version 1.2 · 5 October 2026 · Right of reply not sought · Calculations: data/cc-010/checks.csv", cap),
       Spacer(1, 4 * mm),
       *revision_log([
           ("1.0", "3 Oct 2026", "First issue. Right of reply not sought, at the maintainer's direction."),
@@ -133,7 +133,8 @@ S += [PageBreak(), SectionHeading(4, "Testing the claim, verdict and limits"),
            "the 30 May 2026 election at 84%), with shrubs and vouchers kept out; it replaces the Section 2 tiles. (2) "
            "Searched for a count after the 30 May 2026 election (Project Green’s news to 5 October 2026; web "
            "searches): none found. (3) New sub-claim table in Section 4 (A–D); TL;DR, a tile, verdict box, "
-           "cover note, flyer and claim.yml updated. Version and date added to the cover."),
+           "cover note, flyer and claim.yml updated. Version and date added to the cover. Cover, page footer and "
+           "flyer: “pending right of reply” → “right of reply not sought”, matching the text."),
           ("1.2", "5 Oct 2026", "Maintainer decision (5 Oct 2026): pledge delivery rated separately as Not "
            "substantiated; overall verdict unchanged."),
       ])]
@@ -147,7 +148,8 @@ build_report(Report(
     context="2024 annual count · end-2025 parliamentary answer · snap election 30 May 2026",
     verdict="Largely supported", verdict_note="Counts confirmed; about 60,000 of the 100,000 by end-2025",
     footer_lines=["Version 1.2  ·  5 October 2026", "Miżien · independent, science-first fact-checking",
-                  "Draft for review · right of reply remains with the maintainer"],
+                  "Draft for review · right of reply not sought (maintainer’s direction)"],
     running_head="Tree-planting counts", version="1.2", date="5 October 2026",
+    status_note="right of reply not sought",
     pdf_title="Miżien Claim Check 010 – How many trees were planted?",
     pdf_subject="Government-reported planting counts and the Labour 100,000-tree pledge", story=S))

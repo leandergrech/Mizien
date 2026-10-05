@@ -29,6 +29,6 @@ build_flyer(Flyer(
           "Clarify which agencies and projects are included in the 60,000 total.",
           "Report survival, replacement and maintenance for each planting cohort.",
           "Keep shrub totals and tree vouchers separate from planted trees."],
-    footer="Version 1.2  ·  5 October 2026  ·  Draft pending right of reply",
+    footer="Version 1.2  ·  5 October 2026  ·  Right of reply not sought",
     pdf_title="Claim Check 010 – How many trees were planted?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
