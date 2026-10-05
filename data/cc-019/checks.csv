@@ -2,13 +2,16 @@ check,value,unit,source,note
 Malta's land area (OSM outlines),314.4,km2,OpenStreetMap via geo.json,
 "830,000 m2 as a share of the land area",0.264,%,calculated,Amphora: 0.26%
 "830,000 m2 in FIFA pitches (105 x 68 m)",116,pitches,calculated,Amphora: 116
-"830,000 m2 vs Comino",0.3,x Comino,calculated,Amphora: about a quarter
+"830,000 m2 vs Comino (OSM outline)",0.3,x Comino,calculated,Comino 2.77 km2 in OSM; Amphora: roughly a quarter
+"830,000 m2 vs Comino at 3.5 km2 (area often quoted)",0.24,x Comino,calculated,Amphora: roughly a quarter
 "830,000 m2 vs Manoel Island",2.7,x Manoel,calculated,Amphora: two
 EEA 2006-2012 + 2012-2018 + Amphora 2018-2023,1.94,km2,calculated,Amphora: at least 1.94 km2 (methods differ)
-"IO land cover, new built-up 2018-2023 (3-year rule)",1.905,km2,Impact Observatory LULC v2,reverse change 0.496 km2; net 1.409 km2
+"IO land cover, new built-up first mapped as built in 2020-2021 (3-year rule)",1.905,km2,Impact Observatory LULC v2,reverse change 0.496 km2; net 1.409 km2
 "IO land cover, new built-up from crops / rangeland (3-year rule)",64.9 / 31.1,%,Impact Observatory LULC v2,Amphora: nearly 95% farmland
-"IO land cover, new built-up 2018-2023 (2-year rule)",4.978,km2,Impact Observatory LULC v2,reverse change 2.013 km2; net 2.965 km2
+"IO land cover, new built-up first mapped as built in 2019-2022 (2-year rule)",4.978,km2,Impact Observatory LULC v2,reverse change 2.013 km2; net 2.965 km2
 "IO land cover, new built-up from crops / rangeland (2-year rule)",65.1 / 29.9,%,Impact Observatory LULC v2,Amphora: nearly 95% farmland
+"IO land cover, simple 2018 vs 2023 comparison (single-year maps)",24.231,km2,Impact Observatory LULC v2,"reverse change 5.328 km2; net 18.903 km2 (noise, not credible)"
+"IO built-up total, change from one year to the next (largest / smallest)",26.6 / 3.2,km2,Impact Observatory LULC v2,2017->2018 -18.4; 2018->2019 -3.2; 2019->2020 +26.6; 2020->2021 -20.0; 2021->2022 +8.8; 2022->2023 +6.6
 EEA chart: Malta land take 2012-2018,0.91-0.94,km2,EEA chart x land area,"Amphora quotes 920,000 m2 (0.92 km2)"
 EEA chart: Malta's rank for land take 2012-2018,1,of 39,EEA chart,proportion of country area
-Amphora figure vs IO net change (3-year rule),0.59,ratio,calculated,below 1 = Amphora lower than the independent estimate
+Amphora figure vs IO net change (3-year rule),0.59,ratio,calculated,"below 1 = Amphora lower than the independent estimate; periods differ (Amphora 2018-2023, IO first built 2020-21)"
