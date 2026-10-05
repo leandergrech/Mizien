@@ -182,7 +182,7 @@
                return out; },
              color: function (v) {
                if (/^When: /.test(v)) return "#9fa8da";
-               if (/^What: /.test(v)) return MODES.subtopic.color(v.slice(6));
+               if (/^What: /.test(v)) return MODES.topic.color(v.slice(6).split(" · ")[0]);   // the topic's colour
                var b = (DATA.bodies || []).filter(function (x) { return "Who: " + x.name === v; })[0], t = b && (DATA.body_types || []).filter(function (x) { return x.id === b.type; })[0];
                return t ? t.colour : "#e3a72f"; } },
     network: { label: "Links only", title: "The web of links", sub: "No groups: claims are pulled together by the themes that connect them.",
@@ -1874,6 +1874,8 @@
   function applySelKey(k) {
     if (!k) return;
     var i = k.indexOf(":"), kind = k.slice(0, i), v = k.slice(i + 1);
+    // A body, or a subgroup ("Topic › Subtopic"), exists only with the split on: turn it on for such a link.
+    if (!split && splittable(mode) && (kind === "body" || (kind === "hub" && v.indexOf(" › ") > 0))) setSplit(true);
     if (kind === "claim" && byId[v] && !byId[v].hidden) selectClaim(v);
     else if (kind === "part" && partById[v] && !partById[v].parent.hidden) selectPart(v);
     else if (kind === "theme" && themeById[v]) selectTheme(v);
