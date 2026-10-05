@@ -108,6 +108,35 @@ add("CORINE 2012-2018: share of land take that became quarries (CLC 131)",
     f"{q:.1f} ha; airport (CLC 124) from farmland "
     f"{sum(float(r['area_ha']) for r in lt if r['to_code'] == '124'):.1f} ha")
 
+# v1.2, maintainer decision 5 Oct 2026: imagery spot-check of a PPS sample of Amphora's polygons (spotcheck.py)
+SP = list(csv.DictReader(open(D / "imagery_spotcheck.csv")))
+SS = {(r["group"], r["item"]): r for r in csv.DictReader(open(D / "imagery_spotcheck_summary.csv"))}
+nd = sum(int(r["draws"]) for r in SP)
+cl = lambda k: SS[("class", k)]
+ci = lambda r: f"{r['share_of_draws_pct']} ({r['wilson95_lo_pct']}-{r['wilson95_hi_pct']})"
+add(f"Imagery spot-check: share of Amphora's area confirmed green to grey ({nd} PPS draws, {len(SP)} polygons)",
+    ci(cl("confirmed")), "% (95% CI)", "Esri World Imagery Wayback x Amphora (spotcheck.py)",
+    f"partial {cl('partial')['share_of_draws_pct']}, already grey {cl('already grey')['share_of_draws_pct']}, still open "
+    f"{cl('still open')['share_of_draws_pct']}, unclear {cl('unclear')['share_of_draws_pct']}; confirmed + half of "
+    f"partial {SS[('rule', 'confirmed + half of partial')]['share_of_draws_pct']}; seed {SP[0]['seed']}; classified by eye")
+tm = sum(int(r["draws"]) for r in SP if r["class"] == "unclear" and r["state_sep_2018"] == "mostly cleared or built")
+add("Imagery spot-check: sampled area open in 2015-16 but mostly being developed by 4 Sep 2018 (unclear, timing)",
+    round(100 * tm / nd, 1), "%", "Esri World Imagery Wayback x Amphora", "no imagery of these spots from Aug 2016 to Sep 2018")
+g = SS[("confirmed draws: mostly grey by 6 May 2023", "yes")]
+add("Imagery spot-check: confirmed area already mostly grey by 6 May 2023", g["share_of_draws_pct"], "% of confirmed",
+    "Esri World Imagery Wayback x Amphora",
+    f"partly {SS[('confirmed draws: mostly grey by 6 May 2023', 'partly')]['share_of_draws_pct']}, not yet "
+    f"{SS[('confirmed draws: mostly grey by 6 May 2023', 'no')]['share_of_draws_pct']}; article: 2018-2023, map file: 2018-2025")
+add("Imagery spot-check: share of Amphora's area confirmed and mostly grey by 6 May 2023",
+    ci(SS[("rule", "confirmed and mostly grey by 6 May 2023 (article's 2018-2023)")]), "% (95% CI)",
+    "Esri World Imagery Wayback x Amphora", "the article's window, 2018-2023")
+grp = "before land type (draws open in the before image)"
+f1, f2 = SS[(grp, "fields (cultivated + fallow)")], SS[(grp, "farmland (fields + orchards)")]
+add("Imagery spot-check: fields (cultivated + fallow) / with orchards, share of the sampled land open before",
+    f"{f1['share_of_draws_pct']} / {f2['share_of_draws_pct']}", "%", "Esri World Imagery Wayback x Amphora",
+    f"95% CI {f1['wilson95_lo_pct']}-{f1['wilson95_hi_pct']} / {f2['wilson95_lo_pct']}-{f2['wilson95_hi_pct']}; "
+    f"scrub, garrigue or rough grass {SS[(grp, 'grass-scrub-garrigue')]['share_of_draws_pct']}; Amphora: nearly 95% farmland")
+
 with open(D / "checks.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\r\n")
     w.writeheader()

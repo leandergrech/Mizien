@@ -34,3 +34,19 @@ Added 5 Oct 2026 for report v1.2, written by `tools/cc-019-report/crosscheck.py`
   from the EEA discomap service: CLC codes before and after, area, centroid; `land_take` = change to an artificial
   class (CLC 1xx) from any other class. The service's layer description gives a 5 ha minimum mapping unit for change
   layers (25 ha for status layers).
+
+Added 5 Oct 2026 (maintainer decision: imagery spot-check), written by `tools/cc-019-report/spotcheck.py`:
+
+- `imagery_spotcheck.csv`: one row per sampled polygon. 40 draws by systematic sampling with probability
+  proportional to polygon area (UTM 33N; polygons in random order; seed, interval and random start in the columns),
+  so the share of draws in a class estimates the share of Amphora's area in that class; 39 polygons (one drawn twice,
+  `draws` = 2). Columns: polygon index in Amphora's file and its id, area, centroid, Amphora's 2018 class and place
+  label; Esri World Imagery Wayback release and acquisition date (SRC_DATE from that release's metadata layer) of the
+  before image (latest acquired before 1 Jul 2018), the 4 Sep 2018 image, the by-2023 image and the latest image;
+  every imagery version at the polygon centroid; our class (confirmed / partial / already grey / still open /
+  unclear), the land type before, the state on 4 Sep 2018, whether the polygon was mostly grey by 6 May 2023, and a
+  one-line note. Classified by eye by Miżien; the rules are in the script. The imagery itself is not committed
+  (Esri's terms).
+- `imagery_spotcheck_summary.csv`: shares of draws by class with Wilson 95% intervals; confirmed + half of partial;
+  a rough count-based picture (weights 1/area); land type before (fields, orchards, scrub); state on 4 Sep 2018; grey
+  by May 2023; imagery dates.
