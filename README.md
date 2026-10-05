@@ -48,7 +48,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-016 | Air | Shore-to-ship: 90% less harbour pollution | Drafted | Misleading |
 | CC-017 | Planning & Housing | Land reclamation outside the Freeport | Drafted | Not substantiated |
 | CC-018 | Planning & Housing | IMF 'confirms' MDA on housing | Drafted | Largely supported |
-| CC-019 | Land & Trees | 830,000 m2 of land lost in five years | Drafted | Largely supported |
+| CC-019 | Land & Trees | 830,000 m2 of land lost in five years | Drafted | Not substantiated |
 | CC-020 | Noise | EP study: noise law not the cause | Drafted | Largely supported |
 | CC-021 | Transport | Malta-Gozo tunnel traffic | Not started | - |
 | CC-022 | Climate & Energy | 'Lowest electricity burden in the EU' | Drafted | Largely supported |

@@ -24,10 +24,9 @@ S.append(key_points([
     ("Amphora’s own map adds up.",
      "The 397 change polygons behind Amphora’s map cover 828,429 m², so “nearly 830,000” is exact; the headline’s "
      "“over” is not. The arithmetic and the EEA figures it quotes check out."),
-    ("Imagery confirms most of it.",
-     "In 40 random draws from Amphora’s area checked against satellite images, 72.5% (95% interval 57–84%) went from "
-     "open or green land to grey and 2.5% was already grey. But 15% was already being developed in September 2018, "
-     "and 17.5% turned grey only after May 2023."),
+    ("Imagery confirms most of it, but by 2025, not 2023.",
+     "In 40 random draws checked against satellite images, 72.5% of Amphora’s area (57–84%; about 600,000 m²) went "
+     "from green to grey. Only 55% (about 456,000 m²) was grey by May 2023, the end of the stated period."),
     ("An independent model gets these parcels wrong.",
      "Impact Observatory’s 10 m maps show 68% of Amphora’s area as built-up already in 2018, which the imagery "
      "contradicts; only 2–3% of the model’s new built-up land lies inside the polygons. It can neither confirm nor "
@@ -35,20 +34,18 @@ S.append(key_points([
     ("The 95% farmland share is overstated.",
      "Amphora’s own data reach 96% only by counting all “grass” as farmland and leaving out the 37% with no 2018 "
      "class. In our imagery sample, fields were 59% of the land before (64% with orchards)."),
-    ("Verdict: largely supported (moderate confidence).",
-     "The total is Amphora’s own map, the sums are right and imagery confirms most of a sample; but the years are "
-     "looser than “2018 to 2023” and the farmland share is overstated."),
+    ("Verdict: not substantiated (moderate confidence).",
+     "Most of the land Amphora mapped was built over, but by 2025, not 2023, and about a third was scrub and "
+     "garrigue, not farmland."),
 ]))
-S += [Spacer(1, 4 * mm), VerdictMeter(1), Spacer(1, 3 * mm),
+S += [Spacer(1, 4 * mm), VerdictMeter(2), Spacer(1, 3 * mm),
       tiles([("0.83", ORANGE, "km² in Amphora’s 397 published polygons (828,429 m²)"),
              ("72.5%", GREEN, "of a random sample of that area went from green to grey in imagery (95%: 57–84%)"),
              ("59%", AMBER, "of the sampled land was fields before; Amphora says nearly 95% farmland"),
-             ("2–3%", RED, "of an independent model’s new built-up land lies inside the polygons")]),
+             ("55%", ORANGE, "of that area was grey by May 2023, the end of the stated period: about 456,000 m²")]),
       Spacer(1, 4 * mm),
-      up_down("Amphora’s basis for the 95% and the imagery dates it used; imagery from 2017 to mid-2018; a larger "
-              "imagery sample with a similar result.",
-              "Evidence that much more of the area changed before 2018 or after 2023 than in our sample, or a larger "
-              "sample confirming less than half of it."),
+      up_down("Amphora restating the period as 2018–2025 and the farmland share near 60%.",
+              "A larger imagery sample confirming less than half of the area."),
       Spacer(1, 5 * mm)]
 S += toc([("1", "The claim and what we could verify"), ("2", "Method"), ("3", "How the satellite data work"),
           ("4", "What the data show"), ("5", "Where the evidence points different ways"),
@@ -224,7 +221,7 @@ S.append(P("<b>What it means.</b> More than half of the sampled area is confirme
 S.append(CondPageBreak(80 * mm))
 S.append(SectionHeading(5, "Where the evidence points different ways"))
 S.append(contested(
-    "Q1  Is 830,000 m² right?", "MOSTLY CONFIRMED", LG,
+    "Q1  Were 830,000 m² built over in 2018–2023?", "BY 2025, NOT 2023", AMBER,
     "Amphora’s polygons add up to 828,429 m², and it says each area was checked by eye. In imagery, 72.5% of a "
     "random sample of that area (57–84%) went from open or green land to grey; only 2.5% was already grey. The "
     "model agrees that 88% of the area was built-up by 2023 and 92% by 2025.",
@@ -232,8 +229,9 @@ S.append(contested(
     "inside Amphora’s polygons. In the imagery sample 15% of the area was already being developed by September "
     "2018, and 17.5% turned grey only after May 2023.",
     "<b>For this claim:</b> the imagery settles the main disagreement in Amphora’s favour: these parcels were "
-    "mostly green before. The figure fits 2018–2025, the map file’s years, better than the article’s 2018–2023, and "
-    "no check here looks for developments Amphora missed."))
+    "mostly green before, and most were built over. But only 55% of the area (40–69%; about 456,000 m²) was grey by "
+    "May 2023. The figure fits 2018–2025, the map file’s years, not the article’s 2018–2023. No check here looks "
+    "for developments Amphora missed."))
 S.append(contested(
     "Q2  Was 95% of it farmland?", "OVERSTATED", AMBER,
     "In Amphora’s own data, cropland and grass make up 96% of the area with a known 2018 class. Amphora may count "
@@ -257,33 +255,37 @@ S.append(std_table([
     [C("Sub-claim", cellh), C("What the evidence shows", cellh), C("Rating", cellh)],
     [C("<b>A.</b> About 830,000 m² of green land built up 2018–2023"),
      C("Amphora’s polygons add up to 828,429 m² (two, 4,429 m², were sea in 2018). Imagery confirms green to grey "
-       "for 72.5% of a random sample of the area (57–84%), 55% by May 2023; 15% was being developed by September "
-       "2018. An independent model flags largely different land."), verd("LARGELY SUPPORTED", LG)],
+       "for 72.5% of a random sample of the area (57–84%; about 600,000 m²), but only 55% by May 2023 (about "
+       "456,000 m²); 15% was being developed by September 2018. True for 2018–2025, not for the period stated."),
+     verd("PARTLY SUPPORTED", AMBER)],
     [C("<b>B.</b> 0.26% of land; comparisons (pitches, Comino, Manoel)"), C("Arithmetic checks out (Comino: 0.24 of the "
        "3.5 km² often quoted, 0.30 of the OSM outline; Manoel: 2.7, not two)."), verd("SUPPORTED", GREENC)],
     [C("<b>C.</b> Nearly 95% of take-up was farmland"),
      C("Cropland + grass = 96% of the area with a known 2018 class (our reading of the basis), but only if all grass is "
-       "farmland; 37% has no class. In imagery, fields were 59% of the sampled land, 64% with orchards."),
-     verd("PARTLY SUPPORTED", AMBER)],
+       "farmland; 37% has no class. In imagery, fields were 59% of the sampled land (43–73%), 64% with orchards; "
+       "36% was scrub or garrigue."),
+     verd("NOT SUBSTANTIATED", ORANGE)],
     [C("<b>D.</b> EEA figures and the 1.94 km² total"), C("CORINE change maps: 20.6 ha (2006–12) and 93.7 ha (2012–18) "
        "[9]; EEA chart 0.91–0.94 km² [7]; sum correct."), verd("SUPPORTED", GREENC)],
 ], [52 * mm, 88 * mm, 30 * mm], valign="MIDDLE"))
 
 # ================================================================== 7
 S += [Spacer(1, 6 * mm), SectionHeading(7, "Verdict and requests for evidence"),
-      verdict_box("Largely supported", "Amphora’s map adds up and imagery confirms most of a random sample of it; "
-                  "the years are looser than stated and the 95% farmland share is overstated. Confidence: moderate."),
+      verdict_box("Not substantiated", "Most of the land Amphora mapped was built over, but by 2025, not 2023, and "
+                  "about a third of it was scrub and garrigue, not farmland. Confidence: moderate."),
       Spacer(1, 4 * mm)]
 S.append(P("<b>Why.</b> (1) The figure is the area of Amphora’s published polygons, and the arithmetic, comparisons "
            "and EEA figures are right. (2) Imagery of a random sample confirms green-to-grey change on 72.5% of the "
-           "area (57–84%) and finds almost none already built; the independent model’s contrary reading of 2018 does "
-           "not hold on these parcels, so the model’s failure to confirm the figure weighs little. (3) The years are "
-           "looser than “2018 to 2023”: 15% of the sampled area was already being "
-           "developed by September 2018 and 17.5% turned grey only after May 2023, in line with the map file’s "
-           "2018–2025. (4) The 95% farmland share is overstated: fields were 59% of the sampled land, 64% with "
-           "orchards; and the headline rounds up a number the text rounds down. These limit how exactly the figure fits "
-           "its stated period and land type, not whether the land was built over. Confidence is moderate by the rule "
-           "the maintainer set before the check: more than half of the sampled area confirmed."))
+           "area (57–84%; about 600,000 m²) and finds almost none already built; the independent model’s contrary "
+           "reading of 2018 does not hold on these parcels. (3) But the claim dates the change to 2018–2023, and only "
+           "55% of the area (40–69%; about 456,000 m², range 330,000–574,000) was grey by May 2023; 15% was already "
+           "being developed by September 2018. That fits the map file’s 2018–2025. For the period stated, the figure "
+           "is about 1.8 times too high. (4) The 95% farmland share is overstated: fields were 59% of the sampled land "
+           "(43–73%), 64% with orchards, and 36% was scrub or garrigue. Two of the claim’s three numbers are stated "
+           "more strongly than the evidence allows, which our scale calls <i>Not substantiated</i>: true for a longer "
+           "period and on a broad reading of “farmland”, but not as worded. It is not <i>Misleading</i>: nothing "
+           "material is left out; the numbers are overstated. Confidence is moderate: the classifications are ours, "
+           "by eye, on 40 draws, and fallow fields can look like scrub."))
 S.append(P("Evidence we are asking for", h2))
 S.append(requests_list([
     "Amphora: the basis and period of the 95% farmland figure, and how “grass” was counted.",
@@ -384,7 +386,14 @@ S += revision_log([("1.0", "4 Oct 2026", "First issue. Right of reply to Amphora
                     "section 4; TL;DR (key points, tiles, what would move the verdict), sections 2, 5 to 8 and the flyer "
                     "updated; Q1 “plausible, unconfirmed” → “mostly confirmed”; Q2 “depends on definitions” → "
                     "“overstated”; sub-claim A “plausible” → “largely supported”; sub-claim C “needs context” → "
-                    "“partly supported”. Verdict unchanged.")])
+                    "“partly supported”. Verdict unchanged."),
+                   ("1.2", "5 Oct 2026", "Maintainer decision (5 Oct 2026): verdict changed from Largely supported to Not "
+                    "substantiated (moderate). Read as worded, the claim dates nearly 830,000 m² to 2018–2023; imagery puts "
+                    "about 456,000 m² (330,000–574,000) grey by May 2023 and about 600,000 m² by 2025. It says nearly 95% "
+                    "was farmland; fields were 59% (64% with orchards) and scrub or garrigue 36%. Sub-claim A “largely "
+                    "supported” → “partly supported”; C “partly supported” → “not substantiated”; Q1 retitled. TL;DR, "
+                    "tiles, what would move the verdict, verdict box, Why, flyer and claim.yml updated. A right of reply "
+                    "from Amphora Media is needed.")])
 
 build_report(Report(
     number="019", out=str(FIG / "report.pdf"), kicker="Land and trees",
@@ -395,7 +404,7 @@ build_report(Report(
                  "between 2018 and 2023.”"], quote_size=15,
     attribution="Amphora Media, Green to Grey, 11 September 2026.",
     context="Companion piece: nearly 95% of the take-up was farmland.",
-    verdict="Largely supported", verdict_note="Matches Amphora’s own map; imagery confirms most of a sample",
+    verdict="Not substantiated", verdict_note="Mostly built over, but by 2025, not 2023; a third not farmland",
     footer_lines=["Version 1.2  ·  5 October 2026", "Status: draft (right of reply: Amphora Media)",
                   "Prepared from public sources, Amphora’s map, high-resolution images and land cover.",
                   "Repository: github.com/leandergrech/Mizien"],

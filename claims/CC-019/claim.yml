@@ -3,7 +3,7 @@ title: 830,000 m2 of land lost in five years
 category: Land & Trees
 subtopic: Land take & agriculture
 status: Drafted
-verdict: Largely supported
+verdict: Not substantiated
 verdict_confidence: Moderate
 claim:
   text: 'Amphora Media (Green to Grey, 11-12 Sep 2026): nearly 830,000 square metres of nature and cropland were
@@ -47,7 +47,9 @@ counter_evidence: 'v1.2: Amphora''s published polygons (397) cover 828,429 m2, s
   partial, 2.5% already grey, 0% still open, 17.5% unclear (15% being developed by Sep 2018); 55% (40-69%)
   confirmed and mostly grey by May 2023, so part of the figure is 2024-25 change. The imagery contradicts the model''s
   2018 built-up reading on these parcels. Land before: fields 59% (43-73%), 64% with orchards, the rest scrub,
-  garrigue or rough grass, so ''nearly 95% farmland'' is overstated.'
+  garrigue or rough grass, so ''nearly 95% farmland'' is overstated. Verdict (maintainer decision, 5 Oct 2026): Not
+  substantiated: about 456,000 m2 (330,000-574,000) was grey by May 2023 against ''nearly 830,000'' for 2018-2023
+  (about 600,000 m2 by 2025), and about a third of the land was scrub or garrigue, not farmland.'
 tests: Amphora's published change polygons; imagery spot-check of 40 PPS draws against Esri World Imagery Wayback
   (2015-16, 2018, 2023, 2025); Impact Observatory LULC v2 (Planetary Computer 2017-2023, Esri 2017-2025); EEA CORINE
   change layers 2006-2012 and 2012-2018; OSM island areas; Amphora articles read in full.
@@ -89,9 +91,9 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-019A
     text: "About 830,000 m² of green land built up 2018–2023"
-    finding: "Amphora’s polygons add up to 828,429 m² (two, 4,429 m², were sea in 2018). Imagery confirms green to grey for 72.5% of a random sample of the area (57–84%), 55% by May 2023; 15% was being developed by September 2018. An independent model flags largely different land."
-    rating: "Largely supported"
-    tone: lime
+    finding: "Amphora’s polygons add up to 828,429 m² (two, 4,429 m², were sea in 2018). Imagery confirms green to grey for 72.5% of a random sample of the area (57–84%; about 600,000 m²), but only 55% by May 2023 (about 456,000 m²); 15% was being developed by September 2018. True for 2018–2025, not for the period stated."
+    rating: "Partly supported"
+    tone: amber
   - id: CC-019B
     text: "0.26% of land; comparisons (pitches, Comino, Manoel)"
     finding: "Arithmetic checks out (Comino: 0.24 of the 3.5 km² often quoted, 0.30 of the OSM outline; Manoel: 2.7, not two)."
@@ -99,9 +101,9 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: green
   - id: CC-019C
     text: "Nearly 95% of take-up was farmland"
-    finding: "Cropland + grass = 96% of the area with a known 2018 class (our reading of the basis), but only if all grass is farmland; 37% has no class. In imagery, fields were 59% of the sampled land, 64% with orchards."
-    rating: "Partly supported"
-    tone: amber
+    finding: "Cropland + grass = 96% of the area with a known 2018 class (our reading of the basis), but only if all grass is farmland; 37% has no class. In imagery, fields were 59% of the sampled land (43–73%), 64% with orchards; 36% was scrub or garrigue."
+    rating: "Not substantiated"
+    tone: orange
   - id: CC-019D
     text: "EEA figures and the 1.94 km² total"
     finding: "CORINE change maps: 20.6 ha (2006–12) and 93.7 ha (2012–18) [9]; EEA chart 0.91–0.94 km² [7]; sum correct."
@@ -109,7 +111,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: green
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 0.83 km²
-  caption: in Amphora's published polygons; imagery confirms most of a random sample
+  caption: in Amphora's polygons; built over by 2025, not 2023, and a third not farmland
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-04
     step: version
@@ -123,4 +125,4 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: version
     version: "1.2"
-    note: "Upgrade. (1) Amphora’s published change polygons [8] measured: 397 polygons, 828,429 m², so “nearly 830,000” is reproduced and the headline’s “over” is not. (2) Spatial cross-check with the independent model: “an independent measurement finds more, not less” and “plausible and conservative” → the model already maps 68% of Amphora’s area as built-up in 2018, 6–14% as new, and only 2–3% of its new built-up land lies inside Amphora’s polygons, so it neither confirms nor rules out the figure (TL;DR, tiles, sections 2–8, flyer). (3) The 2024 and 2025 maps added from Esri’s service (identical to the earlier maps for 2017–2023): net totals −0.06 to 2.96 km² by rule. (4) Sub-claim A “supported” → “plausible”; sub-claim C “not shown” → “needs context”: cropland + grass = 96% of the area with a known 2018 class (our reading of the basis of “nearly 95%”). (5) Sub-claim D: the 2006–2012 EEA figure checked with the CORINE change map (20.6 ha; 93.7 ha for 2012–2018). (6) New Figure 1 (Amphora’s polygons over the model’s new built-up land), replacing the map of new built-up pixels; Figure 2 redrawn with four rules and Amphora’s own 2018 classes. Verdict and confidence unchanged. Maintainer decision (5 Oct 2026): imagery spot-check of Amphora’s polygons, with confidence set by a rule fixed beforehand (moderate if more than half of the sampled area is confirmed, low otherwise). 40 draws by systematic sampling proportional to area (seed 20261005; 39 polygons) checked by eye against Esri World Imagery Wayback [11, 12] from 2015–16, 2018, 2023 and 2025: 72.5% of the sampled area confirmed green to grey (95% interval 57–84%), 7.5% partial, 2.5% already grey, 17.5% unclear (15% being developed by September 2018); 55% grey by May 2023; fields 59% of the land before (64% with orchards). Confidence: moderate. New subsection and table rows in section 4; TL;DR (key points, tiles, what would move the verdict), sections 2, 5 to 8 and the flyer updated; Q1 “plausible, unconfirmed” → “mostly confirmed”; Q2 “depends on definitions” → “overstated”; sub-claim A “plausible” → “largely supported”; sub-claim C “needs context” → “partly supported”. Verdict unchanged."
+    note: "Upgrade. (1) Amphora’s published change polygons [8] measured: 397 polygons, 828,429 m², so “nearly 830,000” is reproduced and the headline’s “over” is not. (2) Spatial cross-check with the independent model: “an independent measurement finds more, not less” and “plausible and conservative” → the model already maps 68% of Amphora’s area as built-up in 2018, 6–14% as new, and only 2–3% of its new built-up land lies inside Amphora’s polygons, so it neither confirms nor rules out the figure (TL;DR, tiles, sections 2–8, flyer). (3) The 2024 and 2025 maps added from Esri’s service (identical to the earlier maps for 2017–2023): net totals −0.06 to 2.96 km² by rule. (4) Sub-claim A “supported” → “plausible”; sub-claim C “not shown” → “needs context”: cropland + grass = 96% of the area with a known 2018 class (our reading of the basis of “nearly 95%”). (5) Sub-claim D: the 2006–2012 EEA figure checked with the CORINE change map (20.6 ha; 93.7 ha for 2012–2018). (6) New Figure 1 (Amphora’s polygons over the model’s new built-up land), replacing the map of new built-up pixels; Figure 2 redrawn with four rules and Amphora’s own 2018 classes. Verdict and confidence unchanged. Maintainer decision (5 Oct 2026): imagery spot-check of Amphora’s polygons, with confidence set by a rule fixed beforehand (moderate if more than half of the sampled area is confirmed, low otherwise). 40 draws by systematic sampling proportional to area (seed 20261005; 39 polygons) checked by eye against Esri World Imagery Wayback [11, 12] from 2015–16, 2018, 2023 and 2025: 72.5% of the sampled area confirmed green to grey (95% interval 57–84%), 7.5% partial, 2.5% already grey, 17.5% unclear (15% being developed by September 2018); 55% grey by May 2023; fields 59% of the land before (64% with orchards). Confidence: moderate. New subsection and table rows in section 4; TL;DR (key points, tiles, what would move the verdict), sections 2, 5 to 8 and the flyer updated; Q1 “plausible, unconfirmed” → “mostly confirmed”; Q2 “depends on definitions” → “overstated”; sub-claim A “plausible” → “largely supported”; sub-claim C “needs context” → “partly supported”. Verdict unchanged. Maintainer decision (5 Oct 2026): verdict changed from Largely supported to Not substantiated (moderate). Read as worded, the claim dates nearly 830,000 m² to 2018–2023; imagery puts about 456,000 m² (330,000–574,000) grey by May 2023 and about 600,000 m² by 2025. It says nearly 95% was farmland; fields were 59% (64% with orchards) and scrub or garrigue 36%. Sub-claim A “largely supported” → “partly supported”; C “partly supported” → “not substantiated”; Q1 retitled. TL;DR, tiles, what would move the verdict, verdict box, Why, flyer and claim.yml updated. A right of reply from Amphora Media is needed."
