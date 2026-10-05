@@ -4523,10 +4523,10 @@
       "id": "CC-115",
       "title": "Chamber: congestion cost EUR 770m, 3.4% of GDP",
       "category": "Transport",
-      "claim": "The Malta Chamber of Commerce, Enterprise and Industry (2026 election proposals): traffic congestion alone cost the economy an estimated EUR 770 million in 2025, equivalent to 3.4% of GDP.",
-      "counter": "Engineer Marco Cremona (presentation to Momentum, Malta News Agency 3 Jun 2026) estimated EUR 1.13 billion a year from 60.8 million hours lost at EUR 10 an hour plus fuel. The same Chamber text gives 2025 GDP as EUR 20.40 billion, and EUR 770 million is about 3.8% of that, so the 3.4% depends on which GDP series is used (nominal versus chain-linked volume): to check.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "The Malta Chamber of Commerce, Enterprise and Industry (LEAD proposals for the 2026-2031 legislature, 14 May 2026): traffic congestion cost the economy an estimated EUR 770 million in 2025, equivalent to 3.4% of GDP.",
+      "counter": "The EUR 770m is quoted accurately from the National Transport Master Plan 2030 (p. 124), which projects EUR 917m by 2030 and excludes EUR 195.4m of environmental costs, but the plan publishes no derivation for 2025 (its appraisal annex models 2030 and 2060 only). EUR 770m is 3.12% of 2025 GDP at current prices (Eurostat EUR 24,664m); 3.34% of 2024 GDP; 3.8-3.9% of real GDP. 3.4% would need GDP of EUR 22.6bn. Marco Cremona's EUR 1.13bn estimate (MNA, 3 Jun 2026) is second-hand.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [],
       "subtopic": "Cars & traffic",
       "location": {
@@ -4536,17 +4536,38 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "The Malta Chamber of Commerce, Enterprise and Industry",
       "bodies": [
         "malta-chamber"
       ],
-      "date": "n/d",
-      "quote": "Traffic congestion alone cost the economy an estimated €770 million in 2025, equivalent to 3.4% of GDP.",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-115A",
+          "text": "Traffic congestion cost the economy an estimated €770 million in 2025",
+          "finding": "Accurately cited from the National Transport Master Plan 2030, p. 124. The plan publishes no derivation for 2025, so the figure cannot be tested.",
+          "rating": "Not testable",
+          "tone": "orange"
+        },
+        {
+          "id": "CC-115B",
+          "text": "…equivalent to 3.4% of GDP",
+          "finding": "3.12% of 2025 GDP at current prices; 3.34% of 2024 GDP; 3.8–3.9% of real GDP. No published series gives 3.4%.",
+          "rating": "Overstated",
+          "tone": "amber"
+        }
+      ],
+      "date": "2026-05-14",
+      "quote": "In 2025, traffic congestion imposed an estimated cost of €770 million on the Maltese economy, equivalent to 3.4% of GDP.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-115/report.pdf",
+        "flyer_pdf": "claim-files/CC-115/flyer.pdf",
+        "flyer_png": "claim-files/CC-115/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-115/claim.yml"
     },
     {

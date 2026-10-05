@@ -144,7 +144,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-112 | Tourism & Population | IMF: population up 25% in a decade | Drafted | Largely supported |
 | CC-113 | Climate & Energy | EEA: Malta among highest fossil-fuel subsidies | Not started | - |
 | CC-114 | Climate & Energy | PN: only EU state with rising emissions intensity | Not started | - |
-| CC-115 | Transport | Chamber: congestion cost EUR 770m, 3.4% of GDP | Not started | - |
+| CC-115 | Transport | Chamber: congestion cost EUR 770m, 3.4% of GDP | Drafted | Not substantiated |
 | CC-116 | Planning & Housing | UNESCO: Valletta setting not safeguarded | Not started | - |
 
 The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Claims are numbered CC-001 to CC-021. Report drafts are available for CC-001 to CC-011; CC-012 to CC-021 are candidates (added 3 October 2026). Right of reply remains for the maintainer where not yet handled.
