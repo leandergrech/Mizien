@@ -41,8 +41,9 @@ def fig1():
     ax.set_ylabel("Number per year")
     ax.legend(frameon=False, fontsize=8, loc="upper right")
     ax.text(2000.4, -620, "Dark bars and 2001-2011, 2024: MEPA/PA annual reports (read). Light bars 2019-2023: reports of PA "
-            "data and parliamentary answers (second-hand; 2019 derived). 2005 complaints: financial year 2004/05; "
-            "2011: sites without an existing notice.", fontsize=6.6, color=GREY, wrap=True)
+            "data and parliamentary answers (second-hand; 2019 derived). 2019 complaints: PA Annual Report 2019. "
+            "2005 complaints: financial year 2004/05; 2011: sites without an existing notice.", fontsize=6.6, color=GREY,
+            wrap=True)
     fig.savefig(OUT / "fig1_series.png", bbox_inches="tight", facecolor="white")
 
 

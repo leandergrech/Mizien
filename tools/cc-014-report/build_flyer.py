@@ -24,7 +24,7 @@ build_flyer(Flyer(
             "2,701 complaints in 2009, 2,411 in 2024; 3,313 in 2020."),
            ("~1,200", RED, "Still confirmed illegal",
             "About half of 2024 complaints were confirmed as illegal development."),
-           ("521", RED, "Settled by legalising",
+           ("521", RED, "Applications to legalise",
             "In 2024 more cases ended in a sanctioning application than any other way; 162 got a notice.")],
     fair="The chief executive also said the Authority has struggled with enforcement. Persuading owners first is a "
          "recognised approach. This check is about what fewer notices can show.",
@@ -32,6 +32,6 @@ build_flyer(Flyer(
           "Any survey showing illegal building has fallen.",
           "How many cases end in a sanctioning permit.",
           "The yearly source of 1,500 direct actions."],
-    footer="Version 1.0  ·  3 October 2026  ·  Public data only  ·  Draft pending right of reply from the Planning Authority",
+    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Draft pending right of reply from the Planning Authority",
     pdf_title="Claim Check 014 – Fewer notices, or fewer illegalities?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
