@@ -17,12 +17,23 @@ Malta: domestic transport change 2005-2024,48.6,%,"Eurostat env_air_gge (2026 in
 Malta: buildings and other combustion change 2005-2024,9.3,%,"Eurostat env_air_gge (2026 inventory) and nama_10_pe, retrieved 2 Oct 2026",0.123 -> 0.135 Mt CO2e
 Malta: waste change 2005-2024,-4.7,%,"Eurostat env_air_gge (2026 inventory) and nama_10_pe, retrieved 2 Oct 2026",0.197 -> 0.187 Mt CO2e
 "Malta: international bunkers (memo, outside targets) change 2005-2024",205.6,%,"Eurostat env_air_gge (2026 inventory) and nama_10_pe, retrieved 2 Oct 2026",2.401 -> 7.337 Mt CO2e
-Malta: ESR target 2030 vs 2005,-19,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.115",Effort Sharing Regulation
-Malta: ESR emissions 2024 vs 2005,41,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.115",
-"Malta: ESR projection 2030, existing measures (WEM)",42,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.115",gap -61 pp
-"Malta: ESR projection 2030, additional measures (WAM)",30,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.115",gap -49 pp
+EU-27: energy industries (power) change 2005-2024,-53.6,%,"Eurostat env_air_gge (2026 inventory) and nama_10_pe, retrieved 2 Oct 2026",1385.497 -> 642.415 Mt CO2e
+EU-27: domestic transport change 2005-2024,-5.3,%,"Eurostat env_air_gge (2026 inventory) and nama_10_pe, retrieved 2 Oct 2026",849.894 -> 804.764 Mt CO2e
+Malta: industrial emissions change 2005-2023,293,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.44",mainly refrigeration and air-conditioning gases
+EU-27: industrial emissions change 2005-2023,-36,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.44",total industrial emissions
+Malta: buildings emissions change since 2005,12,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.59",all other Member States fell except Romania (+6%)
+Malta: ESR target 2030 vs 2005,-19,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.114 (Table 25)",Effort Sharing Regulation
+Malta: ESR emissions 2024 vs 2005,41,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.114 (Table 25)",
+"Malta: ESR projection 2030, existing measures (WEM)",42,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.114 (Table 25)",gap -61 pp
+"Malta: ESR projection 2030, additional measures (WAM)",30,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.114 (Table 25)",gap -49 pp
 "Malta: ESR gap WAM, percentage points",49,pp,calculated,projection minus target
-Next largest WAM gap among EU-27 (Ireland),-20,pp,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.115",Malta -49 pp is the largest in pp terms
-Malta: cumulative AEA balance 2030,-2.1,Mt CO2e,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.126",negative = shortfall before flexibilities
+Next largest WAM gap among EU-27 (Ireland),-20,pp,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.113 (Table 25)",Malta -49 pp is the largest in pp terms; Ireland WEM gap -33 pp
+EU-27: ESR target 2030 vs 2005,-40,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.115 (Table 25)",
+EU-27: ESR emissions 2024 vs 2005,-20,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.115 (Table 25)",
+"EU-27: ESR projection 2030, existing measures (WEM)",-31,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.115 (Table 25)",gap -8 pp
+"EU-27: ESR projection 2030, additional measures (WAM)",-38,%,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.115 (Table 25)",gap -2 pp
+Malta: cumulative AEA balance 2030,-2.1,Mt CO2e,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.125",negative = shortfall before flexibilities
+Malta: ESR distance to target 2030,-0.5,Mt CO2e,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.125 (Table 26)",baseline 2005: 1.0 Mt
+Germany: ESR distance to target 2030,-64.0,Mt CO2e,"European Commission, Climate Action Progress Report 2025, SWD (capr2025_swd_en.pdf) p.118 (Table 26)","baseline 2005: 484.7 Mt; gap -14 pp (WEM) / -13 pp (WAM): smaller than Malta's in pp, larger in tonnes"
 "Malta: renewables, gross final energy 2024",17.21,%,"Eurostat nrg_ind_ren, retrieved 2 Oct 2026",EU-27: 25.241%
 "Malta: renewables, electricity 2024",10.655,%,"Eurostat nrg_ind_ren, retrieved 2 Oct 2026",EU-27: 47.503%
