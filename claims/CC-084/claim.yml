@@ -2,21 +2,34 @@ id: CC-084
 title: Tourists tripled in 15 years
 category: Tourism & Population
 subtopic: Tourism numbers & capacity
-status: Not started
-verdict: null
-verdict_confidence: null
+status: In progress
+verdict:
+verdict_confidence:
 claim:
-  text: 'ADPD chairperson Sandra Gauci (2026): Malta welcomed over four million tourists in 2025, triple the number
-    of 15 years ago.'
+  text: 'ADPD chairperson Sandra Gauci (2026): Malta welcomed over four million tourists in 2025, triple the number of 15
+    years ago.'
   speaker: ADPD - The Green Party (Sandra Gauci)
   date: '2026'
   wording_status: 'Paraphrase: locate quote'
   sources:
-  - title: ADPD Says Malta's Localities 'Are Not For Sale' Amid Overdevelopment Concerns
-    publisher: Lovin Malta
-    date: '2026'
-    url: https://lovinmalta.com/news/general-election-2026/adpd-marsaskala-jerma-overdevelopment/
-    note: Opposition claim.
+    - title: ADPD Says Malta's Localities 'Are Not For Sale' Amid Overdevelopment Concerns
+      publisher: Lovin Malta
+      date: '2026'
+      url: https://lovinmalta.com/news/general-election-2026/adpd-marsaskala-jerma-overdevelopment/
+      note: Opposition claim.
+    - title: 4,000,000! L-effetti tat-turiżmu eċċessiv f'Malta huma ċarissimi
+      publisher: ADPD - The Green Party
+      date: '2026-02-14'
+      url: https://adpd.mt/4000000-l-effetti-tat-turizmu-eccessiv-fmalta-huma-carissimi/
+      note: Primary release, read 5 Oct 2026. Gauci quoted on 4 million being too many; no tripling or 2010 comparison.
+    - title: The impact of overtourism in Malta is clear
+      publisher: Newsbook
+      date: '2026-02-14'
+      url: https://newsbook.com.mt/en/the-impact-of-overtourism-in-malta-is-clear-adpd/
+      note: "Outlet's own sentence (no quotation marks): 4,022,310 tourists in 2025 'three times' the 1,338,841 of 2010. Not\
+        \ Gauci's verbatim wording."
+  quote: 4 miljun turist fis-sena wisq ("4 million tourists a year are too many", ADPD release, 14 Feb 2026, Maltese; Newsbook
+    translation). No tripling wording in quotation marks.
 counter_evidence: NSO arrivals 2010 vs 2025; inbound tourists vs cruise passengers.
 tests: NSO inbound tourism series.
 why_low_hanging: A specific, attributable statement that public data can test.
@@ -24,13 +37,13 @@ tags: []
 tags_provisional: true
 priority: Queue
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text before any
+  report.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
+  sent:
+  deadline:
+  response:
+evidence_shown:
 outputs: {}
 location:
   place: Parliament House, Valletta
@@ -38,3 +51,13 @@ location:
   lon: 14.50978
   scope: institution
   icon: parliament
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: The claim record's Lovin Malta locator (25 May 2026) has neither the 4 million nor the tripling. ADPD's release
+      of 14 Feb 2026 (Maltese) quotes Gauci that '4 million tourists a year are too many' but has no tripling; the tripling
+      (4,022,310 vs 1,338,841 in 2010) appears only in Newsbook's own unquoted sentence.
+  - date: 2026-10-05
+    step: note
+    note: "Scanned all ADPD posts since 1 Feb 2026: no 'tripled' wording. Waiting on the maintainer for a primary statement,\
+      \ or a decision to re-scope the claim to the Newsbook sentence."

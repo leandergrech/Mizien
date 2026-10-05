@@ -2,39 +2,120 @@ id: CC-042
 title: '''From Blue Flag to Red Alert'''
 category: Water
 subtopic: Bathing water & sewage
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Nationalist Party: the government celebrates Blue Flag beaches while bathing sites close for sewage contamination.'
+  text: 'Nationalist Party (PN statement, 1 July 2025): the government celebrates Blue Flag beaches while bathing sites close
+    for sewage contamination (Fajtata Bay, Marsaskala, closed two days after 13 Blue Flags were announced).'
   speaker: Nationalist Party (PN)
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  date: 2025-07-01
+  wording_status: 'Verbatim found'
   sources:
-  - title: '''From Blue Flag to Red Alert'': PN slams government over beach closures'
-    publisher: MaltaToday
-    date: n/d
-    url: https://www.maltatoday.com.mt/news/national/135722/from_blue_flag_to_red_alert_pn_slams_government_over_beach_closures
-    note: Opposition claim.
-counter_evidence: Fajtata Bay was closed within 48 hours of its Blue Flag; May 2026 reports put 15 of 87 bathing
-  zones at poor quality.
-tests: Environmental Health Directorate sampling; EU bathing water report.
-why_low_hanging: A specific, attributable statement that public data can test.
+    - title: Marsascala beach goes from Blue Flag to Red Alert in 48 hours, PN says; PL responds
+      publisher: The Malta Independent
+      date: '2025-07-01'
+      url: https://www.independent.com.mt/articles/2025-07-01/local-news/Marsascala-beach-goes-from-Blue-Flag-to-Red-Alert-in-48-hours-PN-says-6736271331
+      note: PN statement and Labour Party reply; read in full (Wayback copy). English text of a statement possibly issued
+        in Maltese; not found on pn.org.mt.
+    - title: "'From Blue Flag to Red Alert': PN slams government over beach closures"
+      publisher: MaltaToday
+      date: '2025-07-01'
+      url: https://www.maltatoday.com.mt/news/national/135722/from_blue_flag_to_red_alert_pn_slams_government_over_beach_closures
+      note: Source of the quoted sentence; read in full (Wayback copy).
+    - title: Fajtata Bay closed to bathers after public toilet overflow spills into sea
+      publisher: MaltaToday (EHD notice)
+      date: '2025-06-30'
+      url: https://www.maltatoday.com.mt/news/national/135697/fajtata_bay_closed_to_bathers_after_public_toilet_overflow_spills_into_sea_
+      note: "EHD notice: 'Bathing is not recommended due to an overflow of foul water in the vicinity of the public toilets.'\
+        \ Timestamp 30 Jun 2025, 12:45."
+    - title: Fajtata Bay open to swimmers again
+      publisher: MaltaToday (EHD statement)
+      date: '2025-07-02'
+      url: https://www.maltatoday.com.mt/news/national/135753/fajtata_bay_open_to_swimmers_again
+      note: Warning lifted after repeated sampling; lifting date 2 Jul from other outlets.
+    - title: Fajtata Beach Closed Due To Sewage Leak Days After Earning Blue Flag Status
+      publisher: Lovin Malta
+      date: '2025-06-30'
+      url: https://lovinmalta.com/lifestyle/announcements/fajtata-beach-closed-due-to-sewage-leak-days-after-earning-blue-flag-status/
+      note: Blue Flag awarded Saturday; closure Monday; ten Maltese and three Gozitan flags. The government press release
+        (28 Jun 2025) was not retrievable.
+    - title: Bathing Water Directive data (DiscoMap, DiscoData)
+      publisher: European Environment Agency
+      date: retrieved 2026-10-05
+      url: https://www.eea.europa.eu/en/topics/in-depth/bathing-water
+      note: Primary data via data/cc-005; 2025 class of each of Malta's 87 sites.
+  quote: The same government that boasts about the 'quality' of our beaches ends up having to close them within days.
+counter_evidence: "Fajtata was closed for about two days (30 Jun-2 Jul 2025) after a public-toilet overflow; Qui-si-Sana was\
+  \ closed 18-24 June after a private establishment's drain failed; Xlendi (listed by the PN among sewage spills) was closed\
+  \ for field run-off after rain, which the Water Services Corporation said was not sewage (second-hand). EEA 2025 classification:\
+  \ 77 of 87 bathing waters Excellent (88.5%, 92.0% in 2024), 8 Good, 2 Sufficient, none Poor; Fajtata (A07) Excellent in\
+  \ every season 2015-2025. The Labour Party's 'over 92% excellent' is the 2024 figure."
+tests: News reports of Environmental Health Directorate notices; EEA bathing-water classification (tools/cc-042-report/calc.py,
+  data/cc-042/).
+why_low_hanging: 'Done: Claim Check 042 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Largely supported: no right of reply needed. Closure causes and dates are second-hand (the EHD closure reports refuse
+  automated access); the PN''s inference of years of infrastructure neglect is an opinion and is not rated.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Parliament House, Valletta
   lat: 35.89614
   lon: 14.50978
   scope: institution
   icon: parliament
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-042A
+    text: "The government celebrated 13 Blue Flag beaches, Fajtata among them, on 28 June 2025"
+    said_by: "PN [1]"
+    finding: "The Minister for Tourism announced ten Maltese and three Gozitan Blue Flags at Golden Bay, Fajtata Bay included [4] ◆. The Blue Flag itself is awarded by Nature Trust–FEE Malta."
+    rating: "Supported"
+    tone: green
+  - id: CC-042B
+    text: "Fajtata was closed to bathers within days (‘48 hours’) of the announcement"
+    said_by: "PN [1]"
+    finding: "EHD notice 30 June; lifted 2 July [3][6]. Possibly 28 June per a summary of the EHD record ◆."
+    rating: "Supported"
+    tone: green
+  - id: CC-042C
+    text: "Bathing sites close because of sewage contamination in 2025"
+    said_by: "PN [1]"
+    finding: "True for Fajtata and Qui-si-Sana. Xlendi was run-off, not sewage ◆. Closures were short; 77 of 87 sites are Excellent for 2025 and none is Poor."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-042D
+    text: "This reflects years of government neglect of infrastructure"
+    said_by: "PN [1]"
+    finding: "An opinion about causes and responsibility; a single public-toilet overflow cannot test it."
+    rating: "Not rated"
+    tone: grey
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 2 days
+  caption: "from the Blue Flag announcement to the Fajtata warning (28 to 30 June 2025); lifted 2 July"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: Sentence found in the PN statement of 1 July 2025 as quoted by MaltaToday and the Malta Independent (English text);
+      the PN's own site has no copy. Locator article read via Wayback.
+  - date: 2026-10-05
+    step: note
+    note: Fajtata timeline, other June 2025 closures and their causes dated from news reports of EHD notices; EHD PDFs refuse
+      access. EEA classification of Malta's 87 sites 2015-2025 recomputed (tools/cc-042-report/calc.py).
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.

@@ -2,39 +2,104 @@ id: CC-063
 title: 'Construction waste: ''standstill'' warning'
 category: Waste
 subtopic: Construction waste
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Moderate
 claim:
-  text: 'Malta Developers Association: unless an enduring solution is found for dumping construction waste, development
-    will come to an almost complete standstill.'
+  text: 'Malta Developers Association (statement of 2 June 2021, as reported by MaltaToday): unless an imminent and enduring
+    solution is found to the dumping of construction waste, development will come to an ''almost complete standstill''.'
   speaker: Malta Developers Association
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  date: 2021-06-02
+  wording_status: 'Verbatim found'
   sources:
-  - title: Developers again call for enduring solution to dumping of construction waste
-    publisher: MaltaToday
-    date: n/d
-    url: https://www.maltatoday.com.mt/news/national/110023/developers_again_call_for_enduring_solution_to_dumping_of_construction_waste
-    note: Locates the claim.
-counter_evidence: Construction is over 80% of waste generated; 32-35 quarries licensed but few accept waste.
-tests: ERA licences and intake volumes; NSO waste statistics.
-why_low_hanging: A specific, attributable statement that public data can test.
+    - title: Developers again call for enduring solution to dumping of construction waste
+      publisher: MaltaToday
+      date: '2021-06-02'
+      url: https://www.maltatoday.com.mt/news/national/110023/developers_again_call_for_enduring_solution_to_dumping_of_construction_waste
+      note: The claim. Read 5 Oct 2026 from the Internet Archive copy (live site 403). Only the words in quotation marks are
+        the MDA's; the conditional framing is the outlet's. The MDA's own statement was not reached.
+    - title: Crippling construction waste dumping costs behind road works standstill, MDA says
+      publisher: BusinessToday
+      date: '2021-06-17'
+      url: https://www.businesstoday.com.mt/business/business/1503/crippling_construction_waste_dumping_costs_behind_road_works_standstill_mda_says
+      note: Repeats the warning; Sandro Chetcuti on EUR 5-8 tendered vs EUR 12 a tonne charged. Read via Internet Archive.
+    - title: Construction drive produced unprecedented levels of construction waste, Farrugia says
+      publisher: MaltaToday
+      date: '2021-10-09'
+      url: https://www.maltatoday.com.mt/news/national/112566/construction_drive_produced_unprecedented_levels_of_construction_waste_farrugia_says
+      note: Construction and demolition waste strategy of 15 measures in four areas. Read via Internet Archive.
+    - title: Production in construction, annual data (sts_copr_a)
+      publisher: Eurostat
+      date: updated 2 Oct 2026
+      url: https://ec.europa.eu/eurostat/databrowser/view/sts_copr_a/default/table
+      note: Primary data, retrieved 5 Oct 2026 (data/cc-063/).
+    - title: Generation of waste by NACE activity (env_wasgen) and Treatment of waste (env_wastrt)
+      publisher: Eurostat
+      date: updated Sep 2025
+      url: https://ec.europa.eu/eurostat/databrowser/view/env_wasgen/default/table
+      note: Primary data, retrieved 5 Oct 2026 (data/cc-063/).
+  quote: There has been a patchwork of attempted solutions along the years in a bid to solve the problem. However, none have
+    proved to be effective long term. … development will come to an “almost complete standstill.”
+counter_evidence: "A real bottleneck existed: road works were halted in 2020 for lack of dumping space and government fixed\
+  \ a EUR 12 a tonne fee; in June 2021 contractors again reported strain (MaltaToday, BusinessToday). But Malta's construction\
+  \ output (volume, 2015=100) rose from 145.5 (2020) to 154.0 (+5.8%, 2021) and 162.5 (+5.5%, 2022, provisional; latest year\
+  \ published). Construction-sector waste was 3.0 Mt in 2020, 2.1 Mt in 2022 (-31%, +4.7% vs 2018), 78% of all waste (84%\
+  \ in 2020). Mineral C&D waste treated in 2022: 67% recycled, 33% backfilling, landfill negligible (backfilling counts as\
+  \ recovery). The MDA published no analysis behind 'almost complete standstill'; government acted (fee 2020, strategy Oct\
+  \ 2021), so the conditional cannot be tested."
+tests: Eurostat sts_copr_a, env_wasgen, env_wastrt for Malta (tools/cc-063-report/calc.py; data/cc-063/).
+why_low_hanging: 'Done: Claim Check 063 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Not substantiated: pending right of reply (to be sought by the maintainer from the Malta Developers Association).
+  Wording is from MaltaToday''s report of the MDA statement (Wayback copy); only the quoted phrases are verbatim, the conditional
+  is the outlet''s paraphrase. Eurostat output data end in 2022; no quarry intake series found.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: citygate
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-063A
+    text: "Dumping of construction waste had no enduring solution in June 2021"
+    said_by: "MDA [1]"
+    finding: "Road works halted in 2020 and strain reported again in 2021; the MDA calls past fixes a “patchwork”."
+    rating: "Supported"
+    tone: green
+  - id: CC-063B
+    text: "Without one, development would come to an almost complete standstill"
+    said_by: "MDA [1]"
+    finding: "No analysis published. Output grew 5.8% (2021) and 5.5% (2022), but government acted, so the counterfactual is untestable."
+    rating: "Not substantiated"
+    tone: amber
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: +5.8%
+  caption: "growth in construction output in 2021, the year of the 'standstill' warning (+5.5% in 2022)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: MDA's warning read in MaltaToday's report of 2 Jun 2021 (Internet Archive copy); only phrases in quotation marks
+      are the MDA's. BusinessToday (17 Jun 2021) and MaltaToday (9 Oct 2021, strategy) read for context.
+  - date: 2026-10-05
+    step: note
+    note: Eurostat construction output (sts_copr_a), construction waste (env_wasgen) and C&D treatment (env_wastrt) downloaded
+      for Malta; calculations in tools/cc-063-report/calc.py.
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Not substantiated (moderate confidence); pending right of reply.
