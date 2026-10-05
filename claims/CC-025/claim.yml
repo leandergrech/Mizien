@@ -2,40 +2,90 @@ id: CC-025
 title: Per-capita emissions down 44% since 2005
 category: Climate & Energy
 subtopic: Emissions & targets
-status: In progress
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
   text: 'Government of Malta (COP30 national statement): Malta has reduced per-capita emissions by over 44% since
     2005 and emissions per unit of GDP by more than 80%.'
   speaker: Government of Malta
   date: 2025-11
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
+  quote: Malta has already reduced its per capita emissions by over 44% compared to 2005 and emissions per unit of GDP by more than 80%, demonstrating our commitment to decoupling growth from emissions.
   sources:
   - title: Statement of Malta, COP30 High-Level Segment
     publisher: UNFCCC
     date: Nov 2025
     url: https://unfccc.int/sites/default/files/resource/MALTA_cop30cmp20cma7_HLS_ENG.pdf
-    note: "Primary statement, delivered on the Minister's behalf. Readable 5 Oct 2026 (a Word file behind the .pdf address); wording in literature/CC-025/primary-source.md."
-counter_evidence: Per-capita and per-GDP falls can coexist with rising absolute effort-sharing emissions (see CC-003);
-  population grew about a third.
-tests: National inventory 1990-2024 (UNFCCC); Eurostat population and GDP.
-why_low_hanging: A specific, attributable statement that public data can test.
-tags: []
-tags_provisional: true
-priority: Queue
+    note: "The claim. Delivered on the Minister's behalf. A Word file behind the .pdf address; paragraph supplied by the maintainer on 5 Oct 2026 (literature/CC-025/primary-source.md). Our own download was refused by a bot check, so only the quoted paragraph was read."
+  - title: Greenhouse gas emissions by source sector (env_air_gge); GDP (nama_10_gdp); population (nama_10_pe)
+    publisher: Eurostat
+    date: retrieved 5 Oct 2026
+    url: https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp/default/table
+    note: 'Primary data; extract and checks in data/cc-025/.'
+  - title: Malta strengthens its contribution toward the EU's climate goals (CC-003)
+    publisher: Climate Action Authority
+    date: 13 Nov 2025
+    url: https://climateaction.gov.mt/press/malta-strengthens-its-contribution-toward-the-eus-climate-goals/
+    note: 'Same 44% figure and 81.6% (EU 61.9%) per unit of GDP, from a different speaker; read in CC-003 (Wayback copy).'
+counter_evidence: 'More than 80% per unit of GDP holds only at current prices (-82% to 2023, -84% to 2024). In chain-linked volumes the fall is -70% (2023) and -72% (2024); no year reaches -80%. The gap is a price effect (Malta GDP deflator +72% since 2005). The per-person fall (-46% / -48.5%) is the figure CC-003 checked; about half is population growth, total emissions fell 27% (EU 33%) and have risen 18% since the 2016 low. In the statement''s favour: real GDP +161% with total emissions -27% is absolute decoupling, and Malta''s fall exceeds the EU''s on both intensity bases.'
+tests: Eurostat env_air_gge, nama_10_gdp (current prices and chain-linked volumes) and nama_10_pe for Malta and the EU-27, recomputed with tools/cc-025-report/calc.py; CC-003 for the per-person figure.
+why_low_hanging: 'Done: Claim Check 025 report and flyer.'
+tags:
+- Selective metric
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Only the quoted paragraph of the statement was read (supplied by the maintainer); the rest may add context. The statement gives no year, scope or GDP basis. Largely supported: no right of reply needed. The speaker is attributed to the Government of Malta; the person who read the statement is not named in the document.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Eurostat env_air_gge, nama_10_gdp and nama_10_pe for Malta and the EU-27, retrieved 5 Oct 2026 (data/cc-025/eurostat_gdp_ghg_pop.csv; checks in data/cc-025/checks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-05'
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
   lat: 35.8959
   lon: 14.51136
   scope: institution
   icon: castille
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-025A
+    text: "Per-capita emissions down over 44% since 2005"
+    said_by: "Govt of Malta [1]"
+    finding: "Reproduced from Eurostat: −46% to 2023, −48.5% to 2024; Malta passed −44% in 2016. The same figure was checked in CC-003. About half of it is population growth."
+    rating: "Accurate"
+    tone: green
+  - id: CC-025B
+    text: "Emissions per unit of GDP down more than 80%"
+    said_by: "Govt of Malta [1]"
+    finding: "Holds at current prices (−82% to 2023, −84% to 2024). In chain-linked volumes it is −70% and −72%; no year reaches −80%. The statement names neither basis."
+    rating: "True only at current prices"
+    tone: amber
+  - id: CC-025C
+    text: "…demonstrating our commitment to decoupling growth from emissions"
+    said_by: "Govt of Malta [1]"
+    finding: "Real GDP +161%, total emissions −27%: absolute decoupling over 2005–2024. A statement of commitment is not itself testable; the data show the decoupling it refers to."
+    rating: "Supported"
+    tone: green
+thumbnail:
+  figure: −72%
+  caption: "emissions per unit of GDP in real terms, 2005–2024 (claim: over 80%; −84% at current prices)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: "Verbatim wording supplied by the maintainer (COP30 Malta National Statement, UNFCCC; Word file behind a .pdf address). Our own download was refused by a bot check. Attributed to the Government of Malta."
+  - date: 2026-10-05
+    step: note
+    note: "Eurostat env_air_gge, nama_10_gdp (current prices and chain-linked volumes) and nama_10_pe downloaded; per-person and per-GDP changes recomputed (tools/cc-025-report/calc.py). Per-person figure matches CC-003. Per-GDP: -82%/-84% at current prices, -70%/-72% in volumes."
+  - date: 2026-10-05
+    step: version
+    version: "1.0"
+    note: "First issue. Verdict Largely supported (moderate confidence); no right of reply needed."
