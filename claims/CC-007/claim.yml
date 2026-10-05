@@ -112,3 +112,6 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: clarification
     note: "Source 6 (CDE News) is headlined 'Malta News Briefing – Saturday 19 July 2023', but the page was published on 19 July 2025 (its own metadata; 19 July 2025 was a Saturday). The record already gave the 2025 date; a note now says that the year in the headline is the publisher's. No figure or finding changes."
+  - date: 2026-10-05
+    step: clarification
+    note: "Right-of-reply status brought into line with the 5 Oct 2026 rule: a reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none. Cover, page footer, flyer and the standards appendix now say so. Findings, verdict and confidence unchanged."

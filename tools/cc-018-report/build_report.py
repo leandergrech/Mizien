@@ -353,7 +353,8 @@ S += revision_log([("1.0", "4 Oct 2026", "First issue. Right of reply to the MDA
                     "points, tiles, Section 3 table, Why, requests, limitations and flyer updated; sections renumbered. "
                     "Verdict unchanged."),
                    ("1.2", "5 Oct 2026", "Maintainer decision (5 Oct 2026): confidence raised from Moderate to High, "
-                    "because the MDA’s own release is now verified.")])
+                    "because the MDA’s own release is now verified."),
+                   ("1.2", "5 Oct 2026", "Maintainer decision (5 Oct 2026): a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none; cover, page footer and flyer now say “no right of reply needed”.")])
 
 build_report(Report(
     number="018", out=str(FIG / "report.pdf"), kicker="Housing and planning",
@@ -365,9 +366,10 @@ build_report(Report(
     attribution="Malta Developers Association, release on its website, 8 February 2026.",
     context="On the IMF’s 2025 Article IV consultation with Malta.",
     verdict="Largely supported", verdict_note="Sound on valuation; the IMF’s bank-exposure warnings omitted",
-    footer_lines=["Version 1.2  ·  5 October 2026", "Status: draft (right of reply: MDA)",
+    footer_lines=["Version 1.2  ·  5 October 2026", "Status: draft · no right of reply needed",
                   "Prepared from the IMF report and Eurostat data.", "Repository: github.com/leandergrech/Mizien"],
     running_head="The IMF and the developers – Malta", version="1.2", date="5 October 2026",
+    status_note="no right of reply needed",
     pdf_title="Did the IMF confirm the developers? Claim Check 018",
     pdf_subject="Tests the MDA's claim that the IMF's assessment confirms what it has been saying about housing",
     story=S))

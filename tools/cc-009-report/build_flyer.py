@@ -29,6 +29,6 @@ build_flyer(Flyer(
           "Monitor water levels, salinity and nitrate on a comparable basis.",
           "Reconcile WSC's 11.4% narrative with its 11.86% chart-derived decline.",
           "Report Plant B's actual output and its effect on groundwater production."],
-    footer="Version 1.2  ·  5 October 2026  ·  Draft pending right of reply (WSC; Energy and Water Agency)",
+    footer="Version 1.2  ·  5 October 2026  ·  No right of reply needed",
     pdf_title="Claim Check 009 – More RO, less WSC groundwater"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

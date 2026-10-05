@@ -33,6 +33,6 @@ build_flyer(Flyer(
           "The MDA-commissioned study.",
           "The basis for “first EU economy”.",
           "Affordability for renters."],
-    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  Right of reply: MDA (not yet sent)",
+    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  No right of reply needed",
     pdf_title="Claim Check 018 – Did the IMF confirm the developers?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

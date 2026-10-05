@@ -166,7 +166,7 @@ S += [CondPageBreak(60 * mm), SectionHeading(6, "Verdict and limits"),
         "Malta; this check is not an independent sampling programme. It does not assess chemical pollutants, marine "
         "ecological status or health outcomes beyond the directive’s two microbiological indicators, and it does "
         "not explain why individual sites declined."),
-      P("Right of reply has not been sought, as directed by the maintainer. The report remains a draft for maintainer "
+      P("Under our standards a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so none is needed for this check. The report remains a draft for maintainer "
         "review.", small),
       Spacer(1, 4 * mm), SectionHeading(None, "References")]
 S += references([
@@ -211,6 +211,7 @@ S += revision_log([
      "five sites that changed class in 2025 are named. Balluta Bay is now described as sufficient in every season "
      "2022–2025, not as a single local episode. Added SWD(2025) 318, which dates the figure, and Directive "
      "2006/7/EC. Verdict and confidence unchanged."),
+    ("1.2", "5 Oct 2026", "Maintainer decision (5 Oct 2026): a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none; cover, page footer and flyer now say “no right of reply needed”."),
 ])
 
 build_report(Report(number="005", out=str(OUT / "report.pdf"), kicker="Bathing water, Malta",
@@ -220,8 +221,8 @@ build_report(Report(number="005", out=str(OUT / "report.pdf"), kicker="Bathing w
     attribution="European Commission, Environmental Implementation Review 2025",
     context="True for 2023 and 2024 (80 of 87 sites). In 2025: 77 of 87, the lowest since 2015.",
     verdict="Supported", verdict_note="Accurate for 2023–24; date it.",
-    footer_lines=["Draft for maintainer review", "Public data · Right of reply not sought, per maintainer direction"],
+    footer_lines=["Draft for maintainer review", "Public data · No right of reply needed"],
     running_head="92% excellent bathing water", version="1.2", date="5 October 2026",
-    status_note="right of reply not sought",
+    status_note="no right of reply needed",
     pdf_title="Claim Check 005 – 92% excellent bathing water",
     pdf_subject="Malta bathing water classification, seasons 2015 to 2025", story=S))

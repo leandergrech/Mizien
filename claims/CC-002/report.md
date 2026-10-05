@@ -54,7 +54,7 @@ That supports the claim as a description of ERA's announced plan. It does not es
 - Site-level vegetation and habitat monitoring that measures native species and ecological function, rather than planting counts alone.
 - A reconciled official species breakdown for the 624 non-protected specimens, including the 467/468 oleander discrepancy.
 
-**Right of reply:** Not sought in this draft, at the maintainer's direction.
+**Right of reply:** Under our standards a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so none is needed for this check.
 **Limitations:** The direct ERA release supports the planned counts, but the full permit annex and site-specific methods were not available for this scientific assessment. Peer-reviewed evidence is relevant to mechanisms, not a substitute for monitoring these Comino trees.
 
 ## Sources
@@ -68,4 +68,4 @@ That supports the claim as a description of ERA's announced plan. It does not es
 7. MaltaToday, [Fact-check: What the Comino hotel project means for the island's trees](https://www.maltatoday.com.mt/news/national/143679/factcheck_what_the_comino_hotel_project_means_for_the_islands_trees), 8 August 2026. Secondary report; used only to flag the unresolved species-count difference.
 8. MaltaToday, [ERA approval paves way for uprooting of 800 trees](https://www.maltatoday.com.mt/environment/planning/143667/era_approves_preliminary_works_for_proposed_comino_hotel), 7 August 2026. Secondary report of stakeholder positions.
 
-*Version 1.0 · 3 October 2026 · Right of reply not sought (wording corrected 5 October 2026) · Calculations: `data/cc-002/checks.csv` · Generators: `tools/cc-002-report/`*
+*Version 1.0 · 3 October 2026 · No right of reply needed (wording corrected 5 October 2026) · Calculations: `data/cc-002/checks.csv` · Generators: `tools/cc-002-report/`*

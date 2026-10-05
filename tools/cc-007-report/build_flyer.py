@@ -28,6 +28,6 @@ build_flyer(Flyer(
           "An explanation of the Attard 2024 difference.",
           "The missing St Paul’s Bay values for 2020 and 2021, if available.",
           "Keep the 2030 EU standard distinct from past compliance."],
-    footer="Version 1.2 · 4 October 2026 · Draft for maintainer review · Reply process to be handled by maintainer",
+    footer="Version 1.2 · 4 October 2026 · Draft for maintainer review · No right of reply needed",
     pdf_title="Claim Check 007 – Within limits, above the guideline"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

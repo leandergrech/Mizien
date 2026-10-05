@@ -33,6 +33,6 @@ build_flyer(Flyer(
           "How many new units become main homes.",
           "Any Malta estimate of the price effect.",
           "The source of the 91,000 figure."],
-    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  Right of reply: Planning Authority (not yet sent)",
+    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  No right of reply needed",
     pdf_title="Claim Check 013 – Do permits keep prices in check?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

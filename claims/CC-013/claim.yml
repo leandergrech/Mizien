@@ -47,8 +47,9 @@ tags: []
 tags_provisional: false
 priority: Done (v1.2)
 data_readiness: High
-caveats: Right of reply to the Planning Authority not yet sent. Effect size unproven for Malta; affordability worsening;
-  approvals are not completions. Prices only, not environmental costs of the permits.
+caveats: No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading
+  or Contradicted). Effect size unproven for Malta; affordability worsening; approvals are not completions. Prices only,
+  not environmental costs of the permits.
 right_of_reply:
   sent: null
   deadline: null
@@ -109,4 +110,4 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: version
     version: "1.2"
-    note: "Upgrade: (1) New Figure 3 and subsection comparing all 27 Member States (Eurostat demo_gind, tipsho10): Malta’s population growth 2015–2025 is the highest (+30.9%; Luxembourg +21.1%), its real house-price rise (+34.2%, provisional) ranks 16th of 27, below the median state (+41.2%); Germany, France and Italy carry 49% of the EU-27 index weight. (2) Rents added (HICP actual rentals): +53.1% vs EU +20.5%, 8th of 27. (3) “Population growth fifteen times the EU’s” → “about 16 times” (30.87% / 1.90% = 16.3). (4) Latest quarter added: house prices +6.9% a year to 2026-Q2 (EU +4.7%; provisional). (5) TL;DR, key points, tiles, table, Q1, Q2, sub-claim C text, Why, Limitations and flyer updated. Verdict and confidence unchanged."
+    note: "Upgrade: (1) New Figure 3 and subsection comparing all 27 Member States (Eurostat demo_gind, tipsho10): Malta’s population growth 2015–2025 is the highest (+30.9%; Luxembourg +21.1%), its real house-price rise (+34.2%, provisional) ranks 16th of 27, below the median state (+41.2%); Germany, France and Italy carry 49% of the EU-27 index weight. (2) Rents added (HICP actual rentals): +53.1% vs EU +20.5%, 8th of 27. (3) “Population growth fifteen times the EU’s” → “about 16 times” (30.87% / 1.90% = 16.3). (4) Latest quarter added: house prices +6.9% a year to 2026-Q2 (EU +4.7%; provisional). (5) TL;DR, key points, tiles, table, Q1, Q2, sub-claim C text, Why, Limitations and flyer updated. Verdict and confidence unchanged. Maintainer decision (5 Oct 2026): a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none; cover, page footer and flyer now say “no right of reply needed”."

@@ -148,8 +148,7 @@ S += [SectionHeading(5, "Verdict and evidence needed"),
         "claim compliance."),
       P("A complete comparison needs ERA’s validated annual series with completeness and quality-control notes, "
         "the missing St Paul’s Bay results if they exist, and an explanation for the Attard 2024 difference."),
-      P("This draft records the maintainers’ current instruction to handle right of reply later. No reply was "
-        "requested for this draft; the status remains a draft for maintainer review."),
+      P("Under our standards a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so none is needed for this check. The status remains a draft for maintainer review."),
       P("Reproducible files: <i>data/cc-007/station_pm25.csv</i>, <i>data/cc-007/checks.csv</i>, "
         "<i>data/cc-007/eea_validated_crosscheck.csv</i> and scripts under <i>tools/cc-007-report/</i>. "
         "The exact Maltese question and answer, transcribed annex and attachment hashes are in "
@@ -183,9 +182,10 @@ build_report(Report(
     attribution="Newsbook, 18 July 2025, on Parliamentary Question 29696",
     context="The Minister tabled the figures; the compliance statement is our test of that table.",
     verdict="Largely supported", verdict_note="All 23 values under 25; two St Paul’s Bay years missing",
-    footer_lines=["Version 1.2  ·  4 October 2026", "Draft for maintainer review · right of reply to be handled by the maintainer",
+    footer_lines=["Version 1.2  ·  4 October 2026", "Draft for maintainer review · no right of reply needed",
                   "Official table, standards and reproducible calculations", "Repository: github.com/leandergrech/Mizien"],
     running_head="PM2.5 · Malta 2020–2024", version="1.2", date="4 October 2026",
+    status_note="no right of reply needed",
     pdf_title="Within EU limits, above WHO’s guideline? Claim Check 007",
     pdf_subject="Malta’s annual PM2.5 station means, 2020–2024, compared with historical EU, WHO and 2030 standards",
     story=S))

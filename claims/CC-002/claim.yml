@@ -56,10 +56,10 @@ caveats: This check assesses the scientific meaning of the reported tree counts 
   does not assess permit validity or any tribunal proceedings. The tree works and planting had not been independently
   verified as completed at the 3 October 2026 cut-off. ERA and secondary reporting differ by one oleander in the
   breakdown of the 624 non-protected specimens (467 versus 468); the permit annex should be checked before treating
-  that species count as settled. Right of reply not sought, at the maintainer’s direction.
+  that species count as settled. No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading or Contradicted).
 right_of_reply:
   sought: false   # maintainer's direction: no right of reply for this check
-  note: Not sought, at the maintainer's direction.
+  note: No right of reply needed (verdict Largely supported); earlier not sought at the maintainer's direction.
   sent: null
   deadline: null
   response: null
@@ -94,4 +94,4 @@ history:   # research log: the date each step of the research was done (not when
     version: "1.0"
   - date: 2026-10-05
     step: correction
-    note: "Right-of-reply status made consistent: the cover, page footer, closing line and flyer said the draft was pending right of reply or that it remained with the maintainer, while the report body said right of reply was not sought, at the maintainer's direction. All now say not sought. Findings, verdict and confidence unchanged."
+    note: "Right-of-reply status made consistent: the cover, page footer, closing line and flyer said the draft was pending right of reply or that it remained with the maintainer, while the report body said right of reply was not sought, at the maintainer's direction. All now say no right of reply is needed, under the 5 Oct 2026 rule that a reply is sought only for Not substantiated, Misleading or Contradicted verdicts. Findings, verdict and confidence unchanged."

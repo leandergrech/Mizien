@@ -32,6 +32,6 @@ build_flyer(Flyer(
           "Spending share by income group, after 2022.",
           "Plans for targeted support.",
           "Cost-recovery tariff estimate."],
-    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  Right of reply: Energy Ministry (not yet sent)",
+    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  No right of reply needed",
     pdf_title="Claim Check 022 – The lowest electricity burden in the EU?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

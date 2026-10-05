@@ -32,6 +32,6 @@ build_flyer(Flyer(
           "Use the latest EEA result (2025: 88.5%) for current conditions.",
           "Explain why Balluta Bay has stayed at the minimum class.",
           "Report the decline since 2018 alongside the headline share."],
-    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  Right of reply not sought  ·  Draft for maintainer review",
+    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  No right of reply needed  ·  Draft for maintainer review",
     pdf_title="Claim Check 005 – 92% excellent bathing water"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

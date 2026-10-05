@@ -282,7 +282,8 @@ S += revision_log([("1.0", "3 Oct 2026", "First issue. Right of reply to the Pla
                     "rentals): +53.1% vs EU +20.5%, 8th of 27. (3) “Population growth fifteen times the EU’s” → "
                     "“about 16 times” (30.87% / 1.90% = 16.3). (4) Latest quarter added: house prices +6.9% a year to "
                     "2026-Q2 (EU +4.7%; provisional). (5) TL;DR, key points, tiles, table, Q1, Q2, sub-claim C text, "
-                    "Why, Limitations and flyer updated. Verdict and confidence unchanged.")])
+                    "Why, Limitations and flyer updated. Verdict and confidence unchanged."),
+                   ("1.2", "5 Oct 2026", "Maintainer decision (5 Oct 2026): a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none; cover, page footer and flyer now say “no right of reply needed”.")])
 
 build_report(Report(
     number="013", out=str(FIG / "report.pdf"), kicker="Housing and planning",
@@ -293,9 +294,10 @@ build_report(Report(
     attribution="Johann Buttigieg, Planning Authority CEO, MaltaToday interview, 2 March 2025.",
     context="Answering a question on 91,000 dwellings approved in a decade.",
     verdict="Largely supported", verdict_note="Right in direction; the size of the effect is unproven",
-    footer_lines=["Version 1.2  ·  5 October 2026", "Status: draft (right of reply: Planning Authority)",
+    footer_lines=["Version 1.2  ·  5 October 2026", "Status: draft · no right of reply needed",
                   "Prepared from public sources, Eurostat and NSO data.", "Repository: github.com/leandergrech/Mizien"],
     running_head="Permits and property prices – Malta", version="1.2", date="5 October 2026",
+    status_note="no right of reply needed",
     pdf_title="Do permits keep prices in check? Claim Check 013",
     pdf_subject="Tests the Planning Authority CEO's claim that issuing permits keeps property prices in check",
     story=S))

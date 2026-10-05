@@ -301,7 +301,8 @@ S += revision_log([("1.0", "4 Oct 2026", "First issue. Right of reply to the Ene
                    ("1.2", "5 Oct 2026",
                     "Maintainer decision (5 Oct 2026): verdict kept as Largely supported; confidence lowered from "
                     "High to Moderate, because the income-based measures in Section 4 mix survey and "
-                    "national-accounts sources and some inputs are provisional.")])
+                    "national-accounts sources and some inputs are provisional."),
+                   ("1.2", "5 Oct 2026", "Maintainer decision (5 Oct 2026): a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none; cover, page footer and flyer now say “no right of reply needed”.")])
 
 build_report(Report(
     number="022", out=str(FIG / "report.pdf"), kicker="Climate and energy",
@@ -313,9 +314,10 @@ build_report(Report(
     attribution="Ministry for the Environment, Energy and Public Cleanliness, 6 May 2025.",
     context="Based on Eurostat figures for the second half of 2024.",
     verdict="Largely supported", verdict_note="Lowest on price, second against income; subsidy cost left out",
-    footer_lines=["Version 1.2  ·  5 October 2026", "Status: draft (right of reply: Energy Ministry)",
+    footer_lines=["Version 1.2  ·  5 October 2026", "Status: draft · no right of reply needed",
                   "Prepared from Eurostat data and the IMF report.", "Repository: github.com/leandergrech/Mizien"],
     running_head="Electricity prices – Malta", version="1.2", date="5 October 2026",
+    status_note="no right of reply needed",
     pdf_title="The lowest electricity burden in the EU? Claim Check 022",
     pdf_subject="Tests the Energy Ministry's claim that Maltese households have the EU's lowest electricity burden",
     story=S))

@@ -222,9 +222,9 @@ S += [CondPageBreak(120 * mm), SectionHeading(7, "Verdict and limits"),
                     ])]),
       Spacer(1, 3 * mm),
       callout([P("RIGHT OF REPLY", tag),
-               P("Before wider circulation this draft should be sent to the Water Services Corporation and the Energy "
-                 "and Water Agency with a fixed deadline (suggested 14 days). Responses will be appended and the "
-                 "verdict revisited.", small)], bg=AMBER_PALE, bar=AMBER),
+               P("Under our standards a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so none is needed for this check (maintainer decision, 5 October 2026). Comments and evidence from the Water Services "
+                 "Corporation, the Energy and Water Agency or anyone else are welcome through the “Contest a verdict” "
+                 "form and will be appended.", small)], bg=AMBER_PALE, bar=AMBER),
       Spacer(1, 3 * mm)]
 LIM = [P("Limitations", h2)]
 for l in ["The RBMP is the latest completed national assessment located, but it is older than the 2025 production "
@@ -276,7 +276,7 @@ S += [CondPageBreak(60 * mm), SectionHeading(8, "Sources"),
                "checks.csv.", ""),
       ]),
       Spacer(1, 4 * mm),
-      P("Version 1.2 · 5 October 2026 · Draft pending right of reply · Calculations: data/cc-009/checks.csv", cap),
+      P("Version 1.2 · 5 October 2026 · No right of reply needed · Calculations: data/cc-009/checks.csv", cap),
       Spacer(1, 4 * mm),
       *revision_log([
           ("1.0", "3 Oct 2026", "First issue."),
@@ -297,6 +297,7 @@ S += [CondPageBreak(60 * mm), SectionHeading(8, "Sources"),
                                 "groundwater” (was “Does more RO mean recovery?”), because no speaker claims aquifer "
                                 "recovery and the verdict rates WSC’s own figures (maintainer, 5 Oct 2026). Verdict and "
                                 "confidence unchanged."),
+          ("1.2", "5 Oct 2026", "Maintainer decision (5 Oct 2026): a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none; cover, page footer and flyer now say “no right of reply needed”."),
       ])]
 
 build_report(Report(
@@ -308,9 +309,10 @@ build_report(Report(
     context="Malta potable supply · 2025 production · August 2026 tender",
     verdict="Largely supported", verdict_note="WSC reliance fell; aquifers last assessed as poor.",
     footer_lines=["Version 1.2  ·  5 October 2026",
-                  "Status: draft for right of reply (WSC; Energy and Water Agency)",
+                  "Status: draft · no right of reply needed",
                   "Prepared from WSC, Eurostat, EEA and ERA sources and peer-reviewed studies.",
                   "Repository: github.com/leandergrech/Mizien"],
     running_head="More RO, less WSC groundwater", version="1.2", date="5 October 2026",
+    status_note="no right of reply needed",
     pdf_title="Miżien Claim Check 009 – More RO, less WSC groundwater",
     pdf_subject="WSC reverse-osmosis production, groundwater status and Għar Lapsi tender", story=S))

@@ -39,10 +39,10 @@ tags: []
 tags_provisional: false
 priority: Done (v1.2)
 data_readiness: Medium
-caveats: Right of reply to the Energy Ministry not yet sent. IMF subsidy series includes fuel; 2025 projected. The
-  release measures 'burden' by price only; v1.2 adds income- and use-based measures (Malta 2nd to 7th, not 1st).
-  Confidence lowered from High to Moderate (maintainer decision, 5 Oct 2026), because the income measures mix
-  survey and national-accounts sources, some provisional.
+caveats: No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading
+  or Contradicted). IMF subsidy series includes fuel; 2025 projected. The release measures 'burden' by price only; v1.2
+  adds income- and use-based measures (Malta 2nd to 7th, not 1st). Confidence lowered from High to Moderate (maintainer
+  decision, 5 Oct 2026), because the income measures mix survey and national-accounts sources, some provisional.
 right_of_reply:
   sent: null
   deadline: null
@@ -102,4 +102,4 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: version
     version: "1.2"
-    note: "Upgrade: (1) New Section 4 tests “burden” against income and use (Eurostat; Figure 4 and a table): typical bill 2.2% of median income (EU 4.7%), 2nd of 27 after Luxembourg; 3.5% of a 20th-percentile income, 2nd; average household’s actual bill 1.26% of disposable income, 5th of 26; spending share 2.3% in 2020, joint 7th of 24; arrears 9th and keeping warm 17th of 27; summer comfort 2012 (25th). (2) New Figure 2: Malta’s price and rank in every consumption band, 2024-S2 and 2025-S2. (3) Figure 3 (was 2) now starts in 2012 and shows the 2014 tariff cut. (4) TL;DR, key points, tiles, Q1, sub-claim D text, Why, Limitations, references and flyer updated; fairness note added. Verdict, confidence and sub-claim ratings unchanged. Maintainer decision (5 Oct 2026): verdict kept as Largely supported; confidence lowered from High to Moderate, because the income-based measures in Section 4 mix survey and national-accounts sources and some inputs are provisional."
+    note: "Upgrade: (1) New Section 4 tests “burden” against income and use (Eurostat; Figure 4 and a table): typical bill 2.2% of median income (EU 4.7%), 2nd of 27 after Luxembourg; 3.5% of a 20th-percentile income, 2nd; average household’s actual bill 1.26% of disposable income, 5th of 26; spending share 2.3% in 2020, joint 7th of 24; arrears 9th and keeping warm 17th of 27; summer comfort 2012 (25th). (2) New Figure 2: Malta’s price and rank in every consumption band, 2024-S2 and 2025-S2. (3) Figure 3 (was 2) now starts in 2012 and shows the 2014 tariff cut. (4) TL;DR, key points, tiles, Q1, sub-claim D text, Why, Limitations, references and flyer updated; fairness note added. Verdict, confidence and sub-claim ratings unchanged. Maintainer decision (5 Oct 2026): verdict kept as Largely supported; confidence lowered from High to Moderate, because the income-based measures in Section 4 mix survey and national-accounts sources and some inputs are provisional. Maintainer decision (5 Oct 2026): a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none; cover, page footer and flyer now say “no right of reply needed”."

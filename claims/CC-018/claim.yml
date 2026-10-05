@@ -80,14 +80,14 @@ tags: []
 tags_provisional: false
 priority: Done (v1.2)
 data_readiness: High
-caveats: 'Right of reply to the MDA not yet sent. MDA release read (5 Oct 2026) and matches the quote; the page was
-  modified on 17 Jun 2026 and the original text was not seen. The release does not mention the IMF''s ''vulnerability''
-  warning on bank exposure. MDA-commissioned study not seen. Eurostat flags a break in Malta''s overburden series in
-  2023. House prices from 2025 Q3 and Malta household income 2021-2024 are provisional; household income not yet
-  published after 2024. The consultation-cycle comparison uses the latest EU staff reports and, for earlier years,
-  Luxembourg only. The v1.2 sub-claims D-G (the release''s statements on the IMF cycle and GDP per head) are rated
-  separately and do not change the verdict. Maintainer decision (5 Oct 2026): confidence raised from Moderate to
-  High, because the MDA''s own release is now verified.'
+caveats: 'No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading
+  or Contradicted). MDA release read (5 Oct 2026) and matches the quote; the page was modified on 17 Jun 2026 and the
+  original text was not seen. The release does not mention the IMF''s ''vulnerability'' warning on bank exposure. MDA-commissioned
+  study not seen. Eurostat flags a break in Malta''s overburden series in 2023. House prices from 2025 Q3 and Malta household
+  income 2021-2024 are provisional; household income not yet published after 2024. The consultation-cycle comparison uses
+  the latest EU staff reports and, for earlier years, Luxembourg only. The v1.2 sub-claims D-G (the release''s statements
+  on the IMF cycle and GDP per head) are rated separately and do not change the verdict. Maintainer decision (5 Oct 2026):
+  confidence raised from Moderate to High, because the MDA''s own release is now verified.'
 right_of_reply:
   sent: null
   deadline: null
@@ -163,4 +163,4 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: version
     version: "1.2"
-    note: "Upgrade: (1) New Section 5 and sub-claims D–G test the release’s other statements: the IMF’s two-year cycle (supported [2]); “the first EU economy” on it (contradicted: Luxembourg was on the 24-month cycle in 2000–2002 [9]; Malta is the only EU member on it in the 2025–2026 reports [8]; IMF criteria [7]); GDP per head “nearly doubled” (largely supported) and “far higher than the EU average” (not substantiated) [10]. (2) Section 1: the IMF phrases the release quotes on overvaluation and income growth, not in Country Report 26/29, traced to an IMF Selected Issues paper of 13 March 2026 [6]. (3) Section 4: house prices to the second quarter of 2026 (provisional) and Figure 3, house prices against incomes per head, 2015 = 100. (4) TL;DR, key points, tiles, Section 3 table, Why, requests, limitations and flyer updated; sections renumbered. Verdict unchanged. Maintainer decision (5 Oct 2026): confidence raised from Moderate to High, because the MDA’s own release is now verified."
+    note: "Upgrade: (1) New Section 5 and sub-claims D–G test the release’s other statements: the IMF’s two-year cycle (supported [2]); “the first EU economy” on it (contradicted: Luxembourg was on the 24-month cycle in 2000–2002 [9]; Malta is the only EU member on it in the 2025–2026 reports [8]; IMF criteria [7]); GDP per head “nearly doubled” (largely supported) and “far higher than the EU average” (not substantiated) [10]. (2) Section 1: the IMF phrases the release quotes on overvaluation and income growth, not in Country Report 26/29, traced to an IMF Selected Issues paper of 13 March 2026 [6]. (3) Section 4: house prices to the second quarter of 2026 (provisional) and Figure 3, house prices against incomes per head, 2015 = 100. (4) TL;DR, key points, tiles, Section 3 table, Why, requests, limitations and flyer updated; sections renumbered. Verdict unchanged. Maintainer decision (5 Oct 2026): confidence raised from Moderate to High, because the MDA’s own release is now verified. Maintainer decision (5 Oct 2026): a right of reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none; cover, page footer and flyer now say “no right of reply needed”."

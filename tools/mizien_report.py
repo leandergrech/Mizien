@@ -398,7 +398,8 @@ def appendix_a(evidence_note, pledges=False):
                "<b>Grade the evidence</b> and show differing views side by side where the evidence is unsettled.",
                "<b>State what we could not access or verify,</b> and what would change the verdict either way.",
                "<b>Ask for the missing evidence</b> in specific, answerable requests.",
-               "<b>Offer a right of reply</b> before wider circulation and append responses.",
+               "<b>Offer a right of reply</b> where a check finds a claim Not substantiated, Misleading or Contradicted "
+               "(or a pledge Not measurable, Off track or Missed), before wider circulation, and append responses.",
                "<b>Correct errors openly</b> with a version number and change log.",
                "<b>Whistle-blow only on evidence:</b> a verdict of <i>Misleading</i> or <i>Contradicted</i> requires "
                "documents or data that can be shown, not inference.",

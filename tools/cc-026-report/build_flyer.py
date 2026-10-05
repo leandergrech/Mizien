@@ -31,6 +31,6 @@ build_flyer(Flyer(
           "A national estimate of aviation emissions to and from Malta.",
           "Eurostat’s 2025 activity breakdown.",
           "Which operators drive the total (not assessed)."],
-    footer="Version 1.0  ·  5 October 2026  ·  Public data only",
+    footer="Version 1.0  ·  5 October 2026  ·  Public data only  ·  No right of reply needed",
     pdf_title="Claim Check 026 – Malta’s 169% rise in emissions?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
