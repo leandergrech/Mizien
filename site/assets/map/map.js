@@ -1295,6 +1295,7 @@
     claims.forEach(function (c) { var L = c.data.location; c.m = L ? geoXY(+L.lat, +L.lon) : { x: 16000 + nl++ * 900, y: -19000 }; });  // no location yet: in the sea, south-east
     buildPlaces(); buildViewBy(); buildMapSearch();
     if (view === "map") setView("map", true);
+    if (view === "map" && sel && sel.kind === "claim" && byId[sel.id]) flyTo(byId[sel.id].place.m, OPEN_Z * 1.5);   // a link to a claim opens on its place
   }
   // Each frame: merge places that would overlap on screen, cull those outside the window, lay out each tree in screen
   // pixels and turn that into world positions (so claims, links and picking work as in the other view).
