@@ -17,6 +17,16 @@ claim:
     date: n/d
     url: https://www.maltatoday.com.mt/news/national/137696/innovative_solar_flowers_installed_at_gozo_multimodal_hub_
     note: Locates the claim.
+  - title: "First solar flowers in Europe installed at the Gozo Multi-Modal Hub in Ta' Xħajma"
+    publisher: "TVM News"
+    date: "21 Oct 2025"
+    url: "https://tvmnews.mt/en/news/first-solar-flowers-in-europe-installed-at-the-gozo-multi-modal-hub-in-ta-xhajma/"
+    note: "Reports the Government statement (first of its kind in Europe; EUR 850,000); readable from scripts. Read 5 Oct 2026."
+  - title: "15 solar flowers installed in Gozo for electricity generation, the first project of its kind in Europe"
+    publisher: "European Commission (Reforms and Investments)"
+    date: "n/d"
+    url: "https://reforms-investments.ec.europa.eu/projects/15-solar-flowers-installed-gozo-electricity-generation-first-project-its-kind-europe-0_en"
+    note: "EU project page repeating the claim (RRP C1-I5). Read 5 Oct 2026."
 counter_evidence: '''First in Europe'' and the share of bus charging covered are testable against installed capacity
   and charging load.'
 tests: Installed kWp; bus charging demand; prior European installations.
