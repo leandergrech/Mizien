@@ -1,6 +1,7 @@
 # Claim Check 005: “92% excellent” bathing water
 
 **Status:** Draft for maintainer review  
+**Version:** 1.1, 5 October 2026 (corrections; see the revision log below)  
 **Verdict:** Supported, high confidence (for the 2023 statistic quoted by the Commission)  
 **Claim source:** European Commission, *Environmental Implementation Review 2025: Malta*  
 **Reference year:** 2023
@@ -17,7 +18,7 @@ The classification is based on two microbiological parameters: *Escherichia coli
 
 | Season | Excellent | Other classes | Total sites | Samples |
 |---|---:|---|---:|---:|
-| 2023 | 80 (92.0%) | 3 good; 4 sufficient | 87 | — |
+| 2023 | 80 (92.0%) | 3 good; 4 sufficient | 87 | 2,021 |
 | 2024 | 80 (92.0%) | 3 good; 4 sufficient | 87 | 2,107 |
 | 2025 | 77 (88.5%) | 8 good; 2 sufficient | 87 | 2,100 |
 
@@ -25,7 +26,7 @@ No sites were classified poor in those seasons. All sites in 2025 met at least t
 
 ## Local pollution and wastewater compliance
 
-The Environmental Health Directorate documented a temporary warning and closure at Balluta Bay sites B08 and B09 in 2024. Its report records microbial contamination, foul water from a storm-water tunnel, and a warning covering the bay from 31 May. The warning was lifted on 12 August after three consecutive samples were below the relevant thresholds. This serious, local episode can coexist with a country-level multi-year classification; it does not change the 2023 national percentage.
+The Environmental Health Directorate documented a temporary warning and closure at Balluta Bay sites B08 and B09 in 2024. Its report records microbial contamination, foul water from a storm-water tunnel, and a warning at the two sites from late May. The warning was lifted on 12 August after three consecutive samples were below the relevant thresholds. This serious, local episode can coexist with a country-level multi-year classification; it does not change the 2023 national percentage.
 
 Separately, the Court of Justice of the European Union found Malta in breach of urban wastewater treatment requirements for named agglomerations in Case C-304/23. That ruling concerns wastewater collection and treatment compliance. It does not classify the bathing sites, and does not demonstrate that the EEA’s 92% result was false. The Commission’s own Malta factsheet presents both points: the bathing-water result under its “Highlights” and inadequate urban wastewater treatment under “Pollution”.
 
@@ -45,4 +46,13 @@ This verdict assesses only the sentence quoted above. It does not establish that
 4. Environmental Health Directorate, [Balluta Bay temporary-closure report](https://environmentalhealth.gov.mt/wp-content/uploads/2024/09/Report-for-Balluta-Bay-the-Bathing-Prohibition-Period-and-Short-Term-Pollution-Period.pdf) — primary record of the May–August 2024 warning and lifting.
 5. Court of Justice of the European Union, [Commission v Malta, C-304/23, ECLI:EU:C:2024:906](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62023CJ0304) — judgment on urban wastewater treatment obligations.
 
-**Limitations:** The EEA classification is based on data reported by Malta and is not an independent resampling programme. This check did not assess chemical pollutants, marine ecological status, or health outcomes beyond the directive’s microbiological classification. The right-of-reply process remains for the maintainer to handle.
+**Limitations:** The EEA classification is based on data reported by Malta and is not an independent resampling programme. This check did not assess chemical pollutants, marine ecological status, or health outcomes beyond the directive’s microbiological classification. Right of reply has not been sought, as directed by the maintainer.
+
+The 2023 sample count is from the EEA's WISE Bathing Water Directive dataset (DiscoData, retrieved 5 October 2026); the query and its cross-check against the 2024 factsheet are in `data/cc-005/eea_bwd_mt_seasons.csv` and `literature/CC-005/notes.md`.
+
+## Revision log
+
+| Version | Date | Change |
+|---|---|---|
+| 1.0 | 2 Oct 2026 | First issue. Right of reply not sought, at the maintainer's direction. |
+| 1.1 | 5 Oct 2026 | Corrections: (1) the report's "what would move the verdict" boxes were reversed; now "up": none (Supported is the top of the scale; naming the 2023 season would remove the date caveat), "down": a different 2023 count, a later intended season or an incompatible denominator. (2) Balluta Bay warning start: "31 May" → "late May 2024"; the bibliography gave 21 May and the primary report could not be re-opened. (3) 2023 sample count: "—" → 2,021 (EEA WISE dataset). (4) PDF page footer: "pending right of reply" → "right of reply not sought"; this file's closing line now says the same. Verdict and confidence unchanged. |
