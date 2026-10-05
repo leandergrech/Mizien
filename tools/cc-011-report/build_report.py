@@ -76,7 +76,7 @@ S.append(std_table([
 ], [36 * mm, 82 * mm, 32 * mm, 20 * mm]))
 S += [Spacer(1, 4 * mm),
       callout([P("FAIRNESS NOTE", tag),
-               P("Labour won the election (36 seats to 29), so its pledge is now a government commitment; the PN’s "
+               P("Labour won the general election of 30 May 2026 [13], so its pledge is now a government commitment; the PN’s "
                  "is an opposition proposal. We hold both to the same standard. Both goals are legitimate: nearby "
                  "green space is associated with better health [7], and island decarbonisation is EU policy. The PN "
                  "also proposes a Parks Act to give “park” and “green space” a legal definition, "
@@ -266,6 +266,8 @@ S += references([
            "contributors, data via Overpass API, 2 Oct 2026, ODbL.",
      "https://data.worldpop.org/GIS/Population/Global_2015_2030/R2025A/2025/MLT/v1/100m/constrained/"),
     ("12", "MiŻien. Analysis code and outputs: tools/cc-011-report/; data/cc-011/.", ""),
+    ("13", "IFES ElectionGuide. Malta: Maltese House of Representatives 2026 General (held 30 May 2026; results "
+           "source: Electoral Commission of Malta). Accessed 5 Oct 2026.", "https://electionguide.org/elections/id/5161/"),
 ])
 
 S.append(PageBreak())
@@ -274,7 +276,11 @@ S += appendix_a("A experiment · B observational study with a control or gradien
 S += [Spacer(1, 5 * mm)]
 S += revision_log([("1.0", "2 Oct 2026", "First issue. Claim restated from the parties’ own texts rather than news "
                                          "summaries. Draft pending right of reply from the Partit Laburista, the "
-                                         "Government and the Partit Nazzjonalista.")])
+                                         "Government and the Partit Nazzjonalista."),
+                   ("1.1", "5 Oct 2026", "Corrections: the flyer said that, read broadly, the pledge “is met today”; it "
+                                         "now says “already almost met”, as the report does (a screening estimate). "
+                                         "The unsourced seat count (“36 seats to 29”) is removed; the 30 May 2026 "
+                                         "election is now sourced [13]. Verdict and confidence unchanged.")])
 
 build_report(Report(
     number="011", out=str(FIG / "report.pdf"), kicker="Election pledges, computed",
@@ -284,10 +290,10 @@ build_report(Report(
     attribution="Partit Laburista, manifesto 2026, priority 19 (our translation). And the PN: a plan for a",
     context="Net-Zero Gozo by 2040, with afforestation among the measures (programme, Gozo chapter).",
     verdict="Not substantiated", verdict_note="No definition or baseline for either pledge",
-    footer_lines=["Version 1.0  ·  2 October 2026",
+    footer_lines=["Version 1.1  ·  5 October 2026",
                   "Status: draft for right of reply (Partit Laburista / Government; Partit Nazzjonalista)",
                   "Prepared from public sources and open data. No site visits.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Manifesto pledges 2026 – green space and a net-zero Gozo", version="1.0", date="2 October 2026",
+    running_head="Manifesto pledges 2026 – green space and a net-zero Gozo", version="1.1", date="5 October 2026",
     pdf_title="Two green pledges: can anyone check them? Claim Check 011",
     pdf_subject="Tests Labour's 10-minute green-space pledge and the PN's net-zero Gozo plan",
     story=S))

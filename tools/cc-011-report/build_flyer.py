@@ -17,7 +17,7 @@ build_flyer(Flyer(
     note="Both parties checked to the same standard. Labour now governs; the PN pledge is an opposition proposal.",
     verdict="Not substantiated", verdict_right=["No definition,", "no baseline."],
     cards=[("99.9%", GREEN, "Any green or open space",
-            "Share of residents already within 800 m (straight line). Read broadly, the pledge is met today."),
+            "Share of residents already within 800 m (straight line). Read broadly, the pledge is already almost met."),
            ("55%", ORANGE, "Parks of at least 0.5 ha",
             "Within a realistic ten-minute walk. About 240,000 people are outside. Which one counts? Not said."),
            ("No inventory", ORANGE, "Gozo emissions",
@@ -32,7 +32,7 @@ build_flyer(Flyer(
           "Government: today’s baseline and a target year.",
           "PN: a Gozo emissions inventory and its boundary.",
           "PN: how much from cuts, forests and offsets."],
-    footer="Version 1.0  ·  2 October 2026  ·  Open data, our analysis  ·  Draft pending right of reply from "
+    footer="Version 1.1  ·  5 October 2026  ·  Open data, our analysis  ·  Draft pending right of reply from "
            "the Partit Laburista / Government and the Partit Nazzjonalista",
     pdf_title="Claim Check 011 – Two green pledges: can anyone check them?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
