@@ -2,7 +2,7 @@ id: CC-021
 title: Malta-Gozo tunnel traffic
 category: Transport
 subtopic: Ferries & Gozo links
-status: In progress
+status: Not started
 verdict: null
 verdict_confidence: null
 claim:
@@ -33,7 +33,7 @@ tags:
 tags_provisional: true
 priority: Queue
 data_readiness: Low
-caveats: No current claim located yet.
+caveats: 'Lead, not a statement: no current claim found (5 Oct 2026; the tunnel was shelved in 2022). Taken off the worker queue by the maintainer; intake may replace it if a fixed link is proposed again.'
 right_of_reply:
   sent: null
   deadline: null
@@ -46,3 +46,7 @@ location:
   lon: 14.32863
   scope: site
   icon: ferry
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: note
+    note: "Taken off the worker queue (maintainer decision): a lead with no dated statement by any speaker; 'about three times' summarises the Cordina cost-benefit study. Status back to Not started."

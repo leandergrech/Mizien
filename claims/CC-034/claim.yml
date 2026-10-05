@@ -17,6 +17,16 @@ claim:
     date: '2025'
     url: https://era.org.mt/air-quality-plan-for-malta-2024/
     note: Primary plan page.
+  - title: "Air Quality Plan for Malta 2025 (web page, Wayback capture of 15 Aug 2025)"
+    publisher: "ERA"
+    date: "15 Aug 2025"
+    url: "https://web.archive.org/web/20250815211515/https://era.org.mt/air-quality-plan-for-malta-2024/"
+    note: "Archived copy of the ERA page (403 to scripts) with the claim: actions 'have already yielded positive results'. Read 5 Oct 2026; wording in literature/CC-034/primary-source.md."
+  - title: "Air Quality Plan for Malta (approved policy, PDF)"
+    publisher: "ERA"
+    date: "Jan 2025"
+    url: "https://era.org.mt/wp-content/uploads/2025/02/DIGITAL-Air-Quality-Plan.pdf"
+    note: "104 pages; read through the Wayback Machine 5 Oct 2026. Executive summary: measures 'have already contributed to improvements in air quality'."
 counter_evidence: Msida exceeded the PM10 daily-limit count in 2018 and 2023; trends need station data, not plan
   text.
 tests: ERA station series; EEA E1a data; exceedance counts by year.

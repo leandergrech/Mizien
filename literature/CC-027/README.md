@@ -23,3 +23,12 @@ widespread power cuts in the heat", "Enemalta fire-fighting multiple power cuts 
 no-confidence motion in Miriam Dalli amid power cut crisis") may quote the minister directly; the no-confidence
 debate in Parliament would have her words on the record (parlament.mt returns 403 to scripts, so that needs a
 browser). Lovin Malta paraphrases only.
+
+## Correction, 5 October 2026 (maintainer review)
+
+The statements are from **21 July 2026**, not July 2024: Lovin Malta's article is dated 21 July 2026, and TVM News
+interviewed the Prime Minister the same day ("PM apologises over power cuts - stresses investment in distribution
+system will continue"). The Newsbook leads listed above are from the 2026 power cuts too. TVM reports Abela's words
+as indirect speech: EUR 161 million invested in the distribution system "between 2022 and last year", and the
+problem "was not the country's electricity generation capacity, but the distribution network". Still needed: the
+words themselves (a transcript of the TVM interview, a press release, or the Hansard of the no-confidence debate).

@@ -18,6 +18,11 @@ claim:
     date: Dec 2024
     url: https://energywateragency.gov.mt/wp-content/uploads/2025/01/MT-%E2%80%93-FINAL-UPDATED-NECP-2021-2030-English.pdf
     note: Primary plan.
+  - title: "Malta - Final updated NECP 2021-2030 (submitted in 2025)"
+    publisher: "European Commission"
+    date: "7 Jan 2025"
+    url: "https://commission.europa.eu/publications/malta-final-updated-necp-2021-2030-submitted-2025_en"
+    note: "The plan as submitted (PDF of 381 pages, created 27 Dec 2024), downloadable with a script; the agency's copy is behind a captcha. Read 5 Oct 2026; wording and page numbers in literature/CC-024/primary-source.md."
 counter_evidence: Two different percentages circulate (11.5% and 25%); check which the plan commits to and Malta's
   actual share (Eurostat nrg_ind_ren).
 tests: NECP text; Eurostat nrg_ind_ren trajectory to 2030.

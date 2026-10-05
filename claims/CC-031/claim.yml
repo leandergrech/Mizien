@@ -6,8 +6,7 @@ status: In progress
 verdict: null
 verdict_confidence: null
 claim:
-  text: 'Gozo Minister Clint Camilleri (Sept 2026): Gozo is on course to become Malta''s first climate-neutral region
-    and already has a fully electric public transport fleet.'
+  text: "Gozo Minister Clint Camilleri (25 Sep 2026), presenting the Gozo climate neutrality plan: 'The plan published today is an important step to continue to realise our vision of Gozo becoming the first climate-neutral region in Malta.' As reported by Gozo Today (paraphrase), he said Gozo had already begun its transition with measures including a fully electric public transport fleet."
   speaker: Clint Camilleri, Minister for Gozo
   date: '2026-09-25'
   wording_status: 'Paraphrase: locate quote'
@@ -17,6 +16,11 @@ claim:
     date: 25 Sep 2026
     url: https://gozotoday.com.mt/2026/09/25/gozo-climate-neutrality-plan-enters-implementation-phase/
     note: Locates the claim.
+  - title: "Public transport in Gozo is now being completely operated with electric buses"
+    publisher: "TVM News"
+    date: "28 May 2026"
+    url: "https://tvmnews.mt/en/news/public-transport-in-gozo-is-now-being-completely-operated-with-electric-buses/"
+    note: "Tests the fleet part: EUR 11 million, new charging depot at Ta' Xħajma. Read 5 Oct 2026."
 counter_evidence: Check the bus fleet composition and Gozo's emissions baseline; the plan's targets and dates.
 tests: Malta Public Transport fleet data; Gozo climate neutrality plan.
 why_low_hanging: A specific, attributable statement that public data can test.
@@ -38,3 +42,7 @@ location:
   lon: 14.23985
   scope: institution
   icon: pin
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: note
+    note: "Claim reworded to what was said (maintainer decision): Camilleri's quoted words speak of a 'vision' of Gozo as Malta's first climate-neutral region; the fully electric fleet is Gozo Today's paraphrase. 'On course' was the intake's wording, not his. Wording in literature/CC-031/primary-source.md."

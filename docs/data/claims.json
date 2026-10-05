@@ -1284,7 +1284,7 @@
       "category": "Transport",
       "claim": "Lead: past government studies found the Malta-Gozo tunnel would only be economically viable if car trips between the islands roughly tripled. The project was shelved in 2022; check whether it, or a fixed link, has been revived with new claims.",
       "counter": "Induced demand: a link designed to triple car trips works against transport-emission targets (see CC-003).",
-      "status": "In progress",
+      "status": "Not started",
       "verdict": null,
       "tags": [
         "Promise-without-baseline"
@@ -1547,8 +1547,8 @@
       "id": "CC-027",
       "title": "Power cuts: heat, not generation",
       "category": "Climate & Energy",
-      "claim": "Energy Minister Miriam Dalli and PM Robert Abela (July 2024): the widespread power cuts were caused by extreme heat and record demand straining the distribution network, not by a lack of generation capacity; EUR 161 million had been invested since 2022.",
-      "counter": "Peak medium-voltage demand rose from 663 MW (Jul 2023) to 741 MW (Jul 2024) as reported.",
+      "claim": "Energy Minister Miriam Dalli and PM Robert Abela (21 July 2026): the widespread power cuts were caused by extreme heat and record demand straining the distribution network, not by a lack of generation capacity; EUR 161 million had been invested since 2022.",
+      "counter": "Reported peak medium-voltage demand: 663 MW (Jul 2023) and 741 MW in the July 2026 heatwave (to verify against Enemalta data).",
       "status": "In progress",
       "verdict": null,
       "tags": [],
@@ -1568,7 +1568,7 @@
         "miriam-dalli",
         "robert-abela"
       ],
-      "date": "2024-07",
+      "date": "2026-07-21",
       "quote": "",
       "version": null,
       "outputs": {},
@@ -1706,7 +1706,7 @@
       "id": "CC-031",
       "title": "Gozo, first climate-neutral region",
       "category": "Climate & Energy",
-      "claim": "Gozo Minister Clint Camilleri (Sept 2026): Gozo is on course to become Malta's first climate-neutral region and already has a fully electric public transport fleet.",
+      "claim": "Gozo Minister Clint Camilleri (25 Sep 2026), presenting the Gozo climate neutrality plan: 'The plan published today is an important step to continue to realise our vision of Gozo becoming the first climate-neutral region in Malta.' As reported by Gozo Today (paraphrase), he said Gozo had already begun its transition with measures including a fully electric public transport fleet.",
       "counter": "Check the bus fleet composition and Gozo's emissions baseline; the plan's targets and dates.",
       "status": "In progress",
       "verdict": null,

@@ -15,7 +15,7 @@ You are a claim-check worker for Miżien, a science-first fact-checking project 
 
 ## 1. Pick the claim
 - YOUR claims are the rows of data/queue.csv with Worker = your letter. Never take a claim outside your rows.
-- Eligible, in ID order: status (claims/CC-NNN/claim.yml) is 'Not started' or 'In progress'; Blocker is empty or starts with 'network'; Attempts < 3; if Attempts > 0, Last attempt is at least 6 days ago; no OPEN pull request mentions the ID (`gh pr list --state open --search CC-NNN`).
+- Eligible, in ID order: status (claims/CC-NNN/claim.yml) is 'Not started' or 'In progress'; Blocker is empty or starts with 'network'; Attempts < 3; if Attempts > 0, Last attempt is at least 6 days ago, unless the Blocker is empty and literature/CC-NNN/primary-source.md exists (a maintainer unblock: eligible at once); no OPEN pull request mentions the ID (`gh pr list --state open --search CC-NNN`).
 - Before starting a candidate, run `python scripts/net_check.py CC-NNN`. If it exits 4 (every source host refused), still try the other routes in step 2.1 (a web search for the same statement in a readable outlet) before recording the attempt as in step 2a. If the primary source is on a site data-sources.md marks as browser-only, first try those routes too; record Blocker 'source: browser-only (<url>)' only if none of them has the verbatim wording. Try at most three claims per run, stopping at the first you complete.
 - If nothing is eligible, stop and report 'nothing to do' (list your blocked claims and their Blocker cells).
 - Create branch `claude/cc-NNN-<short-slug>-<YYYYMMDD>` from origin/main and push it immediately (an empty commit is fine) so others can see the claim is taken.
