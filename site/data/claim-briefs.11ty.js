@@ -25,7 +25,7 @@ export default class {
         title: c.title, topic: c.subtopic ? `${c.category} · ${c.subtopic}` : c.category,
         verdict: c.verdict || null, slug: c.verdict_slug || "none", confidence: c.verdict_confidence || null,
         pledge: pv ? { status: pv.status, as_of: pv.as_of, colour: pv.colour, target: pv.target, pure: pv.pure } : null,
-        status: c.status_label, draft: Boolean(c.is_draft && c.label),
+        status: c.status_label, draft: Boolean(c.is_draft && c.label), reply_sought: c.reply_sought,
         speaker: c.claim.speaker || "", date: c.claim.date ? String(c.claim.date) : "",
         brief: cut(c.claim.text, 230),
         why: c.verdict && c.counter_evidence ? cut(firstSentence(c.counter_evidence), 230) : "",

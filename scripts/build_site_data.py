@@ -68,6 +68,7 @@ def main() -> int:
             "claim": d["claim"]["text"],
             "counter": d.get("counter_evidence", ""),
             "status": d.get("status", "Not started"),
+            **({"reply_sought": False} if not reply_sought(d) else {}),
             "verdict": d.get("verdict"),
             "tags": d.get("tags", []),
             **({"subtopic": d["subtopic"]} if d.get("subtopic") else {}),
@@ -275,13 +276,24 @@ def label_of(d: dict):
     return None, None, None
 
 
+def reply_sought(d: dict) -> bool:
+    """False when, at the maintainer's direction, no right of reply is sought for the check (right_of_reply.sought)."""
+    return (d.get("right_of_reply") or {}).get("sought") is not False
+
+
+def status_label(d: dict) -> str:
+    if d.get("status") == "Drafted" and not reply_sought(d):
+        return "Draft: right of reply not sought"
+    return STATUS_LABELS.get(d.get("status"), d.get("status"))
+
+
 def claim_ref(d: dict) -> dict:
     """The few fields a list of claims needs: number, title and verdict (or pledge label)."""
     label, label_slug, kind = label_of(d)
     return {"id": d["id"], "title": d["title"], "path": f"/claims/{d['id']}/", "verdict": d.get("verdict"),
             "verdict_slug": slug(d["verdict"]) if d.get("verdict") else None, "category": d["category"],
             "status": d.get("status"), "date": str(d["claim"].get("date") or ""),
-            "label": label, "label_slug": label_slug, "label_kind": kind}
+            "label": label, "label_slug": label_slug, "label_kind": kind, "reply_sought": reply_sought(d)}
 
 
 PLEDGE_COLOURS = {   # pledge labels (methodology/verdict-scale.md, Pledges): a family of their own, apart from the verdict hues
@@ -436,7 +448,8 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
         site_claims.append({
             **rec,
             "path": f"/claims/{cid}/",
-            "status_label": STATUS_LABELS.get(d.get("status"), d.get("status")),
+            "status_label": status_label(d),
+            "reply_sought": reply_sought(d),
             "is_draft": d.get("status") != "Published",
             "limitations": public_limitations(d.get("caveats")),
             "rating": VERDICT_RATING.get(d.get("verdict")),
