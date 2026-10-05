@@ -38,6 +38,7 @@ permalink: "/claims/{{ claim.id }}/"
       <a href="#h-sources">{% icon "sources" %}<span>Sources</span></a>
       <a href="#h-reply">{% icon "reply" %}<span>Right of reply</span></a>
       <a href="#h-links">{% icon "links" %}<span>Connections</span></a>
+      <a href="#h-time">{% icon "clock" %}<span>Timeline</span></a>
       {%- if c.files.length %}<a href="#h-downloads">{% icon "download" %}<span>Downloads</span></a>{% endif %}
     </nav>
     {%- if c.is_draft and c.verdict %}
@@ -219,6 +220,36 @@ permalink: "/claims/{{ claim.id }}/"
           {%- endfor %}
         </ul>
       </details>
+      {%- endif %}
+    </section>
+
+    <section class="timeline-sec" aria-labelledby="h-time">
+      <h2 id="h-time">Timeline</h2>
+      <p class="conn-intro">What was said, what was published before and after it, and each step of this check, in date
+        order. Statements and sources carry the date they were published. Check steps carry the date the change was
+        recorded in the public repository, and link to it. Other statements by the same body on the same topic show
+        whether a position was repeated, changed or corrected.</p>
+      {%- if not c.claim.date %}<p class="small">The date of the statement is not recorded yet.</p>{% endif %}
+      {%- if c.timeline.length %}
+      <ol class="tl">
+        {%- for y, evs in c.timeline | groupby("year") %}
+        <li class="tl-year"><h3>{{ y }}</h3>
+          <ol>
+            {%- for e in evs %}
+            <li class="tl-ev k-{{ e.kind }}{% if e.future %} is-future{% endif %}{% if e.self %} is-self{% endif %}">
+              <span class="tl-date">{{ e.date }}</span>
+              <span class="tl-what"><span class="tl-kind">{% if e.future %}Coming up: {% endif %}{{ e.label }}</span>
+              {%- if e.claim %} {{ m.claim(e.claim) }}
+              {%- elif e.self %} <span class="tl-text">{{ c.claim.speaker }} (this claim)</span>
+              {%- elif e.kind == "check" %}{% if e.text %} <span class="tl-text">{{ e.text }}</span>{% endif %}{% if e.url %} <a class="tl-change" href="{{ e.url }}" rel="nofollow">see the change</a>{% endif %}
+              {%- elif e.text %} <span class="tl-text">{% if e.url %}<a href="{{ e.url }}" rel="nofollow">{{ e.text }}</a>{% else %}{{ e.text }}{% endif %}{% if e.by %}, {{ e.by }}{% endif %}</span>
+              {%- endif %}</span>
+            </li>
+            {%- endfor %}
+          </ol>
+        </li>
+        {%- endfor %}
+      </ol>
       {%- endif %}
     </section>
 

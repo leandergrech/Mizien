@@ -1,0 +1,10 @@
+{#- Atom entries for a list of updates (scripts/build_site_data.py: steps of each check, replies, curated events). -#}
+{%- for u in updates %}
+  <entry>
+    <id>tag:leandergrech.github.io,2026:mizien:{{ u.claim.id }}:{{ u.iso }}:{{ u.label | slugify }}{% if u.text %}:{{ u.text | slugify }}{% endif %}</id>
+    <title>{{ u.claim.id }} {{ u.claim.title }}: {{ u.label }}{% if u.text %} ({{ u.text }}){% endif %}</title>
+    <updated>{{ u.iso }}{% if u.iso.length == 10 %}T12:00:00Z{% else %}-01T12:00:00Z{% endif %}</updated>
+    <link rel="alternate" type="text/html" href="{{ u.claim.path | absoluteUrl }}"/>
+    <summary type="text">{{ u.label }}{% if u.text %}: {{ u.text }}{% endif %}. {{ u.claim.id }}, {{ u.claim.category }}{% if u.claim.verdict %}; verdict so far: {{ u.claim.verdict }}{% if u.claim.status != "Published" %} (draft, pending right of reply){% endif %}{% endif %}.{% if u.url %} The change: {{ u.url }}{% endif %}</summary>
+  </entry>
+{%- endfor %}
