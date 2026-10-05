@@ -1,0 +1,47 @@
+id: CC-110
+title: 'EU: 37.7% of new cars zero-emission'
+category: Transport
+subtopic: Cars & traffic
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (2026 Country Report - Malta, 3 Jun 2026): in 2024 Malta recorded 7,700 new passenger car registrations,
+    of which 37.7% were zero-emission vehicles, well above the EU average of 13.6%.'
+  speaker: European Commission
+  date: '2026-06-03'
+  wording_status: Verbatim found
+  sources:
+  - title: 2026 Country Report - Malta, SWD(2026) 218 final (Council doc. 10135/26 ADD 1)
+    publisher: European Commission (via Council of the EU)
+    date: '2026-06-03'
+    url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
+    note: Primary text read 5 Oct 2026 (Sustainable transport section). Footnote (142) gives the data source.
+  quote: In 2024, Malta recorded 7 700 new passenger car registrations, of which 37.7% were ZEVs - a 17.4 percentage point
+    increase since 2023 (20.3%) and well above the EU average of 13.6%
+counter_evidence: 'A share of new registrations says little about the whole fleet, which keeps growing (CC-075: seventh
+  in the EU for cars per 1,000 people). The same report says charging infrastructure is ''still largely underdeveloped''.
+  Grant schemes drove the jump, and a small market can swing sharply year to year.'
+tests: Eurostat road_eqr_carpda / road_eqs_carpda (new registrations and fleet by fuel); ACEA registration data; NSO motor
+  vehicle releases; Transport Malta registrations; compare ZEV share of the fleet with the share of new cars.
+why_low_hanging: Specific shares that Eurostat and national registration data can confirm; also a favourable statement about
+  Malta, so it balances the intake.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat, NSO and Crossref reachable; the Council-hosted PDF was read via WebFetch.'
+caveats: 'Candidate from the weekly intake of 5 Oct 2026. Favourable to Malta: checked on the same terms. Provisionally
+  tagged Selective metric (share of new sales versus the fleet).'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: citygate
