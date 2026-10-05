@@ -208,7 +208,7 @@
       "title": "“92% excellent” bathing water",
       "category": "Water",
       "claim": "Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.",
-      "counter": "The latest EEA season (2025) classified 77 of 87 sites (88.5%) as excellent, down from 80 of 87 (92%) in 2023 and 2024. Malta also had a documented sewage-related bathing warning at Balluta Bay (B08/B09) from May to 12 August 2024, and the CJEU found failures to comply with urban wastewater treatment obligations in named agglomerations. These are important context, but they do not refute the Commission’s dated 2023 bathing-water statistic.",
+      "counter": "The EEA series shows a decline: 86 of 87 sites were excellent in 2016–2018 (98.9%), then 85, 84, 84, 82, 80, 80 and 77 (88.5%) in 2025, the lowest of the eleven seasons since 2015. Malta's lead over the EU-27 coastal average (88.3% in 2025) fell from about 11 percentage points in 2016 to 0.2. Ten of the 87 sites account for every rating below excellent; in 2025 St George's Bay B03 (St Julian's) and Xlendi D06 and D07 fell from excellent to good. Balluta Bay's two sites (B08, B09) were rated only sufficient in every season 2022–2025, with a sewage-related warning from late May to 12 August 2024 inside that run. The CJEU found failures to comply with urban wastewater treatment obligations in named agglomerations. None of this refutes the Commission's figure, which was correct for 2023 and again for 2024, but the summary sentence gives no year.",
       "status": "Drafted",
       "verdict": "Supported",
       "tags": [
@@ -222,7 +222,7 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "High",
       "speaker": "European Commission",
@@ -231,7 +231,7 @@
       ],
       "date": "2025",
       "quote": "Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report_pdf": "claim-files/CC-005/report.pdf",
@@ -319,7 +319,7 @@
       "title": "Flyovers and congestion",
       "category": "Transport",
       "claim": "Infrastructure Malta says the Msida Creek flyover will reduce delays, emissions and noise, and that the Marsa Junction Project has reduced travel time and air pollution.",
-      "counter": "The Msida Creek flyover only entered vehicle use in December 2025, and the wider project remained under construction in 2026. The public Marsa release does not link the surveys behind its percentage claims; there is no project-level before-and-after series here for traffic, ambient air pollution, or noise.",
+      "counter": "The Msida Creek flyover opened to traffic on 18 December 2025, and the wider project remains under construction until 2027. At the only public air monitor near it (EEA sampling point MT00011, about 410 m away), mean NO2 for January–September 2026 was 25.2 µg/m³, against 22.0 in 2025 and 19.2 in 2024 (2026 data not yet validated); urban background stations rose about 4% and St Paul's Bay fell 6%, so the expected improvement has not appeared in the measured data. The Marsa release does not link the surveys behind its percentage claims, and no EEA-reported air monitor has operated within 1.4 km of the Marsa junction since Kordin (Paola) closed at the end of 2016. No project-level before-and-after series was found for traffic or noise at either site.",
       "status": "Drafted",
       "verdict": "Not substantiated",
       "tags": [
@@ -333,7 +333,7 @@
         "scope": "site",
         "icon": "flyover"
       },
-      "priority": "Done (v1.1)",
+      "priority": "Done (v1.2)",
       "wording_status": "Verbatim found",
       "confidence": "Moderate",
       "speaker": "Infrastructure Malta",
@@ -342,7 +342,7 @@
       ],
       "date": "2024-10-28",
       "quote": "Msida has long been a traffic bottleneck, with congestion impacting air quality, noise levels, and overall accessibility. A cornerstone of the Msida Creek Project is the construction of a new flyover to replace the current traffic-light-controlled junction, a critical move to reduce delays, emissions, and noise pollution, making travel smoother and safer for all road users.",
-      "version": "1.1",
+      "version": "1.2",
       "last_reviewed": "2026-10-05",
       "outputs": {
         "report_pdf": "claim-files/CC-008/report.pdf",
