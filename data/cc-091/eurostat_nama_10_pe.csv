@@ -1,0 +1,12 @@
+dataset,unit,nace_r2,geo,year,value,flag,eurostat_updated,query_url,retrieved
+nama_10_pe,THS_PER,,MT,2015,206.68,,2026-10-02T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pe?geo=MT&na_item=EMP_DC&unit=THS_PER&sinceTimePeriod=2015&lang=en,2026-10-05
+nama_10_pe,THS_PER,,MT,2016,218.62,,2026-10-02T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pe?geo=MT&na_item=EMP_DC&unit=THS_PER&sinceTimePeriod=2015&lang=en,2026-10-05
+nama_10_pe,THS_PER,,MT,2017,229.09,,2026-10-02T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pe?geo=MT&na_item=EMP_DC&unit=THS_PER&sinceTimePeriod=2015&lang=en,2026-10-05
+nama_10_pe,THS_PER,,MT,2018,244.83,,2026-10-02T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pe?geo=MT&na_item=EMP_DC&unit=THS_PER&sinceTimePeriod=2015&lang=en,2026-10-05
+nama_10_pe,THS_PER,,MT,2019,259.79,,2026-10-02T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pe?geo=MT&na_item=EMP_DC&unit=THS_PER&sinceTimePeriod=2015&lang=en,2026-10-05
+nama_10_pe,THS_PER,,MT,2020,268.23,,2026-10-02T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pe?geo=MT&na_item=EMP_DC&unit=THS_PER&sinceTimePeriod=2015&lang=en,2026-10-05
+nama_10_pe,THS_PER,,MT,2021,275.88,,2026-10-02T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pe?geo=MT&na_item=EMP_DC&unit=THS_PER&sinceTimePeriod=2015&lang=en,2026-10-05
+nama_10_pe,THS_PER,,MT,2022,289.86,,2026-10-02T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pe?geo=MT&na_item=EMP_DC&unit=THS_PER&sinceTimePeriod=2015&lang=en,2026-10-05
+nama_10_pe,THS_PER,,MT,2023,310.2,,2026-10-02T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pe?geo=MT&na_item=EMP_DC&unit=THS_PER&sinceTimePeriod=2015&lang=en,2026-10-05
+nama_10_pe,THS_PER,,MT,2024,325.37,,2026-10-02T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pe?geo=MT&na_item=EMP_DC&unit=THS_PER&sinceTimePeriod=2015&lang=en,2026-10-05
+nama_10_pe,THS_PER,,MT,2025,338.19,,2026-10-02T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pe?geo=MT&na_item=EMP_DC&unit=THS_PER&sinceTimePeriod=2015&lang=en,2026-10-05
