@@ -128,15 +128,17 @@ def history_events(d, added=None):
         if not when or step not in HISTORY_STEPS:
             continue
         label, text, kind = HISTORY_STEPS[step], str(h.get("note") or ""), "check"
+        fix = step in ("correction", "clarification") or (step == "version" and bool(h.get("correction")))
         if step == "version":
             v = str(h.get("version"))
-            label = f"Version {v}" + (": first issue" if v in ("1", "1.0") else "")
+            label = f"Version {v}" + (": first issue" if v in ("1", "1.0") else ": corrections" if fix else "")
             if v == str(d.get("version")) and d.get("verdict"):
                 conf = d.get("verdict_confidence")
                 text = (text + " " if text else "") + f"Verdict: {d['verdict']}" + (f", {conf.lower()} confidence." if conf else ".")
-        if step in ("correction", "clarification"):
+        if fix:
             kind = "correction"
-        ev.append({"when": when, "kind": kind, "label": label, "text": text, "url": h.get("url"), "step": step})
+        ev.append({"when": when, "kind": kind, "label": label, "text": text, "url": h.get("url"), "step": step,
+                   "version": str(h.get("version")) if step == "version" else None})
     return ev
 
 

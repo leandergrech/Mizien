@@ -42,8 +42,14 @@ permalink: "/claims/{{ claim.id }}/"
       {%- if c.files.length %}<a href="#h-downloads">{% icon "download" %}<span>Downloads</span></a>{% endif %}
     </nav>
     {%- for x in c.corrections | reverse %}
-    <aside class="notice is-correction" aria-label="{{ x.label }}">
+    <aside class="notice is-correction" aria-label="{{ 'Corrected' if x.step == 'version' else x.label }}">
+      {%- if x.step == "version" %}
+      <p><strong>Corrected, {{ x.date }}.</strong> Version {{ x.version }} of this check corrects errors in the version
+        before it. What was wrong and what changed is in the <a href="#h-time">timeline</a> below and on the
+        <a href="/corrections/">Corrections page</a>.</p>
+      {%- else %}
       <p><strong>{{ x.label }}, {{ x.date }}.</strong> {{ x.text }} <a href="/corrections/">All corrections and changes</a>.</p>
+      {%- endif %}
     </aside>
     {%- endfor %}
     {%- if c.is_draft and c.verdict %}

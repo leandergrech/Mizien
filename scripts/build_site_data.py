@@ -383,7 +383,8 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
                        for b in connections.units(claim_bodies[cid], reg)],
             "connections": claim_connections(cid, d, by_id, adj, out, reg, claim_bodies, profiles, pattern_meanings),
             "timeline": claim_timeline(cid, d, by_id, reg, claim_bodies, profiles, sources_ev, intake, today),
-            "corrections": [{"date": e["when"]["label"], "iso": e["when"]["iso"], "label": e["label"], "text": e["text"]}
+            "corrections": [{"date": e["when"]["label"], "iso": e["when"]["iso"], "label": e["label"], "text": e["text"],
+                             "step": e["step"], "version": e["version"]}
                             for e in timeline.history_events(d) if e["kind"] == "correction"],
             "record_url": f"{REPO}/blob/main/claims/{cid}/claim.yml",
         })
@@ -421,7 +422,7 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
         # The public log of changes to checks (the Corrections page): every version, correction and clarification,
         # dated when the research was done.
         "changes": sorted(({"date": e["when"]["label"], "iso": e["when"]["iso"], "step": e["step"], "label": e["label"],
-                            "text": e["text"], "claim": claim_ref(d)}
+                            "text": e["text"], "claim": claim_ref(d), "fix": e["kind"] == "correction"}
                            for d in records for e in timeline.history_events(d) if e["step"] in ("version", "correction", "clarification")),
                           key=lambda x: (x["iso"], x["claim"]["id"], x["label"]), reverse=True),
         "by_kind": by_kind.build(records, claim_bodies, reg, out["themes"], [n for n, _ in bold_table("pattern-tags.md")],

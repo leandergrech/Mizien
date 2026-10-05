@@ -107,3 +107,9 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-02
     step: version
     version: "1.0"
+    note: "First issue. Right of reply not sought, at the maintainer's direction."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections: the Msida quotation now matches the wording on Infrastructure Malta's page (checked 5 October 2026); the earlier quotation included words (“this project”, “which will be”) not on the page as checked, and the forecast reading now rests on the statement having been published before works began. Added the Marsa release's wording on “significant air quality improvements in Paola and Marsa”. Heading typo “Mars” corrected to “Marsa”. Verdict and confidence unchanged."

@@ -59,3 +59,13 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 1st
   caption: cheapest electricity in the EU in purchasing power, typical household (2,500–4,999 kWh)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-04
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply to the Energy Ministry not yet sent."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections. (1) “Lowest in the EU” now says it holds for the standard household band (2,500–4,999 kWh) (TL;DR, tile, Figure 1 caption, table, Q1, sub-claim A, flyer, thumbnail); added one sentence on the other bands (2024-S2: 3rd, 2nd, 16th, 23rd of 27; 4th of 26 on the all-band average). (2) “Tariffs have been frozen since 2014” (no source) → Eurostat’s series: EUR 0.169 (2013-S2) to 0.125 per kWh (2014-S2), then 0.125–0.133 to 2025-S2. (3) The IMF’s EUR 1 billion is now described as energy subsidies for electricity and fuel together, with 2025 projected: Figure 2 caption “what that stability cost” → “energy subsidies as the IMF reports them”; “tariff freeze is financed by” → “fixed electricity and fuel prices are financed by” (TL;DR, Q2, Why, table, tile, flyer). (4) “Eurostat revised 14.33 to 14.35” → difference noted without asserting a revision. (5) IMF reference: DOI added. Verdict and confidence unchanged."

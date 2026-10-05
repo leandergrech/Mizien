@@ -122,7 +122,11 @@ def check_history(d) -> list:
             if not e.get("version"):
                 errs.append(f"history entry {i}: a version step needs its version number")
             versions.append(str(e.get("version")))
-        if step in ("correction", "clarification") and not str(e.get("note") or "").strip():
+        if "correction" in e and not isinstance(e["correction"], bool):
+            errs.append(f"history entry {i}: correction must be true or false")
+        if e.get("correction") and step != "version":
+            errs.append(f"history entry {i}: correction: true marks a version that corrects errors; use step: correction otherwise")
+        if (step in ("correction", "clarification") or e.get("correction")) and not str(e.get("note") or "").strip():
             errs.append(f"history entry {i}: a {step} needs a note saying what was wrong and what changed")
     if d.get("version") and str(d["version"]) not in versions:
         errs.append(f"version {d['version']} has no history entry: add one with the date of the research and what changed")

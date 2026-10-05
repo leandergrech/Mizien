@@ -24,8 +24,9 @@ permalink: /corrections/
       <li>A <strong>correction</strong> fixes something a check got wrong: a figure, a source, an attribution or a
         verdict. It is shown at the top of the check, in its timeline and below.</li>
       <li>A <strong>clarification</strong> adds a note where something was right but could mislead.</li>
-      <li>A <strong>new version</strong> of a report adds evidence or changes its reasoning; its revision note says what
-        changed and whether the verdict changed.</li>
+      <li>A <strong>new version</strong> of a report adds evidence, changes its reasoning or corrects errors; its revision
+        note says what changed and whether the verdict changed. A version that corrects errors is listed with the
+        corrections too.</li>
       <li>Dates are those of the research, from each check's research log (<code>history</code> in its claim record),
         not the date the site was updated. Every change to a record is also public in
         <a href="{{ site.repo }}/commits/main/claims" rel="nofollow">the repository's history</a>.</li>
@@ -36,12 +37,12 @@ permalink: /corrections/
 
   <section aria-labelledby="h-fixes">
     <h2 id="h-fixes">Corrections and clarifications</h2>
-    {%- set fixlist = mizien.changes | without("step", "version") %}
+    {%- set fixlist = mizien.changes | where("fix", true) %}
     {%- if fixlist.length %}
     <ol class="change-list">
       {%- for x in fixlist %}
       <li class="is-{{ x.step }}"><span class="tl-date">{{ x.date }}</span>
-        <span class="change-what"><span class="badge change-{{ x.step }}">{{ x.label }}</span> {{ m.claim(x.claim) }}
+        <span class="change-what"><span class="badge change-{{ 'correction' if x.step == 'version' else x.step }}">{{ x.label }}</span> {{ m.claim(x.claim) }}
         <span class="change-text">{{ x.text }}</span></span></li>
       {%- endfor %}
     </ol>
