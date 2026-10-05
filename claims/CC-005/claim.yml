@@ -40,35 +40,45 @@ claim:
     note: Urban wastewater treatment obligations for named agglomerations; separate from bathing-water classification.
   quote: 'Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are
     of excellent quality.'
-counter_evidence: The latest EEA season (2025) classified 77 of 87 sites (88.5%) as excellent, down from 80 of 87
-  (92%) in 2023 and 2024. Malta also had a documented sewage-related bathing warning at Balluta Bay (B08/B09) from
-  May to 12 August 2024, and the CJEU found failures to comply with urban wastewater treatment obligations in named
-  agglomerations. These are important context, but they do not refute the Commission’s dated 2023 bathing-water
-  statistic.
-tests: Confirm the Commission’s exact wording and reference-year data; establish what the Bathing Water Directive
-  classification measures; distinguish long-term national classification from short-term local warnings and urban
-  wastewater treatment compliance.
+counter_evidence: 'The EEA series shows a decline: 86 of 87 sites were excellent in 2016–2018 (98.9%), then 85,
+  84, 84, 82, 80, 80 and 77 (88.5%) in 2025, the lowest of the eleven seasons since 2015. Malta''s lead over the EU-27
+  coastal average (88.3% in 2025) fell from about 11 percentage points in 2016 to 0.2. Ten of the 87 sites account for
+  every rating below excellent; in 2025 St George''s Bay B03 (St Julian''s) and Xlendi D06 and D07 fell from excellent
+  to good. Balluta Bay''s two sites (B08, B09) were rated only sufficient in every season 2022–2025, with a sewage-related
+  warning from late May to 12 August 2024 inside that run. The CJEU found failures to comply with urban wastewater
+  treatment obligations in named agglomerations. None of this refutes the Commission''s figure, which was correct for
+  2023 and again for 2024, but the summary sentence gives no year.'
+tests: Confirm the Commission's exact wording and reference year; reproduce the count from the EEA's per-site
+  classifications for every season 2015–2025 (map service, checked site by site against the WISE dataset) and compare
+  with the EU-27 coastal share; identify the sites behind each change; establish what the Bathing Water Directive
+  classification measures; distinguish multi-season classification from short-term warnings and from urban wastewater
+  treatment compliance.
 why_low_hanging: The Commission’s precise 2023 indicator is verifiable, while the omission of its reference year
   and the newer 2025 result can make it sound current.
 tags:
 - Compliance-not-health
 tags_provisional: false
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: High
-caveats: Supported applies to the quoted 2023 Bathing Water Directive result. The 2025 annual classification is
-  88.5%. This indicator uses E. coli and intestinal enterococci and is not a general assessment of marine ecological
-  or chemical status. Right of reply has not been sought, as directed by the maintainer.
+caveats: Supported applies to the quoted statistic, which was the 2023 result (80/87) and was repeated in 2024. The
+  2025 classification is 88.5%, the lowest since 2015. This indicator uses E. coli and intestinal enterococci over
+  four seasons of samples and is not a general assessment of marine ecological or chemical status. Right of reply
+  has not been sought, as directed by the maintainer.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: EEA country factsheets for 2023, 2024 and 2025; Environmental Health Directorate Balluta Bay closure
-  report; CJEU Case C-304/23 judgment. All cited in the report and available at the linked primary sources.
+evidence_shown: 'EEA classification of all 87 Maltese bathing waters for every season 2015–2025, from the EEA map
+  service and checked against the WISE dataset (870 site-seasons, all matching), with EU-27 coastal shares:
+  data/cc-005/mt_site_classes.csv and data/cc-005/excellent_share.csv (retrieved 5 October 2026), shown in the
+  report''s Figures 1–3. EEA country factsheets for 2024 and 2025; Commission SWD(2025) 318, which dates the 92%
+  to 2023; Environmental Health Directorate Balluta Bay closure report; CJEU Case C-304/23 judgment. All cited in
+  the report and available at the linked primary sources.'
 outputs:
   report_pdf: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-05'
 location:
   place: City Gate, Valletta (national claim)
@@ -78,7 +88,7 @@ location:
   icon: citygate
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 92%
-  caption: of bathing sites rated excellent in 2023 (80 of 87)
+  caption: of bathing sites rated excellent in 2023 and 2024; 88.5% in 2025
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-02
     step: version

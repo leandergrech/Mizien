@@ -61,5 +61,33 @@
   year         = {2026},
   howpublished = {DiscoData SQL service, tables [WISE\_BWD].[latest].[assessment\_BathingWaterStatus] and [timeseries\_MonitoringResult]},
   url          = {https://discodata.eea.europa.eu/sql},
-  note         = {Retrieved 5 October 2026. 2023: 80/3/4 excellent/good/sufficient, 2,021 reported samples; 2024 total (2,107) matches the EEA 2024 factsheet. Extract in data/cc-005/eea_bwd_mt_seasons.csv.}
+  note         = {Retrieved 5 October 2026. 2023: 80/3/4 excellent/good/sufficient, 2,021 reported samples; 2024 total (2,107) matches the EEA 2024 factsheet. Extract in data/cc-005/eea_bwd_mt_seasons.csv. For v1.2 the same dataset was used to cross-check every Maltese site-season 2015--2024 and to count EU-27 coastal shares 2015--2024.}
+}
+
+@misc{eea_bw_discomap_2025,
+  author       = {{European Environment Agency}},
+  title        = {Bathing water quality, map service BathingWater\_Dyna\_WM\_2025, layer 3 ``Bathing water quality (point)''},
+  year         = {2026},
+  howpublished = {ArcGIS REST service, water.discomap.eea.europa.eu},
+  url          = {https://water.discomap.eea.europa.eu/arcgis/rest/services/BathingWater/BathingWater_Dyna_WM_2025/MapServer/3},
+  note         = {Queried 5 October 2026 (countryCode='MT'; and EU-27 counts by water category and class for 2025). Class of each of Malta's 87 bathing waters for seasons 2015--2025, with coordinates. Every Maltese site-season 2015--2024 matches the WISE dataset. Extracts: data/cc-005/mt_site_classes.csv, data/cc-005/excellent_share.csv.}
+}
+
+@misc{ec_swd_2025_318_mt,
+  author       = {{European Commission}},
+  title        = {2025 Environmental Implementation Review Country Report -- Malta},
+  year         = {2025},
+  number       = {SWD(2025) 318 final},
+  howpublished = {Commission staff working document, Brussels, 7 July 2025},
+  url          = {https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025SC0318},
+  note         = {Dates the 92\% figure: in 2023, 80 of the 87 Maltese bathing waters (92\%) were excellent. Wording checked for v1.1 (see notes.md); EUR-Lex refused scripted access on 5 October 2026, so it was not re-read for v1.2.}
+}
+
+@misc{dir_2006_7_ec,
+  author       = {{European Parliament and Council of the European Union}},
+  title        = {Directive 2006/7/EC concerning the management of bathing water quality and repealing Directive 76/160/EEC},
+  year         = {2006},
+  howpublished = {Official Journal of the European Union, L 64, 4 March 2006},
+  url          = {https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32006L0007},
+  note         = {Article 4: assessment on the data for the season in question and the three preceding seasons. Annex II: classes set by E. coli and intestinal enterococci percentiles. Cited from the legal text; EUR-Lex refused scripted access on 5 October 2026, so the article numbers were not re-read for v1.2 (to verify in a browser).}
 }
