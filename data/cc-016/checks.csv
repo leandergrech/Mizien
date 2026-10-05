@@ -15,3 +15,9 @@ Unplugged berth time at 2025 calls and year-one uptake vs 2024 calls with no OPS
 "Infrastructure Malta: per-liner cut on shore power, sulphur dioxide",99.6,%,"Infrastructure Malta, 30 Nov 2020",stated by IM; underlying study not cited
 "Infrastructure Malta: per-liner cut on shore power, carbon dioxide",39.6,%,"Infrastructure Malta, 30 Nov 2020",stated by IM; underlying study not cited
 Project cost figures stated,33 / 37 / 49.9,EUR million,TVM 10 Jul 2024; IM 2020; IM 2020-2022,launch / phase 1 budget / whole project: figures vary by phase and date
+Berths by length of stay add up to the total,312 + 38 + 23 = 373,berths,Amphora Media,matches 373
+Connected berths implied by the shares by length of stay,61 + 6 + 0 = 67,berths,calculated from Amphora Media shares,matches 67 connections; 6 of 38 is 15.8% (article: 16.2%)
+"Cruise berths not connected, Jul 2024-Jul 2025",306,berths,calculated,373 - 67
+Connected berths by ship: MSC World Europa / other ships,35 / 32,berths,Transport Malta FOI via Amphora,MSC World Europa is LNG-powered (dual-fuel LNG / low-sulphur MGO; MSC Cruises)
+Plug-in rate: MSC World Europa / all other ships,69 / 10,% of berths,calculated,35 of 51; 32 of 322
+"Harbour-wide cut in at-berth cruise emissions at the per-liner NO2 cut, year one (indicative)",8.4,%,calculated,9% of berth time x 93%; same mix of ships assumed

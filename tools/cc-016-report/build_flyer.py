@@ -16,12 +16,13 @@ build_flyer(Flyer(
     context="Repeated at the EUR 33 million project’s launch, 10 July 2024.",
     note="Connection records from Transport Malta, via an FOI request by Amphora Media.",
     verdict="Misleading", verdict_right=["Possible per ship,", "not what happened."],
-    cards=[("Grade B", GREEN, "Works when ships plug in",
-            "Research: time at berth causes most of a cruise ship’s emissions in port."),
+    cards=[("−93%", GREEN, "Works when ships plug in",
+            "NO2 per connected liner (Infrastructure Malta); PM −92.6%, SO2 −99.6%, but CO2 only −40%."),
            ("2030", ORANGE, "Voluntary until then",
             "EU law makes plugging in compulsory only from 1 January 2030."),
            ("9%", RED, "Of berth time plugged in",
-            "67 of 373 berths connected, Jul 2024 – Jul 2025; one ship made half."),
+            "306 of 373 berths not plugged in, Jul 2024 – Jul 2025; one LNG-powered ship made 35 of the 67 "
+            "connections."),
            ("0%", RED, "Of long stays",
             "No ship staying two to four days plugged in."),
            ("+8%", ORANGE, "More cruise calls",
@@ -32,6 +33,6 @@ build_flyer(Flyer(
           "The study behind the 90% figure.",
           "ERA’s Senglea shipping study.",
           "Terms of the shore power deals."],
-    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Right of reply: Infrastructure Malta (not yet sent)",
+    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  Right of reply: Infrastructure Malta (not yet sent)",
     pdf_title="Claim Check 016 – Does shore power cut pollution by 90%?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

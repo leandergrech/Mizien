@@ -10,4 +10,8 @@
   Added 5 Oct 2026: cost figures by phase and date (EUR 33m launch; EUR 37m phase 1 and EUR 49.9m whole project,
   Infrastructure Malta 2020-2022) and Infrastructure Malta's per-liner cuts on shore power (NO2 93%, PM 92.6%,
   SO2 99.6%, CO2 39.6%), from its pages of 30 Nov 2020 and 19 Feb 2022 (`literature/CC-016/primary-source.md`).
+  Added for v1.2 (Amphora Media re-read 5 Oct 2026): berths by length of stay (312, 38, 23; second-hand), and MSC
+  World Europa's dual-fuel LNG engines (MSC Cruises press releases of 24 Oct 2022 and 12 Apr 2023). calc.py checks
+  that the counts reconcile (312 + 38 + 23 = 373; 61 + 6 + 0 = 67 connections) and derives the 306 berths not
+  plugged in and the plug-in rates (MSC World Europa 35 of 51; all other ships 32 of 322).
 - `checks.csv`: written by `tools/cc-016-report/calc.py`.

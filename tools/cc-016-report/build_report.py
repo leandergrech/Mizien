@@ -8,6 +8,7 @@ from mizien_report import *  # noqa: E402,F401
 
 FIG = HERE / "out"
 S = []
+LG = colors.HexColor("#8DB36B")
 
 # ================================================================== TL;DR
 S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
@@ -25,8 +26,9 @@ S.append(key_points([
      "EU law (FuelEU Maritime, Art. 6) only makes connection compulsory from 1 January 2030. Transport Malta says "
      "connecting “remains the prerogative of the shipping line”. Neither the project page nor the launch said so."),
     ("In its first year, ships plugged in for 9% of their time at berth.",
-     "Transport Malta records obtained by Amphora Media show 67 connections in 373 berths (18%) from July 2024 to "
-     "July 2025; one ship made half of them. No ship staying two days or more plugged in."),
+     "Records obtained by Amphora Media from Transport Malta show 67 connections in 373 berths, July 2024 to July "
+     "2025; 306 were not plugged in. One LNG-powered ship made 35 of the 67; other ships plugged in at one berth in "
+     "ten."),
     ("Cruise traffic grew.",
      "Calls rose 8%, from 357 in 2024 to 385 in 2025, about as much as the 9% of berth time plugged in from July "
      "2024 to July 2025, so extra traffic may offset much of the first-year saving. The periods differ, and shore "
@@ -38,7 +40,7 @@ S.append(key_points([
 ]))
 S += [Spacer(1, 4 * mm), VerdictMeter(3), Spacer(1, 3 * mm),
       tiles([("90%", GREY, "Cut promised for Grand Harbour air pollution (Infrastructure Malta)"),
-             ("18%", ORANGE, "Cruise berths that plugged in, Jul 2024–Jul 2025"),
+             ("306", ORANGE, "Of 373 cruise berths not plugged in, Jul 2024–Jul 2025"),
              ("9%", RED, "Share of berth time plugged in (upper bound on the cut)"),
              ("2030", GREEN, "Year EU law makes plugging in compulsory")]),
       Spacer(1, 4 * mm),
@@ -87,7 +89,7 @@ S.append(P("<b>Evidence.</b> The project page, earlier Infrastructure Malta page
            "connection records for July 2024 to July 2025 "
            "obtained by Amphora Media from Transport Malta under freedom of information [4] (second-hand: the reply "
            "is not public); Valletta Cruise Port’s traffic figures [5]; Regulation (EU) 2023/1805 [6]; peer-reviewed "
-           "studies found through Crossref and OpenAlex [7–9]. Numbers are recomputed by "
+           "studies found through Crossref and OpenAlex [7–9]; MSC Cruises’ description of its ship [12]. Numbers are recomputed by "
            "<i>tools/cc-016-report/calc.py</i> from <i>data/cc-016/</i>."))
 S.append(P("<b>Grades.</b> Peer-reviewed observational studies are grade B; official records and reviews grade C. "
            "◆ marks data known second-hand. <b>Verdicts</b> follow the five-point scale in Appendix A."))
@@ -107,21 +109,34 @@ S.append(P("Shore power does nothing for manoeuvring. A sensor network in the Ba
            "use among the barriers to adoption [9]. Pollution in the harbour also comes from ferries, tugs, "
            "other ships, road traffic and the power station; the claim speaks of all air pollution in the Grand "
            "Harbour."))
+S.append(P("The ship that plugged in most often, MSC World Europa (Section 4), is powered by liquefied natural gas. "
+           "Its owner describes it as “the world’s largest LNG-powered cruise ship”, with five dual-fuel engines that "
+           "run on LNG or on low-sulphur marine gasoil, and says LNG “nearly eliminates” sulphur oxides and fine "
+           "particles compared with standard marine fuels [12]. If it runs on LNG at the quay, plugging it in saves "
+           "less sulphur dioxide and particulate matter than Infrastructure Malta’s per-liner figures suggest. Which "
+           "fuel it burned at berth in Valletta is not known."))
 
 # ================================================================== 4
 S.append(CondPageBreak(150 * mm))
 S.append(SectionHeading(4, "How the system is used"))
+S.append(fig(FIG / "fig3_scope.png"))
+S.append(P("Figure 1. Left: the 373 cruise berths from July 2024 to July 2025; 67 plugged in, 35 of them by MSC World "
+           "Europa, and 306 did not. Right: the 90% holds for a connected liner on Infrastructure Malta’s figures "
+           "[10], but in the first year ships were plugged in for 9% of berth time, which caps the harbour-wide cut in "
+           "at-berth cruise emissions at about 9%. Connection data second-hand ◆ [4].", cap))
 S.append(fig(FIG / "fig1_uptake.png"))
-S.append(P("Figure 1. Left: the promised cut against the share of berths and of berth time plugged in during the "
+S.append(P("Figure 2. Left: the promised cut against the share of berths and of berth time plugged in during the "
            "first year. Right: plug-in rate by length of stay. Data ◆ [4].", cap))
 S.append(fig(FIG / "fig2_calls.png"))
-S.append(P("Figure 2. Cruise calls at Valletta Cruise Port [5]; 2019–2023 as quoted in [4]. Infrastructure Malta, "
+S.append(P("Figure 3. Cruise calls at Valletta Cruise Port [5]; 2019–2023 as quoted in [4]. Infrastructure Malta, "
            "citing the NSO, also gives 372 cruise liners for 2019 [10].", cap))
 S.append(std_table([
     [C("Indicator", cellh), C("Value", cellh), C("Source", cellh), C("Grade", cellh)],
     [C("Berths plugged in, Jul 2024–Jul 2025"), C("<b>67 of 373 (18%)</b>"), C("Transport Malta FOI ◆ [4]"), grade_tag("C")],
     [C("Share of berth time plugged in"), C("<b>9%</b>"), C("Amphora Media analysis ◆ [4]"), grade_tag("C")],
     [C("Connections by MSC World Europa"), C("35 of 67 (52%)"), C("Transport Malta FOI ◆ [4]"), grade_tag("C")],
+    [C("Plug-in rate: MSC World Europa; all other ships"), C("35 of 51 (69%); 32 of 322 (10%)"),
+     C("Calculated from [4] ◆"), grade_tag("C")],
     [C("Carnival Corporation calls plugged in"), C("6 of 58"), C("Transport Malta FOI ◆ [4]"), grade_tag("C")],
     [C("Stays of 2–4 days plugged in"), C("0%"), C("Amphora Media analysis ◆ [4]"), grade_tag("C")],
     [C("Cruise calls 2024 → 2025"), C("357 → 385 (+8%)"), C("Valletta Cruise Port [5]"), grade_tag("C")],
@@ -134,17 +149,19 @@ S.append(P("All values in <i>data/cc-016/checks.csv</i>. Transport Malta said Ca
 S.append(CondPageBreak(120 * mm))
 S.append(SectionHeading(5, "Where the evidence points different ways"))
 S.append(contested(
-    "Q1  Is 90% the right number for a connected ship?", "PLAUSIBLE", GREENC,
+    "Q1  Is 90% the right number for a connected ship?", "LARGELY, FOR NOx, PM, SOx", LG,
     "Infrastructure Malta’s figures for a liner on shore power: 93% less NO2, 92.6% less particulate matter, 99.6% "
     "less SO2 [10, 11]. Hotelling dominates cruise emissions in port [7], so a large cut per ship is consistent with "
     "the research.",
     "These are Infrastructure Malta’s estimates; the study behind them is not cited. They apply to ships that "
-    "connect, not to all harbour pollution; CO2 falls 39.6%; manoeuvring emissions remain [8].",
-    "<b>For this claim:</b> the figure is defensible per connected ship, which is how Infrastructure Malta’s "
-    "per-liner figures are stated."))
+    "connect, not to all harbour pollution; CO2 falls 39.6%; manoeuvring emissions remain [8]. For an LNG-fuelled "
+    "ship the sulphur and particulate saving is smaller [12].",
+    "<b>For this claim:</b> the figure holds per connected ship for nitrogen dioxide, particulates and sulphur "
+    "dioxide, which is how Infrastructure Malta’s per-liner figures are stated."))
 S.append(contested(
     "Q2  Did completion of the project deliver 90%?", "NO", RED,
-    "Use is rising: one large ship plugs in routinely, and Carnival ships were certifying in 2025 [4].",
+    "Use is rising: one large ship (MSC World Europa) plugged in at 35 of its 51 calls, and Carnival ships were "
+    "certifying in 2025 [4].",
     "Ships were plugged in for 9% of berth time in the first year; with 100% removal while plugged in, the cut in "
     "at-berth cruise emissions could be at most about 9%. Calls rose 8% in 2025.",
     "<b>For this claim:</b> presented as a result of completion, the 90% overstates the first-year effect about "
@@ -163,9 +180,9 @@ verd = lambda t, c: chip(t, c, w=29 * mm)
 S.append(std_table([
     [C("Sub-claim", cellh), C("What the evidence shows", cellh), C("Rating", cellh)],
     [C("<b>A.</b> Shore power cuts a connected ship’s emissions at berth by about 90%"),
-     C("Infrastructure Malta’s per-liner figures: NO2 −93%, PM −92.6%, SO2 −99.6%, CO2 −39.6% [10, 11]; "
-       "consistent with research [7, 9]. Underlying study not cited."),
-     verd("PLAUSIBLE", GREENC)],
+     C("True for NOx, PM and SOx per connected liner (NO2 −93%, PM −92.6%, SO2 −99.6%) [10, 11]; CO2 falls only "
+       "about 40%; consistent with research [7, 9]. Infrastructure Malta’s own study is not public."),
+     verd("LARGELY SUPPORTED", LG)],
     [C("<b>B.</b> The project slashes 90% of air pollution in the Grand Harbour"),
      C("At most about 9% of at-berth cruise emissions in year one; other sources and manoeuvring untouched; "
        "no harbour measurement."), verd("NOT SHOWN", RED)],
@@ -207,6 +224,10 @@ for l in ["Connection figures are second-hand (Amphora Media’s analysis of a T
           "The per-pollutant cuts are Infrastructure Malta’s own estimates; the study behind them was not found.",
           "Cruise calls are calendar years; the uptake figures cover July 2024 to July 2025.",
           "Emissions shifted to the power station and the interconnector were not estimated.",
+          "Whether MSC World Europa burned LNG or marine gasoil while berthed in Valletta is not known; its fuel is "
+          "described by its owner [12].",
+          "The counts reconcile (312 + 38 + 23 = 373 berths; 61 + 6 = 67 connections), but Amphora Media’s 16.2% for "
+          "stays of one to two days does not divide 38 exactly (6 of 38 is 15.8%).",
           "Peer-reviewed papers were read as abstracts."]:
     S.append(P("• " + l, bul))
 
@@ -240,7 +261,11 @@ S += references([
     ("11", "Infrastructure Malta (19 Feb 2022). First Grand Harbour Clean Air Project frequency converters in place. "
            "Read 5 Oct 2026.",
      "https://www.infrastructuremalta.com/news/first-grand-harbour-clean-air-project-frequency-converters-place"),
-    ("12", "MiŻien. Data and calculations: data/cc-016/; tools/cc-016-report/calc.py.", ""),
+    ("12", "MSC Cruises (24 Oct 2022). Sustainable cruising: the Cruise Division of MSC Group and Chantiers de "
+           "l’Atlantique mark a major step forward with the delivery of MSC World Europa. Press release; also 12 Apr "
+           "2023 (Valletta in its itineraries). Read 5 Oct 2026.",
+     "https://www.mscpressarea.com/en_US/press-releases/sustainable-cruising-the-cruise-division-of-msc-group-and-chantiers-de-l-atlantiq/"),
+    ("13", "MiŻien. Data and calculations: data/cc-016/; tools/cc-016-report/calc.py.", ""),
 ])
 
 S.append(PageBreak())
@@ -259,7 +284,16 @@ S += revision_log([("1.0", "3 Oct 2026", "First issue. Right of reply to Infrast
                     "4 “extra calls roughly cancel the emissions saved” → states that calls are calendar years, uptake "
                     "July–July and shore power was available from July 2024. (5) 2019 calls: also given by "
                     "Infrastructure Malta citing the NSO. ‘What would move it down’: removed the clause saying no "
-                    "scoped wording was found. Verdict and confidence unchanged.")])
+                    "scoped wording was found. Verdict and confidence unchanged."),
+                   ("1.2", "5 Oct 2026", "Upgrade: (1) New Figure 1: the 373 berths split into 35 plugged in by MSC "
+                    "World Europa, 32 by all other ships and 306 not plugged in, beside the 90% per connected liner "
+                    "and the 9% of berth time plugged in (counts re-read in [4] and reconciled; second-hand); former "
+                    "Figures 1 and 2 renumbered 2 and 3. (2) MSC World Europa is LNG-powered (dual-fuel LNG / "
+                    "low-sulphur marine gasoil), from its owner’s release [12]: Section 3, Q1 and limitations. (3) "
+                    "Plug-in rates added: MSC World Europa 35 of 51 calls, all other ships 32 of 322. (4) TL;DR point 3, "
+                    "a tile (306 berths not plugged in), Q2 and flyer updated. Verdict and confidence unchanged."),
+                   ("1.2", "5 Oct 2026", "Maintainer decision (5 Oct 2026): sub-claim A rated Largely supported (was "
+                    "Plausible); its evidence text and the Q1 label updated to match.")])
 
 build_report(Report(
     number="016", out=str(FIG / "report.pdf"), kicker="Air quality",
@@ -270,9 +304,9 @@ build_report(Report(
     attribution="Infrastructure Malta, Shore-to-Ship project page, 1 December 2023.",
     context="Repeated at the inauguration, 10 July 2024.",
     verdict="Misleading", verdict_note="A design potential presented as a result; ships plugged in 9% of the time",
-    footer_lines=["Version 1.1  ·  5 October 2026", "Status: draft (right of reply: Infrastructure Malta, Transport Malta)",
+    footer_lines=["Version 1.2  ·  5 October 2026", "Status: draft (right of reply: Infrastructure Malta, Transport Malta)",
                   "Prepared from public sources and published records.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Shore-to-ship and harbour air – Malta", version="1.1", date="5 October 2026",
+    running_head="Shore-to-ship and harbour air – Malta", version="1.2", date="5 October 2026",
     pdf_title="Does shore power cut harbour pollution by 90%? Claim Check 016",
     pdf_subject="Tests Infrastructure Malta's claim that shore-to-ship slashes 90% of Grand Harbour air pollution",
     story=S))
