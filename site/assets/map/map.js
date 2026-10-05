@@ -42,6 +42,9 @@
   try { if (localStorage.getItem("mizien.labels") === "tag") labelMode = "tag"; if (localStorage.getItem("mizien.text") === "off") showText = false; } catch (e) {}
   var spinning = true, sway = false;
   var sel = null, hover = null;
+  // Lines other than claim links that can be hovered and selected: between bodies (Who said it) and between
+  // overlapping pledges. Their screen geometry is kept from the last frame for picking.
+  var blinks = [], plinks = []; var lastBodyFocus = null;
   var W = 0, H = 0, dpr = 1, R = 250, t0 = performance.now(), lastT = 0;
   var MAP_THEME = document.documentElement.getAttribute("data-map-theme") || "botanical";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -840,6 +843,9 @@
     if (sel.kind === "hub") { hb = sel.hub; (sel.hub.claims || []).forEach(function (c) { ids[c.id] = 1; }); claims.forEach(function (c) { if (c.extra.indexOf(sel.hub) >= 0) ids[c.id] = 1; });
       if (sel.hub.body) hl = linkedBodyHubs(sel.hub).concat(sel.hub.people || [], sel.hub.anchor ? [sel.hub.anchor] : []); }
     if (sel.kind === "part") ids[partById[sel.id].parent.id] = 1;
+    if (sel.kind === "blink") { var bl = bodyLinkClaims(sel.q); bl.named.concat(bl.pairs.map(function (p) { return p.a; }), bl.pairs.map(function (p) { return p.b; }))
+      .forEach(function (c) { ids[c] = 1; }); bl.pairs.forEach(function (p) { es[p.i] = 1; }); hl = [sel.q.a, sel.q.b]; }
+    if (sel.kind === "plink") { ids[sel.l.a] = ids[sel.l.b] = 1; }
     if (sel.kind === "edge") { es[sel.index] = 1; ids[sel.edge.from] = ids[sel.edge.to] = 1; }
     if (sel.kind === "theme") edges.forEach(function (e, i) { if (e.theme === sel.id) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } });
     if (sel.kind === "place") sel.place.claims.forEach(function (c) { ids[c.id] = 1; edges.forEach(function (e, i) { if (e.from === c.id || e.to === c.id) es[i] = 1; }); });
@@ -853,8 +859,12 @@
   function linkedBodyHubs(h) {
     return bodyLinksOf(h).map(function (l) { return bodyHubOf[l.id]; }).filter(function (x) { return x && !x.parent.hidden; });
   }
+  function sameLine(h, q) { return h && h.kind === "blink" && h.q.a === q.a && h.q.b === q.b; }
   function drawBodyLinks(P, F, t) {
-    var focus = sel && sel.kind === "hub" && sel.hub.body ? sel.hub : hover && hover.kind === "hub" && hover.hub.body ? hover.hub : null;
+    var focus = sel && sel.kind === "hub" && sel.hub.body ? sel.hub : sel && sel.kind === "blink" ? sel.q.a
+      : hover && hover.kind === "hub" && hover.hub.body ? hover.hub : hover && hover.kind === "blink" ? hover.q.a   // keep a body's lines while one is hovered
+      : previewKey && lastBodyFocus ? lastBodyFocus : null;
+    lastBodyFocus = focus;
     var pairs = [];
     if (focus) bodyLinksOf(focus).forEach(function (l) { var o = bodyHubOf[l.id]; if (o) pairs.push({ a: focus, b: o, l: l }); });
     else if (linksOn) subHubs.forEach(function (a) {   // all links between bodies named together in a claim
@@ -867,6 +877,9 @@
       var named = q.l.named > 0, w = Math.min(4, 1.2 + 0.5 * (q.l.named * 2 + q.l.pairs));
       var mx = (a.sx + b.sx) / 2, my = (a.sy + b.sy) / 2, dx = b.sx - a.sx, dy = b.sy - a.sy, bend = 0.18;
       var cx = mx - dy * bend, cy = my + dx * bend;
+      blinks.push({ q: q, g: { a: a, b: b, c: { x: cx, y: cy } } });
+      if (sameLine(hover, q) || sameLine(sel, q)) { ctx.strokeStyle = "rgba(246,227,180,.3)"; ctx.lineWidth = w + 10; ctx.lineCap = "round";
+        ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(cx, cy, b.sx, b.sy); ctx.stroke(); }
       ctx.lineCap = "round"; ctx.setLineDash([]);
       ctx.strokeStyle = "rgba(4,18,12,.55)"; ctx.lineWidth = w + 3;
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(cx, cy, b.sx, b.sy); ctx.stroke();
@@ -886,6 +899,8 @@
     if (!sel) return null;
     var centre = null, pts = [];
     if (sel.kind === "part") { centre = partById[sel.id].parent; }
+    else if (sel.kind === "blink") pts = [sel.q.a, sel.q.b];
+    else if (sel.kind === "plink") pts = [byId[sel.l.a], byId[sel.l.b]];
     else if (sel.kind === "claim") { centre = byId[sel.id];
       edges.forEach(function (e) { if (e.from === sel.id) pts.push(byId[e.to]); else if (e.to === sel.id) pts.push(byId[e.from]); }); }
     else if (sel.kind === "edge") pts = [byId[sel.edge.from], byId[sel.edge.to]];
@@ -1013,7 +1028,7 @@
       ctx.setLineDash([2, 6]); ctx.beginPath(); ctx.ellipse(p.sx, p.sy, r, r * (0.32 + 0.5 * Math.abs(Math.sin(cam.pitch))), 0, 0, 6.283); ctx.stroke(); ctx.restore();
     });
 
-    edges.forEach(function (e) { e._g = null; });
+    edges.forEach(function (e) { e._g = null; }); blinks = []; plinks = [];
     function drawLinks(side) {
     // spokes: claim to its group (and faint spokes to secondary groups)
     if (showSpokes && mode !== "network" && view === "graph") subHubs.forEach(function (sh) {
@@ -1028,7 +1043,9 @@
     if (mode === "pledges" && view === "graph") (DATA.pledge_links || []).forEach(function (l) {   // overlapping pledges
       var a = byId[l.a], b = byId[l.b]; if (!a || !b || a.hidden || b.hidden) return;
       var pa = P.get(a), pb = P.get(b), on = !F || F.ids[l.a] || F.ids[l.b];
-      ctx.save(); ctx.globalAlpha = on ? 0.95 : 0.25; ctx.strokeStyle = "#f6e3b4"; ctx.lineWidth = 2.6; ctx.setLineDash([2, 5]); ctx.lineCap = "round";
+      var pc = { x: (pa.sx + pb.sx) / 2, y: (pa.sy + pb.sy) / 2 - 40 }, lit = (hover && hover.kind === "plink" && hover.l === l) || (sel && sel.kind === "plink" && sel.l === l);
+      plinks.push({ l: l, g: { a: pa, b: pb, c: pc } });
+      ctx.save(); ctx.globalAlpha = on || lit ? 0.95 : 0.25; ctx.strokeStyle = "#f6e3b4"; ctx.lineWidth = lit ? 4.2 : 2.6; ctx.setLineDash([2, 5]); ctx.lineCap = "round";
       if (!reduce) ctx.lineDashOffset = -t * 10;
       ctx.beginPath(); ctx.moveTo(pa.sx, pa.sy); ctx.quadraticCurveTo((pa.sx + pb.sx) / 2, (pa.sy + pb.sy) / 2 - 40, pb.sx, pb.sy); ctx.stroke(); ctx.restore();
     });
@@ -1220,10 +1237,12 @@
     if (best) return best.kind === "hub" ? { kind: "hub", hub: best } : best.kind === "part" ? { kind: "part", id: best.id } : { kind: "claim", id: best.id };
     if (view === "map") for (var pi = 0; pi < PLACES.length; pi++) { var Q = PLACES[pi]._p;
       if (Q && Math.hypot(Q.x - x, Q.y - y) < Q.r + 4) return { kind: "place", place: PLACES[pi] }; }
-    var be = -1; bd = 8;
-    edges.forEach(function (e, i) { if (!e._g) return;
-      for (var q = 0; q <= 24; q++) { var p = qpt(e._g, q / 24), d = Math.hypot(p.x - x, p.y - y); if (d < bd) { bd = d; be = i; } } });
-    return be >= 0 ? { kind: "edge", index: be, edge: edges[be] } : null;
+    var found = null; bd = W < 700 ? 12 : 8;
+    function near(g) { var m = 1e9; for (var q = 0; q <= 24; q++) { var p = qpt(g, q / 24); m = Math.min(m, Math.hypot(p.x - x, p.y - y)); } return m; }
+    edges.forEach(function (e, i) { if (!e._g) return; var d = near(e._g); if (d < bd) { bd = d; found = { kind: "edge", index: i, edge: e }; } });
+    blinks.forEach(function (b) { var d = near(b.g); if (d < bd) { bd = d; found = { kind: "blink", q: b.q }; } });
+    plinks.forEach(function (b) { var d = near(b.g); if (d < bd) { bd = d; found = { kind: "plink", l: b.l }; } });
+    return found;
   }
 
   // ------------------------------------------------------------ map view
@@ -1601,6 +1620,7 @@
   var pbody = null, wide = false;
   // Cards give quick information about a node; the full check is on the claim page (opened in a new tab).
   function openPanel(kicker, title, accent, pills, pageUrl, pageLabel) {
+    if (!previewing) stash = null;   // a real selection replaces any hover preview
     panel.textContent = ""; panel.style.display = "block"; panel.scrollTop = 0;
     document.getElementById("mapwrap").classList.add("panel-open");
     var light = themePanel(accent || "#14452f");
@@ -1835,9 +1855,90 @@
     if (also.length) { label("ALSO TAGGED (SECOND PATTERN)"); var b2 = el("div", "links"); also.forEach(function (c) { claimLink(c.id, b2); }); pbody.appendChild(b2); }
     fitPanel();
   }
-  function selectEdge(i) {
-    var e = edges[i], th = themeById[e.theme] || {}; sel = { kind: "edge", index: i, edge: e };
-    openPanel("LINK · " + (th.link_type || e.link_type || "").toUpperCase(), th.name || e.theme, th.color, [e.from + " ↔ " + e.to]);
+  // ------------------------------------------------------------ hover previews of lines
+  // Resting the pointer on a line shows its card without changing the selection or moving the camera. The card stays
+  // while the pointer is on the line or the card; leaving both restores the previous card. A click keeps it.
+  var previewing = false, stash = null, previewKey = null, previewTimer = null, endTimer = null;
+  function lineKey(h) { return !h ? null : h.kind === "edge" ? "e" + h.index : h.kind === "blink" ? "b" + h.q.a.key + "|" + h.q.b.key : h.kind === "plink" ? "p" + h.l.a + "|" + h.l.b : null; }
+  function showLine(h, preview) {
+    previewing = !!preview;
+    if (h.kind === "edge") selectEdge(h.index, preview); else if (h.kind === "blink") selectBodyLink(h.q, preview); else selectPledgeLink(h.l, preview);
+    previewing = false;
+  }
+  function startPreview(h) {
+    clearTimeout(endTimer);
+    if (previewKey === lineKey(h)) return;
+    clearTimeout(previewTimer);
+    previewTimer = setTimeout(function () {
+      if (!stash) stash = { nodes: Array.prototype.slice.call(panel.childNodes), style: panel.getAttribute("style"), cls: panel.className,
+        open: document.getElementById("mapwrap").classList.contains("panel-open"), pbody: pbody };
+      previewKey = lineKey(h); showLine(h, true);
+    }, 320);
+  }
+  function endPreview(soon) {
+    clearTimeout(previewTimer);
+    if (!previewKey) return;
+    clearTimeout(endTimer);
+    endTimer = setTimeout(function () {
+      if (!stash) { previewKey = null; return; }
+      panel.textContent = ""; stash.nodes.forEach(function (n) { panel.appendChild(n); });
+      if (stash.style === null) panel.removeAttribute("style"); else panel.setAttribute("style", stash.style);
+      panel.className = stash.cls; pbody = stash.pbody;
+      document.getElementById("mapwrap").classList.toggle("panel-open", stash.open);
+      stash = null; previewKey = null;
+    }, soon ? 0 : 450);
+  }
+  panel.addEventListener("pointerenter", function () { clearTimeout(endTimer); });
+  panel.addEventListener("pointerleave", function () { if (previewKey) endPreview(); });
+
+  function pairsBetween(as, bs) {   // claim links (edges) between two sets of claims
+    var out = [];
+    edges.forEach(function (e, i) { if (byId[e.from].hidden || byId[e.to].hidden) return;
+      if (as[e.from] && bs[e.to]) out.push({ a: e.from, b: e.to, i: i, theme: e.theme });
+      else if (as[e.to] && bs[e.from]) out.push({ a: e.to, b: e.from, i: i, theme: e.theme }); });
+    return out;
+  }
+  function claimsOfBody(id, asOffice) {   // a person's own claims, or an office's claims with its people's
+    var out = {};
+    claims.forEach(function (c) { (c.data.bodies || []).forEach(function (b) { if (b === id || (asOffice && officeOf(b) === id)) out[c.id] = 1; }); });
+    return out;
+  }
+  function bodyLinkClaims(q) {
+    var as = claimsOfBody(q.a.body.id, !q.a.person), bs = claimsOfBody(q.b.body.id, true);
+    return { named: Object.keys(as).filter(function (c) { return bs[c]; }).sort(), pairs: pairsBetween(as, bs) };
+  }
+  function selectBodyLink(q, preview) {
+    if (!preview) { sel = { kind: "blink", q: q }; syncSelParam(); }
+    var bl = bodyLinkClaims(q), themes = {};
+    bl.pairs.forEach(function (p) { themes[p.theme] = (themes[p.theme] || 0) + 1; });
+    openPanel("LINK BETWEEN BODIES" + (preview ? " · CLICK THE LINE TO KEEP" : ""), q.a.name + " ↔ " + q.b.name, "#f6e3b4",
+      [bl.named.length + (bl.named.length === 1 ? " claim together" : " claims together"), Object.keys(themes).length + (Object.keys(themes).length === 1 ? " shared theme" : " shared themes")]);
+    pbody.appendChild(el("p", null, "Two bodies are linked when they are named in the same claim, or when their claims share a theme. It means their claims are worth reading together; it does not mean they agree, disagree or act together."));
+    if (bl.named.length) { label("NAMED IN THE SAME CLAIM"); var nb = el("div", "links"); bl.named.forEach(function (c) { claimLink(c, nb); }); pbody.appendChild(nb); }
+    if (bl.pairs.length) {
+      label("CLAIMS THAT SHARE A THEME"); var pb = el("div", "links");
+      bl.pairs.forEach(function (p) { var th = themeById[p.theme] || {}, row = el("div", "lrow");
+        var tb = el("button", "tchip", th.name || p.theme); tb.type = "button"; tb.style.borderColor = th.color || "#7fa88b"; tb.onclick = function () { selectEdge(p.i); };
+        row.appendChild(tb); claimLink(p.a, row); row.appendChild(el("span", "small", "↔")); claimLink(p.b, row); pb.appendChild(row); });
+      pbody.appendChild(pb);
+    }
+    var acts = el("div", "acts");
+    [q.a, q.b].forEach(function (h) { var b = el("button", "btn ghost", h.name); b.type = "button"; b.onclick = function () { selectHub(h); }; acts.appendChild(b); });
+    pbody.appendChild(acts); fitPanel();
+  }
+  function selectPledgeLink(l, preview) {
+    if (!preview) { sel = { kind: "plink", l: l }; syncSelParam(); }
+    openPanel("OVERLAPPING PLEDGES" + (preview ? " · CLICK THE LINE TO KEEP" : ""), l.a + " ↔ " + l.b, "#f6e3b4", (l.why || []).slice(0, 2));
+    var box = el("div", "links"); claimLink(l.a, box); claimLink(l.b, box); pbody.appendChild(box);
+    label("WHY THEY OVERLAP");
+    var ul = el("ul"); (l.why || []).forEach(function (w) { ul.appendChild(el("li", "small", w.charAt(0).toUpperCase() + w.slice(1) + ".")); }); pbody.appendChild(ul);
+    pbody.appendChild(el("p", "small", "Overlapping pledges are worth reading together, for example when two parties promise to tackle the same problem."));
+    fitPanel();
+  }
+  function selectEdge(i, preview) {
+    var e = edges[i], th = themeById[e.theme] || {};
+    if (!preview) sel = { kind: "edge", index: i, edge: e };
+    openPanel("LINK · " + (th.link_type || e.link_type || "").toUpperCase() + (preview ? " · CLICK THE LINE TO KEEP" : ""), th.name || e.theme, th.color, [e.from + " ↔ " + e.to]);
     var box = el("div", "links"); claimLink(e.from, box); claimLink(e.to, box); pbody.appendChild(box);
     if (th.description) { label("WHAT CONNECTS THEM"); pbody.appendChild(el("p", null, th.description)); }
     var chips = el("div"); chips.appendChild(el("span", "chip soft", "Strength: " + (e.strength || th.strength))); pbody.appendChild(chips);
@@ -1895,6 +1996,8 @@
     else if (h.kind === "district") txt = h.locked ? lockText(h.d) : h.d.name + " · " + districtClaims(h.d).length + " claims · click to open";
     else if (h.kind === "hub" && h.hub.body) txt = h.hub.name + (h.hub.body.role ? ", " + h.hub.body.role : "") + " · " + h.hub.count + (h.hub.count === 1 ? " claim" : " claims") + " · " + bodyLinksOf(h.hub).length + " linked bodies";
     else if (h.kind === "hub") txt = (h.hub.sub ? h.hub.parent.name + " › " : "") + h.hub.name + " · " + h.hub.count + (h.hub.count === 1 ? " claim" : " claims");
+    else if (h.kind === "blink") txt = h.q.a.name + " ↔ " + h.q.b.name;
+    else if (h.kind === "plink") txt = "Overlapping pledges: " + h.l.a + " ↔ " + h.l.b;
     else { var th = themeById[h.edge.theme] || {}; txt = (th.name || h.edge.theme) + ": " + h.edge.from + " ↔ " + h.edge.to; }
     tip.textContent = txt; tip.style.display = "block";
     tip.style.left = Math.min(x + 14, W - tip.offsetWidth - 8) + "px"; tip.style.top = (y + 16) + "px";
@@ -1945,15 +2048,16 @@
     if (down) { var dx = e.clientX - down.x, dy = e.clientY - down.y; moved += Math.abs(dx) + Math.abs(dy);
       if (dragKind === "pan") panBy(dx, dy); else orbitBy(dx, dy);
       down = { x: e.clientX, y: e.clientY }; showTip(null); }
-    else { hover = pick(mx, my); canvas.style.cursor = hover ? "pointer" : "grab"; showTip(hover, mx, my); }
+    else { hover = pick(mx, my); canvas.style.cursor = hover ? "pointer" : "grab"; showTip(hover, mx, my);
+      if (e.pointerType !== "touch") { if (lineKey(hover)) startPreview(hover); else endPreview(); } }
   });
-  canvas.addEventListener("pointerleave", function () { hover = null; showTip(null); });
+  canvas.addEventListener("pointerleave", function () { hover = null; showTip(null); endPreview(); });
   canvas.addEventListener("pointerup", function (e) {
     delete activePointers[e.pointerId];
     if (multiGesture) { down = null; pinch = null; lastMid = null; if (!pointerCount()) { multiGesture = false; canvas.classList.remove("dragging"); } return; }
     canvas.classList.remove("dragging");
     if (moved < 6) { var r = canvas.getBoundingClientRect(); var h = pick(e.clientX - r.left, e.clientY - r.top);
-      if (!h) clearSel(); else if (h.kind === "district") { if (!h.locked) enterDistrict(h.d); else showToast(lockText(h.d)); } else if (h.kind === "place") selectPlace(h.place); else if (h.kind === "claim") selectClaim(h.id); else if (h.kind === "part") selectPart(h.id); else if (h.kind === "hub") selectHub(h.hub); else selectEdge(h.index); }
+      if (!h) clearSel(); else if (h.kind === "district") { if (!h.locked) enterDistrict(h.d); else showToast(lockText(h.d)); } else if (h.kind === "place") selectPlace(h.place); else if (h.kind === "claim") selectClaim(h.id); else if (h.kind === "part") selectPart(h.id); else if (h.kind === "hub") selectHub(h.hub); else { clearTimeout(previewTimer); clearTimeout(endTimer); stash = null; previewKey = null; showLine(h, false); } }
     else if (view === "graph" && dragKind === "orbit") setSpin(false);
     down = null;
   });
