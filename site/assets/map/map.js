@@ -45,7 +45,7 @@
   var VC = { "Supported": "#2e7d4f", "Largely supported": "#8db36b", "Not substantiated": "#d9772b",
              "Misleading": "#c85a3a", "Contradicted": "#8e2f25" };
   var NOT_YET = "Not yet checked", NOT_YET_COL = "#5d7468";
-  // A pledge gets a label instead of a verdict (methodology/pledge-labels.md). A pure pledge check is coloured by its
+  // A pledge gets a label instead of a verdict (methodology/verdict-scale.md, Pledges). A pure pledge check is coloured by its
   // label; a mixed check keeps its verdict colour and shows the label in its card.
   var PLEDGE_COL = {};
   function unitWord(n) { return n === 1 ? (mode === "pledges" ? " pledge" : " claim") : (mode === "pledges" ? " pledges" : " claims"); }

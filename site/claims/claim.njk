@@ -75,6 +75,7 @@ permalink: "/claims/{{ claim.id }}/"
       <h2 id="h-pledge">{% icon "flag" %}The pledge{% if not pv.pure %} in this claim{% endif %}</h2>
       <p class="pledge-status"><span class="pledge-label">{{ pv.status }}</span> <span class="small">as of {{ pv.as_of }}</span></p>
       {%- if plabel %}<p class="small">{{ pv.status }}: {{ plabel.meaning | mdInline | safe }}</p>{% endif %}
+      {%- if pv.note %}<p>{{ pv.note }}</p>{% endif %}
       {%- if not pv.pure %}<p class="small">A pledge gets a label, not a verdict. The verdict above ({{ c.verdict }}) is for the factual part of the claim.</p>{% endif %}
       <dl class="facts">
         <div><dt>Target</dt><dd>{{ pv.target }}</dd></div>

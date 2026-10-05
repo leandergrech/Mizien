@@ -46,7 +46,7 @@ Every run therefore starts with `python scripts/net_check.py`:
 - **Finished claim:** report, flyer and records as for any claim check; `Blocker` cleared.
 - **Parts and pledges:** copy the report's sub-claim table into `subclaims:` in claim.yml (ids CC-NNNA, CC-NNNB...
   in order, with text, finding, rating and the chip's colour as `tone`); parts share their claim's page and appear
-  on the map as satellites of it. A pledge gets a `pledge:` block with a label from `methodology/pledge-labels.md`
+  on the map as satellites of it. A pledge gets a `pledge:` block with a label from the Pledges section of `methodology/verdict-scale.md`
   instead of a verdict: a pure pledge has `verdict: null`; a check that also tests facts keeps its verdict for them.
   `Missed` needs the deadline or term to have passed and `evidence_shown`.
 - **Research log:** every run that does research on a claim adds a dated entry to its `history:` in `claim.yml`,

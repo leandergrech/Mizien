@@ -89,7 +89,7 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
     table. They share their claim's page (a "Parts of this claim" section, anchors `#CC-017A`), are linked wherever
     their number is mentioned, have their own hover card, and appear in the Għanqbuta view as small satellites of
     their claim (selectable: `?sel=part:CC-017C`). They are not claims of their own: no groups, links or pages.
-  - Pledges get a label instead of a verdict (`methodology/pledge-labels.md`): Not measurable, Not yet due, On
+  - Pledges get a label instead of a verdict (the Pledges section of `methodology/verdict-scale.md`, written by the ccr session): Not measurable, Not yet due, On
     track, Off track, Met, Missed, each with an as-of date, in a `pledge:` block (status, as_of, made_by, made_on,
     vehicle, deadline, target; optional term_end, occasion, overlaps). A pure pledge has no verdict and shows only
     its label; a mixed check shows both. The validator checks the block (Missed only after the deadline or term and

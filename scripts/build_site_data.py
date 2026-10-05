@@ -108,7 +108,7 @@ def main() -> int:
                              for l in p["links"]]} for p in profiles.values()]
     body_types = [{"id": k, "label": v, "colour": register.TYPE_COLOURS[k]} for k, v in register.TYPES.items()]
     pledge_labels = [{"name": n, "meaning": m, "slug": "pledge-" + slug(n), "colour": PLEDGE_COLOURS.get(n, "#716f8d")}
-                     for n, m in bold_table("pledge-labels.md")]
+                     for n, m in pledge_label_list()]
     # Overlapping pledges, for the map's pledge network (each pair once, with the reasons).
     pledge_links = [{"a": x["id"], "b": o["id"], "why": o["why"]}
                     for x in pledge_network(records, reg, connections.adjacency(edges)) for o in x["overlaps"] if x["id"] < o["id"]]
@@ -233,6 +233,11 @@ def bold_table(md_file: str) -> list:
     return re.findall(r"^\|\s*\*\*(.+?)\*\*\s*\|\s*(.+?)\s*\|\s*$", text, flags=re.M)
 
 
+def pledge_label_list() -> list:
+    """[(label, meaning)] from the 'Pledges' section of methodology/verdict-scale.md (maintainer decision, 5 Oct 2026)."""
+    return [(m.group(1), m.group(2)) for m in (re.match(r"\*\*(.+?)\*\*:\s*(.+)", x) for x in section_items("verdict-scale.md", "Pledges")) if m]
+
+
 def section_items(md_file: str, heading: str) -> list:
     """Bulleted or numbered items under '## heading' in a methodology file, inline Markdown kept."""
     text = (ROOT / "methodology" / md_file).read_text(encoding="utf-8")
@@ -279,7 +284,7 @@ def claim_ref(d: dict) -> dict:
             "label": label, "label_slug": label_slug, "label_kind": kind}
 
 
-PLEDGE_COLOURS = {   # pledge labels (methodology/pledge-labels.md): a family of their own, apart from the verdict hues
+PLEDGE_COLOURS = {   # pledge labels (methodology/verdict-scale.md, Pledges): a family of their own, apart from the verdict hues
     "Not measurable": "#716f8d", "Not yet due": "#5c7689", "On track": "#337f71", "Off track": "#ae5d33",
     "Met": "#23705f", "Missed": "#7c2d4a",
 }
@@ -295,7 +300,7 @@ def pledge_view(d: dict, reg: dict) -> dict | None:
     return {"status": p.get("status"), "slug": "pledge-" + slug(p.get("status") or ""), "colour": PLEDGE_COLOURS.get(p.get("status")),
             "as_of": fmt(p.get("as_of")), "as_of_iso": str(p.get("as_of") or ""), "made_on": fmt(p.get("made_on")),
             "deadline": fmt(p.get("deadline")), "term_end": fmt(p.get("term_end")), "target": p.get("target"),
-            "vehicle": p.get("vehicle"), "occasion": occasion,
+            "vehicle": p.get("vehicle"), "occasion": occasion, "note": p.get("note"),
             "made_by": [body_ref(reg[b]) for b in p.get("made_by") or [] if b in reg],
             "made_by_ids": [b for b in p.get("made_by") or [] if b in reg],
             "pure": not d.get("verdict"), "overlaps": [str(x) for x in p.get("overlaps") or []]}
@@ -495,7 +500,7 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
                           key=lambda x: (x["iso"], x["claim"]["id"], x["label"]), reverse=True),
         "by_kind": by_kind.build(records, claim_bodies, reg, out["themes"], [n for n, _ in bold_table("pattern-tags.md")],
                                  [n for n, _ in bold_table("verdict-scale.md")], [c["name"] for c in out["categories"]], claim_ref,
-                                 [n for n, _ in bold_table("pledge-labels.md")]),
+                                 [n for n, _ in pledge_label_list()]),
         "pledges": pledge_network(records, reg, adj),
         "pledge_labels": out["pledge_labels"],
         "theme_bridges": [{**x, "a_name": theme_names.get(x["a"]), "b_name": theme_names.get(x["b"]),

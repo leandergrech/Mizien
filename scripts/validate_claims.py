@@ -119,12 +119,14 @@ def check_subclaims(d) -> list:
 
 
 def load_pledge_labels() -> list:
-    text = (ROOT / "methodology" / "pledge-labels.md").read_text(encoding="utf-8")
-    return re.findall(r"^\|\s*\*\*(.+?)\*\*\s*\|", text, flags=re.M)
+    """Labels from the 'Pledges' section of methodology/verdict-scale.md: lines '- **Label**: meaning'."""
+    text = (ROOT / "methodology" / "verdict-scale.md").read_text(encoding="utf-8")
+    m = re.search(r"^## Pledges\s*$(.*?)(?=^## |\Z)", text, flags=re.M | re.S)
+    return re.findall(r"^- \*\*(.+?)\*\*:", m.group(1), flags=re.M) if m else []
 
 
 def check_pledge(d) -> list:
-    """`pledge:` gives a pledge its label (methodology/pledge-labels.md) instead of, or beside, a verdict."""
+    """`pledge:` gives a pledge its label (methodology/verdict-scale.md, Pledges) instead of, or beside, a verdict."""
     p = d.get("pledge")
     if p is None:
         return []
@@ -136,7 +138,8 @@ def check_pledge(d) -> list:
     errs, labels = [], load_pledge_labels()
     status = p.get("status")
     if status not in labels:
-        errs.append(f"pledge status '{status}' must be one of: {', '.join(labels)}")
+        errs.append(f"pledge status '{status}' must be one of: {', '.join(labels)}" if labels
+                    else "pledge labels are not defined yet: add a 'Pledges' section to methodology/verdict-scale.md")
     as_of = timeline.parse_date(p.get("as_of"))
     if not as_of or as_of["precision"] != "day":
         errs.append("pledge as_of must be a full date (the date of the evidence behind the label)")
