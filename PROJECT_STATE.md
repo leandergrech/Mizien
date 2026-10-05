@@ -112,6 +112,30 @@ sub-claim tables changed in v1.1/v1.2), then both scripts. The report HTML pledg
 `report-meter pledge-meter` and badges `v-not-measurable` etc. with inline colours; replace them with stylesheet
 classes if #55 defines some.
 
+## Worker review (5 October 2026)
+
+The maintainer asked for a review of the first night's worker output (CC-030 and CC-037 drafted, five claims blocked).
+
+- **CC-037 (worker A):** the numbers are right; the verdict stays **Supported (high)**. v1.1 fixes the record and
+  report: `claim.quote` was at the top level; the text said Amphora cites Eurostat (it names no source); the reasoning,
+  sub-claim E and the up/down boxes disagreed with the verdict; the cover said 'published'; Eurostat's own Statistics
+  Explained article was missing; the 2021-22 gap needed its reason (EU-SILC moved to Regulation (EU) 2019/1700) and
+  the dataset flags had been dropped.
+- **CC-030 (worker C):** the release does not contain the neutrality wording the worker quoted as one passage; the
+  ACA directory (WordPress API) and the Gold Standard registry were readable after all; the GPU plausibility check
+  used rates with no source. The maintainer set the verdict to **Not substantiated (moderate)**: the 1,000 t figure
+  has no published method. A right of reply to MIA is needed (draft in the maintainer's private doc).
+- **Blockers:** three of five had readable sources and are unblocked with `primary-source.md` (CC-029 and CC-032
+  via TVM News, CC-032 also the Commission's project page, CC-035 the EEA quick-facts page). CC-027 stays blocked
+  (Lovin Malta paraphrases only; Newsbook leads in its README). **CC-021 needs a decision:** no dated speaker says
+  'about three times'; it summarises the Cordina cost-benefit study, so the claim should be reworded at intake (or
+  replaced) before a worker takes it again.
+- **Routines:** the worker instructions now live in `methodology/worker-routine.md` (all blocker routes tried and
+  logged, a source and date for each quoted passage, sourced inputs only, the scale applied literally, `claim.quote`
+  inside `claim:`, right-of-reply wording, sources Refs renumbered after main's). The routine prompts can only be
+  edited by the maintainer: after this branch merges, replace each worker routine's prompt with the short pointer
+  (worker A, B or C) given in the session. Until then the routines run their old prompts.
+
 ## Automation (3 October 2026)
 
 Nightly checker routines A, B and C (Sonnet 5.5) take claims from `data/queue.csv`; a weekly intake routine adds ten
