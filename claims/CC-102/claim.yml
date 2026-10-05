@@ -2,50 +2,108 @@ id: CC-102
 title: 'Ombudsman: 58% of environment recommendations ignored'
 category: Governance & Promises
 subtopic: Accountability
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
-  text: 'Parliamentary Ombudsman (2025 annual report, reported 2 July 2026): 58% of the justified recommendations
-    of the Commissioner for Environment and Planning went unimplemented in 2025, the highest rate among the Ombudsman''s
-    commissioners, and 22 reports were escalated to Parliament.'
+  text: 'Parliamentary Ombudsman (2025 annual report, reported 2 July 2026): 58% of the justified recommendations of the Commissioner
+    for Environment and Planning went unimplemented in 2025, the highest rate among the Ombudsman''s commissioners, and 22
+    reports were escalated to Parliament.'
   speaker: Parliamentary Ombudsman (Judge Joseph Zammit McKeon)
   date: '2026-07-02'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
+  - title: Annual Report 2025 (Table 1.3, Table 1.22, Commissioner for Environment and Planning chapter)
+    publisher: Office of the Ombudsman, Malta
+    date: 2026-06
+    url: https://ombudsman.org.mt/media/0ownfd4k/digital-annual-report-2025-en.pdf
+    note: Primary. Read in full 5 Oct 2026 (SHA-256 14fcc0c6...42b0). Quote on p. 15; 22 reports to Parliament in Table 1.22
+      (p. 37).
   - title: Public entities ignore Ombudsman as defiance reaches record high
     publisher: Newsbook
     date: '2026-07-02'
     url: https://newsbook.com.mt/en/public-entities-ignore-ombudsman-as-defiance-reaches-record-high/
-    note: Locates the 58% figure; the Ombudsman is quoted only on general frustration. Read the annual report itself.
+    note: Locator. Read 5 Oct 2026. Its "justified recommendations" paraphrases "sustained cases"; the "highest rate" comparison
+      is the newspaper's, from the Ombudsman's tables.
   - title: Ombudsman presents 2025 Annual Report to Speaker
     publisher: The Malta Independent
     date: '2026-06-05'
     url: https://www.independent.com.mt/articles/2026-06-05/local-news/Ombudsman-presents-2025-Annual-Report-to-Speaker-of-the-House-of-Representatives-6736290260
     note: Locator (HTTP 403 to automated fetch); reports the 22 escalated reports.
-counter_evidence: 'The report text and denominator were not read: a percentage can rest on few cases. Non-implementation
-  may reflect disagreement with a finding as well as inaction; the authorities'' stated reasons are in the individual
-  case notes.'
-tests: Ombudsman 2025 annual report (case tables for the Commissioner for Environment and Planning, 2023-2025);
-  individual case notes; number of cases behind the 58%.
-why_low_hanging: A single annual-report table can confirm or correct the number, and the trend over three years
-  is published.
+  - title: Annual Reports 2024 and 2023 (Table 1.3)
+    publisher: Office of the Ombudsman, Malta
+    date: 2025; 2024
+    url: https://ombudsman.org.mt/media/q4nbhpzv/annual-report-2024-ombudsman.pdf
+    note: 'Read 5 Oct 2026. 2023 report: https://ombudsman.org.mt/media/fr1ndd4u/annual-report-2023-en.pdf. Gives 2 of 8 (2024)
+      and 6 of 13 (2023).'
+  quote: The Commissioner for Environment and Planning had 12 sustained cases, representing 15% of the total, of which 7 recommendations,
+    or 58%, were not implemented.
+counter_evidence: The 58% is 7 of 12 sustained cases closed in 2025 (Table 1.3); the same office had 6 of 13 (46%) in 2023
+  and 2 of 8 (25%) in 2024, so the figure swings with very few cases. The Commissioner's chapter says five of the 12 were
+  still unimplemented when the report was written; two more were implemented after referral to the House. 'Highest' holds
+  against Education (53% of sustained cases) but not if only cases with a recommendation are counted (Education 8 of 12, 67%).
+  The Commissioner's remit covers planning, building and transport licensing as well as the environment.
+tests: Ombudsman annual reports 2023-2025 (Table 1.3, Table 1.22, Commissioner chapter); recomputation of rates on two denominators
+  with Wilson intervals (tools/cc-102-report/calc.py).
+why_low_hanging: 'Done: Claim Check 102 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'Medium: ombudsman.org.mt may be browser-only; Newsbook and Independent are news locators.'
-caveats: 'Candidate from the weekly intake of 4 Oct 2026 (second run of the day): Statement about public bodies''
-  conduct; hold to the same standard as any other claim and name the authorities only as the report does. Wording
-  is from a locator source unless marked verbatim; read the primary text before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High: ombudsman.org.mt reachable; annual-report PDFs read in full.'
+caveats: 'Count of cases, not recommendations; status at closure (2 of the 7 were later implemented). Table 1.22''s per-office
+  split differs from Table 1.3 for the Parliamentary Ombudsman (4 vs 5) and Health (3 vs 2); Environment and Planning agrees
+  (7). Statement about public bodies'' conduct: authorities are named only as the report names them; the report records what
+  was not implemented, not why. Supported check: no right of reply needed.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Parliament House, Valletta
   lat: 35.89614
   lon: 14.50978
   scope: institution
   icon: parliament
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-102A
+    text: "58% of the Commissioner for Environment and Planning’s recommendations went unimplemented in 2025"
+    said_by: "Ombudsman [1]; Newsbook [2]"
+    finding: "7 of 12 sustained cases at closure (Table 1.3). Small count; 5 of 12 still open when the report was written."
+    rating: "Confirmed"
+    tone: grey
+  - id: CC-102B
+    text: "The highest rate among the commissioners"
+    said_by: "Newsbook [2]"
+    finding: "58% against Education’s 53% of sustained cases; 67% for Education on cases with a recommendation."
+    rating: "Depends on base"
+    tone: amber
+  - id: CC-102C
+    text: "22 reports escalated to Parliament in 2025"
+    said_by: "Ombudsman [1]; Newsbook [2]"
+    finding: "Table 1.22: 22, up from 16 (2024) and 14 (2023)."
+    rating: "Confirmed"
+    tone: grey
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 7 of 12
+  caption: sustained Environment and Planning cases with the Ombudsman’s recommendation not implemented (2025)
+history:
+- date: '2026-10-05'
+  step: started
+  note: Worker A took the claim from the queue.
+- date: '2026-10-05'
+  step: wording
+  note: Verbatim wording found in the Ombudsman’s Annual Report 2025 (p. 15) on ombudsman.org.mt; 2023 and 2024 reports read
+    for the trend.
+- date: '2026-10-05'
+  step: version
+  version: '1.0'
+  note: 'First issue. 7 of 12 and 22 reports confirmed from the tables; caveats: small count, status at closure (5 of 12 still
+    open), ranking depends on denominator. Largely supported, high confidence.'
