@@ -1,6 +1,11 @@
 indicator,value,unit,period,source,note
 Groundwater bodies assessed,15,bodies,3rd RBMP 2021-2027,ERA/EWA 3rd RBMP chapter 6,Count of groundwater-body entries in the published status tables.
 Poor overall status,15,bodies,3rd RBMP assessment,ERA/EWA 3rd RBMP chapter 6,Overall good status requires both quantitative and qualitative status to pass.
-Poor quantitative status,2,bodies,3rd RBMP assessment,ERA/EWA 3rd RBMP chapter 6,Malta and Gozo Mean Sea Level aquifer systems.
-Poor chemical status,14,bodies,3rd RBMP assessment,ERA/EWA 3rd RBMP chapter 6,Nitrate is the main failing parameter; chemical status is not synonymous with nitrate-only failure.
-Nitrate above 50 mg/L standard,12,bodies,3rd RBMP assessment,ERA/EWA 3rd RBMP chapter 6,Text states all except Gozo Mean Sea Level, Comino Mean Sea Level and Mellieħa Perched bodies exceed the nitrate standard.
+Poor quantitative status (named in plan text),2,bodies,3rd RBMP assessment,ERA/EWA 3rd RBMP chapter 6,"Malta and Gozo Mean Sea Level aquifer systems, as recorded in literature/CC-009/primary-source.md. Whether the chapter's tables list further bodies was not re-checked: ERA's site blocks automated access (5 October 2026). Malta's 3rd-cycle EU reporting lists 4 (see the WISE rows below)."
+Poor chemical status,14,bodies,3rd RBMP assessment,ERA/EWA 3rd RBMP chapter 6,"Nitrate is the main failing parameter; chemical status is not synonymous with nitrate-only failure. Malta's 3rd-cycle EU reporting lists 15 (see below); the difference is unresolved."
+Nitrate above 50 mg/L standard,12,bodies,3rd RBMP assessment,ERA/EWA 3rd RBMP chapter 6,"Text states all except Gozo Mean Sea Level, Comino Mean Sea Level and Mellieħa Perched bodies exceed the nitrate standard."
+Groundwater bodies reported,15,bodies,"3rd cycle (WISE 2022 reporting), status assessed 2021",EEA WISE WFD2022_GroundWaterBody_WM layer 0 (retrieved 2026-10-05),Per-body rows and query URL in wise_gwb_status.csv.
+Poor quantitative status,4,bodies,"3rd cycle (WISE 2022 reporting), status assessed 2021",EEA WISE WFD2022_GroundWaterBody_WM layer 0 (retrieved 2026-10-05),"MT001 Malta Mean Sea Level, MT013 Gozo Mean Sea Level, MT005 Pwales Coastal, MT010 Marfa Coastal."
+Poor chemical status,15,bodies,"3rd cycle (WISE 2022 reporting), status assessed 2021",EEA WISE WFD2022_GroundWaterBody_WM layer 0 (retrieved 2026-10-05),All 15 reported bodies; hence 15 of 15 poor overall.
+Poor quantitative status,2,bodies,"2nd cycle (WISE 2016 reporting), status assessed 2010-2014",EEA WISE WFD2016_GroundWaterBody_WM layer 0 (retrieved 2026-10-05),"MT001 Malta Mean Sea Level, MT013 Gozo Mean Sea Level."
+Poor chemical status,12,bodies,"2nd cycle (WISE 2016 reporting), status assessed 2010-2014",EEA WISE WFD2016_GroundWaterBody_WM layer 0 (retrieved 2026-10-05),"All except MT006 Miżieb Mean Sea Level, MT009 Mellieħa Coastal and MT012 Comino Mean Sea Level."

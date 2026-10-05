@@ -16,11 +16,11 @@ build_flyer(Flyer(
     attribution="Water Services Corporation, Annual Report 2025",
     context="WSC production, 2022–2025 · Plant B tender, August 2026",
     note="A lower WSC groundwater share is not proof of aquifer recovery.",
-    verdict="Largely supported", verdict_right=["WSC reliance fell;", "aquifer status remains poor."],
+    verdict="Largely supported", verdict_right=["WSC reliance fell;", "aquifers last assessed as poor."],
     cards=[
         ("70.7%", GREEN, "WSC production from RO", "In 2025, up from 64.3% in 2022."),
         ("−8.95%", ORANGE, "WSC groundwater production", "Change from 2022 to 2025; not total national abstraction."),
-        ("2 aquifers", RED, "poor quantitative status", "The latest River Basin Management Plan says Malta and Gozo's main aquifers remain over-abstracted."),
+        ("2 aquifers", RED, "poor quantitative status", "The latest River Basin Management Plan says Malta and Gozo's main aquifers are over-abstracted; Malta's EU reporting lists four."),
         ("12 of 15", RED, "above nitrate standard", "The plan names three exceptions; nitrate is not the only cause of poor chemical status."),
         ("30,000 m³/day", BLUE, "planned Għar Lapsi Plant B", "Tendered in August 2026; not commissioned or measured output."),
     ],
@@ -29,6 +29,6 @@ build_flyer(Flyer(
           "Monitor water levels, salinity and nitrate on a comparable basis.",
           "Reconcile WSC's 11.4% narrative with its 11.86% chart-derived decline.",
           "Report Plant B's actual output and its effect on groundwater production."],
-    footer="Version 1.0  ·  3 October 2026  ·  Draft pending right of reply",
+    footer="Version 1.1  ·  5 October 2026  ·  Draft pending right of reply",
     pdf_title="Claim Check 009 – Does more RO mean recovery?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

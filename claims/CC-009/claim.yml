@@ -33,8 +33,16 @@ claim:
     publisher: Environment and Resources Authority and Energy and Water Agency
     date: '2024'
     url: https://era.org.mt/wp-content/uploads/2023/09/3rd-River-Basin-Management-Plan-MALTA-Chapter-6-Assessment-of-Status-Final.pdf
-    note: 'Primary assessment: two main aquifer systems are poor quantitatively; 14 bodies poor chemically; the
-      nitrate standard is exceeded by all except three named bodies.'
+    note: 'Primary assessment, as recorded in literature/CC-009: names the Malta and Gozo Mean Sea Level aquifer
+      systems as poor quantitatively; 14 bodies poor chemically; the nitrate standard is exceeded by all except three
+      named bodies. Not re-opened on 5 October 2026 (ERA blocks automated access).'
+  - title: 'WISE WFD reporting: groundwater bodies, 3rd RBMP (WFD2022_GroundWaterBody_WM, layer 0)'
+    publisher: European Environment Agency
+    date: '2026-10-05'
+    url: https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_GroundWaterBody_WM/MapServer/0
+    note: Malta's 3rd-cycle EU reporting (status assessed 2021), retrieved 5 October 2026. Lists 4 bodies poor
+      quantitatively (Malta and Gozo Mean Sea Level, Pwales Coastal, Marfa Coastal) and all 15 poor chemically. The
+      2nd-cycle layer (WFD2016) had 2 and 12. Extract in data/cc-009/wise_gwb_status.csv.
   - title: Nearly two-thirds of your tap water comes from the sea
     publisher: MaltaToday
     date: 2022 data
@@ -48,8 +56,10 @@ claim:
     date: Aug 2026
     url: https://chambers.com/articles/35-million-tender-launched-new-għar-lapsi-reverse-osmosis-plant
 counter_evidence: The latest published River Basin Management Plan classifies both Malta and Gozo Mean Sea Level
-  aquifer systems in poor quantitative status and 14 groundwater bodies in poor chemical status. It reports nitrate
-  above the 50 mg/L standard in 12 of 15 bodies, with three named exceptions; not every body fails for nitrate.
+  aquifer systems in poor quantitative status and 14 groundwater bodies in poor chemical status. Malta's reporting
+  of the same cycle to the EEA lists four bodies in poor quantitative status (adding Pwales Coastal and Marfa
+  Coastal) and all 15 in poor chemical status. The plan reports nitrate above the 50 mg/L standard in 12 of 15
+  bodies, with three named exceptions; not every body fails for nitrate.
   WSC's potable-production figures cover its supply system and do not establish a national all-user abstraction
   total.
 tests: Recalculate RO shares and groundwater-production changes from WSC annual-report data; compare the WSC series
@@ -60,12 +70,15 @@ why_low_hanging: A rising desalinated-water share can reduce WSC's groundwater p
 tags:
 - Selective metric
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: High
 caveats: WSC's 2025 annual report states that groundwater extraction fell 11.4% from 2024, while the annual-report
   chart values transcribed for 2024 and 2025 imply an 11.9% decline; the discrepancy is retained. WSC production
   is not a complete national groundwater-abstraction series. The 3rd RBMP assessment period is older than the 2025
-  production figures, and a tender does not establish future operation or aquifer recovery.
+  production figures, and a tender does not establish future operation or aquifer recovery. The plan's
+  groundwater-body counts as recorded (Malta and Gozo Mean Sea Level poor quantitatively; 14 poor chemically)
+  differ from Malta's 3rd-cycle EU reporting (4 and 15); the plan could not be re-opened to reconcile them, so the
+  report shows both. "Lowest in a decade" is WSC's statement; the repo series covers 2022–2025 only.
 right_of_reply:
   sent: null
   deadline: null
@@ -73,7 +86,8 @@ right_of_reply:
 evidence_shown: 'WSC''s 2025 Annual Report reports 70.7% RO share and 11.5 million m³ of groundwater production;
   its series shows the groundwater component declined by 8.95% from 2022 to 2025. The report''s chart implies an
   11.86% 2024–2025 decline, versus 11.4% in its narrative. The 3rd RBMP reports two main aquifers in poor quantitative
-  status, 14 of 15 bodies in poor chemical status, and nitrate above the standard in 12 of 15. WSC''s August 2026
+  status, 14 of 15 bodies in poor chemical status, and nitrate above the standard in 12 of 15; Malta''s 3rd-cycle
+  EU reporting to the EEA lists 4 of 15 bodies poor quantitatively and 15 of 15 poor chemically. WSC''s August 2026
   tender notice specifies a planned 30,000 m³/day plant, with bids due 30 October 2026.
 
   '
@@ -81,7 +95,8 @@ outputs:
   report_pdf: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
+version: '1.1'
+last_reviewed: '2026-10-05'
 location:
   place: Pembroke reverse osmosis plant
   lat: 35.93211
