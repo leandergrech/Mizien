@@ -409,3 +409,6 @@ Ref,Claim IDs,Source,Publisher,Date,Type,Reliability note,URL
 398,CC-115,GDP and main components (nama_10_gdp),Eurostat,2 Oct 2026,Independent dataset,Retrieved 5 Oct 2026 by API (data/cc-115/).,https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp/default/table
 399,CC-100,Full-Year Traffic Update (company announcement 461/2026),Malta International Airport plc,14 Jan 2026,Primary (read),The claim. Read 5 Oct 2026.,https://maltairport.com/app/uploads/2026/01/Full-Year-Traffic-Update.pdf
 400,CC-100,Air passenger transport (avia_paoc),Eurostat,2 Oct 2026,Independent dataset,Retrieved 5 Oct 2026 by API (data/cc-100/).,https://ec.europa.eu/eurostat/databrowser/view/avia_paoc/default/table
+401,CC-106,Malta Yelkouan Shearwater Species Action Plan 2022-2030 (page),Environment and Resources Authority,n/d,Official plan,"1,795-2,635 pairs. Live site 403; Internet Archive copy of 8 Aug 2025.",https://era.org.mt/malta-yelkouan-shearwater-species-ap-2022-2030/
+402,CC-106,The endemic Mediterranean yelkouan shearwater (Oryx 42:187-194),Bourgeois & Vidal,2008,Peer-reviewed review,"Global 11,355-54,524 pairs. Crossref verified.",https://doi.org/10.1017/S0030605308006467
+403,CC-106,Yelkouan shearwater (seabird guide),CIESM,n/d,Scientific guide (second-hand),"Global 21,000-36,000 pairs; source not given.",https://ciesm.org/seabird-guide/yelkouan-shearwater/

@@ -2,44 +2,94 @@ id: CC-106
 title: 'Shearwaters: 10% of the world population'
 category: Nature & Wildlife
 subtopic: Hunting & birds
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'BirdLife Malta (LIFE Arċipelagu Garnija project page): Malta''s Yelkouan shearwater population is estimated
-    at around 1,600-1,800 pairs, about 10% of the global population.'
+  text: 'BirdLife Malta (LIFE Arċipelagu Garnija project page): Malta''s Yelkouan shearwater population is estimated at around
+    1,600-1,800 pairs, about 10% of the global population.'
   speaker: BirdLife Malta
   date: n/d
   wording_status: Verbatim found
   sources:
-  - title: LIFE Arċipelagu Garnija
-    publisher: BirdLife Malta
-    date: n/d
-    url: https://birdlifemalta.org/arcipelagugarnija/
-    note: Primary text read 4 Oct 2026. The page is undated; the project ran 2016-2020.
-  quote: Malta's population is estimated to be around 1,600 – 1,800 pairs, constituting approximately 10% of the
-    global population.
-counter_evidence: The page is undated and the estimate probably rests on 2010s surveys; later national or IUCN/BirdLife
-  International estimates may differ. 'About 10%' depends on the global figure used.
-tests: Peer-reviewed Yelkouan shearwater population studies; BirdLife International/IUCN Red List global estimate;
-  Malta's Article 12 Birds Directive report (ERA); Malta breeding-colony surveys.
-why_low_hanging: A specific figure and share that the literature and the Article 12 reporting can test.
+    - title: LIFE Arċipelagu Garnija
+      publisher: BirdLife Malta
+      date: n/d
+      url: https://birdlifemalta.org/arcipelagugarnija/
+      note: The claim. Undated page (project 2016-2020); read 5 Oct 2026.
+    - title: Malta Yelkouan Shearwater Species Action Plan 2022-2030 (page)
+      publisher: Environment and Resources Authority
+      date: n/d
+      url: https://era.org.mt/malta-yelkouan-shearwater-species-ap-2022-2030/
+      note: 1,795-2,635 pairs, 'around 10%'. Live site 403; Internet Archive copy of 8 Aug 2025.
+    - title: 'The endemic Mediterranean yelkouan shearwater Puffinus yelkouan: distribution, threats and a plea for more data'
+      publisher: Oryx 42:187-194
+      date: '2008'
+      url: https://doi.org/10.1017/S0030605308006467
+      note: 'Peer-reviewed review: global 11,355-54,524 pairs, probably overestimated.'
+    - title: Yelkouan shearwater (seabird guide)
+      publisher: CIESM
+      date: n/d
+      url: https://ciesm.org/seabird-guide/yelkouan-shearwater/
+      note: Global 21,000-36,000 pairs; no source given (second-hand).
+  quote: Malta's population is estimated to be around 1,600 – 1,800 pairs, constituting approximately 10% of the global population.
+counter_evidence: "ERA's Species Action Plan 2022-2030 gives 1,795-2,635 pairs (above the page's undated 1,600-1,800) and\
+  \ also says 'around 10%'. Global estimates: 11,355-54,524 pairs (Bourgeois & Vidal 2008, probably overestimated); 21,000-36,000\
+  \ pairs (CIESM guide, second-hand). Malta's share is 4.4-8.6% (central 6.0%) with the page's own count and 5.0-12.5% (central\
+  \ 7.8%) with ERA's count. Tavolara (Sardinia) holds over half the world population (Pezzo et al. 2021)."
+tests: ERA Species Action Plan; Bourgeois & Vidal (2008) Oryx; CIESM guide; shares computed in tools/cc-106-report/calc.py.
+why_low_hanging: 'Done: Claim Check 106 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'High: IUCN, Crossref and EU reporting hosts reachable; the claim page is readable.'
-caveats: 'Candidate from the weekly intake of 4 Oct 2026 (second run of the day): A conservation-science statement
-  from an NGO, held to the same standard as government figures. Undated: record the date read (4 Oct 2026). Wording
-  is from a locator source unless marked verbatim; read the primary text before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'Medium'
+caveats: 'Largely supported: no right of reply needed. The IUCN Red List and BirdLife International pages refused automated
+  access, so the current official global estimate is second-hand (CIESM). The BirdLife Malta page is undated.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+  - data/cc-106/population_estimates.csv and data/cc-106/checks.csv (sources read 5 Oct 2026)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Għadira Nature Reserve, Mellieħa
   lat: 35.97088
   lon: 14.34888
   scope: site
   icon: park
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-106A
+    text: "Malta’s population is around 1,600–1,800 pairs"
+    said_by: "BirdLife Malta [1]"
+    finding: "Overlaps the regulator’s 1,795–2,635 pairs (2022–2030 plan); the page is undated and its count is the lower."
+    rating: "Plausible, dated"
+    tone: lime
+  - id: CC-106B
+    text: "…approximately 10% of the global population"
+    said_by: "BirdLife Malta [1]"
+    finding: "4.4–8.6% with the page’s own count; 5.0–12.5% with the regulator’s; central 6–8%. Global total poorly known."
+    rating: "Upper end of range"
+    tone: amber
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 6-8%
+  caption: "central estimates of Malta's share of Yelkouan shearwater pairs (claim: about 10%)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: Wording confirmed on the BirdLife Malta page (undated). ERA Species Action Plan page read from an Internet Archive
+      copy.
+  - date: 2026-10-05
+    step: literature
+    note: Bourgeois & Vidal (2008) Oryx read in full and verified in Crossref; Pezzo et al. (2021) abstract read; IUCN and
+      BirdLife datazone refused automated access; CIESM guide used for the current global estimate (second-hand).
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.

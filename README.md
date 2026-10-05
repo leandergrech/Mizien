@@ -135,7 +135,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-103 | Health & Safety | Heat-death locations "within three months" | Not started | - |
 | CC-104 | Noise | PN: Malta fails EU noise law | Not started | - |
 | CC-105 | Noise | ADPD: no study of Freeport and airport noise | Not started | - |
-| CC-106 | Nature & Wildlife | Shearwaters: 10% of the world population | Not started | - |
+| CC-106 | Nature & Wildlife | Shearwaters: 10% of the world population | Drafted | Largely supported |
 | CC-107 | Governance & Promises | A net-zero Gozo by 2040 | Drafted | Pledge: Not measurable |
 | CC-108 | Water | WSC: a net-zero impact on groundwater | Not started | - |
 | CC-109 | Transport | EU: transport is 48% of effort-sharing emissions | Not started | - |

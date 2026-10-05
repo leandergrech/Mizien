@@ -4135,9 +4135,10 @@
       "title": "Shearwaters: 10% of the world population",
       "category": "Nature & Wildlife",
       "claim": "BirdLife Malta (LIFE Arċipelagu Garnija project page): Malta's Yelkouan shearwater population is estimated at around 1,600-1,800 pairs, about 10% of the global population.",
-      "counter": "The page is undated and the estimate probably rests on 2010s surveys; later national or IUCN/BirdLife International estimates may differ. 'About 10%' depends on the global figure used.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "ERA's Species Action Plan 2022-2030 gives 1,795-2,635 pairs (above the page's undated 1,600-1,800) and also says 'around 10%'. Global estimates: 11,355-54,524 pairs (Bourgeois & Vidal 2008, probably overestimated); 21,000-36,000 pairs (CIESM guide, second-hand). Malta's share is 4.4-8.6% (central 6.0%) with the page's own count and 5.0-12.5% (central 7.8%) with ERA's count. Tavolara (Sardinia) holds over half the world population (Pezzo et al. 2021).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Hunting & birds",
       "location": {
@@ -4147,17 +4148,38 @@
         "scope": "site",
         "icon": "park"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "BirdLife Malta",
       "bodies": [
         "birdlife"
       ],
+      "subclaims": [
+        {
+          "id": "CC-106A",
+          "text": "Malta’s population is around 1,600–1,800 pairs",
+          "finding": "Overlaps the regulator’s 1,795–2,635 pairs (2022–2030 plan); the page is undated and its count is the lower.",
+          "rating": "Plausible, dated",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-106B",
+          "text": "…approximately 10% of the global population",
+          "finding": "4.4–8.6% with the page’s own count; 5.0–12.5% with the regulator’s; central 6–8%. Global total poorly known.",
+          "rating": "Upper end of range",
+          "tone": "amber"
+        }
+      ],
       "date": "n/d",
       "quote": "Malta's population is estimated to be around 1,600 – 1,800 pairs, constituting approximately 10% of the global population.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-106/report.pdf",
+        "flyer_pdf": "claim-files/CC-106/flyer.pdf",
+        "flyer_png": "claim-files/CC-106/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-106/claim.yml"
     },
     {
