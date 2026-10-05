@@ -227,19 +227,20 @@ eleventyExcludeFromCollections: true
   .seg button:hover { border-color: var(--amber); }
   .seg button[aria-pressed="true"] { background: var(--amber); border-color: var(--amber); color: #13301f; }
   .seg button[aria-pressed="true"] svg path { stroke: #13301f; }
-  #maphud { position: absolute; left: 290px; bottom: calc(var(--linkbar-h, 46px) + 22px); z-index: 3; display: none; width: min(360px, calc(100% - 320px));
-    padding: 10px 14px 12px; border-radius: 14px; background: rgba(8,30,21,.72); border: 1px solid rgba(207,226,212,.22);
-    backdrop-filter: blur(6px); font: 12px Arial, sans-serif; color: var(--ink); }
-  #maphud .lvl { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-  #maphud .lvl b { font: 700 15px "Liberation Serif", Georgia, serif; color: var(--amber); }
-  #maphud .bar { height: 7px; border-radius: 99px; background: rgba(207,226,212,.15); margin: 7px 0 6px; overflow: hidden; }
-  #maphud .bar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, #7fa88b, #e3a72f); transition: width .8s; }
-  #maphud .next { color: var(--muted); }
-  #maphud details summary { cursor: pointer; color: var(--sage); margin-top: 6px; font-size: 11.5px; }
-  #maphud ul { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 3px; }
-  #maphud li { display: flex; gap: 8px; align-items: center; color: var(--muted); }
-  #maphud li.on { color: var(--ink); }
-  #maphud li span:first-child { width: 16px; text-align: center; }
+  #mapsearch input { width: 100%; box-sizing: border-box; padding: 7px 11px; border-radius: 999px; border: 1px solid rgba(207,226,212,.35);
+    background: rgba(8,30,21,.55); color: var(--ink); font: 13px Arial, sans-serif; }
+  #mapsearch input:focus { outline: 2px solid var(--amber); outline-offset: 1px; border-color: var(--amber); }
+  #mapsearch input::placeholder { color: var(--muted); }
+  #placeres { display: flex; flex-direction: column; gap: 1px; margin-top: 6px; }
+  #placeres .hint { margin: 2px 0 2px; color: var(--muted); font-size: 12px; }
+  #placeres button.place { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 28px; padding: 4px 8px; border: 0; border-radius: 6px;
+    background: none; color: var(--ink); font: 13px Arial, sans-serif; text-align: left; cursor: pointer; }
+  #placeres button.place:hover, #placeres button.place:focus-visible { background: rgba(127,168,139,.15); }
+  #placeres .pname { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #placeres .kind { color: var(--muted); font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; }
+  #placeres .n { min-width: 18px; text-align: right; color: var(--amber); font-size: 11.5px; font-weight: 700; }
+  #treekey { margin: 10px 0 0; color: var(--muted); font-size: 12px; line-height: 1.45; max-width: 236px; }
+  #treekey b { color: var(--ink); font-weight: 600; }
   #toast { position: absolute; left: 50%; top: 110px; transform: translateX(-50%); z-index: 6; display: none; padding: 10px 16px;
     border-radius: 12px; background: #e3a72f; color: #13301f; font: 700 13px Arial, sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,.45); }
   #crumb { position: absolute; left: 50%; top: 66px; transform: translateX(-50%); z-index: 3; display: none;
@@ -316,10 +317,6 @@ eleventyExcludeFromCollections: true
     #panel.peek .phead { cursor: pointer; padding-bottom: 12px; }
     #panel.peek h3 { font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     #crumb { top: 86px; max-width: calc(100% - 16px); white-space: nowrap; font-size: 11.5px; gap: 6px; }
-    #maphud { left: 8px; right: 8px; width: auto; bottom: 34px; padding: 7px 11px 8px; font-size: 11px; }
-    #maphud .lvl b { font-size: 13px; }
-    #maphud .bar { margin: 5px 0 4px; height: 5px; }
-    #maphud details { display: none; }
     #controls { left: 8px; right: 8px; top: 8px; flex-wrap: nowrap; overflow-x: auto; justify-content: flex-end; scrollbar-width: none; }
     #controls::-webkit-scrollbar { display: none; }
     button.ctl { min-height: 32px; min-width: 32px; padding: 5px 10px; font-size: 11.5px; flex: none; }
@@ -378,16 +375,19 @@ eleventyExcludeFromCollections: true
       <button class="ctl" id="reset" type="button" aria-label="Reset view: centre and zoom" title="Centre and fit (0)">Fit</button>
     </div>
     <div id="hint" class="tx"><span class="desktop-hint"></span><span class="mobile-hint"></span></div>
-    <div id="maphud" aria-live="polite"></div>
     <div id="toast" role="status"></div>
     <div id="tip" role="tooltip"></div>
     <div id="panel" aria-live="polite"></div>
   </div>
   <div id="legend" class="tx">
     <div><p class="kicker">VIEW</p><div id="viewby" class="seg" role="group" aria-label="View"></div></div>
-    <div><p class="kicker">GROUP CLAIMS BY</p><div id="groupby" role="group" aria-label="Group claims by"></div><div id="splitbox"></div></div>
+    <div id="mapsearch" hidden><p class="kicker"><label for="placeq">FIND CLAIMS BY PLACE</label></p>
+      <input id="placeq" type="search" placeholder="A town or site, e.g. Marsa" autocomplete="off" spellcheck="false">
+      <div id="placeres" aria-live="polite"></div>
+      <p id="treekey">Each place grows a tree: the <b>place</b> on the ground, the <b>body</b> that made the claim, the <b>person</b> who spoke for it, then the <b>claims</b>. Zoom in to open the trees; places outside the window leave the map.</p></div>
+    <div id="groupbox"><p class="kicker">GROUP CLAIMS BY</p><div id="groupby" role="group" aria-label="Group claims by"></div><div id="splitbox"></div></div>
     <div id="arrangebox"><p class="kicker">ARRANGE GROUPS BY</p><div id="arrange" role="group" aria-label="Arrange groups by"></div><p id="arrangenote"></p></div>
-    <div><p class="kicker" id="groupsTitle">GROUPS</p><div id="groups"></div><p id="groupnote"></p></div>
+    <div id="groupsbox"><p class="kicker" id="groupsTitle">GROUPS</p><div id="groups"></div><p id="groupnote"></p></div>
     <div><p class="kicker">CLAIM COLOUR · VERDICT</p><div class="keyrow" id="vkey"></div></div>
   </div>
   <div id="linkbar" class="tx" role="group" aria-label="Show or hide lines"></div>

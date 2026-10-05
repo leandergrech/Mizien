@@ -242,25 +242,26 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
 - Map view: stylised islands from OpenStreetMap (`scripts/build_geo.py` -> `docs/data/geo.json`, ODbL). Claims are
   pins at `location` (new optional field in claim.yml: place, lat, lon, scope = site | institution | national;
   validated). National claims sit at the institution (Castille, Parliament, City Gate, PA in Floriana).
-- Districts: Valletta & Floriana opens into a street-level view (click the badge or zoom in); claims elsewhere are
-  parked on an "Elsewhere in Malta" ring so links stay visible: one slot per site near its true bearing, slots
-  kept apart, a site's claims stacked outwards. Every district has its own streets, walls (OSM city_wall / fort) and
-  landmarks in geo.json (`bbox` per district in build_geo.py). Gozo (Victoria & the Ċittadella) unlocked at 15
-  checks (16 on 3 Oct 2026; no Gozo claim yet); Grand Harbour & the Three Cities is built and unlocks at 20. Locked
-  teasers hang below their circle so they do not cover open badges (Grand Harbour overlaps Valletta).
-- Gamification: map layers unlock with completed checks (TIERS in index.html: 0 islands, 3 names/compass, 5 depth
-  lines, 7 site names, 9 Valletta district, 12 streets, 15 Gozo district, 20 Grand Harbour, 30 living sea). A HUD
-  shows level and the next unlock; a toast announces new layers since the visitor's last visit.
+- Map view (redesigned 5 Oct 2026, no gamification): a simplified map with the island outlines, main roads
+  (OSM motorway/trunk/primary; secondary once zoomed in) and town centres (OSM place=city/town/village; names in
+  everyday use, Maltese spelling, `name` and `mt` both searchable). `python scripts/build_geo.py --keep-islands`
+  refreshes roads and towns without touching the island outlines that the CC-017 and CC-019 reports read.
+- Trees: each place a claim is about grows a tree: place medallion on the ground, then the office that made the
+  claim (`officeOf` the claim's first speaker in the register), then the person who spoke for it (if any), then the
+  claims, coloured by verdict. Places that would overlap on screen merge ("Valletta · 8 places"). Overview: only
+  medallions with claim counts. Zoomed in (scale >= 2.4): bodies wrap into tiers above the place; a body shows its
+  claims for a small place (<= 10 claims), at deep zoom (>= 7.2) or when in focus. A big place out of focus keeps two
+  tiers and folds the rest behind a "+N more bodies" node. Places outside the window leave the map (culled).
+- Find claims by place: the search box (map view only) matches claim sites and towns without accents (Hamrun finds
+  Ħamrun); a town lists claims within 1.5 km of its centre. The grouping controls (Group by, Arrange, groups legend)
+  are hidden in the map view; links between claims still work.
 - Lens: a fisheye focus at the centre of the stage (Lens button, key L; on by default on phones in the map view,
   remembered in localStorage `mizien.lens`). Magnifies up to 3.2x at the centre, compresses the rim; drag the map
   under it. The scale bar hides while it is on.
-- Transitions (district in/out, Fit) fold the camera zoom and pan into the map scale and centre, then animate the
-  scale in log space about the fixed screen point (no jumps). The map view is orthographic so the fold is exact.
-- Landmark medallions: every claim site has a line-art emblem (claim.yml location.icon; PLACE_ICONS in index.html).
-  A site is 'discovered' (gold emblem) once any claim there has a verdict, otherwise a dashed '?'. Click opens a
-  panel of its claims; the HUD counts sites discovered. Medallions are spread apart with leaders to their true spot.
-- To do: a Gozo claim for the Gozo district (none yet; CC-021 Ċirkewwa is on the Malta side); test on phones; new
-  claims must get a `location` (intake routine updated). geo.json is 226 KB with Grand Harbour streets included.
+- Zoom in the map view changes the map scale (the camera zoom is folded in after every step, claims moved with it),
+  so places spread apart while the trees keep their size; icons grow with the scale (iconK). Fit and the place
+  search animate the scale in log space about a fixed screen point; the map is orthographic so the fold is exact.
+- To do: test the trees on phones with real use; new claims must get a `location` (intake routine updated).
 
 ## Outstanding
 
