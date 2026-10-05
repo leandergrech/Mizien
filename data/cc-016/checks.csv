@@ -8,5 +8,10 @@ Claimed cut,90,%,Infrastructure Malta,
 Connected berth time needed for a 90% cut (at 100% removal while plugged in),90,%,calculated,
 Upper bound on cut in all cruise emissions in port (hotelling >90% of CO2),8.1,%,calculated,manoeuvring emissions are not touched by OPS
 Cruise calls 2024 -> 2025,357 -> 385,calls,Valletta Cruise Port,+8%
-Cruise calls 2019 -> 2025,372 -> 385,calls,VCP; 2019 second-hand,+3%
-Unplugged berth time at 2025 traffic vs 2024 with no OPS,-1.9,%,calculated,about level: growth cancels year-one uptake
+Cruise calls 2019 -> 2025,372 -> 385,calls,VCP; 2019 second-hand (Amphora; IM citing NSO),+3%
+Unplugged berth time at 2025 calls and year-one uptake vs 2024 calls with no OPS (indicative),-1.9,%,calculated,periods differ (calendar-year calls; Jul-Jul uptake; OPS from Jul 2024): growth of the same order as uptake
+"Infrastructure Malta: per-liner cut on shore power, nitrogen dioxide",93.0,%,"Infrastructure Malta, 30 Nov 2020",stated by IM; underlying study not cited
+"Infrastructure Malta: per-liner cut on shore power, particulate matter",92.6,%,"Infrastructure Malta, 30 Nov 2020",stated by IM; underlying study not cited
+"Infrastructure Malta: per-liner cut on shore power, sulphur dioxide",99.6,%,"Infrastructure Malta, 30 Nov 2020",stated by IM; underlying study not cited
+"Infrastructure Malta: per-liner cut on shore power, carbon dioxide",39.6,%,"Infrastructure Malta, 30 Nov 2020",stated by IM; underlying study not cited
+Project cost figures stated,33 / 37 / 49.9,EUR million,TVM 10 Jul 2024; IM 2020; IM 2020-2022,launch / phase 1 budget / whole project: figures vary by phase and date

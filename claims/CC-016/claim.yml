@@ -6,9 +6,10 @@ status: Drafted
 verdict: Misleading
 verdict_confidence: Moderate
 claim:
-  text: 'Infrastructure Malta (Shore-to-Ship project page, 1 Dec 2023): the EUR 33 million Grand Harbour shore-to-ship
-    initiative promises to slash 90% of air pollution in the Grand Harbour. Repeated at the inauguration (10 Jul
-    2024): completion means a 90% reduction, with 17,000 families around the harbour benefiting from cleaner air.'
+  text: 'Infrastructure Malta (Shore-to-Ship project page, 1 Dec 2023): the Grand Harbour shore-to-ship initiative
+    promises to slash 90% of air pollution in the Grand Harbour. Repeated at the inauguration (10 Jul 2024, cost given
+    as EUR 33 million): completion means a 90% reduction, with 17,000 families around the harbour benefiting from
+    cleaner air.'
   speaker: Infrastructure Malta; Prime Minister Robert Abela; Ministry for Transport
   date: '2023-12-01'
   wording_status: Verbatim found
@@ -28,29 +29,47 @@ claim:
     date: 17 Oct 2025
     url: https://www.amphora.media/2025/10/cruise-ships-shore-to-ship-power-malta
     note: 67 of 373 berths connected Jul 2024-Jul 2025, from Transport Malta FOI records (second-hand).
+  - title: Grand Harbour Clean Air Project gets underway
+    publisher: Infrastructure Malta
+    date: 30 Nov 2020
+    url: https://www.infrastructuremalta.com/news/grand-harbour-clean-air-project-gets-underway
+    note: 'Basis of the 90%, read 5 Oct 2026: "will cut over 90% of the air pollution that cruise liners and Ro-Ro
+      ships produce"; per liner on shore power NO2 -93%, PM -92.6%, SO2 -99.6%, CO2 -39.6%; EUR 49.9m (EUR 37m
+      phase 1); NSO 372 cruise liners in 2019.'
+  - title: First Grand Harbour Clean Air Project frequency converters in place
+    publisher: Infrastructure Malta
+    date: 19 Feb 2022
+    url: https://www.infrastructuremalta.com/news/first-grand-harbour-clean-air-project-frequency-converters-place
+    note: Read 5 Oct 2026. Repeats the scoped 90% ("cutting 90% of their air pollution"), EUR 49.9m and the
+      per-liner cuts.
   quote: This initiative promises to slash 90% of air pollution in the Grand Harbour.
 counter_evidence: 'Connection is voluntary until 1 Jan 2030 (Regulation (EU) 2023/1805 Art. 6); Transport Malta:
   connecting ''remains the prerogative of the shipping line''. Transport Malta FOI records (via Amphora Media):
   67 of 373 cruise berths (18%) plugged in from Jul 2024 to Jul 2025, 9% of berth time; MSC World Europa made 35
-  of the 67; no stay of 2-4 days plugged in. Cruise calls rose from 357 (2024) to 385 (2025). Hotelling is >90%
-  of cruise CO2 in port (Mocerino et al. 2026), so the 90% is plausible per connected ship; manoeuvring emissions
-  remain (Gagic et al. 2022). No harbour air-quality study before and after.'
+  of the 67; no stay of 2-4 days plugged in. Cruise calls rose from 357 (2024) to 385 (2025; calendar years, while
+  uptake runs Jul-Jul). Infrastructure Malta''s own 2020-2023 pages scope the 90% to the pollution cruise liners and
+  Ro-Ro ships produce, with per-liner cuts on shore power of NO2 -93%, PM -92.6%, SO2 -99.6%, CO2 -39.6% (study not
+  cited); the 2023 project page dropped that scope. Research context: hotelling is >90% of cruise CO2 in port
+  (Mocerino et al. 2026); manoeuvring emissions remain (Gagic et al. 2022). Cost stated as EUR 33m (launch), 37m
+  (phase 1) and 49.9m (whole project). No harbour air-quality study before and after.'
 tests: Transport Malta connection records (FOI, via Amphora Media); Valletta Cruise Port traffic; FuelEU Maritime
   Art. 6; peer-reviewed cruise emission inventories.
 why_low_hanging: 'Done: Claim Check 016 report and flyer.'
 tags:
 - Conditional-turned-unconditional
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: Medium
 caveats: Right of reply to Infrastructure Malta and Transport Malta not yet sent. Connection figures second-hand
-  (FOI reply not public); no later data than Jul 2025; no air-quality measurement either way.
+  (FOI reply not public); no later data than Jul 2025; no air-quality measurement either way. The per-liner cuts
+  are Infrastructure Malta's own estimates. v1.1 (5 Oct 2026) made corrections only; verdict unchanged.
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown:
 - Infrastructure Malta project page (literature/CC-016/primary-source.md)
+- Infrastructure Malta pages of 30 Nov 2020 and 19 Feb 2022 (scope of the 90%; per-liner cuts)
 - Regulation (EU) 2023/1805, Article 6
 - Transport Malta OPS connection records, Jul 2024-Jul 2025, as published by Amphora Media (data/cc-016/)
 - Valletta Cruise Port traffic figures 2024-2025
@@ -58,8 +77,8 @@ outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-03'
+version: '1.1'
+last_reviewed: '2026-10-05'
 location:
   place: Valletta Waterfront cruise terminal, Floriana
   lat: 35.88994

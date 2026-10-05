@@ -11,15 +11,16 @@ S = []
 
 # ================================================================== TL;DR
 S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
-      P("Infrastructure Malta’s project page for the Grand Harbour shore-to-ship system says the EUR 33 million "
-        "initiative <b>“promises to slash 90% of air pollution in the Grand Harbour”</b>. At the July 2024 inauguration "
-        "the government said its completion meant a 90% cut and cleaner air for 17,000 families. We tested the figure "
+      P("Infrastructure Malta’s project page for the Grand Harbour shore-to-ship system says the initiative "
+        "<b>“promises to slash 90% of air pollution in the Grand Harbour”</b>. At the July 2024 inauguration the "
+        "government said its completion meant a 90% cut and cleaner air for 17,000 families. We tested the figure "
         "against how the system is actually used, the law that governs it, and peer-reviewed research on cruise "
         "emissions in port.", lead)]
 S.append(key_points([
     ("Shore power works for a ship that plugs in.",
-     "A cruise liner connected to the grid can switch off its auxiliary engines; its exhaust at the quay stops. "
-     "Research finds that time at berth (hotelling) produces most of a cruise ship’s emissions in port."),
+     "Infrastructure Malta’s own figures, published since 2020, are for a liner that switches off its auxiliary "
+     "engines: 93% less nitrogen dioxide, 92.6% less particulate matter, 99.6% less sulphur dioxide (39.6% less CO2). "
+     "Its earlier pages gave the 90% as a cut in the pollution ships produce; the 2023 page dropped that scope."),
     ("But plugging in is voluntary until 2030.",
      "EU law (FuelEU Maritime, Art. 6) only makes connection compulsory from 1 January 2030. Transport Malta says "
      "connecting “remains the prerogative of the shipping line”. Neither the project page nor the launch said so."),
@@ -27,11 +28,13 @@ S.append(key_points([
      "Transport Malta records obtained by Amphora Media show 67 connections in 373 berths (18%) from July 2024 to "
      "July 2025; one ship made half of them. No ship staying two days or more plugged in."),
     ("Cruise traffic grew.",
-     "Calls rose from 357 (2024) to 385 (2025). At first-year uptake, the extra calls roughly cancel the "
-     "emissions saved. No air-quality study has measured the effect in the harbour."),
+     "Calls rose 8%, from 357 in 2024 to 385 in 2025, about as much as the 9% of berth time plugged in from July "
+     "2024 to July 2025, so extra traffic may offset much of the first-year saving. The periods differ, and shore "
+     "power was available from July 2024. No air-quality study has measured the effect in the harbour."),
     ("Verdict: misleading (moderate confidence).",
-     "The 90% describes what happens when every ship connects. Presented as a result of completing the project, "
-     "it omits the voluntary connection and actual use, which the evidence puts nearer a tenth of the claim."),
+     "The 90% holds per connected ship on Infrastructure Malta’s own figures, but the 2023 page presented it as a "
+     "cut in Grand Harbour air pollution and the launch as a result of completing the project. That omits the "
+     "voluntary connection and actual use, which the evidence puts nearer a tenth of the claim."),
 ]))
 S += [Spacer(1, 4 * mm), VerdictMeter(3), Spacer(1, 3 * mm),
       tiles([("90%", GREY, "Cut promised for Grand Harbour air pollution (Infrastructure Malta)"),
@@ -41,8 +44,7 @@ S += [Spacer(1, 4 * mm), VerdictMeter(3), Spacer(1, 3 * mm),
       Spacer(1, 4 * mm),
       up_down("Connection logs showing most berth time is now plugged in, or a measured fall in harbour NO2 and "
               "particulates of the claimed size, controlled for traffic and weather.",
-              "Evidence that the 2024–25 uptake figures overstate use, or that the claimed 90% was always stated "
-              "with the condition that ships connect (we found no such wording)."),
+              "Evidence that the 2024–25 uptake figures overstate use."),
       Spacer(1, 5 * mm)]
 S += toc([("1", "The claim and what we could verify"), ("2", "Method"), ("3", "What the research says"),
           ("4", "How the system is used"), ("5", "Where the evidence points different ways"),
@@ -66,6 +68,12 @@ S.append(std_table([
     [C("90% when five liners use the system at once"), C("Press conference, as reported [3]"),
      C("Summary read")],
 ], [104 * mm, 38 * mm, 28 * mm]))
+S.append(P("<b>Earlier wording.</b> Infrastructure Malta’s pages on the project from 2020 to 2023 gave the figure a "
+           "narrower scope. On 30 November 2020 it said the project “will cut over 90% of the air pollution that "
+           "cruise liners and Ro-Ro ships produce when visiting Malta’s principal port”, and that by switching off "
+           "their auxiliary engines cruise liners would emit 93% less nitrogen dioxide, 92.6% less particulate matter, "
+           "99.6% less sulphur dioxide and 39.6% less carbon dioxide [10]. A page of 19 February 2022 repeats these "
+           "figures [11]. The 2023 project page dropped the scope: “90% of air pollution in the Grand Harbour”."))
 S += [Spacer(1, 4 * mm),
       callout([P("SCOPE NOTE", tag),
                P("This check is about the 90% figure. It does not question that shore power is worth building, and it "
@@ -75,7 +83,8 @@ S += [Spacer(1, 4 * mm),
 # ================================================================== 2
 S.append(SectionHeading(2, "Method"))
 S.append(P("<b>Question.</b> Has, or will, the shore-to-ship project cut Grand Harbour air pollution by 90%?"))
-S.append(P("<b>Evidence.</b> The project page and launch reports [1–3]; connection records for July 2024 to July 2025 "
+S.append(P("<b>Evidence.</b> The project page, earlier Infrastructure Malta pages and launch reports [1–3, 10, 11]; "
+           "connection records for July 2024 to July 2025 "
            "obtained by Amphora Media from Transport Malta under freedom of information [4] (second-hand: the reply "
            "is not public); Valletta Cruise Port’s traffic figures [5]; Regulation (EU) 2023/1805 [6]; peer-reviewed "
            "studies found through Crossref and OpenAlex [7–9]. Numbers are recomputed by "
@@ -86,11 +95,13 @@ S.append(P("<b>Grades.</b> Peer-reviewed observational studies are grade B; offi
 # ================================================================== 3
 S.append(CondPageBreak(80 * mm))
 S.append(SectionHeading(3, "What the research says"))
-S.append(P("A bottom-up inventory of 164 cruise calls at Istanbul’s Galataport in 2024 found that hotelling, the time "
-           "at berth with auxiliary engines running, produced more than 90% of the ships’ CO2 in port and most of their "
-           "NOx and SOx [7]. Shore power targets exactly that phase, which is why a figure near 90% is plausible "
-           "<i>for a ship that connects</i>. Emissions do not disappear: they move to the power station supplying the "
-           "grid."))
+S.append(P("Infrastructure Malta’s own figures are the basis of the 90%: a cruise liner that switches off its "
+           "auxiliary engines at the quay emits 93% less nitrogen dioxide, 92.6% less particulate matter and 99.6% "
+           "less sulphur dioxide, and 39.6% less carbon dioxide [10, 11]. The study behind these percentages is not "
+           "cited. They apply <i>to a ship that connects</i>. Research is consistent with a large cut per ship: a "
+           "bottom-up inventory of 164 cruise calls at Istanbul’s Galataport in 2024 found that hotelling, the time at "
+           "berth with auxiliary engines running, produced more than 90% of the ships’ CO2 in port and most of their "
+           "NOx and SOx [7]. Emissions do not disappear: they move to the power station supplying the grid."))
 S.append(P("Shore power does nothing for manoeuvring. A sensor network in the Bay of Kotor found particulate spikes "
            "when cruise ships arrived and departed [8], and a 2025 review lists cost, ship retrofits and voluntary "
            "use among the barriers to adoption [9]. Pollution in the harbour also comes from ferries, tugs, "
@@ -104,7 +115,8 @@ S.append(fig(FIG / "fig1_uptake.png"))
 S.append(P("Figure 1. Left: the promised cut against the share of berths and of berth time plugged in during the "
            "first year. Right: plug-in rate by length of stay. Data ◆ [4].", cap))
 S.append(fig(FIG / "fig2_calls.png"))
-S.append(P("Figure 2. Cruise calls at Valletta Cruise Port [5]; 2019–2023 as quoted in [4].", cap))
+S.append(P("Figure 2. Cruise calls at Valletta Cruise Port [5]; 2019–2023 as quoted in [4]. Infrastructure Malta, "
+           "citing the NSO, also gives 372 cruise liners for 2019 [10].", cap))
 S.append(std_table([
     [C("Indicator", cellh), C("Value", cellh), C("Source", cellh), C("Grade", cellh)],
     [C("Berths plugged in, Jul 2024–Jul 2025"), C("<b>67 of 373 (18%)</b>"), C("Transport Malta FOI ◆ [4]"), grade_tag("C")],
@@ -123,11 +135,13 @@ S.append(CondPageBreak(120 * mm))
 S.append(SectionHeading(5, "Where the evidence points different ways"))
 S.append(contested(
     "Q1  Is 90% the right number for a connected ship?", "PLAUSIBLE", GREENC,
-    "Hotelling dominates cruise emissions in port [7]; a ship on shore power emits nothing from its auxiliary engines "
-    "at the quay. A 90% cut in that ship’s local emissions is consistent with the research.",
-    "No source gives the basis of the 90% (which pollutant, which ships, what share of time). Manoeuvring "
-    "emissions remain [8].",
-    "<b>For this claim:</b> the figure is defensible as an engineering potential per connected ship."))
+    "Infrastructure Malta’s figures for a liner on shore power: 93% less NO2, 92.6% less particulate matter, 99.6% "
+    "less SO2 [10, 11]. Hotelling dominates cruise emissions in port [7], so a large cut per ship is consistent with "
+    "the research.",
+    "These are Infrastructure Malta’s estimates; the study behind them is not cited. They apply to ships that "
+    "connect, not to all harbour pollution; CO2 falls 39.6%; manoeuvring emissions remain [8].",
+    "<b>For this claim:</b> the figure is defensible per connected ship, which is how Infrastructure Malta’s "
+    "per-liner figures are stated."))
 S.append(contested(
     "Q2  Did completion of the project deliver 90%?", "NO", RED,
     "Use is rising: one large ship plugs in routinely, and Carnival ships were certifying in 2025 [4].",
@@ -149,7 +163,8 @@ verd = lambda t, c: chip(t, c, w=29 * mm)
 S.append(std_table([
     [C("Sub-claim", cellh), C("What the evidence shows", cellh), C("Rating", cellh)],
     [C("<b>A.</b> Shore power cuts a connected ship’s emissions at berth by about 90%"),
-     C("Consistent with research on hotelling emissions [7, 9]; basis of the figure not published."),
+     C("Infrastructure Malta’s per-liner figures: NO2 −93%, PM −92.6%, SO2 −99.6%, CO2 −39.6% [10, 11]; "
+       "consistent with research [7, 9]. Underlying study not cited."),
      verd("PLAUSIBLE", GREENC)],
     [C("<b>B.</b> The project slashes 90% of air pollution in the Grand Harbour"),
      C("At most about 9% of at-berth cruise emissions in year one; other sources and manoeuvring untouched; "
@@ -157,24 +172,28 @@ S.append(std_table([
     [C("<b>C.</b> 17,000 families benefit from cleaner air"),
      C("Basis of the figure not found; any benefit scales with use."), verd("NOT SHOWN", GREY)],
     [C("<b>D.</b> EUR 33 million; 17 points; five liners at once"),
-     C("Consistent across official sources [1–3]."), verd("CONSISTENT", GREENC)],
+     C("17 points and five liners consistent [1–3]. Cost figures vary by phase and date: EUR 49.9m for the "
+       "whole project and EUR 37m for phase 1 (2020) [10, 11]; EUR 33m at the 2024 launch [2]."),
+     verd("FIGURES VARY", AMBER)],
 ], [52 * mm, 88 * mm, 30 * mm], valign="MIDDLE"))
 
 # ================================================================== 7
 S += [Spacer(1, 6 * mm), SectionHeading(7, "Verdict and requests for evidence"),
       verdict_box("Misleading", "A design potential presented as a result; connection is voluntary until 2030 and "
                   "first-year use was 9% of berth time. Confidence: moderate."), Spacer(1, 4 * mm)]
-S.append(P("<b>Why.</b> (1) The 90% is plausible only for ships that plug in. (2) The project page and launch "
-           "presented it as what the project does, without saying that connection is voluntary until 2030 [1, 2, 6]. "
-           "(3) Transport Malta’s own records, as reported, show ships plugged in for 9% of berth time in the first "
-           "year [4], so the cut was roughly a tenth of the figure claimed. The individual facts (cost, connection "
-           "points, capacity) are accurate; the overall impression is not. Our scale calls this <i>Misleading</i>."))
+S.append(P("<b>Why.</b> (1) The 90% is Infrastructure Malta’s figure for ships that plug in; its earlier pages "
+           "limited it to the pollution ships produce [10, 11]. (2) The 2023 project page presented it as a cut in Grand "
+           "Harbour air pollution and the launch as a result of completing the project, neither saying that "
+           "connection is voluntary until 2030 [1, 2, 6]. (3) Transport Malta’s own records, as reported, show ships plugged in for "
+           "9% of berth time in the first year [4], so the cut was roughly a tenth of the figure claimed. The "
+           "connection points and capacity are as stated; the overall impression is not. Our scale calls this "
+           "<i>Misleading</i>."))
 S.append(P("<b>Confidence is moderate</b> because the connection records are known through a news analysis, not "
            "the FOI reply itself, and no air-quality measurement exists either way."))
 S.append(P("Evidence we are asking for", h2))
 S.append(requests_list([
     "Transport Malta’s OPS connection log by call and hours, July 2024 to date.",
-    "The calculation behind the 90% and 17,000-family figures.",
+    "The study behind the per-pollutant cuts and the 17,000-family figure.",
     "The results of ERA’s Senglea shipping study (mobile station, until October 2024).",
     "The shore power agreements’ terms on use, which Transport Malta declined to release as commercial.",
 ]))
@@ -185,6 +204,8 @@ for l in ["Connection figures are second-hand (Amphora Media’s analysis of a T
           "The 9% upper bound assumes zero local emissions while plugged in and the same mix of ships plugged and "
           "unplugged; larger ships plugging in could make the cut in tonnes somewhat larger.",
           "Uptake may have risen since July 2025; no later figures were found.",
+          "The per-pollutant cuts are Infrastructure Malta’s own estimates; the study behind them was not found.",
+          "Cruise calls are calendar years; the uptake figures cover July 2024 to July 2025.",
           "Emissions shifted to the power station and the interconnector were not estimated.",
           "Peer-reviewed papers were read as abstracts."]:
     S.append(P("• " + l, bul))
@@ -214,7 +235,12 @@ S += references([
     ("9", "Rogošić M., Stanivuk T., Lucaci D. (2025). A study on the application of shore-side power as a method to "
           "reduce the emissions of greenhouse gases by cruise ships. <i>J. Marine Science and Engineering</i> "
           "13(3):453. doi:10.3390/jmse13030453. (Abstract read.)", "https://doi.org/10.3390/jmse13030453"),
-    ("10", "MiŻien. Data and calculations: data/cc-016/; tools/cc-016-report/calc.py.", ""),
+    ("10", "Infrastructure Malta (30 Nov 2020). Grand Harbour Clean Air Project gets underway. Read 5 Oct 2026.",
+     "https://www.infrastructuremalta.com/news/grand-harbour-clean-air-project-gets-underway"),
+    ("11", "Infrastructure Malta (19 Feb 2022). First Grand Harbour Clean Air Project frequency converters in place. "
+           "Read 5 Oct 2026.",
+     "https://www.infrastructuremalta.com/news/first-grand-harbour-clean-air-project-frequency-converters-place"),
+    ("12", "MiŻien. Data and calculations: data/cc-016/; tools/cc-016-report/calc.py.", ""),
 ])
 
 S.append(PageBreak())
@@ -222,7 +248,18 @@ S += appendix_a("A experiment · B observational study with a control or gradien
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
 S += revision_log([("1.0", "3 Oct 2026", "First issue. Right of reply to Infrastructure Malta and Transport Malta "
-                    "not yet sent.")])
+                    "not yet sent."),
+                   ("1.1", "5 Oct 2026", "Corrections: (1) “No source gives the basis of the 90%” / “basis not "
+                    "published” → Infrastructure Malta’s 2020 and 2022 pages give it, scoped to the pollution ships "
+                    "produce, with per-liner cuts (NO2 −93%, PM −92.6%, SO2 −99.6%, CO2 −39.6%) [10, 11]; the 2023 "
+                    "page dropped the scope (Section 1). (2) Section 3: the 90% inferred from hotelling’s share of CO2 "
+                    "[7] → Infrastructure Malta’s own per-pollutant figures, research kept as context. (3) Sub-claim D "
+                    "“Consistent” → “Figures vary”: EUR 33m (2024 launch), 37m (phase 1) and 49.9m (whole project); "
+                    "the TL;DR no longer attributes EUR 33m to the project page, which gives no cost. (4) TL;DR point "
+                    "4 “extra calls roughly cancel the emissions saved” → states that calls are calendar years, uptake "
+                    "July–July and shore power was available from July 2024. (5) 2019 calls: also given by "
+                    "Infrastructure Malta citing the NSO. ‘What would move it down’: removed the clause saying no "
+                    "scoped wording was found. Verdict and confidence unchanged.")])
 
 build_report(Report(
     number="016", out=str(FIG / "report.pdf"), kicker="Air quality",
@@ -233,9 +270,9 @@ build_report(Report(
     attribution="Infrastructure Malta, Shore-to-Ship project page, 1 December 2023.",
     context="Repeated at the inauguration, 10 July 2024.",
     verdict="Misleading", verdict_note="A design potential presented as a result; ships plugged in 9% of the time",
-    footer_lines=["Version 1.0  ·  3 October 2026", "Status: draft (right of reply: Infrastructure Malta, Transport Malta)",
+    footer_lines=["Version 1.1  ·  5 October 2026", "Status: draft (right of reply: Infrastructure Malta, Transport Malta)",
                   "Prepared from public sources and published records.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Shore-to-ship and harbour air – Malta", version="1.0", date="3 October 2026",
+    running_head="Shore-to-ship and harbour air – Malta", version="1.1", date="5 October 2026",
     pdf_title="Does shore power cut harbour pollution by 90%? Claim Check 016",
     pdf_subject="Tests Infrastructure Malta's claim that shore-to-ship slashes 90% of Grand Harbour air pollution",
     story=S))
