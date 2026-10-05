@@ -1,0 +1,53 @@
+id: CC-116
+title: 'UNESCO: Valletta setting not safeguarded'
+category: Planning & Housing
+subtopic: Heritage & character
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'UNESCO World Heritage Committee (2025 state-of-conservation decision, as reported): Malta''s current planning policies
+    and regulations do not sufficiently safeguard Valletta''s setting; the Committee asked for effective height controls
+    within and around the property, a further-developed buffer zone, and an updated conservation report by 1 December 2026.'
+  speaker: UNESCO World Heritage Committee
+  date: n/d
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'State of Conservation (SOC 2025): City of Valletta (Malta)'
+    publisher: UNESCO World Heritage Centre
+    date: '2025'
+    url: https://whc.unesco.org/en/soc/4677
+    note: Primary page; returned 403 to automated reading on 5 Oct 2026. Record the decision number and exact wording.
+  - title: 'UNESCO: 15 years of chasing Malta for Valletta''s conservation report'
+    publisher: The Shift News
+    date: '2026-06-18'
+    url: https://theshiftnews.com/2026/06/18/unesco-15-years-of-chasing-malta-for-vallettas-conservation-report/
+    note: 'Locator: reports the Committee''s requests; wording not verified against the decision text.'
+counter_evidence: The Government treated the later deadline as a sign of confidence in its heritage management and rejected
+  the Opposition's 'alarmism' (Lovin Malta, reported); the PN asked for a local-plan revision (MaltaToday). The Planning
+  Authority's Floor Area Ratio policy and height rules are the policies at issue.
+tests: UNESCO decision text and State of Conservation report; Malta's Floor Area Ratio policy, North Harbour and Grand Harbour
+  Local Plans, the Views and Vistas Analysis; Heritage Impact Assessments for Manoel Island and other major schemes; actual
+  permitted heights near Valletta (PA permits).
+why_low_hanging: An international body's statement about specific planning instruments, which the policy texts and permits
+  can test.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Low to medium: whc.unesco.org returned 403 to scripts; the Shift page is readable. A maintainer may need
+  to paste the decision text into literature/CC-116/primary-source.md.'
+caveats: 'Candidate from the weekly intake of 5 Oct 2026. Wording is from a locator source; the decision number and exact
+  text must be read in a browser. The 1 December 2026 report deadline falls after this intake: do not mark any follow-up
+  before it passes. Overlaps in subject, not in claimant, with CC-065 and CC-066.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City of Valletta World Heritage Site
+  lat: 35.8997
+  lon: 14.5147
+  scope: site
+  icon: citygate

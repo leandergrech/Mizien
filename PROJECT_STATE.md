@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 5 October 2026 (CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 5 October 2026 (weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -394,6 +394,35 @@ CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commi
 - 30 weak links (Weak (indicative) or Pattern, not causal) added to existing themes T2-T9 and a new theme T10 (tourism pressure).
 - Queue: new claims spread across workers A/B/C (open loads 28/27/27). Several claims overlap earlier ones by design (CC-025/CC-094 with CC-003; CC-081 with CC-004; CC-041-043 with CC-005).
 - Site and UI changes (Għanqbuta rename, subtopic sub-hubs, Eleventy build) are owned by the mizien-60 session; do not edit docs/index.html or scripts without checking with it.
+
+## Weekly intake 2026-10-05 (CC-109 to CC-116)
+
+Eight candidates added, not ten: the searches found few further specific, checkable, non-duplicate statements, and padding was avoided. All are `Not started`, verdict null. Six of the eight come from EU, international or foreign-institution speakers or are about them (the collection was skewed to local speakers).
+
+| ID | Topic / subtopic | Side | Claim | Wording | Source host reachable |
+|---|---|---|---|---|---|
+| CC-109 | Transport / Cars & traffic | EU (Commission) | Transport is 48% of Malta's effort-sharing emissions in 2024, up 45% since 2005 (2026 Country Report, 3 Jun 2026) | Verbatim found | Yes (Council-hosted PDF read) |
+| CC-110 | Transport / Cars & traffic | EU (Commission) | 37.7% of new cars in 2024 were zero-emission vs EU 13.6% (same report) | Verbatim found | Yes |
+| CC-111 | Waste / Landfill & treatment | EU (Commission) | 621 kg of waste per person in 2024 vs EU 517; landfill rate 82% to 74%, EU 22% (same report) | Verbatim found | Yes |
+| CC-112 | Tourism & Population / Population & labour | International (IMF) | Population rose 25% over a decade, largely due to immigration (Selected Issues, Feb 2026) | Verbatim found | Yes |
+| CC-113 | Climate & Energy / Electricity & grid | EU agency (EEA) | Malta, Poland, Slovakia had the highest fossil-fuel subsidies as a share of GDP in 2023, at or above 1.5% (29 Jan 2025) | Verbatim found | Yes |
+| CC-114 | Climate & Energy / Emissions & targets | Party (PN) | Malta is the only EU state whose emissions intensity rose since 2013 (+17% vs EU -34%) (26 Jan 2026) | Verbatim found (Newsbook quoting) | Yes |
+| CC-115 | Transport / Cars & traffic | Business (Malta Chamber) | Congestion cost EUR 770 million in 2025, 3.4% of GDP (2026 election proposals; date to record) | Verbatim found (Lovin Malta quoting) | Partly (Chamber PDF probably browser-only) |
+| CC-116 | Planning & Housing / Heritage & character | International (UNESCO WHC) | Malta's planning policies do not sufficiently safeguard Valletta's setting; height controls and report due 1 Dec 2026 | Paraphrase: locate quote | No (whc.unesco.org 403) |
+
+- **Queue:** CC-109 to C, CC-110 to C, CC-111 to A, CC-112 to C, CC-113 to A, CC-114 to B, CC-115 to C, CC-116 to A. Open unblocked loads before 26/27/24 (A/B/C), after 29/28/28.
+- **Taxonomy:** no category added or renamed; no new subtopic (all reuse existing names). Noise still has 3 claims and no subtopics. No Noise, Nature, Water, Health or NGO candidate qualified this week.
+- **Patterns:** no new tag. CC-110 and CC-114 provisionally tagged Selective metric.
+- **Themes and edges:** CC-109, 110, 115 added to T4; CC-111 to T5; CC-110, 114 to T6; CC-109, 114 to T7; CC-112 to T10. New T14 Energy subsidies (CC-022, 095, 113) and T15 Heritage and development control (CC-065, 066, 116), both Weak (indicative). 29 edges added (128 total). Edges were added only between claims that speak to the same issue (for example CC-114 with CC-025 and CC-003; CC-111 with CC-081 and CC-004; CC-115 with CC-008 and CC-071), not between every pair of the large themes, following the 4 Oct intake. `Linked claims (count)` was recounted for every claim (27 older rows changed).
+- **Coverage (claims per topic, before to after, counted from claim.yml):** Transport 12 to 15, Climate & Energy 14 to 16, Planning & Housing 12 to 13, Tourism & Population 10 to 11, Waste 6 to 7; all others unchanged. Sides by body type: Government 32, Agencies 17, Regulators 14, Media 11, Business 10 to 11, Parties 10 to 11, EU and international 5 to 11, NGOs 5, Research 3, Oversight 1. Local speakers 103 to 105; EU, international and foreign speakers 5 to 11. NGOs and civil society remain the least covered side (5), then Noise (3).
+- **Follow-ups (not changed):** CC-111's 74% landfill rate (2023) and CC-081's 79.2% (2024) and the NSO's 72% (2024) use different scopes: the worker should read the report footnote first. CC-115 and Cremona's EUR 1.13 billion (Malta News Agency, 3 Jun 2026) are alternative congestion-cost estimates. CC-114 and CC-025 pick different base years (2013 vs 2005). CC-116's 1 Dec 2026 deadline is after this intake: do not mark it before then. CC-113 is about 20 months old.
+- **Considered and excluded:** NSO 2024 waste release (Newsbook, 2 Dec 2025; near-duplicate of CC-081/CC-004), EU Environmental Crime Directive and Industrial Emissions transposition notices (procedural, no checkable figure), 17% of beaches 'poor' (The Malta Post; overlaps CC-005 and the source is secondary), Din l-Art Ħelwa on the Comino tree permit (CC-002, sub judice, opinion), GRECO anti-corruption report (outside scope), Isla heat-island and Posidonia studies (MDPI pages returned 403; no checkable claim read).
+- **Network:** `net_check.py` reported Crossref, ec.europa.eu, Wayback and EEA reachable. The Council, IMF and EEA documents were read through WebFetch; Newsbook, MaltaToday and whc.unesco.org gave 403 to some pages.
+
+### Needs maintainer (weekly intake 2026-10-05)
+- CC-116: the World Heritage Committee decision number and exact wording on Valletta (whc.unesco.org/en/soc/4677 returns 403) into `literature/CC-116/primary-source.md`.
+- CC-115: the Malta Chamber's own election-proposal document (LEAD) and its date, with the method behind EUR 770 million (browser-only).
+- Standing blockers (queue rows starting `source:`): CC-015, CC-023, CC-027, CC-028 (see the 4 Oct list above).
 
 ## Weekly intake 2026-10-04 (CC-101 to CC-106)
 

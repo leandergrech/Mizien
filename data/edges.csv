@@ -98,3 +98,32 @@ CC-104,CC-105,T13,Noise governance,Shared target,Weak (indicative)
 CC-003,CC-026,T4,"Transport, air and climate",Shared driver,Weak (indicative)
 CC-009,CC-108,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared driver,Strong
 CC-101,CC-108,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared driver,Weak (indicative)
+CC-109,CC-008,T4,"Transport, air and climate",Shared driver,Strong
+CC-109,CC-072,T4,"Transport, air and climate",Shared driver,Strong
+CC-110,CC-072,T4,"Transport, air and climate",Shared driver,Strong
+CC-110,CC-026,T4,"Transport, air and climate",Shared driver,Strong
+CC-110,CC-075,T4,"Transport, air and climate",Shared driver,Strong
+CC-109,CC-110,T4,"Transport, air and climate",Shared driver,Strong
+CC-115,CC-008,T4,"Transport, air and climate",Shared driver,Strong
+CC-115,CC-071,T4,"Transport, air and climate",Shared driver,Strong
+CC-115,CC-109,T4,"Transport, air and climate",Shared driver,Strong
+CC-111,CC-081,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-111,CC-004,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-111,CC-079,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-110,CC-007,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-114,CC-003,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-114,CC-025,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-109,CC-094,T7,2030 carbon target,Shared target,Strong
+CC-109,CC-003,T7,2030 carbon target,Shared target,Strong
+CC-114,CC-094,T7,2030 carbon target,Shared target,Strong
+CC-114,CC-003,T7,2030 carbon target,Shared target,Strong
+CC-114,CC-025,T7,2030 carbon target,Shared target,Strong
+CC-112,CC-088,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-112,CC-089,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-112,CC-099,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-022,CC-095,T14,Energy subsidies,Shared driver,Weak (indicative)
+CC-022,CC-113,T14,Energy subsidies,Shared driver,Weak (indicative)
+CC-095,CC-113,T14,Energy subsidies,Shared driver,Weak (indicative)
+CC-065,CC-066,T15,Heritage and development control,Shared mechanism,Weak (indicative)
+CC-065,CC-116,T15,Heritage and development control,Shared mechanism,Weak (indicative)
+CC-066,CC-116,T15,Heritage and development control,Shared mechanism,Weak (indicative)

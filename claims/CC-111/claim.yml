@@ -1,0 +1,48 @@
+id: CC-111
+title: 'EU: 621 kg of waste a head, 74% landfilled'
+category: Waste
+subtopic: Landfill & treatment
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (2026 Country Report - Malta, 3 Jun 2026): Malta generated 621 kg of waste per person in 2024
+    against an EU average of 517 kg, and its landfill rate fell from 82% to 74% over ten years but remains well above the
+    EU average of 22% (2023).'
+  speaker: European Commission
+  date: '2026-06-03'
+  wording_status: Verbatim found
+  sources:
+  - title: 2026 Country Report - Malta, SWD(2026) 218 final (Council doc. 10135/26 ADD 1)
+    publisher: European Commission (via Council of the EU)
+    date: '2026-06-03'
+    url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
+    note: Primary text read 5 Oct 2026 (circular economy section). Footnotes (156) and (158) give the data sources.
+  quote: Waste generation is still high with 621 kg per person generated in 2024 (compared with the EU average of 517 kg
+    per person)
+counter_evidence: 'The landfill share depends on the definition: The Shift (Feb 2026, CC-081) reports 79.2% landfilled in
+  2024 and the NSO reports 72% of treated municipal waste in 2024, so ''74%'' (2023) may use a different waste scope. The
+  Ministry reports ''strong progress'' (CC-004).'
+tests: Eurostat env_wasmun (municipal waste generated and treated), cei_wm011, env_wasgen; NSO waste statistics 2024; EEA
+  waste indicators; compare scope (municipal vs total, 2023 vs 2024) against the report's footnotes.
+why_low_hanging: Numbers that Eurostat reproduces; extends the landfill comparison in CC-004 and CC-081 with the Commission's
+  own wording.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat, NSO and EEA reachable; the Council-hosted PDF was read via WebFetch.'
+caveats: 'Candidate from the weekly intake of 5 Oct 2026. Municipal and total waste may be mixed in the passage: check the
+  footnoted source before testing. The 2025 Environmental Implementation Review (CC-004, CC-005) is a separate Commission
+  document.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: citygate

@@ -1,0 +1,48 @@
+id: CC-114
+title: 'PN: only EU state with rising emissions intensity'
+category: Climate & Energy
+subtopic: Emissions & targets
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Nationalist Party MP Eve Borg Bonello (26 Jan 2026): Malta is the only EU Member State that, instead of reducing,
+    has increased the intensity of its greenhouse-gas emissions since 2013; it rose 17% while the EU average fell 34%.'
+  speaker: Nationalist Party (PN)
+  date: '2026-01-26'
+  wording_status: Verbatim found
+  sources:
+  - title: PN accuses government of climate 'apathy' as emissions intensity rises
+    publisher: Newsbook
+    date: '2026-01-26'
+    url: https://newsbook.com.mt/en/pn-accuses-government-of-climate-apathy-as-emissions-intensity-rises/
+    note: News report quoting the MP directly, read 5 Oct 2026. Locate the PN press release if one exists.
+  quote: Malta is the only EU Member State that, instead of reducing, has increased the intensity of its greenhouse gas
+    emissions since 2013.
+counter_evidence: 'The Government says per-capita emissions fell over 44% and emissions per unit of GDP over 80% since 2005
+  (CC-025, CC-003): the base year (2005 versus 2013) and the metric differ. Economic output grew fast, so intensity can
+  rise even when the level is flat; the reverse also applies.'
+tests: Eurostat env_air_gge (GHG emissions) and nama_10_gdp (GDP, chain-linked volumes) for all EU-27, 2013 to the latest
+  year; compute intensity change per country; test sensitivity to the end year and to territorial versus residence-based
+  emissions (see CC-026).
+why_low_hanging: A clear 'only member state' ranking that open Eurostat data settle by calculation.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat and Crossref reachable; Newsbook readable.'
+caveats: Candidate from the weekly intake of 5 Oct 2026. An opposition claim, held to the same standard as the Government's
+  (CC-025). The Newsbook report also quotes a projected 142% overshoot of the 2030 effort-sharing target and a 10.7% renewable
+  share in 2024; those are not checked here.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: citygate

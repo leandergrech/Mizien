@@ -138,6 +138,14 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-106 | Nature & Wildlife | Shearwaters: 10% of the world population | Not started | - |
 | CC-107 | Governance & Promises | A net-zero Gozo by 2040 | Drafted | Pledge: Not measurable |
 | CC-108 | Water | WSC: a net-zero impact on groundwater | Not started | - |
+| CC-109 | Transport | EU: transport is 48% of effort-sharing emissions | Not started | - |
+| CC-110 | Transport | EU: 37.7% of new cars zero-emission | Not started | - |
+| CC-111 | Waste | EU: 621 kg of waste a head, 74% landfilled | Not started | - |
+| CC-112 | Tourism & Population | IMF: population up 25% in a decade | Not started | - |
+| CC-113 | Climate & Energy | EEA: Malta among highest fossil-fuel subsidies | Not started | - |
+| CC-114 | Climate & Energy | PN: only EU state with rising emissions intensity | Not started | - |
+| CC-115 | Transport | Chamber: congestion cost EUR 770m, 3.4% of GDP | Not started | - |
+| CC-116 | Planning & Housing | UNESCO: Valletta setting not safeguarded | Not started | - |
 
 The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Claims are numbered CC-001 to CC-021. Report drafts are available for CC-001 to CC-011; CC-012 to CC-021 are candidates (added 3 October 2026). Right of reply remains for the maintainer where not yet handled.
 

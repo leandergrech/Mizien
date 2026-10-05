@@ -1,0 +1,47 @@
+id: CC-113
+title: 'EEA: Malta among highest fossil-fuel subsidies'
+category: Climate & Energy
+subtopic: Electricity & grid
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Environment Agency (indicator page, 29 Jan 2025): in 2023 fossil-fuel subsidies represented the highest
+    shares of GDP in Malta, Poland and Slovakia, all at or above 1.5%.'
+  speaker: European Environment Agency
+  date: '2025-01-29'
+  wording_status: Verbatim found
+  sources:
+  - title: Fossil fuel subsidies in Europe
+    publisher: European Environment Agency
+    date: '2025-01-29'
+    url: https://www.eea.europa.eu/en/analysis/indicators/fossil-fuel-subsidies
+    note: Primary text read 5 Oct 2026. Older than 60 days; kept because EU and EEA statements are under-represented. The
+      page gives no Malta-specific figure.
+  quote: In 2023, fossil fuel subsidies represented the highest shares of gross domestic product (GDP) in Malta, Poland,
+    and Slovakia (all at or above 1.5%).
+counter_evidence: The IMF's 2025 Article IV report estimates Malta's energy subsidy cost falling from about 1.8% of GDP
+  in 2022 to about 0.8% in 2025 (see CC-022); the Government plans about EUR 400 million of energy support to 2027 (CC-095).
+  The EEA's definition of a fossil-fuel subsidy (including support that lowers consumer prices) differs from budget lines.
+tests: EEA indicator data and methodology (subsidy definition, Eurostat environmental subsidies accounts, env_ac_... series);
+  Eurostat GDP (nama_10_gdp); Malta budget documents; IMF CR 26/29 Table 2 (already used in CC-022).
+why_low_hanging: A single threshold claim in an open EEA dataset, which also links to the energy-subsidy claims already
+  in the collection.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: EEA and Eurostat reachable.'
+caveats: Candidate from the weekly intake of 5 Oct 2026. Dated Jan 2025 (about 20 months old). Subsidy definitions differ
+  between EEA, IMF and national budget lines; the check should say which is used.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: citygate
