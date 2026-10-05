@@ -1,46 +1,120 @@
 id: CC-105
 title: 'ADPD: no study of Freeport and airport noise'
 category: Noise
-subtopic: null
-status: Not started
-verdict: null
-verdict_confidence: null
+subtopic:
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'ADPD - The Green Party (deputies Carmel Cacopardo and Melissa Bagley, 26 May 2026): Malta has not yet acknowledged
-    the impact of noise from the Malta Freeport and Malta International Airport on nearby residents, and should
-    commission a study of it (and of entertainment-industry noise).'
+  text: 'ADPD - The Green Party (deputy chairpersons Carmel Cacopardo and Melissa Bagley, press conference in Birżebbuġa,
+    26 May 2026): Malta has yet to acknowledge the effect of noise pollution on the health of people living near the Malta
+    Freeport and Malta International Airport, and should study the impact of noise from the Freeport and the airport on nearby
+    residents (and of entertainment-industry noise).'
   speaker: ADPD - The Green Party
-  date: '2026-05-26'
-  wording_status: 'Paraphrase: locate quote'
+  date: 2026-05-26
+  wording_status: 'Verbatim found'
   sources:
-  - title: 'Air and noise pollution are harming our health: ADPD'
-    publisher: Newsbook
-    date: '2026-05-26'
-    url: https://newsbook.com.mt/en/air-and-noise-pollution-are-harming-our-health-adpd/
-    note: Locator. The article states the call for a study; read the party press statement for exact wording.
-counter_evidence: EU noise-mapping rules cover major airports and roads, so some exposure data may already exist;
-  whether Freeport noise is mapped is not yet checked. The article gives no decibel or exposure figures, and the
-  claim is that no study exists, which can be tested by looking for one.
-tests: Strategic noise maps and action plans (Directive 2002/49/EC) for Malta International Airport; ERA/TM noise
-  reports; Freeport environmental permits and monitoring; WHO 2018 Environmental Noise Guidelines for Europe.
-why_low_hanging: '''No study exists'' is falsifiable by finding one; exposure data can then be set against WHO guidelines.'
-tags:
-- Compliance-not-health
-tags_provisional: true
-priority: Queue
-data_readiness: 'Medium: EEA noise data reachable; ADPD and ERA pages may be browser-only.'
-caveats: 'Candidate from the weekly intake of 4 Oct 2026 (second run of the day): Wording of the ''not acknowledged''
-  part is not confirmed: the article reads as a call for a study. Confirm in the party statement before any check.
-  Wording is from a locator source unless marked verbatim; read the primary text before any report.'
+    - title: It-tniġġis qiegħed iħassrilna saħħitna / Pollution is negatively affecting our health
+      publisher: ADPD - The Green Party
+      date: '2026-05-26'
+      url: https://adpd.mt/it-tniggis-qieghed-ihassrilna-sahhitna-adpd/
+      note: "The claim: party press statement, Maltese and English. Read in full 5 Oct 2026 (WordPress API, post 17576). Also\
+        \ says 'There is a need to study the impact of noise from the Freeport operations and the airport on the surrounding\
+        \ residential community.'"
+    - title: Round 4 Final Project Report, Strategic Noise Mapping in Malta (Lemitor)
+      publisher: Environment and Resources Authority
+      date: 2024-11
+      url: https://era.org.mt/wp-content/uploads/2024/12/R4_Noise_Maps_Malta_Final_Report_compressed.pdf
+      note: Read in full from an Internet Archive copy. Industrial sites mapped (7); the Freeport is not among them; no mention
+        of the Freeport.
+    - title: Malta International Airport Noise Modelling, Final Report (round 3)
+      publisher: ERA / Acustica
+      date: 2019-03
+      url: https://era.org.mt/wp-content/uploads/2019/10/593-14-2v3-1_Malta-International-Airport-R3-Final-Report.pdf
+      note: 'Table 9.2: 9,666 people at 55 dB Lden or more and 827 at 50 dB Lnight or more (2016). Internet Archive copy.'
+    - title: Effects of Noise Pollution on Residents Living in Birzebbuga and the Introduction of Effective Mitigation Measures
+      publisher: Int. J. Sustainable Development and Planning 17(7), Falzon et al.
+      date: '2022'
+      url: https://doi.org/10.18280/ijsdp.170732
+      note: Open access; read in full; Crossref verified. Five monitoring points, 477 questionnaires.
+    - title: Level of noise disturbance at Birżebbuġa is higher than that established by WHO
+      publisher: TVM news
+      date: '2015-12-29'
+      url: https://tvmnews.mt/en/news/level-of-noise-disturbance-at-birzebbuga-is-higher-than-that-established-by-who/
+      note: Second-hand report of a year-long study commissioned by Malta Freeport Terminals (report not seen).
+    - title: Analysing Malta's implementation of Directive 2002/49/EC (PE 783.089)
+      publisher: European Parliament
+      date: 2026-02
+      url: https://doi.org/10.2861/6278624
+      note: Legal context; see CC-020.
+  quote: This country has yet to acknowledge that noise pollution is having an effect on the health of those who live near
+    the Freeport or the airport, including its points of access.
+counter_evidence: 'None of five ERA noise documents (round 4 report, two Noise Action Plans, consultation annex, airport round
+  3 report) mentions the Freeport; the licensed industrial sites mapped (8 in round 3, 7 in round 4) exclude it. But aircraft
+  noise is mapped and published (round 3: 9,666 people at 55 dB Lden or more, 827 at 50 dB Lnight or more, 2016) and the Noise
+  Action Plan states WHO health levels, and Freeport-area noise was measured in a Freeport-commissioned study (2014-15, second-hand
+  via TVM) and a University of Malta study (2020-21: daytime averages 55 dBA or more at all five Birżebbuġa points; 98% of
+  477 respondents called noise a problem). No health-outcome study of residents near either site was found.'
+tests: ERA noise documents searched in full text; Falzon et al. (2022); TVM (2015); tools/cc-105-report/calc.py on data/cc-105/.
+why_low_hanging: 'Done: Claim Check 105 report and flyer.'
+tags: []
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'Medium'
+caveats: 'Largely supported: no right of reply needed. ''Yet to acknowledge'' overstates the case for the airport (mapped
+  and published) and for Freeport-area noise (measured twice); the absence of a health-outcome study is shown only for public
+  sources. The 2014-15 Freeport study is known only second-hand. ERA documents read from Internet Archive copies (era.org.mt
+  403). Entertainment noise not checked.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Malta Freeport, Birżebbuġa
   lat: 35.81859
   lon: 14.53085
   scope: site
   icon: crane
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-105A
+    text: "Malta has yet to acknowledge the effect of Freeport noise on nearby residents' health"
+    said_by: "ADPD [1]"
+    finding: "The Freeport is not mentioned in any ERA noise document and not among the mapped industrial sites, but a Freeport-commissioned study (2014–15 ◆) and a university study (2022) exist."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-105B
+    text: "Malta has yet to acknowledge the effect of airport noise on nearby residents' health"
+    said_by: "ADPD [1]"
+    finding: "Aircraft noise exposure is modelled, mapped and published in three rounds, with WHO levels stated; no health assessment of residents."
+    rating: "Overstated"
+    tone: amber
+  - id: CC-105C
+    text: "A study of the impact of noise from the Freeport and airport on nearby residents is needed"
+    said_by: "ADPD [1]"
+    finding: "No health-outcome study found; local work is exposure, annoyance and self-reported symptoms."
+    rating: "Largely supported"
+    tone: lime
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 0 of 5
+  caption: "ERA noise documents that mention the Freeport (airport noise is mapped; no health study found)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: Verbatim wording found in the party's own press statement on adpd.mt (26 May 2026), Maltese and English; Newsbook
+      is a paraphrase.
+  - date: 2026-10-05
+    step: note
+    note: Five ERA noise documents read in full and searched for the Freeport (no hits); airport exposure tabulated from the
+      round 3 report; Falzon et al. 2022 verified in Crossref and read; TVM 2015 article read (study itself not seen).
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.

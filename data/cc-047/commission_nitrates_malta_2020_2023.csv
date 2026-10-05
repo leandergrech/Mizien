@@ -1,0 +1,16 @@
+item,value,unit,note
+groundwater_monitoring_points,44,count,SWD(2026) 232 Part 20 s4.1
+station_density,139.5,per 1000 km2,s4.1
+share_ge_50,68.2,%,s4.2 average nitrate >= 50 mg/l (drinking water threshold)
+share_40_49.99,13.6,%,s4.2
+share_25_39.99,13.6,%,s4.2
+share_lt_25,4.5,%,s4.2
+share_ge_50_previous_period_2016_2019,63.6,%,s4.2
+phreatic_5_15m_stations,12,count,Table 4
+phreatic_5_15m_share_ge_50,83.3,%,Table 4
+phreatic_15_30m_stations,6,count,Table 4
+phreatic_15_30m_share_ge_50,66.7,%,Table 4
+phreatic_gt30m_stations,26,count,Table 4
+phreatic_gt30m_share_ge_50,61.5,%,Table 4
+pollution_hotspots,35,count,s4.4 (>=50 mg/l or 37.5-49.99 with rising trend)
+trend_points_ge_50_increasing,88.9,%,s4.3

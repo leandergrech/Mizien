@@ -2,39 +2,130 @@ id: CC-050
 title: '''Race to weaken hunting laws'''
 category: Nature & Wildlife
 subtopic: Hunting & birds
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Moderate
 claim:
-  text: 'BirdLife Malta (2026 campaign): Labour and PN are in a ''dangerous race'' to weaken hunting laws ahead
-    of the election.'
+  text: 'BirdLife Malta (press release, 27 May 2026): Labour and the PN are in a ''dangerous political race'' to weaken environmental
+    enforcement on hunting and trapping, three days before the general election.'
   speaker: BirdLife Malta
-  date: '2026'
-  wording_status: 'Paraphrase: locate quote'
+  date: 2026-05-27
+  wording_status: 'Verbatim found'
   sources:
-  - title: BirdLife Malta accuses Labour, PN of 'dangerous race' to weaken hunting laws ahead of election
-    publisher: Newsbook
-    date: '2026'
-    url: https://newsbook.com.mt/en/birdlife-malta-accuses-labour-pn-of-dangerous-race-to-weaken-hunting-laws-ahead-of-election/
-    note: NGO claim about both parties.
-counter_evidence: Compare both manifestos' hunting pledges with current law (CC-006 context).
-tests: Labour and PN 2026 manifestos; legal notices.
-why_low_hanging: A specific, attributable statement that public data can test.
+    - title: BirdLife Malta condemns dangerous political race to weaken environmental enforcement
+      publisher: BirdLife Malta
+      date: '2026-05-27'
+      url: https://birdlifemalta.org/2026/05/birdlife-malta-condemns-dangerous-political-race-to-weaken-environmental-enforcement/
+      note: "The claim (headline verbatim; body: 'a worrying race between political parties to outbid each other with commitments\
+        \ that risk weakening enforcement and accountability'). Read 5 Oct 2026."
+    - title: 'Int Malta: Manifest Elettorali 2026, items 63-64 (Il-kaċċa u l-insib), p. 171'
+      publisher: Partit Laburista
+      date: '2026'
+      url: https://partitlaburista.org/wp-content/uploads/2026/08/Manifest_Elettorali_INT_MALTA_2026.pdf
+      note: Safeguard hunting and trapping within EU-permitted derogations; nothing on fines or licences. Read 5 Oct 2026.
+    - title: 'Nifs Ġdid: Programm Elettorali (16 chapters)'
+      publisher: Partit Nazzjonalista
+      date: '2026'
+      url: https://pn.org.mt/en/nifsgdid/
+      note: 'All 16 chapter pages searched 5 Oct 2026: no hunting or trapping item (data/cc-050/pn_programme_search.csv).'
+    - title: Borg pledges hunting and trapping 'will be safeguarded' during Gozo mass meeting
+      publisher: Lovin Malta
+      date: '2026-05-26'
+      url: https://lovinmalta.com/news/general-election-2026/watch-borg-pledges-hunting-and-trapping-will-be-safeguarded-during-gozo-mass-meeting/
+      note: Outlet's transcription of Alex Borg's words; second-hand.
+    - title: Government should fight wildlife crime, not reward it, 10 NGOs warn
+      publisher: Newsbook
+      date: '2026-05-28'
+      url: https://newsbook.com.mt/en/government-should-fight-wildlife-crime-not-reward-it-10-ngos-warn/
+      note: Reports the minister's campaign statement and the government-FKNK agreement; second-hand.
+    - title: BirdLife warns reduced hunting fines would reward those who break the law
+      publisher: Newsbook
+      date: '2026-09-24'
+      url: https://newsbook.com.mt/en/birdlife-warns-reduced-hunting-fines-would-reward-those-who-break-the-law/
+      note: 'ORNIS proposal of 23 Sep 2026: fines EUR 5,000 to 3,000 and 10,000 to 6,000; second-hand.'
+    - title: BirdLife Malta rejects FKNK President's statement as false
+      publisher: BirdLife Malta
+      date: '2026-10-02'
+      url: https://birdlifemalta.org/2026/10/birdlife-malta-rejects-fknk-presidents-statement-as-false/
+      note: Describes the ORNIS PowerPoint (not public).
+    - title: Conservation of Wild Birds Regulations, S.L. 549.42 (consolidated)
+      publisher: Government of Malta (legislation.mt)
+      date: '2026-10-05'
+      url: https://legislation.mt/eli/sl/549.42/eng
+      note: Amended to L.N. 251 of 2025; fines EUR 5,000 / 10,000 for Schedule I and IX birds still in force.
+  quote: BirdLife Malta condemns dangerous political race to weaken environmental enforcement
+counter_evidence: Labour's manifesto (items 63-64) commits only to defend EU-permitted derogations and safeguard hunting and
+  trapping; it has nothing on fines or licences. The fine cuts (EUR 5,000 to 3,000 first offence; 10,000 to 6,000 repeat,
+  -40%) and licence reapplication come from a minister's campaign statement and an ORNIS Committee proposal of 23 Sep 2026,
+  known only through Newsbook and BirdLife Malta. For the PN, Alex Borg said hunting and trapping 'will be safeguarded' (Lovin
+  Malta); the 16 chapters of the PN programme have no hunting item, and no PN proposal to cut fines or restore licences was
+  found. The reading that the pledge overrides the Birds Directive is BirdLife Malta's inference. The consolidated S.L. 549.42
+  has no 2026 amendment.
+tests: Labour manifesto PDF and PN programme (16 chapters) searched; S.L. 549.42 consolidated text; reduction computed in
+  tools/cc-050-report/calc.py.
+why_low_hanging: 'Done: Claim Check 050 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Not substantiated: pending right of reply (to be sought by the maintainer from BirdLife Malta). Shown for Labour,
+  not for the PN. The minister''s and Mr Borg''s words are second-hand (news); the ORNIS presentation is not public; the PN
+  programme was read as web chapters. The release''s body text is hedged (''appears'', ''statements indicating''); the headline
+  is not.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+  - Labour manifesto 2026, items 63-64, p. 171 (data/cc-050/labour_manifesto_items_63_64.txt)
+  - PN programme chapter search, 16 chapters, 0 hits (data/cc-050/pn_programme_search.csv)
+  - S.L. 549.42 consolidated, current penalties (data/cc-050/sl549_42_regulation_penalties_excerpt.txt)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Parliament House, Valletta
   lat: 35.89614
   lon: 14.50978
   scope: institution
   icon: parliament
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-050A
+    text: "Labour made commitments to lower penalties and revisit licence bans"
+    said_by: "BirdLife Malta [2]"
+    finding: "Minister’s campaign statement and government–federation agreement before the release (Newsbook ◆); an ORNIS proposal four months later (-40% fines; BirdLife screenshot ◆). Not in the manifesto."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-050B
+    text: "The PN would safeguard hunting and trapping even where it conflicts with the Birds Directive"
+    said_by: "BirdLife Malta [2]"
+    finding: "Mr Borg: “will be safeguarded” (quoted by Lovin Malta ◆). No Directive reference, no fine or licence proposal, no hunting item in the programme."
+    rating: "Not substantiated"
+    tone: amber
+  - id: CC-050C
+    text: "The two parties are in a race to outbid each other in weakening enforcement"
+    said_by: "BirdLife Malta [2]"
+    finding: "Documented for one party; the other’s side is an inference. Opposite sides making similar pledges to the same voters is plausible, but a “race to weaken” needs both."
+    rating: "Not substantiated"
+    tone: amber
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 1 of 2
+  caption: "parties shown to weaken hunting enforcement (claim: both Labour and the PN)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: Verbatim wording found in BirdLife Malta's own release of 27 May 2026; the intake's Newsbook headline ('weaken hunting
+      laws') is a paraphrase.
+  - date: 2026-10-05
+    step: note
+    note: Labour manifesto items 63-64 read; 16 PN programme chapters searched (no hunting item); Borg's words traced to Lovin
+      Malta; ORNIS proposal of 23 Sep 2026 traced to Newsbook and BirdLife; S.L. 549.42 consolidated text checked for current
+      penalties and 2026 amendments (none).
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Not substantiated (moderate confidence); pending right of reply.

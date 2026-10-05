@@ -2,21 +2,21 @@ id: CC-081
 title: Landfill share rising
 category: Waste
 subtopic: Landfill & treatment
-status: Not started
-verdict: null
-verdict_confidence: null
+status: In progress
+verdict:
+verdict_confidence:
 claim:
-  text: 'The Shift News (Feb 2026): Malta''s waste management is going in reverse, with the share landfilled rising
-    from 78.6% in 2023 to 79.2% in 2024.'
+  text: 'The Shift News (Feb 2026): Malta''s waste management is going in reverse, with the share landfilled rising from 78.6%
+    in 2023 to 79.2% in 2024.'
   speaker: The Shift News
   date: '2026-02-19'
   wording_status: 'Paraphrase: locate quote'
   sources:
-  - title: Malta's waste management is going in reverse
-    publisher: The Shift News
-    date: 19 Feb 2026
-    url: https://theshiftnews.com/2026/02/19/maltas-waste-management-is-going-in-reverse/
-    note: Media claim.
+    - title: Malta's waste management is going in reverse
+      publisher: The Shift News
+      date: 19 Feb 2026
+      url: https://theshiftnews.com/2026/02/19/maltas-waste-management-is-going-in-reverse/
+      note: Media claim.
 counter_evidence: Compare with CC-004 (government's 'strong progress'); Eurostat municipal waste treatment.
 tests: Eurostat env_wasmun; NSO waste statistics.
 why_low_hanging: A specific, attributable statement that public data can test.
@@ -24,13 +24,13 @@ tags: []
 tags_provisional: true
 priority: Queue
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text before any
+  report.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
+  sent:
+  deadline:
+  response:
+evidence_shown:
 outputs: {}
 location:
   place: Magħtab waste complex
@@ -38,3 +38,9 @@ location:
   lon: 14.44073
   scope: site
   icon: landfill
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: note
+    note: Shift article not retrievable (404; no Wayback copy); only a search-engine summary, not verbatim. Figures 78.6%
+      and 79.2% reproduce in Eurostat env_wasmun as landfilled / treated (data/cc-111/); on a generated basis the share fell
+      (73.6% to 72.1%). Waiting on the article text before a report.
