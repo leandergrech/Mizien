@@ -75,7 +75,7 @@
     else if (b.verdict || !b.pledge) pillOf(b.verdict || "Not yet checked", col[0], col[1]);
     if (b.pledge) { pillOf("Pledge: " + b.pledge.status, b.pledge.colour, "#fff"); meta.push("as of " + b.pledge.as_of); }
     if (b.confidence) meta.push(b.confidence.toLowerCase() + " confidence");
-    var stage = b.draft ? "draft, right of reply pending" : String(b.status || "").toLowerCase();
+    var stage = b.draft ? (b.reply_sought === false ? "draft, right of reply not sought" : "draft, right of reply pending") : String(b.status || "").toLowerCase();
     if (stage && stage !== String(b.verdict || "Not yet checked").toLowerCase() && !b.part) meta.push(stage);
     if (b.parts) meta.push(b.parts + " parts");
     if (meta.length) v.appendChild(el("span", "cr-meta", meta.join(" · ")));
