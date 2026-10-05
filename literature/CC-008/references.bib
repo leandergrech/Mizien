@@ -10,3 +10,39 @@
   url = {https://pubs.aeaweb.org/doi/10.1257/aer.101.6.2616},
   note = {Publisher citation and metadata checked 2 October 2026. Publisher page offers the full text.}
 }
+
+@misc{eea_aq_no2_mt,
+  author = {{European Environment Agency}},
+  title = {Air quality download service: hourly NO2, Malta, sampling points SPO-MT00005\_00008\_100, SPO-MT00011\_00008\_101, SPO-MT00004\_00008\_100, SPO-MT00008\_00008\_100, SPO-MT00009\_00008\_100},
+  year = {2026},
+  howpublished = {Parquet files via the download API (ParquetFile/urls; dataset 2 = E1a validated, dataset 1 = E2a up-to-date)},
+  url = {https://eeadmz1-downloads-webapp.azurewebsites.net/},
+  note = {Retrieved 5 October 2026 by tools/cc-008-report/fetch_data.py. E1a covers 2013--2025 (MT00011 from 16/17 January 2024); E2a covers 2026 to 3 October 2026 and is not validated. Aggregates in data/cc-008/.}
+}
+
+@misc{era_aqd_d_2025,
+  author = {{Environment and Resources Authority}},
+  title = {AQD\_REP\_MT\_ERA\_D-001\_2025: Air Quality e-Reporting dataset D, measurement configuration 2025 (DataFlow\_D\_measurementConfiguration\_2025\_V1.xml)},
+  year = {2026},
+  howpublished = {Eionet Central Data Repository, envelope released 3 February 2026},
+  url = {https://cdr.eionet.europa.eu/mt/eu/aqd/d/envayh2iw/},
+  note = {Station MT00011 ``Msida Station'', 35.895563 N 14.493217 E (ETRS89), from 2024-01-17, NO2 point classified traffic, kerb distance 9 m. Station MT00005 ``Msida Station'', 35.89583 N 14.489888 E, 2006-06-01 to 2024-02-20, kerb distance 5 m. Kordin (MT00003, Paola) ended 2016-12-31. Extract: data/cc-008/aq_stations.csv.}
+}
+
+@misc{eu_2024_2881,
+  author = {{European Parliament and Council of the European Union}},
+  title = {Directive (EU) 2024/2881 on ambient air quality and cleaner air for Europe (recast)},
+  year = {2024},
+  howpublished = {Official Journal of the European Union},
+  url = {https://eur-lex.europa.eu/eli/dir/2024/2881/oj},
+  note = {Annual NO2 limit value of 20 ug/m3 to be met by 2030 (40 ug/m3 under Directive 2008/50/EC until then). Cited for scale only; EUR-Lex refused scripted access on 5 October 2026, so the annex was not re-read (to verify in a browser).}
+}
+
+@misc{osm_msida_flyover,
+  author = {{OpenStreetMap contributors}},
+  title = {Triq Mikiel Anton Vassalli, Msida Creek flyover carriageways (ways 1460775989 and 1460775991)},
+  year = {2026},
+  howpublished = {OpenStreetMap API 0.6, map call for bbox 14.486,35.891,14.497,35.899; ODbL},
+  url = {https://www.openstreetmap.org/way/1460775989},
+  note = {Retrieved 5 October 2026; used only to place the flyover on the map and measure distances to the monitors (data/cc-008/flyovers_osm.geojson, data/cc-008/checks.csv).}
+}
