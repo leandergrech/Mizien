@@ -1,28 +1,47 @@
 check,value,unit,source,note
-"Scope 1 + Scope 2 (location) + business travel, 2025",5444.0,t CO2,MIA Sustainability Report 2025,813 + 4582 + 49
-Same with market-based Scope 2,5555.0,t CO2,MIA Sustainability Report 2025,
-Credits purchased vs location-based sum,6,t CO2,MIA Sustainability Report 2025,difference; 0.1% of the credits
-"Credits purchased vs location-based sum, relative",0.11,%,MIA Sustainability Report 2025,
-"Scope 1 + 2 (location), 2025",5395.0,t CO2,MIA Sustainability Report 2025,
-"Scope 1 + 2 (location), 2015 base year",6949.0,t CO2,MIA Sustainability Report 2025,
-"Change in Scope 1 + 2, 2015 to 2025",-22,%,MIA Sustainability Report 2025,company target: -65% by 2030
-"Change in Scope 1 + 2, 2024 to 2025",8.4,%,MIA Sustainability Report 2025,
-Total reported footprint 2025 (Scope 1 + 2 + 3),738308,t CO2,MIA Sustainability Report 2025,
-Share of reported footprint that is Scope 3,99.3,%,MIA Sustainability Report 2025,
-Share of reported footprint covered by the credits,0.74,%,MIA Sustainability Report 2025,
-Scope 1 + 2 + business travel as a share of the credits bought,99.9,%,MIA Sustainability Report 2025,
-"Aircraft use of sold products, share of Scope 3",91.8,%,MIA Sustainability Report 2025,
+ACA boundary 2025: Scope 1 + Scope 2 (location) + business travel,5444.0,t CO2,MIA Sustainability Report 2025,813 + 4582 + 49
+ACA boundary 2025 with market-based Scope 2,5555.0,t CO2,MIA Sustainability Report 2025,813 + 4693 + 49
+ACA boundary 2024: Scope 1 + Scope 2 (location) + business travel,5025.0,t CO2,MIA Sustainability Report 2025,ACA's notice says 2024 residual emissions were offset
+ACA boundary 2024 with market-based Scope 2,5136.0,t CO2,MIA Sustainability Report 2025,
+Credits minus 2025 boundary (location based),6.0,t CO2,MIA Sustainability Report 2025,credits cover it
+Credits minus 2025 boundary (market based),-105.0,t CO2,MIA Sustainability Report 2025,negative: credits fall short
+Credits minus 2024 boundary (location / market based),425 / 314,t CO2,MIA Sustainability Report 2025,credits exceed the 2024 boundary on either basis
+Credits found retired for MIA in public registries,3780,t CO2,"Gold Standard block 585497 (1,620 t); Rainbow transaction 9e16ced5 (2,160 t)","both retired 4 Jun 2026; Canada block (1,670 t) not found"
+"Share of the 5,450 t found retired",69.4,%,registries; MIA Sustainability Report 2025,
+Total reported footprint 2025 (Scope 1 + 2 location + 3),738308,t CO2,MIA Sustainability Report 2025,
+"Share of reported footprint that is Scope 3, 2025",99.3,%,MIA Sustainability Report 2025,full-flight aircraft accounting from 2025
+"Share of reported footprint that is Scope 3, 2024 (landing and take-off basis)",95.3,%,MIA Sustainability Report 2025,the point stands on either basis
+ACA boundary (location) as a share of the 2025 footprint,0.74,%,MIA Sustainability Report 2025,
+"Share of footprint outside the ACA boundary, 2025",99.3,%,MIA Sustainability Report 2025,
+Credits as a share of the 2025 footprint,0.74,%,MIA Sustainability Report 2025,
+"Scope 3 other than use of sold products and business travel, 2025",59860.0,t CO2,MIA Sustainability Report 2025,
+"Use of sold products (mostly aircraft), share of Scope 3",91.8,%,MIA Sustainability Report 2025,category also holds tenants' Scope 1 and passengers' landside traffic (pp.96-97)
 Scope 3 jump 2024 to 2025,622,%,MIA Sustainability Report 2025,method change: landing/take-off cycle to full flight; not a real 7-fold rise
+"Scope 1 + 2 (location), 2024",4975.0,t CO2,MIA Sustainability Report 2025,
+"Change in Scope 1 + 2, 2015 to 2024",-28.4,%,MIA Sustainability Report 2025,"MIA elsewhere: -31% (2023, Net Zero Carbon Plan), -32% (ACA notice)"
+"Scope 1 + 2 (location), 2025",5395.0,t CO2,MIA Sustainability Report 2025,
+"Change in Scope 1 + 2, 2015 to 2025",-22.4,%,MIA Sustainability Report 2025,"MIA elsewhere: -31% (2023, Net Zero Carbon Plan), -32% (ACA notice)"
+"Change in Scope 1 + 2, 2024 to 2025",8.4,%,MIA Sustainability Report 2025,
+Scope 1 + 2 level implied by -65% by 2030,2432,t CO2,Net Zero Carbon Plan; MIA Sustainability Report 2025,
+Cut still needed from 2025 to reach it,2963,t CO2,calculated,55% of the 2025 level
+"Change in Scope 1, 2024 to 2025",94,%,MIA Sustainability Report 2025,
+"Change in fuel use (GRI 103), 2024 to 2025",30,%,MIA Sustainability Report 2025,1187 to 1540 MWh
+Fuel CO2 2025 from the report's litres and its own factors,408,t CO2,"MIA Sustainability Report 2025 pp.29, 90-91",50% of the reported Scope 1 (813 t); remainder not broken down
+EU grant share of programme cost,43.1,%,CINEA; press release,
+EU grant share of AFIF eligible costs,50.0,%,CINEA,
 Programme avoided CO2 vs Scope 1 + 2 2025,18.5,%,press release; MIA Sustainability Report 2025,
 Programme avoided CO2 vs Scope 3 2025,0.14,%,press release; MIA Sustainability Report 2025,
-Programme avoided CO2 vs aircraft emissions 2025,0.15,%,press release; MIA Sustainability Report 2025,
-Programme avoided CO2 vs credits purchased,18.3,%,press release; MIA Sustainability Report 2025,
-EU grant share of programme cost,43.2,%,press release,
-Cost per tonne avoided per year (EUR),12500,EUR,press release,"gross; over 10 years ~EUR 1,250 / t"
-Turnarounds a year (movements / 2),32735,turnarounds,second-hand movements,"65,470 / 2"
-Avoided CO2 per turnaround if spread over every turnaround,30.5,kg CO2,calculated,30.5 kg; not every turnaround will use a hatch pit
-"GPU-hours a year needed to avoid 1,000 t at 40 kg CO2 per GPU-hour",25000,hours,calculated,"46 min per turnaround if all turnarounds; kg/h is an assumption, not a sourced figure"
-"GPU-hours a year needed to avoid 1,000 t at 60 kg CO2 per GPU-hour",16667,hours,calculated,"31 min per turnaround if all turnarounds; kg/h is an assumption, not a sourced figure"
-"GPU-hours a year needed to avoid 1,000 t at 90 kg CO2 per GPU-hour",11111,hours,calculated,"20 min per turnaround if all turnarounds; kg/h is an assumption, not a sourced figure"
-Scope 2 grid factor (Enemalta residual mix),0.389,kg CO2/kWh,MIA Sustainability Report 2025,electricity supplied to aircraft would add emissions at about this rate
+Turnarounds a year (movements / 2),32735,turnarounds,MIA announcement 461/2026,"65,470 / 2"
+Avoided CO2 per turnaround if spread over every turnaround,30.5,kg CO2,calculated,
+Diesel CO2 factor (IPCC 2006 default),3.186,kg CO2 per kg,IPCC 2006,"74,100 kg/TJ x 43.0 TJ/Gg"
+Diesel GPU CO2 per hour,24.7,kg CO2/h,"Padhra (2018) accepted manuscript (Fleuti 2006, second-hand); IPCC 2006",7.74 kg diesel/h; indicative
+APU CO2 per hour,326,kg CO2/h,Padhra (2018) accepted manuscript; MIA Jet A-1 factor,103.2 kg fuel/h x 3.163
+"Diesel GPU-hours replaced to avoid 1,000 t (gross)",40500.0,hours,calculated,"40,548"
+"Minutes of diesel GPU per turnaround for 1,000 t, every turnaround",74.3,minutes,calculated,against 22.5 min of external power per turnaround in Padhra's sample
+Gross diesel GPU CO2 if every turnaround used one for 22.5 minutes,302,t CO2 a year,calculated,9.2 kg per turnaround; before subtracting grid electricity
+"Diesel GPU share of the claimed 1,000 t on that basis",30,%,calculated,
+"APU-hours avoided for 1,000 t",3064,hours,calculated,
+"Minutes of APU running avoided per turnaround for 1,000 t, every turnaround",5.6,minutes,calculated,
+Minutes of APU avoided per turnaround to cover the rest after the 22.5-minute GPU case,3.9,minutes,calculated,"or electric bus and ground-equipment savings, which MIA has not quantified"
+"Grid electricity factor (MIA, Enemalta residual mix)",0.389,kg CO2/kWh,MIA Sustainability Report 2025,"grid power supplied in place of diesel adds emissions at this rate, so net < gross"
 "Intensity Scope 1 + 2 per passenger, 2025",0.536,kg CO2/pax,MIA Sustainability Report 2025,company reports 0.54
