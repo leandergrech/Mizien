@@ -1,0 +1,29 @@
+item,value,unit,source,note,retrieved
+"Mapped P. oceanica in the map frame: UNEP-WCMC v7.1, all P. oceanica",384.8,ha,UNEP-WCMC (2021) v7.1,"frame (14.505, 35.795, 14.6, 35.862)",2026-10-05
+"Mapped P. oceanica in the map frame: UNEP-WCMC v7.1, dataset 491 (1961/2014)",225.1,ha,UNEP-WCMC (2021) v7.1,"frame (14.505, 35.795, 14.6, 35.862)",2026-10-05
+"Mapped P. oceanica in the map frame: UNEP-WCMC v7.1, dataset 493 (2002)",296.6,ha,UNEP-WCMC (2021) v7.1,"frame (14.505, 35.795, 14.6, 35.862)",2026-10-05
+Mapped P. oceanica in the map frame: EMODnet Seabed Habitats 2025 (map EUSM16me),195.9,ha,EMODnet Seabed Habitats (2025),"frame (14.505, 35.795, 14.6, 35.862)",2026-10-05
+"Mapped P. oceanica within 0.5 km of the new land: UNEP-WCMC v7.1, all P. oceanica",23.5,ha,UNEP-WCMC (2021) v7.1,,2026-10-05
+"Mapped P. oceanica within 1 km of the new land: UNEP-WCMC v7.1, all P. oceanica",119.6,ha,UNEP-WCMC (2021) v7.1,,2026-10-05
+"Mapped P. oceanica within 2 km of the new land: UNEP-WCMC v7.1, all P. oceanica",260.6,ha,UNEP-WCMC (2021) v7.1,,2026-10-05
+"Shortest distance, new land to mapped P. oceanica: UNEP-WCMC v7.1, all P. oceanica",0.19,km,UNEP-WCMC (2021) v7.1,,2026-10-05
+"Mapped P. oceanica within 0.5 km of the new land: UNEP-WCMC v7.1, dataset 491 (1961/2014)",5.9,ha,UNEP-WCMC (2021) v7.1,,2026-10-05
+"Mapped P. oceanica within 1 km of the new land: UNEP-WCMC v7.1, dataset 491 (1961/2014)",54.7,ha,UNEP-WCMC (2021) v7.1,,2026-10-05
+"Mapped P. oceanica within 2 km of the new land: UNEP-WCMC v7.1, dataset 491 (1961/2014)",155.3,ha,UNEP-WCMC (2021) v7.1,,2026-10-05
+"Shortest distance, new land to mapped P. oceanica: UNEP-WCMC v7.1, dataset 491 (1961/2014)",0.37,km,UNEP-WCMC (2021) v7.1,,2026-10-05
+"Mapped P. oceanica within 0.5 km of the new land: UNEP-WCMC v7.1, dataset 493 (2002)",22.4,ha,UNEP-WCMC (2021) v7.1,,2026-10-05
+"Mapped P. oceanica within 1 km of the new land: UNEP-WCMC v7.1, dataset 493 (2002)",112.7,ha,UNEP-WCMC (2021) v7.1,,2026-10-05
+"Mapped P. oceanica within 2 km of the new land: UNEP-WCMC v7.1, dataset 493 (2002)",228.4,ha,UNEP-WCMC (2021) v7.1,,2026-10-05
+"Shortest distance, new land to mapped P. oceanica: UNEP-WCMC v7.1, dataset 493 (2002)",0.19,km,UNEP-WCMC (2021) v7.1,,2026-10-05
+Mapped P. oceanica within 0.5 km of the new land: EMODnet Seabed Habitats 2025 (map EUSM16me),20.8,ha,EMODnet Seabed Habitats (2025),,2026-10-05
+Mapped P. oceanica within 1 km of the new land: EMODnet Seabed Habitats 2025 (map EUSM16me),72.1,ha,EMODnet Seabed Habitats (2025),,2026-10-05
+Mapped P. oceanica within 2 km of the new land: EMODnet Seabed Habitats 2025 (map EUSM16me),148.2,ha,EMODnet Seabed Habitats (2025),,2026-10-05
+"Shortest distance, new land to mapped P. oceanica: EMODnet Seabed Habitats 2025 (map EUSM16me)",0.01,km,EMODnet Seabed Habitats (2025),,2026-10-05
+UNEP-WCMC datasets 491 and 493 in the frame: overlap,136.9,ha,UNEP-WCMC (2021) v7.1,the two source datasets map largely the same meadows,2026-10-05
+UNEP-WCMC (all) and EMODnet in the frame: overlap,154.3,ha,both,,2026-10-05
+EMODnet DTM 2024 cell size,3.75 arc-seconds,,EMODnet Bathymetry Consortium (2024),about 95 m east-west by 115 m north-south,2026-10-05
+Depth of the sea within 0.5 km of the new land: 10th / 50th / 90th percentile,11 / 18 / 27,m,EMODnet Bathymetry Consortium (2024),125 grid cells; shallower than 10 m: 9%; shallower than 20 m: 58%,2026-10-05
+Depth of the sea within 1 km of the new land: 10th / 50th / 90th percentile,5 / 18 / 30,m,EMODnet Bathymetry Consortium (2024),324 grid cells; shallower than 10 m: 20%; shallower than 20 m: 56%,2026-10-05
+Depth of the sea within 2 km of the new land: 10th / 50th / 90th percentile,6 / 25 / 50,m,EMODnet Bathymetry Consortium (2024),807 grid cells; shallower than 10 m: 16%; shallower than 20 m: 38%,2026-10-05
+"Depth of grid cells on mapped P. oceanica in the frame: 10th / 50th / 90th percentile (UNEP-WCMC v7.1, all P. oceanica)",8 / 19 / 34,m,EMODnet Bathymetry Consortium (2024),355 grid cells,2026-10-05
+Depth of grid cells on mapped P. oceanica in the frame: 10th / 50th / 90th percentile (EMODnet Seabed Habitats 2025 (map EUSM16me)),11 / 26 / 35,m,EMODnet Bathymetry Consortium (2024),170 grid cells,2026-10-05

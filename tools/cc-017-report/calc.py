@@ -47,6 +47,33 @@ add("Land reclamation allocated in budgets 2023 / 2024 / 2025", "500,000 / 100,0
 add("Years since the seabed study was said to be the basis for a Cabinet decision", 2026 - 2019, "years", "calculated",
     "MaltaToday, Sep 2019; study not published")
 
+# v1.2: the bay map (fetch_bay.py): seagrass, depth and Malta's Article 17 assessment of Posidonia beds
+B = {r["item"]: r for r in csv.DictReader(open(D / "bay_stats.csv"))}
+WC, EM = "UNEP-WCMC v7.1, all P. oceanica", "EMODnet Seabed Habitats 2025 (map EUSM16me)"
+for km in ("0.5", "1"):
+    add(f"Mapped P. oceanica within {km} km of the new land at Terminal 2 (UNEP-WCMC / EMODnet)",
+        f"{B[f'Mapped P. oceanica within {km} km of the new land: {WC}']['value']} / "
+        f"{B[f'Mapped P. oceanica within {km} km of the new land: {EM}']['value']}", "ha", "UNEP-WCMC (2021); EMODnet (2025)",
+        "UNEP-WCMC surveys dated 1961-2014 and 2002; EMODnet layer gridded at about 230 m")
+add("Shortest distance from the new land to mapped P. oceanica (UNEP-WCMC)",
+    float(B[f"Shortest distance, new land to mapped P. oceanica: {WC}"]["value"]), "km", "UNEP-WCMC (2021)",
+    "the EMODnet layer's grid cells reach the Freeport, so its distance is not meaningful at this scale")
+add("Mapped P. oceanica in the map frame (UNEP-WCMC / EMODnet)",
+    f"{B[f'Mapped P. oceanica in the map frame: {WC}']['value']} / {B[f'Mapped P. oceanica in the map frame: {EM}']['value']}",
+    "ha", "UNEP-WCMC (2021); EMODnet (2025)", B[f"Mapped P. oceanica in the map frame: {WC}"]["note"])
+for km in ("0.5", "1"):
+    r = B[f"Depth of the sea within {km} km of the new land: 10th / 50th / 90th percentile"]
+    add(f"Depth of the sea within {km} km of the new land, 10th / 50th / 90th percentile", r["value"], "m",
+        "EMODnet DTM 2024", r["note"])
+r = B[f"Depth of grid cells on mapped P. oceanica in the frame: 10th / 50th / 90th percentile ({WC})"]
+add("Depth of mapped P. oceanica in the map frame, 10th / 50th / 90th percentile", r["value"], "m",
+    "EMODnet DTM 2024 x UNEP-WCMC", r["note"])
+for a in csv.DictReader(open(D / "article17_1120_mt.csv")):
+    add(f"Article 17, Malta, Posidonia beds (1120), {a['period']}: overall status / trend",
+        f"{a['overall_status']} / {a['overall_trend']}", "", "EEA Article 17 web tool",
+        f"area {a['area_km2']} km2 (method {a['area_method']}); good condition {a['sf_good_km2']} km2, not good "
+        f"{a['sf_not_good_km2']} km2; FV = favourable")
+
 with open(D / "checks.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\r\n")
     w.writeheader()

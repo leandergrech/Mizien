@@ -17,8 +17,18 @@ automated download)
 
 https://lovinmalta.com/news/watch-game-changer-robert-abela-discusses-land-reclamation-plans-off-cost-of-birzebbuga/
 
-Reported: the sea near the Freeport is "an ideal depth"; the aim is "to relocate industries that bother people"; the
-Freeport project is "the lowest hanging fruit". No size, site or timetable given.
+Read in full 5 October 2026 (v1.2). Article by Tim Diacono, published 28 October 2025, 12:23 UTC (page metadata).
+The Prime Minister spoke at a press conference after the Budget; the quotes are Lovin Malta's English rendering (the
+article does not say whether he spoke in English or Maltese):
+
+> "I believe that the Malta Freeport's project is the lowest hanging fruit of all possible land reclamation projects,"
+
+> "The sea near the Freeport is an ideal depth for these kinds of projects, and our idea is to relocate industries
+> that bother people."
+
+The article adds that he "didn't provide details on which industries could be relocated", saying the government is
+"still working on technical details". No size, site or timetable given. The report's map (Figure 3) shows the depths
+near the Freeport without judging what depth is "ideal".
 
 ## Environment Minister José Herrera, September 2019 (TVM Dissett, reported by MaltaToday)
 
