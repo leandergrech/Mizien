@@ -1515,10 +1515,13 @@
       "title": "Per-capita emissions down 44% since 2005",
       "category": "Climate & Energy",
       "claim": "Government of Malta (COP30 national statement): Malta has reduced per-capita emissions by over 44% since 2005 and emissions per unit of GDP by more than 80%.",
-      "counter": "Per-capita and per-GDP falls can coexist with rising absolute effort-sharing emissions (see CC-003); population grew about a third.",
-      "status": "In progress",
-      "verdict": null,
-      "tags": [],
+      "counter": "More than 80% per unit of GDP holds only at current prices (-82% to 2023, -84% to 2024). In chain-linked volumes the fall is -70% (2023) and -72% (2024); no year reaches -80%. The gap is a price effect (Malta GDP deflator +72% since 2005). The per-person fall (-46% / -48.5%) is the figure CC-003 checked; about half is population growth, total emissions fell 27% (EU 33%) and have risen 18% since the 2016 low. In the statement's favour: real GDP +161% with total emissions -27% is absolute decoupling, and Malta's fall exceeds the EU's on both intensity bases.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
+      "tags": [
+        "Selective metric"
+      ],
       "subtopic": "Emissions & targets",
       "location": {
         "place": "Auberge de Castille (Office of the Prime Minister), Valletta",
@@ -1527,17 +1530,45 @@
         "scope": "institution",
         "icon": "castille"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Government of Malta",
       "bodies": [
         "government-of-malta"
       ],
+      "subclaims": [
+        {
+          "id": "CC-025A",
+          "text": "Per-capita emissions down over 44% since 2005",
+          "finding": "Reproduced from Eurostat: −46% to 2023, −48.5% to 2024; Malta passed −44% in 2016. The same figure was checked in CC-003. About half of it is population growth.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-025B",
+          "text": "Emissions per unit of GDP down more than 80%",
+          "finding": "Holds at current prices (−82% to 2023, −84% to 2024). In chain-linked volumes it is −70% and −72%; no year reaches −80%. The statement names neither basis.",
+          "rating": "True only at current prices",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-025C",
+          "text": "…demonstrating our commitment to decoupling growth from emissions",
+          "finding": "Real GDP +161%, total emissions −27%: absolute decoupling over 2005–2024. A statement of commitment is not itself testable; the data show the decoupling it refers to.",
+          "rating": "Supported",
+          "tone": "green"
+        }
+      ],
       "date": "2025-11",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "Malta has already reduced its per capita emissions by over 44% compared to 2005 and emissions per unit of GDP by more than 80%, demonstrating our commitment to decoupling growth from emissions.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-025/report.pdf",
+        "flyer_pdf": "claim-files/CC-025/flyer.pdf",
+        "flyer_png": "claim-files/CC-025/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-025/claim.yml"
     },
     {
