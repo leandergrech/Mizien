@@ -59,8 +59,8 @@ METER_LABELS = [("SUPPORTED", ""), ("LARGELY", "SUPPORTED"), ("NOT", "SUBSTANTIA
                 ("CONTRADICTED", "")]
 # Pledge labels (methodology/verdict-scale.md, Pledges): a pure pledge check shows one of these instead of a verdict.
 PLEDGES = ["Not measurable", "Not yet due", "On track", "Off track", "Met", "Missed"]
-PLEDGE_COLS = [colors.HexColor("#5F6B71"), BLUE, colors.HexColor("#8DB36B"), ORANGE, GREENC,
-               colors.HexColor("#8E2F25")]
+# The site's pledge palette: every colour passes 4.5:1 with white text and stays apart from the verdict colours.
+PLEDGE_COLS = [colors.HexColor(h) for h in ("#716F8D", "#5C7689", "#337F71", "#AE5D33", "#23705F", "#7C2D4A")]
 PLEDGE_METER_LABELS = [("NOT", "MEASURABLE"), ("NOT YET", "DUE"), ("ON", "TRACK"), ("OFF", "TRACK"), ("MET", ""),
                        ("MISSED", "")]
 

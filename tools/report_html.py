@@ -48,6 +48,9 @@ PALETTE = {"#14452f": "green", "#7fa88b": "sage", "#e6efe8": "pale", "#e3a72f": 
            "#ffffff": "white", "#5f6b71": "grey"}   # #5f6b71: the PDF's darker grey (pledge "Not measurable", default chip)
 
 
+PLEDGE_HEX = {"#" + c.hexval()[2:].upper() for c in mizien_report.PLEDGE_COLS}
+
+
 def kc(hexcol):
     return PALETTE.get((hexcol or "").lower(), "other")
 
@@ -144,7 +147,7 @@ def verdict_slug(v):
 def pledge_style(label):
     """Inline colours for a pledge label (the PDF's PLEDGE_COLS), as the --v / --v-ink pair the site styles use."""
     col = "#" + mizien_report.PLEDGE_COLS[mizien_report.PLEDGES.index(label)].hexval()[2:].upper()
-    ink = "#13301f" if label in ("On track", "Off track") else "#ffffff"
+    ink = "#ffffff"
     return f"--v: {col}; --v-ink: {ink}"
 
 
@@ -375,6 +378,8 @@ class Renderer:
         return f'<div class="callout bg-{kc(bg)} bar-{kc(bar)}">{inner}</div>'
 
     def mz_chip(self, text, bg, fg):
+        if (bg or "").upper() in PLEDGE_HEX:   # pledge labels: the site has no chip classes for them
+            return f'<span class="chip" style="background: {bg}; color: #fff">{inline(text)}</span>'
         return f'<span class="chip bg-{kc(bg)}">{inline(text)}</span>'
 
     def mz_grade(self, g):
