@@ -89,6 +89,31 @@ def check(path: pathlib.Path) -> list:
                 errs.append("location scope must be site, institution or national")
             if loc.get("icon") is not None and loc.get("icon") not in PLACE_ICONS:
                 errs.append(f"location icon {loc.get('icon')} unknown (use one of {sorted(PLACE_ICONS)})")
+    errs += check_timeline(d.get("timeline"))
+    return errs
+
+
+def check_timeline(entries) -> list:
+    """Optional `timeline:` events in claim.yml: later statements, new data, replies or corrections (see scripts/timeline.py)."""
+    if entries is None:
+        return []
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import timeline
+    if not isinstance(entries, list):
+        return ["timeline must be a list of events (date, kind, text, optional url)"]
+    errs = []
+    for i, e in enumerate(entries, 1):
+        if not isinstance(e, dict):
+            errs.append(f"timeline event {i} must have date, kind and text")
+            continue
+        if not timeline.parse_date(e.get("date")):
+            errs.append(f"timeline event {i}: date '{e.get('date')}' not understood (use 2026-10-01, 2026-10 or 2026)")
+        if e.get("kind") not in timeline.CURATED_KINDS:
+            errs.append(f"timeline event {i}: kind must be one of {', '.join(timeline.CURATED_KINDS)}")
+        if not str(e.get("text") or "").strip():
+            errs.append(f"timeline event {i}: text is missing")
+        if e.get("url") and not str(e["url"]).startswith(("http://", "https://")):
+            errs.append(f"timeline event {i}: url must start with http:// or https://")
     return errs
 
 
@@ -150,6 +175,8 @@ def check_register(files) -> int:
     ids = [r["ID"] for r in csv.DictReader(open(ROOT / "data" / "bodies.csv", newline="", encoding="utf-8"))]
     errs += [f"register: {i} is listed twice" for i in sorted({i for i in ids if ids.count(i) > 1})]
     for b in reg.values():
+        if b["id"] in bodies.RESERVED_IDS:
+            errs.append(f"register: ID '{b['id']}' is reserved for another page under /bodies/")
         if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", b["id"]):
             errs.append(f"register: ID '{b['id']}' must be lower-case words joined by hyphens")
         if b["type"] not in bodies.TYPES:

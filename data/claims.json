@@ -4352,19 +4352,19 @@
           ]
         },
         {
-          "id": "interconnect-malta",
-          "named": 2,
-          "pairs": 0,
-          "themes": []
-        },
-        {
           "id": "newsbook",
           "named": 0,
-          "pairs": 6,
+          "pairs": 7,
           "themes": [
             "T4",
             "T6"
           ]
+        },
+        {
+          "id": "interconnect-malta",
+          "named": 2,
+          "pairs": 0,
+          "themes": []
         },
         {
           "id": "planning-authority",
@@ -4924,6 +4924,15 @@
           ]
         },
         {
+          "id": "newsbook",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T4",
+            "T6"
+          ]
+        },
+        {
           "id": "pl",
           "named": 1,
           "pairs": 1,
@@ -4950,15 +4959,6 @@
           "named": 1,
           "pairs": 0,
           "themes": []
-        },
-        {
-          "id": "newsbook",
-          "named": 0,
-          "pairs": 3,
-          "themes": [
-            "T4",
-            "T6"
-          ]
         },
         {
           "id": "ministry-health",
@@ -6760,6 +6760,15 @@
           ]
         },
         {
+          "id": "newsbook",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T4",
+            "T6"
+          ]
+        },
+        {
           "id": "pl",
           "named": 0,
           "pairs": 2,
@@ -6782,15 +6791,6 @@
           "pairs": 1,
           "themes": [
             "T4"
-          ]
-        },
-        {
-          "id": "newsbook",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T4",
-            "T6"
           ]
         },
         {
@@ -7884,6 +7884,15 @@
       "role": null,
       "links": [
         {
+          "id": "ministry-environment",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T4",
+            "T6"
+          ]
+        },
+        {
           "id": "infrastructure-malta",
           "named": 0,
           "pairs": 3,
@@ -7892,9 +7901,9 @@
           ]
         },
         {
-          "id": "ministry-environment",
+          "id": "climate-action-authority",
           "named": 0,
-          "pairs": 3,
+          "pairs": 2,
           "themes": [
             "T4",
             "T6"
@@ -7904,15 +7913,6 @@
           "id": "government-of-malta",
           "named": 0,
           "pairs": 2,
-          "themes": [
-            "T4",
-            "T6"
-          ]
-        },
-        {
-          "id": "climate-action-authority",
-          "named": 0,
-          "pairs": 1,
           "themes": [
             "T4",
             "T6"
@@ -8168,43 +8168,53 @@
   "body_types": [
     {
       "id": "government",
-      "label": "Government & ministers"
+      "label": "Government & ministers",
+      "colour": "#e3a72f"
     },
     {
       "id": "agency",
-      "label": "Public agencies & companies"
+      "label": "Public agencies & companies",
+      "colour": "#56b4e9"
     },
     {
       "id": "regulator",
-      "label": "Regulators & authorities"
+      "label": "Regulators & authorities",
+      "colour": "#6fcf97"
     },
     {
       "id": "oversight",
-      "label": "Courts, tribunals & oversight"
+      "label": "Courts, tribunals & oversight",
+      "colour": "#f2994a"
     },
     {
       "id": "party",
-      "label": "Political parties"
+      "label": "Political parties",
+      "colour": "#bb86fc"
     },
     {
       "id": "civil_society",
-      "label": "NGOs & unions"
+      "label": "NGOs & unions",
+      "colour": "#f06292"
     },
     {
       "id": "business",
-      "label": "Business & industry"
+      "label": "Business & industry",
+      "colour": "#4fc3c8"
     },
     {
       "id": "media",
-      "label": "Media"
+      "label": "Media",
+      "colour": "#9fa8da"
     },
     {
       "id": "eu",
-      "label": "EU & international"
+      "label": "EU & international",
+      "colour": "#cfd8dc"
     },
     {
       "id": "research",
-      "label": "Research & statistics"
+      "label": "Research & statistics",
+      "colour": "#a1887f"
     }
   ]
 }

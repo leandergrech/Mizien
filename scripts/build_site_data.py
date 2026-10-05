@@ -20,6 +20,8 @@ import yaml
 
 import bodies as register
 import connections
+import patterns as by_kind
+import timeline
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REPO = "https://github.com/leandergrech/Mizien"
@@ -101,7 +103,7 @@ def main() -> int:
     map_bodies = [{**{k: p[k] for k in ("id", "name", "kind", "type", "parent", "role")},
                    "links": [{"id": l["id"], "named": len(l["named_with"]), "pairs": l["pairs"], "themes": list(l["themes"])}
                              for l in p["links"]]} for p in profiles.values()]
-    body_types = [{"id": k, "label": v} for k, v in register.TYPES.items()]
+    body_types = [{"id": k, "label": v, "colour": register.TYPE_COLOURS[k]} for k, v in register.TYPES.items()]
     out = {"categories": cats, "claims": claims, "edges": edges, "themes": themes, "bodies": map_bodies,
            "body_types": body_types}
     text = json.dumps(out, ensure_ascii=False, indent=2)
@@ -284,6 +286,53 @@ def claim_connections(cid: str, d: dict, by_id: dict, adj, out: dict, reg: dict,
     return {"second": second, "third": third, "same_body": same, "patterns": tags}
 
 
+def claim_timeline(cid, d, by_id, reg, claim_bodies, profiles, sources, history, today):
+    """The claim's dated events (scripts/timeline.py), with statements by the same body on the same topic."""
+    ev = timeline.claim_events(d, sources, history or {})
+    said = timeline.parse_date(d["claim"].get("date"))
+    offices, seen = [], set()
+    for u in connections.units(claim_bodies[cid], reg):
+        o = register.org_of(u, reg)
+        if o not in offices:
+            offices.append(o)
+    for o in offices:
+        for x in (profiles.get(o) or {}).get("claims", []):
+            other = by_id[x]
+            when = timeline.parse_date(other["claim"].get("date"))
+            if x == cid or x in seen or other["category"] != d["category"] or not when:
+                continue
+            seen.add(x)
+            rel = ("Statement" if not said or when["mid"] == said["mid"]
+                   else "Earlier statement" if when["mid"] < said["mid"] else "Later statement")
+            tree = set(connections.descendants(o, reg))
+            who = [reg[u]["name"] for u in connections.units(claim_bodies[x], reg) if u in tree] or [reg[o]["name"]]
+            ev.append({"when": when, "kind": "same-body", "label": f"{rel} by {' and '.join(who)} on {d['category']}",
+                       "text": "", "url": None, "claim": claim_ref(other)})
+    return [{**{k: v for k, v in e.items() if k != "when"}, "date": e["when"]["label"], "iso": e["when"]["iso"],
+             "year": e["when"]["iso"][:4], "mid": e["when"]["mid"], "future": e["when"]["mid"] > today}
+            for e in timeline.sort_events(ev)]
+
+
+def lanes(claims: list, by_id: dict) -> dict:
+    """A body's statements on a time axis, one lane per topic, plus the undated ones and the topics it returned to."""
+    dated, undated = {}, []
+    for c in claims:
+        when = timeline.parse_date(by_id[c]["claim"].get("date"))
+        ref = claim_ref(by_id[c])
+        if when:
+            dated.setdefault(by_id[c]["category"], []).append({**ref, "mid": when["mid"], "date": when["label"],
+                                                               "rough": when["precision"] == "year" or when["approx"]})
+        else:
+            undated.append(ref)
+    ax = timeline.axis([i["mid"] for v in dated.values() for i in v])
+    out = []
+    for topic in sorted(dated, key=lambda t: (-len(dated[t]), t)):
+        placed, rows = timeline.place(dated[topic], ax)
+        out.append({"topic": topic, "items": placed, "rows": rows})
+    threads = [{"topic": l["topic"], "claims": sorted(l["items"], key=lambda i: i["mid"])} for l in out if len(l["items"]) > 1]
+    return {"axis": ax, "lanes": out, "undated": undated, "threads": threads}
+
+
 def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, profiles: dict) -> None:
     import thumbnails  # scripts/thumbnails.py: one scene per subtopic, a specific thumbnail per researched claim
     manifest = load_archive()
@@ -293,6 +342,10 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
     theme_names = {t["id"]: t["name"] for t in out["themes"]}
     adj = connections.adjacency(out["edges"])
     pattern_meanings = dict(bold_table("pattern-tags.md"))
+    sources_ev, history = timeline.source_events(), timeline.claim_history()
+    if history is None:
+        print("Note: no full git history (shallow clone?), so claim timelines leave out the steps of each check.")
+    today = date.today().isoformat()
     site_claims = []
     for d in records:
         cid, rec = d["id"], jsonable(d)
@@ -331,8 +384,14 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
             "bodies": [{**body_ref(reg[b]), "parent": body_ref(reg[reg[b]["parent"]]) if reg[b]["parent"] else None}
                        for b in connections.units(claim_bodies[cid], reg)],
             "connections": claim_connections(cid, d, by_id, adj, out, reg, claim_bodies, profiles, pattern_meanings),
+            "timeline": claim_timeline(cid, d, by_id, reg, claim_bodies, profiles, sources_ev, history, today),
             "record_url": f"{REPO}/blob/main/claims/{cid}/claim.yml",
         })
+    # Updates for the feeds: steps of each check, replies and curated events, newest first.
+    updates = sorted(({**{k: e[k] for k in ("label", "text", "url", "date", "iso", "mid", "kind")}, "claim": claim_ref(by_id[c["id"]])}
+                      for c in site_claims for e in c["timeline"]
+                      if e["kind"] in ("check", "reply", "curated") and not e["future"]),
+                     key=lambda u: (u["mid"], u["claim"]["id"]), reverse=True)
     body_pages = []
     for bid, p in profiles.items():
         b = reg[bid]
@@ -349,6 +408,8 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
                        for c in p["claims"]],
             "direct": p["direct"], "verdicts": p["verdicts"], "topics": p["topics"], "patterns": p["patterns"],
             "links": links,
+            "time": lanes(p["claims"], by_id),
+            "updates": [u for u in updates if u["claim"]["id"] in set(p["claims"])][:50],
         })
     body_order = list(register.TYPES)
     body_pages.sort(key=lambda b: (body_order.index(b["type"]), b["kind"] == "person", b["name"].lower()))
@@ -356,6 +417,9 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
         "claims": site_claims,
         "bodies": body_pages,
         "body_types": out["body_types"],
+        "updates": updates[:100],
+        "by_kind": by_kind.build(records, claim_bodies, reg, out["themes"], [n for n, _ in bold_table("pattern-tags.md")],
+                                 [n for n, _ in bold_table("verdict-scale.md")], [c["name"] for c in out["categories"]], claim_ref),
         "theme_bridges": [{**x, "a_name": theme_names.get(x["a"]), "b_name": theme_names.get(x["b"]),
                            "claims": [claim_ref(by_id[c]) for c in x["claims"]]} for x in connections.bridges(out["themes"])],
         "categories": [{**c, "slug": slug(c["name"])} for c in out["categories"]],

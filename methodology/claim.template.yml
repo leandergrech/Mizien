@@ -30,4 +30,7 @@ right_of_reply:
 evidence_shown: null          # required for Misleading or Contradicted: list the documents or data
 outputs: {}
 bodies: null                  # optional: register IDs from data/bodies.csv, only if the speaker text cannot be matched
+timeline: []                  # optional dated events that are not claims of their own, e.g.
+                              # - {date: "2026-11-02", kind: statement, text: "Minister repeats the figure in Parliament", url: https://...}
+                              # kinds: statement, data, reply, correction, note
 thumbnail: null               # once checked: {figure: "−44%", caption: "short phrase"} from the flyer's results

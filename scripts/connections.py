@@ -73,6 +73,16 @@ def units(ids, reg):
     return [i for i in ids if i not in parents]
 
 
+def descendants(bid, reg):
+    """A body and everything below it in the register (its offices and people)."""
+    out, todo = [], [bid]
+    while todo:
+        x = todo.pop()
+        out.append(x)
+        todo += [b["id"] for b in reg.values() if b["parent"] == x]
+    return out
+
+
 def lineage(bid, reg):
     """A body and everything above it in the register."""
     out = []
