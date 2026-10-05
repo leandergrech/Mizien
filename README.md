@@ -56,15 +56,15 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-024 | Climate & Energy | Renewables target for 2030 | In progress | - |
 | CC-025 | Climate & Energy | Per-capita emissions down 44% since 2005 | In progress | - |
 | CC-026 | Climate & Energy | EU's largest rise in emissions | Drafted | Largely supported |
-| CC-027 | Climate & Energy | Power cuts: heat, not generation | Not started | - |
+| CC-027 | Climate & Energy | Power cuts: heat, not generation | In progress | - |
 | CC-028 | Climate & Energy | 76% less network downtime | In progress | - |
-| CC-029 | Climate & Energy | First offshore wind farm | Not started | - |
+| CC-029 | Climate & Energy | First offshore wind farm | In progress | - |
 | CC-030 | Climate & Energy | Carbon-neutral airport | Drafted | Not substantiated |
 | CC-031 | Climate & Energy | Gozo, first climate-neutral region | In progress | - |
 | CC-032 | Climate & Energy | Solar flowers, first in Europe | Not started | - |
 | CC-033 | Air | Delimara: 'much cleaner air' | Not started | - |
 | CC-034 | Air | Air Quality Plan 'already yielding results' | In progress | - |
-| CC-035 | Air | PM2.5 deaths down two-thirds | Not started | - |
+| CC-035 | Air | PM2.5 deaths down two-thirds | In progress | - |
 | CC-036 | Air | Construction dust 'a nuisance, not a health issue' | Not started | - |
 | CC-037 | Air | Highest share reporting pollution | Drafted | Supported |
 | CC-038 | Air | Saharan dust behind PM10 spikes | Not started | - |

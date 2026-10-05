@@ -33,7 +33,8 @@ Every run therefore starts with `python scripts/net_check.py`:
 - Each worker takes rows of `data/queue.csv` with its letter, in ID order, and completes at most **one** claim per
   run. A claim is eligible when its status is `Not started` or `In progress`, its `Blocker` cell is empty or starts
   with `network`, it has no open PR or live remote branch from another run, and (if `Attempts` > 0) its
-  `Last attempt` is at least 6 days old.
+  `Last attempt` is at least 6 days old. A maintainer unblock (empty `Blocker` and a
+  `literature/CC-NNN/primary-source.md`) is eligible at once, without the 6-day wait.
 - A worker may try up to three eligible claims in one run, stopping at the first it completes.
 - **Blocked claim:** do not change its caveats or wording status. Increment `Attempts`, set `Last attempt` to today
   and `Blocker` to a short reason (`network: host1, host2` or `source: what is missing`). Useful leads found on the

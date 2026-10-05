@@ -113,6 +113,25 @@ sub-claim tables changed in v1.1/v1.2), then both scripts. The report HTML pledg
 `report-meter pledge-meter` and badges `v-not-measurable` etc. with inline colours; replace them with stylesheet
 classes if #55 defines some.
 
+## Maintainer unblocks (5 October 2026, afternoon)
+
+Of the eleven In-progress claims, five more blockers had readable sources from the cloud network:
+
+- **CC-024:** the Commission hosts the final updated NECP (381 pages); passages and page numbers in
+  `literature/CC-024/primary-source.md` (25% ambition, 11.5% to 25%, 24.5% projected for 2030).
+- **CC-025:** the UNFCCC file is a Word document behind a `.pdf` address and is readable. Maintainer decision: keep
+  CC-025, reuse CC-003's analysis for the 44% and check the new 'more than 80%' per unit of GDP.
+- **CC-034:** ERA's page wording via a Wayback capture (15 Aug 2025) and the plan PDF via Wayback.
+- **CC-031:** reworded (maintainer decision) to Camilleri's quoted 'vision' plus Gozo Today's paraphrase of the
+  fully electric fleet; check the plan's target (as a pledge if it has one) and the fleet.
+- **CC-027:** the record had the wrong year: the statements are from 21 July 2026. Still blocked (indirect speech).
+- **CC-021:** taken off the worker queue (a lead, not a statement); status Not started.
+
+Queue rule changed: a maintainer unblock (empty Blocker plus `primary-source.md`) is eligible at once, without the
+6-day wait (`methodology/automation.md`, `methodology/worker-routine.md`). Workers still do one claim a night, in ID
+order, so worker A takes CC-025, CC-031 and CC-034 and worker B takes CC-024, CC-029, CC-032 and CC-035 over the
+coming nights. README statuses were re-synced from the claim records (CC-027, CC-029, CC-035).
+
 ## Worker review (5 October 2026)
 
 The maintainer asked for a review of the first night's worker output (CC-030 and CC-037 drafted, five claims blocked).
@@ -399,9 +418,11 @@ Second intake of the day (the 79-claim bulk intake ran earlier). Six candidates 
 - **Network:** net_check reported Wayback unreachable (connection reset); Crossref, Eurostat, EEA ok. Several Newsbook/Independent pages return 403 to WebFetch; wording for CC-102 to CC-105 comes from search summaries and page summaries, hence 'Paraphrase: locate quote'.
 
 ### Needs maintainer
-- CC-015: exact words of the PA chief's remark (recording/transcript) into `literature/CC-015/primary-source.md`.
-- CC-023: 'on track by 2026' wording not found; supply the source passage.
-- CC-025: UNFCCC document is browser-only; paste the passage.
+- CC-015: exact words of the PA chief's remark into `literature/CC-015/primary-source.md`. Only video has them (The Maltese Herald, 24 Sep 2026, protest at the planning conference); Newsbook and The Shift paraphrase.
+- CC-023: a dated government statement with the 2026 completion date (Lovin Malta, 10 Jan 2025, has it only in paraphrase); the government press release on gov.mt or MaltaToday article 137267 (both 403 to scripts).
+- CC-027: the words of 21 Jul 2026 (TVM interview with Abela; Dalli in Lovin Malta), both reported as indirect speech: a transcript or press release.
+- CC-028: Enemalta's 76% statement (made to MCESD; no release on enemalta.com.mt; outlets paraphrase): a press statement, if one exists.
+- ~~CC-025~~, ~~CC-024~~, ~~CC-034~~, ~~CC-031~~: unblocked 5 Oct 2026 (see 'Maintainer unblocks' below).
 - New claims CC-102 to CC-105: ombudsman.org.mt, the EP Petitions portal, ADPD and ERA pages are likely browser-only; supply wording if a worker is blocked.
 
 - 5 Oct 2026, worker B: CC-024 blocked (source: browser-only; NECP PDF behind `sgcaptcha` wall, Wayback reset, IEA/climateaction.gov.mt/Independent 403); maintainer to paste NECP passages into `literature/CC-024/primary-source.md`.

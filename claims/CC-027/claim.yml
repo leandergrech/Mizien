@@ -6,19 +6,24 @@ status: In progress
 verdict: null
 verdict_confidence: null
 claim:
-  text: 'Energy Minister Miriam Dalli and PM Robert Abela (July 2024): the widespread power cuts were caused by
+  text: 'Energy Minister Miriam Dalli and PM Robert Abela (21 July 2026): the widespread power cuts were caused by
     extreme heat and record demand straining the distribution network, not by a lack of generation capacity; EUR
     161 million had been invested since 2022.'
   speaker: Miriam Dalli, Energy Minister; Robert Abela, Prime Minister
-  date: 2024-07
+  date: '2026-07-21'
   wording_status: 'Paraphrase: locate quote'
   sources:
   - title: Extreme Heat And Record Electricity Demand Behind Malta's Power Cuts Says Miriam Dalli
     publisher: Lovin Malta
-    date: Jul 2024
+    date: 21 Jul 2026
     url: https://lovinmalta.com/news/local/extreme-heat-and-record-electricity-demand-behind-maltas-power-cuts-says-miriam-dalli/
     note: Locates the claim.
-counter_evidence: Peak medium-voltage demand rose from 663 MW (Jul 2023) to 741 MW (Jul 2024) as reported.
+  - title: "PM apologises over power cuts - stresses investment in distribution system will continue"
+    publisher: "TVM News"
+    date: "21 Jul 2026"
+    url: "https://tvmnews.mt/en/news/pm-apologises-over-power-cuts-stresses-investment-in-distribution-system-will-continue/"
+    note: "Abela, asked by TVM News: EUR 161 million invested in distribution 'between 2022 and last year'; the problem was 'not the country's electricity generation capacity, but the distribution network' (reported speech, not a quotation). Read 5 Oct 2026."
+counter_evidence: 'Reported peak medium-voltage demand: 663 MW (Jul 2023) and 741 MW in the July 2026 heatwave (to verify against Enemalta data).'
 tests: Enemalta peak-load and fault logs; investment records.
 why_low_hanging: A specific, attributable statement that public data can test.
 tags: []
@@ -39,3 +44,7 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: note
+    note: "Record corrected: the statements are from 21 July 2026 (TVM News interview with the Prime Minister; Lovin Malta on the Energy Minister), not July 2024. Both report the words as indirect speech; a transcript of the TVM interview or a press release is still needed."
