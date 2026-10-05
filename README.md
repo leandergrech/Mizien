@@ -78,11 +78,11 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-046 | Water | Gozo water autonomy | Not started | - |
 | CC-047 | Water | Nitrates in the aquifer | Not started | - |
 | CC-048 | Nature & Wildlife | Sea urchins recovering | Not started | - |
-| CC-049 | Nature & Wildlife | 242 illegal hunting incidents | Not started | - |
+| CC-049 | Nature & Wildlife | 242 illegal hunting incidents | In progress | - |
 | CC-050 | Nature & Wildlife | 'Race to weaken hunting laws' | Not started | - |
 | CC-051 | Nature & Wildlife | 'Over 30% of our seas protected' | Drafted | Misleading |
 | CC-052 | Nature & Wildlife | Fish-farm slime 'promptly contained' | Not started | - |
-| CC-053 | Nature & Wildlife | Milky Way visible from 13% of Malta | Not started | - |
+| CC-053 | Nature & Wildlife | Milky Way visible from 13% of Malta | Drafted | Supported |
 | CC-054 | Land & Trees | Project Green: 100,000 m2 a year | Not started | - |
 | CC-055 | Land & Trees | Manoel Island back to the public | Not started | - |
 | CC-056 | Land & Trees | Central Link: 'only 254 trees' | Not started | - |
@@ -126,25 +126,25 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-094 | Climate & Energy | Commission: Malta off track for 2030 | Not started | - |
 | CC-095 | Climate & Energy | EUR 400m to keep bills low | Not started | - |
 | CC-096 | Nature & Wildlife | Fish farms moved 6 km offshore | Not started | - |
-| CC-097 | Health & Safety | Beach workers left exposed to heat | Not started | - |
+| CC-097 | Health & Safety | Beach workers left exposed to heat | In progress | - |
 | CC-098 | Tourism & Population | Officials enforce private interests at Blue Lagoon | Not started | - |
 | CC-099 | Tourism & Population | Foreigners are 31% of residents | Not started | - |
-| CC-100 | Tourism & Population | Over 10 million airport passengers | Not started | - |
+| CC-100 | Tourism & Population | Over 10 million airport passengers | Drafted | Supported |
 | CC-101 | Water | EU: no permits for water abstraction | Not started | - |
 | CC-102 | Governance & Promises | Ombudsman: 58% of environment recommendations ignored | Drafted | Largely supported |
 | CC-103 | Health & Safety | Heat-death locations "within three months" | Not started | - |
-| CC-104 | Noise | PN: Malta fails EU noise law | Not started | - |
+| CC-104 | Noise | PN: Malta fails EU noise law | In progress | - |
 | CC-105 | Noise | ADPD: no study of Freeport and airport noise | Not started | - |
-| CC-106 | Nature & Wildlife | Shearwaters: 10% of the world population | Not started | - |
+| CC-106 | Nature & Wildlife | Shearwaters: 10% of the world population | Drafted | Largely supported |
 | CC-107 | Governance & Promises | A net-zero Gozo by 2040 | Drafted | Pledge: Not measurable |
 | CC-108 | Water | WSC: a net-zero impact on groundwater | Not started | - |
 | CC-109 | Transport | EU: transport is 48% of effort-sharing emissions | Not started | - |
-| CC-110 | Transport | EU: 37.7% of new cars zero-emission | Not started | - |
-| CC-111 | Waste | EU: 621 kg of waste a head, 74% landfilled | Not started | - |
-| CC-112 | Tourism & Population | IMF: population up 25% in a decade | Not started | - |
+| CC-110 | Transport | EU: 37.7% of new cars zero-emission | Drafted | Supported |
+| CC-111 | Waste | EU: 621 kg of waste a head, 74% landfilled | Drafted | Supported |
+| CC-112 | Tourism & Population | IMF: population up 25% in a decade | Drafted | Largely supported |
 | CC-113 | Climate & Energy | EEA: Malta among highest fossil-fuel subsidies | Not started | - |
 | CC-114 | Climate & Energy | PN: only EU state with rising emissions intensity | Not started | - |
-| CC-115 | Transport | Chamber: congestion cost EUR 770m, 3.4% of GDP | Not started | - |
+| CC-115 | Transport | Chamber: congestion cost EUR 770m, 3.4% of GDP | Drafted | Not substantiated |
 | CC-116 | Planning & Housing | UNESCO: Valletta setting not safeguarded | Not started | - |
 
 The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Claims are numbered CC-001 to CC-021. Report drafts are available for CC-001 to CC-011; CC-012 to CC-021 are candidates (added 3 October 2026). Right of reply remains for the maintainer where not yet handled.

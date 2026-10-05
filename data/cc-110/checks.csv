@@ -1,0 +1,23 @@
+check,value,unit,source,note
+"Malta: new passenger cars registered, 2022",6429,cars,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"Malta: ZEV share of new passenger cars, 2022",15.4,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"EU-27: ZEV share of new passenger cars, 2022",12.08,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"Malta: new passenger cars registered, 2023",7464,cars,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"Malta: ZEV share of new passenger cars, 2023",20.31,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"EU-27: ZEV share of new passenger cars, 2023",14.53,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"Malta: new passenger cars registered, 2024",7683,cars,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"Malta: ZEV share of new passenger cars, 2024",37.65,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"EU-27: ZEV share of new passenger cars, 2024",13.53,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"Malta: new passenger cars registered, 2025",6537,cars,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"Malta: ZEV share of new passenger cars, 2025",37.56,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"EU-27: ZEV share of new passenger cars, 2025",17.27,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+Malta: change in ZEV share 2023-2024,17.34,percentage points,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",from unrounded shares; the report's 17.4 comes from its rounded annex values (37.66 - 20.31 = 17.35)
+"Malta: plug-in hybrid share of new cars, 2024",6.61,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",not counted as ZEV
+"Malta's rank among member states, ZEV share of new cars 2024",2 of 27,rank,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",higher: DK 51.3%
+"Unweighted mean of member states' ZEV shares, 2024",14.97,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",for comparison with the report's 13.6%; the EU-27 aggregate is the weighted figure
+"Malta: ZEV share of the passenger-car stock, end 2023",1.35,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"EU-27: ZEV share of the passenger-car stock, end 2023",1.73,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"Malta: ZEV share of the passenger-car stock, end 2024",2.21,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+"EU-27: ZEV share of the passenger-car stock, end 2024",2.22,%,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",
+Malta: net growth of the passenger-car stock in 2024,6632,cars,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",18.1 cars a day (2024 is a leap year)
+Malta: net growth of ZEVs in the stock in 2024,2937,cars,"Eurostat road_eqr_carpda / road_eqs_carpda (updated 1 Sep 2026), retrieved 5 Oct 2026",

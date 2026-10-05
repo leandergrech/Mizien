@@ -1,0 +1,25 @@
+check,value,unit,source,note
+"Malta: municipal waste generated per person, 2023",603.0,kg,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",flag: none
+"EU-27: municipal waste generated per person, 2023",511.0,kg,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",flag: none
+"Malta: municipal waste generated per person, 2024",621.0,kg,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",flag: none
+"EU-27: municipal waste generated per person, 2024",517.0,kg,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",flag: i
+"Malta vs EU-27, waste per person 2024",20.1,% above,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+Malta: landfill rate 2013 (landfilled / generated),82.0,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+Malta: landfill rate 2013 (landfilled / treated),86.4,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+Malta: landfill rate 2014 (landfilled / generated),80.4,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+Malta: landfill rate 2014 (landfilled / treated),87.1,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+Malta: landfill rate 2022 (landfilled / generated),83.3,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+Malta: landfill rate 2022 (landfilled / treated),85.8,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+Malta: landfill rate 2023 (landfilled / generated),73.6,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+Malta: landfill rate 2023 (landfilled / treated),78.6,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+Malta: landfill rate 2024 (landfilled / generated),72.1,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+Malta: landfill rate 2024 (landfilled / treated),79.2,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+EU-27: landfill rate 2022 (landfilled / generated),22.6,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",EU-27 landfill value for 2023 not published in env_wasmun
+EU-27: landfill rate 2024 (landfilled / generated),21.3,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",EU-27 landfill value for 2023 not published in env_wasmun
+"Malta: incineration with and without energy recovery, 2023 (share of generated)",2.7,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",
+"Malta: recycling (material, composting, digestion), 2024 (share of generated)",16.9,%,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",Eurostat's official recycling rate (cei_wm011) uses a different method; the report gives 16.7%
+Malta: years 2013-2024 with landfilled tonnage above generated,2015,years,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",2015: 676 kg landfilled against 643 kg generated; the dataset gives no reason; 2015 is not used in any test
+"Malta's rank, waste per person 2023",7 of 27,rank,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026","member states with data, highest first"
+"Malta's rank, landfill rate 2023",3 of 26,rank,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026","higher: EL 80.7%, RO 75.7%"
+"Malta's rank, waste per person 2024",6 of 20,rank,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026","member states with data, highest first"
+"Malta's rank, landfill rate 2024",1 of 20,rank,"Eurostat env_wasmun (updated 30 Mar 2026), retrieved 5 Oct 2026",higher: 

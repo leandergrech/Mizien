@@ -2,9 +2,9 @@ id: CC-111
 title: 'EU: 621 kg of waste a head, 74% landfilled'
 category: Waste
 subtopic: Landfill & treatment
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
   text: 'European Commission (2026 Country Report - Malta, 3 Jun 2026): Malta generated 621 kg of waste per person in 2024
     against an EU average of 517 kg, and its landfill rate fell from 82% to 74% over ten years but remains well above the
@@ -13,36 +13,84 @@ claim:
   date: '2026-06-03'
   wording_status: Verbatim found
   sources:
-  - title: 2026 Country Report - Malta, SWD(2026) 218 final (Council doc. 10135/26 ADD 1)
-    publisher: European Commission (via Council of the EU)
-    date: '2026-06-03'
-    url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
-    note: Primary text read 5 Oct 2026 (circular economy section). Footnotes (156) and (158) give the data sources.
-  quote: Waste generation is still high with 621 kg per person generated in 2024 (compared with the EU average of 517 kg
-    per person)
-counter_evidence: 'The landfill share depends on the definition: The Shift (Feb 2026, CC-081) reports 79.2% landfilled in
-  2024 and the NSO reports 72% of treated municipal waste in 2024, so ''74%'' (2023) may use a different waste scope. The
-  Ministry reports ''strong progress'' (CC-004).'
-tests: Eurostat env_wasmun (municipal waste generated and treated), cei_wm011, env_wasgen; NSO waste statistics 2024; EEA
-  waste indicators; compare scope (municipal vs total, 2023 vs 2024) against the report's footnotes.
-why_low_hanging: Numbers that Eurostat reproduces; extends the landfill comparison in CC-004 and CC-081 with the Commission's
-  own wording.
+    - title: 2026 Country Report - Malta, SWD(2026) 218 final (Council doc. 10135/26 ADD 1)
+      publisher: European Commission (via Council of the EU)
+      date: '2026-06-03'
+      url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
+      note: 'The claim. Full text read 5 Oct 2026: Annex 8 p. 75 (quoted passage; footnotes 156 and 158 cite Eurostat env_wasmun)
+        and summary pp. 17-18.'
+    - title: Municipal waste by waste management operations (env_wasmun)
+      publisher: Eurostat
+      date: updated 30 Mar 2026
+      url: https://ec.europa.eu/eurostat/databrowser/view/env_wasmun/default/table
+      note: Primary data, retrieved 5 Oct 2026; extract and checks in data/cc-111/.
+  quote: Waste generation is still high with 621 kg per person generated in 2024 (compared with the EU average of 517 kg per
+    person) … Over the last 10 years, Malta has brought its landfill rate down from 82% to 74%. However, this is still one
+    of the highest in the EU, and well above the EU average of 22% (2023).
+counter_evidence: 'All figures reproduce from Eurostat env_wasmun: 621 kg (EU 517 kg, provisional) in 2024; landfilled as
+  a share of waste generated 82.0% in 2013 and 73.6% in 2023 (72.1% in 2024); incineration 2.7% in 2023. Malta is 3rd-highest
+  for the landfill rate in 2023 (after Greece and Romania) and highest of 20 states with 2024 data; 6th-highest for waste
+  per person in 2024. EU-27 2023 landfill rate not published (22.6% in 2022, 21.3% in 2024). The fall from 82% to 74% came
+  mostly in 2023 (83.3% in 2022). The Shift''s 79.2% (CC-081) is the 2024 share of waste treated, a different denominator.'
+tests: Eurostat env_wasmun for Malta, the EU-27 and all member states, recomputed with tools/cc-111-report/calc.py.
+why_low_hanging: 'Done: Claim Check 111 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'High: Eurostat, NSO and EEA reachable; the Council-hosted PDF was read via WebFetch.'
-caveats: 'Candidate from the weekly intake of 5 Oct 2026. Municipal and total waste may be mixed in the passage: check the
-  footnoted source before testing. The 2025 Environmental Implementation Review (CC-004, CC-005) is a separate Commission
-  document.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High'
+caveats: 'Supported: no right of reply needed. 2024 data cover 20 member states. Municipal waste definitions differ between
+  countries. The recycling figures in the report''s summary are not tested here (see CC-004).'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+  - Eurostat env_wasmun for Malta, the EU-27 and member states, retrieved 5 Oct 2026 (data/cc-111/; checks in data/cc-111/checks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: citygate
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-111A
+    text: "621 kg of waste per person in 2024, against an EU average of 517 kg"
+    said_by: "Commission [1]"
+    finding: "Eurostat env_wasmun: Malta 621 kg, EU-27 517 kg (provisional). Malta is sixth-highest of 20 states with 2024 data."
+    rating: "Accurate"
+    tone: green
+  - id: CC-111B
+    text: "Landfill rate down from 82% to 74% over ten years"
+    said_by: "Commission [1]"
+    finding: "82.0% (2013) and 73.6% (2023), landfilled as a share of generated. Most of the fall came in 2023."
+    rating: "Accurate"
+    tone: green
+  - id: CC-111C
+    text: "Still one of the highest in the EU, well above the EU average of 22% (2023)"
+    said_by: "Commission [1]"
+    finding: "Third-highest in 2023 (after Greece and Romania); highest of 20 states in 2024. EU-27 2023 not published; 22.6% in 2022 and 21.3% in 2024."
+    rating: "Accurate"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 74%
+  caption: "of Malta's municipal waste landfilled in 2023, as the Commission says (EU about 22%)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: 'Commission 2026 Country Report read in full (Council copy): Annex 8 p. 75 and summary pp. 17-18. Footnotes cite
+      Eurostat env_wasmun.'
+  - date: 2026-10-05
+    step: note
+    note: 'Eurostat env_wasmun downloaded for Malta, the EU-27 and member states; all figures recomputed (tools/cc-111-report/calc.py).
+      Landfill basis: share of waste generated.'
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Supported (high confidence); no right of reply needed.

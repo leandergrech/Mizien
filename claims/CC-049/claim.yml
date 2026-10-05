@@ -2,21 +2,34 @@ id: CC-049
 title: 242 illegal hunting incidents
 category: Nature & Wildlife
 subtopic: Hunting & birds
-status: Not started
-verdict: null
-verdict_confidence: null
+status: In progress
+verdict:
+verdict_confidence:
 claim:
-  text: 'BirdLife Malta: it recorded 242 incidents of illegal hunting in 2025, and police took an average of 51
-    minutes to respond.'
+  text: 'BirdLife Malta (press release, 10 Oct 2025): its 2025 Raptor Camp teams recorded 242 illegal hunting incidents between
+    12 September and 5 October, and police took an average of 51 minutes to respond to their reports.'
   speaker: BirdLife Malta
-  date: 2025-09
-  wording_status: 'Paraphrase: locate quote'
+  date: 2025-10-10
+  wording_status: 'Verbatim found'
   sources:
-  - title: On the frontlines (September 2025 newsletter)
-    publisher: BirdLife Malta
-    date: Sep 2025
-    url: https://birdlifemalta.org/2025/09/on-the-frontlines-september-2025-newsletter/
-    note: NGO claim.
+    - title: On the frontlines (September 2025 newsletter)
+      publisher: BirdLife Malta
+      date: Sep 2025
+      url: https://birdlifemalta.org/2025/09/on-the-frontlines-september-2025-newsletter/
+      note: NGO claim.
+    - title: Illegal hunting soars as enforcement collapses
+      publisher: BirdLife Malta
+      date: '2025-10-10'
+      url: https://birdlifemalta.org/2025/10/illegal-hunting-soars-as-enforcement-collapses/
+      note: The claim (verbatim), read 5 Oct 2026. Raptor Camp 2025, 12 Sep-5 Oct.
+    - title: BirdLife Malta accuses Labour, PN of 'dangerous race' to weaken hunting laws ahead of election
+      publisher: Newsbook
+      date: '2026-05-27'
+      url: https://newsbook.com.mt/en/birdlife-malta-accuses-labour-pn-of-dangerous-race-to-weaken-hunting-laws-ahead-of-election/
+      note: Restates the figures as 'In 2025 alone' in its own words (wider scope than the release).
+  quote: BirdLife Malta’s 2025 Raptor Camp has once again been instrumental in exposing illegal hunting in Malta with a total
+    of 242 illegal hunting incidents recorded in less than a month between the 12th September and 5th October. … their average
+    response time throughout the period reached an astounding 51 minutes
 counter_evidence: NGO incident logs vs police and WBRU enforcement data; reporting coverage.
 tests: Police/ELU case data; WBRU reports; PQ answers.
 why_low_hanging: A specific, attributable statement that public data can test.
@@ -24,13 +37,13 @@ tags: []
 tags_provisional: true
 priority: Queue
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text before any
+  report.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
+  sent:
+  deadline:
+  response:
+evidence_shown:
 outputs: {}
 location:
   place: Għadira Nature Reserve, Mellieħa
@@ -38,3 +51,12 @@ location:
   lon: 14.34888
   scope: site
   icon: park
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: "Verbatim wording found in BirdLife Malta's release of 10 Oct 2025: 242 incidents during Raptor Camp (12 Sep-5 Oct\
+      \ 2025), average police response 51 minutes. The intake's locator did not contain the figures."
+  - date: 2026-10-05
+    step: note
+    note: No independent data found (police/EPU response times, WBRU season report). Waiting on the maintainer for the incident
+      log and enforcement data before a report.

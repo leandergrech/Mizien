@@ -1,0 +1,11 @@
+check,value,unit,source,note
+MIA: passenger movements 2025,10061969,passengers,"Eurostat avia_paoc (updated 2 Oct 2026), retrieved 5 Oct 2026; MIA company announcement 461/2026",company announcement 14 Jan 2026
+"Eurostat: passengers carried at Malta airport, 2019",7318357,passengers,"Eurostat avia_paoc (updated 2 Oct 2026), retrieved 5 Oct 2026; MIA company announcement 461/2026",
+"Eurostat: passengers carried at Malta airport, 2023",7813491,passengers,"Eurostat avia_paoc (updated 2 Oct 2026), retrieved 5 Oct 2026; MIA company announcement 461/2026",
+"Eurostat: passengers carried at Malta airport, 2024",8968239,passengers,"Eurostat avia_paoc (updated 2 Oct 2026), retrieved 5 Oct 2026; MIA company announcement 461/2026",
+"Eurostat: passengers carried at Malta airport, 2025",10070972,passengers,"Eurostat avia_paoc (updated 2 Oct 2026), retrieved 5 Oct 2026; MIA company announcement 461/2026",
+Eurostat 2025 minus MIA 2025,9003,passengers,"Eurostat avia_paoc (updated 2 Oct 2026), retrieved 5 Oct 2026; MIA company announcement 461/2026",0.09% difference
+Eurostat: change 2024 to 2025,12.3,%,"Eurostat avia_paoc (updated 2 Oct 2026), retrieved 5 Oct 2026; MIA company announcement 461/2026",MIA: +12.3%
+Eurostat: change 2019 to 2025,37.6,%,"Eurostat avia_paoc (updated 2 Oct 2026), retrieved 5 Oct 2026; MIA company announcement 461/2026",
+Eurostat: first year above 10 million,2025,year,"Eurostat avia_paoc (updated 2 Oct 2026), retrieved 5 Oct 2026; MIA company announcement 461/2026",
+Eurostat: share of 2025 passengers on flights to or from outside the EU,29.2,%,"Eurostat avia_paoc (updated 2 Oct 2026), retrieved 5 Oct 2026; MIA company announcement 461/2026",

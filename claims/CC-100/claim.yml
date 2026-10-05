@@ -2,38 +2,88 @@ id: CC-100
 title: Over 10 million airport passengers
 category: Tourism & Population
 subtopic: Tourism numbers & capacity
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
-  text: 'Malta International Airport: it welcomed over 10 million passengers in 2025, a new traffic milestone.'
+  text: 'Malta International Airport plc (company announcement, 14 Jan 2026): full-year traffic for 2025 reached 10,061,969
+    passenger movements, a 12.3% increase on 2024 and the first time above 10 million.'
   speaker: Malta International Airport plc
-  date: '2026'
-  wording_status: 'Paraphrase: locate quote'
+  date: 2026-01-14
+  wording_status: 'Verbatim found'
   sources:
-  - title: Facts and Figures
-    publisher: Malta International Airport
-    date: '2026'
-    url: https://maltairport.com/corporate/our-airport/facts-and-figures/
-    note: Company figures.
-counter_evidence: Passenger movements count each arrival and departure; residents travelling vs tourists.
-tests: MIA traffic reports; NSO arrivals and departures.
-why_low_hanging: A specific, attributable statement that public data can test.
+    - title: Full-Year Traffic Update (company announcement 461/2026)
+      publisher: Malta International Airport plc
+      date: '2026-01-14'
+      url: https://maltairport.com/app/uploads/2026/01/Full-Year-Traffic-Update.pdf
+      note: The claim. Read in full 5 Oct 2026.
+    - title: Facts and Figures
+      publisher: Malta International Airport
+      date: n/d
+      url: https://maltairport.com/corporate/our-airport/facts-and-figures/
+      note: The intake's locator; on 5 Oct 2026 it still showed the 2025 forecast of 9.3 million.
+    - title: Air passenger transport (avia_paoc)
+      publisher: Eurostat
+      date: updated 2 Oct 2026
+      url: https://ec.europa.eu/eurostat/databrowser/view/avia_paoc/default/table
+      note: Primary data, retrieved 5 Oct 2026 (data/cc-100/).
+  quote: This figure brought full-year traffic for 2025 up to 10,061,969 passenger movements, marking a 12.3% increase over
+    the previous year.
+counter_evidence: "Eurostat avia_paoc: 10,070,972 passengers carried in 2025 (0.09% above the company's figure) and 8,968,239\
+  \ in 2024: +12.3%. 2025 is the first year above 10 million (7.3 million in 2019). Movements count each arrival and departure,\
+  \ so a return trip counts twice."
+tests: Eurostat avia_paoc for Malta, 2015-2025 (tools/cc-100-report/calc.py).
+why_low_hanging: 'Done: Claim Check 100 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: 'Supported: no right of reply needed. Passenger movements are not travellers. The company''s Facts and Figures page
+  still shows the 2025 forecast.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+  - Eurostat avia_paoc, retrieved 5 Oct 2026 (data/cc-100/; checks in data/cc-100/checks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Malta International Airport, Luqa
   lat: 35.84741
   lon: 14.49229
   scope: site
   icon: pin
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-100A
+    text: "Full-year traffic for 2025 of 10,061,969 passenger movements"
+    said_by: "MIA plc [1]"
+    finding: "Eurostat: 10,070,972 passengers carried in 2025 (+0.09%). First year above 10 million."
+    rating: "Accurate"
+    tone: green
+  - id: CC-100B
+    text: "A 12.3% increase over the previous year"
+    said_by: "MIA plc [1]"
+    finding: "Eurostat: 8,968,239 in 2024 to 10,070,972 in 2025, +12.3%."
+    rating: "Accurate"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 10.07m
+  caption: "passengers through Malta's airport in 2025 (Eurostat), +12.3%, as the airport said"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: Company announcement 461/2026 (14 Jan 2026) read in full; the intake's Facts and Figures page still shows the 2025
+      forecast.
+  - date: 2026-10-05
+    step: note
+    note: Eurostat avia_paoc downloaded; total and growth compared (tools/cc-100-report/calc.py).
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Supported (high confidence); no right of reply needed.

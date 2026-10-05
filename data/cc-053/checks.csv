@@ -1,0 +1,14 @@
+check,value,unit,source,note
+"Area-weighted share in Bortle class 4 (Malta, Gozo, Comino)",11.6,%,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),paper's 'All' column: 12.8%
+"Area-weighted share in Bortle class 5 (Malta, Gozo, Comino)",50.1,%,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),paper's 'All' column: 49.9%
+"Area-weighted share in Bortle class 6-7 (Malta, Gozo, Comino)",28.2,%,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),paper's 'All' column: 27.4%
+"Area-weighted share in Bortle class 8-9 (Malta, Gozo, Comino)",10.2,%,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),paper's 'All' column: 9.9%
+Paper: share in classes 5-9 (= 100% minus class 4),87.2,%,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),the '87%' in the claim
+"Paper: Milky Way visible, class 4 threshold (> 20.4)",12.8,%,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),2017/18
+"Paper: Milky Way visible, Falchi midpoint threshold (> 20.3)",13.5,%,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),
+Paper: threshold sensitivity (> 20.6 to > 20.0),6.3 to 25.9,%,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),
+Falchi et al. (2016) world atlas: Milky Way visible (Maltese islands),11,%,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),as reported by Caruana et al. (2020)
+"Island of Malta, class 4 share 2017/18 vs 2018/19",3.9 vs 1.6,%,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),second survey of Malta only
+Land area used: Malta,245.62,km2,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),
+Land area used: Gozo,65.81,km2,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),
+Land area used: Comino,2.87,km2,Caruana et al. (2020) Table 1; island areas from OpenStreetMap (docs/data/geo.json),
