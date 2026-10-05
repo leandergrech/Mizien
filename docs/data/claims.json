@@ -2399,9 +2399,9 @@
       "id": "CC-049",
       "title": "242 illegal hunting incidents",
       "category": "Nature & Wildlife",
-      "claim": "BirdLife Malta: it recorded 242 incidents of illegal hunting in 2025, and police took an average of 51 minutes to respond.",
+      "claim": "BirdLife Malta (press release, 10 Oct 2025): its 2025 Raptor Camp teams recorded 242 illegal hunting incidents between 12 September and 5 October, and police took an average of 51 minutes to respond to their reports.",
       "counter": "NGO incident logs vs police and WBRU enforcement data; reporting coverage.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Hunting & birds",
@@ -2413,14 +2413,14 @@
         "icon": "park"
       },
       "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
+      "wording_status": "Verbatim found",
       "confidence": null,
       "speaker": "BirdLife Malta",
       "bodies": [
         "birdlife"
       ],
-      "date": "2025-09",
-      "quote": "",
+      "date": "2025-10-10",
+      "quote": "BirdLife Malta’s 2025 Raptor Camp has once again been instrumental in exposing illegal hunting in Malta with a total of 242 illegal hunting incidents recorded in less than a month between the 12th September and 5th October. … their average response time throughout the period reached an astounding 51 minutes",
       "version": null,
       "outputs": {},
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-049/claim.yml"
@@ -2548,10 +2548,11 @@
       "id": "CC-053",
       "title": "Milky Way visible from 13% of Malta",
       "category": "Nature & Wildlife",
-      "claim": "Researchers (University of Malta photometric mapping): the Milky Way is visible from only about 13% of the Maltese Islands, and 87% of the area has high light pollution.",
-      "counter": "Peer-reviewed study (J. Environ. Manage., 2020); ERA/PA 2020 light guidelines still draft. Check trend data since.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "University of Malta researchers (Caruana et al., Journal of Environmental Management, 2020): 87% of the area of the Maltese Islands registers Bortle class 5 or brighter night skies, and the Milky Way is visible from only 12.8% of the area (reported as 'about 13%').",
+      "counter": "The study gives 12.8% (Bortle class 4) or 13.5% (world atlas threshold); 87.2% of the area is in classes 5-9. Area-weighting the island results gives 11.6% (the paper weights 347 survey cells). The 2016 world atlas gave 11%. Threshold sensitivity 6.3-25.9%. Data are from 2017-2019; on the island of Malta class 4 fell from 3.9% to 1.6% between the two surveys; no survey since.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
       "tags": [],
       "subtopic": "Dark skies",
       "location": {
@@ -2561,17 +2562,38 @@
         "scope": "site",
         "icon": "pin"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "University of Malta researchers",
       "bodies": [
         "um-researchers"
       ],
-      "date": "2020",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-053A",
+          "text": "The Milky Way is visible from only about 13% of the islands",
+          "finding": "12.8% (class 4) or 13.5% (atlas threshold); 11.6% area-weighted; world atlas 11%.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-053B",
+          "text": "87% of the area has high light pollution",
+          "finding": "87.2% of the area in Bortle class 5 or brighter, 2017/18.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
+      "date": "2020-05",
+      "quote": "We show that the vast majority of the area of the Maltese Islands is heavily light polluted, with 87% of the area registering a NSB < 20.39 magSQM/arcsec2 (Bortle Class 5 or higher) and 37.3% < 19.09 magSQM/arcsec2 (Bortle Class 6 or higher), with the Milky Way being visible for only 12.8% of the area",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-053/report.pdf",
+        "flyer_pdf": "claim-files/CC-053/flyer.pdf",
+        "flyer_png": "claim-files/CC-053/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-053/claim.yml"
     },
     {
@@ -3882,9 +3904,9 @@
       "id": "CC-097",
       "title": "Beach workers left exposed to heat",
       "category": "Health & Safety",
-      "claim": "General Workers' Union (2026): workers stationed on beaches for ERA services were left exposed to extreme heat with no adequate response from their contractor.",
+      "claim": "General Workers' Union (statement, 17 Jul 2026): it registered an industrial dispute against Securital over a lack of action, poor communication and no responses on the health and safety of workers providing services to ERA who were exposed to extreme heat on Malta's beaches during official heatwave warnings; ERA failed to intervene and heat SOPs appear never to have been implemented.",
       "counter": "Heat-stress rules for outdoor work; OHSA guidance and contract conditions.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Heat & health",
@@ -3896,14 +3918,14 @@
         "icon": "pin"
       },
       "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
+      "wording_status": "Verbatim found",
       "confidence": null,
       "speaker": "General Workers' Union (GWU)",
       "bodies": [
         "gwu"
       ],
-      "date": "2026",
-      "quote": "",
+      "date": "2026-07-17",
+      "quote": "The dispute follows a lack of action, poor communication and the absence of responses to correspondence exchanged between the parties, particularly regarding the health and safety of workers exposed to extreme heat, especially those working on Malta’s beaches. This comes at a time when official warnings have been issued about a heatwave and exceptionally high temperatures.",
       "version": null,
       "outputs": {},
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-097/claim.yml"
@@ -3972,10 +3994,11 @@
       "id": "CC-100",
       "title": "Over 10 million airport passengers",
       "category": "Tourism & Population",
-      "claim": "Malta International Airport: it welcomed over 10 million passengers in 2025, a new traffic milestone.",
-      "counter": "Passenger movements count each arrival and departure; residents travelling vs tourists.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Malta International Airport plc (company announcement, 14 Jan 2026): full-year traffic for 2025 reached 10,061,969 passenger movements, a 12.3% increase on 2024 and the first time above 10 million.",
+      "counter": "Eurostat avia_paoc: 10,070,972 passengers carried in 2025 (0.09% above the company's figure) and 8,968,239 in 2024: +12.3%. 2025 is the first year above 10 million (7.3 million in 2019). Movements count each arrival and departure, so a return trip counts twice.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
       "tags": [],
       "subtopic": "Tourism numbers & capacity",
       "location": {
@@ -3985,17 +4008,38 @@
         "scope": "site",
         "icon": "pin"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "Malta International Airport plc",
       "bodies": [
         "malta-airport"
       ],
-      "date": "2026",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-100A",
+          "text": "Full-year traffic for 2025 of 10,061,969 passenger movements",
+          "finding": "Eurostat: 10,070,972 passengers carried in 2025 (+0.09%). First year above 10 million.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-100B",
+          "text": "A 12.3% increase over the previous year",
+          "finding": "Eurostat: 8,968,239 in 2024 to 10,070,972 in 2025, +12.3%.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
+      "date": "2026-01-14",
+      "quote": "This figure brought full-year traffic for 2025 up to 10,061,969 passenger movements, marking a 12.3% increase over the previous year.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-100/report.pdf",
+        "flyer_pdf": "claim-files/CC-100/flyer.pdf",
+        "flyer_png": "claim-files/CC-100/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-100/claim.yml"
     },
     {
@@ -4124,7 +4168,7 @@
       "category": "Noise",
       "claim": "Nationalist Party MP Albert Buttigieg and MEP Peter Agius (petition to the European Parliament, reported 12 Oct 2024): Malta has failed to implement Directive 2002/49/EC, including noise mapping and national action plans, with only a draft Noise Action Plan 2019-2024 and no concrete implementation in St Julian's, Sliema and Valletta.",
       "counter": "CC-020 records a February 2026 study for the European Parliament's Petitions Committee that finds only two meaningful gaps in Malta's transposition of the noise law and places most complaints (construction, entertainment, neighbourhood noise) outside its scope. The petition is older than 60 days (Oct 2024); included because noise is the least-covered topic and the claim is testable against EU reporting.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "location": {
@@ -4185,9 +4229,10 @@
       "title": "Shearwaters: 10% of the world population",
       "category": "Nature & Wildlife",
       "claim": "BirdLife Malta (LIFE Arċipelagu Garnija project page): Malta's Yelkouan shearwater population is estimated at around 1,600-1,800 pairs, about 10% of the global population.",
-      "counter": "The page is undated and the estimate probably rests on 2010s surveys; later national or IUCN/BirdLife International estimates may differ. 'About 10%' depends on the global figure used.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "ERA's Species Action Plan 2022-2030 gives 1,795-2,635 pairs (above the page's undated 1,600-1,800) and also says 'around 10%'. Global estimates: 11,355-54,524 pairs (Bourgeois & Vidal 2008, probably overestimated); 21,000-36,000 pairs (CIESM guide, second-hand). Malta's share is 4.4-8.6% (central 6.0%) with the page's own count and 5.0-12.5% (central 7.8%) with ERA's count. Tavolara (Sardinia) holds over half the world population (Pezzo et al. 2021).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Hunting & birds",
       "location": {
@@ -4197,17 +4242,38 @@
         "scope": "site",
         "icon": "park"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "BirdLife Malta",
       "bodies": [
         "birdlife"
       ],
+      "subclaims": [
+        {
+          "id": "CC-106A",
+          "text": "Malta’s population is around 1,600–1,800 pairs",
+          "finding": "Overlaps the regulator’s 1,795–2,635 pairs (2022–2030 plan); the page is undated and its count is the lower.",
+          "rating": "Plausible, dated",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-106B",
+          "text": "…approximately 10% of the global population",
+          "finding": "4.4–8.6% with the page’s own count; 5.0–12.5% with the regulator’s; central 6–8%. Global total poorly known.",
+          "rating": "Upper end of range",
+          "tone": "amber"
+        }
+      ],
       "date": "n/d",
       "quote": "Malta's population is estimated to be around 1,600 – 1,800 pairs, constituting approximately 10% of the global population.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-106/report.pdf",
+        "flyer_pdf": "claim-files/CC-106/flyer.pdf",
+        "flyer_png": "claim-files/CC-106/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-106/claim.yml"
     },
     {
@@ -4364,12 +4430,11 @@
       "title": "EU: 37.7% of new cars zero-emission",
       "category": "Transport",
       "claim": "European Commission (2026 Country Report - Malta, 3 Jun 2026): in 2024 Malta recorded 7,700 new passenger car registrations, of which 37.7% were zero-emission vehicles, well above the EU average of 13.6%.",
-      "counter": "A share of new registrations says little about the whole fleet, which keeps growing (CC-075: seventh in the EU for cars per 1,000 people). The same report says charging infrastructure is 'still largely underdeveloped'. Grant schemes drove the jump, and a small market can swing sharply year to year.",
-      "status": "Not started",
-      "verdict": null,
-      "tags": [
-        "Selective metric"
-      ],
+      "counter": "Eurostat: 7,683 new cars in 2024, 2,893 battery electric, no hydrogen: 37.65% (2023: 20.31%; 2025: 37.56%). EU-27 13.53% (report 13.6%). Malta is 2nd of 27 after Denmark (51.3%). Context: zero-emission cars were 2.2% of the passenger-car stock at the end of 2024 (EU 2.2%) and the stock grew by 6,632 cars (18 a day); the report notes charging infrastructure lags.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
+      "tags": [],
       "subtopic": "Cars & traffic",
       "location": {
         "place": "City Gate, Valletta (national claim)",
@@ -4378,17 +4443,45 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-110A",
+          "text": "7 700 new passenger cars in 2024, 37.7% of them zero-emission",
+          "finding": "Eurostat: 7,683 new cars, 2,893 battery electric, no hydrogen: 37.65%.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-110B",
+          "text": "Up 17.4 points from 20.3% in 2023",
+          "finding": "2023 share 20.31%. The rise is 17.34 points from unrounded shares, 17.35 from the report’s own annex values.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-110C",
+          "text": "Well above the EU average of 13.6%",
+          "finding": "Eurostat EU-27: 13.53%. Malta is second of 27 member states, after Denmark.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
       "date": "2026-06-03",
-      "quote": "In 2024, Malta recorded 7 700 new passenger car registrations, of which 37.7% were ZEVs - a 17.4 percentage point increase since 2023 (20.3%) and well above the EU average of 13.6%",
-      "version": null,
-      "outputs": {},
+      "quote": "In 2024, Malta recorded 7 700 new passenger car registrations, of which 37.7% were ZEVs - a 17.4 percentage point increase since 2023 (20.3%) and well above the EU average of 13.6%.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-110/report.pdf",
+        "flyer_pdf": "claim-files/CC-110/flyer.pdf",
+        "flyer_png": "claim-files/CC-110/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-110/claim.yml"
     },
     {
@@ -4396,9 +4489,10 @@
       "title": "EU: 621 kg of waste a head, 74% landfilled",
       "category": "Waste",
       "claim": "European Commission (2026 Country Report - Malta, 3 Jun 2026): Malta generated 621 kg of waste per person in 2024 against an EU average of 517 kg, and its landfill rate fell from 82% to 74% over ten years but remains well above the EU average of 22% (2023).",
-      "counter": "The landfill share depends on the definition: The Shift (Feb 2026, CC-081) reports 79.2% landfilled in 2024 and the NSO reports 72% of treated municipal waste in 2024, so '74%' (2023) may use a different waste scope. The Ministry reports 'strong progress' (CC-004).",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "All figures reproduce from Eurostat env_wasmun: 621 kg (EU 517 kg, provisional) in 2024; landfilled as a share of waste generated 82.0% in 2013 and 73.6% in 2023 (72.1% in 2024); incineration 2.7% in 2023. Malta is 3rd-highest for the landfill rate in 2023 (after Greece and Romania) and highest of 20 states with 2024 data; 6th-highest for waste per person in 2024. EU-27 2023 landfill rate not published (22.6% in 2022, 21.3% in 2024). The fall from 82% to 74% came mostly in 2023 (83.3% in 2022). The Shift's 79.2% (CC-081) is the 2024 share of waste treated, a different denominator.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
       "tags": [],
       "subtopic": "Landfill & treatment",
       "location": {
@@ -4408,17 +4502,45 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-111A",
+          "text": "621 kg of waste per person in 2024, against an EU average of 517 kg",
+          "finding": "Eurostat env_wasmun: Malta 621 kg, EU-27 517 kg (provisional). Malta is sixth-highest of 20 states with 2024 data.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-111B",
+          "text": "Landfill rate down from 82% to 74% over ten years",
+          "finding": "82.0% (2013) and 73.6% (2023), landfilled as a share of generated. Most of the fall came in 2023.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-111C",
+          "text": "Still one of the highest in the EU, well above the EU average of 22% (2023)",
+          "finding": "Third-highest in 2023 (after Greece and Romania); highest of 20 states in 2024. EU-27 2023 not published; 22.6% in 2022 and 21.3% in 2024.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
       "date": "2026-06-03",
-      "quote": "Waste generation is still high with 621 kg per person generated in 2024 (compared with the EU average of 517 kg per person)",
-      "version": null,
-      "outputs": {},
+      "quote": "Waste generation is still high with 621 kg per person generated in 2024 (compared with the EU average of 517 kg per person) … Over the last 10 years, Malta has brought its landfill rate down from 82% to 74%. However, this is still one of the highest in the EU, and well above the EU average of 22% (2023).",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-111/report.pdf",
+        "flyer_pdf": "claim-files/CC-111/flyer.pdf",
+        "flyer_png": "claim-files/CC-111/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-111/claim.yml"
     },
     {
@@ -4426,9 +4548,10 @@
       "title": "IMF: population up 25% in a decade",
       "category": "Tourism & Population",
       "claim": "International Monetary Fund staff (Selected Issues, Feb 2026): Malta's population rose by 25 percent over a decade, largely due to immigration.",
-      "counter": "NSO reports a population of 588,254 at the end of 2025, up 2.4% in the year (CC-088); the 25% depends on the start and end years chosen. Whether 'largely due to immigration' holds depends on net migration versus natural change.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Eurostat demo_gind: growth was 24.4-24.6% over the decades ending 1 Jan 2020, 2021 and 2022, but 30.9% over 1 Jan 2015-2025 (the latest decade available in Feb 2026) and 30.8% over 2016-2026. The paper gives no years. Net migration was 93-97% of growth in every decade since 2010-2020. EU-27 grew 1.9% over 2015-2025.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Population & labour",
       "location": {
@@ -4438,17 +4561,38 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "International Monetary Fund",
       "bodies": [
         "imf"
       ],
+      "subclaims": [
+        {
+          "id": "CC-112A",
+          "text": "Malta’s population rose by 25 percent over a decade",
+          "finding": "24.4–24.6% for the decades ending 2020–2022; 30.9% for 2015–2025, the latest decade available in Feb 2026. No years given.",
+          "rating": "Understates recent growth",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-112B",
+          "text": "…largely due to immigration",
+          "finding": "Net migration was 93–97% of the growth in every decade since 2010–2020; natural change was small.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
       "date": "2026-02",
       "quote": "Malta’s population rose by 25 percent over a decade, largely due to immigration.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-112/report.pdf",
+        "flyer_pdf": "claim-files/CC-112/flyer.pdf",
+        "flyer_png": "claim-files/CC-112/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-112/claim.yml"
     },
     {
@@ -4517,10 +4661,10 @@
       "id": "CC-115",
       "title": "Chamber: congestion cost EUR 770m, 3.4% of GDP",
       "category": "Transport",
-      "claim": "The Malta Chamber of Commerce, Enterprise and Industry (2026 election proposals): traffic congestion alone cost the economy an estimated EUR 770 million in 2025, equivalent to 3.4% of GDP.",
-      "counter": "Engineer Marco Cremona (presentation to Momentum, Malta News Agency 3 Jun 2026) estimated EUR 1.13 billion a year from 60.8 million hours lost at EUR 10 an hour plus fuel. The same Chamber text gives 2025 GDP as EUR 20.40 billion, and EUR 770 million is about 3.8% of that, so the 3.4% depends on which GDP series is used (nominal versus chain-linked volume): to check.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "The Malta Chamber of Commerce, Enterprise and Industry (LEAD proposals for the 2026-2031 legislature, 14 May 2026): traffic congestion cost the economy an estimated EUR 770 million in 2025, equivalent to 3.4% of GDP.",
+      "counter": "The EUR 770m is quoted accurately from the National Transport Master Plan 2030 (p. 124), which projects EUR 917m by 2030 and excludes EUR 195.4m of environmental costs, but the plan publishes no derivation for 2025 (its appraisal annex models 2030 and 2060 only). EUR 770m is 3.12% of 2025 GDP at current prices (Eurostat EUR 24,664m); 3.34% of 2024 GDP; 3.8-3.9% of real GDP. 3.4% would need GDP of EUR 22.6bn. Marco Cremona's EUR 1.13bn estimate (MNA, 3 Jun 2026) is second-hand.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [],
       "subtopic": "Cars & traffic",
       "location": {
@@ -4530,17 +4674,38 @@
         "scope": "national",
         "icon": "citygate"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "The Malta Chamber of Commerce, Enterprise and Industry",
       "bodies": [
         "malta-chamber"
       ],
-      "date": "n/d",
-      "quote": "Traffic congestion alone cost the economy an estimated €770 million in 2025, equivalent to 3.4% of GDP.",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-115A",
+          "text": "Traffic congestion cost the economy an estimated €770 million in 2025",
+          "finding": "Accurately cited from the National Transport Master Plan 2030, p. 124. The plan publishes no derivation for 2025, so the figure cannot be tested.",
+          "rating": "Not testable",
+          "tone": "orange"
+        },
+        {
+          "id": "CC-115B",
+          "text": "…equivalent to 3.4% of GDP",
+          "finding": "3.12% of 2025 GDP at current prices; 3.34% of 2024 GDP; 3.8–3.9% of real GDP. No published series gives 3.4%.",
+          "rating": "Overstated",
+          "tone": "amber"
+        }
+      ],
+      "date": "2026-05-14",
+      "quote": "In 2025, traffic congestion imposed an estimated cost of €770 million on the Maltese economy, equivalent to 3.4% of GDP.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-115/report.pdf",
+        "flyer_pdf": "claim-files/CC-115/flyer.pdf",
+        "flyer_png": "claim-files/CC-115/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-115/claim.yml"
     },
     {

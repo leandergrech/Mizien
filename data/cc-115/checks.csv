@@ -1,0 +1,14 @@
+check,value,unit,source,note
+Malta: nominal GDP 2025 (current prices),24664.0,EUR million,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",
+EUR 770 million as a share of nominal GDP 2025 (current prices),3.12,%,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",
+Malta: nominal GDP 2024,23079.3,EUR million,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",
+EUR 770 million as a share of nominal GDP 2024,3.34,%,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",
+"Malta: real GDP 2025 (chain-linked, 2020 prices)",19993.1,EUR million,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",
+"EUR 770 million as a share of real GDP 2025 (chain-linked, 2020 prices)",3.85,%,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",
+"Malta: real GDP 2025 (chain-linked, 2015 prices)",18019.8,EUR million,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",
+"EUR 770 million as a share of real GDP 2025 (chain-linked, 2015 prices)",4.27,%,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",
+"EUR 770 million as a share of the Chamber's own GDP figure (EUR 20.40 billion, real, 2025)",3.77,%,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",the Chamber's text gives real GDP of EUR 20.40bn for 2025
+GDP that would make EUR 770 million equal to 3.4%,22647,EUR million,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",for comparison with the series above
+Chamber's 2015 real GDP (EUR 11.34bn) vs Eurostat CLV20 2015,11340.7,EUR million,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",matches: the Chamber's GDP series is chain-linked volumes at 2020 prices (an earlier vintage for 2025)
+Plan: projected increase 2025 to 2030,19.1,%,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",EUR 770m to EUR 917m
+Plan: implied annual growth 2025-2030,3.56,%/yr,"Eurostat nama_10_gdp (updated 2 Oct 2026), retrieved 5 Oct 2026; National Transport Master Plan 2030 p. 124",

@@ -2,9 +2,9 @@ id: CC-110
 title: 'EU: 37.7% of new cars zero-emission'
 category: Transport
 subtopic: Cars & traffic
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
   text: 'European Commission (2026 Country Report - Malta, 3 Jun 2026): in 2024 Malta recorded 7,700 new passenger car registrations,
     of which 37.7% were zero-emission vehicles, well above the EU average of 13.6%.'
@@ -12,36 +12,79 @@ claim:
   date: '2026-06-03'
   wording_status: Verbatim found
   sources:
-  - title: 2026 Country Report - Malta, SWD(2026) 218 final (Council doc. 10135/26 ADD 1)
-    publisher: European Commission (via Council of the EU)
-    date: '2026-06-03'
-    url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
-    note: Primary text read 5 Oct 2026 (Sustainable transport section). Footnote (142) gives the data source.
+    - title: 2026 Country Report - Malta, SWD(2026) 218 final (Council doc. 10135/26 ADD 1)
+      publisher: European Commission (via Council of the EU)
+      date: '2026-06-03'
+      url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
+      note: 'The claim. Full text read 5 Oct 2026: Annex 8 (quoted passage; footnote 142 cites Eurostat) and statistical annex.'
+    - title: New passenger cars by type of motor energy (road_eqr_carpda); passenger cars (road_eqs_carpda)
+      publisher: Eurostat
+      date: updated 1 Sep 2026
+      url: https://ec.europa.eu/eurostat/databrowser/view/road_eqr_carpda/default/table
+      note: Primary data, retrieved 5 Oct 2026; extract and checks in data/cc-110/.
   quote: In 2024, Malta recorded 7 700 new passenger car registrations, of which 37.7% were ZEVs - a 17.4 percentage point
-    increase since 2023 (20.3%) and well above the EU average of 13.6%
-counter_evidence: 'A share of new registrations says little about the whole fleet, which keeps growing (CC-075: seventh
-  in the EU for cars per 1,000 people). The same report says charging infrastructure is ''still largely underdeveloped''.
-  Grant schemes drove the jump, and a small market can swing sharply year to year.'
-tests: Eurostat road_eqr_carpda / road_eqs_carpda (new registrations and fleet by fuel); ACEA registration data; NSO motor
-  vehicle releases; Transport Malta registrations; compare ZEV share of the fleet with the share of new cars.
-why_low_hanging: Specific shares that Eurostat and national registration data can confirm; also a favourable statement about
-  Malta, so it balances the intake.
-tags:
-- Selective metric
-tags_provisional: true
-priority: Queue
-data_readiness: 'High: Eurostat, NSO and Crossref reachable; the Council-hosted PDF was read via WebFetch.'
-caveats: 'Candidate from the weekly intake of 5 Oct 2026. Favourable to Malta: checked on the same terms. Provisionally
-  tagged Selective metric (share of new sales versus the fleet).'
+    increase since 2023 (20.3%) and well above the EU average of 13.6%.
+counter_evidence: 'Eurostat: 7,683 new cars in 2024, 2,893 battery electric, no hydrogen: 37.65% (2023: 20.31%; 2025: 37.56%).
+  EU-27 13.53% (report 13.6%). Malta is 2nd of 27 after Denmark (51.3%). Context: zero-emission cars were 2.2% of the passenger-car
+  stock at the end of 2024 (EU 2.2%) and the stock grew by 6,632 cars (18 a day); the report notes charging infrastructure
+  lags.'
+tests: Eurostat road_eqr_carpda and road_eqs_carpda for all member states, recomputed with tools/cc-110-report/calc.py.
+why_low_hanging: 'Done: Claim Check 110 report and flyer.'
+tags: []
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High'
+caveats: 'Supported: no right of reply needed. The light commercial vehicle figures in the same passage are not tested. New-car
+  shares are not fleet or emissions trends (CC-109).'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+  - Eurostat road_eqr_carpda and road_eqs_carpda, retrieved 5 Oct 2026 (data/cc-110/; checks in data/cc-110/checks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: citygate
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-110A
+    text: "7 700 new passenger cars in 2024, 37.7% of them zero-emission"
+    said_by: "Commission [1]"
+    finding: "Eurostat: 7,683 new cars, 2,893 battery electric, no hydrogen: 37.65%."
+    rating: "Accurate"
+    tone: green
+  - id: CC-110B
+    text: "Up 17.4 points from 20.3% in 2023"
+    said_by: "Commission [1]"
+    finding: "2023 share 20.31%. The rise is 17.34 points from unrounded shares, 17.35 from the report’s own annex values."
+    rating: "Accurate"
+    tone: green
+  - id: CC-110C
+    text: "Well above the EU average of 13.6%"
+    said_by: "Commission [1]"
+    finding: "Eurostat EU-27: 13.53%. Malta is second of 27 member states, after Denmark."
+    rating: "Accurate"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-05'
+thumbnail:
+  figure: 37.7%
+  caption: "of new cars in Malta zero-emission in 2024, second in the EU (EU 13.5%)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: 'Commission 2026 Country Report read in full (Council copy): Annex 8 passage, footnote 142 and statistical annex.'
+  - date: 2026-10-05
+    step: note
+    note: Eurostat road_eqr_carpda and road_eqs_carpda downloaded for all member states; shares and ranking recomputed (tools/cc-110-report/calc.py).
+  - date: 2026-10-05
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Supported (high confidence); no right of reply needed.

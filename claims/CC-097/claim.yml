@@ -2,21 +2,32 @@ id: CC-097
 title: Beach workers left exposed to heat
 category: Health & Safety
 subtopic: Heat & health
-status: Not started
-verdict: null
-verdict_confidence: null
+status: In progress
+verdict:
+verdict_confidence:
 claim:
-  text: 'General Workers'' Union (2026): workers stationed on beaches for ERA services were left exposed to extreme
-    heat with no adequate response from their contractor.'
+  text: 'General Workers'' Union (statement, 17 Jul 2026): it registered an industrial dispute against Securital over a lack
+    of action, poor communication and no responses on the health and safety of workers providing services to ERA who were
+    exposed to extreme heat on Malta''s beaches during official heatwave warnings; ERA failed to intervene and heat SOPs appear
+    never to have been implemented.'
   speaker: General Workers' Union (GWU)
-  date: '2026'
-  wording_status: 'Paraphrase: locate quote'
+  date: 2026-07-17
+  wording_status: 'Verbatim found'
   sources:
-  - title: GWU registers industrial dispute with Securital over beach workers' heat exposure
-    publisher: Newsbook
-    date: '2026'
-    url: https://newsbook.com.mt/en/gwu-registers-industrial-dispute-with-securital-over-beach-workers-heat-exposure/
-    note: Union claim.
+    - title: GWU registers industrial dispute with Securital over beach workers' heat exposure
+      publisher: Newsbook
+      date: '2026'
+      url: https://newsbook.com.mt/en/gwu-registers-industrial-dispute-with-securital-over-beach-workers-heat-exposure/
+      note: Union claim.
+    - title: There is no place for discrimination between workers
+      publisher: General Workers' Union
+      date: '2026-07-17'
+      url: https://gwu.org.mt/en/there-is-no-place-for-discrimination-between-workers/
+      note: The claim (verbatim), read 5 Oct 2026.
+  quote: The dispute follows a lack of action, poor communication and the absence of responses to correspondence exchanged
+    between the parties, particularly regarding the health and safety of workers exposed to extreme heat, especially those
+    working on Malta’s beaches. This comes at a time when official warnings have been issued about a heatwave and exceptionally
+    high temperatures.
 counter_evidence: Heat-stress rules for outdoor work; OHSA guidance and contract conditions.
 tests: OHSA heat guidance; contract terms; heat-alert days.
 why_low_hanging: A specific, attributable statement that public data can test.
@@ -24,13 +35,13 @@ tags: []
 tags_provisional: true
 priority: Queue
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text before any
+  report.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
+  sent:
+  deadline:
+  response:
+evidence_shown:
 outputs: {}
 location:
   place: Environment and Resources Authority, Marsa
@@ -38,3 +49,11 @@ location:
   lon: 14.49732
   scope: institution
   icon: pin
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: Verbatim wording found in the GWU statement of 17 Jul 2026 (dispute registered with DIER against Securital).
+  - date: 2026-10-05
+    step: note
+    note: The core of the claim concerns correspondence and procedures held by the parties; no public response from Securital
+      or ERA found. Waiting on documents from the maintainer before a report.
