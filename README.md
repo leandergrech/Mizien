@@ -38,7 +38,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-006 | Nature & Wildlife | Spring hunting derogation | Drafted | Not substantiated |
 | CC-007 | Air | Within EU limits vs WHO guideline | Drafted | Largely supported |
 | CC-008 | Transport | Flyovers and congestion | Drafted | Not substantiated |
-| CC-009 | Water | Reverse osmosis and groundwater | Drafted | Largely supported |
+| CC-009 | Water | More RO, less WSC groundwater | Drafted | Largely supported |
 | CC-010 | Land & Trees | Tree-planting counts | Drafted | Largely supported |
 | CC-011 | Governance & Promises | Ten minutes' walk to green space | Drafted | Not substantiated |
 | CC-012 | Land & Trees | Ta' Qali gravel and grass | Drafted | Contradicted |

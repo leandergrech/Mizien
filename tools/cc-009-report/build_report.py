@@ -293,14 +293,16 @@ S += [CondPageBreak(60 * mm), SectionHeading(8, "Sources"),
                                 "2025 cut is about 4% of national abstraction; new section 3. Peer-reviewed literature "
                                 "verified on Crossref and read [9, 10]; new section 5. Figures 1–3 added (WSC "
                                 "production by source; abstraction and recharge; groundwater-body map). Right-of-reply "
-                                "status corrected to pending (maintainer, 5 Oct 2026). Verdict and confidence "
-                                "unchanged."),
+                                "status corrected to pending (maintainer, 5 Oct 2026). Retitled “More RO, less WSC "
+                                "groundwater” (was “Does more RO mean recovery?”), because no speaker claims aquifer "
+                                "recovery and the verdict rates WSC’s own figures (maintainer, 5 Oct 2026). Verdict and "
+                                "confidence unchanged."),
       ])]
 
 build_report(Report(
     number="009", out=str(ROOT / "claims" / "CC-009" / "report.pdf"),
-    kicker="Water, Malta", title_lines=["Does more RO", "mean recovery?"],
-    subtitle_lines=["Water supply, groundwater status and the", "new Għar Lapsi tender"],
+    kicker="Water, Malta", title_lines=["More RO, less", "WSC groundwater"],
+    subtitle_lines=["What the Water Services Corporation’s figures show,", "and what they don’t"],
     quote_lines=["“70.7% ... from the four Reverse Osmosis plants”"],
     attribution="Water Services Corporation, Annual Report 2025",
     context="Malta potable supply · 2025 production · August 2026 tender",
@@ -309,6 +311,6 @@ build_report(Report(
                   "Status: draft for right of reply (WSC; Energy and Water Agency)",
                   "Prepared from WSC, Eurostat, EEA and ERA sources and peer-reviewed studies.",
                   "Repository: github.com/leandergrech/Mizien"],
-    running_head="Reverse osmosis and groundwater", version="1.2", date="5 October 2026",
-    pdf_title="Miżien Claim Check 009 – Does more RO mean recovery?",
+    running_head="More RO, less WSC groundwater", version="1.2", date="5 October 2026",
+    pdf_title="Miżien Claim Check 009 – More RO, less WSC groundwater",
     pdf_subject="WSC reverse-osmosis production, groundwater status and Għar Lapsi tender", story=S))

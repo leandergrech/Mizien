@@ -10,8 +10,8 @@ from mizien_report import Flyer, build_flyer, flyer_png, GREEN, ORANGE, RED, BLU
 OUT = ROOT / "claims" / "CC-009"
 build_flyer(Flyer(
     number="009", out=str(OUT / "flyer.pdf"), kicker="Water, Malta",
-    title_lines=["Does more RO", "mean recovery?"],
-    subtitle="Reverse-osmosis supply, groundwater status and the Għar Lapsi tender",
+    title_lines=["More RO, less", "WSC groundwater"],
+    subtitle="What the Water Services Corporation’s figures show, and what they don’t",
     quote_lines=["“70.7% ... from the four Reverse Osmosis plants”"],
     attribution="Water Services Corporation, Annual Report 2025",
     context="WSC production, 2022–2025 · Plant B tender, August 2026",
@@ -30,5 +30,5 @@ build_flyer(Flyer(
           "Reconcile WSC's 11.4% narrative with its 11.86% chart-derived decline.",
           "Report Plant B's actual output and its effect on groundwater production."],
     footer="Version 1.2  ·  5 October 2026  ·  Draft pending right of reply (WSC; Energy and Water Agency)",
-    pdf_title="Claim Check 009 – Does more RO mean recovery?"))
+    pdf_title="Claim Check 009 – More RO, less WSC groundwater"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
