@@ -281,7 +281,7 @@ S += [Spacer(1, 4 * mm),
 # ================================================================== 7
 S += [Spacer(1, 6 * mm), SectionHeading(7, "Verdict and requests for evidence"),
       verdict_box("Not substantiated", "Separation is up, but only 16.7% of municipal waste was recycled in 2024 "
-                  "(target 55% by 2025) and 79% of treated waste was landfilled. Confidence: moderate."),
+                  "(target 55% by 2025) and 79% of treated waste was landfilled. Confidence: high."),
       Spacer(1, 4 * mm)]
 S.append(P("<b>Why.</b> (1) Separate collection is rising and the recycling rate has improved from a very low base, "
            "faster than in most EU states, so “progress in waste separation” is supported. (2) The release presents "
@@ -291,7 +291,8 @@ S.append(P("<b>Why.</b> (1) Separate collection is rising and the recycling rate
            "conclusion. (3) The 412 million kg figure cannot be reconciled with published statistics. We chose "
            "<i>Not substantiated</i> rather than <i>Misleading</i> because the release is framed around separation, "
            "where its direction is right, and because the ministry may hold data that explain the 412 figure. "
-           "Confidence stays moderate for the same reason."))
+           "Confidence is high because three Commission assessments and Eurostat agree on the outcome; the "
+           "unexplained 412 figure is a caveat, not a gap in the finding."))
 S.append(P("<b>What this verdict does not say.</b> It does not say the figures are invented, that separation measures "
            "were wrong, or that anyone acted in bad faith. A checkable statement would read: <i>“Separate "
            "collection rose to X t; after sorting, Y t entered recycling, raising the recycling rate to Z%. We expect "
@@ -373,7 +374,9 @@ S += revision_log([("1.0", "2 Oct 2026", "First issue. Draft pending right of re
                                          "read directly (second-hand marker removed); its 2025 review [6] read in full "
                                          "(postponement renounced; biowaste reported as landfilled). New Figure 3 "
                                          "(EU-27); verified fairness points (+7.6 points, 4th of 20; packaging and "
-                                         "deposit scheme); new Q4. Verdict and confidence unchanged.")])
+                                         "deposit scheme); new Q4. Maintainer decision (5 Oct 2026): confidence raised from "
+                                         "moderate to high, because three Commission documents and Eurostat now agree. "
+                                         "Verdict unchanged.")])
 
 build_report(Report(
     number="004", out=str(FIG / "report.pdf"), kicker="Statistics and EU law",
