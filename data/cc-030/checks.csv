@@ -1,0 +1,28 @@
+check,value,unit,source,note
+"Scope 1 + Scope 2 (location) + business travel, 2025",5444.0,t CO2,MIA Sustainability Report 2025,813 + 4582 + 49
+Same with market-based Scope 2,5555.0,t CO2,MIA Sustainability Report 2025,
+Credits purchased vs location-based sum,6,t CO2,MIA Sustainability Report 2025,difference; 0.1% of the credits
+"Credits purchased vs location-based sum, relative",0.11,%,MIA Sustainability Report 2025,
+"Scope 1 + 2 (location), 2025",5395.0,t CO2,MIA Sustainability Report 2025,
+"Scope 1 + 2 (location), 2015 base year",6949.0,t CO2,MIA Sustainability Report 2025,
+"Change in Scope 1 + 2, 2015 to 2025",-22,%,MIA Sustainability Report 2025,company target: -65% by 2030
+"Change in Scope 1 + 2, 2024 to 2025",8.4,%,MIA Sustainability Report 2025,
+Total reported footprint 2025 (Scope 1 + 2 + 3),738308,t CO2,MIA Sustainability Report 2025,
+Share of reported footprint that is Scope 3,99.3,%,MIA Sustainability Report 2025,
+Share of reported footprint covered by the credits,0.74,%,MIA Sustainability Report 2025,
+Scope 1 + 2 + business travel as a share of the credits bought,99.9,%,MIA Sustainability Report 2025,
+"Aircraft use of sold products, share of Scope 3",91.8,%,MIA Sustainability Report 2025,
+Scope 3 jump 2024 to 2025,622,%,MIA Sustainability Report 2025,method change: landing/take-off cycle to full flight; not a real 7-fold rise
+Programme avoided CO2 vs Scope 1 + 2 2025,18.5,%,press release; MIA Sustainability Report 2025,
+Programme avoided CO2 vs Scope 3 2025,0.14,%,press release; MIA Sustainability Report 2025,
+Programme avoided CO2 vs aircraft emissions 2025,0.15,%,press release; MIA Sustainability Report 2025,
+Programme avoided CO2 vs credits purchased,18.3,%,press release; MIA Sustainability Report 2025,
+EU grant share of programme cost,43.2,%,press release,
+Cost per tonne avoided per year (EUR),12500,EUR,press release,"gross; over 10 years ~EUR 1,250 / t"
+Turnarounds a year (movements / 2),32735,turnarounds,second-hand movements,"65,470 / 2"
+Avoided CO2 per turnaround if spread over every turnaround,30.5,kg CO2,calculated,30.5 kg; not every turnaround will use a hatch pit
+"GPU-hours a year needed to avoid 1,000 t at 40 kg CO2 per GPU-hour",25000,hours,calculated,"46 min per turnaround if all turnarounds; kg/h is an assumption, not a sourced figure"
+"GPU-hours a year needed to avoid 1,000 t at 60 kg CO2 per GPU-hour",16667,hours,calculated,"31 min per turnaround if all turnarounds; kg/h is an assumption, not a sourced figure"
+"GPU-hours a year needed to avoid 1,000 t at 90 kg CO2 per GPU-hour",11111,hours,calculated,"20 min per turnaround if all turnarounds; kg/h is an assumption, not a sourced figure"
+Scope 2 grid factor (Enemalta residual mix),0.389,kg CO2/kWh,MIA Sustainability Report 2025,electricity supplied to aircraft would add emissions at about this rate
+"Intensity Scope 1 + 2 per passenger, 2025",0.536,kg CO2/pax,MIA Sustainability Report 2025,company reports 0.54

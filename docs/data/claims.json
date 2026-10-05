@@ -1163,7 +1163,7 @@
       "category": "Transport",
       "claim": "Lead: past government studies found the Malta-Gozo tunnel would only be economically viable if car trips between the islands roughly tripled. The project was shelved in 2022; check whether it, or a fixed link, has been revived with new claims.",
       "counter": "Induced demand: a link designed to triple car trips works against transport-emission targets (see CC-003).",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [
         "Promise-without-baseline"
@@ -1428,7 +1428,7 @@
       "category": "Climate & Energy",
       "claim": "Energy Minister Miriam Dalli and PM Robert Abela (July 2024): the widespread power cuts were caused by extreme heat and record demand straining the distribution network, not by a lack of generation capacity; EUR 161 million had been invested since 2022.",
       "counter": "Peak medium-voltage demand rose from 663 MW (Jul 2023) to 741 MW (Jul 2024) as reported.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Electricity & grid",
@@ -1519,9 +1519,10 @@
       "title": "Carbon-neutral airport",
       "category": "Climate & Energy",
       "claim": "Malta International Airport: it has reached carbon neutrality (ACA Level 3+) and its EUR 12.5m airfield electrification will avoid 1,000 tonnes of CO2 a year.",
-      "counter": "Level 3+ relies on carbon credits for residual airport emissions and excludes flights; passengers passed 10 million in 2025.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Level 3+ covers Scope 1, Scope 2 and business travel only, so 99.3% of the reported 2025 footprint (738,308 t, mostly aircraft) is outside the neutral boundary; credits cover 0.74% of it. Scope 1 + 2 is 22% below 2015 and rose 8% in 2025 (company target -65% by 2030). The avoided tonnes fall in Scope 3, and the release gives no method, baseline or grid-emissions treatment, so gross or net is unknown. Padhra (2018) shows the saving depends on what is replaced.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Emissions & targets",
       "location": {
@@ -1531,17 +1532,52 @@
         "scope": "site",
         "icon": "pin"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Malta International Airport plc",
       "bodies": [
         "malta-airport"
       ],
+      "subclaims": [
+        {
+          "id": "CC-030A",
+          "text": "MIA reached carbon neutrality (ACA Level 3+) in 2025",
+          "finding": "5,444 t in scope against 5,450 t of credits; Scope 1–2 limited assurance by PwC [2]. ACA directory and registries not checked.",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-030B",
+          "text": "A €12.5 million airfield electrification programme",
+          "finding": "Described in the release with 35 hatch pits, 20 charging points, five substations; 43% EU-funded [1].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-030C",
+          "text": "It will avoid an average of 1,000 t CO₂ a year",
+          "finding": "Plausible size (about 30 kg per turnaround); method, baseline and grid emissions unpublished; completion 2028.",
+          "rating": "Not yet testable",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-030D",
+          "text": "Scope of ‘neutral’",
+          "finding": "Scope 3 is 99.3% of the reported footprint; Level 3+ does not cover it [2, 4].",
+          "rating": "Needs context",
+          "tone": "amber"
+        }
+      ],
       "date": "2026-05-25",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "Malta International Airport is implementing a €12.5 million Airfield Electrification Programme, which is set to avoid the emission of an average of 1,000 tonnes of carbon dioxide annually.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-030/report.pdf",
+        "flyer_pdf": "claim-files/CC-030/flyer.pdf",
+        "flyer_png": "claim-files/CC-030/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-030/claim.yml"
     },
     {
