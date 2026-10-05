@@ -65,8 +65,14 @@ outputs:
   flyer_png: flyer.png
 version: '1.0'
 last_reviewed: '2026-10-05'
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
-             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-020A
     text: "Only two meaningful non-conformities in the transposition"
     finding: "Per the study’s table [1]; legal comparison not repeated."
@@ -87,12 +93,6 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "Second-hand via ERA 2023c; not traced; EU28 source unknown."
     rating: "Not verified"
     tone: grey
-location:
-  place: Auberge de Castille (Office of the Prime Minister), Valletta
-  lat: 35.8959
-  lon: 14.51136
-  scope: institution
-  icon: castille
 thumbnail:
   figure: 31.3%
   caption: of people report street or neighbour noise (EU 18.1%), highest in the EU

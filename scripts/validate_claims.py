@@ -92,6 +92,7 @@ def check(path: pathlib.Path) -> list:
     errs += check_timeline(d.get("timeline"))
     errs += check_history(d)
     errs += check_subclaims(d)
+    errs += check_subclaims_match_report(d)
     errs += check_pledge(d)
     return errs
 
@@ -116,6 +117,16 @@ def check_subclaims(d) -> list:
         if x.get("tone") is not None and x["tone"] not in TONES:
             errs.append(f"sub-claim {x.get('id')}: tone must be one of {', '.join(sorted(TONES))}")
     return errs
+
+
+def check_subclaims_match_report(d) -> list:
+    """A claim's subclaims must match its report's sub-claim table (scripts/subclaims.py keeps them in step)."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import subclaims
+    report = subclaims.from_report(d["id"])
+    if report is None or subclaims.same(d.get("subclaims"), report):
+        return []
+    return [f"subclaims differ from the report's sub-claim table: run python scripts/subclaims.py {d['id']}"]
 
 
 def load_pledge_labels() -> list:

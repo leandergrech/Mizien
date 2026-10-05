@@ -70,8 +70,14 @@ outputs:
   flyer_png: flyer.png
 version: '1.0'
 last_reviewed: '2026-10-05'
+location:
+  place: Victoria, Gozo
+  lat: 36.04289
+  lon: 14.23985
+  scope: site
+  icon: pin
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
-             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-107A
     text: "A clear and realistic plan for a Net-Zero Gozo by 2040"
     said_by: "PN [1]"
@@ -90,12 +96,6 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "Not tested."
     rating: "Not tested"
     tone: grey
-location:
-  place: Victoria, Gozo
-  lat: 36.04289
-  lon: 14.23985
-  scope: site
-  icon: pin
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 4.9–6.3×
   caption: Gozo's area needed as forest to offset its emissions

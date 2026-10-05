@@ -71,8 +71,14 @@ outputs:
   flyer_png: flyer.png
 version: '1.0'
 last_reviewed: '2026-10-02'
+location:
+  place: Magħtab waste complex
+  lat: 35.93923
+  lon: 14.44073
+  scope: site
+  icon: landfill
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
-             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-004A
     text: "Mixed waste down over 30%, to 95.5 million kg from about 141 million kg"
     said_by: "Ministry [1]"
@@ -103,12 +109,6 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "Outcome measures: 16.7% recycled, 79% landfilled; 2020 target missed, 2025 on course to be missed [3, 6]. The release does not report them."
     rating: "Not substantiated"
     tone: orange
-location:
-  place: Magħtab waste complex
-  lat: 35.93923
-  lon: 14.44073
-  scope: site
-  icon: landfill
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 16.7%
   caption: of municipal waste actually recycled in 2024 (target 55%)

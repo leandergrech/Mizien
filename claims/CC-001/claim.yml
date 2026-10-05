@@ -48,8 +48,14 @@ outputs:
   flyer_png: flyer.png
 version: '1.1'
 last_reviewed: '2026-10-02'
+location:
+  place: Upper Barrakka Gardens, Valletta
+  lat: 35.89493
+  lon: 14.51194
+  scope: site
+  icon: barrakka
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
-             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-001A
     text: "“Given its temporary nature, it will not cause damage to the tree”"
     said_by: "Ambjent Malta (Times of Malta)"
@@ -86,12 +92,6 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "The Oct 2026 article reports soil removed from at least one planter, so “untouched” can only refer to trunks and crowns. Root condition is not addressed."
     rating: "Unverified / ambiguous"
     tone: grey
-location:
-  place: Upper Barrakka Gardens, Valletta
-  lat: 35.89493
-  lon: 14.51194
-  scope: site
-  icon: barrakka
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 0 studies
   caption: of short-term concrete over tree roots

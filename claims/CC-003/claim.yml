@@ -69,8 +69,14 @@ outputs:
   flyer_png: flyer.png
 version: '1.1'
 last_reviewed: '2026-10-05'
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
-             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-003A
     text: "Emissions per capita have fallen 44% since 2005"
     said_by: "CAA [1]"
@@ -107,12 +113,6 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "A stated aim, not a result. Scope (total or effort-sharing) not given. Same figure appears in the 2026 Labour manifesto (see CC-011)."
     rating: "Unclear scope"
     tone: grey
-location:
-  place: Auberge de Castille (Office of the Prime Minister), Valletta
-  lat: 35.8959
-  lon: 14.51136
-  scope: institution
-  icon: castille
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: −44%
   caption: emissions per person since 2005, as claimed

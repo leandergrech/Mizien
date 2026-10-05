@@ -79,8 +79,14 @@ outputs:
   flyer_png: flyer.png
 version: '1.1'
 last_reviewed: '2026-10-05'
+location:
+  place: Valletta Waterfront cruise terminal, Floriana
+  lat: 35.88994
+  lon: 14.50753
+  scope: site
+  icon: waterfront
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
-             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-016A
     text: "Shore power cuts a connected ship’s emissions at berth by about 90%"
     finding: "Infrastructure Malta’s per-liner figures: NO2 −93%, PM −92.6%, SO2 −99.6%, CO2 −39.6% [10, 11]; consistent with research [7, 9]. Underlying study not cited."
@@ -101,12 +107,6 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "17 points and five liners consistent [1–3]. Cost figures vary by phase and date: EUR 49.9m for the whole project and EUR 37m for phase 1 (2020) [10, 11]; EUR 33m at the 2024 launch [2]."
     rating: "Figures vary"
     tone: amber
-location:
-  place: Valletta Waterfront cruise terminal, Floriana
-  lat: 35.88994
-  lon: 14.50753
-  scope: site
-  icon: waterfront
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 9%
   caption: of cruise berth time plugged in, Jul 2024 – Jul 2025

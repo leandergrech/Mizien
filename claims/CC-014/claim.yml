@@ -75,8 +75,14 @@ outputs:
   flyer_png: flyer.png
 version: '1.1'
 last_reviewed: '2026-10-05'
+location:
+  place: Planning Authority, St Francis Ravelin, Floriana
+  lat: 35.89
+  lon: 14.50314
+  scope: institution
+  icon: ravelin
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
-             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-014A
     text: "“We had times when we issued over 1,000 enforcement notices per year”"
     finding: "1,369 (2001), 1,030 (2002), 1,061 (2004), 1,077 (2005), 1,120 (2009) [2–6]."
@@ -102,12 +108,6 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "No annual series found."
     rating: "Not tested"
     tone: grey
-location:
-  place: Planning Authority, St Francis Ravelin, Floriana
-  lat: 35.89
-  lon: 14.50314
-  scope: institution
-  icon: ravelin
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: '187'
   caption: enforcement notices a year, 2020–24 (1,033 in 2001–09)

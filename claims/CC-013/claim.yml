@@ -60,8 +60,14 @@ outputs:
   flyer_png: flyer.png
 version: '1.1'
 last_reviewed: '2026-10-05'
+location:
+  place: Planning Authority, St Francis Ravelin, Floriana
+  lat: 35.89
+  lon: 14.50314
+  scope: institution
+  icon: ravelin
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
-             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-013A
     text: "Price is a supply-and-demand issue; more permits help keep prices in check"
     finding: "Supported in direction by peer-reviewed studies [5–7]; effect size uncertain and possibly small for affordability [8]."
@@ -82,12 +88,6 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "87,814 approved 2015–2024 [2]."
     rating: "Close"
     tone: green
-location:
-  place: Planning Authority, St Francis Ravelin, Floriana
-  lat: 35.89
-  lon: 14.50314
-  scope: institution
-  icon: ravelin
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: +34%
   caption: real house prices, 2015–2025 (EU +25%)
