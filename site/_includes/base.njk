@@ -17,6 +17,10 @@
 {%- if pager and pager.next %}
 <link rel="next" href="{{ pager.next.path }}">
 {%- endif %}
+<link rel="alternate" type="application/atom+xml" title="{{ site.name }}: updates to the checks" href="/feed.xml">
+{%- if feedUrl %}
+<link rel="alternate" type="application/atom+xml" title="{{ feedTitle }}" href="{{ feedUrl }}">
+{%- endif %}
 <meta name="theme-color" content="#0e2a1f">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any">
 <link rel="stylesheet" href="/assets/site.css">

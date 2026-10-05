@@ -102,3 +102,8 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 16.7%
   caption: of municipal waste actually recycled in 2024 (target 55%)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-02
+    step: version
+    version: "1.0"
+    note: "First issue. Draft pending right of reply from the Ministry for the Environment, Energy and Public Cleanliness and WasteServ."

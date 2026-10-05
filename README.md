@@ -152,7 +152,8 @@ archive/             manifest.csv of archived claim sources (links and hashes)
 site/                the website: Eleventy templates, the map homepage (site/index.njk, site/assets/map/map.js)
 docs/                site data and claim files copied into the build (being retired)
 scripts/             validate_claims.py, build_site_data.py, archive_sources.py, bodies.py and connections.py
-                     (matching speakers to the register; links, indirect connections and linked bodies)
+                     (matching speakers to the register; links, indirect connections and linked bodies),
+                     timeline.py (each claim's dated events) and patterns.py (patterns by kind of body)
 tools/               mizien_report.py (shared report and flyer design), report_html.py (web version of each report)
                      and per-claim generators
 PROJECT_STATE.md     working notes: conventions, design tokens, status and next steps

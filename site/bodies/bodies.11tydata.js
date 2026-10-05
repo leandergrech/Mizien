@@ -12,6 +12,8 @@ export default {
       const who = b.kind === "person" ? `${b.name}${b.role ? `, ${b.role}` : ""}` : b.name;
       return `${n} claim${n === 1 ? "" : "s"} by ${who} on Miżien, ${checked} with a verdict: what was said, the topics, and the bodies linked to it. A record of what was checked, not a score.`;
     },
+    feedUrl: (d) => (d.body ? `/bodies/${d.body.id}/feed.xml` : null),
+    feedTitle: (d) => (d.body ? `Miżien: claims by ${d.body.name}` : null),
     noindex: (d) => !d.site.index_drafts && Boolean(d.body) && hasDraftVerdict(d.body.claims),
   },
 };

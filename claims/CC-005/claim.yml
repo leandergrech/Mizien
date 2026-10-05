@@ -79,3 +79,13 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 92%
   caption: of bathing sites rated excellent in 2023 (80 of 87)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-02
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply not sought, at the maintainer’s direction."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections: (1) the ‘what would move the verdict’ boxes were reversed. ‘Up’ listed conditions that would lower the verdict, and ‘down’ cited a newer season at 92% or more. Now: up, none (Supported is the top of the scale; naming the 2023 season would remove the date caveat); down, a different 2023 count, a later intended season or an incompatible denominator. (2) Balluta Bay warning start: ‘31 May 2024’ → ‘late May 2024’. Our bibliography gave 21 May, and news reports date the two sites’ warnings ten days apart; the primary report could not be re-opened to settle it. (3) 2023 sample count: ‘—’ → 2,021 (EEA WISE dataset). (4) Page footer: ‘pending right of reply’ → ‘right of reply not sought’, matching the maintainer’s decision. Verdict and confidence unchanged."

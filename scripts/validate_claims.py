@@ -89,6 +89,71 @@ def check(path: pathlib.Path) -> list:
                 errs.append("location scope must be site, institution or national")
             if loc.get("icon") is not None and loc.get("icon") not in PLACE_ICONS:
                 errs.append(f"location icon {loc.get('icon')} unknown (use one of {sorted(PLACE_ICONS)})")
+    errs += check_timeline(d.get("timeline"))
+    errs += check_history(d)
+    return errs
+
+
+def check_history(d) -> list:
+    """`history:` in claim.yml is the research log: the date each step was done (see scripts/timeline.py)."""
+    entries = d.get("history")
+    if entries is None:
+        return [f"version {d['version']} has no research log: add history entries (date, step: version, version, note)"] if d.get("version") else []
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import timeline
+    if not isinstance(entries, list):
+        return ["history must be a list of research steps (date, step, ...)"]
+    errs, versions, last = [], [], ""
+    for i, e in enumerate(entries, 1):
+        if not isinstance(e, dict):
+            errs.append(f"history entry {i} must have date and step")
+            continue
+        when = timeline.parse_date(e.get("date"))
+        if not when or when["precision"] != "day":
+            errs.append(f"history entry {i}: date '{e.get('date')}' must be a full date (2026-10-02), the day the research was done")
+        elif when["iso"] < last:
+            errs.append(f"history entry {i}: dates must be in order (oldest first)")
+        else:
+            last = when["iso"]
+        step = e.get("step")
+        if step not in timeline.HISTORY_STEPS:
+            errs.append(f"history entry {i}: step must be one of {', '.join(timeline.HISTORY_STEPS)}")
+        if step == "version":
+            if not e.get("version"):
+                errs.append(f"history entry {i}: a version step needs its version number")
+            versions.append(str(e.get("version")))
+        if "correction" in e and not isinstance(e["correction"], bool):
+            errs.append(f"history entry {i}: correction must be true or false")
+        if e.get("correction") and step != "version":
+            errs.append(f"history entry {i}: correction: true marks a version that corrects errors; use step: correction otherwise")
+        if (step in ("correction", "clarification") or e.get("correction")) and not str(e.get("note") or "").strip():
+            errs.append(f"history entry {i}: a {step} needs a note saying what was wrong and what changed")
+    if d.get("version") and str(d["version"]) not in versions:
+        errs.append(f"version {d['version']} has no history entry: add one with the date of the research and what changed")
+    return errs
+
+
+def check_timeline(entries) -> list:
+    """Optional `timeline:` events in claim.yml: later statements, new data, replies or corrections (see scripts/timeline.py)."""
+    if entries is None:
+        return []
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import timeline
+    if not isinstance(entries, list):
+        return ["timeline must be a list of events (date, kind, text, optional url)"]
+    errs = []
+    for i, e in enumerate(entries, 1):
+        if not isinstance(e, dict):
+            errs.append(f"timeline event {i} must have date, kind and text")
+            continue
+        if not timeline.parse_date(e.get("date")):
+            errs.append(f"timeline event {i}: date '{e.get('date')}' not understood (use 2026-10-01, 2026-10 or 2026)")
+        if e.get("kind") not in timeline.CURATED_KINDS:
+            errs.append(f"timeline event {i}: kind must be one of {', '.join(timeline.CURATED_KINDS)}")
+        if not str(e.get("text") or "").strip():
+            errs.append(f"timeline event {i}: text is missing")
+        if e.get("url") and not str(e["url"]).startswith(("http://", "https://")):
+            errs.append(f"timeline event {i}: url must start with http:// or https://")
     return errs
 
 
@@ -150,6 +215,8 @@ def check_register(files) -> int:
     ids = [r["ID"] for r in csv.DictReader(open(ROOT / "data" / "bodies.csv", newline="", encoding="utf-8"))]
     errs += [f"register: {i} is listed twice" for i in sorted({i for i in ids if ids.count(i) > 1})]
     for b in reg.values():
+        if b["id"] in bodies.RESERVED_IDS:
+            errs.append(f"register: ID '{b['id']}' is reserved for another page under /bodies/")
         if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", b["id"]):
             errs.append(f"register: ID '{b['id']}' must be lower-case words joined by hyphens")
         if b["type"] not in bodies.TYPES:

@@ -1,0 +1,135 @@
+---
+layout: base.njk
+title: Patterns by kind of body
+description: Which pattern tags, verdicts and topics turn up in claims by government, agencies, regulators, parties, NGOs, business, media and EU bodies, and what each side said, when, on each issue. Counts of what was checked, not a rating.
+permalink: /bodies/patterns/
+---
+{%- import "macros.njk" as m -%}
+{%- set K = mizien.by_kind -%}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/bodies/">Who said it</a></li><li aria-current="page">Patterns by kind of body</li></ol>
+</nav>
+
+<article class="page prose-page patterns-page">
+  <header class="page-head">
+    <p class="kicker">Who said it</p>
+    <h1>Patterns by kind of body</h1>
+    <p class="lead">Which ways of presenting figures, which verdicts and which topics turn up in claims by each kind of
+      body, and what each side said, and when, on the same issue. Grouped by kind of body, never by person or party.</p>
+  </header>
+
+  <aside class="notice" aria-label="How to read these numbers">
+    <p><strong>What these numbers show.</strong> They count the claims Miżien has picked up and checked so far. They
+      do not show how accurate any kind of body is. Claims are picked because they are public and can be checked, not
+      as a fair sample of what anyone says, so a kind of body with more claims here has simply been checked more
+      often. Pattern tags are provisional until a report is finished, and the numbers are small. A claim made jointly
+      by bodies of two kinds counts once for each. Nothing here rates any body, party or person.</p>
+  </aside>
+
+  <nav class="toc" aria-label="On this page">
+    <ol>
+      <li><a href="#kinds">The claims so far</a></li>
+      <li><a href="#tags">Pattern tags</a></li>
+      <li><a href="#verdicts">Verdicts so far</a></li>
+      <li><a href="#topics">Topics</a></li>
+      <li><a href="#issues">Issues over time</a></li>
+    </ol>
+  </nav>
+
+  <section aria-labelledby="kinds">
+    <h2 id="kinds">The claims so far</h2>
+    <div class="table-scroll">
+    <table class="claims kind-table">
+      <thead><tr><th scope="col">Kind of body</th><th scope="col">Claims</th><th scope="col">With a verdict</th><th scope="col">With a pattern tag</th></tr></thead>
+      <tbody>
+      {%- for k in K.kinds %}
+        <tr><th scope="row"><span class="kind-swatch" style="--k: {{ k.colour }}"></span>{{ k.label }}</th><td>{{ k.claims }}</td><td>{{ k.checked }}</td><td>{{ k.tagged }}</td></tr>
+      {%- endfor %}
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="tags">
+    <h2 id="tags">Pattern tags</h2>
+    <p>A pattern tag names a recurring way a claim can mislead (<a href="/methodology/connections/#patterns">what each
+      tag means</a>). Each cell lists the claims with that tag made by that kind of body. A sentence below each tag
+      says where it turns up, once at least {{ K.min_for_observation }} claims carry it.</p>
+    <div class="table-scroll">
+    <table class="claims matrix">
+      <thead><tr><th scope="col">Kind of body</th>{% for r in K.patterns %}<th scope="col">{{ r.name }}</th>{% endfor %}</tr></thead>
+      <tbody>
+      {%- for k in K.kinds %}
+        <tr><th scope="row">{{ k.label }}</th>
+          {%- for r in K.patterns %}{% set cell = r.cells | findBy("type", k.id) %}
+          <td>{% for x in cell.claims %}{{ m.claim(x, true) }}{% if not loop.last %} {% endif %}{% else %}<span class="none">–</span>{% endfor %}</td>
+          {%- endfor %}</tr>
+      {%- endfor %}
+      </tbody>
+    </table>
+    </div>
+    <dl class="pattern-list">
+      {%- for o in K.observations %}
+      <div><dt>{{ o.tag }} <span class="count">{{ o.n }}</span></dt><dd>{{ o.text }}</dd></div>
+      {%- endfor %}
+    </dl>
+  </section>
+
+  <section aria-labelledby="verdicts">
+    <h2 id="verdicts">Verdicts so far</h2>
+    <p>How many claims by each kind of body have each verdict. Most claims are not checked yet, and every verdict is
+      about one statement as worded on its date.</p>
+    <div class="table-scroll">
+    <table class="claims matrix counts">
+      <thead><tr><th scope="col">Kind of body</th>{% for r in K.verdicts %}{% set v = mizien.verdicts | findBy("name", r.name) %}<th scope="col"><span class="badge v-{{ v.slug if v else 'none' }}">{{ r.name }}</span></th>{% endfor %}</tr></thead>
+      <tbody>
+      {%- for k in K.kinds %}
+        <tr><th scope="row">{{ k.label }}</th>
+          {%- for r in K.verdicts %}{% set cell = r.cells | findBy("type", k.id) %}
+          <td>{% if cell.claims.length %}<details class="cell"><summary>{{ cell.claims.length }}</summary>{% for x in cell.claims %}{{ m.claim(x, true) }} {% endfor %}</details>{% else %}<span class="none">–</span>{% endif %}</td>
+          {%- endfor %}</tr>
+      {%- endfor %}
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="topics">
+    <h2 id="topics">Topics</h2>
+    <p>What each kind of body's claims are about.</p>
+    <dl class="facts kind-topics">
+      {%- for k in K.kinds %}
+      <div><dt>{{ k.label }}</dt><dd>{% for r in K.topics %}{% set cell = r.cells | findBy("type", k.id) %}{% if cell.claims.length %}<span class="tally">{{ r.name }} <b>{{ cell.claims.length }}</b></span>{% endif %}{% endfor %}</dd></div>
+      {%- endfor %}
+    </dl>
+  </section>
+
+  <section aria-labelledby="issues">
+    <h2 id="issues">Issues over time</h2>
+    <p>Each row is a theme: claims that share a cause, a mechanism, a target or a way of presenting figures. Each dot
+      is a claim, placed on the date it was made and coloured by the kind of body that made it, so you can see who
+      spoke on an issue, and when. The verdict of each claim is in its summary (rest the pointer on a dot) and on its
+      page.</p>
+    <ul class="kind-legend" aria-label="Colours">
+      {%- for k in K.kinds %}<li><span class="kind-swatch" style="--k: {{ k.colour }}"></span>{{ k.label }}</li>{% endfor %}
+    </ul>
+    {%- set T = K.chart %}{% set colourBy = "kind" %}
+    {%- if T.axis %}
+    {%- include "timeline-chart.njk" %}
+    {%- endif %}
+    {%- for i in K.issues %}
+    <div class="theme-card" style="--t: {{ i.color }}">
+      <p class="theme-name">{{ i.name }} <span class="theme-kind">{{ i.strength }}</span></p>
+      <p class="theme-desc">{{ i.description }}</p>
+      <ol class="thread">
+        {%- for x in i.items | sort(false, false, "mid") %}{% set kd = mizien.body_types | findBy("id", x.type) %}
+        <li><span class="tl-date">{{ x.date }}</span> {{ m.claim(x) }} <span class="small">{{ kd.label if kd else "" }}</span></li>
+        {%- endfor %}
+        {%- for x in i.undated %}{% set kd = mizien.body_types | findBy("id", x.type) %}
+        <li><span class="tl-date">undated</span> {{ m.claim(x) }} <span class="small">{{ kd.label if kd else "" }}</span></li>
+        {%- endfor %}
+      </ol>
+    </div>
+    {%- endfor %}
+  </section>
+</article>

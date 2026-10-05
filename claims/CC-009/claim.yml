@@ -132,3 +132,13 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 70.7%
   caption: of WSC water from reverse osmosis in 2025
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"
+    note: "First issue."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections: (1) Groundwater-body status: the table gave the plan's counts alone (quantitative ‘2 poor’, chemical ‘14 poor’). It now shows the plan alongside Malta's 3rd-cycle EU reporting to the EEA (4 poor quantitatively, 15 poor chemically) and states the difference; TL;DR, verdict text and flyer card updated to match. (2) Cover verdict line ‘aquifer status remains a separate question’ and flyer ‘aquifer status remains poor’ → both ‘aquifers last assessed as poor’. (3) ‘Lowest in a decade’ in the TL;DR and section 2 is now attributed to WSC. (4) Reference [6] is now cited in section 2; reference [7] added for the EU reporting. Verdict and confidence unchanged."

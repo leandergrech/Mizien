@@ -64,3 +64,8 @@ location:
   lon: 14.50907
   scope: national
   icon: citygate
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply not sent: the claim reports a Eurostat estimate; any reply is for the maintainer to decide."

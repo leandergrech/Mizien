@@ -100,3 +100,8 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 99.3%
   caption: Quail quota as a share of the legal benchmark
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.1"
+    note: "Report and flyer updated to version 1.1. The date of version 1.0 is not recorded in the report."

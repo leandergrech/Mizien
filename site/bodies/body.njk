@@ -64,6 +64,37 @@ permalink: "/bodies/{{ body.id }}/"
     </div>
   </section>
 
+  {%- set T = b.time %}
+  <section aria-labelledby="h-time">
+    <h2 id="h-time">Statements over time</h2>
+    <p>Each dot is one claim, placed on the date it was made and coloured by its verdict, with a row for each topic.
+      Where {{ "this person" if b.kind == "person" else "this body" }} returned to a topic, the claims are listed below
+      in date order, so you can see whether a position was repeated, changed or corrected. Read each check for the
+      detail: the dots are not a score.</p>
+    {%- if T.axis %}
+    {%- include "timeline-chart.njk" %}
+    {%- endif %}
+    {%- if T.threads.length %}
+    <h3>Topics {{ "they" if b.kind == "person" else "it" }} returned to</h3>
+    <ul class="threads">
+      {%- for th in T.threads %}
+      <li><span class="thread-topic">{{ th.topic }}</span>
+        <ol class="thread">{% for i in th.claims %}<li><span class="tl-date">{{ i.date }}</span> {{ m.claim(i) }}</li>{% endfor %}</ol></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+    {%- if T.undated.length %}
+    <p class="small">Not dated yet: {% for i in T.undated %}{{ m.claim(i, true) }}{% if not loop.last %}, {% endif %}{% endfor %}.</p>
+    {%- endif %}
+    <p class="feed-link">{% icon "feed" %}<a href="/bodies/{{ b.id }}/feed.xml">Follow these claims</a>
+      <span class="small">(an Atom feed of new claims, verdicts and report updates; paste the link into a feed reader)</span></p>
+    {%- if b.updates.length %}
+    <details class="updates"><summary>Latest updates ({{ b.updates.length }})</summary>
+      <ul>{% for u in b.updates | slice(0, 12) %}<li><span class="tl-date">{{ u.date }}</span> {{ m.claim(u.claim, true) }} {{ u.label }}{% if u.text %}: {{ u.text }}{% endif %}</li>{% endfor %}</ul>
+    </details>
+    {%- endif %}
+  </section>
+
   <section aria-labelledby="h-about">
     <h2 id="h-about">What the claims are about</h2>
     <dl class="facts body-facts">

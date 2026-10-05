@@ -96,3 +96,13 @@ last_reviewed: '2026-10-05'
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: ~60,000
   caption: trees reported by end-2025, of 100,000 pledged
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply not sought, at the maintainer's direction."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections: the pledge was framed as open until 2027; it now records that the legislature ended with the snap general election of 30 May 2026 [8] and that about 75% of the five-year period had passed by end-2025, against about 60% of the trees reported (the “2027 deadline” tile is replaced). Added Labour's own 2026 manifesto count, more than 57,000 trees for 2022–2025 [9], alongside the Minister's ~60,000. Updated the voucher scheme to 23,000 trees in vouchers issued by 13 May 2026 [10]; vouchers are not trees planted. Cover note shortened to fit; italics fixed. Verdict and confidence unchanged."
