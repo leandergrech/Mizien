@@ -17,13 +17,14 @@ build_flyer(Flyer(
     note="We checked every figure in the release.",
     verdict="Largely supported", verdict_right=["Accurate figures;", "the cost is left out."],
     cards=[("1st", GREEN, "Cheapest in purchasing power",
-            "14.35 PPS per 100 kWh, lowest of 27 EU countries (Eurostat)."),
+            "14.35 PPS per 100 kWh for a typical household (2,500–4,999 kWh): "
+            "lowest of 27 (Eurostat)."),
            ("3rd", GREEN, "Cheapest in euros",
             "EUR 0.130 per kWh in late 2024, as stated."),
            ("−0.2%", GREEN, "Stable since 2020",
             "The EU average rose 35% over the same period."),
            ("€1.0bn", RED, "Paid from public funds",
-            "IMF: energy subsidies 2022–2025 (electricity and fuel)."),
+            "IMF: energy subsidies 2022–2025, electricity and fuel together (2025 projected)."),
            ("7.6%", GREEN, "Can't keep home warm",
             "Below the EU's 8.8% (2025); bill arrears 4.5% vs 7.0%.")],
     fair="Low, stable prices protected households through the energy crisis. The release leaves out that taxpayers "
@@ -32,6 +33,6 @@ build_flyer(Flyer(
           "Spending share by income group.",
           "Plans for targeted support.",
           "Cost-recovery tariff estimate."],
-    footer="Version 1.0  ·  4 October 2026  ·  Public data only  ·  Right of reply: Energy Ministry (not yet sent)",
+    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Right of reply: Energy Ministry (not yet sent)",
     pdf_title="Claim Check 022 – The lowest electricity burden in the EU?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
