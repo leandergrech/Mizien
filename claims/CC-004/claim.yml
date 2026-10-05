@@ -80,6 +80,38 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 16.7%
   caption: of municipal waste actually recycled in 2024 (target 55%)
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+  - id: CC-004A
+    text: "Mixed waste down over 30%, to 95.5 million kg from about 141 million kg"
+    said_by: "Ministry [1]"
+    finding: "Arithmetic correct (−32%). No start year; not a published statistic. Direction consistent with Eurostat landfill data."
+    rating: "Unverifiable as stated"
+    tone: grey
+  - id: CC-004B
+    text: "Organic waste a record 30 million kg in 2025"
+    said_by: "Ministry [1]"
+    finding: "2025 data not yet published by NSO. 2024 NSO data show organic-bag collections rising."
+    rating: "Plausible"
+    tone: amber
+  - id: CC-004C
+    text: "About 412 million kg diverted from landfill over five years"
+    said_by: "Minister Dalli [1]"
+    finding: "Not reconcilable with Eurostat (271 kt recycled or recovered, 2020–24). Scope, years and method not stated."
+    rating: "Not substantiated"
+    tone: orange
+  - id: CC-004D
+    text: "Malta records strong progress in waste separation"
+    said_by: "Ministry [1]"
+    finding: "Separated collections and the recycling rate have risen. “Strong” is relative to Malta’s past, not to its targets."
+    rating: "Partly supported"
+    tone: amber
+  - id: CC-004E
+    text: "The Long-Term Waste Management Plan is working; real and measurable outcomes"
+    said_by: "Minister Dalli [1]"
+    finding: "Outcome measures: 16.7% recycled, 79% landfilled; 2020 target missed, 2025 on course to be missed [3, 6]. The release does not report them."
+    rating: "Not substantiated"
+    tone: orange
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-02
     step: version

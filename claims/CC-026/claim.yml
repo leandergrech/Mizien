@@ -64,6 +64,33 @@ location:
   lon: 14.50907
   scope: national
   icon: citygate
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+  - id: CC-026A
+    text: "Eurostat estimates Malta’s emissions rose 169.4% in 2015–2025"
+    finding: "Eurostat’s release says +169.4% [2]; recomputed from the database +169.7% after revision [3]."
+    rating: "Supported"
+    tone: green
+  - id: CC-026B
+    text: "This is the highest increase in the EU; only four rose"
+    finding: "Malta first, then Cyprus +10.7%, Lithuania, Romania; 23 fell [2][3]."
+    rating: "Supported"
+    tone: green
+  - id: CC-026C
+    text: "Eurostat counts Malta-registered aircraft wherever they fly; the UN counts emissions in Malta only"
+    finding: "Eurostat: residence principle, resident units [4]; inventory: territorial, international aviation a memo item [5]. “Registered” is the outlet’s wording; Eurostat speaks of the resident operator."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-026D
+    text: "Headline: “largest rise in greenhouse gas emissions” (read alone)"
+    finding: "True of the accounts; territorial emissions rose 1.6% (2015–2024). The body gives the context."
+    rating: "Needs context"
+    tone: amber
+  - id: CC-026E
+    text: "Central Bank of Malta: intensity declining and at historic lows"
+    finding: "Second-hand: we did not read the report ◆. Not tested."
+    rating: "Not tested"
+    tone: grey
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-05
     step: version

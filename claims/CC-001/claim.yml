@@ -57,6 +57,44 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 0 studies
   caption: of short-term concrete over tree roots
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+  - id: CC-001A
+    text: "“Given its temporary nature, it will not cause damage to the tree”"
+    said_by: "Ambjent Malta (Times of Malta)"
+    finding: "Plausible in direction, since sealing harm builds with time. But “temporary” has no stated duration, no tree-specific assessment is given, and the statement does not address the soil removal or root exposure the article reports."
+    rating: "Not substantiated"
+    tone: orange
+  - id: CC-001B
+    text: "Prolonged cover would be a concern: water, bark, nutrient transport, decay"
+    said_by: "Ambjent Malta"
+    finding: "Matches mechanisms in the literature (table below). Candid and accurate as far as it goes."
+    rating: "Consistent with research"
+    tone: green
+  - id: CC-001C
+    text: "Concrete directly on the roots has since been removed"
+    said_by: "Times of Malta / Ambjent"
+    finding: "The photo and caption show concrete cleared from directly around the trunk, leaving a mound of loose soil and stone. Root and bark condition after removal is not reported."
+    rating: "Partly verified"
+    tone: amber
+  - id: CC-001D
+    text: "Ambjent made every effort to save old trees"
+    said_by: "FWA (Times of Malta)"
+    finding: "No method statement, root-protection plan or arborist report seen."
+    rating: "Unverified"
+    tone: grey
+  - id: CC-001E
+    text: "Five treated planters, no tree has died or been removed"
+    said_by: "FWA (Newsbook)"
+    finding: "Death is a late, coarse signal; decline may take 3–5+ years. No dates, species or condition data (Figure 3)."
+    rating: "Weak evidence"
+    tone: amber
+  - id: CC-001F
+    text: "Earlier phase: membrane, mulch and pots; trunks and crowns untouched"
+    said_by: "FWA chairman (MaltaToday, c. Dec 2025)"
+    finding: "The Oct 2026 article reports soil removed from at least one planter, so “untouched” can only refer to trunks and crowns. Root condition is not addressed."
+    rating: "Unverified / ambiguous"
+    tone: grey
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-02
     step: version

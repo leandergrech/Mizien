@@ -74,6 +74,28 @@ location:
 thumbnail:
   figure: 31.3%
   caption: of people report street or neighbour noise (EU 18.1%), highest in the EU
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # tone is the colour of the report's rating chip: green, lime, amber, orange, red, maroon or grey
+  - id: CC-020A
+    text: "Only two meaningful non-conformities in the transposition"
+    finding: "Per the study’s table [1]; legal comparison not repeated."
+    rating: "Supported (study)"
+    tone: lime
+  - id: CC-020B
+    text: "No END infringement proceedings, 2015–2025"
+    finding: "Per the study [1]; register not searched."
+    rating: "Not checked"
+    tone: grey
+  - id: CC-020C
+    text: "Complaints concern sources outside the END"
+    finding: "Consistent with the Directive’s scope and with Eurostat’s all-source indicator [1, 2]."
+    rating: "Supported"
+    tone: green
+  - id: CC-020D
+    text: "21% vs 9% survey figure"
+    finding: "Second-hand via ERA 2023c; not traced; EU28 source unknown."
+    rating: "Not verified"
+    tone: grey
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-05
     step: version
