@@ -33,7 +33,7 @@ S.append(key_points([
     ("Fewer struggle than the EU average, but not the fewest.",
      "4.5% of people are in arrears on utility bills (EU 7.0%; 9th of 27) and 7.6% cannot keep the home adequately "
      "warm (EU 8.8%; 17th of 27)."),
-    ("Verdict: largely supported (high confidence).",
+    ("Verdict: largely supported (moderate confidence).",
      "The price comparison is accurate, and Malta’s burden is among the EU’s lowest on every measure we tried, but "
      "the lowest only on price. The cost of keeping prices low, borne by public finances, is left out."),
 ]))
@@ -213,13 +213,15 @@ S.append(std_table([
 
 S += [Spacer(1, 6 * mm), SectionHeading(7, "Verdict and requests for evidence"),
       verdict_box("Largely supported", "Every figure is accurate; the cost of keeping prices low is left out. "
-                  "Confidence: high."), Spacer(1, 4 * mm)]
+                  "Confidence: moderate."), Spacer(1, 4 * mm)]
 S.append(P("<b>Why.</b> The statistical claims match Eurostat exactly. The word “burden” and the minister’s conclusion "
            "rest on price alone. Measured against income, Malta’s burden is the second lowest in the EU, after "
            "Luxembourg, and the fifth lowest on households’ actual bills: among the lowest on every measure, but the "
            "lowest only on the price the release used. Fixed electricity and fuel prices are financed by public "
            "subsidies the IMF puts at about EUR 1 billion over 2022–2025 (electricity and fuel together; 2025 "
-           "projected). These qualify the claim without contradicting it."))
+           "projected). These qualify the claim without contradicting it. Confidence is moderate because the "
+           "income comparisons combine survey income (EU-SILC), national-accounts income and labour-force household "
+           "counts, and several inputs are provisional."))
 S.append(CondPageBreak(30 * mm))
 S.append(P("Evidence we are asking for", h2))
 S.append(requests_list([
@@ -295,7 +297,11 @@ S += revision_log([("1.0", "4 Oct 2026", "First issue. Right of reply to the Ene
                     "summer comfort 2012 (25th). (2) New Figure 2: Malta’s price and rank in every consumption band, "
                     "2024-S2 and 2025-S2. (3) Figure 3 (was 2) now starts in 2012 and shows the 2014 tariff cut. "
                     "(4) TL;DR, key points, tiles, Q1, sub-claim D text, Why, Limitations, references and flyer "
-                    "updated; fairness note added. Verdict, confidence and sub-claim ratings unchanged.")])
+                    "updated; fairness note added. Verdict, confidence and sub-claim ratings unchanged."),
+                   ("1.2", "5 Oct 2026",
+                    "Maintainer decision (5 Oct 2026): verdict kept as Largely supported; confidence lowered from "
+                    "High to Moderate, because the income-based measures in Section 4 mix survey and "
+                    "national-accounts sources and some inputs are provisional.")])
 
 build_report(Report(
     number="022", out=str(FIG / "report.pdf"), kicker="Climate and energy",
