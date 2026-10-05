@@ -252,7 +252,7 @@ permalink: "/claims/{{ claim.id }}/"
               <span class="tl-what"><span class="tl-kind">{% if e.future %}Coming up: {% endif %}{{ e.label }}</span>
               {%- if e.claim %} {{ m.claim(e.claim) }}
               {%- elif e.self %} <span class="tl-text">{{ c.claim.speaker }} (this claim)</span>
-              {%- elif e.kind == "check" or e.kind == "correction" %}{% if e.text %} <span class="tl-text">{{ e.text }}</span>{% endif %}{% if e.kind == "correction" %} <a class="tl-change" href="/corrections/">all corrections</a>{% endif %}
+              {%- elif e.kind == "check" or e.kind == "correction" %}{% if e.text %} <span class="tl-text">{{ e.text }}</span>{% endif %}{% if e.verdict %} <span class="tl-verdict">Verdict in this version: {{ e.verdict }}.</span>{% endif %}{% if e.kind == "correction" %} <a class="tl-change" href="/corrections/">all corrections</a>{% endif %}
               {%- elif e.text %} <span class="tl-text">{% if e.url %}<a href="{{ e.url }}" rel="nofollow">{{ e.text }}</a>{% else %}{{ e.text }}{% endif %}{% if e.by %}, {{ e.by }}{% endif %}</span>
               {%- endif %}</span>
             </li>

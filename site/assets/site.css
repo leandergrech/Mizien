@@ -298,7 +298,7 @@ h1, h2 { font-family: var(--serif); line-height: 1.2; }
 .pager-step { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 999px;
   border: 1px solid rgba(207,226,212,.3); color: var(--ink); text-decoration: none; font: 600 15px var(--sans); }
 .pager-step:hover { border-color: var(--amber); }
-.pager-step.is-off { opacity: .45; }
+.pager-step.is-off { opacity: 1; color: #a9c2b1; border-style: dashed; cursor: default; }   /* readable (4.5:1) but plainly inactive */
 .pager-count { flex-basis: 100%; margin: 6px 0 0; color: var(--muted); font-size: 13px; }
 @media (hover: none) { .pager-keys { display: none; } }
 .claim-flip .flip { position: fixed; top: 50%; z-index: 20; display: flex; align-items: center; gap: 8px; height: 56px; min-width: 56px;
@@ -522,6 +522,7 @@ a.claimref { text-decoration-style: dotted; text-underline-offset: 3px; font-wei
 .change-list li { display: grid; grid-template-columns: 150px 1fr; gap: 2px 12px; margin: 0; padding: 9px 0; border-bottom: 1px solid var(--paper-line); }
 .change-what { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
 .change-text { flex-basis: 100%; font-size: 14.5px; }
+.tl-verdict { display: block; margin-top: 2px; font-size: 13.5px; font-weight: 700; color: #14452f; }
 .badge.change-correction { --v: #8e2f25; --v-ink: #fff; }
 .badge.change-clarification { --v: #6b4aa6; --v-ink: #fff; }
 @media (max-width: 640px) { .change-list li { grid-template-columns: 1fr; } }

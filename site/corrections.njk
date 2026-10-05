@@ -43,7 +43,7 @@ permalink: /corrections/
       {%- for x in fixlist %}
       <li class="is-{{ x.step }}"><span class="tl-date">{{ x.date }}</span>
         <span class="change-what"><span class="badge change-{{ 'correction' if x.step == 'version' else x.step }}">{{ x.label }}</span> {{ m.claim(x.claim) }}
-        <span class="change-text">{{ x.text }}</span></span></li>
+        <span class="change-text">{{ x.text }}{% if x.verdict %} <span class="tl-verdict">Verdict now: {{ x.verdict }}.</span>{% endif %}</span></span></li>
       {%- endfor %}
     </ol>
     {%- else %}
@@ -58,7 +58,8 @@ permalink: /corrections/
       {%- for x in mizien.changes | where("step", "version") %}
       <li><span class="tl-date">{{ x.date }}</span>
         <span class="change-what"><b>{{ x.label }}</b> {{ m.claim(x.claim) }}{% if x.text %}
-        <span class="change-text">{{ x.text }}</span>{% endif %}</span></li>
+        <span class="change-text">{{ x.text }}</span>{% endif %}{% if x.verdict %}
+        <span class="change-text tl-verdict">Verdict now: {{ x.verdict }}.</span>{% endif %}</span></li>
       {%- endfor %}
     </ol>
   </section>
