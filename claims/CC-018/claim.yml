@@ -59,3 +59,8 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: −10.7%
   caption: house price-to-income ratio, 2015–2024 (Eurostat)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-04
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply to the MDA not yet sent."

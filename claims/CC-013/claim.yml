@@ -68,3 +68,8 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: +34%
   caption: real house prices, 2015–2025 (EU +25%)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply to the Planning Authority not yet sent."

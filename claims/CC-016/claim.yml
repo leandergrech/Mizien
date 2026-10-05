@@ -69,3 +69,8 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 9%
   caption: of cruise berth time plugged in, Jul 2024 – Jul 2025
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply to Infrastructure Malta and Transport Malta not yet sent."

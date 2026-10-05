@@ -75,3 +75,8 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: '187'
   caption: enforcement notices a year, 2020–24 (1,033 in 2001–09)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"
+    note: "First issue. Draft pending right of reply from the Planning Authority."

@@ -97,3 +97,7 @@ version: '1.0'
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 79%
   caption: travel-time cut reported at Marsa; survey not published
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-02
+    step: version
+    version: "1.0"

@@ -78,3 +78,8 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: −44%
   caption: emissions per person since 2005, as claimed
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-02
+    step: version
+    version: "1.0"
+    note: "First issue. Draft pending right of reply from the Climate Action Authority and the Ministry for the Environment, Energy and Public Cleanliness."

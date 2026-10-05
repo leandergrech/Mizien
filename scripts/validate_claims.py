@@ -90,6 +90,42 @@ def check(path: pathlib.Path) -> list:
             if loc.get("icon") is not None and loc.get("icon") not in PLACE_ICONS:
                 errs.append(f"location icon {loc.get('icon')} unknown (use one of {sorted(PLACE_ICONS)})")
     errs += check_timeline(d.get("timeline"))
+    errs += check_history(d)
+    return errs
+
+
+def check_history(d) -> list:
+    """`history:` in claim.yml is the research log: the date each step was done (see scripts/timeline.py)."""
+    entries = d.get("history")
+    if entries is None:
+        return [f"version {d['version']} has no research log: add history entries (date, step: version, version, note)"] if d.get("version") else []
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import timeline
+    if not isinstance(entries, list):
+        return ["history must be a list of research steps (date, step, ...)"]
+    errs, versions, last = [], [], ""
+    for i, e in enumerate(entries, 1):
+        if not isinstance(e, dict):
+            errs.append(f"history entry {i} must have date and step")
+            continue
+        when = timeline.parse_date(e.get("date"))
+        if not when or when["precision"] != "day":
+            errs.append(f"history entry {i}: date '{e.get('date')}' must be a full date (2026-10-02), the day the research was done")
+        elif when["iso"] < last:
+            errs.append(f"history entry {i}: dates must be in order (oldest first)")
+        else:
+            last = when["iso"]
+        step = e.get("step")
+        if step not in timeline.HISTORY_STEPS:
+            errs.append(f"history entry {i}: step must be one of {', '.join(timeline.HISTORY_STEPS)}")
+        if step == "version":
+            if not e.get("version"):
+                errs.append(f"history entry {i}: a version step needs its version number")
+            versions.append(str(e.get("version")))
+        if step in ("correction", "clarification") and not str(e.get("note") or "").strip():
+            errs.append(f"history entry {i}: a {step} needs a note saying what was wrong and what changed")
+    if d.get("version") and str(d["version"]) not in versions:
+        errs.append(f"version {d['version']} has no history entry: add one with the date of the research and what changed")
     return errs
 
 

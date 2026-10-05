@@ -286,9 +286,9 @@ def claim_connections(cid: str, d: dict, by_id: dict, adj, out: dict, reg: dict,
     return {"second": second, "third": third, "same_body": same, "patterns": tags}
 
 
-def claim_timeline(cid, d, by_id, reg, claim_bodies, profiles, sources, history, today):
+def claim_timeline(cid, d, by_id, reg, claim_bodies, profiles, sources, intake, today):
     """The claim's dated events (scripts/timeline.py), with statements by the same body on the same topic."""
-    ev = timeline.claim_events(d, sources, history or {})
+    ev = timeline.claim_events(d, sources, intake.get(cid))
     said = timeline.parse_date(d["claim"].get("date"))
     offices, seen = [], set()
     for u in connections.units(claim_bodies[cid], reg):
@@ -342,9 +342,7 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
     theme_names = {t["id"]: t["name"] for t in out["themes"]}
     adj = connections.adjacency(out["edges"])
     pattern_meanings = dict(bold_table("pattern-tags.md"))
-    sources_ev, history = timeline.source_events(), timeline.claim_history()
-    if history is None:
-        print("Note: no full git history (shallow clone?), so claim timelines leave out the steps of each check.")
+    sources_ev, intake = timeline.source_events(), timeline.intake_dates()
     today = date.today().isoformat()
     site_claims = []
     for d in records:
@@ -384,13 +382,15 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
             "bodies": [{**body_ref(reg[b]), "parent": body_ref(reg[reg[b]["parent"]]) if reg[b]["parent"] else None}
                        for b in connections.units(claim_bodies[cid], reg)],
             "connections": claim_connections(cid, d, by_id, adj, out, reg, claim_bodies, profiles, pattern_meanings),
-            "timeline": claim_timeline(cid, d, by_id, reg, claim_bodies, profiles, sources_ev, history, today),
+            "timeline": claim_timeline(cid, d, by_id, reg, claim_bodies, profiles, sources_ev, intake, today),
+            "corrections": [{"date": e["when"]["label"], "iso": e["when"]["iso"], "label": e["label"], "text": e["text"]}
+                            for e in timeline.history_events(d) if e["kind"] == "correction"],
             "record_url": f"{REPO}/blob/main/claims/{cid}/claim.yml",
         })
     # Updates for the feeds: steps of each check, replies and curated events, newest first.
     updates = sorted(({**{k: e[k] for k in ("label", "text", "url", "date", "iso", "mid", "kind")}, "claim": claim_ref(by_id[c["id"]])}
                       for c in site_claims for e in c["timeline"]
-                      if e["kind"] in ("check", "reply", "curated") and not e["future"]),
+                      if e["kind"] in ("check", "correction", "reply", "curated") and not e["future"]),
                      key=lambda u: (u["mid"], u["claim"]["id"]), reverse=True)
     body_pages = []
     for bid, p in profiles.items():
@@ -418,6 +418,12 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
         "bodies": body_pages,
         "body_types": out["body_types"],
         "updates": updates[:100],
+        # The public log of changes to checks (the Corrections page): every version, correction and clarification,
+        # dated when the research was done.
+        "changes": sorted(({"date": e["when"]["label"], "iso": e["when"]["iso"], "step": e["step"], "label": e["label"],
+                            "text": e["text"], "claim": claim_ref(d)}
+                           for d in records for e in timeline.history_events(d) if e["step"] in ("version", "correction", "clarification")),
+                          key=lambda x: (x["iso"], x["claim"]["id"], x["label"]), reverse=True),
         "by_kind": by_kind.build(records, claim_bodies, reg, out["themes"], [n for n, _ in bold_table("pattern-tags.md")],
                                  [n for n, _ in bold_table("verdict-scale.md")], [c["name"] for c in out["categories"]], claim_ref),
         "theme_bridges": [{**x, "a_name": theme_names.get(x["a"]), "b_name": theme_names.get(x["b"]),

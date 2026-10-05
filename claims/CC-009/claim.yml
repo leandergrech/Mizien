@@ -91,3 +91,7 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 70.7%
   caption: of WSC water from reverse osmosis in 2025
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"

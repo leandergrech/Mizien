@@ -60,3 +60,8 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 1.4 km²
   caption: independent estimate of land built over (0.83 km² claimed)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-04
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply to Amphora Media not yet sent."

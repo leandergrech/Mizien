@@ -86,3 +86,7 @@ version: '1.0'
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: '540'
   caption: new indigenous trees for 54 protected ones removed
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"

@@ -3,33 +3,32 @@
 A claim's timeline joins:
 - the statement itself (claim.date);
 - the dated sources about it (data/sources.csv): statements, reports and evidence, as published;
-- the steps of its check, read from the history of its claim.yml in git: added, check started, verdict recorded or
-  changed, confidence changed, report versions, evidence reviewed. Each links to the change on GitHub;
-- right of reply (sent, deadline, response) and the next evidence review;
-- curated events in claim.yml under `timeline:` (date, kind, text, optional url), for later statements, new data,
-  corrections and replies that are not claims of their own.
+- the research log in claim.yml (`history:`): when the claim was added, each version of its check with what changed,
+  corrections and clarifications. These carry the date the research was done, recorded by whoever did it, not the
+  date the site or the repository changed. A claim's intake date also comes from data/queue.csv;
+- right of reply, the last evidence review and the next one due;
+- outside events in claim.yml (`timeline:`): later statements, new data or replies that are not claims of their own.
 Statements by the same body on the same topic are added by scripts/build_site_data.py, which knows the bodies.
 
-Dates of statements and sources are as published. Dates of check steps are when the change was committed to the
-public repository. Nothing here is inferred: an event without a date is left out.
+Nothing here is inferred: an event without a recorded date is left out.
 """
 import csv
 import datetime
 import pathlib
 import re
-import subprocess
-
-import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REPO = "https://github.com/leandergrech/Mizien"
 MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
 MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
                "November", "December"]
-CURATED_KINDS = {"statement": "Statement", "data": "New data", "reply": "Reply", "correction": "Correction",
+CURATED_KINDS = {"statement": "Statement", "data": "New data", "reply": "Reply", "correction": "Correction by the speaker",
                  "note": "Note"}
-STAGE_EVENTS = {"In progress": "Check started", "Drafted": "Draft check recorded",
-                "Right of reply": "Sent to the body concerned for reply", "Published": "Check published"}
+HISTORY_STEPS = {   # research log steps (claim.yml `history:`) and how the timeline names them
+    "added": "Added to the claims to check", "started": "Check started", "wording": "Exact wording found",
+    "version": "Version", "reply-sent": "Right of reply sent", "reply-received": "Reply received",
+    "published": "Check published", "correction": "Correction", "clarification": "Clarification", "note": "Note",
+}
 
 
 # ---------------------------------------------------------------- dates
@@ -79,7 +78,7 @@ def parse_date(text):
 
 def source_kind(kind_text):
     t = str(kind_text or "")
-    if t.lower().startswith("news"):
+    if re.search(r"\bnews\b|briefing|clipping|locator|blog", t, re.I):
         return "reported", "Reported"
     if re.search(r"statement|manifesto|parliament|press|speech|interview|post\b|minutes", t, re.I):
         return "said", "Statement published"
@@ -106,96 +105,44 @@ def source_events():
     return out
 
 
-# ---------------------------------------------------------------- the history of each claim.yml
+# ---------------------------------------------------------------- the research log
 
-def _git(*args, data=None):
-    return subprocess.run(["git", *args], cwd=ROOT, input=data, capture_output=True, check=True).stdout
-
-
-def claim_history():
-    """{claim id: [(date, sha, subject, record)]}, oldest first, from git. None without full history (a shallow
-    clone would date every claim to its last commit, so no check steps are shown rather than wrong ones)."""
-    try:
-        if _git("rev-parse", "--is-shallow-repository").decode().strip() != "false":
-            return None
-        log = _git("log", "--no-merges", "--format=@@%H%x09%cs%x09%s", "--name-only", "--", "claims/*/claim.yml").decode("utf-8")
-    except (OSError, subprocess.CalledProcessError):
-        return None
-    commits, cur = [], None
-    for line in log.splitlines():
-        if line.startswith("@@"):
-            sha, date, subject = (line[2:].split("\t", 2) + ["", ""])[:3]
-            cur = {"sha": sha, "date": date, "subject": subject, "files": []}
-            commits.append(cur)
-        elif line.strip() and cur:
-            cur["files"].append(line.strip())
-    wanted = [(c, f) for c in commits for f in c["files"] if re.fullmatch(r"claims/CC-\d{3}/claim\.yml", f)]
-    if not wanted:
+def intake_dates():
+    """{claim id: date added} from data/queue.csv, the intake record of the checker routines."""
+    path = ROOT / "data" / "queue.csv"
+    if not path.is_file():
         return {}
-    raw = _git("cat-file", "--batch", data="".join(f"{c['sha']}:{f}\n" for c, f in wanted).encode())
-    out, pos = {}, 0
-    for c, f in wanted:
-        end = raw.index(b"\n", pos)
-        header = raw[pos:end].decode().split()
-        pos = end + 1
-        record = None
-        if len(header) == 3 and header[1] == "blob":
-            size = int(header[2])
-            try:
-                record = yaml.safe_load(raw[pos:pos + size].decode("utf-8"))
-            except (yaml.YAMLError, UnicodeDecodeError):
-                record = None
-            pos += size + 1
-        if isinstance(record, dict):
-            out.setdefault(f.split("/")[1], []).append((c["date"], c["sha"], c["subject"], record))
-    for cid in out:
-        out[cid].reverse()   # git log lists newest first
-    return out
+    with open(path, newline="", encoding="utf-8") as f:
+        return {r["ID"].strip(): r["Added"].strip() for r in csv.DictReader(f) if r.get("Added")}
 
 
-def check_events(versions):
-    """The steps of a check, from successive versions of its claim.yml."""
-    events, prev = [], None
-
-    def add(date, label, text="", sha=None, subject=""):
-        events.append({"when": parse_date(date), "kind": "check", "label": label, "text": text,
-                       "url": f"{REPO}/commit/{sha}" if sha else None, "change": subject})
-
-    for date, sha, subject, d in versions:
-        status, verdict, conf = d.get("status"), d.get("verdict"), d.get("verdict_confidence")
-        version, reviewed = d.get("version"), d.get("last_reviewed")
-        wording = (d.get("claim") or {}).get("wording_status")
-        if prev is None:
-            add(date, "Added to the claims to check", "", sha, subject)
-        p = prev or {}
-        if prev is not None and status != p.get("status") and status in STAGE_EVENTS:
-            add(date, STAGE_EVENTS[status], "", sha, subject)
-        if verdict and verdict != p.get("verdict"):
-            label = "Verdict changed" if p.get("verdict") else "Draft verdict recorded"
-            text = (f"{p['verdict']} → " if p.get("verdict") else "") + verdict + (f", {conf.lower()} confidence" if conf else "")
-            add(date, label, text, sha, subject)
-        elif verdict and conf and p.get("verdict_confidence") and conf != p.get("verdict_confidence"):
-            add(date, "Confidence changed", f"{p['verdict_confidence']} → {conf}", sha, subject)
-        if version and str(version) != str(p.get("version") or ""):
-            add(date, f"Report version {version}", "", sha, subject)
-        if wording == "Verbatim found" and p.get("wording") not in (None, "Verbatim found") and prev is not None:
-            add(date, "Exact wording found", "", sha, subject)
-        if reviewed and str(reviewed) != str(p.get("reviewed") or "") and parse_date(reviewed):
-            add(str(reviewed), "Evidence reviewed", "", sha, subject)
-        prev = {"status": status, "verdict": verdict, "verdict_confidence": conf, "version": version,
-                "reviewed": reviewed, "wording": wording}
-    seen, out = set(), []
-    for e in events:   # one event per step and day, even when several commits repeat it
-        key = (e["label"], e["text"], e["when"]["iso"] if e["when"] else "")
-        if e["when"] and key not in seen:
-            seen.add(key)
-            out.append(e)
-    return out
+def history_events(d, added=None):
+    """The steps of a check from its research log, dated when the research was done."""
+    ev, steps = [], d.get("history") or []
+    if added and not any(h.get("step") == "added" for h in steps):
+        steps = [{"date": added, "step": "added"}] + list(steps)
+    versions = [str(h.get("version")) for h in steps if h.get("step") == "version"]
+    for h in steps:
+        when = parse_date(h.get("date"))
+        step = h.get("step")
+        if not when or step not in HISTORY_STEPS:
+            continue
+        label, text, kind = HISTORY_STEPS[step], str(h.get("note") or ""), "check"
+        if step == "version":
+            v = str(h.get("version"))
+            label = f"Version {v}" + (": first issue" if v in ("1", "1.0") else "")
+            if v == str(d.get("version")) and d.get("verdict"):
+                conf = d.get("verdict_confidence")
+                text = (text + " " if text else "") + f"Verdict: {d['verdict']}" + (f", {conf.lower()} confidence." if conf else ".")
+        if step in ("correction", "clarification"):
+            kind = "correction"
+        ev.append({"when": when, "kind": kind, "label": label, "text": text, "url": h.get("url"), "step": step})
+    return ev
 
 
 # ---------------------------------------------------------------- a claim's timeline
 
-def claim_events(d, sources, history):
+def claim_events(d, sources, added=None):
     """Every dated event for one claim except statements by the same body (added by the caller)."""
     ev = []
     said = parse_date((d.get("claim") or {}).get("date"))
@@ -203,18 +150,20 @@ def claim_events(d, sources, history):
         ev.append({"when": said, "kind": "statement", "label": "The statement", "text": d["claim"].get("speaker", ""),
                    "url": None, "self": True})
     ev += sources.get(d["id"], [])
-    ev += check_events(history.get(d["id"], [])) if history else []
+    ev += history_events(d, added)
     ror = d.get("right_of_reply") or {}
     for key, label in (("sent", "Right of reply sent"), ("deadline", "Right of reply deadline"),
-                       ("response", "Reply received")):
-        when = parse_date(ror.get("response_date") if key == "response" else ror.get(key))
-        if when:
+                       ("response_date", "Reply received")):
+        when = parse_date(ror.get(key))
+        if when and not any(e.get("step") in ("reply-sent", "reply-received") and e["when"]["iso"] == when["iso"] for e in ev):
             ev.append({"when": when, "kind": "reply", "label": label, "text": "", "url": None})
     reviewed = parse_date(d.get("last_reviewed"))
-    if reviewed and reviewed["precision"] == "day":
-        due = datetime.date.fromisoformat(reviewed["iso"]) + datetime.timedelta(days=365)
-        ev.append({"when": parse_date(due.isoformat()), "kind": "due", "label": "Evidence review due",
-                   "text": "Each finished check is reviewed against new evidence within a year.", "url": None})
+    if reviewed:
+        ev.append({"when": reviewed, "kind": "check", "label": "Evidence reviewed", "text": "", "url": None})
+        if reviewed["precision"] == "day":
+            due = datetime.date.fromisoformat(reviewed["iso"]) + datetime.timedelta(days=365)
+            ev.append({"when": parse_date(due.isoformat()), "kind": "due", "label": "Evidence review due",
+                       "text": "Each finished check is reviewed against new evidence within a year.", "url": None})
     for t in d.get("timeline") or []:
         when = parse_date(t.get("date"))
         if when:
@@ -225,7 +174,7 @@ def claim_events(d, sources, history):
 
 def sort_events(ev):
     order = {"statement": 0, "said": 1, "same-body": 2, "reported": 3, "evidence": 4, "curated": 5, "check": 6,
-             "reply": 7, "due": 8}
+             "correction": 7, "reply": 8, "due": 9}
     return sorted(ev, key=lambda e: (e["when"]["mid"], order.get(e["kind"], 9)))
 
 

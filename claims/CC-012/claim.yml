@@ -120,3 +120,8 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: '0.11'
   caption: winter greenness after the gravel, down from 0.37–0.47
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"
+    note: "First issue. Draft pending right of reply."

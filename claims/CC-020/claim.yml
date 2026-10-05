@@ -74,3 +74,8 @@ location:
 thumbnail:
   figure: 31.3%
   caption: of people report street or neighbour noise (EU 18.1%), highest in the EU
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply not yet sent."
