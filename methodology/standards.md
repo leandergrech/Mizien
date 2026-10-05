@@ -5,7 +5,8 @@
 3. **Grade the evidence** and show differing views side by side where the science is unsettled.
 4. **State what we could not access or verify,** and what would change the verdict either way.
 5. **Ask for the missing evidence** in specific, answerable requests.
-6. **Offer a right of reply** before wider circulation and append the response.
+6. **Offer a right of reply** before wider circulation when a check finds a claim *Not substantiated*, *Misleading* or
+   *Contradicted*, and append the response. A check that finds a claim *Supported* or *Largely supported* needs none.
 7. **Correct errors openly** with a version number and change log.
 8. **Whistle-blow only on evidence.** A verdict of Misleading or Contradicted requires documents or data that can be shown.
 9. **Check every side.** Governments, opposition parties, NGOs, developers and agencies are held to the same standard.
@@ -18,6 +19,10 @@
 - After refreshing a review, update `last_reviewed` and run `python scripts/build_site_data.py` so the map and preview use the new date.
 
 ## Right of reply (proposed procedure; edit as needed)
+
+- When: only for a verdict of *Not substantiated*, *Misleading* or *Contradicted*; for a pledge, the labels *Not
+  measurable*, *Off track* and *Missed* (maintainer decision, 5 October 2026). A check that supports a claim needs no
+  reply. Where the maintainer decides not to seek one, record `right_of_reply.sought: false` with a `note`.
 
 - Send the draft to the body concerned with a fixed deadline (suggested: 14 days).
 - Record the date sent in `claim.yml` (`right_of_reply.sent`) and the deadline.

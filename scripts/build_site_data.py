@@ -68,7 +68,7 @@ def main() -> int:
             "claim": d["claim"]["text"],
             "counter": d.get("counter_evidence", ""),
             "status": d.get("status", "Not started"),
-            **({"reply_sought": False} if not reply_sought(d) else {}),
+            **({"reply": reply_state(d)} if reply_state(d) in ("not-needed", "not-sought") else {}),
             "verdict": d.get("verdict"),
             "tags": d.get("tags", []),
             **({"subtopic": d["subtopic"]} if d.get("subtopic") else {}),
@@ -276,14 +276,32 @@ def label_of(d: dict):
     return None, None, None
 
 
-def reply_sought(d: dict) -> bool:
-    """False when, at the maintainer's direction, no right of reply is sought for the check (right_of_reply.sought)."""
-    return (d.get("right_of_reply") or {}).get("sought") is not False
+# Right of reply (maintainer decision, 5 October 2026): sought only when a check finds a claim Not substantiated,
+# Misleading or Contradicted (for pledges: Not measurable, Off track or Missed). A check that supports a claim needs
+# none. right_of_reply.sought: false records a decision not to seek one where it would otherwise apply.
+REPLY_VERDICTS = {"Not substantiated", "Misleading", "Contradicted"}
+REPLY_PLEDGES = {"Not measurable", "Off track", "Missed"}
+
+
+def reply_state(d: dict):
+    """Where a check's right of reply stands: received, sent, not-sought, pending, not-needed, or None (no verdict)."""
+    ror = d.get("right_of_reply") or {}
+    if ror.get("response") or ror.get("response_date"):
+        return "received"
+    if ror.get("sent"):
+        return "sent"
+    if ror.get("sought") is False:
+        return "not-sought"
+    verdict, pledge = d.get("verdict"), (d.get("pledge") or {}).get("status")
+    if not (verdict or pledge):
+        return None
+    return "pending" if verdict in REPLY_VERDICTS or pledge in REPLY_PLEDGES else "not-needed"
 
 
 def status_label(d: dict) -> str:
-    if d.get("status") == "Drafted" and not reply_sought(d):
-        return "Draft: right of reply not sought"
+    if d.get("status") == "Drafted":
+        return {"not-sought": "Draft: right of reply not sought",
+                "not-needed": "Draft: no right of reply needed"}.get(reply_state(d), STATUS_LABELS["Drafted"])
     return STATUS_LABELS.get(d.get("status"), d.get("status"))
 
 
@@ -293,7 +311,7 @@ def claim_ref(d: dict) -> dict:
     return {"id": d["id"], "title": d["title"], "path": f"/claims/{d['id']}/", "verdict": d.get("verdict"),
             "verdict_slug": slug(d["verdict"]) if d.get("verdict") else None, "category": d["category"],
             "status": d.get("status"), "date": str(d["claim"].get("date") or ""),
-            "label": label, "label_slug": label_slug, "label_kind": kind, "reply_sought": reply_sought(d)}
+            "label": label, "label_slug": label_slug, "label_kind": kind, "reply": reply_state(d)}
 
 
 PLEDGE_COLOURS = {   # pledge labels (methodology/verdict-scale.md, Pledges): a family of their own, apart from the verdict hues
@@ -449,7 +467,7 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
             **rec,
             "path": f"/claims/{cid}/",
             "status_label": status_label(d),
-            "reply_sought": reply_sought(d),
+            "reply": reply_state(d),
             "is_draft": d.get("status") != "Published",
             "limitations": public_limitations(d.get("caveats")),
             "rating": VERDICT_RATING.get(d.get("verdict")),

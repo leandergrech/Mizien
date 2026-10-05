@@ -5,6 +5,6 @@
     <title>{{ u.claim.id }} {{ u.claim.title }}: {{ u.label }}{% if u.text %} ({{ u.text }}){% endif %}</title>
     <updated>{{ u.iso }}{% if u.iso.length == 10 %}T12:00:00Z{% else %}-01T12:00:00Z{% endif %}</updated>
     <link rel="alternate" type="text/html" href="{{ u.claim.path | absoluteUrl }}"/>
-    <summary type="text">{{ u.label }}{% if u.text %}: {{ u.text }}{% endif %}. {{ u.claim.id }}, {{ u.claim.category }}{% if u.claim.label %}; {{ "pledge label" if u.claim.label_kind == "pledge" else "verdict" }} so far: {{ u.claim.label }}{% if u.claim.status != "Published" %} (draft, {{ "pending right of reply" if u.claim.reply_sought else "right of reply not sought" }}){% endif %}{% endif %}.{% if u.url %} The change: {{ u.url }}{% endif %}</summary>
+    <summary type="text">{{ u.label }}{% if u.text %}: {{ u.text }}{% endif %}. {{ u.claim.id }}, {{ u.claim.category }}{% if u.claim.label %}; {{ "pledge label" if u.claim.label_kind == "pledge" else "verdict" }} so far: {{ u.claim.label }}{% if u.claim.status != "Published" %} (draft, {{ "right of reply not sought" if u.claim.reply == "not-sought" else ("no right of reply needed" if u.claim.reply == "not-needed" else "pending right of reply") }}){% endif %}{% endif %}.{% if u.url %} The change: {{ u.url }}{% endif %}</summary>
   </entry>
 {%- endfor %}

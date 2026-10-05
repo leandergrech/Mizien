@@ -62,8 +62,18 @@ def check(path: pathlib.Path) -> list:
         errs.append("subtopic must be a non-empty string when present")
     if d.get("verdict") in STRICT_VERDICTS and not d.get("evidence_shown"):
         errs.append("Misleading/Contradicted requires 'evidence_shown' (documents or data that can be shown)")
-    if d["status"] in {"Right of reply", "Published"} and not (d.get("right_of_reply") or {}).get("sent"):
-        errs.append("status needs right_of_reply.sent date")
+    # A right of reply is needed when a check finds a claim Not substantiated, Misleading or Contradicted (for a pledge:
+    # Not measurable, Off track or Missed), unless right_of_reply.sought is false (maintainer decision, 5 Oct 2026).
+    ror = d.get("right_of_reply") or {}
+    reply_needed = ror.get("sought") is not False and (
+        d.get("verdict") in {"Not substantiated", "Misleading", "Contradicted"}
+        or (d.get("pledge") or {}).get("status") in {"Not measurable", "Off track", "Missed"})
+    if d["status"] == "Right of reply" and not ror.get("sent"):
+        errs.append("status 'Right of reply' needs right_of_reply.sent date")
+    if d["status"] == "Published" and reply_needed and not ror.get("sent"):
+        errs.append("publishing this verdict needs a right of reply first (right_of_reply.sent date)")
+    if ror.get("sought") is False and ror.get("sent"):
+        errs.append("right_of_reply.sought is false but a sent date is recorded")
     if d["status"] == "Published" and c.get("wording_status") != "Verbatim found":
         errs.append("cannot publish without a verbatim, archived claim wording")
     reviewed = d.get("last_reviewed")

@@ -44,8 +44,8 @@ export default {
       const verdict = c.verdict
         ? `${c.verdict}${c.verdict_confidence ? ` (${c.verdict_confidence.toLowerCase()} confidence)` : ""}${pledge ? `; ${pledge}` : ""}`
         : pledge || "Not yet checked";
-      const draft = !(c.is_draft && c.label) ? ""
-        : c.reply_sought ? "Draft check, right of reply pending. " : "Draft check, right of reply not sought. ";
+      const reply = { "not-sought": "right of reply not sought", "not-needed": "no right of reply needed" }[c.reply] || "right of reply pending";
+      const draft = c.is_draft && c.label ? `Draft check, ${reply}. ` : "";
       const when = c.claim.date ? `, ${isoMonth(c.claim.date)}` : "";
       return `${draft}${verdict}. ${c.claim.speaker}${when}: ${c.title}.`;
     },
