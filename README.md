@@ -53,7 +53,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-021 | Transport | Malta-Gozo tunnel traffic | Not started | - |
 | CC-022 | Climate & Energy | 'Lowest electricity burden in the EU' | Drafted | Largely supported |
 | CC-023 | Climate & Energy | Second interconnector by 2026 | In progress | - |
-| CC-024 | Climate & Energy | Renewables target for 2030 | In progress | - |
+| CC-024 | Climate & Energy | Renewables target for 2030 | Drafted | Not substantiated |
 | CC-025 | Climate & Energy | Per-capita emissions down 44% since 2005 | Drafted | Largely supported |
 | CC-026 | Climate & Energy | EU's largest rise in emissions | Drafted | Largely supported |
 | CC-027 | Climate & Energy | Power cuts: heat, not generation | In progress | - |

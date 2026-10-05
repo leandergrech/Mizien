@@ -1,0 +1,6 @@
+series,key,value,unit,source,retrieved,note
+PV_capacity_end_2024,2024,252.255,MWp,NSO Malta news release NR 111/2025 (24 Jun 2025),2026-10-05,"SECOND-HAND: nso.gov.mt returned 403 to scripts, figures read from a web-search summary of the release (252,255.4 kWp)"
+PV_capacity_growth_2024,2024,4.8,%,NSO Malta news release NR 111/2025,2026-10-05,second-hand (as above)
+PV_connected_2024,2024,11.792,MWp,NSO Malta news release NR 111/2025,2026-10-05,second-hand (as above)
+PV_decommissioned_2024,2024,0.262,MW,NSO Malta news release NR 111/2025,2026-10-05,second-hand (as above)
+PV_generation_2024,2024,326.5,GWh,NSO Malta news release NR 111/2025,2026-10-05,"second-hand (as above); grid-connected PV, +5.8% on 2023"

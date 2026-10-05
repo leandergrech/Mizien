@@ -1,0 +1,23 @@
+series,key,value,unit,source,page,note
+plan_indicative_RES_target,2023,14.7,%,Malta final updated NECP 2021-2030 (Table 3),p.83,typed
+plan_indicative_RES_target,2024,15.5,%,Malta final updated NECP 2021-2030 (Table 3),p.83,typed
+plan_indicative_RES_target,2025,16.5,%,Malta final updated NECP 2021-2030 (Table 3),p.83,typed
+plan_indicative_RES_target,2026,17.7,%,Malta final updated NECP 2021-2030 (Table 3),p.83,typed
+plan_indicative_RES_target,2027,20.7,%,Malta final updated NECP 2021-2030 (Table 3),p.83,typed
+plan_indicative_RES_target,2028,21.9,%,Malta final updated NECP 2021-2030 (Table 3),p.83,typed
+plan_indicative_RES_target,2029,23.2,%,Malta final updated NECP 2021-2030 (Table 3),p.83,typed
+plan_indicative_RES_target,2030,24.5,%,Malta final updated NECP 2021-2030 (Table 3),p.83,typed
+plan_minimum_trajectory,2025,16.2,%,Malta final updated NECP 2021-2030 (Table 3),p.83,typed
+plan_minimum_trajectory,2027,19.4,%,Malta final updated NECP 2021-2030 (Table 3),p.83,typed
+plan_binding_2020_target,2020,10.0,%,Malta final updated NECP 2021-2030,p.82,typed
+plan_summary_ambition,2030,25.0,%,Malta final updated NECP 2021-2030 (summary table),p.21,"""Increase Malta's ambition to a renewable energy share of 25% by 2030"""
+plan_summary_previous,earlier contribution,11.5,%,Malta final updated NECP 2021-2030 (summary table),p.22,"""Increase the Renewable Energy contribution from 11.5% to 25%"" (2019 plan not read: host refused)"
+plan_PV_capacity_2030,2030,350,MWp,Malta final updated NECP 2021-2030,p.84,"""Solar PV is expected to reach 350 MWp by 2030"""
+plan_PV_capacity_end_2023,2023,241,MWp,Malta final updated NECP 2021-2030,p.74,"cites NSO (2024), PV 2023"
+plan_offshore_by_2030,2030,350,MW,Malta final updated NECP 2021-2030,p.25,"TEN-E non-binding commitment: ""a minimum of 350MW ... by 2030"" (up to 380 MW)"
+plan_offshore_by_2050,2050,350,MW,Malta final updated NECP 2021-2030,p.78,"same plan elsewhere: ""350MW by 2050"""
+plan_2022_RES_share,2022,13.4,%,Malta final updated NECP 2021-2030,p.279 (PDF 280),"SHARES figure used in the plan; Eurostat now shows 14.04%"
+commission_formula_contribution,2030,28,%,Commission SWD(2025) 140 extract for Malta (Table 1; section 2.2),pp.160 and 163,"Annex II Governance Regulation formula result"
+commission_reference_point_2025,2025,18,%,Commission SWD(2025) 140 extract for Malta (section 2.2),p.163,"reference point for the EU 42.5% target"
+commission_reference_point_2027,2027,22,%,Commission SWD(2025) 140 extract for Malta (section 2.2),p.163,"reference point for the EU 42.5% target"
+commission_latest_data,2023,15.1,%,Commission SWD(2025) 140 extract for Malta (Table 1),p.160,"progress figure at the time of the assessment"

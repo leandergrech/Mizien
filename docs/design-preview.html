@@ -1438,10 +1438,12 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "title": "Renewables target for 2030",
       "category": "Climate & Energy",
       "claim": "Updated National Energy and Climate Plan (Dec 2024): Malta will reach its 2030 renewable-energy contribution (11.5% of gross final energy consumption in the EU-reported target; 25% cited in summaries) through solar PV and offshore wind.",
-      "counter": "Two different percentages circulate (11.5% and 25%); check which the plan commits to and Malta's actual share (Eurostat nrg_ind_ren).",
-      "status": "In progress",
-      "verdict": null,
-      "tags": [],
+      "counter": "The plan itself gives three figures: 11.5% (the earlier contribution), 25% (summary ambition) and 24.5% (projection). Its projection counts no offshore wind (p. 83); its summary lists offshore technologies among the means (p. 22). Malta's share was 17.2% in 2024 (Eurostat) against 15.5% on the plan's path, 18.8% provisional for 2025 (plan 16.5%; Commission reference point 18%); the rise is in heating and cooling (23.0% to 59.2% of sector use, 2020-2024), while electricity moved 9.5% to 10.7%. The Commission finds 24.5% below the 28% formula result and PV support unquantified. PV: 252.3 MWp end-2024 (NSO, second-hand), about 16 MWp a year needed for 350 MWp against 11.5 net in 2024.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
+      "tags": [
+        "Promise-without-baseline"
+      ],
       "subtopic": "Renewables",
       "location": {
         "place": "Auberge de Castille (Office of the Prime Minister), Valletta",
@@ -1450,17 +1452,87 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "institution",
         "icon": "castille"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Government of Malta (NECP 2021-2030, updated)",
       "bodies": [
         "government-of-malta"
       ],
+      "subclaims": [
+        {
+          "id": "CC-024A",
+          "text": "The 2030 contribution is 11.5%",
+          "finding": "11.5% is the earlier contribution that the plan raises (p. 22). It is not the 2030 figure.",
+          "rating": "Outdated",
+          "tone": "red"
+        },
+        {
+          "id": "CC-024B",
+          "text": "It is 25% (or 24.5%)",
+          "finding": "25% is the summary ambition; 24.5% is the projection and trajectory end-point (pp. 21, 83).",
+          "rating": "Accurate, rounded",
+          "tone": "green"
+        },
+        {
+          "id": "CC-024C",
+          "text": "Malta will reach it through solar PV",
+          "finding": "PV is one of four named contributors; 350 MWp by 2030 needs a faster pace; its points of share are not quantified.",
+          "rating": "Partly supported",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-024D",
+          "text": "…and through offshore wind",
+          "finding": "The plan counts no offshore wind in the 2030 share (p. 83).",
+          "rating": "Not supported",
+          "tone": "red"
+        },
+        {
+          "id": "CC-024E",
+          "text": "Malta will reach the 2030 share",
+          "finding": "17.2% in 2024 against 15.5% on the plan’s path; Commission: below its formula and reference points. A target, rated as a pledge.",
+          "rating": "On track (pledge)",
+          "tone": "green"
+        }
+      ],
+      "pledge": {
+        "status": "On track",
+        "slug": "pledge-on-track",
+        "colour": "#337f71",
+        "as_of": "15 September 2026",
+        "as_of_iso": "2026-09-15",
+        "made_on": "7 January 2025",
+        "deadline": "31 December 2030",
+        "term_end": null,
+        "target": "24.5% renewables share of gross final energy consumption in 2030 (summary: 25%)",
+        "vehicle": "Final updated NECP 2021-2030 (submitted 7 Jan 2025)",
+        "occasion": "Final updated NECP 2021-2030 (submitted 7 Jan 2025)",
+        "note": "Eurostat 17.2% in 2024 vs 15.5% on the plan path; 18.8% provisional for 2025. Rise is from heating and cooling; the Commission rates 24.5% below its 28% formula result. Delivery against the plan figure only.",
+        "made_by": [
+          {
+            "id": "government-of-malta",
+            "name": "Government of Malta",
+            "kind": "organisation",
+            "role": null,
+            "path": "/bodies/government-of-malta/"
+          }
+        ],
+        "made_by_ids": [
+          "government-of-malta"
+        ],
+        "pure": false,
+        "overlaps": []
+      },
       "date": "2024-12",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "Increase the Renewable Energy contribution from 11.5% to 25% through multiple initiatives to focus on more diversification in onshore and offshore technologies",
+      "version": "1.0",
+      "last_reviewed": "2026-10-05",
+      "outputs": {
+        "report": "claim-files/CC-024/report.pdf",
+        "flyer_pdf": "claim-files/CC-024/flyer.pdf",
+        "flyer_png": "claim-files/CC-024/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-024/claim.yml"
     },
     {
@@ -10176,6 +10248,13 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
     }
   ],
   "pledge_links": [
+    {
+      "a": "CC-011",
+      "b": "CC-024",
+      "why": [
+        "share a theme"
+      ]
+    },
     {
       "a": "CC-011",
       "b": "CC-107",
