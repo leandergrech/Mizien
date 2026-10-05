@@ -4,5 +4,8 @@
   "url": "https://leandergrech.github.io",
   "repo": "https://github.com/leandergrech/Mizien",
   "index_drafts": false,
-  "goatcounter": ""
+  "umami": {
+    "websiteId": "",
+    "scriptUrl": "https://cloud.umami.is/script.js"
+  }
 }
