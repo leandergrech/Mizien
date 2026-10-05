@@ -1,0 +1,11 @@
+geo,year,value,flag,eurostat_updated,query_url,retrieved
+MT,2015,1408.4,,2026-02-25T23:00:00+0100,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d3dens?geo=MT&sinceTimePeriod=2015&format=JSON&lang=en,2026-10-05
+MT,2016,1450.2,b,2026-02-25T23:00:00+0100,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d3dens?geo=MT&sinceTimePeriod=2015&format=JSON&lang=en,2026-10-05
+MT,2017,1495.2,,2026-02-25T23:00:00+0100,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d3dens?geo=MT&sinceTimePeriod=2015&format=JSON&lang=en,2026-10-05
+MT,2018,1548.3,,2026-02-25T23:00:00+0100,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d3dens?geo=MT&sinceTimePeriod=2015&format=JSON&lang=en,2026-10-05
+MT,2019,1595.1,,2026-02-25T23:00:00+0100,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d3dens?geo=MT&sinceTimePeriod=2015&format=JSON&lang=en,2026-10-05
+MT,2020,1610.4,,2026-02-25T23:00:00+0100,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d3dens?geo=MT&sinceTimePeriod=2015&format=JSON&lang=en,2026-10-05
+MT,2021,1646.4,,2026-02-25T23:00:00+0100,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d3dens?geo=MT&sinceTimePeriod=2015&format=JSON&lang=en,2026-10-05
+MT,2022,1696.8,,2026-02-25T23:00:00+0100,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d3dens?geo=MT&sinceTimePeriod=2015&format=JSON&lang=en,2026-10-05
+MT,2023,1766.0,,2026-02-25T23:00:00+0100,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d3dens?geo=MT&sinceTimePeriod=2015&format=JSON&lang=en,2026-10-05
+MT,2024,1817.4,,2026-02-25T23:00:00+0100,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d3dens?geo=MT&sinceTimePeriod=2015&format=JSON&lang=en,2026-10-05
