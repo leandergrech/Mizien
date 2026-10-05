@@ -96,7 +96,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
   - id: CC-003B
     text: "…well above the EU average of 34%"
     said_by: "CAA [1]"
-    finding: "Reproduced (−34% to 2023). True per person; false in total tonnes (−27% vs −33%)."
+    finding: "Reproduced (−34% to 2023). True per person (3rd of 27 to 2024); not in total tonnes (−27% vs −33%; 20th of 27)."
     rating: "Accurate, partial"
     tone: amber
   - id: CC-003C
@@ -108,13 +108,13 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
   - id: CC-003D
     text: "Malta is reducing emissions at household level"
     said_by: "CAA [1]"
-    finding: "Sectors linked to households rose: transport +49%, buildings +9 to +12%, air-conditioning gases up almost six-fold. A per-person ratio is not a household measure."
+    finding: "In total, sectors linked to households rose: transport +49%, buildings +9 to +12%, air-conditioning gases up almost six-fold. Per person, the target sectors were flat (2.50 t to 2.52 t, our estimate), not falling. A per-person ratio of all emissions is not a household measure."
     rating: "Not supported"
     tone: red
   - id: CC-003E
     text: "Malta’s efforts are showing clear results"
     said_by: "CAA [1]"
-    finding: "True for power generation. The same report projects the largest shortfall in the EU (in percentage points) against Malta’s binding 2030 target, which the release does not mention."
+    finding: "True for power generation. The same report shows Malta over its yearly limits since 2022 and projects the largest shortfall in the EU (in percentage points) against its binding 2030 target; the release mentions neither."
     rating: "Misleading by omission"
     tone: red
   - id: CC-003F

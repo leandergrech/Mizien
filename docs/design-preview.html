@@ -232,7 +232,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         {
           "id": "CC-003B",
           "text": "…well above the EU average of 34%",
-          "finding": "Reproduced (−34% to 2023). True per person; false in total tonnes (−27% vs −33%).",
+          "finding": "Reproduced (−34% to 2023). True per person (3rd of 27 to 2024); not in total tonnes (−27% vs −33%; 20th of 27).",
           "rating": "Accurate, partial",
           "tone": "amber"
         },
@@ -246,14 +246,14 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         {
           "id": "CC-003D",
           "text": "Malta is reducing emissions at household level",
-          "finding": "Sectors linked to households rose: transport +49%, buildings +9 to +12%, air-conditioning gases up almost six-fold. A per-person ratio is not a household measure.",
+          "finding": "In total, sectors linked to households rose: transport +49%, buildings +9 to +12%, air-conditioning gases up almost six-fold. Per person, the target sectors were flat (2.50 t to 2.52 t, our estimate), not falling. A per-person ratio of all emissions is not a household measure.",
           "rating": "Not supported",
           "tone": "red"
         },
         {
           "id": "CC-003E",
           "text": "Malta’s efforts are showing clear results",
-          "finding": "True for power generation. The same report projects the largest shortfall in the EU (in percentage points) against Malta’s binding 2030 target, which the release does not mention.",
+          "finding": "True for power generation. The same report shows Malta over its yearly limits since 2022 and projects the largest shortfall in the EU (in percentage points) against its binding 2030 target; the release mentions neither.",
           "rating": "Misleading by omission",
           "tone": "red"
         },
@@ -316,7 +316,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         {
           "id": "CC-004B",
           "text": "Organic waste a record 30 million kg in 2025",
-          "finding": "2025 data not yet published by NSO. 2024 NSO data show organic-bag collections rising.",
+          "finding": "2025 data not yet published by NSO. 2024 NSO data show organic-bag collections rising. Treated organic waste is reported as landfilled, not recycled [6].",
           "rating": "Plausible",
           "tone": "amber"
         },
@@ -330,14 +330,14 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         {
           "id": "CC-004D",
           "text": "Malta records strong progress in waste separation",
-          "finding": "Separated collections and the recycling rate have risen. “Strong” is relative to Malta’s past, not to its targets.",
+          "finding": "Separated collections and the recycling rate have risen, faster than in most EU states. “Strong” is relative to Malta’s past, not to its targets.",
           "rating": "Partly supported",
           "tone": "amber"
         },
         {
           "id": "CC-004E",
           "text": "The Long-Term Waste Management Plan is working; real and measurable outcomes",
-          "finding": "Outcome measures: 16.7% recycled, 79% landfilled; 2020 target missed, 2025 on course to be missed [3, 6]. The release does not report them.",
+          "finding": "Outcome measures: 16.7% recycled, 79% landfilled; 2020 target missed, 2025 on course to be missed, now without postponement [3, 6, 8]. The release does not report them.",
           "rating": "Not substantiated",
           "tone": "orange"
         }
@@ -567,6 +567,64 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "pl",
         "ministry-environment"
       ],
+      "subclaims": [
+        {
+          "id": "CC-010A",
+          "text": "More than 8,000 trees and more than 25,000 shrubs planted by government entities in 2024",
+          "finding": "Stated in Project Green's release [1]; self-reported, with no site list.",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-010B",
+          "text": "Pledge 305: 100,000 trees in the next five years",
+          "finding": "Wording confirmed in the 2022 manifesto, PDF p. 91 [2].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-010C",
+          "text": "About 60,000 trees and more than 100,000 shrubs planted through end-2025",
+          "finding": "Stated by the Minister in Parliament [3]; rounded, no project list; Labour's own count is lower, more than 57,000 [9].",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-010D",
+          "text": "Delivery of 100,000 trees within the pledge period",
+          "finding": "About 60,000 (Labour: more than 57,000) by end-2025, when about 75% of the window had elapsed; the legislature then ended with the 30 May 2026 election, and no later count was found [3, 8, 9].",
+          "rating": "Not substantiated",
+          "tone": "orange"
+        }
+      ],
+      "pledge": {
+        "status": "Off track",
+        "slug": "pledge-off-track",
+        "colour": "#ae5d33",
+        "as_of": "31 December 2025",
+        "as_of_iso": "2025-12-31",
+        "made_on": "11 March 2022",
+        "deadline": "26 March 2027",
+        "term_end": null,
+        "target": "100,000 trees in the next five years",
+        "vehicle": "Labour manifesto 2022, pledge 305",
+        "occasion": "Labour manifesto 2022",
+        "note": "About 60,000 trees reported by end-2025 with 75% of the five years gone (parliamentary answer, Feb 2026). The deadline is five years from the 26 March 2022 election; the legislature ended early (election 30 May 2026) and no count for January-May 2026 was found, so the label stays Off track rather than Missed.",
+        "made_by": [
+          {
+            "id": "pl",
+            "name": "Partit Laburista (Labour Party)",
+            "kind": "organisation",
+            "role": null,
+            "path": "/bodies/pl/"
+          }
+        ],
+        "made_by_ids": [
+          "pl"
+        ],
+        "pure": false,
+        "overlaps": []
+      },
       "date": "2024-12-31",
       "quote": "",
       "version": "1.2",
@@ -627,6 +685,34 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
           "tone": "grey"
         }
       ],
+      "pledge": {
+        "status": "Not measurable",
+        "slug": "pledge-not-measurable",
+        "colour": "#716f8d",
+        "as_of": "5 October 2026",
+        "as_of_iso": "2026-10-05",
+        "made_on": "May 2026",
+        "deadline": null,
+        "term_end": null,
+        "target": "Every person no more than ten minutes' walk from an open or green space",
+        "vehicle": "Labour manifesto 2026 (Int Malta), priority 19",
+        "occasion": "Labour manifesto 2026 (Int Malta)",
+        "note": "No definition of \"open or green space\", no baseline and no date. 99.7-99.9% of residents are already within ten minutes of some open space on a broad reading; 55-68% for parks of at least 0.5 ha. Labour won the 30 May 2026 election, so the pledge is a government commitment for the 2026 legislature.",
+        "made_by": [
+          {
+            "id": "pl",
+            "name": "Partit Laburista (Labour Party)",
+            "kind": "organisation",
+            "role": null,
+            "path": "/bodies/pl/"
+          }
+        ],
+        "made_by_ids": [
+          "pl"
+        ],
+        "pure": true,
+        "overlaps": []
+      },
       "date": "2026-05",
       "quote": "Kull persuna f'pajjiżna ma tkunx aktar minn għaxar minuti mixi 'l bogħod minn spazju miftuħ jew aħdar.",
       "version": "1.3",
@@ -722,7 +808,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         {
           "id": "CC-013C",
           "text": "Without the permits Malta would face the same crises as other European countries",
-          "finding": "Counterfactual. Malta is below the EU on overcrowding and overburden today, but its prices grew faster and overburden is rising.",
+          "finding": "Counterfactual. Malta is below the EU on overcrowding and overburden today, and its real price rise ranks 16th of 27 despite the fastest population growth; but its prices outpaced the EU aggregate, rents rose 53% (EU 21%) and overburden is rising.",
           "rating": "Not shown",
           "tone": "grey"
         },
@@ -782,29 +868,29 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         {
           "id": "CC-014B",
           "text": "Now around 200",
-          "finding": "164–233 a year, 2019–2024; 191 in 2024 [9–12].",
+          "finding": "164–233 a year, 2018–2024 (191 in 2024); 315 in 2017 [9–16].",
           "rating": "Accurate",
           "tone": "green"
         },
         {
           "id": "CC-014C",
           "text": "The fall is due to fewer illegalities",
-          "finding": "Complaints fell 11–35% against an 82% fall in notices; notices per complaint fell about five-fold; the Authority attributes the fall to persuasion.",
+          "finding": "Notices fell 82%; complaints fell 11–35% since 2004–09 and averaged about 2,860 a year in 2017–24. Confirmed cases in 2024 were close to 2018, and only 7–13 in 100 ended in a notice. The Authority attributes the fall to its strategy [9–16].",
           "rating": "Misleading",
           "tone": "red"
         },
         {
           "id": "CC-014D",
           "text": "Over 5,000 cases awaiting direct action; over 90 years to clear",
-          "finding": "5,382 pending notices at end 2021 [11]; 74 closed by direct action in 2020 [10] implies about 73 years. Consistent in size.",
+          "finding": "Pending notices: almost 7,000 (end 2018), 6,119 (2019), almost 5,600 (2020) [11–13]; 5,382 (end 2021) [17]. Notices closed by direct action: 27–135 a year in 2017–2020, mean 72 [10–13], which implies about 75 years. Consistent in size.",
           "rating": "Broadly consistent",
           "tone": "amber"
         },
         {
           "id": "CC-014E",
           "text": "1,500 illegalities removed by direct action in 30 years",
-          "finding": "No annual series found.",
-          "rating": "Not tested",
+          "finding": "Notices closed by direct action: 135, 52, 27 and 74 in 2017–2020 [10–13]. 1,500 in 30 years is 50 a year, the same order. No 30-year series found.",
+          "rating": "Partly tested",
           "tone": "grey"
         }
       ],
@@ -881,9 +967,9 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         {
           "id": "CC-016A",
           "text": "Shore power cuts a connected ship’s emissions at berth by about 90%",
-          "finding": "Infrastructure Malta’s per-liner figures: NO2 −93%, PM −92.6%, SO2 −99.6%, CO2 −39.6% [10, 11]; consistent with research [7, 9]. Underlying study not cited.",
-          "rating": "Plausible",
-          "tone": "green"
+          "finding": "True for NOx, PM and SOx per connected liner (NO2 −93%, PM −92.6%, SO2 −99.6%) [10, 11]; CO2 falls only about 40%; consistent with research [7, 9]. Infrastructure Malta’s own study is not public.",
+          "rating": "Largely supported",
+          "tone": "lime"
         },
         {
           "id": "CC-016B",
@@ -963,7 +1049,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         {
           "id": "CC-017C",
           "text": "“There are five or six sites where reclamation is possible and environmentally safe” (2019)",
-          "finding": "Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km from the Terminal 2 works [7].",
+          "finding": "Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km and mapped Posidonia ~0.2 km from the Terminal 2 works [7, 12].",
           "rating": "Not shown",
           "tone": "red"
         },
@@ -972,6 +1058,13 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
           "text": "Commercial activity will move so families can enjoy the space",
           "finding": "Activities and spaces not identified.",
           "rating": "Not shown",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-017E",
+          "text": "“The sea near the Freeport is an ideal depth for these kinds of projects” (Prime Minister)",
+          "finding": "Within 1 km of the Terminal 2 works the sea is mostly 5–30 m deep [14]; “ideal” is not defined. Mapped meadows in the bay lie at similar depths, 8–34 m [12].",
+          "rating": "Not tested",
           "tone": "grey"
         }
       ],
@@ -1031,6 +1124,34 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
           "finding": "Partly; the MDA’s own study pointed the other way on price-to-income.",
           "rating": "Partly",
           "tone": "amber"
+        },
+        {
+          "id": "CC-018D",
+          "text": "The IMF will now assess Malta “every two years”",
+          "finding": "The staff report recommends the 24-month cycle, and the annex says Malta “has moved” to it [2].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-018E",
+          "text": "Malta is “the first EU economy to be given such a certificate of economic governance”",
+          "finding": "Not the first: Luxembourg was on the 24-month cycle in 2000–2002 [9]. Malta is the only EU member on it today [8]. The IMF’s criteria are size, low perceived risk and consent, not a certificate [7].",
+          "rating": "Contradicted",
+          "tone": "maroon"
+        },
+        {
+          "id": "CC-018F",
+          "text": "Since 2013 GDP per capita “has nearly doubled”",
+          "finding": "The IMF’s own words (US$25,000 → 45,000, 2013–2024) [2]. In euros it more than doubled (×2.2 to 2025); after inflation it rose by about half (×1.5) [10].",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-018G",
+          "text": "GDP per capita is now “far higher than the EU average”",
+          "finding": "The IMF says “higher”. Eurostat, 2025: 1.7% above the EU average at market prices, 10% above in purchasing power [10].",
+          "rating": "Not substantiated",
+          "tone": "orange"
         }
       ],
       "date": "2026-02-08",
@@ -1072,9 +1193,9 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         {
           "id": "CC-019A",
           "text": "About 830,000 m² of green land built up 2018–2023",
-          "finding": "Independent estimate 1.4–3.0 km² net, over shorter windows (land first built 2019–22); Amphora’s figure plausible and conservative.",
-          "rating": "Supported",
-          "tone": "green"
+          "finding": "Amphora’s polygons add up to 828,429 m² (two, 4,429 m², were sea in 2018). An independent model flags largely different land and can neither confirm nor rule out the figure.",
+          "rating": "Plausible",
+          "tone": "lime"
         },
         {
           "id": "CC-019B",
@@ -1086,14 +1207,14 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         {
           "id": "CC-019C",
           "text": "Nearly 95% of take-up was farmland",
-          "finding": "Independent data: 65% cropland, 31% shrub or grass.",
-          "rating": "Not shown",
-          "tone": "grey"
+          "finding": "Cropland + grass = 96% of the area with a known 2018 class (our reading of the basis), but only if all grass is farmland; 37% of the area has no class.",
+          "rating": "Needs context",
+          "tone": "amber"
         },
         {
           "id": "CC-019D",
           "text": "EEA figures and the 1.94 km² total",
-          "finding": "Sum correct; EEA chart gives 0.91–0.94 km² for 2012–18 [7]; 2006–12 not seen.",
+          "finding": "CORINE change maps: 20.6 ha (2006–12) and 93.7 ha (2012–18) [9]; EEA chart 0.91–0.94 km² [7]; sum correct.",
           "rating": "Supported",
           "tone": "green"
         }
@@ -1255,7 +1376,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         {
           "id": "CC-022D",
           "text": "Lowest “burden” on families",
-          "finding": "True for price; the subsidy cost is not counted [4].",
+          "finding": "True for price. Against income, 2nd of 27 for a typical and a low-income household; on actual bills, 5th of 26 (Section 4). The subsidy cost is not counted [4].",
           "rating": "Largely supported",
           "tone": "lime"
         }
@@ -3940,6 +4061,34 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
           "tone": "grey"
         }
       ],
+      "pledge": {
+        "status": "Not measurable",
+        "slug": "pledge-not-measurable",
+        "colour": "#716f8d",
+        "as_of": "5 October 2026",
+        "as_of_iso": "2026-10-05",
+        "made_on": "May 2026",
+        "deadline": "31 December 2040",
+        "term_end": null,
+        "target": "A clear and realistic plan for Gozo to become a Net-Zero Island by 2040",
+        "vehicle": "PN electoral programme 2026 (Nifs Ġdid), chapter Għawdex",
+        "occasion": "PN electoral programme 2026 (Nifs Ġdid)",
+        "note": "No baseline, boundary or pathway published and no greenhouse-gas inventory for Gozo. The PN lost the 30 May 2026 election, so this is an opposition proposal.",
+        "made_by": [
+          {
+            "id": "pn",
+            "name": "Partit Nazzjonalista (Nationalist Party)",
+            "kind": "organisation",
+            "role": null,
+            "path": "/bodies/pn/"
+          }
+        ],
+        "made_by_ids": [
+          "pn"
+        ],
+        "pure": true,
+        "overlaps": []
+      },
       "date": "2026-05",
       "quote": "Infasslu pjan ċar u realistiku biex sal-2040, Għawdex isir Net-Zero Island",
       "version": "1.1",
@@ -8775,8 +8924,53 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "colour": "#a1887f"
     }
   ],
-  "pledge_labels": [],
-  "pledge_links": []
+  "pledge_labels": [
+    {
+      "name": "Not measurable",
+      "meaning": "the pledge as worded has no definition, baseline or date against which delivery could be checked.",
+      "slug": "pledge-not-measurable",
+      "colour": "#716f8d"
+    },
+    {
+      "name": "Not yet due",
+      "meaning": "the pledge is measurable, its deadline or term has not passed, and no progress data have been published yet.",
+      "slug": "pledge-not-yet-due",
+      "colour": "#5c7689"
+    },
+    {
+      "name": "On track",
+      "meaning": "published progress is at or ahead of a straight-line path (or the pledge's own milestones) to the target by the deadline.",
+      "slug": "pledge-on-track",
+      "colour": "#337f71"
+    },
+    {
+      "name": "Off track",
+      "meaning": "published progress is behind that path, and the target has not yet been shown to be met or missed.",
+      "slug": "pledge-off-track",
+      "colour": "#ae5d33"
+    },
+    {
+      "name": "Met",
+      "meaning": "documents or data show the target was reached, by the deadline if one was set.",
+      "slug": "pledge-met",
+      "colour": "#23705f"
+    },
+    {
+      "name": "Missed",
+      "meaning": "the deadline or term has passed, and documents or data that can be shown say the target was not reached.",
+      "slug": "pledge-missed",
+      "colour": "#7c2d4a"
+    }
+  ],
+  "pledge_links": [
+    {
+      "a": "CC-011",
+      "b": "CC-107",
+      "why": [
+        "same subtopic (Manifestos & pledges)"
+      ]
+    }
+  ]
 }</script>
 <script>(function(){var data=document.getElementById("map-data").textContent;document.getElementById("theme-map").src="index.html?previewTheme=botanical&previewData="+encodeURIComponent(data)})();</script>
 </body></html>

@@ -100,23 +100,23 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: green
   - id: CC-014B
     text: "Now around 200"
-    finding: "164–233 a year, 2019–2024; 191 in 2024 [9–12]."
+    finding: "164–233 a year, 2018–2024 (191 in 2024); 315 in 2017 [9–16]."
     rating: "Accurate"
     tone: green
   - id: CC-014C
     text: "The fall is due to fewer illegalities"
-    finding: "Complaints fell 11–35% against an 82% fall in notices; notices per complaint fell about five-fold; the Authority attributes the fall to persuasion."
+    finding: "Notices fell 82%; complaints fell 11–35% since 2004–09 and averaged about 2,860 a year in 2017–24. Confirmed cases in 2024 were close to 2018, and only 7–13 in 100 ended in a notice. The Authority attributes the fall to its strategy [9–16]."
     rating: "Misleading"
     tone: red
   - id: CC-014D
     text: "Over 5,000 cases awaiting direct action; over 90 years to clear"
-    finding: "5,382 pending notices at end 2021 [11]; 74 closed by direct action in 2020 [10] implies about 73 years. Consistent in size."
+    finding: "Pending notices: almost 7,000 (end 2018), 6,119 (2019), almost 5,600 (2020) [11–13]; 5,382 (end 2021) [17]. Notices closed by direct action: 27–135 a year in 2017–2020, mean 72 [10–13], which implies about 75 years. Consistent in size."
     rating: "Broadly consistent"
     tone: amber
   - id: CC-014E
     text: "1,500 illegalities removed by direct action in 30 years"
-    finding: "No annual series found."
-    rating: "Not tested"
+    finding: "Notices closed by direct action: 135, 52, 27 and 74 in 2017–2020 [10–13]. 1,500 in 30 years is 50 a year, the same order. No 30-year series found."
+    rating: "Partly tested"
     tone: grey
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: '187'

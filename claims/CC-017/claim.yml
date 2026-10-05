@@ -98,13 +98,18 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: grey
   - id: CC-017C
     text: "“There are five or six sites where reclamation is possible and environmentally safe” (2019)"
-    finding: "Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km from the Terminal 2 works [7]."
+    finding: "Seabed study unpublished; a marine Natura 2000 site lies ~0.4 km and mapped Posidonia ~0.2 km from the Terminal 2 works [7, 12]."
     rating: "Not shown"
     tone: red
   - id: CC-017D
     text: "Commercial activity will move so families can enjoy the space"
     finding: "Activities and spaces not identified."
     rating: "Not shown"
+    tone: grey
+  - id: CC-017E
+    text: "“The sea near the Freeport is an ideal depth for these kinds of projects” (Prime Minister)"
+    finding: "Within 1 km of the Terminal 2 works the sea is mostly 5–30 m deep [14]; “ideal” is not defined. Mapped meadows in the bay lie at similar depths, 8–34 m [12]."
+    rating: "Not tested"
     tone: grey
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: +3.7 ha

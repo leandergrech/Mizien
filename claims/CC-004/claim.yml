@@ -110,7 +110,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
   - id: CC-004B
     text: "Organic waste a record 30 million kg in 2025"
     said_by: "Ministry [1]"
-    finding: "2025 data not yet published by NSO. 2024 NSO data show organic-bag collections rising."
+    finding: "2025 data not yet published by NSO. 2024 NSO data show organic-bag collections rising. Treated organic waste is reported as landfilled, not recycled [6]."
     rating: "Plausible"
     tone: amber
   - id: CC-004C
@@ -122,13 +122,13 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
   - id: CC-004D
     text: "Malta records strong progress in waste separation"
     said_by: "Ministry [1]"
-    finding: "Separated collections and the recycling rate have risen. “Strong” is relative to Malta’s past, not to its targets."
+    finding: "Separated collections and the recycling rate have risen, faster than in most EU states. “Strong” is relative to Malta’s past, not to its targets."
     rating: "Partly supported"
     tone: amber
   - id: CC-004E
     text: "The Long-Term Waste Management Plan is working; real and measurable outcomes"
     said_by: "Minister Dalli [1]"
-    finding: "Outcome measures: 16.7% recycled, 79% landfilled; 2020 target missed, 2025 on course to be missed [3, 6]. The release does not report them."
+    finding: "Outcome measures: 16.7% recycled, 79% landfilled; 2020 target missed, 2025 on course to be missed, now without postponement [3, 6, 8]. The release does not report them."
     rating: "Not substantiated"
     tone: orange
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)

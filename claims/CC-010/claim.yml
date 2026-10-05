@@ -97,6 +97,28 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-010A
+    text: "More than 8,000 trees and more than 25,000 shrubs planted by government entities in 2024"
+    finding: "Stated in Project Green's release [1]; self-reported, with no site list."
+    rating: "Supported"
+    tone: green
+  - id: CC-010B
+    text: "Pledge 305: 100,000 trees in the next five years"
+    finding: "Wording confirmed in the 2022 manifesto, PDF p. 91 [2]."
+    rating: "Supported"
+    tone: green
+  - id: CC-010C
+    text: "About 60,000 trees and more than 100,000 shrubs planted through end-2025"
+    finding: "Stated by the Minister in Parliament [3]; rounded, no project list; Labour's own count is lower, more than 57,000 [9]."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-010D
+    text: "Delivery of 100,000 trees within the pledge period"
+    finding: "About 60,000 (Labour: more than 57,000) by end-2025, when about 75% of the window had elapsed; the legislature then ended with the 30 May 2026 election, and no later count was found [3, 8, 9]."
+    rating: "Not substantiated"
+    tone: orange
 version: '1.2'
 last_reviewed: '2026-10-05'
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)

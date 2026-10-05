@@ -83,7 +83,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: green
   - id: CC-022D
     text: "Lowest “burden” on families"
-    finding: "True for price; the subsidy cost is not counted [4]."
+    finding: "True for price. Against income, 2nd of 27 for a typical and a low-income household; on actual bills, 5th of 26 (Section 4). The subsidy cost is not counted [4]."
     rating: "Largely supported"
     tone: lime
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)

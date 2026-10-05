@@ -85,7 +85,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: lime
   - id: CC-013C
     text: "Without the permits Malta would face the same crises as other European countries"
-    finding: "Counterfactual. Malta is below the EU on overcrowding and overburden today, but its prices grew faster and overburden is rising."
+    finding: "Counterfactual. Malta is below the EU on overcrowding and overburden today, and its real price rise ranks 16th of 27 despite the fastest population growth; but its prices outpaced the EU aggregate, rents rose 53% (EU 21%) and overburden is rising."
     rating: "Not shown"
     tone: grey
   - id: CC-013D

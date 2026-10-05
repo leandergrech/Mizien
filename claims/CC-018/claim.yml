@@ -127,6 +127,26 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "Partly; the MDA’s own study pointed the other way on price-to-income."
     rating: "Partly"
     tone: amber
+  - id: CC-018D
+    text: "The IMF will now assess Malta “every two years”"
+    finding: "The staff report recommends the 24-month cycle, and the annex says Malta “has moved” to it [2]."
+    rating: "Supported"
+    tone: green
+  - id: CC-018E
+    text: "Malta is “the first EU economy to be given such a certificate of economic governance”"
+    finding: "Not the first: Luxembourg was on the 24-month cycle in 2000–2002 [9]. Malta is the only EU member on it today [8]. The IMF’s criteria are size, low perceived risk and consent, not a certificate [7]."
+    rating: "Contradicted"
+    tone: maroon
+  - id: CC-018F
+    text: "Since 2013 GDP per capita “has nearly doubled”"
+    finding: "The IMF’s own words (US$25,000 → 45,000, 2013–2024) [2]. In euros it more than doubled (×2.2 to 2025); after inflation it rose by about half (×1.5) [10]."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-018G
+    text: "GDP per capita is now “far higher than the EU average”"
+    finding: "The IMF says “higher”. Eurostat, 2025: 1.7% above the EU average at market prices, 10% above in purchasing power [10]."
+    rating: "Not substantiated"
+    tone: orange
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: −10.7%
   caption: house price-to-income ratio, 2015–2024 (Eurostat)

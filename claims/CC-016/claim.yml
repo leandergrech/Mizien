@@ -105,9 +105,9 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-016A
     text: "Shore power cuts a connected ship’s emissions at berth by about 90%"
-    finding: "Infrastructure Malta’s per-liner figures: NO2 −93%, PM −92.6%, SO2 −99.6%, CO2 −39.6% [10, 11]; consistent with research [7, 9]. Underlying study not cited."
-    rating: "Plausible"
-    tone: green
+    finding: "True for NOx, PM and SOx per connected liner (NO2 −93%, PM −92.6%, SO2 −99.6%) [10, 11]; CO2 falls only about 40%; consistent with research [7, 9]. Infrastructure Malta’s own study is not public."
+    rating: "Largely supported"
+    tone: lime
   - id: CC-016B
     text: "The project slashes 90% of air pollution in the Grand Harbour"
     finding: "At most about 9% of at-berth cruise emissions in year one; other sources and manoeuvring untouched; no harbour measurement."
