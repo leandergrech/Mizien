@@ -1,13 +1,5 @@
 # CC-102: Ombudsman: 58% of environment recommendations ignored
 
-**Status:** literature not yet collected.
+**Status:** Drafted (report v1.0, 5 Oct 2026). Verdict: Largely supported (high).
 
-## To collect
-
-Ombudsman 2025 annual report (case tables for the Commissioner for Environment and Planning, 2023-2025); individual case notes; number of cases behind the 58%.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-102) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+See `notes.md` and `references.bib`. Analysis in `data/cc-102/`. The Ombudsman's PDFs are not committed (publisher copyright); URLs and SHA-256 hashes are in `data/sources.csv`.

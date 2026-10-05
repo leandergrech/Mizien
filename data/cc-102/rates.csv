@@ -1,0 +1,18 @@
+year,office,sustained_cases,not_implemented,rate_of_sustained_pct,cases_with_recommendation,rate_of_cases_with_recommendation_pct,reports_to_parliament
+2023,Parliamentary Ombudsman,10,2,20.0,6,33.3,4
+2023,Environment and Planning,13,6,46.2,13,46.2,5
+2023,Education,8,3,37.5,7,42.9,5
+2023,Health,20,0,0.0,12,0.0,0
+2024,Parliamentary Ombudsman,19,8,42.1,19,42.1,8
+2024,Environment and Planning,8,2,25.0,8,25.0,2
+2024,Education,12,5,41.7,10,50.0,6
+2024,Health,48,0,0.0,30,0.0,0
+2025,Parliamentary Ombudsman,17,5,29.4,16,31.2,4
+2025,Environment and Planning,12,7,58.3,12,58.3,7
+2025,Education,15,8,53.3,12,66.7,8
+2025,Health,37,2,5.4,17,11.8,3
+2023-2025,Education,35,16,45.7,29,55.2,19
+2023-2025,Environment and Planning,33,15,45.5,33,45.5,14
+2023-2025,Health,105,2,1.9,59,3.4,3
+2023-2025,Parliamentary Ombudsman,46,15,32.6,41,36.6,16
+"2025 (chapter 3, at time of writing)",Environment and Planning,12,5,41.7,12,41.7,7
