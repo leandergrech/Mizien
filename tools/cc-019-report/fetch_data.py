@@ -2,10 +2,12 @@
 """CC-019: independent check of 'Malta lost ~830,000 m2 of green land to development, 2018-2023'.
 
 Uses Impact Observatory / Esri 10 m annual land use land cover v2 (io-lulc-annual-v02, 2017-2023) from Microsoft
-Planetary Computer. Single-year maps are noisy (built area swings by >15 km2 between years), so new built-up land is
-counted only where a pixel is consistently not built before and consistently built after:
-  strict: not built 2017, 2018, 2019 and built 2021, 2022, 2023
-  two-year: not built 2017 and 2018, built 2022 and 2023
+Planetary Computer. Single-year maps are noisy (built area swings by up to 27 km2 between years), so new built-up land
+is counted only where a pixel is consistently not built before and consistently built after:
+  strict: not built 2017, 2018, 2019 and built 2021, 2022, 2023, so it detects land first mapped as built in the
+          2020 or 2021 map (and still built in 2023), not all of 2018-2023
+  two-year: not built 2017 and 2018, built 2022 and 2023: land first mapped as built in the 2019-2022 maps
+  single-year: not built 2018, built 2023 (the simple comparison, kept only to show the noise; added in v1.1)
 The reverse transitions (built -> not built, same rules) gauge the noise. Needs network, numpy, rasterio.
 
 Writes data/cc-019/io_lulc_areas.csv, io_lulc_change.csv, new_built_strict.csv (row, col of 10 m pixels, for the map)
@@ -48,7 +50,8 @@ B = {y: Y[y] == 7 for y in yrs}
 nb = lambda ys: np.all([~B[y] for y in ys], axis=0)
 bb = lambda ys: np.all([B[y] for y in ys], axis=0)
 rules = {"strict": (("2017", "2018", "2019"), ("2021", "2022", "2023")),
-         "two-year": (("2017", "2018"), ("2022", "2023"))}
+         "two-year": (("2017", "2018"), ("2022", "2023")),
+         "single-year": (("2018",), ("2023",))}
 rows = []
 for name, (pre, post) in rules.items():
     gain = land & nb(pre) & bb(post)

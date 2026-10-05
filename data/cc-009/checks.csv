@@ -10,4 +10,4 @@ check,value,unit,source,note
 WSC groundwater production change 2022 to 2025,-8.9495,%,WSC Annual Report 2025 Figure 20,"Calculated from the annual report chart values; WSC production series, not all-user national abstraction."
 WSC groundwater production change 2024 to 2025 from chart,-11.8606,%,WSC Annual Report 2025 Figure 20,"WSC narrative states -11.4%; chart values imply -11.86%, a small internal difference retained rather than reconciled."
 WSC groundwater production change 2024 to 2025 as reported,-11.4,%,WSC Annual Report 2025 p.43,Directly stated by WSC; separate from calculation using chart values.
-Groundwater bodies failing nitrate standard,12,of 15 bodies,"ERA/EWA 3rd River Basin Management Plan, Chapter 6","Three exceptions are named; 14 bodies fail overall chemical status, which is broader than nitrate alone."
+Groundwater bodies failing nitrate standard,12,of 15 bodies,"ERA/EWA 3rd River Basin Management Plan, Chapter 6","Three exceptions are named; the plan records 14 bodies failing chemical status, which is broader than nitrate alone (Malta's 3rd-cycle EU reporting lists 15; see wise_gwb_status.csv)."

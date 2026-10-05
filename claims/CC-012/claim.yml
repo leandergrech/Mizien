@@ -83,17 +83,17 @@ claim:
     note: 'Primary evidence: tools/cc-012-report/fetch_s2.py; data/cc-012/.'
   quote: The benefit of this work is that the natural grass grows at a much faster rate well before the rainfall
     of the winter season. (Public Works Ministry statement, as reported by MaltaToday)
-counter_evidence: 'Sentinel-2: the 2.8 ha gravel zone (Momentum measured ~2.2 ha) greened every winter before the
-  gravel (winter median NDVI 0.37-0.47 in 2023-2025, level with the rest of the park) and stayed bare in winter
-  2025-26 (0.11) while the rest of the park was at 0.38. Summers were already bare before the gravel (~0.11), as
-  the park management said. Gravel still in place and area bare in the last clear image, 27 Sep 2026. Soil-compaction
+counter_evidence: 'Sentinel-2 (v1.1, reflectance offset applied): the 2.8 ha gravel zone (Momentum measured ~2.2 ha)
+  greened every winter before the gravel (winter median NDVI 0.53-0.67 in 2023-2025, close to the rest of the park
+  at 0.65-0.68) and stayed bare in winter 2025-26 (0.15) while the rest of the park was at 0.68. Summers were already
+  bare before the gravel (~0.15), as the park management said. Gravel still in place and area bare in the last clear image, 27 Sep 2026. Soil-compaction
   reviews support the choking mechanism; gravel-sand mulch is a known water-conservation technique.'
 tests: Sentinel-2 NDVI and brightness 2023-2026 against a control area in the same park; soil compaction literature.
 why_low_hanging: 'Done: Claim Check 012 report and flyer.'
 tags:
 - Promise-without-baseline
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: High
 caveats: Draft pending right of reply (Ministry, park unit, OPM, PN, Momentum). Verdict applies to the government
   assurance that grass would regrow; PN/Momentum description of the current state is supported, 'permanently' not
@@ -109,8 +109,8 @@ outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-03'
+version: '1.1'
+last_reviewed: '2026-10-05'
 location:
   place: Ta' Qali picnic area
   lat: 35.8952
@@ -118,5 +118,5 @@ location:
   scope: site
   icon: park
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
-  figure: '0.11'
-  caption: winter greenness after the gravel, down from 0.37–0.47
+  figure: '0.15'
+  caption: winter greenness after the gravel, down from 0.53–0.67

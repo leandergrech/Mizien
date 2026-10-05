@@ -335,7 +335,7 @@ def references(refs):
     out = []
     for n, t, u in refs:
         link = f' <link href="{u}" color="#3C6E8F">{u.replace("&", "&amp;")}</link>' if u else ""
-        out.append(_tag(("ref", n, t, u), Paragraph(f"<b>[{n}]</b> {t}{link}", ref)))
+        out.append(_tag(("ref", n, t, u), Paragraph(f"<b>[{n}]</b> {t.replace('◆', DIAM)}{link}", ref)))
     return out
 
 
@@ -399,6 +399,7 @@ class Report:
     pdf_subject: str
     title_size: float = 37
     quote_size: float = 16.5
+    status_note: str = "pending right of reply"   # page footer; e.g. "right of reply not sought"
     story: list = field(default_factory=list)
 
 
@@ -479,7 +480,7 @@ def build_report(R: Report):
         c.drawRightString(PW - RM, PH - 12.2 * mm, R.running_head)
         c.setStrokeColor(RULE)
         c.line(LM, 14 * mm, PW - RM, 14 * mm)
-        c.drawString(LM, 9.6 * mm, f"v{R.version} draft  ·  {R.date}  ·  pending right of reply")
+        c.drawString(LM, 9.6 * mm, f"v{R.version} draft  ·  {R.date}  ·  {R.status_note}")
         c.setFillColor(GREEN)
         c.setFont("Sans-B", 8)
         c.drawRightString(PW - RM, 9.6 * mm, f"{doc.page}")

@@ -1,15 +1,15 @@
 check,value,unit,source,note
 "Gravel zone area (brightening Aug-Sep 2025 vs 2024, inside OSM park polygon)",27600,m2,data/cc-012/gravel_zone.geojson,"Momentum's inspection reported about 22,000 m2"
-summer 2023: NDVI gravel zone / rest of park,0.11 / 0.26,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,26 scenes; ratio 0.44
-winter 2023: NDVI gravel zone / rest of park,0.37 / 0.40,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,6 scenes; ratio 0.92
-summer 2024: NDVI gravel zone / rest of park,0.11 / 0.25,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,22 scenes; ratio 0.45
-winter 2024: NDVI gravel zone / rest of park,0.47 / 0.40,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,7 scenes; ratio 1.17
-summer 2025: NDVI gravel zone / rest of park,0.08 / 0.28,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,42 scenes; ratio 0.28
-winter 2025: NDVI gravel zone / rest of park,0.38 / 0.39,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,5 scenes; ratio 0.99
-summer 2026: NDVI gravel zone / rest of park,0.07 / 0.28,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,31 scenes; ratio 0.26
-winter 2026: NDVI gravel zone / rest of park,0.11 / 0.38,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,5 scenes; ratio 0.29
-"Winter ratio zone/rest of park, before gravel (2023-2025)",0.99,ratio,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,18 scenes
-"Winter ratio zone/rest of park, after gravel (2025-26)",0.3,ratio,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,5 scenes
-"Brightness in zone, May 2025 -> Aug 2025",2881 -> 4191,reflectance x 10^4,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,gravel laid June 2025
-Latest clear scene,2026-09-27,date,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,NDVI zone 0.10 vs rest 0.32; brightness 3510 vs 1802
-"Brightness in zone, Aug-Sep 2026 median",3956,reflectance x 10^4,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,"no return to pre-gravel levels (about 2,000-3,000) by end of September 2026"
+summer 2023: NDVI gravel zone / rest of park,0.15 / 0.38,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,26 scenes; ratio 0.40
+winter 2023: NDVI gravel zone / rest of park,0.53 / 0.67,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,6 scenes; ratio 0.79
+summer 2024: NDVI gravel zone / rest of park,0.15 / 0.37,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,22 scenes; ratio 0.41
+winter 2024: NDVI gravel zone / rest of park,0.67 / 0.68,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,7 scenes; ratio 0.99
+summer 2025: NDVI gravel zone / rest of park,0.10 / 0.41,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,42 scenes; ratio 0.24
+winter 2025: NDVI gravel zone / rest of park,0.57 / 0.65,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,5 scenes; ratio 0.88
+summer 2026: NDVI gravel zone / rest of park,0.09 / 0.42,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,31 scenes; ratio 0.22
+winter 2026: NDVI gravel zone / rest of park,0.15 / 0.68,NDVI,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,5 scenes; ratio 0.22
+"Winter ratio zone/rest of park, before gravel (2023-2025)",0.88,ratio,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,18 scenes
+"Winter ratio zone/rest of park, after gravel (2025-26)",0.23,ratio,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,5 scenes
+"Brightness in zone, May 2025 -> Aug 2025",0.19 -> 0.32,surface reflectance (0-1),Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,gravel laid June 2025
+Latest clear scene,2026-09-27,date,Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,NDVI zone 0.13 vs rest 0.51; brightness 0.25 vs 0.08
+"Brightness in zone, Aug-Sep 2026 median",0.30,surface reflectance (0-1),Sentinel-2 L2A (Copernicus) via Planetary Computer; data/cc-012/ndvi_timeseries.csv,pre-gravel scenes (Jan 2023-May 2025) ranged 0.06-0.26; Aug-Sep 2023 and 2024 medians 0.19 and 0.21

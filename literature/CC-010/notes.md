@@ -1,13 +1,15 @@
 # CC-010 research notes
 
-**Checked:** 3 October 2026
+**Checked:** 3 October 2026; corrections 5 October 2026
 
 ## Claim components
 
 1. Project Green's 31 December 2024 release says more than 8,000 trees and more than 25,000 shrubs were planted in 2024 by various government entities. It does not provide a project-level inventory, species-level breakdown, planting locations, or survival follow-up in the release. Preserve the two categories; do not combine them as “trees”.
 2. Pledge 305 of the 2022 Labour manifesto says (Maltese): “Inniedu pjan wiesgħa ta’ azzjoni għat-tħawwil ta’ siġar u afforestazzjoni fejn ser nikkommettu ruħna li jitħawlu 100,000 siġra fil-ħames snin li ġejjin.” Translation: launch a broad action plan for tree planting and afforestation, committing to 100,000 trees being planted over the next five years. The manifesto PDF is hosted by Talk.mt; the original document itself is the primary source. The pledge appears on PDF p. 91 (printed p. 89).
 3. Parliament's 18 February 2026 record of PQ 34270 gives the Environment Minister's written answer: entities under her ministry and entities under other ministries together planted around 60,000 trees and more than 100,000 shrubs during that legislature up to the end of 2025. This is a direct primary source for the count, although the answer gives no agency-by-agency breakdown, method, sites, or survival data.
-4. A separate April 2026 Ministry release describes a private-land tree scheme announced to plant more than 100,000 trees. It says vouchers covering 13,000 trees had been issued and distribution was underway. Do not conflate this scheme with the 2022 manifesto pledge or count issued vouchers as planted trees.
+4. A separate April 2026 Ministry release describes a private-land tree scheme announced to plant more than 100,000 trees. It says vouchers covering 13,000 trees had been issued and distribution was underway. Project Green's later release of 13 May 2026 says vouchers had by then been issued for 23,000 trees, “spread over more than 250 beneficiaries”, and that some had been redeemed (checked 5 October 2026). Do not conflate this scheme with the 2022 manifesto pledge or count issued vouchers as planted trees.
+5. Labour's 2026 manifesto (*Int Malta: Manifest Elettorali 2026*, SHA-256 466a60f9…1ceb, the copy used for CC-011), item 43, PDF p. 170 (printed p. 168), under “Afforestazzjoni”: “Bejn l-2022 u l-2025 tħawlu aktar minn 57,000 siġra madwar il-pajjiż kollu” (between 2022 and 2025 more than 57,000 trees were planted across the country). This is the party's own count and is lower than the Minister's ~60,000 for a similar period; neither document reconciles the two. Verified in the PDF on 5 October 2026.
+6. Timing (v1.1 correction). IFES ElectionGuide records the 2022 general election on 26 March 2022 and a snap general election on 30 May 2026. The 2022 manifesto's five years would have run to March 2027, but the legislature ended with the 2026 election. By 31 December 2025 (the parliamentary count), 75.4% of the five-year window from 26 March 2022 had elapsed (76.2% counting from the 11 March 2022 date recorded for the manifesto in claim.yml); at 30 May 2026, 83.6%. See `data/cc-010/calc.py`, `dates.csv` and `checks.csv`. The Electoral Commission site (electoral.gov.mt) returned 403 to scripted requests; check it in a browser if a primary electoral source is needed.
 
 ## Evidence and gaps
 

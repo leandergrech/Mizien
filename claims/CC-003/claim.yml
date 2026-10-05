@@ -21,7 +21,7 @@ claim:
     publisher: European Commission
     date: Nov 2025
     url: https://climate.ec.europa.eu/document/download/35f83a2d-f77d-4895-b616-d579069b23d3_en?filename=capr2025_swd_en.pdf
-    note: 'Primary evidence: ESR table p. 115, AEA balance p. 126.'
+    note: 'Primary evidence: ESR Table 25 pp. 114-115, AEA balance p. 125 (printed page numbers; PDF page is one higher).'
   - title: Malta set to increase emissions as EU cuts carbon output (citing EC 2025 Climate Action Progress Report)
     publisher: Italpress / MNA
     date: Nov 2025
@@ -49,7 +49,7 @@ why_low_hanging: 'Done: Claim Check 003 report and flyer.'
 tags:
 - Selective metric
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: High
 caveats: Draft pending right of reply (Climate Action Authority; Environment Ministry). Misleading must not be published
   before the reply deadline passes. Figures accurate; verdict rests on omission of the 2030 projection from the
@@ -59,16 +59,16 @@ right_of_reply:
   deadline: null
   response: null
 evidence_shown:
-- European Commission, Climate Action Progress Report 2025 SWD, p. 115 (Malta ESR +41% in 2024; 2030 projections
-  +42%/+30% vs -19% target) and p. 126 (AEA balance -2.1 Mt by 2030)
+- European Commission, Climate Action Progress Report 2025 SWD, printed p. 114 (Malta ESR +41% in 2024; 2030 projections
+  +42%/+30% vs -19% target; EU-27 -31%/-38% on p. 115) and p. 125 (AEA balance -2.1 Mt by 2030)
 - European Commission, CAPR 2025 chapter 3 web page (Germany, Ireland and Malta largest projected gaps)
 - Eurostat env_air_gge and nama_10_pe, retrieved 2 Oct 2026 (data/cc-003/)
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-02'
+version: '1.1'
+last_reviewed: '2026-10-05'
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
   lat: 35.8959

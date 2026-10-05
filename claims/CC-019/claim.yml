@@ -24,16 +24,18 @@ claim:
     url: https://www.amphora.media/2026/09/green-to-grey-development-agricutlural-land
     note: Companion piece. Read in full 4 Oct 2026 (print copy supplied by maintainer).
   quote: nearly 830,000 square metres of nature and cropland have been built up in Malta between 2018 and 2023
-counter_evidence: 'Independent check with Impact Observatory/Esri 10 m land cover (2017-2023): consistent new built-up
-  1.9 km2 gross, 1.4 km2 net (3-year rule); 5.0 / 3.0 km2 (2-year rule), so 0.83 km2 is plausible and conservative.
-  Arithmetic (0.26%, 116 pitches, 1.94 km2 since 2006) checks out. Previous cover: 65% crops, 31% rangeland, 4%
+counter_evidence: 'Independent check with Impact Observatory/Esri 10 m land cover (2017-2023 maps): consistent new
+  built-up 1.9 km2 gross, 1.4 km2 net for land first mapped as built in 2020-21 (3-year rule); 5.0 / 3.0 km2 for
+  2019-22 (2-year rule), so 0.83 km2 for 2018-2023 is plausible and conservative (different model and windows, not
+  like for like). Arithmetic (0.26%, 116 pitches, 1.94 km2 since 2006) checks out; ''roughly a quarter of Comino''
+  fits the 3.5 km2 often quoted (0.30 of the 2.8 km2 OSM outline). Previous cover: 65% crops, 31% rangeland, 4%
   bare, so the ''nearly 95% farmland'' share is not reproduced. EEA chart (2012-2018): about 0.91-0.94 km2, highest
   land take of EEA39, matching the 920,000 m2 quoted; 2006-2012 figure not seen.'
 tests: Impact Observatory LULC v2 (Planetary Computer); OSM island areas; Amphora articles read in full.
 why_low_hanging: 'Done: Claim Check 019 report and flyer.'
 tags: []
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: High
 caveats: Right of reply to Amphora Media not yet sent. Amphora polygons and EEA 2006-2012 figure not obtained; class
   definitions differ between land-cover models.
@@ -49,8 +51,8 @@ outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-04'
+version: '1.1'
+last_reviewed: '2026-10-05'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623

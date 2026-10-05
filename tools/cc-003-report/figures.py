@@ -70,7 +70,7 @@ def fig2():
     a1.tick_params(axis="y", labelsize=8)
     a1.set_xlabel("% change, 2005 to 2024 (F-gas bar truncated at +120%). Source: Eurostat env_air_gge.",
                   fontsize=7, color=GREY)
-    # ESR panel (Commission SWD p.115)
+    # ESR panel (Commission SWD Table 25, printed p. 114)
     xs = ["2024\nactual", "2030\nexisting\nmeasures", "2030\nwith planned\nmeasures", "2030\ntarget"]
     ys = [41, 42, 30, -19]
     a2.bar(xs, ys, color=[RED, RED, ORANGE, GREEN], width=0.6)
@@ -84,7 +84,7 @@ def fig2():
     a2.set_ylim(-35, 55)
     a2.set_title("Effort-sharing emissions vs 2005", fontsize=9.5, color=GREEN, loc="left", fontweight="bold")
     a2.tick_params(axis="x", labelsize=7.6)
-    a2.set_xlabel("Source: Commission CAPR 2025 staff working document, p. 115.", fontsize=7, color=GREY)
+    a2.set_xlabel("Source: Commission CAPR 2025 staff working document, p. 114.", fontsize=7, color=GREY)
     fig.tight_layout(w_pad=2.5)
     fig.savefig(OUT / "fig2_sectors_esr.png", bbox_inches="tight", facecolor="white")
 

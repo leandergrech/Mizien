@@ -1,5 +1,5 @@
 id: CC-011
-title: 2026 manifesto pledges
+title: Ten minutes' walk to green space
 category: Governance & Promises
 subtopic: Manifestos & pledges
 status: Drafted
@@ -7,9 +7,8 @@ verdict: Not substantiated
 verdict_confidence: Moderate
 claim:
   text: 'Labour manifesto 2026, priority 19: every person no more than ten minutes'' walk from an open or green
-    space. PN programme 2026: a clear and realistic plan for Gozo to become a Net-Zero Island by 2040, with afforestation
-    among several measures.'
-  speaker: Labour Party; Nationalist Party
+    space. (Until v1.1 this check also covered the PN''s net-zero Gozo pledge, now CC-107.)'
+  speaker: Labour Party
   date: 2026-05
   wording_status: Verbatim found
   sources:
@@ -18,39 +17,31 @@ claim:
     date: '2026'
     url: https://partitlaburista.org/wp-content/uploads/2026/08/Manifest_Elettorali_INT_MALTA_2026.pdf
     note: Read pp. 17 and 21. SHA-256 466a60f920d956bbb30b934606b10dd6ebf7e7d0b9f162702257916a08911ceb.
-  - title: 'Nifs Ġdid: Programm Elettorali, chapter Għawdex'
-    publisher: Partit Nazzjonalista
-    date: '2026'
-    url: https://pn.org.mt/en/nifsgdid/ghawdex/
-    note: Read in a browser. Net-Zero Island by 2040; afforestation one of several measures.
   - title: 'Labour publishes its manifesto: here is a breakdown'
     publisher: MaltaToday
     date: May 2026
     url: https://www.maltatoday.com.mt/news/election-2026/141840/labour_publishes_its_manifesto_here_is_a_breakdown
-  - title: PN approves its electoral manifesto
-    publisher: MaltaToday
-    date: May 2026
-    url: https://www.maltatoday.com.mt/news/election-2026/141891/pn_approves_its_electoral_manifesto
-  - title: 'Clean energy for EU islands: Malta'
-    publisher: European Commission
-    date: n/d
-    url: https://clean-energy-islands.ec.europa.eu/countries/malta
+  - title: 'Malta: Maltese House of Representatives 2026 General'
+    publisher: IFES ElectionGuide
+    date: Accessed 5 October 2026
+    url: https://electionguide.org/elections/id/5161/
+    note: Source for the 30 May 2026 general election (results source given as the Electoral Commission of Malta).
   quote: Kull persuna f'pajjiżna ma tkunx aktar minn għaxar minuti mixi 'l bogħod minn spazju miftuħ jew aħdar.
-    (PL) / Infasslu pjan ċar u realistiku biex sal-2040, Għawdex isir Net-Zero Island (PN)
-counter_evidence: 'Election held 30 May 2026; Labour won. Neither pledge defines its terms or gives a baseline.
-  Our open-data analysis: 99.7-99.9% of residents already within ten minutes of any green or open space, but only
-  55-68% of a public park of at least 0.5 ha. No Gozo emissions inventory; afforestation alone would need 1.5-8.5
-  times Gozo''s area.'
-tests: WorldPop 2025 + OpenStreetMap access analysis; Gozo carbon arithmetic with measured sequestration rates.
-why_low_hanging: 'Done: Claim Check 011 report and flyer.'
+counter_evidence: 'Election held 30 May 2026; Labour won, so the pledge is now a government commitment. The manifesto
+  defines neither "open or green space" nor a baseline or year. Our open-data analysis: 99.7-99.9% of residents already
+  live within ten minutes of some green or open space, so read broadly the pledge is almost met; but only 55-68% live
+  within a ten-minute walk of a public park of at least 0.5 ha (about 240,000 people outside), and 24% within 300 m of
+  one (WHO Europe indicator).'
+tests: WorldPop 2025 + OpenStreetMap access analysis (six definitions; 300, 615 and 800 m).
+why_low_hanging: 'Done: Claim Check 011 report and flyer (v1.2: split; the PN Gozo pledge is now CC-107).'
 tags:
 - Promise-without-baseline
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.2)
 data_readiness: High
-caveats: Draft pending right of reply (Partit Laburista / Government; Partit Nazzjonalista). Access analysis is
-  a straight-line screening estimate. Manifesto translations are ours. News summaries narrowed both pledges; the
-  parties' own texts are assessed.
+caveats: Draft pending right of reply (Partit Laburista / Government). Access analysis is a straight-line
+  screening estimate. Manifesto translation is ours. The news summary narrowed the pledge to green space; the party's
+  own text is assessed. Split on 5 Oct 2026; the PN's net-zero Gozo pledge is CC-107.
 right_of_reply:
   sent: null
   deadline: null
@@ -60,8 +51,8 @@ outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-02'
+version: '1.2'
+last_reviewed: '2026-10-05'
 location:
   place: Parliament House, Valletta
   lat: 35.89614

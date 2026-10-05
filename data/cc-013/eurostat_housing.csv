@@ -175,11 +175,11 @@ ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2010,10.0,
 ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2011,10.6,retrieved 3 Oct 2026
 ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2012,11.5,retrieved 3 Oct 2026
 ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2013,11.6,retrieved 3 Oct 2026
-ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2014,11.5,retrieved 3 Oct 2026
-ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2015,11.2,retrieved 3 Oct 2026
-ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2016,10.9,retrieved 3 Oct 2026
-ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2017,10.1,retrieved 3 Oct 2026
-ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2018,9.6,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2014,11.5,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2015,11.2,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2016,10.9,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2017,10.1,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2018,9.6,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
 ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2019,9.4,retrieved 3 Oct 2026
 ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2020,7.8,retrieved 3 Oct 2026
 ilc_lvho07a,"Housing cost overburden rate, % of population",EU27_2020,2021,8.7,retrieved 3 Oct 2026
@@ -205,7 +205,7 @@ ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2019,2.6,retrieve
 ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2020,2.8,retrieved 3 Oct 2026
 ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2021,2.7,retrieved 3 Oct 2026
 ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2022,2.9,retrieved 3 Oct 2026
-ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2023,6.0,retrieved 3 Oct 2026
+ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2023,6.0,"retrieved 3 Oct 2026; flag b (break in time series), checked 5 Oct 2026"
 ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2024,5.9,retrieved 3 Oct 2026
 ilc_lvho07a,"Housing cost overburden rate, % of population",MT,2025,6.0,retrieved 3 Oct 2026
 prc_hpi_a,"House price index, nominal, 2015=100",EU27_2020,2005,85.85,retrieved 3 Oct 2026
@@ -249,89 +249,89 @@ prc_hpi_a,"House price index, nominal, 2015=100",MT,2021,135.44,retrieved 3 Oct 
 prc_hpi_a,"House price index, nominal, 2015=100",MT,2022,144.45,retrieved 3 Oct 2026
 prc_hpi_a,"House price index, nominal, 2015=100",MT,2023,153.42,retrieved 3 Oct 2026
 prc_hpi_a,"House price index, nominal, 2015=100",MT,2024,163.77,retrieved 3 Oct 2026
-prc_hpi_a,"House price index, nominal, 2015=100",MT,2025,173.55,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2005,392.1,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2005,294.2,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2006,423.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2006,292.6,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2007,387.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2007,274.6,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2008,243.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2008,202.9,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2009,164.6,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2009,147.8,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2010,138.8,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2010,134.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2011,134.8,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2011,132.3,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2012,113.5,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2012,111.2,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2013,92.6,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2013,93.2,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2014,94.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2014,93.4,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2015,100.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2015,100.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2016,121.9,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2016,118.2,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2017,134.9,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2017,130.9,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2018,144.1,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2018,134.6,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2019,142.3,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2019,131.8,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2020,128.3,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2020,119.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2021,149.4,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2021,137.2,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2022,157.5,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",EU27_2020,2022,136.3,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2000,45.7,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2000,38.2,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2001,93.8,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2001,44.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2002,127.4,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2002,81.7,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2003,148.6,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2003,98.1,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2004,172.3,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2004,113.7,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2005,246.7,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2005,162.7,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2006,293.2,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2006,193.4,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2007,335.5,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2007,221.2,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2008,202.4,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2008,133.5,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2009,151.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2009,99.6,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2010,122.3,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2010,79.8,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2011,107.2,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2011,75.1,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2012,81.4,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2012,69.3,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2013,67.5,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2013,57.6,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2014,72.7,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2014,66.5,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2015,100.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2015,100.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2016,206.7,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2016,144.4,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2017,254.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2017,183.4,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2018,366.8,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2018,249.4,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2019,351.0,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2019,246.7,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2020,220.4,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2020,157.7,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2021,211.1,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2021,144.9,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2022,270.9,retrieved 3 Oct 2026
-sts_cobp_a,"Building permits, dwellings in residential buildings with 2+ dwellings, index 2015=100",MT,2022,181.4,retrieved 3 Oct 2026
+prc_hpi_a,"House price index, nominal, 2015=100",MT,2025,173.55,"retrieved 3 Oct 2026; flag p (provisional), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2005,392.1,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2005,294.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2006,423.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2006,292.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2007,387.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2007,274.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2008,243.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2008,202.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2009,164.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2009,147.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2010,138.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2010,134.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2011,134.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2011,132.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2012,113.5,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2012,111.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2013,92.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2013,93.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2014,94.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2014,93.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2015,100.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2015,100.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2016,121.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2016,118.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2017,134.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2017,130.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2018,144.1,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2018,134.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2019,142.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2019,131.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2020,128.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2020,119.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2021,149.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2021,137.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2022,157.5,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",EU27_2020,2022,136.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2000,45.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2000,38.2,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2001,93.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2001,44.0,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2002,127.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2002,81.7,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2003,148.6,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2003,98.1,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2004,172.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2004,113.7,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2005,246.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2005,162.7,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2006,293.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2006,193.4,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2007,335.5,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2007,221.2,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2008,202.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2008,133.5,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2009,151.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2009,99.6,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2010,122.3,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2010,79.8,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2011,107.2,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2011,75.1,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2012,81.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2012,69.3,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2013,67.5,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2013,57.6,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2014,72.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2014,66.5,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2015,100.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2015,100.0,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2016,206.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2016,144.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2017,254.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2017,183.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2018,366.8,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2018,249.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2019,351.0,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2019,246.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2020,220.4,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2020,157.7,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2021,211.1,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2021,144.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, number of dwellings (indic_bt BPRM_DW), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2022,270.9,retrieved 3 Oct 2026
+sts_cobp_a,"Building permits, m2 of useful floor area (indic_bt BPRM_SQM), residential buildings with 2+ dwellings (cpa2_1 CPA_F410012_410013), index 2015=100",MT,2022,181.4,retrieved 3 Oct 2026
 tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2005,99.51,retrieved 3 Oct 2026
 tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2006,106.73,retrieved 3 Oct 2026
 tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2007,112.72,retrieved 3 Oct 2026
@@ -353,11 +353,11 @@ tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2022,128.64,re
 tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2023,120.46,retrieved 3 Oct 2026
 tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2024,121.22,retrieved 3 Oct 2026
 tipsho10,"House price index, deflated (HICP), 2015=100",EU27_2020,2025,124.75,retrieved 3 Oct 2026
-tipsho10,"House price index, deflated (HICP), 2015=100",MT,2000,44.22,retrieved 3 Oct 2026
-tipsho10,"House price index, deflated (HICP), 2015=100",MT,2001,47.25,retrieved 3 Oct 2026
-tipsho10,"House price index, deflated (HICP), 2015=100",MT,2002,52.33,retrieved 3 Oct 2026
-tipsho10,"House price index, deflated (HICP), 2015=100",MT,2003,60.32,retrieved 3 Oct 2026
-tipsho10,"House price index, deflated (HICP), 2015=100",MT,2004,68.34,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2000,44.22,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2001,47.25,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2002,52.33,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2003,60.32,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2004,68.34,"retrieved 3 Oct 2026; flag e (estimated), checked 5 Oct 2026"
 tipsho10,"House price index, deflated (HICP), 2015=100",MT,2005,71.57,retrieved 3 Oct 2026
 tipsho10,"House price index, deflated (HICP), 2015=100",MT,2006,83.61,retrieved 3 Oct 2026
 tipsho10,"House price index, deflated (HICP), 2015=100",MT,2007,99.89,retrieved 3 Oct 2026
@@ -378,4 +378,4 @@ tipsho10,"House price index, deflated (HICP), 2015=100",MT,2021,126.3,retrieved 
 tipsho10,"House price index, deflated (HICP), 2015=100",MT,2022,128.71,retrieved 3 Oct 2026
 tipsho10,"House price index, deflated (HICP), 2015=100",MT,2023,122.4,retrieved 3 Oct 2026
 tipsho10,"House price index, deflated (HICP), 2015=100",MT,2024,125.99,retrieved 3 Oct 2026
-tipsho10,"House price index, deflated (HICP), 2015=100",MT,2025,134.2,retrieved 3 Oct 2026
+tipsho10,"House price index, deflated (HICP), 2015=100",MT,2025,134.2,"retrieved 3 Oct 2026; flag p (provisional), checked 5 Oct 2026"

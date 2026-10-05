@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """CC-018: test 'the IMF's assessment confirms what the MDA has been saying' with formulas, not by eye.
 
-Reads data/cc-018/ and data/cc-013/eurostat_housing.csv; writes data/cc-018/checks.csv.
+Reads data/cc-018/ and data/cc-013/eurostat_housing.csv; writes data/cc-018/checks.csv. Housing-cost overburden
+comes from data/cc-018/eurostat_ilc_lvho07a.csv (retrieved 5 Oct 2026 with Eurostat's status flags): Malta's 2023
+value is flagged b (break in time series), so the series is split at the break.
 """
 import csv, pathlib
 from collections import defaultdict
@@ -41,9 +43,18 @@ add("Banks: real estate and construction share of private loans",
 add("Banks: residential mortgages share of private lending",
     f"{I['Residential mortgages share a decade earlier']} -> {I['Residential mortgages share of private lending']}", "%",
     "IMF CR 26/29 p.19")
-o = E[("ilc_lvho07a", "MT")]
-add("Malta: housing-cost overburden 2015 -> 2025", f"{o[2015]} -> {o[2025]}", "% of people", "Eurostat ilc_lvho07a",
-    "affordability, not covered by the IMF assessment")
+OB = defaultdict(dict)
+for x in csv.DictReader(open(D / "eurostat_ilc_lvho07a.csv")):
+    OB[x["geo"]][int(x["year"])] = (float(x["value"]), x["flag"])
+brk = min(y for y, (_, f) in OB["MT"].items() if "b" in f)
+for geo, lab in (("MT", "Malta"), ("EU27_2020", "EU-27")):
+    o = {y: v for y, (v, _) in OB[geo].items()}
+    add(f"{lab}: housing-cost overburden 2015 -> {brk - 1} (before Malta's series break)",
+        f"{o[2015]} -> {o[brk - 1]}", "% of people", "Eurostat ilc_lvho07a",
+        "affordability, not covered by the IMF assessment")
+    add(f"{lab}: housing-cost overburden {brk} -> {max(o)} (after the break)",
+        " / ".join(f"{o[y]}" for y in range(brk, max(o) + 1)), "% of people", "Eurostat ilc_lvho07a",
+        f"Malta {brk} flagged b (break in time series)" if geo == "MT" else "")
 r = E[("tipsho10", "MT")]
 add("Malta: real house prices 2015 -> 2025", round(100 * (r[2025] / r[2015] - 1)), "%", "Eurostat tipsho10")
 add("MDA-commissioned study: price-to-income 2024 -> 2025", "14.0 -> 14.5", "ratio",

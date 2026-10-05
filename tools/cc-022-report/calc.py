@@ -49,6 +49,25 @@ for s in SUB:
     add(f"Energy subsidies {s['year']}", round(eur), "EUR million", "IMF CR 26/29 x Eurostat GDP",
         f"{s['energy_subsidies_pct_gdp']}% of GDP")
 add("Energy subsidies 2022-2025, total", round(tot), "EUR million", "calculated")
+# v1.1: Malta's rank in every consumption band (PPS), and its band-DC price history since 2012.
+PB = {(r["nrg_cons"], r["geo"], r["time"]): (float(r["value"]), r["flag"])
+      for r in csv.DictReader(open(D / "eurostat_prices_bands.csv"))}
+BANDS = (("KWH_LT1000", "under 1,000 kWh (DA)"), ("KWH1000-2499", "1,000-2,499 kWh (DB)"),
+         ("KWH2500-4999", "2,500-4,999 kWh (DC, standard household)"), ("KWH5000-14999", "5,000-14,999 kWh (DD)"),
+         ("KWH_GE15000", "15,000 kWh or more (DE)"), ("TOT_KWH", "all bands (Eurostat average)"))
+for t in ("2024-S2", "2025-S2"):
+    for b, lab in BANDS:
+        v = sorted((PB[(b, g, t)][0], g) for g in EU if (b, g, t) in PB)
+        mt, fl = PB[(b, "MT", t)]
+        add(f"Malta rank, PPS price, {t}, band {lab}", [g for _, g in v].index("MT") + 1, f"of {len(v)}",
+            "Eurostat nrg_pc_204", f"Malta {100 * mt:.2f} PPS/100 kWh" + (f" (flag {fl})" if fl else ""))
+H = {r["time"]: (float(r["value"]), r["flag"]) for r in csv.DictReader(open(D / "eurostat_prices_mt_history.csv"))
+     if r["geo"] == "MT"}
+for t in ("2013-S2", "2014-S1", "2014-S2"):
+    add(f"Malta nominal price {t}, band DC", H[t][0], "EUR/kWh", "Eurostat nrg_pc_204")
+later = [H[t][0] for t in sorted(H) if t >= "2014-S2"]
+add("Malta nominal price range 2014-S2 to 2025-S2, band DC", f"{min(later):.4f} to {max(later):.4f}", "EUR/kWh",
+    "Eurostat nrg_pc_204", f"2025-S2 flag {H['2025-S2'][1]}" if H["2025-S2"][1] else "")
 for ds, lab in (("ilc_mdes01", "Unable to keep home adequately warm"), ("ilc_mdes07", "Arrears on utility bills")):
     add(f"{lab}, 2025: Malta vs EU-27", f"{POV[(ds, 'MT')][2025]} vs {POV[(ds, 'EU27_2020')][2025]}", "% of people",
         f"Eurostat {ds}")

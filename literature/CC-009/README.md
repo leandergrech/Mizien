@@ -4,7 +4,7 @@
 
 ## To collect
 
-The WSC series is its own potable-water production mix, not an all-user national abstraction total. The 3rd RBMP separately assesses water-body status: the two main aquifer systems are poor quantitatively; 14 bodies are poor chemically; the nitrate standard is exceeded in 12 of 15 bodies, with three named exceptions. The 4th RBMP is scheduled for 2028, so the 3rd RBMP remains the latest completed national plan at this review date.
+The WSC series is its own potable-water production mix, not an all-user national abstraction total. The 3rd RBMP separately assesses water-body status: the two main aquifer systems are poor quantitatively; 14 bodies are poor chemically; the nitrate standard is exceeded in 12 of 15 bodies, with three named exceptions. Malta's 3rd-cycle EU reporting to the EEA (WISE) lists 4 bodies poor quantitatively and all 15 poor chemically; the difference is unresolved (see `primary-source.md`, v1.1 corrections check). The 4th RBMP is scheduled for 2028, so the 3rd RBMP remains the latest completed national plan at this review date.
 
 ## Known leads
 

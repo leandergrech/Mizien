@@ -40,7 +40,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-008 | Transport | Flyovers and congestion | Drafted | Not substantiated |
 | CC-009 | Water | Reverse osmosis and groundwater | Drafted | Largely supported |
 | CC-010 | Land & Trees | Tree-planting counts | Drafted | Largely supported |
-| CC-011 | Governance & Promises | 2026 manifesto pledges | Drafted | Not substantiated |
+| CC-011 | Governance & Promises | Ten minutes' walk to green space | Drafted | Not substantiated |
 | CC-012 | Land & Trees | Ta' Qali gravel and grass | Drafted | Contradicted |
 | CC-013 | Planning & Housing | Permits keep property prices in check | Drafted | Largely supported |
 | CC-014 | Planning & Housing | Fewer enforcement notices, fewer illegalities | Drafted | Misleading |
@@ -136,6 +136,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-104 | Noise | PN: Malta fails EU noise law | Not started | - |
 | CC-105 | Noise | ADPD: no study of Freeport and airport noise | Not started | - |
 | CC-106 | Nature & Wildlife | Shearwaters: 10% of the world population | Not started | - |
+| CC-107 | Governance & Promises | A net-zero Gozo by 2040 | Drafted | Not substantiated |
 
 The interactive 3D map is the homepage of the site (`docs/`). Claim documents open in an on-page viewer, with a separate download button. Claims are numbered CC-001 to CC-021. Report drafts are available for CC-001 to CC-011; CC-012 to CC-021 are candidates (added 3 October 2026). Right of reply remains for the maintainer where not yet handled.
 

@@ -36,12 +36,22 @@ add("Upper bound on cut in all cruise emissions in port (hotelling >90% of CO2)"
     "calculated", "manoeuvring emissions are not touched by OPS")
 add("Cruise calls 2024 -> 2025", f"{CALLS[2024]} -> {CALLS[2025]}", "calls", "Valletta Cruise Port",
     f"{100 * (CALLS[2025] / CALLS[2024] - 1):+.0f}%")
-add("Cruise calls 2019 -> 2025", f"{CALLS[2019]} -> {CALLS[2025]}", "calls", "VCP; 2019 second-hand",
+add("Cruise calls 2019 -> 2025", f"{CALLS[2019]} -> {CALLS[2025]}", "calls",
+    "VCP; 2019 second-hand (Amphora; IM citing NSO)",
     f"{100 * (CALLS[2025] / CALLS[2019] - 1):+.0f}%")
-# Unplugged berth time at 2025 traffic against a 2024 baseline with no OPS (same stay lengths assumed)
+# Indicative only: unplugged berth time at 2025 calls (year-one uptake) against 2024 calls with no OPS, same stay
+# lengths assumed. The periods do not match: calls are calendar years, uptake is Jul 2024-Jul 2025, and OPS was
+# already available from Jul 2024, so 2024 is not a no-OPS baseline.
 g = CALLS[2025] / CALLS[2024]
-add("Unplugged berth time at 2025 traffic vs 2024 with no OPS",
-    round(100 * (g * (1 - t / 100) - 1), 1), "%", "calculated", "about level: growth cancels year-one uptake")
+add("Unplugged berth time at 2025 calls and year-one uptake vs 2024 calls with no OPS (indicative)",
+    round(100 * (g * (1 - t / 100) - 1), 1), "%", "calculated",
+    "periods differ (calendar-year calls; Jul-Jul uptake; OPS from Jul 2024): growth of the same order as uptake")
+for k in ["nitrogen dioxide", "particulate matter", "sulphur dioxide", "carbon dioxide"]:
+    add(f"Infrastructure Malta: per-liner cut on shore power, {k}", U[f"Per-liner cut on shore power: {k}"], "%",
+        "Infrastructure Malta, 30 Nov 2020", "stated by IM; underlying study not cited")
+add("Project cost figures stated", " / ".join(f"{U[k]:g}" for k in ["Project cost (stated at launch)",
+    "Project cost, phase 1 (budget)", "Project cost, whole Grand Harbour Clean Air Project"]), "EUR million",
+    "TVM 10 Jul 2024; IM 2020; IM 2020-2022", "launch / phase 1 budget / whole project: figures vary by phase and date")
 
 with open(D / "checks.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\r\n")

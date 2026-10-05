@@ -15,7 +15,7 @@ S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
         "44% since 2005, well above the EU average of 34%</b>, and that this shows Malta “reducing emissions both "
         "at household level and across the economy”. The figures come from the European Commission’s 2025 "
         "Climate Action Progress Report. <b>The same report projects that Malta will miss its binding 2030 target by "
-        "the widest margin in the EU.</b> The CAA release does not mention that projection.", lead)]
+        "the widest margin in the EU in percentage points.</b> The CAA release does not mention that projection.", lead)]
 S.append(key_points([
     ("The numbers are right.",
      "Eurostat data reproduce a per-person fall of about 46% (2005–2023) for Malta against 34% for the EU."),
@@ -130,14 +130,14 @@ S.append(std_table([
     [C("Total emissions, 2005–2024"), C("<b>−27%</b>"), C("−33%"), C("Eurostat [6]"), grade_tag("C")],
     [C("Population, 2005–2024"), C("+41%"), C("+4%"), C("Eurostat [7]"), grade_tag("C")],
     [C("Power generation emissions, 2005–2024"), C("−63%"), C("−54%"), C("Eurostat [6]"), grade_tag("C")],
-    [C("Domestic transport emissions, 2005–2024"), C("+49%"), C("−5%"), C("Eurostat [6]; Commission [4] p. 52"), grade_tag("C")],
-    [C("Industrial emissions (mainly refrigeration and air-conditioning gases), 2005–2023"), C("+293%"), C("fell"),
-     C("Commission [4] p. 45"), grade_tag("C")],
-    [C("Buildings emissions since 2005"), C("+12%"), C("fell in every other state but Romania"), C("Commission [4] p. 60"), grade_tag("C")],
-    [C("Effort-sharing emissions, 2024 vs 2005"), C("<b>+41%</b>"), C("−20%"), C("Commission [4] p. 115"), grade_tag("C")],
-    [C("2030 projection, existing measures / with planned measures"), C("<b>+42% / +30%</b>"), C("−31% / …"),
-     C("Commission [4] p. 115"), grade_tag("C")],
-    [C("2030 effort-sharing target"), C("−19%"), C("−40% (EU)"), C("Commission [4] p. 115"), grade_tag("C")],
+    [C("Domestic transport emissions, 2005–2024"), C("+49%"), C("−5%"), C("Eurostat [6]; Commission [4] pp. 51–52"), grade_tag("C")],
+    [C("Industrial emissions (mainly refrigeration and air-conditioning gases), 2005–2023"), C("+293%"), C("−36%"),
+     C("Commission [4] p. 44"), grade_tag("C")],
+    [C("Buildings emissions since 2005"), C("+12%"), C("fell in every other state but Romania"), C("Commission [4] p. 59"), grade_tag("C")],
+    [C("Effort-sharing emissions, 2024 vs 2005"), C("<b>+41%</b>"), C("−20%"), C("Commission [4] pp. 114–115"), grade_tag("C")],
+    [C("2030 projection, existing measures / with planned measures"), C("<b>+42% / +30%</b>"), C("−31% / −38%"),
+     C("Commission [4] pp. 114–115"), grade_tag("C")],
+    [C("2030 effort-sharing target"), C("−19%"), C("−40% (EU)"), C("Commission [4] pp. 114–115"), grade_tag("C")],
     [C("Renewables share of electricity, 2024"), C("10.7%"), C("47.5%"), C("Eurostat [8]"), grade_tag("C")],
 ], [60 * mm, 26 * mm, 26 * mm, 46 * mm, 12 * mm]))
 S.append(P("All values recomputed or transcribed in <i>data/cc-003/checks.csv</i>. The Commission’s per-person "
@@ -150,8 +150,10 @@ for t in ["• <b>The cut was concentrated in electricity</b>, which is regulate
           "release’s phrase “reducing emissions both at household level” is not what the sector data "
           "show; a per-person ratio is not a measure of household emissions.",
           "• <b>Malta’s 2030 gap is the largest in the EU in percentage points</b>: 61 points with existing "
-          "measures and 49 with planned measures. The next largest is Ireland (33 and 20) [4]. The Commission names "
-          "Germany, Ireland and Malta as having the largest projected gaps [5].",
+          "measures and 49 with planned measures. The next largest is Ireland (33 and 20) [4]. In tonnes, larger "
+          "states’ gaps are bigger: Germany’s projected 2030 shortfall is 64 Mt CO<sub>2</sub>-eq, Malta’s "
+          "0.5 Mt [4, pp. 118, 125]. The Commission names Germany, Ireland and Malta as having the largest "
+          "projected gaps [5].",
           "• <b>International shipping and aviation bunkers</b>, which are outside both the national total and "
           "the target, tripled from 2.4 to 7.3 Mt, more than three times Malta’s national total. They are "
           "reported but not part of this claim."]:
@@ -184,7 +186,7 @@ S.append(contested(
     "The CAA says Malta aims to cut emissions by 40% by 2030 [1]. The EU rules allow flexibilities (buying "
     "allocations from other states, ETS and land-use credits). Projections can be revised as measures are added.",
     "Even with planned measures the Commission projects +30% against −19% [4]. Malta’s cumulative "
-    "allocation balance turns negative from 2025 and reaches −2.1 Mt by 2030 before flexibilities [4, p. 126]. "
+    "allocation balance turns negative from 2025 and reaches −2.1 Mt by 2030 before flexibilities [4, p. 125]. "
     "Malta is among six states projected to have excess emissions in 2026–2030 [5].",
     "We did not test the 40% figure; it appears to refer to total emissions including power, while the binding "
     "target covers the sectors that are rising. <b>For this claim:</b> a reader of the release would not learn "
@@ -208,7 +210,8 @@ S.append(std_table([
      C("Sectors linked to households rose: transport +49%, buildings +9 to +12%, air-conditioning gases up "
        "almost six-fold. A per-person ratio is not a household measure."), verd("NOT SUPPORTED", RED)],
     [C("<b>E.</b> Malta’s efforts are showing clear results"), C("CAA [1]"),
-     C("True for power generation. The same report projects the largest shortfall in the EU against Malta’s "
+     C("True for power generation. The same report projects the largest shortfall in the EU (in percentage "
+       "points) against Malta’s "
        "binding 2030 target, which the release does not mention."), verd("MISLEADING BY OMISSION", colors.HexColor("#C85A3A"))],
     [C("<b>F.</b> Malta aims to reduce emissions by 40% by 2030"), C("CAA [1]"),
      C("A stated aim, not a result. Scope (total or effort-sharing) not given. Same figure appears in the 2026 "
@@ -217,7 +220,7 @@ S.append(std_table([
 S += [Spacer(1, 4 * mm),
       callout([P("WHAT THE REPORT ITSELF SAYS ABOUT MALTA", tag),
                P("The CAA release cites the Commission’s November 2025 report as its source. In the staff working "
-                 "document, Malta’s effort-sharing table (p. 115) shows +41% in 2024 and a projected 2030 gap of "
+                 "document, Malta’s effort-sharing table (p. 114) shows +41% in 2024 and a projected 2030 gap of "
                  "61 points with existing measures and 49 with planned ones. The web chapter on effort sharing names "
                  "Malta among the three states with the largest projected gaps [5]. Choosing the per-person line from "
                  "that report, and leaving out the target line, is the pattern our methodology calls a "
@@ -231,7 +234,8 @@ S.append(P("<b>Why.</b> (1) The 44% and 34% figures are correct and reproducible
            "per-person fall reflects population growth; in total tonnes Malta cut less than the EU average. "
            "(3) The cut came almost entirely from power generation, which is outside the national target, while "
            "transport, buildings and refrigerant gases rose. (4) The report the authority cites projects that Malta "
-           "will miss its binding 2030 target by the widest margin in the EU; the release omits this. Under our scale, "
+           "will miss its binding 2030 target by the widest margin in the EU in percentage points; the release omits "
+           "this. Under our scale, "
            "a statement whose individual figures are defensible but which omits material facts so that the overall "
            "impression is inaccurate is <i>Misleading</i>."))
 S.append(P("<b>What this verdict does not say.</b> It does not say the figures are false, that the power-sector "
@@ -278,7 +282,7 @@ S += references([
     ("3", "Italpress / MNA (17 Nov 2025). Malta set to increase emissions as EU cuts carbon output.",
      "https://www.italpress.com/?p=605399"),
     ("4", "European Commission (Nov 2025). Climate Action Progress Report 2025, Commission Staff Working Document. "
-          "Pages cited: 34, 45, 52, 60, 115, 126.",
+          "Pages cited (printed page numbers; the PDF page is one higher): 33, 44, 51–52, 59, 113–115, 118, 125.",
      "https://climate.ec.europa.eu/document/download/35f83a2d-f77d-4895-b616-d579069b23d3_en?filename=capr2025_swd_en.pdf"),
     ("5", "European Commission (2025). EU Climate Action Progress Report 2025, Chapter 3: Effort sharing emissions.",
      "https://climate.ec.europa.eu/eu-action/climate-strategies-targets/progress-climate-action/eu-climate-action-progress-report-2025/chapter-3-effort-sharing-emissions_en"),
@@ -304,7 +308,18 @@ S += appendix_a("A experiment · B observational study with a control or gradien
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
 S += revision_log([("1.0", "2 Oct 2026", "First issue. Draft pending right of reply from the Climate Action Authority "
-                                         "and the Ministry for the Environment, Energy and Public Cleanliness.")])
+                                         "and the Ministry for the Environment, Energy and Public Cleanliness."),
+                   ("1.1", "5 Oct 2026",
+                    "Corrections. (1) Section 4 table, EU 2030 effort-sharing projection: “−31% / …” → “−31% / −38%” "
+                    "(existing / additional measures, Commission Table 25). (2) EU industrial emissions, 2005–2023: "
+                    "“fell” → “−36%” (Commission p. 44). (3) “Widest margin in the EU” → “widest margin in the EU in "
+                    "percentage points” (TL;DR, Sections 6 and 7, flyer); Section 4 adds that in tonnes Germany’s "
+                    "projected 2030 shortfall (64 Mt) exceeds Malta’s (0.5 Mt). (4) Commission page numbers changed "
+                    "from PDF to printed pages: p. 115 → pp. 114–115 (Figure 2 label → p. 114), p. 126 → 125, "
+                    "p. 45 → 44, p. 52 → 51–52, p. 60 → 59. (5) Flyer title “Emissions down 44%” → “Emissions per "
+                    "person down 44%”; the two “+41%” flyer cards retitled “Population growth since 2005” and "
+                    "“Target-sector emissions, 2024”. (6) data/cc-003/checks.csv now also holds the EU-27 values shown "
+                    "in the Section 4 table. Verdict and confidence unchanged.")])
 
 build_report(Report(
     number="003", out=str(FIG / "report.pdf"), kicker="Statistics and EU reports",
@@ -314,10 +329,10 @@ build_report(Report(
     attribution="Climate Action Authority, press release, 13 November 2025.",
     context="Citing the European Commission’s Climate Action Progress Report 2025.",
     verdict="Misleading", verdict_note="Accurate figures; the report’s main finding is left out",
-    footer_lines=["Version 1.0  ·  2 October 2026", "Status: draft for right of reply (Climate Action Authority; "
+    footer_lines=["Version 1.1  ·  5 October 2026", "Status: draft for right of reply (Climate Action Authority; "
                   "Ministry for the Environment)", "Prepared from public sources and Eurostat data.",
                   "Repository: github.com/leandergrech/Mizien"],
-    running_head="Per-person emissions and the 2030 target – Malta", version="1.0", date="2 October 2026",
+    running_head="Per-person emissions and the 2030 target – Malta", version="1.1", date="5 October 2026",
     pdf_title="Down 44% per person, or off track for 2030? Claim Check 003",
     pdf_subject="Tests the Climate Action Authority's per-capita emissions claim against the Commission's 2030 projection",
     story=S))

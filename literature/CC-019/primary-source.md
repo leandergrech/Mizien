@@ -9,6 +9,10 @@ https://www.amphora.media/2026/09/green-to-grey-malta-land-loss-development-cons
 
 > "nearly 830,000 square metres of nature and cropland have been built up in Malta between 2018 and 2023"
 
+> "That's about 116 football pitches – or two Manoel Islands – and roughly a quarter of Comino."
+
+(web text re-read 5 October 2026 for report v1.1.)
+
 The headline says "over" 830,000; the body says "nearly". Also: total land loss 0.26%, "among the top 5 countries
 by share of green area lost"; "a conservative estimate"; largest five areas from over 20,000 to over 34,000 m2; EEA
 figures of 920,000 m2 (2012-2018) and 190,000 m2 (2006-2012); "at least 1.94 square kilometres" since 2006.

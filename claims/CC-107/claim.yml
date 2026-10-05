@@ -1,0 +1,81 @@
+id: CC-107
+title: A net-zero Gozo by 2040
+category: Governance & Promises
+subtopic: Manifestos & pledges
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Moderate
+claim:
+  text: 'PN programme 2026: a clear and realistic plan for Gozo to become a Net-Zero Island by 2040, with afforestation
+    among several measures. News summaries said net zero "through afforestation". (Checked as part of CC-011 until
+    5 Oct 2026.)'
+  speaker: Nationalist Party
+  date: 2026-05
+  wording_status: Verbatim found
+  sources:
+  - title: 'Nifs Ġdid: Programm Elettorali, chapter Għawdex'
+    publisher: Partit Nazzjonalista
+    date: '2026'
+    url: https://pn.org.mt/en/nifsgdid/ghawdex/
+    note: Read in a browser. Net-Zero Island by 2040; afforestation one of several measures.
+  - title: PN approves its electoral manifesto
+    publisher: MaltaToday
+    date: May 2026
+    url: https://www.maltatoday.com.mt/news/election-2026/141891/pn_approves_its_electoral_manifesto
+    note: News summary ("net-zero island through afforestation").
+  - title: 'Clean energy for EU islands: Energy Baseline Scenario for Gozo'
+    publisher: Clean energy for EU islands secretariat (European Commission)
+    date: 25 Jan 2023
+    url: https://clean-energy-islands.ec.europa.eu/system/files/2025-06/REPORT_TechnicalAssistance_Gozo_20230223.pdf
+    note: Read in full 5 Oct 2026. Table 16, energy-related CO2 118,333-153,997 t a year (2016-2020). Not official
+      statistics.
+  - title: 'Clean energy for EU islands: Malta'
+    publisher: European Commission
+    date: n/d
+    url: https://clean-energy-islands.ec.europa.eu/countries/malta
+    note: Gozo area 67 km2.
+  - title: 'Malta: Maltese House of Representatives 2026 General'
+    publisher: IFES ElectionGuide
+    date: Accessed 5 October 2026
+    url: https://electionguide.org/elections/id/5161/
+    note: Source for the 30 May 2026 general election (Labour won; the PN pledge is an opposition proposal).
+  quote: Infasslu pjan ċar u realistiku biex sal-2040, Għawdex isir Net-Zero Island
+counter_evidence: 'The programme promises a plan but publishes no baseline, boundary or pathway, and there is no official
+  greenhouse-gas inventory for Gozo. A 2023 study for the EU islands secretariat put Gozo''s energy-related CO2 at
+  118,000-154,000 t a year (2016-2020); our population-based estimate is about 157,000 t. Offsetting that by
+  afforestation alone would need 4.9-6.3 times Gozo''s land area at a measured semi-arid rate (1.5-8.5 times across a
+  wider range). The PN''s text relies on cuts first; "through afforestation" is a news summary.'
+tests: Gozo carbon arithmetic with a measured sequestration rate (Grünzweig et al. 2007); Eurostat Gozo population; the
+  2023 Energy Baseline Scenario for Gozo; EC Clean energy for EU islands (Gozo area).
+why_low_hanging: 'Done: Claim Check 107 report and flyer (split from Claim Check 011).'
+tags:
+- Promise-without-baseline
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: Medium
+caveats: Draft pending right of reply (Partit Nazzjonalista). Gozo emissions estimated from national per-person figures
+  and an energy-only study that is not official statistics. Programme translation is ours. First assessed as pledge 2
+  of CC-011 (v1.0 2 Oct 2026, v1.1 5 Oct 2026).
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown:
+- Forest-area arithmetic (data/cc-107/gozo_net_zero_arithmetic.csv)
+- Energy Baseline Scenario for Gozo (2023), Table 16
+- PN programme 2026, Gozo chapter
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-05'
+location:
+  place: Victoria, Gozo
+  lat: 36.04289
+  lon: 14.23985
+  scope: site
+  icon: pin
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 4.9–6.3×
+  caption: Gozo's area needed as forest to offset its emissions

@@ -19,12 +19,13 @@ S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
         "product.", lead)]
 S.append(key_points([
     ("The arithmetic holds.",
-     "830,000 m² is 0.26% of Malta’s land, 116 football pitches and about 0.3 of Comino, as stated. The EEA’s own chart "
-     "puts Malta’s 2012–2018 land take at about 0.91–0.94 km², the highest share of any of 39 European countries, "
+     "830,000 m² is 0.26% of Malta’s land and 116 football pitches, as stated, and a quarter to 0.3 of Comino, "
+     "depending on the island area used (Amphora: “roughly a quarter”). The EEA’s own chart puts Malta’s 2012–2018 land take at about 0.91–0.94 km², the highest share of any of 39 European countries, "
      "matching the 920,000 m² quoted."),
     ("An independent measurement finds more, not less.",
      "Using Impact Observatory’s 10 m land-cover maps and counting only land that changed consistently, about 1.4 km² "
-     "net became built up between 2018 and 2023. Amphora’s figure is lower, consistent with its own description as "
+     "net was first mapped as built up in 2020 or 2021, a shorter window than Amphora’s 2018–2023. The model and method "
+     "differ, so this is not like for like, but Amphora’s figure is lower, consistent with its own description as "
      "“a conservative estimate”."),
     ("The 95% farmland share was not reproduced.",
      "In the independent data, 65% of the new built-up land was cropland and 31% shrub or grassland. Abandoned fields "
@@ -38,7 +39,7 @@ S.append(key_points([
 ]))
 S += [Spacer(1, 4 * mm), VerdictMeter(1), Spacer(1, 3 * mm),
       tiles([("0.83", ORANGE, "km² built up 2018–2023, Amphora (Dynamic World, checked by hand)"),
-             ("1.41", GREEN, "km² net, independent estimate (IO land cover, 3-year rule)"),
+             ("1.41", GREEN, "km² net, IO land cover, 3-year rule (first built 2020–21)"),
              ("65%", AMBER, "of new built-up land was cropland (IO); Amphora: nearly 95%"),
              ("0.26%", GREY, "of Malta’s land, as stated")]),
       Spacer(1, 4 * mm),
@@ -83,11 +84,13 @@ S.append(P("<b>Grades.</b> Satellite land cover is a direct, model-classified me
 S.append(CondPageBreak(70 * mm))
 S.append(SectionHeading(3, "How the satellite data work"))
 S.append(P("Both products classify every 10 m pixel with a deep-learning model trained on Sentinel-2 imagery [3, 4]. "
-           "Single-year maps are noisy: in the Impact Observatory data Malta’s built-up area swings by more than 15 km² "
-           "from one year to the next, twenty times the change being measured. A simple 2018-versus-2023 comparison "
-           "would give 24 km², which is not credible. We therefore counted only pixels that were not built up in each "
-           "of 2017, 2018 and 2019 and built up in each of 2021, 2022 and 2023, and subtracted the reverse change as a "
-           "gauge of noise. Amphora handled the same problem by checking each flagged area by eye, which removes false "
+           "Single-year maps are noisy: in the Impact Observatory data Malta’s built-up area changes by 3 to 27 km² "
+           "from one year to the next; the largest swing is over thirty times the 0.83 km² being measured. Comparing the "
+           "2018 and 2023 maps directly gives 24 km² of newly built-up pixels, or 18.9 km² net of pixels classed the "
+           "other way, which is not credible. We therefore counted only pixels that were not built up in each of 2017, "
+           "2018 and 2019 and built up in each of 2021, 2022 and 2023, and subtracted the reverse change as a gauge of "
+           "noise. This rule only detects land first mapped as built in 2020 or 2021; a looser two-year rule (not built "
+           "in 2017–18, built in 2022–23) covers land first mapped as built in 2019–2022. Amphora handled the same problem by checking each flagged area by eye, which removes false "
            "alarms but can miss developments, as it notes."))
 
 # ================================================================== 4
@@ -97,27 +100,30 @@ S.append(fig(FIG / "fig1_map.png", width=CW * 0.92))
 S.append(P("Figure 1. Land that became consistently built up between 2017–19 and 2021–23 in the Impact Observatory "
            "data. The changes are small and scattered, as Amphora describes.", cap))
 S.append(fig(FIG / "fig2_estimates.png"))
-S.append(P("Figure 2. Left: Amphora’s figure against two independent estimates. Right: what the newly built land "
-           "was before.", cap))
+S.append(P("Figure 2. Left: Amphora’s figure (2018–2023) against two independent estimates, which cover land first "
+           "mapped as built in 2020–21 and in 2019–22. Right: what the newly built land was before.", cap))
 S.append(std_table([
     [C("Check", cellh), C("Result", cellh), C("Amphora", cellh), C("Grade", cellh)],
     [C("830,000 m² as a share of Malta’s land (314 km²)"), C("0.264%"), C("0.26%"), grade_tag("C")],
-    [C("In FIFA pitches; vs Comino; vs Manoel Island"), C("116; 0.30; 2.7"), C("116; a quarter; two"), grade_tag("C")],
+    [C("In FIFA pitches; vs Comino; vs Manoel Island"), C("116; 0.24–0.30; 2.7"), C("116; roughly a quarter; two"),
+     grade_tag("C")],
     [C("EEA 2006–12 + 2012–18 + Amphora 2018–23"), C("1.94 km²"), C("at least 1.94 km²"), grade_tag("C")],
     [C("EEA land take 2012–18, read from chart [7]"), C("0.91–0.94 km²; highest of 39"), C("0.92 km²"), grade_tag("C")],
-    [C("New built-up 2018–23, IO, 3-year rule (net)"), C("<b>1.41 km²</b> (gross 1.91)"), C("0.83 km²"), grade_tag("B")],
-    [C("New built-up 2018–23, IO, 2-year rule (net)"), C("2.96 km² (gross 4.98)"), C("–"), grade_tag("B")],
+    [C("New built-up, IO, 3-year rule (net; first built 2020–21)"), C("<b>1.41 km²</b> (gross 1.91)"),
+     C("0.83 km² (2018–23)"), grade_tag("B")],
+    [C("New built-up, IO, 2-year rule (net; first built 2019–22)"), C("2.96 km² (gross 4.98)"), C("–"), grade_tag("B")],
     [C("Previously cropland / shrub and grass / bare"), C("65% / 31% / 4%"), C("nearly 95% farmland"), grade_tag("B")],
 ], [70 * mm, 40 * mm, 46 * mm, 14 * mm]))
-S.append(P("All values in <i>data/cc-019/checks.csv</i>.", cap))
+S.append(P("All values in <i>data/cc-019/checks.csv</i>. Comino: 0.30 of its 2.8 km² OpenStreetMap outline, 0.24 of "
+           "the 3.5 km² often quoted.", cap))
 
 # ================================================================== 5
 S.append(CondPageBreak(120 * mm))
 S.append(SectionHeading(5, "Where the evidence points different ways"))
 S.append(contested(
     "Q1  Is 830,000 m² right?", "PLAUSIBLE, PROBABLY LOW", GREENC,
-    "An independent model finds 1.4 to 3.0 km² net under strict rules: more than Amphora’s figure, which it calls "
-    "conservative.",
+    "An independent model finds 1.4 to 3.0 km² net under strict rules, over windows shorter than Amphora’s five years: "
+    "more than Amphora’s figure, which it calls conservative.",
     "The independent estimates include classification noise that Amphora removed by hand; the true figure could be "
     "nearer Amphora’s.",
     "<b>For this claim:</b> the scale is right, and the figure is unlikely to be an overstatement."))
@@ -141,9 +147,10 @@ verd = lambda t, c: chip(t, c, w=29 * mm)
 S.append(std_table([
     [C("Sub-claim", cellh), C("What the evidence shows", cellh), C("Rating", cellh)],
     [C("<b>A.</b> About 830,000 m² of green land built up 2018–2023"),
-     C("Independent estimate 1.4–3.0 km² net; Amphora’s figure plausible and conservative."), verd("SUPPORTED", GREENC)],
-    [C("<b>B.</b> 0.26% of land; comparisons (pitches, Comino, Manoel)"), C("Arithmetic checks out (Manoel: 2.7, "
-       "not two)."), verd("SUPPORTED", GREENC)],
+     C("Independent estimate 1.4–3.0 km² net, over shorter windows (land first built 2019–22); Amphora’s figure "
+       "plausible and conservative."), verd("SUPPORTED", GREENC)],
+    [C("<b>B.</b> 0.26% of land; comparisons (pitches, Comino, Manoel)"), C("Arithmetic checks out (Comino: 0.24 of the 3.5 km² often "
+       "quoted, 0.30 of the OSM outline; Manoel: 2.7, not two)."), verd("SUPPORTED", GREENC)],
     [C("<b>C.</b> Nearly 95% of take-up was farmland"), C("Independent data: 65% cropland, 31% shrub or grass."),
      verd("NOT SHOWN", GREY)],
     [C("<b>D.</b> EEA figures and the 1.94 km² total"), C("Sum correct; EEA chart gives 0.91–0.94 km² for 2012–18 [7]; "
@@ -167,6 +174,8 @@ S.append(requests_list([
 # ================================================================== 8
 S += [Spacer(1, 6 * mm), SectionHeading(8, "Limitations")]
 for l in ["Land-cover models misclassify pixels; our rules reduce but do not remove this.",
+          "The persistence rules only see land first mapped as built in 2020–21 (3-year rule) or 2019–22 (2-year rule), "
+          "not the whole of 2018–2023.",
           "Built-up land includes roads, car parks and quarries as well as buildings; so does Amphora’s.",
           "Neither estimate says whether development was inside or outside the development zone.",
           "Class names differ between the two models; ‘rangeland’ in IO is not the same as ‘natural’."]:
@@ -194,7 +203,17 @@ S.append(PageBreak())
 S += appendix_a("A experiment · B observational study with a control or gradient, or direct measurement · C review, "
                 "guidance or official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
-S += revision_log([("1.0", "4 Oct 2026", "First issue. Right of reply to Amphora Media not yet sent.")])
+S += revision_log([("1.0", "4 Oct 2026", "First issue. Right of reply to Amphora Media not yet sent."),
+                   ("1.1", "5 Oct 2026", "Corrections. (1) Periods of the independent estimates: “2018–2023” → land "
+                    "first mapped as built in 2020–21 (3-year rule) and 2019–22 (2-year rule), which is what the rules "
+                    "can detect (TL;DR, tile, sections 3, 4, 5 and 6, limitations, Figure 2 labels and caption). "
+                    "(2) Comino: “about 0.3 of Comino, as stated” → Amphora says “roughly a quarter”; 830,000 m² is 0.24 "
+                    "of the 3.5 km² often quoted and 0.30 of the 2.8 km² OpenStreetMap outline. (3) Simple comparison: "
+                    "“would give 24 km²” → 24 km² of newly built-up pixels, 18.9 km² net (now saved in "
+                    "<i>data/cc-019/io_lulc_change.csv</i>). (4) Year-to-year noise: “more than 15 km², twenty times the "
+                    "change” → 3 to 27 km², the largest over thirty times 0.83 km²; flyer “15 km² a year” → “up to "
+                    "27 km² from year to year”. (5) The TL;DR now says the two estimates are not like for like. Verdict and "
+                    "confidence unchanged.")])
 
 build_report(Report(
     number="019", out=str(FIG / "report.pdf"), kicker="Land and trees",
@@ -206,9 +225,9 @@ build_report(Report(
     attribution="Amphora Media, Green to Grey, 11 September 2026.",
     context="Companion piece: nearly 95% of the take-up was farmland.",
     verdict="Largely supported", verdict_note="Figure stands up, probably low; the 95% farmland share is not shown",
-    footer_lines=["Version 1.0  ·  4 October 2026", "Status: draft (right of reply: Amphora Media)",
+    footer_lines=["Version 1.1  ·  5 October 2026", "Status: draft (right of reply: Amphora Media)",
                   "Prepared from public sources and satellite land cover.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Green to grey – Malta", version="1.0", date="4 October 2026",
+    running_head="Green to grey – Malta", version="1.1", date="5 October 2026",
     pdf_title="830,000 m2 of green land built over? Claim Check 019",
     pdf_subject="Tests Amphora Media's estimate of green land built up in Malta, 2018-2023",
     story=S))

@@ -22,16 +22,17 @@ build_flyer(Flyer(
             "No site, size, cost, fill source or assessment for the large project."),
            ("7 yrs", ORANGE, "Seabed study unpublished",
             "Promised for public consultation in 2019; still not public."),
-           ("1 km", ORANGE, "To protected sites",
-            "Three Natura 2000 sites, incl. a 256 km² marine bird area."),
-           ("−34%", RED, "Seagrass at risk",
-            "Mediterranean Posidonia meadows lost a third in 50 years (research).")],
+           ("0.4 km", ORANGE, "To protected sites",
+            "From the new land to a 256 km² marine bird area; cliff sites 0.5 km."),
+           ("−34%", RED, "Mediterranean seagrass",
+            "Loss of Posidonia meadows across the whole Mediterranean in 50 years (research), not a Malta figure.")],
     fair="Moving industry away from homes could help residents. The plan may prove sound once the study and a site "
          "are published.",
     asks=["The ERA seabed study.",
           "Site, size and fill source.",
           "Any environmental screening.",
           "Which activities would move."],
-    footer="Version 1.0  ·  3 October 2026  ·  Public data only  ·  Right of reply: Ministry for Finance (not yet sent)",
+    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Right of reply: Finance and Environment ministries "
+           "(not yet sent)",
     pdf_title="Claim Check 017 – Reclaiming land outside the Freeport"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
