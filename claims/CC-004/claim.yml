@@ -23,10 +23,25 @@ claim:
     date: 23 Jan 2026
     url: https://publicservice.gov.mt/en/news/malta-records-strong-progress-in-waste-separation
     note: 'Not read: site blocks automated access.'
-  - title: 'Environmental Implementation Review 2025: Malta'
-    publisher: European Commission (OP)
-    date: '2025'
-    url: https://op.europa.eu/webpub/env/eir-country-reports-summaries/en/malta.html
+  - title: '2025 Environmental Implementation Review: Country Report - Malta (SWD(2025) 318 final)'
+    publisher: European Commission
+    date: 7 Jul 2025
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025SC0318
+    note: Waste chapter (pp. 3-11) read in full on 5 Oct 2026 via the EU Publications Office (celex 52025SC0318).
+      Postponement notified Dec 2023, renounced Nov 2024 (p. 8); treated biowaste reported as landfilled (p. 9).
+      Summary page https://op.europa.eu/webpub/env/eir-country-reports-summaries/en/malta.html
+  - title: Early warning report on Member States at risk of missing the 2025 municipal and packaging waste targets
+      (COM(2023) 304 final)
+    publisher: European Commission
+    date: 8 Jun 2023
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0304
+    note: Read in full on 5 Oct 2026. Malta among 10 states at risk of missing both 2025 targets (p. 3) and 13 still
+      far from the 2035 landfill target (p. 10).
+  - title: The early warning report for Malta (SWD(2023) 195 final)
+    publisher: European Commission
+    date: 8 Jun 2023
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023SC0195
+    note: Read in full on 5 Oct 2026. Compost used for landscaping and landfill remediation (p. 2).
   - title: NSO data reveals positive trends in sustainability and resource recovery
     publisher: ERA
     date: 19 Feb 2025
@@ -42,24 +57,31 @@ claim:
     url: https://nso.gov.mt/municipal-waste-2024/
   - title: Recycling rate of municipal waste (cei_wm011) and env_wasmun
     publisher: Eurostat
-    date: retrieved 2 Oct 2026
+    date: retrieved 2 and 5 Oct 2026
     url: https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table
   quote: Malta continues to make strong progress in waste management
-counter_evidence: Municipal recycling rate 16.7% in 2024 (EU 48.1%; 2025 target 55%); 79% of treated municipal waste
-  landfilled. The EU Environmental Implementation Review 2025 says Malta missed the 2020 target by a large margin
-  and is on course to miss 2025. The 412 million kg cannot be reconciled with Eurostat (271 kt recycled or recovered,
-  2020-24); the 141 million kg baseline has no year. (ERA's 68% figure is explicitly for construction waste and
-  is not part of this claim.)
-tests: Eurostat cei_wm011, env_wasmun, cei_wm020; NSO releases; Directive (EU) 2018/851 Art 11a.
-why_low_hanging: 'Done: Claim Check 004 report and flyer.'
+counter_evidence: Municipal recycling rate 16.7% in 2024 (EU 48.1%; 2025 target 55%), second-lowest of the 20
+  states with 2024 data; 79% of treated municipal waste landfilled. The Commission's 2023 early-warning report lists
+  Malta among 10 states at risk of missing both 2025 targets and 13 far from the 2035 landfill target; its 2025
+  review says Malta missed the 2020 target by a large margin and is on course to miss 2025. Malta notified a
+  postponement in December 2023 and renounced it in November 2024. Treated biowaste is used for landscaping and
+  landfill remediation and reported as landfilled. The 412 million kg cannot be reconciled with Eurostat (271 kt
+  recycled or recovered, 2020-24); the 141 million kg baseline has no year. In fairness, the rate rose 7.6 points
+  2019-2024 (4th-largest rise of 20 EU states) and packaging recycling rose from 30.8% to 43.4% in 2023. (ERA's 68%
+  figure is explicitly for construction waste and is not part of this claim.)
+tests: Eurostat cei_wm011 (Malta and all EU-27), env_wasmun, cei_wm020; NSO releases; Directive (EU) 2018/851
+  Art 11a; Commission COM(2023) 304, SWD(2023) 195 and SWD(2025) 318.
+why_low_hanging: 'Done: Claim Check 004 report and flyer (v1.1).'
 tags:
 - Selective metric
 - Input-as-outcome
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: High
 caveats: Draft pending right of reply (Environment Ministry; WasteServ). The ministry may hold operational data
-  that explain the 412 figure; 2025 statistics not yet published.
+  that explain the 412 figure; 2025 statistics not yet published. The link between the deposit refund scheme and
+  the 2023 packaging jump is our inference; the scheme's 78% collected and 74% recycled (2023) are reported by the
+  Commission from ERA and were not recomputed.
 right_of_reply:
   sent: null
   deadline: null
@@ -69,8 +91,8 @@ outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-02'
+version: '1.1'
+last_reviewed: '2026-10-05'
 location:
   place: Magħtab waste complex
   lat: 35.93923

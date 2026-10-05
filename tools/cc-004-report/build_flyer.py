@@ -15,24 +15,25 @@ build_flyer(Flyer(
     attribution="Ministry for the Environment, press release PR260072en, 19 January 2026",
     context="Minister Dalli: the waste plan “is working”; 412 million kg diverted from landfill in five years.",
     note="EU targets are measured on waste actually recycled after sorting, not on kilograms separated.",
-    verdict="Not substantiated", verdict_right=["Separation is up;", "the outcome isn’t shown."],
-    cards=[("Rising", GREEN, "Separation is up",
-            "NSO confirms more organic, grey-bag, glass and deposit-scheme waste. Landfilled municipal waste fell 21% since 2019."),
+    verdict="Not substantiated", verdict_right=["Separation is up; only 16.7%", "was recycled in 2024."],
+    cards=[("+7.6 pts", GREEN, "Recycling rate since 2019",
+            "From 9.1% to 16.7%: the 4th-largest rise of 20 EU states. Packaging recycling jumped in 2023."),
            ("16.7%", RED, "Actually recycled, 2024",
-            "Share of municipal waste recycled. EU average 48%. The 2025 target is 55%."),
+            "Of municipal waste. EU average 48%. The 2025 target is 55%; Malta renounced a postponement."),
            ("79%", RED, "Still landfilled",
             "Of treated municipal waste in 2024. The 2020 target was missed by a wide margin."),
            ("412 vs 271", ORANGE, "Thousand tonnes",
             "Ministry’s “diverted” figure vs Eurostat’s recycled or recovered waste, 2020–24."),
-           ("No year", ORANGE, "For “141 to 95.5 million kg”",
-            "The mixed-waste fall of 32% has no start year and is not a published statistic.")],
-    fair="Mandatory separation, organic collection and gate fees are measures that research links to higher "
-         "recycling. The direction is right; the claim is about how far it has got.",
+           ("0 t", ORANGE, "Organic waste recycled",
+            "None counted, 2019–24: treated biowaste is used for landscaping and landfill remediation, so it is "
+            "reported as landfilled.")],
+    fair="Malta’s recycling rate is rising faster than in most EU states, and the deposit scheme coincided with a jump "
+         "in packaging recycling. The direction is right; the claim is about how far it has got.",
     asks=["Scope, years and method behind 412 million kg.",
           "How much separated waste is rejected and landfilled.",
-          "Why no composting or digestion is reported as recycling.",
+          "Where compost and digestate go, and when they will count.",
           "The year Malta expects to reach 55% recycled."],
-    footer="Version 1.0  ·  2 October 2026  ·  Public data only  ·  Draft pending right of reply from the "
+    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Draft pending right of reply from the "
            "Environment Ministry and WasteServ",
     pdf_title="Claim Check 004 – More waste separated, but how much recycled?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
