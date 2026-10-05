@@ -32,10 +32,10 @@
 
 /* A claim marker pops out of the line on a stem; clumps show a ring of their verdict colours and a count. */
 .tlv-m { display: flex; align-items: center; gap: 7px; padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer;
-  font: 600 12.5px/1.2 var(--sans); text-align: left; --v: #5d7468; }
-.tlv-stem { position: absolute; width: 2px; background: var(--v); opacity: .85; pointer-events: none; }
+  font: 600 12.5px/1.2 var(--sans); text-align: left; }
+.tlv-stem { position: absolute; width: 2px; background: var(--v, #5d7468); opacity: .85; pointer-events: none; }
 .tlv-m.is-clump .tlv-stem { background: var(--sage); }
-.tlv-head { flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--v); border: 2px solid var(--paper);
+.tlv-head { flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--v, #5d7468); border: 2px solid var(--paper);
   box-shadow: 0 2px 8px rgba(0,0,0,.45); position: relative; transition: transform .12s; }
 .tlv-head b { display: grid; place-items: center; width: 62%; height: 62%; border-radius: 50%; background: var(--bg); color: var(--ink);
   font: 700 11px/1 var(--sans); }
@@ -96,3 +96,26 @@
   .tlv-ol li { padding-left: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { .tlv-head { transition: none; } }
+
+/* Lanes (one line per topic, kind of body or verdict) and the "checked only" filter */
+.tlv-lanes button { padding: 0 12px; }
+.tlv-check { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 12px; border-radius: 999px;
+  border: 1px solid rgba(207,226,212,.28); background: rgba(8,30,21,.45); color: var(--ink); font: 600 13.5px/1 var(--sans); cursor: pointer; }
+.tlv-check input { width: 16px; height: 16px; accent-color: var(--amber); margin: 0; }
+.tlv-check:has(input:focus-visible) { outline: 3px solid var(--amber); outline-offset: 2px; }
+.tlv-lline { left: 0; right: 0; height: 1px; background: rgba(127,168,139,.42); }
+.tlv-lname { left: 10px; z-index: 1; padding: 1px 7px; border-radius: 6px; background: rgba(14,42,31,.82); color: var(--muted);
+  font: 600 11.5px/1.3 var(--sans); white-space: nowrap; pointer-events: none; }
+.tlv-lname b { color: var(--amber); font-weight: 700; margin-left: 3px; }
+.tlv-lm .tlv-head { border-width: 1.5px; }
+.tlv-lm.is-clump .tlv-head b { font-size: 10px; }
+.tlv-lbar { height: 10px; padding: 0; border: 1.5px dashed var(--sage); border-radius: 999px; background: rgba(127,168,139,.18); cursor: pointer; }
+.tlv-lbar:hover { background: rgba(127,168,139,.34); }
+.tlv-lbar.is-selected { border-color: var(--amber); background: rgba(227,167,47,.3); }
+.tlv-also { display: block; margin-top: 2px; }
+.tlv-also a { color: #cfe2d4; }
+@media (max-width: 640px) {
+  .tlv-lanes { overflow-x: auto; scrollbar-width: none; }
+  .tlv-lanes button { flex: none; padding: 0 12px; }
+  .tlv-check { width: 100%; justify-content: center; }
+}

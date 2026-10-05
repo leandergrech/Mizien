@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 5 October 2026 (timeline page `/timeline/` added on branch `ccr-b5c27334-uals26`; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 5 October 2026 (interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -19,11 +19,52 @@ https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.gith
 ## Timeline page
 
 `/timeline/` (site/timeline.njk, assets/timeline.js, assets/timeline.css) places every claim with a date on one
-horizontal line. Claims are clumped by month, week, day or hour depending on zoom (buttons, pinch, Ctrl+scroll, keys),
-and a claim is never placed more finely than its recorded date: month- or year-only claims are drawn as dashed bars.
+horizontal line. Claims are clumped by year, month, week, day or hour depending on zoom (buttons, pinch, Ctrl+scroll,
+keys), and a claim is never placed more finely than its recorded date: month- or year-only claims are drawn as dashed
+bars. **Lanes** (One line / By topic / By who said it / By verdict) split the line, one row per group, so clusters over
+time show (e.g. which kind of body made the claims checked as Not substantiated, and when); **Checked claims only**
+hides the rest. Both are kept in the address (`?lanes=who&checked=1`). A selected claim links to its page, to its place
+on the map (`/?view=map&sel=claim:CC-NNN`, when it has a location) and to the claims web. Links in the page's data are
+resolved against the script's own folder, so they work under the `/Mizien/` prefix (they did not before: fixed).
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
-hour; no claim has a time yet, so the hour view currently shows only date-only bars. Undated claims appear in the
-text list only. The text list below the chart is the no-JavaScript version.
+hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
+
+## Interface revision (5 October 2026, evening)
+
+Review of every view with the aim of letting readers find patterns themselves (which bodies, topics and verdicts go
+together, where and when). Done in this pass:
+
+- **Map view rebuilt** (`site/assets/map/map.js`, map view section). MapLibre GL 6.12 (npm, copied to
+  `/assets/vendor/maplibre/` by eleventy.config.js) draws a vector map from a **self-hosted extract**:
+  `docs/data/malta.pmtiles` (4.2 MB, zoom 0-14, OpenMapTiles schema from OpenFreeMap, trimmed to the layers the map
+  draws; overzoomed to 18.5) and glyphs in `docs/data/fonts/` (Noto Sans, Latin ranges). No map service is contacted
+  when someone opens the map. Rebuild with `pip install mapbox-vector-tile pmtiles && python scripts/build_tiles.py`
+  (network needed; Geofabrik and Overpass are not reachable from the cloud sessions, OpenFreeMap is). Attribution:
+  (c) OpenMapTiles (c) OpenStreetMap contributors (shown on the map). The land is drawn from the island outlines in
+  `data/geo.json` and the town names come from its town list, so names follow the site's spelling.
+- Zooming is continuous; roads, then streets, street names and buildings appear for the area in view. Each place is a
+  **medallion**: the number of claims and one leaf per checked claim, coloured by verdict. Places that would touch on
+  screen share a medallion, named after the biggest ("City Gate + 2 places"), which splits as you zoom; pressing a
+  merged medallion zooms to its places. Claims are listed **only when a place is pressed** (panel grouped by the body
+  that made them, with a verdict bar). Claims with no location are listed under "No place recorded" in the search
+  column. Deep links `?view=map&sel=claim:CC-NNN` fly to the claim's place. Without WebGL the page falls back to the
+  claims web with a message. The old canvas map (island outlines, trees of bodies and people) is removed.
+- **Network (Għanqbuta)**: Names, Lens, Hide text and Pause moved into a Display menu (zoom and Fit stay); the title
+  sits beside the control column instead of over the middle of the graph; the control column scrolls instead of
+  squeezing; on phones, Arrange, the group list and the colour key fold behind "More options".
+- **Homepage**: the claims table is gone; the list lives only on the All claims tab (maintainer request). The skip
+  link goes to `/claims/`.
+- **Timeline**: lanes, Years level, checked-only filter, links to the map and the web, verdict colours on single dots
+  (they were all grey because of a CSS default: fixed).
+
+Proposed next, for user-derived pattern matching (not done; needs a maintainer decision on scope):
+1. One shared filter ("lens") across the web, the map and the timeline: topic, verdict, kind of body, pattern tag,
+   year, carried in the address so a pattern found in one view opens in the others.
+2. A "compare" mode: pin two groups (e.g. Government vs Opposition, or two topics) and see their verdict mix, timing
+   and places side by side.
+3. Semantic zoom in the web: group labels at overview, claim names only on zoom or hover (the CC-numbers clutter).
+4. Make the leaves mean one thing. On the map a leaf is a checked claim coloured by **verdict**; in the web a leaf is a
+   checked claim coloured by how **recently its evidence was reviewed**. Pick one meaning, or label both.
 
 ## Conventions
 
@@ -286,6 +327,8 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
   - The network view is renamed "Għanqbuta" (spider; `?view=ghanqbuta`, with `?view=network` kept as an alias) and gets subtopic sub-hubs.
 
 ## Map view prototype (3 October 2026)
+
+*Superseded on 5 October 2026 (evening) by the MapLibre map: see "Interface revision". Kept for the history.*
 
 - `docs/index.html` has a **Network / Malta map** toggle (also `?view=map`, key M). Network view: larger default
   scale, right-drag / Shift-drag / two-finger pan, zoom towards the cursor or pinch point, double-click to zoom,

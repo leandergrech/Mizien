@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Timeline
-description: Every claim Miżien has recorded, placed on a line of calendar days. Zoom from months to weeks, days and hours.
+description: Every claim Miżien has recorded, placed on a line of calendar days. Zoom from years to months, weeks, days and hours.
 permalink: /timeline/
 styles: [timeline.css]
 ---
@@ -19,11 +19,19 @@ styles: [timeline.css]
   <div class="tlv-card" id="tl" hidden>
     <div class="tlv-bar" role="toolbar" aria-label="Timeline zoom and position">
       <div class="tlv-levels" role="group" aria-label="Group claims by">
+        <button type="button" data-level="year" aria-pressed="false">Years</button>
         <button type="button" data-level="month" aria-pressed="false">Months</button>
         <button type="button" data-level="week" aria-pressed="false">Weeks</button>
         <button type="button" data-level="day" aria-pressed="false">Days</button>
         <button type="button" data-level="hour" aria-pressed="false">Hours</button>
       </div>
+      <div class="tlv-levels tlv-lanes" role="group" aria-label="Lanes">
+        <button type="button" data-lanes="none" aria-pressed="true">One line</button>
+        <button type="button" data-lanes="topic" aria-pressed="false">By topic</button>
+        <button type="button" data-lanes="who" aria-pressed="false">By who said it</button>
+        <button type="button" data-lanes="verdict" aria-pressed="false">By verdict</button>
+      </div>
+      <label class="tlv-check"><input type="checkbox" id="tl-checked"> Checked claims only</label>
       <div class="tlv-tools">
         <button type="button" class="tlv-btn" data-act="out" aria-label="Zoom out">−</button>
         <button type="button" class="tlv-btn" data-act="in" aria-label="Zoom in">+</button>
@@ -35,7 +43,8 @@ styles: [timeline.css]
     <div class="tlv-stage" id="tl-stage" tabindex="0" role="group"
       aria-label="Timeline of claims. Arrow keys move along the line; plus and minus zoom. The same claims are listed below as text."></div>
     <div class="tlv-over" id="tl-over" aria-hidden="true"></div>
-    <p class="tlv-hint small">Drag to move. Pinch, or hold Ctrl and scroll, to zoom. Select a marker to read its claims.</p>
+    <p class="tlv-hint small">Drag to move. Pinch, or hold Ctrl and scroll, to zoom. Select a marker to read its claims.
+      Lanes split the line by topic, by the kind of body that spoke, or by verdict, to show when claims of one kind cluster.</p>
     <div class="tlv-panel" id="tl-panel" aria-live="polite"><p class="small">Select a marker to see its claims.</p></div>
     <ul class="tlv-legend small" aria-label="Marker colours">
       {%- for v in mizien.verdicts %}<li><span class="tlv-key v-{{ v.slug }}"></span>{{ v.name }}</li>{% endfor %}
