@@ -3,8 +3,8 @@ title: A net-zero Gozo by 2040
 category: Governance & Promises
 subtopic: Manifestos & pledges
 status: Drafted
-verdict: Not substantiated
-verdict_confidence: Moderate
+verdict: null   # a pure pledge check: the pledge label below is shown instead of a verdict
+verdict_confidence: null
 claim:
   text: 'PN programme 2026: a clear and realistic plan for Gozo to become a Net-Zero Island by 2040, with afforestation
     among several measures. News summaries said net zero "through afforestation". (Checked as part of CC-011 until
@@ -51,7 +51,7 @@ why_low_hanging: 'Done: Claim Check 107 report and flyer (split from Claim Check
 tags:
 - Promise-without-baseline
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: Medium
 caveats: Draft pending right of reply (Partit Nazzjonalista). Gozo emissions estimated from national per-person figures
   and an energy-only study that is not official statistics. Programme translation is ours. First assessed as pledge 2
@@ -68,7 +68,7 @@ outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
+version: '1.1'
 last_reviewed: '2026-10-05'
 location:
   place: Victoria, Gozo
@@ -94,3 +94,7 @@ history:   # research log: the date each step of the research was done (not when
     step: version
     version: "1.0"
     note: "First issue as a separate check. The analysis first appeared as pledge 2 of Claim Check 011 (v1.0, 2 Oct 2026; v1.1, 5 Oct 2026). New in this issue: the 2023 Energy Baseline Scenario for Gozo [6], which gives an energy-emissions baseline and puts the forest needed at 4.9–6.3 times Gozo’s area at the measured rate (the 1.5–8.5 times range is kept). Verdict as in Claim Check 011: not substantiated, moderate confidence. Draft pending right of reply from the Partit Nazzjonalista."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    note: "Maintainer decision (5 Oct 2026): pledges get one of six pledge labels instead of a verdict (methodology, Pledges). This pure pledge check is now labelled “Not measurable” as of 5 October 2026 in place of the verdict “Not substantiated” (moderate); the analysis and numbers are unchanged. Appendix A lists the pledge labels."

@@ -27,10 +27,10 @@ S.append(key_points([
     ("The WHO-style measure is far off.",
      "About a quarter of residents live within 300 m of a public park of at least 0.5 ha, the distance and size "
      "WHO Europe suggests as an indicator."),
-    ("Verdict: not substantiated.",
-     "The pledge is not wrong; it is not stated in a way that can be measured."),
+    ("Pledge label: not measurable (as of 5 October 2026).",
+     "The pledge is not wrong; it is not stated in a way that can be measured. Pledges get a label, not a verdict."),
 ]))
-S += [Spacer(1, 4 * mm), VerdictMeter(2), Spacer(1, 3 * mm),
+S += [Spacer(1, 4 * mm), VerdictMeter(0, scale="pledge"), Spacer(1, 3 * mm),
       tiles([("99.9%", GREEN, "Residents within 800 m of any green or open space (straight line)"),
              ("55%", ORANGE, "Within an 800 m walk of a public park of at least 0.5 ha"),
              ("~240,000", ORANGE, "People outside that walk (WorldPop 2025 model)"),
@@ -39,10 +39,11 @@ S += [Spacer(1, 4 * mm), VerdictMeter(2), Spacer(1, 3 * mm),
       up_down("A published definition of “open or green space”, a baseline map and a target year from the "
               "government.",
               "A government statement that the pledge is met using a broad definition without new space being "
-              "created."),
+              "created.",
+              heads=("What would make it measurable", "What would count against it")),
       Spacer(1, 5 * mm)]
 S += toc([("1", "The pledge and what we could verify"), ("2", "Method"), ("3", "Why the definition decides the answer"),
-          ("4", "Ten minutes from green space"), ("5", "Testing the pledge"), ("6", "Verdict and requests for evidence"),
+          ("4", "Ten minutes from green space"), ("5", "Testing the pledge"), ("6", "Pledge label and requests for evidence"),
           ("7", "Limitations")])
 S.append(PageBreak())
 
@@ -144,13 +145,14 @@ S.append(std_table([
 ], [46 * mm, 20 * mm, 70 * mm, 34 * mm], valign="MIDDLE"))
 
 # ================================================================== 6
-S += [Spacer(1, 6 * mm), SectionHeading(6, "Verdict and requests for evidence"),
-      verdict_box("Not substantiated", "The pledge lacks the definition and baseline needed to check it. "
-                  "Confidence: moderate. Our access analysis is a screening estimate."), Spacer(1, 4 * mm)]
+S += [Spacer(1, 6 * mm), SectionHeading(6, "Pledge label and requests for evidence"),
+      verdict_box("Not measurable", "As of 5 October 2026. The pledge lacks the definition and baseline needed to "
+                  "check it. Our access analysis is a screening estimate."), Spacer(1, 4 * mm)]
 S.append(P("<b>Why.</b> The pledge can be read as already achieved or as needing new parks within reach of about "
            "240,000 people; the manifesto does not say which. A pledge is not a statement of fact, so we do not call it "
-           "false; we rate it <i>Not substantiated</i> because, as worded, it cannot be shown to be achieved or missed."))
-S.append(P("<b>What this verdict does not say.</b> It does not say the goal is undesirable, or that anyone acted in bad "
+           "false. We label it <i>Not measurable</i>: as worded, it cannot be shown to be achieved or missed. Pledges get one "
+           "of six labels rather than a verdict (Appendix A)."))
+S.append(P("<b>What this label does not say.</b> It does not say the goal is undesirable, or that anyone acted in bad "
            "faith. A checkable version of the pledge would read: <i>“By [year], every resident will live within "
            "800 m by foot of a public park of at least [size]; today [X]% do (map published).”</i>"))
 S.append(CondPageBreak(45 * mm))
@@ -166,7 +168,7 @@ S += [Spacer(1, 4 * mm),
       callout([P("RIGHT OF REPLY", tag),
                P("Before wider circulation this draft should be sent to the Partit Laburista and, as the pledge is now "
                  "a government commitment, the Office of the Prime Minister or the responsible ministry, with a fixed "
-                 "deadline (suggested 14 days). Responses will be appended and the verdict revisited.", small)],
+                 "deadline (suggested 14 days). Responses will be appended and the label revisited.", small)],
               bg=AMBER_PALE, bar=AMBER)]
 
 # ================================================================== 7
@@ -177,7 +179,7 @@ for l in ["The access analysis uses straight-line distances, a modelled populati
           "would give lower shares for every definition.",
           "The manifesto translation is ours. The Labour PDF was read at pp. 17 and 21 only; other chapters may add detail.",
           "We read the green-space health literature [5, 6] as abstracts or metadata only; it is context for why the "
-          "pledge matters, not evidence for the verdict."]:
+          "pledge matters, not evidence for the label."]:
     S.append(P("• " + l, bul))
 
 S += [Spacer(1, 6 * mm), SectionHeading(None, "References")]
@@ -208,7 +210,8 @@ S += references([
 
 S.append(PageBreak())
 S += appendix_a("A experiment · B observational study with a control or gradient · C review, guidance or "
-                "official statistics · D assertion or anecdote. Our own analyses are screening estimates.")
+                "official statistics · D assertion or anecdote. Our own analyses are screening estimates.",
+                pledges=True)
 S += [Spacer(1, 5 * mm)]
 S += revision_log([("1.0", "2 Oct 2026", "First issue, covering two pledges (Labour’s ten-minute green space and the "
                                          "PN’s net-zero Gozo). Claims restated from the parties’ own texts rather than "
@@ -221,7 +224,12 @@ S += revision_log([("1.0", "2 Oct 2026", "First issue, covering two pledges (Lab
                                          "ten-minute pledge only, under the title “Ten minutes’ walk to green "
                                          "space”. The PN’s net-zero Gozo pledge and its arithmetic are now Claim "
                                          "Check 107. Labour’s analysis and numbers are unchanged; references "
-                                         "renumbered. Verdict and confidence unchanged.")])
+                                         "renumbered. Verdict and confidence unchanged."),
+                   ("1.3", "5 Oct 2026", "Maintainer decision (5 Oct 2026): pledges get one of six pledge labels "
+                                         "instead of a verdict (methodology, Pledges). This pure pledge check is now "
+                                         "labelled “Not measurable” as of 5 October 2026 in place of the verdict "
+                                         "“Not substantiated” (moderate); the analysis and numbers are unchanged. "
+                                         "Appendix A lists the pledge labels.")])
 
 build_report(Report(
     number="011", out=str(FIG / "report.pdf"), kicker="Election pledges, computed",
@@ -230,11 +238,11 @@ build_report(Report(
     quote_lines=["“Every person … no more than ten minutes’ walk", "from an open or green space.”"], quote_size=15,
     attribution="Partit Laburista, manifesto 2026, priority 19 (our translation).",
     context="Now a government commitment: Labour won the election of 30 May 2026.",
-    verdict="Not substantiated", verdict_note="No definition or baseline: met already, or far off",
-    footer_lines=["Version 1.2  ·  5 October 2026",
+    verdict="Not measurable", verdict_note="As of 5 Oct 2026: no definition or baseline; met already, or far off",
+    footer_lines=["Version 1.3  ·  5 October 2026",
                   "Status: draft for right of reply (Partit Laburista / Government)",
                   "Prepared from public sources and open data. No site visits.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Ten minutes’ walk to green space – Labour manifesto 2026", version="1.2", date="5 October 2026",
+    running_head="Ten minutes’ walk to green space – Labour manifesto 2026", version="1.3", date="5 October 2026",
     pdf_title="Ten minutes’ walk to green space? Claim Check 011",
     pdf_subject="Tests Labour's 2026 pledge that nobody lives more than ten minutes' walk from open or green space",
     story=S))
