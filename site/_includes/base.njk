@@ -26,6 +26,9 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/tabs.css">
 <script src="/assets/claimrefs.js" defer></script>
+{%- if site.goatcounter %}
+<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{%- endif %}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -43,6 +46,9 @@
   <p>Content is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; site code is MIT.
      Source and data: <a href="{{ site.repo }}">github.com/leandergrech/Mizien</a>.
      <a href="/about/disclaimer/">What a check represents</a>.</p>
+{%- if site.goatcounter %}
+  <p>Visits are counted with <a href="https://www.goatcounter.com/">GoatCounter</a>: no cookies, no personal data, no tracking across sites.</p>
+{%- endif %}
 </footer>
 </body>
 </html>
