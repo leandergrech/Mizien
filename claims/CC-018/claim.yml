@@ -4,7 +4,7 @@ category: Planning & Housing
 subtopic: Housing & affordability
 status: Drafted
 verdict: Largely supported
-verdict_confidence: Moderate
+verdict_confidence: High
 claim:
   text: 'Malta Developers Association (release on its website, 8 Feb 2026; quoted by MaltaToday the same day): ''The
     IMF''s assessment of the Maltese housing market confirms what the Malta Developers Association has been saying
@@ -17,8 +17,9 @@ claim:
     publisher: Malta Developers Association
     date: 8 Feb 2026
     url: https://mda.com.mt/a-strong-housing-market-supported-by-excellent-fundamentals/
-    note: The claim, primary wording. Read in full 5 Oct 2026 (via the site's WordPress API, post 1574). Page modified
-      17 Jun 2026, after publication; original text not available. Hashes in literature/CC-018/primary-source.md.
+    note: The claim, primary wording. Read in full 5 Oct 2026 (via the site's WordPress API, post 1574; re-read for
+      v1.2 the same day, content hash unchanged). Page modified 17 Jun 2026, after publication; original text not
+      available. Hashes in literature/CC-018/primary-source.md.
   - title: Malta Development Association welcomes IMF assessment of housing market
     publisher: MaltaToday
     date: 8 Feb 2026
@@ -29,8 +30,34 @@ claim:
     publisher: International Monetary Fund
     date: Feb 2026
     url: https://www.imf.org/-/media/files/publications/cr/2026/english/1mltea2026001-source-pdf.pdf
-    note: Read in full 4 Oct 2026; housing findings pp. 3, 8, 11, 12, 19, 20. DOI 10.5089/9798229038249.002
-      (Crossref checked 5 Oct 2026).
+    note: 'Read in full 4 Oct 2026; housing findings pp. 3, 8, 11, 12, 19, 20. DOI 10.5089/9798229038249.002
+      (Crossref checked 5 Oct 2026). v1.2: next consultation "on the 24-month cycle" (p.26, para. 40); "Malta has
+      moved to the 24-month consultation cycle" (p.66); per capita income US$25,000 (2013) to US$45,000 (2024),
+      "nearly doubled" (pp. 8, 25).'
+  - title: 'Malta''s Growth-at-Risk: Exploring the Effects of Macro-Financial Factors on Growth (IMF Selected Issues
+      Paper 2026/022)'
+    publisher: International Monetary Fund (F. Hasanov)
+    date: 13 Mar 2026
+    url: https://www.elibrary.imf.org/view/journals/018/2026/022/article-A001-en.xml
+    note: 'Read 5 Oct 2026 on the IMF eLibrary. Source of two IMF phrases the MDA release quotes that CR 26/29 does
+      not contain: "current data do not suggest overvaluation (price increases have been in line with income growth in
+      recent years)". Published after the release''s 8 Feb date; the release was modified on 17 Jun 2026. DOI
+      10.5089/9798229041652.018 (Crossref checked).'
+  - title: Guidance Note for Surveillance Under Article IV Consultations (IMF Policy Paper 2022/029)
+    publisher: International Monetary Fund
+    date: Jun 2022
+    url: https://www.elibrary.imf.org/view/journals/007/2022/029/article-A001-en.xml
+    note: 'Read 5 Oct 2026. Para. 123: standard cycle 12 months; a longer cycle of up to 24 months only with the
+      member''s consent and if it is not of systemic or regional importance, not perceived to be at risk, and owes the
+      Fund no more than 145% of quota. DOI 10.5089/9798400211522.007 (Crossref checked).'
+  - title: 'Luxembourg: Staff Reports for the 2000 and 2002 Article IV Consultations (IMF CR 00/65 and 02/118)'
+    publisher: International Monetary Fund
+    date: May 2000; Jun 2002
+    url: https://www.elibrary.imf.org/view/journals/002/2000/065/article-A001-en.xml
+    note: 'Read 5 Oct 2026. 2000, para. 45: next consultation "expected to be held on the 24-month cycle"; 2002, para.
+      34: next "within 24 months"; the previous one concluded 8 May 2000. DOIs 10.5089/9781451824254.002 and
+      10.5089/9781451824339.002 (Crossref checked). The latest staff reports of all 27 EU members (2025-26) are in
+      data/cc-018/imf_consultation_cycles.csv: only Malta is on the 24-month cycle.'
   quote: The IMF's assessment of the Maltese housing market confirms what the Malta Developers Association has been
     saying for several years.
 counter_evidence: 'IMF CR 26/29: prices ''aligned with fundamentals'', price-to-income and price-to-rent stable,
@@ -38,17 +65,29 @@ counter_evidence: 'IMF CR 26/29: prices ''aligned with fundamentals'', price-to-
   average (EU 98.9). But IMF calls banks'' real-estate exposure (72% of private loans, from 61%) ''a vulnerability'',
   urges vigilance and enhanced monitoring given rapid price growth; affordability not assessed (housing-cost
   overburden worsened between 2015 and 2022 on Eurostat''s comparable series, 1.1% -> 2.9%; a break in the series in
-  2023, 6.0%, flat since). MDA-commissioned study (as reported) found prices outpacing incomes.'
-tests: MDA release and IMF Country Report 26/29 read in full; Eurostat tipsho60, tipsho10, ilc_lvho07a.
+  2023, 6.0%, flat since). MDA-commissioned study (as reported) found prices outpacing incomes. House prices +6.8% and
+  +6.9% year on year in 2026 Q1 and Q2 (Eurostat prc_hpi_q, provisional). v1.2, the release''s other statements: the
+  IMF did move Malta to a 24-month cycle (supported), but Malta is not ''the first EU economy'' on it (contradicted:
+  Luxembourg 2000-2002; Malta is the only EU member on it in the 2025-26 reports); GDP per head ''nearly doubled''
+  since 2013 is the IMF''s own phrase (US$, x1.8 to 2024; Eurostat EUR x2.2 to 2025, real x1.5; largely supported);
+  ''far higher than the EU average'' is not substantiated (2025: +1.7% at market prices, PPS index 110).'
+tests: MDA release and IMF Country Report 26/29 read in full; Eurostat tipsho60, tipsho10, ilc_lvho07a. v1.2 IMF
+  Selected Issues Paper 2026/022, IMF surveillance guidance (2022), latest staff reports of all 27 EU members and
+  Luxembourg's 2000 and 2002 reports (IMF eLibrary); Eurostat nama_10_pc, prc_hpi_q, prc_hpi_a, nasa_10_nf_tr,
+  nama_10_pe.
 why_low_hanging: 'Done: Claim Check 018 report and flyer.'
 tags: []
 tags_provisional: false
-priority: Done (v1.1)
+priority: Done (v1.2)
 data_readiness: High
-caveats: Right of reply to the MDA not yet sent. MDA release read (5 Oct 2026) and matches the quote; the page was
-  modified on 17 Jun 2026 and the original text was not seen. The release does not mention the IMF's 'vulnerability'
-  warning on bank exposure. MDA-commissioned study not seen. Eurostat flags a break in Malta's overburden series in
-  2023. v1.1 (5 Oct 2026) made corrections only; verdict and confidence unchanged.
+caveats: 'Right of reply to the MDA not yet sent. MDA release read (5 Oct 2026) and matches the quote; the page was
+  modified on 17 Jun 2026 and the original text was not seen. The release does not mention the IMF''s ''vulnerability''
+  warning on bank exposure. MDA-commissioned study not seen. Eurostat flags a break in Malta''s overburden series in
+  2023. House prices from 2025 Q3 and Malta household income 2021-2024 are provisional; household income not yet
+  published after 2024. The consultation-cycle comparison uses the latest EU staff reports and, for earlier years,
+  Luxembourg only. The v1.2 sub-claims D-G (the release''s statements on the IMF cycle and GDP per head) are rated
+  separately and do not change the verdict. Maintainer decision (5 Oct 2026): confidence raised from Moderate to
+  High, because the MDA''s own release is now verified.'
 right_of_reply:
   sent: null
   deadline: null
@@ -57,11 +96,13 @@ evidence_shown:
 - MDA release of 8 Feb 2026 (literature/CC-018/primary-source.md)
 - IMF Country Report 26/29 (data/cc-018/imf_extracts.csv)
 - Eurostat tipsho60 (data/cc-018/eurostat_tipsho60.csv)
+- IMF consultation cycles of the 27 EU members and Luxembourg 2000/2002 (data/cc-018/imf_consultation_cycles.csv)
+- Eurostat GDP per head, house prices and household income (data/cc-018/eurostat_more.csv)
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-05'
 location:
   place: City Gate, Valletta (national claim)

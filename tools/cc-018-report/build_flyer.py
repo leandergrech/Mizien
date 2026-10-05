@@ -22,16 +22,17 @@ build_flyer(Flyer(
             "Prices “aligned with fundamentals”; weakening “currently low”."),
            ("72%", ORANGE, "Banks tied to property",
             "Share of private loans; the IMF calls it “a vulnerability”."),
-           ("6.0%", RED, "Affordability not assessed",
-            "Overburdened by housing costs: 1.1% (2015) to 2.9% (2022); about 6% since a 2023 series break."),
-           ("+59%", ORANGE, "MDA’s own study disagrees",
-            "Prices since 2017; as reported, faster than incomes.")],
+           ("2000", RED, "Not the first EU economy",
+            "Luxembourg was on the IMF’s two-year cycle in 2000–02. Malta is the only EU member on it now."),
+           ("110", ORANGE, "Above the EU, not “far”",
+            "GDP per head in purchasing power, EU = 100 (2025); 102 at market prices.")],
     fair="The statement is right about what the IMF said on valuation and stability. It leaves out the IMF’s "
-         "warnings on banks and fast price growth.",
+         "warnings on banks and fast price growth, and the IMF did not assess affordability. The two-year IMF "
+         "cycle the release cites is real.",
     asks=["The release as first published.",
           "The MDA-commissioned study.",
-          "How its price-to-income is measured.",
+          "The basis for “first EU economy”.",
           "Affordability for renters."],
-    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Right of reply: MDA (not yet sent)",
+    footer="Version 1.2  ·  5 October 2026  ·  Public data only  ·  Right of reply: MDA (not yet sent)",
     pdf_title="Claim Check 018 – Did the IMF confirm the developers?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
