@@ -72,8 +72,10 @@ caveats: The February 2026 answer gives a collective rounded total through end-2
   returns 403 to scripts). The 2024 Project Green release and parliamentary answer report separate tree and shrub
   totals; do not combine them or treat them as canopy measures. Vouchers issued under the separate 2026 private-land
   scheme (23,000 trees by 13 May 2026) are not trees planted. Without a final count, the end-2025 figure does not
-  prove a final shortfall either.
+  prove a final shortfall either. Right of reply not sought, at the maintainer’s direction.
 right_of_reply:
+  sought: false   # maintainer's direction: no right of reply for this check
+  note: Not sought, at the maintainer's direction.
   sent: null
   deadline: null
   response: null

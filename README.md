@@ -34,7 +34,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-002 | Land & Trees | Comino tree compensation | Drafted | Largely supported |
 | CC-003 | Climate & Energy | Per-capita emissions vs 2030 projection | Drafted | Misleading |
 | CC-004 | Waste | 'Strong progress' in waste separation | Drafted | Not substantiated |
-| CC-005 | Water | '92% excellent' bathing water | Drafted | Supported |
+| CC-005 | Water | “92% excellent” bathing water | Drafted | Supported |
 | CC-006 | Nature & Wildlife | Spring hunting derogation | Drafted | Not substantiated |
 | CC-007 | Air | Within EU limits vs WHO guideline | Drafted | Largely supported |
 | CC-008 | Transport | Flyovers and congestion | Drafted | Not substantiated |
@@ -44,7 +44,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-012 | Land & Trees | Ta' Qali gravel and grass | Drafted | Contradicted |
 | CC-013 | Planning & Housing | Permits keep property prices in check | Drafted | Largely supported |
 | CC-014 | Planning & Housing | Fewer enforcement notices, fewer illegalities | Drafted | Misleading |
-| CC-015 | Governance & Promises | 'Three weeks left' at the PA | Not started | - |
+| CC-015 | Governance & Promises | 'Three weeks left' at the PA | In progress | - |
 | CC-016 | Air | Shore-to-ship: 90% less harbour pollution | Drafted | Misleading |
 | CC-017 | Planning & Housing | Land reclamation outside the Freeport | Drafted | Not substantiated |
 | CC-018 | Planning & Housing | IMF 'confirms' MDA on housing | Drafted | Largely supported |
@@ -52,18 +52,18 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-020 | Noise | EP study: noise law not the cause | Drafted | Largely supported |
 | CC-021 | Transport | Malta-Gozo tunnel traffic | Not started | - |
 | CC-022 | Climate & Energy | 'Lowest electricity burden in the EU' | Drafted | Largely supported |
-| CC-023 | Climate & Energy | Second interconnector by 2026 | Not started | - |
-| CC-024 | Climate & Energy | Renewables target for 2030 | Not started | - |
-| CC-025 | Climate & Energy | Per-capita emissions down 44% since 2005 | Not started | - |
+| CC-023 | Climate & Energy | Second interconnector by 2026 | In progress | - |
+| CC-024 | Climate & Energy | Renewables target for 2030 | In progress | - |
+| CC-025 | Climate & Energy | Per-capita emissions down 44% since 2005 | In progress | - |
 | CC-026 | Climate & Energy | EU's largest rise in emissions | Drafted | Largely supported |
 | CC-027 | Climate & Energy | Power cuts: heat, not generation | Not started | - |
-| CC-028 | Climate & Energy | 76% less network downtime | Not started | - |
+| CC-028 | Climate & Energy | 76% less network downtime | In progress | - |
 | CC-029 | Climate & Energy | First offshore wind farm | Not started | - |
 | CC-030 | Climate & Energy | Carbon-neutral airport | Not started | - |
-| CC-031 | Climate & Energy | Gozo, first climate-neutral region | Not started | - |
+| CC-031 | Climate & Energy | Gozo, first climate-neutral region | In progress | - |
 | CC-032 | Climate & Energy | Solar flowers, first in Europe | Not started | - |
 | CC-033 | Air | Delimara: 'much cleaner air' | Not started | - |
-| CC-034 | Air | Air Quality Plan 'already yielding results' | Not started | - |
+| CC-034 | Air | Air Quality Plan 'already yielding results' | In progress | - |
 | CC-035 | Air | PM2.5 deaths down two-thirds | Not started | - |
 | CC-036 | Air | Construction dust 'a nuisance, not a health issue' | Not started | - |
 | CC-037 | Air | Highest share reporting pollution | Not started | - |

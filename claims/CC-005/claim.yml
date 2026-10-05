@@ -65,6 +65,8 @@ caveats: Supported applies to the quoted statistic, which was the 2023 result (8
   four seasons of samples and is not a general assessment of marine ecological or chemical status. Right of reply
   has not been sought, as directed by the maintainer.
 right_of_reply:
+  sought: false   # maintainer's direction: no right of reply for this check
+  note: Not sought, at the maintainer's direction.
   sent: null
   deadline: null
   response: null

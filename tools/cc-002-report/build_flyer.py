@@ -28,6 +28,6 @@ build_flyer(Flyer(
           "Publish the final species, provenance and aftercare plan.",
           "Report transplant and planting survival at years 1, 3 and 5.",
           "Monitor native biodiversity and habitat function, not counts alone."],
-    footer="Version 1.0  ·  3 October 2026  ·  Draft pending right of reply",
+    footer="Version 1.0  ·  3 October 2026  ·  Right of reply not sought",
     pdf_title="Claim Check 002 – What do the tree numbers prove?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

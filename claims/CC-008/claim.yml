@@ -78,8 +78,10 @@ caveats: The 79% travel-time and emissions reductions are Infrastructure Malta�
   on one monitor about 410 m from the flyover, a sampling point that replaced the old one (about 300 m west) in
   January 2024, unvalidated 2026 data, and no adjustment for weather or traffic; works continue until 2027, so it
   does not show that the flyover raised pollution. No post-project noise dataset was found for either site. The
-  induced-demand literature cited is from US urban road networks and is not a direct estimate for Malta.
+  induced-demand literature cited is from US urban road networks and is not a direct estimate for Malta. Right of reply not sought, at the maintainer’s direction.
 right_of_reply:
+  sought: false   # maintainer's direction: no right of reply for this check
+  note: Not sought, at the maintainer's direction.
   sent: null
   deadline: null
   response: null
@@ -130,4 +132,4 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: version
     version: "1.2"
-    note: "Upgrade: added EEA hourly NO2 data for Msida and three comparison stations, 2022 to September 2026, with a new section and three figures (monthly series, January–September comparison, map of the monitoring points from ERA's station metadata). New finding: in the nine months after the flyover opened (18 December 2025), NO2 at the Msida monitor was 14.3% higher than a year earlier (unvalidated data), with caveats stated: one site, a new sampling point from January 2024, works continuing until 2027. Added that no EEA-reported monitor has operated near Marsa since 2016. Page footer: “pending right of reply” → “right of reply not sought”, matching the text. Verdict and confidence unchanged."
+    note: "Upgrade: added EEA hourly NO2 data for Msida and three comparison stations, 2022 to September 2026, with a new section and three figures (monthly series, January–September comparison, map of the monitoring points from ERA's station metadata). New finding: in the nine months after the flyover opened (18 December 2025), NO2 at the Msida monitor was 14.3% higher than a year earlier (unvalidated data), with caveats stated: one site, a new sampling point from January 2024, works continuing until 2027. Added that no EEA-reported monitor has operated near Marsa since 2016. Page footer and cover: “pending right of reply” → “right of reply not sought”, matching the text. Verdict and confidence unchanged."

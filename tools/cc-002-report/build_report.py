@@ -95,7 +95,7 @@ S += [Spacer(1, 2 * mm), SectionHeading(5, "Verdict, limits and evidence needed"
           (7, "MaltaToday, Fact-check: What the Comino hotel project means for the island's trees, 8 August 2026 (secondary; 468 oleanders).", "https://www.maltatoday.com.mt/news/national/143679/factcheck_what_the_comino_hotel_project_means_for_the_islands_trees"),
           (8, "MaltaToday, ERA approval paves way for uprooting of 800 trees for proposed Comino hotel, 7 August 2026 (secondary account of stakeholder statements).", "https://www.maltatoday.com.mt/environment/planning/143667/era_approves_preliminary_works_for_proposed_comino_hotel"),
       ]),
-      Spacer(1, 3 * mm), P("Version 1.0 · 3 October 2026 · Draft pending right of reply · Calculations: data/cc-002/checks.csv · Generator: tools/cc-002-report/build_report.py", cap)]
+      Spacer(1, 3 * mm), P("Version 1.0 · 3 October 2026 · Right of reply not sought (wording corrected 5 October 2026) · Calculations: data/cc-002/checks.csv · Generator: tools/cc-002-report/build_report.py", cap)]
 
 build_report(Report(
     number="002", out=str(OUT / "report.pdf"), kicker="Land and trees, Malta",
@@ -105,8 +105,9 @@ build_report(Report(
     attribution="Environment and Resources Authority, 11 August 2026",
     context="Comino hotel site · planned removal and transplantation",
     verdict="Largely supported", verdict_note="Plan maths checks out; ecological outcome is open.",
-    footer_lines=["Miżien · independent, science-first fact-checking", "Draft for review · right of reply remains with the maintainer"],
+    footer_lines=["Miżien · independent, science-first fact-checking", "Draft for review · right of reply not sought (maintainer’s direction)"],
     running_head="Comino tree compensation", version="1.0", date="3 October 2026",
+    status_note="right of reply not sought",
     pdf_title="Miżien Claim Check 002 – What does ten trees compensate?",
     pdf_subject="Comino tree-removal counts, transplanting and ecological compensation",
     story=S,

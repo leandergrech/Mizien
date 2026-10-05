@@ -68,4 +68,4 @@ That supports the claim as a description of ERA's announced plan. It does not es
 7. MaltaToday, [Fact-check: What the Comino hotel project means for the island's trees](https://www.maltatoday.com.mt/news/national/143679/factcheck_what_the_comino_hotel_project_means_for_the_islands_trees), 8 August 2026. Secondary report; used only to flag the unresolved species-count difference.
 8. MaltaToday, [ERA approval paves way for uprooting of 800 trees](https://www.maltatoday.com.mt/environment/planning/143667/era_approves_preliminary_works_for_proposed_comino_hotel), 7 August 2026. Secondary report of stakeholder positions.
 
-*Version 1.0 · 3 October 2026 · Draft pending right of reply · Calculations: `data/cc-002/checks.csv` · Generators: `tools/cc-002-report/`*
+*Version 1.0 · 3 October 2026 · Right of reply not sought (wording corrected 5 October 2026) · Calculations: `data/cc-002/checks.csv` · Generators: `tools/cc-002-report/`*

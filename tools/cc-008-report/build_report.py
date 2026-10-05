@@ -244,7 +244,7 @@ S += [CondPageBreak(70 * mm), SectionHeading(5, "Verdict and evidence needed"),
            f"flyover opened (18 December 2025), NO2 at the Msida monitor was {RISE}% higher than a year earlier "
            "(unvalidated data), with caveats stated: one site, a new sampling point from January 2024, works "
            "continuing until 2027. Added that no EEA-reported monitor has operated near Marsa since 2016. Page "
-           "footer: “pending right of reply” → “right of reply not sought”, matching the text. Verdict and "
+           "footer and cover: “pending right of reply” → “right of reply not sought”, matching the text. Verdict and "
            "confidence unchanged."),
       ])]
 
@@ -257,7 +257,7 @@ build_report(Report(
     context="Marsa Junction completed 2021 · Msida Creek flyover opened 18 Dec 2025; wider works ongoing",
     verdict="Not substantiated",
     verdict_note="Marsa figures unpublished; Msida NO2 not down.",
-    footer_lines=["Miżien · independent, science-first fact-checking", "Draft for review · right of reply remains with the maintainer"],
+    footer_lines=["Miżien · independent, science-first fact-checking", "Draft for review · right of reply not sought (maintainer’s direction)"],
     running_head="Flyovers, traffic and local pollution", version="1.2", date="5 October 2026",
     status_note="right of reply not sought",
     pdf_title="Miżien Claim Check 008 – Flyovers and congestion",
