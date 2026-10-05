@@ -79,3 +79,8 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 4.9–6.3×
   caption: Gozo's area needed as forest to offset its emissions
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: version
+    version: "1.0"
+    note: "First issue as a separate check. The analysis first appeared as pledge 2 of Claim Check 011 (v1.0, 2 Oct 2026; v1.1, 5 Oct 2026). New in this issue: the 2023 Energy Baseline Scenario for Gozo [6], which gives an energy-emissions baseline and puts the forest needed at 4.9–6.3 times Gozo’s area at the measured rate (the 1.5–8.5 times range is kept). Verdict as in Claim Check 011: not substantiated, moderate confidence. Draft pending right of reply from the Partit Nazzjonalista."

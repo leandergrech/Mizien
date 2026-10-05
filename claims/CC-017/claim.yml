@@ -73,3 +73,13 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: +3.7 ha
   caption: new land at Freeport Terminal 2 since 2023
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply to the Ministry for Finance and the Ministry for the Environment not yet sent."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections. (1) The 2019 statement is quoted as said: “least environmental damage” (a paraphrase) → “possible and environmentally safe” (cover, TL;DR, sections 2, 3, 5, 6 and 7); sub-claim C now tests that wording. (2) Distance to Natura 2000: “about 1 km from the Freeport”, measured from an onshore point west of Terminal 2 → 0.4 km from the new land at Terminal 2 to the marine SPA MT0000111 and 0.5 km to the cliff sites (shortest distance to the EEA boundaries; data/cc-017/natura2000_distances.csv); tile “1 km” → “0.4 km”. (3) “Three Natura 2000 sites” → three designations, two of which (SAC MT0000024, SPA MT0000033) overlap on the same cliffs. (4) Flyer: right of reply now names the Finance and Environment ministries, as the report does; the −34% seagrass loss is labelled Mediterranean-wide. Verdict and confidence unchanged."

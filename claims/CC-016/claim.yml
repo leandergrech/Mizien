@@ -88,3 +88,13 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 9%
   caption: of cruise berth time plugged in, Jul 2024 – Jul 2025
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply to Infrastructure Malta and Transport Malta not yet sent."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections: (1) “No source gives the basis of the 90%” / “basis not published” → Infrastructure Malta’s 2020 and 2022 pages give it, scoped to the pollution ships produce, with per-liner cuts (NO2 −93%, PM −92.6%, SO2 −99.6%, CO2 −39.6%) [10, 11]; the 2023 page dropped the scope (Section 1). (2) Section 3: the 90% inferred from hotelling’s share of CO2 [7] → Infrastructure Malta’s own per-pollutant figures, research kept as context. (3) Sub-claim D “Consistent” → “Figures vary”: EUR 33m (2024 launch), 37m (phase 1) and 49.9m (whole project); the TL;DR no longer attributes EUR 33m to the project page, which gives no cost. (4) TL;DR point 4 “extra calls roughly cancel the emissions saved” → states that calls are calendar years, uptake July–July and shore power was available from July 2024. (5) 2019 calls: also given by Infrastructure Malta citing the NSO. ‘What would move it down’: removed the clause saying no scoped wording was found. Verdict and confidence unchanged."

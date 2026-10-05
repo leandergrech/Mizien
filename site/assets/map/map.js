@@ -93,6 +93,7 @@
     "mode:pattern": "M12 3 A9 9 0 1 0 12.01 3 M12 7 A5 5 0 1 0 12.01 7 M12 11 A1 1 0 1 0 12.01 11",
     "mode:status": "M3 12 H21 M5 12 A1.5 1.5 0 1 0 5.01 12 M12 12 A1.5 1.5 0 1 0 12.01 12 M19 12 A1.5 1.5 0 1 0 19.01 12",
     "mode:speaker": "M4 5 H20 V15 H10.5 L6.5 19 V15 H4 Z",
+    "mode:year": "M4 6.5 H20 V20 H4 Z M4 10.5 H20 M8 4 V8 M16 4 V8 M7.5 14 H9 M11.25 14 H12.75 M15 14 H16.5 M7.5 17 H9 M11.25 17 H12.75",
     "mode:network": "M5 6 A2 2 0 1 0 5.01 6 M19 7 A2 2 0 1 0 19.01 7 M12 18 A2 2 0 1 0 12.01 18 M6.5 7.5 L11 16 M17.5 8.5 L13 16 M7 6.2 L17 6.8"
   };
   function iconKey(name) { return ICONS[name] ? name : String(name || "").split(" · ")[0]; } // subtopics reuse their topic's icon
@@ -143,10 +144,18 @@
                return out.length ? out : ["Other"]; },
              order: function () { return (DATA.body_types || []).map(function (t) { return t.label; }).concat(["Other"]); },
              color: function (v, i) { return PALETTE[i % PALETTE.length]; } },
+    year: { label: "When said", title: "Claims by when they were made", sub: "One group per year of the statement, oldest on the left. Claims whose date is not recorded yet sit at the end.",
+             layout: "line", key: function (c) { var m = /^(\d{4})/.exec(c.date || ""); return [m ? m[1] : "Undated"]; },
+             order: function () { var ys = {};
+               DATA.claims.forEach(function (c) { var m = /^(\d{4})/.exec(c.date || ""); if (m) ys[m[1]] = 1; });
+               return Object.keys(ys).sort().concat(["Undated"]); },
+             color: function (v) { if (v === "Undated") return NOT_YET_COL;
+               var ys = MODES.year.order().filter(function (y) { return y !== "Undated"; }), i = ys.indexOf(v);
+               return mix("#56b4e9", "#e3a72f", ys.length > 1 ? i / (ys.length - 1) : 1); } },
     network: { label: "Links only", title: "The web of links", sub: "No groups: claims are pulled together by the themes that connect them.",
              layout: "force", key: function () { return []; }, order: function () { return []; }, color: function () { return "#7fa88b"; } }
   };
-  var MODE_ORDER = ["topic", "subtopic", "verdict", "pattern", "status", "speaker", "network"];
+  var MODE_ORDER = ["topic", "subtopic", "verdict", "pattern", "status", "speaker", "year", "network"];
 
   function rng(seed) {
     var h = 1779033703 ^ seed.length;

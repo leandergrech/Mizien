@@ -16,6 +16,17 @@ TYPES = {   # type -> label, in the order the constellation shows them
     "business": "Business & industry", "media": "Media", "eu": "EU & international", "research": "Research & statistics",
 }
 KINDS = {"organisation", "person"}
+TYPE_COLOURS = {   # the map's hub colours, also used for the kinds of body on the site's timelines
+    "government": "#e3a72f", "agency": "#56b4e9", "regulator": "#6fcf97", "oversight": "#f2994a", "party": "#bb86fc",
+    "civil_society": "#f06292", "business": "#4fc3c8", "media": "#9fa8da", "eu": "#cfd8dc", "research": "#a1887f",
+}
+TYPE_PROSE = {     # for sentences: "4 of the 6 claims involve the government and its ministers"
+    "government": "the government and its ministers", "agency": "public agencies and companies",
+    "regulator": "regulators and authorities", "oversight": "courts, tribunals and oversight bodies",
+    "party": "political parties", "civil_society": "NGOs and unions", "business": "business and industry",
+    "media": "the media", "eu": "EU and international bodies", "research": "research and statistics bodies",
+}
+RESERVED_IDS = {"patterns", "feed", "index"}   # paths under /bodies/ used by other pages
 
 
 def _norm(s):

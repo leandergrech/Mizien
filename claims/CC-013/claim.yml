@@ -69,3 +69,13 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: +34%
   caption: real house prices, 2015–2025 (EU +25%)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply to the Planning Authority not yet sent."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections. (1) Housing-cost overburden: Eurostat flags a break in Malta’s series in 2023, so “1.1% (2015) → 6.0% (2025)” and “more than fivefold” → like-for-like runs “1.1% → 2.9% (2015–2022)” and “6.0% → 5.9% → 6.0% (2023–2025)” (TL;DR, tiles, Figure 2 caption, Section 4 table, Q2, Section 7, Limitations, flyer). (2) Real house prices 2015–2025 (+34% Malta, +25% EU) now written to checks.csv by calc.py, which previously held only 2015–2024 (+26%, +21%); Malta’s 2025 value marked provisional (TL;DR, tiles, Figure 1 caption, table “+34%” → “+34% (p)”); table note now states each price row’s basis and period (real, HICP-deflated, to 2025; nominal to 2024). (3) data/cc-013/eurostat_housing.csv: the second sts_cobp_a series each year relabelled as m² of useful floor area (it had the dwellings label); Eurostat flags recorded. (4) Q1: “the most plausible reason … the research supports this” → stated as our inference, not tested for Malta. Verdict and confidence unchanged."

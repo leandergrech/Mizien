@@ -30,4 +30,13 @@ right_of_reply:
 evidence_shown: null          # required for Misleading or Contradicted: list the documents or data
 outputs: {}
 bodies: null                  # optional: register IDs from data/bodies.csv, only if the speaker text cannot be matched
+history: []                   # research log, oldest first: the date each step of the research was DONE, e.g.
+                              # - {date: 2026-10-02, step: added}
+                              # - {date: 2026-10-03, step: version, version: "1.0", note: "First issue."}
+                              # - {date: 2026-10-05, step: correction, note: "What was wrong, and what changed."}
+                              # steps: added, started, wording, version, reply-sent, reply-received, published,
+                              # correction, clarification, note. Every `version` needs an entry.
+timeline: []                  # optional dated events that are not claims of their own, e.g.
+                              # - {date: "2026-11-02", kind: statement, text: "Minister repeats the figure in Parliament", url: https://...}
+                              # kinds: statement, data, reply, correction, note
 thumbnail: null               # once checked: {figure: "−44%", caption: "short phrase"} from the flyer's results

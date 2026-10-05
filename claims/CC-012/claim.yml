@@ -120,3 +120,13 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: '0.15'
   caption: winter greenness after the gravel, down from 0.53–0.67
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-03
+    step: version
+    version: "1.0"
+    note: "First issue. Draft pending right of reply."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections: (1) Sentinel-2 values recomputed with the reflectance offset (BOA_ADD_OFFSET −1000, processing baseline 04.00 and later) that 1.0 omitted, which had pulled NDVI towards zero. Zone winter NDVI before the gravel 0.37 / 0.47 / 0.38 → 0.53 / 0.67 / 0.57; rest of the park 0.39–0.40 → 0.65–0.68; winter 2025–26 zone 0.11 → 0.15, park 0.38 → 0.68; pre-gravel summers about 0.11 → about 0.15; winter ratio zone/park 0.99 → 0.88 before and 0.30 → 0.23 after (data/cc-012/checks.csv); zone brightness now in reflectance, May → Aug 2025 0.19 → 0.32 (1.0 gave raw values 2881 → 4191). Figures 1 and 2 redrawn; Figure 1 was washed out. Zone (2.8 ha) and scene set (199) unchanged. (2) “Two normal winters” corrected to three (2023, 2024, 2025); “level with the rest of the park” changed to “close to”. (3) Removed the unsourced statement that Summer Daze took place in August 2026. (4) “What would move it down” rewritten: Contradicted is already the lowest rating. (5) Flyer: the 2.8 ha zone was called the “same area” as Momentum’s 2.2 ha; it is about a quarter larger. (6) Layout: removed a near-empty page. Verdict and confidence unchanged."

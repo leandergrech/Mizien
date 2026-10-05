@@ -44,6 +44,13 @@ Every run therefore starts with `python scripts/net_check.py`:
   `literature/CC-NNN/primary-source.md`, as for CC-007, and clear the `Blocker` cell. Workers treat that file as
   the archived primary wording.
 - **Finished claim:** report, flyer and records as for any claim check; `Blocker` cleared.
+- **Research log:** every run that does research on a claim adds a dated entry to its `history:` in `claim.yml`,
+  using the date the research was done (today), not a merge or release date: `started` when work first begins,
+  `wording` when the verbatim source is found, and `version` (with the version number and a one-line note matching
+  the report's revision log) for each issue of the report. A finding that was wrong is fixed with a `correction`
+  entry, and a right finding that could mislead gets a `clarification`; both need a note saying what was wrong and
+  what changed. They appear on the claim page and on the site's Corrections page. `validate_claims.py` fails when a
+  `version` has no entry.
 - **Concurrency:** if `main` has moved, `git merge origin/main` into the branch (never rebase a pushed branch,
   never force-push), keep both sides' CSV rows, regenerate data with `scripts/build_site_data.py`, and re-run
   `scripts/validate_claims.py`, which fails on any leftover conflict marker.
@@ -65,6 +72,9 @@ Every run therefore starts with `python scripts/net_check.py`:
   exact wording to the `Aliases` of the right row (separated by `|`), or add a row with `ID, Name, Kind`
   (organisation or person), `Type`, `Parent` (a person's office), `Role` (as the source names it) and `Aliases`.
   `scripts/validate_claims.py` warns on any speaker that matches nothing. Never guess a role or affiliation.
+- Follows stances over time: when a body repeats, changes or corrects a claim already listed, add the new statement as a
+  claim of its own if it can be checked; otherwise add it to the existing claim's `timeline:` (date, kind, text, url;
+  kinds: statement, data, reply, correction, note). New data that bears on a finished check goes there too, as `data`.
 - Gives every new claim a `location` (place, lat, lon from OpenStreetMap or the source; scope `site`, or
   `institution`/`national` with the institution's address) so it appears on the map view, and an `icon` for its
   landmark medallion: one of parliament, castille, citygate, barrakka, ravelin, waterfront, tower, landfill, flyover,

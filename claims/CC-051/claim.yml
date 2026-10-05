@@ -66,3 +66,12 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 5.5%
   caption: of waters Malta reports to the EU are protected
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-04
+    step: version
+    version: "1.0"
+    note: "First issue. Right of reply to the Environment Ministry and ERA not yet sent."
+  - date: 2026-10-04
+    step: version
+    version: "1.1"
+    note: "Maps of all the waters Malta reports to the EU, the three reference areas and depth bands; areas measured from boundary files; clearer summary. Verdict unchanged."

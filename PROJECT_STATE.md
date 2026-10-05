@@ -83,6 +83,30 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
 
 ## Site build (4 October 2026)
 
+- **Stance timelines and patterns by kind of body** (5 October 2026).
+  - Every claim page has a Timeline: the statement, sources as published (`data/sources.csv` dates; access dates are
+    ignored), each step of the check from its research log, right of reply, the evidence review due a year after the
+    last review, and earlier or later statements by the same body on the same topic.
+  - **Research log** (maintainer decision, 5 October 2026: dates are when the research was done, independent of
+    site versions): `history:` in claim.yml, oldest first, with steps added, started, wording, version (number and
+    note), reply-sent, reply-received, published, correction, clarification and note. Backfilled for the 22
+    researched claims from their reports' revision logs, or from the version and date on the report cover where there
+    is no log (CC-002, 005, 006, 008, 009, 010; CC-006's version 1.0 is undated, so only 1.1 is listed). Intake dates
+    come from `data/queue.csv`. Git dates are not used. `validate_claims.py` fails when a `version` has no entry.
+  - **Corrections page** `/corrections/` (the Corrections tab): corrections and clarifications, then every version
+    of every check, all dated by research. Corrections also show at the top of the check and in the feeds.
+  - Optional `timeline:` events in claim.yml (date, kind, text, url) record later statements, new data, replies and
+    corrections that are not claims of their own. `validate_claims.py` checks them.
+  - Body pages: "Statements over time" (a row per topic, dots coloured by verdict, a dashed ring when only the year
+    is known), the topics a body returned to in date order, and an Atom feed (`/bodies/<id>/feed.xml`; site-wide
+    `/feed.xml`) of new claims, verdicts, report versions and replies.
+  - `/bodies/patterns/`: claims, pattern tags, verdicts and topics by kind of body, sentences on where each tag
+    turns up (only from 3 tagged claims, "most" from 60%), and issues over time (each theme's claims by date,
+    coloured by kind of body). Never by person or party; counts, not ratings.
+  - Map: a "When said" grouping (one group per year of the statement).
+  - CC-007, source 6 (CDE News): its headline says "Saturday 19 July 2023" but the page was published on 19 July
+    2025 (page metadata, checked 5 October 2026). Our record had the right date; a note now says the year in the
+    headline is the publisher's. Logged as a clarification.
 - **Who said it, connections and claim mentions.**
   - `data/bodies.csv` is the register of bodies and people: 63 organisations and 14 people, with kind, type, parent
     office, role and the exact speaker wording as aliases. Claims are matched by speaker text (`scripts/bodies.py`),

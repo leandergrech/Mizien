@@ -78,3 +78,13 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: −44%
   caption: emissions per person since 2005, as claimed
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-02
+    step: version
+    version: "1.0"
+    note: "First issue. Draft pending right of reply from the Climate Action Authority and the Ministry for the Environment, Energy and Public Cleanliness."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections. (1) Section 4 table, EU 2030 effort-sharing projection: “−31% / …” → “−31% / −38%” (existing / additional measures, Commission Table 25). (2) EU industrial emissions, 2005–2023: “fell” → “−36%” (Commission p. 44). (3) “Widest margin in the EU” → “widest margin in the EU in percentage points” (TL;DR, Sections 6 and 7, flyer); Section 4 adds that in tonnes Germany’s projected 2030 shortfall (64 Mt) exceeds Malta’s (0.5 Mt). (4) Commission page numbers changed from PDF to printed pages: p. 115 → pp. 114–115 (Figure 2 label → p. 114), p. 126 → 125, p. 45 → 44, p. 52 → 51–52, p. 60 → 59. (5) Flyer title “Emissions down 44%” → “Emissions per person down 44%”; the two “+41%” flyer cards retitled “Population growth since 2005” and “Target-sector emissions, 2024”. (6) data/cc-003/checks.csv now also holds the EU-27 values shown in the Section 4 table. Verdict and confidence unchanged."

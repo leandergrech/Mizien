@@ -62,3 +62,17 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 99.9%
   caption: of residents already near open or green space
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-02
+    step: version
+    version: "1.0"
+    note: "First issue, covering two pledges (Labour’s ten-minute green space and the PN’s net-zero Gozo). Claims restated from the parties’ own texts rather than news summaries. Draft pending right of reply."
+  - date: 2026-10-05
+    step: version
+    version: "1.1"
+    correction: true   # this version corrects errors in an earlier one
+    note: "Corrections: the flyer said that, read broadly, the pledge “is met today”; it now says “already almost met”, as the report does (a screening estimate). The unsourced seat count (“36 seats to 29”) is removed; the 30 May 2026 election is now sourced. Verdict and confidence unchanged."
+  - date: 2026-10-05
+    step: version
+    version: "1.2"
+    note: "Split at the maintainer’s request: this check now covers Labour’s ten-minute pledge only, under the title “Ten minutes’ walk to green space”. The PN’s net-zero Gozo pledge and its arithmetic are now Claim Check 107. Labour’s analysis and numbers are unchanged; references renumbered. Verdict and confidence unchanged."

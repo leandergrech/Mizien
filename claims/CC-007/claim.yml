@@ -24,7 +24,8 @@ claim:
     date: '2025-07-19'
     url: https://cde.news/malta-news-briefing-saturday-19-july-2023/
     note: Secondary clipping reproduces Newsbook's five-station comparison and attributes it to Newsbook; it is
-      a locator, not primary evidence.
+      a locator, not primary evidence. The headline says 2023, but the page was published on 19 July 2025
+      (page metadata, checked 5 Oct 2026); the year in the headline is the publisher's.
   - title: Parliamentary Question 29696, oral question and tabled annex
     publisher: House of Representatives of Malta
     date: '2025-07-16'
@@ -95,3 +96,19 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 23 / 23
   caption: readings above WHO’s guideline, all within the EU limit
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-02
+    step: version
+    version: "1.0"
+    note: "First draft based on Parliamentary Question 29696 and its tabled annex."
+  - date: 2026-10-03
+    step: version
+    version: "1.1"
+    note: "Added an independent partial cross-check against EEA validated station data; documented one unresolved Attard 2024 difference."
+  - date: 2026-10-04
+    step: version
+    version: "1.2"
+    note: "Newsbook article read in full (Wayback snapshot): verbatim wording quoted, its figures checked against the annex; confidence raised to high."
+  - date: 2026-10-05
+    step: clarification
+    note: "Source 6 (CDE News) is headlined 'Malta News Briefing – Saturday 19 July 2023', but the page was published on 19 July 2025 (its own metadata; 19 July 2025 was a Saturday). The record already gave the 2025 date; a note now says that the year in the headline is the publisher's. No figure or finding changes."

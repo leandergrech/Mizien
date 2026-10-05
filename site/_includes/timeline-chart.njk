@@ -1,0 +1,18 @@
+{#- Claims on a time axis, one lane per row. Expects T = {axis, lanes: [{topic, items: [{x, row, ...claim}], rows}]}
+    and, optionally, colourBy = "kind" (dots coloured by the kind of body) instead of the verdict.
+    The dots are pointer shortcuts with a summary on hover; the same claims are listed as text next to the chart. -#}
+<div class="tl-chart{% if colourBy == 'kind' %} by-kind{% endif %}">
+  <div class="tl-row tl-axis" aria-hidden="true"><span class="tl-lane-name"></span>
+    <div class="tl-track">{% for t in T.axis.ticks %}<span class="tl-tick{% if t.major %} is-major{% endif %}" style="--x: {{ t.x }}%">{{ t.label }}</span>{% endfor %}</div></div>
+  {%- for l in T.lanes %}
+  <div class="tl-row">
+    <span class="tl-lane-name">{{ l.topic }}</span>
+    <div class="tl-track" style="--rows: {{ l.rows or 1 }}" aria-hidden="true">
+      {%- for t in T.axis.ticks %}<span class="tl-grid{% if t.major %} is-major{% endif %}" style="--x: {{ t.x }}%"></span>{% endfor %}
+      {%- for i in l.items %}<a class="tl-dot v-{{ i.verdict_slug or 'none' }}{% if colourBy == 'kind' %} kind-{{ i.type }}{% endif %}{% if i.rough %} is-rough{% endif %}" style="--x: {{ i.x }}%; --row: {{ i.row }}" href="{{ i.path }}" data-claim="{{ i.id }}" tabindex="-1"></a>{% endfor %}
+    </div>
+  </div>
+  {%- endfor %}
+  <p class="tl-note small">{% if colourBy == 'kind' %}Dot colour: the kind of body that made the claim.{% else %}Dot colour: the verdict; grey is not yet checked.{% endif %}
+    A dashed ring means only the year (or an approximate date) is known, so the dot sits in the middle of the year.</p>
+</div>
