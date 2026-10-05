@@ -1,0 +1,19 @@
+check,value,unit,source,note
+Malta: all-activity emissions 2015 -> 2025,2603 -> 7021,kt CO2e,Eurostat env_ac_ainah_r2,2025 is an early estimate
+Malta: change 2015-2025 (recomputed),169.7,%,Eurostat env_ac_ainah_r2,Eurostat release of 16 Jun 2026 and Newsbook: +169.4% (series since revised)
+EU-27: change 2015-2025,-17.2,%,Eurostat env_ac_ainah_r2,Eurostat release: -17.2%
+Member states with higher emissions in 2025 than 2015,4,of 27,Eurostat env_ac_ainah_r2,"MT +169.7%, CY +10.7%, LT +8.4%, RO +5.6%"
+Malta: rank of increase,1,of 27,Eurostat env_ac_ainah_r2,next: CY +10.7%
+Malta: share of 2025 EU-27 total,0.21,%,Eurostat env_ac_ainah_r2,
+"Malta: change 2015-2024, all activities and households",167.1,%,Eurostat env_ac_ainah_r2,
+Malta: air transport (NACE H51) 2015 -> 2024,444 -> 4730,kt CO2e,Eurostat env_ac_ainah_r2,x10.7
+Air transport: share of the 2015-2024 increase,98.6,%,calculated,
+"Air transport: share of Malta total, 2015 -> 2024",17 -> 68,%,calculated,
+Malta excluding air transport: 2015 -> 2024,2159 -> 2221,kt CO2e,calculated,+2.9%
+"Malta: electricity, gas, steam (NACE D) 2015 -> 2024",890 -> 743,kt CO2e,Eurostat env_ac_ainah_r2,-16.5%
+"Malta: 2025 vs 2024 (all activities, early estimate)",1.0,%,calculated,
+"Malta: UNFCCC inventory total (no LULUCF, no memo items) 2015 -> 2024",2136 -> 2170,kt CO2e,Eurostat env_air_gge,+1.6%
+Malta: UNFCCC inventory change 2005-2024,-27.4,%,Eurostat env_air_gge,
+"Malta: international aviation, memo item (fuel sold in Malta) 2015 -> 2024",360 -> 528,kt CO2e,Eurostat env_air_gge,+46.6%
+Malta 2024: Eurostat account total vs UNFCCC inventory total,3.2,ratio,calculated,6951 vs 2170 kt
+Malta 2024: air transport (account) vs international aviation memo item,9.0,ratio,calculated,residence principle (operator) vs fuel bunkered in Malta

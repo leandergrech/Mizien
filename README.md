@@ -55,7 +55,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-023 | Climate & Energy | Second interconnector by 2026 | Not started | - |
 | CC-024 | Climate & Energy | Renewables target for 2030 | Not started | - |
 | CC-025 | Climate & Energy | Per-capita emissions down 44% since 2005 | Not started | - |
-| CC-026 | Climate & Energy | EU's largest rise in emissions | Not started | - |
+| CC-026 | Climate & Energy | EU's largest rise in emissions | Drafted | Largely supported |
 | CC-027 | Climate & Energy | Power cuts: heat, not generation | Not started | - |
 | CC-028 | Climate & Energy | 76% less network downtime | Not started | - |
 | CC-029 | Climate & Energy | First offshore wind farm | Not started | - |
