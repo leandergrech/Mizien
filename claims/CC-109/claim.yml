@@ -1,0 +1,48 @@
+id: CC-109
+title: 'EU: transport is 48% of effort-sharing emissions'
+category: Transport
+subtopic: Cars & traffic
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (2026 Country Report - Malta, 3 Jun 2026): transport is the dominant source of Malta''s effort-sharing
+    emissions, generating 48% of them in 2024 and up by 45% since 2005.'
+  speaker: European Commission
+  date: '2026-06-03'
+  wording_status: Verbatim found
+  sources:
+  - title: 2026 Country Report - Malta, SWD(2026) 218 final (Council doc. 10135/26 ADD 1)
+    publisher: European Commission (via Council of the EU)
+    date: '2026-06-03'
+    url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
+    note: Primary text read 5 Oct 2026 (Sustainable transport section of the climate chapter). Council-hosted copy of the
+      Commission staff working document; footnote (141) gives its data source.
+  quote: Transport is the dominant source of Malta’s effort sharing emissions. It has generated 48% of these emissions in
+    2024 (141), up by 45% since 2005.
+counter_evidence: The same report projects Malta's effort-sharing emissions 29.7% above 2005 in 2030 against a 19% cut target
+  (see CC-094). 'Up by 45%' may refer to transport emissions or to transport's share; the sentence does not say, so the
+  footnoted data must be read. Malta's government points to a fast-growing zero-emission share of new cars (see CC-110).
+tests: Eurostat env_air_gge (GHG by source sector, CRF 1.A.3 road transport) and the EU effort-sharing inventory (EEA/UNFCCC);
+  Commission ESR data behind footnote (141); Transport Malta licensing data; Eurostat road fuel sales. Test both readings
+  of 'up by 45%' (level or share).
+why_low_hanging: One sentence with two numbers that open EU data reproduces directly.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat, EEA and Crossref reachable; the Council-hosted PDF was read via WebFetch (ec.europa.eu
+  is reachable; confirm the Commission copy).'
+caveats: Candidate from the weekly intake of 5 Oct 2026. An EU assessment of Malta, held to the same standard as local statements.
+  Wording is the Commission's own, read in the primary document.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: citygate
