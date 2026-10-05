@@ -278,7 +278,8 @@ def label_of(d: dict):
 
 # Right of reply (maintainer decision, 5 October 2026): sought only when a check finds a claim Not substantiated,
 # Misleading or Contradicted (for pledges: Not measurable, Off track or Missed). A check that supports a claim needs
-# none. right_of_reply.sought: false records a decision not to seek one where it would otherwise apply.
+# none, and says so even if its record also says sought: false. right_of_reply.sought: false records a decision not
+# to seek one where it would otherwise apply.
 REPLY_VERDICTS = {"Not substantiated", "Misleading", "Contradicted"}
 REPLY_PLEDGES = {"Not measurable", "Off track", "Missed"}
 
@@ -290,12 +291,12 @@ def reply_state(d: dict):
         return "received"
     if ror.get("sent"):
         return "sent"
-    if ror.get("sought") is False:
-        return "not-sought"
     verdict, pledge = d.get("verdict"), (d.get("pledge") or {}).get("status")
     if not (verdict or pledge):
-        return None
-    return "pending" if verdict in REPLY_VERDICTS or pledge in REPLY_PLEDGES else "not-needed"
+        return "not-sought" if ror.get("sought") is False else None
+    if not (verdict in REPLY_VERDICTS or pledge in REPLY_PLEDGES):
+        return "not-needed"
+    return "not-sought" if ror.get("sought") is False else "pending"
 
 
 def status_label(d: dict) -> str:
