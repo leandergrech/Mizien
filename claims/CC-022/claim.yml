@@ -41,7 +41,7 @@ priority: Done (v1.2)
 data_readiness: Medium
 caveats: Right of reply to the Energy Ministry not yet sent. IMF subsidy series includes fuel; 2025 projected. The
   release measures 'burden' by price only; v1.2 adds income- and use-based measures (Malta 2nd to 7th, not 1st).
-  Confidence lowered from High to Moderate (maintainer decision, 5 Oct 2026): the income measures mix
+  Confidence lowered from High to Moderate (maintainer decision, 5 Oct 2026), because the income measures mix
   survey and national-accounts sources, some provisional.
 right_of_reply:
   sent: null
