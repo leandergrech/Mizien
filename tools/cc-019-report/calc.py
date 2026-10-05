@@ -56,6 +56,58 @@ s = C["strict"]
 add("Amphora figure vs IO net change (3-year rule)", round(lost / 1e6 / float(s["net_km2"]), 2), "ratio", "calculated",
     "below 1 = Amphora lower than the independent estimate; periods differ (Amphora 2018-2023, IO first built 2020-21)")
 
+# v1.2: Amphora's own polygons (crosscheck.py), the 2024-2025 maps and the CORINE change layers
+K = {r["lc2018"]: r for r in csv.DictReader(open(D / "amphora_classes.csv"))}
+add("Amphora polygons: number and total area (geometry, UTM 33N)", f"{K['all']['polygons']} / {int(K['all']['area_m2']):,}",
+    "- / m2", "Amphora GeoJSON (crosscheck.py)", f"the file's own area_m2 field sums to {int(K['all']['area_m2_field']):,}")
+farm = lambda col: round(float(K["cropland"][col]) + float(K["grass"][col]), 1)
+add("Amphora: cropland + grass, share of the area with a known 2018 class (geometry / area field / count)",
+    f"{farm('share_of_known_pct')} / {farm('share_of_known_by_field_pct')} / {farm('share_of_known_by_count_pct')}", "%",
+    "Amphora GeoJSON", f"cropland {K['cropland']['share_of_known_pct']}%, grass {K['grass']['share_of_known_pct']}%; "
+                       f"Amphora: nearly 95% farmland (basis not stated; this is our reading)")
+add("Amphora: area with no 2018 class ('unknown')", float(K["unknown"]["share_of_all_pct"]), "%", "Amphora GeoJSON",
+    f"{K['unknown']['polygons']} polygons")
+add("Amphora: cropland share of all area / if every unknown area were farmland",
+    f"{K['cropland']['share_of_all_pct']} / {round(100 - sum(float(K[k]['share_of_all_pct']) for k in ('bare', 'water', 'tree', 'bush')), 1)}",
+    "%", "calculated", "bounds for 'farmland' depending on how grass and unknown are counted")
+add("Amphora: polygons classed as water in 2018", f"{K['water']['polygons']} / {K['water']['area_m2']}", "- / m2",
+    "Amphora GeoJSON", "Gżira and Sliema waterfronts: sea in 2018, not green land")
+O = {r["measure"]: r for r in csv.DictReader(open(D / "amphora_io_overlap.csv"))}
+add("Amphora's area already built in the IO 2018 map (all pixels / >= 20 m inside edges)",
+    f"{O['Amphora area: built in the 2018 map']['value']} / "
+    f"{O['Amphora area at least 20 m inside a polygon edge: built in the 2018 map']['value']}", "%", "IO x Amphora",
+    f"built in all of 2017-19: {O['Amphora area: built in all of the 2017, 2018 and 2019 maps']['value']}%")
+rules = ("strict", "two-year", "strict-2025", "two-year-2025")
+sh = [float(O[f"{r}: share of Amphora's area that IO maps as new built-up"]["value"]) for r in rules]
+add("Share of Amphora's area that IO maps as new built-up (persistence rules)", f"{min(sh)}-{max(sh)}", "%",
+    "IO x Amphora", "; ".join(f"{r} {v}" for r, v in zip(rules, sh)))
+sh = [float(O[f"{r}: share of IO new built-up inside Amphora's polygons"]["value"]) for r in rules]
+s20 = [float(O[f"{r}: share of IO new built-up within 20 m of Amphora's polygons"]["value"]) for r in rules]
+add("Share of IO new built-up inside Amphora's polygons (persistence rules)", f"{min(sh)}-{max(sh)}", "%",
+    "IO x Amphora", f"within 20 m: {min(s20)}-{max(s20)}%")
+E = {r["rule"]: r for r in csv.DictReader(open(D / "io_lulc_change_ext.csv"))}
+add("IO net new built-up, all persistence rules incl. 2024-2025 maps", " / ".join(E[r]["net_km2"] for r in rules), "km2",
+    "Impact Observatory / Esri 2017-2025", "; ".join(f"{r}: {E[r]['window']}" for r in rules))
+ES = [r for r in csv.DictReader(open(D / "io_esri_series.csv"))]
+add("Esri 2017-2023 maps identical to the Planetary Computer maps",
+    min(float(r["identical_to_planetary_computer_pct"]) for r in ES if r["year"] < "2024"), "% of pixels", "both")
+bu = {int(r["year"]): float(r["built_area_km2"]) for r in ES}
+add("IO built-up total, change 2023->2024 / 2024->2025", f"{bu[2024] - bu[2023]:+.1f} / {bu[2025] - bu[2024]:+.1f}", "km2",
+    "Impact Observatory / Esri")
+CL = list(csv.DictReader(open(D / "corine_change.csv")))
+for per, amph in (("2006-2012", "Land take 2006-2012 (EEA)"), ("2012-2018", "Land take 2012-2018 (EEA)")):
+    lt = [r for r in CL if r["period"] == per and r["land_take"] == "yes"]
+    ha = sum(float(r["area_ha"]) for r in lt)
+    add(f"CORINE change polygons {per}: change to artificial land (CLC class 1)", round(ha, 1), "ha",
+        "EEA CORINE Land Cover change layer", f"{len(lt)} polygon{'s' if len(lt) != 1 else ''}; Amphora quotes {A[amph] / 1e4:.0f} ha; "
+        "changes under 5 ha are not mapped")
+lt = [r for r in CL if r["period"] == "2012-2018" and r["land_take"] == "yes"]
+q = sum(float(r["area_ha"]) for r in lt if r["to_code"] == "131")
+add("CORINE 2012-2018: share of land take that became quarries (CLC 131)",
+    round(100 * q / sum(float(r["area_ha"]) for r in lt), 1), "%", "EEA CORINE Land Cover change layer",
+    f"{q:.1f} ha; airport (CLC 124) from farmland "
+    f"{sum(float(r['area_ha']) for r in lt if r['to_code'] == '124'):.1f} ha")
+
 with open(D / "checks.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\r\n")
     w.writeheader()

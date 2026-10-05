@@ -1,0 +1,10 @@
+year,source,identical_to_planetary_computer_pct,built_area_km2,crops_km2,rangeland_km2,bare_ground_km2,trees_km2
+2017,Esri Living Atlas,100.0,171.06,48.16,86.28,7.35,0.19
+2018,Esri Living Atlas,100.0,152.61,80.39,73.19,5.93,0.93
+2019,Esri Living Atlas,100.0,149.4,86.77,70.5,5.2,1.18
+2020,Esri Living Atlas,100.0,176.01,56.27,75.04,5.06,0.67
+2021,Esri Living Atlas,100.0,156.06,69.0,81.7,5.55,0.73
+2022,Esri Living Atlas,100.0,164.89,72.92,69.38,4.67,1.14
+2023,Esri Living Atlas,100.0,171.51,38.28,98.43,4.44,0.39
+2024,Esri Living Atlas,n/a (not on Planetary Computer),150.27,40.24,117.07,5.24,0.24
+2025,Esri Living Atlas,n/a (not on Planetary Computer),173.54,31.3,103.46,4.4,0.35

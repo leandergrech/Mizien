@@ -15,7 +15,7 @@
   author = {Brown, Christopher F. and Brumby, Steven P. and Guzder-Williams, Brookie and Birch, Tanya and Hyde, Samantha Brooks and others},
   title = {Dynamic World, Near real-time global 10 m land use land cover mapping}, journal = {Scientific Data},
   year = {2022}, volume = {9}, pages = {251}, doi = {10.1038/s41597-022-01307-4},
-  note = {Method paper for the dataset Amphora used. Metadata verified; not read in full. Grade C (method).}
+  note = {Method paper for the dataset Amphora used. Metadata verified; Table 1 (class definitions) read via Europe PMC PMC9184477 on 5 Oct 2026 (open access, CC BY 4.0). Grade C (method).}
 }
 @inproceedings{karra2021,
   author = {Karra, Krishna and Kontgis, Caitlin and Statman-Weil, Zoe and Mazzariello, Joseph C. and Mathis, Mark and Brumby, Steven P.},
@@ -32,4 +32,19 @@
   author = {{European Environment Agency}}, title = {Country comparison: land take and land recultivation in EEA39 in the period 2012-2018 (in proportion of country area)},
   year = {2019}, note = {Modified 20 Sep 2024. Static chart; Malta value read by pixel measurement. PDF supplied by maintainer.},
   url = {https://www.eea.europa.eu/en/analysis/maps-and-charts/country-comparison-land-take-and}
+}
+@misc{amphora_2026_geojson,
+  author = {{Amphora Media}}, title = {Green to Grey change polygons for Malta (malta-change.geojson)}, year = {2026},
+  url = {https://www.amphora.media/greentogrey/data/malta-change.geojson},
+  note = {File metadata: generatedAt 2026-08-30T15:52:41Z, 397 features, yearRange 2018-2025. Server Last-Modified 10 Sep 2026. Retrieved 5 Oct 2026; SHA-256 cf250ece689bec333d8e4852aaa9b53abf492ba971ad2e2a47d4fe9a04fcf320; 546,436 bytes. Licence not stated: not committed. data/cc-019/amphora_record.csv.}
+}
+@misc{io_esri_2025,
+  author = {{Impact Observatory, Microsoft and Esri}}, title = {Sentinel-2 10m Land Cover time series, 2017-2025 (Esri Living Atlas image service)}, year = {2026},
+  url = {https://ic.imagery1.arcgis.com/arcgis/rest/services/Sentinel2_10m_LandCover/ImageServer},
+  note = {Retrieved 5 Oct 2026; 2017-2023 identical to io_lulc_v2 pixel for pixel. data/cc-019/io_esri_series.csv. Grade B.}
+}
+@misc{eea_clc_change,
+  author = {{European Environment Agency}}, title = {CORINE Land Cover change layers 2006-2012 (CHA0612) and 2012-2018 (CHA1218), discomap map service}, year = {2020},
+  url = {https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine},
+  note = {Queried 5 Oct 2026 (services CHA2006_2012_WM and CHA2012_2018_WM, layer 0). Layer description: minimum mapping unit 5 ha for change layers, 25 ha for status layers. data/cc-019/corine_change.csv. Grade C.}
 }

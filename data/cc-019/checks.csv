@@ -15,3 +15,17 @@ EEA 2006-2012 + 2012-2018 + Amphora 2018-2023,1.94,km2,calculated,Amphora: at le
 EEA chart: Malta land take 2012-2018,0.91-0.94,km2,EEA chart x land area,"Amphora quotes 920,000 m2 (0.92 km2)"
 EEA chart: Malta's rank for land take 2012-2018,1,of 39,EEA chart,proportion of country area
 Amphora figure vs IO net change (3-year rule),0.59,ratio,calculated,"below 1 = Amphora lower than the independent estimate; periods differ (Amphora 2018-2023, IO first built 2020-21)"
+"Amphora polygons: number and total area (geometry, UTM 33N)","397 / 828,429",- / m2,Amphora GeoJSON (crosscheck.py),"the file's own area_m2 field sums to 745,042"
+"Amphora: cropland + grass, share of the area with a known 2018 class (geometry / area field / count)",95.7 / 95.6 / 95.3,%,Amphora GeoJSON,"cropland 34.3%, grass 61.4%; Amphora: nearly 95% farmland (basis not stated; this is our reading)"
+Amphora: area with no 2018 class ('unknown'),37.4,%,Amphora GeoJSON,162 polygons
+Amphora: cropland share of all area / if every unknown area were farmland,21.5 / 97.3,%,calculated,bounds for 'farmland' depending on how grass and unknown are counted
+Amphora: polygons classed as water in 2018,2 / 4429,- / m2,Amphora GeoJSON,"Gżira and Sliema waterfronts: sea in 2018, not green land"
+Amphora's area already built in the IO 2018 map (all pixels / >= 20 m inside edges),68.3 / 69.1,%,IO x Amphora,built in all of 2017-19: 60.8%
+Share of Amphora's area that IO maps as new built-up (persistence rules),5.9-14.1,%,IO x Amphora,strict 5.9; two-year 13.6; strict-2025 10.9; two-year-2025 14.1
+Share of IO new built-up inside Amphora's polygons (persistence rules),2.3-2.7,%,IO x Amphora,within 20 m: 5.3-7.1%
+"IO net new built-up, all persistence rules incl. 2024-2025 maps",1.409 / 2.964 / 2.105 / -0.059,km2,Impact Observatory / Esri 2017-2025,strict: first mapped as built in 2020-21; two-year: first mapped as built in 2019-22; strict-2025: first mapped as built in 2020-23; two-year-2025: first mapped as built in 2019-24
+Esri 2017-2023 maps identical to the Planetary Computer maps,100.0,% of pixels,both,
+"IO built-up total, change 2023->2024 / 2024->2025",-21.2 / +23.3,km2,Impact Observatory / Esri,
+CORINE change polygons 2006-2012: change to artificial land (CLC class 1),20.6,ha,EEA CORINE Land Cover change layer,1 polygon; Amphora quotes 19 ha; changes under 5 ha are not mapped
+CORINE change polygons 2012-2018: change to artificial land (CLC class 1),93.7,ha,EEA CORINE Land Cover change layer,9 polygons; Amphora quotes 92 ha; changes under 5 ha are not mapped
+CORINE 2012-2018: share of land take that became quarries (CLC 131),33.8,%,EEA CORINE Land Cover change layer,31.7 ha; airport (CLC 124) from farmland 15.7 ha
