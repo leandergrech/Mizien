@@ -1,0 +1,27 @@
+check,value,unit,source,note
+Quarters where the category columns do not sum to the printed total,none,quarters,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",
+"Net increase in stock, Q2 2023",5319,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",91 days; 58.45 per day
+"Net increase in stock, Q3 2023",3968,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",92 days; 43.13 per day
+"Net increase in stock, Q4 2023",2560,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",92 days; 27.83 per day
+"Net increase in stock, Q1 2024",831,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",91 days; 9.13 per day
+"Net increase in stock, Q2 2024",765,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",91 days; 8.41 per day
+"Net increase in stock, Q3 2024",3030,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",92 days; 32.93 per day
+"Net increase in stock, Q4 2024",2518,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",92 days; 27.37 per day
+"Net increase in stock, Q1 2025",1744,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",90 days; 19.38 per day
+"Net increase in stock, Q2 2025",3339,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",91 days; 36.69 per day
+"Net increase in stock, Q3 2025",3344,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",92 days; 36.35 per day
+"Net increase in stock, Q4 2025",3265,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",92 days; 35.49 per day
+"Net increase in stock, Q1 2026",3245,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",90 days; 36.06 per day
+Stock at end of March 2026,460648,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026","NSO text: 460,648"
+Net increase Q1 2026,3245,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026","NSO text: 3,245"
+Days in Q1 2026,90,days,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",
+"Net average daily increase, Q1 2026 (note 7)",36.06,vehicles per day,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",NSO text: 36
+"Net average daily increase, Q4 2025",35.49,vehicles per day,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",Commission's 2026 Country Report says 35 and cites NSO Q4/2025
+"Net average daily increase, Q3 2025",36.35,vehicles per day,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026","Newsbook (11 Nov 2025) reports 3,344 and 36 a day for Q3 2025"
+Net average daily increase over calendar 2025,32.03,vehicles per day,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",11692 vehicles over 365 days
+"Net average daily increase, four quarters to end Q1 2026",36.15,vehicles per day,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",13193 vehicles over 365 days
+"Growth of stock, end Q1 2023 to end Q1 2026",8.0,%,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",
+"Gross newly licensed per day, Q1 2026",63,vehicles per day,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",NSO text: 63
+Stock by NSO note 6 (previous stock + new - restricted + restrictions ended),460260,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",differs from the published stock by 388; NSO says cut-off dates of databases can cause small differences
+Net change by the flow identity,2857,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",31.7 per day
+"Net as share of gross newly licensed, Q1 2026",57.1,%,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",36 net a day against 63 newly licensed a day
