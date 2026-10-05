@@ -24,7 +24,9 @@
     var id = a.getAttribute("data-claim");
     if (id) return id;
     if (a.tagName !== "A") return null;
-    var m = /\/claims\/(CC-\d{3})\/?(?:[#?].*)?$/.exec(a.getAttribute("href") || "");
+    var h = a.getAttribute("href") || "", part = /#(CC-\d{3}[A-Z])$/.exec(h);
+    if (part) return part[1];
+    var m = /\/claims\/(CC-\d{3})\/?(?:[#?].*)?$/.exec(h);
     return m ? m[1] : null;
   }
   function refAt(node) {
@@ -67,12 +69,15 @@
     if (b.thumb) { var img = el("img", "cr-thumb"); img.src = base + b.thumb.replace(/^\//, ""); img.alt = ""; img.width = 52; img.height = 52; head.appendChild(img); }
     var ht = el("div"); ht.appendChild(el("p", "cr-kicker", id + " · " + b.topic)); ht.appendChild(el("p", "cr-title", b.title));
     head.appendChild(ht); p.appendChild(head);
-    var v = el("div", "cr-verdict"), col = VERDICT[b.slug] || VERDICT.none;
-    var pill = el("span", "cr-pill", b.verdict || "Not yet checked"); pill.style.background = col[0]; pill.style.color = col[1]; v.appendChild(pill);
-    var meta = [];
+    var v = el("div", "cr-verdict"), col = VERDICT[b.slug] || VERDICT.none, meta = [];
+    function pillOf(text, bg, ink) { var x = el("span", "cr-pill", text); x.style.background = bg; x.style.color = ink; v.appendChild(x); }
+    if (b.part) pillOf(b.rating || "Not rated", b.tone[0], b.tone[1]);                      // a part of a claim: the report's rating
+    else if (b.verdict || !b.pledge) pillOf(b.verdict || "Not yet checked", col[0], col[1]);
+    if (b.pledge) { pillOf("Pledge: " + b.pledge.status, b.pledge.colour, "#fff"); meta.push("as of " + b.pledge.as_of); }
     if (b.confidence) meta.push(b.confidence.toLowerCase() + " confidence");
     var stage = b.draft ? "draft, right of reply pending" : String(b.status || "").toLowerCase();
-    if (stage && stage !== String(b.verdict || "Not yet checked").toLowerCase()) meta.push(stage);
+    if (stage && stage !== String(b.verdict || "Not yet checked").toLowerCase() && !b.part) meta.push(stage);
+    if (b.parts) meta.push(b.parts + " parts");
     if (meta.length) v.appendChild(el("span", "cr-meta", meta.join(" · ")));
     p.appendChild(v);
     var body = el("div", "cr-body");

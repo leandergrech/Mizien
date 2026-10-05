@@ -81,7 +81,7 @@ permalink: /bodies/patterns/
       about one statement as worded on its date.</p>
     <div class="table-scroll">
     <table class="claims matrix counts">
-      <thead><tr><th scope="col">Kind of body</th>{% for r in K.verdicts %}{% set v = mizien.verdicts | findBy("name", r.name) %}<th scope="col"><span class="badge v-{{ v.slug if v else 'none' }}">{{ r.name }}</span></th>{% endfor %}</tr></thead>
+      <thead><tr><th scope="col">Kind of body</th>{% for r in K.verdicts %}{% set v = mizien.verdicts | findBy("name", r.name) %}{% set pl = mizien.pledge_labels | findBy("name", r.name | replace("Pledge: ", "")) %}<th scope="col"><span class="badge v-{{ v.slug if v else (pl.slug if pl else 'none') }}">{{ r.name }}</span></th>{% endfor %}</tr></thead>
       <tbody>
       {%- for k in K.kinds %}
         <tr><th scope="row">{{ k.label }}</th>

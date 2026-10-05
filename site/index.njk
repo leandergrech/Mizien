@@ -429,7 +429,7 @@ eleventyExcludeFromCollections: true
     <table id="claims"><thead><tr><th>ID</th><th>Topic</th><th>Claim</th><th>Status</th></tr></thead><tbody>
     {%- for c in mizien.claims %}
       <tr data-id="{{ c.id }}"><td><a href="{{ c.path }}">{{ c.id }}</a></td><td>{{ c.category }}</td><td><a href="{{ c.path }}">{{ c.title }}</a></td>
-        <td>{% if c.verdict %}<span class="chip v-{{ c.verdict_slug }}">{{ c.verdict }}</span><span class="muted"> {{ c.status }}</span>{% else %}<span class="chip v-none">{{ c.status }}</span>{% endif %}</td></tr>
+        <td>{% if c.label %}<span class="chip v-{{ c.label_slug }}">{% if c.label_kind == "pledge" %}Pledge: {% endif %}{{ c.label }}</span><span class="muted"> {{ c.status }}</span>{% else %}<span class="chip v-none">{{ c.status }}</span>{% endif %}</td></tr>
     {%- endfor %}
     </tbody></table>
   </section>

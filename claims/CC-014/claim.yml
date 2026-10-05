@@ -81,6 +81,33 @@ location:
   lon: 14.50314
   scope: institution
   icon: ravelin
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-014A
+    text: "“We had times when we issued over 1,000 enforcement notices per year”"
+    finding: "1,369 (2001), 1,030 (2002), 1,061 (2004), 1,077 (2005), 1,120 (2009) [2–6]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-014B
+    text: "Now around 200"
+    finding: "164–233 a year, 2019–2024; 191 in 2024 [9–12]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-014C
+    text: "The fall is due to fewer illegalities"
+    finding: "Complaints fell 11–35% against an 82% fall in notices; notices per complaint fell about five-fold; the Authority attributes the fall to persuasion."
+    rating: "Misleading"
+    tone: red
+  - id: CC-014D
+    text: "Over 5,000 cases awaiting direct action; over 90 years to clear"
+    finding: "5,382 pending notices at end 2021 [11]; 74 closed by direct action in 2020 [10] implies about 73 years. Consistent in size."
+    rating: "Broadly consistent"
+    tone: amber
+  - id: CC-014E
+    text: "1,500 illegalities removed by direct action in 30 years"
+    finding: "No annual series found."
+    rating: "Not tested"
+    tone: grey
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: '187'
   caption: enforcement notices a year, 2020–24 (1,033 in 2001–09)

@@ -75,6 +75,44 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-003A
+    text: "Emissions per capita have fallen 44% since 2005"
+    said_by: "CAA [1]"
+    finding: "Reproduced from Eurostat (−46% to 2023, −48% to 2024). Commission source."
+    rating: "Accurate"
+    tone: green
+  - id: CC-003B
+    text: "…well above the EU average of 34%"
+    said_by: "CAA [1]"
+    finding: "Reproduced (−34% to 2023). True per person; false in total tonnes (−27% vs −33%)."
+    rating: "Accurate, partial"
+    tone: amber
+  - id: CC-003C
+    text: "Emissions per unit of GDP down 81.6% vs EU 61.9%"
+    said_by: "CAA [1]"
+    finding: "Not recomputed (GDP series and price base not stated). Direction consistent with Commission data."
+    rating: "Not tested"
+    tone: grey
+  - id: CC-003D
+    text: "Malta is reducing emissions at household level"
+    said_by: "CAA [1]"
+    finding: "Sectors linked to households rose: transport +49%, buildings +9 to +12%, air-conditioning gases up almost six-fold. A per-person ratio is not a household measure."
+    rating: "Not supported"
+    tone: red
+  - id: CC-003E
+    text: "Malta’s efforts are showing clear results"
+    said_by: "CAA [1]"
+    finding: "True for power generation. The same report projects the largest shortfall in the EU (in percentage points) against Malta’s binding 2030 target, which the release does not mention."
+    rating: "Misleading by omission"
+    tone: red
+  - id: CC-003F
+    text: "Malta aims to reduce emissions by 40% by 2030"
+    said_by: "CAA [1]"
+    finding: "A stated aim, not a result. Scope (total or effort-sharing) not given. Same figure appears in the 2026 Labour manifesto (see CC-011)."
+    rating: "Unclear scope"
+    tone: grey
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: −44%
   caption: emissions per person since 2005, as claimed

@@ -59,6 +59,26 @@ location:
   lon: 14.50978
   scope: institution
   icon: parliament
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-011A
+    text: "Nobody more than ten minutes’ walk from an open or green space"
+    said_by: "Labour [1]"
+    finding: "No definition, baseline or year. Broad reading: about 99.7% already within reach. Strict reading: about 55%."
+    rating: "No baseline"
+    tone: orange
+  - id: CC-011B
+    text: "Delivered through green spaces within ten minutes and parks such as Manoel Island, White Rocks, Fort Campbell"
+    said_by: "Labour [1]"
+    finding: "Named projects are real proposals; their effect on access depends on location. Not modelled here."
+    rating: "Not tested"
+    tone: grey
+  - id: CC-011C
+    text: "Related pledge in the same manifesto: a 40% cut in carbon emissions by 2030 vs 2005 (priority 18)"
+    said_by: "Labour [1]"
+    finding: "Same aim as the Climate Action Authority’s; scope not stated. See CC-003."
+    rating: "See CC-003"
+    tone: grey
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 99.9%
   caption: of residents already near open or green space

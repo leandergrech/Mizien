@@ -8,6 +8,9 @@
   var DATA = null, claims = [], edges = [], byId = {}, themeById = {}, stars = [];
   var hubPool = {}, hubs = [];            // hubPool: every hub ever made (key = mode|value); hubs: those of the current mode
   var subHubs = [];                      // topic view: subtopic hubs orbiting their topic hub (claim.yml `subtopic`)
+  // Parts of a claim (claim.yml `subclaims`, numbered CC-017A, B...): drawn in the Għanqbuta view as small satellites
+  // of their claim, placed from the claim's position each frame. They are not claims of their own: no groups, no links.
+  var parts = [], partById = {};
   // Coarse filtering: groups can be hidden from the legend. A hidden group's hub, claims, spokes and links leave the
   // map (both views) and the other groups spread out. Kept per grouping; the current grouping's set is in ?hide=.
   var hiddenGroups = {}, legendGroups = [];
@@ -47,6 +50,14 @@
   var VC = { "Supported": "#2e7d4f", "Largely supported": "#8db36b", "Not substantiated": "#d9772b",
              "Misleading": "#c85a3a", "Contradicted": "#8e2f25" };
   var NOT_YET = "Not yet checked", NOT_YET_COL = "#5d7468";
+  // A pledge gets a label instead of a verdict (methodology/verdict-scale.md, Pledges). A pure pledge check is coloured by its
+  // label; a mixed check keeps its verdict colour and shows the label in its card.
+  var PLEDGE_COL = {};
+  function unitWord(n) { return n === 1 ? (mode === "pledges" ? " pledge" : " claim") : (mode === "pledges" ? " pledges" : " claims"); }
+  function rated(d) { return d.verdict || (d.pledge && d.pledge.status) || null; }
+  function ratedText(d) { return d.verdict ? d.verdict : d.pledge ? "Pledge: " + d.pledge.status : null; }
+  function colOf(d) { return d.verdict ? VC[d.verdict] : d.pledge ? PLEDGE_COL[d.pledge.status] || NOT_YET_COL : NOT_YET_COL; }
+  var TONE = { green: "#2e7d4f", lime: "#8db36b", amber: "#e3a72f", orange: "#d9772b", red: "#b5483a", maroon: "#8e2f25", grey: "#7d8f86" };
   var ICONS = {
     // topics
     "Land & Trees": "M12 2.5 L5.5 11 H9 L5 16.5 H19 L15 11 H18.5 Z M12 16.5 V21.5",
@@ -98,10 +109,20 @@
     "mode:pattern": "M12 3 A9 9 0 1 0 12.01 3 M12 7 A5 5 0 1 0 12.01 7 M12 11 A1 1 0 1 0 12.01 11",
     "mode:status": "M3 12 H21 M5 12 A1.5 1.5 0 1 0 5.01 12 M12 12 A1.5 1.5 0 1 0 12.01 12 M19 12 A1.5 1.5 0 1 0 19.01 12",
     "mode:speaker": "M4 5 H20 V15 H10.5 L6.5 19 V15 H4 Z",
+    "mode:pledges": "M5 21 V4 M5 4.5 H16 L13.8 8.3 L16 12 H5",
+    "pledge": "M5 21 V4 M5 4.5 H16 L13.8 8.3 L16 12 H5",
     "mode:year": "M4 6.5 H20 V20 H4 Z M4 10.5 H20 M8 4 V8 M16 4 V8 M7.5 14 H9 M11.25 14 H12.75 M15 14 H16.5 M7.5 17 H9 M11.25 17 H12.75",
     "mode:network": "M5 6 A2 2 0 1 0 5.01 6 M19 7 A2 2 0 1 0 19.01 7 M12 18 A2 2 0 1 0 12.01 18 M6.5 7.5 L11 16 M17.5 8.5 L13 16 M7 6.2 L17 6.8"
   };
-  function iconKey(name) { return ICONS[name] ? name : String(name || "").split(" · ")[0]; } // subtopics reuse their topic's icon
+  function iconKey(name) {   // subtopics reuse their topic's icon; pledge groups use the flag, a calendar or their topic's
+    name = String(name || "");
+    if (ICONS[name]) return name;
+    if (/^Pledge: /.test(name)) return "pledge";
+    if (/^When: /.test(name)) return "mode:year";
+    if (/^What: /.test(name)) return iconKey(name.slice(6));
+    if (/^Who: /.test(name)) return "person";
+    return name.split(" · ")[0];
+  }
   var ICON_PATHS = {};
   Object.keys(ICONS).forEach(function (k) { ICON_PATHS[k] = new Path2D(ICONS[k]); });
 
@@ -124,9 +145,10 @@
              order: function () { return DATA.categories.map(function (c) { return c.name; }); },
              color: function (v) { var c = DATA.categories.filter(function (x) { return x.name === v; })[0]; return c ? c.color : "#7fa88b"; } },
     verdict: { label: "Verdict", title: "Claims by verdict", sub: "From supported to contradicted, left to right.",
-             layout: "arc", key: function (c) { return [c.verdict || NOT_YET]; },
-             order: function () { return Object.keys(VC).concat([NOT_YET]); },
-             color: function (v) { return VC[v] || NOT_YET_COL; } },
+             layout: "arc", key: function (c) { return [c.verdict || (c.pledge ? "Pledge: " + c.pledge.status : NOT_YET)]; },
+             order: function () { return Object.keys(VC).concat((DATA.pledge_labels || []).map(function (l) { return "Pledge: " + l.name; })
+               .filter(function (v) { return DATA.claims.some(function (c) { return !c.verdict && c.pledge && "Pledge: " + c.pledge.status === v; }); }), [NOT_YET]); },
+             color: function (v) { return VC[v] || PLEDGE_COL[String(v).replace(/^Pledge: /, "")] || NOT_YET_COL; } },
     pattern: { label: "Pattern", title: "Claims by pattern", sub: "Recurring ways a claim can mislead, laid out on a plate so that patterns sharing claims sit together. Faint spokes show a claim's second pattern. Claims without a pattern tag are left out.",
              layout: "ring", key: function (c) { return c.tags && c.tags.length ? c.tags : ["No pattern tag"]; },
              order: function () { return ["Selective metric", "Input-as-outcome", "Compliance-not-health", "Conditional-turned-unconditional", "Promise-without-baseline", "No pattern tag"]; },
@@ -149,10 +171,24 @@
              color: function (v) { if (v === "Undated") return NOT_YET_COL;
                var ys = MODES.year.order().filter(function (y) { return y !== "Undated"; }), i = ys.indexOf(v);
                return mix("#56b4e9", "#e3a72f", ys.length > 1 ? i / (ys.length - 1) : 1); } },
+    pledges: { label: "Pledges", title: "The pledge network", sub: "Each pledge sits with the body that made it; spokes lead to when it was pledged and what it is about. Gold lines join overlapping pledges.",
+             layout: "ring", key: function (c) {
+               if (!c.pledge) return [];
+               var who = (c.pledge.made_by || []).map(function (b) { return "Who: " + b.name; });
+               return who.concat(["When: " + c.pledge.occasion, "What: " + (c.subtopic ? c.category + " · " + c.subtopic : c.category)]); },
+             order: function () { var seen = {}, out = [];
+               ["Who: ", "When: ", "What: "].forEach(function (pre) { DATA.claims.forEach(function (c) { if (!c.pledge) return;
+                 MODES.pledges.key(c).forEach(function (k) { if (k.indexOf(pre) === 0 && !seen[k]) { seen[k] = 1; out.push(k); } }); }); });
+               return out; },
+             color: function (v) {
+               if (/^When: /.test(v)) return "#9fa8da";
+               if (/^What: /.test(v)) return MODES.subtopic.color(v.slice(6));
+               var b = (DATA.bodies || []).filter(function (x) { return "Who: " + x.name === v; })[0], t = b && (DATA.body_types || []).filter(function (x) { return x.id === b.type; })[0];
+               return t ? t.colour : "#e3a72f"; } },
     network: { label: "Links only", title: "The web of links", sub: "No groups: claims are pulled together by the themes that connect them.",
              layout: "force", key: function () { return []; }, order: function () { return []; }, color: function () { return "#7fa88b"; } }
   };
-  var MODE_ORDER = ["topic", "verdict", "pattern", "status", "speaker", "year", "network"];
+  var MODE_ORDER = ["topic", "verdict", "pattern", "status", "speaker", "year", "pledges", "network"];
 
   function rng(seed) {
     var h = 1779033703 ^ seed.length;
@@ -199,6 +235,7 @@
     data.themes.forEach(function (t) { themeById[t.id] = t; themeOn[t.id] = true; });
     (data.body_types || []).forEach(function (t) { typeLabel[t.id] = t.label; });
     (data.bodies || []).forEach(function (b) { bodyById[b.id] = b; });
+    (data.pledge_labels || []).forEach(function (l) { PLEDGE_COL[l.name] = l.colour; });
     data.claims.forEach(function (c) {
       var rnd = rng(c.id);
       var node = { kind: "claim", id: c.id, data: c, phase: rnd() * 6.28, x: (rnd() - .5) * 60, y: (rnd() - .5) * 60, z: (rnd() - .5) * 60,
@@ -208,6 +245,8 @@
       }
       claims.push(node); byId[c.id] = node;
     });
+    data.claims.forEach(function (c) { (c.subclaims || []).forEach(function (x, i, arr) {
+      var pt = { kind: "part", id: x.id, data: x, parent: byId[c.id], i: i, n: arr.length }; parts.push(pt); partById[x.id] = pt; }); });
     var pairCount = {};
     edges = data.edges.filter(function (e) { return byId[e.from] && byId[e.to]; }).map(function (e) {
       var key = [e.from, e.to].sort().join("|"); var k = pairCount[key] = (pairCount[key] || 0) + 1;
@@ -228,8 +267,8 @@
 
   function buildStats() {
     var s = document.getElementById("stats"); s.textContent = "";
-    var withV = DATA.claims.filter(function (c) { return c.verdict; }).length;
-    [[DATA.claims.length, "claims"], [withV, "with a verdict"], [DATA.edges.length, "links"], [DATA.themes.length, "themes"]].forEach(function (p) {
+    var withV = DATA.claims.filter(rated).length;
+    [[DATA.claims.length, "claims"], [withV, "checked"], [DATA.edges.length, "links"], [DATA.themes.length, "themes"]].forEach(function (p) {
       var d = el("div"); d.appendChild(el("b", null, String(p[0]))); d.appendChild(document.createTextNode(p[1])); s.appendChild(d);
     });
   }
@@ -327,7 +366,7 @@
     return MODES[m].sub;
   }
   function setMode(m, instant) {
-    if (!MODES[m]) m = "topic";
+    if (!MODES[m] || (m === "pledges" && !DATA.claims.some(function (c) { return c.pledge; }))) m = "topic";
     mode = m; var M = MODES[m];
     Object.keys(hubPool).forEach(function (k) { hubPool[k].talpha = 0; });
     claims.forEach(function (c) { c.hub = null; c.extra = []; c.sub = null; c.hidden = false; });
@@ -345,13 +384,16 @@
       var members = groups[v] || [];
       members.forEach(function (o) { if (o.primary) { o.c.hub = h; h.claims.push(o.c); if (o.c.reviewLeafColor) h.reviewLeaves.push(o.c); } else o.c.extra.push(h); });
       h.count = h.claims.length; h.empty = h.count === 0;
+      if (m === "pledges") h.count = members.length;   // pledge view: who, when and what each count every pledge they touch
       if (M.layout === "force") return;
       if (m === "pattern" && v === "No pattern tag") { h.claims.forEach(function (c) { c.hidden = true; }); return; }   // untagged claims have no place in the patterns view
       if (h.empty && (m === "topic" || m === "speaker" || m === "pattern")) return; // hide empty groups where order is not meaningful
+      if (m === "pledges" && !members.length) return;   // pledge view: "when" and "what" groups hold only spokes, and stay
       h.hidden = !!hid[v]; legendGroups.push(h);
       if (h.hidden) { h.claims.forEach(function (c) { c.hidden = true; }); return; }
       hubs.push(h);
     });
+    if (m === "pledges") claims.forEach(function (c) { if (!c.data.pledge) c.hidden = true; });   // only pledges here
     buildSubHubs(m);
     // hub targets
     var n = hubs.length;
@@ -539,7 +581,7 @@
     cam.tem = Math.max(1.15, Math.min(2.4, 175 / (h.openR || 110)));
     var cr = document.getElementById("crumb"); cr.textContent = "";
     cr.appendChild(document.createTextNode(MODES[mode].label + " · ")); cr.appendChild(el("b", null, h.name));
-    cr.appendChild(document.createTextNode(" · " + h.count + (h.count === 1 ? " claim" : " claims")));
+    cr.appendChild(document.createTextNode(" · " + h.count + unitWord(h.count)));
     var back = el("button", null, "Show all groups"); back.type = "button"; back.onclick = function () { clearSel(); }; cr.appendChild(back);
     cr.style.display = "inline-flex";
   }
@@ -577,6 +619,7 @@
   function buildGroupBy() {
     var g = document.getElementById("groupby"); g.textContent = "";
     MODE_ORDER.forEach(function (m) {
+      if (m === "pledges" && !DATA.claims.some(function (c) { return c.pledge; })) return;
       var b = el("button"); b.type = "button"; b.dataset.mode = m; b.appendChild(iconSvg("mode:" + m, "#eef3ef"));
       b.appendChild(document.createTextNode(MODES[m].label)); b.onclick = function () { setMode(m); }; g.appendChild(b);
     });
@@ -602,7 +645,7 @@
     document.getElementById("groupsTitle").textContent = mode === "network" ? "ISOLATED CLAIMS" : MODES[mode].label.toUpperCase() + " GROUPS";
     if (mode === "network") {
       var lone = claims.filter(function (c) { return !edges.some(function (e) { return e.from === c.id || e.to === c.id; }); });
-      lone.forEach(function (c) { var b = el("button"); b.type = "button"; var s = el("span", "sw"); s.style.background = c.data.verdict ? VC[c.data.verdict] : NOT_YET_COL;
+      lone.forEach(function (c) { var b = el("button"); b.type = "button"; var s = el("span", "sw"); s.style.background = colOf(c.data);
         b.appendChild(s); b.appendChild(el("span", null, c.id + " " + c.data.title)); b.onclick = function () { selectClaim(c.id); }; g.appendChild(b); });
       note.textContent = lone.length ? "Not yet linked to any other claim." : "Every claim is linked to at least one other.";
       return;
@@ -652,6 +695,7 @@
     });
     if (!note.textContent && legendGroups.length > 1) note.textContent = "Hide groups to declutter: their claims and links leave the map.";
     if (mode === "pattern") note.textContent = "Tags are provisional until a report is finished.";
+    if (mode === "pledges") note.textContent = "Who made each pledge, when (the manifesto, budget or announcement) and what it is about. Each pledge's label and its as-of date are in its card.";
     if (mode === "speaker") note.textContent = "Each claim sits with the first body named as its speaker. Select a body to see the bodies its claims link to; switch on links to see bodies named together.";
   }
   // Apply a hide/show rule to every group of the current grouping, re-lay out the map, keep it in the URL.
@@ -718,8 +762,11 @@
   function syncBarHeight() { var b = document.getElementById("linkbar"); if (b) document.getElementById("mapwrap").style.setProperty("--linkbar-h", b.offsetHeight + "px"); }
   function buildKey() {
     var k = document.getElementById("vkey"); k.textContent = "";
-    Object.keys(VC).concat([NOT_YET]).forEach(function (v) {
-      var s = el("span"), d = el("span", "vdot" + (VC[v] ? "" : " open")); d.style.background = VC[v] || NOT_YET_COL;
+    var pl = (DATA.pledge_labels || []).filter(function (l) { return DATA.claims.some(function (c) { return !c.verdict && c.pledge && c.pledge.status === l.name; }); })
+      .map(function (l) { return "Pledge: " + l.name; });
+    Object.keys(VC).concat(pl, [NOT_YET]).forEach(function (v) {
+      var col = VC[v] || PLEDGE_COL[v.replace(/^Pledge: /, "")];
+      var s = el("span"), d = el("span", "vdot" + (col ? "" : " open")); d.style.background = col || NOT_YET_COL;
       s.appendChild(d); s.appendChild(document.createTextNode(v)); k.appendChild(s);
     });
   }
@@ -738,8 +785,8 @@
     DATA.claims.forEach(function (c) {
       var tr = el("tr");
       tr.appendChild(el("td", null, c.id)); tr.appendChild(el("td", null, c.category)); tr.appendChild(el("td", null, c.title));
-      var td = el("td"); td.appendChild(el("span", "chip " + verdictClass(c.verdict), c.verdict ? c.verdict : c.status));
-      if (c.verdict) td.appendChild(el("span", "muted", " " + c.status));
+      var td = el("td"); td.appendChild(el("span", "chip " + verdictClass(c.verdict), ratedText(c) || c.status));
+      if (rated(c)) td.appendChild(el("span", "muted", " " + c.status));
       tr.appendChild(td); showOnMap(tr, c.id);
       tb.appendChild(tr);
     });
@@ -792,6 +839,7 @@
     if (sel.kind === "claim") { ids[sel.id] = 1; edges.forEach(function (e, i) { if ((e.from === sel.id || e.to === sel.id) && !byId[e.from].hidden && !byId[e.to].hidden) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } }); }
     if (sel.kind === "hub") { hb = sel.hub; (sel.hub.claims || []).forEach(function (c) { ids[c.id] = 1; }); claims.forEach(function (c) { if (c.extra.indexOf(sel.hub) >= 0) ids[c.id] = 1; });
       if (sel.hub.body) hl = linkedBodyHubs(sel.hub).concat(sel.hub.people || [], sel.hub.anchor ? [sel.hub.anchor] : []); }
+    if (sel.kind === "part") ids[partById[sel.id].parent.id] = 1;
     if (sel.kind === "edge") { es[sel.index] = 1; ids[sel.edge.from] = ids[sel.edge.to] = 1; }
     if (sel.kind === "theme") edges.forEach(function (e, i) { if (e.theme === sel.id) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } });
     if (sel.kind === "place") sel.place.claims.forEach(function (c) { ids[c.id] = 1; edges.forEach(function (e, i) { if (e.from === c.id || e.to === c.id) es[i] = 1; }); });
@@ -837,7 +885,8 @@
     if (expanded) return { x: expanded.x, y: expanded.y, z: expanded.z, r: expanded.openR || 110, max: 3.4 };
     if (!sel) return null;
     var centre = null, pts = [];
-    if (sel.kind === "claim") { centre = byId[sel.id];
+    if (sel.kind === "part") { centre = partById[sel.id].parent; }
+    else if (sel.kind === "claim") { centre = byId[sel.id];
       edges.forEach(function (e) { if (e.from === sel.id) pts.push(byId[e.to]); else if (e.to === sel.id) pts.push(byId[e.from]); }); }
     else if (sel.kind === "edge") pts = [byId[sel.edge.from], byId[sel.edge.to]];
     else if (sel.kind === "theme") edges.forEach(function (e) { if (e.theme === sel.id) pts.push(byId[e.from], byId[e.to]); });
@@ -976,6 +1025,13 @@
       ctx.setLineDash(sh.person ? [4, 4] : []); ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke(); ctx.setLineDash([]);
     });
     if (mode === "speaker" && split && view === "graph") drawBodyLinks(P, F, t);
+    if (mode === "pledges" && view === "graph") (DATA.pledge_links || []).forEach(function (l) {   // overlapping pledges
+      var a = byId[l.a], b = byId[l.b]; if (!a || !b || a.hidden || b.hidden) return;
+      var pa = P.get(a), pb = P.get(b), on = !F || F.ids[l.a] || F.ids[l.b];
+      ctx.save(); ctx.globalAlpha = on ? 0.95 : 0.25; ctx.strokeStyle = "#f6e3b4"; ctx.lineWidth = 2.6; ctx.setLineDash([2, 5]); ctx.lineCap = "round";
+      if (!reduce) ctx.lineDashOffset = -t * 10;
+      ctx.beginPath(); ctx.moveTo(pa.sx, pa.sy); ctx.quadraticCurveTo((pa.sx + pb.sx) / 2, (pa.sy + pb.sy) / 2 - 40, pb.sx, pb.sy); ctx.stroke(); ctx.restore();
+    });
     if (showSpokes && mode !== "network" && view === "graph") claims.forEach(function (c) {
       if (c.hidden) return;
       [c.sub && c.sub.alpha > 0.02 ? c.sub : c.hub].concat(c.extra).forEach(function (h, j) {
@@ -983,7 +1039,7 @@
         var a = P.get(h), b = P.get(c), on = F && (F.hub === h || F.ids[c.id]);
         if (!inPass(side, a, b)) return;
         var g = ctx.createLinearGradient(a.sx, a.sy, b.sx, b.sy);
-        var al = (j ? 0.18 : 0.42) * h.alpha * (F && !on ? 0.35 : 1);
+        var al = (j && mode !== "pledges" ? 0.18 : 0.42) * h.alpha * (F && !on ? 0.35 : 1);   // pledge view: every spoke matters
         g.addColorStop(0, rgba(h.color, al)); g.addColorStop(1, rgba(h.color, al * 0.25));
         ctx.strokeStyle = g; ctx.lineWidth = on ? 2 : 1.4; ctx.setLineDash(j ? [3, 5] : []);
         ctx.beginPath(); ctx.moveTo(a.sx, a.sy);
@@ -1059,28 +1115,28 @@
         });
         n._p = { x: p.sx, y: p.sy, r: r, live: n.alpha > 0.5 };
         if (n.sub) { if (n.alpha > 0.3 && ((expanded ? expanded === n.parent : cam.zoom >= 1.8 || coronaOn()) || isHov || isSel || (on && F && F.hl))) labels.push({ x: p.sx, y: p.sy + r + 13, text: n.name,
-          sub: (n.person && n.body.role ? n.body.role + " · " : "") + n.count + (n.count === 1 ? " claim" : " claims") + (n.also && n.also.length ? ", named in " + n.also.length + " more" : ""),
+          sub: (n.person && n.body.role ? n.body.role + " · " : "") + n.count + unitWord(n.count) + (n.also && n.also.length ? ", named in " + n.also.length + " more" : ""),
           hub: true, small: true, color: n.color, alpha: a, pri: expanded === n.parent || isSel || isHov ? 3.6 : F && F.hl ? 2.5 : 1.5 }); }
-        else if (n.alpha > 0.3 && n !== expanded) labels.push({ x: p.sx, y: p.sy + r + 15, text: n.name, sub: n.count + (n.count === 1 ? " claim" : " claims"),
+        else if (n.alpha > 0.3 && n !== expanded) labels.push({ x: p.sx, y: p.sy + r + 15, text: n.name, sub: n.count + unitWord(n.count),
           hub: true, color: n.color, alpha: a * (expanded ? 0.45 : 1), pri: expanded ? 1 : 3 + (isSel ? 2 : 0) });
         ctx.globalAlpha = 1;
       } else {
-        var d = n.data, col = d.verdict ? VC[d.verdict] : NOT_YET_COL;
-        var r2 = 7 * sc * (isHov || isSel ? 1.3 : 1) * (n.clustered ? 0.55 : 1), pulse = d.verdict && !reduce ? 1 + 0.07 * Math.sin(t * 2 + n.phase) : 1;
+        var d = n.data, col = colOf(d), isRated = rated(d);
+        var r2 = 7 * sc * (isHov || isSel ? 1.3 : 1) * (n.clustered ? 0.55 : 1), pulse = isRated && !reduce ? 1 + 0.07 * Math.sin(t * 2 + n.phase) : 1;
         ctx.globalAlpha = (on ? 1 : 0.18) * fg * (n.offmap ? 0.75 : 1);
         if (view === "map" && n.anchor) { var gp = project(n.anchor);
           ctx.fillStyle = "rgba(0,0,0,.35)"; ctx.beginPath(); ctx.ellipse(gp.sx, gp.sy, 4 * sc, 1.8 * sc, 0, 0, 6.283); ctx.fill();
           ctx.strokeStyle = n.offmap ? "rgba(207,226,212,.35)" : rgba(col, 0.8); ctx.lineWidth = 1.4; ctx.setLineDash(n.offmap ? [3, 4] : []);
           ctx.beginPath(); ctx.moveTo(gp.sx, gp.sy); ctx.lineTo(p.sx, p.sy); ctx.stroke(); ctx.setLineDash([]);
           if (!n.offmap) { ctx.fillStyle = col; ctx.beginPath(); ctx.arc(gp.sx, gp.sy, 2.4, 0, 6.283); ctx.fill(); } }
-        if (d.verdict) { var gh = ctx.createRadialGradient(p.sx, p.sy, r2, p.sx, p.sy, r2 * 2.8 * pulse);
+        if (isRated) { var gh = ctx.createRadialGradient(p.sx, p.sy, r2, p.sx, p.sy, r2 * 2.8 * pulse);
           gh.addColorStop(0, rgba(col, 0.55)); gh.addColorStop(1, rgba(col, 0)); ctx.fillStyle = gh;
           ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 * 2.8 * pulse, 0, 6.283); ctx.fill(); }
         var g3 = ctx.createRadialGradient(p.sx - r2 * .4, p.sy - r2 * .4, r2 * .1, p.sx, p.sy, r2);
         g3.addColorStop(0, rgba("#ffffff", 0.5)); g3.addColorStop(0.35, col); g3.addColorStop(1, col);
         ctx.fillStyle = g3; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2, 0, 6.283); ctx.fill();
         ctx.strokeStyle = "rgba(246,244,238,.6)"; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 0.6, 0, 6.283); ctx.stroke();
-        if (!d.verdict) { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,.7)"; ctx.lineWidth = 1.1;
+        if (!isRated) { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,.7)"; ctx.lineWidth = 1.1;
           ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 3.4, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
         if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
         n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: !n.clustered };
@@ -1088,7 +1144,7 @@
         var member = expanded && n.hub === expanded && mode !== "speaker", tagged = labelMode === "tag" || member;   // Who said it: too many claims to name them all
         var hp = member ? P.get(n.sub && n.sub.alpha > 0.3 ? n.sub : expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
         if ((!expanded || member || isHov || isSel) && !n.clustered) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: (tagged ? d.title : n.id) + (n.offmap && n.ringFirst && n.data.location && W >= 700 ? "  → " + shortPlace(n.data.location.place) : ""),
-          sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (d.verdict ? " · " + d.verdict : " · not yet checked") : d.title) : "",
+          sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (isRated ? " · " + ratedText(d) : " · not yet checked") : d.title) : "",
           hub: false, tag: tagged, color: col, alpha: (on ? 1 : 0.25) * fg, ax: p.sx, ay: p.sy, rr: r2 + 6,
           dir: member && expanded.claims.length > 1 ? { x: ddx / dl, y: ddy / dl } : null,
           pri: isSel || isHov ? 4 : member ? 3.5 : focused ? 2 : p.s > 0.9 ? 1 : 0 });
@@ -1097,6 +1153,7 @@
     });
 
     if (!sphereDone) { drawSphere(SPH); drawLinks("near"); }
+    drawParts(t, F, labels);
 
     // labels last, highest priority first, skipping overlaps so hub titles always stay readable
     if (!showText) labels = [];
@@ -1130,13 +1187,37 @@
     requestAnimationFrame(frame);
   }
 
+  // Parts of a claim: small dots around their claim, faint until the claim (or one of its parts) is hovered or selected.
+  function partFocus(par) {
+    return (sel && ((sel.kind === "claim" && sel.id === par.id) || (sel.kind === "part" && partById[sel.id].parent === par))) ||
+      (hover && ((hover.kind === "claim" && hover.id === par.id) || (hover.kind === "part" && partById[hover.id] && partById[hover.id].parent === par)));
+  }
+  function drawParts(t, F, labels) {
+    parts.forEach(function (pt) {
+      var par = pt.parent; pt._p = null;
+      if (view !== "graph" || par.hidden || !par._p || !par._p.live) return;
+      var focus = partFocus(par), a = focus ? 1 : F ? (F.ids[par.id] ? 0.6 : 0.1) : 0.5;
+      var ang = -Math.PI / 2 + (pt.i / pt.n) * Math.PI * 2 + (reduce ? 0 : t * 0.12), R0 = par._p.r + (focus ? 15 : 8);
+      var x = par._p.x + Math.cos(ang) * R0, y = par._p.y + Math.sin(ang) * R0, r = focus ? 4.6 : 2.8;
+      var isSel = sel && sel.kind === "part" && sel.id === pt.id, isHov = hover && hover.kind === "part" && hover.id === pt.id;
+      ctx.save(); ctx.globalAlpha = a;
+      ctx.strokeStyle = "rgba(246,244,238,.45)"; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(par._p.x + Math.cos(ang) * (par._p.r - 2), par._p.y + Math.sin(ang) * (par._p.r - 2)); ctx.lineTo(x, y); ctx.stroke();
+      ctx.fillStyle = TONE[pt.data.tone] || TONE.grey; ctx.strokeStyle = isSel || isHov ? "#fff" : "rgba(246,244,238,.85)"; ctx.lineWidth = isSel ? 2.2 : 1.1;
+      ctx.beginPath(); ctx.arc(x, y, r * (isHov || isSel ? 1.35 : 1), 0, 6.283); ctx.fill(); ctx.stroke(); ctx.restore();
+      pt._p = { x: x, y: y, r: r + 2, live: focus || cam.zoom >= 1.6 };
+      if (focus) labels.push({ x: x, y: y + r + 12, text: pt.id.slice(-1), sub: isHov || isSel ? pt.data.rating || "" : "", hub: false, color: TONE[pt.data.tone] || TONE.grey,
+        alpha: 1, pri: isSel || isHov ? 4 : 2.6 });
+    });
+  }
+
   function pick(x, y) {
     if (view === "map" && !mapLevel) for (var bi = 0; bi < badges.length; bi++) { var B = badges[bi];
       if (Math.hypot(B.x - x, B.y - y) < Math.max(B.r, 22)) return { kind: "district", d: B.d, locked: B.locked }; }
     var best = null, bd = 1e9;
-    claims.concat(hubs, subHubs).forEach(function (n) { if (!n._p || !n._p.live || n.hidden || (n.kind === "hub" && n.alpha < 0.5)) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
+    claims.concat(hubs, subHubs, parts).forEach(function (n) { if (!n._p || !n._p.live || n.hidden || (n.kind === "hub" && n.alpha < 0.5)) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
       var hit = Math.max(n._p.r + 5, W < 700 ? 16 : 0); if (d < hit && d < bd) { bd = d; best = n; } });
-    if (best) return best.kind === "hub" ? { kind: "hub", hub: best } : { kind: "claim", id: best.id };
+    if (best) return best.kind === "hub" ? { kind: "hub", hub: best } : best.kind === "part" ? { kind: "part", id: best.id } : { kind: "claim", id: best.id };
     if (view === "map") for (var pi = 0; pi < PLACES.length; pi++) { var Q = PLACES[pi]._p;
       if (Q && Math.hypot(Q.x - x, Q.y - y) < Q.r + 4) return { kind: "place", place: PLACES[pi] }; }
     var be = -1; bd = 8;
@@ -1158,7 +1239,7 @@
     { n: 20, key: "harbour", label: "District: Grand Harbour & the Three Cities" },
     { n: 30, key: "sea", label: "Living sea: ferries and currents" }
   ];
-  function checksDone() { return DATA ? DATA.claims.filter(function (c) { return c.verdict; }).length : 0; }
+  function checksDone() { return DATA ? DATA.claims.filter(rated).length : 0; }
   function has(key) { var t = TIERS.filter(function (x) { return x.key === key; })[0]; return t && checksDone() >= t.n; }
   function unlocked(d) { return d && checksDone() >= d.unlock; }
   function lockText(d) { var k = d.unlock - checksDone(); return d.name + " unlocks after " + k + " more completed check" + (k === 1 ? "" : "s"); }
@@ -1191,7 +1272,7 @@
     claims.forEach(function (c) { var L = c.data.location; if (!L || !c.m) return;
       var P = by[L.place]; if (!P) { P = by[L.place] = { kind: "place", name: L.place, short: shortPlace(L.place), m: c.m, icon: L.icon || "pin", district: c.district, claims: [] }; PLACES.push(P); }
       P.claims.push(c); c.place = P; });
-    PLACES.forEach(function (P) { P.discovered = P.claims.some(function (c) { return c.data.verdict; }); });
+    PLACES.forEach(function (P) { P.discovered = P.claims.some(function (c) { return rated(c.data); }); });
   }
   function placeVisible(P) { return mapLevel ? P.district === mapLevel : !(P.district && unlocked(P.district)); }
   function drawPlaces() {
@@ -1221,7 +1302,7 @@
   }
   function selectPlace(P) {
     sel = { kind: "place", place: P };
-    var done = P.claims.filter(function (c) { return c.data.verdict; }).length;
+    var done = P.claims.filter(function (c) { return rated(c.data); }).length;
     openPanel("PLACE · " + (P.discovered ? "DISCOVERED" : "NOT YET CHECKED"), P.discovered ? P.name : "Undiscovered site", P.discovered ? "#e3a72f" : NOT_YET_COL,
       [P.claims.length + (P.claims.length === 1 ? " claim" : " claims"), done + " checked"]);
     pbody.appendChild(el("p", "small", P.discovered ? "Claims about this place. Each completed check adds to the map."
@@ -1578,19 +1659,21 @@
   // Text with claim numbers ("see CC-011") turned into links. A plain click selects the claim on the map; a click
   // with a modifier key, or a middle click, opens its page. A long hover shows its summary (assets/claimrefs.js).
   function richText(tag, cls, text) {
-    var e = el(tag, cls), parts = String(text || "").split(/\b(CC-\d{3})\b/);
-    parts.forEach(function (t, i) {
+    var e = el(tag, cls), bits = String(text || "").split(/\b(CC-\d{3}[A-Z]?)\b/);   // CC-017A: part A of CC-017
+    bits.forEach(function (t, i) {
       if (i % 2 === 0) { if (t) e.appendChild(document.createTextNode(t)); return; }
-      if (!byId[t]) { e.appendChild(document.createTextNode(t)); return; }
-      var a = el("a", "claimref", t); a.href = "claims/" + t + "/"; a.dataset.claim = t;
-      a.addEventListener("click", function (ev) { if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) return; ev.preventDefault(); selectClaim(t); });
+      var isPart = t.length > 6;
+      if (isPart ? !partById[t] : !byId[t]) { e.appendChild(document.createTextNode(t)); return; }
+      var a = el("a", "claimref", t); a.href = "claims/" + t.slice(0, 6) + "/" + (isPart ? "#" + t : ""); a.dataset.claim = t;
+      a.addEventListener("click", function (ev) { if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) return; ev.preventDefault();
+        if (isPart) selectPart(t); else selectClaim(t); });
       e.appendChild(a);
     });
     return e;
   }
   function claimLink(id, box) {
     var c = byId[id].data, b = el("button", "link"); b.type = "button"; b.dataset.claim = id;
-    var dot = el("span", "dot"); dot.style.background = c.verdict ? VC[c.verdict] : NOT_YET_COL;
+    var dot = el("span", "dot"); dot.style.background = colOf(c);
     b.appendChild(dot); b.appendChild(document.createTextNode(c.id + "  " + c.title));
     b.onclick = function () { selectClaim(id); }; box.appendChild(b);
   }
@@ -1618,8 +1701,9 @@
     var d = c.data;
     if (expanded && c.hub !== expanded) collapse();
     if (view === "map") { if (c.district && c.district !== mapLevel && unlocked(c.district)) enterDistrict(c.district); else if (!c.district && mapLevel) exitDistrict(); }
-    var pills = d.verdict ? [d.verdict].concat(d.confidence ? [d.confidence + " confidence"] : []) : [d.status, "not yet checked"];
-    openPanel(d.id + " · " + d.category.toUpperCase(), d.title, d.verdict ? VC[d.verdict] : NOT_YET_COL, pills, "claims/" + d.id + "/");
+    var pills = d.verdict ? [d.verdict].concat(d.confidence ? [d.confidence + " confidence"] : []) : d.pledge ? [] : [d.status, "not yet checked"];
+    if (d.pledge) pills.push("Pledge: " + d.pledge.status, "as of " + d.pledge.as_of);
+    openPanel(d.id + " · " + d.category.toUpperCase(), d.title, colOf(d), pills, "claims/" + d.id + "/");
     syncSelParam();
     if (d.quote) pbody.appendChild(el("blockquote", null, "“" + d.quote + "”"));
     pbody.appendChild(richText("p", null, d.claim));
@@ -1629,8 +1713,8 @@
       who.forEach(function (h) { var bb = el("button", "btn ghost", h.name); bb.type = "button"; bb.onclick = function () { selectHub(h); }; wb.appendChild(bb); });
       pbody.appendChild(wb); }
     var chips = el("div");
-    if (d.verdict) chips.appendChild(el("span", "chip soft", d.status + (d.status === "Drafted" ? ", pending right of reply" : "")));
-    if (d.wording_status && !d.verdict) chips.appendChild(el("span", "chip soft", d.wording_status));
+    if (rated(d)) chips.appendChild(el("span", "chip soft", d.status + (d.status === "Drafted" ? ", pending right of reply" : "")));
+    if (d.wording_status && !rated(d)) chips.appendChild(el("span", "chip soft", d.wording_status));
     (d.tags || []).forEach(function (t) { chips.appendChild(el("span", "chip soft", t)); }); pbody.appendChild(chips);
     if (d.last_reviewed) {
       var days = c.reviewAgeDays || 0, remaining = Math.max(0, 365 - days);
@@ -1638,6 +1722,22 @@
       pbody.appendChild(el("p", "small", "Evidence last reviewed " + d.last_reviewed + " · " + (days >= 365 ? "refresh due" : remaining + " days until refresh due") + "."));
     }
     if (d.counter) { label("CONTEXT AND EVIDENCE"); pbody.appendChild(richText("p", null, d.counter)); }
+    if (d.pledge) {
+      label("PLEDGE · " + d.pledge.status.toUpperCase() + " · AS OF " + String(d.pledge.as_of || "").toUpperCase());
+      if (d.pledge.target) pbody.appendChild(el("p", null, d.pledge.target));
+      pbody.appendChild(el("p", "small", "Made by " + (d.pledge.made_by || []).map(function (b) { return b.name; }).join(", ") + " in " + d.pledge.vehicle +
+        (d.pledge.deadline ? "; deadline " + d.pledge.deadline : "; no deadline stated") + (d.verdict ? ". The verdict above is for the factual part." : ".")));
+      if (mode !== "pledges") { var pa = el("div", "acts"), pnb = el("button", "btn ghost", "Show in the pledge network"); pnb.type = "button";
+        pnb.onclick = function () { setMode("pledges"); selectClaim(id); }; pa.appendChild(pnb); pbody.appendChild(pa); }
+    }
+    if (d.subclaims && d.subclaims.length) {
+      label("PARTS OF THIS CLAIM · " + d.subclaims.length); var pl = el("div", "links");
+      d.subclaims.forEach(function (x) { var b = el("button", "link part-link"); b.type = "button"; b.dataset.claim = x.id;
+        var dt = el("span", "dot"); dt.style.background = TONE[x.tone] || TONE.grey; b.appendChild(dt);
+        b.appendChild(document.createTextNode(x.id + "  " + x.text + (x.rating ? " · " + x.rating : "")));
+        b.onclick = function () { selectPart(x.id); }; pl.appendChild(b); });
+      pbody.appendChild(pl);
+    }
     var mine = edges.map(function (e, i) { return { e: e, i: i }; }).filter(function (o) { return o.e.from === id || o.e.to === id; });
     if (mine.length) {
       label("LINKED CLAIMS · CLICK A THEME OR A CLAIM"); var box = el("div", "links");
@@ -1653,6 +1753,24 @@
       hb.onclick = function () { selectHub(c.sub && mode === "speaker" ? c.sub : c.hub); }; acts.appendChild(hb); pbody.appendChild(acts); }
     fitPanel();
   }
+  function selectPart(id) {
+    var pt = partById[id]; if (!pt) return; var x = pt.data, par = pt.parent.data;
+    sel = { kind: "part", id: id }; if (expanded && pt.parent.hub !== expanded) collapse();
+    openPanel("PART " + id.slice(-1) + " OF " + par.id + " · " + par.category.toUpperCase(), x.text, TONE[x.tone] || TONE.grey,
+      x.rating ? [x.rating] : [], "claims/" + par.id + "/#" + id, "Open on the claim page");
+    syncSelParam();
+    if (x.said_by) pbody.appendChild(el("p", "small", x.said_by));
+    if (x.finding) { label("WHAT THE EVIDENCE SHOWS"); pbody.appendChild(richText("p", null, x.finding)); }
+    label("PART OF"); var box = el("div", "links"); claimLink(par.id, box); pbody.appendChild(box);
+    var others = (par.subclaims || []).filter(function (y) { return y.id !== id; });
+    if (others.length) { label("OTHER PARTS"); var ob = el("div", "links");
+      others.forEach(function (y) { var b = el("button", "link part-link"); b.type = "button"; b.dataset.claim = y.id;
+        var dt = el("span", "dot"); dt.style.background = TONE[y.tone] || TONE.grey; b.appendChild(dt);
+        b.appendChild(document.createTextNode(y.id + "  " + y.text + (y.rating ? " · " + y.rating : ""))); b.onclick = function () { selectPart(y.id); }; ob.appendChild(b); });
+      pbody.appendChild(ob); }
+    pbody.appendChild(el("p", "small note", "A part is rated within its claim's report; the claim's verdict weighs all its parts."));
+    fitPanel();
+  }
   function bodyLinkText(l) {
     var bits = [];
     if (l.named) bits.push("named together in " + l.named + (l.named === 1 ? " claim" : " claims"));
@@ -1664,7 +1782,7 @@
     sel = { kind: "hub", hub: h }; setTimeout(syncSelParam, 0);
     var b = h.body, all = [];   // every claim it is named in, its people's included (as on the body page)
     [h].concat(h.people).forEach(function (x) { x.claims.concat(x.also).forEach(function (c) { if (all.indexOf(c) < 0) all.push(c); }); });
-    var withV = all.filter(function (c) { return c.data.verdict; }).length;
+    var withV = all.filter(function (c) { return rated(c.data); }).length;
     openPanel((h.person ? "PERSON · " : "") + h.parent.name.toUpperCase(), b.name, h.parent.color,
       [all.length + (all.length === 1 ? " claim" : " claims"), withV + " with a verdict"], "bodies/" + b.id + "/", "Open body page");
     collapse();   // the map zooms to the body and the bodies it is linked to, rather than opening its group
@@ -1695,11 +1813,11 @@
   function selectHub(h) {
     if (h.body) return selectBody(h);
     sel = { kind: "hub", hub: h }; setTimeout(syncSelParam, 0);
-    var withV = h.claims.filter(function (c) { return c.data.verdict; }).length;
-    openPanel(h.sub ? "SUBTOPIC · " + h.parent.name.toUpperCase() : MODES[mode].label.toUpperCase() + " GROUP", h.name, h.color, [h.count + (h.count === 1 ? " claim" : " claims"), withV + " with a verdict"]);
+    var withV = h.claims.filter(function (c) { return rated(c.data); }).length;
+    openPanel(h.sub ? "SUBTOPIC · " + h.parent.name.toUpperCase() : MODES[mode].label.toUpperCase() + " GROUP", h.name, h.color, [h.count + unitWord(h.count), withV + " with a verdict"]);
     if (mode === "speaker" && h.subs) pbody.appendChild(el("p", "small", h.subs.filter(function (x) { return !x.person; }).length + " bodies and " + h.subs.filter(function (x) { return x.person; }).length + " people. Select one to see its claims and the bodies it is linked to."));
     if (view === "graph") expandHub(h);
-    var list = h.claims, done = list.filter(function (c) { return c.data.verdict; }).length, reviewed = h.reviewLeaves || [];
+    var list = h.claims, done = list.filter(function (c) { return rated(c.data); }).length, reviewed = h.reviewLeaves || [];
     pbody.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " with a verdict, " + reviewed.length + " completed evidence reviews."));
     if (reviewed.length) {
       label("LEAVES · ONE PER COMPLETED REVIEW"); var freshness = el("div", "links");
@@ -1742,6 +1860,7 @@
   function selKey() {
     if (!sel) return null;
     if (sel.kind === "claim") return "claim:" + sel.id;
+    if (sel.kind === "part") return "part:" + sel.id;
     if (sel.kind === "theme") return "theme:" + sel.id;
     if (sel.kind === "hub" && sel.hub.body) return "body:" + sel.hub.body.id;
     if (sel.kind === "hub") return "hub:" + (sel.hub.sub ? sel.hub.parent.name + " › " + sel.hub.name : sel.hub.name);
@@ -1756,6 +1875,7 @@
     if (!k) return;
     var i = k.indexOf(":"), kind = k.slice(0, i), v = k.slice(i + 1);
     if (kind === "claim" && byId[v] && !byId[v].hidden) selectClaim(v);
+    else if (kind === "part" && partById[v] && !partById[v].parent.hidden) selectPart(v);
     else if (kind === "theme" && themeById[v]) selectTheme(v);
     else if (kind === "body" && bodyHubOf[v]) selectHub(bodyHubOf[v]);
     else if (kind === "hub") { var parts = v.split(" › "), h = hubs.filter(function (x) { return x.name === parts[0]; })[0];
@@ -1766,7 +1886,8 @@
   function showTip(h, x, y) {
     if (!h) { tip.style.display = "none"; return; }
     var txt;
-    if (h.kind === "claim") { var d = byId[h.id].data; txt = d.id + " · " + d.title + (d.verdict ? " — " + d.verdict : " — not yet checked"); }
+    if (h.kind === "part") { var px = partById[h.id]; txt = px.id + " · " + px.data.text + (px.data.rating ? " — " + px.data.rating : ""); }
+    else if (h.kind === "claim") { var d = byId[h.id].data; txt = d.id + " · " + d.title + (rated(d) ? " — " + ratedText(d) : " — not yet checked"); }
     else if (h.kind === "place") { var dn = h.place.claims.filter(function (c) { return c.data.verdict; }).length;
       txt = (h.place.discovered ? h.place.name : "Undiscovered site") + " · " + h.place.claims.length + (h.place.claims.length === 1 ? " claim" : " claims") + ", " + dn + " checked"; }
     else if (h.kind === "district") txt = h.locked ? lockText(h.d) : h.d.name + " · " + districtClaims(h.d).length + " claims · click to open";
@@ -1830,7 +1951,7 @@
     if (multiGesture) { down = null; pinch = null; lastMid = null; if (!pointerCount()) { multiGesture = false; canvas.classList.remove("dragging"); } return; }
     canvas.classList.remove("dragging");
     if (moved < 6) { var r = canvas.getBoundingClientRect(); var h = pick(e.clientX - r.left, e.clientY - r.top);
-      if (!h) clearSel(); else if (h.kind === "district") { if (!h.locked) enterDistrict(h.d); else showToast(lockText(h.d)); } else if (h.kind === "place") selectPlace(h.place); else if (h.kind === "claim") selectClaim(h.id); else if (h.kind === "hub") selectHub(h.hub); else selectEdge(h.index); }
+      if (!h) clearSel(); else if (h.kind === "district") { if (!h.locked) enterDistrict(h.d); else showToast(lockText(h.d)); } else if (h.kind === "place") selectPlace(h.place); else if (h.kind === "claim") selectClaim(h.id); else if (h.kind === "part") selectPart(h.id); else if (h.kind === "hub") selectHub(h.hub); else selectEdge(h.index); }
     else if (view === "graph" && dragKind === "orbit") setSpin(false);
     down = null;
   });
