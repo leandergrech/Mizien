@@ -7,6 +7,7 @@ Practical notes for anyone (human or routine) checking a claim. Add to this file
 | Source | Use | Access notes |
 |---|---|---|
 | Eurostat dissemination API `https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/<dataset>?geo=MT&...&format=JSON` | Prices, population, emissions, energy, housing, waste | Works with curl. **Read the dataset `label` before using it**: e.g. `tipsho20` is the *nominal* house price index and `tipsho10` the *deflated* one (a CC-013 near-miss). |
+| Eurostat news items `ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-YYYYMMDD-N` and table metadata `.../cache/metadata/EN/<dataset>_simsae_dk.htm` | Citing Eurostat's own wording; residence vs territorial principle | Readable with curl. Statistics Explained pages are JavaScript-rendered. Eurostat revises series: re-download and note differences from the release. `env_ac_ainah_r2` (accounts, residence) vs `env_air_gge` (inventory, territorial; international aviation is a memo item). |
 | Crossref `https://api.crossref.org/works/<DOI>` | Verify every DOI | Check that the returned title and authors are the paper you meant: two "remembered" DOIs on 3 Oct 2026 resolved to unrelated papers. |
 | OpenAlex `https://api.openalex.org/works/doi:<DOI>` | Abstracts (inverted index), open-access links | Abstract missing for some publishers; then cite as metadata only. |
 | Sentinel-2 L2A via Microsoft Planetary Computer (STAC search + anonymous SAS token) | Vegetation, land cover, before/after on a site | See `tools/cc-012-report/fetch_s2.py`. Define the study area from a signal other than the one you test (CC-012 used summer brightening to locate gravel, then tested winter greenness), and always compare with a control area. |
@@ -19,6 +20,8 @@ Practical notes for anyone (human or routine) checking a claim. Add to this file
 | gov.mt, pa.org.mt, era.org.mt, parlament.mt, pn.org.mt | Primary statements, PQs | Cloudflare: browser only. In a routine, record `source: browser-only (<url>)` as the Blocker rather than spending the run. |
 
 ## Pitfalls seen so far
+
+- **energywateragency.gov.mt** PDFs return an `sgcaptcha` redirect to scripted clients (CC-024): browser-only.
 
 - **Who said it.** A figure in an interviewer's question is not the speaker's claim (CC-013: the 91,000 dwellings).
 - **Paraphrase vs quote.** Newspapers paraphrase around short quotes; quote only the words inside quotation marks
