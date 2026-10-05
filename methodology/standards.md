@@ -22,7 +22,9 @@
 - Send the draft to the body concerned with a fixed deadline (suggested: 14 days).
 - Record the date sent in `claim.yml` (`right_of_reply.sent`) and the deadline.
 - Publish the response alongside the report. If new evidence moves the verdict, re-issue with a change log.
-- Do not publish a *Misleading* or *Contradicted* verdict before the deadline has passed.
+- A draft verdict may be shown on Miżien's own site before the deadline, marked as a draft pending right of reply.
+- Do not circulate a *Misleading* or *Contradicted* verdict anywhere else (flyers, social media, press, messages to
+  third parties) before the deadline has passed. (Maintainer decision, 5 October 2026.)
 
 ## Sub judice and live proceedings
 

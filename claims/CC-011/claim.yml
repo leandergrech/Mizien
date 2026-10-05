@@ -62,6 +62,17 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 99.9%
   caption: of residents already near open or green space
+pledge:   # pledge label (methodology/verdict-scale.md, Pledges); shown instead of the verdict
+  status: Not measurable
+  as_of: '2026-10-05'
+  made_by: [pl]
+  made_on: 2026-05
+  vehicle: 'Labour manifesto 2026 (Int Malta), priority 19'
+  deadline: null
+  target: Every person no more than ten minutes' walk from an open or green space
+  note: No definition of "open or green space", no baseline and no date. 99.7-99.9% of residents are already within ten
+    minutes of some open space on a broad reading; 55-68% for parks of at least 0.5 ha. Labour won the 30 May 2026
+    election, so the pledge is a government commitment for the 2026 legislature.
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-02
     step: version

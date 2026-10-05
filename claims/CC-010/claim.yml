@@ -102,6 +102,17 @@ last_reviewed: '2026-10-05'
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: ~60,000
   caption: trees reported by end-2025, of 100,000 pledged
+pledge:   # pledge label (methodology/verdict-scale.md, Pledges); the verdict above covers the planting counts
+  status: Off track
+  as_of: '2025-12-31'
+  made_by: [pl]
+  made_on: '2022-03-11'
+  vehicle: Labour manifesto 2022, pledge 305
+  deadline: '2027-03-26'
+  target: 100,000 trees in the next five years
+  note: About 60,000 trees reported by end-2025 with 75% of the five years gone (parliamentary answer, Feb 2026).
+    The deadline is five years from the 26 March 2022 election; the legislature ended early (election 30 May 2026)
+    and no count for January-May 2026 was found, so the label stays Off track rather than Missed.
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-03
     step: version

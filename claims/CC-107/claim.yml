@@ -79,6 +79,16 @@ location:
 thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
   figure: 4.9–6.3×
   caption: Gozo's area needed as forest to offset its emissions
+pledge:   # pledge label (methodology/verdict-scale.md, Pledges); shown instead of the verdict
+  status: Not measurable
+  as_of: '2026-10-05'
+  made_by: [pn]
+  made_on: 2026-05
+  vehicle: 'PN electoral programme 2026 (Nifs Ġdid), chapter Għawdex'
+  deadline: '2040-12-31'
+  target: A clear and realistic plan for Gozo to become a Net-Zero Island by 2040
+  note: No baseline, boundary or pathway published and no greenhouse-gas inventory for Gozo. The PN lost the 30 May
+    2026 election, so this is an opposition proposal.
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-05
     step: version
