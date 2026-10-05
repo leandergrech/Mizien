@@ -16,7 +16,7 @@ data. Every source is archived, so the record of what was said survives edits an
 3. **Search the science first**, then independent datasets, then regulator and EU reports.
 4. **Grade the evidence** (A to D) and show disagreements side by side.
 5. **Give a verdict** on a five-point scale, with a confidence level.
-6. **Offer a right of reply** to the body concerned and publish its response.
+6. **Offer a right of reply** to the body concerned when the verdict is Not substantiated, Misleading or Contradicted, and publish its response.
 7. **Publish with a version number and change log**, and correct errors openly.
 
 Misleading or Contradicted verdicts need documents or data that can be shown. See [`methodology/`](methodology/).
@@ -196,5 +196,6 @@ material remains under its owners' rights.
 
 ## Independence
 
-Miżien is independent and is not affiliated with any party, authority or institution. Drafts are marked as pending
-right of reply until the body concerned has had the chance to respond.
+Miżien is independent and is not affiliated with any party, authority or institution. Checks that find a claim Not
+substantiated, Misleading or Contradicted stay drafts, pending right of reply, until the body concerned has had the
+chance to respond.

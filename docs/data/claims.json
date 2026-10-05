@@ -139,7 +139,7 @@
       "claim": "ERA (11 Aug 2026): 54 protected trees will be removed, with 10 new indigenous trees planted for each (540). Of 678 trees and shrubs to be removed, 92% are classified as non-protected; 348 more are to be transplanted.",
       "counter": "The published figures describe proposed interventions and planting conditions, not completed work or measured ecological replacement. Studies show that transplant outcomes vary with species, source, site suitability and aftercare; tree counts alone do not establish survival, habitat recovery or equivalent ecological function.",
       "status": "Drafted",
-      "reply_sought": false,
+      "reply": "not-needed",
       "verdict": "Largely supported",
       "tags": [
         "Input-as-outcome",
@@ -336,7 +336,7 @@
       "claim": "Malta also shows excellent records under the Bathing Water Directive: 92% of Maltese bathing waters are of excellent quality.",
       "counter": "The EEA series shows a decline: 86 of 87 sites were excellent in 2016–2018 (98.9%), then 85, 84, 84, 82, 80, 80 and 77 (88.5%) in 2025, the lowest of the eleven seasons since 2015. Malta's lead over the EU-27 coastal average (88.3% in 2025) fell from about 11 percentage points in 2016 to 0.2. Ten of the 87 sites account for every rating below excellent; in 2025 St George's Bay B03 (St Julian's) and Xlendi D06 and D07 fell from excellent to good. Balluta Bay's two sites (B08, B09) were rated only sufficient in every season 2022–2025, with a sewage-related warning from late May to 12 August 2024 inside that run. The CJEU found failures to comply with urban wastewater treatment obligations in named agglomerations. None of this refutes the Commission's figure, which was correct for 2023 and again for 2024, but the summary sentence gives no year.",
       "status": "Drafted",
-      "reply_sought": false,
+      "reply": "not-needed",
       "verdict": "Supported",
       "tags": [
         "Compliance-not-health"
@@ -411,6 +411,7 @@
       "claim": "Newsbook (18 Jul 2025), reporting Parliamentary Question 29696: measurements taken between 2020 and 2024 at ERA's five PM2.5 monitoring stations are well above the WHO guideline but well within the less stringent EU annual limits.",
       "counter": "All 23 reported station-year values exceed the WHO annual PM2.5 guideline of 5 µg/m³ and are below the EU annual limit of 25 µg/m³ applicable in 2020-2024. The annex marks St Paul's Bay as n/a for 2020 and 2021. Fourteen of 23 values exceed the EU limit of 10 µg/m³ due by 2030; this future standard does not establish past non-compliance. EEA validated daily data independently cross-check 11 station-years; ten match the annex to 0.1 µg/m³. Attard 2024 differs (12.122 µg/m³ from the EEA valid-day mean versus 11.9 in the annex), though both remain below 25 µg/m³.",
       "status": "Drafted",
+      "reply": "not-needed",
       "verdict": "Largely supported",
       "tags": [
         "Compliance-not-health"
@@ -448,7 +449,7 @@
       "claim": "Infrastructure Malta says the Msida Creek flyover will reduce delays, emissions and noise, and that the Marsa Junction Project has reduced travel time and air pollution.",
       "counter": "The Msida Creek flyover opened to traffic on 18 December 2025, and the wider project remains under construction until 2027. At the only public air monitor near it (EEA sampling point MT00011, about 410 m away), mean NO2 for January–September 2026 was 25.2 µg/m³, against 22.0 in 2025 and 19.2 in 2024 (2026 data not yet validated); urban background stations rose about 4% and St Paul's Bay fell 6%, so the expected improvement has not appeared in the measured data. The Marsa release does not link the surveys behind its percentage claims, and no EEA-reported air monitor has operated within 1.4 km of the Marsa junction since Kordin (Paola) closed at the end of 2016. No project-level before-and-after series was found for traffic or noise at either site.",
       "status": "Drafted",
-      "reply_sought": false,
+      "reply": "not-sought",
       "verdict": "Not substantiated",
       "tags": [
         "Promise-without-baseline"
@@ -486,6 +487,7 @@
       "claim": "WSC reported that reverse osmosis supplied 70.7% of its potable-water production in 2025, while groundwater production fell to 11.5 million m³, its lowest annual total in a decade. In August 2026, WSC issued a tender for a new 30,000 m³/day reverse-osmosis plant at Għar Lapsi.",
       "counter": "The latest published River Basin Management Plan classifies both Malta and Gozo Mean Sea Level aquifer systems in poor quantitative status and 14 groundwater bodies in poor chemical status. Malta's reporting of the same cycle to the EEA lists four bodies in poor quantitative status (adding Pwales Coastal and Marfa Coastal) and all 15 in poor chemical status. The plan reports nitrate above the 50 mg/L standard in 12 of 15 bodies, with three named exceptions; not every body fails for nitrate. WSC's potable-production figures cover its supply system, not national abstraction. Eurostat estimates national fresh groundwater abstraction at 38.46 million m³ in 2024 (57% agriculture, up 3.1 million m³ on 2023), so WSC's 2025 cut of 1.55 million m³ is about 4% of it; a published water balance (Sapiano 2020) puts available groundwater at about 37 million m³ a year. Tracer ages of 15-40 years (Malta) and up to 60 or more (Gozo) mean water-quality recovery would take years to decades to show (Stuart et al. 2010).",
       "status": "Drafted",
+      "reply": "not-needed",
       "verdict": "Largely supported",
       "tags": [
         "Selective metric"
@@ -523,7 +525,7 @@
       "claim": "Project Green reported more than 8,000 trees and more than 25,000 shrubs planted by government entities in 2024. Pledge 305 of the 2022 Labour manifesto commits to 100,000 trees being planted over the next five years; a February 2026 parliamentary answer reports around 60,000 trees and over 100,000 shrubs planted through the end of 2025.",
       "counter": "Counts confirmed; the 100,000 trees were not reached by the end of 2025 (about 60,000), and no later count was found before the legislature ended on 30 May 2026. Maintainer decision (5 Oct 2026): delivery of 100,000 trees within the pledge period is rated separately as Not substantiated (sub-claim D); the overall verdict, on the reported counts, is unchanged. The reported 2024 and cumulative counts are planting inputs, not survival or canopy outcomes. The 2026 parliamentary answer says about 60,000 trees were planted by the end of 2025, below the 100,000 target at that date, when about 75% of the five-year window (from the 26 March 2022 election) had elapsed; Labour's 2026 manifesto gives a lower count of more than 57,000 trees for 2022-2025. The legislature ended with the snap general election of 30 May 2026; no count after 2025 was found (Project Green news to 5 Oct 2026, web searches). Tree and shrub totals are separate; vouchers are not trees planted.",
       "status": "Drafted",
-      "reply_sought": false,
+      "reply": "not-sought",
       "verdict": "Largely supported",
       "tags": [
         "Input-as-outcome",
@@ -752,6 +754,7 @@
       "claim": "Planning Authority CEO Johann Buttigieg (MaltaToday interview, 2 Mar 2025): continuing to issue permits helps keep property prices in check; without them Malta would face the same housing crises as other European countries. The interviewer cited about 91,000 dwellings approved over a decade.",
       "counter": "Supported in direction by peer-reviewed research on supply constraints (Glaeser et al. 2005; Hilber and Vermeulen 2016; Saiz 2010); Anenberg and Kung (2020) find extra supply alone does little for rent burdens. Malta population +31% 2015-2025 (EU +2%; highest of 27, about 16 times the EU rate); real house prices +34% (EU +25%; Malta 2025 provisional), which ranks 16th of 27, below the median Member State (+41%); the EU aggregate is weighted towards Germany, France and Italy (49%). Rents (HICP actual rentals) +53% vs EU +21% (8th of 27); house prices +6.9% a year to 2026-Q2 (provisional) vs EU +4.7%. Housing-cost overburden rose from 1.1% (2015) to 2.9% (2022) while the EU's fell; Eurostat flags a break in Malta's series in 2023, after which it held at about 6% (6.0% in 2025; EU 7.7%). Overcrowding 4.7% vs EU 16.8%. 27.5% of dwellings not a main residence (Census 2021).",
       "status": "Drafted",
+      "reply": "not-needed",
       "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Housing & affordability",
@@ -1065,6 +1068,7 @@
       "claim": "Malta Developers Association (release on its website, 8 Feb 2026; quoted by MaltaToday the same day): 'The IMF's assessment of the Maltese housing market confirms what the Malta Developers Association has been saying for several years', i.e. (MaltaToday's summary) the strength and stability of the property sector.",
       "counter": "IMF CR 26/29: prices 'aligned with fundamentals', price-to-income and price-to-rent stable, weakening 'currently low' (supports). Eurostat tipsho60: Malta price-to-income -10.7% 2015-2024, 92.9% of long-term average (EU 98.9). But IMF calls banks' real-estate exposure (72% of private loans, from 61%) 'a vulnerability', urges vigilance and enhanced monitoring given rapid price growth; affordability not assessed (housing-cost overburden worsened between 2015 and 2022 on Eurostat's comparable series, 1.1% -> 2.9%; a break in the series in 2023, 6.0%, flat since). MDA-commissioned study (as reported) found prices outpacing incomes. House prices +6.8% and +6.9% year on year in 2026 Q1 and Q2 (Eurostat prc_hpi_q, provisional). v1.2, the release's other statements: the IMF did move Malta to a 24-month cycle (supported), but Malta is not 'the first EU economy' on it (contradicted: Luxembourg 2000-2002; Malta is the only EU member on it in the 2025-26 reports); GDP per head 'nearly doubled' since 2013 is the IMF's own phrase (US$, x1.8 to 2024; Eurostat EUR x2.2 to 2025, real x1.5; largely supported); 'far higher than the EU average' is not substantiated (2025: +1.7% at market prices, PPS index 110).",
       "status": "Drafted",
+      "reply": "not-needed",
       "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Housing & affordability",
@@ -1216,6 +1220,7 @@
       "claim": "Study for the European Parliament's Committee on Petitions (Ecocentric Consulting, February 2026): Malta's noise problems are not caused by how it transposed and implements the Environmental Noise Directive, with only two meaningful non-conformity issues, because the noise people complain about (construction, entertainment, neighbourhood) falls outside the Directive's scope; it cites a 2019 survey in which 21% of Maltese ranked noise among their top four environmental issues against an EU28 average of 9%.",
       "counter": "The conclusion follows from the study's evidence. The Directive sets only reporting thresholds (55 dB Lden and 50 dB Lnight, above the WHO 2018 levels of 53 and 45 dB for roads and 45 and 40 dB for aircraft) and excludes construction, entertainment and neighbourhood noise. Eurostat (ilc_mddw01) puts Malta first in the EU for reported street or neighbour noise, 31.3% against 18.1% in 2023, above the EU average in all 12 available years since 2010. Action-plan delays (plan due January 2025 unpublished at January 2026) are a genuine END implementation issue. Legal compliance is not the same as exposure below WHO levels. The transposition table, infringement record and the 21% vs 9% survey figure were not independently verified.",
       "status": "Drafted",
+      "reply": "not-needed",
       "verdict": "Largely supported",
       "tags": [],
       "location": {
@@ -1313,6 +1318,7 @@
       "claim": "Energy Ministry (press release, 6 May 2025): Malta has the lowest household electricity prices in the EU in purchasing power standards (14.33 PPS per 100 kWh, 2024-S2), the third-lowest nominal price (EUR 0.131), and 'the burden on Maltese families is the lowest in the EU'.",
       "counter": "Eurostat nrg_pc_204 confirms every figure for the standard household band (2,500-4,999 kWh): Malta 14.35 PPS/100 kWh in 2024-S2, lowest of 27; EUR 0.1303, third lowest; CZ 41.00, CY 35.70, DE 35.23 PPS. In other bands Malta is not the cheapest (2024-S2: 3rd for 1,000-2,499 kWh, 2nd for 5,000-14,999 kWh, 16th under 1,000 kWh, 23rd of 27 at 15,000 kWh or more; 4th of 26 on the all-band average). Malta's price -0.2% 2020-25 vs EU +35%; EUR 0.169 to 0.125 per kWh in 2014, 0.125-0.133 since. Fixed electricity and fuel prices are financed by energy subsidies of 1.8% of GDP (2022) to 0.8% (2025, projected), about EUR 1.0bn 2022-2025 (IMF CR 26/29; electricity and fuel together, electricity share not published). Against income (v1.2): a 3,750 kWh bill at the 2024 band-DC price is 2.2% of median equivalised income (EU 4.7%), 2nd of 27 after Luxembourg, and 3.5% of the 20th-percentile income (EU 7.3%), also 2nd; the average household's actual bill (4,617 kWh, 21st of 27 on use; a fifth for space cooling) is 1.26% of disposable income per household (EU 1.91%), 5th of 26; electricity's share of spending 2.3% in 2020 (joint 7th of 24). Energy poverty below the EU average but not the lowest: arrears 4.5% vs 7.0% (9th of 27); unable to keep warm 7.6% vs 8.8% (17th of 27).",
       "status": "Drafted",
+      "reply": "not-needed",
       "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Electricity & grid",
@@ -1469,6 +1475,7 @@
       "claim": "Newsbook, reporting Eurostat: Malta recorded the EU's largest rise in greenhouse gas emissions, an estimated 169.4% between 2015 and 2025.",
       "counter": "Eurostat's air emissions accounts follow the residence principle (emissions of resident units wherever they occur); air transport rose from 444 to 4,730 kt CO2e in 2015-2024 and is 98.6% of the increase. The territorial inventory (UNFCCC) rose 1.6% in 2015-2024 and is 27% below 2005. Malta excluding air transport +2.9%.",
       "status": "Drafted",
+      "reply": "not-needed",
       "verdict": "Largely supported",
       "tags": [
         "Selective metric"

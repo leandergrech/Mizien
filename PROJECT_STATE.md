@@ -126,6 +126,13 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
 
 ## Site build (4 October 2026)
 
+- **Right of reply only where a check goes against a claim** (maintainer decision, 5 October 2026): sought for
+  *Not substantiated*, *Misleading* and *Contradicted* (pledges: *Not measurable*, *Off track*, *Missed*); a check that
+  supports a claim needs none, and `right_of_reply.sought: false` records a decision not to seek one. The site shows
+  each check's reply state (pending, not needed, not sought, sent, received); the validator requires a sent date to
+  publish only where a reply is needed. Public wording updated (homepage, footer, disclaimer, verdict process, feed,
+  README, standards.md).
+
 - **Parts of a claim and pledge labels** (5 October 2026, maintainer decisions).
   - Sub-claims are numbered parent + letter (CC-017A, B...) and recorded in claim.yml as `subclaims:` (wording,
     finding, rating and the colour of the report's rating chip). Backfilled from the 15 reports with a sub-claim
