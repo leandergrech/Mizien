@@ -75,13 +75,17 @@
     "Right of reply": "M4 4.5 H20 V15 H10.5 L6.5 19.5 V15 H4 Z",
     "Published": "M3.5 5 H10.5 C11.4 5 12 5.6 12 6.5 V20 C12 19.2 11.4 18.6 10.5 18.6 H3.5 Z M20.5 5 H13.5 C12.6 5 12 5.6 12 6.5 V20 C12 19.2 12.6 18.6 13.5 18.6 H20.5 Z",
     // speakers
-    "Government": "M3 9 L12 4 L21 9 Z M5.5 9.5 V17.5 M10 9.5 V17.5 M14 9.5 V17.5 M18.5 9.5 V17.5 M3 20 H21",
-    "Regulators & agencies": "M8.5 3.5 H15.5 V6.5 H8.5 Z M6.5 5 H4.5 V21 H19.5 V5 H17.5 M8 11.5 H16 M8 15.5 H13",
+    "Government & ministers": "M3 9 L12 4 L21 9 Z M5.5 9.5 V17.5 M10 9.5 V17.5 M14 9.5 V17.5 M18.5 9.5 V17.5 M3 20 H21",
+    "Public agencies & companies": "M4 20.5 V8 L9 5 V20.5 M9 9 L15 6 V20.5 M15 10 L20 8 V20.5 M2.5 20.5 H21.5 M6 11 H7 M6 14 H7 M11.5 12 H12.5 M11.5 15 H12.5 M17 13 H18",
+    "Regulators & authorities": "M8.5 3.5 H15.5 V6.5 H8.5 Z M6.5 5 H4.5 V21 H19.5 V5 H17.5 M8 11.5 H16 M8 15.5 H13",
+    "Courts, tribunals & oversight": "M12 3.5 V20 M7.5 20 H16.5 M5 7 H19 M5 7 L2.5 13 H7.5 Z M19 7 L16.5 13 H21.5 Z",
     "Political parties": "M4.5 10 H19.5 V20.5 H4.5 Z M8.5 10 L12 4 L15.5 10 M9 15 H15",
-    "Business & developers": "M4 8 H20 V19.5 H4 Z M9 8 V5 H15 V8 M4 13 H20",
-    "NGOs & civil society": "M8 7.5 A2.8 2.8 0 1 0 8.01 7.5 M16 7.5 A2.8 2.8 0 1 0 16.01 7.5 M2.5 19.5 C2.5 15 13.5 15 13.5 19.5 M10.5 19.5 C10.5 15 21.5 15 21.5 19.5",
+    "NGOs & unions": "M8 7.5 A2.8 2.8 0 1 0 8.01 7.5 M16 7.5 A2.8 2.8 0 1 0 16.01 7.5 M2.5 19.5 C2.5 15 13.5 15 13.5 19.5 M10.5 19.5 C10.5 15 21.5 15 21.5 19.5",
+    "Business & industry": "M4 8 H20 V19.5 H4 Z M9 8 V5 H15 V8 M4 13 H20",
     "Media": "M4 5 H17 V19.5 H6 C4.9 19.5 4 18.6 4 17.5 Z M17 9 H20 V17.5 C20 18.6 19.1 19.5 18 19.5 M7 8.5 H14 M7 12 H14 M7 15.5 H11",
     "EU & international": "M12 3 A9 9 0 1 0 12.01 3 M3 12 H21 M12 3 C15.5 6.5 15.5 17.5 12 21 C8.5 17.5 8.5 6.5 12 3",
+    "Research & statistics": "M5 20 V11 M10 20 V6 M15 20 V13 M20 20 V16 M3 20.5 H21.5",
+    "person": "M12 11.5 A4 4 0 1 0 12.01 11.5 M4.5 21 C4.5 16.5 8 14.5 12 14.5 C16 14.5 19.5 16.5 19.5 21",
     // grouping buttons
     "mode:topic": "M12 3 A9 9 0 1 0 12.01 3 M7 9 A1.5 1.5 0 1 0 7.01 9 M16 8 A1.5 1.5 0 1 0 16.01 8 M11 16 A1.5 1.5 0 1 0 11.01 16",
     "mode:subtopic": "M12 3 A9 9 0 1 0 12.01 3 M12 7.5 A4.5 4.5 0 1 0 12.01 7.5 M12 3 V7.5 M12 16.5 V21 M3 12 H7.5 M16.5 12 H21",
@@ -96,21 +100,16 @@
   Object.keys(ICONS).forEach(function (k) { ICON_PATHS[k] = new Path2D(ICONS[k]); });
 
   var PALETTE = ["#e3a72f", "#56b4e9", "#6fcf97", "#f2994a", "#bb86fc", "#f06292", "#4fc3c8", "#9fa8da", "#cfd8dc"];
-  var SPEAKER_RULES = [
-    ["Media", /newsbook|amphora|times of malta|maltatoday|independent|shift news/i],
-    ["EU & international", /european commission|european parliament|\bimf\b|\beu\b/i],
-    ["Regulators & agencies", /planning authority|environment and resources|\bera\b|transport malta|ornis|wild birds/i],
-    ["Political parties", /partit|labour party|nationalist|\bpn\b|\bpl\b|momentum/i],
-    ["Business & developers", /developers|\bmda\b|hili|hospitality|chamber/i],
-    ["NGOs & civil society", /graffitti|birdlife|din l-art|friends of the earth|ngo/i],
-    ["Government", /minist|government|prime minister|authority|project green|infrastructure malta|water services|ambjent|wasteserv/i]
-  ];
-  function speakerGroup(s) {
-    var first = (s || "").split(";")[0];
-    for (var i = 0; i < SPEAKER_RULES.length; i++) if (SPEAKER_RULES[i][1].test(first)) return SPEAKER_RULES[i][0];
-    for (i = 0; i < SPEAKER_RULES.length; i++) if (SPEAKER_RULES[i][1].test(s || "")) return SPEAKER_RULES[i][0];
-    return "Other";
+  // Who said it: claims are matched to the register of bodies and people (data/bodies.csv) by the site build. A claim
+  // sits with the first body named as its speaker; an office named together with one of its people is implied by them.
+  var bodyById = {}, typeLabel = {};
+  function claimUnits(d) {
+    var ids = (d.bodies || []).filter(function (b) { return bodyById[b]; }), implied = {};
+    ids.forEach(function (b) { var x = bodyById[b]; if (x.kind === "person" && x.parent) implied[x.parent] = 1; });
+    return ids.filter(function (b) { return !implied[b]; });
   }
+  function officeOf(b) { var x = bodyById[b]; return x && x.kind === "person" && x.parent ? x.parent : b; }
+  function typeOf(b) { var x = bodyById[b]; return x ? typeLabel[x.type] || x.type : "Other"; }
 
   // ------------------------------------------------------------ groupings
   var MODES = {
@@ -138,9 +137,11 @@
              layout: "line", key: function (c) { return [c.status]; },
              order: function () { return ["Not started", "In progress", "Drafted", "Right of reply", "Published"]; },
              color: function (v) { return { "Not started": "#5d7468", "In progress": "#56b4e9", "Drafted": "#e3a72f", "Right of reply": "#f2994a", "Published": "#6fcf97" }[v] || "#7fa88b"; } },
-    speaker: { label: "Who said it", title: "Claims by who made them", sub: "Every side is held to the same standard.",
-             layout: "ring", key: function (c) { return [speakerGroup(c.speaker)]; },
-             order: function () { return ["Government", "Regulators & agencies", "Political parties", "Business & developers", "NGOs & civil society", "Media", "EU & international", "Other"]; },
+    speaker: { label: "Who said it", title: "Claims by who made them", sub: "Each kind of body is a hub; bodies orbit it and people sit beside the office they spoke for. Every side is held to the same standard.",
+             layout: "ring", key: function (c) { var out = [];
+               claimUnits(c).forEach(function (b) { var t = typeOf(b); if (out.indexOf(t) < 0) out.push(t); });
+               return out.length ? out : ["Other"]; },
+             order: function () { return (DATA.body_types || []).map(function (t) { return t.label; }).concat(["Other"]); },
              color: function (v, i) { return PALETTE[i % PALETTE.length]; } },
     network: { label: "Links only", title: "The web of links", sub: "No groups: claims are pulled together by the themes that connect them.",
              layout: "force", key: function () { return []; }, order: function () { return []; }, color: function () { return "#7fa88b"; } }
@@ -190,6 +191,8 @@
     DATA = data;
     var startSel = new URLSearchParams(location.search).get("sel");   // read before the first layout clears it
     data.themes.forEach(function (t) { themeById[t.id] = t; themeOn[t.id] = true; });
+    (data.body_types || []).forEach(function (t) { typeLabel[t.id] = t.label; });
+    (data.bodies || []).forEach(function (b) { bodyById[b.id] = b; });
     data.claims.forEach(function (c) {
       var rnd = rng(c.id);
       var node = { kind: "claim", id: c.id, data: c, phase: rnd() * 6.28, x: (rnd() - .5) * 60, y: (rnd() - .5) * 60, z: (rnd() - .5) * 60,
@@ -247,10 +250,7 @@
   };
   var arrange = (function () { var a = new URLSearchParams(location.search).get("arrange"); return ARRANGE[a] ? a : "links"; })();
   var arrangeGain = 0;
-  function bodiesOf(c) {
-    return String(c.data.speaker || "").split(";").map(function (s) { return s.replace(/\(.*?\)/g, "").trim().toLowerCase(); })
-      .filter(function (s) { return s.length > 2; });
-  }
+  function bodiesOf(c) { return claimUnits(c.data).map(officeOf); }
   function affinity(hs, kind) {
     var n = hs.length, A = [], idx = {};
     for (var i = 0; i < n; i++) { A.push(new Array(n).fill(0)); hs[i].claims.forEach(function (c) { idx[c.id] = i; }); }
@@ -389,6 +389,7 @@
   }
   function buildSubHubs(m) {
     subHubs = [];
+    if (m === "speaker") { buildBodyHubs(); return; }
     hubs.forEach(function (h) {
       h.subs = [];
       if (m !== "topic") return;
@@ -402,12 +403,49 @@
       });
     });
   }
+  // Who said it: a small hub per body, orbiting the hub of its kind. A person's hub sits beside the office they spoke
+  // for (its anchor). A claim sits with the first body it names; the other bodies it names get a faint spoke.
+  var bodyHubOf = {};
+  function getBodyHub(h, bid) {
+    var k = "body|" + bid, b = bodyById[bid];
+    if (!hubPool[k]) hubPool[k] = { kind: "hub", sub: true, key: k, mode: "speaker", body: b, name: b.name, x: h.x, y: h.y, z: h.z, tx: h.x, ty: h.y, tz: h.z, alpha: 0, talpha: 0, claims: [] };
+    var sh = hubPool[k]; sh.parent = h; sh.person = b.kind === "person"; sh.anchor = null; sh.people = []; sh.also = []; sh.claims = [];
+    sh.color = mix(h.color, "#ffffff", sh.person ? 0.45 : 0.3); return sh;
+  }
+  function buildBodyHubs() {
+    var hubOfType = {}; bodyHubOf = {};
+    hubs.forEach(function (h) { h.subs = []; hubOfType[h.name] = h; });
+    function unit(bid) {
+      if (bid in bodyHubOf) return bodyHubOf[bid];
+      var h = hubOfType[typeOf(bid)]; if (!h) return (bodyHubOf[bid] = null);
+      var sh = getBodyHub(h, bid); bodyHubOf[bid] = sh; h.subs.push(sh); subHubs.push(sh);
+      if (sh.person && sh.body.parent) { var a = unit(sh.body.parent); if (a && a.parent === h) { sh.anchor = a; a.people.push(sh); } }
+      return sh;
+    }
+    claims.forEach(function (c) {
+      if (c.hidden || !c.hub) return;
+      var u = claimUnits(c.data), first = u.length ? unit(u[0]) : null;
+      if (first && first.parent === c.hub) { first.claims.push(c); c.sub = first; }
+      c.extra = [];
+      u.slice(1).forEach(function (b) { var sh = unit(b); if (sh && sh !== first && c.extra.indexOf(sh) < 0) { c.extra.push(sh); sh.also.push(c); } });
+    });
+    hubs.forEach(function (h) {   // offices by name, each followed by its people, so a person sits next to their office
+      var offices = h.subs.filter(function (x) { return !x.anchor; }).sort(function (a, b) { return a.name.localeCompare(b.name); });
+      h.subs = []; offices.forEach(function (o) { h.subs.push(o); o.people.sort(function (a, b) { return a.name.localeCompare(b.name); }).forEach(function (x) { h.subs.push(x); }); });
+    });
+    subHubs.forEach(function (sh) { sh.count = sh.claims.length; sh.empty = false; sh.reviewLeaves = []; });
+  }
   function layoutWithSubs(h, open) {
     var subs = h.subs, ns = subs.length, byClaimId = function (a, b) { return a.id < b.id ? -1 : 1; };
     var rs = open ? Math.max(120, 56 + 26 * ns + 6 * Math.sqrt(h.count)) : 24 + 9 * ns + 6 * Math.sqrt(h.count), reach = 0;
     subs.forEach(function (sh, i) {
       var a = (i / ns) * Math.PI * 2 - Math.PI / 2;
       var p = open ? { x: Math.cos(a) * rs, y: Math.sin(a) * rs * 0.82, z: Math.sin(a * 2) * rs * 0.18 } : spiral(ns, i, rs);
+      if (!open && sh.anchor) {   // closed: a person sits just outside their office
+        var ax = sh.anchor.tx - h.tx, ay = sh.anchor.ty - h.ty, az = sh.anchor.tz - h.tz, al = Math.hypot(ax, ay, az) || 1, k2 = sh.anchor.people.indexOf(sh);
+        var px = -az / al, pz = ax / al;   // sideways, in the horizontal plane
+        p = { x: ax + ax / al * 16 + px * (k2 - (sh.anchor.people.length - 1) / 2) * 14, y: ay + ay / al * 16, z: az + az / al * 16 + pz * (k2 - (sh.anchor.people.length - 1) / 2) * 14 };
+      }
       sh.tx = h.tx + p.x; sh.ty = h.ty + p.y; sh.tz = h.tz + p.z; sh.talpha = 1;
       var len = Math.hypot(p.x, p.y, p.z) || 1, out = { x: p.x / len, y: p.y / len, z: p.z / len };
       var m = sh.claims.length, r = open ? Math.max(46, 24 + 18 * Math.sqrt(m)) : 10 + 8 * Math.sqrt(m);
@@ -528,7 +566,7 @@
     });
     if (!note.textContent && legendGroups.length > 1) note.textContent = "Hide groups to declutter: their claims and links leave the map.";
     if (mode === "pattern") note.textContent = "Tags are provisional until a report is finished.";
-    if (mode === "speaker") note.textContent = "Grouped by the first body named as speaker.";
+    if (mode === "speaker") note.textContent = "Each claim sits with the first body named as its speaker. Select a body to see the bodies its claims link to; switch on links to see bodies named together.";
   }
   // Apply a hide/show rule to every group of the current grouping, re-lay out the map, keep it in the URL.
   function setHidden(rule, after) {
@@ -664,13 +702,45 @@
 
   function focusSet() {
     if (!sel) return null;
-    var ids = {}, es = {}, hb = null;
+    var ids = {}, es = {}, hb = null, hl = null;
     if (sel.kind === "claim") { ids[sel.id] = 1; edges.forEach(function (e, i) { if ((e.from === sel.id || e.to === sel.id) && !byId[e.from].hidden && !byId[e.to].hidden) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } }); }
-    if (sel.kind === "hub") { hb = sel.hub; (sel.hub.claims || []).forEach(function (c) { ids[c.id] = 1; }); claims.forEach(function (c) { if (c.extra.indexOf(sel.hub) >= 0) ids[c.id] = 1; }); }
+    if (sel.kind === "hub") { hb = sel.hub; (sel.hub.claims || []).forEach(function (c) { ids[c.id] = 1; }); claims.forEach(function (c) { if (c.extra.indexOf(sel.hub) >= 0) ids[c.id] = 1; });
+      if (sel.hub.body) hl = linkedBodyHubs(sel.hub).concat(sel.hub.people || [], sel.hub.anchor ? [sel.hub.anchor] : []); }
     if (sel.kind === "edge") { es[sel.index] = 1; ids[sel.edge.from] = ids[sel.edge.to] = 1; }
     if (sel.kind === "theme") edges.forEach(function (e, i) { if (e.theme === sel.id) { es[i] = 1; ids[e.from] = ids[e.to] = 1; } });
     if (sel.kind === "place") sel.place.claims.forEach(function (c) { ids[c.id] = 1; edges.forEach(function (e, i) { if (e.from === c.id || e.to === c.id) es[i] = 1; }); });
-    return { ids: ids, es: es, hub: hb };
+    return { ids: ids, es: es, hub: hb, hl: hl };
+  }
+
+  // ------------------------------------------------------------ links between bodies (Who said it)
+  // From the register: two bodies are linked when a claim names both, or when their claims share a theme. Links are
+  // counted per office, so a person's links run from their own hub to the office hubs of the other bodies.
+  function bodyLinksOf(h) { var b = h && h.body && bodyById[h.body.id]; return b ? b.links || [] : []; }
+  function linkedBodyHubs(h) {
+    return bodyLinksOf(h).map(function (l) { return bodyHubOf[l.id]; }).filter(function (x) { return x && !x.parent.hidden; });
+  }
+  function drawBodyLinks(P, F, t) {
+    var focus = sel && sel.kind === "hub" && sel.hub.body ? sel.hub : hover && hover.kind === "hub" && hover.hub.body ? hover.hub : null;
+    var pairs = [];
+    if (focus) bodyLinksOf(focus).forEach(function (l) { var o = bodyHubOf[l.id]; if (o) pairs.push({ a: focus, b: o, l: l }); });
+    else if (linksOn) subHubs.forEach(function (a) {   // all links between bodies named together in a claim
+      if (a.person) return;
+      bodyLinksOf(a).forEach(function (l) { var o = bodyHubOf[l.id]; if (o && l.named && a.body.id < l.id) pairs.push({ a: a, b: o, l: l }); });
+    });
+    pairs.forEach(function (q) {
+      if (q.a.alpha < 0.3 || q.b.alpha < 0.3) return;
+      var a = P.get(q.a), b = P.get(q.b); if (!a || !b) return;
+      var named = q.l.named > 0, w = Math.min(4, 1.2 + 0.5 * (q.l.named * 2 + q.l.pairs));
+      var mx = (a.sx + b.sx) / 2, my = (a.sy + b.sy) / 2, dx = b.sx - a.sx, dy = b.sy - a.sy, bend = 0.18;
+      var cx = mx - dy * bend, cy = my + dx * bend;
+      ctx.lineCap = "round"; ctx.setLineDash([]);
+      ctx.strokeStyle = "rgba(4,18,12,.55)"; ctx.lineWidth = w + 3;
+      ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(cx, cy, b.sx, b.sy); ctx.stroke();
+      ctx.setLineDash(named ? [] : [6, 5]); if (!named && focus && !reduce) ctx.lineDashOffset = -t * 14;
+      ctx.strokeStyle = named ? "rgba(246,227,180,.95)" : "rgba(169,194,177,.9)"; ctx.globalAlpha = focus ? 1 : 0.55; ctx.lineWidth = w;
+      ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(cx, cy, b.sx, b.sy); ctx.stroke();
+      ctx.globalAlpha = 1; ctx.lineDashOffset = 0; ctx.setLineDash([]); ctx.lineCap = "butt";
+    });
   }
 
   // ------------------------------------------------------------ what the camera centres on
@@ -685,6 +755,7 @@
       edges.forEach(function (e) { if (e.from === sel.id) pts.push(byId[e.to]); else if (e.to === sel.id) pts.push(byId[e.from]); }); }
     else if (sel.kind === "edge") pts = [byId[sel.edge.from], byId[sel.edge.to]];
     else if (sel.kind === "theme") edges.forEach(function (e) { if (e.theme === sel.id) pts.push(byId[e.from], byId[e.to]); });
+    else if (sel.kind === "hub" && sel.hub.body) { pts = [sel.hub].concat(sel.hub.claims, linkedBodyHubs(sel.hub), sel.hub.people, sel.hub.anchor ? [sel.hub.anchor] : []); }  // the body and its constellation
     else if (sel.kind === "hub") { centre = sel.hub; pts = sel.hub.claims.slice(); }
     pts = pts.filter(Boolean);
     if (!centre) { if (!pts.length) return null;
@@ -747,10 +818,12 @@
     // spokes: claim to its group (and faint spokes to secondary groups)
     if (showSpokes && mode !== "network" && view === "graph") subHubs.forEach(function (sh) {
       if (sh.alpha < 0.02 || sh.parent.alpha < 0.02) return;
-      var a = P.get(sh.parent), b = P.get(sh), on = F && (F.hub === sh || F.hub === sh.parent || sh.claims.some(function (c) { return F.ids[c.id]; }));
+      var from = sh.anchor && sh.anchor.alpha > 0.02 ? sh.anchor : sh.parent;
+      var a = P.get(from), b = P.get(sh), on = F && (F.hub === sh || F.hub === sh.parent || F.hub === sh.anchor || sh.claims.some(function (c) { return F.ids[c.id]; }));
       ctx.strokeStyle = rgba(sh.parent.color, 0.5 * sh.alpha * (F && !on ? 0.35 : 1)); ctx.lineWidth = on ? 2.4 : 1.8;
-      ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke();
+      ctx.setLineDash(sh.person ? [4, 4] : []); ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke(); ctx.setLineDash([]);
     });
+    if (mode === "speaker" && view === "graph") drawBodyLinks(P, F, t);
     if (showSpokes && mode !== "network" && view === "graph") claims.forEach(function (c) {
       if (c.hidden) return;
       [c.sub && c.sub.alpha > 0.02 ? c.sub : c.hub].concat(c.extra).forEach(function (h, j) {
@@ -766,8 +839,8 @@
     });
     ctx.setLineDash([]);
 
-    // theme links
-    edges.forEach(function (e, i) {
+    // theme links (in Who said it, they show only for a selection: the bodies' own links take their place)
+    if (!(mode === "speaker" && view === "graph" && !F)) edges.forEach(function (e, i) {
       e._g = null;
       if (byId[e.from].hidden || byId[e.to].hidden) return;     // a hidden group takes its links with it
       var hi = F && F.es[i];
@@ -801,11 +874,11 @@
     var items = allHubs.concat(claims.filter(function (c) { return !c.hidden; })).sort(function (m, n) { return P.get(n).z - P.get(m).z; });
     items.forEach(function (n) {
       var p = P.get(n), isHub = n.kind === "hub", sc = nodeScale(p), fg = fog(p);
-      var on = !F || (isHub ? F.hub === n || n.claims.some(function (c) { return F.ids[c.id]; }) : F.ids[n.id]);
+      var on = !F || (isHub ? F.hub === n || (F.hl && F.hl.indexOf(n) >= 0) || n.claims.some(function (c) { return F.ids[c.id]; }) : F.ids[n.id]);
       var isSel = sel && ((isHub && sel.hub === n) || (!isHub && sel.kind === "claim" && sel.id === n.id));
       var isHov = hover && ((isHub && hover.hub === n) || (!isHub && hover.kind === "claim" && hover.id === n.id));
       if (isHub) {
-        var a = n.alpha * (on ? 1 : 0.3), r = (n.sub ? 10 : 19) * sc * (isHov ? 1.08 : 1) * (0.6 + 0.4 * n.alpha);
+        var a = n.alpha * (on ? 1 : 0.3), r = (n.sub ? (n.person ? 8 : 10) : 19) * sc * (isHov ? 1.08 : 1) * (0.6 + 0.4 * n.alpha);
         ctx.globalAlpha = a;
         var g = ctx.createRadialGradient(p.sx, p.sy, r * 0.5, p.sx, p.sy, r * 3);
         g.addColorStop(0, rgba(n.color, n.sub ? 0.32 : 0.5)); g.addColorStop(1, rgba(n.color, 0));
@@ -813,8 +886,9 @@
         var g2 = ctx.createRadialGradient(p.sx - r * .35, p.sy - r * .4, r * .1, p.sx, p.sy, r);
         g2.addColorStop(0, rgba("#ffffff", 0.55)); g2.addColorStop(0.25, n.color); g2.addColorStop(1, rgba(n.color, 0.85));
         ctx.fillStyle = g2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r, 0, 6.283); ctx.fill();
-        ctx.strokeStyle = isSel ? "#fff" : "rgba(255,255,255,.6)"; ctx.lineWidth = isSel ? 3 : 1.5; ctx.stroke();
-        var ip = ICON_PATHS[iconKey(n.sub ? n.parent.name : n.name)];
+        ctx.strokeStyle = isSel ? "#fff" : "rgba(255,255,255,.6)"; ctx.lineWidth = isSel ? 3 : 1.5;
+        if (n.person && !isSel) ctx.setLineDash([3, 3]); ctx.stroke(); ctx.setLineDash([]);
+        var ip = ICON_PATHS[n.person ? "person" : iconKey(n.sub ? n.parent.name : n.name)];
         if (ip) { ctx.save(); var s2 = r * 1.15 / 24; ctx.translate(p.sx - 12 * s2, p.sy - 12 * s2); ctx.scale(s2, s2);
           ctx.strokeStyle = "rgba(10,30,20,.9)"; ctx.lineWidth = 2.3; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.stroke(ip); ctx.restore(); }
         (n.reviewLeaves || []).forEach(function (rv, ri) {
@@ -823,8 +897,9 @@
           drawLeaf(p.sx + Math.cos(ang) * r * 1.5, p.sy + Math.sin(ang) * r * 1.5, ang + Math.PI / 2, 6);
         });
         n._p = { x: p.sx, y: p.sy, r: r, live: n.alpha > 0.5 };
-        if (n.sub) { if (n.alpha > 0.3 && ((expanded ? expanded === n.parent : cam.zoom >= 1.8) || isHov || isSel)) labels.push({ x: p.sx, y: p.sy + r + 13, text: n.name,
-          sub: n.count + (n.count === 1 ? " claim" : " claims"), hub: true, small: true, color: n.color, alpha: a, pri: expanded === n.parent || isSel || isHov ? 3.6 : 1.5 }); }
+        if (n.sub) { if (n.alpha > 0.3 && ((expanded ? expanded === n.parent : cam.zoom >= 1.8) || isHov || isSel || (on && F && F.hl))) labels.push({ x: p.sx, y: p.sy + r + 13, text: n.name,
+          sub: (n.person && n.body.role ? n.body.role + " · " : "") + n.count + (n.count === 1 ? " claim" : " claims") + (n.also && n.also.length ? ", named in " + n.also.length + " more" : ""),
+          hub: true, small: true, color: n.color, alpha: a, pri: expanded === n.parent || isSel || isHov ? 3.6 : F && F.hl ? 2.5 : 1.5 }); }
         else if (n.alpha > 0.3 && n !== expanded) labels.push({ x: p.sx, y: p.sy + r + 15, text: n.name, sub: n.count + (n.count === 1 ? " claim" : " claims"),
           hub: true, color: n.color, alpha: a * (expanded ? 0.45 : 1), pri: expanded ? 1 : 3 + (isSel ? 2 : 0) });
         ctx.globalAlpha = 1;
@@ -849,7 +924,7 @@
         if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
         n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: !n.clustered };
         var focused = F && F.ids[n.id];
-        var member = expanded && n.hub === expanded, tagged = labelMode === "tag" || member;
+        var member = expanded && n.hub === expanded && mode !== "speaker", tagged = labelMode === "tag" || member;   // Who said it: too many claims to name them all
         var hp = member ? P.get(n.sub && n.sub.alpha > 0.3 ? n.sub : expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
         if ((!expanded || member || isHov || isSel) && !n.clustered) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: (tagged ? d.title : n.id) + (n.offmap && n.ringFirst && n.data.location && W >= 700 ? "  → " + shortPlace(n.data.location.place) : ""),
           sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (d.verdict ? " · " + d.verdict : " · not yet checked") : d.title) : "",
@@ -867,6 +942,7 @@
     labels.forEach(function (L) {
       var titleFont = L.small ? "700 11.5px Arial, sans-serif" : L.hub ? "700 13px Arial, sans-serif" : "600 11px Arial, sans-serif";
       ctx.font = titleFont;
+      if (ctx.measureText(L.text).width > 230) { var tt = L.text; while (ctx.measureText(tt + "…").width > 230 && tt.length > 6) tt = tt.slice(0, -1); L.text = tt.replace(/[\s,]+$/, "") + "…"; }
       var w = ctx.measureText(L.text).width, w2 = 0;
       if (L.sub) { ctx.font = L.hub ? "11px Arial, sans-serif" : "italic 11px Arial, sans-serif"; w2 = Math.min(220, ctx.measureText(L.sub).width); }
       var bw = Math.max(w, w2) + (L.hub ? 18 : 10), bh = L.sub ? 32 : 18;
@@ -1280,7 +1356,7 @@
   }
   var pbody = null, wide = false;
   // Cards give quick information about a node; the full check is on the claim page (opened in a new tab).
-  function openPanel(kicker, title, accent, pills, pageUrl) {
+  function openPanel(kicker, title, accent, pills, pageUrl, pageLabel) {
     panel.textContent = ""; panel.style.display = "block"; panel.scrollTop = 0;
     document.getElementById("mapwrap").classList.add("panel-open");
     var light = themePanel(accent || "#14452f");
@@ -1294,8 +1370,8 @@
     head.appendChild(el("div", "id", kicker)); head.appendChild(el("h3", null, title));
     if (pills && pills.length) { var vl = el("div", "verdictline"); pills.forEach(function (t) { vl.appendChild(el("span", "vpill" + (light ? " dark" : ""), t)); }); head.appendChild(vl); }
     if (pageUrl) {
-      var open = el("a", "openpage" + (light ? " dark" : ""), "Open claim page ↗"); open.href = pageUrl; open.target = "_blank"; open.rel = "noopener";
-      open.setAttribute("aria-label", "Open the claim page in a new tab"); head.appendChild(open);
+      var open = el("a", "openpage" + (light ? " dark" : ""), (pageLabel || "Open claim page") + " ↗"); open.href = pageUrl; open.target = "_blank"; open.rel = "noopener";
+      open.setAttribute("data-no-brief", ""); open.setAttribute("aria-label", (pageLabel || "Open claim page") + " in a new tab"); head.appendChild(open);
     }
     panel.appendChild(head); pbody = el("div", "pbody"); panel.appendChild(pbody);
   }
@@ -1336,8 +1412,21 @@
   }
   function fitPanel() { var need = (panel.firstChild ? panel.firstChild.offsetHeight : 0) + (pbody ? pbody.offsetHeight : 0); panel.classList.toggle("fit", need < stage.clientHeight - 140); }
   function label(t) { pbody.appendChild(el("div", "label", t)); }
+  // Text with claim numbers ("see CC-011") turned into links. A plain click selects the claim on the map; a click
+  // with a modifier key, or a middle click, opens its page. A long hover shows its summary (assets/claimrefs.js).
+  function richText(tag, cls, text) {
+    var e = el(tag, cls), parts = String(text || "").split(/\b(CC-\d{3})\b/);
+    parts.forEach(function (t, i) {
+      if (i % 2 === 0) { if (t) e.appendChild(document.createTextNode(t)); return; }
+      if (!byId[t]) { e.appendChild(document.createTextNode(t)); return; }
+      var a = el("a", "claimref", t); a.href = "claims/" + t + "/"; a.dataset.claim = t;
+      a.addEventListener("click", function (ev) { if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) return; ev.preventDefault(); selectClaim(t); });
+      e.appendChild(a);
+    });
+    return e;
+  }
   function claimLink(id, box) {
-    var c = byId[id].data, b = el("button", "link"); b.type = "button";
+    var c = byId[id].data, b = el("button", "link"); b.type = "button"; b.dataset.claim = id;
     var dot = el("span", "dot"); dot.style.background = c.verdict ? VC[c.verdict] : NOT_YET_COL;
     b.appendChild(dot); b.appendChild(document.createTextNode(c.id + "  " + c.title));
     b.onclick = function () { selectClaim(id); }; box.appendChild(b);
@@ -1370,8 +1459,12 @@
     openPanel(d.id + " · " + d.category.toUpperCase(), d.title, d.verdict ? VC[d.verdict] : NOT_YET_COL, pills, "claims/" + d.id + "/");
     syncSelParam();
     if (d.quote) pbody.appendChild(el("blockquote", null, "“" + d.quote + "”"));
-    pbody.appendChild(el("p", null, d.claim));
+    pbody.appendChild(richText("p", null, d.claim));
     if (d.speaker) pbody.appendChild(el("p", "small", d.speaker + (d.date ? " · " + d.date : "")));
+    var who = claimUnits(d).map(function (b) { return bodyHubOf[b]; }).filter(Boolean);
+    if (mode === "speaker" && who.length) { var wb = el("div", "acts");
+      who.forEach(function (h) { var bb = el("button", "btn ghost", h.name); bb.type = "button"; bb.onclick = function () { selectHub(h); }; wb.appendChild(bb); });
+      pbody.appendChild(wb); }
     var chips = el("div");
     if (d.verdict) chips.appendChild(el("span", "chip soft", d.status + (d.status === "Drafted" ? ", pending right of reply" : "")));
     if (d.wording_status && !d.verdict) chips.appendChild(el("span", "chip soft", d.wording_status));
@@ -1381,7 +1474,7 @@
       label("STUDY FRESHNESS");
       pbody.appendChild(el("p", "small", "Evidence last reviewed " + d.last_reviewed + " · " + (days >= 365 ? "refresh due" : remaining + " days until refresh due") + "."));
     }
-    if (d.counter) { label("CONTEXT AND EVIDENCE"); pbody.appendChild(el("p", null, d.counter)); }
+    if (d.counter) { label("CONTEXT AND EVIDENCE"); pbody.appendChild(richText("p", null, d.counter)); }
     var mine = edges.map(function (e, i) { return { e: e, i: i }; }).filter(function (o) { return o.e.from === id || o.e.to === id; });
     if (mine.length) {
       label("LINKED CLAIMS · CLICK A THEME OR A CLAIM"); var box = el("div", "links");
@@ -1393,14 +1486,55 @@
       });
       pbody.appendChild(box);
     }
-    if (c.hub && mode !== "network") { var acts = el("div", "acts"), hb = el("button", "btn ghost", "Show its group: " + c.hub.name); hb.type = "button";
-      hb.onclick = function () { selectHub(c.hub); }; acts.appendChild(hb); pbody.appendChild(acts); }
+    if (c.hub && mode !== "network") { var acts = el("div", "acts"), hb = el("button", "btn ghost", "Show its group: " + (c.sub && mode === "speaker" ? c.sub.name : c.hub.name)); hb.type = "button";
+      hb.onclick = function () { selectHub(c.sub && mode === "speaker" ? c.sub : c.hub); }; acts.appendChild(hb); pbody.appendChild(acts); }
+    fitPanel();
+  }
+  function bodyLinkText(l) {
+    var bits = [];
+    if (l.named) bits.push("named together in " + l.named + (l.named === 1 ? " claim" : " claims"));
+    if (l.pairs) bits.push("claims share " + (l.themes.length === 1 ? "a theme: " : l.themes.length + " themes: ") +
+      l.themes.map(function (t) { return themeById[t] ? themeById[t].name : t; }).join(", "));
+    return bits.join("; ");
+  }
+  function selectBody(h) {
+    sel = { kind: "hub", hub: h }; setTimeout(syncSelParam, 0);
+    var b = h.body, all = [];   // every claim it is named in, its people's included (as on the body page)
+    [h].concat(h.people).forEach(function (x) { x.claims.concat(x.also).forEach(function (c) { if (all.indexOf(c) < 0) all.push(c); }); });
+    var withV = all.filter(function (c) { return c.data.verdict; }).length;
+    openPanel((h.person ? "PERSON · " : "") + h.parent.name.toUpperCase(), b.name, h.parent.color,
+      [all.length + (all.length === 1 ? " claim" : " claims"), withV + " with a verdict"], "bodies/" + b.id + "/", "Open body page");
+    collapse();   // the map zooms to the body and the bodies it is linked to, rather than opening its group
+    if (h.person) { var r = el("p", "small"); r.appendChild(document.createTextNode((b.role ? b.role + ", " : "") + "speaking for "));
+      if (h.anchor) { var ab = el("button", "inline", h.anchor.name); ab.type = "button"; ab.onclick = function () { selectHub(h.anchor); }; r.appendChild(ab); }
+      else r.appendChild(document.createTextNode(bodyById[b.parent] ? bodyById[b.parent].name : "")); pbody.appendChild(r); }
+    if (h.people.length) { label("PEOPLE WHO SPOKE FOR IT"); var pb = el("div", "acts");
+      h.people.forEach(function (x) { var bb = el("button", "btn ghost", x.name + " · " + x.count); bb.type = "button"; bb.onclick = function () { selectHub(x); }; pb.appendChild(bb); });
+      pbody.appendChild(pb); }
+    if (h.claims.length) { label(h.person ? "CLAIMS" : "CLAIMS IT MADE"); var box = el("div", "links"); h.claims.forEach(function (c) { claimLink(c.id, box); }); pbody.appendChild(box); }
+    if (h.also.length) { label("ALSO NAMED IN"); var b2 = el("div", "links"); h.also.forEach(function (c) { claimLink(c.id, b2); }); pbody.appendChild(b2); }
+    var links = bodyLinksOf(h);
+    if (links.length) {
+      label("LINKED BODIES · " + links.length); var lb = el("div", "links");
+      links.slice(0, 10).forEach(function (l) {
+        var o = bodyHubOf[l.id], row = el("button", "link body-link"); row.type = "button";
+        row.appendChild(el("b", null, bodyById[l.id] ? bodyById[l.id].name : l.id)); row.appendChild(el("span", "why", bodyLinkText(l)));
+        if (o) row.onclick = function () { selectHub(o); }; else row.disabled = true;
+        lb.appendChild(row);
+      });
+      if (links.length > 10) lb.appendChild(el("p", "small", "And " + (links.length - 10) + " more on the body page."));
+      pbody.appendChild(lb);
+      pbody.appendChild(el("p", "small", "Solid lines: named in the same claim. Dashed: their claims share a theme. A link says the claims are worth reading together, not that the bodies agree or act together."));
+    }
+    pbody.appendChild(el("p", "small note", "A record of the claims checked so far, not a score: claims are picked because they can be checked."));
     fitPanel();
   }
   function selectHub(h) {
+    if (h.body) return selectBody(h);
     sel = { kind: "hub", hub: h }; setTimeout(syncSelParam, 0);
     var withV = h.claims.filter(function (c) { return c.data.verdict; }).length;
     openPanel(h.sub ? "SUBTOPIC · " + h.parent.name.toUpperCase() : MODES[mode].label.toUpperCase() + " GROUP", h.name, h.color, [h.count + (h.count === 1 ? " claim" : " claims"), withV + " with a verdict"]);
+    if (mode === "speaker" && h.subs) pbody.appendChild(el("p", "small", h.subs.filter(function (x) { return !x.person; }).length + " bodies and " + h.subs.filter(function (x) { return x.person; }).length + " people. Select one to see its claims and the bodies it is linked to."));
     if (view === "graph") expandHub(h);
     var list = h.claims, done = list.filter(function (c) { return c.data.verdict; }).length, reviewed = h.reviewLeaves || [];
     pbody.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " with a verdict, " + reviewed.length + " completed evidence reviews."));
@@ -1410,10 +1544,10 @@
         freshness.appendChild(el("p", "small", c.id + " · last reviewed " + c.data.last_reviewed + " · " + (age >= 365 ? "refresh due" : Math.max(0, 365 - age) + " days until due"))); });
       pbody.appendChild(freshness);
     }
-    if (h.subs && h.subs.length) { // a topic lists its claims by subtopic
-      h.subs.forEach(function (sh) { label(sh.name.toUpperCase()); var sb = el("div", "links"); sh.claims.forEach(function (c) { claimLink(c.id, sb); }); pbody.appendChild(sb); });
+    if (h.subs && h.subs.length) { // a topic lists its claims by subtopic; a kind of body, by body
+      h.subs.forEach(function (sh) { if (!sh.claims.length) return; label(sh.name.toUpperCase()); var sb = el("div", "links"); sh.claims.forEach(function (c) { claimLink(c.id, sb); }); pbody.appendChild(sb); });
       var loose = list.filter(function (c) { return !c.sub; });
-      if (loose.length) { label("NO SUBTOPIC"); var lb = el("div", "links"); loose.forEach(function (c) { claimLink(c.id, lb); }); pbody.appendChild(lb); }
+      if (loose.length) { label(mode === "speaker" ? "OTHER" : "NO SUBTOPIC"); var lb = el("div", "links"); loose.forEach(function (c) { claimLink(c.id, lb); }); pbody.appendChild(lb); }
     } else { label("CLAIMS IN THIS GROUP"); var box = el("div", "links");
       list.forEach(function (c) { claimLink(c.id, box); }); pbody.appendChild(box); }
     var also = claims.filter(function (c) { return c.extra.indexOf(h) >= 0; });
@@ -1446,6 +1580,7 @@
     if (!sel) return null;
     if (sel.kind === "claim") return "claim:" + sel.id;
     if (sel.kind === "theme") return "theme:" + sel.id;
+    if (sel.kind === "hub" && sel.hub.body) return "body:" + sel.hub.body.id;
     if (sel.kind === "hub") return "hub:" + (sel.hub.sub ? sel.hub.parent.name + " › " + sel.hub.name : sel.hub.name);
     return null;
   }
@@ -1459,6 +1594,7 @@
     var i = k.indexOf(":"), kind = k.slice(0, i), v = k.slice(i + 1);
     if (kind === "claim" && byId[v] && !byId[v].hidden) selectClaim(v);
     else if (kind === "theme" && themeById[v]) selectTheme(v);
+    else if (kind === "body" && bodyHubOf[v]) selectHub(bodyHubOf[v]);
     else if (kind === "hub") { var parts = v.split(" › "), h = hubs.filter(function (x) { return x.name === parts[0]; })[0];
       if (h && parts[1]) h = (h.subs || []).filter(function (x) { return x.name === parts[1]; })[0] || h;
       if (h) selectHub(h); }
@@ -1471,6 +1607,7 @@
     else if (h.kind === "place") { var dn = h.place.claims.filter(function (c) { return c.data.verdict; }).length;
       txt = (h.place.discovered ? h.place.name : "Undiscovered site") + " · " + h.place.claims.length + (h.place.claims.length === 1 ? " claim" : " claims") + ", " + dn + " checked"; }
     else if (h.kind === "district") txt = h.locked ? lockText(h.d) : h.d.name + " · " + districtClaims(h.d).length + " claims · click to open";
+    else if (h.kind === "hub" && h.hub.body) txt = h.hub.name + (h.hub.body.role ? ", " + h.hub.body.role : "") + " · " + h.hub.count + (h.hub.count === 1 ? " claim" : " claims") + " · " + bodyLinksOf(h.hub).length + " linked bodies";
     else if (h.kind === "hub") txt = (h.hub.sub ? h.hub.parent.name + " › " : "") + h.hub.name + " · " + h.hub.count + (h.hub.count === 1 ? " claim" : " claims");
     else { var th = themeById[h.edge.theme] || {}; txt = (th.name || h.edge.theme) + ": " + h.edge.from + " ↔ " + h.edge.to; }
     tip.textContent = txt; tip.style.display = "block";

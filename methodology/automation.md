@@ -61,6 +61,10 @@ Every run therefore starts with `python scripts/net_check.py`:
 - Reviews all claims for recurring patterns and shared mechanisms: new pattern tags go in
   `methodology/pattern-tags.md` (provisional), new themes and link types in `data/themes.csv` and `data/edges.csv`
   (strength `Weak (indicative)` or `Pattern, not causal` until a report confirms them).
+- Matches every new claim's speaker to the register of bodies and people (`data/bodies.csv`): add the speaker's
+  exact wording to the `Aliases` of the right row (separated by `|`), or add a row with `ID, Name, Kind`
+  (organisation or person), `Type`, `Parent` (a person's office), `Role` (as the source names it) and `Aliases`.
+  `scripts/validate_claims.py` warns on any speaker that matches nothing. Never guess a role or affiliation.
 - Gives every new claim a `location` (place, lat, lon from OpenStreetMap or the source; scope `site`, or
   `institution`/`national` with the institution's address) so it appears on the map view, and an `icon` for its
   landmark medallion: one of parliament, castille, citygate, barrakka, ravelin, waterfront, tower, landfill, flyover,

@@ -1,0 +1,52 @@
+---
+layout: base.njk
+title: Who said it
+description: Every claim on Miżien is matched to the body or person who made it. Government, agencies, regulators, parties, NGOs, business and media, with their claims and the bodies their claims connect to.
+permalink: /bodies/
+---
+{%- import "macros.njk" as m -%}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li aria-current="page">Who said it</li></ol>
+</nav>
+
+<article class="page prose-page bodies-index">
+  <header class="page-head">
+    <p class="kicker">Who said it</p>
+    <h1>Bodies and people</h1>
+    <p class="lead">Every claim is matched to the body or person who made it: {{ mizien.bodies | where("kind", "organisation") | length }}
+      bodies and {{ mizien.bodies | where("kind", "person") | length }} people so far, from government and its agencies to
+      parties, NGOs, business and the media. Every side is held to the same standard.</p>
+  </header>
+
+  <aside class="notice" aria-label="What these pages show">
+    <p><strong>A record, not a score.</strong> Claims are picked because they are public and can be checked, not to
+      sample anyone's statements fairly. A body with more claims here has simply been checked more often; the pages
+      do not rate anyone's accuracy. <a href="/methodology/connections/#bodies">How claims are matched to bodies</a>.</p>
+  </aside>
+
+  <p class="small">On the <a href="/?group=speaker">map</a>, group the claims by <em>Who said it</em> to see the same
+    register as a constellation: each kind of body is a hub, each body orbits it, and people sit beside the body they spoke for.</p>
+
+  {%- for t in mizien.body_types %}
+  {%- set orgs = mizien.bodies | where("type", t.id) | where("kind", "organisation") %}
+  {%- set people = mizien.bodies | where("type", t.id) | where("kind", "person") %}
+  {%- if orgs.length or people.length %}
+  <section aria-labelledby="h-{{ t.id }}">
+    <h2 id="h-{{ t.id }}">{{ t.label }}</h2>
+    <ul class="body-grid">
+      {%- for o in orgs %}
+      {%- set checked = o.claims | selectattr("verdict") | length %}
+      <li class="body-card">
+        <a class="bc-name" href="{{ o.path }}">{{ o.name }}</a>
+        <span class="bc-count">{{ o.claims.length }} claim{% if o.claims.length != 1 %}s{% endif %}{% if checked %} · {{ checked }} with a verdict{% endif %}</span>
+        {%- if o.parent %}<span class="bc-parent">part of {{ o.parent.name }}</span>{% endif %}
+        {%- if o.people.length %}
+        <span class="bc-people">{% for x in o.people %}<a href="{{ x.path }}">{{ x.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</span>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+  {%- endfor %}
+</article>

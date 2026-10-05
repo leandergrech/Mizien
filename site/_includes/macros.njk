@@ -1,0 +1,16 @@
+{#- Shared snippets. Import with {% import "macros.njk" as m %}. -#}
+
+{#- A link to a claim: verdict dot, number and title. The number alone with short=true. -#}
+{% macro claim(x, short=false) -%}
+<a class="cref v-{{ x.verdict_slug or 'none' }}" href="{{ x.path }}" data-claim="{{ x.id }}"><span class="cref-dot" aria-hidden="true"></span><span class="cref-id">{{ x.id }}</span>{% if not short %} <span class="cref-title">{{ x.title }}</span>{% endif %}<span class="visually-hidden"> ({{ x.verdict or "not yet checked" }})</span></a>
+{%- endmacro %}
+
+{#- A route from one claim to another through the links: theme, claim, theme, claim. -#}
+{% macro route(steps, themes) -%}
+<span class="route">{% for s in steps %}{% set th = themes | findBy("id", s.theme) %}<span class="route-theme" style="--t: {{ th.color if th else '#7fa88b' }}">{{ s.theme_name }}</span>{% if not loop.last %}<a class="route-claim" href="/claims/{{ s.id }}/" data-claim="{{ s.id }}">{{ s.id }}</a>{% endif %}{% endfor %}</span>
+{%- endmacro %}
+
+{#- A body or person: name, and role where the register gives one. -#}
+{% macro body(b) -%}
+<a class="body-chip{% if b.kind == 'person' %} is-person{% endif %}" href="{{ b.path }}">{{ b.name }}{% if b.role %}<span class="body-role">, {{ b.role }}</span>{% endif %}</a>
+{%- endmacro %}

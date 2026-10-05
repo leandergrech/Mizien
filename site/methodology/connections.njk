@@ -1,0 +1,130 @@
+---
+layout: base.njk
+title: How claims are connected
+description: How Miżien links claims through shared themes and pattern tags, how indirect connections are found, how claims are matched to the bodies that made them, and what a connection does not mean.
+permalink: /methodology/connections/
+---
+{%- import "macros.njk" as m -%}
+{%- set linked = mizien.claims | having("links.length") | length -%}
+{%- set withSecond = mizien.claims | having("connections.second.length") | length -%}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li>Methodology</li><li aria-current="page">How claims are connected</li></ol>
+</nav>
+
+<article class="page prose-page connections-page">
+  <header class="page-head">
+    <p class="kicker">Methodology</p>
+    <h1>How claims are connected</h1>
+    <p class="lead">Claims are connected in three ways: by themes the editors set, by pattern tags, and by the bodies
+      that made them. Indirect connections are then found by following the themes. A connection is a reason to read two
+      checks side by side. It is never evidence for or against either claim.</p>
+  </header>
+
+  <nav class="toc" aria-label="On this page">
+    <ol>
+      <li><a href="#themes">Themes and direct links</a></li>
+      <li><a href="#patterns">Pattern tags</a></li>
+      <li><a href="#indirect">Indirect connections</a></li>
+      <li><a href="#bridges">Where themes meet</a></li>
+      <li><a href="#bodies">Who said it</a></li>
+      <li><a href="#limits">What a connection does not mean</a></li>
+    </ol>
+  </nav>
+
+  <section aria-labelledby="themes">
+    <h2 id="themes">Themes and direct links</h2>
+    <p>A theme is something several claims have in common: a shared cause, a shared mechanism, a shared target, a shared
+      flow of material, or a shared way of presenting figures. Two claims in the same theme are <strong>linked
+      directly</strong>. On the map these are the coloured lines; on a claim page they are listed under
+      <em>Connections</em>, with what connects them.</p>
+    <p>Each theme has a strength:</p>
+    <ul>
+      <li><strong>Strong</strong>: the shared cause, mechanism or target is documented in the sources of the checks.</li>
+      <li><strong>Weak (indicative)</strong>: a plausible connection proposed while claims are collected. It stays
+        indicative until a finished report confirms it.</li>
+      <li><strong>Pattern, not causal</strong>: the claims present evidence in the same way. Nothing connects them
+        physically.</li>
+    </ul>
+    <p>{{ linked }} of {{ mizien.claims.length }} claims are linked to at least one other. A new claim has no links until
+      the editors place it in a theme.</p>
+    <div class="table-scroll">
+    <table class="claims theme-table">
+      <thead><tr><th scope="col">Theme</th><th scope="col">Kind</th><th scope="col">Claims</th><th scope="col">What connects them</th></tr></thead>
+      <tbody>
+      {%- for t in mizien.themes %}
+        <tr><td><span class="route-theme" style="--t: {{ t.color }}">{{ t.name }}</span></td>
+          <td>{{ t.link_type }}<br><span class="small">{{ t.strength }}</span></td>
+          <td>{% for id in t.members %}{% set x = mizien.claims | findBy("id", id) %}{% if x %}{{ m.claim(x, true) }} {% endif %}{% endfor %}</td>
+          <td>{{ t.description }}</td></tr>
+      {%- endfor %}
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="patterns">
+    <h2 id="patterns">Pattern tags</h2>
+    <p>A pattern tag names a recurring way a claim can mislead. It describes the statement, not the speaker, and it is
+      provisional until the claim's report is finished. Claims with the same tag are listed together on each claim page.</p>
+    <dl class="pattern-list">
+      {%- for p in mizien.patterns %}
+      <div><dt>{{ p.name }}</dt><dd>{{ p.meaning | mdInline | safe }}
+        <span class="pattern-claims">{% for x in mizien.claims | tagged(p.name) %}{{ m.claim(x, true) }} {% endfor %}</span></dd></div>
+      {%- endfor %}
+    </dl>
+  </section>
+
+  <section aria-labelledby="indirect">
+    <h2 id="indirect">Indirect connections</h2>
+    <p>Two claims that are not linked directly may both be linked to a third. Following the links one step further
+      shows claims <strong>two steps away</strong>; one more step gives claims <strong>three steps away</strong>. These
+      are worked out by the site build, not chosen by the editors: for each claim it lists the shortest routes through
+      the links, up to three routes for each claim it reaches.</p>
+    <p>Each route is shown as the themes it passes through. For example, a claim about sealed soil and a claim about
+      traffic emissions can meet through a third claim that belongs to both themes. {{ withSecond }} claims have at least
+      one connection two steps away.</p>
+    <p>The further a connection goes, the looser it is. At two steps it shows where one theme meets another; at three it
+      says more about how the themes fit together than about either claim.</p>
+  </section>
+
+  <section aria-labelledby="bridges">
+    <h2 id="bridges">Where themes meet</h2>
+    <p>A claim that belongs to two themes joins them. These claims are the bridges that indirect connections pass
+      through, and good places to start reading across topics.</p>
+    <ul class="bridge-list">
+      {%- for b in mizien.theme_bridges %}
+      {%- set ta = mizien.themes | findBy("id", b.a) %}{% set tb = mizien.themes | findBy("id", b.b) %}
+      <li><span class="route-theme" style="--t: {{ ta.color }}">{{ b.a_name }}</span> meets
+        <span class="route-theme" style="--t: {{ tb.color }}">{{ b.b_name }}</span> in
+        {% for x in b.claims %}{{ m.claim(x) }}{% if not loop.last %}{% if loop.revindex == 2 %} and {% else %}, {% endif %}{% endif %}{% endfor %}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <section aria-labelledby="bodies">
+    <h2 id="bodies">Who said it</h2>
+    <p>Every claim is matched to the body or person who made it, using a register of bodies and people
+      (<a href="{{ site.repo }}/blob/main/data/bodies.csv">data/bodies.csv</a>). The register records each body's
+      kind (government, agency, regulator, oversight body, party, NGO or union, business, media, EU or research body)
+      and the office a person spoke for, with the role named in the source. A claim made by a minister counts for the
+      minister and for their ministry.</p>
+    <p>Two bodies are <strong>linked</strong> when they are named in the same claim, or when their claims share a theme.
+      A link means their claims are worth reading together. It does not mean the bodies agree, disagree or act together.</p>
+    <p>Each body has a page listing its claims, the topics and pattern tags they carry, and the bodies they link to.
+      <strong>These pages are a record, not a score.</strong> Claims are picked because they are public and can be
+      checked, not to sample anyone's statements fairly. A body with more claims has been checked more often, which says
+      nothing about how accurate it is. No body or person is rated. See <a href="/bodies/">Who said it</a>.</p>
+    <p>If a claim is matched to the wrong body, please <a href="{{ site.repo }}/issues/new">report it</a>.</p>
+  </section>
+
+  <section aria-labelledby="limits">
+    <h2 id="limits">What a connection does not mean</h2>
+    <ul>
+      <li>It is not evidence. Each claim is checked on its own sources; a link to a contradicted claim does not weaken
+        another claim, and a link to a supported one does not strengthen it.</li>
+      <li>It is not a finding of coordination or motive. Nothing on this site says bodies acted together, or why anyone
+        said something, unless documents show it.</li>
+      <li>It can change. Themes are revised as checks are finished, and indirect connections follow automatically.</li>
+    </ul>
+  </section>
+</article>

@@ -104,6 +104,7 @@ def main() -> int:
                 print(f"   - {e}")
     print(f"{len(files) - bad}/{len(files)} claim records valid.")
     bad += check_queue({p.parent.name for p in files})
+    bad += check_register(files)
     bad += check_conflict_markers()
     return 1 if bad else 0
 
@@ -130,6 +131,54 @@ def check_queue(ids: set) -> int:
     for e in errs:
         print("FAIL " + e)
     print(f"queue: {len(seen)} claims assigned, {len(errs)} problems.")
+    return 1 if errs else 0
+
+
+def check_register(files) -> int:
+    """data/bodies.csv: the register of bodies and people that claims are matched to (see scripts/bodies.py).
+
+    Errors in the register fail. A claim whose speaker matches no entry only warns: add the speaker's wording to
+    the Aliases column of the right row (or a new row), or list `bodies: [id, ...]` in the claim.
+    """
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import bodies
+    reg = bodies.load()
+    if not reg:
+        return 0
+    errs, warns = [], []
+    import csv
+    ids = [r["ID"] for r in csv.DictReader(open(ROOT / "data" / "bodies.csv", newline="", encoding="utf-8"))]
+    errs += [f"register: {i} is listed twice" for i in sorted({i for i in ids if ids.count(i) > 1})]
+    for b in reg.values():
+        if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", b["id"]):
+            errs.append(f"register: ID '{b['id']}' must be lower-case words joined by hyphens")
+        if b["type"] not in bodies.TYPES:
+            errs.append(f"register: {b['id']} has type '{b['type']}' (use one of {', '.join(bodies.TYPES)})")
+        if b["kind"] not in bodies.KINDS:
+            errs.append(f"register: {b['id']} has kind '{b['kind']}' (organisation or person)")
+        if b["parent"] and b["parent"] not in reg:
+            errs.append(f"register: {b['id']} has unknown parent '{b['parent']}'")
+        if b["kind"] == "person" and not b["parent"]:
+            errs.append(f"register: person {b['id']} needs a parent (the body they spoke for)")
+        seen, x = set(), b["id"]
+        while x and x not in seen:
+            seen.add(x)
+            x = reg[x]["parent"] if x in reg else None
+        if x:
+            errs.append(f"register: {b['id']} has a loop in its parents")
+    idx = bodies.alias_index(reg)
+    for p in files:
+        d = yaml.safe_load(p.read_text(encoding="utf-8"))
+        found, unknown = bodies.resolve(d, reg, idx)
+        if d.get("bodies"):
+            errs += [f"register: {d['id']} lists unknown body '{u}'" for u in unknown]
+        else:
+            warns += [f"register: {d['id']} speaker '{u}' matches no body in data/bodies.csv" for u in unknown]
+    for e in errs:
+        print("FAIL " + e)
+    for w in warns:
+        print("WARN " + w)
+    print(f"register: {len(reg)} bodies and people, {len(errs)} problems, {len(warns)} unmatched speakers.")
     return 1 if errs else 0
 
 
