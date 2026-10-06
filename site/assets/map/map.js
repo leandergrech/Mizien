@@ -1215,13 +1215,17 @@
         if (Tray && Tray.has(n.id)) { ctx.strokeStyle = "#e3a72f"; ctx.lineWidth = 2.2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 5, 0, 6.283); ctx.stroke(); }   // pinned
         n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: true };
         var focused = F && F.ids[n.id];
-        var member = expanded && n.hub === expanded && mode !== "speaker", tagged = labelMode === "tag" || member;   // Who said it: too many claims to name them all
+        // Semantic zoom: at the overview only the groups are named; claim codes fade in from zoom 1.35, and from 2.2 the
+        // codes give way to the claims' names. A hovered, selected, pinned or highlighted claim is always labelled.
+        var pin = Tray && Tray.has(n.id), zfade = Math.max(0, Math.min(1, (cam.zoom - 1.35) / 0.3)), close = cam.zoom >= 2.2;
+        var member = expanded && n.hub === expanded && mode !== "speaker", tagged = labelMode === "tag" || member || (close && !expanded);   // Who said it: too many claims to name them all
+        var keep = isHov || isSel || member || focused || pin;
         var hp = member ? P.get(n.sub && n.sub.alpha > 0.3 ? n.sub : expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
-        if (!expanded || member || isHov || isSel) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: tagged ? d.title : n.id,
+        if ((!expanded && (keep || zfade > 0)) || member || isHov || isSel) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: tagged ? d.title : n.id,
           sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (isRated ? " · " + ratedText(d) : " · not yet checked") : d.title) : "",
-          hub: false, tag: tagged, color: col, alpha: (on ? 1 : 0.25) * fg, ax: p.sx, ay: p.sy, rr: r2 + 6,
+          hub: false, tag: tagged, color: col, alpha: (on ? 1 : 0.25) * fg * (keep ? 1 : zfade), ax: p.sx, ay: p.sy, rr: r2 + 6,
           dir: member && expanded.claims.length > 1 ? { x: ddx / dl, y: ddy / dl } : null,
-          pri: isSel || isHov ? 4 : member ? 3.5 : focused ? 2 : p.s > 0.9 ? 1 : 0 });
+          pri: isSel || isHov ? 4 : member ? 3.5 : focused || pin ? 2 : p.s > 0.9 ? 1 : 0 });
         ctx.globalAlpha = 1;
       }
     });
@@ -2185,7 +2189,7 @@
   function syncLabelButtons() {
     var lb = document.getElementById("labelmode"), tb = document.getElementById("texttoggle");
     lb.textContent = labelMode === "tag" ? "Codes" : "Names"; lb.setAttribute("aria-pressed", labelMode === "tag" ? "true" : "false");
-    lb.title = labelMode === "tag" ? "Show claim codes (CC-001)" : "Show claim names instead of codes";
+    lb.title = labelMode === "tag" ? "Back to codes, with names when zoomed in close" : "Show claim names at every zoom, instead of codes";
     tb.textContent = showText ? "Hide text" : "Show text"; tb.setAttribute("aria-pressed", showText ? "false" : "true");
   }
   document.getElementById("labelmode").onclick = function () { labelMode = labelMode === "tag" ? "code" : "tag";
