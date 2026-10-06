@@ -82,7 +82,7 @@ export function pledgeStack(pledges, claims, ids) {
   const years = [...new Set(list.map(pledgeYear))].sort((a, b) => a - b);
   const topics = [...new Set(list.map((p) => p.category))].sort();
   // geometry: flat disks seen from slightly above, the newest on top
-  const W = 700, rx = 236, ry = 48, gap = 108, cx = 300, top = 34;
+  const W = 660, rx = 230, ry = 44, gap = 132, cx = 340, top = 30;   // gap > 2 ry + room: the back of a disk stays clear of the front of the one above
   const H = top + ry + (years.length - 1) * gap + ry + 30;
   const cyOf = (y) => top + ry + (years.length - 1 - years.indexOf(y)) * gap;
   const sector = (t) => topics.indexOf(t) / topics.length * Math.PI * 2 + Math.PI * 0.5;   // topics spaced round the disk, the first at the front
@@ -113,7 +113,7 @@ export function pledgeStack(pledges, claims, ids) {
   for (const y of years) {
     const cy = cyOf(y), n = list.filter((p) => pledgeYear(p) === y).length;
     svg.push(`<g class="ps-disk"><ellipse cx="${cx}" cy="${cy + 7}" rx="${rx}" ry="${ry}" class="ps-edge-band"/><ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" class="ps-top"/>` +
-      `<text x="${cx + rx + 22}" y="${cy + 5}" class="ps-year">${y}</text><text x="${cx + rx + 22}" y="${cy + 22}" class="ps-n">${n} pledge${n === 1 ? "" : "s"}</text></g>`);
+      `<text x="${cx - rx - 22}" y="${cy + 5}" class="ps-year" text-anchor="end">${y}</text><text x="${cx - rx - 22}" y="${cy + 22}" class="ps-n" text-anchor="end">${n} pledge${n === 1 ? "" : "s"}</text></g>`);
   }
   for (const e of edges) {
     const dash = e.avg == null ? ` stroke-dasharray="5 4"` : "";

@@ -35,7 +35,7 @@ styles: [lens.css, who.css]
       {%- if b.kind == "person" %}
       <p class="small">Checks of claims by {{ b.name }}{% if b.parent %} count towards <a href="{{ b.parent.path }}">{{ b.parent.name }}</a>, the body they spoke for{% endif %}:
         Miżien summarises bodies, not people.</p>
-      {%- if s.pledges.length %}<p class="wm-pledges">{% for p in s.pledges %}<a class="pl-chip" href="{{ p.path }}" style="--pl: {{ p.colour }}">Pledge: {{ p.status }} <span>{{ p.id }}</span></a>{% endfor %}</p>{% endif %}
+      {%- if s.pledges.length %}<p class="wm-pledges">{% for p in s.pledges %}<a class="pl-chip" href="{{ p.path }}" style="--pl: {{ p.colour }}">{% glyph "pledge:" + p.status %}Pledge: {{ p.status }} <span>{{ p.id }}</span></a>{% endfor %}</p>{% endif %}
       {%- else %}
       {%- set big = true %}{% include "who-meter.njk" %}
       {%- endif %}

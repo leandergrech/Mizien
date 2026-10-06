@@ -22,12 +22,15 @@
 <link rel="alternate" type="application/atom+xml" title="{{ feedTitle }}" href="{{ feedUrl }}">
 {%- endif %}
 <meta name="theme-color" content="#0e2a1f">
+{%- include "theme-init.njk" %}
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any">
+<link rel="stylesheet" href="/assets/theme.css">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/tabs.css">
 {%- for css in styles %}
 <link rel="stylesheet" href="/assets/{{ css }}">
 {%- endfor %}
+<script src="/assets/theme.js" defer></script>
 <script src="/assets/claimrefs.js" defer></script>
 {%- if site.umami.websiteId %}
 <script defer src="{{ site.umami.scriptUrl }}" data-website-id="{{ site.umami.websiteId }}"></script>
@@ -37,7 +40,10 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
   <a class="brand" href="/">{% include "brand-mark.njk" %}<span>{{ site.name }}</span></a>
-  {%- include "nav.njk" %}
+  <div class="head-end">
+    {%- include "nav.njk" %}
+    {%- include "theme-toggle.njk" %}
+  </div>
 </header>
 <main id="main">
 {{ content | safe }}
@@ -48,7 +54,7 @@
      the chance to respond.</p>
   <p>Content is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; site code is MIT.
      Source and data: <a href="{{ site.repo }}">github.com/leandergrech/Mizien</a>.
-     <a href="/about/disclaimer/">What a check represents</a>.</p>
+     <a href="/about/disclaimer/">What a check represents</a> · <a href="/about/glyphs/">Glyph key</a>.</p>
 {%- if site.umami.websiteId %}
   <p>Visits are counted with <a href="https://umami.is/">Umami</a>: no cookies, no personal data, no tracking across sites.</p>
 {%- endif %}

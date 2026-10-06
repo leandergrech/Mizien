@@ -62,6 +62,12 @@
     return true;
   }
   function count() { return items.filter(function (it) { return match(it); }).length; }
+  // The glyph beside a value (assets/glyphs.js): topics, verdicts (and pledge labels), kinds of body and patterns have one.
+  function glyph(k, v) {
+    var G = window.MizienGlyphs; if (!G || k === "year") return "";
+    var text = label(k, v), pl = k === "verdict" && /^Pledge: (.+)$/.exec(text);
+    return G.svg(pl ? "pledge:" + pl[1] : text, { cls: "lg" });
+  }
   function label(k, v) { return (labels[k] && labels[k][v]) || (k === "year" && v === "undated" ? "Undated" : v); }
   function values(k) {   // every value of a facet, with how many items it would show given the other facets
     var n = {}, all = {};
@@ -93,7 +99,7 @@
       state.only.length + " pinned <span aria-hidden=\"true\">×</span></button>" : "";
     bar.querySelector(".lens-chips").innerHTML = onlyChip + chips.map(function (c) {
       return '<button type="button" class="lens-chip" data-k="' + c.k + '" data-v="' + esc(c.v) + '" aria-label="Remove filter ' + esc(label(c.k, c.v)) + '">' +
-        esc(label(c.k, c.v)) + ' <span aria-hidden="true">×</span></button>'; }).join("");
+        glyph(c.k, c.v) + esc(label(c.k, c.v)) + ' <span aria-hidden="true">×</span></button>'; }).join("");
     bar.querySelector(".lens-chips").hidden = !chips.length && !state.only.length;
     var cnt = bar.querySelector(".lens-count");
     cnt.innerHTML = active() ? "<b>" + n + "</b> of " + items.length + " claims" : "<b>" + items.length + "</b> claims";
@@ -106,7 +112,7 @@
     pop.innerHTML = '<p class="lens-pop-h">' + esc(F.label) + '<span>Choose any; the numbers count claims that also pass the other filters.</span></p><ul>' +
       values(openFacet).map(function (o) {
         return '<li><label class="' + (o.n || o.on ? "" : "is-zero") + '"><input type="checkbox" data-k="' + openFacet + '" value="' + esc(o.v) + '"' + (o.on ? " checked" : "") + "> " +
-          '<span class="lv">' + esc(label(openFacet, o.v)) + '</span><span class="ln">' + o.n + "</span></label></li>"; }).join("") + "</ul>" +
+          '<span class="lv">' + glyph(openFacet, o.v) + esc(label(openFacet, o.v)) + '</span><span class="ln">' + o.n + "</span></label></li>"; }).join("") + "</ul>" +
       '<p class="lens-pop-f"><button type="button" class="lens-done">Done</button></p>';
   }
   function mount(el) {

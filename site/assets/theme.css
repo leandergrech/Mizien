@@ -1,0 +1,85 @@
+/* Miżien colour themes, loaded first by every page.
+   Dark is the original look. Light keeps the project's deep green (#14452F, the colour of the report covers) as the
+   foreground and puts it on pale sage and cream; the amber stays as the accent but is darkened wherever it is text,
+   a line or an outline, so it stays readable. The theme is set on <html data-theme="dark|light"> by the inline script
+   in _includes/theme-init.njk (before first paint) and changed by assets/theme.js.
+
+   How to use the tokens
+   - Colours with transparency are written rgb(var(--rim) / .28): the base colour flips with the theme, the alpha stays.
+   - --amber is for fills (always #e3a72f, with --on-amber text on it). --accent is for amber text, borders, outlines
+     and strokes: #e3a72f on dark, a deeper amber on light. Focus rings use --accent.
+   - The paper tokens colour the cards on claim and reading pages (cream with slate text on dark; white-ish with the
+     deep green as text on light).
+   - Canvases (the claims web, the Malta map) read the --stage-* and --cv-* tokens through assets/theme.js. */
+:root {
+  color-scheme: dark;
+  /* surfaces */
+  --bg: #0e2a1f; --bg2: #14452f; --card: #123826; --line: #1f5a40; --hair: rgba(127,168,139,.22); --deep: #08201a;
+  /* text and links */
+  --ink: #eef3ef; --ink-soft: #cfe2d4; --muted: #a9c2b1; --sage: #7fa88b; --link: #e3a72f;
+  /* amber */
+  --amber: #e3a72f; --accent: #e3a72f; --amber-soft: #f6e3b4; --on-amber: #13301f;
+  /* colour channels for rgb(var(--x) / alpha) */
+  --rim: 207 226 212; --panel: 8 30 21; --panel-deep: 6 24 16; --bg-rgb: 14 42 31; --sage-rgb: 127 168 139;
+  --accent-rgb: 227 167 47; --shade: 0 0 0; --green-rgb: 20 69 47;
+  /* paper cards */
+  --paper: #f6f4ee; --paper-ink: #2b3a42; --paper-muted: #56636a; --paper-line: #d9e2db; --paper-link: #14452f;
+  --card-shadow: 0 18px 50px rgba(0,0,0,.35);
+  /* buttons that stand out (home page, primary actions) */
+  --btn-bg: #e3a72f; --btn-ink: #13301f; --btn-bg-hover: #f0bb4d;
+  /* hover tint, feature cards, quoted text on cards */
+  --text-halo: 0 1px 3px rgba(0,0,0,.65); --track: #3c5247;
+  --deck-bg: #0f3324; --deck-quote: #d9e7dd; --deck-shadow: 0 18px 40px rgba(0,0,0,.42);
+  --hover: rgba(20,69,47,.75); --tint: rgba(20,69,47,.45); --feature-a: #164a33; --feature-b: #0f3324; --ink-quote: #e6efe8; --ink-quote-hi: #fff;
+  /* the brand mark */
+  --mark-cross: #7fa88b; --mark-ink: #eef3ef; --mark-pivot: #e3a72f;
+  /* canvases: the stage behind the claims web, the map's sea, and what is drawn on them (read by map.js through theme.js) */
+  --stage-a: #1d5a3f; --stage-b: #133d2b; --stage-c: #0b2419; --sea: #0c2c21;
+  --cv-label-bg: rgba(7,25,17,.78); --cv-label-bg2: rgba(7,25,17,.82); --cv-label-ink: #eef3ef; --cv-label-sub: #a9c2b1;
+  --cv-under-rgb: 4 18 12; --cv-pale-rgb: 246 227 180; --cv-soft-rgb: 169 194 177;
+  --cv-dust: #cfe2d4; --cv-dust-hi: #f6e3b4; --cv-sel: #fff; --cv-ring: rgba(255,255,255,.6); --cv-ring2: rgba(255,255,255,.7);
+  --cv-sph-0: #3a7058; --cv-sph-1: #1e4433; --cv-sph-2: #0b2218; --cv-disc-2: #143024; --cv-disc-side: #08170f;
+  --cv-sph-line: rgba(159,214,182,.16); --cv-sph-rim: rgba(159,214,182,.5);
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #e8efe8; --bg2: #d3e2d7; --card: #f6f4ee; --line: #b9ccbf; --hair: rgba(20,69,47,.2); --deep: #14452f;
+  --ink: #14452f; --ink-soft: #2f5a45; --muted: #4a6757; --sage: #3a7351; --link: #0b6a3b;
+  --amber: #e3a72f; --accent: #8a5a00; --amber-soft: #6e4700; --on-amber: #13301f;
+  --rim: 20 69 47; --panel: 255 255 255; --panel-deep: 255 255 255; --bg-rgb: 232 239 232; --sage-rgb: 58 115 81;
+  --accent-rgb: 138 90 0; --shade: 20 45 30; --green-rgb: 20 69 47;
+  --paper: #fbfaf6; --paper-ink: #14452f; --paper-muted: #4a6757; --paper-line: #cfdcd2; --paper-link: #0b6a3b;
+  --card-shadow: 0 0 0 1px rgba(20,69,47,.1), 0 10px 30px rgba(20,69,47,.12);
+  --btn-bg: #14452f; --btn-ink: #f6f4ee; --btn-bg-hover: #1d5a3f;
+  --text-halo: 0 0 3px rgba(255,255,255,.9), 0 0 8px rgba(255,255,255,.7); --track: #a9bfb0;
+  --deck-bg: #fbfaf6; --deck-quote: #14452f; --deck-shadow: 0 0 0 1px rgba(20,69,47,.1), 0 14px 30px rgba(20,69,47,.16);
+  --hover: rgba(20,69,47,.1); --tint: rgba(20,69,47,.06); --feature-a: #fbfaf6; --feature-b: #eef3ee; --ink-quote: #14452f; --ink-quote-hi: #0b2f1f;
+  --mark-cross: #14452f; --mark-ink: #14452f; --mark-pivot: #c98a14;
+  --stage-a: #f7f5ee; --stage-b: #e9f0e9; --stage-c: #d7e5da; --sea: #cfe3e0;
+  --cv-label-bg: rgba(255,255,255,.88); --cv-label-bg2: rgba(255,255,255,.9); --cv-label-ink: #14452f; --cv-label-sub: #4a6757;
+  --cv-under-rgb: 255 255 255; --cv-pale-rgb: 138 90 0; --cv-soft-rgb: 74 103 87;
+  --cv-dust: #3a7351; --cv-dust-hi: #8a5a00; --cv-sel: #14452f; --cv-ring: rgba(255,255,255,.95); --cv-ring2: rgba(20,69,47,.5);
+  --cv-sph-0: #f4faf5; --cv-sph-1: #cfe3d5; --cv-sph-2: #a9c7b3; --cv-disc-2: #bfd6c6; --cv-disc-side: #8fb09a;
+  --cv-sph-line: rgba(20,69,47,.16); --cv-sph-rim: rgba(20,69,47,.4);
+}
+
+/* ---------------------------------------------------------------- the brand mark (_includes/brand-mark.njk) */
+.brand-mark .bm-cross { fill: var(--mark-cross); stroke: var(--mark-cross); }
+.brand-mark .bm-beam { stroke: var(--mark-ink); }
+.brand-mark .bm-pivot { fill: var(--mark-pivot); }
+
+/* ---------------------------------------------------------------- the theme toggle (_includes/theme-toggle.njk, assets/theme.js) */
+.theme-toggle { flex: none; display: inline-grid; place-items: center; width: 38px; height: 38px; padding: 0; border-radius: 50%;
+  border: 1px solid rgb(var(--rim) / .28); background: rgb(var(--panel) / .45); color: var(--ink); cursor: pointer;
+  transition: border-color .15s, background .15s; }
+.theme-toggle[hidden] { display: none; }
+.theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.theme-toggle svg { width: 19px; height: 19px; fill: none; stroke: var(--accent); stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .i-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .i-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .i-moon { display: block; }
+
+/* ---------------------------------------------------------------- glyphs (assets/glyphs.js, the {% glyph %} shortcode) */
+.gl { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round;
+  stroke-linejoin: round; vertical-align: -.2em; }

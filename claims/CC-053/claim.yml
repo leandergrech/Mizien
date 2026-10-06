@@ -58,7 +58,7 @@ location:
   lat: 36.01889
   lon: 14.24934
   scope: site
-  icon: pin
+  icon: cliffs
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-053A

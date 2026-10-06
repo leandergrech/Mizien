@@ -18,15 +18,15 @@ styles: [lens.css]
 {%- set pv = c.pledge_view -%}
 <article class="check v-{{ c.label_slug or 'none' }}">
   <header class="check-head">
-    <p class="kicker">{{ c.id }} · {{ c.category }}{% if c.subtopic %} · {{ c.subtopic }}{% endif %}</p>
+    <p class="kicker">{{ c.id }} · {% glyph c.category %}{{ c.category }}{% if c.subtopic %} · {% glyph c.subtopic %}{{ c.subtopic }}{% endif %}</p>
     <h1>{{ c.title }}</h1>
     <p class="verdictline">
       {%- if c.verdict or not pv %}
-      <span class="verdict">{{ c.verdict or "Not yet checked" }}</span>
+      {%- set vname = c.verdict or "Not yet checked" %}<span class="verdict">{% glyph vname %}{{ vname }}</span>
       {%- if c.verdict_confidence %} <span class="pill">{{ c.verdict_confidence }} confidence</span>{% endif %}
       {%- endif %}
       {%- if pv %}
-      <span class="{{ 'verdict' if pv.pure else 'pill pledge-pill' }}"{% if not pv.pure %} style="--pl: {{ pv.colour }}"{% endif %}>Pledge: {{ pv.status }}</span>
+      <span class="{{ 'verdict' if pv.pure else 'pill pledge-pill' }}"{% if not pv.pure %} style="--pl: {{ pv.colour }}"{% endif %}>{% set pglyph = "pledge:" + pv.status %}{% glyph pglyph %}Pledge: {{ pv.status }}</span>
       <span class="pill">as of {{ pv.as_of }}</span>
       {%- endif %}
       <span class="pill">{{ c.status_label }}</span>
@@ -136,6 +136,7 @@ styles: [lens.css]
       <p>{{ c.claim.text }}</p>
       <dl class="facts">
         <div><dt>Who</dt><dd>{{ c.claim.speaker }}</dd></div>
+        {%- if c.location and c.location.place %}<div><dt>Where</dt><dd>{% set plglyph = "place:" + (c.location.icon or "pin") %}{% glyph plglyph %}{{ c.location.place }}</dd></div>{% endif %}
         {%- if c.claim.date %}<div><dt>When</dt><dd>{{ c.claim.date | ukDate }}</dd></div>{% endif %}
         <div><dt>Wording</dt><dd>{{ c.claim.wording_status }}</dd></div>
       </dl>

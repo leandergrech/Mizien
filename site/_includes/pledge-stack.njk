@@ -6,7 +6,7 @@
       {%- for r in ps.rows %}
       <li><span class="ps-y">{{ r.year }}</span>
         <ul>{% for p in r.items %}<li><a href="{{ p.path }}"><b>{{ p.id }}</b> {{ p.title }}</a>
-          <span class="pl-chip" style="--pl: {{ p.pledge.colour }}">Pledge: {{ p.pledge.status }}</span>
+          <span class="pl-chip" style="--pl: {{ p.pledge.colour }}">{% glyph "pledge:" + p.pledge.status %}Pledge: {{ p.pledge.status }}</span>
           {%- if p.factVerdict %} <span class="small">facts: {{ p.factVerdict }}</span>{% endif %}
           <span class="small">· {{ p.category }}{% if p.pledge.made_by.length %} · {{ p.pledge.made_by[0].name }}{% endif %}</span></li>{% endfor %}</ul></li>
       {%- endfor %}

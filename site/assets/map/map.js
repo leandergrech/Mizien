@@ -64,66 +64,35 @@
   function ratedText(d) { return d.verdict ? d.verdict : d.pledge ? "Pledge: " + d.pledge.status : null; }
   function colOf(d) { return d.verdict ? VC[d.verdict] : d.pledge ? PLEDGE_COL[d.pledge.status] || NOT_YET_COL : NOT_YET_COL; }
   var TONE = { green: "#2e7d4f", lime: "#8db36b", amber: "#e3a72f", orange: "#d9772b", red: "#b5483a", maroon: "#8e2f25", grey: "#7d8f86" };
-  var ICONS = {
-    // topics
-    "Land & Trees": "M12 2.5 L5.5 11 H9 L5 16.5 H19 L15 11 H18.5 Z M12 16.5 V21.5",
-    "Climate & Energy": "M13.5 2.5 L5 13.5 H11 L10 21.5 L19 10 H13 Z",
-    "Waste": "M4 6.5 H20 M9.5 6.5 V4 H14.5 V6.5 M6 6.5 L7 20.5 H17 L18 6.5 M10 10 V17 M14 10 V17",
-    "Water": "M12 2.5 C12 2.5 5.5 10 5.5 14.5 A6.5 6.5 0 0 0 18.5 14.5 C18.5 10 12 2.5 12 2.5 Z",
-    "Nature & Wildlife": "M2.5 13 C6 13 8 11 9 7.5 C10.5 11 13 12.5 16 12.5 L21.5 9 L19.5 14 C17.5 18 14 19.5 10 19.5 C6 19.5 3.5 17 2.5 13 Z M14.5 9.5 L14.6 9.6",
-    "Air": "M3 8.5 H13 A3 3 0 1 0 10 5.5 M3 12.5 H18 A3 3 0 1 1 15 15.5 M3 16.5 H9",
-    "Transport": "M3 13.5 L5.5 7.5 H18.5 L21 13.5 V18 H3 Z M3 13.5 H21 M6 18 V20 M18 18 V20 M7 15.8 H8.5 M15.5 15.8 H17",
-    "Governance & Promises": "M12 3 V20.5 M7.5 20.5 H16.5 M4.5 6.5 H19.5 M4.5 6.5 L2 12.5 H7 Z M19.5 6.5 L17 12.5 H22 Z",
-    "Planning & Housing": "M3 11 L12 3.5 L21 11 M5.5 9 V20.5 H18.5 V9 M10 20.5 V14.5 H14 V20.5",
-    "Noise": "M3.5 9.5 H7.5 L12.5 5 V19 L7.5 14.5 H3.5 Z M16 9 C17.3 10.5 17.3 13.5 16 15 M18.8 6.5 C21.4 9.5 21.4 14.5 18.8 17.5",
-    // verdicts
-    "Supported": "M5 12.5 L10 17.5 L19 7",
-    "Largely supported": "M4 13 L8.5 17.5 L15.5 9 M12.5 17 L14 18.5 L21 10",
-    "Not substantiated": "M8.8 9 A3.3 3.3 0 1 1 13.6 12 C12.4 12.6 12 13.3 12 14.6 M12 18 V18.1",
-    "Misleading": "M12 3.5 L21.5 20 H2.5 Z M12 10 V14.5 M12 17 V17.1",
-    "Contradicted": "M6 6 L18 18 M18 6 L6 18",
-    "Not yet checked": "M5.5 12 V12.1 M12 12 V12.1 M18.5 12 V12.1",
-    // patterns
-    "Selective metric": "M10.5 4 A6.5 6.5 0 1 0 10.51 4 M15.2 15.2 L20.5 20.5",
-    "Input-as-outcome": "M3.5 5 H20.5 L14 12.5 V19.5 L10 17.5 V12.5 Z",
-    "Compliance-not-health": "M12 3 L19 6 V11 C19 15.5 16 19 12 21 C8 19 5 15.5 5 11 V6 Z M9 12 L11 14 L15 10",
-    "Conditional-turned-unconditional": "M6 3.5 V20.5 M6 12 C11 12 12 6 18 6 M15 3 L18 6 L15 9",
-    "Promise-without-baseline": "M5.5 21 V3.5 M5.5 4 H17.5 L15 8 L17.5 12 H5.5",
-    "No pattern tag": "M12 8 A4 4 0 1 0 12.01 8",
-    // stages
-    "Not started": "M12 3 A9 9 0 1 0 12.01 3 M12 7 V12 L15.5 14",
-    "In progress": "M4 12 H19 M13 6 L19 12 L13 18",
-    "Drafted": "M4 20 L8.5 19 L19.5 8 L16 4.5 L5 15.5 Z M14 6.5 L17.5 10",
-    "Right of reply": "M4 4.5 H20 V15 H10.5 L6.5 19.5 V15 H4 Z",
-    "Published": "M3.5 5 H10.5 C11.4 5 12 5.6 12 6.5 V20 C12 19.2 11.4 18.6 10.5 18.6 H3.5 Z M20.5 5 H13.5 C12.6 5 12 5.6 12 6.5 V20 C12 19.2 12.6 18.6 13.5 18.6 H20.5 Z",
-    // speakers
-    "Government & ministers": "M3 9 L12 4 L21 9 Z M5.5 9.5 V17.5 M10 9.5 V17.5 M14 9.5 V17.5 M18.5 9.5 V17.5 M3 20 H21",
-    "Public agencies & companies": "M4 20.5 V8 L9 5 V20.5 M9 9 L15 6 V20.5 M15 10 L20 8 V20.5 M2.5 20.5 H21.5 M6 11 H7 M6 14 H7 M11.5 12 H12.5 M11.5 15 H12.5 M17 13 H18",
-    "Regulators & authorities": "M8.5 3.5 H15.5 V6.5 H8.5 Z M6.5 5 H4.5 V21 H19.5 V5 H17.5 M8 11.5 H16 M8 15.5 H13",
-    "Courts, tribunals & oversight": "M12 3.5 V20 M7.5 20 H16.5 M5 7 H19 M5 7 L2.5 13 H7.5 Z M19 7 L16.5 13 H21.5 Z",
-    "Political parties": "M4.5 10 H19.5 V20.5 H4.5 Z M8.5 10 L12 4 L15.5 10 M9 15 H15",
-    "NGOs & unions": "M8 7.5 A2.8 2.8 0 1 0 8.01 7.5 M16 7.5 A2.8 2.8 0 1 0 16.01 7.5 M2.5 19.5 C2.5 15 13.5 15 13.5 19.5 M10.5 19.5 C10.5 15 21.5 15 21.5 19.5",
-    "Business & industry": "M4 8 H20 V19.5 H4 Z M9 8 V5 H15 V8 M4 13 H20",
-    "Media": "M4 5 H17 V19.5 H6 C4.9 19.5 4 18.6 4 17.5 Z M17 9 H20 V17.5 C20 18.6 19.1 19.5 18 19.5 M7 8.5 H14 M7 12 H14 M7 15.5 H11",
-    "EU & international": "M12 3 A9 9 0 1 0 12.01 3 M3 12 H21 M12 3 C15.5 6.5 15.5 17.5 12 21 C8.5 17.5 8.5 6.5 12 3",
-    "Research & statistics": "M5 20 V11 M10 20 V6 M15 20 V13 M20 20 V16 M3 20.5 H21.5",
-    "person": "M12 11.5 A4 4 0 1 0 12.01 11.5 M4.5 21 C4.5 16.5 8 14.5 12 14.5 C16 14.5 19.5 16.5 19.5 21",
-    // grouping buttons
-    "mode:topic": "M12 3 A9 9 0 1 0 12.01 3 M7 9 A1.5 1.5 0 1 0 7.01 9 M16 8 A1.5 1.5 0 1 0 16.01 8 M11 16 A1.5 1.5 0 1 0 11.01 16",
-    "mode:subtopic": "M12 3 A9 9 0 1 0 12.01 3 M12 7.5 A4.5 4.5 0 1 0 12.01 7.5 M12 3 V7.5 M12 16.5 V21 M3 12 H7.5 M16.5 12 H21",
-    "mode:verdict": "M12 3 V20.5 M7.5 20.5 H16.5 M4.5 6.5 H19.5 M4.5 6.5 L2 12.5 H7 Z M19.5 6.5 L17 12.5 H22 Z",
-    "mode:pattern": "M12 3 A9 9 0 1 0 12.01 3 M12 7 A5 5 0 1 0 12.01 7 M12 11 A1 1 0 1 0 12.01 11",
-    "mode:status": "M3 12 H21 M5 12 A1.5 1.5 0 1 0 5.01 12 M12 12 A1.5 1.5 0 1 0 12.01 12 M19 12 A1.5 1.5 0 1 0 19.01 12",
-    "mode:speaker": "M4 5 H20 V15 H10.5 L6.5 19 V15 H4 Z",
-    "mode:pledges": "M5 21 V4 M5 4.5 H16 L13.8 8.3 L16 12 H5",
-    "pledge": "M5 21 V4 M5 4.5 H16 L13.8 8.3 L16 12 H5",
-    "mode:year": "M4 6.5 H20 V20 H4 Z M4 10.5 H20 M8 4 V8 M16 4 V8 M7.5 14 H9 M11.25 14 H12.75 M15 14 H16.5 M7.5 17 H9 M11.25 17 H12.75",
-    "mode:network": "M5 6 A2 2 0 1 0 5.01 6 M19 7 A2 2 0 1 0 19.01 7 M12 18 A2 2 0 1 0 12.01 18 M6.5 7.5 L11 16 M17.5 8.5 L13 16 M7 6.2 L17 6.8"
-  };
-  function iconKey(name) {   // subtopics reuse their topic's icon; pledge groups use the flag, a calendar or their topic's
+  // What the canvas draws (the sphere, lines, labels, rings) follows the site theme: the colours are tokens in
+  // assets/theme.css, read here and read again when the reader switches theme (assets/theme.js).
+  var CV = {};
+  function tok(name, fallback) { var v = getComputedStyle(document.documentElement).getPropertyValue(name).trim(); return v || fallback; }
+  function chan(name, fallback) { return tok(name, fallback).split(/\s+/).join(","); }   // "4 18 12" -> "4,18,12" for rgba()
+  function readCanvasTheme() {
+    CV.light = document.documentElement.dataset.theme === "light";
+    CV.labelBg = tok("--cv-label-bg", "rgba(7,25,17,.78)"); CV.labelBg2 = tok("--cv-label-bg2", "rgba(7,25,17,.82)");
+    CV.labelInk = tok("--cv-label-ink", "#eef3ef"); CV.labelSub = tok("--cv-label-sub", "#a9c2b1");
+    CV.under = chan("--cv-under-rgb", "4 18 12"); CV.pale = chan("--cv-pale-rgb", "246 227 180"); CV.soft = chan("--cv-soft-rgb", "169 194 177");
+    CV.dust = tok("--cv-dust", "#cfe2d4"); CV.dustHi = tok("--cv-dust-hi", "#f6e3b4");
+    CV.sel = tok("--cv-sel", "#fff"); CV.ring = tok("--cv-ring", "rgba(255,255,255,.6)"); CV.ring2 = tok("--cv-ring2", "rgba(255,255,255,.7)");
+    CV.sph0 = tok("--cv-sph-0", "#3a7058"); CV.sph1 = tok("--cv-sph-1", "#1e4433"); CV.sph2 = tok("--cv-sph-2", "#0b2218");
+    CV.disc2 = tok("--cv-disc-2", "#143024"); CV.discSide = tok("--cv-disc-side", "#08170f");
+    CV.sphLine = tok("--cv-sph-line", "rgba(159,214,182,.16)"); CV.sphRim = tok("--cv-sph-rim", "rgba(159,214,182,.5)");
+  }
+  readCanvasTheme();
+  window.addEventListener("mizien:theme", function () {
+    readCanvasTheme();
+    if (typeof gmap !== "undefined" && gmap && typeof gmapReady !== "undefined" && gmapReady) gmap.setStyle(mapStyle());
+  });
+  // Glyphs: one registry (assets/glyphs.js) for every view. Names are the display names the web already uses (topics,
+  // subtopics, verdicts, patterns, stages, kinds of body), "pledge:<label>", "theme:T<n>", "place:<key>" and "mode:<grouping>".
+  var GLY = window.MizienGlyphs, ICONS = GLY.paths;
+  function iconKey(name) {   // pledge groups use their label's glyph, a calendar or their topic's
     name = String(name || "");
     if (ICONS[name]) return name;
-    if (/^Pledge: /.test(name)) return "pledge";
+    var pl = /^Pledge: (.+)$/.exec(name);
+    if (pl) return ICONS["pledge:" + pl[1]] ? "pledge:" + pl[1] : "pledge";
     if (/^When: /.test(name)) return "mode:year";
     if (/^What: /.test(name)) return iconKey(name.slice(6));
     if (/^Who: /.test(name)) return "person";
@@ -131,6 +100,13 @@
   }
   var ICON_PATHS = {};
   Object.keys(ICONS).forEach(function (k) { ICON_PATHS[k] = new Path2D(ICONS[k]); });
+  // The glyph of a node: a person has "person"; a subgroup has a glyph of its own where it has one (a subtopic) and
+  // otherwise its group's (a body shares the glyph of its kind); a group has its own.
+  function nodeGlyph(n) {
+    if (n.person) return "person";
+    var own = iconKey(n.name);
+    return n.sub && !ICONS[own] ? iconKey(n.parent.name) : own;
+  }
 
   var PALETTE = ["#e3a72f", "#56b4e9", "#6fcf97", "#f2994a", "#bb86fc", "#f06292", "#4fc3c8", "#9fa8da", "#cfd8dc"];
   // Who said it: claims are matched to the register of bodies and people (data/bodies.csv) by the site build. A claim
@@ -311,7 +287,7 @@
   }
   function lensChanged() {
     syncTimelineLink();
-    if (view === "map") { buildPlaces(); if (gmapLayer) { gmapLayer.textContent = ""; gmapMarks = {}; } queueGeoMarks();
+    if (view === "map") { buildPlaces(); if (gmapLayer) { gmapLayer.textContent = ""; gmapMarks = {}; } queueGeoMarks(); fitPlaces(true);
       var q = document.getElementById("placeq"); if (q) q.dispatchEvent(new Event("input")); return; }
     var keep = selKey(); setMode(mode, false); applySelKey(keep);
   }
@@ -341,7 +317,11 @@
   // the ratios between the levels; the view refits, so wider groups make room rather than leave the screen.
   var SP = { g: 1, s: 1, c: 1 };
   try { var sp0 = JSON.parse(localStorage.getItem("mizien.spacing") || "null"); if (sp0) ["g", "s", "c"].forEach(function (k) { if (+sp0[k] >= 0.4 && +sp0[k] <= 2.5) SP[k] = +sp0[k]; }); } catch (e) {}
-  function groupSpread() { return GROUP_SPREAD * SP.g; }
+  // A partial view (the site-wide filter, or only the pinned claims) keeps fewer groups: they draw in closer together
+  // (fill, from the share of groups still shown) and the view refits to them, rather than leaving a few nodes on the rim
+  // of a layout made for all of them.
+  var fill = 1, shownCount = 0;
+  function groupSpread() { return GROUP_SPREAD * SP.g * fill; }
 
   // ------------------------------------------------------------ arranging groups (topology)
   // Groups sit on fixed slots (points on the sphere or ring). An arrangement pattern scores how strongly two groups
@@ -419,6 +399,9 @@
     var y = 1 - (i / (n - 1)) * 2, rad = Math.sqrt(Math.max(0, 1 - y * y)), th = Math.PI * (3 - Math.sqrt(5)) * i;
     return { x: Math.cos(th) * rad * r, y: y * r, z: Math.sin(th) * rad * r };
   }
+  function equator(n, i, r) { // one to three groups: round the middle of the sphere (the spiral would put one at its centre, or two at the poles)
+    var a = (i / n) * Math.PI * 2 + 0.4; return { x: Math.cos(a) * r, y: n === 3 ? (i - 1) * r * 0.18 : 0, z: Math.sin(a) * r };
+  }
   function clusterRadius(n) { return n <= 1 ? 0 : (34 + 15 * Math.sqrt(n)) * SP.c; }
 
   function modeSub(m) {
@@ -431,11 +414,12 @@
     mode = m; var M = MODES[m];
     Object.keys(hubPool).forEach(function (k) { hubPool[k].talpha = 0; });
     claims.forEach(function (c) { c.hub = null; c.extra = []; c.sub = null; c.hidden = false; });
-    var hid = hiddenSet(m);
+    var hid = hiddenSet(m), partial = !!(Lens && Lens.active()), allKeys = {};
     var order = M.order(), groups = {};
     claims.forEach(function (c) {
-      if (!inLens(c)) { c.hidden = true; return; }   // outside the site-wide filter
       var keys = M.key(c.data);
+      if (keys.length) allKeys[keys[0]] = 1;
+      if (!inLens(c)) { c.hidden = true; return; }   // outside the site-wide filter
       keys.forEach(function (v, j) { (groups[v] = groups[v] || []).push({ c: c, primary: j === 0 }); });
     });
     // unseen values (e.g. a new status) go at the end
@@ -450,7 +434,7 @@
       if (m === "pledges") h.count = members.length;   // pledge view: who, when and what each count every pledge they touch
       if (M.layout === "force") return;
       if (m === "pattern" && v === "No pattern tag") { h.claims.forEach(function (c) { c.hidden = true; }); return; }   // untagged claims have no place in the patterns view
-      if (h.empty && (m === "topic" || m === "speaker" || m === "pattern")) return; // hide empty groups where order is not meaningful
+      if (h.empty && (m === "topic" || m === "speaker" || m === "pattern" || (partial && m !== "pledges"))) return; // hide empty groups where order is not meaningful, and all of them in a partial view
       if (m === "pledges" && !members.length) return;   // pledge view: "when" and "what" groups hold only spokes, and stay
       h.hidden = !!hid[v]; legendGroups.push(h);
       if (h.hidden) { h.claims.forEach(function (c) { c.hidden = true; }); return; }
@@ -458,10 +442,12 @@
     });
     if (m === "pledges") claims.forEach(function (c) { if (!c.data.pledge) c.hidden = true; });   // only pledges here
     buildSubHubs(m);
+    shownCount = partial ? claims.filter(function (c) { return !c.hidden; }).length : Infinity;   // partial views only: hiding groups in the legend does not count
     // hub targets
-    var n = hubs.length;
+    var n = hubs.length, nAll = Math.max(1, Object.keys(allKeys).length - (m === "pattern" && allKeys["No pattern tag"] ? 1 : 0));
+    fill = partial && M.layout !== "force" ? Math.max(0.42, Math.min(1, Math.sqrt(n / nAll))) : 1;   // the web of links fits itself
     if (M.layout === "sphere") {
-      hubs.forEach(function (h, i) { var p = spiral(n, i, R * groupSpread()); h.tx = p.x; h.ty = p.y; h.tz = p.z; });
+      hubs.forEach(function (h, i) { var p = n <= 3 ? equator(n, i, R * groupSpread()) : spiral(n, i, R * groupSpread()); h.tx = p.x; h.ty = p.y; h.tz = p.z; });
     } else if (M.layout === "ring") {
       hubs.forEach(function (h, i) { var a = (i / n) * Math.PI * 2; h.tx = Math.cos(a) * R * 1.12 * groupSpread() / 1.05; h.tz = Math.sin(a) * R * 1.12 * groupSpread() / 1.05; h.ty = m === "pattern" ? 0 : (i % 2 ? 1 : -1) * 34; });
     }
@@ -561,7 +547,8 @@
   var SPHERE_K = 0.94, CORONA_K = 1.38;
   function coronaK() { return 1 + (CORONA_K - 1) * SP.s; }
   // The opaque backdrop under a grouping: a sphere for topics, a flat disc for the patterns (their ring); none elsewhere.
-  function backdrop() { return view !== "graph" ? null : mode === "topic" ? "sphere" : mode === "pattern" ? "disc" : null; }
+  // A partial view with only a few topics drops the sphere, so that none of them hides behind it.
+  function backdrop() { return view !== "graph" ? null : mode === "topic" ? (fill < 1 && hubs.length <= 4 ? null : "sphere") : mode === "pattern" ? "disc" : null; }
   function coronaOn() { return split && backdrop() === "sphere"; }
   function normalOf(x, y, z) { var l = Math.hypot(x, y, z); return l < 1e-6 ? { x: 0, y: 0, z: 1 } : { x: x / l, y: y / l, z: z / l }; }
   function lift(p, n, base) {   // flatten p onto the tangent plane at n, then raise it outward so it clears the surface
@@ -632,7 +619,7 @@
       else if (lifted) p = n === 1 ? { x: nrm.x * 36, y: nrm.y * 36, z: nrm.z * 36 } : lift(spiral(n, i, r), nrm, 0.35 * r);
       else p = spiral(n, i, r);
       c.tx = h.tx + p.x; c.ty = h.ty + p.y; c.tz = h.tz + p.z;
-      if (n === 1 && !lifted) c.ty += open ? 90 : 46;
+      if (n === 1 && !lifted) c.ty += open ? 90 : fill < 1 ? -52 : 46;   // a partial view: above the group, clear of its label
     });
     h.openR = r;
   }
@@ -673,9 +660,13 @@
       P.forEach(function (p) { p.vx -= p.x * 0.012; p.vy -= p.y * 0.012; p.vz -= p.z * 0.012;
         p.x += p.vx * 0.5 * cool; p.y += p.vy * 0.5 * cool; p.z += p.vz * 0.5 * cool; p.vx *= .55; p.vy *= .55; p.vz *= .55; });
     }
-    var mx = 0; P.forEach(function (p) { mx = Math.max(mx, Math.hypot(p.x, p.y, p.z)); });
-    var s = (R * 1.35) / (mx || 1);
-    claims.forEach(function (c, i) { c.tx = P[i].x * s; c.ty = P[i].y * s * 0.8; c.tz = P[i].z * s; });
+    // fit the claims shown (all, or a filtered or pinned set) to the view: centred on them, and as wide as the whole web
+    var on = claims.map(function (c) { return !c.hidden; }), k = 0, cx = 0, cy = 0, cz = 0, mx = 0;
+    P.forEach(function (p, i) { if (on[i]) { cx += p.x; cy += p.y; cz += p.z; k++; } });
+    if (k) { cx /= k; cy /= k; cz /= k; }
+    P.forEach(function (p, i) { if (on[i]) mx = Math.max(mx, Math.hypot(p.x - cx, p.y - cy, p.z - cz)); });
+    var s = (R * 1.35) / Math.max(mx, k > 1 ? 1 : 60, k < claims.length ? 110 : 1);   // a few claims: spread out, but not to the rim
+    claims.forEach(function (c, i) { c.tx = (P[i].x - cx) * s; c.ty = (P[i].y - cy) * s * 0.8; c.tz = (P[i].z - cz) * s; });
   }
 
   // ------------------------------------------------------------ chrome
@@ -683,7 +674,7 @@
     var g = document.getElementById("groupby"); g.textContent = "";
     MODE_ORDER.forEach(function (m) {
       if (m === "pledges" && !DATA.claims.some(function (c) { return c.pledge; })) return;
-      var b = el("button"); b.type = "button"; b.dataset.mode = m; b.appendChild(iconSvg("mode:" + m, "#eef3ef"));
+      var b = el("button"); b.type = "button"; b.dataset.mode = m; b.appendChild(iconSvg("mode:" + m, "currentColor"));
       b.appendChild(document.createTextNode(MODES[m].label)); b.onclick = function () { setMode(m); }; g.appendChild(b);
     });
   }
@@ -773,7 +764,8 @@
       if (nested && h.subs && h.subs.length && legendOpen[h.name] && !h.hidden) {
         var kids = el("div", "gsubs");
         h.subs.forEach(function (sh) {
-          var kb = el("button", "gsub" + (sh.person ? " person" : "")); kb.type = "button"; var d = el("span", "dot"); d.style.background = sh.color;
+          var kb = el("button", "gsub" + (sh.person ? " person" : "")); kb.type = "button"; var d = el("span", "sw sm"); d.style.background = sh.color;
+          d.appendChild(iconSvg(nodeGlyph(sh)));
           kb.appendChild(d); kb.appendChild(el("span", "gname", sh.name)); kb.appendChild(el("span", "n", String(sh.count)));
           kb.onclick = function () { selectHub(sh); }; kids.appendChild(kb); });
         g.appendChild(kids); }
@@ -944,13 +936,13 @@
       var mx = (a.sx + b.sx) / 2, my = (a.sy + b.sy) / 2, dx = b.sx - a.sx, dy = b.sy - a.sy, bend = 0.18;
       var cx = mx - dy * bend, cy = my + dx * bend;
       blinks.push({ q: q, g: { a: a, b: b, c: { x: cx, y: cy } } });
-      if (sameLine(hover, q) || sameLine(sel, q)) { ctx.strokeStyle = "rgba(246,227,180,.3)"; ctx.lineWidth = w + 10; ctx.lineCap = "round";
+      if (sameLine(hover, q) || sameLine(sel, q)) { ctx.strokeStyle = "rgba(" + CV.pale + ",.3)"; ctx.lineWidth = w + 10; ctx.lineCap = "round";
         ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(cx, cy, b.sx, b.sy); ctx.stroke(); }
       ctx.lineCap = "round"; ctx.setLineDash([]);
-      ctx.strokeStyle = "rgba(4,18,12,.55)"; ctx.lineWidth = w + 3;
+      ctx.strokeStyle = "rgba(" + CV.under + ",.55)"; ctx.lineWidth = w + 3;
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(cx, cy, b.sx, b.sy); ctx.stroke();
       ctx.setLineDash(named ? [] : [6, 5]); if (!named && focus && !reduce) ctx.lineDashOffset = -t * 14;
-      ctx.strokeStyle = named ? "rgba(246,227,180,.95)" : "rgba(169,194,177,.9)"; ctx.globalAlpha = focus ? 1 : 0.55; ctx.lineWidth = w;
+      ctx.strokeStyle = named ? "rgba(" + CV.pale + ",.95)" : "rgba(" + CV.soft + ",.9)"; ctx.globalAlpha = focus ? 1 : 0.55; ctx.lineWidth = w;
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(cx, cy, b.sx, b.sy); ctx.stroke();
       ctx.globalAlpha = 1; ctx.lineDashOffset = 0; ctx.setLineDash([]); ctx.lineCap = "butt";
     });
@@ -998,23 +990,23 @@
     for (var i = 0; i < N; i++) { var a = i / N * 6.2832, x = Math.cos(a) * rd, z = Math.sin(a) * rd; top.push(project({ x: x, y: 0, z: z })); bot.push(project({ x: x, y: 16, z: z })); }
     function poly(pts) { ctx.beginPath(); pts.forEach(function (q, i) { if (i) ctx.lineTo(q.sx, q.sy); else ctx.moveTo(q.sx, q.sy); }); ctx.closePath(); }
     ctx.save(); ctx.globalAlpha = vis;
-    ctx.fillStyle = "#08170f"; poly(bot); ctx.fill();
+    ctx.fillStyle = CV.discSide; poly(bot); ctx.fill();
     var g = ctx.createRadialGradient(c.sx, c.sy, 0, c.sx, c.sy, rd * c.s);
-    g.addColorStop(0, "#3a7058"); g.addColorStop(0.7, "#1e4433"); g.addColorStop(1, "#143024");
+    g.addColorStop(0, CV.sph0); g.addColorStop(0.7, CV.sph1); g.addColorStop(1, CV.disc2);
     ctx.fillStyle = g; poly(top); ctx.fill();
-    ctx.strokeStyle = "rgba(159,214,182,.16)"; ctx.lineWidth = 1;
+    ctx.strokeStyle = CV.sphLine; ctx.lineWidth = 1;
     [1 / 3, 2 / 3].forEach(function (f) { poly(top.map(function (q) { return { sx: c.sx + (q.sx - c.sx) * f, sy: c.sy + (q.sy - c.sy) * f }; })); ctx.stroke(); });
-    ctx.strokeStyle = "rgba(159,214,182,.5)"; ctx.lineWidth = 1.5; poly(top); ctx.stroke();
+    ctx.strokeStyle = CV.sphRim; ctx.lineWidth = 1.5; poly(top); ctx.stroke();
     ctx.restore();
   }
   function drawSphere(S) {
     var c = S.c, r = S.rs, wr = R * groupSpread() * SPHERE_K;
     ctx.save(); ctx.globalAlpha = S.vis;
     var g = ctx.createRadialGradient(c.sx - r * 0.35, c.sy - r * 0.4, r * 0.08, c.sx, c.sy, r);
-    g.addColorStop(0, "#3a7058"); g.addColorStop(0.5, "#1e4433"); g.addColorStop(1, "#0b2218");
+    g.addColorStop(0, CV.sph0); g.addColorStop(0.5, CV.sph1); g.addColorStop(1, CV.sph2);
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(c.sx, c.sy, r, 0, 6.283); ctx.fill();
     ctx.save(); ctx.beginPath(); ctx.arc(c.sx, c.sy, r, 0, 6.283); ctx.clip();
-    ctx.strokeStyle = "rgba(159,214,182,.16)"; ctx.lineWidth = 1;
+    ctx.strokeStyle = CV.sphLine; ctx.lineWidth = 1;
     function trace(fn, n) {   // a graticule line, only the half that faces the viewer
       var pen = false; ctx.beginPath();
       for (var i = 0; i <= n; i++) { var w = fn(i / n), q = project({ x: w.x * wr, y: w.y * wr, z: w.z * wr });
@@ -1024,7 +1016,7 @@
     for (var la = -60; la <= 60; la += 30) trace(function (u) { var a = u * 6.2832, cl = Math.cos(la * Math.PI / 180); return { x: Math.cos(a) * cl, y: Math.sin(la * Math.PI / 180), z: Math.sin(a) * cl }; }, 48);
     for (var lo = 0; lo < 180; lo += 30) trace(function (u) { var a = (u - 0.5) * 3.1416 * 2, b = lo * Math.PI / 180; return { x: Math.cos(a) * Math.cos(b), y: Math.sin(a), z: Math.cos(a) * Math.sin(b) }; }, 48);
     ctx.restore();
-    ctx.strokeStyle = "rgba(159,214,182,.5)"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(c.sx, c.sy, r, 0, 6.283); ctx.stroke();
+    ctx.strokeStyle = CV.sphRim; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(c.sx, c.sy, r, 0, 6.283); ctx.stroke();
     ctx.restore();
   }
 
@@ -1052,7 +1044,7 @@
     ctx.clearRect(0, 0, W, H);
     stars.forEach(function (s) {
       ctx.globalAlpha = s.a * (0.65 + 0.35 * Math.sin(t * 0.7 + s.tw));
-      ctx.fillStyle = s.d > .85 ? "#f6e3b4" : "#cfe2d4";
+      ctx.fillStyle = s.d > .85 ? CV.dustHi : CV.dust;
       var px = (s.x * W + cam.yaw * 30 * s.d) % W; if (px < 0) px += W;
       ctx.beginPath(); ctx.arc(px, s.y * H, s.r, 0, 6.283); ctx.fill();
     });
@@ -1109,7 +1101,7 @@
       var pa = P.get(a), pb = P.get(b), on = !F || F.ids[l.a] || F.ids[l.b];
       var pc = { x: (pa.sx + pb.sx) / 2, y: (pa.sy + pb.sy) / 2 - 40 }, lit = (hover && hover.kind === "plink" && hover.l === l) || (sel && sel.kind === "plink" && sel.l === l);
       plinks.push({ l: l, g: { a: pa, b: pb, c: pc } });
-      ctx.save(); ctx.globalAlpha = on || lit ? 0.95 : 0.25; ctx.strokeStyle = "#f6e3b4"; ctx.lineWidth = lit ? 4.2 : 2.6; ctx.setLineDash([2, 5]); ctx.lineCap = "round";
+      ctx.save(); ctx.globalAlpha = on || lit ? 0.95 : 0.25; ctx.strokeStyle = CV.dustHi; ctx.lineWidth = lit ? 4.2 : 2.6; ctx.setLineDash([2, 5]); ctx.lineCap = "round";
       if (!reduce) ctx.lineDashOffset = -t * 10;
       ctx.beginPath(); ctx.moveTo(pa.sx, pa.sy); ctx.quadraticCurveTo((pa.sx + pb.sx) / 2, (pa.sy + pb.sy) / 2 - 40, pb.sx, pb.sy); ctx.stroke(); ctx.restore();
     });
@@ -1143,7 +1135,7 @@
       var weak = e.strength && (e.strength.indexOf("Weak") === 0 || e.strength.indexOf("Pattern") === 0);
       ctx.lineCap = "round";
       ctx.setLineDash([]);                                   // dark underlay: the line reads on any background
-      ctx.strokeStyle = "rgba(4,18,12," + (dim ? 0.12 : 0.6) + ")"; ctx.lineWidth = strong ? 7 : 4.4;
+      ctx.strokeStyle = "rgba(" + CV.under + "," + (dim ? 0.12 : 0.6) + ")"; ctx.lineWidth = strong ? 7 : 4.4;
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke();
       if (strong) { ctx.strokeStyle = rgba(col, 0.32); ctx.lineWidth = 13;
         ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke(); }
@@ -1153,7 +1145,7 @@
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke();
       ctx.lineDashOffset = 0; ctx.globalAlpha = 1; ctx.lineCap = "butt";
       if ((hi || hv) && !reduce) { // particles travelling along highlighted links
-        ctx.setLineDash([]); ctx.fillStyle = "#fff";
+        ctx.setLineDash([]); ctx.fillStyle = CV.sel;
         for (var q = 0; q < 3; q++) { var s = ((t * 0.35 + q / 3 + i * 0.07) % 1), pt = qpt(e._g, s);
           ctx.globalAlpha = 0.9 * Math.sin(s * Math.PI); ctx.beginPath(); ctx.arc(pt.x, pt.y, 2.4, 0, 6.283); ctx.fill(); }
         ctx.globalAlpha = 1;
@@ -1184,9 +1176,9 @@
         var g2 = ctx.createRadialGradient(p.sx - r * .35, p.sy - r * .4, r * .1, p.sx, p.sy, r);
         g2.addColorStop(0, rgba("#ffffff", 0.55)); g2.addColorStop(0.25, n.color); g2.addColorStop(1, rgba(n.color, 0.85));
         ctx.fillStyle = g2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r, 0, 6.283); ctx.fill();
-        ctx.strokeStyle = isSel ? "#fff" : "rgba(255,255,255,.6)"; ctx.lineWidth = isSel ? 3 : 1.5;
+        ctx.strokeStyle = isSel ? CV.sel : CV.ring; ctx.lineWidth = isSel ? 3 : 1.5;
         if (n.person && !isSel) ctx.setLineDash([3, 3]); ctx.stroke(); ctx.setLineDash([]);
-        var ip = ICON_PATHS[n.person ? "person" : iconKey(n.sub ? n.parent.name : n.name)];
+        var ip = ICON_PATHS[nodeGlyph(n)];
         if (ip) { ctx.save(); var s2 = r * 1.15 / 24; ctx.translate(p.sx - 12 * s2, p.sy - 12 * s2); ctx.scale(s2, s2);
           ctx.strokeStyle = "rgba(10,30,20,.9)"; ctx.lineWidth = 2.3; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.stroke(ip); ctx.restore(); }
         var lr = r;   // where the label goes: below the laurel, if there is one
@@ -1209,9 +1201,9 @@
         g3.addColorStop(0, rgba("#ffffff", 0.5)); g3.addColorStop(0.35, col); g3.addColorStop(1, col);
         ctx.fillStyle = g3; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2, 0, 6.283); ctx.fill();
         ctx.strokeStyle = "rgba(246,244,238,.6)"; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 0.6, 0, 6.283); ctx.stroke();
-        if (!isRated) { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,.7)"; ctx.lineWidth = 1.1;
+        if (!isRated) { ctx.setLineDash([2, 3]); ctx.strokeStyle = CV.ring2; ctx.lineWidth = 1.1;
           ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 3.4, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
-        if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
+        if (isSel) { ctx.strokeStyle = CV.sel; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
         if (Tray && Tray.has(n.id)) { ctx.strokeStyle = "#e3a72f"; ctx.lineWidth = 2.2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 5, 0, 6.283); ctx.stroke(); }   // pinned
         n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: true };
         var focused = F && F.ids[n.id];
@@ -1219,7 +1211,7 @@
         // codes give way to the claims' names. A hovered, selected, pinned or highlighted claim is always labelled.
         var pin = Tray && Tray.has(n.id), zfade = Math.max(0, Math.min(1, (cam.zoom - 1.35) / 0.3)), close = cam.zoom >= 2.2;
         var member = expanded && n.hub === expanded && mode !== "speaker", tagged = labelMode === "tag" || member || (close && !expanded);   // Who said it: too many claims to name them all
-        var keep = isHov || isSel || member || focused || pin;
+        var keep = isHov || isSel || member || focused || pin || shownCount <= 24 || mode === "pledges";   // a small filtered or pinned set, and the pledges, are always labelled
         var hp = member ? P.get(n.sub && n.sub.alpha > 0.3 ? n.sub : expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
         if ((!expanded && (keep || zfade > 0)) || member || isHov || isSel) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: tagged ? d.title : n.id,
           sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (isRated ? " · " + ratedText(d) : " · not yet checked") : d.title) : "",
@@ -1251,13 +1243,13 @@
       var box = { x: L.x - bw / 2, y: L.y - 12, w: bw, h: bh };
       if (L.pri < 3.5 && placed.some(function (o) { return box.x < o.x + o.w && box.x + box.w > o.x && box.y < o.y + o.h && box.y + box.h > o.y; })) return;
       placed.push(box); ctx.globalAlpha = L.alpha;
-      if (L.hub) { ctx.fillStyle = "rgba(7,25,17,.78)"; roundRect(box.x, box.y, box.w, box.h, 9); ctx.fill();
+      if (L.hub) { ctx.fillStyle = CV.labelBg; roundRect(box.x, box.y, box.w, box.h, 9); ctx.fill();
         ctx.strokeStyle = rgba(L.color, 0.7); ctx.lineWidth = 1; ctx.stroke(); }
-      else if (L.sub || L.tag) { ctx.fillStyle = "rgba(7,25,17,.82)"; roundRect(box.x, box.y, box.w, box.h, 7); ctx.fill();
+      else if (L.sub || L.tag) { ctx.fillStyle = CV.labelBg2; roundRect(box.x, box.y, box.w, box.h, 7); ctx.fill();
         if (L.tag) { ctx.strokeStyle = rgba(L.color, 0.85); ctx.lineWidth = 1.2; ctx.stroke(); } }
-      ctx.textAlign = "center"; ctx.fillStyle = "#eef3ef"; ctx.font = titleFont;
+      ctx.textAlign = "center"; ctx.fillStyle = CV.labelInk; ctx.font = titleFont;
       ctx.fillText(L.text, L.x, L.y + 1);
-      if (L.sub) { ctx.font = L.hub ? "11px Arial, sans-serif" : "italic 11px Arial, sans-serif"; ctx.fillStyle = "#a9c2b1";
+      if (L.sub) { ctx.font = L.hub ? "11px Arial, sans-serif" : "italic 11px Arial, sans-serif"; ctx.fillStyle = CV.labelSub;
         var sub = L.sub; while (ctx.measureText(sub).width > 220 && sub.length > 4) sub = sub.slice(0, -2);
         ctx.fillText(sub === L.sub ? sub : sub + "…", L.x, L.y + 15); }
       ctx.globalAlpha = 1;
@@ -1281,7 +1273,7 @@
       ctx.save(); ctx.globalAlpha = a;
       ctx.strokeStyle = "rgba(246,244,238,.45)"; ctx.lineWidth = 1;
       ctx.beginPath(); ctx.moveTo(par._p.x + Math.cos(ang) * (par._p.r - 2), par._p.y + Math.sin(ang) * (par._p.r - 2)); ctx.lineTo(x, y); ctx.stroke();
-      ctx.fillStyle = TONE[pt.data.tone] || TONE.grey; ctx.strokeStyle = isSel || isHov ? "#fff" : "rgba(246,244,238,.85)"; ctx.lineWidth = isSel ? 2.2 : 1.1;
+      ctx.fillStyle = TONE[pt.data.tone] || TONE.grey; ctx.strokeStyle = isSel || isHov ? CV.sel : "rgba(246,244,238,.85)"; ctx.lineWidth = isSel ? 2.2 : 1.1;
       ctx.beginPath(); ctx.arc(x, y, r * (isHov || isSel ? 1.35 : 1), 0, 6.283); ctx.fill(); ctx.stroke(); ctx.restore();
       pt._p = { x: x, y: y, r: r + 2, live: focus || cam.zoom >= 1.6 };
       if (focus) labels.push({ x: x, y: y + r + 12, text: pt.id.slice(-1), sub: isHov || isSel ? pt.data.rating || "" : "", hub: false, color: TONE[pt.data.tone] || TONE.grey,
@@ -1313,23 +1305,8 @@
   var gmapMarks = {}, gmapGroups = [], gmapSel = null, gmapRaf = 0, gmapFailed = false;
   var ISLANDS_BOUNDS = [[14.175, 35.795], [14.585, 36.085]];
   function shortPlace(p) { return String(p || "").split(/[,(]/)[0].trim(); }
-  // Landmark emblems (24 x 24 line art) for every place a claim is about. Keys come from claim.yml location.icon.
-  var PLACE_ICONS = {
-    parliament: "M2 20.5 H22 M4 20.5 V9.5 H11 V20.5 M13 20.5 V9.5 H20 V20.5 M3 9.5 H21 M6 12 V18 M8.5 12 V18 M15.5 12 V18 M18 12 V18 M4 7 H20",
-    castille: "M2 20.5 H22 M3 20.5 V10.5 H21 V20.5 M10 20.5 V16 A2 2 0 0 1 14 16 V20.5 M3 10.5 L12 6.5 L21 10.5 M12 6.5 V2.5 L15.5 3.5 L12 4.6 M6 13 V15.5 M18 13 V15.5",
-    citygate: "M2 21 H22 M4.5 21 V5.5 L8.5 4 V21 M15.5 21 V4 L19.5 5.5 V21 M8.5 21 H15.5 M10.5 9 H13.5 M10.5 13 H13.5",
-    barrakka: "M2 20.5 H22 M3 20.5 V11.5 A3 3 0 0 1 9 11.5 V20.5 M9 11.5 A3 3 0 0 1 15 11.5 V20.5 M15 11.5 A3 3 0 0 1 21 11.5 V20.5 M3 8.5 H21 M17 6 L21 4.5",
-    ravelin: "M12 2.5 L21.5 10 L18 20.5 H6 L2.5 10 Z M7.5 17.5 H16.5 M12 6.5 V11 M9.5 11 H14.5",
-    waterfront: "M2 20.5 H22 M3 20.5 V12 H21 V20.5 M5 20.5 V16 A1.5 1.5 0 0 1 8 16 V20.5 M10.5 20.5 V16 A1.5 1.5 0 0 1 13.5 16 V20.5 M16 20.5 V16 A1.5 1.5 0 0 1 19 16 V20.5 M3 12 L12 8 L21 12",
-    tower: "M8 19 V8.5 H15 V19 M7 8.5 H16 M8 5.5 H15 V8.5 M8 5.5 V4 M11.5 5.5 V4 M15 5.5 V4 M10.5 12 H12.5 M2 21.5 C5 20.5 7 22.5 10 21.5 C13 20.5 15 22.5 18 21.5 C19.5 21 20.5 21.2 22 21.5",
-    landfill: "M2 20.5 C5 13 9 10 13 12 C16 13.5 19 16.5 22 20.5 Z M15.5 9.5 V4 H17.5 V10.5 M7 17.5 L9.5 15 M12 17 L14 14.5",
-    flyover: "M2 18 C8 18 10 10 16 10 H22 M2 12 H8 C14 12 15 18 22 18 M6 18 V21.5 M18 10 V21.5 M12 13.5 V21.5",
-    ro_plant: "M6 21 V12.5 H18 V21 Z M6 16 H18 M9.5 12.5 V21 M14.5 12.5 V21 M12 2.5 C12 2.5 9 6.5 9 8.5 A3 3 0 0 0 15 8.5 C15 6.5 12 2.5 12 2.5 Z",
-    park: "M2 20.5 H22 M7 20.5 V13.5 M7 4 C3 6 3 12 7 13.5 C11 12 11 6 7 4 Z M13 15.5 H21 M14 15.5 L13 20.5 M20 15.5 L21 20.5 M14.5 13 H19.5",
-    crane: "M4.5 21 V5.5 H20.5 M4.5 5.5 L8.5 2.5 H18.5 L20.5 5.5 M15 5.5 V10.5 M12.5 10.5 H17.5 V13.5 H12.5 Z M9.5 21 V17 H21 V21 M2 21 H22",
-    ferry: "M3 15 H21 L19 19 H5 Z M6.5 15 V11.5 H16.5 V15 M8.5 11.5 V8.5 H13.5 V11.5 M17.5 8 V11.5 M2 21.5 C5 20.5 7 22.5 10 21.5 C13 20.5 15 22.5 18 21.5 C19.5 21 20.5 21.2 22 21.5",
-    pin: "M12 21 C12 21 5 14 5 9 A7 7 0 0 1 19 9 C19 14 12 21 12 21 Z M12 9 V9.1"
-  };
+  // Landmark emblems for every place a claim is about: the "place:" glyphs of assets/glyphs.js, keyed by `icon` in claim.yml.
+  var PLACE_ICONS = GLY.places;
   var PLACES = [], UNPLACED = [];
   function buildPlaces() {
     var by = {}; PLACES = []; UNPLACED = [];
@@ -1365,6 +1342,24 @@
     var land = { type: "FeatureCollection", features: (GEO.islands || []).map(function (I) {   // the land under the tiles, so the sea
       return { type: "Feature", properties: {}, geometry: { type: "Polygon", coordinates: [ll(I.detail || I.coarse)] } }; }) };   // beyond them reads as sea
     var minor = ["minor", "service"], mid = ["tertiary"], main = ["primary", "secondary"], fast = ["motorway", "trunk"];
+    // two palettes: the dark one is the original; the light one is pale land and sea with deep-green lines and names
+    var C = CV.light ? {
+      sea: "#cfe3e0", land: "#f3f1e6", wood: "#d6e6cf", grass: "#e0ecd6", farm: "#e8ecd5", cover: "#e2eadb",
+      industrial: "#dedcd0", quarry: "#d2cfc2", built: "#ebe8dc", park: "#cde5c4", water: "#cfe3e0", waterway: "#9cc6d0",
+      aero: "#e4e2d8", bld: "#d9d4c5", bldLine: "#bdb7a5",
+      path: "rgba(20,69,47,.3)", ferry: "rgba(60,110,143,.55)", ferry2: "rgba(60,110,143,.5)",
+      minor: "rgba(20,69,47,.2)", mid: "rgba(20,69,47,.3)", mainCase: "rgba(255,255,255,.9)", main: "rgba(20,69,47,.55)", fast: "rgba(190,140,50,.7)",
+      roadTxt: "#14452f", roadHalo: "rgba(246,244,238,.95)", waterTxt: "#3c6e8f", waterHalo: "rgba(207,227,224,.95)",
+      locTxt: "rgba(20,69,47,.72)", locHalo: "rgba(246,244,238,.92)", townTxt: "rgba(20,69,47,.92)", townHalo: "rgba(246,244,238,.95)"
+    } : {
+      sea: "#0c2c21", land: "#285c43", wood: "#2a6a48", grass: "#2f6c4c", farm: "#2c6347", cover: "#2b6448",
+      industrial: "#3d6656", quarry: "#5a6b5c", built: "#36684f", park: "#2f7451", water: "#0c2c21", waterway: "#245e66",
+      aero: "#3a5f4e", bld: "#4a7c61", bldLine: "#5c8f73",
+      path: "rgba(207,226,212,.28)", ferry: "rgba(127,179,196,.4)", ferry2: "rgba(127,179,196,.35)",
+      minor: "rgba(207,226,212,.3)", mid: "rgba(207,226,212,.42)", mainCase: "rgba(10,32,23,.75)", main: "rgba(238,243,239,.62)", fast: "rgba(227,194,122,.85)",
+      roadTxt: "#d4e4d9", roadHalo: "rgba(14,42,31,.92)", waterTxt: "#86b8c8", waterHalo: "rgba(12,44,33,.9)",
+      locTxt: "rgba(238,243,239,.6)", locHalo: "rgba(14,42,31,.9)", townTxt: "rgba(238,243,239,.82)", townHalo: "rgba(14,42,31,.92)"
+    };
     function roads(id, classes, minzoom, color, w, extra) {
       return Object.assign({ id: id, type: "line", source: "omt", "source-layer": "transportation", minzoom: minzoom,
         filter: ["all", ["in", ["get", "class"], ["literal", classes]], ["!=", ["get", "brunnel"], "tunnel"]],
@@ -1378,46 +1373,58 @@
         towns: { type: "geojson", data: towns }, land: { type: "geojson", data: land }
       },
       layers: [
-        { id: "sea", type: "background", paint: { "background-color": "#0c2c21" } },
-        { id: "land", type: "fill", source: "land", paint: { "fill-color": "#285c43" } },
+        { id: "sea", type: "background", paint: { "background-color": C.sea } },
+        { id: "land", type: "fill", source: "land", paint: { "fill-color": C.land } },
         { id: "landcover", type: "fill", source: "omt", "source-layer": "landcover",
-          paint: { "fill-color": ["match", ["get", "class"], "wood", "#2a6a48", "grass", "#2f6c4c", "farmland", "#2c6347", "#2b6448"], "fill-opacity": 0.8 } },
+          paint: { "fill-color": ["match", ["get", "class"], "wood", C.wood, "grass", C.grass, "farmland", C.farm, C.cover], "fill-opacity": 0.8 } },
         { id: "landuse", type: "fill", source: "omt", "source-layer": "landuse",
           filter: ["in", ["get", "class"], ["literal", ["residential", "suburb", "neighbourhood", "commercial", "industrial", "retail", "quarry"]]],
-          paint: { "fill-color": ["match", ["get", "class"], "industrial", "#3d6656", "quarry", "#5a6b5c", "#36684f"],
+          paint: { "fill-color": ["match", ["get", "class"], "industrial", C.industrial, "quarry", C.quarry, C.built],
                    "fill-opacity": ["interpolate", ["linear"], ["zoom"], 9, 0.45, 14, 0.85] } },
-        { id: "park", type: "fill", source: "omt", "source-layer": "park", paint: { "fill-color": "#2f7451", "fill-opacity": 0.6 } },
-        { id: "water", type: "fill", source: "omt", "source-layer": "water", paint: { "fill-color": "#0c2c21" } },
-        { id: "waterway", type: "line", source: "omt", "source-layer": "waterway", minzoom: 12, paint: { "line-color": "#245e66", "line-width": 1 } },
+        { id: "park", type: "fill", source: "omt", "source-layer": "park", paint: { "fill-color": C.park, "fill-opacity": 0.6 } },
+        { id: "water", type: "fill", source: "omt", "source-layer": "water", paint: { "fill-color": C.water } },
+        { id: "waterway", type: "line", source: "omt", "source-layer": "waterway", minzoom: 12, paint: { "line-color": C.waterway, "line-width": 1 } },
         { id: "aeroway", type: "fill", source: "omt", "source-layer": "aeroway", filter: ["==", ["geometry-type"], "Polygon"],
-          paint: { "fill-color": "#3a5f4e", "fill-opacity": 0.8 } },
+          paint: { "fill-color": C.aero, "fill-opacity": 0.8 } },
         { id: "building", type: "fill", source: "omt", "source-layer": "building", minzoom: 14,
-          paint: { "fill-color": "#4a7c61", "fill-opacity": ["interpolate", ["linear"], ["zoom"], 14, 0, 15.5, 0.55], "fill-outline-color": "#5c8f73" } },
-        roads("path", ["path", "track"], 15, "rgba(207,226,212,.28)", [15, 0.6, 18, 1.6], { paint: { "line-color": "rgba(207,226,212,.28)", "line-width": 1, "line-dasharray": [2, 2] } }),
-        roads("ferry", ["ferry"], 10, "rgba(127,179,196,.4)", [9, 0.8, 16, 2], { paint: { "line-color": "rgba(127,179,196,.35)", "line-width": 1.2, "line-dasharray": [3, 3] } }),
-        roads("road-minor", minor, 13, "rgba(207,226,212,.3)", [13, 0.4, 16, 3, 18, 9]),
-        roads("road-mid", mid, 11, "rgba(207,226,212,.42)", [11, 0.5, 16, 4, 18, 11]),
-        roads("road-main-case", main.concat(fast), 13, "rgba(10,32,23,.75)", [13, 2.6, 16, 9, 18, 18]),
-        roads("road-main", main, 9, "rgba(238,243,239,.62)", [9, 0.5, 12, 1.3, 16, 6, 18, 14]),
-        roads("road-fast", fast, 8, "rgba(227,194,122,.85)", [8, 0.7, 12, 1.8, 16, 7.5, 18, 16]),
+          paint: { "fill-color": C.bld, "fill-opacity": ["interpolate", ["linear"], ["zoom"], 14, 0, 15.5, 0.55], "fill-outline-color": C.bldLine } },
+        roads("path", ["path", "track"], 15, C.path, [15, 0.6, 18, 1.6], { paint: { "line-color": C.path, "line-width": 1, "line-dasharray": [2, 2] } }),
+        roads("ferry", ["ferry"], 10, C.ferry, [9, 0.8, 16, 2], { paint: { "line-color": C.ferry2, "line-width": 1.2, "line-dasharray": [3, 3] } }),
+        roads("road-minor", minor, 13, C.minor, [13, 0.4, 16, 3, 18, 9]),
+        roads("road-mid", mid, 11, C.mid, [11, 0.5, 16, 4, 18, 11]),
+        roads("road-main-case", main.concat(fast), 13, C.mainCase, [13, 2.6, 16, 9, 18, 18]),
+        roads("road-main", main, 9, C.main, [9, 0.5, 12, 1.3, 16, 6, 18, 14]),
+        roads("road-fast", fast, 8, C.fast, [8, 0.7, 12, 1.8, 16, 7.5, 18, 16]),
         { id: "road-names", type: "symbol", source: "omt", "source-layer": "transportation_name", minzoom: 15,
           layout: { "symbol-placement": "line", "text-field": ["coalesce", ["get", "name"], ["get", "ref"]], "text-font": ["Noto Sans Regular"], "text-size": 11.5 },
-          paint: { "text-color": "#d4e4d9", "text-halo-color": "rgba(14,42,31,.92)", "text-halo-width": 1.3 } },
+          paint: { "text-color": C.roadTxt, "text-halo-color": C.roadHalo, "text-halo-width": 1.3 } },
         { id: "water-names", type: "symbol", source: "omt", "source-layer": "water_name", minzoom: 11,
           layout: { "text-field": ["get", "name"], "text-font": ["Noto Sans Italic"], "text-size": 11.5, "text-max-width": 8 },
-          paint: { "text-color": "#86b8c8", "text-halo-color": "rgba(12,44,33,.9)", "text-halo-width": 1 } },
+          paint: { "text-color": C.waterTxt, "text-halo-color": C.waterHalo, "text-halo-width": 1 } },
         { id: "localities", type: "symbol", source: "omt", "source-layer": "place", minzoom: 14,
           filter: ["in", ["get", "class"], ["literal", ["suburb", "neighbourhood", "hamlet", "locality", "quarter"]]],
           layout: { "text-field": ["get", "name"], "text-font": ["Noto Sans Italic"], "text-size": 11.5, "text-max-width": 9 },
-          paint: { "text-color": "rgba(238,243,239,.6)", "text-halo-color": "rgba(14,42,31,.9)", "text-halo-width": 1.2 } },
+          paint: { "text-color": C.locTxt, "text-halo-color": C.locHalo, "text-halo-width": 1.2 } },
         { id: "towns", type: "symbol", source: "towns", minzoom: 9.6,
           layout: { "text-field": ["get", "name"], "text-font": ["Noto Sans Italic"], "symbol-sort-key": ["-", 0, ["get", "pop"]],
                     "text-size": ["interpolate", ["linear"], ["zoom"], 10, ["case", [">=", ["get", "pop"], 12000], 12.5, 11], 15, 15],
                     "text-padding": 6, "text-max-width": 9 },
-          paint: { "text-color": "rgba(238,243,239,.82)", "text-halo-color": "rgba(14,42,31,.92)", "text-halo-width": 1.5,
+          paint: { "text-color": C.townTxt, "text-halo-color": C.townHalo, "text-halo-width": 1.5,
                    "text-opacity": ["interpolate", ["linear"], ["zoom"], 9.6, 0, 10.2, 1] } }
       ]
     };
+  }
+  // The map frames the places still shown: all of Malta and Gozo normally, or just the places of a filtered or pinned set.
+  function placesBounds() {
+    if (!(Lens && Lens.active()) || !PLACES.length) return ISLANDS_BOUNDS;
+    var w = 180, s = 90, e = -180, n = -90;
+    PLACES.forEach(function (P) { w = Math.min(w, P.ll[0]); e = Math.max(e, P.ll[0]); s = Math.min(s, P.ll[1]); n = Math.max(n, P.ll[1]); });
+    var px = Math.max(0.004, (e - w) * 0.08), py = Math.max(0.003, (n - s) * 0.08);
+    return [[w - px, s - py], [e + px, n + py]];
+  }
+  function fitPlaces(animate) {
+    if (!gmapReady) return;
+    gmap.fitBounds(placesBounds(), { padding: mapPadding(), maxZoom: 15, duration: animate && !reduce ? 800 : 0 });
   }
   function mapPadding() {
     var narrow = W <= 900;
@@ -1443,7 +1450,7 @@
         attributionControl: { compact: true }, fadeDuration: reduce ? 0 : 300, renderWorldCopies: false });
       gmap.touchZoomRotate.disableRotation(); gmap.keyboard.disableRotation();
       gmapLayer = el("div", "gm-layer"); gmap.getContainer().appendChild(gmapLayer);
-      gmap.on("load", function () { gmapReady = true; gmap.setPadding(mapPadding()); layoutGeoMarks(); afterMapReady(); });
+      gmap.on("load", function () { gmapReady = true; gmap.setPadding(mapPadding()); if (Lens && Lens.active() && !pendingMapClaim) fitPlaces(false); layoutGeoMarks(); afterMapReady(); });
       gmap.on("move", queueGeoMarks); gmap.on("zoom", queueGeoMarks); gmap.on("resize", queueGeoMarks);
       gmap.on("click", function (e) { if (!e.originalEvent.target.closest(".gm-m")) clearSel(); });
       gmap.on("error", function (e) { if (window.console) console.warn("Map:", e && e.error ? e.error.message || e.error : e);
@@ -1627,7 +1634,7 @@
   }
   function mapZoomBy(d) { if (gmapReady) gmap.zoomTo(gmap.getZoom() + d, { duration: reduce ? 0 : 300 }); }
   function fitView() {
-    if (view === "map") { if (gmapReady) gmap.fitBounds(ISLANDS_BOUNDS, { padding: mapPadding(), duration: reduce ? 0 : 800 }); return; }
+    if (view === "map") { fitPlaces(true); return; }
     cam.zoom = 1; cam.tpx = 0; cam.tpy = 0; cam.yaw = 0.6; cam.pitch = cam.tpitch; if (sway) cam.yaw = 0;
   }
   function setView(v, instant) {
@@ -1666,12 +1673,12 @@
     [["graph", "Għanqbuta", "mode:network", "Għanqbuta (spider): a web of claims, with topic hubs, spokes and the threads that link them"],
      ["map", "Map", "mode:topic", "Claims placed where they happened, across Malta and Gozo"]].forEach(function (v) {
       var b = el("button"); b.type = "button"; b.dataset.view = v[0]; b.title = v[3]; b.setAttribute("aria-pressed", view === v[0] ? "true" : "false");
-      if (v[0] === "map") { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 L9 4 L15 6.5 L21 4 V17.5 L15 20 L9 17.5 L3 20 Z M9 4 V17.5 M15 6.5 V20" fill="none" stroke="#cfe2d4" stroke-width="1.8" stroke-linejoin="round"/></svg>'; }
-      else b.appendChild(iconSvg(v[2], "#cfe2d4"));
+      if (v[0] === "map") { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 L9 4 L15 6.5 L21 4 V17.5 L15 20 L9 17.5 L3 20 Z M9 4 V17.5 M15 6.5 V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'; }
+      else b.appendChild(iconSvg(v[2], "currentColor"));
       b.appendChild(document.createTextNode(v[1])); b.onclick = function () { setView(v[0]); }; g.appendChild(b);
     });
     var t = el("a"); t.id = "tl-link"; t.title = "Every dated claim on a timeline, with the same filter";
-    t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l3.5 2" fill="none" stroke="#cfe2d4" stroke-width="1.8" stroke-linecap="round"/></svg>';
+    t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
     t.appendChild(document.createTextNode("Timeline")); g.appendChild(t); syncTimelineLink();
   }
   var toastTimer = null;
@@ -2213,10 +2220,10 @@
 
   var previewPayload = new URLSearchParams(location.search).get("previewData");
   if (previewPayload) {
-    try { init(JSON.parse(previewPayload)); } catch (e) { stage.appendChild(el("p", null, "The embedded map data could not be read.")).style.cssText = "padding:24px;color:#e3a72f"; }
+    try { init(JSON.parse(previewPayload)); } catch (e) { stage.appendChild(el("p", null, "The embedded map data could not be read.")).style.cssText = "padding:24px;color:var(--accent)"; }
   } else {
     fetch(ROOT + "data/claims.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(init).catch(function () {
-      stage.appendChild(el("p", null, "Could not load data/claims.json. If you opened this file directly, serve the docs folder instead (python -m http.server -d docs).")).style.cssText = "padding:24px;color:#e3a72f";
+      stage.appendChild(el("p", null, "Could not load data/claims.json. If you opened this file directly, serve the docs folder instead (python -m http.server -d docs).")).style.cssText = "padding:24px;color:var(--accent)";
     });
   }
 })();
