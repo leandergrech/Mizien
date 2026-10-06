@@ -16,13 +16,15 @@ def v(check, fmt="{:.1f}"):
     return fmt.format(float(CHK[check]["value"]))
 
 
-SH_PX = v("Transport share of ESR emissions 2024, approximated inventory")                       # 52.9
+SH_PX = v("Transport share of ESR emissions 2024, approximated inventory")                       # 53.3
 SH_G = v("Transport share of ESR emissions 2024, the report's own Graph 3.1")                    # 53.3
 SH_FIN = v("Transport share of ESR emissions 2024, 2026 inventory (our estimate)")               # 54.8
 SH_ROAD = v("Road transport only (1.A.3.b), 2026 inventory, as share of the approximated ESR total, 2024")  # 48.0
 SH_ROAD23 = v("Road transport only, share of the reviewed ESR total, 2023")                     # 47.5
 CH_G = v("Transport change 2005-2024, the report's own Graph 3.1")                              # 45.0
-CH_PX = v("Transport change 2005-2024, inventory 2005 and approximated 2024")                    # 44.1
+CH_PX = v("Transport change 2005-2024, inventory 2005 and approximated 2024")                    # 45.0
+ROAD_RANGE = CHK["Range of road-transport-only ratios that round to 48%"]["value"].replace("-", "–")  # 47.5–48.3
+GAP = v("Gap: approximated-inventory share minus the report's 48%")                              # 5.3
 CH_FIN = v("Transport change 2005-2024, 2026 inventory (final submission)")                      # 48.4
 CH_ROAD = v("Road transport only (1.A.3.b) change 2005-2024")                                    # 39.4
 CH_NAV = v("Domestic navigation (1.A.3.d) change 2005-2024", "{:.0f}")                           # 184
@@ -30,11 +32,11 @@ CH_CARS = v("Cars (1.A.3.b.i) change 2005-2024", "{:.0f}")                      
 ROAD_SH = v("Road share of ESR transport, 2024")                                                 # 88.1
 NAV_SH = CHK["Domestic navigation share of ESR transport, 2005 and 2024"]["value"].split(" / ")   # 6.2, 11.9
 INC_ROAD = v("Share of the 2005-2024 transport increase from road", "{:.0f}")                    # 76
-T_PX = v("ESR transport 2024, approximated inventory (non-ETS 1.A.3)", "{:.3f}")                 # 0.761
+T_PX = v("ESR transport 2024, approximated inventory (1.A.3 total minus 1.A.3.a CO2)", "{:.3f}")  # 0.766
 ESR_PX = v("ESR total 2024, approximated inventory", "{:.3f}")                                   # 1.437
-REV = v("ESR transport 2024: approximated vs final inventory")                                   # 3.0
+REV = v("ESR transport 2024: approximated vs final inventory")                                   # 2.3
 SH05 = CHK["Transport share of ESR emissions 2005"]["value"].split(" ")[0]                        # 52.0
-SMALL = v("ESR sector share 2024 (approximated): Small industry (residual)")                     # 19.6
+SMALL = v("ESR sector share 2024 (approximated): Small industry (residual)", "{:.0f}")            # 19
 EU_CH = v("EU-27: ESR transport (1.A.3 - aviation CO2) change 2005-2024")                        # -5.0
 A81_T = v("Table A8.1 row vs ESR transport series, 2018-2023: largest difference")               # 0.0
 A81_R = v("Table A8.1 row vs road-only series, 2018-2023: largest difference")                   # 6.2
@@ -51,20 +53,20 @@ S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
 S.append(key_points([
     ("Transport is the dominant source.",
      f"On the effort-sharing definition (all domestic transport, with aviation CO<sub>2</sub> excluded) transport was "
-     f"{SH_PX}% of Malta’s effort-sharing emissions in 2024; the next sector, small industry, was 19–20%. Transport "
+     f"{SH_PX}% of Malta’s effort-sharing emissions in 2024; the next sector, small industry, was {SMALL}%. Transport "
      "has been the largest sector in every year since 2005."),
     ("“Up by 45% since 2005” reproduces.",
-     f"Transport emissions rose from 0.528 Mt in 2005 to {T_PX}–0.765 Mt in 2024 on the approximated data the report "
-     f"uses: +{CH_PX}% to +{CH_G}%. The figure is the rise in emissions, not in the share, which barely moved "
-     f"({SH05}% to {SH_G}%). Malta’s final 2026 inventory gives +{CH_FIN}%."),
-    ("The 48% does not reproduce; the share is about 53%.",
-     f"The same definition gives {SH_G}% in the report’s own Graph 3.1, 53% in the Commission’s climate-progress "
-     f"profile of Malta and {SH_PX}% in the EEA’s approximated inventory. Road transport alone gives {SH_ROAD}%; that "
-     "may be how the figure arose (our identification; the report does not say). The 48% understates transport’s share."),
+     f"Transport emissions rose from 0.528 Mt in 2005 to {T_PX} Mt in 2024 on the approximated data the report "
+     f"uses: +{CH_PX}%, exactly its figure. That is the rise in emissions; the share barely moved ({SH05}% to "
+     f"{SH_G}%). The final 2026 inventory gives +{CH_FIN}%."),
+    ("The 48% does not reproduce; the share is 53%.",
+     f"The same definition gives {SH_PX}% in the EEA’s approximated inventory and the report’s own Graph 3.1, and 53% "
+     f"in the Commission’s climate profile of Malta. Only road transport alone ({ROAD_RANGE}%) gives 48% (our "
+     "identification; the report does not say). The 48% understates transport’s share."),
     ("The labels are narrower than the data.",
-     "A footnote describes the effort-sharing sector as “road transport”, and the annex table labels its series "
-     f"“domestic road transport”, but that series is all domestic transport except aviation CO<sub>2</sub>, domestic "
-     f"shipping included ({NAV_SH[1]}% of it in 2024). The 2024 figures are approximated; final data come in 2027."),
+     "A footnote calls the sector “road transport” and the annex table labels its series “domestic road transport”, "
+     f"but the series includes domestic shipping ({NAV_SH[1]}% in 2024). 2024 figures are approximated; final data come "
+     "in 2027."),
     ("Verdict: largely supported (high confidence).",
      "The substance holds, and on the report’s own definition transport’s share is larger than stated, not smaller."),
 ]))
@@ -72,7 +74,7 @@ S += [Spacer(1, 3.5 * mm), VerdictMeter(1), Spacer(1, 3 * mm),
       tiles([(f"{float(SH_PX):.0f}%", GREEN, f"transport’s share of effort-sharing emissions, 2024 (report: 48%)"),
              (f"+{float(CH_G):.0f}%", GREEN, f"transport emissions 2005–2024, approximated data (final inventory +{CH_FIN}%)"),
              ("20 of 20", GREEN, "years since 2005 with transport the largest effort-sharing sector"),
-             (f"{SH_ROAD}%", GREY, "road transport alone: one route to the report’s 48% (our identification)")]),
+             ("48%", GREY, f"only from road transport alone ({ROAD_RANGE}% of a total; our identification)")]),
       Spacer(1, 4 * mm),
       up_down("A published Commission or EEA series in which transport, as the Effort Sharing Regulation defines it, "
               "is 48% of Malta’s 2024 effort-sharing emissions.",
@@ -175,30 +177,35 @@ S.append(SectionHeading(4, "What the data show"))
 S.append(KeepTogether([fig(FIG / "fig1_graph31.png", width=CW * 0.8), P(
     "Figure 1. The report’s own Graph 3.1, redrawn from the values in the PDF’s drawing instructions [1]. Transport is "
     f"the largest sector in all three years. In 2024 it is 0.765 of 1.437 Mt, or {SH_G}%; the amber line marks where "
-    "48% would fall. The 2024 total equals the EEA’s approximated effort-sharing total [4, 5].", cap)]))
-S.append(P(f"<b>The share.</b> The report’s Graph 3.1, which the chapter-3 sentence cites, shows transport at {SH_G}% of "
-           f"effort-sharing emissions in 2024. The EEA’s approximated inventory gives {SH_PX}% ({T_PX} of {ESR_PX} Mt) "
-           "[5], and the Commission’s own climate-progress profile of Malta, published in January 2026, prints 53% for "
-           "the same year and definition, against 39% for the EU-27 [8]. Its 2024 profile gave 52% for 2023 [9]. With "
-           f"the final 2026 inventory, and our estimate of the effort-sharing total, the share is {SH_FIN}% [6]. "
-           "Small industry is second, at 19–20% (Figure 1)."))
+    "48% would fall. The 2024 bars equal the EEA’s approximated inventory [4, 5].", cap)]))
+S.append(P(f"<b>The share.</b> The EEA’s approximated inventory gives transport {T_PX} Mt (all transport, 0.767 Mt, minus "
+           f"0.9 kt of domestic-aviation CO<sub>2</sub>) of an effort-sharing total of {ESR_PX} Mt: {SH_PX}% [5]. The "
+           "EEA builds its total with the same aviation figure, so numerator and denominator match. The report’s Graph "
+           f"3.1, which the chapter-3 sentence cites, shows the same {SH_G}%, and the Commission’s own climate-progress "
+           "profile of Malta, published in January 2026, prints 53% for the same year and definition, against 39% for "
+           "the EU-27 [8]. Its 2024 profile gave 52% for 2023 [9]. With the final 2026 inventory, and our estimate of "
+           f"the effort-sharing total, the share is {SH_FIN}% [6]. Small industry is second, at {SMALL}% (Figure 1)."))
 S.append(KeepTogether([fig(FIG / "fig2_shares.png"), P(
     "Figure 2. Transport’s 2024 share of Malta’s effort-sharing emissions by source and definition. Every source on the "
-    "effort-sharing definition gives 53–55%. Only road transport alone, divided by the effort-sharing total, gives 48%.",
+    "effort-sharing definition gives 53–55%. Only road transport alone, divided by an effort-sharing total, gives 48%.",
     cap)]))
 S.append(P(f"<b>Where could 48% come from?</b> The report does not say. Footnote (141) points to Table A8.1, which gives "
-           "no share. Of the combinations we tried, only one reproduces the figure: road transport alone (1.A.3.b, "
-           f"0.690 Mt) divided by the approximated effort-sharing total (1.437 Mt) gives {SH_ROAD}%; for 2023 the same "
-           f"ratio is {SH_ROAD23}%. That fits footnote (140)’s wording (“road transport”) but is our identification, "
-           f"not a stated method. If it is the source, the sentence mixes two scopes: road alone rose +{CH_ROAD}% "
-           "since 2005, not 45%."))
+           f"no share. Of the combinations we tried, only ratios of road transport alone ({ROAD_RANGE}%) give 48%: road "
+           f"(1.A.3.b, 0.690 Mt) over the approximated effort-sharing total is {SH_ROAD}%, road CO<sub>2</sub> alone "
+           f"{v('Road transport only, CO2 only, as share of the approximated ESR total, 2024')}%, road over our "
+           f"final-inventory total {v('Road transport only, share of the final-inventory ESR estimate, 2024')}%, and "
+           f"road in 2023 {SH_ROAD23}%. The {SH_ROAD}% mixes a final-inventory numerator with an approximated "
+           "denominator, because the approximated inventory has no road row. A road-only figure would fit footnote "
+           "(140)’s wording (“road transport”), but this is our identification, not a stated method. If it is the "
+           f"source, the sentence mixes two scopes: road alone rose +{CH_ROAD}% since 2005, not 45%."))
 S.append(KeepTogether([fig(FIG / "fig3_change.png"), P(
     f"Figure 3. Change since 2005 in effort-sharing transport (green) and road transport alone (grey). Table A8.1’s "
     f"“domestic road transport” values (amber) sit on the green line for 2018–2023 (to the table’s one-decimal precision) "
-    f"and up to {A81_R} points off the road-only line. The red marker is 2023 as approximated a year earlier.", cap)]))
+    f"and up to {A81_R} points off the road-only line; its 2024 value, +45.0%, equals our recomputation from the "
+    "approximated inventory. The red marker is 2023 as approximated a year earlier.", cap)]))
 S.append(P(f"<b>The rise.</b> Effort-sharing transport emitted 0.528 Mt in 2005. On the approximated 2024 data the report "
-           f"uses it was {T_PX}–0.765 Mt: +{CH_PX}% to +{CH_G}% [1, 5]. The report’s “45%” is that rise: the chapter-3 "
-           "sentence says “with emissions up by 45%”, and transport’s share moved only from "
+           f"uses it was {T_PX} Mt: +{CH_PX}% [1, 5], the same as Table A8.1 and Graph 3.1 (+{CH_G}%). The report’s "
+           "“45%” is that rise: the chapter-3 sentence says “with emissions up by 45%”, and transport’s share moved only from "
            f"{SH05}% to {SH_G}%. On the final 2026 inventory the rise is +{CH_FIN}% [6], close to the +48.6% Claim Check "
            f"003 found for all domestic transport. Road transport rose +{CH_ROAD}% (cars +{CH_CARS}%) and domestic "
            f"navigation +{CH_NAV}%: road gave {INC_ROAD}% of the increase, shipping the rest, and shipping’s part of "
@@ -217,10 +224,11 @@ S.append(KeepTogether([
         [C("Same, approximated inventory / Graph 3.1 / climate profile"), C(f"{SH_PX}% / {SH_G}% / 53%"),
          C("[5] / [1] / [8]"), grade_tag("C")],
         [C("Same, final 2026 inventory (our estimate of the total)"), C(f"{SH_FIN}%"), C("[6, 5]"), grade_tag("C")],
-        [C("Road transport only ÷ effort-sharing total, 2024"), C(f"{SH_ROAD}%"), C("[6, 5]"), grade_tag("C")],
+        [C("Road transport only ÷ an effort-sharing total, 2023–2024"), C(f"{ROAD_RANGE}%"), C("[4–6]"),
+         grade_tag("C")],
         [C("Transport emissions change 2005–2024: report’s text"), C("<b>+45%</b>"), C("[1] pp. 14, 66"), grade_tag("C")],
-        [C("Same, approximated 2024 / Graph 3.1 / final inventory"), C(f"+{CH_PX}% / +{CH_G}% / +{CH_FIN}%"),
-         C("[5, 6] / [1] / [6]"), grade_tag("C")],
+        [C("Same, approximated 2024 (= Graph 3.1, Table A8.1) / final inventory"), C(f"+{CH_PX}% / +{CH_FIN}%"),
+         C("[5, 6, 1] / [6]"), grade_tag("C")],
         [C("Years 2005–2024 with transport the largest sector"), C("20 of 20"), C("[6]"), grade_tag("C")],
         [C("EU-27: transport share 2024; transport change 2005–2024"), C(f"39%; {EU_CH}%"), C("[8]; [6]"),
          grade_tag("C")],
@@ -230,22 +238,22 @@ S.append(KeepTogether([
       "and industry plus F-gases in the inventory; Malta’s ETS emissions are power generation plus 0.0003 Mt [5].", cap)]))
 
 # ================================================================== 5
-S.append(CondPageBreak(120 * mm))
+S.append(CondPageBreak(95 * mm))
 S.append(SectionHeading(5, "Where the evidence points different ways"))
 S.append(contested(
     "Q1  Is transport 48% or 53% of Malta’s effort-sharing emissions?", "53% ON THE REPORT’S DEFINITION", ORANGE,
-    f"Road transport alone is {SH_ROAD}% of the effort-sharing total, and footnote (140) names the sector “road "
+    f"Road transport alone is {ROAD_RANGE}% of an effort-sharing total, and footnote (140) names the sector “road "
     "transport”. Read that way, the 48% is a correct number for a narrower category.",
-    f"The report’s own Graph 3.1 ({SH_G}%), the Commission’s climate profile of Malta (53%) and the EEA’s approximated "
-    f"inventory ({SH_PX}%) all use all domestic transport except aviation CO<sub>2</sub>, the legal definition [2]. "
-    "On that definition 48% is about five points low.",
+    f"The EEA’s approximated inventory and the report’s own Graph 3.1 ({SH_PX}%) and the Commission’s climate profile "
+    "of Malta (53%) all use all domestic transport except aviation CO<sub>2</sub>, the legal definition [2]. On that "
+    f"definition 48% is {GAP} points low.",
     "<b>For this claim:</b> the sentence says “transport” and “these emissions”, and the report’s graph uses the wider "
     "definition, so 53% is the figure that matches the sentence. The 48% understates transport’s weight; it does not "
     "exaggerate it, and transport is the dominant source either way."))
 S.append(contested(
     "Q2  Does “up by 45% since 2005” hold, given that 2024 is approximated?", "HOLDS; FINAL DATA GIVE +48%", GREEN,
-    f"On the approximated 2024 data the report uses, the rise is +{CH_PX}% to +{CH_G}%, and the report’s Table A8.1 "
-    "reproduces exactly from the inventory for 2018–2023.",
+    f"On the approximated 2024 data the report uses, the rise is +{CH_PX}%, and the report’s Table A8.1 reproduces "
+    "exactly from the inventory for 2018–2023 and from the approximated inventory for 2024.",
     "Approximations can be revised a long way: the 2025 report put 2023 at +32.2%, the final inventory at +44.8%. "
     "The final effort-sharing figures for 2024 will only be set after the 2027 review.",
     f"<b>For this claim:</b> the final 2026 inventory already gives +{CH_FIN}%, so the revision so far has raised the "
@@ -259,23 +267,24 @@ S.append(std_table([
     [C("Sub-claim", cellh), C("Said by", cellh), C("What the evidence shows", cellh), C("Rating", cellh)],
     # plain strings (no f-strings) so scripts/subclaims.py can read the table; numbers checked against checks.csv below
     [C("<b>A.</b> Transport is the dominant source of Malta’s effort sharing emissions"), C("Commission [1]"),
-     C("52.9% in 2024 on the approximated data; the next sector, small industry, 19–20%. The largest sector in "
+     C("53.3% in 2024 on the approximated data; the next sector, small industry, 19%. The largest sector in "
        "every year 2005–2024 [5, 6]."), verd("ACCURATE", GREENC)],
     [C("<b>B.</b> It has generated 48% of these emissions in 2024"), C("Commission [1]"),
-     C("53% on the report’s own definition: Graph 3.1 53.3%, Commission climate profile 53%, EEA approximated "
-       "inventory 52.9% [1, 5, 8]. Road transport alone gives 48.0% (our identification)."),
+     C("53% on the report’s own definition: EEA approximated inventory and Graph 3.1 53.3%, Commission climate "
+       "profile 53% [1, 5, 8]. Only road-transport-only ratios (47.5–48.3%) give 48% (our identification)."),
      verd("UNDERSTATED", AMBER)],
     [C("<b>C.</b> … up by 45% since 2005"), C("Commission [1]"),
-     C("The rise in emissions, not in the share: +44.1% to +45.0% on approximated 2024 data; +48.4% on the "
-       "final 2026 inventory [1, 5, 6]. The share moved from 52.0% to 53.3%."), verd("ACCURATE", GREENC)],
+     C("The rise in emissions, not in the share: +45.0% on approximated 2024 data (0.528 to 0.766 Mt); +48.4% on "
+       "the final 2026 inventory [1, 5, 6]. The share moved from 52.0% to 53.3%."), verd("ACCURATE", GREENC)],
     [C("<b>D.</b> Effort sharing covers “road transport”; Table A8.1 row “domestic road transport”"),
      C("Commission [1], footnote (140), Table A8.1"),
      C("Effort sharing covers all domestic transport except aviation CO<sub>2</sub> [2, 3]. The table row matches that "
-       "wider series to 0.1 points in 2018–2023, not road alone (up to 6.2 points off). Shipping is 11.9% "
-       "of it [6]."), verd("LOOSELY WORDED", AMBER)],
+       "wider series to 0.1 points in 2018–2023 and exactly in 2024 (45.0%); road alone is up to 6.2 points off "
+       "(2024: +39.4%). Shipping is 11.9% of it [6]."), verd("LOOSELY WORDED", AMBER)],
 ], [46 * mm, 22 * mm, 72 * mm, 30 * mm], valign="MIDDLE"))
-for got, want in ((SH_PX, "52.9"), (SH_G, "53.3"), (SH_ROAD, "48.0"), (CH_PX, "44.1"), (CH_G, "45.0"),
-                  (CH_FIN, "48.4"), (SH05, "52.0"), (A81_R, "6.2"), (NAV_SH[1], "11.9")):
+for got, want in ((SH_PX, "53.3"), (SH_G, "53.3"), (ROAD_RANGE, "47.5–48.3"), (CH_PX, "45.0"), (CH_G, "45.0"),
+                  (CH_FIN, "48.4"), (SH05, "52.0"), (A81_R, "6.2"), (NAV_SH[1], "11.9"), (SMALL, "19"),
+                  (T_PX, "0.766"), (CH_ROAD, "39.4")):
     assert got == want, (got, want)   # the sub-claim table's typed numbers must match data/cc-109/checks.csv
 S.append(Spacer(1, 3 * mm))
 S.append(P("<b>Reading the sentence.</b> “Up by 45% since 2005” could in principle mean that transport’s share rose by "
@@ -361,7 +370,7 @@ S += references([
     ("13", "Commission Implementing Decision (EU) 2020/2126 of 16 December 2020 setting out the annual emission "
            "allocations of the Member States for 2021–2030, Annex I (Malta, 2005: 1 020 601 t CO<sub>2</sub>e). OJ L 426, "
            "17.12.2020, p. 58. Read via the EU Publications Office, 6 Oct 2026.",
-     "http://data.europa.eu/eli/dec_impl/2020/2126/oj"),
+     "https://data.europa.eu/eli/dec_impl/2020/2126/oj"),
 ])
 
 S.append(PageBreak())

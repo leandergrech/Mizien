@@ -8,7 +8,7 @@ no right of reply needed.
 | Route | Result |
 |---|---|
 | Claim record URL: Council copy, `data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf` (curl, browser User-Agent) | **Read.** 126 pages, PDF created 8 Jun 2026; SHA-256 `684d13b1...a9cd4ba`. Council cover note (page 1), then SWD(2026) 218 final. Printed page = PDF page - 2. |
-| The Commission's own copy, found on DG ECFIN's country page `economy-finance.ec.europa.eu/.../country-report-malta_en` ("2026 Country Report (including annexes) - Malta") | **Read.** 110 pages, PDF created 5 Jun 2026; SHA-256 `401cca4c...1905ac50`. Committed as `open-access/ec_swd_2026_218_country_report_malta.pdf`. Same wording as the Council copy in every passage used; page numbers differ (below). |
+| The Commission's own copy, found on DG ECFIN's country page `economy-finance.ec.europa.eu/.../country-report-malta_en` ("2026 Country Report (including annexes) - Malta") | **Read.** 110 pages, PDF created 5 Jun 2026; SHA-256 `401cca4c...1905ac50`. Committed as `open-access/ec_swd_2026_218_country_report_malta.pdf` (Commission document; the PDF carries no licence notice; reuse under Decision 2011/833/EU and the Commission legal notice, CC BY 4.0 unless otherwise indicated). Same wording as the Council copy in every passage used; page numbers differ (below). |
 | Wayback Machine (`web.archive.org/web/2026/<url>`, availability API) | Not reachable from this network on 6 Oct 2026 (connection reset; API 429). Not needed: both live copies read. Archive by hand. |
 | WebSearch for the wording | Finds the Council PDF and the Austrian Parliament's copy of the same Council document (`parlament.gv.at/dokument/XXVIII/EU/76309/imfname_11628204.pdf`, not opened). |
 

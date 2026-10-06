@@ -76,7 +76,8 @@ def fig2():
     """Transport's 2024 share of effort-sharing emissions, by source and definition."""
     items = [
         ("The report’s text (pp. 6, 14, 66)", 48.0, AMBER, "claim"),
-        ("Road transport only (1.A.3.b) ÷ ESR total\n(our identification of a route to 48%)",
+        ("Road transport only (1.A.3.b) ÷ ESR total\n(road-only ratios give "
+         f"{CHK['Range of road-transport-only ratios that round to 48%']['value'].replace('-', '–')}%; our identification)",
          num("Road transport only (1.A.3.b), 2026 inventory, as share of the approximated ESR total, 2024"), GREY, ""),
         ("EEA approximated inventory 2024\n(transport excl. aviation CO2 ÷ ESR total)",
          num("Transport share of ESR emissions 2024, approximated inventory"), GREEN, ""),
@@ -110,7 +111,7 @@ def fig3():
     tab = {int(r["year"]): float(r["value"]) for r in cf
            if r["document"].startswith("2026 Country") and r["item"] == "Table A8.1 domestic road transport vs base year"}
     old = [float(r["value"]) for r in cf if r["document"].startswith("2025 Country")
-           and r["item"] == "Table A8.1 domestic road transport vs base year"][0]
+           and r["item"] == "Table A7.1 domestic road transport vs base year"][0]
     yrs = list(range(2005, 2025))
     fig, ax = plt.subplots(figsize=(9.6, 4.3), dpi=220)
     ax.axhline(0, color=GREY, lw=0.7)

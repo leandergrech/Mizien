@@ -10,7 +10,8 @@ from mizien_report import Flyer, build_flyer, flyer_png, GREEN, AMBER  # noqa: E
 CHK = {r["check"]: r for r in csv.DictReader(open(HERE.parents[1] / "data" / "cc-109" / "checks.csv"))}
 v = lambda k, f="{:.1f}": f.format(float(CHK[k]["value"]))
 G = v("Transport share of ESR emissions 2024, the report's own Graph 3.1")
-ROAD = v("Road transport only (1.A.3.b), 2026 inventory, as share of the approximated ESR total, 2024")
+RANGE = CHK["Range of road-transport-only ratios that round to 48%"]["value"].replace("-", "–")
+SH = v("Transport share of ESR emissions 2024, approximated inventory")
 FIN = v("Transport change 2005-2024, 2026 inventory (final submission)", "{:.0f}")
 NAV = CHK["Domestic navigation share of ESR transport, 2005 and 2024"]["value"].split(" / ")[1]
 NAVCH = v("Domestic navigation (1.A.3.d) change 2005-2024", "{:.0f}")
@@ -27,15 +28,15 @@ build_flyer(Flyer(
     note="Effort sharing: emissions outside the EU emissions trading system, under Malta’s national target. 2024 data approximated.",
     verdict="Largely supported", verdict_right=["Transport dominates and is", "up 45%; its share is 53%."],
     cards=[("53%", GREEN, "Share on the report’s definition",
-            f"Transport excluding aviation CO2, 2024: the report’s own Graph 3.1 shows {G}%. Its text says 48%."),
+            f"Transport excluding aviation CO2, 2024: {SH}% in the EEA’s data and the report’s own Graph 3.1. Its text says 48%."),
            ("+45%", GREEN, "The rise since 2005 holds",
-            f"0.53 to 0.76 Mt on the approximated 2024 data the report uses. Malta’s final 2026 inventory: +{FIN}%."),
+            f"0.53 to 0.77 Mt on the approximated 2024 data the report uses, as in its own table. Final 2026 inventory: +{FIN}%."),
            ("20 of 20", GREEN, "Largest sector every year",
             "Transport has been Malta’s biggest effort-sharing source in every year since 2005. Next: small "
-            "industry, 19–20%."),
-           (f"{ROAD}%", AMBER, "One route to 48%",
-            "Road transport alone divided by the effort-sharing total. Our identification: the report does not "
-            "say how it got 48%."),
+            "industry, 19%."),
+           ("48%", AMBER, "Only road alone gives 48%",
+            f"Road transport alone over an effort-sharing total gives {RANGE}%. Our identification: the report does "
+            "not say how it got 48%."),
            (f"{float(NAV):.0f}%", AMBER, "Not only road",
             f"Domestic shipping is {NAV}% of effort-sharing transport (2024), up {NAVCH}% since 2005. The report "
             "labels the series “road transport”.")],

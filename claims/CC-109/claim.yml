@@ -16,8 +16,8 @@ claim:
       publisher: European Commission (via Council of the EU)
       date: '2026-06-03'
       url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
-      note: 'The claim. Council copy read in full 5 and 6 Oct 2026: Annex 8 p. 72 (quote, footnotes 140-141), chapter 3 p.
-        15, Graph 3.1 p. 16, summary p. 6, Table A8.1 p. 77.'
+      note: 'The claim. Council copy read in full 6 Oct 2026: Annex 8 p. 72 (quote, footnotes 140-141), chapter 3 p. 15,
+        Graph 3.1 p. 16, summary p. 6, Table A8.1 p. 77.'
     - title: 2026 Country Report - Malta, SWD(2026) 218 final (Commission copy)
       publisher: European Commission
       date: '2026-06-03'
@@ -30,7 +30,8 @@ claim:
       date: Nov 2025
       url: https://doi.org/10.2909/f80bebef-447e-4882-b3e9-c4a91cbae4f5
       note: 'Primary data, retrieved 6 Oct 2026 (also doi:10.2909/cd572015-4d0d-408a-abf8-290ed2057bf7). Malta 2024 ESR
-        total 1.437 Mt, transport (non-ETS 1.A.3) 0.761 Mt: 52.9%.'
+        total 1.437 Mt; transport (1.A.3 total 0.767 Mt minus 0.9 kt domestic-aviation CO2, the same figure the EEA uses
+        for the ESR total) 0.766 Mt: 53.3%.'
     - title: Greenhouse gas emissions by source sector (env_air_gge)
       publisher: Eurostat
       date: updated 2 Jun 2026
@@ -44,11 +45,12 @@ claim:
   quote: Transport is the dominant source of Malta’s effort sharing emissions. It has generated 48% of these emissions in
     2024 (141), up by 45% since 2005.
 counter_evidence: 'On the effort-sharing definition (all domestic transport, aviation CO2 excluded; the definition of the
-  report''s own Graph 3.1) transport was 52.9% of Malta''s effort-sharing emissions in 2024 (EEA approximated inventory),
-  53.3% in the report''s Graph 3.1 and 53% in the Commission''s CAPR 2025 Malta profile; 54.8% on the final 2026 inventory
-  (our estimate of the total). Road transport alone over the ESR total gives 48.0% (our identification; the report does
-  not say how 48% was computed). The 45% reproduces as the rise in transport emissions (+44.1% to +45.0% on approximated
-  2024 data; +48.4% on the final inventory); the share barely moved (52.0% to 53.3%). Footnote (140) and Table A8.1 call
+  report''s own Graph 3.1) transport was 53.3% of Malta''s effort-sharing emissions in 2024 in the EEA approximated
+  inventory and in the report''s Graph 3.1, and 53% in the Commission''s CAPR 2025 Malta profile; 54.8% on the final 2026
+  inventory (our estimate of the total). Only road transport alone over an ESR total gives 48% (47.5-48.3%; our
+  identification; the report does not say how 48% was computed). The 45% reproduces exactly as the rise in transport
+  emissions (+45.0% on approximated 2024 data, 0.528 to 0.766 Mt; +48.4% on the final inventory); the share barely moved
+  (52.0% to 53.3%). Footnote (140) and Table A8.1 call
   the sector "road transport", but the table''s series includes domestic shipping (11.9% of it in 2024, +184% since 2005).
   2024 values are approximated; final data after the 2027 review.'
 tests: Eurostat env_air_gge (2026 inventory, Malta and EU-27, CRF 1.A.3 and sub-categories); EEA ESR emissions 2005-2024 and
@@ -90,25 +92,25 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
   - id: CC-109A
     text: "Transport is the dominant source of Malta’s effort sharing emissions"
     said_by: "Commission [1]"
-    finding: "52.9% in 2024 on the approximated data; the next sector, small industry, 19–20%. The largest sector in every year 2005–2024 [5, 6]."
+    finding: "53.3% in 2024 on the approximated data; the next sector, small industry, 19%. The largest sector in every year 2005–2024 [5, 6]."
     rating: "Accurate"
     tone: green
   - id: CC-109B
     text: "It has generated 48% of these emissions in 2024"
     said_by: "Commission [1]"
-    finding: "53% on the report’s own definition: Graph 3.1 53.3%, Commission climate profile 53%, EEA approximated inventory 52.9% [1, 5, 8]. Road transport alone gives 48.0% (our identification)."
+    finding: "53% on the report’s own definition: EEA approximated inventory and Graph 3.1 53.3%, Commission climate profile 53% [1, 5, 8]. Only road-transport-only ratios (47.5–48.3%) give 48% (our identification)."
     rating: "Understated"
     tone: amber
   - id: CC-109C
     text: "… up by 45% since 2005"
     said_by: "Commission [1]"
-    finding: "The rise in emissions, not in the share: +44.1% to +45.0% on approximated 2024 data; +48.4% on the final 2026 inventory [1, 5, 6]. The share moved from 52.0% to 53.3%."
+    finding: "The rise in emissions, not in the share: +45.0% on approximated 2024 data (0.528 to 0.766 Mt); +48.4% on the final 2026 inventory [1, 5, 6]. The share moved from 52.0% to 53.3%."
     rating: "Accurate"
     tone: green
   - id: CC-109D
     text: "Effort sharing covers “road transport”; Table A8.1 row “domestic road transport”"
     said_by: "Commission [1], footnote (140), Table A8.1"
-    finding: "Effort sharing covers all domestic transport except aviation CO2 [2, 3]. The table row matches that wider series to 0.1 points in 2018–2023, not road alone (up to 6.2 points off). Shipping is 11.9% of it [6]."
+    finding: "Effort sharing covers all domestic transport except aviation CO2 [2, 3]. The table row matches that wider series to 0.1 points in 2018–2023 and exactly in 2024 (45.0%); road alone is up to 6.2 points off (2024: +39.4%). Shipping is 11.9% of it [6]."
     rating: "Loosely worded"
     tone: amber
 version: '1.0'
@@ -130,13 +132,20 @@ history:   # research log: the date each step of the research was done (not when
     step: note
     note: 'Data: EEA ESR emissions 2005-2024 and approximated inventory 2024 (WebDAV shares), EEA GovReg 2026 v1.0, Eurostat
       env_air_gge; Graph 3.1 read from the PDF''s vector paths; Commission CAPR 2024 and 2025 Malta profiles and the 2025
-      Country Report read; ESR Art. 2 read via the Publications Office. Transport 52.9-53.3% of 2024 ESR emissions;
-      +44.1% to +45.0% since 2005 (approximated), +48.4% (final inventory); road alone 48.0% of the total.'
+      Country Report read; ESR Art. 2 read via the Publications Office. Transport 53.3% of 2024 ESR emissions; +45.0%
+      since 2005 (approximated), +48.4% (final inventory); only road-alone ratios give 48% (47.5-48.3%).'
   - date: 2026-10-06
     step: note
     note: 'Baseline checked for consistency with Claim Check 094: Implementing Decision (EU) 2020/2126, Annex I, read via
       the Publications Office (Malta 2005: 1,020,601 t); the approximated 2024 total, 1,437.4 kt, is +40.8% on it, as in the
       report. Table A8.1''s 2030 projections (+42.1% existing, +29.7% additional measures) match CC-094''s.'
+  - date: 2026-10-06
+    step: note
+    note: 'Review before issue: the approximated-inventory transport figure is now 1.A.3 total minus 1.A.3.a CO2 (0.766 Mt),
+      the same aviation CO2 (0.924 kt) the EEA uses to build the ESR total, giving 53.3% and +45.0%, which match Graph 3.1
+      and Table A8.1 exactly; the file''s non-ETS 1.A.3 row (0.761 Mt, 5.94 kt below the total) was used in an earlier
+      draft and is not used. Small industry 19%; approximated-to-final revision +2.3%. The 2025 report''s table is Table
+      A7.1. Several road-only ratios round to 48% (47.5-48.3%).'
   - date: 2026-10-06
     step: version
     version: "1.0"

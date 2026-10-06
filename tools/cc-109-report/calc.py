@@ -83,11 +83,19 @@ N = MT("GHG", "CRF1A3D")
 TEU = {y: EU("GHG", "CRF1A3")[y] - EU("CO2", "CRF1A3A")[y] for y in EU("GHG", "CRF1A3")}
 
 # ---------------------------------------------------------------- 1. Transport's share of effort-sharing emissions, 2024
-T_px, ESR_px = PX[("non-ETS", "1A3")], PX[("ESR", "Total")]
-add("ESR transport 2024, approximated inventory (non-ETS 1.A.3)", round(T_px, 4), "Mt CO2e", EEA_PX,
-    f"total 1.A.3 {PX[('Total', '1A3')]:.4f} Mt minus domestic-aviation CO2")
+# ESR transport = total 1.A.3 minus 1.A.3.a CO2, the same aviation CO2 (0.924 kt) the EEA uses to build the ESR total.
+# The file's 'non-ETS 1.A.3' row (0.761 Mt) is 5.94 kt below the 1.A.3 total, not 0.924 kt, so it is not used.
+T_px, ESR_px = PX[("Total", "1A3")] - PX[("CO2", "1A3a")], PX[("ESR", "Total")]
+add("ESR transport 2024, approximated inventory (1.A.3 total minus 1.A.3.a CO2)", round(T_px, 4), "Mt CO2e", EEA_PX,
+    f"total 1.A.3 {PX[('Total', '1A3')]:.4f} Mt minus domestic-aviation CO2 {PX[('CO2', '1A3a')] * 1000:.3f} kt; "
+    f"the file's non-ETS 1.A.3 row ({PX[('non-ETS', '1A3')]:.4f} Mt) is "
+    f"{(PX[('Total', '1A3')] - PX[('non-ETS', '1A3')]) * 1000:.2f} kt below the total and is not used")
 add("ESR total 2024, approximated inventory", round(ESR_px, 4), "Mt CO2e", EEA_PX + "; same value in " + EEA_ESR,
     f"EEA ESR dataset 2024: {ESR[2024]:.4f} Mt ({ESR_ST[2024]})")
+rebuilt = PX[("Total", "Total_net")] - PX[("Total", "4")] - PX[("ETS", "Total")] - PX[("CO2", "1A3a")]
+add("ESR total 2024 rebuilt from the approximated inventory (total - LULUCF - ETS - aviation CO2)", round(rebuilt, 4),
+    "Mt CO2e", EEA_PX, f"difference from the EEA's ESR total {(rebuilt - ESR_px) * 1000:.3f} kt: the EEA builds it "
+    "with the same 0.924 kt of aviation CO2")
 share_px = 100 * T_px / ESR_px
 add("Transport share of ESR emissions 2024, approximated inventory", round(share_px, 1), "%", EEA_PX)
 g24 = G[("2024", "Domestic transport (excl. aviation)")]
@@ -111,9 +119,19 @@ add("Transport share of ESR emissions 2024, 2026 inventory (our estimate)", roun
     f"{T[2024]:.4f} / {esr_est:.4f} Mt; with the CC-003 proxy {100 * T[2024] / alt:.1f}%")
 add("Road transport only (1.A.3.b), 2026 inventory, as share of the approximated ESR total, 2024",
     round(100 * R[2024] / ESR_px, 1), "%", ES + "; " + EEA_PX,
-    f"{R[2024]:.4f} / {ESR_px:.4f} Mt: the one combination of published figures we found that gives 48% (our identification)")
+    f"{R[2024]:.4f} / {ESR_px:.4f} Mt; mixes a final-inventory numerator with an approximated denominator (the "
+    "approximated inventory has no 1.A.3.b row). Our identification, not a stated method")
+add("Road transport only, CO2 only, as share of the approximated ESR total, 2024",
+    round(100 * MT("CO2", "CRF1A3B")[2024] / ESR_px, 1), "%", ES + "; " + EEA_PX,
+    f"{MT('CO2', 'CRF1A3B')[2024]:.4f} / {ESR_px:.4f} Mt")
+add("Road transport only, share of the final-inventory ESR estimate, 2024", round(100 * R[2024] / esr_est, 1), "%", ES,
+    f"{R[2024]:.4f} / {esr_est:.4f} Mt")
 add("Road transport only, share of the reviewed ESR total, 2023", round(100 * R[2023] / ESR[2023], 1), "%",
     ES + "; " + EEA_ESR, f"{R[2023]:.4f} / {ESR[2023]:.4f} Mt")
+road_ratios = [100 * R[2024] / ESR_px, 100 * MT("CO2", "CRF1A3B")[2024] / ESR_px, 100 * R[2024] / esr_est,
+               100 * R[2023] / ESR[2023]]
+add("Range of road-transport-only ratios that round to 48%", f"{min(road_ratios):.1f}-{max(road_ratios):.1f}", "%",
+    "calculated", "every ratio on the effort-sharing definition of transport gives 53-55%")
 add("Report's figure: transport share of ESR emissions 2024", 48, "%", CR + ", pp. 6, 14, 66")
 add("Gap: approximated-inventory share minus the report's 48%", round(share_px - 48, 1), "pp", "calculated")
 
@@ -160,6 +178,10 @@ for y in range(2018, 2024):
 add("Table A8.1 row vs ESR transport series, 2018-2023: largest difference", round(max(diffs_T), 1), "pp", "calculated",
     "the row is all domestic transport except aviation CO2, despite its label")
 add("Table A8.1 row vs road-only series, 2018-2023: largest difference", round(max(diffs_R), 1), "pp", "calculated")
+tab24 = float(CF[("CR26", "Table A8.1 domestic road transport vs base year", "2024")]["value"])
+add("Table A8.1 'domestic road transport' 2024 vs our series (approximated 2024)", tab24, "%", CR + ", Table A8.1, p. 71",
+    f"ESR transport, approximated inventory {pct(T_px, T[2005]):.1f}%; road only (1.A.3.b, final inventory; the "
+    f"approximated inventory has no road row) {pct(R[2024], R[2005]):.1f}%")
 
 # ---------------------------------------------------------------- 3. Is transport the dominant source?
 secs24 = {"Transport (excl. aviation CO2)": T_px, "Buildings (1.A.4, non-ETS)": PX[("non-ETS", "1A4")],
@@ -193,9 +215,9 @@ add("ESR 2005 base implied by the Commission's +40.8% for 2024", round(ESR[2024]
 add("ESR transport 2024: approximated vs final inventory", round(pct(T[2024], T_px), 1), "%", ES + "; " + EEA_PX,
     f"{T_px:.4f} (approximated, Nov 2025) vs {T[2024]:.4f} Mt (inventory, Mar 2026)")
 a23 = float(CF[("CR26", "Table A8.1 domestic road transport vs base year", "2023")]["value"])
-p23 = float(CF[("CR25", "Table A8.1 domestic road transport vs base year", "2023")]["value"])
+p23 = float(CF[("CR25", "Table A7.1 domestic road transport vs base year", "2023")]["value"])
 add("2023 transport change since 2005: approximated (2025 report) vs final (2026 report)", f"{p23} -> {a23}", "%",
-    "Commission, 2025 Country Report Table A8.1 (p. 69); 2026 Country Report Table A8.1 (p. 71)",
+    "Commission, 2025 Country Report Table A7.1 (p. 69); 2026 Country Report Table A8.1 (p. 71)",
     f"revised up by {a23 - p23:.1f} points once the final inventory replaced the approximated one")
 c23 = float(CF[("CAPR24", "Transport emissions change on 2022 (approximated)", "2023")]["value"])
 add("2023 vs 2022 transport change: approximated (CAPR 2024 profile) vs inventory", f"{c23} / {pct(T[2023], T[2022]):.1f}", "%",
