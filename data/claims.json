@@ -274,19 +274,10 @@
       "similar": [
         {
           "id": "CC-025",
-          "score": 0.44,
+          "score": 0.41,
           "terms": [
             "capita",
             "emissions"
-          ]
-        },
-        {
-          "id": "CC-114",
-          "score": 0.26,
-          "terms": [
-            "emissions",
-            "reducing",
-            "average"
           ]
         }
       ]
@@ -1442,7 +1433,7 @@
       "similar": [
         {
           "id": "CC-104",
-          "score": 0.42,
+          "score": 0.43,
           "terms": [
             "noise",
             "directive",
@@ -1785,7 +1776,7 @@
       "similar": [
         {
           "id": "CC-003",
-          "score": 0.44,
+          "score": 0.41,
           "terms": [
             "capita",
             "emissions"
@@ -2302,12 +2293,13 @@
     },
     {
       "id": "CC-035",
-      "title": "PM2.5 deaths down two-thirds",
+      "title": "PM2.5 death rate down two-thirds",
       "category": "Air",
-      "claim": "European Environment Agency: in Malta the rate of deaths attributable to PM2.5 fell by 67.7% between 2005 and 2023, to 172 attributable deaths in 2023.",
-      "counter": "Model estimate against the WHO 5 ug/m3 reference; compare with CC-007 station data.",
-      "status": "In progress",
-      "verdict": null,
+      "claim": "European Environment Agency (Air pollution quick country facts, 2025 country fact sheets): in Malta the rate of all-cause natural deaths attributable to long-term exposure to PM2.5 above 5 µg/m³, per 100 000 inhabitants aged 30 or over, is estimated to have fallen by 67.7% between 2005 and 2023 (from 143.5 to 46.3), resulting in 172 (95% CI 131-192) attributable deaths in 2023.",
+      "counter": "Every figure reproduces from the EEA's own burden-of-disease table and Eurostat sdg_11_52, which republishes it (143.5, 46.3, 67.74%, 172 (131-192)); the ETC HE technical report gives 173 (132-193), a one-death difference we cannot explain. From Eurostat natural deaths aged 30+ and the EEA's concentrations we get 346 (2005) and 170 (2023) deaths, within 1.2%. Measured PM2.5 fell: Msida -39% (2007-2023) and the three long-running stations -25% (2010-2023); this is direct evidence of a fall, not a check of the map, which is built on these stations. Caveats: no Maltese PM2.5 was reported to the EEA for 2005 (first valid day 29 August 2006), so the 2005 value (21.0 µg/m³) is a map value, from an older map method and model than 2023; the 95% CI covers the risk function only. PM10 at Msida and Żejtun did not fall while PM2.5 fell about 40%, and the PM2.5 instruments changed. The number of deaths fell 50.6% (348 to 172), as the population aged 30+ grew 54%; counting all concentrations the rate fell 54.7%, and from 2007 it fell 56.6%.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Air quality & health",
       "location": {
@@ -2317,17 +2309,59 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "European Environment Agency",
       "bodies": [
         "eea"
       ],
-      "date": "2025",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-035A",
+          "text": "The rate was 143.5 per 100 000 aged 30+ in 2005",
+          "finding": "EEA table: 143.5 (348 deaths, 242,534 people aged 30+) [2]; Eurostat: 348 deaths [3].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-035B",
+          "text": "It was 46.3 in 2023",
+          "finding": "EEA table and technical report: 46.3 (35.2–51.7) [2, 6].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-035C",
+          "text": "“reduced by 67.7% between 2005 and 2023”",
+          "finding": "(143.5 − 46.3) / 143.5 = 67.74%. The 2005 value is a map value, from maps of another method and model, with no Maltese PM2.5 reported to the EEA [8, 10]; from 2007 the fall is 56.6%; the 95% CI covers the risk only [4].",
+          "rating": "Largely accurate",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-035D",
+          "text": "“172 (95% CI: 131-192) attributable deaths in 2023”",
+          "finding": "EEA table and Eurostat: 172 (131–192) [2, 3]. Technical report: 173 (132–193) [6]. The rate implies 172.8 deaths, but rounding does not explain the lower bound (35.2 → 131.4): a one-death difference, unexplained.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-035E",
+          "text": "Natural deaths, long-term exposure above 5 µg/m³, people aged 30+",
+          "finding": "Matches the documented method [4–6]; recomputed from Eurostat deaths within 1.2% (section 3).",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
+      "date": "2025-12-01",
+      "quote": "In Malta, the rate of the all-cause natural deaths attributable to long-term exposure to fine particles (number of premature deaths attributable per 100 000 inhabitants 30 years or above) above 5µg/m3 is estimated to have been reduced by 67.7% between 2005 and 2023 (from 143.5 to 46.3, respectively), resulting in 172 (95% CI: 131-192) attributable deaths in 2023.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-06",
+      "outputs": {
+        "report": "claim-files/CC-035/report.pdf",
+        "flyer_pdf": "claim-files/CC-035/flyer.pdf",
+        "flyer_png": "claim-files/CC-035/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-035/claim.yml"
     },
     {
@@ -2445,7 +2479,7 @@
       "similar": [
         {
           "id": "CC-113",
-          "score": 0.31,
+          "score": 0.29,
           "terms": [
             "share",
             "highest"
@@ -2574,7 +2608,7 @@
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.63,
+          "score": 0.64,
           "terms": [
             "impact",
             "abstraction",
@@ -3750,7 +3784,7 @@
       "similar": [
         {
           "id": "CC-082",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "construction",
             "waste"
@@ -4098,7 +4132,7 @@
         },
         {
           "id": "CC-115",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "cost",
             "traffic",
@@ -4608,7 +4642,7 @@
       "similar": [
         {
           "id": "CC-063",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "construction",
             "waste"
@@ -4888,7 +4922,7 @@
         },
         {
           "id": "CC-106",
-          "score": 0.39,
+          "score": 0.38,
           "terms": [
             "population",
             "estimated"
@@ -5045,7 +5079,7 @@
       "similar": [
         {
           "id": "CC-097",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "workers",
             "safety",
@@ -5368,7 +5402,7 @@
         },
         {
           "id": "CC-091",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "workers",
             "safety",
@@ -5684,7 +5718,7 @@
       "similar": [
         {
           "id": "CC-020",
-          "score": 0.42,
+          "score": 0.43,
           "terms": [
             "noise",
             "directive",
@@ -5816,7 +5850,7 @@
       "similar": [
         {
           "id": "CC-088",
-          "score": 0.39,
+          "score": 0.38,
           "terms": [
             "population",
             "estimated"
@@ -5956,7 +5990,7 @@
       "similar": [
         {
           "id": "CC-039",
-          "score": 0.63,
+          "score": 0.64,
           "terms": [
             "impact",
             "abstraction",
@@ -6272,7 +6306,7 @@
       "similar": [
         {
           "id": "CC-037",
-          "score": 0.31,
+          "score": 0.29,
           "terms": [
             "share",
             "highest"
@@ -6327,15 +6361,6 @@
             "greenhouse",
             "gas",
             "emissions"
-          ]
-        },
-        {
-          "id": "CC-003",
-          "score": 0.26,
-          "terms": [
-            "emissions",
-            "reducing",
-            "average"
           ]
         }
       ]
@@ -6393,7 +6418,7 @@
       "similar": [
         {
           "id": "CC-071",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "cost",
             "traffic",
