@@ -111,13 +111,18 @@
     document.body.removeChild(probe);
     return (colourCache[slug] = c);
   }
-  function ring(items) {
-    var slugs = items.map(function (i) { return i.v; }).sort();
-    var step = 100 / slugs.length, stops = slugs.map(function (s, i) {
-      return colour(s) + " " + (i * step).toFixed(2) + "% " + ((i + 1) * step).toFixed(2) + "%";
-    });
-    return "conic-gradient(" + stops.join(",") + ")";
+  // Laurel (assets/laurel.js): a leaf per checked claim in the clump, coloured by verdict, faded by evidence age.
+  var Laurel = window.MizienLaurel || null, LORDER = ["supported", "largely-supported", "not-substantiated", "misleading", "contradicted"];
+  function laurel(items, h) {
+    if (!Laurel) return "";
+    var done = items.filter(function (i) { return i.v !== "none"; }).sort(function (a, b) {
+      var ia = LORDER.indexOf(a.v), ib = LORDER.indexOf(b.v); return (ia < 0 ? 9 : ia) - (ib < 0 ? 9 : ib); });
+    if (!done.length) return "";
+    var r = h / 2, E = Math.ceil(Laurel.extent(items.length, r) + 2), S = 2 * E;
+    return '<svg class="tlv-laurel" width="' + S + '" height="' + S + '" style="left:' + (r - E) + "px;top:" + (r - E) + 'px" aria-hidden="true">' +
+      Laurel.svg(done.map(function (i) { return { color: colour(i.v), reviewed: i.reviewed }; }), items.length, r, E, E) + "</svg>";
   }
+
 
   // ------------------------------------------------------------ view state
   var W = 800, t0 = 0, ppd = 4, selected = {}, picks = [], anim = 0, raf = 0, lastH = 0;
@@ -258,8 +263,8 @@
         : m.items.length + " claims, " + periodName(level.name, m.s);
       html += '<button type="button" class="tlv-m' + (sel ? " is-selected" : "") + (m.single ? " v-" + m.items[0].v : " is-clump") +
         '" data-k="' + key + '" style="left:' + (m.x - m.h / 2).toFixed(1) + "px;top:" + top + "px;height:" + m.h + 'px" aria-label="' + esc(aria) + '">' +
-        '<i class="tlv-stem" style="left:' + (m.h / 2 - 1) + "px;top:" + m.h + "px;height:" + stem + 'px"></i>' +
-        '<span class="tlv-head" style="width:' + m.h + "px;height:" + m.h + "px" + (m.single ? "" : ";background:" + ring(m.items)) + '">' +
+        '<i class="tlv-stem" style="left:' + (m.h / 2 - 1) + "px;top:" + m.h + "px;height:" + stem + 'px"></i>' + laurel(m.items, m.h) +
+        '<span class="tlv-head" style="width:' + m.h + "px;height:" + m.h + 'px">' +
         (m.single ? "" : "<b>" + m.items.length + "</b>") + "</span>" +
         (m.lab ? '<span class="tlv-lab" style="max-width:' + maxLab + 'px">' + esc(m.text) + "</span>" : "") + "</button>";
     });
@@ -317,8 +322,8 @@
       var sel = c.items.some(function (i) { return selected[i.id]; });
       var aria = single ? c.items[0].id + ": " + c.items[0].title + ", " + pointDate(c.items[0]) + ", " + c.items[0].label : c.items.length + " claims, " + LN[c.li].name + ", " + periodName(level.name, c.s);
       html += '<button type="button" class="tlv-m tlv-lm' + (sel ? " is-selected" : "") + (single ? " v-" + c.items[0].v : " is-clump") + '" data-k="' + key +
-        '" style="left:' + (x - h / 2).toFixed(1) + "px;top:" + (y - h / 2) + "px;height:" + h + 'px" aria-label="' + esc(aria) + '">' +
-        '<span class="tlv-head" style="width:' + h + "px;height:" + h + "px" + (single ? "" : ";background:" + ring(c.items)) + '">' + (single ? "" : "<b>" + c.items.length + "</b>") + "</span></button>"; });
+        '" style="left:' + (x - h / 2).toFixed(1) + "px;top:" + (y - h / 2) + "px;height:" + h + 'px" aria-label="' + esc(aria) + '">' + laurel(c.items, h) +
+        '<span class="tlv-head" style="width:' + h + "px;height:" + h + 'px">' + (single ? "" : "<b>" + c.items.length + "</b>") + "</span></button>"; });
     finish(html, items, A + 52, level);
   }
   function finish(html, items, H, level) {

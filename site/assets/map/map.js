@@ -212,19 +212,21 @@
     p.setAttribute("fill", "none"); p.setAttribute("stroke", color || "#fff"); p.setAttribute("stroke-width", "2.2");
     p.setAttribute("stroke-linecap", "round"); p.setAttribute("stroke-linejoin", "round"); svg.appendChild(p); return svg;
   }
-  function drawLeaf(x, y, angle, size) {
-    ctx.save(); ctx.translate(x, y); ctx.rotate(angle); ctx.beginPath(); ctx.moveTo(-size, 0);
-    ctx.quadraticCurveTo(-size * .3, -size * .8, size, 0); ctx.quadraticCurveTo(-size * .3, size * .8, -size, 0);
-    ctx.fill(); ctx.stroke(); ctx.restore();
-  }
+
   function reviewAgeDays(dateText) {
     var stamp = Date.parse(dateText + "T00:00:00Z");
     return Number.isFinite(stamp) ? Math.max(0, Math.floor((Date.now() - stamp) / 86400000)) : 0;
   }
-  function reviewLeafColor(age) {
-    var t = Math.max(0, Math.min(1, age / 365)), fresh = [76, 164, 97], due = [145, 84, 48];
-    return "rgb(" + fresh.map(function (v, i) { return Math.round(v + (due[i] - v) * t); }).join(",") + ")";
+  // Laurels (assets/laurel.js): one leaf per checked claim in a group, coloured by its verdict, faded by the age of its
+  // evidence review, best verdicts first.
+  var LAUREL_ORDER = ["Supported", "Largely supported", "Not substantiated", "Misleading", "Contradicted"];
+  function laurelOf(list) {
+    return list.filter(function (c) { return rated(c.data); }).sort(function (a, b) {
+      var ia = LAUREL_ORDER.indexOf(a.data.verdict), ib = LAUREL_ORDER.indexOf(b.data.verdict);
+      return (ia < 0 ? 9 : ia) - (ib < 0 ? 9 : ib) || a.id.localeCompare(b.id);
+    }).map(function (c) { return { color: colOf(c.data), reviewed: c.data.last_reviewed, id: c.id }; });
   }
+  var Laurel = window.MizienLaurel || null;
   function roundRect(x, y, w, h, r) { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r);
     ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
 
@@ -247,9 +249,7 @@
       var rnd = rng(c.id);
       var node = { kind: "claim", id: c.id, data: c, phase: rnd() * 6.28, x: (rnd() - .5) * 60, y: (rnd() - .5) * 60, z: (rnd() - .5) * 60,
                    tx: 0, ty: 0, tz: 0, hub: null, extra: [] };
-      if (c.last_reviewed && c.outputs && (c.outputs.report || c.outputs.report_pdf) && (c.status === "Drafted" || c.status === "Published")) {
-        node.reviewAgeDays = reviewAgeDays(c.last_reviewed); node.reviewLeafColor = reviewLeafColor(node.reviewAgeDays);
-      }
+      if (c.last_reviewed) node.reviewAgeDays = reviewAgeDays(c.last_reviewed);
       claims.push(node); byId[c.id] = node;
     });
     data.claims.forEach(function (c) { (c.subclaims || []).forEach(function (x, i, arr) {
@@ -263,7 +263,7 @@
     var sr = rng("stars");
     for (var i = 0; i < 220; i++) stars.push({ x: sr(), y: sr(), r: sr() * 1.3 + 0.2, a: sr() * 0.32 + 0.04, tw: sr() * 6.28, d: sr() });
     initLens();
-    buildStats(); buildGroupBy(); buildLinkBar(); buildKey(); resize();
+    buildStats(); buildGroupBy(); buildSpacing(); buildLinkBar(); buildKey(); resize();
     setMode(groupParam(), true);
     buildViewBy(); setHint();
     var wantMap = new URLSearchParams(location.search).get("view") === "map";
@@ -321,6 +321,12 @@
     return hubPool[k];
   }
   var GROUP_SPREAD = 1.6;     // radius of the sphere of groups, in units of R (was 1.05): more space between groups
+  // Spacing, set by the reader (three sliders, remembered): level 1 = groups apart, level 2 = subgroups out from their
+  // group, level 3 = claims out from their group or subgroup. Each multiplies its own distances, so moving one changes
+  // the ratios between the levels; the view refits, so wider groups make room rather than leave the screen.
+  var SP = { g: 1, s: 1, c: 1 };
+  try { var sp0 = JSON.parse(localStorage.getItem("mizien.spacing") || "null"); if (sp0) ["g", "s", "c"].forEach(function (k) { if (+sp0[k] >= 0.4 && +sp0[k] <= 2.5) SP[k] = +sp0[k]; }); } catch (e) {}
+  function groupSpread() { return GROUP_SPREAD * SP.g; }
 
   // ------------------------------------------------------------ arranging groups (topology)
   // Groups sit on fixed slots (points on the sphere or ring). An arrangement pattern scores how strongly two groups
@@ -398,7 +404,7 @@
     var y = 1 - (i / (n - 1)) * 2, rad = Math.sqrt(Math.max(0, 1 - y * y)), th = Math.PI * (3 - Math.sqrt(5)) * i;
     return { x: Math.cos(th) * rad * r, y: y * r, z: Math.sin(th) * rad * r };
   }
-  function clusterRadius(n) { return n <= 1 ? 0 : 34 + 15 * Math.sqrt(n); }
+  function clusterRadius(n) { return n <= 1 ? 0 : (34 + 15 * Math.sqrt(n)) * SP.c; }
 
   function modeSub(m) {
     if (split && m === "topic") return "Topics stay on the inner sphere; each topic's subtopics pop out onto a larger sphere around it, like a corona.";
@@ -421,9 +427,10 @@
     Object.keys(groups).forEach(function (v) { if (order.indexOf(v) < 0) order.push(v); });
     hubs = []; legendGroups = [];
     order.forEach(function (v, i) {
-      var h = getHub(m, v, i); h.color = M.color(v, i); h.claims = []; h.reviewLeaves = [];
+      var h = getHub(m, v, i); h.color = M.color(v, i); h.claims = [];
       var members = groups[v] || [];
-      members.forEach(function (o) { if (o.primary) { o.c.hub = h; h.claims.push(o.c); if (o.c.reviewLeafColor) h.reviewLeaves.push(o.c); } else o.c.extra.push(h); });
+      members.forEach(function (o) { if (o.primary) { o.c.hub = h; h.claims.push(o.c); } else o.c.extra.push(h); });
+      h.laurel = laurelOf(h.claims);
       h.count = h.claims.length; h.empty = h.count === 0;
       if (m === "pledges") h.count = members.length;   // pledge view: who, when and what each count every pledge they touch
       if (M.layout === "force") return;
@@ -439,9 +446,9 @@
     // hub targets
     var n = hubs.length;
     if (M.layout === "sphere") {
-      hubs.forEach(function (h, i) { var p = spiral(n, i, R * GROUP_SPREAD); h.tx = p.x; h.ty = p.y; h.tz = p.z; });
+      hubs.forEach(function (h, i) { var p = spiral(n, i, R * groupSpread()); h.tx = p.x; h.ty = p.y; h.tz = p.z; });
     } else if (M.layout === "ring") {
-      hubs.forEach(function (h, i) { var a = (i / n) * Math.PI * 2; h.tx = Math.cos(a) * R * 1.12 * GROUP_SPREAD / 1.05; h.tz = Math.sin(a) * R * 1.12 * GROUP_SPREAD / 1.05; h.ty = m === "pattern" ? 0 : (i % 2 ? 1 : -1) * 34; });
+      hubs.forEach(function (h, i) { var a = (i / n) * Math.PI * 2; h.tx = Math.cos(a) * R * 1.12 * groupSpread() / 1.05; h.tz = Math.sin(a) * R * 1.12 * groupSpread() / 1.05; h.ty = m === "pattern" ? 0 : (i % 2 ? 1 : -1) * 34; });
     }
     if (M.layout === "sphere" || M.layout === "ring") arrangeHubs(); else if (M.layout === "arc" || M.layout === "line") {
       var widths = hubs.map(function (h) { return Math.max(60, clusterRadius(h.count) + 46); });
@@ -453,7 +460,7 @@
         h.tz = M.layout === "arc" ? 120 * Math.cos(u * Math.PI) - 60 : 0;
         if (h.name === NOT_YET) { h.ty += 60; }
       });
-      var scale = Math.min(1, (R * 3.5) / total); hubs.forEach(function (h) { h.tx *= scale; });
+      var scale = Math.min(1, (R * 3.5) / total) * SP.g; hubs.forEach(function (h) { h.tx *= scale; });
     }
     hubs.forEach(function (h) {
       if (h.alpha < 0.05) { // a new hub grows out of its members' current centroid
@@ -496,7 +503,7 @@
       h.claims.forEach(function (c) { var s = c.data.subtopic; if (!s) return; if (!by[s]) { by[s] = []; names.push(s); } by[s].push(c); });
       if (!names.length) return;
       names.sort().forEach(function (s) {
-        var sh = getSubHub(h, s); sh.claims = by[s]; sh.count = sh.claims.length; sh.empty = false; sh.reviewLeaves = [];
+        var sh = getSubHub(h, s); sh.claims = by[s]; sh.count = sh.claims.length; sh.empty = false; sh.laurel = laurelOf(sh.claims);
         sh.claims.forEach(function (c) { c.sub = sh; });
         h.subs.push(sh); subHubs.push(sh);
       });
@@ -532,11 +539,12 @@
       var offices = h.subs.filter(function (x) { return !x.anchor; }).sort(function (a, b) { return a.name.localeCompare(b.name); });
       h.subs = []; offices.forEach(function (o) { h.subs.push(o); o.people.sort(function (a, b) { return a.name.localeCompare(b.name); }).forEach(function (x) { h.subs.push(x); }); });
     });
-    subHubs.forEach(function (sh) { sh.count = sh.claims.length; sh.empty = false; sh.reviewLeaves = []; });
+    subHubs.forEach(function (sh) { sh.count = sh.claims.length; sh.empty = false; sh.laurel = laurelOf(sh.claims); });
   }
   // Sphere layouts: topics sit on an opaque inner sphere (SPHERE_K x the hub radius). Their claims lie as a cap on its
   // surface, and in the Subtopic grouping each topic's subtopics pop out onto a larger concentric sphere (CORONA_K).
   var SPHERE_K = 0.94, CORONA_K = 1.38;
+  function coronaK() { return 1 + (CORONA_K - 1) * SP.s; }
   // The opaque backdrop under a grouping: a sphere for topics, a flat disc for the patterns (their ring); none elsewhere.
   function backdrop() { return view !== "graph" ? null : mode === "topic" ? "sphere" : mode === "pattern" ? "disc" : null; }
   function coronaOn() { return split && backdrop() === "sphere"; }
@@ -547,30 +555,30 @@
   }
   function layoutCorona(h, open) {
     var subs = h.subs, ns = subs.length, byClaimId = function (a, b) { return a.id < b.id ? -1 : 1; };
-    var hr = Math.hypot(h.tx, h.ty, h.tz) || 1, nrm = normalOf(h.tx, h.ty, h.tz), rc = hr * CORONA_K, reach = 0;
+    var hr = Math.hypot(h.tx, h.ty, h.tz) || 1, nrm = normalOf(h.tx, h.ty, h.tz), rc = hr * coronaK(), reach = 0;
     var up = Math.abs(nrm.y) > 0.9 ? { x: 1, y: 0, z: 0 } : { x: 0, y: 1, z: 0 };
     var u = { x: nrm.y * up.z - nrm.z * up.y, y: nrm.z * up.x - nrm.x * up.z, z: nrm.x * up.y - nrm.y * up.x }, ul = Math.hypot(u.x, u.y, u.z) || 1;
     u = { x: u.x / ul, y: u.y / ul, z: u.z / ul };
     var v = { x: nrm.y * u.z - nrm.z * u.y, y: nrm.z * u.x - nrm.x * u.z, z: nrm.x * u.y - nrm.y * u.x };
-    var tr = 54 + 24 * ns;
+    var tr = (54 + 24 * ns) * SP.s;
     subs.forEach(function (sh, i) {
       var a = (i / ns) * Math.PI * 2 + 0.4, o = ns === 1 ? 0 : tr;
       var q = { x: nrm.x * rc + (u.x * Math.cos(a) + v.x * Math.sin(a)) * o, y: nrm.y * rc + (u.y * Math.cos(a) + v.y * Math.sin(a)) * o, z: nrm.z * rc + (u.z * Math.cos(a) + v.z * Math.sin(a)) * o };
       var ql = Math.hypot(q.x, q.y, q.z) || 1; sh.tx = q.x / ql * rc; sh.ty = q.y / ql * rc; sh.tz = q.z / ql * rc; sh.talpha = 1;
-      var sn = normalOf(sh.tx, sh.ty, sh.tz), m = sh.claims.length, r = (open ? 1.5 : 1) * (14 + 13 * Math.sqrt(m));
+      var sn = normalOf(sh.tx, sh.ty, sh.tz), m = sh.claims.length, r = (open ? 1.5 : 1) * (14 + 13 * Math.sqrt(m)) * SP.c;
       sh.claims.slice().sort(byClaimId).forEach(function (c, j) {
         var d = m === 1 ? { x: sn.x * r, y: sn.y * r, z: sn.z * r } : lift(spiral(m, j, r), sn, 0.3 * r);
         c.tx = sh.tx + d.x; c.ty = sh.ty + d.y; c.tz = sh.tz + d.z;
       });
       reach = Math.max(reach, Math.hypot(sh.tx - h.tx, sh.ty - h.ty, sh.tz - h.tz) + r);
     });
-    var loose = h.claims.filter(function (c) { return !c.sub; }).sort(byClaimId), nl = loose.length, rl = 20 + 8 * Math.sqrt(nl);
+    var loose = h.claims.filter(function (c) { return !c.sub; }).sort(byClaimId), nl = loose.length, rl = (20 + 8 * Math.sqrt(nl)) * SP.c;
     loose.forEach(function (c, i) { var d = lift(nl === 1 ? { x: 0, y: 0, z: 0 } : spiral(nl, i, rl), nrm, nl === 1 ? 34 : 0.4 * rl); c.tx = h.tx + d.x; c.ty = h.ty + d.y; c.tz = h.tz + d.z; });
     h.ringR = null; h.openR = Math.max(reach, 70);
   }
   function layoutWithSubs(h, open) {
     var subs = h.subs, ns = subs.length, byClaimId = function (a, b) { return a.id < b.id ? -1 : 1; };
-    var rs = open ? Math.max(120, 56 + 26 * ns + 6 * Math.sqrt(h.count)) : 24 + 9 * ns + 6 * Math.sqrt(h.count), reach = 0;
+    var rs = (open ? Math.max(120, 56 + 26 * ns + 6 * Math.sqrt(h.count)) : 24 + 9 * ns + 6 * Math.sqrt(h.count)) * SP.s, reach = 0;
     subs.forEach(function (sh, i) {
       var a = (i / ns) * Math.PI * 2 - Math.PI / 2;
       var p = open ? { x: Math.cos(a) * rs, y: Math.sin(a) * rs * 0.82, z: Math.sin(a * 2) * rs * 0.18 } : spiral(ns, i, rs);
@@ -581,7 +589,7 @@
       }
       sh.tx = h.tx + p.x; sh.ty = h.ty + p.y; sh.tz = h.tz + p.z; sh.talpha = 1;
       var len = Math.hypot(p.x, p.y, p.z) || 1, out = { x: p.x / len, y: p.y / len, z: p.z / len };
-      var m = sh.claims.length, r = open ? Math.max(46, 24 + 18 * Math.sqrt(m)) : 10 + 8 * Math.sqrt(m);
+      var m = sh.claims.length, r = (open ? Math.max(46, 24 + 18 * Math.sqrt(m)) : 10 + 8 * Math.sqrt(m)) * SP.c;
       sh.claims.slice().sort(byClaimId).forEach(function (c, j) {
         var q;
         if (m === 1) q = { x: out.x * r, y: out.y * r, z: out.z * r };       // a lone claim sits just outside its sub-hub
@@ -592,7 +600,7 @@
       });
       reach = Math.max(reach, r);
     });
-    var loose = h.claims.filter(function (c) { return !c.sub; }).sort(byClaimId), nl = loose.length, rl = open ? 46 : 16;
+    var loose = h.claims.filter(function (c) { return !c.sub; }).sort(byClaimId), nl = loose.length, rl = (open ? 46 : 16) * SP.c;
     loose.forEach(function (c, i) { var q = nl === 1 ? { x: 0, y: rl, z: 0 } : spiral(nl, i, rl); c.tx = h.tx + q.x; c.ty = h.ty + q.y; c.tz = h.tz + q.z; });
     h.ringR = rs; h.openR = rs + reach;
   }
@@ -668,6 +676,28 @@
   var legendOpen = {};   // groups whose subgroups are unfolded in the legend
   var SPLIT_NOTE = { topic: "Topics keep their place on the inner sphere; their subtopics pop out onto a larger sphere around each one.",
                      speaker: "Kinds of body show the bodies in each, and the people beside their office." };
+  // Spacing sliders (SP): groups apart, subgroups out, claims out. The layout is redone as a slider moves.
+  function buildSpacing() {
+    var box = document.getElementById("spacing"); if (!box) return;
+    box.textContent = "";
+    var defs = [["g", "Groups apart", "Distance between the groups (level 1)"], ["s", "Subgroups out", "Distance from a group to its subgroups (level 2)"],
+                ["c", "Claims out", "Distance from a group or subgroup to its claims (level 3)"]];
+    var reset = el("button", "sp-reset", "Reset spacing"); reset.type = "button";
+    function sync() { reset.disabled = SP.g === 1 && SP.s === 1 && SP.c === 1; try { localStorage.setItem("mizien.spacing", JSON.stringify(SP)); } catch (e) {} }
+    var t = 0;
+    function relayout() { clearTimeout(t); t = setTimeout(function () { var keep = selKey(), ex = expanded; setMode(mode, false); applySelKey(keep); if (ex && !expanded) expandHub(ex); }, 60); }
+    defs.forEach(function (d) {
+      var lab = el("label"); lab.title = d[2];
+      lab.appendChild(el("span", null, d[1]));
+      var inp = document.createElement("input"); inp.type = "range"; inp.min = "0.5"; inp.max = "2"; inp.step = "0.05"; inp.value = String(SP[d[0]]);
+      inp.setAttribute("aria-label", d[2]);
+      var out = el("output", null, Math.round(SP[d[0]] * 100) + "%");
+      inp.addEventListener("input", function () { SP[d[0]] = +inp.value; out.textContent = Math.round(SP[d[0]] * 100) + "%"; sync(); relayout(); });
+      lab.appendChild(inp); lab.appendChild(out); box.appendChild(lab);
+    });
+    reset.onclick = function () { SP = { g: 1, s: 1, c: 1 }; sync(); buildSpacing(); relayout(); };
+    box.appendChild(reset); sync();
+  }
   function setSplit(v) { split = v; legendOpen = {}; setMode(mode, false); }
   function buildSplit() {
     var box = document.getElementById("splitbox"); if (!box) return; box.textContent = "";
@@ -811,6 +841,12 @@
       var s = el("span"), d = el("span", "vdot" + (col ? "" : " open")); d.style.background = col || NOT_YET_COL;
       s.appendChild(d); s.appendChild(document.createTextNode(v)); k.appendChild(s);
     });
+    // the laurel, with a fresh and an old leaf, drawn by the same code as the groups' laurels
+    if (window.MizienLaurel) { var lk = el("span", "lkey"), old = new Date(Date.now() - 500 * 864e5).toISOString().slice(0, 10);
+      lk.innerHTML = '<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">' + window.MizienLaurel.svg([{ color: VC.Supported }, { color: VC["Largely supported"] },
+        { color: VC["Not substantiated"], reviewed: old }], 4, 9, 22, 22) + '<circle cx="22" cy="22" r="9" fill="#5d7468" stroke="#f6f4ee" stroke-width="1.2"/></svg>' +
+        "<span>Laurel: a leaf per checked claim in the group, in its verdict colour; a full laurel means all are checked. Leaves fade as the evidence review ages (an outline after a year).</span>";
+      k.appendChild(lk); }
   }
   // ------------------------------------------------------------ projection
   function leftInset() { return W > 900 ? 270 : 0; }
@@ -823,7 +859,7 @@
   function cxTarget() { return leftInset() + (W - leftInset() - panelInset()) / 2; }
   function baseScale() {
     var usable = Math.min(W - leftInset() - panelInset(), H - 120 - topInset() - barInset());
-    return Math.max(0.3, usable / (400 * GROUP_SPREAD / 1.05) * (W < 700 ? 0.78 : 1) * (coronaOn() ? 0.7 : 1));   // phones: room for the outer labels
+    return Math.max(0.3, usable / (400 * groupSpread() / 1.05) * (W < 700 ? 0.78 : 1) * (coronaOn() ? 0.7 : 1));   // phones: room for the outer labels
   }
   // Node size: grows only gently with zoom and the lens (zoom^0.3), capped, so pins never blow up on any screen.
   function nodeScale(p) {
@@ -836,7 +872,7 @@
     var px = p.x - cam.fx, py = p.y - cam.fy, pz = p.z - cam.fz;
     var x1 = px * cy - pz * sy, z1 = px * sy + pz * cy;
     var y2 = py * cp - z1 * sp, z2 = py * sp + z1 * cp;
-    var F = 900, s = F / (F + z2 + 300);
+    var kf = groupSpread() / GROUP_SPREAD, F = 900 * kf, s = F / (F + z2 + 300 * kf);   // the eye moves back with the spacing, so a wider web refits exactly
     var base = baseScale() * cam.zoom * cam.em;
     var sx = cxNow + cam.px + x1 * s * base, sy = cyNow + cam.py + y2 * s * base, sc = s * base;
     if (lensK > 0.01) { var ldx = sx - cxNow, ldy = sy - cyNow, lr = Math.hypot(ldx, ldy), LR = lensR();
@@ -943,7 +979,7 @@
   }
   // The pattern disc: a flat opaque plate the pattern hubs sit on, with a faint ring grid, seen from above.
   function drawDisc(vis) {
-    var rd = R * 1.12 * GROUP_SPREAD / 1.05 * 1.22, N = 72, top = [], bot = [], c = project({ x: 0, y: 0, z: 0 });
+    var rd = R * 1.12 * groupSpread() / 1.05 * 1.22, N = 72, top = [], bot = [], c = project({ x: 0, y: 0, z: 0 });
     for (var i = 0; i < N; i++) { var a = i / N * 6.2832, x = Math.cos(a) * rd, z = Math.sin(a) * rd; top.push(project({ x: x, y: 0, z: z })); bot.push(project({ x: x, y: 16, z: z })); }
     function poly(pts) { ctx.beginPath(); pts.forEach(function (q, i) { if (i) ctx.lineTo(q.sx, q.sy); else ctx.moveTo(q.sx, q.sy); }); ctx.closePath(); }
     ctx.save(); ctx.globalAlpha = vis;
@@ -957,7 +993,7 @@
     ctx.restore();
   }
   function drawSphere(S) {
-    var c = S.c, r = S.rs, wr = R * GROUP_SPREAD * SPHERE_K;
+    var c = S.c, r = S.rs, wr = R * groupSpread() * SPHERE_K;
     ctx.save(); ctx.globalAlpha = S.vis;
     var g = ctx.createRadialGradient(c.sx - r * 0.35, c.sy - r * 0.4, r * 0.08, c.sx, c.sy, r);
     g.addColorStop(0, "#3a7058"); g.addColorStop(0.5, "#1e4433"); g.addColorStop(1, "#0b2218");
@@ -1024,8 +1060,8 @@
     sphereVis += (sphereWant - sphereVis) * Math.min(1, k * 1.3);
     coronaVis += ((coronaOn() ? 1 : 0) - coronaVis) * Math.min(1, k * 1.3);
     var SPH = null;
-    if (view === "graph" && sphereVis > 0.01 && backKind === "sphere") { var sc0 = project({ x: 0, y: 0, z: 0 }), swr = R * GROUP_SPREAD * SPHERE_K;
-      SPH = { c: sc0, cz: sc0.z, rs: swr * sc0.s, rc: swr / SPHERE_K * CORONA_K * sc0.s, vis: sphereVis, solid: sphereVis > 0.5 }; }
+    if (view === "graph" && sphereVis > 0.01 && backKind === "sphere") { var sc0 = project({ x: 0, y: 0, z: 0 }), swr = R * groupSpread() * SPHERE_K;
+      SPH = { c: sc0, cz: sc0.z, rs: swr * sc0.s, rc: swr / SPHERE_K * coronaK() * sc0.s, vis: sphereVis, solid: sphereVis > 0.5 }; }
     var DSK = view === "graph" && sphereVis > 0.01 && backKind === "disc";
     function inPass(side, a, b) {   // which half a line belongs to; without the sphere everything is drawn once, in "near"
       if (!SPH) return side === "near";
@@ -1138,16 +1174,13 @@
         var ip = ICON_PATHS[n.person ? "person" : iconKey(n.sub ? n.parent.name : n.name)];
         if (ip) { ctx.save(); var s2 = r * 1.15 / 24; ctx.translate(p.sx - 12 * s2, p.sy - 12 * s2); ctx.scale(s2, s2);
           ctx.strokeStyle = "rgba(10,30,20,.9)"; ctx.lineWidth = 2.3; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.stroke(ip); ctx.restore(); }
-        (n.reviewLeaves || []).forEach(function (rv, ri) {
-          var count = n.reviewLeaves.length, ang = -Math.PI / 2 + (ri - (count - 1) / 2) * .42;
-          ctx.fillStyle = rv.reviewLeafColor; ctx.strokeStyle = "rgba(246,244,238,.85)"; ctx.lineWidth = 1;
-          drawLeaf(p.sx + Math.cos(ang) * r * 1.5, p.sy + Math.sin(ang) * r * 1.5, ang + Math.PI / 2, 6);
-        });
+        var lr = r;   // where the label goes: below the laurel, if there is one
+        if (Laurel && n.laurel && n.laurel.length) { Laurel.draw(ctx, n.laurel, n.claims.length, r, p.sx, p.sy, a); lr = Math.max(r, Laurel.extent(n.claims.length, r) * 0.82); }
         n._p = { x: p.sx, y: p.sy, r: r, live: n.alpha > 0.5 };
-        if (n.sub) { if (n.alpha > 0.3 && ((expanded ? expanded === n.parent : cam.zoom >= 1.8 || coronaOn()) || isHov || isSel || (on && F && F.hl))) labels.push({ x: p.sx, y: p.sy + r + 13, text: n.name,
+        if (n.sub) { if (n.alpha > 0.3 && ((expanded ? expanded === n.parent : cam.zoom >= 1.8 || coronaOn()) || isHov || isSel || (on && F && F.hl))) labels.push({ x: p.sx, y: p.sy + lr + 13, text: n.name,
           sub: (n.person && n.body.role ? n.body.role + " · " : "") + n.count + unitWord(n.count) + (n.also && n.also.length ? ", named in " + n.also.length + " more" : ""),
           hub: true, small: true, color: n.color, alpha: a, pri: expanded === n.parent || isSel || isHov ? 3.6 : F && F.hl ? 2.5 : 1.5 }); }
-        else if (n.alpha > 0.3 && n !== expanded) labels.push({ x: p.sx, y: p.sy + r + 15, text: n.name, sub: n.count + unitWord(n.count),
+        else if (n.alpha > 0.3 && n !== expanded) labels.push({ x: p.sx, y: p.sy + lr + 15, text: n.name, sub: n.count + unitWord(n.count),
           hub: true, color: n.color, alpha: a * (expanded ? 0.45 : 1), pri: expanded ? 1 : 3 + (isSel ? 2 : 0) });
         ctx.globalAlpha = 1;
       } else {
@@ -1415,29 +1448,22 @@
   function queueGeoMarks() { if (!gmapRaf) gmapRaf = requestAnimationFrame(function () { gmapRaf = 0; layoutGeoMarks(); }); }
 
   // ---- medallions: places merged while they would overlap on screen; split as the map is zoomed in
-  function leafPath(cx, cy, ang, s) {   // the same leaf as the claims web draws on its groups
-    var ca = Math.cos(ang), sa = Math.sin(ang);
-    function P(x, y) { return (cx + x * ca - y * sa).toFixed(1) + " " + (cy + x * sa + y * ca).toFixed(1); }
-    return "M" + P(-s, 0) + " Q" + P(-s * .3, -s * .8) + " " + P(s, 0) + " Q" + P(-s * .3, s * .8) + " " + P(-s, 0) + "Z";
-  }
+
   var VERDICT_ORDER = ["Supported", "Largely supported", "Not substantiated", "Misleading", "Contradicted"];
   function medallionSvg(G, r, emblem) {
     var checked = G.claims.filter(function (c) { return rated(c.data); }).sort(function (a, b) {
       var ia = VERDICT_ORDER.indexOf(a.data.verdict), ib = VERDICT_ORDER.indexOf(b.data.verdict);
       return (ia < 0 ? 9 : ia) - (ib < 0 ? 9 : ib); });
-    var shown = checked.slice(0, 11), S = 2 * (r + 16), c = S / 2, out = [];
+    var n = G.claims.length, ext = Laurel && checked.length ? Laurel.extent(n, r) : r, S = Math.ceil(2 * (Math.max(ext, r + 6) + 3)), c = S / 2, out = [];
     out.push('<svg width="' + S + '" height="' + S + '" viewBox="0 0 ' + S + " " + S + '" aria-hidden="true">');
-    var step = shown.length > 7 ? 0.33 : 0.42;
-    shown.forEach(function (x, i) {                                   // leaves fan out over the top, as on the web's groups
-      var ang = -Math.PI / 2 + (i - (shown.length - 1) / 2) * step, lx = c + Math.cos(ang) * (r + 7), ly = c + Math.sin(ang) * (r + 7);
-      out.push('<path class="leaf" d="' + leafPath(lx, ly, ang + Math.PI / 2, 6.5) + '" fill="' + colOf(x.data) + '"/>'); });
+    if (Laurel) out.push(Laurel.svg(checked.map(function (x) { return { color: colOf(x.data), reviewed: x.data.last_reviewed }; }), n, r, c, c));   // the same laurel as the web's groups
     out.push('<circle class="disc" cx="' + c + '" cy="' + c + '" r="' + r + '"/>');
     if (emblem) {
       var k = (r * 1.15) / 24;
       out.push('<path class="emblem" transform="translate(' + (c - 12 * k).toFixed(1) + " " + (c - 12 * k).toFixed(1) + ") scale(" + k.toFixed(3) + ')" d="' + (PLACE_ICONS[G.lead.icon] || PLACE_ICONS.pin) + '"/>');
     } else out.push('<text x="' + c + '" y="' + (c + 0.5) + '" class="count">' + G.claims.length + "</text>");
     out.push("</svg>");
-    return { html: out.join(""), size: S, more: checked.length - shown.length };
+    return { html: out.join(""), size: S };
   }
   function layoutGeoMarks() {
     if (!gmapReady || view !== "map") return;
@@ -1469,7 +1495,8 @@
       }
       m._G = G;
       if (m._sig !== sig) { var s = medallionSvg(G, r, emblem); m.firstChild.innerHTML = s.html; m._sig = sig; m._size = s.size;
-        m.style.setProperty("--s", s.size + "px"); m.style.setProperty("--r", r + "px");
+        m.style.setProperty("--s", s.size + "px"); m.style.setProperty("--r", r + "px"); m._ext = Laurel && G.claims.some(function (c) { return rated(c.data); }) ? Laurel.extent(n, r) : r;
+        m.style.setProperty("--e", Math.round(Math.max(r, m._ext * 0.84)) + "px");
         m.children[1].textContent = emblem ? String(n) : ""; m.children[1].hidden = !emblem; }
       var dn = G.claims.filter(function (c) { return rated(c.data); }).length;
       m.setAttribute("aria-label", G.name + ": " + n + (n === 1 ? " claim, " : " claims, ") + dn + " checked. " +
@@ -1477,14 +1504,14 @@
       m.title = (G.places.length > 1 ? G.places.map(function (P) { return P.short; }).join(", ") : G.lead.name) + " · " + n + (n === 1 ? " claim" : " claims") + ", " + dn + " checked";
       m.classList.toggle("is-sel", !!gmapSel && G.places.some(function (P) { return P.name === gmapSel || gmapSel.split("|").indexOf(P.name) >= 0; }));
       m.style.transform = "translate(" + (G.x - m._size / 2).toFixed(1) + "px," + (G.y - m._size / 2).toFixed(1) + "px)";
-      labels.push({ m: m, G: G, n: n, r: r });
+      labels.push({ m: m, G: G, n: n, r: r, e: Math.max(r, (m._ext || r) * 0.84) });
     });
     // Names under the medallions: the biggest first, never over another name
-    var boxes = labels.map(function (L) { var a = L.r + 8; return { x: L.G.x - a, y: L.G.y - a - 10, w: 2 * a, h: 2 * a + 6 }; });   // the medallions themselves
+    var boxes = labels.map(function (L) { var a = L.e + 4; return { x: L.G.x - a, y: L.G.y - a - 6, w: 2 * a, h: 2 * a + 6 }; });   // the medallions and their laurels
     labels.sort(function (a, b) { return b.n - a.n; }).forEach(function (L) {
       var want = z >= 12.2 || L.n >= 5 || L.m.classList.contains("is-sel"), tw = Math.min(narrow ? 130 : 180, L.G.name.length * 6.6 + 12);
-      var bx = { x: L.G.x - tw / 2, y: L.G.y + L.r + 4, w: tw, h: 18 };
-      var own = { x: L.G.x - L.r - 8, y: L.G.y - L.r - 18 };
+      var bx = { x: L.G.x - tw / 2, y: L.G.y + L.e + 4, w: tw, h: 18 };
+      var own = { x: L.G.x - L.e - 4, y: L.G.y - L.e - 10 };
       var ok = want && !boxes.some(function (o) { if (o.x === own.x && o.y === own.y) return false; return bx.x < o.x + o.w && bx.x + bx.w > o.x && bx.y < o.y + o.h && bx.y + bx.h > o.y; });
       if (ok) boxes.push(bx);
       var nm = L.m.children[2]; nm.textContent = L.G.name; nm.hidden = !ok; nm.style.maxWidth = tw + "px";
@@ -1595,7 +1622,7 @@
     }
     document.getElementById("mapwrap").classList.toggle("is-map", v === "map");
     // the map has one arrangement (places): the grouping controls give way to the place search
-    ["groupbox", "groupsbox", "arrangebox"].forEach(function (id) { document.getElementById(id).hidden = v === "map"; });
+    ["groupbox", "groupsbox", "arrangebox", "spacingbox"].forEach(function (id) { document.getElementById(id).hidden = v === "map"; });
     document.getElementById("mapsearch").hidden = v !== "map";
     document.querySelectorAll("#viewby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.view === v ? "true" : "false"); });
     buildLinkBar(); if (v !== "map") { buildArrange(); buildSplit(); }
@@ -1864,14 +1891,9 @@
     openPanel(h.sub ? "SUBTOPIC · " + h.parent.name.toUpperCase() : MODES[mode].label.toUpperCase() + " GROUP", h.name, h.color, [h.count + unitWord(h.count), withV + " with a verdict"]);
     if (mode === "speaker" && h.subs) pbody.appendChild(el("p", "small", h.subs.filter(function (x) { return !x.person; }).length + " bodies and " + h.subs.filter(function (x) { return x.person; }).length + " people. Select one to see its claims and the bodies it is linked to."));
     if (view === "graph") expandHub(h);
-    var list = h.claims, done = list.filter(function (c) { return rated(c.data); }).length, reviewed = h.reviewLeaves || [];
-    pbody.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " with a verdict, " + reviewed.length + " completed evidence reviews."));
-    if (reviewed.length) {
-      label("LEAVES · ONE PER COMPLETED REVIEW"); var freshness = el("div", "links");
-      reviewed.forEach(function (c) { var age = c.reviewAgeDays || 0;
-        freshness.appendChild(el("p", "small", c.id + " · last reviewed " + c.data.last_reviewed + " · " + (age >= 365 ? "refresh due" : Math.max(0, 365 - age) + " days until due"))); });
-      pbody.appendChild(freshness);
-    }
+    var list = h.claims, done = list.filter(function (c) { return rated(c.data); }).length;
+    pbody.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " with a verdict. The laurel has a leaf for each " +
+      "checked claim, coloured by its verdict; a leaf fades as its evidence review ages and is an outline after a year."));
     if (h.subs && h.subs.length) { // a topic lists its claims by subtopic; a kind of body, by body
       h.subs.forEach(function (sh) { if (!sh.claims.length) return; label(sh.name.toUpperCase()); var sb = el("div", "links"); sh.claims.forEach(function (c) { claimLink(c.id, sb); }); pbody.appendChild(sb); });
       var loose = list.filter(function (c) { return !c.sub; });

@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 6 October 2026 (laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -28,6 +28,23 @@ on the map (`/?view=map&sel=claim:CC-NNN`, when it has a location) and to the cl
 resolved against the script's own folder, so they work under the `/Mizien/` prefix (they did not before: fixed).
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
+
+## Laurels and spacing (6 October 2026)
+
+Maintainer decisions of 6 October 2026, built as part of step 3:
+- **Laurels** (`site/assets/laurel.js`, one geometry for every view): a group in the claims web (and each subgroup), a
+  place on the map and a clump on the timeline carry a laurel with **one leaf per checked claim, in its verdict
+  colour** (pledge label colours for pledges). Leaves grow from just left of the bottom, up over the top and down the
+  right, one slot per claim in the group, so a **full laurel means every claim there is checked**; colours run from
+  the best verdict to the worst. **Freshness is opacity only**: opaque for a review in the last 90 days, fading to
+  0.15 at a year, then an outline only (from `last_reviewed`). The old freshness colours (green to brown) are gone.
+- Leaves never cover each other: neighbouring leaves are parallel, so they clear each other while the leaf length is
+  at most 1.45x the spacing along the branch; the code uses 1.3x, falls back to a second ring and then a wider laurel.
+  Checked for discs of 8 to 40 px and groups of 1 to 80 claims (no overlaps, no leaf inside the disc).
+- Timeline clumps are now dark discs with a count (like the map's places); their verdict mix is in the laurel.
+- **Spacing sliders** in the web (SPACING, in the control column / phone drawer): Groups apart (level 1),
+  Subgroups out (level 2), Claims out (level 3), 50 to 200 %, remembered per reader (`mizien.spacing`). The view
+  refits (the perspective distance scales with the spacing), so wider groups stay on screen.
 
 ## Site-wide filter (6 October 2026)
 
