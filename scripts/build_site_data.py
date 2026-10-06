@@ -371,12 +371,22 @@ def pledge_outliers(records: list) -> dict:
             where = (" Commitment first appears in: " + p["source_of_commitment"] + ".") if p.get("source_of_commitment") else ""
             found.append({"type": "unanchored", "text": f"No earlier pledge found (searched: {'; '.join(map(str, fs['searched']))}, "
                           f"{(timeline.parse_date(fs.get('date')) or {}).get('label', fs.get('date'))}).{where}"})
+        here = pledges.cycle_of(p, CYCLES)
         for f in [str(x) for x in p.get("follows") or []]:
             prev = by.get(f)
-            if prev and prev["pledge"].get("status") != "Met":
-                found.append({"type": "recycled", "text": f"Also promised earlier: {f}, {prev['title']} ({prev['pledge'].get('status')})."})
+            if prev:
+                pp = prev["pledge"]
+                pc = pledges.cycle_of(pp, CYCLES)
+                kind = pledges.link_type(here, pc, pp.get("status"))
+                what = f"{f}, {prev['title']} ({pledges.KINDS.get(pp.get('kind'), 'pledge').lower()}, {pledges.cycle_label(pc, CYCLES)}"
+                found.append({"type": kind, "text": (f"Also promised earlier: {what}, {pp.get('status')})." if kind == "recycled"
+                                                     else f"Carries forward {what})."), "link": f})
             elif f in mp:
-                found.append({"type": "follows", "text": f"Carries forward {mp[f]['document']}, {mp[f]['number'] or mp[f]['section']}."})
+                row = mp[f]
+                linked = by.get(row.get("claim") or "")   # a manifesto pledge that was itself checked: its label counts
+                kind = pledges.link_type(here, row.get("cycle"), linked["pledge"].get("status") if linked else None)
+                found.append({"type": kind, "text": f"{'Also promised earlier' if kind == 'recycled' else 'Carries forward'}: "
+                              f"{row['document']}, {row['number'] or row['section']} ({pledges.cycle_label(row.get('cycle'), CYCLES)}).", "link": f})
         if p.get("drift"):
             found.append({"type": "drift", "text": f"Changed from the earlier pledge ({p['drift']['type']}): {p['drift']['note']}"})
         if found:

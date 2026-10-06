@@ -68,9 +68,12 @@ def cycle_of(p: dict, cycles: list | None = None) -> str | None:
             if c["election_date"] >= made[:len(c["election_date"])] or c["election_date"][:len(made)] == made:
                 return c["id"]
         return None
+    # The cycle in force at the START of the period the date names: a commitment dated only "2026-05" or "2026"
+    # could come before the election that month or year, so it is placed in the earlier cycle unless `cycle:` says otherwise.
+    start = made + "-01-01"[len(made) - 4:] if len(made) < 10 else made
     last = None
     for c in cycles:
-        if c["election_date"] <= made + "-99"[: max(0, 10 - len(made))]:
+        if c["election_date"] <= start:
             last = c["id"]
     return last or "before-" + cycles[0]["id"]
 
@@ -87,6 +90,37 @@ def cycle_label(cid: str | None, cycles: list | None = None) -> str | None:
         return cid
     i = ids.index(cid)
     return f"{cid}–{ids[i + 1][2:]}" if i + 1 < len(ids) else f"{cid}–"
+
+
+def cycle_order(cid: str | None) -> float | None:
+    """'2022' -> 2022; 'before-2022' -> 2021.5 (sorts before it); None stays None."""
+    if not cid:
+        return None
+    return float(cid[7:]) - 0.5 if cid.startswith("before-") else float(cid)
+
+
+def link_type(this_cycle: str | None, prev_cycle: str | None, prev_status: str | None) -> str:
+    """What a `follows` link is (methodology/verdict-scale.md, Outliers): 'recycled' only when the earlier pledge was made
+    in an EARLIER cycle and was not met; otherwise a neutral 'follows' (for example a government commitment carrying
+    forward its own party's campaign pledge in the same cycle, which is the normal chain, not an outlier)."""
+    a, b = cycle_order(this_cycle), cycle_order(prev_cycle)
+    if a is not None and b is not None and b < a and prev_status and prev_status != "Met":
+        return "recycled"
+    return "follows"
+
+
+def _selftest() -> None:
+    """Run by validate_claims.py: the rules above, on fixed cases."""
+    cy = [{"id": "2022", "election_date": "2022-03-26"}, {"id": "2026", "election_date": "2026-05-30"}]
+    assert cycle_of({"made_on": "2022-03-11", "kind": "campaign"}, cy) == "2022"
+    assert cycle_of({"made_on": "2026-05", "kind": "campaign"}, cy) == "2026"
+    assert cycle_of({"made_on": "2026-05", "kind": "government"}, cy) == "2022"      # month of the election: the earlier cycle
+    assert cycle_of({"made_on": "2026-06-02", "kind": "government"}, cy) == "2026"
+    assert cycle_of({"made_on": "2019-04-02", "kind": "target"}, cy) == "before-2022"
+    assert link_type("2022", "2022", "Off track") == "follows"     # same cycle: the normal chain, not an outlier
+    assert link_type("2026", "2022", "Off track") == "recycled"    # made again later while the earlier one was not met
+    assert link_type("2026", "2022", "Met") == "follows"
+    assert link_type("2026", "2022", None) == "follows"            # status unknown (an unchecked manifesto pledge)
 
 
 def check(p: dict, claim_ids: set) -> list:

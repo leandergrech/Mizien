@@ -304,6 +304,10 @@ def check_pledge_files(ids: set) -> int:
     sys.path.insert(0, str(ROOT / "scripts"))
     import pledges
     errs = pledges.check_files(ids)
+    try:
+        pledges._selftest()
+    except AssertionError as e:
+        errs.append(f"scripts/pledges.py self-test failed: {e or 'see the asserts in _selftest()'}")
     for e in errs:
         print("FAIL " + e)
     print(f"pledges: {len(pledges.load_cycles())} election cycles, {len(pledges.load_manifesto())} manifesto pledges listed, {len(errs)} problems.")

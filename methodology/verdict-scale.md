@@ -53,7 +53,8 @@ Pledges are not made continuously: most come in bursts around elections. Each pl
 
 Each pledge belongs to an **election cycle** (`data/cycles.csv`: the election and the legislature after it). A campaign
 pledge belongs to the election it was made for (the first election on or after the date it was made); any other
-pledge to the cycle in force when it was made. An explicit `cycle:` overrides this.
+pledge to the cycle in force when it was made (at the start of the period its date names, so a commitment dated only
+by the month or year of an election falls in the earlier cycle). An explicit `cycle:` overrides this.
 
 `data/manifesto_pledges.csv` is a light list of manifesto pledges (party, cycle, number, page, wording, archived
 source), most never checked, so that pledges can be linked and promises nobody took up can be found. Wording is entered
