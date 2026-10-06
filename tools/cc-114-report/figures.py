@@ -40,7 +40,7 @@ def fig1():
         V[("env_ac_aeint_r2", "EU27_2020", "GHG|TOTAL|B1G", "G_EUR_CLV20", 2013)] * 100 - 100
     inv = lambda g, y: V[("env_air_gge", g, "GHG|TOTX4_MEMO", "MIO_T", y)] / V[("nama_10_gdp", g, "B1GQ", "CLV20_MEUR", y)]
     eu_inv = inv("EU27_2020", 2024) / inv("EU27_2020", 2013) * 100 - 100
-    fig, ax = plt.subplots(figsize=(9.6, 6.7), dpi=220)
+    fig, ax = plt.subplots(figsize=(9.6, 5.9), dpi=220)
     for i, g in enumerate(geos):
         a, b = RANK[(M_PUB, g)], RANK[(M_INV, g)]
         if g == "MT":
@@ -106,7 +106,7 @@ def fig2():
     a1.set_xticks([2008, 2013, 2018, 2024])
     a1.set_ylabel("Mt CO₂ equivalent", fontsize=9)
     a1.set_title("A. Malta: greenhouse gases of resident production units", fontsize=9.6, color=SLATE, loc="left")
-    a1.legend(handles=[Patch(color=RED, label="Air transport (H51)"), Patch(color=SAGE, label="Other activities"),
+    a1.legend(handles=[Patch(color=RED, label="Air transport (H51)"), Patch(color=SAGE, label="Other activities (incl. other transport)"),
                        Patch(color=SLATE, label="Electricity, gas, steam (D)"),
                        Patch(facecolor="white", edgecolor=GREY, hatch="////", label="2024: Eurostat estimate")],
               frameon=False, fontsize=7.4, loc="upper left", bbox_to_anchor=(0.0, 0.92))

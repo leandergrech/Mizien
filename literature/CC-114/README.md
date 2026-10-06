@@ -25,3 +25,7 @@ https://ec.europa.eu/eurostat/help/copyright-notice, read 6 Oct 2026); unchanged
 ## Attempt log
 
 - 6 Oct 2026 (maintainer session): wording found and read; Eurostat data downloaded; report, flyer and record drafted.
+- 6 Oct 2026 (same session, after an independent review and before circulation): counter-figures tested from every base year
+  (data/cc-114/sensitivity_base_years.csv); renewables link rated on the decomposition and its bound; Ireland, Estonia and
+  Finland given on both bases with flags; Eurostat news item of 18 Dec 2025 read (data/cc-114/eurostat_ren_news_dec2025.csv);
+  translation of sentence 6 corrected; the release's traffic sentence added (primary-source.md item 9). Version unchanged (1.0).

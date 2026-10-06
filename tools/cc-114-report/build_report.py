@@ -1,4 +1,5 @@
 """Claim Check 114 report. Run fetch.py, calc.py and figures.py first. Output: out/report.pdf"""
+import csv
 import pathlib
 import sys
 
@@ -7,38 +8,41 @@ sys.path.insert(0, str(HERE.parent))
 from mizien_report import *  # noqa: E402,F401
 
 FIG = HERE / "out"
+DATA = HERE.parents[1] / "data" / "cc-114"
 BRICK = VERDICT_COLS[3]     # the Misleading colour
 MAROON = VERDICT_COLS[4]    # the Contradicted colour
 S = []
+TIGHT = [("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3)]
 
 # ================================================================== TL;DR
 S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
       P("On 26 January 2026 a Nationalist Party (PN) release signed by Eve Borg Bonello said that <b>“Malta is the "
         "only EU Member State which, instead of reducing, increased the intensity of greenhouse gas emissions from "
         "2013 to date”</b> (+17%, EU −34%), that Malta now pollutes more for every euro of its economy, and that this "
-        "is “the direct result” of the Government’s lack of ambition, above all on renewables [1] (our translation). "
-        "We tested it against Eurostat’s own tables.", lead)]
+        "is “the direct result” of a lack of ambition on several fronts, among them, renewables [1] (our "
+        "translation). We tested it against Eurostat’s own tables.", lead)]
 S.append(key_points([
     ("The headline figure is Eurostat’s, quoted correctly.",
      "Eurostat: “Only Malta (+17%) saw its emissions intensity increase since 2013”, EU −34% [3, 4]. Revised data "
-     "(August 2026) give +14.3%, still the only rise of the 27 [6]."),
-    ("72% of the emissions in Malta’s 2024 figure are airline fuel bought abroad.",
+     "give +14.3%, still the only rise; Malta ranks last of the 27 from every base year [6]."),
+    ("72% of Malta’s 2024 figure is airline fuel bought abroad.",
      "The indicator counts Malta-resident firms’ emissions wherever they occur [7]. Air transport rose from 0.30 to "
-     "4.73 Mt CO₂e, 2013–2024, almost all of it fuel bought abroad [6, 8]."),
-    ("Without air transport, or on the territorial inventory, intensity fell sharply.",
-     "−64% and −61%: both the EU’s second-largest fall (EU −35% and −36%) [6, 9]."),
-    ("The cause the release gives does not fit the data.",
-     "Electricity-supply emissions, where renewables act, fell 56% [6]. The 10.7% is Malta’s renewable share of "
-     "electricity, set against the EU’s overall share; Estonia, Ireland and Finland cut intensity, not emissions [6, 10]."),
+     "4.73 Mt CO₂e, 2013–2024, and all of the rise is fuel bought abroad [6, 8]."),
+    ("Without air transport, the indicator fell from every base year.",
+     "−8.5% to −72% for bases 2008–2023. Since 2013 the fall (−64%) is the EU’s second largest; since 2016 it is "
+     "−29.5%, 17th of 27, as power-sector emissions fell mostly in 2014–2016 [6]."),
+    ("Renewables cannot explain the rise.",
+     "Air transport is 116% of the net rise since 2013. With no electricity-sector emissions at all in 2024, the "
+     "indicator would still be 1.4% above 2013; renewable shares rose meanwhile [6, 10]."),
     ("Verdict: misleading (high confidence).",
-     "The statistic is right, but without its driver the release gives an inaccurate impression: that Malta’s economy "
-     "pollutes more per euro because of weak renewables policy. Pending right of reply."),
+     "The statistic is right, but the release never says it counts airline fuel bought abroad, and it links the rise "
+     "to renewables, which cannot account for it. Pending right of reply."),
 ]))
 S += [Spacer(1, 4 * mm), VerdictMeter(3), Spacer(1, 3 * mm),
       tiles([("+14%", RED, "Eurostat’s indicator for Malta, 2013–2024 (+17% in January; EU −34%)"),
              ("72%", RED, "of Malta’s 2024 figure is airline fuel bought abroad (11% in 2013)"),
-             ("−64%", GREEN, "the same without air transport: the EU’s second-largest fall"),
-             ("−56%", GREEN, "emissions from electricity supply, 2013–2024")]),
+             ("116%", ORANGE, "of the net rise since 2013 is air transport: the rest fell, taken together"),
+             ("−64%", GREEN, "without air transport since 2013; a fall from every base year 2008–2023")]),
       Spacer(1, 4 * mm),
       up_down("Revised data or a source showing that the rise comes from activities in Malta that renewable energy "
               "could reduce (for example emissions reallocated from air transport to electricity or other domestic "
@@ -55,9 +59,9 @@ S.append(PageBreak())
 S.append(SectionHeading(1, "The claim and what we could verify"))
 S.append(P("The statement is a PN press release in Maltese, published on the party’s website on 26 January 2026 and "
            "signed by Eve Borg Bonello as Shadow Minister for Climate Change and Public Cleanliness [1]. Newsbook "
-           "reported it in English the same day, with some sentences in quotation marks and the figures in its own "
-           "words [2]. We rate the release. Quotations below are our translation of the Maltese, checked against "
-           "Newsbook’s English where it has one; the original sentences are in <i>literature/CC-114/primary-source.md</i>."))
+           "reported it in English the same day, quoting some sentences and giving the figures in its own words [2]. "
+           "We rate the release. Quotations are our translation, checked against Newsbook’s English where it has one; "
+           "the Maltese is in <i>literature/CC-114/primary-source.md</i>."))
 S.append(std_table([
     [C("What was said (our translation)", cellh), C("Where", cellh), C("Our access", cellh)],
     [C("“Malta is the only EU Member State which, instead of reducing, increased the intensity of greenhouse gas "
@@ -68,13 +72,13 @@ S.append(std_table([
     [C("Eurostat’s figures, “published in recent days”, show other countries succeeding “in the fight against air "
        "pollution”, among them “Estonia, which reduced emissions by 64%, Ireland by 50% and Finland by 44%”."),
      C("Release [1]"), C("Read in full")],
-    [C("“In simple words, we are not polluting more simply because the economy grew; today, for every euro we put "
-       "into our economy, we are polluting more than we were polluting in 2013.”"), C("Release [1]; quoted in "
-                                                                                     "English by Newsbook [2]"),
-     C("Read in full")],
+    [C("“In simple words, it is not simply that we are polluting more because the economy grew, but today, for every "
+       "euro we put into our economy, we are polluting more than we were polluting in 2013.”"),
+     C("Release [1]; quoted in English by Newsbook [2]"), C("Read in full")],
     [C("“This is the direct result of a lack of ambition on the part of the Maltese Government on several fronts. "
-       "Among them, the clear lack of ambition to seriously increase the use of renewable energy.”"),
-     C("Release [1]; subtitle says the same of renewables"), C("Read in full")],
+       "Among them, the clear lack of ambition to seriously increase the use of renewable energy.” A later "
+       "paragraph cites “the long hours stuck in traffic” as a problem on which the Government drags its feet."),
+     C("Release [1]; its subtitle names renewables"), C("Read in full")],
     [C("“In 2024 our country generated only 10.7% of its energy from renewable sources … the European average is a "
        "little over 25% … third from last.”"), C("Release [1]"), C("Read in full")],
     [C("The release’s image: Eurostat’s map of the change in emissions intensity of gross value added, 2013–2024 "
@@ -83,120 +87,142 @@ S.append(std_table([
 S += [Spacer(1, 4 * mm),
       callout([P("FAIRNESS NOTE", tag),
                P("The PN reproduced Eurostat’s headline and definition accurately, and Eurostat’s own news item "
-                 "gives no explanation of Malta’s figure either [3]. The questions are what the figure measures and "
-                 "whether the release’s reading of it holds. This is an opposition statement, held to the same "
-                 "standard and the same data as the Government’s statement on the same theme (Claim Check 025: "
-                 "emissions per unit of GDP down more than 80% since 2005) [13]. Newsbook added, in its own words, "
-                 "that Malta leads the EU on cutting emissions per unit of GDP since 2005; that is not the PN’s "
-                 "statement and is not rated here.", small)],
+                 "gives no explanation of Malta’s figure either [3]. This is an opposition statement, held to the same "
+                 "standard and data as the Government’s statement on the same theme (Claim Check 025) [13]; we test our "
+                 "own counter-figures from every base year, as we test the PN’s. Newsbook’s own additions (for example "
+                 "Malta’s lead in emissions per unit of GDP since 2005) are not the PN’s and are not rated.", small)],
               bg=AMBER_PALE, bar=AMBER), Spacer(1, 4 * mm)]
 
 # ================================================================== 2
 S.append(SectionHeading(2, "Method"))
-S.append(P("<b>Questions.</b> (A) Does Eurostat show Malta as the only EU Member State whose emissions intensity rose "
-           "since 2013, by 17% against −34%? (B) Does that hold in the latest data and for other start and end years? "
-           "(C) What drives Malta’s figure? (D) Do other measures of emissions per unit of output agree? (E) Does the "
-           "cause the release gives fit the data? (F) Are the release’s other figures right?"))
-S.append(P("<b>Evidence.</b> Eurostat’s news item and its map [3, 4]; its Statistics Explained article on greenhouse "
-           "gas emission accounts [5]; the air emissions accounts by activity, the intensity table and the table "
-           "bridging the accounts to the national inventory [6]; Eurostat’s and the National Statistics Office’s "
-           "(NSO) metadata [7, 8]; the territorial inventory, GDP, gross value added and population [9]; renewable "
-           "shares [10]; and two peer-reviewed papers on accounting principles and decoupling [11, 12]. All data "
-           "were retrieved on 6 October 2026 into <i>data/cc-114/</i> with Eurostat’s status flags, and every figure "
-           "here is recomputed by <i>tools/cc-114-report/calc.py</i> (<i>data/cc-114/checks.csv</i>)."))
-S.append(P("<b>Grades.</b> Eurostat’s and the NSO’s statistics and metadata are official statistics, grade C. The two "
-           "papers are a methodological analysis and a systematic review, read as abstracts, grade C. The release "
-           "and the news report are the claim, not evidence. <b>Verdicts</b> follow the five-point scale in "
-           "Appendix A."))
+S.append(P("<b>Questions.</b> (i) Does Eurostat show Malta as the only EU Member State whose emissions intensity rose "
+           "since 2013, by 17% against −34%? (ii) Does that hold in the latest data and for other start and end years? "
+           "(iii) What drives Malta’s figure? (iv) Do other measures of emissions per unit of output agree, and from "
+           "which base years? (v) Can the cause the release gives account for the rise? (vi) Are the release’s other "
+           "figures right?"))
+S.append(P("<b>Evidence.</b> Eurostat’s news item, map and Statistics Explained article [3–5]; its air emissions "
+           "accounts (intensities, emissions by activity, bridging to the national inventory) [6]; Eurostat’s and the "
+           "National Statistics Office’s (NSO) metadata [7, 8]; the territorial inventory, GDP, value added and "
+           "population [9]; renewable shares [10, 16]; and two peer-reviewed papers [11, 12]. All data were retrieved "
+           "on 6 October 2026 into <i>data/cc-114/</i> with Eurostat’s status flags; every figure is recomputed by "
+           "<i>tools/cc-114-report/calc.py</i> (<i>data/cc-114/checks.csv</i>)."))
+S.append(P("<b>Grades.</b> Eurostat’s and the NSO’s statistics and metadata are official statistics, grade C; the two "
+           "papers, read as abstracts, are a methodological analysis and a systematic review, grade C. The release and "
+           "the news report are the claim, not evidence. <b>Verdicts</b> follow the scale in Appendix A."))
 
 # ================================================================== 3
 S.append(CondPageBreak(80 * mm))
 S.append(SectionHeading(3, "What Eurostat’s indicator counts"))
 S.append(P("Eurostat’s greenhouse gas emissions intensity is the emissions of an economy’s production units, in CO₂ "
            "equivalents, per euro of gross value added in chain-linked 2020 prices; households are left out because "
-           "they produce no value added [3, 5]. The emissions come from the <b>air emissions accounts</b>, which follow "
+           "they produce no value added [5]. The emissions come from the <b>air emissions accounts</b>, which follow "
            "the national accounts and so the <b>residence principle</b>: they record “emissions arising from the "
            "activities of all resident units … regardless of where these emissions actually occur geographically” "
-           "[7]. The national inventory under the UN climate convention, on which EU targets are set, counts what is "
-           "emitted on the territory and keeps international aviation and shipping as memo items [9]; Eurostat "
-           "bridges the two in a separate table [6]. A peer-reviewed comparison finds the gap between the two "
-           "principles “high for many countries” and growing [11]."))
-S.append(P("An airline resident in Malta is counted in Malta’s accounts for the fuel it burns on any route, and its "
-           "value added is part of Malta’s GDP: the indicator is consistent, but it does not measure emissions in "
-           "Malta. Eurostat’s article notes that in Denmark, Luxembourg and Malta transport is the key emitting "
+           "[7]. The inventory reported to the UN climate convention instead counts what is emitted on the territory "
+           "(“territory principle”, in the label of Eurostat’s bridging table [6]) and keeps international aviation "
+           "and shipping as memo items [9]. A peer-reviewed comparison finds the gap between the two principles "
+           "“high for many countries” and growing [11]."))
+S.append(P("An airline resident in Malta is counted in Malta’s accounts for the fuel it burns on any route [7], and "
+           "its value added is part of Malta’s GDP (general national-accounts context): the indicator is consistent, "
+           "but it does not measure emissions in Malta. Eurostat’s article notes that in Denmark, Luxembourg and Malta transport is the key emitting "
            "activity in these accounts, as transport companies’ emissions “are allocated to the country of "
            "residence” [5]."))
-S.append(P("<b>Malta’s air transport.</b> Eurostat’s bridging table puts emissions from fuel bought abroad by "
-           "Malta-resident air transport firms at 0.30 Mt CO₂e in 2013, 0.91 Mt in 2019, 1.59 Mt in 2022, 3.11 Mt in "
-           "2023 and 4.73 Mt in 2024 [6]: from 0.4% to 4.4% of all such emissions by EU residents, for an economy "
-           "with 0.13% of the EU’s value added. The NSO attributes the 2023 jump to “an increase in international "
-           "aviation activity, primarily due to the activity of airlines which started operating during 2023”; its "
-           "source is the OECD’s residence-based aviation data, with charter flights for 2013–2018 estimated by the "
-           "NSO and revised in February 2026 [8]. Neither names the airlines, and we do not."))
-S.append(P("<b>What 2024 is.</b> Eurostat estimates the latest year itself [7]: Malta’s 2024 values carry the flag "
-           "“i”, imputed. Eurostat also warns that “a multitude of factors may drive greenhouse gas emissions "
-           "intensity, with improving environmental performance and decarbonisation policies being only one of "
-           "them” [5]. A falling intensity alongside growth is what the literature calls relative decoupling [12]."))
+S.append(P("<b>Malta’s air transport.</b> Eurostat’s bridging table classes as fuel bought abroad 299 of the 304 kt "
+           "of Malta’s air-transport emissions in 2013 and all 4.73 Mt in 2024 (an estimate), with 0.91 Mt in 2019, "
+           "1.59 Mt in 2022 and 3.11 Mt in 2023 [6]: from 0.4% to 4.4% of all such emissions by EU residents, for "
+           "an economy with 0.13% of the EU’s value added. The NSO attributes the 2023 jump to “an increase in "
+           "international aviation activity, primarily due to the activity of airlines which started operating during "
+           "2023”; its source is the OECD’s residence-based aviation data, with charter flights for 2013–2018 "
+           "estimated by the NSO and revised in February 2026 [8]. Neither names the airlines, and we do not."))
+S.append(P("<b>What 2024 is.</b> Eurostat estimates the latest year itself [7]: Malta’s 2024 values, and the EU-27’s, "
+           "carry the flag “i”, imputed. Eurostat also warns that “a multitude of factors may drive greenhouse gas "
+           "emissions intensity, with improving environmental performance and decarbonisation policies being only "
+           "one of them” [5]. A falling intensity alongside growth is what the literature calls relative "
+           "decoupling [12]."))
 
 # ================================================================== 4
-S.append(KeepTogether([SectionHeading(4, "What the data show"),
-    P("The same economy gives opposite signs depending on what is counted, from when, and at which prices. Figure 1 "
-      "sets the two main measures side by side for the 27; Figure 2 shows what lies inside Malta’s figure."),
+S += [CondPageBreak(70 * mm), SectionHeading(4, "What the data show"),
+    P("The same economy gives opposite signs depending on what is counted, from when and at which prices. This table "
+      "starts in 2013, the PN’s base year; the next one tests other base years, for our figures as for the PN’s."),
     std_table([
     [C("Measure", cellh), C("Counts", cellh), C("Period", cellh), C("Malta", cellh), C("EU-27", cellh),
-     C("Malta among 27", cellh)],
+     C("Rank, 1 = largest fall", cellh)],
     [C("Eurostat’s indicator, January release"), C("Residents / GVA"), C("2013–24"), C("<b>+16.6%</b>"),
-     C("−34.0%"), C("only rise")],
+     C("−34.0%"), C("27th, only rise")],
     [C("Same, data of August 2026"), C("Residents / GVA"), C("2013–24"), C("<b>+14.3%</b> (est.)"),
-     C("−34.0%"), C("only rise")],
+     C("−34.0%"), C("27th, only rise")],
     [C("Same, ending 2023"), C("Residents / GVA"), C("2013–23"), C("−8.3%"), C("−32.4%"), C("no rise")],
     [C("Same, current prices"), C("Residents / GVA"), C("2013–24"), C("−20.3%"), C("−49.3%"), C("no rise")],
     [C("Same, without air transport"), C("Residents / GVA"), C("2013–24"), C("<b>−64.0%</b>"), C("−35.2%"),
-     C("2nd-largest fall")],
+     C("2nd of 27")],
     [C("Territorial inventory per € of GDP"), C("Territory / GDP"), C("2013–24"), C("<b>−61.3%</b>"), C("−35.5%"),
-     C("2nd-largest fall")],
-    [C("Same, from 2005 (CC-025)"), C("Territory / GDP"), C("2005–24"), C("−72.2%"), C("−47.9%"),
-     C("")],
-    [C("Same, current prices (CC-025’s “80%”)"), C("Territory / GDP"), C("2005–24"),
-     C("−83.8%"), C("−64.7%"), C("")],
+     C("2nd of 27")],
+    [C("Same, from 2005, volumes / current prices (CC-025’s “80%”)"), C("Territory / GDP"), C("2005–24"),
+     C("−72.2% / −83.8%"), C("−47.9% / −64.7%"), C("")],
     [C("Territorial inventory per person"), C("Territory / person"), C("2013–24"), C("−42.6%"), C("−24.2%"),
-     C("3rd-largest fall")],
+     C("3rd of 27")],
     [C("Residents incl. households, per person"), C("Residents / person"), C("2013–24"), C("+69.2%"), C("−21.2%"),
-     C("largest of 5 rises")],
-], [62 * mm, 28 * mm, 15 * mm, 23 * mm, 16 * mm, 26 * mm]),
+     C("27th, 5 rises")],
+], [50 * mm, 27 * mm, 15 * mm, 25 * mm, 25 * mm, 28 * mm],
+              extra=TIGHT),
     P("Sources [4, 6, 9, 13]; values in <i>data/cc-114/checks.csv</i>, ranks in <i>ranking_2013_2024.csv</i>. "
-      "“Without air transport” removes its emissions only; removing transport from both sides gives −66.3%.", cap)]))
+      "“Without air transport” removes its emissions only; removing transport from both sides gives −66.3%.", cap)]
+# base-year sensitivity, read from calc.py's output
+BS = {int(r["base_year"]): r for r in csv.DictReader(open(DATA / "sensitivity_base_years.csv"))}
+th = lambda n: f"{n}{'st' if n % 10 == 1 and n != 11 else 'nd' if n % 10 == 2 and n != 12 else 'rd' if n % 10 == 3 and n != 13 else 'th'}"
+cell = lambda v, rk: C(f"{float(v):+.1f}% ({th(int(rk))})".replace("+-", "−").replace("-", "−"))
+bs_rows = [[C("Base year", cellh), C("Eurostat’s indicator", cellh), C("Without air transport", cellh),
+            C("Territorial per € of GDP", cellh), C("Electricity-sector emissions", cellh)]]
+for b in (2008, 2010, 2012, 2013, 2014, 2015, 2016, 2019, 2023):
+    r = BS[b]
+    bs_rows.append([C(f"<b>{b}</b>" if b in (2013, 2016) else str(b)), cell(r["published_malta_pct"], r["published_rank"]),
+                    cell(r["without_air_malta_pct"], r["without_air_rank"]),
+                    cell(r["territorial_per_gdp_malta_pct"], r["territorial_rank"]),
+                    C(f"{float(r['malta_electricity_D_pct']):+.0f}%".replace("-", "−"))])
+S.append(KeepTogether([P("Every measure by base year, to 2024", h2), std_table(bs_rows, [24 * mm, 38 * mm, 38 * mm,
+                                                                                          38 * mm, 32 * mm]),
+    P("Malta’s change to 2024 and its rank of 27 (1st = largest fall; 27th = weakest). EU-27 from 2013: −34.0%, "
+      "−35.2%, −35.5%; from 2016: −29.0%, −30.1%, −29.8%. All bases 2008–2023 in <i>sensitivity_base_years.csv</i> "
+      "[6, 9].", cap)]))
+RA = [P("Reading across the data", h2)]
+for t in ["• <b>Both parties’ figures are real; they count different things.</b> The Government’s COP30 statement "
+          "(Claim Check 025) gave no basis; its “more than 80%” per unit of GDP since 2005 holds on the territorial "
+          "inventory only at current prices (−72% in volumes) [13]. The PN used Eurostat’s residence-based indicator.",
+          "• <b>One activity explains the whole rise.</b> Malta’s resident production units went from 2.78 to "
+          "6.59 Mt CO₂e while real value added rose 108.5%: air transport from 0.30 to 4.73 Mt, electricity, gas and "
+          "steam from 1.70 to 0.74 Mt, other transport from 0.18 to 0.26 Mt, and all other activities from 0.59 to "
+          "0.86 Mt [6]. Air transport added 4.43 Mt, 116% of the net increase; the rest fell, taken together.",
+          "• <b>Our counter-figures depend on the base year too.</b> Most of the fall without air transport, and of the "
+          "territorial fall, came in 2014–2016, when electricity-sector emissions fell from 1.70 to 0.58 Mt; since "
+          "2016 they have risen 28%. From 2016, Malta’s fall without air transport (−29.5%, 17th) and on the "
+          "territorial inventory (−27.1%, 21st) is close to the EU’s. What holds from every base year is the "
+          "direction: both fell, from every year from 2008 to 2023.",
+          "• <b>The PN’s base year is not a convenient one.</b> Ending 2024, Malta’s rise from any base year 2014–2019 "
+          "is larger, +19.5% to +97%, and Malta is last of the 27 from every base year from 2008, though it fell "
+          "(by up to 9%) from bases 2008–2012.",
+          "• <b>“Only Malta” rests on the 2024 estimate.</b> With 2013 as the base, Malta is the only riser for the "
+          "end year 2024 and for no other; to 2023, the last year Malta reported, it fell 8.3% and no Member State "
+          "rose.",
+          "• <b>The rise is recent.</b> The indicator fell 40% from 2013 to 2016 and was still 39% below 2013 in 2021. "
+          "It rose 63% from 2022 to 2024: the NSO links the 2023 jump to airlines that started operating that year "
+          "[8]; the 2024 value is Eurostat’s estimate.",
+          "• <b>The January and August figures differ only for Malta:</b> +16.6% to +14.3%; no other country moved "
+          "by more than 0.7 points. The NSO revised 2013–2018 air transport in February 2026 [8]."]:
+    RA.append(P(t, bul))
+S += [KeepTogether(RA[:2])] + RA[2:]
 S.append(KeepTogether([fig(FIG / "fig1_ranking.png", width=CW * 0.92),
                        P("Figure 1. Change in emissions per euro of output, 2013–2024, for the 27 Member States, on "
                          "Eurostat’s published indicator (filled; resident production units per euro of gross value "
                          "added) and on the territorial inventory per euro of GDP (hollow; excluding land use and "
                          "international bunkers), both in chain-linked volumes [6, 9]. Sorted by Eurostat’s indicator. "
-                         "Malta’s 2024 value in the accounts is a Eurostat estimate.", cap)]))
+                         "2024 values in the accounts are Eurostat estimates; ranks depend on the base year (see the base-year table).",
+                         cap)]))
 S.append(KeepTogether([fig(FIG / "fig2_malta.png"),
                        P("Figure 2. Malta. Panel A: emissions of resident production units by activity, with the "
                          "territorial inventory for comparison (Mt CO₂e). Panel B: Eurostat’s indicator, the same "
                          "without air-transport emissions, and the territorial inventory per euro of GDP, all indexed "
                          "to 2013 = 100. 2024 is a Eurostat estimate (hatched, shaded) [6, 9].", cap)]))
-RA = [P("Reading across the data", h2)]
-for t in ["• <b>Both parties’ figures are real; they count different things.</b> The Government’s COP30 statement "
-          "(Claim Check 025) used the territorial inventory since 2005 and found a fall of more than 80% at current "
-          "prices (−72% in volumes); the PN used Eurostat’s residence-based indicator since 2013 and found a rise. "
-          "On the territorial basis Malta’s fall since 2013 is the EU’s second largest, after Estonia’s.",
-          "• <b>One activity explains the whole rise.</b> Emissions of Malta’s resident production units went from "
-          "2.78 to 6.59 Mt CO₂e while real value added rose 108.5%. Air transport added 4.43 Mt, 116% of the net "
-          "increase: everything else fell, taken together. Electricity, gas and steam fell from 1.70 to 0.74 Mt "
-          "(−56%); the remaining activities rose from 0.59 to 0.86 Mt, less than half as fast as output.",
-          "• <b>The rise is recent.</b> The indicator fell 40% from 2013 to 2016 and was still 39% below 2013 in "
-          "2021. It rose 63% from 2022 to 2024, the years of the airline growth the NSO describes [8].",
-          "• <b>“Only Malta” rests on the 2024 estimate.</b> With 2013 as the base, Malta is the only riser for the "
-          "end year 2024 and for no other; to 2023, the last year Malta reported, it fell 8.3% and no Member State "
-          "rose. With 2024 as the end year, Malta is the only riser for every base year from 2013 to 2019, but fell "
-          "from 2008–2012 (−9.0% since 2008).",
-          "• <b>The January and August figures differ only for Malta.</b> Malta moved from +16.6% to +14.3%; no other "
-          "country moved by more than 0.7 points. This coincides with the NSO’s February 2026 revision of 2013–2018 "
-          "air transport [8]."]:
-    RA.append(P(t, bul))
-S += [KeepTogether(RA[:2])] + RA[2:]
+
 
 # ================================================================== 5
 S.append(CondPageBreak(85 * mm))
@@ -204,27 +230,29 @@ S.append(SectionHeading(5, "Where the evidence points different ways"))
 S.append(contested(
     "Q1  Is Malta the only Member State whose intensity rose since 2013?", "YES, ON EUROSTAT’S INDICATOR", GREEN,
     "Eurostat’s news item and map say so: +16.6%, the only rise, EU −34.0% [3, 4]. The revised data of August 2026 "
-    "give +14.3%, still the only rise [6].",
+    "give +14.3%, still the only rise, and Malta ranks last from every base year [6].",
     "Only with 2024 as the end year, and Malta’s 2024 value is a Eurostat estimate. To 2023 the indicator fell 8.3% "
-    "and no Member State rose. On the territorial inventory Malta’s fall is the EU’s second largest [6, 9].",
+    "and no Member State rose [6].",
     "<b>For this claim:</b> accurate as Eurostat’s published statistic; the release rightly says it is Eurostat’s."))
 S.append(contested(
     "Q2  Does Malta now pollute more per euro than in 2013?", "ONLY BY COUNTING AIRLINES ABROAD", ORANGE,
     "Malta-resident firms emit 14% more per euro of value added than in 2013 [6]. Their value added is in Malta’s "
     "GDP, so counting their emissions is consistent, as Eurostat’s accounts intend [5, 7].",
-    "72% of the 2024 figure is fuel bought abroad by resident air transport firms [6]. Without air "
-    "transport the indicator fell 64%; the territorial inventory per euro of GDP fell 61% [6, 9].",
-    "<b>For this claim:</b> true of resident firms as the accounts count them, not of emissions in Malta; the "
-    "release presents it as the second without saying it is the first."))
+    "72% of the 2024 figure is fuel bought abroad by resident air transport firms. Without air transport the "
+    "indicator fell from every base year (−64% since 2013, −29.5% since 2016) [6].",
+    "<b>For this claim:</b> true of resident firms as the accounts count them. The release never names that basis, "
+    "and its renewables explanation treats the figure as domestic."))
 S.append(contested(
-    "Q3  Is the rise the result of weak renewables ambition?", "NOT BORNE OUT", RED,
-    "Malta’s renewable shares are among the lowest in the EU: 10.7% of electricity in 2024, the lowest of the 27, and "
+    "Q3  Can a lack of renewables explain the rise?", "CONTRADICTED", MAROON,
+    "Malta’s renewable shares are among the EU’s lowest: 10.7% of electricity in 2024, the lowest of the 27, and "
     "17.2% of all energy, fourth from last [10].",
-    "Emissions from electricity, gas and steam supply fell 56% since 2013 [6]. The whole net rise is air transport, "
-    "fuel bought abroad, which renewable power in Malta does not displace. Eurostat cautions that many factors "
-    "besides policy drive intensity [5].",
-    "<b>For this claim:</b> the release names a cause the sector data do not show. It speaks of “several fronts” but "
-    "names only renewables; unnamed causes cannot be tested."))
+    "Air transport is 116% of the net rise since 2013. Even with no electricity-sector emissions at all in 2024, the "
+    "indicator would still be 1.4% above 2013. Renewable shares rose over the period: electricity 1.6% to 10.7%, "
+    "overall 3.8% to 17.2% [6, 10].",
+    "<b>For this claim:</b> no renewables policy could have removed the rise. “A lack of ambition on several fronts” "
+    "is a political judgement we do not rate. The release also cites “the long hours stuck in traffic”, without tying "
+    "it to the figure: households’ own car use is outside the indicator [5], and land transport firms went from "
+    "0.05 to 0.09 Mt [6]."))
 
 # ================================================================== 6
 S.append(CondPageBreak(120 * mm))
@@ -236,57 +264,75 @@ S.append(std_table([
      C("Eurostat’s news item and map say so [3, 4]; still true in the August 2026 data, but only with 2024, a Eurostat "
        "estimate, as end year (to 2023: −8.3%, no riser) [6]."), verd("ACCURATE", GREENC)],
     [C("<b>B.</b> Malta +17%, EU average −34%"),
-     C("Matches the January release (+16.6%, −34.0%); revised to +14.3% in August 2026. The release’s “these emissions” "
-       "means the intensity; the −34% is the EU aggregate, not a mean of countries (−32.4%) [3, 4, 6]."), verd("ACCURATE", GREENC)],
+     C("Matches the January release (+16.6%, −34.0%); revised to +14.3% (EU values flagged i). “Increased these "
+       "emissions” is the slip rated in C, but here the same sentence gives the EU’s “average intensity”, so we read "
+       "the figures as intensity. The −34% is the EU aggregate (countries’ mean −32.4%) [3, 4, 6]."), verd("ACCURATE", GREENC)],
     [C("<b>C.</b> Estonia reduced emissions by 64%, Ireland by 50%, Finland by 44%"),
-     C("These are the intensity changes. Their emissions changed by −55%, +14% (Ireland’s rose) and −38% [5, 6]."),
+     C("These are intensity changes, given as emissions and “the fight against air pollution”. Emissions 2013–2024, "
+       "residence accounts / territorial inventory: Estonia −55% / −53% and Finland −38% / −38% (both 2024 flagged "
+       "i), Ireland +13.7% / −6.9% (2024 flagged e; 87% of its rise on the residence basis is air transport) "
+       "[5, 6, 9]."),
      verd("MISLABELLED", AMBER)],
     [C("<b>D.</b> For every euro put into the economy, Malta pollutes more than in 2013"),
-     C("True only as the accounts count resident firms: 72% of Malta’s 2024 figure is airline fuel bought abroad; "
-       "without it −64%; territorial inventory per € of GDP −61%, the EU’s second-largest fall [6, 9]."),
-     verd("MISLEADING", BRICK)],
-    [C("<b>E.</b> The rise is the direct result of a lack of ambition, notably on renewable energy"),
-     C("Electricity-supply emissions fell 56% since 2013; the net rise is all air-transport fuel bought abroad, which "
-       "renewable power in Malta does not displace. No other cause is named [1, 6]."), verd("CONTRADICTED", MAROON)],
-    [C("<b>F.</b> 10.7% renewables in 2024 against an EU average of just over 25%, third from last"),
+     C("True on the residence basis, which the release never names: 72% of Malta’s 2024 figure is air-transport fuel "
+       "bought abroad; without it the indicator fell from every base year (−64% since 2013); territorial inventory per "
+       "€ of GDP −61% since 2013 [6, 9]."), verd("NEEDS CONTEXT", AMBER)],
+    [C("<b>E.</b> The rise is the direct result of a lack of ambition on several fronts"),
+     C("A political judgement about the Government’s ambition, not a checkable statement of fact [1]."),
+     verd("NOT RATED", GREY)],
+    [C("<b>F.</b> Renewables as a cause of the rise: “among them, the clear lack of ambition to seriously increase "
+       "the use of renewable energy”"),
+     C("Rated only as a cause. Air transport is 116% of the net rise; with zero electricity-sector emissions in 2024 "
+       "the indicator would still be 1.4% above 2013; renewable shares rose (electricity 1.6% to 10.7%). The "
+       "release also cites traffic: land transport firms went 0.05 to 0.09 Mt [5, 6, 10]."),
+     verd("CONTRADICTED", MAROON)],
+    [C("<b>G.</b> 10.7% renewables in 2024 against an EU average of just over 25%, third from last"),
      C("10.7% is Malta’s electricity share (lowest in the EU; EU 47.5%); 25.2% is the EU’s overall share. Malta’s "
-       "overall share is 17.2%, fourth from last [10]. Malta is near the bottom either way."),
-     verd("MIXED MEASURES", AMBER)],
+       "overall share is 17.2%, fourth from last [10]. Eurostat’s release of 18 December 2025 named Belgium, Luxembourg "
+       "and Ireland (14.3–16.1%) as the lowest three, so Malta was not third from last in the data published before "
+       "the PN’s release [16]."), verd("MIXED MEASURES", AMBER)],
 ], [50 * mm, 90 * mm, 30 * mm], valign="MIDDLE"))
 
 # ================================================================== 7
 S += [Spacer(1, 6 * mm), CondPageBreak(90 * mm), SectionHeading(7, "Verdict and requests for evidence"),
-      verdict_box("Misleading", "Eurostat’s figure is quoted correctly, but the release omits that the whole rise is "
-                  "airline fuel bought abroad and blames a cause the data do not show. Confidence: high."),
+      verdict_box("Misleading", "Eurostat’s figure is quoted correctly, but the release never says it counts airline "
+                  "fuel bought abroad, and links the rise to renewables, which cannot account for it. Confidence: high."),
       Spacer(1, 4 * mm)]
-S.append(P("<b>Why.</b> (1) The central statistic is Eurostat’s and is quoted correctly: Malta is the only Member "
-           "State whose indicator rose from 2013 to 2024. (2) The release then reads it as Malta polluting more for "
-           "every euro of its economy, as the direct result of the Government’s lack of ambition on renewable energy. "
-           "(3) Eurostat’s own tables, which the release does not mention, show that the rise is entirely air transport, "
-           "almost all of it fuel bought abroad by airlines resident in Malta; that without it the indicator fell "
-           "64%; that the territorial inventory per euro of GDP fell 61%, the EU’s second-largest fall; and that "
-           "emissions from electricity supply fell 56%. These omitted facts are material: they reverse the sign of "
-           "the trend and contradict the cause given. The individual figures are defensible but the overall "
-           "impression is inaccurate, which is the scale’s definition of <i>Misleading</i>. The evidence that can "
-           "be shown is listed in the claim record (Eurostat tables [6, 9, 10] and the NSO’s metadata [8])."))
+S.append(P("<b>Why.</b> (1) The central statistic is Eurostat’s, quoted correctly: Malta is the only Member "
+           "State whose indicator rose from 2013 to 2024. (2) The release "
+           "reads it as Malta polluting more for every euro of its economy, “the direct result” of a lack of ambition "
+           "on several fronts, among them, renewables. (3) Eurostat’s own tables, which the release does not mention, "
+           "show that air transport is 116% of the net rise, all of the rise being fuel bought abroad by air "
+           "transport firms resident in Malta; that without it the indicator fell from every base year from 2008 to "
+           "2023; and that even with no electricity-sector emissions in 2024 it would still be above 2013, so "
+           "renewables cannot explain the rise. These omitted facts change what the figure means: the individual "
+           "figures are defensible but the overall impression is inaccurate, the scale’s definition of "
+           "<i>Misleading</i>. The verdict rests on the omission (sub-claim D) together with the contradicted "
+           "renewables link (F); the evidence shown is listed in the claim record."))
 S.append(P("<b>Why not Contradicted or Largely supported.</b> The headline statistic is true, so the claim is not "
            "contradicted. The omission is not a minor caveat: it changes what the figure means and undercuts the "
-           "cause the release draws from it. <b>Why high confidence.</b> Four independent lines agree: emissions by "
-           "activity, the bridging table, the NSO’s description of its data, and the territorial inventory. The one "
-           "soft point, the 2024 estimate, bears on the headline, which we rate accurate, not on the omission."))
+           "cause drawn from it. <b>Why high confidence.</b> The decomposition and the bound are arithmetic on "
+           "Eurostat’s own tables, and the OECD-based aviation series in the accounts [8] and the separately compiled "
+           "territorial inventory [9] point the same way. The 2024 estimate bears on the headline, which we rate "
+           "accurate, not on the omission. Our own counter-figures depend on the base year, so the verdict rests on "
+           "their direction, not on Malta’s ranking."))
 S.append(P("<b>Consistency with other checks.</b> Claim Check 026 rated a news report of a figure from the same "
-           "accounts (Malta’s emissions up an estimated 169% since 2015, the EU’s largest rise) <i>Largely "
-           "supported</i>: it gave Eurostat’s estimate as such and drew no conclusion from it [15]. This release goes "
-           "further, reading the figure as more pollution per euro and naming a cause the data contradict. Claim "
-           "Check 025 rated the Government’s “more than 80%” per unit of GDP <i>Largely supported</i>, its omission "
-           "(−72% in volumes) being one of degree; Claim Check 003 rated a per-person figure <i>Misleading</i> for "
-           "leaving out a projection that changed the picture [13, 14]."))
+           "accounts <i>Largely supported</i> because its body explained the difference between the residence and "
+           "territorial measures; its headline read alone was rated “Needs context” (amber, 026D) [15]. This release "
+           "never names the basis, so sub-claim D gets the same amber rating, and the overall <i>Misleading</i> rests "
+           "on that omission together with the contradicted renewables link (F). Claim Check 025 rated the "
+           "Government’s “more than 80%” per unit of GDP “True only at current prices” (amber, within a <i>Largely "
+           "supported</i> statement): it gave no basis, and the figure holds on the territorial inventory at current "
+           "prices, not in volumes (−72%) [13]. Claim Check 003 rated a per-person figure <i>Misleading</i> for "
+           "leaving out a projection that changed the picture [14]. “Selective metric” tags a metric favourable to "
+           "the speaker’s argument (not to Malta or to any party) cited while the inventory reported to the UN climate "
+           "convention points the other way."))
 S.append(P("<b>What this verdict does not say.</b> It does not say Malta’s renewable shares are adequate (its "
            "electricity share is the EU’s lowest), that aviation emissions do not matter, or that anyone acted in "
            "bad faith. A statement the data support would read: <i>“On Eurostat’s residence-based measure Malta’s "
-           "emissions intensity rose 17% since 2013 (14% in revised data), the only rise in the EU, because emissions of airlines based in "
-           "Malta, mostly from fuel bought abroad, rose fifteen-fold; Malta’s territorial emissions per euro fell "
-           "61%.”</i>"))
+           "emissions intensity rose 17% since 2013 (14% in revised data), the only rise in the EU, because emissions "
+           "of airlines resident in Malta, from fuel bought abroad, rose more than fifteen-fold; without them, and on the "
+           "territorial inventory, Malta’s emissions per euro fell.”</i>"))
 S.append(KeepTogether([P("Evidence we are asking for", h2), requests_list([
     "From the PN: whether the release took account of Eurostat’s breakdown by activity and its bridging table, and "
     "which other “fronts” it had in mind besides renewable energy.",
@@ -304,18 +350,18 @@ S += [Spacer(1, 4 * mm),
               bg=AMBER_PALE, bar=AMBER)]
 
 # ================================================================== 8
-S += [Spacer(1, 6 * mm), CondPageBreak(70 * mm), SectionHeading(8, "Limitations")]
-for l in ["Malta’s 2024 values in the air emissions accounts are Eurostat estimates (flag i); Malta reported to 2023. "
-          "The rise since 2013 depends on that estimate and may be revised.",
+S += [Spacer(1, 4 * mm), CondPageBreak(60 * mm), SectionHeading(8, "Limitations")]
+for l in ["Malta’s 2024 values in the air emissions accounts are Eurostat estimates (flag i; Malta reported to 2023), "
+          "and the rise since 2013 depends on them. Our counter-figures hold in direction from every base year, but "
+          "their size and rank do not: from 2016 they are close to the EU’s (section 4).",
           "Malta’s air-transport series comes from the OECD’s residence-based aviation data with NSO additions for "
           "charter flights before 2019 [8]; a change of source between years could affect comparisons with 2013.",
           "We did not identify the airlines or read company filings. The value added of air transport is not "
           "published for 2013 and is negative in volumes for 2022–2024, so “without air transport” removes "
-          "emissions only; removing the whole transport section from both sides gives a similar result (−66.3%).",
+          "emissions only (removing all transport from both sides: −66.3%).",
           "The translation of the Maltese release is ours. The page was modified on 24 April 2026 (its image is filed "
           "under that month); we found no January copy, but Newsbook’s quotes of 26 January match the text.",
-          "The two papers were read as abstracts. MaltaToday’s report of the statement was not readable from our "
-          "network and was not used."]:
+          "The two papers were read as abstracts; MaltaToday’s report was not readable and not used."]:
     S.append(P("• " + l, bul))
 
 S += [Spacer(1, 6 * mm), SectionHeading(None, "References")]
@@ -360,9 +406,12 @@ S += references([
      "https://github.com/leandergrech/Mizien/tree/main/claims/CC-025"),
     ("14", "Miżien. Claim Check 003: per-capita emissions vs the 2030 projection, v1.2.",
      "https://github.com/leandergrech/Mizien/tree/main/claims/CC-003"),
-    ("15", "Miżien. Claim Check 026: the EU’s largest rise in emissions, v1.0 (same accounts; air transport 444 to "
+    ("15", "Miżien. Claim Check 026: the EU’s largest rise in emissions, v1.1 (same accounts; air transport 444 to "
            "4,730 kt CO₂e, 2015–2024).", "https://github.com/leandergrech/Mizien/tree/main/claims/CC-026"),
-    ("16", "Miżien. Data and calculations: data/cc-114/; tools/cc-114-report/fetch.py and calc.py.", ""),
+    ("16", "Eurostat (18 December 2025). 25.2% of energy EU used in 2024 came from renewables. News item (lowest: "
+           "Belgium 14.3%, Luxembourg 14.7%, Ireland 16.1%).",
+     "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251218-2"),
+    ("17", "Miżien. Data and calculations: data/cc-114/; tools/cc-114-report/fetch.py and calc.py.", ""),
 ])
 
 S.append(PageBreak())
@@ -380,7 +429,8 @@ build_report(Report(
     quote_lines=["“Malta is the only EU Member State which, instead", "of reducing, increased the intensity of",
                  "greenhouse gas emissions from 2013 to date.”"], quote_size=13.5,
     attribution="Partit Nazzjonalista press release, signed by Eve Borg Bonello, 26 Jan 2026 (our translation).",
-    context="It cites Eurostat (Malta +17%, EU −34%) and calls the rise the result of weak renewables ambition.",
+    context="It cites Eurostat (Malta +17%, EU −34%) and blames a lack of ambition on “several fronts”, among them, "
+            "renewables.",
     verdict="Misleading", verdict_note="Eurostat’s figure is right; the rise is airline fuel bought abroad",
     footer_lines=["Version 1.0  ·  6 October 2026", "Status: draft, pending right of reply (Nationalist Party)",
                   "Prepared from public sources and Eurostat data.",

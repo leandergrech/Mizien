@@ -216,11 +216,80 @@ add("Malta: inventory memo items, international navigation / aviation bunkers so
     f"{g('env_air_gge', 'MT', 'GHG|CRF1D1B', 'MIO_T', 2024):.2f} / {g('env_air_gge', 'MT', 'GHG|CRF1D1A', 'MIO_T', 2024):.2f}",
     "Mt CO2e", "fuel sold on the territory to ships and aircraft of any residence; outside both measures above")
 
+# base-year sensitivity of OUR counter-figures (end year 2024), tested as strictly as the PN's figure
+d_em = lambda geo, y: em(geo, "D", y)
+bs_rows = []
+for base in range(2008, 2024):
+    row = [base]
+    for fn in (intens, int_x51, int_inv):
+        c_ = {c: change(fn, c, base, 2024) for c in EU27}
+        o = sorted(EU27, key=lambda c: c_[c])
+        row += [r1(c_["MT"]), o.index("MT") + 1, r1(change(fn, "EU27_2020", base, 2024))]
+    row += [r1(pc(d_em("MT", 2024), d_em("MT", base)))]
+    bs_rows.append(row)
+with open(D / "sensitivity_base_years.csv", "w", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(["base_year", "published_malta_pct", "published_rank", "published_eu27_pct",
+                "without_air_malta_pct", "without_air_rank", "without_air_eu27_pct",
+                "territorial_per_gdp_malta_pct", "territorial_rank", "territorial_eu27_pct", "malta_electricity_D_pct"])
+    w.writerows(bs_rows)
+xa = [r[4] for r in bs_rows]
+add("Without air transport: Malta's change to 2024 from every base year 2008-2023 (all falls?)",
+    f"{'yes' if max(xa) < 0 else 'no'}: {max(xa)}% (base {bs_rows[xa.index(max(xa))][0]}) to {min(xa)}% "
+    f"(base {bs_rows[xa.index(min(xa))][0]})", "%", "rank 1 = largest fall; data/cc-114/sensitivity_base_years.csv")
+ta = [r[7] for r in bs_rows]
+add("Territorial inventory per euro of GDP: Malta's change to 2024 from every base year 2008-2023 (all falls?)",
+    f"{'yes' if max(ta) < 0 else 'no'}: {max(ta)}% to {min(ta)}%", "%")
+b16 = [r for r in bs_rows if r[0] == 2016][0]
+add("From base 2016 to 2024: without air transport / territorial per euro of GDP (Malta, rank, EU-27)",
+    f"{b16[4]}% ({b16[5]}th; EU {b16[6]}%) / {b16[7]}% ({b16[8]}st; EU {b16[9]}%)", "%",
+    "the falls since 2013 come mostly from 2014-2016")
+add("Malta: electricity, gas, steam (D) emissions 2013 / 2016 / 2024; change from 2016",
+    f"{d_em('MT', 2013):.0f} / {d_em('MT', 2016):.0f} / {d_em('MT', 2024):.0f}", "kt CO2e",
+    f"{pc(d_em('MT', 2024), d_em('MT', 2016)):+.0f}% from 2016")
+pr = [r for r in bs_rows if 2014 <= r[0] <= 2019]
+add("In the PN's favour: published indicator, Malta's rise to 2024 from base years 2014-2019",
+    f"{min(r[1] for r in pr):+.1f}% to {max(r[1] for r in pr):+.1f}%", "%", "2013 is not a convenient base for the PN")
+# the bound: could renewables have removed the rise? Remove ALL electricity-sector emissions in 2024.
+bound = intens("MT", 2024) * (1 - d_em("MT", 2024) / em("MT", "TOTAL", 2024))
+add("Bound: Malta's 2024 indicator with zero electricity-sector (D) emissions, vs 2013",
+    f"{bound:.1f} vs {intens('MT', 2013)}", "g/EUR", f"{pc(bound, intens('MT', 2013)):+.1f}%: still above 2013, so no "
+    "renewables policy could have removed the rise (371.69 x (1 - D/TOTAL 2024))")
+REN = lambda geo, b, y: g("nrg_ind_ren", geo, b, "PC", y)
+add("Malta renewable shares 2013 -> 2024: electricity / overall", f"{REN('MT', 'REN_ELC', 2013):.1f} -> "
+    f"{REN('MT', 'REN_ELC', 2024):.1f} / {REN('MT', 'REN', 2013):.1f} -> {REN('MT', 'REN', 2024):.1f}", "%",
+    "shares rose over the period")
+add("Malta: components of NACE-total GHG 2013 -> 2024: air transport / electricity (D) / other transport (H less H51) "
+    "/ all other activities", " / ".join(f"{a:.2f} -> {b:.2f}" for a, b in (
+        (em("MT", "H51", 2013) / 1e3, em("MT", "H51", 2024) / 1e3), (d_em("MT", 2013) / 1e3, d_em("MT", 2024) / 1e3),
+        ((em("MT", "H", 2013) - em("MT", "H51", 2013)) / 1e3, (em("MT", "H", 2024) - em("MT", "H51", 2024)) / 1e3),
+        (rest(2013) / 1e3, rest(2024) / 1e3))), "Mt CO2e",
+    "sum = NACE total; Figure 2's 'other activities' = other transport + all other")
+add("Malta (bridging table): air-transport fuel bought abroad as share of air transport (H51), 2013 / 2024",
+    f"{br('MT', 'AEMIS_RES_ABR_ATR', 2013):.0f} of {em('MT', 'H51', 2013):.0f} kt / "
+    f"{100 * br('MT', 'AEMIS_RES_ABR_ATR', 2024) / em('MT', 'H51', 2024):.0f}%", "",
+    f"rise in fuel bought abroad {br('MT', 'AEMIS_RES_ABR_ATR', 2024) - br('MT', 'AEMIS_RES_ABR_ATR', 2013):.0f} kt "
+    f">= rise in H51 {em('MT', 'H51', 2024) - em('MT', 'H51', 2013):.0f} kt: all of the rise")
+
 # ------------------------------------------------------------------ 4. the other figures in the release
 for c in ("EE", "IE", "FI"):
-    add(f"{NAMES[c]}: GHG of resident production units, change 2013-2024 (the release says 'reduced emissions by')",
-        r1(pc(em(c, "TOTAL", 2024), em(c, "TOTAL", 2013))), "%", f"intensity change {ch[c]:.1f}%")
-REN = lambda geo, b, y: g("nrg_ind_ren", geo, b, "PC", y)
+    k = (AE, c, "GHG|TOTAL", "THS_T", 2024)
+    add(f"{NAMES[c]}: emissions change 2013-2024, residence accounts / territorial inventory (the release says "
+        "'reduced emissions by')", f"{pc(em(c, 'TOTAL', 2024), em(c, 'TOTAL', 2013)):+.1f} / "
+        f"{pc(inv(c, 2024), inv(c, 2013)):+.1f}", "%",
+        f"intensity change {ch[c]:.1f}%; 2024 flags: accounts '{F[k]}', intensity "
+        f"'{F[(INT[0], c, INT[1], INT[2], 2024)]}', inventory '{F.get(('env_air_gge', c, 'GHG|TOTX4_MEMO', 'MIO_T', 2024), '')}'")
+add("Ireland: air transport (H51) 2013 -> 2024 and its share of the rise in residence emissions",
+    f"{em('IE', 'H51', 2013) / 1e3:.2f} -> {em('IE', 'H51', 2024) / 1e3:.2f} Mt; "
+    f"{100 * (em('IE', 'H51', 2024) - em('IE', 'H51', 2013)) / (em('IE', 'TOTAL', 2024) - em('IE', 'TOTAL', 2013)):.0f}%",
+    "", f"territorial inventory {inv('IE', 2013):.2f} -> {inv('IE', 2024):.2f} Mt")
+add("EU-27 published intensity flags 2013 / 2023 / 2024", " / ".join(F[(INT[0], 'EU27_2020', INT[1], INT[2], y)]
+                                                                    for y in (2013, 2023, 2024)), "flags")
+nd = {r_["geo"]: float(r_["value_pct"]) for r_ in csv.DictReader(open(D / "eurostat_ren_news_dec2025.csv"))}
+add("Eurostat news 18 Dec 2025: EU share and three lowest (vs current nrg_ind_ren)",
+    f"EU {nd['EU27_2020']}; " + ", ".join(f"{c} {nd[c]} (now {REN(c, 'REN', 2024):.1f})" for c in ("BE", "LU", "IE")),
+    "%", f"Malta not among them in the release the PN could have used; Malta now {REN('MT', 'REN', 2024):.1f}",
+    source="data/cc-114/eurostat_ren_news_dec2025.csv")
 for b, lab in (("REN", "overall (gross final energy consumption)"), ("REN_ELC", "electricity")):
     for y in (2023, 2024):
         o = sorted(EU27, key=lambda c: REN(c, b, y))
