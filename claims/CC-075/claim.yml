@@ -2,38 +2,122 @@ id: CC-075
 title: Seventh in the EU for cars
 category: Transport
 subtopic: Cars & traffic
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
-  text: 'Lovin Malta, reporting Eurostat: Malta ranks seventh in the EU with 585 passenger cars per 1,000 inhabitants.'
+  text: 'Lovin Malta (21 Sep 2024), citing a Eurostat dataset: Malta is ranked seventh in the EU, between Germany and
+    Poland, with 585 passenger cars per 1,000 inhabitants. The article gives no year for the figure.'
   speaker: Lovin Malta (reporting Eurostat)
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  date: '2024-09-21'
+  wording_status: Verbatim found
   sources:
-  - title: Malta Ranked Number Seven On Eurostat's 'Passenger Cars Per 1,000 Inhabitants' Dataset
-    publisher: Lovin Malta
-    date: n/d
-    url: https://lovinmalta.com/malta/malta-ranked-number-seven-on-eurostats-passenger-cars-per-1000-inhabitants-dataset/
-    note: Media summary.
-counter_evidence: NSO gives 576 per 1,000 for 2024; denominator choice (resident population) matters.
-tests: Eurostat road_eqs_carhab; NSO vehicle stock.
-why_low_hanging: A specific, attributable statement that public data can test.
+    - title: Malta Ranked Number Seven On Eurostat's 'Passenger Cars Per 1,000 Inhabitants' Dataset
+      publisher: Lovin Malta (J. Darmanin)
+      date: 21 Sep 2024
+      url: https://lovinmalta.com/malta/malta-ranked-number-seven-on-eurostats-passenger-cars-per-1000-inhabitants-dataset/
+      note: The claim, in the outlet's own words. Read in full on 6 Oct 2026 (page and WordPress API, post 148257). Names
+        Eurostat and a graphic by Paula Lago via The European Correspondent 'up to the year 2022'; no year for the 585.
+    - title: Passenger cars - per thousand inhabitants (road_eqs_carhab)
+      publisher: Eurostat
+      date: updated 30 Jul 2026
+      url: https://ec.europa.eu/eurostat/databrowser/view/road_eqs_carhab/default/table?lang=en
+      note: Primary evidence. Retrieved 6 Oct 2026 with Eurostat's flags; rebuilt from road_eqs_carmot and demo_gind.
+    - title: Passenger cars per 1 000 inhabitants reached 560 in 2022
+      publisher: Eurostat
+      date: 17 Jan 2024
+      url: https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20240117-1
+      note: Eurostat's release of the 2022 figures (EU 560; Italy 684; Latvia 414); does not mention Malta. Read 6 Oct 2026.
+  quote: Malta is ranked number seven, just between Germany and Poland respectively, with 585 cars per 1,000 inhabitants.
+counter_evidence: 'The figures are 2022''s, which the article does not say (it calls the dataset "as of 2023"). In Eurostat''s
+  2023 figures as now published Malta is 11th (575); in 2025 it is 14th (571), below the EU-27 (584). The rate fell because
+  the population grew faster than the car stock (end 2012 to end 2025: +39.6% against +34.5%); the number of cars rose every
+  year. Side remarks: 585 per 1,000 is one car per 1.7 people, not one per two; 246 km2 is Malta island, the country has 313
+  km2 of land (still the most cars per km2 in the EU). Malta''s count appears to be NSO''s licensed stock (second-hand),
+  while other registers may include inactive cars.'
+tests: Eurostat road_eqs_carhab (all countries and years, with flags), rebuilt from road_eqs_carmot (stock at 31 Dec) and
+  demo_gind (population on 1 Jan of the next year) for all 27 Member States; reg_area3 land area; Eurostat's release of 17 Jan
+  2024 and its Statistics Explained articles; recomputed with tools/cc-075-report/calc.py.
+why_low_hanging: 'Done: Claim Check 075 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'The figure and rank are right for 2022, the year of the graphic the article used; the article gives no year.
+  We could not see Eurostat''s dataset as it stood on 21 Sep 2024 (Wayback unreachable from our network), so whether any
+  2023 values were already published is open. NSO figures are second-hand. Largely supported verdict: no right of reply
+  needed.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - Eurostat road_eqs_carhab, retrieved 6 Oct 2026 with flags (data/cc-075/eurostat_road_eqs_carhab.csv; checks in data/cc-075/checks.csv)
+  - Eurostat road_eqs_carmot and demo_gind, retrieved 6 Oct 2026 (data/cc-075/eurostat_road_eqs_carmot.csv, eurostat_demo_gind_jan.csv)
+  - Eurostat reg_area3 land area, retrieved 6 Oct 2026 (data/cc-075/eurostat_reg_area3_land.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-075A
+    text: "Malta has 585 cars per 1,000 inhabitants"
+    finding: "Eurostat 2022: 585, no flag; reproduced from 317,234 cars and 542,051 people on 1 Jan 2023 [2–4]."
+    rating: "Accurate (2022)"
+    tone: green
+  - id: CC-075B
+    text: "Ranked number seven, between Germany and Poland"
+    finding: "Seventh of 27, all reporting; Germany 587 (break in series), Poland 584 (imputed) [2]. An EU ranking: among all 41 countries in the dataset Malta is ninth."
+    rating: "Accurate (2022)"
+    tone: green
+  - id: CC-075C
+    text: "The year: a dataset “as of 2023”, a graphic “up to the year 2022”"
+    finding: "The figures are 2022’s; the article never says so. In the 2023 figures as now published Malta is 11th (575) [2]; whether they were out by 21 Sep 2024 could not be established."
+    rating: "Year not stated"
+    tone: amber
+  - id: CC-075D
+    text: "Italy top at 682, Latvia lowest at 409"
+    finding: "Italy 682 and Latvia lowest match [2]. Latvia is 406 (break in series) now and was 414 in Eurostat’s January 2024 release [6]."
+    rating: "Largely accurate"
+    tone: lime
+  - id: CC-075E
+    text: "“Approximately 1 car for every 2 people”"
+    finding: "585 per 1,000 is one car for every 1.71 people [2]; the rounding understates the rate."
+    rating: "Loosely worded"
+    tone: lime
+  - id: CC-075F
+    text: "246 km² of land; among the highest car density in Europe"
+    finding: "246 km² is Malta island; the country has 313 km² of land [5]. With 1,014 cars per km² of land Malta is first in the EU, 3.9 times the Netherlands [3, 5]."
+    rating: "Largely accurate"
+    tone: lime
+version: '1.0'
+last_reviewed: '2026-10-06'
+thumbnail:
+  figure: '585'
+  caption: passenger cars per 1,000 people in Malta in 2022, seventh in the EU (14th by 2025)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-06
+    step: started
+    note: "Check started in the maintainer session. Eurostat road_eqs_carhab, road_eqs_carmot, demo_gind and reg_area3\
+      \ downloaded through the dissemination API with flags; Eurostat news of 17 Jan 2024, 6 May 2024 and 21 May 2025 and\
+      \ two Statistics Explained articles read; Crossref and OpenAlex searched (Warren and Enoch 2010 read in full)."
+  - date: 2026-10-06
+    step: wording
+    note: "Verbatim wording found on the Lovin Malta page (21 Sep 2024), confirmed through its WordPress API. The figures\
+      \ match Eurostat's 2022 data: 585, seventh of 27, between Germany (587) and Poland (584)."
+  - date: 2026-10-06
+    step: note
+    note: "Not reachable from this network: web.archive.org (connection reset; a 25 Feb 2024 capture of Eurostat's\
+      \ passenger-car article is listed), nso.gov.mt and transport.gov.mt (403), the European Correspondent graphic and\
+      \ the embedded Instagram post (login). NSO licensed-vehicle figures used second-hand only."
+  - date: 2026-10-06
+    step: version
+    version: "1.0"
+    note: "First issue. Verdict Largely supported (high confidence); no right of reply needed."
