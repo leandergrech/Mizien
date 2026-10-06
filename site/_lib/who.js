@@ -5,8 +5,9 @@
 //   - 5 or more checked claims: a verdict bar (counts per verdict, never percentages).
 //   - 3 or 4: a tentative balance, shown as work in progress until there are enough checks for a bar. Each checked
 //     claim is placed on the verdict scale (Contradicted 0 ... Supported 1) and weighted by the freshness of the
-//     claim itself (the date it was made, not the date of the check): the weight halves every two years of age, and
-//     an undated claim counts as if three years old.
+//     claim itself (the date it was made, not the date of the check): the weight halves every two years of age. An
+//     undated claim counts as three years older than the body's oldest dated checked claim (maintainer decision,
+//     6 Oct 2026), so the balance depends only on the claims and changes only when they do, not with the build date.
 //   - fewer: a count only ("1 of 5 checks so far").
 //   Pledge labels are always shown, apart from the verdicts.
 // pledgeStack(pledges, claims, ids?): the pledges as dots on stacked disks, one disk per year the pledge was made
@@ -26,8 +27,10 @@ export function claimDate(s) {
   if (!m) return null;
   return new Date(Date.UTC(+m[1], m[2] ? +m[2] - 1 : 6, m[3] ? +m[3] : m[2] ? 15 : 1));
 }
-export function freshness(date, now = new Date()) {
-  const d = claimDate(date), years = d ? Math.max(0, (now - d) / (365.25 * 864e5)) : UNDATED_YEARS;
+// Weight of a claim made on `date`, seen from `now`. An undated claim takes `undated` (a Date) as its date.
+export function freshness(date, now = new Date(), undated = null) {
+  const d = claimDate(date) || undated;
+  const years = d ? Math.max(0, (now - d) / (365.25 * 864e5)) : UNDATED_YEARS;
   return Math.pow(0.5, years / HALF_LIFE_YEARS);
 }
 
@@ -45,8 +48,12 @@ export function whoSummary(body, pledgeList, bodies, now = new Date()) {
   const checked = claims.filter((c) => c.verdict && VALUE[c.verdict] != null);
   const counts = ORDER.map((v) => ({ name: v, slug: SLUG[v], colour: COLOUR[v], n: checked.filter((c) => c.verdict === v).length })).filter((x) => x.n);
   const pledges = Object.values(pl).map((p) => ({ id: p.id, title: p.title, path: p.path, ...p.pledge }));
+  // undated claims: three years before the oldest dated checked claim; with none dated, all weigh the same
+  const dated = checked.map((c) => claimDate(c.date)).filter(Boolean);
+  const oldest = dated.length ? new Date(Math.min(...dated)) : null;
+  const undated = oldest ? new Date(oldest.getTime() - UNDATED_YEARS * 365.25 * 864e5) : now;
   let sw = 0, sv = 0;
-  for (const c of checked) { const w = freshness(c.date, now); sw += w; sv += w * VALUE[c.verdict]; }
+  for (const c of checked) { const w = freshness(c.date, now, undated); sw += w; sv += w * VALUE[c.verdict]; }
   const tier = checked.length >= BAR_MIN ? "bar" : checked.length >= TENTATIVE_MIN ? "tentative" : "few";
   return {
     total: claims.length, checked: checked.length, waiting: claims.length - checked.length, tier, counts,

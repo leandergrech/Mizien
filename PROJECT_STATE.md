@@ -40,7 +40,9 @@ styles in `assets/who.css`).
 - **Index** (`site/bodies/index.njk`): each body's card shows claims and checks, then its verdict summary and its
   pledge labels. Verdict bar (counts per verdict, never percentages) from 5 checked claims. At 3 or 4: a tentative
   balance, a hollow dashed marker on a scale from Contradicted (0) to Supported (1), each check weighted by the age of
-  the claim (weight halves every 2 years; an undated claim counts as 3 years old), with progress dots towards 5. Below
+  the claim (weight halves every 2 years; an undated claim counts as 3 years older than the body's oldest dated checked
+  claim, or all weigh the same if none is dated: maintainer decision 6 Oct 2026, so the balance changes only when the
+  claims do), with progress dots towards 5. Below
   3: "n of 5 checks: too few to summarise", or "No checks yet". A key above the cards explains the three.
 - **Pledges, year by year** on the index (all pledges) and on each body page (its own, with its offices and people):
   an SVG of stacked disks, the newest year on top. A pledge is a dot in its label colour, ringed in the colour of the
