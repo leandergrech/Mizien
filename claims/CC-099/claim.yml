@@ -36,9 +36,9 @@ claim:
       date: 15 Jul 2026
       url: https://businessnow.mt/maltas-population-could-reach-636000-by-2030-pwc-projects/
       note: Second-hand report of the PwC report (range 624,000–660,000; "around 38% in the base case").
-    - title: World Population Day 11 July 2026
+    - title: 'World Population Day: 11 July 2026 (NR 120/2026)'
       publisher: National Statistics Office
-      date: 11 Jul 2026
+      date: 9 Jul 2026
       url: https://nso.gov.mt/world-population-day-11-july-2026/
       note: Not read (403). Its end-2025 figures (31.1% non-Maltese citizens, 182,693) known second-hand via Newsbook (9 Jul
         2026) and Lovin Malta (11 Jul 2026).
@@ -136,8 +136,8 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-06
     step: wording
     note: "Verbatim wording found: PwC Malta's press release on its Summer 2026 Economic Update, published by The Malta Business\
-      \ Weekly on 19 Jul 2026 (same text on the Malta Chamber site and Mondaq). PwC's report and the NSO release of 11 Jul\
-      \ 2026 refused automated access; the NSO's end-2025 figures read through Newsbook, Lovin Malta, International Adviser\
+      \ Weekly on 19 Jul 2026 (same text on the Malta Chamber site and Mondaq). PwC's report and the NSO release of 9 Jul\
+      \ 2026 (NR 120/2026) refused automated access; the NSO's end-2025 figures read through Newsbook, Lovin Malta, International Adviser\
       \ and MEETinc."
   - date: 2026-10-06
     step: note

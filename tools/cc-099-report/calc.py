@@ -18,7 +18,7 @@ S_CENS = "Eurostat cens_21ctz_r3 / cens_21cob_r3 (Census 2021), retrieved 6 Oct 
 S_FLOW = "Eurostat migr_imm1ctz, migr_emi1ctz, migr_acq, retrieved 6 Oct 2026"
 S_JP = "Jobsplus workbooks (December of each year), retrieved 6 Oct 2026"
 S_PWC = "PwC Malta press release, as published by The Malta Business Weekly, 19 Jul 2026"
-S_NSO = "◆ NSO World Population Day release (11 Jul 2026) as reported by Newsbook, Lovin Malta, MEETinc"
+S_NSO = "◆ NSO World Population Day release (NR 120/2026, 9 Jul 2026) as reported by Newsbook, Lovin Malta, MEETinc"
 
 
 def add(check, value, unit, source, note=""):

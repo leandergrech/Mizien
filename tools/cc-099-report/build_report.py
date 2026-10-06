@@ -100,7 +100,7 @@ S.append(P("<b>Evidence.</b> We downloaded from Eurostat’s dissemination API o
            "[12], Census 2021 [13], immigration, emigration and acquisitions of citizenship by citizenship [14], births "
            "by the mother’s citizenship and deaths by citizenship [15], and the EUROPOP2025 projections [16]. We "
            "downloaded Jobsplus’s workbooks on foreign nationals in employment and total employment [18, 19]. The NSO’s "
-           "release of 11 July 2026 [7] and PwC’s report [4] refused automated access; their figures are used only as "
+           "release of 9 July 2026 [7] and PwC’s report [4] refused automated access; their figures are used only as "
            "reported by news outlets, marked ◆. The Central Bank of Malta’s policy note was read as its abstract (Crossref) "
            "[20]. Every figure is recomputed by <i>tools/cc-099-report/calc.py</i> from <i>data/cc-099/</i>. A Crossref "
            "search (three queries, logged in <i>literature/CC-099/notes.md</i>) found no peer-reviewed study of "
@@ -158,7 +158,7 @@ S.append(P("Without the citizenship split for 2026 we cannot read the share dire
            "Maltese citizens rose in every year from 2010 to 2024, by between 237 (2024) and 1,394 (2011) a year [10]. "
            "If 2025’s change lay anywhere in that range, Maltese citizens numbered 405,549–406,706 on 1 January 2026, "
            "and non-Maltese citizens were <b>30.9–31.1%</b> of 588,254. Both ends round to 31%."))
-S.append(P("The NSO’s own figure agrees. Its World Population Day release (11 July 2026) is not readable from our "
+S.append(P("The NSO’s own figure agrees. Its World Population Day release (NR 120/2026, 9 July 2026) is not readable from our "
            "network, but four outlets report it: 68.9% Maltese citizens and 31.1% non-Maltese citizens at the end of "
            "2025, or 182,693 people [8, 9] ◆. That implies 405,561 Maltese citizens, 249 more than a year earlier, "
            "inside the range above. PwC does not name its source; the 31% matches the NSO’s citizenship figure, rounded "
@@ -332,7 +332,7 @@ S += references([
     ("6", "◆ Balzan J. (17 Jul 2026). PwC: Malta’s population could climb to 660,000 within five years. Newsbook. "
           "Report quoted second-hand; parliamentary answer reported.",
      "https://newsbook.com.mt/en/pwc-maltas-population-could-climb-to-660000-within-five-years/"),
-    ("7", "National Statistics Office (11 Jul 2026). World Population Day: 11 July 2026. Not readable (403), 6 Oct 2026.",
+    ("7", "National Statistics Office (9 Jul 2026). World Population Day: 11 July 2026 (NR 120/2026). Not readable (403), 6 Oct 2026.",
      "https://nso.gov.mt/world-population-day-11-july-2026/"),
     ("8", "◆ Newsbook (9 Jul 2026). Malta’s population grows 2.4%, driven entirely by migration. NSO figures "
           "(31.1%; 182,693); MEETinc (16 Jul) and International Adviser (13 Jul 2026) agree.",
