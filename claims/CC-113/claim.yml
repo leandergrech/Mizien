@@ -1,10 +1,10 @@
 id: CC-113
-title: 'EEA: Malta among highest fossil-fuel subsidies'
+title: 'EEA: Malta among highest fossil-fuel subsidies relative to GDP'
 category: Climate & Energy
 subtopic: Electricity & grid
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
   text: 'European Environment Agency (indicator page, 29 Jan 2025): in 2023 fossil-fuel subsidies represented the highest
     shares of GDP in Malta, Poland and Slovakia, all at or above 1.5%.'
@@ -16,32 +16,176 @@ claim:
     publisher: European Environment Agency
     date: '2025-01-29'
     url: https://www.eea.europa.eu/en/analysis/indicators/fossil-fuel-subsidies
-    note: Primary text read 5 Oct 2026. Older than 60 days; kept because EU and EEA statements are under-represented. The
-      page gives no Malta-specific figure.
+    note: 'The claim. Read in full 6 Oct 2026 (page published 29 Jan 2025, modified 29 Jul 2025). Same sentence, word
+      for word, in the EEA''s browser-printed copy of 3 Feb 2025 and in the 8th EAP monitoring report 2025 PDF (26 Nov
+      2025). Wayback and archive.today refused connections from this network.'
+  - title: Fossil fuel subsidies as a share of GDP 2023 (chart) and the indicator's chart data packages
+    publisher: European Environment Agency
+    date: '2025-01-29'
+    url: https://www.eea.europa.eu/en/analysis/indicators/fossil-fuel-subsidies/fossil-fuel-subsidies-as
+    note: 'Malta 3.37%, Poland 2.09%, Slovakia 1.51%, EU-27 0.66% (2023, provisional: 2022 values used for about 7%
+      of the total). Downloaded 6 Oct 2026 (data/cc-113/).'
+  - title: Inventory of energy subsidies in the EU27, 2024 edition (subsidy database)
+    publisher: European Commission (DG ENER; Enerdata, Trinomics)
+    date: 6 Sep 2024
+    url: https://circabc.europa.eu/ui/group/8f5f9424-a7ef-4dbf-b914-1af1d12ff5d2/library/4e6f2b2c-702b-429b-bb19-7aeb48f28f58/details
+    note: 'Primary evidence: the database behind the EEA indicator, published with COM(2025) 17 (file modified 9 Apr
+      2025; SHA-256 recorded). Every EEA share reproduced to two decimals (tools/cc-113-report/calc.py). The workbook
+      is (c) Enerdata: only country totals and five Malta figures are committed; the measure rows are rebuilt locally.'
+  - title: 2024 Report on Energy subsidies in the EU, COM(2025) 17 final
+    publisher: European Commission
+    date: 28 Jan 2025
+    url: http://publications.europa.eu/resource/cellar/7150e5a9-dd6f-11ef-be2a-01aa75ed71a1.0017.03/DOC_1
+    note: 'Read 6 Oct 2026 from the EU Publications Office (EUR-Lex refused scripts). Figure 16, "Fossil fuel subsidies
+      compared to GDP (%, 2015 and 2023)", shows MT about 3.37, PL about 2.09, SK about 1.51 (measured by pixel:
+      3.367, 2.091, 1.507): the values as of 28 Jan 2025, before the CIRCABC file was modified on 9 Apr 2025.
+      Footnote 6: data "to be confirmed" were 8% of the 2023 total.'
+  - title: 9th report on the state of the energy union (page)
+    publisher: European Commission, DG ENER
+    date: '2025-01-29'
+    url: https://energy.ec.europa.eu/strategy/energy-union/ninth-report-state-energy-union_en
+    note: 'Read 6 Oct 2026 (modified 30 Jul 2026). Lists the energy subsidies report (COM/2025/17) and the subsidy
+      database (xl file), and links to the CIRCABC file.'
+  - title: Report on energy subsidies in the EU, COM(2026) 472 final (Council document ST 13343/26)
+    publisher: European Commission
+    date: 17 Sep 2026
+    url: https://data.consilium.europa.eu/doc/document/ST-13343-2026-INIT/en/pdf
+    note: Read in full 6 Oct 2026. EU fossil fuel subsidies 2023 revised to EUR 121bn (2024 prices); Malta first per
+      unit of GDP in 2024 (Figure 15, about 1.8%, read from the chart).
+  - title: 'Malta: Draft Budgetary Plan 2024'
+    publisher: Government of Malta
+    date: Oct 2023
+    url: https://economy-finance.ec.europa.eu/document/download/4edb4e16-f5c7-4443-ba70-dc3c0dc4099b_en?filename=2024_dbp_mt_en.pdf
+    note: Energy support measures (including other basic commodities) 2.5% of GDP in 2022 and 1.7% expected in 2023
+      (section 3.1, PDF p.34).
+  - title: 'Malta: Draft Budgetary Plan 2025'
+    publisher: Government of Malta
+    date: Oct 2024
+    url: https://economy-finance.ec.europa.eu/document/download/8d77183d-aad8-464a-9c97-8baded7f13a8_en?filename=2025_dbp_mt_en.pdf
+    note: Keeping energy and basic-commodity costs unchanged cost 0.87% of GDP in 2024 and 0.72% in 2025 (PDF p.40).
+  - title: 'IMF Fossil Fuel Subsidies Data: 2023 Update (Climate Data dashboard)'
+    publisher: International Monetary Fund
+    date: Aug 2023
+    url: https://climatedata.imf.org/datasets/d48cfd2124954fb0900cef95f2db2724_0
+    note: Price-gap method; Malta's explicit subsidies are zero in every year; explicit plus implicit 2.27% of GDP in
+      2023, 15th of 27.
   quote: In 2023, fossil fuel subsidies represented the highest shares of gross domestic product (GDP) in Malta, Poland,
     and Slovakia (all at or above 1.5%).
-counter_evidence: The IMF's 2025 Article IV report estimates Malta's energy subsidy cost falling from about 1.8% of GDP
-  in 2022 to about 0.8% in 2025 (see CC-022); the Government plans about EUR 400 million of energy support to 2027 (CC-095).
-  The EEA's definition of a fossil-fuel subsidy (including support that lowers consumer prices) differs from budget lines.
-tests: EEA indicator data and methodology (subsidy definition, Eurostat environmental subsidies accounts, env_ac_... series);
-  Eurostat GDP (nama_10_gdp); Malta budget documents; IMF CR 26/29 Table 2 (already used in CC-022).
-why_low_hanging: A single threshold claim in an open EEA dataset, which also links to the energy-subsidy claims already
-  in the collection.
+counter_evidence: 'The ranking reproduces exactly from the Commission''s subsidy database (2024 edition) that the EEA
+  used, and holds with Eurostat GDP (as of 6 Oct 2026, which the EEA could not have had) and, as a lower bound, with
+  the unconfirmed items set to zero; but Slovakia''s "at or above 1.5%" holds only on the EEA''s basis (1.507%; 1.49%
+  with Eurostat GDP; 1.39% with the unconfirmed items set to zero). Malta''s 2023 figure (EUR 605m, or 633m with a
+  stand-in) is 96% one line, compensation to Enemalta for frozen energy prices, booked as actual costs and wholly to
+  natural gas; it is 2.1 times the IMF Article IV energy-subsidy cost for 2023 (1.4% of GDP, CR 26/29) and 1.7 times
+  the Government''s expected cost (1.7% of GDP, DBP 2024, other basic commodities included), a gap we could not
+  reconcile. For 2022 the database was lower (1.71% of GDP, the line EUR 246.6m) than the Government (2.5%, about EUR
+  451m) and the IMF (1.8%, about EUR 325m); over 2022-23 the line (EUR 826.5m) is close to the Government''s expected
+  cost (about EUR 806m), which points to timing or basis; the 2024 gap (about 1.8% against 0.87%) persists. The IMF''s
+  price-gap database records no explicit subsidy for Malta; the OECD/IISD tracker has no OECD or IEA estimate for
+  Malta. Malta was 0.08-0.10% of GDP in 2015-2020 (24th-27th of 27) and is first again for 2024 in COM(2026) 472. In
+  euros Malta''s EUR 0.63bn is 19th of 27.'
+tests: Commission subsidy inventory 2024 edition (CIRCABC) rebuilt measure by measure (locally); EEA chart data;
+  COM(2025) 17 Figure 16 (read by pixel); Eurostat nama_10_gdp, gov_10a_main and nrg_cb_e; Malta Draft Budgetary Plans
+  2024 and 2025; IMF CR 26/29 Table 2 (read for CC-018/CC-022); IMF Fossil Fuel Subsidies Data 2023 update; OECD/IISD
+  Fossil Fuel Subsidy Tracker; COM(2026) 472; ECFIN Discussion Paper 214 for definitions (tools/cc-113-report/calc.py).
+why_low_hanging: 'Done: Claim Check 113 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: EEA and Eurostat reachable.'
-caveats: Candidate from the weekly intake of 5 Oct 2026. Dated Jan 2025 (about 20 months old). Subsidy definitions differ
-  between EEA, IMF and national budget lines; the check should say which is used.
+caveats: 'Statement by an EU agency about EU data; the EEA states its definition (WTO categories, EU inventory method).
+  The claim is about shares of GDP (in euros Malta is 19th of 27). 2023 values are provisional for the items still to be
+  confirmed (about 7-8% of the EU total; in Malta only the EUR 28.2m excise cut); Malta''s EUR 580m line is booked as
+  actual costs and is not reconciled with other sources. Versions C and D (unconfirmed items set to zero) are a lower
+  bound, not equally valid versions; B and D use Eurostat GDP as of 6 Oct 2026, which the EEA could not have had.
+  COM(2025) 17 (28 Jan 2025) was read from the EU Publications Office: its Figure 16 gives the same top four as the
+  CIRCABC file, which was modified on 9 Apr 2025. The Commission workbook is (c) Enerdata (reproduction prohibited
+  without written permission): measure rows are not committed. The original 29 Jan 2025 page could not be opened; the
+  earliest copy read is 3 Feb 2025. IMF CR 26/29 figures are from the CC-018/CC-022 record (read in full 5 Oct 2026).
+  Largely supported verdict: no right of reply needed.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- European Commission subsidy inventory, 2024 edition (CIRCABC), rebuilt measure by measure locally (measure rows are Enerdata copyright and not committed; country totals, GDP and five Malta figures in data/cc-113/ec_inventory_*.csv; checks in data/cc-113/checks.csv)
+- COM(2025) 17 Figure 16, 2023 bars measured by pixel (data/cc-113/com2025_17_fig16_measured.csv)
+- EEA chart data for the indicator (data/cc-113/eea_*.csv)
+- Eurostat nama_10_gdp, gov_10a_main and nrg_cb_e, retrieved 6 Oct 2026 with flags (data/cc-113/eurostat_*.csv)
+- Malta Draft Budgetary Plans 2024 and 2025; IMF CR 26/29 Table 2; COM(2026) 472 Figure 15 (data/cc-113/other_estimates_transcribed.csv)
+- IMF Fossil Fuel Subsidies Data 2023 update and OECD/IISD tracker (data/cc-113/imf_ffs_eu27.csv, oecd_iisd_tracker_malta.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-113A
+    text: "In 2023 the highest shares of GDP were in Malta, Poland and Slovakia"
+    finding: "Rebuilt from the Commission database: Malta 3.37%, Poland 2.09%, Slovakia 1.51%, then Croatia 1.15% [3, 4]; the Commission’s own chart of 28 Jan 2025 shows the same [19]. The same three lead with Eurostat’s GDP and, as a lower bound, with the unconfirmed items set to zero [5]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-113B
+    text: "“all at or above 1.5%”"
+    finding: "True on the EEA’s basis (Slovakia 1.507%). With Eurostat’s GDP of 6 Oct 2026 (later than the EEA could have used) Slovakia is 1.49%; with the unconfirmed items set to zero (a lower bound), 1.39%. Malta and Poland clear the line in every version [4, 5]."
+    rating: "Largely accurate"
+    tone: lime
+  - id: CC-113C
+    text: "Malta’s share, 3.37% of GDP, the highest (the EEA’s linked chart)"
+    finding: "Reproduced exactly; 3.03% with Eurostat’s GDP of 6 Oct 2026; first in the Commission’s 2024 data too [8]. 96% is one EUR 580m line; the total is 2.1 times the IMF Article IV estimate of the 2023 cost and 1.7 times the Government’s, though in 2022 the database was lower than both [10, 12]."
+    rating: "Largely accurate"
+    tone: lime
+  - id: CC-113D
+    text: "Malta’s support is a fossil-fuel subsidy"
+    finding: "Yes under the EU reporting method, which the EEA states; the IMF’s price-gap database records none, and the OECD/IISD tracker has no OECD or IEA estimate for Malta [9, 13, 14]. The database books Malta’s main line wholly to natural gas, although 21.7% of the 2023 electricity supply was imported [4, 20]; the rank does not change."
+    rating: "Accurate (official method)"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-06'
+thumbnail:
+  figure: 3.37%
+  caption: of GDP in fossil-fuel subsidies, Malta 2023, the EU's highest on the EEA's data (EU-27 as a whole 0.66%)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-06
+    step: started
+    note: "Check started. EEA indicator page, chart pages and data packages downloaded; the Commission's subsidy\
+      \ database (2024 edition) found on CIRCABC through the 9th State of the Energy Union page; Eurostat GDP and\
+      \ government subsidies, the IMF price-gap data and the OECD/IISD tracker downloaded; COM(2026) 472, Malta's Draft\
+      \ Budgetary Plans 2024 and 2025, the Commission's 2024 country report and ECFIN Discussion Paper 214 read."
+  - date: 2026-10-06
+    step: wording
+    note: "Verbatim wording read on the live EEA page (published 29 Jan 2025, modified 29 Jul 2025) and in the EEA's\
+      \ fixed copies of 3 Feb 2025 and 26 Nov 2025: identical. Wayback and archive.today refused connections, so the\
+      \ 29 Jan 2025 page itself was not opened."
+  - date: 2026-10-06
+    step: note
+    note: "Every EEA share reproduced to two decimals from the Commission database (2022 values used for 'to be\
+      \ confirmed' measures; GDP from the database, Enerdata via IMF and World Bank). With Eurostat GDP as of 6 Oct\
+      \ 2026 (which the EEA could not have had): Malta 3.03%, Poland 2.08%, Slovakia 1.49%. Malta's 2023 amount is 96% one line (EUR 580m, Enemalta compensation), 2.1 times\
+      \ the IMF's and 1.7 times the Government's 2023 cost of energy support; not reconciled."
+  - date: 2026-10-06
+    step: note
+    note: "COM(2025) 17 (28 Jan 2025) read from the EU Publications Office (Cellar). Its Figure 16, measured by pixel,\
+      \ gives Malta 3.37%, Poland 2.09%, Slovakia 1.51%, Croatia 1.15% (the top ten bars match the CIRCABC file to 0.001\
+      \ points); the CIRCABC file was modified on 9 Apr 2025, after the report, so for those countries the values we\
+      \ rebuilt are those of 28 Jan 2025. Eurostat nrg_cb_e: Malta imported 648 of 2,992 GWh (21.7%) of its 2023 electricity supply, while\
+      \ the database books the Enemalta line wholly to natural gas; leaving out only the import share gives 2.70%, still\
+      \ first."
+  - date: 2026-10-06
+    step: note
+    note: "Licence: the Commission workbook's own notice says (c) Enerdata, reproduction and diffusion prohibited\
+      \ without written permission. Measure-level extracts removed from the repository; only country totals, the GDP\
+      \ series and five Malta figures are kept, and fetch.py rebuilds the rest locally after a SHA-256 check. Review\
+      \ fixes applied before first issue: variants C and D labelled a lower bound; the EUR 580m line is booked as actual\
+      \ costs (only the EUR 28.2m excise cut is to be confirmed); 2022 and 2024 comparisons with the Government and IMF\
+      \ added; title now says relative to GDP."
+  - date: 2026-10-06
+    step: version
+    version: "1.0"
+    note: "First issue. Verdict Largely supported (moderate confidence); no right of reply needed."

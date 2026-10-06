@@ -1,0 +1,61 @@
+freq,unit,age,citizen,geo,time,value,flag,dataset,label,updated,retrieved,sex
+A,NR,TOTAL,NAT,MT,2010,3634,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2011,3730,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2012,3648,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2013,3553,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2014,3555,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2015,3595,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2016,3627,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2017,3409,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2018,3396,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2019,3195,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2020,3147,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2021,3050,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2022,3049,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2023,2963,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2024,2821,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2010,3898,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2011,4165,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2012,4130,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2013,4032,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2014,4191,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2015,4325,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2016,4476,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2017,4319,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2018,4444,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2019,4350,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2020,4414,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2021,4395,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2022,4309,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2023,4462,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,TOTAL,MT,2024,4374,,demo_faczc,Live births by mother's age and citizenship,2026-09-30T23:00:00+0200,2026-10-06,
+A,NR,TOTAL,NAT,MT,2010,2919,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2011,3146,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2012,3268,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2013,3112,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2014,3131,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2015,3290,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2016,3183,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2017,3408,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2018,3487,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2019,3494,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2020,3895,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2021,3950,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2022,3970,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2023,3820,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,NAT,MT,2024,3940,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2010,3010,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2011,3267,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2012,3418,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2013,3236,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2014,3270,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2015,3442,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2016,3342,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2017,3571,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2018,3688,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2019,3688,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2020,4091,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2021,4163,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2022,4230,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2023,4030,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T
+A,NR,TOTAL,TOTAL,MT,2024,4181,,demo_maczc,"Deaths by age, sex and citizenship",2026-09-17T23:00:00+0200,2026-10-06,T

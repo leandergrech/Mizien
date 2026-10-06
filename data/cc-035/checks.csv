@@ -1,0 +1,70 @@
+check,value,unit,source,note
+EEA table: Malta rate 2005 (AD per 100k aged 30+),143.5,per 100k,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",statement: 143.5
+EEA table: Malta rate 2023,46.3,per 100k,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",statement: 46.3
+"Fall in the rate, 2005-2023",67.74,%,calculated,statement: 67.7%
+EEA table: Malta attributable deaths 2023 (95% CI),172 (131-192),deaths,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",statement: 172 (131-192)
+ETC HE technical report: Malta AD 2023 (95% CI) and rate,173 (132-193); 46.3 (35.2-51.7),deaths; per 100k,"ETC HE Report 2025/8 (Soares et al. 2025), Annex 3-4","Table A4.1, read 6 Oct 2026; one death above the table and the quick-facts page"
+Deaths implied by the 2023 rate x population aged 30+,172.8,deaths,calculated,46.3 x 373208 / 100 000; 46.25-46.35 gives 172.6-173.0: consistent with 172 truncated and 173 rounded
+"Rate recomputed from table AD / population 30+, 2005",143.49,per 100k,calculated,
+"Rate recomputed from table AD / population 30+, 2023",46.09,per 100k,calculated,with AD = 172; the table's 46.3 uses the unrounded AD
+Eurostat sdg_11_52: Malta deaths 2005 / 2023,348 / 172,deaths,"Eurostat sdg_11_52, updated 9 Dec 2025, retrieved 6 Oct 2026",no flags on the Malta values
+Eurostat sdg_11_52: Malta rate per 100 000 inhabitants (all ages) 2005 / 2023,86 / 31,per 100k,"Eurostat sdg_11_52, updated 9 Dec 2025, retrieved 6 Oct 2026","a different denominator from the statement's (all ages, not 30+)"
+Eurostat rate (all ages): fall 2005-2023,64.0,%,calculated,
+Eurostat sdg_11_52: years in the series,"2005, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023",years,"Eurostat sdg_11_52, updated 9 Dec 2025, retrieved 6 Oct 2026",no 2006 value (the EEA table has none either)
+Attributable deaths 2005 -> 2023,348 -> 172,deaths,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",
+"Fall in the number of attributable deaths, 2005-2023",50.6,%,calculated,"the statement gives the rate, not the number"
+Population aged 30+ (EEA table) 2005 -> 2023,242534 -> 373208,people,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",+53.9%
+Eurostat demo_pjan: Malta population aged 30+ on 1 Jan 2005,242544,people,"Eurostat demo_pjan, retrieved 6 Oct 2026",EEA table: 242534
+Eurostat demo_pjan: Malta population aged 30+ on 1 Jan 2023,373224,people,"Eurostat demo_pjan, retrieved 6 Oct 2026",EEA table: 373208
+"Population-weighted PM2.5 (modelled), 2005 -> 2023",21.0 -> 10.9,ug/m3,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",fall 48.1%
+"Excess above 5 ug/m3, 2005 -> 2023",16.0 -> 5.9,ug/m3,calculated,fall 63.1%
+2005 reference map (ETC/ATNI 2020/1): Malta population-weighted PM2.5,21.2,ug/m3,"ETC/ATNI Report 2020/1, Table 2.3",EEA table now 21.0
+"Attributable fraction at the national PWC, 2005 / 2023",11.59 / 4.44,%,calculated,PAF = 1 - exp(-ln(1.08)/10 x (PWC - 5)); the EEA works cell by cell on a 1 km grid
+Eurostat: deaths aged 30+ (all causes) 2005 / 2023,3065 / 3987,deaths,"Eurostat demo_magec, retrieved 6 Oct 2026",
+"Eurostat: external-cause share of deaths aged 30+, 2011 / 2023",2.57 / 3.94,%,"Eurostat hlth_cd_aro (residents), retrieved 6 Oct 2026","2011 stands in for 2005, as in the ETC method"
+Our approximation of attributable deaths 2005 (PAF at national PWC x natural deaths 30+),346.0,deaths,calculated,EEA: 348; difference -0.6%
+Implied natural death rate aged 30+ 2005 (EEA AD / PAF / population 30+),1238.5,per 100k,calculated,Eurostat-based: 1231.3
+Our approximation of attributable deaths 2023 (PAF at national PWC x natural deaths 30+),170.0,deaths,calculated,EEA: 172; difference -1.2%
+Implied natural death rate aged 30+ 2023 (EEA AD / PAF / population 30+),1038.2,per 100k,calculated,Eurostat-based: 1026.2
+Decomposition of the rate fall: attributable fraction ratio x baseline death-rate ratio,0.383 x 0.838 = 0.321,ratio,calculated,fall 67.9%; with the fraction alone the fall would be 61.7%
+"Rate fall 2005-2023, previous method (RR 1.062, all concentrations)",55.0,%,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",147.0 -> 66.1 per 100k aged 30+
+"Rate fall 2005-2023, all concentrations (CF 0)",54.7,%,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",184.8 -> 83.7 per 100k aged 30+
+"Rate fall 2005-2023, above the 2030 EU limit (CF 10)",92.4,%,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",100.6 -> 7.6 per 100k aged 30+
+Rate fall 2005-2023 if Malta's 2005 map value were -2.9 ug/m3,61.0,%,"calculated; RMSE from ETC/ATNI Report 2020/1, Table A.4 (urban background, 2005)",2005 rate would be 118.8; indicative only
+Rate fall 2005-2023 if Malta's 2005 map value were +2.9 ug/m3,72.4,%,"calculated; RMSE from ETC/ATNI Report 2020/1, Table A.4 (urban background, 2005)",2005 rate would be 167.7; indicative only
+Rate fall 2007-2023 (WHO 2021 baseline),56.6,%,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",106.7 -> 46.3
+Rate fall 2008-2023 (WHO 2021 baseline),47.7,%,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",88.6 -> 46.3
+Rate fall 2010-2023 (WHO 2021 baseline),35.1,%,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",71.3 -> 46.3
+Highest rate in the series,143.5,per 100k,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",2005
+Rate range 2013-2023,43.2-67.6,per 100k,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",
+EU-27 countries with a 2005 and 2023 rate,27,count,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",
+Malta's rank by rate fall among EU-27 (1 = largest fall),14,of 27,calculated,"largest Finland 97.5%, smallest Greece 35.1%"
+EU-27: rate 2005 -> 2023,153.0 -> 59.7,per 100k,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",fall 61.0%
+EU-27: attributable deaths 2005 -> 2023,423593 -> 182399,deaths,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",fall 56.9% (EEA indicator: 57%)
+EU-27: population-weighted PM2.5 2005 -> 2023,19.4 -> 10.2,ug/m3,"EEA burden-of-disease table (Countries & NUTS), retrieved 6 Oct 2026",EEA indicator: 19.4 -> 10.2
+Malta stations with PM2.5 reported to the EEA for 2005,0,stations,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026","first PM2.5 days in the EEA archive: Żejtun Aug 2006, Msida Oct 2006, Għarb Jun 2007; data never reported to the EEA would not appear"
+Malta stations with PM10 reported to the EEA for 2005 (annual mean of valid days),MT00002 (PM10 only; closed) 49.0 (82% of days); Kordin 42.4 (81% of days),ug/m3,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026","PM10 feeds 'pseudo PM2.5' in the maps, but the ETC maps use background and traffic stations only (ETC/ATNI 2020/1, Table A.1); Kordin is industrial, MT00002's type is not in the current metadata"
+"Mean of the five stations' PM2.5, 2023 (EEA files)",10.92,ug/m3,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026","PQ 29696 annex (CC-007): 11.4, 13.9, 9.5, 10.9, 8.9 -> mean 10.9; EEA modelled PWC 10.9"
+"Three long-running stations (Msida, Żejtun, Għarb): first year all >= 75% of days",2010,year,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026",mean 15.05 vs EEA PWC 13.8
+"Three-station mean PM2.5, first full year -> 2023",15.05 -> 11.22,ug/m3,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026",fall 25.4%; EEA PWC 13.8 -> 10.9 (fall 21.0%)
+Msida: PM2.5 first year with >= 75% of days -> 2023,2007: 22.74 -> 13.86,ug/m3,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026",fall 39.1%; coverage 86.3% and 98.4%
+Żejtun: PM2.5 first year with >= 75% of days -> 2023,2010: 13.6 -> 10.93,ug/m3,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026",fall 19.6%; coverage 85.2% and 99.2%
+Għarb: PM2.5 first year with >= 75% of days -> 2023,2008: 13.56 -> 8.88,ug/m3,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026",fall 34.5%; coverage 89.3% and 96.2%
+"Three-station mean minus EEA PWC, years with full coverage",-0.96 to +1.25,ug/m3,calculated,"13 years: 2010, 2011, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023. Not an independent check: the map interpolates between these stations"
+Station type in EEA metadata: MT00002 (PM10 only; closed) (MT00002),not in the current metadata,type,"EEA station metadata (PanEuropean_metadata.csv), retrieved 6 Oct 2026",
+Station type in EEA metadata: Kordin (MT00003),industrial urban,type,"EEA station metadata (PanEuropean_metadata.csv), retrieved 6 Oct 2026",
+Station type in EEA metadata: Żejtun (MT00004),background urban,type,"EEA station metadata (PanEuropean_metadata.csv), retrieved 6 Oct 2026",SPP-MT_A_BETA_enviroMP101M (2006-07-01 to open); SPP-MT_A_light-scat_GRIMM-EDM280 (no date to open); SPP-MT_N_gravi_leckelSEQ47-50 (2014-01-01 to open)
+Station type in EEA metadata: Msida (MT00005),traffic urban,type,"EEA station metadata (PanEuropean_metadata.csv), retrieved 6 Oct 2026",SPP-MT_A_BETA_enviroMP101M (2006-07-01 to 2021-09-23); SPP-MT_A_light-scat_GRIMM-EDM180C (2021-09-24 to open); SPP-MT_A_light-scat_GRIMM-EDM280 (no date to open); SPP-MT_N_gravi_leckelSEQ47-50 (2014-01-01 to open)
+Station type in EEA metadata: Għarb (MT00007),background rural-regional,type,"EEA station metadata (PanEuropean_metadata.csv), retrieved 6 Oct 2026",SPP-MT_A_TEOM-FDMS_TEOM1400AB-FDMS (2007-06-01 to open); SPP-MT_A_light-scat_GRIMM-EDM280 (no date to open); SPP-MT_N_gravi_derendaLVS-3-1 (2014-01-01 to open); atmospheric_relative_humidity_procedure (no date to open)
+Station type in EEA metadata: Attard (MT00008),background urban,type,"EEA station metadata (PanEuropean_metadata.csv), retrieved 6 Oct 2026",SPP-MT_A_TEOM-FDMS_TEOM1400AB-FDMS (2015-01-01 to open); SPP-MT_A_light-scat_GRIMM-EDM280 (no date to open); SPP-MT_N_gravi_partisol2025 (2021-01-01 to open)
+Station type in EEA metadata: St Paul's Bay (MT00009),traffic urban,type,"EEA station metadata (PanEuropean_metadata.csv), retrieved 6 Oct 2026",SPP-MT_A_light-scat_FIDAS200E (2022-02-15 to open); SPP-MT_N_gravi_MCZ-M-PNS-LVS16 (2022-01-01 to open)
+Station type in EEA metadata: Msida (new site) (MT00011),not in the current metadata,type,"EEA station metadata (PanEuropean_metadata.csv), retrieved 6 Oct 2026",
+2023 five-station mean: station types,"2 traffic (Msida, St Paul's Bay), 2 urban background (Żejtun, Attard), 1 rural background (Għarb)",types,"EEA station metadata (PanEuropean_metadata.csv), retrieved 6 Oct 2026","unweighted mean, not population-weighted"
+Msida: PM10 2009 -> 2023,42.49 -> 43.7,ug/m3,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026","coverage 85.8% and 98.4%; PM2.5 22.45 -> 13.86 (-38.3%, coverage 84.4%)"
+Żejtun: PM10 2007 -> 2023,29.3 -> 28.73,ug/m3,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026","coverage 93.2% and 99.7%; PM2.5 18.2 -> 10.93 (-39.9%, coverage 66.8%)"
+"Msida: PM2.5/PM10 ratio of annual means, 2007",0.535,ratio,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026","PM2.5 coverage 86.3%, PM10 64.9%; different valid days"
+"Żejtun: PM2.5/PM10 ratio of annual means, 2007",0.621,ratio,"EEA station files (AirBase, E1a), retrieved 6 Oct 2026","PM2.5 coverage 66.8%, PM10 93.2%; different valid days"
+Indicative 2005 PM2.5 at MT00002 (PM10 only; closed) (2005 PM10 49.02 x 2007 ratios),26.2-30.4,ug/m3,calculated,map value for Malta 21.0; site type: not in the current metadata; indicative only
+Indicative 2005 PM2.5 at Kordin (2005 PM10 42.4 x 2007 ratios),22.7-26.3,ug/m3,calculated,map value for Malta 21.0; site type: industrial urban; indicative only
+"Malta primary PM2.5 emissions, national total, 2005 -> 2023",750 -> 310,tonnes,"Eurostat env_air_emis (NECD inventory), retrieved 6 Oct 2026",fall 58.7%; flags: none/none
+"Of which public electricity and heat production (NFR 1A1a), 2005 -> 2023",420 -> 3,tonnes,"Eurostat env_air_emis, retrieved 6 Oct 2026",

@@ -2,47 +2,177 @@ id: CC-114
 title: 'PN: only EU state with rising emissions intensity'
 category: Climate & Energy
 subtopic: Emissions & targets
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Misleading
+verdict_confidence: High
 claim:
-  text: 'Nationalist Party MP Eve Borg Bonello (26 Jan 2026): Malta is the only EU Member State that, instead of reducing,
-    has increased the intensity of its greenhouse-gas emissions since 2013; it rose 17% while the EU average fell 34%.'
+  text: 'Nationalist Party press release signed by Shadow Minister Eve Borg Bonello (26 Jan 2026; in Maltese, our translation),
+    citing Eurostat: "Malta is the only EU Member State which, instead of reducing, increased the intensity of greenhouse gas
+    emissions from 2013 to date. Malta in fact increased these emissions by 17%, when the average intensity of these emissions
+    in all EU Member States fell by 34%"; "In simple words, it is not simply that we are polluting more because the economy
+    grew, but today, for every euro we put into our economy, we are polluting more than we were polluting in 2013"; and "This
+    is the direct result of a lack of ambition on the part of the Maltese Government on several fronts. Among them, the clear
+    lack of ambition to seriously increase the use of renewable energy." The release also says Estonia "reduced emissions by
+    64%", Ireland "by 50%" and Finland "by 44%", and that Malta generated "only 10.7%" of its energy from renewables in 2024
+    when the European average is "a little over 25%", "third from last".'
   speaker: Nationalist Party (PN)
   date: '2026-01-26'
   wording_status: Verbatim found
+  quote: Malta is the only EU Member State which, instead of reducing, increased the intensity of greenhouse gas emissions from 2013 to date. (our translation)
   sources:
+  - title: Malta l-uniku Stat Membru tal-UE li żied l-intensità tal-emissjonijiet tiegħu mill-2013 ’l hawn
+    publisher: Partit Nazzjonalista
+    date: '2026-01-26'
+    url: https://pn.org.mt/press-releases/malta-l-uniku-stat-membru-tal-ue-li-zied-l-intenstita-tal-emissjonijiet-tieghu-mill-2013-l-hawn/
+    note: 'The claim. Press release in Maltese, signed by Eve Borg Bonello, Shadow Minister for Climate Change and Public
+      Cleanliness; read in full 6 Oct 2026 (found through the site''s press-release sitemap; HTTP 200 with a browser
+      User-Agent). Page modified 24 Apr 2026 (its image, Eurostat''s map, is filed under that month); text matches
+      Newsbook''s quotes of 26 Jan. Translation ours (literature/CC-114/primary-source.md).'
   - title: PN accuses government of climate 'apathy' as emissions intensity rises
     publisher: Newsbook
     date: '2026-01-26'
     url: https://newsbook.com.mt/en/pn-accuses-government-of-climate-apathy-as-emissions-intensity-rises/
-    note: News report quoting the MP directly, read 5 Oct 2026. Locate the PN press release if one exists.
-  quote: Malta is the only EU Member State that, instead of reducing, has increased the intensity of its greenhouse gas
-    emissions since 2013.
-counter_evidence: 'The Government says per-capita emissions fell over 44% and emissions per unit of GDP over 80% since 2005
-  (CC-025, CC-003): the base year (2005 versus 2013) and the metric differ. Economic output grew fast, so intensity can
-  rise even when the level is flat; the reverse also applies.'
-tests: Eurostat env_air_gge (GHG emissions) and nama_10_gdp (GDP, chain-linked volumes) for all EU-27, 2013 to the latest
-  year; compute intensity change per country; test sensitivity to the end year and to territorial versus residence-based
-  emissions (see CC-026).
-why_low_hanging: A clear 'only member state' ranking that open Eurostat data settle by calculation.
+    note: Locator. English quotes of the release (Newsbook's translation); the 17% and 34% are Newsbook's paraphrase.
+      Read in full 6 Oct 2026; Internet Archive capture 13 Feb 2026.
+  - title: '2024 EU greenhouse gas emissions: -20% since 2013'
+    publisher: Eurostat
+    date: '2026-01-23'
+    url: https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260123-1
+    note: 'The figures the release cites ("Eurostat''s figures ... published in recent days"; identifying this news item
+      is ours): "Only Malta (+17%) saw its emissions intensity increase since 2013"; EU -34%; source dataset
+      env_ac_aeint_r2. Map data (20 Jan 2026) in data/cc-114/eurostat_map_jan2026.csv.'
+  - title: 25.2% of energy EU used in 2024 came from renewables
+    publisher: Eurostat
+    date: '2025-12-18'
+    url: https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251218-2
+    note: 'News item read 6 Oct 2026 (text only): EU 25.2%; lowest Belgium 14.3%, Luxembourg 14.7%, Ireland 16.1%; Malta
+      is not named, and the item gives no value for it. Transcribed in data/cc-114/eurostat_ren_news_dec2025.csv.'
+  - title: Air emissions accounts (env_ac_aeint_r2, env_ac_ainah_r2, env_ac_aibrid_r2); env_air_gge; nama_10_gdp; nama_10_a64;
+      nama_10_pe; nrg_ind_ren
+    publisher: Eurostat
+    date: retrieved 6 Oct 2026
+    url: https://ec.europa.eu/eurostat/databrowser/view/env_ac_aeint_r2/default/table
+    note: Primary data with status flags; extract, queries and checks in data/cc-114/.
+counter_evidence: 'Eurostat''s figure is quoted correctly (January release +16.6%, EU -34.0%; August 2026 data +14.3%, still
+  the only rise; Malta 27th of 27 from every base year 2008-2023; EU-27 values flagged i), but it is a residence-based
+  measure. Malta''s resident production units emitted 2.78 Mt CO2e in 2013 and 6.59 Mt in 2024; air transport rose from
+  0.30 to 4.73 Mt (71.8% of 2024), 116% of the net increase; all of the rise is fuel bought abroad by resident air
+  transport firms (Eurostat bridging table: 299 of 304 kt in 2013, 100% of the 2024 estimate). The NSO attributes the 2023
+  jump to airlines that started operating that year. Without air-transport emissions the indicator fell from every base
+  year 2008-2023 (-8.5% to -72%): -64.0% since 2013 (2nd-largest fall in the EU; EU -35.2%) but -29.5% since 2016 (17th
+  of 27; EU -30.1%). The territorial inventory per euro of GDP also fell from every base year (-6.6% to -69%): -61.3%
+  since 2013 (2nd after Estonia; EU -35.5%), -27.1% since 2016 (21st; EU -29.8%). Most of the fall came in 2014-2016, when
+  electricity-sector emissions fell from 1,703 to 581 kt (743 kt in 2024, +28% since 2016), so these counter-figures
+  depend on the base year too; in the PN''s favour, from base years 2014-2019 Malta''s rise is +19.5% to +97%. The
+  renewables explanation does not fit: with zero electricity-sector emissions in 2024 the indicator would still be 1.4%
+  above 2013 (329.8 against 325.2 g/EUR), and renewable shares rose over the period (electricity 1.6% to 10.7%, overall
+  3.8% to 17.2%). The release''s next paragraph also cites traffic; households'' own car use is outside the indicator and
+  land transport firms went from 49 to 86 kt. With 2013 as base Malta is the only riser only for end year 2024, a
+  Eurostat estimate; 2013-2023 it fell 8.3% and no state rose. Estonia, Ireland and Finland cut intensity, not
+  emissions: residence accounts / territorial inventory 2013-2024, Estonia -55.4% / -53.1% (2024 flagged i), Finland
+  -37.9% / -37.6% (i), Ireland +13.7% / -6.9% (flagged e; its air transport, 9.90 to 16.32 Mt, is 87% of its residence-based
+  rise). 10.7% is Malta''s renewable share of electricity (EU 47.5%); its overall share is 17.2%, fourth from last
+  (EU 25.2%); Eurostat''s release of 18 Dec 2025 named Belgium, Luxembourg and Ireland as the lowest three. In the PN''s
+  favour: the statistic is real and Eurostat''s own news item gives no explanation either; Malta''s renewable shares are
+  among the EU''s lowest.'
+tests: Eurostat env_ac_aeint_r2 for all EU-27 (2013-2024, both vintages, start- and end-year sensitivity, and our own counter-figures from every base year 2008-2023); env_ac_ainah_r2
+  by activity and env_ac_aibrid_r2 for Malta's drivers; env_air_gge with nama_10_gdp for the territorial inventory per
+  euro of GDP (and CC-025's 2005 base); nama_10_pe per person; nrg_ind_ren for the renewables figures. Recomputed in
+  tools/cc-114-report/calc.py (data/cc-114/checks.csv, ranking_2013_2024.csv, sensitivity.csv, sensitivity_base_years.csv).
+why_low_hanging: 'Done: Claim Check 114 report and flyer.'
 tags:
 - Selective metric
-tags_provisional: true
-priority: Queue
-data_readiness: 'High: Eurostat and Crossref reachable; Newsbook readable.'
-caveats: Candidate from the weekly intake of 5 Oct 2026. An opposition claim, held to the same standard as the Government's
-  (CC-025). The Newsbook report also quotes a projected 142% overshoot of the 2030 effort-sharing target and a 10.7% renewable
-  share in 2024; those are not checked here.
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High: Eurostat and Crossref reachable; Newsbook and pn.org.mt readable.'
+caveats: 'An opposition claim, held to the same standard and data as the Government''s (CC-025): our own counter-figures are
+  tested from every base year, as the PN''s is. Translation of the Maltese release is ours. Malta''s 2024 values in the air
+  emissions accounts are Eurostat estimates (flag i); the rise since 2013 depends on them. The airlines behind Malta''s
+  air-transport series are not identified (Eurostat and the NSO name none; no company filings read). The release page was
+  modified on 24 Apr 2026 and no January copy was found; Newsbook''s quotes of 26 Jan match its text. MaltaToday''s
+  report was not readable (403). Newsbook''s own additions (the 81.6% per unit of GDP since 2005, a 142% overshoot of the
+  2030 effort-sharing target, 24.5% renewables by 2030) are not the PN''s and are not checked here; the 10.7% and "third
+  from last" are the PN''s own. "A lack of ambition on several fronts" is a political judgement and is not rated; only
+  the renewables link is. The "Selective metric" tag means a metric favourable to the speaker''s argument, not to Malta or
+  any party. Reviewed on 6 Oct 2026 before circulation; version unchanged. Misleading: pending right of reply from the
+  Nationalist Party; must not be circulated beyond the site before the reply deadline.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Eurostat env_ac_aeint_r2, env_ac_ainah_r2 and env_ac_aibrid_r2 (updated 7 Aug 2026), retrieved 6 Oct 2026 (data/cc-114/eurostat_extract.csv; checks in data/cc-114/checks.csv)
+- Eurostat env_air_gge, nama_10_gdp, nama_10_a64, nama_10_pe and nrg_ind_ren, retrieved 6 Oct 2026 (same files; ranking_2013_2024.csv, sensitivity.csv)
+- Eurostat news item ddn-20260123-1 and its map data (data/cc-114/eurostat_map_jan2026.csv)
+- Eurostat news item ddn-20251218-2 (data/cc-114/eurostat_ren_news_dec2025.csv); base-year tables of our counter-figures (data/cc-114/sensitivity_base_years.csv)
+- NSO Malta national metadata for the air emissions accounts (11 Feb 2026), sections 17.2, 18.3, 18.5.2
+- Eurostat Statistics Explained, Greenhouse gas emission accounts (June 2026; literature/CC-114/open-access/)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-06'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-114A
+    text: "Malta is the only EU Member State whose greenhouse gas emissions intensity rose since 2013"
+    finding: "Eurostat’s news item and map say so [3, 4]; still true in the August 2026 data, but only with 2024, a Eurostat estimate, as end year (to 2023: −8.3%, no riser) [6]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-114B
+    text: "Malta +17%, EU average −34%"
+    finding: "Matches the January release (+16.6%, −34.0%); revised to +14.3% (EU values flagged i). “Increased these emissions” is the slip rated in C, but here the same sentence gives the EU’s “average intensity”, so we read the figures as intensity. The −34% is the EU aggregate (countries’ mean −32.4%) [3, 4, 6]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-114C
+    text: "Estonia reduced emissions by 64%, Ireland by 50%, Finland by 44%"
+    finding: "These are intensity changes, given as emissions and “the fight against air pollution”. Emissions 2013–2024, residence accounts / territorial inventory: Estonia −55% / −53% and Finland −38% / −38% (both 2024 flagged i), Ireland +13.7% / −6.9% (2024 flagged e; 87% of its rise on the residence basis is air transport) [5, 6, 9]."
+    rating: "Mislabelled"
+    tone: amber
+  - id: CC-114D
+    text: "For every euro put into the economy, Malta pollutes more than in 2013"
+    finding: "True on the residence basis, which the release never names: 72% of Malta’s 2024 figure is air-transport fuel bought abroad; without it the indicator fell from every base year (−64% since 2013); territorial inventory per € of GDP −61% since 2013 [6, 9]."
+    rating: "Needs context"
+    tone: amber
+  - id: CC-114E
+    text: "The rise is the direct result of a lack of ambition on several fronts"
+    finding: "A political judgement about the Government’s ambition, not a checkable statement of fact [1]."
+    rating: "Not rated"
+    tone: grey
+  - id: CC-114F
+    text: "Renewables as a cause of the rise: “among them, the clear lack of ambition to seriously increase the use of renewable energy”"
+    finding: "Rated only as a cause. Air transport is 116% of the net rise; with zero electricity-sector emissions in 2024 the indicator would still be 1.4% above 2013; renewable shares rose (electricity 1.6% to 10.7%). The release also cites traffic: land transport firms went 0.05 to 0.09 Mt [5, 6, 10]."
+    rating: "Contradicted"
+    tone: maroon
+  - id: CC-114G
+    text: "10.7% renewables in 2024 against an EU average of just over 25%, third from last"
+    finding: "10.7% is Malta’s electricity share (lowest in the EU; EU 47.5%); 25.2% is the EU’s overall share. Malta’s overall share is 17.2%, fourth from last [10]. Eurostat’s release of 18 December 2025 named Belgium, Luxembourg and Ireland (14.3–16.1%) as the lowest three, so Malta was not third from last in the data published before the PN’s release [16]."
+    rating: "Mixed measures"
+    tone: amber
+thumbnail:
+  figure: 72%
+  caption: "of the emissions in Malta’s 2024 intensity figure are airline fuel bought abroad; without them it fell from every base year, 2008–2023"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-06
+    step: started
+    note: "Checked in the maintainer session of 6 Oct 2026. Newsbook article read; Eurostat news item of 23 Jan 2026 identified as the source of the figures (env_ac_aeint_r2)."
+  - date: 2026-10-06
+    step: wording
+    note: "Primary wording found: PN press release in Maltese, signed by Shadow Minister Eve Borg Bonello, 26 Jan 2026 (pn.org.mt, located through the press-release sitemap; page modified 24 Apr 2026). Claim text restated from the release (our translation); Newsbook's English quotes match."
+  - date: 2026-10-06
+    step: note
+    note: "Eurostat air emissions accounts (intensities, emissions by activity, bridging table), territorial inventory, GDP, GVA, population and renewables downloaded with flags; January 2026 map data extracted. Malta +14.3% (Jan +16.6%), only riser; air transport 0.30 to 4.73 Mt, all fuel bought abroad; without it -64.0%; territorial per euro of GDP -61.3%; electricity -56%; 2013-2023 -8.3%. NSO metadata (11 Feb 2026) and Eurostat Statistics Explained read; Usubiaga & Acosta-Fernandez (2015) and Haberl et al. (2020) verified in Crossref."
+  - date: 2026-10-06
+    step: note
+    note: "Independent review, same day and before circulation: our counter-figures (without air transport, territorial inventory) tested from every base year 2008-2023 as strictly as the PN's (a fall from every base year, but -29.5% / -27.1% since 2016, close to the EU's; ranks now stated 'since 2013'); renewables link rated on the decomposition (air transport 116% of the net rise; zero electricity-sector emissions would leave the indicator 1.4% above 2013; renewable shares rose) with 'lack of ambition on several fronts' marked not rated; Ireland, Estonia and Finland given on both bases with Eurostat flags; sub-claim D rated like CC-026D (amber); Eurostat's news item of 18 Dec 2025 added for the renewables ranking; translation of sentence 6 corrected."
+  - date: 2026-10-06
+    step: version
+    version: "1.0"
+    note: "First issue. Verdict Misleading (high confidence); pending right of reply (Nationalist Party)."

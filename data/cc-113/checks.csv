@@ -1,0 +1,90 @@
+check,value,unit,source,note
+"Rebuilt from local measure rows vs the inventory's pivot, 2023 incl. TBC: largest difference",0.0,EUR million,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026","measure rows (Enerdata copyright) kept locally, not committed; techno group 'Fossil fuels', no double counting"
+"Rebuilt from local measure rows vs pivot, 2023 excl. TBC: largest difference",0.0,EUR million,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",
+Inventory 2023 incl. TBC vs EEA Figure 2 (2023): largest difference,0.0,EUR billion,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026; EEA chart data, retrieved 6 Oct 2026",the EEA figure is the inventory including the 2022 stand-ins
+EU-27 FFS 2023 incl. TBC (sum of countries),111.0,EUR billion (2023 prices),"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",EEA text: EUR 111 billion
+EU-27 FFS 2023 excl. TBC,102.8,EUR billion (2023 prices),"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",
+Share of EU-27 2023 total that is TBC stand-in,7.4,%,calculated,EEA figure note: 'about 7% of total'; COM(2025) 17 footnote 6: 8% 'To be confirmed'
+"Malta's rank by absolute amount, 2023 incl. TBC",19 of 27 (EUR 0.63bn),rank,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026","largest: DE EUR 41.1bn; smaller than Malta: CZ, LU, AT, DK, LV, SI, CY, EE"
+A: EEA basis (with 2022 stand-ins; inventory GDP): top three,"MT 3.37%, PL 2.09%, SK 1.51%",% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",
+A: EEA basis (with 2022 stand-ins; inventory GDP): fourth,HR 1.15%,% of GDP,calculated,
+A: EEA basis (with 2022 stand-ins; inventory GDP): countries at or above 1.5%,"MT, PL, SK",list,calculated,"share rounded to two decimals, as the EEA chart prints it"
+A: EEA basis (with 2022 stand-ins; inventory GDP): Malta rank,1,of 27,calculated,
+A: EEA basis (with 2022 stand-ins; inventory GDP): Slovakia share,1.507,% of GDP,calculated,
+A: EEA basis (with 2022 stand-ins; inventory GDP): EU-27 total / EU GDP,0.659,% of GDP,calculated,"aggregate ratio, not an average of country shares"
+B: with stand-ins; Eurostat GDP as of 6 Oct 2026: top three,"MT 3.03%, PL 2.08%, SK 1.49%",% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026; Eurostat nama_10_gdp (CP_MEUR), updated 2026-10-06, retrieved 6 Oct 2026",
+B: with stand-ins; Eurostat GDP as of 6 Oct 2026: fourth,BG 1.08%,% of GDP,calculated,
+B: with stand-ins; Eurostat GDP as of 6 Oct 2026: countries at or above 1.5%,"MT, PL",list,calculated,"share rounded to two decimals, as the EEA chart prints it"
+B: with stand-ins; Eurostat GDP as of 6 Oct 2026: Malta rank,1,of 27,calculated,
+B: with stand-ins; Eurostat GDP as of 6 Oct 2026: Slovakia share,1.494,% of GDP,calculated,
+B: with stand-ins; Eurostat GDP as of 6 Oct 2026: EU-27 total / EU GDP,0.642,% of GDP,calculated,"aggregate ratio, not an average of country shares"
+C: lower bound (unconfirmed set to zero); inventory GDP: top three,"MT 3.22%, PL 1.89%, SK 1.39%",% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",
+C: lower bound (unconfirmed set to zero); inventory GDP: fourth,BG 1.02%,% of GDP,calculated,
+C: lower bound (unconfirmed set to zero); inventory GDP: countries at or above 1.5%,"MT, PL",list,calculated,"share rounded to two decimals, as the EEA chart prints it"
+C: lower bound (unconfirmed set to zero); inventory GDP: Malta rank,1,of 27,calculated,
+C: lower bound (unconfirmed set to zero); inventory GDP: Slovakia share,1.388,% of GDP,calculated,
+C: lower bound (unconfirmed set to zero); inventory GDP: EU-27 total / EU GDP,0.61,% of GDP,calculated,"aggregate ratio, not an average of country shares"
+D: lower bound (unconfirmed set to zero); Eurostat GDP as of 6 Oct 2026: top three,"MT 2.89%, PL 1.88%, SK 1.38%",% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026; Eurostat nama_10_gdp (CP_MEUR), updated 2026-10-06, retrieved 6 Oct 2026",
+D: lower bound (unconfirmed set to zero); Eurostat GDP as of 6 Oct 2026: fourth,BG 1.00%,% of GDP,calculated,
+D: lower bound (unconfirmed set to zero); Eurostat GDP as of 6 Oct 2026: countries at or above 1.5%,"MT, PL",list,calculated,"share rounded to two decimals, as the EEA chart prints it"
+D: lower bound (unconfirmed set to zero); Eurostat GDP as of 6 Oct 2026: Malta rank,1,of 27,calculated,
+D: lower bound (unconfirmed set to zero); Eurostat GDP as of 6 Oct 2026: Slovakia share,1.375,% of GDP,calculated,
+D: lower bound (unconfirmed set to zero); Eurostat GDP as of 6 Oct 2026: EU-27 total / EU GDP,0.594,% of GDP,calculated,"aggregate ratio, not an average of country shares"
+EEA printed share vs variant A: largest difference across 27 countries,0.0,percentage points,"EEA chart data, retrieved 6 Oct 2026; calculated",0 means every printed value is reproduced to two decimals
+"COM(2025) 17 Figure 16 (28 Jan 2025), measured: MT / PL / SK / HR / BG",3.367 / 2.091 / 1.507 / 1.152 / 1.103,% of GDP,"COM(2025) 17 via Cellar, pixel measurement (measure_fig16.py)",variant A: 3.367 / 2.091 / 1.507 / 1.151 / 1.103
+"Largest difference, Figure 16 (measured) vs variant A, top five",0.001,percentage points,calculated,for the top five the CIRCABC file (modified 9 Apr 2025) gives the same values as the report of 28 Jan 2025
+"Largest difference, Figure 16 (measured) vs variant A, the 10 bars above 0.8%",0.001,percentage points,calculated,"pixel measurement, about +/-0.01 pp; lower bars are hidden by the EU-27 line and 2015 markers, not used"
+EEA printed: Malta / Poland / Slovakia / EU-27,3.37 / 2.09 / 1.51 / 0.66,% of GDP,"EEA chart data, retrieved 6 Oct 2026",EU-27 = EU total over EU GDP
+EEA lowest three (printed),"AT 0.07%, DK 0.08%, EE 0.12%",% of GDP,"EEA chart data, retrieved 6 Oct 2026","EEA text: Austria, Denmark and Estonia below 0.2%"
+"Inventory GDP vs Eurostat GDP, Malta 2023",18796.7 vs 20914.5,EUR million,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026; Eurostat nama_10_gdp (CP_MEUR), updated 2026-10-06, retrieved 6 Oct 2026",Eurostat 11.3% higher; Eurostat flag 'none'
+"Inventory GDP vs Eurostat GDP, Slovakia 2023",122419.0 vs 123538.7,EUR million,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026; Eurostat nama_10_gdp (CP_MEUR), updated 2026-10-06, retrieved 6 Oct 2026",Eurostat 0.9% higher
+Slovakia: TBC stand-in amount in 2023,146.4,EUR million,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",
+"Malta's 2023 amount that would put it below the fourth country (HR, 1.15%) on the EEA basis",216.4,EUR million,calculated,"to fall out of the top three on the EEA's basis Malta's 2023 amount would have to be under this, below even the IMF-based EUR 293m (1.4% of Eurostat GDP)"
+Malta FFS item: Energy Support Measures (compensation to Enemalta),246.55 (2022) / 580.00 (2023),EUR million (2023 prices),"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026 (aggregated)","natural gas; income or price support (consumer price guarantee, cost support); created for the price crisis; cost basis: actual costs; to be confirmed: no"
+Malta FFS item: Gas Stabilisation Fund,17.20 (2022) / 15.00 (2023),EUR million (2023 prices),"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026 (aggregated)",natural gas; income or price support; created for the price crisis; cost basis: actual costs; to be confirmed: no
+Malta FFS item: Cut in excise duty on petrol and diesel,28.21 (2022) / 0.00 (2023),EUR million (2023 prices),"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026 (aggregated)",oil; tax expenditure; created for the price crisis; 2023 'to be confirmed' (2022 value used as stand-in); cost basis: estimate; to be confirmed: yes
+"Malta FFS item: Excise exemptions: inland navigation, fishing, domestic flights (three measures)",9.48 (2022) / 8.50 (2023),EUR million (2023 prices),"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026 (aggregated)",oil; tax expenditures; cost basis: estimate; to be confirmed: no
+Malta FFS item: Melita TransGas pipeline (Malta-Sicily),1.36 (2022) / 1.20 (2023),EUR million (2023 prices),"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026 (aggregated)",natural gas; grant; cost basis: actual costs; to be confirmed: no
+Malta: 'Energy Support Measures' share of 2023 FFS (excl. TBC),95.9,%,calculated,
+"Malta: the Energy Support Measures line alone, share of GDP 2023 (inventory GDP)",3.09,% of GDP,calculated,the total incl. stand-in is 3.37%
+Malta: crisis-related share of 2023 FFS (excl. TBC),98.4,%,calculated,items flagged 'Created or modified to address energy price rising'
+"Malta: TBC stand-in in 2023 (excise cut on petrol and diesel, 2022 value)",28.21,EUR million,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",
+"Malta FFS share of GDP and rank, 2015 (inventory pivot, excl. TBC)",0.09% (rank 26 of 27),% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",first: EL
+"Malta FFS share of GDP and rank, 2016 (inventory pivot, excl. TBC)",0.08% (rank 26 of 27),% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",first: EL
+"Malta FFS share of GDP and rank, 2017 (inventory pivot, excl. TBC)",0.09% (rank 26 of 27),% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",first: EL
+"Malta FFS share of GDP and rank, 2018 (inventory pivot, excl. TBC)",0.08% (rank 27 of 27),% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",first: EL
+"Malta FFS share of GDP and rank, 2019 (inventory pivot, excl. TBC)",0.09% (rank 26 of 27),% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",first: EL
+"Malta FFS share of GDP and rank, 2020 (inventory pivot, excl. TBC)",0.10% (rank 24 of 27),% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",first: CY
+"Malta FFS share of GDP and rank, 2021 (inventory pivot, excl. TBC)",1.33% (rank 1 of 27),% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",first: MT
+"Malta FFS share of GDP and rank, 2022 (inventory pivot, excl. TBC)",1.71% (rank 2 of 27),% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",first: HR
+"Malta FFS share of GDP and rank, 2023 (inventory pivot, excl. TBC)",3.22% (rank 1 of 27),% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026",first: MT
+"Malta 2023 FFS vs 2022 (inventory, excl. TBC)",99.7,% change,calculated,302.8 -> 604.7 EUR million
+"EEA Malta country chart (Europe's environment 2025): 2015, 2020, 2021, 2022, 2023",0.09 / 0.10 / 1.33 / 1.71 / 3.37,% of GDP,"EEA, retrieved 6 Oct 2026",same values as the inventory pivot (2023 incl. TBC)
+Member States whose FFS fell 2022 to 2023 (incl. TBC),19,of 27,calculated,EEA text: 'declined in 20 EU Member States' (not part of the claim); Malta rose
+Malta 2023: electricity imports / (gross production + imports),21.7,%,"Eurostat nrg_cb_e, retrieved 6 Oct 2026",648.4 of 2992.7 GWh
+Sensitivity: Malta's 2023 share (EEA basis) if the import share of the Enemalta line were not counted,2.70% (rank 1 of 27),% of GDP,calculated,"imports are not all non-fossil; a bound on the pro-rating question, not an estimate"
+"Malta general government subsidies (all purposes, D.3), 2019",195.1 (1.3% of GDP),EUR million,"Eurostat gov_10a_main, retrieved 6 Oct 2026",
+"Malta general government subsidies (all purposes, D.3), 2021",698.0 (4.2% of GDP),EUR million,"Eurostat gov_10a_main, retrieved 6 Oct 2026",
+"Malta general government subsidies (all purposes, D.3), 2022",823.9 (4.6% of GDP),EUR million,"Eurostat gov_10a_main, retrieved 6 Oct 2026",
+"Malta general government subsidies (all purposes, D.3), 2023",659.7 (3.2% of GDP),EUR million,"Eurostat gov_10a_main, retrieved 6 Oct 2026",
+"Malta general government subsidies (all purposes, D.3), 2024",509.3 (2.2% of GDP),EUR million,"Eurostat gov_10a_main, retrieved 6 Oct 2026",
+"Energy support measures (Government of Malta), 2022, in EUR with Eurostat GDP",450.7,EUR million,transcribed % of GDP x Eurostat GDP,2.5% of GDP
+"Energy support measures (Government of Malta), 2023, in EUR with Eurostat GDP",355.5,EUR million,transcribed % of GDP x Eurostat GDP,1.7% of GDP
+"Energy subsidies (IMF Article IV), 2022, in EUR with Eurostat GDP",324.5,EUR million,transcribed % of GDP x Eurostat GDP,1.8% of GDP
+"Energy subsidies (IMF Article IV), 2023, in EUR with Eurostat GDP",292.8,EUR million,transcribed % of GDP x Eurostat GDP,1.4% of GDP
+Inventory Enemalta line 2022 vs Government and IMF 2022,246.6 vs 450.7 vs 324.5,EUR million,calculated,the database is lower in 2022
+Two-year total 2022-23: inventory Enemalta line / Government / IMF,826.5 / 806.2 / 617.3,EUR million,calculated,inventory 2022 in 2023 prices; budget figures nominal; points to timing or basis
+"Inventory Malta FFS 2022 share (excl. TBC, inventory GDP)",1.71,% of GDP,"EC subsidy inventory 2024 ed. (CIRCABC), retrieved 6 Oct 2026","Government 2.5%, IMF 1.8%"
+"Sensitivity: Malta's rank if its 2023 share were the IMF Article IV figure (1.4%), others on the EEA basis",3,of 27,calculated,"mixes definitions; a robustness check, not a like-for-like figure"
+"Sensitivity: Malta's rank if its 2023 share were the Government of Malta DBP 2024 figure (1.7%), others on the EEA basis",2,of 27,calculated,"mixes definitions; a robustness check, not a like-for-like figure"
+"Inventory Malta FFS 2023 (excl. TBC) / IMF Article IV energy subsidies 2023 (EUR, Eurostat GDP)",2.07,x,calculated,inventory in 2023 prices = nominal for 2023
+"Inventory Malta FFS 2023 (excl. TBC) / Government DBP energy support 2023 (EUR, Eurostat GDP)",1.7,x,calculated,the Government's figure includes other basic commodities
+"IMF FFS data (2023 update): Malta explicit subsidies, 2015-2025",zero in every year,% of GDP,"IMF climate data dashboard, retrieved 6 Oct 2026",values for 2023 onwards estimated in Aug 2023
+IMF explicit FFS 2022: top three EU,"HU 3.50%, EE 3.00%, SK 2.09%",% of GDP,IMF climate data dashboard,"2 of 27 at zero, Malta among them"
+IMF explicit + implicit FFS 2022: Malta,2.86% (rank 15 of 27),% of GDP,IMF climate data dashboard,implicit = unpriced environmental costs and forgone VAT
+IMF explicit FFS 2023: top three EU,"EE 2.91%, HU 2.34%, BG 1.95%",% of GDP,IMF climate data dashboard,"2 of 27 at zero, Malta among them"
+IMF explicit + implicit FFS 2023: Malta,2.27% (rank 15 of 27),% of GDP,IMF climate data dashboard,implicit = unpriced environmental costs and forgone VAT
+OECD/IISD tracker: data sources for Malta,IMF,list,"OECD/IISD Fossil Fuel Subsidy Tracker, retrieved 6 Oct 2026",no OECD-inventory or IEA rows for Malta
+OECD/IISD tracker: Malta total 2022,0.0,USD million,tracker,
+OECD/IISD tracker: Malta total 2023,0.0,USD million,tracker,
+OECD/IISD tracker: Malta total 2024,0.0,USD million,tracker,

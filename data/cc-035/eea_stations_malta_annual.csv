@@ -1,0 +1,148 @@
+pollutant,station,year,dataset,time_step,valid_days,coverage_pct,mean_of_valid_days_ug_m3,source,retrieved
+PM10,MT00002,2004,AirBase (2002-2012),hourly,141,38.5,32.39,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00002,2005,AirBase (2002-2012),hourly,301,82.5,49.02,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00003,2004,AirBase (2002-2012),hourly,121,33.1,22.81,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00003,2005,AirBase (2002-2012),hourly,295,80.8,42.4,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00003,2013,E1a verified (2013 onwards),daily,358,98.1,27.3,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00003,2014,E1a verified (2013 onwards),daily,343,94.0,32.15,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00003,2015,E1a verified (2013 onwards),daily,323,88.5,31.62,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00003,2016,E1a verified (2013 onwards),daily,342,93.4,37.27,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2006,AirBase (2002-2012),daily,176,48.2,26.43,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2007,AirBase (2002-2012),daily,340,93.2,29.3,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2008,AirBase (2002-2012),daily,154,42.1,21.91,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2009,AirBase (2002-2012),daily,320,87.7,27.93,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2010,AirBase (2002-2012),daily,322,88.2,32.57,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2011,AirBase (2002-2012),daily,221,60.5,29.57,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2012,AirBase (2002-2012),daily,125,34.2,27.72,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2013,E1a verified (2013 onwards),daily,248,67.9,27.21,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2014,E1a verified (2013 onwards),daily,328,89.9,29.16,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2015,E1a verified (2013 onwards),daily,209,57.3,27.31,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2016,E1a verified (2013 onwards),daily,364,99.5,31.66,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2017,E1a verified (2013 onwards),daily,344,94.2,26.2,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2018,E1a verified (2013 onwards),daily,337,92.3,31.88,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2019,E1a verified (2013 onwards),daily,363,99.5,29.43,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2020,E1a verified (2013 onwards),daily,365,99.7,25.76,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2021,E1a verified (2013 onwards),daily,365,100.0,29.11,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2022,E1a verified (2013 onwards),daily,364,99.7,27.86,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2023,E1a verified (2013 onwards),daily,364,99.7,28.73,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2024,E1a verified (2013 onwards),daily,360,98.4,29.13,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00004,2025,E1a verified (2013 onwards),daily,344,94.2,25.25,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2006,AirBase (2002-2012),daily,169,46.3,45.04,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2007,AirBase (2002-2012),daily,237,64.9,42.49,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2008,AirBase (2002-2012),daily,238,65.0,40.28,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2009,AirBase (2002-2012),daily,313,85.8,42.49,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2010,AirBase (2002-2012),daily,340,93.2,45.34,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2011,AirBase (2002-2012),daily,268,73.4,40.88,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2012,AirBase (2002-2012),daily,297,81.1,40.73,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2013,E1a verified (2013 onwards),daily,351,96.2,38.35,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2014,E1a verified (2013 onwards),daily,334,91.5,37.91,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2015,E1a verified (2013 onwards),daily,342,93.7,39.45,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2016,E1a verified (2013 onwards),daily,365,99.7,42.66,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2017,E1a verified (2013 onwards),daily,351,96.2,38.11,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2018,E1a verified (2013 onwards),daily,362,99.2,43.08,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2019,E1a verified (2013 onwards),daily,353,96.7,41.27,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2020,E1a verified (2013 onwards),daily,365,99.7,34.54,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2021,E1a verified (2013 onwards),daily,362,99.2,39.95,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2022,E1a verified (2013 onwards),daily,364,99.7,36.93,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00005,2023,E1a verified (2013 onwards),daily,359,98.4,43.7,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2007,AirBase (2002-2012),daily,177,48.5,28.07,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2008,AirBase (2002-2012),daily,311,85.0,31.27,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2009,AirBase (2002-2012),daily,138,37.8,34.87,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2010,AirBase (2002-2012),daily,326,89.3,32.44,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2011,AirBase (2002-2012),daily,352,96.4,29.14,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2012,AirBase (2002-2012),daily,341,93.2,25.63,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2013,E1a verified (2013 onwards),daily,336,92.1,25.26,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2014,E1a verified (2013 onwards),daily,354,97.0,18.37,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2015,E1a verified (2013 onwards),daily,334,91.5,18.28,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2016,E1a verified (2013 onwards),daily,355,97.0,21.09,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2017,E1a verified (2013 onwards),daily,359,98.4,15.76,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2018,E1a verified (2013 onwards),daily,354,97.0,19.62,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2019,E1a verified (2013 onwards),daily,352,96.4,18.91,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2020,E1a verified (2013 onwards),daily,354,96.7,16.23,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2021,E1a verified (2013 onwards),daily,341,93.4,21.18,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2022,E1a verified (2013 onwards),daily,326,89.3,19.48,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2023,E1a verified (2013 onwards),daily,355,97.3,18.27,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2024,E1a verified (2013 onwards),daily,362,98.9,19.34,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00007,2025,E1a verified (2013 onwards),daily,359,98.4,17.16,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00008,2024,E1a verified (2013 onwards),daily,349,95.4,32.72,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00008,2025,E1a verified (2013 onwards),daily,132,36.2,22.73,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00009,2022,E1a verified (2013 onwards),daily,364,99.7,29.0,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00009,2023,E1a verified (2013 onwards),daily,364,99.7,29.18,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00009,2024,E1a verified (2013 onwards),daily,366,100.0,30.51,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00009,2025,E1a verified (2013 onwards),daily,358,98.1,26.72,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00011,2024,E1a verified (2013 onwards),daily,347,94.8,36.82,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM10,MT00011,2025,E1a verified (2013 onwards),daily,351,96.2,37.65,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2006,AirBase (2002-2012),daily,174,47.7,15.72,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2007,AirBase (2002-2012),daily,244,66.8,18.2,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2008,AirBase (2002-2012),daily,99,27.0,13.77,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2009,AirBase (2002-2012),daily,236,64.7,13.9,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2010,AirBase (2002-2012),daily,311,85.2,13.6,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2011,AirBase (2002-2012),daily,318,87.1,12.09,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2012,AirBase (2002-2012),daily,340,92.9,10.41,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2013,E1a verified (2013 onwards),daily,348,95.3,10.49,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2014,E1a verified (2013 onwards),daily,357,97.8,11.47,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2015,E1a verified (2013 onwards),daily,300,82.2,12.47,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2016,E1a verified (2013 onwards),daily,362,98.9,11.91,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2017,E1a verified (2013 onwards),daily,363,99.5,10.62,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2018,E1a verified (2013 onwards),daily,363,99.5,12.08,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2019,E1a verified (2013 onwards),daily,365,100.0,11.98,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2020,E1a verified (2013 onwards),daily,360,98.4,9.61,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2021,E1a verified (2013 onwards),daily,362,99.2,10.68,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2022,E1a verified (2013 onwards),daily,364,99.7,10.09,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2023,E1a verified (2013 onwards),daily,362,99.2,10.93,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2024,E1a verified (2013 onwards),daily,360,98.4,10.36,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00004,2025,E1a verified (2013 onwards),daily,358,98.1,8.94,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2006,AirBase (2002-2012),daily,169,46.3,23.57,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2007,AirBase (2002-2012),daily,315,86.3,22.74,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2008,AirBase (2002-2012),daily,305,83.3,21.26,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2009,AirBase (2002-2012),daily,308,84.4,22.45,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2010,AirBase (2002-2012),daily,292,80.0,20.02,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2011,AirBase (2002-2012),daily,283,77.5,20.23,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2012,AirBase (2002-2012),daily,304,83.1,18.43,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2013,E1a verified (2013 onwards),daily,335,91.8,17.77,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2014,E1a verified (2013 onwards),daily,332,91.0,15.55,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2015,E1a verified (2013 onwards),daily,327,89.6,16.57,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2016,E1a verified (2013 onwards),daily,366,100.0,15.28,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2017,E1a verified (2013 onwards),daily,365,100.0,13.94,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2018,E1a verified (2013 onwards),daily,361,98.9,14.43,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2019,E1a verified (2013 onwards),daily,353,96.7,14.03,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2020,E1a verified (2013 onwards),daily,366,100.0,10.98,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2021,E1a verified (2013 onwards),daily,361,98.9,12.37,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2022,E1a verified (2013 onwards),daily,360,98.6,11.66,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00005,2023,E1a verified (2013 onwards),daily,359,98.4,13.86,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2007,AirBase (2002-2012),daily,175,47.9,12.61,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2008,AirBase (2002-2012),daily,327,89.3,13.56,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2009,AirBase (2002-2012),daily,102,27.9,12.88,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2010,AirBase (2002-2012),daily,293,80.3,11.52,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2011,AirBase (2002-2012),daily,341,93.4,15.58,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2012,AirBase (2002-2012),daily,271,74.0,12.65,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2013,E1a verified (2013 onwards),daily,316,86.6,11.99,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2014,E1a verified (2013 onwards),daily,321,87.9,9.37,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2015,E1a verified (2013 onwards),daily,333,91.2,9.19,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2016,E1a verified (2013 onwards),daily,322,88.0,10.34,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2017,E1a verified (2013 onwards),daily,356,97.5,8.42,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2018,E1a verified (2013 onwards),daily,357,97.8,8.64,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2019,E1a verified (2013 onwards),daily,359,98.4,9.07,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2020,E1a verified (2013 onwards),daily,300,82.0,7.36,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2021,E1a verified (2013 onwards),daily,348,95.3,8.57,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2022,E1a verified (2013 onwards),daily,327,89.6,8.95,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2023,E1a verified (2013 onwards),daily,351,96.2,8.88,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2024,E1a verified (2013 onwards),daily,362,98.9,8.71,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00007,2025,E1a verified (2013 onwards),daily,351,96.2,7.53,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00008,2015,E1a verified (2013 onwards),daily,318,87.1,15.02,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00008,2016,E1a verified (2013 onwards),daily,314,85.8,9.96,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00008,2017,E1a verified (2013 onwards),daily,346,94.8,12.56,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00008,2018,E1a verified (2013 onwards),daily,347,95.1,13.2,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00008,2019,E1a verified (2013 onwards),daily,305,83.6,12.11,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00008,2020,E1a verified (2013 onwards),daily,365,99.7,9.85,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00008,2021,E1a verified (2013 onwards),daily,365,100.0,11.95,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00008,2022,E1a verified (2013 onwards),daily,365,100.0,10.8,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00008,2023,E1a verified (2013 onwards),daily,360,98.6,11.38,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00008,2024,E1a verified (2013 onwards),daily,351,95.9,12.12,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00008,2025,E1a verified (2013 onwards),daily,347,95.1,9.21,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00009,2022,E1a verified (2013 onwards),daily,362,99.2,10.6,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00009,2023,E1a verified (2013 onwards),daily,364,99.7,9.53,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00009,2024,E1a verified (2013 onwards),daily,353,96.4,9.52,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00009,2025,E1a verified (2013 onwards),daily,352,96.4,8.51,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00011,2024,E1a verified (2013 onwards),daily,347,94.8,11.59,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
+PM2.5,MT00011,2025,E1a verified (2013 onwards),daily,355,97.3,10.5,EEA Air Quality download service (Parquet); see eea_station_file_manifest.csv,2026-10-06
