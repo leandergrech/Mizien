@@ -274,7 +274,7 @@
       "similar": [
         {
           "id": "CC-025",
-          "score": 0.41,
+          "score": 0.39,
           "terms": [
             "capita",
             "emissions"
@@ -1541,7 +1541,7 @@
       "similar": [
         {
           "id": "CC-095",
-          "score": 0.3,
+          "score": 0.28,
           "terms": [
             "prices",
             "electricity",
@@ -1579,25 +1579,7 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-023/claim.yml",
-      "similar": [
-        {
-          "id": "CC-024",
-          "score": 0.32,
-          "terms": [
-            "renewable",
-            "energy"
-          ]
-        },
-        {
-          "id": "CC-080",
-          "score": 0.31,
-          "terms": [
-            "renewable",
-            "electricity"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-023/claim.yml"
     },
     {
       "id": "CC-024",
@@ -1690,17 +1672,7 @@
         "flyer_pdf": "claim-files/CC-024/flyer.pdf",
         "flyer_png": "claim-files/CC-024/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-024/claim.yml",
-      "similar": [
-        {
-          "id": "CC-023",
-          "score": 0.32,
-          "terms": [
-            "renewable",
-            "energy"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-024/claim.yml"
     },
     {
       "id": "CC-025",
@@ -1765,7 +1737,7 @@
       "similar": [
         {
           "id": "CC-003",
-          "score": 0.41,
+          "score": 0.39,
           "terms": [
             "capita",
             "emissions"
@@ -2085,7 +2057,7 @@
       "similar": [
         {
           "id": "CC-100",
-          "score": 0.34,
+          "score": 0.35,
           "terms": [
             "airport",
             "international",
@@ -2193,31 +2165,80 @@
       "id": "CC-032",
       "title": "Solar flowers, first in Europe",
       "category": "Climate & Energy",
-      "claim": "Government of Malta: the 15 'solar flowers' at Gozo's Multi-Modal Hub are a first of their kind in Europe and power the charging of electric buses.",
-      "counter": "'First in Europe' and the share of bus charging covered are testable against installed capacity and charging load.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Government statement on the fifteen solar flowers at the Gozo Multi-Modal Hub, Ta' Xħajma (21 Oct 2025), assembled from three texts. Quoted (TVM News, Maltese; Lovin Malta's English, an article tagged 'Press Release'): Gozo Minister Clint Camilleri, 'With the installation of these first solar flowers in Europe, we are demonstrating how Gozo can be a model for sustainable innovation'; in the same statement he called it the first of its kind used in Malta and, by number at one site, the second in the world; and (TVM News, English) 'This energy will be used to supply electricity, electric buses which offer transport between Imġarr port and the Park & Ride facility.' The statement as published, not in quotation marks: 'the first installation of its kind in Europe' (Lovin Malta's text) or 'the first of its kind in Europe' (TVM News, indirect speech), the energy to 'directly offset' the electricity used to charge the Park and Ride bus fleet (Lovin Malta's text), up to 40% more energy than traditional panels, about EUR 850,000. The European Commission's project page repeats the claim in its own words ('They are the first of their kind in Europe.'); it is not rated, as the claim is the Government's.",
+      "counter": "The fifteen units are SmartFlowers (manufacturer, 14 Nov 2025), an Austrian product. Dated records: two SmartFlowers newly installed at the Umwelt Arena, Spreitenbach, Switzerland (Moneycab, 19 May 2015; text credited to the arena); on sale in Spain from June 2015 (a product launch, not an installation: energynews.es, 3 Jun 2015); an electric-vehicle charging version presented in Spain in January 2016 (smartgridsinfo.es, aimed at public administrations and companies); in service at the ASFINAG Hinterbrühl motorway rest area in Austria by 7 Dec 2016 (MeinBezirk.at community post with an ASFINAG photo; IÖB project page); and at Vodafone in Newbury, UK (Newbury Today, Aug 2021). The maker calls Gozo's 'one of the largest installations in Europe', not the first. Bus charging: no capacity, metered output, bus consumption, hours or wiring published, so the share covered cannot be calculated; Parliament was told no feasibility study was made (Newsbook, 19 Jan 2026, second-hand). PVGIS models 85.1 MWh a year if each unit is 2.5 kWp (37.5 kWp, two-axis tracking), 36.5% more than fixed panels. Cost: PQ figure EUR 699,611.98 excl. VAT (second-hand); the award we identify as this contract, TED 742398-2024, EUR 718,830.07, is EUR 848,219 with 18% VAT.",
+      "status": "Drafted",
+      "verdict": "Contradicted",
       "tags": [],
       "subtopic": "Renewables",
       "location": {
-        "place": "Victoria, Gozo",
-        "lat": 36.04289,
-        "lon": 14.23985,
+        "place": "Xewkija, Gozo",
+        "lat": 36.038,
+        "lon": 14.272,
         "scope": "institution",
-        "icon": "cittadella"
+        "icon": "pin"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Ministry for Gozo; Ministry for Transport",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
+      "speaker": "Clint Camilleri, Minister for Gozo; Parliamentary Secretariat for Public Works",
       "bodies": [
-        "ministry-gozo",
-        "ministry-transport"
+        "clint-camilleri",
+        "parl-sec-public-works"
       ],
-      "date": "",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-032A",
+          "text": "Fifteen solar flowers were installed at the Gozo Multi-Modal Hub, Ta’ Xħajma",
+          "finding": "The maker reports fifteen SmartFlowers at the hub [5]; Parliament was told all were working [10] ◆.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-032B",
+          "text": "“These first solar flowers in Europe”; “the first installation of its kind in Europe”",
+          "finding": "SmartFlowers, an Austrian product, were installed in Switzerland (2015) and in service in Austria (2016) and the UK (2021) [13–15, 30]; the maker calls Gozo’s “one of the largest installations in Europe” [5].",
+          "rating": "Contradicted",
+          "tone": "maroon"
+        },
+        {
+          "id": "CC-032C",
+          "text": "The first of its kind used in Malta; second in the world by number at one site",
+          "finding": "First in Malta: consistent with the reply to Parliament [10] ◆ and our search. Second in the world: not tested.",
+          "rating": "Not contradicted",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-032D",
+          "text": "The energy will supply, or offset the charging of, the Park and Ride electric buses",
+          "finding": "No capacity, metered output or bus use published; no feasibility study [10] ◆. The share of charging covered cannot be calculated.",
+          "rating": "Not substantiated",
+          "tone": "orange"
+        },
+        {
+          "id": "CC-032E",
+          "text": "Each flower yields up to 40% more energy than traditional panels",
+          "finding": "PVGIS: 36.5% more than fixed panels at the best angle at the site [17]; one study: 18–31% elsewhere [18]. Not measured here. The Commission page’s flat “40% more power” has no “up to”, so it is stronger than the statement; it is not rated.",
+          "rating": "Largely accurate",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-032F",
+          "text": "About €850,000, funded by the EU recovery plan (C1-I5)",
+          "finding": "Parliament was told €699,612 excluding VAT [10] ◆; the award we identify as this contract, €718,830, is €848,219 with VAT [26, 27]; C1-I5 funds solar panels in public spaces [28].",
+          "rating": "Consistent",
+          "tone": "green"
+        }
+      ],
+      "date": "2025-10-21",
+      "quote": "With the installation of these first solar flowers in Europe, we are demonstrating how Gozo can be a model for sustainable innovation.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-06",
+      "outputs": {
+        "report": "claim-files/CC-032/report.pdf",
+        "flyer_pdf": "claim-files/CC-032/flyer.pdf",
+        "flyer_png": "claim-files/CC-032/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-032/claim.yml"
     },
     {
@@ -3413,7 +3434,7 @@
       "similar": [
         {
           "id": "CC-093",
-          "score": 0.31,
+          "score": 0.29,
           "terms": [
             "park",
             "public"
@@ -3453,7 +3474,7 @@
       "similar": [
         {
           "id": "CC-057",
-          "score": 0.65,
+          "score": 0.66,
           "terms": [
             "trees",
             "central",
@@ -3502,7 +3523,7 @@
       "similar": [
         {
           "id": "CC-056",
-          "score": 0.65,
+          "score": 0.66,
           "terms": [
             "trees",
             "central",
@@ -3702,7 +3723,7 @@
       "similar": [
         {
           "id": "CC-063",
-          "score": 0.29,
+          "score": 0.27,
           "terms": [
             "construction",
             "developers",
@@ -3772,7 +3793,7 @@
         },
         {
           "id": "CC-062",
-          "score": 0.29,
+          "score": 0.27,
           "terms": [
             "construction",
             "developers",
@@ -4005,14 +4026,6 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-069/claim.yml",
       "similar": [
         {
-          "id": "CC-070",
-          "score": 0.4,
-          "terms": [
-            "bus",
-            "transport"
-          ]
-        },
-        {
           "id": "CC-073",
           "score": 0.38,
           "terms": [
@@ -4021,8 +4034,16 @@
           ]
         },
         {
+          "id": "CC-070",
+          "score": 0.37,
+          "terms": [
+            "bus",
+            "transport"
+          ]
+        },
+        {
           "id": "CC-071",
-          "score": 0.34,
+          "score": 0.35,
           "terms": [
             "buses",
             "transport",
@@ -4063,7 +4084,7 @@
       "similar": [
         {
           "id": "CC-069",
-          "score": 0.4,
+          "score": 0.37,
           "terms": [
             "bus",
             "transport"
@@ -4103,7 +4124,7 @@
       "similar": [
         {
           "id": "CC-069",
-          "score": 0.34,
+          "score": 0.35,
           "terms": [
             "buses",
             "transport",
@@ -4501,7 +4522,7 @@
       "similar": [
         {
           "id": "CC-080",
-          "score": 0.46,
+          "score": 0.47,
           "terms": [
             "waste",
             "plant",
@@ -4542,19 +4563,11 @@
       "similar": [
         {
           "id": "CC-079",
-          "score": 0.46,
+          "score": 0.47,
           "terms": [
             "waste",
             "plant",
             "wasteserv"
-          ]
-        },
-        {
-          "id": "CC-023",
-          "score": 0.31,
-          "terms": [
-            "renewable",
-            "electricity"
           ]
         }
       ]
@@ -4912,7 +4925,7 @@
         },
         {
           "id": "CC-106",
-          "score": 0.38,
+          "score": 0.39,
           "terms": [
             "population",
             "estimated"
@@ -5110,7 +5123,7 @@
       "similar": [
         {
           "id": "CC-107",
-          "score": 0.62,
+          "score": 0.63,
           "terms": [
             "afforestation",
             "zero",
@@ -5151,7 +5164,7 @@
       "similar": [
         {
           "id": "CC-055",
-          "score": 0.31,
+          "score": 0.29,
           "terms": [
             "park",
             "public"
@@ -5234,7 +5247,7 @@
       "similar": [
         {
           "id": "CC-109",
-          "score": 0.32,
+          "score": 0.31,
           "terms": [
             "sharing",
             "effort",
@@ -5274,20 +5287,20 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-095/claim.yml",
       "similar": [
         {
-          "id": "CC-022",
-          "score": 0.3,
-          "terms": [
-            "prices",
-            "electricity",
-            "eur"
-          ]
-        },
-        {
           "id": "CC-013",
           "score": 0.28,
           "terms": [
             "keep",
             "prices"
+          ]
+        },
+        {
+          "id": "CC-022",
+          "score": 0.28,
+          "terms": [
+            "prices",
+            "electricity",
+            "eur"
           ]
         },
         {
@@ -5543,7 +5556,7 @@
       "similar": [
         {
           "id": "CC-030",
-          "score": 0.34,
+          "score": 0.35,
           "terms": [
             "airport",
             "international",
@@ -5876,7 +5889,7 @@
       "similar": [
         {
           "id": "CC-088",
-          "score": 0.38,
+          "score": 0.39,
           "terms": [
             "population",
             "estimated"
@@ -5974,7 +5987,7 @@
       "similar": [
         {
           "id": "CC-092",
-          "score": 0.62,
+          "score": 0.63,
           "terms": [
             "afforestation",
             "zero",
@@ -6111,7 +6124,7 @@
       "similar": [
         {
           "id": "CC-094",
-          "score": 0.32,
+          "score": 0.31,
           "terms": [
             "sharing",
             "effort",
@@ -8685,12 +8698,6 @@
           "themes": []
         },
         {
-          "id": "ministry-gozo",
-          "named": 1,
-          "pairs": 0,
-          "themes": []
-        },
-        {
           "id": "opm",
           "named": 1,
           "pairs": 0,
@@ -8767,7 +8774,7 @@
           "themes": []
         },
         {
-          "id": "ministry-transport",
+          "id": "parl-sec-public-works",
           "named": 1,
           "pairs": 0,
           "themes": []
@@ -8781,7 +8788,14 @@
       "type": "government",
       "parent": "ministry-gozo",
       "role": "Minister for Gozo",
-      "links": []
+      "links": [
+        {
+          "id": "parl-sec-public-works",
+          "named": 1,
+          "pairs": 0,
+          "themes": []
+        }
+      ]
     },
     {
       "id": "ministry-tourism",
@@ -9062,7 +9076,14 @@
       "type": "government",
       "parent": "government-of-malta",
       "role": null,
-      "links": []
+      "links": [
+        {
+          "id": "ministry-gozo",
+          "named": 1,
+          "pairs": 0,
+          "themes": []
+        }
+      ]
     },
     {
       "id": "public-works-department",

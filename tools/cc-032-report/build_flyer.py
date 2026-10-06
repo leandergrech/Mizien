@@ -16,7 +16,7 @@ build_flyer(Flyer(
     context="Lovin Malta’s English (tagged “Press Release”); Maltese original in TVM News. The Commission’s page repeats the claim.",
     note="He added the energy would supply the Park and Ride’s electric buses.",
     verdict="Contradicted", verdict_right=["Installed elsewhere in", "Europe from 2015."],
-    cards=[("2016", RED, "Austria had one first",
+    cards=[("2016", RED, "In service in Austria by 2016",
             "Motorway operator ASFINAG put a SmartFlower into service at a rest area on the A21."),
            ("15", GREEN, "SmartFlowers installed",
             "The maker calls Gozo’s “one of the largest installations in Europe”, not the first."),
@@ -27,8 +27,8 @@ build_flyer(Flyer(
            ("None", ORANGE, "Bus-charging figures published",
             "The share covered cannot be calculated. Parliament was told no feasibility study was made "
             "(Newsbook, second-hand).")],
-    fair="The flowers were EU-funded at about €850,000 and, Parliament was told (Newsbook, second-hand), work and are "
-         "Malta’s first. A claim to be among Europe’s largest would have held.",
+    fair=("The flowers were EU-funded (about €850,000). Parliament was told they work and are Malta’s first "
+          "(Newsbook, second-hand). A claim to be among Europe’s largest would have held."),
     asks=["What “first of its kind in Europe” meant.",
           "The flowers’ capacity and metered output.",
           "The shuttle buses’ charging energy and hours.",

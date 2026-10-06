@@ -71,7 +71,7 @@ location:
   lat: 36.0380
   lon: 14.2720
   scope: institution
-  icon: cittadella
+  icon: pin
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-032A

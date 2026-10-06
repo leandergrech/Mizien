@@ -61,7 +61,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-029 | Climate & Energy | First offshore wind farm | Drafted | Largely supported (pledge: Off track) |
 | CC-030 | Climate & Energy | Carbon-neutral airport | Drafted | Not substantiated |
 | CC-031 | Climate & Energy | Gozo, first climate-neutral region | Drafted | Largely supported (pledge: Not measurable) |
-| CC-032 | Climate & Energy | Solar flowers, first in Europe | Not started | - |
+| CC-032 | Climate & Energy | Solar flowers, first in Europe | Drafted | Contradicted |
 | CC-033 | Air | Delimara: 'much cleaner air' | Not started | - |
 | CC-034 | Air | Air Quality Plan 'already yielding results' | In progress | - |
 | CC-035 | Air | PM2.5 death rate down two-thirds | Drafted | Largely supported |
