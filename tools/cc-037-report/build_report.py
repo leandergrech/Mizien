@@ -297,7 +297,6 @@ build_report(Report(
     verdict="Supported", verdict_note="Accurate; reported problems, in Eurostat’s own words",
     footer_lines=["Version 1.1  ·  5 October 2026", "Status: draft · no right of reply needed",
                   "Prepared from public sources and Eurostat data.", "Repository: github.com/leandergrech/Mizien"],
-    status_note="no right of reply needed",
     running_head="Reported pollution in Malta and the EU", version="1.1", date="5 October 2026",
     pdf_title="Is Malta first in the EU for reported pollution? Claim Check 037",
     pdf_subject="Tests Amphora Media's statement that 35% of people in Malta reported pollution in 2023, the highest share in the EU",
