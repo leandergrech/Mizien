@@ -17,7 +17,7 @@ claim:
     publisher: UNFCCC
     date: Nov 2025
     url: https://unfccc.int/sites/default/files/resource/MALTA_cop30cmp20cma7_HLS_ENG.pdf
-    note: "The claim. Delivered on the Minister's behalf. A Word file behind the .pdf address; paragraph supplied by the maintainer on 5 Oct 2026 (literature/CC-025/primary-source.md). Our own download was refused by a bot check, so only the quoted paragraph was read."
+    note: "The claim. Delivered on the Minister's behalf. A Word file behind the .pdf address; paragraph supplied by the maintainer on 5 Oct 2026 (literature/CC-025/primary-source.md). Our own download was refused by a bot check (still an HTML page on 6 Oct 2026), so only the quoted paragraph was read and the wording is not independently verified."
   - title: Greenhouse gas emissions by source sector (env_air_gge); GDP (nama_10_gdp); population (nama_10_pe)
     publisher: Eurostat
     date: retrieved 5 Oct 2026
@@ -34,9 +34,9 @@ why_low_hanging: 'Done: Claim Check 025 report and flyer.'
 tags:
 - Selective metric
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: Medium
-caveats: 'Only the quoted paragraph of the statement was read (supplied by the maintainer); the rest may add context. The statement gives no year, scope or GDP basis. Largely supported: no right of reply needed. The speaker is attributed to the Government of Malta; the person who read the statement is not named in the document.'
+caveats: 'The wording is the paragraph supplied by the maintainer; our own download of the UNFCCC file was refused by a bot check, so it is not independently verified, and the rest of the statement may add context. The statement gives no year, scope or GDP basis; the choice of 2023 and 2024 is the report''s assumption. A roughly ten-point overstatement on the usual (volumes) basis is a minor caveat because the 44% figure is right, the decoupling holds and current prices are a computable basis. Largely supported: no right of reply needed. The speaker is attributed to the Government of Malta; the person who read the statement is not named in the document.'
 right_of_reply:
   sent: null
   deadline: null
@@ -47,8 +47,8 @@ outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-05'
+version: '1.1'
+last_reviewed: '2026-10-06'
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
   lat: 35.8959
@@ -89,3 +89,13 @@ history:   # research log: the date each step of the research was done (not when
     step: version
     version: "1.0"
     note: "First issue. Verdict Largely supported (moderate confidence); no right of reply needed."
+  - date: 2026-10-06
+    step: correction
+    note: "Verdict rationale (report section 6): added why the 8-10 point overstatement in volumes (-70%/-72% against 'more than 80%') is a minor caveat under the scale, what would have made it Not substantiated, and the consistency with CC-003 (Misleading on a different ground). Verdict unchanged."
+  - date: 2026-10-06
+    step: clarification
+    note: "Records made consistent: the wording is the maintainer-supplied paragraph; our own UNFCCC download was refused (re-tested 6 Oct 2026: 212-byte HTML page, not the .docx). Withdrew the earlier statement in literature/CC-025/primary-source.md that the file was read with a script. Report now discloses in one place that the wording is not independently verified and that the 2023/2024 year choice is our assumption."
+  - date: 2026-10-06
+    step: version
+    version: "1.1"
+    note: "1.1: corrections after the 6 Oct 2026 audit: verdict rationale, consistent record of how the wording was obtained, year choice disclosed. Verdict unchanged (Largely supported, moderate); no right of reply needed."
