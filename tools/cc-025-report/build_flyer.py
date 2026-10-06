@@ -30,6 +30,6 @@ build_flyer(Flyer(
          "intensity fell more than the EU's on either price basis.",
     asks=["The source and method behind “80%”.", "Whether GDP is in current prices or volumes.",
           "The year and emissions scope used.", "The rest of the statement, to check for context."],
-    footer="Version 1.1  ·  6 October 2026  ·  Public data only  ·  No right of reply needed",
+    footer="Version 1.2  ·  6 October 2026  ·  Public data only  ·  No right of reply needed",
     pdf_title="Claim Check 025 – Emissions down 44% per person, 80% per unit of GDP?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

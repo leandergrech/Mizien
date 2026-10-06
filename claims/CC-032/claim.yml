@@ -15,9 +15,9 @@ claim:
   sources:
   - title: Innovative solar flowers installed at Gozo's Multi-Modal Hub
     publisher: MaltaToday
-    date: n/d
+    date: 21 Oct 2025
     url: https://www.maltatoday.com.mt/news/national/137696/innovative_solar_flowers_installed_at_gozo_multimodal_hub_
-    note: Locates the claim (403 to scripts; not read).
+    note: "Read in full 6 Oct 2026 with a browser user-agent (21 Oct 2025, 2:04 pm, by Jade Bezzina). 'This installation marks the first of its kind in Europe' is reporter text, not a quote. Camilleri is quoted on other lines ('another step towards an environmentally friendly future' and a closing quote on emissions and quality of life); the article adds no new minister quote."
   - title: "Installati l-ewwel solar flowers tax-xorta tagħhom fl-Ewropa fil-Gozo Multi-Modal Hub f'Ta' Xħajma"
     publisher: TVM News
     date: 21 Oct 2025
@@ -35,7 +35,7 @@ claim:
     publisher: Lovin Malta
     date: 21 Oct 2025
     url: https://lovinmalta.com/malta/gozo-leads-the-way-in-europe-with-first-ever-solar-flowers-at-ta-xhajma-multi-modal-hub/
-    note: English rendering of the quoted words, read in full 6 Oct 2026.
+    note: "English rendering of the quoted words, read in full 6 Oct 2026. The minister's English on the energy: 'the energy generated will power the lighting and electricity needs of the electric buses'. 'Directly offset' and 'charge' are the statement's text, not in quotation marks."
   - title: "15 solar flowers installed in Gozo for electricity generation, the first project of its kind in Europe"
     publisher: "European Commission (Reforms and Investments)"
     date: "n/d"
@@ -81,8 +81,8 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     rating: "Accurate"
     tone: green
   - id: CC-032B
-    text: "“These first solar flowers in Europe”; “the first installation of its kind in Europe”"
-    said_by: "Camilleri, quoted [1, 2]; Lovin Malta’s text [2] (TVM’s indirect speech [3]). Commission page not rated"
+    text: "“These first solar flowers in Europe”"
+    said_by: "Camilleri, quoted [1, 2]. Rated on his words only. Context, not rated: the statement’s “the first installation of its kind in Europe” (Lovin Malta’s text [2]; MaltaToday’s text [32]; TVM’s indirect speech [3]); Commission page [4]"
     finding: "SmartFlowers, an Austrian product, were installed in Switzerland (2015) and in service in Austria (2016) and the UK (2021) [13–15, 30]; the maker calls Gozo’s “one of the largest installations in Europe” [5]."
     rating: "Contradicted"
     tone: maroon
@@ -93,9 +93,9 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     rating: "Not contradicted"
     tone: grey
   - id: CC-032D
-    text: "The energy will supply, or offset the charging of, the Park and Ride electric buses"
-    said_by: "Camilleri, quoted [3]; statement [2]"
-    finding: "No capacity, metered output or bus use published; no feasibility study [10] ◆. The share of charging covered cannot be calculated."
+    text: "The energy will “power the lighting and electricity needs of the electric buses” (Maltese: “tissupplixxi d-dawl, l-enerġija lill-buses elettriċi”); the statement adds “charging” and “directly offset”"
+    said_by: "Camilleri, quoted [1–3]; “charging” and “directly offset”: the statement, not quoted from him [2]"
+    finding: "No capacity, metered output or bus use published, for charging or lighting; no feasibility study [10] ◆. The share covered cannot be calculated."
     rating: "Not substantiated"
     tone: orange
   - id: CC-032E
@@ -110,7 +110,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "Parliament was told €699,612 excluding VAT [10] ◆; the award we identify as this contract, €718,830, is €848,219 with VAT [26, 27]; C1-I5 funds solar panels in public spaces [28]."
     rating: "Consistent"
     tone: green
-version: '1.0'
+version: '1.1'
 last_reviewed: '2026-10-06'
 thumbnail:
   figure: '2016'
@@ -142,3 +142,13 @@ history:   # research log: the date each step of the research was done (not when
     version: "1.0"
     note: "First issue. Verdict Contradicted (high confidence); pending right of reply (Ministry for Gozo and Planning;\
       \ Public Works Department)."
+  - date: 2026-10-06
+    step: note
+    note: "MaltaToday read with a browser user-agent (21 Oct 2025, 2:04 pm, Jade Bezzina): 'first of its kind in Europe' is reporter text; no new minister quote. TVM Maltese ('tissupplixxi d-dawl, l-enerġija lill-buses elettriċi') and Lovin Malta ('power the lighting and electricity needs of the electric buses') re-checked verbatim. Log in literature/CC-032/notes.md."
+  - date: 2026-10-06
+    step: clarification
+    note: "Wording fixes after the audit, ratings unchanged: (1) MaltaToday source record dated and its note rewritten, added to the report's references as [32]; (2) sub-claim B and the TL;DR state that B is rated on Camilleri's own quoted words ('these first solar flowers in Europe') and the statement's or outlets' 'first installation of its kind in Europe' is context only; (3) sub-claim D quotes the minister on 'lighting and electricity needs', with 'charging' and 'directly offset' kept as the statement's; (4) flyer 'Fair to say' tile now says Parliament was told no other such installation exists in Malta (Newsbook, second-hand)."
+  - date: 2026-10-06
+    step: version
+    version: "1.1"
+    note: "1.1: corrections after the 6 Oct 2026 audit: MaltaToday read and cited, sub-claim B rated on the minister's own words, sub-claim D quotes his wording on lighting and electricity, flyer Malta-first wording follows Newsbook. Verdict Contradicted (high confidence) unchanged; pending right of reply."

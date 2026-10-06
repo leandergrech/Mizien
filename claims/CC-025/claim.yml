@@ -28,7 +28,7 @@ claim:
     date: 13 Nov 2025
     url: https://climateaction.gov.mt/press/malta-strengthens-its-contribution-toward-the-eus-climate-goals/
     note: 'Same 44% figure and 81.6% (EU 61.9%) per unit of GDP, from a different speaker; read in CC-003 (Wayback copy).'
-counter_evidence: 'More than 80% per unit of GDP holds only at current prices (-82% to 2023, -84% to 2024). In chain-linked volumes the fall is -70% (2023) and -72% (2024); no year reaches -80%. The gap is a price effect (Malta GDP deflator +72% since 2005). The per-person fall (-46% / -48.5%) is the figure CC-003 checked; about half is population growth, total emissions fell 27% (EU 33%) and have risen 18% since the 2016 low. In the statement''s favour: real GDP +161% with total emissions -27% is absolute decoupling, and Malta''s fall exceeds the EU''s on both intensity bases.'
+counter_evidence: 'More than 80% per unit of GDP holds only at current prices (-82% to 2023, -84% to 2024). In chain-linked volumes the fall is -70% (2023) and -72% (2024); no year reaches -80%. The gap is a price effect (Malta GDP deflator +72% since 2005). The per-person fall (-46% / -48.5%) is the figure CC-003 checked; about half is population growth, total emissions fell 27% (EU 33%) and have risen 18% since the 2016 low. In the statement''s favour: real GDP +161% with total emissions -27% is absolute decoupling, and Malta''s fall exceeds the EU''s on both intensity bases. On the residence basis (env_ac_ainah_r2: Malta-resident units, including international aviation fuel bought abroad) per-person emissions rose 69% from 2013 to 2024, rank 27 of 27 (EU-27 -21%); the claim''s figures hold on the territorial (UNFCCC) basis (the statement names none), so this is context (CC-114).'
 tests: Eurostat env_air_gge, nama_10_gdp (current prices and chain-linked volumes) and nama_10_pe for Malta and the EU-27, recomputed with tools/cc-025-report/calc.py; CC-003 for the per-person figure.
 why_low_hanging: 'Done: Claim Check 025 report and flyer.'
 tags:
@@ -36,18 +36,19 @@ tags:
 tags_provisional: false
 priority: Done (v1.1)
 data_readiness: Medium
-caveats: 'The wording is the paragraph supplied by the maintainer; our own download of the UNFCCC file was refused by a bot check, so it is not independently verified, and the rest of the statement may add context. The statement gives no year, scope or GDP basis; the choice of 2023 and 2024 is the report''s assumption. A roughly ten-point overstatement on the usual (volumes) basis is a minor caveat because the 44% figure is right, the decoupling holds and current prices are a computable basis. Largely supported: no right of reply needed. The speaker is attributed to the Government of Malta; the person who read the statement is not named in the document.'
+caveats: 'The wording is the paragraph supplied by the maintainer; our own download of the UNFCCC file was refused by a bot check, so it is not independently verified, and the rest of the statement may add context. The statement gives no year, scope or GDP basis; the choice of 2023 and 2024 is the report''s assumption. A roughly ten-point overstatement on the usual (volumes) basis is a minor caveat because the 44% figure is right, the decoupling holds and current prices are a computable basis. On the residence basis (Eurostat air emissions accounts, env_ac_ainah_r2: Malta-resident units, including international aviation fuel bought abroad) per-person emissions rose 69% from 2013 to 2024, the largest rise of the 27 Member States (EU-27 -21%); the Government''s figures hold on the territorial (UNFCCC) basis, though the statement names none, so this is context, not a contradiction (see CC-114, which differs because it draws a causal inference the data contradict). Largely supported: no right of reply needed. The speaker is attributed to the Government of Malta; the person who read the statement is not named in the document.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown:
+- Eurostat env_ac_ainah_r2 (TOTAL_HH) and nama_10_pe, retrieved 6 Oct 2026, residence-basis per-person change 2013-2024 (data/cc-025/residence_basis_per_person.csv; tools/cc-025-report/residence_basis.py)
 - Eurostat env_air_gge, nama_10_gdp and nama_10_pe for Malta and the EU-27, retrieved 5 Oct 2026 (data/cc-025/eurostat_gdp_ghg_pop.csv; checks in data/cc-025/checks.csv)
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.1'
+version: '1.2'
 last_reviewed: '2026-10-06'
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
@@ -99,3 +100,10 @@ history:   # research log: the date each step of the research was done (not when
     step: version
     version: "1.1"
     note: "1.1: corrections after the 6 Oct 2026 audit: verdict rationale, consistent record of how the wording was obtained, year choice disclosed. Verdict unchanged (Largely supported, moderate); no right of reply needed."
+  - date: 2026-10-06
+    step: clarification
+    note: "Added context on the residence basis (Eurostat air emissions accounts, env_ac_ainah_r2, all activities and households; population nama_10_pe, retrieved 6 Oct 2026): per-person emissions +69.2% 2013-2024 (7.2 to 12.2 t CO2e; 2024 flagged imputed), rank 27 of 27 (EU-27 -21.2%; Latvia, Romania, Croatia and Lithuania also rose). Matches the CC-114 audit figure when households are included (the activities-only total gives +77%). The claim uses the territorial basis, so verdict, confidence and sub-claim ratings are unchanged. New paragraph in report section 4; caveats and counter_evidence extended."
+  - date: 2026-10-06
+    step: version
+    version: "1.2"
+    note: "1.2: residence-basis context added (report section 4, caveats, counter_evidence, cross-reference to CC-114). Verdict unchanged (Largely supported, moderate); no right of reply needed."

@@ -14,9 +14,9 @@ S = []
 # ================================================================== TL;DR
 S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
       P("On 21 October 2025 the Government announced fifteen “solar flowers” at the Gozo Multi-Modal Hub in Ta’ "
-        "Xħajma as “the first installation of its kind in Europe” (Lovin Malta’s text, tagged “Press Release”); Minister "
-        "Clint Camilleri spoke of <b>“these first solar flowers in Europe”</b> and said their energy would supply the "
-        "Park and Ride buses [1–3]. We checked both claims against the record.", lead)]
+        "Xħajma. Minister Clint Camilleri spoke of <b>“these first solar flowers in Europe”</b> and said their energy "
+        "would supply the Park and Ride buses [1–3]. Sub-claim B is rated on his own quoted words only; the "
+        "statement’s and outlets’ “the first installation of its kind in Europe” is context [2, 3, 32].", lead)]
 S.append(key_points([
     ("Europe had solar flowers before Gozo.",
      "The units are SmartFlowers, an Austrian product [5]. Dated reports show two installed in Switzerland (2015), "
@@ -58,8 +58,9 @@ S.append(PageBreak())
 
 # ================================================================== 1
 S.append(SectionHeading(1, "The claim and what we could verify"))
-S.append(P("The Government’s own press release (gov.mt) could not be read from our network. Three readable texts carry "
-           "it, and the claim is assembled from them. Only words inside quotation marks in those texts are treated as the "
+S.append(P("The Government’s own press release (gov.mt) could not be read from our network. Four readable texts carry "
+           "it (MaltaToday, read 6 October 2026 with a browser user-agent, adds no new minister quote), and the claim is "
+           "assembled from them. Only words inside quotation marks in those texts are treated as the "
            "speakers’ own. Lovin Malta’s article is tagged “Press Release”, so its English is probably the Government’s "
            "own release. The Maltese article is the fullest: TVM’s English version drops the words “first … in Europe” "
            "from the minister’s quote, while Lovin Malta’s English keeps them [1–3]."))
@@ -74,11 +75,16 @@ S.append(std_table([
        "place, the second in the world)."),
      C("Camilleri, quoted [1]; Lovin Malta’s English renders it “first of its kind in Malta” [2]"), C("Read in full")],
     [C("“This energy will be used to supply electricity, electric buses which offer transport between Imġarr port "
-       "and the Park &amp; Ride facility.”"), C("Camilleri, quoted; TVM News (English) [3]"), C("Read in full")],
+       "and the Park &amp; Ride facility.” Maltese: “… se tkun qiegħda tintuża sabiex tissupplixxi d-dawl, l-enerġija lill-buses "
+       "elettriċi …”; Lovin Malta’s English: “the energy generated will power the lighting and electricity needs of the "
+       "electric buses operating between Mġarr Port and this Park and Ride”."),
+     C("Camilleri, quoted; TVM News (English [3] and Maltese [1]); Lovin Malta’s English [2]"), C("Read in full")],
     [C("The installation is “the first installation of its kind in Europe” (Lovin Malta’s text) or “the first of its "
        "kind in Europe” (TVM’s indirect speech); the energy will directly offset the electricity used to charge the Park and "
        "Ride bus fleet; up to 40% more energy than traditional panels; about €850,000."),
-     C("The statement as published, not in quotation marks: Lovin Malta’s text, tagged “Press Release” [2]; TVM News [1, 3]"), C("Read in full")],
+     C("The statement as published, not in quotation marks: Lovin Malta’s text, tagged “Press Release” [2]; TVM News [1, 3]; "
+       "MaltaToday, reporter’s text: “This installation marks the first of its kind in Europe” [32]. Context only: "
+       "sub-claim B is rated on the minister’s own words"), C("Read in full")],
     [C("Title: “… the first project of its kind in Europe”; text: “They are the first of their kind in Europe.” "
        "“Each ‘flower’ can generate 40% more power than traditional solar panels.” RRP C1-I5; €850,000."),
      C("European Commission project page (the “-0_en” page) [4]; not rated"), C("Read in full")],
@@ -178,8 +184,10 @@ S.append(KeepTogether(std_table([
 S.append(CondPageBreak(60 * mm))
 S.append(SectionHeading(5, "Do they power the buses?"))
 S.append(P("The minister said the energy “will be used to supply electricity, electric buses” running between Mġarr and "
-           "the Park and Ride [3]; the statement said it would “directly offset” the electricity used to charge that "
-           "fleet [2]. Neither gives an amount. Six electric buses owned by the Ministry for Gozo run the shuttle every "
+           "the Park and Ride [3]; in Maltese, “tissupplixxi d-dawl, l-enerġija lill-buses elettriċi” [1], and in Lovin "
+           "Malta’s English it will “power the lighting and electricity needs of the electric buses” [2]. The statement, "
+           "not the minister, said it would “directly offset” the electricity used to charge that fleet [2]. None gives "
+           "an amount, and the wording leaves open whether “lighting” means the buses’ or the hub’s. Six electric buses owned by the Ministry for Gozo run the shuttle every "
            "10 minutes, operated by Malta Public Transport under negotiated contracts [19, 20]. The GRDA notes that "
            "uptake “remains very low” [19]. Where and when the six shuttle buses charge is not published. Since May "
            "2026, seven months after the statement, the hub has also held a new depot where Gozo’s route buses, now 29 "
@@ -255,8 +263,9 @@ S.append(std_table([
      C("Statement [1–3]"),
      C("The maker reports fifteen SmartFlowers at the hub [5]; Parliament was told all were working [10] ◆."),
      verd("ACCURATE", GREENC)],
-    [C("<b>B.</b> “These first solar flowers in Europe”; “the first installation of its kind in Europe”"),
-     C("Camilleri, quoted [1, 2]; Lovin Malta’s text [2] (TVM’s indirect speech [3]). Commission page not rated"),
+    [C("<b>B.</b> “These first solar flowers in Europe”"),
+     C("Camilleri, quoted [1, 2]. Rated on his words only. Context, not rated: the statement’s “the first installation of "
+       "its kind in Europe” (Lovin Malta’s text [2]; MaltaToday’s text [32]; TVM’s indirect speech [3]); Commission page [4]"),
      C("SmartFlowers, an Austrian product, were installed in Switzerland (2015) and in service in Austria (2016) and "
        "the UK (2021) [13–15, 30]; the maker calls Gozo’s “one of the largest installations in Europe” [5]."),
      verd("CONTRADICTED", MAROON)],
@@ -264,10 +273,11 @@ S.append(std_table([
      C("Camilleri, quoted [1, 2]"),
      C("First in Malta: consistent with the reply to Parliament [10] ◆ and our search. Second in the world: not "
        "tested."), verd("NOT CONTRADICTED", GREY)],
-    [C("<b>D.</b> The energy will supply, or offset the charging of, the Park and Ride electric buses"),
-     C("Camilleri, quoted [3]; statement [2]"),
-     C("No capacity, metered output or bus use published; no feasibility study [10] ◆. The share of charging covered "
-       "cannot be calculated."), verd("NOT SUBSTANTIATED", ORANGE)],
+    [C("<b>D.</b> The energy will “power the lighting and electricity needs of the electric buses” (Maltese: “tissupplixxi "
+       "d-dawl, l-enerġija lill-buses elettriċi”); the statement adds “charging” and “directly offset”"),
+     C("Camilleri, quoted [1–3]; “charging” and “directly offset”: the statement, not quoted from him [2]"),
+     C("No capacity, metered output or bus use published, for charging or lighting; no feasibility study [10] ◆. The "
+       "share covered cannot be calculated."), verd("NOT SUBSTANTIATED", ORANGE)],
     [C("<b>E.</b> Each flower yields up to 40% more energy than traditional panels"),
      C("Lovin Malta’s text [2]; TVM News [3]. Commission page [4] not rated"),
      C("PVGIS: 36.5% more than fixed panels at the best angle at the site [17]; one study: 18–31% elsewhere [18]. Not "
@@ -284,8 +294,8 @@ S += [Spacer(1, 3 * mm), SectionHeading(8, "Verdict and requests for evidence"),
       verdict_box("Contradicted", "The claim that Gozo’s fifteen solar flowers are Europe’s first is contradicted by dated "
                   "records of the same product installed elsewhere in Europe from 2015. Confidence: high."),
       Spacer(1, 4 * mm)]
-S.append(P("<b>Why.</b> (1) The headline claim, in the minister’s words and the statement, is that these are "
-           "Europe’s first solar flowers, or its first installation of the kind. (2) The units are SmartFlowers, and "
+S.append(P("<b>Why.</b> (1) The claim we rate is the minister’s own quoted wording, “these first solar flowers in "
+           "Europe”; the statement’s “first installation of its kind in Europe” is context, not separately rated. (2) The units are SmartFlowers, and "
            "independent, dated records show the same Austrian product installed in Switzerland in 2015 and in service "
            "in Austria from 2016 (a pilot by a motorway operator) and in the UK from 2021. (3) The maker calls "
            "Gozo’s installation one of the largest in Europe, not the first. The evidence points against the claim as "
@@ -411,6 +421,10 @@ S += references([
     ("31", "smartgridsinfo.es (28 January 2016). Nuevo sistema fotovoltaico para la recarga de vehículos eléctricos "
            "(smartflower POP-e).",
      "https://www.smartgridsinfo.es/2016/01/28/nuevo-sistema-fotovoltaico-para-la-recarga-de-vehiculos-electricos"),
+    ("32", "MaltaToday (21 October 2025, 2:04 pm, Jade Bezzina). Innovative solar flowers installed at Gozo Multi-Modal Hub "
+           "(read 6 October 2026 with a browser user-agent; “first of its kind in Europe” is reporter text; Camilleri is "
+           "quoted on other lines; no new minister quote).",
+     "https://www.maltatoday.com.mt/news/national/137696/innovative_solar_flowers_installed_at_gozo_multimodal_hub_"),
 ])
 
 S += [Spacer(1, 2 * mm), CondPageBreak(60 * mm)]
@@ -420,6 +434,11 @@ S += [Spacer(1, 2 * mm)]
 S += revision_log([
     ("1.0", "6 Oct 2026", "First issue. Pending right of reply (Ministry for "
                           "Gozo and Planning; Public Works Department)."),
+    ("1.1", "6 Oct 2026", "Corrections after the audit. MaltaToday (21 Oct 2025) read and added as [32]. Sub-claim B and "
+                          "the TL;DR now say B is rated on the minister’s own words only; the statement’s wording is "
+                          "context. Sub-claim D quotes the minister on “lighting and electricity needs”, with “charging” "
+                          "and “directly offset” kept as the statement’s. Flyer wording for Malta as a first made faithful "
+                          "to Newsbook. Ratings unchanged. Pending right of reply."),
 ])
 
 build_report(Report(
@@ -431,11 +450,11 @@ build_report(Report(
     attribution="Clint Camilleri, Minister for Gozo and Planning, 21 October 2025.",
     context="English as in Lovin Malta (tagged “Press Release”); Maltese original in TVM News.",
     verdict="Contradicted", verdict_note="Solar flowers were installed elsewhere in Europe from 2015",
-    footer_lines=["Version 1.0  ·  6 October 2026",
+    footer_lines=["Version 1.1  ·  6 October 2026",
                   "Status: draft, pending right of reply (Ministry for Gozo and Planning; Public Works Department)",
                   "Prepared from public sources, EU records and the PVGIS model.",
                   "Repository: github.com/leandergrech/Mizien"],
-    running_head="Gozo’s solar flowers", version="1.0", date="6 October 2026",
+    running_head="Gozo’s solar flowers", version="1.1", date="6 October 2026",
     pdf_title="Europe's first solar flowers? Claim Check 032",
     pdf_subject="Tests the Government's claim that Gozo's 15 solar flowers are Europe's first and power its electric buses",
     story=S))

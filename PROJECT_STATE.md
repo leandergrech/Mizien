@@ -742,6 +742,23 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
   search animate the scale in log space about a fixed screen point; the map is orthographic so the fold is exact.
 - To do: test the trees on phones with real use; new claims must get a `location` (intake routine updated).
 
+## Audit of the PR #91 draft verdicts (6 October 2026)
+
+Independent audits of the three harshest new verdicts: CC-032 (Contradicted), CC-075 and CC-114 (Misleading). No
+figure or quote was wrong. Corrections issued as v1.1 (CC-025 v1.2):
+- **CC-032:** verdict and confidence unchanged. MaltaToday source dated and read (reporter text only); sub-claim B
+  rated on the minister's own words; his "lighting" wording quoted in D; flyer line made faithful to Newsbook.
+- **CC-075:** stays Misleading, confidence High to Moderate (maintainer decision). "No year given" was wrong: the
+  article gives conflicting years ("as of 2023" / graphic "up to 2022"); verdict boxes, the 602 explanation and
+  limitations fixed; the report no longer claims a reply letter was drafted.
+- **CC-114:** stays Misleading, confidence High to Moderate (maintainer decision). Renewables wording narrowed to
+  "more renewable electricity, on its own, could not have removed the rise"; 2024 estimates labelled; 116% labelled
+  as a share of the rise in emissions; C explained by the Ireland case.
+- **CC-025:** context added for fairness with CC-114: on the residence basis per-person emissions rose 69% from
+  2013 to 2024 (27th of 27). Verdict unchanged; neither statement names a basis, but CC-025's figures hold on the
+  territorial inventory and draw no causal inference.
+- Right of reply for CC-032, CC-075 and CC-114 may now be drafted (still pending; not circulated).
+
 ## Audit of the worker checks (6 October 2026)
 
 Five independent Sonnet auditors re-checked the ten checks the nightly workers had produced (CC-020, 024, 025, 026,
