@@ -1,6 +1,9 @@
 /* The pinned tray, shared by /explore/ (web and map) and /timeline/.
    A reader pins claims as they explore; the tray keeps them (in this browser, and in the address as ?pin=CC-001,CC-017
    so a selection can be shared), marks them in every view, and offers:
+     - In common: what the pinned claims share (verdict, body, kind of body, topic, pattern, place, year, pledges, and
+       the theme links and similar wording between them), each counted ("4 of 6") with a link to every claim like it;
+     - Save this set: named sets kept in this browser, to pin again later (Copy link shares the set itself);
      - Show only pinned: the site-wide filter (assets/lens.js) narrowed to the pinned claims;
      - Find related: claims that share something with the pinned ones, each with its reasons (the same body, a
        theme linking them, similar wording with the shared words, the same pattern, place or topic, said within two
@@ -16,20 +19,20 @@
 (function () {
   "use strict";
   var ROOT = (document.currentScript && document.currentScript.src || location.href).replace(/assets\/tray\.js.*$/, "");
-  var keepUrl = true, pins = [], saved = null, data = null, byId = {}, themes = {}, bodies = {}, hooks = [], btn = null, pop = null, mode = "pins";
+  var keepUrl = true, sets = [], pins = [], saved = null, data = null, byId = {}, themes = {}, bodies = {}, types = {}, hooks = [], btn = null, pop = null, mode = "pins";
   var VERDICTS = ["Supported", "Largely supported", "Not substantiated", "Misleading", "Contradicted"];
   var VC = { "Supported": "#2e7d4f", "Largely supported": "#8db36b", "Not substantiated": "#d9772b", "Misleading": "#c85a3a", "Contradicted": "#8e2f25" };
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function store() {
-    try { localStorage.setItem("mizien.tray", JSON.stringify({ pins: pins, saved: saved })); } catch (e) {}
+    try { localStorage.setItem("mizien.tray", JSON.stringify({ pins: pins, saved: saved, sets: sets })); } catch (e) {}
     if (!keepUrl) return;   // claim pages keep their own address
     var u = new URL(location.href);
     if (pins.length) u.searchParams.set("pin", pins.join(",")); else u.searchParams.delete("pin");
     history.replaceState(null, "", u);
   }
   function load() {
-    try { var t = JSON.parse(localStorage.getItem("mizien.tray") || "null"); if (t) { pins = t.pins || []; saved = t.saved || null; } } catch (e) {}
+    try { var t = JSON.parse(localStorage.getItem("mizien.tray") || "null"); if (t) { pins = t.pins || []; saved = t.saved || null; sets = t.sets || []; } } catch (e) {}
     var q = new URLSearchParams(location.search).get("pin");
     if (q) pins = q.split(",").filter(function (x) { return /^CC-\d{3}$/.test(x); });   // a shared link wins
   }
@@ -41,6 +44,7 @@
       data = d; d.claims.forEach(function (c) { byId[c.id] = c; });
       (d.themes || []).forEach(function (t) { themes[t.id] = t.name || t.id; });
       (d.bodies || []).forEach(function (b) { bodies[b.id] = b; });
+      (d.body_types || []).forEach(function (t) { types[t.id] = t.label; });
       return d;
     });
   }
@@ -71,6 +75,42 @@
     });
     return Object.keys(out).map(function (k) { return out[k]; }).sort(function (a, b) { return b.score - a.score || a.id.localeCompare(b.id); }).slice(0, 12);
   }
+  // ---- in common: what the pinned claims share, counted from the record, each with a way to see every claim like it
+  function slug(x) { return String(x || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/ħ/g, "h").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+  function common() {
+    var cs = pins.map(function (id) { return byId[id]; }).filter(Boolean), n = cs.length, rows = [], set = {};
+    cs.forEach(function (c) { set[c.id] = 1; });
+    function tally(label, f, link) {
+      var k = {}, names = {};
+      cs.forEach(function (c) { var seen = {}; [].concat(f(c)).forEach(function (v) { if (!v || seen[v[0]]) return; seen[v[0]] = 1; k[v[0]] = (k[v[0]] || []).concat(c.id); names[v[0]] = v[1]; }); });
+      Object.keys(k).forEach(function (key) { if (k[key].length >= 2) rows.push({ n: k[key].length, what: label, name: names[key], ids: k[key], href: link ? link(key) : null }); });
+    }
+    var X = ROOT + "explore/?";
+    tally("verdict", function (c) { var v = verdictOf(c); return [[c.verdict || c.pledge ? slug(v) : "none", v]]; }, function (k) { return X + "view=ghanqbuta&verdict=" + k; });
+    tally("said by", function (c) { return (c.bodies || []).map(function (b) { return [b, bodies[b] ? bodies[b].name : b]; }); }, function (k) { return ROOT + "bodies/" + k + "/"; });
+    tally("kind of body", function (c) { return (c.bodies || []).map(function (b) { var t = bodies[b] && bodies[b].type; return t ? [t, types[t] || t] : null; }); }, function (k) { return X + "view=ghanqbuta&group=speaker&who=" + k; });
+    tally("topic", function (c) { return [[slug(c.category), c.category]]; }, function (k) { return X + "view=ghanqbuta&topic=" + k; });
+    tally("pattern", function (c) { return (c.tags || []).map(function (t) { return [slug(t), t]; }); }, function (k) { return X + "view=ghanqbuta&group=pattern&pattern=" + k; });
+    tally("place", function (c) { return c.location ? [[c.location.place, c.location.place]] : []; }, null);
+    tally("year said", function (c) { var y = /^\d{4}/.exec(String(c.date || "")); return y ? [[y[0], y[0]]] : []; }, function (k) { return ROOT + "timeline/?year=" + k; });
+    tally("kind of claim", function (c) { return c.pledge ? [["pledge", "a pledge"]] : []; }, null);
+    rows.sort(function (a, b) { return b.n - a.n || a.what.localeCompare(b.what); });
+    var links = [];
+    (data.edges || []).forEach(function (e) { if (set[e.from] && set[e.to]) links.push({ a: e.from, b: e.to, why: "linked by " + (themes[e.theme] || e.theme) }); });
+    cs.forEach(function (c) { (c.similar || []).forEach(function (x) { if (set[x.id] && c.id < x.id) links.push({ a: c.id, b: x.id, why: "similar wording: " + x.terms.join(", ") }); }); });
+    return { n: n, rows: rows, links: links };
+  }
+  function commonHtml() {
+    if (pins.length < 2) return '<p class="tr-note">Pin two or more claims to see what they have in common.</p>';
+    var C = common(), h = '<p class="tr-note">What the ' + C.n + ' pinned claims share, counted from the record. A shared feature is a lead to look into, not a finding.</p>';
+    if (!C.rows.length && !C.links.length) return h + '<p class="tr-note">No verdict, body, topic, pattern, place or year is shared by two or more of them.</p>';
+    h += '<ul class="tr-common">' + C.rows.map(function (r) {
+      return '<li><span class="tr-share" style="--k:' + (r.n / C.n).toFixed(2) + '"><b>' + r.n + "</b> of " + C.n + "</span><span>" + esc(r.what) + ": <b>" + esc(r.name) + "</b>" +
+        '<span class="tr-ids">' + esc(r.ids.join(", ")) + "</span></span>" + (r.href ? '<a class="tr-see" href="' + esc(r.href) + '">See all</a>' : "<span></span>") + "</li>"; }).join("") + "</ul>";
+    if (C.links.length) h += '<p class="tr-h2">Links between them</p><ul class="tr-common tr-pairs">' + C.links.map(function (l) {
+      return "<li><span><b>" + esc(l.a) + "</b> and <b>" + esc(l.b) + "</b></span><span>" + esc(l.why) + "</span></li>"; }).join("") + "</ul>";
+    return h;
+  }
   // ---- compare: a summary of a set of claims
   function summary(ids) {
     var cs = ids.map(function (id) { return byId[id]; }).filter(Boolean), tally = function (f) { var n = {}; cs.forEach(function (c) { [].concat(f(c)).forEach(function (v) { if (v) n[v] = (n[v] || 0) + 1; }); });
@@ -99,7 +139,7 @@
     if (!data) { pop.innerHTML = '<p class="tr-h">Pinned claims</p><p class="tr-note">Loading…</p>'; return; }
     var Lens = window.MizienLens, onlyOn = Lens && Lens.only().length && Lens.only().join(",") === pins.join(",");
     var openIn = ROOT + "explore/?pin=" + pins.join(",") + "&only=" + pins.join(",");
-    var h = '<div class="tr-tabs" role="tablist">' + [["pins", "Pinned"], ["related", "Find related"], ["compare", "Compare"]].map(function (t) {
+    var h = '<div class="tr-tabs" role="tablist">' + [["pins", "Pinned"], ["common", "In common"], ["related", "Find related"], ["compare", "Compare"]].map(function (t) {
       return '<button type="button" role="tab" data-tab="' + t[0] + '" aria-selected="' + (mode === t[0]) + '">' + t[1] + "</button>"; }).join("") + "</div>";
     if (mode === "pins") {
       if (!pins.length) h += '<p class="tr-note">Nothing pinned yet. Open a claim, a group or a place and press <b>Pin</b>; pinned claims are marked in every view and kept in this browser.</p>';
@@ -107,8 +147,13 @@
         h += '<ul class="tr-list">' + pins.map(function (id) { var c = byId[id]; return c ? row(c, '<button type="button" class="tr-x" data-unpin="' + id + '" aria-label="Unpin ' + id + '">×</button>') : ""; }).join("") + "</ul>";
         h += '<p class="tr-acts">' + (Lens ? '<button type="button" data-act="only" aria-pressed="' + !!onlyOn + '">' + (onlyOn ? "Show all claims" : "Show only pinned") + "</button>"
           : '<a class="tr-open" href="' + esc(openIn) + '">Open in Explore</a><a class="tr-open" href="' + esc(ROOT + "timeline/?pin=" + pins.join(",") + "&only=" + pins.join(",")) + '">On the timeline</a>') +
-          '<button type="button" data-act="share">Copy link</button><button type="button" data-act="clear">Clear</button></p>';
+          '<button type="button" data-act="share">Copy link</button><button type="button" data-act="save">Save this set</button><button type="button" data-act="clear">Clear</button></p>';
       }
+      if (sets.length) h += '<p class="tr-h2">Saved sets</p><ul class="tr-list tr-sets">' + sets.map(function (st, i) {
+        return '<li><span class="tr-dot"></span><button type="button" class="tr-load" data-load="' + i + '"><b>' + esc(st.name) + "</b> · " + st.pins.length + " claims</button>" +
+          '<span class="tr-v">' + esc(st.date || "") + '</span><button type="button" class="tr-x" data-drop="' + i + '" aria-label="Delete the set ' + esc(st.name) + '">×</button></li>'; }).join("") + "</ul>";
+    } else if (mode === "common") {
+      h += commonHtml();
     } else if (mode === "related") {
       if (!pins.length) h += '<p class="tr-note">Pin a claim first; related claims are found from what they share with it.</p>';
       else { var R = related();
@@ -138,10 +183,14 @@
       if (b.dataset.tab) { mode = b.dataset.tab; render(); return; }
       if (b.dataset.unpin) { remove(b.dataset.unpin); return; }
       if (b.dataset.pin) { add([b.dataset.pin]); return; }
+      if (b.dataset.load) { var st = sets[+b.dataset.load]; if (st) { pins = st.pins.slice(); changed(); } return; }
+      if (b.dataset.drop) { sets.splice(+b.dataset.drop, 1); changed(); return; }
       var a = b.dataset.act, Lens = window.MizienLens;
       if (a === "only" && Lens) { var on = Lens.only().join(",") === pins.join(","); Lens.only(on ? [] : pins); render(); }
       else if (a === "share") { var u = keepUrl ? location.href : new URL(ROOT + "explore/?pin=" + pins.join(","), location.href).href; (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(function () { b.textContent = "Link copied"; }, function () { prompt("Copy this link", u); }); }
       else if (a === "clear") { pins = []; changed(); }
+      else if (a === "save") { var nm = prompt("A name for this set of " + pins.length + " claims (kept in this browser)", "Set " + (sets.length + 1));
+        if (nm && nm.trim()) { sets = sets.filter(function (x) { return x.name !== nm.trim(); }); sets.unshift({ name: nm.trim().slice(0, 60), pins: pins.slice(), date: new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) }); changed(); } }
       else if (a === "addall") add(related().map(function (o) { return o.id; }));
       else if (a === "keep") { saved = pins.slice(); pins = []; changed(); }
       else if (a === "swap") { var t = pins; pins = saved.slice(); saved = t.length ? t : saved; changed(); }

@@ -132,3 +132,20 @@
 .tr-pop a.tr-open { display: inline-flex; align-items: center; min-height: 32px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(227,167,47,.6);
   color: #f6e3b4; font: 600 12.5px "Liberation Sans", Arial, sans-serif; text-decoration: none; }
 .tr-pop a.tr-open:hover { background: #e3a72f; color: #13301f; }
+
+/* Tray: In common, saved sets */
+.tr-h2 { margin: 12px 0 4px; color: #e3a72f; font: 700 11px "Liberation Sans", Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.tr-common { list-style: none; margin: 0; padding: 0; }
+.tr-common li { display: grid; grid-template-columns: 64px 1fr auto; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid rgba(207,226,212,.1); font-size: 13px; }
+.tr-common li > span b { color: #eef3ef; }
+.tr-share { position: relative; padding: 2px 0 6px; color: #a9c2b1; font-size: 12px; white-space: nowrap; }
+.tr-share b { color: #e3a72f !important; font-size: 15px; }
+.tr-share::after { content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: calc(var(--k) * 100%); border-radius: 2px; background: #e3a72f; }
+.tr-ids { display: block; color: #a9c2b1; font-size: 11.5px; }
+.tr-pop a.tr-see { color: #f6e3b4; font-size: 12px; white-space: nowrap; }
+.tr-pairs li { grid-template-columns: auto 1fr; color: #cfe2d4; }
+.tr-load { min-width: 0; padding: 0; border: 0; background: none; color: #eef3ef; font: 13.5px "Liberation Sans", Arial, sans-serif; text-align: left; cursor: pointer;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tr-load b { color: #e3a72f; }
+.tr-load:hover { text-decoration: underline; }
+.tr-sets .tr-dot { background: #e3a72f; }

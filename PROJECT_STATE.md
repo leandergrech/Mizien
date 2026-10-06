@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 6 October 2026 (pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -28,6 +28,24 @@ on the map (`/?view=map&sel=claim:CC-NNN`, when it has a location) and to the cl
 resolved against the script's own folder, so they work under the `/Mizien/` prefix (they did not before: fixed).
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
+
+## After the plan: claim pages, zoom labels, In common (6 October 2026)
+
+The three items left over from the interface review, done at the maintainer's request:
+- **Pin from claim pages.** `site/claims/claim.njk` loads `tray.js` (and `lens.css`): a "Pin this claim" button and
+  the Pinned tray sit in the header under the downloads. With `init({ url: false })` the tray leaves the page address
+  alone; instead of "Show only pinned" it links to the pinned set in Explore and on the timeline, and Copy link copies
+  an Explore link.
+- **Web labels follow the zoom** (`map.js`, claim labels in the frame loop): at the overview only the groups are
+  named; claim codes fade in from zoom 1.35; from 2.2 the codes give way to the claims' names. Hovered, selected,
+  pinned and highlighted claims, and the members of an opened group, are always labelled. The Names button now means
+  "names at every zoom".
+- **In common** (a tray tab): what the pinned claims share, counted ("4 of 6") from the record: verdict, who said it,
+  kind of body, topic, pattern, place, year, pledges; then the theme links and similar wording between them. Each row
+  links to every claim like it (Explore with the matching filter, the body's page, or the timeline for a year). Shown
+  only for two or more pinned claims; labelled as a lead, not a finding.
+- **Saved sets**: "Save this set" names the pinned claims and keeps them in this browser (`mizien.tray` in
+  localStorage); the Pinned tab lists the sets to pin again or delete. Copy link remains the way to share a set.
 
 ## Similar wording (6 October 2026)
 
@@ -58,7 +76,7 @@ the filter bar:
   (1). Top 12; Pin one or Pin all. No hidden inference: the reasons are the data.
 - **Compare**: keep the pinned claims as A, pin a second set (B), and see both side by side: verdict bar and
   counts, topics, who said it, places, years.
-- Not done (possible next): "similar wording" as another reason (computed at build time), pinning from claim pages.
+- Done since: similar wording as a reason (step 4), pinning from claim pages, In common and saved sets (below).
 
 ## Laurels and spacing (6 October 2026)
 
