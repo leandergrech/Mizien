@@ -3,9 +3,10 @@
 inhabitants (article of 21 Sep 2024), and the article's other figures.
 
 Reads data/cc-075/ (Eurostat road_eqs_carhab, road_eqs_carmot, demo_gind, reg_area3, retrieved 6 Oct 2026 by
-fetch.py with Eurostat's flags; reported_values.csv for figures stated in texts we read, second-hand rows marked);
+fetch.py with Eurostat's flags; reported_values.csv for figures stated in texts we read, second-hand rows marked;
+the earlier vintages saved by fetch_vintage.py and read by read_charts.py);
 writes data/cc-075/checks.csv."""
-import csv, pathlib
+import csv, json, pathlib, re
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 D = ROOT / "data" / "cc-075"
 EU27 = "BE BG CZ DK DE EE IE EL ES FR HR IT CY LV LT LU HU MT NL AT PL PT RO SI SK FI SE".split()
@@ -196,6 +197,59 @@ add("NSO licensed passenger cars, end 2022, implied by 74.7% of 424,904 (second-
     f"{nso_total * nso_share / 100:,.0f} ({lo:,.0f}-{hi:,.0f} for 74.65-74.75%)", "cars", "NSO News2023_023 via search summary ◆",
     f"Eurostat stock {int(STOCK[('MT', 2022)][0]):,}: inside the range" if lo <= STOCK[("MT", 2022)][0] <= hi
     else f"Eurostat stock {int(STOCK[('MT', 2022)][0]):,}: outside the range")
+
+# ---- what Eurostat had published before the article (21 Sep 2024): fetch_vintage.py, read_charts.py
+S_SE = "Eurostat Statistics Explained 'Passenger cars in the EU' (MediaWiki API), retrieved 6 Oct 2026"
+revs = json.load(open(D / "es_passenger_cars_revisions_2023-2025.json"))
+rl = sorted((r["timestamp"], r["revid"]) for p in revs["query"]["pages"].values() for r in p["revisions"])
+live = [r for r in rl if r[0] <= "2024-09-21T23:59:59Z"][-1]
+nxt = [r for r in rl if r[0] > "2024-09-21T23:59:59Z"][0]
+add("Statistics Explained revision live on 21 Sep 2024", live[1], "revision", S_SE,
+    f"saved {live[0]}; next revision {nxt[1]} on {nxt[0]}")
+rv = json.load(open(D / "es_passenger_cars_rev647912.json"))
+txt = list(rv["query"]["pages"].values())[0]["revisions"][0]["slots"]["main"]
+txt = txt.get("*") or txt.get("content")
+add("Revision 647912: data extraction stated", re.search(r"Data extracted in [A-Za-z]+ \d{4}", txt).group(0), "text", S_SE)
+add("Revision 647912: figure shown for the motorisation rate", re.findall(r"Image:(Motorisation[^|\]]*)", txt)[0], "file",
+    S_SE, "uploaded 2024-07-25T08:53:34Z; sha1 7dd8b8d6c18bfdce7c98b5baf50fff8743d2125b (vintage_sources.csv)")
+it23 = re.search(r"Italy heads the list .(\d+)", txt).group(1)
+eu23 = re.search(r"EU average .(\d+)", txt).group(1)
+add("Revision 647912: Italy and EU average, 2023 (text)", f"{it23} / {eu23}", "per 1,000", S_SE)
+first23 = min(t for t, rid in rl if rid >= 646192)
+add("First revision with the 2023 motorisation rate", 646192, "revision", S_SE,
+    f"{first23}; revisions 627098-644029 (31 Jan - 2 Jul 2024) showed 2022 ('Data extracted in December 2023')")
+CR = list(csv.DictReader(open(D / "chart_reads.csv")))
+
+
+def chart(fname):
+    return {r["label"]: (float(r["value_read"]), r["eu27_rank_by_value"]) for r in CR if r["file"] == fname}
+
+
+c23, c22, inf = (chart("es_fig3_motorisation_2023.png"), chart("es_fig3_motorisation_2022_jan2024.png"),
+                 chart("news_20240117_infographic.png"))
+worst = {r["file"]: r["max_abs_residual_on_printed"] for r in CR}
+add("Malta, 2023, as published Jul-Aug 2024 (Figure 3 read by pixel)", c23["Malta"][0], "per 1,000",
+    "read_charts.py on es_fig3_motorisation_2023.png",
+    f"rank {c23['Malta'][1]} of 27; France {c23['France'][0]} ({c23['France'][1]}), Austria {c23['Austria'][0]} "
+    f"({c23['Austria'][1]}); chart read within {worst['es_fig3_motorisation_2023.png']} of the printed values")
+add("Germany and Poland, 2023, as published Jul-Aug 2024 (read)",
+    f"{c23['Germany'][0]} ({c23['Germany'][1]}) / {c23['Poland'][0]} ({c23['Poland'][1]})", "per 1,000 (rank)",
+    "read_charts.py")
+add("Malta, 2022, in Eurostat's release of 17 Jan 2024 (infographic read by pixel)", inf["Malta"][0], "per 1,000",
+    "read_charts.py on news_20240117_infographic.png",
+    f"rank {inf['Malta'][1]} of 27; Germany {inf['Germany'][0]} ({inf['Germany'][1]}), Poland {inf['Poland'][0]} "
+    f"({inf['Poland'][1]}); read within {worst['news_20240117_infographic.png']} of the printed values")
+add("Malta, 2022, in Statistics Explained Figure 3 of January 2024 (read by pixel)", c22["Malta"][0], "per 1,000",
+    "read_charts.py on es_fig3_motorisation_2022_jan2024.png",
+    f"rank {c22['Malta'][1]} of 27; read within {worst['es_fig3_motorisation_2022_jan2024.png']} of the printed values")
+add("Malta, 2022: January 2024 release vs today's data", f"about {inf['Malta'][0]:.0f} (6th) -> {HAB[('MT', 2022)][0]:.0f} "
+    f"({rank_of('MT', 2022)}th)", "per 1,000", "calculated", "Malta's 2022 value was revised after January 2024")
+t2 = [float(r["value"]) for r in REP if r["indicator"] == "passenger car stock (Table 2)"]
+add("Malta stock in revision 647912 Table 2 (2022, 2023) vs today's road_eqs_carmot",
+    f"{t2[0]:,.0f}, {t2[1]:,.0f} vs {STOCK[('MT', 2022)][0]:,.0f}, {STOCK[('MT', 2023)][0]:,.0f}", "cars",
+    "reported_values.csv; " + S_STK)
+add("Malta, 2023, in today's data", f"{HAB[('MT', 2023)][0]:.0f}, rank {rank_of('MT', 2023)}", "per 1,000", S_HAB,
+    f"France now {HAB[('FR', 2023)][0]:.0f} ('{HAB[('FR', 2023)][1]}'), below Malta")
 
 with open(D / "checks.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)

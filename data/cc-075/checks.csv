@@ -53,3 +53,15 @@ EU-27 2022: Eurostat news (Jan 2024) / dataset now,560 / 564,"per 1,000","report
 "Malta: cars per km2 if only Malta island's land (245 km2) were used, 2022",1295,cars/km2,calculated,for comparison; the stock is national
 "Malta: passenger cars per km2 of land, 2025",1073,cars/km2,calculated,rank 1 of 27
 "NSO licensed passenger cars, end 2022, implied by 74.7% of 424,904 (second-hand)","317,403 (317,191-317,616 for 74.65-74.75%)",cars,NSO News2023_023 via search summary ◆,"Eurostat stock 317,234: inside the range"
+Statistics Explained revision live on 21 Sep 2024,647912,revision,"Eurostat Statistics Explained 'Passenger cars in the EU' (MediaWiki API), retrieved 6 Oct 2026",saved 2024-08-19T11:56:03Z; next revision 655141 on 2024-11-05T10:15:34Z
+Revision 647912: data extraction stated,Data extracted in July 2024,text,"Eurostat Statistics Explained 'Passenger cars in the EU' (MediaWiki API), retrieved 6 Oct 2026",
+Revision 647912: figure shown for the motorisation rate,"Motorisation rate,_2023 Figure 3.png",file,"Eurostat Statistics Explained 'Passenger cars in the EU' (MediaWiki API), retrieved 6 Oct 2026",uploaded 2024-07-25T08:53:34Z; sha1 7dd8b8d6c18bfdce7c98b5baf50fff8743d2125b (vintage_sources.csv)
+"Revision 647912: Italy and EU average, 2023 (text)",694 / 571,"per 1,000","Eurostat Statistics Explained 'Passenger cars in the EU' (MediaWiki API), retrieved 6 Oct 2026",
+First revision with the 2023 motorisation rate,646192,revision,"Eurostat Statistics Explained 'Passenger cars in the EU' (MediaWiki API), retrieved 6 Oct 2026",2024-07-23T09:20:31Z; revisions 627098-644029 (31 Jan - 2 Jul 2024) showed 2022 ('Data extracted in December 2023')
+"Malta, 2023, as published Jul-Aug 2024 (Figure 3 read by pixel)",574.3,"per 1,000",read_charts.py on es_fig3_motorisation_2023.png,"rank 12 of 27; France 577.5 (11), Austria 565.9 (13); chart read within 1.1 of the printed values"
+"Germany and Poland, 2023, as published Jul-Aug 2024 (read)",587.7 (9) / 599.9 (6),"per 1,000 (rank)",read_charts.py,
+"Malta, 2022, in Eurostat's release of 17 Jan 2024 (infographic read by pixel)",601.6,"per 1,000",read_charts.py on news_20240117_infographic.png,"rank 6 of 27; Germany 584.5 (9), Poland 570.8 (11); read within 1.2 of the printed values"
+"Malta, 2022, in Statistics Explained Figure 3 of January 2024 (read by pixel)",601.9,"per 1,000",read_charts.py on es_fig3_motorisation_2022_jan2024.png,rank 6 of 27; read within 0.9 of the printed values
+"Malta, 2022: January 2024 release vs today's data",about 602 (6th) -> 585 (7th),"per 1,000",calculated,Malta's 2022 value was revised after January 2024
+"Malta stock in revision 647912 Table 2 (2022, 2023) vs today's road_eqs_carmot","317,234, 323,852 vs 317,234, 323,852",cars,"reported_values.csv; Eurostat road_eqs_carmot, updated 1 Sep 2026, retrieved 6 Oct 2026",
+"Malta, 2023, in today's data","575, rank 11","per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026","France now 573 ('p'), below Malta"

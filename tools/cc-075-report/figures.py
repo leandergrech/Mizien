@@ -31,7 +31,6 @@ def load(f):
 HAB = load("eurostat_road_eqs_carhab.csv")
 STOCK = load("eurostat_road_eqs_carmot.csv")
 POP = load("eurostat_demo_gind_jan.csv")
-LAND = load("eurostat_reg_area3_land.csv")
 
 
 def ranked(y):
@@ -51,7 +50,7 @@ def runs(xs):
 
 def fig1():
     """Malta and EU-27 rate (top) and Malta's rank (bottom), 1990-2025: two panels, one y-scale each."""
-    fig, (ax, ax2) = plt.subplots(2, 1, figsize=(9.6, 5.6), dpi=220, sharex=True,
+    fig, (ax, ax2) = plt.subplots(2, 1, figsize=(9.6, 4.9), dpi=220, sharex=True,
                                   gridspec_kw={"height_ratios": [3, 2], "hspace": 0.12})
     for geo, col, ls in (("MT", GREEN, "-"), ("EU27_2020", BLUE, "--")):
         xs = sorted(y for (g, y) in HAB if g == geo)
@@ -100,7 +99,7 @@ def fig1():
 def fig2():
     """2022, all 27 Member States: the year the article's figures match."""
     y = 2022
-    fig, ax = plt.subplots(figsize=(9.6, 3.9), dpi=220)
+    fig, ax = plt.subplots(figsize=(9.6, 3.5), dpi=220)
     items = [(g, v) for v, g in ranked(y)]
     ax.bar([k for k, _ in items], [v for _, v in items], color=[GREEN if k == "MT" else SAGE for k, _ in items],
            width=0.72)
@@ -124,50 +123,38 @@ def fig2():
     fig.savefig(OUT / "fig2_rank2022.png", bbox_inches="tight", facecolor="white")
 
 
-def fig3():
-    """Malta: car stock and population indexed to the end of 2012 = 100 (one scale)."""
-    fig, ax = plt.subplots(figsize=(9.6, 3.6), dpi=220)
-    ys = list(range(2012, 2026))
-    s0, p0 = STOCK[("MT", 2012)][0], POP[("MT", 2013)][0]
-    st = [STOCK[("MT", y)][0] / s0 * 100 for y in ys]
-    po = [POP[("MT", y + 1)][0] / p0 * 100 for y in ys]
-    ax.plot(ys, st, color=GREEN, lw=2.2, marker="o", ms=3.4)
-    ax.plot(ys, po, color=ORANGE, lw=2.2, marker="o", ms=3.4)
-    ax.text(2025.25, st[-1] - 1.5, f"Passenger cars {st[-1]:.0f}\n({int(STOCK[('MT', 2025)][0]):,})", color=GREEN,
-            fontsize=8.5, va="center")
-    ax.text(2025.25, po[-1] + 2.0, f"Population {po[-1]:.0f}\n({int(POP[('MT', 2026)][0]):,})", color=ORANGE,
-            fontsize=8.5, va="center")
-    ax.axvspan(2021.6, 2022.4, color=AMBER, alpha=0.18, lw=0, zorder=0)
-    ax.set_xlim(2011.6, 2028.2)
-    ax.set_xticks(range(2012, 2026, 2))
-    ax.set_ylim(95, 145)
-    ax.set_ylabel("index, end of 2012 = 100")
-    ax.text(2011.7, 83, "Passenger car stock at 31 December (Eurostat road_eqs_carmot) and population on 1 January of the "
-            "next year (Eurostat demo_gind),\nthe two inputs of the per-1,000 rate. Retrieved 6 Oct 2026; no flags on "
-            "Malta’s values.", fontsize=7, color=GREY)
-    fig.savefig(OUT / "fig3_growth.png", bbox_inches="tight", facecolor="white")
+def fig5():
+    """2023 as Eurostat published it in July 2024 (Statistics Explained Figure 3, read by pixel in read_charts.py)."""
+    names = {"Belgium": "BE", "Bulgaria": "BG", "Czechia": "CZ", "Denmark": "DK", "Germany": "DE", "Estonia": "EE",
+             "Ireland": "IE", "Greece": "EL", "Spain": "ES", "France": "FR", "Croatia": "HR", "Italy": "IT",
+             "Cyprus": "CY", "Latvia": "LV", "Lithuania": "LT", "Luxembourg": "LU", "Hungary": "HU", "Malta": "MT",
+             "Netherlands": "NL", "Austria": "AT", "Poland": "PL", "Portugal": "PT", "Romania": "RO", "Slovenia": "SI",
+             "Slovakia": "SK", "Finland": "FI", "Sweden": "SE"}
+    rd = [r for r in csv.DictReader(open(D / "chart_reads.csv")) if r["file"] == "es_fig3_motorisation_2023.png"]
+    eu = next(float(r["value_read"]) for r in rd if r["label"] == "EU")
+    items = sorted(((names[r["label"]], float(r["value_read"])) for r in rd if r["label"] in names),
+                   key=lambda kv: -kv[1])
+    fig, ax = plt.subplots(figsize=(9.6, 3.5), dpi=220)
+    ax.bar([k for k, _ in items], [v for _, v in items], color=[RED if k == "MT" else SAGE for k, _ in items],
+           width=0.72)
+    for i, (k, v) in enumerate(items):
+        if k in ("FR", "MT", "AT"):   # only Malta and its neighbours: read values carry about +/-1 of error
+            ax.text(i, v + 8, f"≈{v:.0f}", ha="center", va="bottom", fontsize=6.8, color=RED if k == "MT" else SLATE,
+                    fontweight="bold" if k == "MT" else "normal", zorder=4,
+                    bbox=dict(facecolor="white", edgecolor="none", pad=0.3))
+    ax.axhline(eu, color=BLUE, lw=1.3, ls="--")
+    ax.text(26.4, eu + 52, f"EU 571 (Eurostat’s text)", color=BLUE, fontsize=8.5, ha="right")
+    i = [k for k, _ in items].index("MT")
+    ax.annotate("Malta 12th", xy=(i, items[i][1] + 45), xytext=(i + 3.2, 720), fontsize=9, color=RED,
+                fontweight="bold", arrowprops=dict(arrowstyle="-", color=RED, lw=0.9))
+    ax.set_ylim(0, 760)
+    ax.set_ylabel("passenger cars per 1,000")
+    ax.tick_params(axis="x", labelsize=8)
+    ax.text(-0.5, -150, "2023 values as Eurostat published them by 25 July 2024 (Statistics Explained, ‘Passenger cars in "
+            "the EU’, Figure 3; revision 647912, live 19 Aug – 5 Nov 2024),\nread by pixel measurement from Eurostat’s "
+            "chart (within 1.1 of every value Eurostat prints in the text, so labels are approximate). Retrieved 6 Oct 2026.", fontsize=7, color=GREY)
+    fig.savefig(OUT / "fig5_published2023.png", bbox_inches="tight", facecolor="white")
 
 
-def fig4():
-    """Passenger cars per km2 of land, 2022, top ten of the EU-27."""
-    y = 2022
-    dens = sorted(((STOCK[(g, y)][0] / LAND[(g, y)][0], g) for g in EU27), reverse=True)[:10]
-    fig, ax = plt.subplots(figsize=(9.6, 3.0), dpi=220)
-    names = [g for _, g in dens][::-1]
-    vals = [v for v, _ in dens][::-1]
-    ax.barh(names, vals, color=[GREEN if g == "MT" else SAGE for g in names], height=0.66)
-    for i, (g, v) in enumerate(zip(names, vals)):
-        ax.text(v + 12, i, f"{v:,.0f}", va="center", fontsize=8, color=GREEN if g == "MT" else SLATE,
-                fontweight="bold" if g == "MT" else "normal")
-    ax.set_xlim(0, 1150)
-    ax.set_xlabel("passenger cars per km² of land, 2022")
-    ax.tick_params(axis="y", labelsize=8.5)
-    pf = [g for _, g in dens if STOCK[(g, y)][1]]
-    ax.text(0, -3.9, "Passenger car stock (Eurostat road_eqs_carmot) divided by land area (Eurostat reg_area3; Malta "
-            "313 km², including Gozo and Comino). Top ten of 27. Retrieved 6 Oct 2026.\nStock values flagged imputed (i): "
-            + (", ".join(pf) or "none") + ". Land areas carry no flags.", fontsize=7, color=GREY)
-    fig.savefig(OUT / "fig4_density.png", bbox_inches="tight", facecolor="white")
-
-
-fig1(); fig2(); fig3(); fig4()
+fig1(); fig2(); fig5()
 print("figures in", OUT)

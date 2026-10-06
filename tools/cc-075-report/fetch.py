@@ -60,4 +60,13 @@ for ds, query, out, keep in JOBS:
     "receiving agencies, p provisional, e estimated, d definition differs, m missing (data cannot exist); combinations "
     "carry both meanings. `checks.csv` is written by `calc.py`.\n\n"
     "| File | Dataset | API URL | Updated (Eurostat) | Retrieved | Rows |\n|---|---|---|---|---|---|\n"
-    + "\n".join(LOG) + "\n")
+    + "\n".join(LOG) + "\n\n"
+    "## Earlier vintages (what Eurostat had published before 21 Sep 2024)\n\n"
+    "Eurostat's API serves only current data. `fetch_vintage.py` saves Eurostat's own earlier publications: the "
+    "Statistics Explained article 'Passenger cars in the EU' through its MediaWiki API (revision list; revisions 627098 "
+    "of 31 Jan 2024 and 647912 of 19 Aug 2024, the latter live until 5 Nov 2024), the two 'Motorisation rate' Figure 3 "
+    "images those revisions show, and the infographic of Eurostat's news release of 17 Jan 2024. Each file's URL, sha1 "
+    "and retrieval date are in `vintage_sources.csv`. `read_charts.py` reads the three bar charts by pixel measurement "
+    "(calibrated on the gridlines, checked against the values Eurostat prints) into `chart_reads.csv`. "
+    "`reported_values.csv` holds figures stated in texts and tables we read (second-hand rows marked). Eurostat content "
+    "is reused under Eurostat's copyright notice (https://ec.europa.eu/eurostat/help/copyright-notice: re-use authorised, source acknowledged; read via search summary 6 Oct 2026).\n")
