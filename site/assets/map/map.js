@@ -2164,7 +2164,11 @@
   // Display menu: the less-used switches (labels, lens, text, rotation) behind one button
   (function () {
     var btn = document.getElementById("displaybtn"), pop = document.getElementById("displaypop");
-    function show(on) { pop.hidden = !on; btn.setAttribute("aria-expanded", on ? "true" : "false"); }
+    // On phones the control row scrolls sideways, which would clip the menu: place it on the page instead, under the button.
+    function place() { var r = btn.getBoundingClientRect(); pop.style.position = "fixed"; pop.style.top = (r.bottom + 6) + "px";
+      pop.style.right = Math.max(8, window.innerWidth - r.right) + "px"; pop.style.left = "auto"; }
+    function show(on) { pop.hidden = !on; btn.setAttribute("aria-expanded", on ? "true" : "false"); if (on) place(); }
+    window.addEventListener("resize", function () { if (!pop.hidden) place(); });
     btn.onclick = function (e) { e.stopPropagation(); show(pop.hidden); };
     document.addEventListener("click", function (e) { if (!pop.hidden && !e.target.closest("#displaymenu")) show(false); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !pop.hidden) { show(false); btn.focus(); } });
