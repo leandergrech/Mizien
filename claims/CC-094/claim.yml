@@ -2,39 +2,141 @@ id: CC-094
 title: 'Commission: Malta off track for 2030'
 category: Climate & Energy
 subtopic: Emissions & targets
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
-  text: 'European Commission (Climate Action Progress Report 2025): Malta is projected to emit more in 2030 than
-    in 2005 in effort-sharing sectors, missing its target.'
+  text: 'European Commission (EU Climate Action Progress Report 2025, COM(2025) 668, 6 Nov 2025): before any use of
+    flexibilities, Malta''s projected 2030 effort-sharing emissions leave a gap of 49 and 61 percentage points to its
+    19% reduction target, so Malta "is projected to emit more in 2030 than in 2005"; Malta is among the Member States
+    with the largest projected gaps and is projected to have excess emissions in 2026-2030.'
   speaker: European Commission
-  date: '2025'
-  wording_status: 'Paraphrase: locate quote'
+  date: '2025-11-06'
+  wording_status: Verbatim found
   sources:
-  - title: EU Climate Action Progress Report 2025
-    publisher: EUR-Lex
-    date: '2025'
+  - title: EU Climate Action Progress Report 2025, COM(2025) 668 final
+    publisher: European Commission (EUR-Lex)
+    date: 6 Nov 2025
     url: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX%3A52025DC0668
-    note: Primary EU report.
-counter_evidence: Compare with the government's per-capita framing (CC-025) and CC-003.
-tests: ESR projections; national inventory; NECP measures.
-why_low_hanging: A specific, attributable statement that public data can test.
+    note: 'The claim: note to Figure 13 and section 3.2, printed pp. 30-31. EUR-Lex refused scripts (HTTP 202, empty);
+      read in full for Malta from the EU Publications Office copies (XHTML and PDF, https://publications.europa.eu/resource/celex/52025DC0668)
+      on 6 Oct 2026. PDF in literature/CC-094/open-access/.'
+  - title: Climate Action Progress Report 2025, Commission Staff Working Document SWD(2025) 347
+    publisher: European Commission
+    date: Nov 2025
+    url: https://climate.ec.europa.eu/document/download/35f83a2d-f77d-4895-b616-d579069b23d3_en?filename=capr2025_swd_en.pdf
+    note: Table 25 (p. 114) assigns 49 to planned and 61 to existing measures; Table 26 (p. 125) Malta's 2021-2030 balance.
+  - title: Greenhouse gas emissions under the Effort Sharing Legislation, 2005-2024; Member States' GHG emission projections
+      2025
+    publisher: European Environment Agency
+    date: Nov 2025; Apr 2026
+    url: https://doi.org/10.2909/d6938865-05e5-4016-a15c-a09bb898421d
+    note: Primary evidence. Retrieved 6 Oct 2026 from the EEA datastore (data/cc-094/).
+  - title: Implementing Decision (EU) 2026/895 (annual emission allocations 2021-2030); Implementing Decisions (EU) 2020/2126
+      and 2024/1884; Regulations (EU) 2018/842 and 2023/857
+    publisher: EU Official Journal
+    date: 2018-2026
+    url: https://data.europa.eu/eli/dec_impl/2026/895/oj
+    note: The 2005 level (1,020,601 t), the -19% target, Malta's yearly limits and flexibilities. Read via the Publications
+      Office, 6 Oct 2026.
+  - title: Malta's final updated National Energy and Climate Plan 2021-2030 (Commission copy)
+    publisher: Government of Malta
+    date: Dec 2024
+    url: https://commission.europa.eu/publications/malta-final-updated-necp-2021-2030-submitted-2025_en
+    note: The government's view of the target (pp. 54-58). Read 6 Oct 2026.
+  quote: Malta’s gap to target is 49 and 61 percentage points, exceeding its 19% reduction target. This means Malta
+    is projected to emit more in 2030 than in 2005.
+counter_evidence: 'Reproduced. Malta''s March 2025 projections (EEA) give 1,323.8 kt with planned measures and 1,450.1
+  kt with existing ones in 2030, against the legal 2005 level of 1,020.6 kt: +29.7% and +42.1%, gaps of 48.7 and 61.1
+  points to -19%. Above 2005 against every 2005 figure (EEA estimate 1,007.4 kt; 2013-2020 base year 1,116.1 kt: +18.6%
+  at least) and with projections re-based on reviewed 2023 emissions (+26% / +38%). 2024 approximated emissions +40.8%
+  (1,437 kt); over the yearly limit by 220, 257 and 301 kt in 2022-2024. Gap ranking with planned measures: Malta 48.7,
+  Ireland 20.3, Germany 13.2 points (in tonnes Malta 0.5 Mt, Germany 64 Mt). Context and the other side: 2021-2030 balance
+  -2.09 Mt (planned measures); the ETS flexibility (0.51 Mt) and the maximum land-use credit (0.03 Mt) leave 1.55 Mt to
+  buy from other Member States (about 1% of the 125-175 Mt EU surplus) or cut; no safety reserve for Malta (Decision
+  2023/863). The Commission says it "cannot, at this stage, conclude" that progress is insufficient. Malta''s plan says
+  the target rests on 2005 forecasts overtaken by population growth (+41% to 2024; effort-sharing emissions per person
+  flat at 2.53 t), and EU law (Regulation 2023/857) accepts the target is above Malta''s cost-effective potential. "Missing
+  its target" was the intake''s paraphrase, not the Commission''s wording.'
+tests: EEA effort-sharing emissions 2005-2024 and GHG projections (2025 and 2023 submissions) for Malta and all EU-27;
+  2005 levels, targets, allocations and flexibilities from Regulations (EU) 2018/842 and 2023/857 and Implementing Decisions
+  (EU) 2020/2126, 2024/1884 and 2026/895; Commission SWD Tables 25-26; recomputed in tools/cc-094-report/calc.py.
+why_low_hanging: 'Done: Claim Check 094 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: 'Supported verdict: no right of reply needed. The claim text was restated from the Commission''s own wording;
+  "missing its target" (the intake''s paraphrase) is not rated. Projections are Malta''s March 2025 submission as held
+  by the EEA; 2024 emissions are approximated. Whether Malta will buy allocations, and at what cost, is not public.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- European Commission, COM(2025) 668 final, printed pp. 30-31 (literature/CC-094/open-access/COM-2025-668-final_EN.pdf)
+- EEA effort-sharing emissions 2005-2024 and GHG projections 2025, retrieved 6 Oct 2026 (data/cc-094/; checks in data/cc-094/checks.csv)
+- Implementing Decisions (EU) 2020/2126 (Annex I), 2024/1884 and 2026/895; Regulations (EU) 2018/842 and 2023/857 (data/cc-094/esr_legal_inputs.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-06'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-094A
+    text: "“Malta’s gap to target is 49 and 61 percentage points”"
+    finding: "48.7 (planned measures) and 61.1 (existing) from Malta’s March 2025 projections, the legal 2005 level and the −19% target [4, 6, 7]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-094B
+    text: "“…exceeding its 19% reduction target. This means Malta is projected to emit more in 2030 than in 2005.”"
+    finding: "+29.7% and +42.1% on 2005; above 2005 against every 2005 figure and if re-based on reviewed 2023 data (+26% and +38%) [3, 4]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-094C
+    text: "Germany, Ireland and Malta show the largest projected 2030 gaps before flexibilities"
+    finding: "With planned measures, in points: Malta 48.7, Ireland 20.3, Germany 13.2, Austria next at 8.0. Not so with existing measures (Cyprus, Belgium above Germany) or in tonnes (Malta 0.5 Mt) [4]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-094D
+    text: "Malta projected to have excess emissions in 2026–2030"
+    finding: "Covered to 2025 after the ETS flexibility (+0.07 Mt); −1.58 Mt by 2030 (planned measures), −1.55 Mt with the maximum land-use credit [3–5, 8, 9]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-094E
+    text: "“Missing its target” (our claim list’s paraphrase)"
+    finding: "Not the Commission’s words. Domestically 0.5 Mt over in 2030; legally, compliance possible by buying about 1.6 Mt (1.2% or less of the EU surplus). No safety reserve for Malta [1, 10]."
+    rating: "Not rated (paraphrase)"
+    tone: grey
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: +30%
+  caption: Malta's effort-sharing emissions in 2030 vs 2005 with planned measures (+42% without; target −19%)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-06
+    step: started
+    note: "Check started. EUR-Lex refused scripts (HTTP 202, empty body) and the Wayback Machine had no copy; the Commission's\
+      \ CAPR page download hit a bot check."
+  - date: 2026-10-06
+    step: wording
+    note: "Verbatim wording found in COM(2025) 668 final, read in full for Malta from the EU Publications Office (XHTML and\
+      \ PDF): note to Figure 13 and section 3.2, printed pp. 30-31. The claim text was restated from the Commission's words;\
+      \ 'missing its target' was the intake's paraphrase."
+  - date: 2026-10-06
+    step: note
+    note: "EEA effort-sharing emissions (2005-2024) and 2025 projections downloaded from the EEA datastore; Regulations (EU)\
+      \ 2018/842 and 2023/857 and Implementing Decisions (EU) 2020/2126, 2023/1319, 2024/1884 and 2026/895 and Decision\
+      \ (EU) 2023/863 read via the Publications Office; Malta's NECP and the Commission's NECP assessment read. All figures\
+      \ recomputed in tools/cc-094-report/calc.py: gaps 48.7 and 61.1 points; 2021-2030 balance -2.09 Mt, -1.55 Mt after\
+      \ Malta's own flexibilities (planned measures)."
+  - date: 2026-10-06
+    step: version
+    version: "1.0"
+    note: "First issue. No right of reply needed for a Supported verdict."
