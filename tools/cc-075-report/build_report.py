@@ -10,7 +10,6 @@ from mizien_report import *  # noqa: E402,F401
 FIG = HERE / "out"
 S = []
 LG = colors.HexColor("#8DB36B")
-REPLY = "pending right of reply (Lovin Malta)"   # maintainer session, 6 Oct 2026: name the body in the status
 
 # ================================================================== TL;DR
 S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
@@ -26,29 +25,30 @@ S.append(key_points([
      "By 25 July 2024, about two months before the article, Eurostat had published 2023 figures for all 27 Member "
      "States: Malta about 575, 12th; EU 571. That version of Eurostat’s article was online on the day the article "
      "appeared [13]."),
-    ("The article presents the old rank as current.",
-     "It calls Eurostat’s dataset “as of 2023” and says Malta “is ranked number seven”, while dating its graphic “up "
-     "to the year 2022”. It never says the 585 is a 2022 figure, and does not mention the 2023 figures."),
+    ("The article gives conflicting year signals and presents seventh as current.",
+     "It calls Eurostat’s dataset “as of 2023” but says its graphic illustrates the rankings “up to the year 2022”, "
+     "and it says Malta “is ranked number seven” in the present tense. It does not mention Eurostat’s already-published "
+     "2023 figures, which put Malta about 12th."),
     ("Lower since.",
      "In today’s revised data Malta is 11th for 2023 and 14th for 2025 (571, below the EU-27’s 584) [2]: its "
      "population has grown faster than its car stock [3, 4]. Side remarks: 585 per 1,000 is one car per 1.7 people, "
      "not per two; 246 km² is Malta island."),
-    ("Verdict: misleading (high confidence).",
-     "The 2022 figure is defensible, but leaving out that Eurostat’s latest figures put Malta 12th gives an inaccurate "
-     "picture of where Malta stood."),
+    ("Verdict: misleading (moderate confidence).",
+     "The 2022 figure is defensible, but seventh in the present tense, with conflicting dates and no mention of the "
+     "2023 figures, gives an inaccurate picture. Moderate, not high, because readers may read the dates differently."),
 ]))
-S += [Spacer(1, 4 * mm), VerdictMeter(3), Spacer(1, 3 * mm),
+S += [Spacer(1, 2 * mm), VerdictMeter(3), Spacer(1, 2 * mm),
       tiles([("585", GREEN, "Malta, 2022, in Eurostat’s revised data: seventh of 27, the figure the article reports"),
              ("12th", RED, "Malta’s rank in Eurostat’s 2023 figures (about 575), published by 25 July 2024"),
              ("≈602", GREY, "Malta’s 2022 value as Eurostat first released it (January 2024): sixth"),
              ("14th", ORANGE, "Malta’s rank in 2025 (571), now below the EU-27’s 584")]),
-      Spacer(1, 4 * mm),
+      Spacer(1, 2 * mm),
       up_down("Evidence that Eurostat’s 2023 figures were not public on 21 September 2024 (its article history shows "
-              "they were from 23 July), or that the article told readers the rank was for 2022 and that newer figures "
-              "existed.",
-              "Evidence that the graphic the article relied on showed 2023 data, so that seventh and 585 were misread "
-              "rather than out of date."),
-      Spacer(1, 5 * mm)]
+              "they were from 23 July), or that the graphic the article relied on (not found) labelled the 585 and the "
+              "rank as 2022 where readers saw them, so that the dates were not conflicting for readers.",
+              "None foreseen: the 585 and seventh place are right for 2022, so the figures themselves cannot be shown "
+              "false; only how they are presented is in question."),
+      Spacer(1, 2 * mm)]
 S += toc([("1", "The claim and what we could verify"), ("2", "Method"), ("3", "What the indicator measures"),
           ("4", "What Eurostat had published by 21 September 2024"), ("5", "What the data show now"),
           ("6", "Population growth and car density"), ("7", "Where the evidence points different ways"),
@@ -76,8 +76,9 @@ S.append(std_table([
 ], [104 * mm, 36 * mm, 30 * mm]))
 S.append(P("The headline is “Malta Ranked Number Seven On Eurostat’s ‘Passenger Cars Per 1,000 Inhabitants’ "
            "Dataset”. The claim record’s summary (seventh in the EU, 585 per 1,000) matches the article; we rate the "
-           "article’s own sentences, which add the neighbours (Germany, Poland), describe the dataset as “as of 2023” "
-           "and give no year for the 585."))
+           "article’s own sentences, which add the neighbours (Germany, Poland) and give conflicting year signals: the "
+           "dataset is “as of 2023” but the graphic runs “up to the year 2022”, and the sentence with the 585 and the "
+           "rank carries no year of its own."))
 S += [Spacer(1, 2 * mm),
       callout([P("SCOPE NOTE", tag),
                P("This check tests the statistics the article reports and how it presents them. It does not assess "
@@ -146,7 +147,7 @@ S.append(KeepTogether([std_table([
     [C("Article “Passenger cars in the EU”, revision 647912 (live 19 Aug – 5 Nov 2024)"), C("text 23 Jul, chart "
                                                                                              "25 Jul 2024"),
      C("2023"), C("about 575"), C("<b>12th</b>"), C("[13]")],
-    [C("<i>Lovin Malta article</i>"), C("<i>21 Sep 2024</i>"), C("<i>not stated</i>"), C("<i>585</i>"),
+    [C("<i>Lovin Malta article</i>"), C("<i>21 Sep 2024</i>"), C("<i>“2023” and “2022”</i>"), C("<i>585</i>"),
      C("<i>“number seven”</i>"), C("[1]")],
     [C("Database today (updated 30 Jul 2026)"), C("—"), C("2022 / 2023 / 2025"), C("585 / 575 / 571"),
      C("7th / 11th / 14th"), C("[2]")],
@@ -159,7 +160,8 @@ S.append(KeepTogether([fig(FIG / "fig5_published2023.png"), P(
     "stood on 21 September 2024. Malta is 12th [13].", cap)]))
 S.append(P("So the article’s 585 and seventh place are the 2022 column of data revised after January 2024: the 2022 "
            "value Eurostat first released was about 602 (sixth), and when the article appeared Eurostat’s published "
-           "2023 figures put Malta 12th. The article does not say which year its figures are for."))
+           "2023 figures put Malta 12th. The article gives conflicting year signals (dataset “as of 2023”, graphic “up to "
+           "the year 2022”) and states the rank in the present tense."))
 
 # ================================================================== 5
 S.append(CondPageBreak(110 * mm))
@@ -201,8 +203,17 @@ S.append(SectionHeading(6, "Population growth and car density"))
 S.append(P("The fall in the rate is a population effect. Malta’s passenger car stock grew every year from 2006 to 2025 "
            "[3]: by 6,618 in 2023, 6,632 in 2024 and 5,209 in 2025. Its population grew faster: from the end of 2012 to "
            "the end of 2025 the car stock rose 34.5% (249,612 to 335,693) and the population 39.6% (421,464 to 588,254) "
-           "[3, 4]. In 2022 alone the stock rose 1.3% and the population 4.2%, which is why the rate dropped from 602 to "
-           "585 in today’s data; from 2022 to 2025 the population grew 8.5% and the car stock 5.8% [3, 4]."))
+           "[3, 4]. In 2022 alone the stock rose 1.3% and the population 4.2%, which is why today’s data show the rate "
+           "dropping from 602 (2021) to 585 (2022); from 2022 to 2025 the population grew 8.5% and the car stock 5.8% "
+           "[3, 4]."))
+S.append(P("<b>Two different 602s.</b> Eurostat’s January 2024 release gave Malta about 602 for <i>2022</i> (read from its "
+           "chart) [6, 14]. Today’s data give 602 for <i>2021</i> and 585 for 2022 [2]. The numbers coincide, but they "
+           "are values for different years: the 2022 value was revised from about 602 to 585 after January 2024. The "
+           "car stock is not where the revision lies as far as we can see: the table in Eurostat’s July 2024 version "
+           "gives 317,234 for 2022, the same as today’s data [3, 13]. Dividing that stock by 602 implies a population of "
+           "about 527,000, against 542,051 on 1 January 2023 in today’s data [4]. So if the stock was the same in "
+           "January 2024, the revision is in the population denominator; we did not retrieve the January 2024 stock or "
+           "population, so the cause of the revision is not identified [12]."))
 S.append(P("Measured per km² of land instead of per person, Malta is far ahead of every other Member State: 1,014 "
            "passenger cars per km² in 2022 against 261 in the Netherlands, the next highest, and 1,073 in 2025 [3, 5]. "
            "The article’s 246 km² is Malta island (245 km² of land in Eurostat’s data); the whole country, including "
@@ -217,11 +228,12 @@ S.append(contested(
     "585 and seventh place are right for 2022 in Eurostat’s revised data [2], and the article dates its graphic “up to "
     "the year 2022”.",
     "Eurostat’s article, in the version online from 19 August to 5 November 2024, gave 2023 figures for all 27 Member "
-    "States, with Malta 12th at about 575 [13]. The Lovin Malta article calls the dataset “as of 2023”, states the "
-    "rank in the present tense and never gives a year for the 585.",
-    "<b>For this claim:</b> the 2022 figure is defensible, but presenting seventh as Malta’s standing, without saying "
-    "it was 2022 or that Eurostat’s newer figures put Malta 12th, leaves out a material fact and gives an inaccurate "
-    "picture."))
+    "States, with Malta 12th at about 575 [13]. The Lovin Malta article calls the dataset “as of 2023” but its graphic "
+    "“up to the year 2022”, and states the rank in the present tense.",
+    "<b>For this claim:</b> the 2022 figure is defensible, but presenting seventh in the present tense, with "
+    "conflicting dates and without saying that Eurostat’s newer figures put Malta 12th, leaves out a material fact and "
+    "gives an inaccurate picture. How readers take the conflicting dates is the interpretive question; it is why "
+    "confidence is moderate."))
 S.append(P("<b>Comparability.</b> Eurostat publishes and ranks these rates side by side [6, 7], and Malta’s values carry "
            "no flag, but collection methods are “not harmonised at EU level” and registers may hold cars with no "
            "“signs of life” [7]. Revisions also move places: after January 2024 Malta’s 2022 value went from about 602 to "
@@ -245,8 +257,8 @@ S.append(std_table([
        "release Malta was sixth and Poland 11th [6]."),
      verd("ACCURATE (2022, REVISED DATA)", GREENC)],
     [C("<b>C.</b> Presented as current: dataset “as of 2023”, Malta “is ranked” seventh"),
-     C("The article dates its graphic “up to the year 2022” but calls the dataset “as of 2023” and gives the rank in "
-       "the present tense. Eurostat had published 2023 figures by 25 Jul 2024: Malta about 575, 12th [13]. Separately, "
+     C("The article gives conflicting year signals (dataset “as of 2023”, graphic “up to the year 2022”) and states "
+       "the rank in the present tense. Eurostat had published 2023 figures by 25 Jul 2024: Malta about 575, 12th [13]. Separately, "
        "in today’s revised data Malta is 11th for 2023 [2]."),
      verd("OUT OF DATE WHEN PUBLISHED", RED)],
     [C("<b>D.</b> Italy top at 682, Latvia lowest at 409"),
@@ -270,19 +282,23 @@ S.append(P("<b>The figure and rank (A, B)</b> reproduce from Eurostat’s data f
 
 # ================================================================== 9
 S += [CondPageBreak(55 * mm), Spacer(1, 3 * mm), SectionHeading(9, "Verdict and requests for evidence"),
-      verdict_box("Misleading", "The 2022 figure is right in revised data, but the article presents seventh as current "
-                  "when Eurostat’s 2023 figures, published two months earlier, put Malta 12th. Confidence: high."),
+      verdict_box("Misleading", "The 2022 figure is right in revised data, but the article presents seventh in the "
+                  "present tense, with conflicting dates, when Eurostat’s 2023 figures, published two months earlier, "
+                  "put Malta about 12th. Confidence: moderate."),
       Spacer(1, 4 * mm)]
 S.append(P("<b>Why.</b> (1) Malta’s 585 and seventh place, between Germany and Poland, match Eurostat’s 2022 data as "
            "revised after January 2024; Eurostat’s January 2024 release had Malta sixth at about 602 [2, 6]. (2) By 23–25 "
            "July 2024 Eurostat had published 2023 figures for all 27 Member States, and the version of its article that "
            "showed them was online from 19 August to 5 November 2024: Malta about 575, 12th [13]. (3) The article calls "
-           "the dataset “as of 2023” and says “Malta is ranked number seven” without giving a year or mentioning the "
-           "2023 figures. Readers would take seventh as Malta’s latest standing; on Eurostat’s published figures it "
-           "was not. Individual statements are defensible, but the omission makes the overall impression inaccurate, "
-           "which is the scale’s definition of Misleading. (4) Confidence is high because Eurostat’s dated revision "
-           "history, the chart file with its upload time and checksum, the values in Eurostat’s text and our pixel "
-           "reading all agree [12, 13]. The documents are listed in the claim record (evidence shown)."))
+           "the dataset “as of 2023” but its graphic “up to the year 2022”, and says “Malta is ranked number seven” in "
+           "the present tense without mentioning the 2023 figures. Readers would take seventh as Malta’s latest "
+           "standing; on Eurostat’s published figures it was not. Individual statements are defensible, but the "
+           "omission makes the overall impression inaccurate, which is the scale’s definition of Misleading. (4) "
+           "Confidence is moderate, not high. The facts are well documented: Eurostat’s dated revision history, the "
+           "chart file with its upload time and checksum, the values in Eurostat’s text and our pixel reading all agree "
+           "[12, 13]. What is open is interpretive: the article’s own dates conflict, and a reader who noticed “up to "
+           "the year 2022” could fairly take seventh as a 2022 rank. The documents are listed in the claim record "
+           "(evidence shown)."))
 S.append(P("<b>What this verdict does not say.</b> It does not say the 585 figure is wrong (it is right for 2022 in "
            "today’s data), and it says nothing about intent: the graphic the article used may itself have been built "
            "from 2022 data. It assesses the article as published. It also says nothing about congestion, pollution or "
@@ -293,17 +309,23 @@ S.append(KeepTogether([P("Evidence we are asking for", h2), requests_list([
     "From NSO or Transport Malta: the stock of licensed passenger cars by year, the number of rented cars in it, and "
     "the number of registered but unlicensed (garaged) cars.",
 ])]))
-S.append(P("<b>Right of reply.</b> Under the project’s rule a reply is sought for a Misleading verdict. A letter to "
-           "Lovin Malta has been drafted for the maintainer; any response will be appended and the verdict revisited. "
+S.append(P("<b>Right of reply.</b> Under the project’s rule a reply is sought for a Misleading verdict. A right-of-reply "
+           "letter to Lovin Malta will be drafted for the maintainer; any response will be appended and the verdict revisited. "
            "Until the reply deadline has passed, this draft verdict is shown only on Miżien’s own site."))
 
 # ================================================================== 10
 S += [Spacer(1, 6 * mm), CondPageBreak(60 * mm), SectionHeading(10, "Limitations")]
 for l in ["Eurostat’s database serves only current data. What Eurostat had published earlier is shown through its "
           "Statistics Explained revisions and charts [13, 14] and its January 2024 release [6], not through a copy of "
-          "the database itself. The article’s own data date is unknown.",
+          "the database itself. For September 2024 we saw only the Statistics Explained revision and its figure as published, "
+          "not the database tables road_eqs_carhab and road_eqs_carmot, whose past vintages cannot be retrieved. The "
+          "data year behind the article’s figures is not confirmed: the article’s own dates conflict.",
           "The earlier values are read from Eurostat’s charts by pixel measurement; they match every value Eurostat "
-          "prints within 1.2 cars per 1,000, and Malta’s 12th place in 2023 rests on gaps of about 3 and 8.",
+          "prints within 1.2 cars per 1,000. Malta’s 12th place in 2023 is read from the chart, about 3 cars per 1,000 "
+          "behind France (about 578) and about 8 ahead of Austria, so 11th or 12th is within reading error; either is "
+          "far from seventh.",
+          "The cause of the revision of Malta’s 2022 value from about 602 to 585 is not identified (section 6): the "
+          "January 2024 car stock and population were not retrieved.",
           "The graphic the article used (Paula Lago, The European Correspondent) was not found (the embedded Instagram "
           "post needs a login; web.archive.org reset every connection). Eurostat’s methodology page for road "
           "equipment returned “not found”, so the denominator was established by recomputation.",
@@ -363,7 +385,14 @@ S += appendix_a("A experiment · B observational study with a control or gradien
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
 S += revision_log([("1.0", "6 Oct 2026", "First issue. Draft verdict Misleading (high confidence); pending right of "
-                                         "reply (Lovin Malta).")])
+                                         "reply."),
+                   ("1.1", "6 Oct 2026", "Corrections after the 6 Oct 2026 audit. The article gives conflicting year "
+                                         "signals (“as of 2023”, graphic “up to the year 2022”), not “no year”; wording "
+                                         "corrected throughout. Verdict stays Misleading; confidence lowered from high to "
+                                         "moderate (readers’ reading of the conflicting dates). Clarified: the two "
+                                         "“what would move the verdict” boxes; the 602 to 585 revision (section 6); "
+                                         "right-of-reply sentence; limitations (database vintages not seen; 11th or "
+                                         "12th within reading error). Pending right of reply.")])
 
 build_report(Report(
     number="075", out=str(FIG / "report.pdf"), kicker="Statistics and EU data",
@@ -373,12 +402,11 @@ build_report(Report(
                  "per 1,000 inhabitants.”"],
     quote_size=14,
     attribution="Lovin Malta (J. Darmanin), 21 September 2024.",
-    context="The outlet’s own text, citing Eurostat; no year given for the figure.",
+    context="The outlet’s own text, citing Eurostat; conflicting dates (“as of 2023”, graphic “up to 2022”).",
     verdict="Misleading", verdict_note="A 2022 rank presented as current; 2023 figures put Malta 12th",
-    footer_lines=["Version 1.0 (draft)  ·  6 October 2026", "Status:",
+    footer_lines=["Version 1.1 (draft)  ·  6 October 2026", "Status:",
                   "Prepared from public sources and Eurostat data.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Passenger cars per person: Malta and the EU", version="1.0", date="6 October 2026",
-    status_note=REPLY,
+    running_head="Passenger cars per person: Malta and the EU", version="1.1", date="6 October 2026",
     pdf_title="Is Malta seventh in the EU for cars per person? Claim Check 075",
     pdf_subject="Tests Lovin Malta's report that Malta ranks seventh in the EU with 585 passenger cars per 1,000 inhabitants",
     story=S))

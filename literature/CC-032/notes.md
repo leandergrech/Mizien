@@ -155,3 +155,9 @@ so the "second in the world" phrase is not tested.
 - The shuttle buses' model, battery, charging times and metered charging energy; the shuttle's operating hours.
 - What "of its kind" was meant to cover; the source for "second in the world".
 - The PQ answers themselves (parlament.mt, 403) and the contract documents (etenders).
+
+## Audit corrections, 6 Oct 2026
+- MaltaToday (maltatoday.com.mt/news/national/137696/...): fetched with a Firefox user-agent (HTTP 200), read in full. Dated 21 October 2025, 2:04pm, by Jade Bezzina. Reporter text: "This installation marks the first of its kind in Europe." Camilleri quoted only on "another step towards an environmentally friendly future" and a closing quote on emissions and quality of life. No new minister quote. Typo in the article ("directly effect") not quoted.
+- Verbatim re-check on the energy supply: TVM Maltese, Camilleri: "... din l-enerġija se tkun qiegħda tintuża sabiex tissupplixxi d-dawl, l-enerġija lill-buses elettriċi ..."; Lovin Malta, Camilleri: "the energy generated will power the lighting and electricity needs of the electric buses operating between Mġarr Port and this Park and Ride". "Directly offset the electricity used to charge" is Lovin Malta's statement text (TVM Maltese: "tikkumpensa l-elettriku użat biex tiġi ċċarġjata"), not in quotation marks.
+- Observation: Lovin Malta's English renders the second-in-the-world clause as "within the same region"; TVM Maltese says "bħala ammont fl-istess żona" (by number in the same area). Not rated.
+- Flyer: the diamond glyph does not render in the flyer font, so the flyer tile says "second-hand" in words.

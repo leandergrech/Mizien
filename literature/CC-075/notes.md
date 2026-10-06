@@ -6,7 +6,7 @@ MediaWiki API, Crossref, OpenAlex, DataCite, WebSearch, Lovin Malta page and Wor
 
 | Key | Source | Access | Finding used | Grade |
 |---|---|---|---|---|
-| lovin_2024_cars | Lovin Malta (J. Darmanin), 21 Sep 2024 | F | The claim, in the outlet's own words (no quotation marks; Lovin is the speaker): "according to the statistics Malta is ranked number seven, just between Germany and Poland respectively, with 585 cars per 1,000 inhabitants". Also: Eurostat "shared a dataset detailing the unit of cars per thousand residents in each European country as of 2023"; a graphic by Paula Lago via The European Correspondent "better illustrated these rankings up to the year 2022"; Italy top at 682, Latvia lowest at 409; "approximately 1 car for every 2 people"; "with just 246 square kilometres of land, Malta is also up there among the countries with the highest car density in Europe". No year is given for the 585; the rank is in the present tense. | (claim) |
+| lovin_2024_cars | Lovin Malta (J. Darmanin), 21 Sep 2024 | F | The claim, in the outlet's own words (no quotation marks; Lovin is the speaker): "according to the statistics Malta is ranked number seven, just between Germany and Poland respectively, with 585 cars per 1,000 inhabitants". Also: Eurostat "shared a dataset detailing the unit of cars per thousand residents in each European country as of 2023"; a graphic by Paula Lago via The European Correspondent "better illustrated these rankings up to the year 2022"; Italy top at 682, Latvia lowest at 409; "approximately 1 car for every 2 people"; "with just 246 square kilometres of land, Malta is also up there among the countries with the highest car density in Europe". The article gives conflicting year signals (dataset "as of 2023", graphic "up to the year 2022"); the sentence with the 585 and the rank carries no year of its own, and the rank is in the present tense. | (claim) |
 | eurostat_se_passenger_cars_rev647912 | Eurostat Statistics Explained "Passenger cars in the EU", revision 647912 (saved 19 Aug 2024, replaced 5 Nov 2024) | F (MediaWiki API) | **The version online on 21 Sep 2024.** "Data extracted in July 2024". Text (2023): Italy 694, Luxembourg 675, Cyprus 665, Finland 664, Estonia 630, Latvia 418, EU average 571. Figure 3 "Motorisation rate, 2023" (uploaded 25 Jul 2024, sha1 7dd8b8d6...): all 27 Member States; **Malta 12th, about 575** (France about 578 11th, Austria about 566 13th; pixel reading within 1.1 of every printed value). Table 2: Malta stock 317,234 (2022) and 323,852 (2023), as today. The 2023 text first appears in revision 646192 (23 Jul 2024). | C |
 | eurostat_se_passenger_cars_rev627098 | Same article, revision 627098 (31 Jan 2024) | F (MediaWiki API) | "Data extracted in December 2023"; Figure 3 "Motorisation rate, 2022" (uploaded 16 Jan 2024): Malta sixth at about 602. | C |
 | eurostat_news_20240117 | Eurostat news 17 Jan 2024 and its chart | F | Release of the 2022 figures: EU 560; Italy 684, Luxembourg 678, Finland 661, Cyprus 658; Latvia 414 lowest. **Its chart (2012 and 2022) shows Malta sixth at about 602**, Germany about 585, Poland about 571 (pixel reading within 1.2 of the printed values). Malta's 2022 value was later revised to 585 and Poland's to 584. | C |
@@ -72,3 +72,16 @@ read and not cited. No peer-reviewed study of the comparability of national vehi
 - The data year and release used by the graphic the article relied on (Latvia 409 matches neither Eurostat's January
   2024 release, 414, nor today's data, 406).
 - NSO's licensed-vehicle release (second-hand only) and the number of rented cars in Malta's stock.
+
+## Re-read of the article, 6 Oct 2026 (audit correction, version 1.1)
+
+- Lovin Malta WordPress API (post 148257) re-read in full on 6 Oct 2026. Paragraph 1: Eurostat "shared a dataset ... as of
+  2023"; paragraph 2: a graphic "better illustrated these rankings up to the year 2022". The sentence with the rank and
+  the 585 has no year. So the article gives conflicting year signals; the earlier "no year given" wording was too
+  strong and was corrected.
+- Two 602s: the January 2024 value for 2022 (about 602, chart reading) equals today's value for 2021 (602). The stock
+  317,234 for 2022 is the same in revision 647912 (Table 2, July 2024) and in today's road_eqs_carmot; stock / 602
+  implies about 527,000 people against 542,051 on 1 Jan 2023 today (data/cc-075/checks.csv). The January 2024 stock and
+  population were not retrieved, so the cause of the revision is not identified.
+- Vintages not seen: for September 2024 only the Statistics Explained revision and its figure; the database tables
+  road_eqs_carhab and road_eqs_carmot as they stood then cannot be retrieved.

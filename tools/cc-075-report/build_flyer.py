@@ -14,7 +14,7 @@ build_flyer(Flyer(
     quote_lines=["“Malta is ranked number seven, just between Germany",
                  "and Poland … with 585 cars per 1,000 inhabitants.”"],
     attribution="Lovin Malta, 21 September 2024",
-    context="The outlet’s own text, citing a Eurostat dataset “as of 2023”. No year is given for the figure.",
+    context="The outlet’s own text, citing a Eurostat dataset “as of 2023”, with a graphic “up to the year 2022”.",
     note="The 585 and seventh place are Eurostat’s 2022 figures, as revised after January 2024.",
     verdict="Misleading", verdict_right=["Right for 2022, but", "not Malta’s latest rank."],
     cards=[("585", GREEN, "Right for 2022",
@@ -22,7 +22,7 @@ build_flyer(Flyer(
            ("12th", RED, "Eurostat’s 2023 figures",
             "Published by 25 July 2024, two months before the article: Malta about 575."),
            ("“is ranked”", ORANGE, "Presented as current",
-            "The article calls the data “as of 2023” and never says the 585 is for 2022."),
+            "Conflicting dates (“as of 2023”, graphic “up to the year 2022”), but seventh in the present tense."),
            ("≈602", GREY, "Revised since",
             "Eurostat’s January 2024 release had Malta’s 2022 value at about 602, sixth."),
            ("14th", ORANGE, "Lower since",
@@ -32,6 +32,6 @@ build_flyer(Flyer(
     asks=["Lovin Malta: the data year and Eurostat release it used.",
           "Lovin Malta: the graphic behind the rankings.",
           "NSO: licensed versus garaged and rented cars."],
-    footer="Version 1.0  ·  6 October 2026  ·  Public data only  ·  Draft · pending right of reply (Lovin Malta)",
+    footer="Version 1.1  ·  6 October 2026  ·  Public data only  ·  Draft · pending right of reply",
     pdf_title="Claim Check 075 – Is Malta seventh in the EU for cars per person?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

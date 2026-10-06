@@ -248,6 +248,15 @@ t2 = [float(r["value"]) for r in REP if r["indicator"] == "passenger car stock (
 add("Malta stock in revision 647912 Table 2 (2022, 2023) vs today's road_eqs_carmot",
     f"{t2[0]:,.0f}, {t2[1]:,.0f} vs {STOCK[('MT', 2022)][0]:,.0f}, {STOCK[('MT', 2023)][0]:,.0f}", "cars",
     "reported_values.csv; " + S_STK)
+add("Malta 2022: January 2024 value (about 602, read from chart) equals today's value for which year",
+    f"today's 2021 = {HAB[('MT', 2021)][0]:.0f}; today's 2022 = {HAB[('MT', 2022)][0]:.0f}", "per 1,000", S_HAB,
+    "the same number, a different year: the 2022 value was revised")
+_imp = STOCK[("MT", 2022)][0] / inf["Malta"][0] * 1000
+add("Malta 2022: population implied by today's stock and the January 2024 value (stock / 602 x 1,000)",
+    f"{_imp:,.0f} vs {POP[('MT', 2023)][0]:,.0f} on 1 Jan 2023 today", "people",
+    "calculated from " + S_STK + "; " + S_POP,
+    "stock unchanged (317,234 in revision 647912 and today), so the revision is in the denominator or its cause is "
+    "unidentified; the January 2024 stock and population were not retrieved")
 add("Malta, 2023, in today's data", f"{HAB[('MT', 2023)][0]:.0f}, rank {rank_of('MT', 2023)}", "per 1,000", S_HAB,
     f"France now {HAB[('FR', 2023)][0]:.0f} ('{HAB[('FR', 2023)][1]}'), below Malta")
 
