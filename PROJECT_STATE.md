@@ -105,7 +105,12 @@ hour; no claim has a time yet. Undated claims appear in the text list only. The 
 - **Still to do:** Labour 2022 chapter 07 (transport) and chapter 13 (Gozo); Labour 2026 chapters 15 and 17; the PN 2022
   and 2026 programmes (needed for opposition proposals and "adopted by government"); the "dropped" check (after the
   2022–26 legislature, which has ended: which governing-party 2022 pledges in this list have no follow-up, after a
-  search); archive the manifesto PDFs in the Wayback Machine (reachable from the cloud).
+  search).
+- **Outstanding: archive both manifesto PDFs** in the Wayback Machine (reachable from the cloud) and add the archive
+  URLs to `data/sources.csv`. The Labour 2022 PDF is hosted on talk.mt, not on the party's own site, so its archived
+  copy matters more; the sha256 of the copies read is in each row of `data/manifesto_pledges.csv`.
+- **Balance:** the list is Labour-only for now (234 Labour rows, 1 PN row). PN 2022/2026 and the smaller parties are
+  missing; the maintainer is deciding whether to add PN before this list is merged.
 
 ## Pledges: stage 1 and squares (6 October 2026)
 
