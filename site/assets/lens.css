@@ -115,3 +115,20 @@
   .tr-pop { position: fixed; left: 8px; right: 8px; top: auto; bottom: 8px; width: auto; max-height: 75vh; }
   .tr-cmp { grid-template-columns: 1fr; }
 }
+
+/* Claim pages: "Pin this claim" and the tray, in the verdict-coloured header (white chips like the downloads) */
+.claim-pin { position: relative; display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
+.claim-pin[hidden] { display: none; }
+.claim-pin .tray { display: flex; }
+.cp-btn, .claim-pin .tr-btn { min-height: 40px; padding: 0 14px; border-radius: 9px; border: 0; background: #fff; color: #14452f;
+  font: 700 14px/1.2 var(--sans, "Liberation Sans", Arial, sans-serif); box-shadow: 0 1px 3px rgba(0,0,0,.18); cursor: pointer; }
+.cp-btn::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 8px; border-radius: 50%; border: 2px solid #e3a72f; vertical-align: 1px; }
+.cp-btn[aria-pressed="true"]::before { background: #e3a72f; }
+.cp-btn:hover, .claim-pin .tr-btn:hover { background: #f6f4ee; }
+.cp-btn:focus-visible, .claim-pin .tr-btn:focus-visible { outline: 3px solid #13301f; outline-offset: 2px; }
+.claim-pin .tr-btn svg { stroke: #b07a12; }
+@media (min-width: 701px) { .claim-pin .tr-pop { left: 0; right: auto; width: min(560px, calc(100vw - 32px)); } }
+.claim-pin .tr-pop { text-align: left; }
+.tr-pop a.tr-open { display: inline-flex; align-items: center; min-height: 32px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(227,167,47,.6);
+  color: #f6e3b4; font: 600 12.5px "Liberation Sans", Arial, sans-serif; text-decoration: none; }
+.tr-pop a.tr-open:hover { background: #e3a72f; color: #13301f; }

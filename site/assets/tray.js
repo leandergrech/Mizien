@@ -9,17 +9,21 @@
        dates).
    The tray never decides anything: every suggestion says why it is there.
 
-   MizienTray.init({ mount, onChange }) · has(id) · toggle(id) · add(ids) · list() */
+   Claim pages have a "Pin this claim" button and the same tray (init with url: false: the address is left alone, and
+   "Show only pinned" becomes links to Explore and the timeline).
+
+   MizienTray.init({ mount, onChange, url }) · has(id) · toggle(id) · add(ids) · list() */
 (function () {
   "use strict";
   var ROOT = (document.currentScript && document.currentScript.src || location.href).replace(/assets\/tray\.js.*$/, "");
-  var pins = [], saved = null, data = null, byId = {}, themes = {}, bodies = {}, hooks = [], btn = null, pop = null, mode = "pins";
+  var keepUrl = true, pins = [], saved = null, data = null, byId = {}, themes = {}, bodies = {}, hooks = [], btn = null, pop = null, mode = "pins";
   var VERDICTS = ["Supported", "Largely supported", "Not substantiated", "Misleading", "Contradicted"];
   var VC = { "Supported": "#2e7d4f", "Largely supported": "#8db36b", "Not substantiated": "#d9772b", "Misleading": "#c85a3a", "Contradicted": "#8e2f25" };
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function store() {
     try { localStorage.setItem("mizien.tray", JSON.stringify({ pins: pins, saved: saved })); } catch (e) {}
+    if (!keepUrl) return;   // claim pages keep their own address
     var u = new URL(location.href);
     if (pins.length) u.searchParams.set("pin", pins.join(",")); else u.searchParams.delete("pin");
     history.replaceState(null, "", u);
@@ -94,13 +98,15 @@
     if (pop.hidden) return;
     if (!data) { pop.innerHTML = '<p class="tr-h">Pinned claims</p><p class="tr-note">Loading…</p>'; return; }
     var Lens = window.MizienLens, onlyOn = Lens && Lens.only().length && Lens.only().join(",") === pins.join(",");
+    var openIn = ROOT + "explore/?pin=" + pins.join(",") + "&only=" + pins.join(",");
     var h = '<div class="tr-tabs" role="tablist">' + [["pins", "Pinned"], ["related", "Find related"], ["compare", "Compare"]].map(function (t) {
       return '<button type="button" role="tab" data-tab="' + t[0] + '" aria-selected="' + (mode === t[0]) + '">' + t[1] + "</button>"; }).join("") + "</div>";
     if (mode === "pins") {
       if (!pins.length) h += '<p class="tr-note">Nothing pinned yet. Open a claim, a group or a place and press <b>Pin</b>; pinned claims are marked in every view and kept in this browser.</p>';
       else {
         h += '<ul class="tr-list">' + pins.map(function (id) { var c = byId[id]; return c ? row(c, '<button type="button" class="tr-x" data-unpin="' + id + '" aria-label="Unpin ' + id + '">×</button>') : ""; }).join("") + "</ul>";
-        h += '<p class="tr-acts"><button type="button" data-act="only" aria-pressed="' + !!onlyOn + '">' + (onlyOn ? "Show all claims" : "Show only pinned") + "</button>" +
+        h += '<p class="tr-acts">' + (Lens ? '<button type="button" data-act="only" aria-pressed="' + !!onlyOn + '">' + (onlyOn ? "Show all claims" : "Show only pinned") + "</button>"
+          : '<a class="tr-open" href="' + esc(openIn) + '">Open in Explore</a><a class="tr-open" href="' + esc(ROOT + "timeline/?pin=" + pins.join(",") + "&only=" + pins.join(",")) + '">On the timeline</a>') +
           '<button type="button" data-act="share">Copy link</button><button type="button" data-act="clear">Clear</button></p>';
       }
     } else if (mode === "related") {
@@ -134,7 +140,7 @@
       if (b.dataset.pin) { add([b.dataset.pin]); return; }
       var a = b.dataset.act, Lens = window.MizienLens;
       if (a === "only" && Lens) { var on = Lens.only().join(",") === pins.join(","); Lens.only(on ? [] : pins); render(); }
-      else if (a === "share") { var u = location.href; (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(function () { b.textContent = "Link copied"; }, function () { prompt("Copy this link", u); }); }
+      else if (a === "share") { var u = keepUrl ? location.href : new URL(ROOT + "explore/?pin=" + pins.join(","), location.href).href; (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(function () { b.textContent = "Link copied"; }, function () { prompt("Copy this link", u); }); }
       else if (a === "clear") { pins = []; changed(); }
       else if (a === "addall") add(related().map(function (o) { return o.id; }));
       else if (a === "keep") { saved = pins.slice(); pins = []; changed(); }
@@ -151,7 +157,7 @@
 
   load();
   window.MizienTray = {
-    init: function (o) { if (o.mount) mount(o.mount); if (o.onChange) hooks.push(o.onChange); },
+    init: function (o) { if (o.url === false) keepUrl = false; if (o.mount) mount(o.mount); if (o.onChange) hooks.push(o.onChange); },
     onChange: function (f) { hooks.push(f); },
     has: function (id) { return pins.indexOf(id) >= 0; },
     toggle: function (id) { if (pins.indexOf(id) >= 0) remove(id); else add([id]); },

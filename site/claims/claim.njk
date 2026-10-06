@@ -5,6 +5,7 @@ pagination:
   size: 1
   alias: claim
 permalink: "/claims/{{ claim.id }}/"
+styles: [lens.css]
 ---
 {%- import "macros.njk" as m -%}
 {%- set c = claim -%}
@@ -37,6 +38,9 @@ permalink: "/claims/{{ claim.id }}/"
       {%- endfor %}
     </ul>
     {%- endif %}
+    <div class="claim-pin" id="claim-pin" data-id="{{ c.id }}" hidden>
+      <button type="button" class="cp-btn" aria-pressed="false">Pin this claim</button>
+    </div>
   </header>
 
   <div class="check-body{% if c.report_html %} has-report{% endif %}">
@@ -416,3 +420,15 @@ permalink: "/claims/{{ claim.id }}/"
   })();
 </script>
 {%- endif %}
+<script src="/assets/tray.js" defer></script>
+<script>
+  // Pin this claim to the tray (assets/tray.js) shared with Explore and the timeline; the tray's button sits beside it.
+  addEventListener("DOMContentLoaded", function () {
+    var box = document.getElementById("claim-pin"), T = window.MizienTray; if (!box || !T) return;
+    var id = box.dataset.id, b = box.querySelector(".cp-btn");
+    function sync() { var on = T.has(id); b.setAttribute("aria-pressed", on ? "true" : "false"); b.textContent = on ? "Pinned · unpin" : "Pin this claim"; }
+    b.addEventListener("click", function () { T.toggle(id); });
+    T.init({ mount: box, url: false, onChange: sync });
+    box.hidden = false; sync();
+  });
+</script>
