@@ -13,6 +13,7 @@ styles: [home.css]
 </script>
 
 <section class="home-hero" aria-labelledby="h-hero">
+  <div class="hero-text">
   <h1 id="h-hero">Weighing public claims against the evidence.</h1>
   <p class="lead">An independent record of checks on what authorities, institutions, parties, NGOs and others say in
     Malta about quality of life and the environment: science first, every source archived, every side held to the same
@@ -28,9 +29,25 @@ styles: [home.css]
     <a class="btn-ghost" href="/claims/">{% icon "list" %}<span>All claims</span></a>
     <a class="btn-ghost" href="/timeline/">{% icon "clock" %}<span>Timeline</span></a>
   </p>
+  </div>
+  {#- A deck of claim panels: one check at a time from a random chain. Swipe or drag a card left for the next, right to
+      go back; on wide screens it also turns by itself (not with reduced motion). assets/home.js draws the cards. -#}
+  <div class="deck-wrap" aria-roledescription="carousel" aria-label="Checks from the record">
+    {%- set c = H.cards[0] %}
+    <div class="deck" id="deck" aria-live="polite">
+      <article class="dcard is-front v-{{ c.v }}">{% include "deck-card.njk" %}</article>
+    </div>
+    <div class="deck-nav" hidden>
+      <button type="button" class="deck-btn" data-go="-1" aria-label="Previous check">‹</button>
+      <span class="deck-n" aria-hidden="true"></span>
+      <button type="button" class="deck-btn" data-go="1" aria-label="Next check">›</button>
+      <button type="button" class="deck-play" aria-pressed="false">Pause</button>
+    </div>
+    <p class="deck-hint">Swipe for another check</p>
+  </div>
 </section>
 
-<section class="home-section" aria-labelledby="h-mosaic">
+<section class="home-section is-mosaic" aria-labelledby="h-mosaic">
   <div class="home-head">
     <h2 id="h-mosaic">From the record</h2>
     <button type="button" class="mosaic-pause" id="mosaic-pause" aria-pressed="false" hidden>Pause</button>

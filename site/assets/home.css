@@ -68,3 +68,63 @@
 }
 @media (max-width: 400px) { .mosaic { grid-template-columns: 1fr; } .mcard { min-height: 0; } }
 @media (prefers-reduced-motion: reduce) { .mcard { transition: none; } .mcard.is-in { animation: none; } }
+
+/* The deck of claim panels in the hero: text on the left, a stack of cards on the right (below the text on phones) */
+.home-hero { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 28px 48px; align-items: center; }
+.deck-wrap { position: relative; padding: 10px 0 0; }
+.deck { position: relative; height: 380px; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.dcard { position: absolute; inset: 0; border-radius: 16px; overflow: hidden; background: var(--deck-bg); border: 1px solid rgb(var(--rim) / .16);
+  box-shadow: var(--deck-shadow); transition: transform .38s cubic-bezier(.2,.7,.2,1), opacity .38s ease; will-change: transform; }
+.dcard.is-back1 { transform: translate(14px, -12px) rotate(3.2deg) scale(.96); opacity: .8; }
+.dcard.is-back2 { transform: translate(26px, -22px) rotate(6deg) scale(.92); opacity: .5; }
+.dcard.is-front { z-index: 2; cursor: grab; }
+.dcard.is-front:active { cursor: grabbing; }
+.dcard.fly-left { transform: translate(-46%, 34px) rotate(-9deg) scale(.94) !important; opacity: 0; transition: transform .38s ease-in, opacity .26s ease-in; }
+.dcard.rise1 { transform: none; opacity: 1; }
+.dcard.rise2 { transform: translate(14px, -12px) rotate(3.2deg) scale(.96); opacity: .8; }
+.dcard.from-right { transform: translate(-46%, 34px) rotate(-9deg) scale(.94); opacity: 0; z-index: 3; }
+.dcard.sink1 { transform: translate(14px, -12px) rotate(3.2deg) scale(.96); opacity: .8; z-index: 1; }
+.dcard.sink2 { transform: translate(26px, -22px) rotate(6deg) scale(.92); opacity: .5; }
+.dc-link { display: flex; flex-direction: column; height: 100%; color: var(--ink); text-decoration: none; -webkit-user-drag: none; }
+.dc-link:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; border-radius: 16px; }
+.dc-head { display: block; padding: 16px 18px 14px; background: var(--v, #5d7468); color: var(--v-ink, #fff); }
+.dc-kicker { display: block; font: 700 11px/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; opacity: .9; }
+.dc-verdict { display: block; margin-top: 6px; font: 700 23px/1.15 var(--serif); }
+.dc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; font: 600 11.5px var(--sans); }
+.dc-tags span { padding: 2px 9px; border-radius: 999px; border: 1px solid currentColor; opacity: .9; }
+.dc-tags .dc-draft { border-style: dashed; text-transform: uppercase; letter-spacing: .06em; }
+.dc-body { display: flex; flex-direction: column; gap: 8px; flex: 1; min-height: 0; padding: 14px 18px 16px; }
+.dc-title { font: 700 17px/1.25 var(--serif); color: var(--ink-quote-hi); }
+.dc-quote { flex: 1; min-height: 0; font: italic 15px/1.45 var(--serif); color: var(--deck-quote); display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+.dc-meta { color: var(--muted); font-size: 12.5px; line-height: 1.45; }
+.dc-go { color: var(--accent); font: 700 13px var(--sans); }
+.dc-link:hover .dc-go { text-decoration: underline; }
+.deck-nav { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 16px; }
+.deck-nav[hidden], .deck-play[hidden] { display: none; }
+.deck-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgb(var(--rim) / .3); background: rgb(var(--panel) / .45); color: var(--ink);
+  font: 700 22px/1 var(--sans); cursor: pointer; }
+.deck-btn:hover { border-color: var(--accent); color: var(--accent); }
+.deck-n { min-width: 64px; text-align: center; color: var(--muted); font: 600 13px var(--sans); font-variant-numeric: tabular-nums; }
+.deck-play { min-height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid rgb(var(--rim) / .3); background: none; color: var(--muted);
+  font: 600 12px var(--sans); cursor: pointer; }
+.deck-hint { display: none; margin: 8px 0 0; text-align: center; color: var(--muted); font-size: 12.5px; }
+.deck-wrap:not(.is-live) .dcard.is-front { cursor: default; }
+@media (max-width: 900px) {
+  .home-hero { grid-template-columns: 1fr; gap: 0; }
+  /* on narrower screens the deck comes straight after the introduction, before the counts and links */
+  .hero-text { display: contents; }
+  .home-hero h1 { order: 1; } .home-hero .lead { order: 2; } .deck-wrap { order: 3; } .home-stats { order: 4; } .home-cta { order: 5; }
+  .deck-wrap { width: min(420px, 100%); margin: 4px auto 0; padding-top: 22px; }
+  .deck-wrap.is-live .deck-hint { display: block; }
+}
+@media (max-width: 640px) {
+  .deck { height: 360px; }
+  .dcard.is-back1 { transform: translate(8px, -10px) rotate(2.4deg) scale(.96); }
+  .dcard.is-back2 { transform: translate(14px, -19px) rotate(4.6deg) scale(.92); }
+  .dcard.rise2, .dcard.sink1 { transform: translate(8px, -10px) rotate(2.4deg) scale(.96); }
+  .dcard.sink2 { transform: translate(14px, -19px) rotate(4.6deg) scale(.92); }
+  .dc-verdict { font-size: 21px; }
+  /* on phones the deck is the way through the record, so the grid of cards below would repeat it */
+  .home-section.is-mosaic { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .dcard { transition: none; } }
