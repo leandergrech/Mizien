@@ -39,6 +39,16 @@ def load_cycles() -> list:
     return sorted(rows, key=lambda r: r["election_date"])
 
 
+COVERAGE_STATUS = ["listed", "no programme found", "not yet listed"]
+
+
+def load_coverage() -> dict:
+    p = ROOT / "data" / "manifesto_coverage.csv"
+    if not p.exists():
+        return {}
+    return {(r["cycle"], r["party"]): r for r in csv.DictReader(p.open(encoding="utf-8"))}
+
+
 def load_manifesto() -> dict:
     p = ROOT / "data" / "manifesto_pledges.csv"
     if not p.exists():
@@ -165,7 +175,30 @@ def check_files(claim_ids: set) -> list:
         if not (c.get("source") or "").strip():
             errs.append(f"data/cycles.csv: {c.get('id')} needs a source")
     ids = {c["id"] for c in cycles}
-    for mid, r in load_manifesto().items():
+    contested = {c["id"]: {x.strip() for x in (c.get("contested") or "").split(";") if x.strip()} for c in cycles}
+    manifesto = load_manifesto()
+    # Fairness rule (maintainer, 6 Oct 2026): every party that contested an election is listed to the same scope, and
+    # data/manifesto_coverage.csv records for each one what was listed, or where and when a programme was searched for.
+    coverage = load_coverage()
+    for cid, parties in contested.items():
+        for party in sorted(parties):
+            cov = coverage.get((cid, party))
+            if cov is None:
+                errs.append(f"data/manifesto_coverage.csv: no row for {party} in {cid} (every contesting party needs one)")
+                continue
+            n = sum(1 for r in manifesto.values() if r.get("cycle") == cid and r.get("party") == party)
+            if cov.get("status") not in COVERAGE_STATUS:
+                errs.append(f"data/manifesto_coverage.csv: {cid} {party} status must be one of {', '.join(COVERAGE_STATUS)}")
+            elif cov["status"] == "listed" and str(n) != (cov.get("rows") or "").strip():
+                errs.append(f"data/manifesto_coverage.csv: {cid} {party} says {cov.get('rows')} rows, the list has {n}")
+            elif cov["status"] != "listed" and not (cov.get("searched") or "").strip():
+                errs.append(f"data/manifesto_coverage.csv: {cid} {party} needs `searched` (where and when)")
+    for key in coverage:
+        if key[1] not in contested.get(key[0], set()):
+            errs.append(f"data/manifesto_coverage.csv: {key[1]} is not listed as contesting {key[0]} in data/cycles.csv")
+    for mid, r in manifesto.items():
+        if contested.get(r.get("cycle")) and r.get("party") not in contested[r.get("cycle")]:
+            errs.append(f"data/manifesto_pledges.csv: {mid} party '{r.get('party')}' did not contest {r.get('cycle')} (data/cycles.csv)")
         if not MP_ID.fullmatch(mid):
             errs.append(f"data/manifesto_pledges.csv: id '{mid}' must look like MP-PL-2022-305")
         if r.get("cycle") not in ids:
@@ -173,7 +206,7 @@ def check_files(claim_ids: set) -> list:
         if r.get("claim") and r["claim"] not in claim_ids:
             errs.append(f"data/manifesto_pledges.csv: {mid} claim '{r['claim']}' is not a claim")
         for f in [x.strip() for x in (r.get("follows") or "").split(";") if x.strip()]:
-            if not (re.fullmatch(r"CC-\d{3}", f) and f in claim_ids) and f not in load_manifesto():
+            if not (re.fullmatch(r"CC-\d{3}", f) and f in claim_ids) and f not in manifesto:
                 errs.append(f"data/manifesto_pledges.csv: {mid} follows '{f}', which is neither a claim nor a manifesto pledge")
         if r.get("measurable", "") not in ("", "yes", "no"):
             errs.append(f"data/manifesto_pledges.csv: {mid} measurable must be yes, no or empty")
