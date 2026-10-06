@@ -32,6 +32,14 @@
     });
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", token("--bg") || "#0e2a1f");
+    // no stored choice and no ?theme=: follow the system setting if it changes while the page is open
+    if (window.matchMedia && !/[?&]theme=(light|dark)\b/.test(location.search)) {
+      var mq = matchMedia("(prefers-color-scheme: light)"), follow = function () {
+        var s = null; try { s = localStorage.getItem(KEY); } catch (e) {}
+        if (s !== "light" && s !== "dark") apply(mq.matches ? "light" : "dark", false);
+      };
+      if (mq.addEventListener) mq.addEventListener("change", follow); else if (mq.addListener) mq.addListener(follow);
+    }
     // another tab changed the theme
     window.addEventListener("storage", function (e) { if (e.key === KEY && (e.newValue === "light" || e.newValue === "dark") && e.newValue !== current()) apply(e.newValue, false); });
   }

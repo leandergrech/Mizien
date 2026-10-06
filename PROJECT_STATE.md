@@ -34,8 +34,8 @@ previous build: only the header differs, plus native controls such as checkboxes
   Do not hard-code the dark greens in new CSS: use the tokens.
 - The toggle (`_includes/theme-toggle.njk`, `assets/theme.js`) sits beside the main tabs on every page. The choice is kept in
   `localStorage` (`mizien.theme`); `?theme=light|dark` shows a theme for one visit (handy for links and for testing).
-  `_includes/theme-init.njk` sets it before first paint (no flash). **Default is dark for everyone; to follow the system
-  setting instead, change the first line of that script (the comment there says how). Maintainer decision pending.**
+  `_includes/theme-init.njk` sets it before first paint (no flash). **With no stored choice the site follows the reader's
+  system setting (maintainer decision, 6 Oct 2026), dark where the browser cannot say; it also follows a change while the page is open.**
 - The claims web (sphere, lines, labels, rings) reads `--cv-*`/`--stage-*` tokens through `map.js` (`readCanvasTheme`); the Malta
   map has a dark and a light palette (`mapStyle`) and restyles in place when the theme changes.
 - Checked: axe colour-contrast has 0 violations on 12 page types in the light theme (and on the glyph key and claim pages in
@@ -65,8 +65,9 @@ open-ended and neutral, and an emblem could read as a logo or an endorsement).
   label, a new "Where" fact with the place emblem, kind of body on every body chip), `/about/glyphs/` (footer and Explore legend).
 - Not done on purpose: verdict glyphs inside every `.badge` (many templates; the claim page and filters have them), glyphs on
   individual claims' nodes (their colour is the verdict), unique glyphs for individual bodies (see above).
-- Weakest glyphs, to redraw if they confuse readers: Emissions & targets (CO2 molecule), Open spaces & parks (bench reads as a
-  table), Construction waste (tipper truck, busy at 16 px), the three domed place emblems (valletta, cittadella, gardjola).
+- Redrawn on 6 Oct 2026 at the maintainer's request: Emissions & targets (an arrow into a target), Open spaces & parks (a
+  round tree and a bench), Construction waste (a wheelbarrow of rubble), Valletta (dome and spire on a bastion), Cittadella
+  (walls and cathedral front on a hill), Gardjola (the domed lookout with its eye).
 - Noticed, not changed: in the Explore panel the "shares: ..." lines under Similar wording (`map.js`, a `span.small` outside
   `#panel p.small`) render in body size instead of the small type used around them. Same on the previous build.
 
