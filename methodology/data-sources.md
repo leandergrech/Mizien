@@ -58,3 +58,4 @@ turned out to have readable sources):
   Article 12 tables under the obvious names (CC-106).
 
 - **airportcarbonaccreditation.org** web pages return an `sgcaptcha` wall, but its WordPress API is readable: `/wp-json/wp/v2/accredited-airport?slug=malta` gives an airport's current level (CC-030 review, 5 Oct 2026). Carbon-credit retirements can be checked in the Gold Standard public API (`public-api.goldstandard.org/credits/<id>`) and other registries' public endpoints. `maltairport.com` press releases and sustainability reports download with curl (follow redirects, `-L`); MIA's report gives Scope 1-3 in GRI 102 and PwC limited assurance on Scope 1-2.
+- **grda.mt** pages and its `?s=` search are readable with a browser User-Agent (CC-031); **gozo.news** serves a JavaScript bot check; Gozo's NUTS 3 population is Eurostat `demo_r_pjangrp3`, geo `MT002`. Eurostat has no Gozo emissions inventory.

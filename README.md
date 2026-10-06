@@ -60,7 +60,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-028 | Climate & Energy | 76% less network downtime | In progress | - |
 | CC-029 | Climate & Energy | First offshore wind farm | In progress | - |
 | CC-030 | Climate & Energy | Carbon-neutral airport | Drafted | Not substantiated |
-| CC-031 | Climate & Energy | Gozo, first climate-neutral region | In progress | - |
+| CC-031 | Climate & Energy | Gozo, first climate-neutral region | Drafted | Largely supported (pledge: Not measurable) |
 | CC-032 | Climate & Energy | Solar flowers, first in Europe | Not started | - |
 | CC-033 | Air | Delimara: 'much cleaner air' | Not started | - |
 | CC-034 | Air | Air Quality Plan 'already yielding results' | In progress | - |

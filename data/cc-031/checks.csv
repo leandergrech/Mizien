@@ -1,0 +1,22 @@
+check,value,unit,source,note
+"Gozo and Comino share of Malta's population, 1 Jan 2023",7.41,%,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",40191 of 542051
+Malta total GHG 2023,2207.3,kt CO2e,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",excl. LULUCF and international aviation and shipping
+Malta road-transport GHG 2023,686.5,kt CO2e,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",31.1% of the total
+Malta fuel combustion in transport 2023,765.2,kt CO2e,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",34.7% of the total
+"Gozo road transport 2023, population-proportional approximation",50.9,kt CO2e,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",NOT Gozo data: Malta road transport x Gozo's population share; no regional inventory exists in Eurostat
+"Gozo all sectors 2023, population-proportional approximation",163.7,kt CO2e,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",as above; illustrative scale only
+Bus saving (1.3 kt) as share of approximate Gozo road transport 2023,2.6,%,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",operator estimate over proportional approximation: order of magnitude only
+Bus saving as share of Malta road transport 2023,0.19,%,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",
+Bus saving as share of Malta total GHG 2023,0.059,%,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",
+"Gozo and Comino share of Malta's population, 1 Jan 2024",7.26,%,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",40926 of 563443
+Malta total GHG 2024,2170.2,kt CO2e,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",excl. LULUCF and international aviation and shipping
+Malta road-transport GHG 2024,690.2,kt CO2e,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",31.8% of the total
+Malta fuel combustion in transport 2024,787.7,kt CO2e,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",36.3% of the total
+"Gozo road transport 2024, population-proportional approximation",50.1,kt CO2e,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",NOT Gozo data: Malta road transport x Gozo's population share; no regional inventory exists in Eurostat
+"Gozo all sectors 2024, population-proportional approximation",157.6,kt CO2e,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",as above; illustrative scale only
+Bus saving (1.3 kt) as share of approximate Gozo road transport 2024,2.6,%,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",operator estimate over proportional approximation: order of magnitude only
+Bus saving as share of Malta road transport 2024,0.19,%,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",
+Bus saving as share of Malta total GHG 2024,0.06,%,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",
+"Road transport share of Malta total GHG, 2005",16.6,%,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",
+Malta road-transport GHG change 2005-2024,39.4,%,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",
+Eurostat status flags on the values used,none,flags,"Eurostat env_air_gge, demo_r_pjangrp3, retrieved 6 Oct 2026; MPT estimate via TVM News 4 Jul 2026",
