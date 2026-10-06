@@ -1,0 +1,55 @@
+check,value,unit,source,note
+"Malta: passenger cars per 1,000 inhabitants, 2022",585.0,"per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",no flag
+EU-27 countries with a 2022 value,27,of 27,"Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026","flags among the 27: DE 'b', LV 'b', PL 'i', RO 'e'"
+"Malta rank among EU-27, 2022 (1 = most cars per person)",7,rank,"Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",
+"Country ranked just above Malta, 2022",587.0,"per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",DE (Germany); flag 'b'
+"Country ranked just below Malta, 2022",584.0,"per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",PL (Poland); flag 'i'
+"Highest EU-27 value, 2022",682.0,"per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",IT; no flag
+"Lowest EU-27 value, 2022",406.0,"per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",LV; flag 'b'
+"EU-27 average, 2022",564.0,"per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",no flag
+"Values of the 5th to 9th places, 2022",622-582,"per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026","5th EE, 9th CZ: five countries within 40 cars per 1,000"
+"Countries within 5 cars per 1,000 of Malta, 2022","DE 587, PL 584, CZ 582",list,"Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",
+"Malta rank among every country in the dataset, 2022",9,of 41,"Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026","non-EU countries above Malta: LI 773, IS 611 ('i')"
+Malta: passenger car stock at end of 2022,317234,cars,"Eurostat road_eqs_carmot, updated 1 Sep 2026, retrieved 6 Oct 2026",no flag
+Malta: population on 1 January 2023,542051,people,"Eurostat demo_gind (1 January), updated 30 Sep 2026, retrieved 6 Oct 2026",no flag
+"Malta: stock / population on 1 Jan 2023 x 1,000",585.2,"per 1,000",calculated,reproduces Eurostat's 585
+"Malta: stock / population on 1 Jan 2022 x 1,000 (start-of-year denominator)",609.9,"per 1,000",calculated,for comparison only; Eurostat uses the end-of-year population
+"EU-27 countries whose 2022 rate is reproduced by stock / population on 1 Jan 2023 (within 1 per 1,000)",27,of 27,calculated,the denominator is the population at the end of the reference year
+"Malta 2021: stock / population on 1 Jan 2022 x 1,000 vs Eurostat",602.1 vs 602,"per 1,000",calculated,
+"Malta 2022: stock / population on 1 Jan 2023 x 1,000 vs Eurostat",585.2 vs 585,"per 1,000",calculated,
+"Malta 2023: stock / population on 1 Jan 2024 x 1,000 vs Eurostat",574.8 vs 575,"per 1,000",calculated,
+"Malta 2024: stock / population on 1 Jan 2025 x 1,000 vs Eurostat",575.5 vs 576,"per 1,000",calculated,
+"Malta 2025: stock / population on 1 Jan 2026 x 1,000 vs Eurostat",570.7 vs 571,"per 1,000",calculated,
+"Malta rank among EU-27, 2023",11,of 27,"Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026","Malta 575 (no flag); EU-27 570 (no flag); 12 countries above the EU-27 value; flagged: BE 'i', FR 'p', RO 'e'"
+"Malta rank among EU-27, 2024",13,of 27,"Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026","Malta 576 (no flag); EU-27 577 (no flag); 11 countries above the EU-27 value; flagged: BE 'i', IE 'i', FR 'p', PL 'b', RO 'e'"
+"Malta rank among EU-27, 2025",14,of 27,"Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026","Malta 571 (no flag); EU-27 584 (no flag); 11 countries above the EU-27 value; flagged: BE 'p', IE 'i', EL 'ep', ES 'p', FR 'ip', IT 'p', CY 'p', PL 'i', PT 'p', RO 'e', SI 'b'"
+"Malta minus EU-27, 2025",-13.0,"per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",
+"Malta minus EU-27, 2024",-1.0,"per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",
+Years Malta ranked in the EU-27's top three,11 years,years,"Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026","1995, 1997, 2007, 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016"
+Malta's highest value in the series,616.0,"per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",2016; rank 3 of 27
+Malta: years with no value,"2003, 2004",years,"Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",
+"Eurostat flags on Malta's series, 1990-2025",none,flags,"Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",
+First year Malta's rate is below the EU-27 value,2024,year,"Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",Malta 576 vs EU-27 577; EU-27 series starts 2000 (gaps to 2010)
+"Malta minus EU-27, 2010",94.0,"per 1,000","Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",
+Malta 2012-2025: change in car stock vs change in population (end-year),+34.5% vs +39.6%,%,"calculated from Eurostat road_eqs_carmot, updated 1 Sep 2026, retrieved 6 Oct 2026 and Eurostat demo_gind (1 January), updated 30 Sep 2026, retrieved 6 Oct 2026","stock 249,612 -> 335,693; population on 1 Jan 2013 421,464 -> 2026 588,254"
+Malta 2021-2022: change in car stock vs change in population (end-year),+1.3% vs +4.2%,%,"calculated from Eurostat road_eqs_carmot, updated 1 Sep 2026, retrieved 6 Oct 2026 and Eurostat demo_gind (1 January), updated 30 Sep 2026, retrieved 6 Oct 2026","stock 313,177 -> 317,234; population on 1 Jan 2022 520,174 -> 2023 542,051"
+Malta 2022-2025: change in car stock vs change in population (end-year),+5.8% vs +8.5%,%,"calculated from Eurostat road_eqs_carmot, updated 1 Sep 2026, retrieved 6 Oct 2026 and Eurostat demo_gind (1 January), updated 30 Sep 2026, retrieved 6 Oct 2026","stock 317,234 -> 335,693; population on 1 Jan 2023 542,051 -> 2026 588,254"
+"Malta: net addition to the car stock, 2023-2025 (per year)","2023: +6,618, 2024: +6,632, 2025: +5,209",cars,"Eurostat road_eqs_carmot, updated 1 Sep 2026, retrieved 6 Oct 2026",
+Malta: years 2006-2025 in which the car stock fell,none,years,"Eurostat road_eqs_carmot, updated 1 Sep 2026, retrieved 6 Oct 2026",
+Italy 2022: article / Eurostat news (Jan 2024) / dataset now,682 / 684 / 682,"per 1,000","reported_values.csv; Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",no flag
+Latvia 2022: article / Eurostat news (Jan 2024) / dataset now,409 / 414 / 406,"per 1,000","reported_values.csv; Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",flag 'b' (b = break in time series)
+Luxembourg 2022: Eurostat news (Jan 2024) / dataset now,678 / 673,"per 1,000","reported_values.csv; Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",revised since the January 2024 release
+Finland 2022: Eurostat news (Jan 2024) / dataset now,661 / 660,"per 1,000","reported_values.csv; Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",revised since the January 2024 release
+Cyprus 2022: Eurostat news (Jan 2024) / dataset now,658 / 633,"per 1,000","reported_values.csv; Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",revised since the January 2024 release
+EU-27 2022: Eurostat news (Jan 2024) / dataset now,560 / 564,"per 1,000","reported_values.csv; Eurostat road_eqs_carhab, updated 30 Jul 2026, retrieved 6 Oct 2026",
+"People per passenger car in Malta, 2022 (1,000 / 585)",1.71,people,calculated,the article: 'approximately 1 car for every 2 people'
+"Passenger cars per person in Malta, 2022",0.585,cars,calculated,
+"Malta: land area (whole country), 2022",313.0,km2,"Eurostat reg_area3 (land area), updated 22 Jan 2026, retrieved 6 Oct 2026",no flag
+"Malta island (NUTS 3 MT001): land area, 2022",245.0,km2,"Eurostat reg_area3 (land area), updated 22 Jan 2026, retrieved 6 Oct 2026",the article: 246 km2
+"Gozo and Comino (MT002): land area, 2022",68.0,km2,"Eurostat reg_area3 (land area), updated 22 Jan 2026, retrieved 6 Oct 2026",
+"EU-27 countries with both car stock and land area, 2022",27,of 27,calculated,
+"Malta: passenger cars per km2 of land, 2022",1014,cars/km2,calculated,rank 1 of 27
+"Second-highest EU-27 cars per km2 of land, 2022",261,cars/km2,calculated,NL (Netherlands); Malta / second = 3.9x
+"Malta: cars per km2 if only Malta island's land (245 km2) were used, 2022",1295,cars/km2,calculated,for comparison; the stock is national
+"Malta: passenger cars per km2 of land, 2025",1073,cars/km2,calculated,rank 1 of 27
+"NSO licensed passenger cars, end 2022, implied by 74.7% of 424,904 (second-hand)","317,403 (317,191-317,616 for 74.65-74.75%)",cars,NSO News2023_023 via search summary ◆,"Eurostat stock 317,234: inside the range"
