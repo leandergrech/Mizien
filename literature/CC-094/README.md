@@ -1,4 +1,4 @@
-# CC-094: Commission: Malta off track for 2030
+# CC-094: Commission: Malta to emit more in 2030 than in 2005
 
 **Status:** Drafted (v1.0, 6 Oct 2026). Verdict Supported (high confidence); no right of reply needed. See
 `primary-source.md` (the Commission's sentences, page numbers, file hashes), `notes.md` (sources, access, grades, search
@@ -6,8 +6,11 @@ log, gaps) and `references.bib`. Data: `data/cc-094/` (EEA effort-sharing emissi
 the Commission's stated figures, `checks.csv`); the Commission's SWD tables for Malta are reused from
 `data/cc-003/capr2025_esr_malta.csv`. Report build: `tools/cc-094-report/`.
 
-Open access: `open-access/COM-2025-668-final_EN.pdf`, the report itself (75 pages, from the EU Publications Office;
-reuse of Commission documents authorised with acknowledgement of the source, Commission Decision 2011/833/EU).
+Open access: `open-access/COM-2025-668-final_EN.pdf`, the report itself (75 pages, from the EU Publications Office).
+Licence: © European Union, 2025, CC BY 4.0 (Decision 2011/833/EU).
+
+Title: changed on 6 Oct 2026 from the intake's "Commission: Malta off track for 2030". The Commission did not use
+"off track", and its gap is stated before any use of flexibilities.
 
 ## Routes tried for the verbatim wording (6 Oct 2026)
 

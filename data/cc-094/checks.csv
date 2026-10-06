@@ -27,6 +27,7 @@ Malta 2022: emissions minus annual allocation,220.3,kt CO2e,calculated,allocatio
 Malta 2023: emissions minus annual allocation,257.2,kt CO2e,calculated,allocation 1187.9 kt
 Malta 2024: emissions minus annual allocation,301.2,kt CO2e,calculated,allocation 1136.3 kt
 2024 approximated emissions vs the 2025 projection's value for 2024,-3.3,%,calculated,1437.4 vs 1487.2 kt (WEM = WAM in 2024)
+WAM 2030 projection minus the 2005 level,303.2,kt CO2e,calculated,how far 2030 sits above 2005 with planned measures
 Cut needed from 2024 to reach the 2030 limit,-42.5,%,calculated,1437.4 -> 826.7 kt; -8.8% a year
 "Malta effort-sharing emissions, average yearly change 2005-2024",1.8,% a year,calculated,from the 2005 base to the 2024 approximated value
 "Projected change 2024-2030, WAM",-7.9,%,calculated,
@@ -69,11 +70,14 @@ WAM 2030: sum of sectors minus total,0.0,kt CO2e,calculated,should be 0
 2030 WEM minus WAM: Industrial processes (mainly F-gases),34.4,kt CO2e,calculated,
 2030 WEM minus WAM: Agriculture,0.0,kt CO2e,calculated,
 2030 WEM minus WAM: Waste,91.9,kt CO2e,calculated,
+Transport in 2030 as a share of the 2030 limit,89.2,%,calculated,transport is the same in WEM and WAM
 "Largest 2030 gaps in percentage points, WAM","MT 48.7, IE 20.3, DE 13.2, AT 8.0",pp,calculated,"Commission (p. 30): DE, IE, MT"
 "Largest 2030 overachievement, WAM","BG -25.6, EL -20.6, PT -11.4",pp,calculated,"Commission (p. 30): BG, EL, PT"
+"Gap ranking in percentage points, WAM, top 8","MT 48.7, IE 20.3, DE 13.2, AT 8.0, CY 6.1, EE 5.9, SE 5.1, FI 4.8",pp,calculated,Germany ranks 3 of 27; Ireland 2
 "Largest 2030 gaps in tonnes, WAM","DE 64.1, IT 10.9, IE 9.7",Mt CO2e,calculated,"Malta 0.50 Mt, rank 10 of 27"
 "Largest 2030 gaps in percentage points, WEM","MT 61.1, IE 32.5, CY 28.2, BE 25.3",pp,calculated,"Commission (p. 30): DE, IE, MT"
 "Largest 2030 overachievement, WEM","BG -25.6, EL -20.6, CZ -1.6",pp,calculated,"Commission (p. 30): BG, EL, PT"
+"Gap ranking in percentage points, WEM, top 8","MT 61.1, IE 32.5, CY 28.2, BE 25.3, SI 17.6, LU 17.0, AT 15.8, DE 13.6",pp,calculated,Germany ranks 8 of 27; Ireland 2
 "Largest 2030 gaps in tonnes, WEM","DE 66.1, IT 45.9, FR 42.0",Mt CO2e,calculated,"Malta 0.62 Mt, rank 19 of 27"
 Belgium's projection is from its 2024 submission (gap-filled by the EEA),2024,submission year,"EEA, GHG projections 2025 submission (GHG_projections_2025_EEA_incl_pivots.xlsx), retrieved 6 Oct 2026",COM p. 17: Belgium had not submitted in 2025
 "Cumulative allocations minus emissions 2021-2025, WAM",-0.44,Mt CO2e,calculated,"2021-2024 reviewed/approximated, 2025 projected; SWD Table 26: -0.4 Mt"
@@ -81,12 +85,16 @@ Belgium's projection is from its 2024 submission (gap-filled by the EEA),2024,su
 "Same, 2021-2025, after the ETS flexibility, WAM",0.07,Mt CO2e,calculated,"ETS flexibility 510.3 kt (Decision 2024/1884), assumed usable when needed, as the Commission assumes (COM p. 31)"
 "Same, 2021-2030, after the ETS flexibility, WAM",-1.58,Mt CO2e,calculated,
 "Same, 2021-2030, after ETS and the maximum LULUCF flexibility, WAM",-1.55,Mt CO2e,calculated,"LULUCF maximum 30 kt (Annex III), only if credits exist"
+"Share of the 2021-2030 excess covered by Malta's own flexibilities, WAM",25.8,%,calculated,own flexibilities 0.54 Mt (ETS 0.51 + LULUCF maximum 0.03)
+"EU surplus as a multiple of Malta's remaining shortfall, WAM",80.5-112.7,times,calculated,125-175 Mt / 1.55 Mt
 "Shortfall to cover by buying allocations, WAM, as a share of the EU surplus",0.9-1.2,%,calculated,1.55 Mt against 125-175 Mt (COM p. 31)
 "Cumulative allocations minus emissions 2021-2025, WEM",-0.44,Mt CO2e,calculated,"2021-2024 reviewed/approximated, 2025 projected; SWD Table 26: -0.4 Mt"
 "Cumulative allocations minus emissions 2021-2030, WEM",-2.71,Mt CO2e,calculated,"allocations from Decision 2026/895; SWD Table 26 (Commission estimate, WAM): -2.1 Mt"
 "Same, 2021-2025, after the ETS flexibility, WEM",0.07,Mt CO2e,calculated,"ETS flexibility 510.3 kt (Decision 2024/1884), assumed usable when needed, as the Commission assumes (COM p. 31)"
 "Same, 2021-2030, after the ETS flexibility, WEM",-2.2,Mt CO2e,calculated,
 "Same, 2021-2030, after ETS and the maximum LULUCF flexibility, WEM",-2.17,Mt CO2e,calculated,"LULUCF maximum 30 kt (Annex III), only if credits exist"
+"Share of the 2021-2030 excess covered by Malta's own flexibilities, WEM",20.0,%,calculated,own flexibilities 0.54 Mt (ETS 0.51 + LULUCF maximum 0.03)
+"EU surplus as a multiple of Malta's remaining shortfall, WEM",57.7-80.8,times,calculated,125-175 Mt / 2.17 Mt
 "Shortfall to cover by buying allocations, WEM, as a share of the EU surplus",1.2-1.7,%,calculated,2.17 Mt against 125-175 Mt (COM p. 31)
 2021 one-off adjustment in the 2021 allocation,774.0,kt CO2e,"Regulation (EU) 2018/842, Annex IV",2021 surplus 740.3 kt; without the adjustment: -33.7 kt
 2021 surplus vs the 75% banking limit,740.3 / 1548.8,kt CO2e,calculated,"the whole 2021 surplus can be banked (Regulation 2023/857, Article 5(3)(a))"

@@ -69,15 +69,15 @@ def fig1():
     ax.axhline(B, color=BLUE, lw=1.1, ls=":", zorder=2)
     ax.plot([2005], [B], marker="D", ms=6, color=BLUE, zorder=6)
     ax.text(2005.3, B - 60, f"2005 level used for the target: {B:,.0f} kt", color=BLUE, fontsize=8, va="top")
-    ax.plot([2030], [LIMIT], marker="_", ms=22, mew=2.6, color=GREEN, zorder=6)
-    ax.text(2030.45, LIMIT, f"2030 limit\n{LIMIT:,.0f} kt (−19%)", color=GREEN, fontsize=8, va="center", fontweight="bold")
-    ax.text(2030.45, wem[2030] + 18, f"{wem[2030]:,.0f} kt\n+{100 * (wem[2030] / B - 1):.0f}% (existing)", color=RED,
+    ax.plot([2030], [LIMIT], marker="_", ms=18, mew=2.6, color=GREEN, zorder=6)
+    ax.text(2030.75, LIMIT, f"2030 limit\n{LIMIT:,.0f} kt (−19%)", color=GREEN, fontsize=8, va="center", fontweight="bold")
+    ax.text(2030.75, wem[2030] + 18, f"{wem[2030]:,.0f} kt\n+{100 * (wem[2030] / B - 1):.0f}% (existing)", color=RED,
             fontsize=8, va="center", fontweight="bold")
-    ax.text(2030.45, wam[2030] - 40, f"{wam[2030]:,.0f} kt\n+{100 * (wam[2030] / B - 1):.0f}% (with planned)",
+    ax.text(2030.75, wam[2030] - 40, f"{wam[2030]:,.0f} kt\n+{100 * (wam[2030] / B - 1):.0f}% (with planned)",
             color=ORANGE, fontsize=8, va="center", fontweight="bold")
     ax.text(2024, esr[2024] + 55, f"2024: {esr[2024]:,.0f} kt\n(+{100 * (esr[2024] / B - 1):.0f}%)", color=GREEN,
             fontsize=7.6, ha="center")
-    ax.set_xlim(2004.3, 2033.6)
+    ax.set_xlim(2004.3, 2034.0)
     ax.set_ylim(0, 2650)
     ax.set_xticks(range(2005, 2031, 5))
     ax.set_ylabel("kt CO$_2$e")
@@ -147,10 +147,13 @@ def fig3():
                      - proj[("MT", "1.A.2. Manufacturing industries and construction", sc)][y])
             ax.barh(i, v, left=bottom, color=col, height=0.6, edgecolor="white", lw=0.6)
             if v > 60:
-                ax.text(bottom + v / 2, i, f"{v:.0f}", ha="center", va="center", fontsize=7.6, color="white")
+                x = bottom + v / 2
+                if bottom < LIMIT < bottom + v:   # keep the label clear of the dashed 2030-limit line
+                    x = (bottom + LIMIT) / 2 if LIMIT - bottom >= bottom + v - LIMIT else (LIMIT + bottom + v) / 2
+                ax.text(x, i, f"{v:.0f}", ha="center", va="center", fontsize=7.6, color="white", zorder=6)
             bottom += v
         ax.text(bottom + 12, i, f"{bottom:,.0f} kt", va="center", fontsize=8.4, fontweight="bold", color=SLATE)
-    ax.axvline(LIMIT, color=GREEN, lw=2, ls="--")
+    ax.axvline(LIMIT, color=GREEN, lw=2, ls="--", zorder=4)
     ax.text(LIMIT - 8, -0.5, f"2030 limit {LIMIT:,.0f} kt", color=GREEN, fontsize=8, ha="right", fontweight="bold")
     ax.axvline(B, color=BLUE, lw=1.1, ls=":")
     ax.text(B + 8, -0.5, f"2005 level {B:,.0f} kt", color=BLUE, fontsize=8)

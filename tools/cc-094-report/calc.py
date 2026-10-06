@@ -120,6 +120,8 @@ for y in (2021, 2022, 2023, 2024):
 add("2024 approximated emissions vs the 2025 projection's value for 2024", round(pct(esr[("Malta", 2024)], wam[2024]), 1),
     "%", "calculated", f"{esr[('Malta', 2024)]:.1f} vs {wam[2024]:.1f} kt (WEM = WAM in 2024)")
 cut = pct(LIMIT, esr[("Malta", 2024)])
+add("WAM 2030 projection minus the 2005 level", round(wam[2030] - B, 1), "kt CO2e", "calculated",
+    "how far 2030 sits above 2005 with planned measures")
 add("Cut needed from 2024 to reach the 2030 limit", round(cut, 1), "%", "calculated",
     f"{esr[('Malta', 2024)]:.1f} -> {LIMIT:.1f} kt; {100 * ((LIMIT / esr[('Malta', 2024)]) ** (1 / 6) - 1):.1f}% a year")
 add("Malta effort-sharing emissions, average yearly change 2005-2024", round(100 * ((esr[("Malta", 2024)] / B) ** (1 / 19) - 1), 1),
@@ -155,6 +157,8 @@ for sc in ("WEM", "WAM"):
 for lab, cat in SECT:
     d = proj[("2025", "MT", cat, "WEM")][2030] - proj[("2025", "MT", cat, "WAM")][2030]
     add(f"2030 WEM minus WAM: {lab}", round(d, 1), "kt CO2e", "calculated")
+add("Transport in 2030 as a share of the 2030 limit", round(100 * proj[("2025", "MT", "1.A.3. Transport", "WAM")][2030] / LIMIT, 1),
+    "%", "calculated", "transport is the same in WEM and WAM")
 
 # ------------------------------------------------------------------ D: largest gaps (p. 30)
 gaps = {}
@@ -169,6 +173,8 @@ for sc in ("WAM", "WEM"):
         "pp", "calculated", f"Commission (p. 30): {com['largest_gaps']}")
     add(f"Largest 2030 overachievement, {sc}", ", ".join(f"{c} {gaps[(c, sc)][0]:.1f}" for c in order[::-1][:3]),
         "pp", "calculated", f"Commission (p. 30): {com['largest_over']}")
+    add(f"Gap ranking in percentage points, {sc}, top 8", ", ".join(f"{c} {gaps[(c, sc)][0]:.1f}" for c in order[:8]),
+        "pp", "calculated", f"Germany ranks {order.index('DE') + 1} of 27; Ireland {order.index('IE') + 1}")
     ordt = sorted(EU27, key=lambda c: -gaps[(c, sc)][1])
     add(f"Largest 2030 gaps in tonnes, {sc}", ", ".join(f"{c} {gaps[(c, sc)][1]:.1f}" for c in ordt[:3]), "Mt CO2e",
         "calculated", f"Malta {gaps[('MT', sc)][1]:.2f} Mt, rank {ordt.index('MT') + 1} of 27")
@@ -194,6 +200,11 @@ for sc, s in (("WAM", wam), ("WEM", wem)):
     add(f"Same, 2021-2030, after ETS and the maximum LULUCF flexibility, {sc}", round((c30 + ETS + LUL) / 1000, 2),
         "Mt CO2e", "calculated", f"LULUCF maximum {LUL:.0f} kt (Annex III), only if credits exist")
     short = -(c30 + ETS + LUL) / 1000
+    add(f"Share of the 2021-2030 excess covered by Malta's own flexibilities, {sc}", round(100 * (ETS + LUL) / -c30, 1),
+        "%", "calculated", f"own flexibilities {(ETS + LUL) / 1000:.2f} Mt (ETS {ETS / 1000:.2f} + LULUCF maximum {LUL / 1000:.2f})")
+    add(f"EU surplus as a multiple of Malta's remaining shortfall, {sc}",
+        f"{float(com['eu_surplus_low']) / short:.1f}-{float(com['eu_surplus_high']) / short:.1f}", "times", "calculated",
+        f"{com['eu_surplus_low']}-{com['eu_surplus_high']} Mt / {short:.2f} Mt")
     add(f"Shortfall to cover by buying allocations, {sc}, as a share of the EU surplus",
         f"{100 * short / float(com['eu_surplus_high']):.1f}-{100 * short / float(com['eu_surplus_low']):.1f}",
         "%", "calculated", f"{short:.2f} Mt against {com['eu_surplus_low']}-{com['eu_surplus_high']} Mt (COM p. 31)")

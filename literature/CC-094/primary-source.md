@@ -12,8 +12,8 @@ PDF and "ALL" views. The same act was downloaded from the EU Publications Office
 | XHTML | `cellar/5685db25-bb0c-11f0-b37f-01aa75ed71a1.0001.03/DOC_1` | converter note "generated_on 20251107"; 2.65 MB | `685aa68994e57e2dd8561828048f28b2e8e5ed33813fcf5a3e114153895ceacc` |
 | PDF | `cellar/5685db25-bb0c-11f0-b37f-01aa75ed71a1.0001.02/DOC_1` | 75 pages, created 6 Nov 2025 | `b63c23c1d1260fb6ed737d0fb8453a7dedff1fde6e52e334c991645997e157a1` |
 
-The PDF is committed as `open-access/COM-2025-668-final_EN.pdf` (reuse of Commission documents is authorised, with
-acknowledgement of the source, under Commission Decision 2011/833/EU). Page numbers below are the **printed** page
+The PDF is committed as `open-access/COM-2025-668-final_EN.pdf` (© European Union, 2025, CC BY 4.0 (Decision
+2011/833/EU)). Page numbers below are the **printed** page
 numbers (the PDF page is one higher). Every sentence that mentions Malta was read; the ones about the 2030 target are
 quoted here.
 

@@ -18,21 +18,21 @@ S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
         "Malta among the countries with the largest gaps. We tested these sentences against Malta’s own projections, "
         "the official emissions data and the EU law that sets the target.", lead)]
 S.append(key_points([
-    ("The numbers reproduce exactly.",
+    ("The numbers reproduce to the nearest point.",
      "Malta’s March 2025 projections put its effort-sharing emissions at 1,324 kt in 2030 with planned measures and "
      "1,450 kt with existing ones: +29.7% and +42.1% on the 2005 level of 1,021 kt, a gap of 48.7 and 61.1 points to "
      "the −19% target [3, 4, 7]."),
     ("“More in 2030 than in 2005” holds every way we tried:",
      "both scenarios, every 2005 figure we found, and projections re-based on reviewed 2023 data (+26% and +38%). "
-     "2024 emissions were already 41% above 2005 [3]."),
+     "2024 emissions (approximated) were already 41% above 2005 [3]."),
     ("Malta’s gap is the EU’s largest in percentage points:",
-     "49, then Ireland 20 and Germany 13 (planned measures), as the Commission says. In tonnes it is small (0.5 Mt)."),
+     "49, then Ireland 20 and Germany 13 (planned measures). In tonnes it is small (0.5 Mt)."),
     ("Flexibilities shrink the gap but do not close it.",
      "Malta is projected 2.1 Mt over its yearly limits in 2021–2030. Its own flexibilities cover 0.54 Mt; about 1.6 Mt "
      "would have to be bought from other Member States (about 1% of the expected EU surplus) or cut."),
     ("Verdict: supported (high confidence).",
      "The Commission’s words match the data and the law. “Missing its target”, in our claim list, is a paraphrase: "
-     "true of Malta’s own emissions, but Malta can still comply by buying allocations."),
+     "domestically, emissions miss the 2030 level by 0.5 Mt; legally, compliance can still be bought. Not rated."),
 ]))
 S += [Spacer(1, 4 * mm), VerdictMeter(0), Spacer(1, 3 * mm),
       tiles([("+30–42%", RED, "Malta’s effort-sharing emissions in 2030 vs 2005 (planned / existing measures)"),
@@ -80,8 +80,7 @@ S += [Spacer(1, 1 * mm),
                P("This check holds an EU institution to the same standard as Maltese speakers. It tests what the "
                  "Commission said, not whether Malta’s target is fair; the Maltese government’s view of the target, set "
                  "out in its climate plan, is given in section 6. Related checks: CC-003 (the Climate Action Authority’s "
-                 "per-person figures, which omitted this projection), CC-025 (Malta’s COP30 statement) and CC-024 "
-                 "(renewables).", small)],
+                 "per-person figures), CC-025 (Malta’s COP30 statement) and CC-024 (renewables).", small)],
               bg=AMBER_PALE, bar=AMBER), Spacer(1, 4 * mm)]
 
 # ================================================================== 2
@@ -91,7 +90,8 @@ S.append(P("<b>Question.</b> Do Malta’s reported projections, the official emi
            "Malta’s gap among the largest, and does it survive the flexibilities the law allows?"))
 S.append(P("<b>Evidence.</b> We downloaded from the European Environment Agency (EEA) its effort-sharing emissions for "
            "2005–2024 [3] and the Member States’ 2025 greenhouse gas projections [4], kept each value’s status (reviewed "
-           "or approximated) and recomputed every figure with <i>tools/cc-094-report/calc.py</i> from <i>data/cc-094/</i>. "
+           "or approximated) and recomputed every figure with <i>tools/cc-094-report/calc.py</i> from <i>data/cc-094/</i> "
+           "[18]. "
            "The 2005 levels, targets, yearly limits and flexibilities come from the legal texts themselves [5–10], read "
            "through the EU Publications Office on 6 October 2026, as was the report [1]. We read the ESR section of "
            "Malta’s climate plan [12] and the Commission’s assessment of it [13]. Crossref was searched for peer-reviewed "
@@ -107,8 +107,9 @@ S.append(P("The Effort Sharing Regulation (ESR) covers the emissions outside the
            "domestic transport, buildings, agriculture, small industry and waste [1], including industrial gases, which in "
            "Malta come almost entirely (over 95%) from refrigeration and air conditioning [12]. Power generation falls under the trading system: in "
            "Malta’s projections, energy industries add under 1 kt to its effort-sharing emissions [4]. Each Member State "
-           "has a 2030 target against its 2005 level. Malta’s is −19%, the same in the 2018 regulation and in the 2023 "
-           "revision that raised every other Member State’s target [5, 6]. The 2005 level used is fixed in law at 1,020,601 t CO₂e [7], so the 2030 "
+           "has a 2030 target against its 2005 level; targets differ according to GDP per capita [11]. Malta’s is −19%, set "
+           "in the 2018 regulation and unchanged by the 2023 revision that raised every other Member State’s target; the "
+           "2023 regulation calls it “based on gross domestic product per capita” (recital (19)) [5, 6]. The 2005 level used is fixed in law at 1,020,601 t CO₂e [7], so the 2030 "
            "limit is 826.7 kt, the figure Malta’s own plan gives [12]."))
 S.append(P("The target is enforced through yearly limits, the annual emission allocations, set for 2021–2025 and, "
            "after a review of 2021–2023 emissions, for 2026–2030 (adopted 24 April 2026) [8]. Malta’s 2021 limit includes "
@@ -122,9 +123,15 @@ S.append(KeepTogether([fig(FIG / "fig1_path.png"), P(
     "Effort Sharing Decision basis and are shown for context only. Sources [3, 4, 7, 8].", cap)]))
 
 # ================================================================== 4
-S.append(CondPageBreak(90 * mm))
+S.append(CondPageBreak(55 * mm))
 S.append(SectionHeading(4, "What the data show"))
 S.append(P("Projections and the 2005 level", h2))
+S.append(P("Recomputed against the legal 2005 level, Malta’s March 2025 projections give the Commission’s gaps to the "
+           "nearest point (table below). Recent years point the same way. Reviewed emissions were 30%, 43% and 42% above "
+           "the 2005 level in 2021–2023 and approximated emissions 41% above in 2024 (1,437 kt), matching the "
+           "Commission’s Table 25 [2, 3]. Malta was over its yearly limit by 220, 257 and 301 kt in 2022–2024. The 2024 "
+           "value is 3.3% below what the projection expected for that year, a small easing. Malta’s own 2025 progress "
+           "report gives 2023 emissions of 1,448.5 kt and the same 2030 projections [14]."))
 S.append(KeepTogether([
     std_table([
         [C("Measure", cellh), C("Existing measures (WEM)", cellh), C("Planned measures (WAM)", cellh), C("Source", cellh),
@@ -142,33 +149,37 @@ S.append(KeepTogether([
         [C("Re-based on reviewed 2023 emissions (projection starts 2.6% high)"), C("+38.5%"), C("+26.4%"),
          C("calculated"), grade_tag("C")],
         [C("Previous projection, March 2023"), C("+46.3%"), C("+46.3%"), C("EEA [4]"), grade_tag("C")],
+        [C("Commission’s NECP assessment, May 2025: “existing policies and measures”"), C("+29.4% (as labelled)"),
+         C("–"), C("SWD(2025) 140 [13]"), grade_tag("C")],
     ], [62 * mm, 34 * mm, 34 * mm, 24 * mm, 16 * mm]),
     P("All values in <i>data/cc-094/checks.csv</i>. The legal 2005 level is from Implementing Decision (EU) 2020/2126 "
-      "[7]; the other two 2005 figures are shown only to test how much the choice matters.", cap)]))
+      "[7]; the other two 2005 figures are shown only to test how much the choice matters. The NECP assessment’s +29.4% "
+      "is labelled existing measures, but it is close to the planned-measures projection (+29.7%), not the "
+      "existing-measures one (+42.1%).", cap)]))
 S.append(P("Every combination leaves 2030 above 2005: the smallest margin, +18.6%, uses an older base year that the "
-           "current rules do not use. Recent years point the same way. Reviewed emissions were 30%, 43% and 42% above "
-           "the 2005 level in 2021–2023 and approximated emissions 41% above in 2024 (1,437 kt), matching the "
-           "Commission’s Table 25 [2, 3]. Malta was over its yearly limit by 220, 257 and 301 kt in 2022–2024. The 2024 "
-           "value is 3.3% below what the projection expected for that year, a small easing. Reaching 827 kt by 2030 "
-           "would need a 42.5% cut from 2024, about 8.8% a year; the planned-measures projection has 7.9% in all over "
-           "six years, and the existing-measures one has emissions flat."))
+           "current rules do not use. Reaching 827 kt by 2030 would need a 42.5% cut from 2024, about 8.8% a year; the "
+           "planned-measures projection has 7.9% in all over six years, and the existing-measures one has emissions "
+           "flat."))
 S.append(P("Where the projected emissions come from", h2))
 S.append(P("Transport is half of Malta’s effort-sharing emissions (745 kt in 2023) and is projected at 737 kt in 2030 "
-           "in <i>both</i> scenarios [4]. The two projections differ only in waste (165 kt with existing measures, 73 kt "
+           "in <i>both</i> scenarios [4]; a peer-reviewed scenario study describes Malta’s high dependence on private cars "
+           "[16]. The two projections differ only in waste (165 kt with existing measures, 73 kt "
            "with planned ones: landfill gas capture, which Malta’s plan describes [12]) and industrial gases (198 and 163 "
            "kt). Buildings, manufacturing fuel and agriculture are the same in both. The Commission’s assessment of the "
            "plan found “insufficient details” on how Malta will meet the target and noted that the projections leave out "
            "the new trading system for buildings and road fuel (ETS2) [13]."))
-S.append(KeepTogether([fig(FIG / "fig3_sectors.png"), P(
+S.append(KeepTogether([fig(FIG / "fig3_sectors.png", width=CW * 0.86), P(
     "Figure 2. Malta’s projected effort-sharing emissions by sector. Transport alone (737 kt in 2030, the same in both "
     "projections) would take up 89% of the 2030 limit of 827 kt. Source [4].", cap)]))
 S.append(CondPageBreak(90 * mm))
 S.append(P("Is Malta’s gap among the largest?", h2))
 S.append(P("We recomputed the gap for all 27 Member States from the same projections, the legal 2005 levels and the "
-           "2030 targets [4, 6, 7]. With planned measures, the measure the Commission’s section uses, the largest gaps "
-           "are Malta (48.7 points), Ireland (20.3) and Germany (13.2), then Austria (8.0); the largest overachievement "
-           "is Bulgaria (25.6 points), Greece (20.6) and Portugal (11.4). Both lists are the Commission’s. With existing "
-           "measures Malta is still first (61.1), but Cyprus (28.2) and Belgium (25.3) rank above Germany. In tonnes, the "
+           "2030 targets [4, 6, 7]. The Commission does not say which projection its ranking uses; we read it as planned "
+           "measures, which its section discusses. On that basis the largest gaps are Malta (48.7 points), Ireland (20.3) "
+           "and Germany (13.2), then Austria (8.0), and the largest overachievement is Bulgaria (25.6 points), Greece "
+           "(20.6) and Portugal (11.4): the countries the Commission names. With existing measures Malta is still first "
+           "(61.1) and Ireland second (32.5), but Germany (13.6) falls to eighth, behind Cyprus, Belgium, Slovenia, "
+           "Luxembourg and Austria. In tonnes, the "
            "largest gaps are Germany (64.1 Mt), Italy (10.9) and Ireland (9.7); Malta’s is 0.5 Mt, tenth. Belgium did "
            "not report in 2025, so its figures are from 2024."))
 S.append(KeepTogether([fig(FIG / "fig2_gaps.png"), P(
@@ -199,22 +210,22 @@ S.append(P("This reproduces the Commission’s finding: Malta is covered for 202
            "those adopted in April 2026 [8]. The land-use credit is small in law (0.03 Mt) and Malta’s land sector has "
            "produced almost none so far [1, 2]. Malta cannot use the EU’s safety reserve: its emissions exceeded its "
            "limits in 2013–2020 [10]."))
-S.append(KeepTogether([fig(FIG / "fig4_ledger.png"), P(
+S.append(KeepTogether([fig(FIG / "fig4_ledger.png", width=CW * 0.9), P(
     "Figure 4. Malta’s effort-sharing balance over 2021–2030 and what its own flexibilities cover. The rest would have "
     "to be bought from other Member States or cut further. Sources [3–5, 8, 9].", cap)]))
-S.append(P("So two readings of “missing its target” are both right in their own terms. Malta’s own emissions are "
-           "projected to miss the 2030 level by about 0.5 Mt even with planned measures. Legally, Malta can still comply "
-           "by buying about 1.6 Mt of allocations (2.2 Mt without the planned measures) from Member States with a surplus, "
-           "which the regulation allows. The price is not public, so we do not estimate the cost. The Commission’s "
-           "wording (“gap”, “excess emissions”, “prior to any use of ESR flexibilities”) keeps the two apart."))
+S.append(P("<b>“Missing its target”</b> (our claim list’s paraphrase): domestically, emissions miss the 2030 level by "
+           "0.5 Mt even with planned measures; legally, compliance can still be bought, about 1.6 Mt of allocations "
+           "(2.2 Mt without the planned measures) from Member States with a surplus, as the regulation allows. Not rated. "
+           "The price is not public, so we do not estimate the cost. The Commission’s wording (“gap”, “excess "
+           "emissions”, “prior to any use of ESR flexibilities”) keeps the two apart."))
 
 # ================================================================== 6
 S.append(CondPageBreak(120 * mm))
 S.append(SectionHeading(6, "Where the evidence points different ways"))
 S.append(contested(
-    "Q1  Is a projection a fair basis for “will emit more”?", "YES, AS WORDED", GREEN,
+    "Q1  Is a projection a fair basis for saying Malta “is projected to emit more”?", "YES, AS WORDED", GREEN,
     "The Commission says Malta “is projected to” emit more, which is what Malta’s own projections show [4]. Measured "
-    "emissions agree: 41% above 2005 in 2024, over the yearly limit for three years running [3, 8].",
+    "emissions agree: 41% above 2005 in 2024 (approximated), over the yearly limit for three years running [3, 8].",
     "Projections can be wrong. Malta’s started 2.6% above the reviewed 2023 value, its 2024 emissions came in 3.3% "
     "below the projection, and ETS2 is not modelled [13]. A new projection is due in 2027.",
     "<b>For this claim:</b> even re-based on the reviewed 2023 value, 2030 is 26–38% above 2005. Closing that by 2030 "
@@ -224,8 +235,9 @@ S.append(contested(
     "The target is binding law, unchanged since 2018 [5, 6]. Malta’s own plan states the 826.7 kt limit and calls "
     "flexibilities “crucial” to meet it [12].",
     "Malta’s plan says the target rests on 2005 projections that “differ markedly from today’s reality, particularly "
-    "in terms of population growth” [12]; population grew 41% from 2005 to 2024 [15], and effort-sharing emissions "
-    "per person were 2.53 t in both years. EU lawmakers accepted that Malta’s target is “significantly above its "
+    "in terms of population growth” [12]; in fact the −19% was set in 2018 on the basis of GDP per capita (recital "
+    "(19) of Regulation 2023/857), and 2005 is only the base year [5, 6]. Population grew 41% from 2005 to 2024 [15]; "
+    "effort-sharing emissions per person were 2.53 t in both years. EU lawmakers accepted that Malta’s target is “significantly above its "
     "cost-effective reduction potential” and raised its ETS flexibility to 7% [6].",
     "<b>For this claim:</b> both points are fair context and both sides are quoted. Neither changes what the "
     "Commission said: the target is −19% in total tonnes, and the projection misses it."))
@@ -233,13 +245,13 @@ S.append(contested(
     "Q3  Does “missing its target” overstate the Commission?", "PARAPHRASE, NOT RATED", GREY,
     "Domestic emissions are projected above the 2030 limit and above the yearly limits from 2026 on; Malta’s own "
     "flexibilities cover about a quarter of the excess with planned measures and a fifth without (section 5).",
-    "Compliance can be bought: the expected EU surplus is 80 to 110 times Malta’s shortfall, and the Commission says it "
-    "cannot yet conclude that progress is insufficient [1].",
+    "Compliance can be bought: the expected EU surplus is about 80 to 113 times Malta’s shortfall, and the Commission "
+    "says it cannot yet conclude that Member States, taken together, are not making sufficient progress [1].",
     "<b>For this claim:</b> the Commission did not say “missing its target”; its own words separate the gap before "
     "flexibilities from compliance after them. We rate its words."))
 
 # ================================================================== 7
-S.append(CondPageBreak(60 * mm))
+S.append(CondPageBreak(40 * mm))
 S.append(SectionHeading(7, "Testing the claim"))
 verd = lambda t, c: chip(t, c, w=29 * mm)
 S.append(std_table([
@@ -251,8 +263,9 @@ S.append(std_table([
      C("+29.7% and +42.1% on 2005; above 2005 against every 2005 figure and if re-based on reviewed 2023 data "
        "(+26% and +38%) [3, 4]."), verd("ACCURATE", GREENC)],
     [C("<b>C.</b> Germany, Ireland and Malta show the largest projected 2030 gaps before flexibilities"),
-     C("With planned measures, in points: Malta 48.7, Ireland 20.3, Germany 13.2, Austria next at 8.0. Not so with "
-       "existing measures (Cyprus, Belgium above Germany) or in tonnes (Malta 0.5 Mt) [4]."), verd("ACCURATE", GREENC)],
+     C("With planned measures (our reading of the basis), in points: Malta 48.7, Ireland 20.3, Germany 13.2, Austria "
+       "next at 8.0. Not so with existing measures (Germany eighth) or in tonnes (Malta 0.5 Mt) [4]."),
+     verd("ACCURATE", GREENC)],
     [C("<b>D.</b> Malta projected to have excess emissions in 2026–2030"),
      C("Covered to 2025 after the ETS flexibility (+0.07 Mt); −1.58 Mt by 2030 (planned measures), −1.55 Mt with the "
        "maximum land-use credit [3–5, 8, 9]."), verd("ACCURATE", GREENC)],
@@ -275,7 +288,7 @@ S += [CondPageBreak(85 * mm), Spacer(1, 4 * mm), SectionHeading(8, "Verdict and 
                   "projections, the EEA’s data and the legal 2005 level. Confidence: high."), Spacer(1, 4 * mm)]
 S.append(P("<b>Why.</b> (1) The 49 and 61 points reproduce from Malta’s projections as held by the EEA, the 2005 "
            "level and the target in EU law. (2) “More in 2030 than in 2005” holds under both projections and every 2005 "
-           "figure we found; 2024 emissions were already 41% above 2005. (3) The ranking and the 2026–2030 excess "
+           "figure we found; 2024 emissions (approximated) were already 41% above 2005. (3) The ranking and the 2026–2030 excess "
            "reproduce under the Commission’s stated assumptions, and its words are conditioned on flexibilities that, "
            "by our ledger, do not close the gap. Confidence is high: the projections, reviewed emissions, legal texts, "
            "the Commission’s tables and Malta’s plan all agree."))
@@ -328,7 +341,7 @@ S += references([
     ("10", "Commission Decision (EU) 2023/863 (safety reserve), recital (5).", "https://data.europa.eu/eli/dec/2023/863/oj"),
     ("11", "European Commission. Effort sharing 2021–2030: targets and flexibilities (web page). Read 6 Oct 2026.",
      "https://climate.ec.europa.eu/areas-action/carbon-removals-and-carbon-farming/effort-sharing-member-states-emission-targets/effort-sharing-2021-2030-targets-and-flexibilities_en"),
-    ("12", "Government of Malta (Dec 2024). Final updated National Energy and Climate Plan 2021–2030, pp. 54–58, 138 "
+    ("12", "Government of Malta (Dec 2024; submitted 7 Jan 2025). Final updated National Energy and Climate Plan 2021–2030, pp. 54–58, 138 "
            "and 327–329 (Commission copy).",
      "https://commission.europa.eu/publications/malta-final-updated-necp-2021-2030-submitted-2025_en"),
     ("13", "European Commission (2025). Assessment of the final updated NECPs, SWD(2025) 140, Malta extract, pp. 160–162.",
@@ -354,8 +367,8 @@ S += revision_log([("1.0", "6 Oct 2026", "First issue. No right of reply needed 
 build_report(Report(
     number="094", out=str(FIG / "report.pdf"), kicker="EU assessments and effort-sharing data",
     title_lines=["More in 2030", "than in 2005?"],
-    subtitle_lines=["Testing the European Commission’s projection of Malta’s", "effort-sharing emissions against "
-                    "the data and the law"],
+    subtitle_lines=["Testing the Commission’s reading of Malta’s projections", "for its effort-sharing emissions "
+                    "against the data and the law"],
     quote_lines=["“Malta’s gap to target is 49 and 61 percentage points,", "exceeding its 19% reduction target. "
                  "This means Malta", "is projected to emit more in 2030 than in 2005.”"],
     quote_size=13.2,

@@ -10,7 +10,7 @@ OUT = HERE / "out"
 build_flyer(Flyer(
     number="094", out=str(OUT / "flyer.pdf"), kicker="Climate targets, Malta",
     title_lines=["More in 2030", "than in 2005?"],
-    subtitle="The European Commission’s projection for Malta, tested against the data and the law",
+    subtitle="The Commission’s reading of Malta’s projections, tested against the data and the law",
     quote_lines=["“…This means Malta is projected to emit", "more in 2030 than in 2005.”"],
     attribution="European Commission, EU Climate Action Progress Report 2025, COM(2025) 668, p. 30, 6 Nov 2025",
     context="“Malta’s gap to target is 49 and 61 percentage points, exceeding its 19% reduction target.”",
@@ -26,9 +26,9 @@ build_flyer(Flyer(
             "In percentage points: Malta 49, Ireland 20, Germany 13. In tonnes Malta’s gap is small (0.5 Mt)."),
            ("1.6 Mt", ORANGE, "Left after flexibilities",
             "Over 2021–30, after the ETS flexibility and land credits: to buy from other states or cut.")],
-    fair="Malta’s plan says the target rests on 2005 forecasts. Population has since grown 41%, and "
-         "effort-sharing emissions per person are flat. EU law accepts the target is above Malta’s cost-effective "
-         "potential.",
+    fair="Malta’s plan says the target rests on 2005 forecasts; in fact −19% was set in 2018 from GDP per capita "
+         "(2005 is the base year). Population has grown 41% since 2005, and effort-sharing emissions per person "
+         "are flat.",
     asks=["How Malta will cover its 2026–2030 excess, and at what cost.",
           "Approximated 2025 emissions and the 2027 projections.",
           "The effect of the new ETS2 on transport and buildings.",
