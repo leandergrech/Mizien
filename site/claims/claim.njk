@@ -67,6 +67,10 @@ permalink: "/claims/{{ claim.id }}/"
       <p><strong>This is a draft check.</strong> It finds the claim supported, so no right of reply is needed. The verdict
          may change in light of new evidence. A verdict applies to the statement as worded on the date it was made; it is
          not a judgement of anyone's motives. <a href="/about/disclaimer/">What a check represents</a>.</p>
+      {%- elif c.reply == "on-hold" %}
+      <p><strong>This is a draft check.</strong> The right of reply is on hold {{ c.right_of_reply.on_hold }}, and the
+         verdict may change once that is done or in light of new evidence. A verdict applies to the statement as worded
+         on the date it was made; it is not a judgement of anyone's motives. <a href="/about/disclaimer/">What a check represents</a>.</p>
       {%- elif c.reply == "not-sought" %}
       <p><strong>This is a draft check.</strong> A right of reply was not sought for it, at the maintainer's direction.
          The verdict may change in light of new evidence. A verdict applies to the statement as worded on the date it
@@ -206,6 +210,9 @@ permalink: "/claims/{{ claim.id }}/"
          substantiated, Misleading or Contradicted{% if c.pledge_view %} (for a pledge: Not measurable, Off track or Missed){% endif %}.</p>
       {%- elif c.reply == "not-sought" %}
       <p>{{ ror.note or "Not sought, at the maintainer's direction." }}</p>
+      {%- elif c.reply == "on-hold" %}
+      <p>On hold {{ ror.on_hold }}: the reply would rest on a document we have not yet read. Once it is read, a draft
+         will go to the body concerned with a deadline, and its response will be published here.</p>
       {%- elif ror.sent %}
       <p>A draft was sent to the body concerned on {{ ror.sent | ukDate }}{% if ror.deadline %}, with a deadline of {{ ror.deadline | ukDate }}{% endif %}. Its response will be published here.</p>
       {%- elif c.verdict %}

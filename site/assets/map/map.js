@@ -1718,7 +1718,7 @@
       who.forEach(function (h) { var bb = el("button", "btn ghost", h.name); bb.type = "button"; bb.onclick = function () { selectHub(h); }; wb.appendChild(bb); });
       pbody.appendChild(wb); }
     var chips = el("div");
-    if (rated(d)) chips.appendChild(el("span", "chip soft", d.status + (d.status === "Drafted" ? ({ "not-sought": ", right of reply not sought", "not-needed": ", no right of reply needed" }[d.reply] || ", pending right of reply") : "")));
+    if (rated(d)) chips.appendChild(el("span", "chip soft", d.status + (d.status === "Drafted" ? ({ "not-sought": ", right of reply not sought", "on-hold": ", right of reply on hold", "not-needed": ", no right of reply needed" }[d.reply] || ", pending right of reply") : "")));
     if (d.wording_status && !rated(d)) chips.appendChild(el("span", "chip soft", d.wording_status));
     (d.tags || []).forEach(function (t) { chips.appendChild(el("span", "chip soft", t)); }); pbody.appendChild(chips);
     if (d.last_reviewed) {

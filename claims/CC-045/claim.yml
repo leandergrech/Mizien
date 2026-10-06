@@ -6,89 +6,101 @@ status: Drafted
 verdict: Not substantiated
 verdict_confidence: Moderate
 claim:
-  text: 'Public Works Department (TVM News, 4 Jul 2025): the department is working to increase from 16 km to 20 km the
-    infrastructure of canals, tunnels and culverts in use to reduce flooding (TVM''s summary), and Mario Ellul, Director of
-    the Coastal and Stormwater Unit, is quoted by TVM as saying that these systems, "particularly for the Birkirkara
-    localities", "avoid flooding and damage caused by waters every time it rains". A MaltaToday headline (undated), "20
-    kilometres of underground tunnel helped Malta manage its flooding problems", located the claim; it is headline wording,
-    not the speaker''s, and is not rated.'
+  text: 'Public Works Department (TVM News, 4 Jul 2025): the department is working to increase from 16 km to 20 km the infrastructure
+    of canals, tunnels and culverts in use to reduce flooding (TVM''s summary), and Mario Ellul, Director of the Coastal and
+    Stormwater Unit, is quoted by TVM as saying that these systems, "particularly for the Birkirkara localities", "avoid flooding
+    and damage caused by waters every time it rains". A MaltaToday headline (undated), "20 kilometres of underground tunnel
+    helped Malta manage its flooding problems", located the claim; it is headline wording, not the speaker''s, and is not
+    rated.'
   speaker: Public Works Department; Government of Malta
   date: '2025-07-04'
   wording_status: Verbatim found
   sources:
-  - title: 2,400 tonnes of waste removed from 16 km of stormwater tunnels
-    publisher: TVM News
-    date: 4 Jul 2025
-    url: https://tvmnews.mt/en/news/2400-tonnes-of-waste-removed-from-16-km-of-stormwater-tunnels/
-    note: 'Primary wording, read in full and re-checked 6 Oct 2026. English text is TVM''s translation of the Maltese release;
-      the "16 km to 20 km" sentence and the "total to 20 km" sentence are TVM''s indirect speech; the Ellul and Farrugia
-      sentences are pull-quotes attributed by TVM (the page prints no quotation marks).'
-  - title: Press release by the Parliamentary Secretariat for Public Works, 2,400 tonnes from 16 km of stormwater tunnels
-    publisher: Government of Malta, Department of Information
-    date: 4 Jul 2025
-    url: https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/2025/07/04/pr251213en.aspx
-    note: Original release; not read (HTTP 403 to scripts). Cited through TVM News.
-  - title: 20 kilometres of underground tunnel helped Malta manage its flooding problems
-    publisher: MaltaToday
-    date: n/d
-    url: https://www.maltatoday.com.mt/environment/nature/107804/20_kilometres_of_underground_tunnel_helped_malta_manage_its_flooding_problems
-    note: Locates the claim; its headline is not the department's wording and is not rated. Headline and search summary only (HTTP 403); speaker and date not read.
-  - title: Fighting floods in Malta
-    publisher: European Commission, Inforegio
-    date: 15 Oct 2013
-    url: https://ec.europa.eu/regional_policy/projects/projects-database/fighting-floods-in-malta_en
-    note: 'Design figures: 65 km2, 5-year storm, about 165,000 beneficiaries (expected).'
-  - title: An underground tunnel and millions in road investment later, Malta is still flooding
-    publisher: Lovin Malta
-    date: 15 Sep 2020
-    url: https://lovinmalta.com/opinion/analysis/an-underground-tunnel-and-millions-in-road-investment-later-but-malta-is-still-flooding/
-    note: Flooding reported in project localities; about 16 km, EUR 54 million (outlet's statement).
-  - title: Underground tunnels being excavated to alleviate flooding
-    publisher: TVM News
-    date: 28 Aug 2022
-    url: https://tvmnews.mt/en/news/underground-tunnels-being-excavated-to-alleviate-flooding/
-    note: Two further tunnels planned (Mosta, Mater Dei).
-  - title: Preliminary Flood Risk Assessment for the Malta River Basin District 2019
-    publisher: Energy and Water Agency
-    date: 2019
-    url: https://www.energywateragency.gov.mt/wp-content/uploads/2020/09/Preliminary-Flood-Risk-Assessment-for-the-Malta-River-Basin-District-2019.pdf
-    note: Project designed for 5-year events; official statement, no incident data. Keyword search and partial reading.
-  - title: 2nd Flood Risk Management Plan for the Malta River Basin District
-    publisher: Energy and Water Agency
-    date: 2024
-    url: https://energywateragency.gov.mt/wp-content/uploads/2024/02/2nd-Flood-Risk-Management-Plan-Final.pdf
-    note: Says an ante and post-operam comparison of the flood relief project was carried out and shared with stakeholders (measure FLD1); no results in the text searched. Keyword search and partial reading.
-  - title: Flood Hazard Maps and Flood Risk Maps for the Malta River Basin District
-    publisher: Energy and Water Agency
-    date: Dec 2020
-    url: https://energywateragency.gov.mt/wp-content/uploads/2022/09/FHM-and-FRM_11_12_2020_Final_Draft.pdf
-    note: Predictive maps; past floods used only to validate them. Keyword search and partial reading.
-  - title: Storm Harry leaves EUR 12m in damage claims, majority from flooding
-    publisher: Insurance Association Malta
-    date: 24 Mar 2026
-    url: https://maltainsurance.org/general/storm-harry-leaves-e12m-in-damage-claims-majority-from-flooding/
-    note: Single-event claims figures only; the underlying Sunday Times of Malta article was not read.
-  - title: GHCN-Daily, Luqa (MT000016597), precipitation
-    publisher: NOAA NCEI
-    date: retrieved 6 Oct 2026
-    url: https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=MT000016597&dataTypes=PRCP&format=csv
-    note: Context only; one gauge, gaps after 2019.
+    - title: 2,400 tonnes of waste removed from 16 km of stormwater tunnels
+      publisher: TVM News
+      date: 4 Jul 2025
+      url: https://tvmnews.mt/en/news/2400-tonnes-of-waste-removed-from-16-km-of-stormwater-tunnels/
+      note: 'Primary wording, read in full and re-checked 6 Oct 2026. English text is TVM''s translation of the Maltese release;
+        the "16 km to 20 km" sentence and the "total to 20 km" sentence are TVM''s indirect speech; the Ellul and Farrugia
+        sentences are pull-quotes attributed by TVM (the page prints no quotation marks).'
+    - title: Press release by the Parliamentary Secretariat for Public Works, 2,400 tonnes from 16 km of stormwater tunnels
+      publisher: Government of Malta, Department of Information
+      date: 4 Jul 2025
+      url: https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/2025/07/04/pr251213en.aspx
+      note: Original release; not read (HTTP 403 to scripts). Cited through TVM News.
+    - title: 20 kilometres of underground tunnel helped Malta manage its flooding problems
+      publisher: MaltaToday
+      date: n/d
+      url: https://www.maltatoday.com.mt/environment/nature/107804/20_kilometres_of_underground_tunnel_helped_malta_manage_its_flooding_problems
+      note: Locates the claim; its headline is not the department's wording and is not rated. Headline and search summary
+        only (HTTP 403); speaker and date not read.
+    - title: Fighting floods in Malta
+      publisher: European Commission, Inforegio
+      date: 15 Oct 2013
+      url: https://ec.europa.eu/regional_policy/projects/projects-database/fighting-floods-in-malta_en
+      note: 'Design figures: 65 km2, 5-year storm, about 165,000 beneficiaries (expected).'
+    - title: An underground tunnel and millions in road investment later, Malta is still flooding
+      publisher: Lovin Malta
+      date: 15 Sep 2020
+      url: https://lovinmalta.com/opinion/analysis/an-underground-tunnel-and-millions-in-road-investment-later-but-malta-is-still-flooding/
+      note: Flooding reported in project localities; about 16 km, EUR 54 million (outlet's statement).
+    - title: Underground tunnels being excavated to alleviate flooding
+      publisher: TVM News
+      date: 28 Aug 2022
+      url: https://tvmnews.mt/en/news/underground-tunnels-being-excavated-to-alleviate-flooding/
+      note: Two further tunnels planned (Mosta, Mater Dei).
+    - title: Preliminary Flood Risk Assessment for the Malta River Basin District 2019
+      publisher: Energy and Water Agency
+      date: 2019
+      url: https://www.energywateragency.gov.mt/wp-content/uploads/2020/09/Preliminary-Flood-Risk-Assessment-for-the-Malta-River-Basin-District-2019.pdf
+      note: Project designed for 5-year events; official statement, no incident data. Keyword search and partial reading.
+    - title: 2nd Flood Risk Management Plan for the Malta River Basin District
+      publisher: Energy and Water Agency
+      date: 2024
+      url: https://energywateragency.gov.mt/wp-content/uploads/2024/02/2nd-Flood-Risk-Management-Plan-Final.pdf
+      note: Says an ante and post-operam comparison of the flood relief project was carried out and shared with stakeholders
+        (measure FLD1); no results in the text searched. Keyword search and partial reading.
+    - title: Flood Hazard Maps and Flood Risk Maps for the Malta River Basin District
+      publisher: Energy and Water Agency
+      date: Dec 2020
+      url: https://energywateragency.gov.mt/wp-content/uploads/2022/09/FHM-and-FRM_11_12_2020_Final_Draft.pdf
+      note: Predictive maps; past floods used only to validate them. Keyword search and partial reading.
+    - title: Storm Harry leaves EUR 12m in damage claims, majority from flooding
+      publisher: Insurance Association Malta
+      date: 24 Mar 2026
+      url: https://maltainsurance.org/general/storm-harry-leaves-e12m-in-damage-claims-majority-from-flooding/
+      note: Single-event claims figures only; the underlying Sunday Times of Malta article was not read.
+    - title: GHCN-Daily, Luqa (MT000016597), precipitation
+      publisher: NOAA NCEI
+      date: retrieved 6 Oct 2026
+      url: https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=MT000016597&dataTypes=PRCP&format=csv
+      note: Context only; one gauge, gaps after 2019.
   quote: These are very important systems for the country, particularly for the Birkirkara localities, because they avoid
     flooding and damage caused by waters every time it rains.
-counter_evidence: 'The department puts 16 km in use and 4 km planned (not rated); flooding was reported in project localities in Sep 2020 (news report) and two further tunnels were planned in 2022; the system is designed for a 5-year storm only; no before-and-after incident data found in the sources searched (partial search, logged in literature/CC-045/notes.md); the Energy and Water Agency says it compared flood hazard before and after the works but we found no results.'
+counter_evidence: 'The department puts 16 km in use and 4 km planned (not rated); flooding was reported in project localities
+  in Sep 2020 (news report) and two further tunnels were planned in 2022; the system is designed for a 5-year storm only;
+  no before-and-after incident data found in the sources searched (partial search, logged in literature/CC-045/notes.md);
+  the Energy and Water Agency says it compared flood hazard before and after the works but we found no results.'
 tests: Flood incident records before and after; rainfall data.
 why_low_hanging: A specific, attributable statement that public data can test.
 tags:
-- Input-as-outcome
+  - Input-as-outcome
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: Medium
-caveats: Pending right of reply (Public Works Department). The original gov.mt release and the MaltaToday article were refused to scripts (403); wording is from TVM News's account, which prints the Ellul sentence as an attributed pull-quote without quotation marks. Luqa rainfall is one gauge with gaps after 2019 and is context only. No flood-incident series was found in a partial, logged search (literature/CC-045/notes.md); that is not proof none exists. The Energy and Water Agency's before-and-after comparison of the project (2nd Flood Risk Management Plan, measure FLD1) was not seen; it could change the verdict. The verdict rests on sub-claims C and D; A is not rated.
+caveats: Right of reply on hold until the Energy and Water Agency's before-and-after comparison is read (then to the Public
+  Works Department). The original gov.mt release and the MaltaToday article were refused to scripts (403); wording is from
+  TVM News's account, which prints the Ellul sentence as an attributed pull-quote without quotation marks. Luqa rainfall is
+  one gauge with gaps after 2019 and is context only. No flood-incident series was found in a partial, logged search (literature/CC-045/notes.md);
+  that is not proof none exists. The Energy and Water Agency's before-and-after comparison of the project (2nd Flood Risk
+  Management Plan, measure FLD1) was not seen; it could change the verdict. The verdict rests on sub-claims C and D; A is
+  not rated.
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
+  sent:
+  deadline:
+  response:
+  on_hold: until the Energy and Water Agency's before-and-after comparison is read
+evidence_shown:
 outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
@@ -105,7 +117,8 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-045A
     text: "16 km in use, 20 km as the planned total (department’s own figures)"
-    finding: "Stated as 16 km in use, 4 km planned, 20 km total (department, 4 Jul 2025) [1]; about 16 km in 2020 [4]. The MaltaToday headline’s “20 km … helped” is headline wording, not rated."
+    finding: "Stated as 16 km in use, 4 km planned, 20 km total (department, 4 Jul 2025) [1]; about 16 km in 2020 [4]. The\
+      \ MaltaToday headline’s “20 km … helped” is headline wording, not rated."
     rating: "Not rated"
     tone: grey
   - id: CC-045B
@@ -115,7 +128,9 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: green
   - id: CC-045C
     text: "The infrastructure is in use “to reduce flooding” (department, as summarised by TVM)"
-    finding: "Plausible from design; no before-and-after incident data found in the sources searched. Flooding reported in project localities in 2020 [4] and new tunnels planned in 2022 [2]. The Agency’s own comparison is not published in what we read [9]."
+    finding: "Plausible from design; no before-and-after incident data found in the sources searched. Flooding reported in\
+      \ project localities in 2020 [4] and new tunnels planned in 2022 [2]. The Agency’s own comparison is not published in\
+      \ what we read [9]."
     rating: "Not shown"
     tone: grey
   - id: CC-045D
@@ -129,30 +144,48 @@ thumbnail:
 history:
   - date: 2026-10-06
     step: started
-    note: "Picked up by worker C. The claim record came from a MaltaToday headline (403 to scripts); searched for the public statement behind it."
+    note: "Picked up by worker C. The claim record came from a MaltaToday headline (403 to scripts); searched for the public\
+      \ statement behind it."
   - date: 2026-10-06
     step: wording
-    note: "Verbatim wording found in TVM News, 4 Jul 2025 (Public Works Department: 16 km in use, 20 km planned; Ellul quote). Original gov.mt release refused (403)."
+    note: "Verbatim wording found in TVM News, 4 Jul 2025 (Public Works Department: 16 km in use, 20 km planned; Ellul quote).\
+      \ Original gov.mt release refused (403)."
   - date: 2026-10-06
     step: version
     version: "1.0"
     note: "First issue. Verdict Not substantiated (moderate), pending right of reply from the Public Works Department."
   - date: 2026-10-06
     step: note
-    note: "Data pull: NOAA NCEI GHCN-Daily precipitation for Luqa (MT000016597), 1990 to 5 Oct 2026, retrieved from the NCEI access service (data/cc-045/ghcnd_luqa_prcp_raw.csv). Many gaps in 2020 to 2023 and 2025."
+    note: "Data pull: NOAA NCEI GHCN-Daily precipitation for Luqa (MT000016597), 1990 to 5 Oct 2026, retrieved from the NCEI\
+      \ access service (data/cc-045/ghcnd_luqa_prcp_raw.csv). Many gaps in 2020 to 2023 and 2025."
   - date: 2026-10-06
     step: note
-    note: "Rainfall calculation: annual daily maxima for years with at least 330 readings, empirical 5-year level (Weibull) of 104 mm at Luqa, one storm above it since 2014 (10 Feb 2018); tools/cc-045-report/calc.py, outputs in data/cc-045/. Context only; the gauge cannot test the effect."
+    note: "Rainfall calculation: annual daily maxima for years with at least 330 readings, empirical 5-year level (Weibull)\
+      \ of 104 mm at Luqa, one storm above it since 2014 (10 Feb 2018); tools/cc-045-report/calc.py, outputs in data/cc-045/.\
+      \ Context only; the gauge cannot test the effect."
   - date: 2026-10-06
     step: note
-    note: "Search for flood-incident data (CPD, insurers, parliamentary questions, NSO, EWA/ERA, news): no multi-year incident series found; opened the Energy and Water Agency's PFRA 2019, 2nd FRMP 2024 and flood maps report 2020 (keyword search, partial reading) and the Insurance Association Malta's Storm Harry page. The FRMP says a before-and-after comparison exists but gives no results. Log in literature/CC-045/notes.md."
+    note: "Search for flood-incident data (CPD, insurers, parliamentary questions, NSO, EWA/ERA, news): no multi-year incident\
+      \ series found; opened the Energy and Water Agency's PFRA 2019, 2nd FRMP 2024 and flood maps report 2020 (keyword search,\
+      \ partial reading) and the Insurance Association Malta's Storm Harry page. The FRMP says a before-and-after comparison\
+      \ exists but gives no results. Log in literature/CC-045/notes.md."
   - date: 2026-10-06
     step: correction
-    note: "Audit corrections. claim.text and quote restated to the department's and Ellul's own wording as printed by TVM; the MaltaToday headline is no longer part of the rated claim. Sub-claim A re-scoped to the department's own figures and not rated (it was rated Overstated on the headline's 20 km); C and D re-worded to the department's wording; the verdict is stated to rest on C and D and is unchanged (Not substantiated, moderate). Removed the word 'solved' from the fairness note (no cited source uses it). Wording about Ellul and Farrugia changed from 'direct quotes' to pull-quotes attributed by TVM, without printed quotation marks."
+    note: "Audit corrections. claim.text and quote restated to the department's and Ellul's own wording as printed by TVM;\
+      \ the MaltaToday headline is no longer part of the rated claim. Sub-claim A re-scoped to the department's own figures\
+      \ and not rated (it was rated Overstated on the headline's 20 km); C and D re-worded to the department's wording; the\
+      \ verdict is stated to rest on C and D and is unchanged (Not substantiated, moderate). Removed the word 'solved' from\
+      \ the fairness note (no cited source uses it). Wording about Ellul and Farrugia changed from 'direct quotes' to pull-quotes\
+      \ attributed by TVM, without printed quotation marks."
   - date: 2026-10-06
     step: clarification
-    note: "'No flood-incident series was found' now carries its search log and is worded 'not found in the sources searched'. Added references 8 to 11 (EWA documents, Insurance Association Malta). Layout of the report fixed (table of contents with its heading, section 6 and 7 on one page with the verdict box and its reasoning). Status wording: pending right of reply."
+    note: "'No flood-incident series was found' now carries its search log and is worded 'not found in the sources searched'.\
+      \ Added references 8 to 11 (EWA documents, Insurance Association Malta). Layout of the report fixed (table of contents\
+      \ with its heading, section 6 and 7 on one page with the verdict box and its reasoning). Status wording: pending right\
+      \ of reply."
   - date: 2026-10-06
     step: version
     version: "1.1"
-    note: "1.1: corrections after the 6 Oct 2026 audit: claim restated to the speaker's wording, sub-claim A not rated, verdict basis stated (C and D), unsourced word removed, quotation marks wording corrected, flood-incident search logged, layout fixed. Verdict unchanged."
+    note: "1.1: corrections after the 6 Oct 2026 audit: claim restated to the speaker's wording, sub-claim A not rated, verdict\
+      \ basis stated (C and D), unsourced word removed, quotation marks wording corrected, flood-incident search logged, layout\
+      \ fixed. Verdict unchanged."

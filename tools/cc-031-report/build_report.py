@@ -23,7 +23,7 @@ S.append(key_points([
      "diesel-powered buses in Gozo”. The sources are the operator and the government; we did not find independent "
      "fleet records."),
     ("It is a small part of the job.",
-     "Malta Public Transport estimates the electric fleet saves about 1,300 tonnes of CO2 a year. Against a rough, "
+     "Malta Public Transport estimates the electric fleet saves about 1,300 tonnes of CO2 a year (as reported by TVM News ◆). Against a rough, "
      "population-proportional estimate of Gozo’s road-transport emissions (about 50 kt CO2e) that is about 2.6%. "
      "This is an order of magnitude, not a Gozo measurement: Eurostat has no regional inventory."),
     ("The “vision” has no date or measure in the words quoted.",
@@ -35,8 +35,8 @@ S.append(key_points([
 ]))
 S += [Spacer(1, 2.5 * mm), VerdictMeter(1), Spacer(1, 3 * mm),
       tiles([("100%", GREEN, "Gozo’s buses electric since late May 2026 (TVM News)"),
-             ("1,300 t", GREEN, "CO2 a year saved, Malta Public Transport’s estimate"),
-             ("≈2.6%", ORANGE, "Of an approximate Gozo road-transport total (our scale check)"),
+             ("22", GREEN, "New electric buses; all Gozo bus services electric (TVM News)"),
+             ("≈2.6%", ORANGE, "Operator’s estimated saving ◆ against an approximate Gozo road-transport total (our scale check)"),
              ("Not measurable", GREY, "Pledge label for the “vision”, as of 6 Oct 2026")]),
       Spacer(1, 4 * mm),
       up_down("None: this is not the top of the scale only because the fleet evidence comes from the operator and the "
@@ -68,7 +68,7 @@ S.append(std_table([
      C("Same article."), C("<b>Paraphrase</b>")],
     [C("<b>TVM News</b>, 28 May and 4 Jul 2026 [3, 4]"),
      C("Gozo’s bus service “completely operated with electric buses”; 22 new buses; EUR 11 million; first full month "
-       "carried 332,000 passengers; “end of diesel-powered buses in Gozo”; 1,300 t CO2 a year estimated saving."),
+       "carried 332,000 passengers; “end of diesel-powered buses in Gozo”; 1,300 t CO2 a year estimated saving (operator, via TVM ◆)."),
      C("Read in full, 6 Oct 2026."), C("Evidence (operator and government statements)")],
     [C("<b>Eurostat</b>, env_air_gge and demo_r_pjangrp3 [5, 6]"),
      C("Malta greenhouse-gas inventory by sector; population of Gozo and Comino (NUTS 3, MT002)."),
@@ -119,7 +119,7 @@ S.append(P("<b>The fleet.</b> TVM News reported on 28 May 2026 that public trans
            "in Gozo and a step towards a carbon-neutral island [3]. A month later TVM News reported that Malta Public "
            "Transport carried more than 332,000 passengers in the first full month (up 11% on a year earlier), that the "
            "change “marked the end of diesel-powered buses in Gozo”, and that the operator estimates the electric fleet "
-           "will eliminate about 1,300 tonnes of CO2 a year [4]."))
+           "will eliminate about 1,300 tonnes of CO2 a year [4] ◆."))
 S.append(fig(FIG / "fig1_scale.png", width=CW * 0.95))
 S.append(P("Figure 1. The estimated annual saving from the electric buses against an approximate Gozo road-transport total "
            "and an approximate all-sector total (population-proportional, 2024).", cap))
@@ -139,7 +139,7 @@ S.append(callout([P("WHAT THIS DOES AND DOES NOT SHOW", tag),
 S.append(CondPageBreak(75 * mm))
 S.append(SectionHeading(4, "Where the evidence points different ways"))
 S.append(contested("Is the electric fleet a meaningful step towards climate neutrality?", "YES, BUT SMALL", AMBER,
-                   "All Gozo bus services are now electric (TVM News [3, 4]); the operator estimates 1,300 t CO2 a "
+                   "All Gozo bus services are now electric (TVM News [3, 4]); the operator estimates (via TVM ◆) 1,300 t CO2 a "
                    "year saved and patronage rose 11% in the first full month; 22 new buses and a charging depot were funded.",
                    "On our rough scale check the saving is about 2.6% of Gozo’s road-transport emissions, which are "
                    "in turn roughly a third of Malta’s total. We did not split road emissions by vehicle type, so we cannot say how "

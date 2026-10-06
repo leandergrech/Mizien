@@ -46,7 +46,8 @@ You are a claim-check worker for Miżien, a science-first fact-checking project 
      maintainer has decided otherwise (e.g. "right of reply not sought"). The flyer footer, revision log, claim.yml
      caveats and history must use the same words: "no right of reply needed" or "pending right of reply".
    - A right of reply that rests on a document we have not read (e.g. a plan the speaker cites) is not requested:
-     record "right of reply on hold until <document> is read" in caveats.
+     set `right_of_reply.on_hold: "until <document> is read"` in claim.yml (the site then shows the reply as on hold),
+     say the same in caveats, and pass `status_note="right of reply on hold until ... is read"` to the report.
    - Before finishing, reconcile every figure that appears twice (TL;DR, tiles, sub-claim table, flyer, claim.yml)
      and every page citation against the source.
 6. Build the report (about 8-10 pages) and flyer using tools/mizien_report.py, copying a finished claim's scripts as the template; outputs go to tools/cc-NNN-report/out/ (git-ignored) and are copied to claims/CC-NNN/ (report.pdf, flyer.pdf, flyer.png). Install what you need: `pip install reportlab matplotlib pillow pyyaml`; fonts and PNG rendering need `fonts-liberation fonts-dejavu-core poppler-utils` (apt-get if available). Render the PDF pages and figures to PNG and look at them to catch layout problems (overlapping labels, near-empty pages, a heading or table note stranded on another page) before finishing. Then run `python tools/report_html.py CC-NNN` and make sure it prints 'ok' (the web version of the report); do not commit claims/*/report.html or report-figures/.

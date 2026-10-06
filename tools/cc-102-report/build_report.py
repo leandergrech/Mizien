@@ -156,7 +156,7 @@ S.append(std_table([
      C("Ombudsman [1]; Newsbook [2]"),
      C("7 of 12 sustained cases closed in 2025, status at closure (Table 1.3). Small count; 5 of 12 still open when the report was "
        "written."), verd("CONFIRMED", GREEN)],
-    [C("<b>B.</b> The highest rate among the commissioners"), C("Claim record; Newsbook [2] gives 58% and 53%"),
+    [C("<b>B.</b> The highest rate among the commissioners"), C("Newsbook [2] (its comparison, from the Ombudsman’s tables)"),
      C("58% against Education’s 53% of sustained cases; 67% for Education on cases with a recommendation."),
      verd("DEPENDS ON BASE", AMBER)],
     [C("<b>C.</b> 22 reports escalated to Parliament in 2025"), C("Ombudsman [1]; Newsbook [2]"),

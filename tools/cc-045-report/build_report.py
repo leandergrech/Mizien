@@ -227,9 +227,10 @@ S.append(requests_list([
 ]))
 S += [Spacer(1, 4 * mm),
       callout([P("RIGHT OF REPLY", tag),
-               P("Before wider circulation this draft should be sent to the Public Works Department with a fixed "
-                 "deadline for reply. It is a draft pending right of reply and should not be circulated elsewhere "
-                 "until the deadline has passed.")],
+               P("On hold. The Energy and Water Agency’s before-and-after comparison of the project (2nd Flood Risk "
+                 "Management Plan, measure FLD1) has not been read and could change the verdict. Once it is read, this "
+                 "draft will be sent to the Public Works Department with a fixed deadline for reply; until then it "
+                 "should not be circulated elsewhere.")],
               bg=AMBER_PALE, bar=AMBER)]
 
 # ================================================================== 8
@@ -289,8 +290,8 @@ S += revision_log([("1.0", "6 Oct 2026", "First issue. Draft pending right of re
                     "department’s own wording (the MaltaToday headline and sub-claim A are not rated); the verdict "
                     "is stated to rest on C and D; the unsourced word “solved” removed; the Ellul and Farrugia sentences "
                     "described as TVM pull-quotes without quotation marks; a logged search for flood-incident data "
-                    "and the Energy and Water Agency’s documents added; layout fixed. Verdict unchanged. Draft pending "
-                    "right of reply from the Public Works Department.")])
+                    "and the Energy and Water Agency’s documents added; layout fixed. Verdict unchanged. Right of reply "
+                    "on hold until the Energy and Water Agency’s before-and-after comparison is read.")])
 
 build_report(Report(
     number="045", out=str(FIG / "report.pdf"), kicker="Flood tunnels",
@@ -300,9 +301,10 @@ build_report(Report(
     attribution="Attributed by TVM News to Mario Ellul, Public Works Department, 4 July 2025.",
     context="Said alongside a plan to extend the network from 16 km to a 20 km total.",
     verdict="Not substantiated", verdict_note="Plausible by design; effect not shown",
-    footer_lines=["Version 1.1  ·  6 October 2026", "Status: draft for right of reply (Public Works Department)",
+    footer_lines=["Version 1.1  ·  6 October 2026", "Status:",
                   "Prepared from public sources and open data.", "Repository: github.com/leandergrech/Mizien"],
     running_head="Flood tunnels – Malta", version="1.1", date="6 October 2026",
+    status_note="right of reply on hold until the comparison is read",
     pdf_title="Do 20 km of tunnels manage flooding? Claim Check 045",
     pdf_subject="Tests the claim that 20 km of underground tunnels have helped Malta manage flooding",
     story=S))

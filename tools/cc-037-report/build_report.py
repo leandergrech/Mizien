@@ -178,7 +178,7 @@ S.append(contested(
     "Q2  Does the ranking reflect real conditions or a survey effect?", "UNCERTAIN; RANKING IS ROBUST", GREEN,
     "Malta has led the EU in all 17 survey years with data, and in 2023 by 14.2 points, so a single year’s sampling "
     "noise does not explain it.",
-    "Perception varies with expectations, and Eurostat sets no common standard for what counts as a problem [7]. We "
+    "Self-reports can reflect expectations as well as conditions (general context; one study found only partial agreement with measurements [3]), and Eurostat sets no common standard for what counts as a problem [7]. We "
     "found no study that separates these effects for Malta.",
     "<b>For this claim:</b> the rank is accurate as a statement about reports. Causes are outside this check."))
 
@@ -284,7 +284,8 @@ S += appendix_a("A experiment · B observational study with a control or gradien
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
 S += revision_log([("1.0", "5 Oct 2026", "First issue. No right of reply needed for a Supported verdict."),
-                   ("1.1", "5 Oct 2026", REV_11)])
+                   ("1.1", "5 Oct 2026", REV_11),
+                   ("1.2", "6 Oct 2026", "Clarification after the 6 Oct 2026 audit: an unsourced sentence on perception reworded as general context, tied to the cited study [3]. Verdict unchanged; no right of reply needed.")])
 
 build_report(Report(
     number="037", out=str(FIG / "report.pdf"), kicker="Statistics and EU surveys",
@@ -295,9 +296,9 @@ build_report(Report(
     attribution="Amphora Media, 2026 Election Guidebook: The Environment, 12 May 2026.",
     context="Source not named; the figures match Eurostat’s EU-SILC data.",
     verdict="Supported", verdict_note="Accurate; reported problems, in Eurostat’s own words",
-    footer_lines=["Version 1.1  ·  5 October 2026", "Status: draft · no right of reply needed",
+    footer_lines=["Version 1.2  ·  6 October 2026", "Status:",
                   "Prepared from public sources and Eurostat data.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Reported pollution in Malta and the EU", version="1.1", date="5 October 2026",
+    running_head="Reported pollution in Malta and the EU", version="1.2", date="6 October 2026",
     pdf_title="Is Malta first in the EU for reported pollution? Claim Check 037",
     pdf_subject="Tests Amphora Media's statement that 35% of people in Malta reported pollution in 2023, the highest share in the EU",
     story=S))

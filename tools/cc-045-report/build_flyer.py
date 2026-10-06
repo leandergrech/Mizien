@@ -27,6 +27,6 @@ build_flyer(Flyer(
           "Design storm for each catchment.",
           "Operating length of each tunnel.",
           "The Agency's before-and-after comparison."],
-    footer="Version 1.1  ·  6 October 2026  ·  Public data only  ·  Draft, pending right of reply from the Public Works Department",
+    footer="Version 1.1  ·  6 October 2026  ·  Public data only  ·  Right of reply on hold until the comparison is read",
     pdf_title="Claim Check 045 – 20 km of tunnels: do they manage flooding?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

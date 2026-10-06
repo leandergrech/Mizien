@@ -200,8 +200,7 @@ S.append(P("<b>What this label does not say.</b> It does not say the project fai
            "would read: <i>“Compared with [year], WSC’s groundwater production will fall by 4.0 million m³ a year by "
            "[date], while its total electricity use stays at or below [X] GWh.”</i>"))
 S.append(CondPageBreak(45 * mm))
-S.append(P("Evidence we are asking for", h2))
-S.append(requests_list([
+_req = [P("Evidence we are asking for", h2), requests_list([
     "From WSC: the baseline year and completion date behind “4 billion litres per year”, and annual groundwater "
     "abstraction by source since 2014.",
     "From WSC: total electricity consumption (kWh) by year, split by RO, groundwater pumping, distribution and sewage "
@@ -209,12 +208,12 @@ S.append(requests_list([
     "From WSC: whether all components of the Net Zero Impact Utility project are complete, and the 2018 framework "
     "document that Sapiano [3] cites.",
     "From WSC: the specific energy of each RO plant by year, and the boundary of the “Total Energy Requirement” indicator.",
-]))
-S += [Spacer(1, 4 * mm),
+]), Spacer(1, 4 * mm),
       callout([P("RIGHT OF REPLY", tag),
                P("Before wider circulation this draft should be sent to the Water Services Corporation with a fixed "
                  "deadline (suggested 14 days). Responses will be appended and the label revisited.", small)],
               bg=AMBER_PALE, bar=AMBER)]
+S.append(KeepTogether(_req))
 
 # ================================================================== 7
 S += [Spacer(1, 6 * mm), SectionHeading(7, "Limitations")]
@@ -262,16 +261,9 @@ S += appendix_a("A experiment · B observational study with a control or gradien
                 "official statistics · D assertion or anecdote. WSC annual reports are self-reported (C); our own "
                 "arithmetic is an order-of-magnitude estimate.", pledges=True)
 S += [Spacer(1, 5 * mm)]
-S += revision_log([("1.1", "6 Oct 2026", "Corrections after audit: sub-claim A range restated as 0.3–2.0 million m³ (9–49% of 4.0), matching the "
-                                         "data. The 4.68 kWh/m³ figure, taken from a search summary, was replaced by figures read in WSC’s Impact "
-                                         "and Allocation Report 2024 (4.68 is the whole-utility figure for 2022, not an RO figure for 2024); the "
-                                         "RO 2024 bar was removed. 2016 baseline wording, WSC page date (16 Apr 2018) and Sapiano page "
-                                         "citation checked. Label unchanged. Pending right of reply."),
-                    ("1.0", "5 Oct 2026", "First issue. Pledge label: not measurable. Groundwater: no baseline or date; "
-                                         "against 2016, WSC production was 2.0 million m³ lower in 2025 (49% of the "
-                                         "pledged 4.0). Energy: RO output up 50% since 2016; WSC’s total electricity "
-                                         "use not found. Draft pending right of reply from the Water Services "
-                                         "Corporation.")])
+S += revision_log([
+    ('1.0', '5 Oct 2026', 'First issue. Pledge label: not measurable. Groundwater: no baseline or date; against 2016, WSC production was 2.0 million m³ lower in 2025 (49% of the pledged 4.0). Energy: RO output up 50% since 2016; WSC’s total electricity use not found. Draft pending right of reply from the Water Services Corporation.'),
+    ('1.1', '6 Oct 2026', 'Corrections after audit: sub-claim A range restated as 0.3–2.0 million m³ (9–49% of 4.0), matching the data. The 4.68 kWh/m³ figure, taken from a search summary, was replaced by figures read in WSC’s Impact and Allocation Report 2024 (4.68 is the whole-utility figure for 2022, not an RO figure for 2024); the RO 2024 bar was removed. 2016 baseline wording, WSC page date (16 Apr 2018) and Sapiano page citation checked. Label unchanged. Pending right of reply.')])
 
 build_report(Report(
     number="039", out=str(FIG / "report.pdf"), kicker="Water, checked",

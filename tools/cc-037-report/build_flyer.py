@@ -32,6 +32,6 @@ build_flyer(Flyer(
     asks=["The source Amphora used (not named).",
           "Measured exposure data to set beside this survey.",
           "The 2026 survey results, when published."],
-    footer="Version 1.1  ·  5 October 2026  ·  Public data only  ·  Draft  ·  No right of reply needed (Supported)",
+    footer="Version 1.2  ·  6 October 2026  ·  Public data only  ·  No right of reply needed",
     pdf_title="Claim Check 037 – Is Malta first in the EU for reported pollution?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
