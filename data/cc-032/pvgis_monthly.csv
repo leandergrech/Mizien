@@ -1,0 +1,27 @@
+system,month,E_d_kWh,E_m_kWh,H_i_d_kWh_m2,source,url,retrieved
+two_axis,1,162.24,5029.47,5.15,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,2,195.76,5481.24,6.27,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,3,227.5,7052.35,7.36,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,4,257.42,7722.69,8.46,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,5,289.37,8970.51,9.7,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,6,304.95,9148.35,10.49,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,7,315.44,9778.68,11.03,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,8,290.87,9016.91,10.17,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,9,239.43,7182.76,8.21,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,10,194.16,6018.85,6.51,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,11,166.54,4996.2,5.43,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,12,152.37,4723.39,4.85,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+two_axis,year,233.21,85121.39,7.81,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&twoaxis=1,2026-10-06
+fixed_optimal,1,125.45,3889.08,4.0,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,2,152.02,4256.47,4.9,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,3,176.19,5461.86,5.75,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,4,191.78,5753.5,6.37,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,5,202.87,6288.85,6.88,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,6,204.37,6131.12,7.12,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,7,210.77,6533.81,7.45,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,8,204.43,6337.18,7.22,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,9,182.19,5465.65,6.3,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,10,152.44,4725.77,5.14,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,11,128.75,3862.5,4.22,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,12,117.26,3635.0,3.75,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06
+fixed_optimal,year,170.8,62340.78,5.76,PVGIS 5.3 PVcalc (JRC); PVGIS-SARAH3,https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=36.0380&lon=14.2720&peakpower=37.5&loss=14&outputformat=json&optimalangles=1,2026-10-06

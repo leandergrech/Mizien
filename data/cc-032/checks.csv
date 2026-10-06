@@ -1,0 +1,27 @@
+check,value,unit,source,note
+Installed capacity if each unit is the 2.5 kWp model,37.5,kWp,data sheet; pv magazine 2024,15 x 2.5; the Gozo capacity is not published
+"Modelled yearly output, two-axis tracking, 37.5 kWp",85121,kWh a year,"PVGIS 5.3 (SARAH3, 2005-2023)",14% system loss (PVGIS default)
+Modelled yearly output per unit,5675,kWh a year,PVGIS 5.3,"manufacturer's range 4,000-6,500 kWh per unit"
+"Modelled specific yield, two-axis",2270,kWh per kWp a year,PVGIS 5.3,
+"Modelled yearly output, same capacity fixed at the optimal angle",62341,kWh a year,PVGIS 5.3,"optimal tilt 32 degrees, azimuth 3 degrees"
+Tracking gain over an optimally tilted fixed array at the site,36.5,%,PVGIS 5.3,statement: 'up to 40%'; Bahrami et al. 2016: 17.7-31.2% across Europe and Africa (irradiation)
+Manufacturer's range for 15 units,"60,000-97,500",kWh a year,data sheet Rev G (2019),
+"Modelled average output a day, two-axis",233.21,kWh a day,PVGIS 5.3,
+"Modelled output a day, December / July",152.37 / 315.44,kWh a day,PVGIS 5.3,lowest / highest month
+"Shuttle round trip, Park and Ride - Mġarr ferry terminal - Park and Ride",8.49,km,OSRM (OpenStreetMap),"4350 m + 4145 m, car routing"
+Shuttle distance per hour of service every 10 minutes,51.0,km per hour of service,GRDA (headway); OSRM,six round trips an hour; operating hours not published
+"Energy per hour of 10-minute service at 1.45 (simulated WLTP cycle, Li et al. 2025) kWh/km",74.0,kWh per hour of service,calculated; indicative,"consumption from other routes and buses, not Gozo data"
+"Hours of 10-minute service the flowers' average day equals, at 1.45 kWh/km",3.2,hours a day,calculated; indicative,"December 2.1 h, July 4.3 h"
+"Bus-km the flowers' average day equals, at 1.45 kWh/km",161,km a day,calculated; indicative,Malta Public Transport gives a range of up to 300 km per charge
+"Energy per hour of 10-minute service at 1.8 (modelled route, off-peak, Czapla and Sierpinski 2023) kWh/km",91.7,kWh per hour of service,calculated; indicative,"consumption from other routes and buses, not Gozo data"
+"Hours of 10-minute service the flowers' average day equals, at 1.8 kWh/km",2.5,hours a day,calculated; indicative,"December 1.7 h, July 3.4 h"
+"Bus-km the flowers' average day equals, at 1.8 kWh/km",130,km a day,calculated; indicative,Malta Public Transport gives a range of up to 300 km per charge
+"Energy per hour of 10-minute service at 2.1 (modelled route, peak, Czapla and Sierpinski 2023) kWh/km",107.0,kWh per hour of service,calculated; indicative,"consumption from other routes and buses, not Gozo data"
+"Hours of 10-minute service the flowers' average day equals, at 2.1 kWh/km",2.2,hours a day,calculated; indicative,"December 1.4 h, July 2.9 h"
+"Bus-km the flowers' average day equals, at 2.1 kWh/km",111,km a day,calculated; indicative,Malta Public Transport gives a range of up to 300 km per charge
+PQ figure plus VAT at 18%,825542.14,EUR,Newsbook (second-hand); EPRS,"against 'about EUR 850,000'"
+TED award value plus VAT at 18%,848219.48,EUR,TED 742398-2024 (our identification); EPRS,"against 'about EUR 850,000'"
+Difference between TED award value and PQ figure,19218.09,EUR,calculated,reason not stated
+Stated cost per flower,56667,EUR,TVM News; EC page,
+"PQ cost per flower, excl. VAT",46641,EUR,Newsbook (second-hand),
+Share of the RRF C1-I5 target (143 kWp) if 37.5 kWp,26.2,%,Council 11894/26 ADD 1,"the target counts kWp installed, not energy"
