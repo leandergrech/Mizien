@@ -1,0 +1,15 @@
+check,value,unit,source,note
+Implied capacity factor (0.8 TWh a year from 300 MW),30.4,%,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026","800 GWh / (300 MW x 8,760 h)"
+Final electricity consumption 2024,2868.231,GWh,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026",flags: none
+Electricity supplied (production + imports - exports) 2024,3153.4,GWh,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026",flags as above
+0.8 TWh as share of final consumption 2024,27.9,%,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026",
+0.8 TWh as share of electricity supplied 2024,25.4,%,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026",
+Final electricity consumption 2025,2969.82,GWh,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026",flags: p
+Electricity supplied (production + imports - exports) 2025,3252.2,GWh,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026",flags as above
+0.8 TWh as share of final consumption 2025,26.9,%,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026",
+0.8 TWh as share of electricity supplied 2025,24.6,%,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026",
+Share of 2025 supply that was imported,31.7,%,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026",interconnector imports
+"Days from PQQ launch (5 Dec 2024) to submissions deadline (21 Jul 2025, extended from 28 Mar 2025)",228,days,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026","ICM news 5 Dec 2024, 27 Mar 2025; TVM News 22 Jul 2025"
+Extension of the submissions deadline,115,days,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026","28 Mar 2025 (original, offshoreWIND.biz) to 21 Jul 2025 (ICM)"
+"Days from the submissions deadline to 30 Jun 2026 (end of 'the first part' of 2026, our reading)",344,days,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026",
+Days from 30 Jun 2026 to the check date (6 Oct 2026),98,days,"Eurostat nrg_cb_e (E7000, GWh), retrieved 6 Oct 2026; ICM project page and news of 22 Apr 2026",no public notice of candidates qualifying or of the dialogue stage found on ICM's news list

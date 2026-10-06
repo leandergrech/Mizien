@@ -2,50 +2,142 @@ id: CC-029
 title: First offshore wind farm
 category: Climate & Energy
 subtopic: Renewables
-status: In progress
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Government of Malta: a first floating offshore wind farm of about 300 MW will be developed beyond territorial
-    waters; three developers sought prequalification and the next stage was due early 2026.'
-  speaker: Government of Malta; Interconnect Malta
-  date: 2025-07
-  wording_status: 'Paraphrase: locate quote'
+  text: 'Energy Ministry (22 Jul 2025): Malta''s first floating offshore wind farm, of approximately 300 MW, will be located
+    beyond Malta''s territorial waters; three submissions were received to the first (qualification) stage; the plan was to
+    inform candidates who qualify for the next phase by the first part of 2026.'
+  speaker: Energy Ministry (Minister Miriam Dalli); Interconnect Malta
+  date: '2025-07-22'
+  wording_status: Verbatim found
   sources:
   - title: Three Applications Submitted in Malta's First Offshore Wind Tender
     publisher: offshoreWIND.biz
     date: 23 Jul 2025
     url: https://www.offshorewind.biz/2025/07/23/three-applications-submitted-in-maltas-first-offshore-wind-tender
     note: Locates the timeline.
-  - title: "Three submissions presented for the first offshore wind farm concession in Malta"
-    publisher: "TVM News"
-    date: "22 Jul 2025"
-    url: "https://tvmnews.mt/en/news/three-submissions-presented-for-the-first-offshore-wind-farm-concession-in-malta/"
-    note: "Energy Ministry statement (about 300 MW, beyond territorial waters) and a direct quote from Minister Dalli. Read 5 Oct 2026."
-  - title: "Three firms bid for Malta's first offshore wind farm concession"
-    publisher: "Newsbook"
-    date: "Jul 2025"
-    url: "https://newsbook.com.mt/en/three-firms-bid-for-maltas-first-offshore-wind-farm-concession/"
-    note: "Next stage to qualifying candidates 'by early next year'; direct quote from Minister Dalli. Read 5 Oct 2026."
-counter_evidence: Timeline and capacity are testable against tender documents; a metocean survey tender opened only
-  in April 2026.
+  - title: Three submissions presented for the first offshore wind farm concession in Malta
+    publisher: TVM News
+    date: 22 Jul 2025
+    url: https://tvmnews.mt/en/news/three-submissions-presented-for-the-first-offshore-wind-farm-concession-in-malta/
+    note: Energy Ministry statement (about 300 MW, beyond territorial waters) and a direct quote from Minister Dalli. Read
+      5 Oct 2026.
+  - title: Three firms bid for Malta's first offshore wind farm concession
+    publisher: Newsbook
+    date: Jul 2025
+    url: https://newsbook.com.mt/en/three-firms-bid-for-maltas-first-offshore-wind-farm-concession/
+    note: Next stage to qualifying candidates 'by early next year'; direct quote from Minister Dalli. Read 5 Oct 2026.
+  - title: Offshore Renewable Energy Project
+    publisher: InterConnect Malta
+    date: read 6 Oct 2026
+    url: https://icm.mt/projects/offshore-renewable-energy-project/
+    note: 'Project description: about 300 MW, beyond 12 nautical miles, up to 0.8 TWh a year, competitive dialogue.'
+  - title: 'Offshore floating wind farm: ICM issues tender to collect data on wind, wave conditions'
+    publisher: InterConnect Malta
+    date: 22 Apr 2026
+    url: https://icm.mt/offshore-floating-wind-farm-icm-issues-tender-to-collect-data-on-wind-wave-conditions/
+    note: EUR 3.6 million metocean tender; about 25% of 2025 demand.
+  - title: Supply, transformation and consumption of electricity (nrg_cb_e), Malta
+    publisher: Eurostat
+    date: retrieved 6 Oct 2026
+    url: https://ec.europa.eu/eurostat/databrowser/view/nrg_cb_e/default/table
+    note: Scale check of the output figure.
+  quote: '"What was once an exploratory initiative has now entered a structured phase" (Minister Miriam Dalli). Ministry statement
+    as reported by TVM News, not in quotation marks: located "beyond Malta''s territorial waters"; "installed capacity of
+    approximately 300MW"; "The current plan is to inform candidates who qualify for the next phase by the first part of next
+    year."'
+counter_evidence: 'No public notice that qualifying candidates were informed, or that the dialogue stage was issued, by 6
+  Oct 2026 (ICM news list to 3 Oct 2026; ICM tenders page: no open tenders). ICM issued a EUR 3.6 million metocean tender
+  on 22 Apr 2026 for two years of site data. A press report seen only in a search summary (MaltaToday, 403) puts the dialogue
+  stage around April 2026 and contractor selection at the end of 2027 (second-hand). A private notice cannot be excluded.'
 tests: Tender notices; Interconnect Malta updates; NECP wind assumptions.
 why_low_hanging: A specific, attributable statement that public data can test.
-tags: []
-tags_provisional: true
-priority: Queue
+tags:
+- Promise-without-baseline
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Mixed check: the facts (capacity, position, three submissions, output) are rated; the timetable is a pledge rated
+  Off track (as of 6 Oct 2026) on the absence of a public notice, not on a statement that the step was missed. The ministry''s
+  own release was refused to scripts: the statement is read via TVM News and Newsbook; only the minister''s words are in quotation
+  marks. Tender documents and the NECP offshore wind assumption were not read. Pledge label Off track: pending right of reply.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- InterConnect Malta project page and news (5 Dec 2024, 27 Mar 2025, 22 Apr 2026; news list read 6 Oct 2026)
+- Eurostat nrg_cb_e (Malta electricity, retrieved 6 Oct 2026; data/cc-029/eurostat_electricity.csv, checks in data/cc-029/checks.csv)
+- TVM News and Newsbook, 22 Jul 2025 (URLs in sources)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
   lat: 35.8959
   lon: 14.51136
   scope: institution
   icon: castille
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-029A
+    text: "A first floating wind farm of about 300 MW, beyond territorial waters"
+    said_by: "Energy Ministry [1]"
+    finding: "ICM’s project page gives the same capacity, floating technology and position beyond 12 nautical miles [4]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-029B
+    text: "Three submissions to the first stage"
+    said_by: "Energy Ministry [1]"
+    finding: "Three named applicants; announced 22 Jul 2025 by the ministry; same in Newsbook and trade media [1, 2, 9]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-029C
+    text: "Output: around a quarter of 2025 demand (ICM)"
+    said_by: "ICM [6]"
+    finding: "0.8 TWh is 24.6% of 2025 electricity supplied and 26.9% of final consumption (Eurostat) [7]."
+    rating: "Consistent"
+    tone: green
+  - id: CC-029D
+    text: "Qualifying candidates informed “by the first part” of 2026"
+    said_by: "Energy Ministry [1]"
+    finding: "No public notice by 6 Oct 2026; a metocean tender was issued in April 2026 instead; a private notice cannot be excluded."
+    rating: "Off track (pledge)"
+    tone: orange
+version: '1.0'
+last_reviewed: '2026-10-06'
+thumbnail:
+  figure: 24.6%
+  caption: of Malta's 2025 electricity supply is what the planned offshore wind farm would provide (timetable Off track)
+pledge:
+  status: Off track
+  as_of: '2026-10-06'
+  made_by:
+  - ministry-environment
+  made_on: '2025-07-22'
+  vehicle: Energy Ministry statement on the first offshore wind concession (TVM News, 22 Jul 2025)
+  deadline: null
+  target: Qualifying candidates informed of the next phase by the first part of 2026
+  note: Deadline not defined in the statement; read as the end of June 2026. No public notice found by 6 Oct 2026; a private
+    notice cannot be excluded.
+history:
+- date: '2026-10-06'
+  step: started
+  note: Worker B took the claim (maintainer unblock, primary-source.md). TVM News and Newsbook re-read in full; ICM project
+    page, news list and tenders page read; offshoreWIND.biz and Windtech read.
+- date: '2026-10-06'
+  step: wording
+  note: 'Verbatim found: Minister Dalli quoted in quotation marks (TVM News, Newsbook, 22 Jul 2025); the ministry statement
+    (300 MW, beyond territorial waters, timetable) is reported without quotation marks.'
+- date: '2026-10-06'
+  step: note
+  note: 'Eurostat nrg_cb_e downloaded; output and share checks in tools/cc-029-report/calc.py (data/cc-029/checks.csv). Searched
+    for a public notice of the next stage: none found.'
+- date: '2026-10-06'
+  step: version
+  note: First issue. Verdict Largely supported (moderate confidence); pledge label Off track (as of 6 Oct 2026); pending right
+    of reply.
+  version: '1.0'

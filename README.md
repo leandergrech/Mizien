@@ -58,7 +58,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-026 | Climate & Energy | EU's largest rise in emissions | Drafted | Largely supported |
 | CC-027 | Climate & Energy | Power cuts: heat, not generation | In progress | - |
 | CC-028 | Climate & Energy | 76% less network downtime | In progress | - |
-| CC-029 | Climate & Energy | First offshore wind farm | In progress | - |
+| CC-029 | Climate & Energy | First offshore wind farm | Drafted | Largely supported (pledge: Off track) |
 | CC-030 | Climate & Energy | Carbon-neutral airport | Drafted | Not substantiated |
 | CC-031 | Climate & Energy | Gozo, first climate-neutral region | Drafted | Largely supported (pledge: Not measurable) |
 | CC-032 | Climate & Energy | Solar flowers, first in Europe | Not started | - |
