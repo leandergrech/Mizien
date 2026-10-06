@@ -595,7 +595,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-046",
-          "score": 0.55,
+          "score": 0.56,
           "terms": [
             "osmosis",
             "reverse",
@@ -1467,7 +1467,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-104",
-          "score": 0.43,
+          "score": 0.42,
           "terms": [
             "noise",
             "directive",
@@ -2130,7 +2130,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-100",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "airport",
             "international",
@@ -2470,7 +2470,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-113",
-          "score": 0.34,
+          "score": 0.31,
           "terms": [
             "share",
             "highest"
@@ -2650,7 +2650,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-046",
-          "score": 0.28,
+          "score": 0.29,
           "terms": [
             "water",
             "litres",
@@ -2961,7 +2961,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-009",
-          "score": 0.55,
+          "score": 0.56,
           "terms": [
             "osmosis",
             "reverse",
@@ -2970,7 +2970,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         },
         {
           "id": "CC-040",
-          "score": 0.28,
+          "score": 0.29,
           "terms": [
             "water",
             "litres",
@@ -4255,10 +4255,10 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "id": "CC-075",
       "title": "Seventh in the EU for cars",
       "category": "Transport",
-      "claim": "Lovin Malta, reporting Eurostat: Malta ranks seventh in the EU with 585 passenger cars per 1,000 inhabitants.",
-      "counter": "NSO gives 576 per 1,000 for 2024; denominator choice (resident population) matters.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Lovin Malta (21 Sep 2024), describing a Eurostat dataset \"as of 2023\": Malta is ranked seventh in the EU, between Germany and Poland, with 585 passenger cars per 1,000 inhabitants. The article gives no year for the figure.",
+      "counter": "By 25 Jul 2024, about two months before the article, Eurostat had published 2023 figures for all 27 Member States (Statistics Explained \"Passenger cars in the EU\", revision 647912, live 19 Aug to 5 Nov 2024): Malta about 575, 12th; EU 571. The article calls the dataset \"as of 2023\" and states the rank in the present tense without giving a year or mentioning the 2023 figures. Its 585 and seventh place are 2022 figures in data revised after January 2024 (Eurostat's January 2024 release had Malta sixth at about 602). Today's data: 11th for 2023, 14th for 2025 (571, below the EU's 584); the population grew faster than the car stock. Side remarks: one car per 1.7 people, not per two; 246 km2 is Malta island (country 313 km2; still the most cars per km2 in the EU). NSO licensed-vehicle figures are second-hand.",
+      "status": "Drafted",
+      "verdict": "Misleading",
       "tags": [],
       "subtopic": "Cars & traffic",
       "location": {
@@ -4268,28 +4268,67 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "Lovin Malta (reporting Eurostat)",
       "bodies": [
         "lovin-malta"
       ],
-      "date": "",
-      "quote": "",
-      "version": null,
-      "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-075/claim.yml",
-      "similar": [
+      "subclaims": [
         {
-          "id": "CC-110",
-          "score": 0.29,
-          "terms": [
-            "cars",
-            "passenger"
-          ]
+          "id": "CC-075A",
+          "text": "Malta has 585 cars per 1,000 inhabitants",
+          "finding": "Right for 2022 in data revised after January 2024: 585, no flag; rebuilt from 317,234 cars and 542,051 people [2–4]. Eurostat’s January 2024 release had about 602 [6].",
+          "rating": "Accurate (2022, revised data)",
+          "tone": "green"
+        },
+        {
+          "id": "CC-075B",
+          "text": "Ranked number seven, between Germany and Poland",
+          "finding": "Seventh of 27 for 2022 in today’s data, between Germany 587 (b) and Poland 584 (i) [2]. In the January 2024 release Malta was sixth and Poland 11th [6].",
+          "rating": "Accurate (2022, revised data)",
+          "tone": "green"
+        },
+        {
+          "id": "CC-075C",
+          "text": "Presented as current: dataset “as of 2023”, Malta “is ranked” seventh",
+          "finding": "The article dates its graphic “up to the year 2022” but calls the dataset “as of 2023” and gives the rank in the present tense. Eurostat had published 2023 figures by 25 Jul 2024: Malta about 575, 12th [13]. Separately, in today’s revised data Malta is 11th for 2023 [2].",
+          "rating": "Out of date when published",
+          "tone": "red"
+        },
+        {
+          "id": "CC-075D",
+          "text": "Italy top at 682, Latvia lowest at 409",
+          "finding": "Italy 682 matches today’s 2022 data (684 in January 2024); Latvia is lowest in every version (406 now, 414 then) [2, 6].",
+          "rating": "Largely accurate",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-075E",
+          "text": "“Approximately 1 car for every 2 people”",
+          "finding": "585 per 1,000 is one car for every 1.71 people [2]; the rounding understates the rate.",
+          "rating": "Loosely worded",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-075F",
+          "text": "246 km² of land; among the highest car density in Europe",
+          "finding": "246 km² is Malta island; the country has 313 km² of land [5]. With 1,014 cars per km² of land Malta is first in the EU, 3.9 times the Netherlands [3, 5].",
+          "rating": "Largely accurate",
+          "tone": "lime"
         }
-      ]
+      ],
+      "date": "2024-09-21",
+      "quote": "Malta is ranked number seven, just between Germany and Poland … with 585 cars per 1,000 inhabitants.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-06",
+      "outputs": {
+        "report": "claim-files/CC-075/report.pdf",
+        "flyer_pdf": "claim-files/CC-075/flyer.pdf",
+        "flyer_png": "claim-files/CC-075/flyer.png"
+      },
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-075/claim.yml"
     },
     {
       "id": "CC-076",
@@ -5202,19 +5241,19 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
           ]
         },
         {
-          "id": "CC-113",
-          "score": 0.29,
-          "terms": [
-            "fuel",
-            "subsidies"
-          ]
-        },
-        {
           "id": "CC-013",
           "score": 0.28,
           "terms": [
             "keep",
             "prices"
+          ]
+        },
+        {
+          "id": "CC-113",
+          "score": 0.27,
+          "terms": [
+            "fuel",
+            "subsidies"
           ]
         },
         {
@@ -5434,7 +5473,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-030",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "airport",
             "international",
@@ -5627,7 +5666,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-020",
-          "score": 0.43,
+          "score": 0.42,
           "terms": [
             "noise",
             "directive",
@@ -6024,17 +6063,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "flyer_pdf": "claim-files/CC-110/flyer.pdf",
         "flyer_png": "claim-files/CC-110/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-110/claim.yml",
-      "similar": [
-        {
-          "id": "CC-075",
-          "score": 0.29,
-          "terms": [
-            "cars",
-            "passenger"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-110/claim.yml"
     },
     {
       "id": "CC-111",
@@ -6189,7 +6218,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-037",
-          "score": 0.34,
+          "score": 0.31,
           "terms": [
             "share",
             "highest"
@@ -6197,7 +6226,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         },
         {
           "id": "CC-095",
-          "score": 0.29,
+          "score": 0.27,
           "terms": [
             "fuel",
             "subsidies"
