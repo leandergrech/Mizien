@@ -436,12 +436,28 @@ class Report:
     pdf_subject: str
     title_size: float = 37
     quote_size: float = 16.5
-    status_note: str = "pending right of reply"   # page footer; e.g. "right of reply not sought"
+    status_note: str = None     # page footer and cover "Status:" line; None = derived from verdict and pledge_label
+    pledge_label: str = None    # a mixed check's pledge label (a pure pledge passes it as `verdict`)
     story: list = field(default_factory=list)
+
+
+REPLY_VERDICTS = {"Not substantiated", "Misleading", "Contradicted"}   # maintainer rule, 5 Oct 2026
+REPLY_PLEDGES = {"Not measurable", "Off track", "Missed"}
+
+
+def reply_status(verdict, pledge_label=None):
+    """The one wording for the cover and every page footer: a reply is sought only for these verdicts and labels."""
+    needs = verdict in REPLY_VERDICTS or verdict in REPLY_PLEDGES or (pledge_label in REPLY_PLEDGES)
+    return "pending right of reply" if needs else "no right of reply needed"
 
 
 def build_report(R: Report):
     vkind, _, vcols, _, vi = scale_of(R.verdict)
+    if R.status_note is None:                       # derived, so cover, footers and the record cannot disagree
+        R.status_note = reply_status(R.verdict, R.pledge_label)
+    status_line = "Status: draft, pending right of reply" if R.status_note == "pending right of reply" else \
+        "Status: no right of reply needed" if R.status_note == "no right of reply needed" else f"Status: {R.status_note}"
+    R.footer_lines = [status_line if str(l).startswith("Status:") else l for l in R.footer_lines]
 
     def draw_cover(c, doc):
         c.saveState()
