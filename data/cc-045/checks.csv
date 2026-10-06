@@ -1,0 +1,16 @@
+check,value,unit,note
+"Years with at least 330 daily readings (Luqa, 1990-2025)",25,years,"first 1992, last 2024; years below the cut-off are not used for annual maxima"
+Years excluded for missing readings,"1990, 1991, 1999, 2000, 2001, 2002, 2020, 2021, 2022, 2023, 2025",,daily readings missing; the maximum of an incomplete year could be understated
+Median annual maximum daily rainfall,59.4,mm,"empirical, complete years"
+Empirical 2-year daily rainfall at Luqa (Weibull),59.4,mm,
+Empirical 5-year daily rainfall at Luqa (Weibull),103.6,mm,"single gauge, 24-hour totals; the NFRP design storm is a catchment flow criterion, not this figure"
+Largest daily total in the record,182.1,mm,1996-08-23
+"Days at or above 50 mm at Luqa, 1 Jan 2015 to 5 Oct 2026",2,days,2018-02-10 108.7; 2021-11-26 66.8
+Luqa daily rainfall on 14 Sep 2020 (the day before Lovin Malta's report of flooding),20.1,mm,"Luqa is about 6 km from Birkirkara; 13 Sep has no reading; below the empirical 2-year level, so a single gauge does not show the storm"
+Years 2015-2025 with complete readings,6,of 11,2020-2023 and 2025 are incomplete: too few years to compare 'before' and 'after' the tunnels
+"Length stated: Public Works Department via TVM News (Ellul, director Coastal and Stormwater Unit)",16,km,"canals, tunnels and culverts in use; works under way to reach 20 km"
+Length stated: Public Works Department via TVM News (planned total),20,km,"total after a further 4 km of canals, tunnels and culverts"
+"Length stated: European Commission project page, Fighting floods in Malta",,km,no total length stated (nine localities; 65 km2; 5-year storm)
+"Length stated: Lovin Malta (15 Sep 2020, citing the 2014 project)",16,km,'some 16 kilometres of mostly underground tunnels' (outlet's statement)
+Length stated: MaltaToday headline (undated; read only as a search snippet),20,km,'20 kilometres of underground tunnel'; page refused to scripts (403)
+"Gap between 20 km (claim) and 16 km (Public Works Department, 4 Jul 2025)",4,km,the department describes 16 km as in use and 4 km more as planned

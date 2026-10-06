@@ -1,40 +1,116 @@
 id: CC-045
-title: Tunnels solved flooding
+title: Do 20 km of tunnels manage flooding?
 category: Water
 subtopic: Flood relief
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Moderate
 claim:
-  text: 'Public Works / National Flood Relief Project: some 20 km of underground tunnels have helped Malta manage
-    its flooding problems.'
+  text: 'Public Works Department (TVM News, 4 Jul 2025): the department is working to extend its flood-relief canals,
+    tunnels and culverts from 16 km to 20 km, and these systems "avoid flooding and damage caused by waters every
+    time it rains". A MaltaToday headline (undated) renders this as 20 km of underground tunnel having helped Malta
+    manage its flooding problems.'
   speaker: Public Works Department; Government of Malta
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  date: '2025-07-04'
+  wording_status: Verbatim found
   sources:
+  - title: 2,400 tonnes of waste removed from 16 km of stormwater tunnels
+    publisher: TVM News
+    date: 4 Jul 2025
+    url: https://tvmnews.mt/en/news/2400-tonnes-of-waste-removed-from-16-km-of-stormwater-tunnels/
+    note: 'Primary wording, read in full 6 Oct 2026. English text is TVM''s translation of the Maltese release; the "16 km
+      to 20 km" sentence is TVM''s summary, the Ellul and Farrugia sentences are direct quotes.'
+  - title: Press release by the Parliamentary Secretariat for Public Works, 2,400 tonnes from 16 km of stormwater tunnels
+    publisher: Government of Malta, Department of Information
+    date: 4 Jul 2025
+    url: https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/2025/07/04/pr251213en.aspx
+    note: Original release; not read (HTTP 403 to scripts). Cited through TVM News.
   - title: 20 kilometres of underground tunnel helped Malta manage its flooding problems
     publisher: MaltaToday
     date: n/d
     url: https://www.maltatoday.com.mt/environment/nature/107804/20_kilometres_of_underground_tunnel_helped_malta_manage_its_flooding_problems
-    note: Locates the claim.
-counter_evidence: Flooding persists in some localities; rainfall intensity vs design capacity.
+    note: Locates the claim. Headline and search summary only (HTTP 403); speaker and date not read.
+  - title: Fighting floods in Malta
+    publisher: European Commission, Inforegio
+    date: 15 Oct 2013
+    url: https://ec.europa.eu/regional_policy/projects/projects-database/fighting-floods-in-malta_en
+    note: 'Design figures: 65 km2, 5-year storm, about 165,000 beneficiaries (expected).'
+  - title: An underground tunnel and millions in road investment later, Malta is still flooding
+    publisher: Lovin Malta
+    date: 15 Sep 2020
+    url: https://lovinmalta.com/opinion/analysis/an-underground-tunnel-and-millions-in-road-investment-later-but-malta-is-still-flooding/
+    note: Flooding reported in project localities; about 16 km, EUR 54 million (outlet's statement).
+  - title: Underground tunnels being excavated to alleviate flooding
+    publisher: TVM News
+    date: 28 Aug 2022
+    url: https://tvmnews.mt/en/news/underground-tunnels-being-excavated-to-alleviate-flooding/
+    note: Two further tunnels planned (Mosta, Mater Dei).
+  - title: GHCN-Daily, Luqa (MT000016597), precipitation
+    publisher: NOAA NCEI
+    date: retrieved 6 Oct 2026
+    url: https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=MT000016597&dataTypes=PRCP&format=csv
+    note: Context only; one gauge, gaps after 2019.
+  quote: These are very important systems for the country, particularly for the Birkirkara localities, because they avoid
+    flooding and damage caused by waters every time it rains.
+counter_evidence: 'The department puts 16 km in use and 4 km planned; flooding was reported in project localities in Sep 2020 and two further tunnels were planned in 2022; the system is designed for a 5-year storm only; no before-and-after incident data published.'
 tests: Flood incident records before and after; rainfall data.
 why_low_hanging: A specific, attributable statement that public data can test.
-tags: []
-tags_provisional: true
-priority: Queue
+tags:
+- Input-as-outcome
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: Draft pending right of reply (Public Works Department). The original gov.mt release and the MaltaToday article were refused to scripts (403); wording is from TVM News's account. Luqa rainfall is one gauge with gaps after 2019 and is context only. No flood-incident series was found.
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-06'
 location:
   place: Flood relief tunnel outlet, Ta' Xbiex
   lat: 35.89911
   lon: 14.4949
   scope: site
   icon: pin
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-045A
+    text: "Some 20 km of tunnels"
+    finding: "16 km in use and 4 km planned (department, 4 Jul 2025) [1]; about 16 km in 2020 [4]. 20 km is the planned total."
+    rating: "Overstated"
+    tone: orange
+  - id: CC-045B
+    text: "They are designed to reduce flooding"
+    finding: "65 km², 5-year storm, 165,000 expected beneficiaries (Commission, 2013) [3]."
+    rating: "Supported"
+    tone: green
+  - id: CC-045C
+    text: "They have helped Malta manage flooding"
+    finding: "Plausible from design; no before-and-after incident data published. Flooding reported in project localities in 2020 [4] and new tunnels planned in 2022 [2]."
+    rating: "Not shown"
+    tone: grey
+  - id: CC-045D
+    text: "They “avoid flooding … every time it rains”"
+    finding: "A 5-year design is exceeded by larger storms; no source shows how often flooding is prevented [1, 3, 4]."
+    rating: "Overstated"
+    tone: orange
+thumbnail:
+  figure: 16 km
+  caption: of flood tunnels in use (20 km is the planned total)
+history:
+  - date: 2026-10-06
+    step: started
+    note: "Picked up by worker C. The claim record came from a MaltaToday headline (403 to scripts); searched for the public statement behind it."
+  - date: 2026-10-06
+    step: wording
+    note: "Verbatim wording found in TVM News, 4 Jul 2025 (Public Works Department: 16 km in use, 20 km planned; Ellul quote). Original gov.mt release refused (403)."
+  - date: 2026-10-06
+    step: version
+    version: "1.0"
+    note: "First issue. Verdict Not substantiated (moderate), pending right of reply from the Public Works Department."

@@ -74,7 +74,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-042 | Water | 'From Blue Flag to Red Alert' | Drafted | Largely supported |
 | CC-043 | Water | 13 Blue Flag beaches | Not started | - |
 | CC-044 | Water | 2,400 tonnes from storm tunnels | Not started | - |
-| CC-045 | Water | Tunnels solved flooding | Not started | - |
+| CC-045 | Water | Do 20 km of tunnels manage flooding? | Drafted | Not substantiated |
 | CC-046 | Water | Gozo water autonomy | Not started | - |
 | CC-047 | Water | Nitrates in the aquifer | Drafted | Largely supported |
 | CC-048 | Nature & Wildlife | Sea urchins recovering | Not started | - |
