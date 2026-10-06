@@ -4,10 +4,10 @@ category: Transport
 subtopic: Cars & traffic
 status: Drafted
 verdict: Misleading
-verdict_confidence: High
+verdict_confidence: Moderate
 claim:
   text: 'Lovin Malta (21 Sep 2024), describing a Eurostat dataset "as of 2023": Malta is ranked seventh in the EU, between
-    Germany and Poland, with 585 passenger cars per 1,000 inhabitants. The article gives no year for the figure.'
+    Germany and Poland, with 585 passenger cars per 1,000 inhabitants. The article gives conflicting year signals: the dataset "as of 2023", a graphic "up to the year 2022".'
   speaker: Lovin Malta (reporting Eurostat)
   date: '2024-09-21'
   wording_status: Verbatim found
@@ -18,7 +18,7 @@ claim:
       url: https://lovinmalta.com/malta/malta-ranked-number-seven-on-eurostats-passenger-cars-per-1000-inhabitants-dataset/
       note: The claim, in the outlet's own words. Read in full on 6 Oct 2026 (page and WordPress API, post 148257). Calls
         Eurostat's dataset 'as of 2023' and dates its graphic (Paula Lago, The European Correspondent) 'up to the year
-        2022'; no year for the 585.
+        2022'; the sentence with the 585 and the rank carries no year of its own.
     - title: Passenger cars in the EU (Statistics Explained), revision 647912
       publisher: Eurostat
       date: 19 Aug 2024 (live until 5 Nov 2024)
@@ -40,8 +40,8 @@ claim:
   quote: Malta is ranked number seven, just between Germany and Poland … with 585 cars per 1,000 inhabitants.
 counter_evidence: 'By 25 Jul 2024, about two months before the article, Eurostat had published 2023 figures for all 27 Member
   States (Statistics Explained "Passenger cars in the EU", revision 647912, live 19 Aug to 5 Nov 2024): Malta about 575,
-  12th; EU 571. The article calls the dataset "as of 2023" and states the rank in the present tense without giving a year
-  or mentioning the 2023 figures. Its 585 and seventh place are 2022 figures in data revised after January 2024 (Eurostat''s
+  12th; EU 571. The article gives conflicting year signals (dataset "as of 2023", graphic "up to the year 2022") and
+  states the rank in the present tense without mentioning the 2023 figures. Its 585 and seventh place are 2022 figures in data revised after January 2024 (Eurostat''s
   January 2024 release had Malta sixth at about 602). Today''s data: 11th for 2023, 14th for 2025 (571, below the EU''s 584);
   the population grew faster than the car stock. Side remarks: one car per 1.7 people, not per two; 246 km2 is Malta island
   (country 313 km2; still the most cars per km2 in the EU). NSO licensed-vehicle figures are second-hand.'
@@ -58,7 +58,10 @@ data_readiness: Medium
 caveats: 'The 585 and seventh place are right for 2022 in Eurostat''s revised data, but Eurostat''s published 2023 figures
   put Malta 12th when the article appeared, and the article presents seventh as current. Earlier Eurostat values are read
   from Eurostat''s own charts by pixel measurement; the article''s own data source (a third-party graphic) was not found.
-  NSO figures are second-hand. Misleading verdict: draft, pending right of reply (Lovin Malta).'
+  NSO figures are second-hand. For September 2024 only the Statistics Explained revision and its figure were seen,
+  not the database tables as then published; Malta''s 2023 rank (12th) is read from a chart, so 11th or 12th is within
+  reading error. Confidence Moderate: the article''s own dates conflict, so what readers take from them is open.
+  Misleading verdict: draft, pending right of reply.'
 right_of_reply:
   sent: null
   deadline: null
@@ -98,7 +101,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: green
   - id: CC-075C
     text: "Presented as current: dataset “as of 2023”, Malta “is ranked” seventh"
-    finding: "The article dates its graphic “up to the year 2022” but calls the dataset “as of 2023” and gives the rank in the present tense. Eurostat had published 2023 figures by 25 Jul 2024: Malta about 575, 12th [13]. Separately, in today’s revised data Malta is 11th for 2023 [2]."
+    finding: "The article gives conflicting year signals (dataset “as of 2023”, graphic “up to the year 2022”) and states the rank in the present tense. Eurostat had published 2023 figures by 25 Jul 2024: Malta about 575, 12th [13]. Separately, in today’s revised data Malta is 11th for 2023 [2]."
     rating: "Out of date when published"
     tone: red
   - id: CC-075D
@@ -116,7 +119,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "246 km² is Malta island; the country has 313 km² of land [5]. With 1,014 cars per km² of land Malta is first in the EU, 3.9 times the Netherlands [3, 5]."
     rating: "Largely accurate"
     tone: lime
-version: '1.0'
+version: '1.1'
 last_reviewed: '2026-10-06'
 thumbnail:
   figure: 12th
@@ -150,3 +153,26 @@ history:   # research log: the date each step of the research was done (not when
     step: version
     version: "1.0"
     note: "First issue. Draft verdict Misleading (high confidence); pending right of reply (Lovin Malta)."
+  - date: 2026-10-06
+    step: correction
+    note: "Wording on the year corrected. The article does not 'give no year': it calls Eurostat's dataset 'as of 2023'\
+      \ and says its graphic illustrates the rankings 'up to the year 2022'. Replaced 'no year given' (claim text, cover,\
+      \ TL;DR, sections 1, 4, 7 and 9, flyer) with the accurate finding: conflicting year signals, and seventh place in\
+      \ the present tense although Eurostat's already-published 2023 figures put Malta about 12th. Verdict stays\
+      \ Misleading; confidence lowered from High to Moderate (maintainer decision), because the interpretive question is\
+      \ what readers take from the conflicting dates."
+  - date: 2026-10-06
+    step: clarification
+    note: "Both 'what would move the verdict' boxes rewritten (up no longer cites the article telling readers the year was\
+      \ 2022; down: none foreseen). Section 6 explains the two 602s: the January 2024 value for 2022 (about 602) equals\
+      \ today's 2021 value; the car stock is unchanged (317,234 in revision 647912 and today), so the revision is in the\
+      \ population denominator (implied about 527,000 against 542,051) or its cause is unidentified (January 2024 stock\
+      \ and population not retrieved); checks added to data/cc-075/checks.csv. Section 9: 'A letter ... has been\
+      \ drafted' replaced by 'will be drafted'. Limitations: only the Statistics Explained revision and figure were seen\
+      \ for September 2024, not the database tables; Malta's 2023 rank is read from the chart (about 3 per 1,000 behind\
+      \ France), so 11th or 12th is within reading error, either far from seventh. Status: pending right of reply."
+  - date: 2026-10-06
+    step: version
+    version: "1.1"
+    note: "1.1: corrections after the 6 Oct 2026 audit: year wording, confidence High to Moderate, what-would-move boxes,\
+      \ 602 to 585 explanation, reply sentence, limitations. Pending right of reply."
