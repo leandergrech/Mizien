@@ -56,8 +56,13 @@ does not name any) was 6.2% of ESR transport in 2005 and 11.9% in 2024.
   2 Jun 2026) puts ESR transport at 0.784 Mt, 3.0% above the approximated 0.761 Mt: +48.4% since 2005 and, on our
   estimate of the ESR total, 54.8% of it. The final ESR figures for 2024 are set after the 2027 comprehensive review.
 - Past approximations moved: for 2023 the 2025 report gave +32.2% (approximated), the 2026 report +44.8% (final).
-- The 2005 base differs by source: EEA 2005 ESR estimate 1.0074 Mt; Graph 3.1's 2005 bar 1.016 Mt; the Commission's
-  40.8% for 2024 implies 1.021 Mt; Table A8.1 rounds to 1.0. The transport growth rate does not depend on it.
+- The 2005 base differs by source: the legal ESR value is 1,020,601 t (Commission Implementing Decision (EU) 2020/2126,
+  Annex I; OJ L 426, 17.12.2020, p. 58; read via the Publications Office 6 Oct 2026), and the approximated 2024 total
+  (1,437.4 kt) is +40.8% on it, the report's figure; the EEA's 2005 ESR estimate is 1.0074 Mt; Graph 3.1's 2005 bar
+  sums to 1.016 Mt; Table A8.1 rounds to 1.0. The transport growth rate does not depend on it.
+- Consistency with Claim Check 094 (checked in parallel, 6 Oct 2026): it gives the same 1,437.4 kt, +40.8% on
+  1,020,601 t, and 2030 projections of +29.7% (with additional measures) and +42.1% (with existing measures), which are
+  also the values in the 2026 report's Table A8.1 (p. 71). This check does not test the projections.
 
 ## Gaps
 

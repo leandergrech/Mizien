@@ -114,8 +114,9 @@ S.append(std_table([
 S += [Spacer(1, 2 * mm),
       callout([P("FAIRNESS NOTE", tag),
                P("An EU institution’s assessment of Malta is held to the same standard as a local statement. This check "
-                 "covers one sentence and its two figures. The 2030 projection in the same passage (+29.7% against a "
-                 "−19% target) is outside this check; Claim Check 003 covers the Commission’s earlier version of it.",
+                 "covers one sentence and its two figures. The 2030 projection in the same annex (+29.7% with additional "
+                 "measures, +42.1% with existing measures, against a −19% target; Table A8.1) is outside this check; "
+                 "Claim Checks 003 and 094 cover the Commission’s projections.",
                  small)], bg=AMBER_PALE, bar=AMBER), Spacer(1, 3 * mm)]
 
 # ================================================================== 2
@@ -203,6 +204,11 @@ S.append(P(f"<b>The rise.</b> Effort-sharing transport emitted 0.528 Mt in 2005.
            f"navigation +{CH_NAV}%: road gave {INC_ROAD}% of the increase, shipping the rest, and shipping’s part of "
            f"transport grew from {NAV_SH[0]}% to {NAV_SH[1]}%. Across the EU-27, effort-sharing transport fell "
            f"{EU_CH[1:]}% over the same years [6]."))
+S.append(P(f"<b>The 2005 baseline.</b> The approximated 2024 total, {ESR_PX} Mt, is "
+           f"{v('ESR total 2024 (approximated) vs the legal 2005 base')}% above Malta’s legal 2005 level of 1,020,601 t "
+           "set in Commission Implementing Decision (EU) 2020/2126 [13]: the report’s “40.8% above 2005 levels” [1]. "
+           "The EEA’s own 2005 estimate (1.007 Mt [4]) and Graph 3.1’s 2005 bar (1.016 Mt) differ slightly. The "
+           "transport growth rate compares transport with itself, so it does not depend on which 2005 total is used."))
 S.append(KeepTogether([
     std_table([
         [C("Measure, Malta", cellh), C("Value", cellh), C("Source", cellh), C("Grade", cellh)],
@@ -352,6 +358,10 @@ S += references([
            "Report ◆.", "https://doi.org/10.3390/su16010430"),
     ("12", "Miżien. Data and calculations: data/cc-109/; tools/cc-109-report/ (fetch.py, read_graph.py, calc.py). Claim "
            "Check 003 for the earlier figures (data/cc-003/).", ""),
+    ("13", "Commission Implementing Decision (EU) 2020/2126 of 16 December 2020 setting out the annual emission "
+           "allocations of the Member States for 2021–2030, Annex I (Malta, 2005: 1 020 601 t CO<sub>2</sub>e). OJ L 426, "
+           "17.12.2020, p. 58. Read via the EU Publications Office, 6 Oct 2026.",
+     "http://data.europa.eu/eli/dec_impl/2020/2126/oj"),
 ])
 
 S.append(PageBreak())

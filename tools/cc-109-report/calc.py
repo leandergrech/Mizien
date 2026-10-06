@@ -67,7 +67,7 @@ GS = "Commission, 2026 Country Report - Malta, Graph 3.1 (p. 14; Council copy p.
 
 def _doc(d):
     return ("CR26" if d.startswith("2026 Country") else "CR25" if d.startswith("2025 Country") else
-            "CAPR25" if "2025 country profile" in d else "CAPR24")
+            "CAPR25" if "2025 country profile" in d else "DEC2126" if "2020/2126" in d else "CAPR24")
 
 
 CF = {(_doc(r["document"]), r["item"], r["year"]): r for r in csv.DictReader(open(D / "commission_figures.csv"))}
@@ -179,8 +179,17 @@ add("Years 2005-2024 in which transport exceeds every other effort-sharing secto
 # ---------------------------------------------------------------- 4. Data status and consistency
 add("ESR total 2024 vs 2005, EEA series", round(pct(ESR[2024], ESR[2005]), 1), "%", EEA_ESR,
     f"{ESR[2005]:.4f} ({ESR_ST[2005]}) -> {ESR[2024]:.4f} ({ESR_ST[2024]}); the Commission gives +40.8% on its base")
+base = float(CF[("DEC2126", "Malta 2005 greenhouse gas emissions (legal effort-sharing base)", "2005")]["value"])
+add("ESR legal 2005 base (Implementing Decision (EU) 2020/2126, Annex I)", base, "Mt CO2e",
+    "Commission Implementing Decision (EU) 2020/2126, Annex I (OJ L 426, 17.12.2020, p. 58)", "1 020 601 t CO2e")
+add("ESR total 2024 (approximated) vs the legal 2005 base", round(pct(ESR[2024], base), 1), "%",
+    EEA_ESR + "; Decision 2020/2126",
+    f"{ESR[2024]:.4f} / {base:.4f}; the report gives +40.8% (pp. 66, 71); consistent with Claim Check 094")
+g05_tot = sum(float(G[("2005", k)]["value_mt"]) for k in ("Domestic transport (excl. aviation)", "Buildings (under ESR)",
+                                                          "Agriculture", "Small industry", "Waste"))
 add("ESR 2005 base implied by the Commission's +40.8% for 2024", round(ESR[2024] / 1.408, 4), "Mt CO2e", "calculated",
-    "approximated 2024 total / 1.408; Table A8.1 gives 1.0")
+    f"approximated 2024 total / 1.408; legal base {base:.4f}; Graph 3.1's 2005 bar {g05_tot:.4f}; "
+    f"EEA 2005 estimate {ESR[2005]:.4f}; Table A8.1 gives 1.0")
 add("ESR transport 2024: approximated vs final inventory", round(pct(T[2024], T_px), 1), "%", ES + "; " + EEA_PX,
     f"{T_px:.4f} (approximated, Nov 2025) vs {T[2024]:.4f} Mt (inventory, Mar 2026)")
 a23 = float(CF[("CR26", "Table A8.1 domestic road transport vs base year", "2023")]["value"])
