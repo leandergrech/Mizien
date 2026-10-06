@@ -14,3 +14,6 @@ Add `references.bib` and `notes.md` as in `literature/CC-001/`.
 
 ## Attempt 5 Oct 2026 (worker B)
 Lead: offshoreWIND.biz (23 Jul 2025) confirms three PQQ submissions and a ~300 MW floating concession, but not the government wording. Try the Ministry press release, tender notice, parlament.mt PQs.
+
+## Run 6 Oct 2026 (worker B): completed
+Routes tried: TVM News and Newsbook (read in full), ICM pages (readable), interconnectmalta.com (refused), Wayback (reset), MaltaToday (403), web searches for the next stage and the dialogue stage (nothing published after the April 2026 tender). See notes.md.

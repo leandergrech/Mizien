@@ -1711,11 +1711,13 @@
       "id": "CC-029",
       "title": "First offshore wind farm",
       "category": "Climate & Energy",
-      "claim": "Government of Malta: a first floating offshore wind farm of about 300 MW will be developed beyond territorial waters; three developers sought prequalification and the next stage was due early 2026.",
-      "counter": "Timeline and capacity are testable against tender documents; a metocean survey tender opened only in April 2026.",
-      "status": "In progress",
-      "verdict": null,
-      "tags": [],
+      "claim": "Energy Ministry (22 Jul 2025): Malta's first floating offshore wind farm, of approximately 300 MW, will be located beyond Malta's territorial waters; three submissions were received to the first (qualification) stage; the plan was to inform candidates who qualify for the next phase by the first part of 2026.",
+      "counter": "No public notice that qualifying candidates were informed, or that the dialogue stage was issued, by 6 Oct 2026 (ICM news list to 3 Oct 2026; ICM tenders page: no open tenders). ICM issued a EUR 3.6 million metocean tender on 22 Apr 2026 for two years of site data. A press report seen only in a search summary (MaltaToday, 403) puts the dialogue stage around April 2026 and contractor selection at the end of 2027 (second-hand). A private notice cannot be excluded.",
+      "status": "Drafted",
+      "verdict": "Largely supported",
+      "tags": [
+        "Promise-without-baseline"
+      ],
       "subtopic": "Renewables",
       "location": {
         "place": "Auberge de Castille (Office of the Prime Minister), Valletta",
@@ -1724,18 +1726,81 @@
         "scope": "institution",
         "icon": "castille"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Government of Malta; Interconnect Malta",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Energy Ministry (Minister Miriam Dalli); Interconnect Malta",
       "bodies": [
-        "government-of-malta",
+        "ministry-environment",
         "interconnect-malta"
       ],
-      "date": "2025-07",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-029A",
+          "text": "A first floating wind farm of about 300 MW, beyond territorial waters",
+          "finding": "ICM’s project page gives the same capacity, floating technology and position beyond 12 nautical miles [4].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-029B",
+          "text": "Three submissions to the first stage",
+          "finding": "Three named applicants; announced 22 Jul 2025 by the ministry; same in Newsbook and trade media [1, 2, 9].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-029C",
+          "text": "Output: around a quarter of 2025 demand (ICM)",
+          "finding": "0.8 TWh is 24.6% of 2025 electricity supplied and 26.9% of final consumption (Eurostat) [7].",
+          "rating": "Consistent",
+          "tone": "green"
+        },
+        {
+          "id": "CC-029D",
+          "text": "Qualifying candidates informed “by the first part” of 2026",
+          "finding": "No public notice by 6 Oct 2026; a metocean tender was issued in April 2026 instead; a private notice cannot be excluded.",
+          "rating": "Off track (pledge)",
+          "tone": "orange"
+        }
+      ],
+      "pledge": {
+        "status": "Off track",
+        "slug": "pledge-off-track",
+        "colour": "#ae5d33",
+        "as_of": "6 October 2026",
+        "as_of_iso": "2026-10-06",
+        "made_on": "22 July 2025",
+        "deadline": null,
+        "term_end": null,
+        "target": "Qualifying candidates informed of the next phase by the first part of 2026",
+        "vehicle": "Energy Ministry statement on the first offshore wind concession (TVM News, 22 Jul 2025)",
+        "occasion": "Energy Ministry statement on the first offshore wind concession (TVM News",
+        "note": "Deadline not defined in the statement; read as the end of June 2026. No public notice found by 6 Oct 2026; a private notice cannot be excluded.",
+        "made_by": [
+          {
+            "id": "ministry-environment",
+            "name": "Ministry for the Environment",
+            "kind": "organisation",
+            "role": null,
+            "path": "/bodies/ministry-environment/"
+          }
+        ],
+        "made_by_ids": [
+          "ministry-environment"
+        ],
+        "pure": false,
+        "overlaps": []
+      },
+      "date": "2025-07-22",
+      "quote": "\"What was once an exploratory initiative has now entered a structured phase\" (Minister Miriam Dalli). Ministry statement as reported by TVM News, not in quotation marks: located \"beyond Malta's territorial waters\"; \"installed capacity of approximately 300MW\"; \"The current plan is to inform candidates who qualify for the next phase by the first part of next year.\"",
+      "version": "1.0",
+      "last_reviewed": "2026-10-06",
+      "outputs": {
+        "report": "claim-files/CC-029/report.pdf",
+        "flyer_pdf": "claim-files/CC-029/flyer.pdf",
+        "flyer_png": "claim-files/CC-029/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-029/claim.yml"
     },
     {
@@ -6910,6 +6975,12 @@
           "themes": []
         },
         {
+          "id": "interconnect-malta",
+          "named": 1,
+          "pairs": 0,
+          "themes": []
+        },
+        {
           "id": "ministry-agriculture",
           "named": 1,
           "pairs": 0,
@@ -8216,7 +8287,13 @@
       "links": [
         {
           "id": "government-of-malta",
-          "named": 2,
+          "named": 1,
+          "pairs": 0,
+          "themes": []
+        },
+        {
+          "id": "ministry-environment",
+          "named": 1,
           "pairs": 0,
           "themes": []
         }
@@ -10593,6 +10670,13 @@
       "b": "CC-107",
       "why": [
         "same subtopic (Manifestos & pledges)"
+      ]
+    },
+    {
+      "a": "CC-024",
+      "b": "CC-029",
+      "why": [
+        "same subtopic (Renewables)"
       ]
     }
   ]
