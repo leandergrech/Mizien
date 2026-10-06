@@ -63,7 +63,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-031 | Climate & Energy | Gozo, first climate-neutral region | Drafted | Largely supported (pledge: Not measurable) |
 | CC-032 | Climate & Energy | Solar flowers, first in Europe | Drafted | Contradicted |
 | CC-033 | Air | Delimara: 'much cleaner air' | Not started | - |
-| CC-034 | Air | Air Quality Plan 'already yielding results' | In progress | - |
+| CC-034 | Air | Air Quality Plan 'already yielding results' | Drafted | Not substantiated |
 | CC-035 | Air | PM2.5 death rate down two-thirds | Drafted | Largely supported |
 | CC-036 | Air | Construction dust 'a nuisance, not a health issue' | Not started | - |
 | CC-037 | Air | Highest share reporting pollution | Drafted | Supported |

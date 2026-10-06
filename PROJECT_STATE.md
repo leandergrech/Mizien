@@ -345,6 +345,7 @@ Proposed next, for user-derived pattern matching (not done; needs a maintainer d
 | CC-035 PM2.5 death rate down two-thirds | Report v1.0 and flyer drafted (6 Oct 2026, maintainer session; review fixes applied 6 Oct). **Verdict: Largely supported (high confidence).** The EEA's quick-facts sentence reports its own estimate exactly (143.5 -> 46.3 per 100 000 aged 30+, -67.74%; 172 (131-192) deaths in 2023, as Eurostat sdg_11_52, which republishes it); the method recomputes from Eurostat deaths within 1.2%; measured PM2.5 fell from 2007 (Msida -39%, three long-running stations -25% since 2010). Caveats: the EEA maps are not one method (updated PM2.5 method from 2017, EMEP to CAMS from 2020), and no Maltese PM2.5 was reported to the EEA for 2005, so the 2005 start is a map value (21.0; ETC/ATNI 2020/1 gives 21.2, an unexplained gap; our identification of the map); the stations anchor the map and do not check it; the CI covers the risk function only. The number of deaths fell 50.6%. No right of reply needed. Title changed to 'PM2.5 death rate down two-thirds' (update claims.csv and README). **Unverified:** which 2005 map version the EEA uses; Wayback copies (429); Chen and Hoek and Scerri et al. read as abstracts, Scerri corrigendum not read; the indicative 2005 PM10-ratio test rests on other sites and another year; any 2005 PM2.5 data not reported to the EEA. |
 | CC-099 Foreign residents: 31% now, 38% by 2030 | Report v1.0 and flyer drafted (6 Oct 2026, maintainer session; revised after independent review). **Verdict: Not substantiated (low confidence).** The words are PwC Malta's press release on its Summer 2026 Economic Update; earliest copy found is Finance Malta's (17 Jul 2026), reprinted by MBW (19 Jul), the Malta Chamber (22 Jul) and Mondaq (23 Jul). The record's original MBW link was a different article without the claim (speaker restated to PwC Malta, title changed). 31% accurate: our calculation from Eurostat data 30.9-31.1% non-Maltese citizens at end-2025 if 2025's change lay within the 2010-24 range (Eurostat has not published the 2026 split; NSO 31.1% second-hand); 32.0% born abroad (1 Jan 2025); 39.8% of registered employment (Jobsplus, Dec 2025). 38% by 2030 is PwC's own model and is not shown: no Eurostat or NSO projection by citizenship found; 'around 38%' tested as 37.5-38.5% of PwC's 636,000, which on citizenship needs Maltese citizens to fall by at least 1,610 a year over 2026-30, though they rose every year 2010-2024; only a projection that leaves out future naturalisations (as the Central Bank of Malta's baseline does, second-hand) gives such a fall, and the release states neither its definition nor its naturalisation assumption. Right of reply on hold until PwC's report is read (pwc.com 403; a browser read could move the verdict). **Unverified:** PwC report; NSO release first-hand; CBM note full text and its path to 2030; the Business Now and Newsbook accounts of the report; parliamentary reply on population projections. |
 | CC-032 Solar flowers, first in Europe | Report v1.0 and flyer drafted (6 Oct 2026, maintainer session; review fixes applied the same day). **Verdict: Contradicted (high).** Wording: Camilleri's quoted 'dawn l-ewwel solar flowers fl-Ewropa' (TVM News, Maltese; Lovin Malta's English, tagged 'Press Release', 'these first solar flowers in Europe'); the English TVM article has 'first of its kind in Europe' only in indirect speech; the Commission page repeats the claim in its own words and is not rated. The 15 units are SmartFlowers (maker, 14 Nov 2025: 'one of the largest installations in Europe'); dated records: two installed at the Umwelt Arena, Switzerland (Moneycab, 19 May 2015, the arena's text); on sale in Spain from Jun 2015 (a product launch, not an installation); EV-charging version POP-e presented in Spain Jan 2016; in service at the ASFINAG Hinterbrühl rest area, Austria, Dec 2016 (MeinBezirk community post; IÖB corroborates; earliest in-service date); Vodafone Newbury UK Aug 2021. Bus charging Not substantiated: no capacity, metered output, bus consumption, hours or wiring published, so the share covered cannot be calculated (a 2-3 h/day order of magnitude is kept only as a conditional in report section 5); PQ (Newsbook, second-hand): no feasibility study. PVGIS: 85.1 MWh/yr if each unit is 2.5 kWp (37.5 kWp), +36.5% vs fixed. Cost: PQ EUR 699,611.98 excl. VAT; TED 742398-2024 EUR 718,830.07 (+18% VAT = 848,219; our identification). C1-I5 target 143 kWp by Q2 2026. No tags. Map pin at the Ta' Xħajma hub (Xewkija). **Pending right of reply (Ministry for Gozo and Planning; Public Works Department; draft letter for the maintainer's private doc).** **Unverified:** installed kWp and model; metered output; shuttle buses' model, consumption, hours and charging place; the PQ text itself; whether TED 742398-2024 is this contract; 'second in the world'; a LinkedIn profile reportedly calling Gozo 'the largest installation of SmartFlower Solar units in Europe' (HTTP 999, unread). |
+| CC-034 Air Quality Plan 'already yielding results' | Report v1.0 and flyer drafted (6 Oct 2026, maintainer session; review fixes applied the same day). **Verdict: Not substantiated (moderate).** ERA's page (dated 12 Mar 2025 in its metadata) says the plan's actions 'have already yielded positive results'; we rate the plan's list of six measures (our reading). Power-sector reform shown to help (power-station SOx -99.8% 2014-18, -99.9% since 2008 but 55% of that fall before 2015; SO2 in air -83% at Żejtun; Kordin already 2.6 µg/m³ in 2014). Msida NO2 -22% and PM2.5 -17% (2015-17 to 2021-23), in step with fleet renewal, not tied to any named measure; PM10 flat (40.1 to 40.2) and 2023 the worst of 2015-2023 at the old Msida point after ERA's natural deduction (52 days, 35 allowed; ERA's 2024-25 counts are zone counts from other stations). Plan gives uptake, not effect, for grants, ferry landings, fast ferry, free public transport. Its school-transport NO2 test does not reproduce: peak to peak -1.0 µg/m³ in EEA data; its 2018-19 curves reproduce only with hour-ending labels and its 2014-17 baseline under neither labelling; a sustained -11.5 fall began in 2019, not tied to the measure. 10 of 11 station readings rose in the year after free public transport. Tag Input-as-outcome. Pending right of reply (ERA). **Unverified:** no weather normalisation or traffic data; Msida monitor moved Jan 2024 (2024-25 not compared) and Msida Creek works 112 m from the old point (start date not verified); ERA page and plan read from Wayback copies saved 5 Oct (archive unreachable 6 Oct); plan pp. 3, 21-67, 91, 95 read, pp. 4-20, 68-90, 96-104 skimmed only; plan's Figure 26 read off the PDF (±1 µg/m³); EEA UTC+1 convention second-hand; ERA consultation report unread; Scerri 2016 second-hand. |
 
 | CC-111 Commission: 621 kg waste, 74% landfilled | Report v1.0 and flyer (5 Oct 2026, maintainer-requested batch, PR #73). **Verdict: Supported (high).** All figures reproduce from Eurostat env_wasmun (landfill as a share of waste generated); The Shift's 79.2% (CC-081) is the share of waste treated. |
 | CC-110 Commission: 37.7% zero-emission new cars | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Supported (high).** Eurostat road_eqr_carpda: 37.65% of 7,683 new cars; Malta 2nd in the EU; EU-27 13.53% (report 13.6%). |
@@ -408,11 +409,47 @@ sub-claim tables changed in v1.1/v1.2), then both scripts. The report HTML pledg
 `report-meter pledge-meter` and badges `v-not-measurable` etc. with inline colours; replace them with stylesheet
 classes if #55 defines some.
 
-## Checks in progress (maintainer session, 6 October 2026)
+## Ten checks with draft verdicts (6 October 2026, maintainer session)
 
-Being checked now in the maintainer's session, with draft verdicts to follow in one PR: CC-032, CC-034, CC-035,
-CC-075, CC-094, CC-099, CC-101, CC-109, CC-113 and CC-114 (reserves if one is blocked: CC-040, CC-043, CC-062,
-CC-069). Workers should leave these claims alone while that PR is open.
+Asked by the maintainer: "check up to 10 more claims now and submit the draft verdicts". Each claim was checked by
+one agent (shared brief: worker-routine method, with shared files applied centrally), then reviewed independently;
+every review found something to fix (two changed or sharpened a verdict), and the fixes were applied before
+integration. Status on the site: Drafted, draft verdict; nothing sent.
+
+| Claim | Draft verdict | Right of reply |
+|---|---|---|
+| CC-032 Solar flowers, first in Europe | Contradicted (high) | Pending: Ministry for Gozo and Planning, Public Works Department |
+| CC-034 Air Quality Plan 'already yielding results' | Not substantiated (moderate) | Pending: ERA |
+| CC-035 PM2.5 death rate down two-thirds (EEA) | Largely supported (high) | Not needed |
+| CC-075 Seventh in the EU for cars (Lovin Malta) | Misleading (high); was Largely supported before review | Pending: Lovin Malta |
+| CC-094 Commission: Malta to emit more in 2030 than in 2005 | Supported (high) | Not needed |
+| CC-099 Foreign residents 31%, 38% by 2030 (PwC Malta) | Not substantiated (low) | On hold until PwC's report is read |
+| CC-101 EU: no registration or prior authorisation of water abstraction in Malta | Largely supported (moderate) | Not needed |
+| CC-109 EU: transport is 48% of effort-sharing emissions | Largely supported (high) | Not needed |
+| CC-113 EEA: Malta among highest fossil-fuel subsidies relative to GDP | Largely supported (moderate) | Not needed |
+| CC-114 PN: only EU state with rising emissions intensity | Misleading (high) | Pending: PN |
+
+Letters for CC-032, 034, 075, 114 and (on hold) 099 are in the maintainer's private right-of-reply doc.
+
+**Titles changed** (claim.yml, claims.csv, README): CC-035 (death *rate*), CC-094 (was "off track"), CC-101 (was
+"no permits"), CC-113 ("relative to GDP"). **Speaker changed:** CC-099 is PwC Malta's press release (Finance Malta,
+17 Jul 2026), not Malta Business Weekly's; PwC Malta added to data/bodies.csv. CC-032's map pin moved to the Ta'
+Xħajma hub (Xewkija).
+
+**Licence:** CC-113's source workbook (DG ENER inventory) is © Enerdata, reproduction prohibited: only country
+aggregates and five Malta figures are committed; the measure-level extract was kept out of the git history.
+
+**For the maintainer (browser checks):**
+- CC-099: read PwC's Summer 2026 Economic Update (pwc.com refuses scripts); it decides the 38% and the letter.
+- CC-101: Green Paper (Nov 2023) and interim report (Apr 2025) quotes and pages (EWA captcha); 3rd RBMP.
+- CC-075: archive the Lovin Malta article; CC-035, CC-109: archive the EEA pages (Wayback unreachable or 429).
+- CC-089: its "Malta Chamber" source is the same PwC release, so its speaker is probably PwC Malta.
+
+**Proposed links, not yet applied** (themes.csv / edges.csv; recount 'Linked claims'):
+CC-075 into T4 and CC-003–CC-075 (Weak); CC-109–CC-075 (T4); CC-114–CC-026 (T4, Strong; same residence-based
+accounts); CC-094–CC-025 (Strong, shared target); CC-031–CC-032 (same hub and minister); CC-034–CC-007, CC-008,
+CC-033, CC-038 (same stations and pollutants); CC-035–CC-037 and a stronger CC-007–CC-035; CC-099–CC-088 and
+CC-099–CC-089 (same NSO release and PwC release); CC-101–CC-108 can move from Weak to documented.
 
 ## Maintainer unblocks (5 October 2026, afternoon)
 

@@ -1269,7 +1269,7 @@
       "similar": [
         {
           "id": "CC-061",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "market",
             "housing"
@@ -1422,7 +1422,7 @@
       "similar": [
         {
           "id": "CC-104",
-          "score": 0.43,
+          "score": 0.42,
           "terms": [
             "noise",
             "directive",
@@ -2275,11 +2275,13 @@
       "id": "CC-034",
       "title": "Air Quality Plan 'already yielding results'",
       "category": "Air",
-      "claim": "Environment and Resources Authority (Air Quality Plan 2025): actions already taken have yielded positive results for Malta's air quality.",
-      "counter": "Msida exceeded the PM10 daily-limit count in 2018 and 2023; trends need station data, not plan text.",
-      "status": "In progress",
-      "verdict": null,
-      "tags": [],
+      "claim": "Environment and Resources Authority (Air Quality Plan for Malta 2025): the plan outlines actions that \"have already yielded positive results for Malta's air quality\"; the plan names them as measures that \"have already contributed to improvements in air quality in Malta\", such as power-sector reform, grants for more sustainable transport, free school transport, better ferry landing places, the fast ferry and free public transport for all.",
+      "counter": "Power-sector reform is shown to have helped: power-station sulphur oxides fell 99.8% in the reform years (2014-2018; 99.9% since 2008, but 55% of that fall came before 2015) and SO2 in the air fell 83% at Żejtun (2008-12 to 2018-23, leaving out 2011 with 28.5% of the year measured; the ships' fuel-sulphur cap of 1 January 2020 is a co-driver the data cannot separate); SO2 at Kordin was already 2.6 µg/m³ in 2014, before the reform. NO2 and PM2.5 at the Msida roadside fell 22% and 17% (2015-17 to 2021-23; NO2 -20% to 2022-23 alone), in step with a cleaner fleet, but no named transport measure is shown to have caused it. PM10 at Msida, the reason for the plan, did not improve: after ERA's natural-source deduction 2023 had 52 days over the limit (35 allowed), the most of 2015-2023 at the old Msida point (ERA's 2024-25 zone counts, 20 and 23, come from other stations and are not comparable), after free school transport, the fast ferry and free public transport began; a single-site, single-year comparison with no weather adjustment. The plan gives uptake or passenger figures, not air-quality effects, for grants, ferry landing places, the fast ferry and free public transport (plan pages 3, 21-67, 91 and 95 read; pp. 4-20, 68-90 and 96-104 skimmed for effect estimates, none found). Its one test (free school transport, NO2 \"around 10 µg/m³\" lower at rush hour) does not reproduce in validated data: the peak falls by 1.0 µg/m³ (62.3 to 61.3 at Start 07; +0.7 on weekdays only); the plan's 2018-19 curves reproduce only with hour-ending labels and its 2014-17 baseline does not reproduce under either labelling, so its gap sits in the baseline. A sustained fall of 11.5 µg/m³ in October-December weekday-morning NO2 (2013-17 to 2019-23) began in 2019, not 2018, and cannot be tied to the measure. In the 12 months after free public transport began, 10 of 11 station readings were higher than in the 12 months before.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
+      "tags": [
+        "Input-as-outcome"
+      ],
       "subtopic": "Air quality & health",
       "location": {
         "place": "Environment and Resources Authority, Marsa",
@@ -2288,17 +2290,66 @@
         "scope": "institution",
         "icon": "era"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Environment and Resources Authority (ERA)",
       "bodies": [
         "era"
       ],
-      "date": "2025",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-034A",
+          "text": "The reform in the power generation sector has contributed to improvements in air quality",
+          "finding": "Power-station sulphur oxides −99.8% and nitrogen oxides −90%, 2014 to 2018 (−99.9% and −95% from 2008; 55% of the sulphur fall came before 2015) [5]; SO₂ in the air −83% at Żejtun (2008–12 to 2018–23); Kordin already 2.6 µg/m³ in 2014 [3]; nickel down at Kordin (plan) [2].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-034B",
+          "text": "Grants for more sustainable transport have contributed",
+          "finding": "The plan gives uptake, not effect [2]. NO₂ at Msida −22%, matching the modelled −23% in road exhaust NOx from a newer fleet, which grants are one cause of [3, 5]; cars +31% [6].",
+          "rating": "Plausible, not shown",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-034C",
+          "text": "Free school transport (from 2018) has contributed",
+          "finding": "The plan’s NO₂ fall of “around 10 µg/m³” at rush hour does not reproduce: peak to peak −1.0 in the EEA data, and its 2014–17 baseline cannot be matched; autumn 2018 had the highest morning NO₂ of 2013–2023; a sustained fall of 11.5 came from 2019 and cannot be tied to the measure; the term-time change matches the Attard background [2, 3].",
+          "rating": "Not shown",
+          "tone": "orange"
+        },
+        {
+          "id": "CC-034D",
+          "text": "Better ferry landing places and the fast ferry (2021) have contributed",
+          "finding": "The plan reports passengers only (1.6 million in 2018; about 42,000 in the fast ferries’ first month) [2]. No air data offered.",
+          "rating": "No evidence offered",
+          "tone": "orange"
+        },
+        {
+          "id": "CC-034E",
+          "text": "Free public transport for all (from October 2022) has contributed",
+          "finding": "The plan offers no measured effect [2]. In the year after it began, 10 of 11 station readings were higher; Msida PM10 +8.1 µg/m³, 90 days over 50 against 48 (one site, one year, no weather adjustment) [3].",
+          "rating": "Not shown",
+          "tone": "orange"
+        },
+        {
+          "id": "CC-034F",
+          "text": "Msida exceeded the PM10 daily limit in 2018 and 2023 (the plan’s reason)",
+          "finding": "ERA’s reports: 41 and 52 days after natural deduction, 86 and 84 before; 35 allowed [4]. 2023 is the highest of 2015–2023 at the old Msida point; ERA’s 2024–25 counts (20, 23) are zone counts from other stations.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
+      "date": "2025-03-12",
+      "quote": "The plan outlines actions that have already yielded positive results for Malta's air quality, measures committed to by the Government for imminent implementation, and additional proposed measures designed to further enhance air quality in Malta.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-06",
+      "outputs": {
+        "report": "claim-files/CC-034/report.pdf",
+        "flyer_pdf": "claim-files/CC-034/flyer.pdf",
+        "flyer_png": "claim-files/CC-034/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-034/claim.yml"
     },
     {
@@ -3642,7 +3693,7 @@
       "similar": [
         {
           "id": "CC-074",
-          "score": 0.34,
+          "score": 0.31,
           "terms": [
             "grants",
             "eur"
@@ -3682,7 +3733,7 @@
       "similar": [
         {
           "id": "CC-018",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "market",
             "housing"
@@ -3785,7 +3836,7 @@
       "similar": [
         {
           "id": "CC-082",
-          "score": 0.34,
+          "score": 0.33,
           "terms": [
             "construction",
             "waste"
@@ -4043,11 +4094,19 @@
         },
         {
           "id": "CC-071",
-          "score": 0.35,
+          "score": 0.28,
           "terms": [
             "buses",
             "transport",
             "public"
+          ]
+        },
+        {
+          "id": "CC-078",
+          "score": 0.25,
+          "terms": [
+            "passenger",
+            "trips"
           ]
         }
       ]
@@ -4124,7 +4183,7 @@
       "similar": [
         {
           "id": "CC-069",
-          "score": 0.35,
+          "score": 0.28,
           "terms": [
             "buses",
             "transport",
@@ -4133,20 +4192,11 @@
         },
         {
           "id": "CC-115",
-          "score": 0.34,
+          "score": 0.28,
           "terms": [
             "cost",
             "traffic",
             "eur"
-          ]
-        },
-        {
-          "id": "CC-095",
-          "score": 0.26,
-          "terms": [
-            "eur",
-            "subsidies",
-            "million"
           ]
         }
       ]
@@ -4253,7 +4303,7 @@
       "similar": [
         {
           "id": "CC-060",
-          "score": 0.34,
+          "score": 0.31,
           "terms": [
             "grants",
             "eur"
@@ -4480,6 +4530,14 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-078/claim.yml",
       "similar": [
         {
+          "id": "CC-069",
+          "score": 0.25,
+          "terms": [
+            "passenger",
+            "trips"
+          ]
+        },
+        {
           "id": "CC-100",
           "score": 0.25,
           "terms": [
@@ -4645,7 +4703,7 @@
       "similar": [
         {
           "id": "CC-063",
-          "score": 0.34,
+          "score": 0.33,
           "terms": [
             "construction",
             "waste"
@@ -5123,7 +5181,7 @@
       "similar": [
         {
           "id": "CC-107",
-          "score": 0.61,
+          "score": 0.62,
           "terms": [
             "afforestation",
             "zero",
@@ -5301,15 +5359,6 @@
           "terms": [
             "keep",
             "prices"
-          ]
-        },
-        {
-          "id": "CC-071",
-          "score": 0.26,
-          "terms": [
-            "eur",
-            "subsidies",
-            "million"
           ]
         },
         {
@@ -5641,7 +5690,7 @@
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.35,
+          "score": 0.36,
           "terms": [
             "abstraction",
             "groundwater",
@@ -5793,7 +5842,7 @@
       "similar": [
         {
           "id": "CC-020",
-          "score": 0.43,
+          "score": 0.42,
           "terms": [
             "noise",
             "directive",
@@ -6023,7 +6072,7 @@
       "similar": [
         {
           "id": "CC-092",
-          "score": 0.61,
+          "score": 0.62,
           "terms": [
             "afforestation",
             "zero",
@@ -6074,7 +6123,7 @@
         },
         {
           "id": "CC-101",
-          "score": 0.35,
+          "score": 0.36,
           "terms": [
             "abstraction",
             "groundwater",
@@ -6585,7 +6634,7 @@
       "similar": [
         {
           "id": "CC-071",
-          "score": 0.34,
+          "score": 0.28,
           "terms": [
             "cost",
             "traffic",
