@@ -403,6 +403,12 @@ sub-claim tables changed in v1.1/v1.2), then both scripts. The report HTML pledg
 `report-meter pledge-meter` and badges `v-not-measurable` etc. with inline colours; replace them with stylesheet
 classes if #55 defines some.
 
+## Checks in progress (maintainer session, 6 October 2026)
+
+Being checked now in the maintainer's session, with draft verdicts to follow in one PR: CC-032, CC-034, CC-035,
+CC-075, CC-094, CC-099, CC-101, CC-109, CC-113 and CC-114 (reserves if one is blocked: CC-040, CC-043, CC-062,
+CC-069). Workers should leave these claims alone while that PR is open.
+
 ## Maintainer unblocks (5 October 2026, afternoon)
 
 Of the eleven In-progress claims, five more blockers had readable sources from the cloud network:
