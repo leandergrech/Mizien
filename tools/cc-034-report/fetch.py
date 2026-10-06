@@ -12,12 +12,15 @@ Sources (all public; network needed; run from the repository root or anywhere):
 
 Outputs (data/cc-034/):
   eea_files.csv        manifest of the EEA files used (URL, dataset, SHA-256, retrieval date)
-  pm10_daily.csv       daily PM10 (µg/m³), one column per station; blank = no valid value
+  pm10_daily.csv       daily PM10 (µg/m³, 3 decimals as reported), one column per station; blank = no valid value
   pm25_daily.csv       daily PM2.5, same layout
   no2_daily.csv        daily mean NO2 from hourly values, days with at least 18 valid hours only
   annual.csv           station x pollutant x year: mean, valid days or hours, coverage, PM10 days > 50, datasets
   monthly.csv          station x pollutant x month: mean, valid count, dataset
   diurnal.csv          NO2 and CO hour-of-day means, by station, year, season (Jun-Aug, Oct-Dec) and weekday/weekend
+                       (hour = the hour of the EEA "Start" time stamp: the beginning of the hour)
+  clock_check.csv      hourly values per day on the days the clocks changed (last Sunday of March and October),
+                       Msida NO2, 2013-2023: 24 on every one, so the EEA's hourly clock has no daylight saving
   g_attainment.csv     ERA's reported attainment values (before and after natural-source deduction), 2015-2025
   eurostat_emissions.csv  Malta NOx, SOx, PM2.5, PM10 emissions by sector (selected NFR codes), tonnes
   eurostat_cars.csv    Malta passenger cars (stock and per 1,000 inhabitants)
@@ -105,7 +108,7 @@ def wide(pollutant, name, start=dt.date(2004, 1, 1)):
         r = {"date": d.isoformat()}
         for st in sts:
             v = daily[(st, pollutant)].get(d)
-            r[st] = f"{v[0]:.1f}" if v else ""
+            r[st] = f"{v[0]:.3f}" if v else ""   # unrounded to 3 dp: a day counts as over 50 on the exact value
         rows.append(r)
     write(name, rows, ["date"] + sts)
 
@@ -163,6 +166,29 @@ for (st, pol), hrs in sorted(hourly.items()):
         diur.append({"station": st, "pollutant": pol, "year": y, "season": season, "daytype": dtp, "hour": h,
                      "mean": f"{sum(vals) / len(vals):.{2 if pol == 'CO' else 1}f}", "unit": UNIT.get(pol, "ug/m3"), "n_hours": len(vals)})
 write("diurnal.csv", diur)
+
+# the EEA's hourly time stamps ("Start"): do they follow the clock changes? Count hourly rows on the 22 days (2013-2023)
+# on which Malta's clocks changed; the E1a file for Msida NO2 is read as downloaded (all validity flags).
+def last_sunday(y, m):
+    d = dt.date(y, m, 31)
+    while d.weekday() != 6:
+        d -= dt.timedelta(days=1)
+    return d
+
+
+change_days = {last_sunday(y, m): m for y in range(2013, 2024) for m in (3, 10)}
+f = eea_cache.CACHE / "E1a" / "SPO-MT00005_00008_100.parquet"
+t = pq.read_table(f, columns=["Start", "End", "Validity"]).to_pydict()
+per_day, valid_day, hour_len = defaultdict(int), defaultdict(int), set()
+for s, e, val in zip(t["Start"], t["End"], t["Validity"]):
+    hour_len.add((e - s).total_seconds() / 3600)
+    if s.date() in change_days:
+        per_day[s.date()] += 1
+        valid_day[s.date()] += val >= 1
+write("clock_check.csv", [{"station": "MT00005", "pollutant": "NO2", "date": d.isoformat(),
+                           "change": "clocks forward" if m == 3 else "clocks back", "hourly_rows": per_day[d],
+                           "valid_rows": valid_day[d], "end_minus_start_hours": "/".join(str(int(h)) for h in sorted(hour_len)),
+                           "file": f.name} for d, m in sorted(change_days.items())])
 
 # ------------------------------------------------------------------ 2. ERA's attainment reports (dataflow G)
 NS = {"aqd": "http://dd.eionet.europa.eu/schemaset/id2011850eu-1.0", "gml": "http://www.opengis.net/gml/3.2",
