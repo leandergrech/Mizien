@@ -2,50 +2,159 @@ id: CC-034
 title: Air Quality Plan 'already yielding results'
 category: Air
 subtopic: Air quality & health
-status: In progress
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Moderate
 claim:
-  text: 'Environment and Resources Authority (Air Quality Plan 2025): actions already taken have yielded positive
-    results for Malta''s air quality.'
+  text: 'Environment and Resources Authority (Air Quality Plan for Malta 2025): the plan outlines actions that "have
+    already yielded positive results for Malta''s air quality"; the plan names them as measures that "have already
+    contributed to improvements in air quality in Malta", such as power-sector reform, grants for more sustainable
+    transport, free school transport, better ferry landing places, the fast ferry and free public transport for all.'
   speaker: Environment and Resources Authority (ERA)
-  date: '2025'
-  wording_status: 'Paraphrase: locate quote'
+  date: '2025-03-12'
+  wording_status: Verbatim found
   sources:
   - title: Air Quality Plan for Malta 2025
     publisher: ERA
     date: '2025'
     url: https://era.org.mt/air-quality-plan-for-malta-2024/
-    note: Primary plan page.
+    note: Primary plan page; 403 to scripts. Page metadata gives datePublished 12 Mar 2025.
   - title: "Air Quality Plan for Malta 2025 (web page, Wayback capture of 15 Aug 2025)"
     publisher: "ERA"
     date: "15 Aug 2025"
     url: "https://web.archive.org/web/20250815211515/https://era.org.mt/air-quality-plan-for-malta-2024/"
-    note: "Archived copy of the ERA page (403 to scripts) with the claim: actions 'have already yielded positive results'. Read 5 Oct 2026; wording in literature/CC-034/primary-source.md."
+    note: "The claim: the plan outlines actions 'that have already yielded positive results for Malta's air quality'.
+      Read in full on 6 Oct 2026 from the copy saved through the Wayback Machine on 5 Oct 2026 (the archive was
+      unreachable from this network on 6 Oct); SHA-256 in literature/CC-034/references.bib."
   - title: "Air Quality Plan for Malta (approved policy, PDF)"
     publisher: "ERA"
     date: "Jan 2025"
     url: "https://era.org.mt/wp-content/uploads/2025/02/DIGITAL-Air-Quality-Plan.pdf"
-    note: "104 pages; read through the Wayback Machine 5 Oct 2026. Executive summary: measures 'have already contributed to improvements in air quality'."
-counter_evidence: Msida exceeded the PM10 daily-limit count in 2018 and 2023; trends need station data, not plan
-  text.
-tests: ERA station series; EEA E1a data; exceedance counts by year.
-why_low_hanging: A specific, attributable statement that public data can test.
-tags: []
-tags_provisional: true
-priority: Queue
+    note: "104 pages, ISBN 978-9918-628-10-0; read in full (pp. 3, 21-67, 91, 95) on 6 Oct 2026 from the Wayback copy
+      saved 5 Oct 2026. Executive summary, p. 3: measures 'have already contributed to improvements in air quality'.
+      Evidence of effect given only for the power-sector reform (pp. 57-58) and free school transport (pp. 59-60)."
+  - title: "Air Quality download service: Malta, PM10, PM2.5, NO2, SO2, CO, all sampling points"
+    publisher: "European Environment Agency"
+    date: "retrieved 6 Oct 2026"
+    url: "https://eeadmz1-downloads-api-appservice.azurewebsites.net/"
+    note: "Primary evidence. AirBase (to 2012), E1a validated (2013-2025) and E2a (2026, not validated, not used for
+      findings); 85 files, SHA-256 in data/cc-034/eea_files.csv."
+  - title: "Air Quality e-Reporting, dataflow G (attainment), Malta, 2015-2025"
+    publisher: "ERA (Eionet Central Data Repository)"
+    date: "retrieved 6 Oct 2026"
+    url: "https://cdr.eionet.europa.eu/mt/eu/aqd/g/"
+    note: "ERA's own reported PM10 exceedances before and after deduction of natural sources: Msida 86/41 days (2018),
+      84/52 days (2023); 35 allowed."
+  - title: "Air pollutants by source sector (env_air_emis); passenger cars (road_eqs_carpda, road_eqs_carhab)"
+    publisher: "Eurostat"
+    date: "updated 7 Sep 2026; retrieved 6 Oct 2026"
+    url: "https://ec.europa.eu/eurostat/databrowser/view/env_air_emis/default/table"
+    note: "Power-sector (NFR 1A1a) and road-transport emissions; car stock."
+  quote: "The plan outlines actions that have already yielded positive results for Malta's air quality, measures
+    committed to by the Government for imminent implementation, and additional proposed measures designed to further
+    enhance air quality in Malta."
+counter_evidence: 'Power-sector reform is shown to have helped: power-station sulphur oxides fell 99.9% (2008-2018) and
+  SO2 in the air fell 82% at Żejtun. NO2 and PM2.5 at the Msida roadside fell 22% and 17% (2015-17 to 2021-23), in step
+  with a cleaner fleet, but no named transport measure is shown to have caused it. PM10 at Msida, the reason for the
+  plan, did not improve: after ERA''s natural-source deduction 2023 had 52 days over the limit (35 allowed), the most of
+  2015-2025, after free school transport, the fast ferry and free public transport began. The plan gives uptake or
+  passenger figures, not air-quality effects, for grants, ferry landing places, the fast ferry and free public transport;
+  its one test (free school transport, NO2 "around 10 µg/m³" lower at rush hour) does not reproduce in validated data
+  (-1.0 µg/m³ at 07:00; autumn 2018 the highest morning NO2 of 2013-2023). In the 12 months after free public transport
+  began, 10 of 11 station readings were higher than in the 12 months before.'
+tests: EEA validated station data (AirBase, E1a) for PM10, PM2.5, NO2, SO2 and CO at every ERA station, 2006-2025;
+  ERA's attainment reports (dataflow G) 2015-2025; Eurostat env_air_emis and road_eqs_carpda; traffic site vs
+  background stations; before/after windows around each dated measure; the plan's own school-transport comparison
+  recomputed (tools/cc-034-report/calc.py, data/cc-034/checks.csv).
+why_low_hanging: 'Done: Claim Check 034 report and flyer.'
+tags:
+- Input-as-outcome
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Draft verdict Not substantiated (moderate), pending right of reply from ERA. Missing evidence, not evidence
+  against: flat PM10 does not prove the measures did nothing (car numbers +31%, 2013-2025). No weather normalisation or
+  traffic data; the Msida monitor moved about 300 m in January 2024, so 2024-25 are not compared with earlier years.
+  ERA''s page and plan were read from Wayback copies saved on 5 Oct 2026. Scerri et al. (2016) is second-hand.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- EEA validated station data, retrieved 6 Oct 2026 (data/cc-034/annual.csv, pm10_daily.csv, no2_daily.csv,
+  diurnal.csv; files and SHA-256 in eea_files.csv)
+- ERA attainment reports to the EEA, 2015-2025 (data/cc-034/g_attainment.csv)
+- Eurostat env_air_emis and road_eqs_carpda (data/cc-034/eurostat_emissions.csv, eurostat_cars.csv)
+- Calculations in data/cc-034/checks.csv (tools/cc-034-report/calc.py)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Environment and Resources Authority, Marsa
   lat: 35.88617
   lon: 14.49732
   scope: institution
   icon: era
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-034A
+    text: "The reform in the power generation sector has contributed to improvements in air quality"
+    finding: "Power-station sulphur oxides −99.9% and nitrogen oxides −95%, 2008 to 2018 [5]; SO₂ in the air 16.0 to 1.5 µg/m³ at Kordin (2012 to 2015) and −82% at Żejtun [3]; nickel down at Kordin (plan) [2]."
+    rating: "Supported"
+    tone: green
+  - id: CC-034B
+    text: "Grants for more sustainable transport have contributed"
+    finding: "The plan gives uptake, not effect [2]. NO₂ at Msida −22%, matching the modelled −23% in road exhaust NOx from a newer fleet, which grants are one cause of [3, 5]; cars +31% [6]."
+    rating: "Plausible, not shown"
+    tone: amber
+  - id: CC-034C
+    text: "Free school transport (from 2018) has contributed"
+    finding: "The plan’s NO₂ fall of “around 10 µg/m³” at rush hour does not reproduce (−1.0 at 07:00); autumn 2018 had the highest morning NO₂ of 2013–2023; the term-time change matches the Attard background [2, 3]."
+    rating: "Not shown"
+    tone: orange
+  - id: CC-034D
+    text: "Better ferry landing places and the fast ferry (2021) have contributed"
+    finding: "The plan reports passengers only (1.6 million in 2018; about 42,000 in the fast ferries’ first month) [2]. No air data offered."
+    rating: "No evidence offered"
+    tone: orange
+  - id: CC-034E
+    text: "Free public transport for all (from October 2022) has contributed"
+    finding: "The plan offers no measured effect [2]. In the year after it began, 10 of 11 station readings were higher; Msida PM10 +8.1 µg/m³, 90 days over 50 against 48 [3]."
+    rating: "Not shown"
+    tone: orange
+  - id: CC-034F
+    text: "Msida exceeded the PM10 daily limit in 2018 and 2023 (the plan’s reason)"
+    finding: "ERA’s reports: 41 and 52 days after natural deduction, 86 and 84 before; 35 allowed [4]. 2023 is the highest of 2015–2025."
+    rating: "Accurate"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-06'
+thumbnail:
+  figure: 52 days
+  caption: of PM10 over the daily limit at Msida in 2023, after ERA deducts dust and sea salt (35 allowed)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-06
+    step: started
+    note: "Check started in the maintainer session. EEA download service queried for every Maltese sampling point
+      (PM10, PM2.5, NO2, SO2, CO; AirBase, E1a, E2a: 85 files); ERA's attainment reports (dataflow G) 2015-2025
+      downloaded from the Eionet CDR; Eurostat env_air_emis and road_eqs_carpda retrieved; literature searched in
+      Crossref (OpenAlex rate-limited)."
+  - date: 2026-10-06
+    step: wording
+    note: "Verbatim wording read in full from the ERA page (Wayback capture of 15 Aug 2025; page metadata
+      datePublished 12 Mar 2025) and the plan's executive summary (p. 3), using the copies saved through the Wayback
+      Machine on 5 Oct 2026 (SHA-256 of the PDF matches primary-source.md); the archive was unreachable on 6 Oct.
+      The claim record combines the two documents."
+  - date: 2026-10-06
+    step: note
+    note: "Findings: power-station SOx -99.9% and NOx -95% (2008-2018), SO2 in the air -82% at Żejtun; Msida NO2 -22%
+      and PM2.5 -17% (2015-17 to 2021-23), PM10 flat; ERA's own counts after natural deduction 41 days (2018) and
+      52 (2023), the most of 2015-2025; the plan's school-transport NO2 fall does not reproduce; 10 of 11 station
+      readings higher in the year after free public transport began. CC-007 and CC-008 data reused for station
+      metadata; CC-033 and CC-038 have no data on this branch."
+  - date: 2026-10-06
+    step: version
+    version: "1.0"
+    note: "First issue. Draft verdict Not substantiated (moderate); pending right of reply from the Environment and
+      Resources Authority."
