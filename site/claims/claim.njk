@@ -98,7 +98,7 @@ permalink: "/claims/{{ claim.id }}/"
         <div><dt>Deadline</dt><dd>{{ pv.deadline or "none stated" }}</dd></div>
         {%- if pv.term_end %}<div><dt>Term ended</dt><dd>{{ pv.term_end }}</dd></div>{% endif %}
       </dl>
-      <p class="small"><a href="/pledges/">All pledges and how they are labelled</a> · <a href="/?group=pledges&amp;sel=claim:{{ c.id }}">See it in the pledge network</a></p>
+      <p class="small"><a href="/pledges/">All pledges and how they are labelled</a> · <a href="/explore/?group=pledges&amp;sel=claim:{{ c.id }}">See it in the pledge network</a></p>
     </section>
     {%- endif %}
 

@@ -3,12 +3,12 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 5 October 2026 (interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 6 October 2026 (homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
 Miżien: an independent, science-first record of fact-checks on public claims in Malta (authorities, institutions,
-parties, NGOs, opposition), focused on quality of life and the environment. Homepage is a 3D mind map of all claims
+parties, NGOs, opposition), focused on quality of life and the environment. The homepage introduces the record with changing claim cards; the Explore tab (`/explore/`) is a 3D mind map of all claims
 grouped by topic with links between them. The repository is public and doubles as the assistant's persistent storage.
 
 ## Repository
@@ -28,6 +28,26 @@ on the map (`/?view=map&sel=claim:CC-NNN`, when it has a location) and to the cl
 resolved against the script's own folder, so they work under the `/Mizien/` prefix (they did not before: fixed).
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
+
+## Homepage and Explore split (6 October 2026)
+
+Step 1 of the plan agreed with the maintainer (story first, tool second):
+- **`/` (site/index.njk, assets/home.js, assets/home.css)**: a readable homepage on the standard layout. Introduction
+  and counts; "From the record": 12 claim cards (verdict, Draft marker, quote, speaker, date) drawn from the checked
+  claims, one swapped every ~4 s (random start; pauses on hover, touch or focus and when the tab is hidden; Pause
+  button; no rotation with reduced motion); four starter questions that open the viewer already set up; recently
+  checked; how the checks work and the verdict scale. Drafts keep their "Draft" marker on every card.
+- **`/explore/` (site/explore.njk)**: the viewer (claims web and Malta map) in its own tab, filling exactly the visible
+  screen (100dvh, no page scroll) on desktop and phones. Compact header. On phones the controls are in a "Views &
+  filters" drawer that slides up over the viewer and closes when a card opens. `map.js` resolves data, pages and map
+  files against the site root (`ROOT`), so it works from any page.
+- Old viewer links (`/?view=…`, `/?group=…`, `/?sel=…`, `/?hide=…`, `/?split=…`) redirect to `/explore/` with the same
+  query. Links in templates and timeline.js now point to `/explore/`. The nav's first tab is **Explore**; the brand
+  goes home.
+- Next steps (not started): 2) one site-wide filter (topic, verdict, kind of body, place, year, pattern) across the
+  web, map and timeline, kept in the address, with the timeline as a third view inside Explore; 3) pinning claims to a
+  tray shown in every view, "find related" groups with stated reasons, compare two trays; 4) optional "similar
+  wording" measure computed at build time.
 
 ## Interface revision (5 October 2026, evening)
 

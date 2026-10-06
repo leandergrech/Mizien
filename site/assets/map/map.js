@@ -2,6 +2,9 @@
 // Moved verbatim from the inline <script> in docs/index.html (October 2026).
 (function () {
   "use strict";
+  // The site's root (served under /Mizien/ on GitHub Pages; the viewer page is /explore/): data, pages and the map's
+  // files are resolved against the folder this script is served from, not against the page.
+  var ROOT = (document.currentScript && document.currentScript.src || location.href).replace(/assets\/map\/map\.js.*$/, "");
   var canvas = document.getElementById("map"), ctx = canvas.getContext("2d");
   var stage = document.getElementById("stage"), panel = document.getElementById("panel"), tip = document.getElementById("tip");
   var viewer = document.getElementById("doc-viewer"), viewerFrame = viewer.querySelector("iframe"), viewerImage = viewer.querySelector("img");
@@ -1258,12 +1261,12 @@
     var o = officeOf(u); return { office: o, person: u !== o ? u : "" }; }
 
   // ---- loading: the map library, the tile reader and the town list arrive only when the map view is opened
-  function abs(path) { return new URL(path, document.baseURI).href; }
+  function abs(path) { return ROOT + path; }
   function loadMapLib() {
     if (MAPLIB) return MAPLIB;
     var css = document.createElement("link"); css.rel = "stylesheet"; css.href = abs("assets/vendor/maplibre/maplibre-gl.css"); document.head.appendChild(css);
     var pm = new Promise(function (ok, no) { var s = document.createElement("script"); s.src = abs("assets/vendor/pmtiles.js"); s.onload = ok; s.onerror = no; document.head.appendChild(s); });
-    var geo = GEO ? Promise.resolve(GEO) : fetch("data/geo.json").then(function (r) { return r.json(); }).then(function (g) { GEO = g; return g; });
+    var geo = GEO ? Promise.resolve(GEO) : fetch(ROOT + "data/geo.json").then(function (r) { return r.json(); }).then(function (g) { GEO = g; return g; });
     MAPLIB = Promise.all([import(abs("assets/vendor/maplibre/maplibre-gl.mjs")), pm, geo]).then(function (r) { return r[0]; });
     return MAPLIB;
   }
@@ -1669,7 +1672,7 @@
       if (i % 2 === 0) { if (t) e.appendChild(document.createTextNode(t)); return; }
       var isPart = t.length > 6;
       if (isPart ? !partById[t] : !byId[t]) { e.appendChild(document.createTextNode(t)); return; }
-      var a = el("a", "claimref", t); a.href = "claims/" + t.slice(0, 6) + "/" + (isPart ? "#" + t : ""); a.dataset.claim = t;
+      var a = el("a", "claimref", t); a.href = ROOT + "claims/" + t.slice(0, 6) + "/" + (isPart ? "#" + t : ""); a.dataset.claim = t;
       a.addEventListener("click", function (ev) { if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) return; ev.preventDefault();
         if (isPart) selectPart(t); else selectClaim(t); });
       e.appendChild(a);
@@ -1694,6 +1697,7 @@
   viewer.addEventListener("click", function (event) { if (event.target === viewer) viewer.close(); });
   viewer.addEventListener("close", function () { viewerFrame.removeAttribute("src"); viewerImage.removeAttribute("src"); });
   function addFileAction(box, title, url) {
+    if (!/^(https?:)?\//.test(url)) url = ROOT + url;   // claim files are given relative to the site root
     var group = el("span", "file-action");
     var open = el("button", "btn", "Open " + title); open.type = "button"; open.onclick = function () { openDocument(title, url); };
     var download = el("a", "btn ghost", "Download"); download.href = url; download.download = url.split("/").pop();
@@ -1708,7 +1712,7 @@
     if (view === "map" && c.place) showClaimPlace(c);   // bring its place into view
     var pills = d.verdict ? [d.verdict].concat(d.confidence ? [d.confidence + " confidence"] : []) : d.pledge ? [] : [d.status, "not yet checked"];
     if (d.pledge) pills.push("Pledge: " + d.pledge.status, "as of " + d.pledge.as_of);
-    openPanel(d.id + " · " + d.category.toUpperCase(), d.title, colOf(d), pills, "claims/" + d.id + "/");
+    openPanel(d.id + " · " + d.category.toUpperCase(), d.title, colOf(d), pills, ROOT + "claims/" + d.id + "/");
     syncSelParam();
     if (d.quote) pbody.appendChild(el("blockquote", null, "“" + d.quote + "”"));
     pbody.appendChild(richText("p", null, d.claim));
@@ -1762,7 +1766,7 @@
     var pt = partById[id]; if (!pt) return; var x = pt.data, par = pt.parent.data;
     sel = { kind: "part", id: id }; if (expanded && pt.parent.hub !== expanded) collapse();
     openPanel("PART " + id.slice(-1) + " OF " + par.id + " · " + par.category.toUpperCase(), x.text, TONE[x.tone] || TONE.grey,
-      x.rating ? [x.rating] : [], "claims/" + par.id + "/#" + id, "Open on the claim page");
+      x.rating ? [x.rating] : [], ROOT + "claims/" + par.id + "/#" + id, "Open on the claim page");
     syncSelParam();
     if (x.said_by) pbody.appendChild(el("p", "small", x.said_by));
     if (x.finding) { label("WHAT THE EVIDENCE SHOWS"); pbody.appendChild(richText("p", null, x.finding)); }
@@ -1789,7 +1793,7 @@
     [h].concat(h.people).forEach(function (x) { x.claims.concat(x.also).forEach(function (c) { if (all.indexOf(c) < 0) all.push(c); }); });
     var withV = all.filter(function (c) { return rated(c.data); }).length;
     openPanel((h.person ? "PERSON · " : "") + h.parent.name.toUpperCase(), b.name, h.parent.color,
-      [all.length + (all.length === 1 ? " claim" : " claims"), withV + " with a verdict"], "bodies/" + b.id + "/", "Open body page");
+      [all.length + (all.length === 1 ? " claim" : " claims"), withV + " with a verdict"], ROOT + "bodies/" + b.id + "/", "Open body page");
     collapse();   // the map zooms to the body and the bodies it is linked to, rather than opening its group
     if (h.person) { var r = el("p", "small"); r.appendChild(document.createTextNode((b.role ? b.role + ", " : "") + "speaking for "));
       if (h.anchor) { var ab = el("button", "inline", h.anchor.name); ab.type = "button"; ab.onclick = function () { selectHub(h.anchor); }; r.appendChild(ab); }
@@ -2074,6 +2078,16 @@
     document.addEventListener("click", function (e) { if (!pop.hidden && !e.target.closest("#displaymenu")) show(false); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !pop.hidden) { show(false); btn.focus(); } });
   })();
+  // Phones: the controls slide up in a drawer over the viewer; opening a card (a place, claim or group) closes it
+  (function () {
+    var d = document.getElementById("drawer"), b = document.getElementById("drawerbtn"), c = document.getElementById("drawerclose");
+    if (!d || !b) return;
+    function show(on) { d.classList.toggle("open", on); b.setAttribute("aria-expanded", on ? "true" : "false"); if (on && c) c.focus({ preventScroll: true }); }
+    b.onclick = function () { show(!d.classList.contains("open")); };
+    if (c) c.onclick = function () { show(false); b.focus({ preventScroll: true }); };
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && d.classList.contains("open")) { show(false); b.focus(); } });
+    new MutationObserver(function () { if (panel.style.display === "block") show(false); }).observe(panel, { attributes: true, attributeFilter: ["style"] });
+  })();
   // Phones: the arrangement, group list and colour key fold behind "More options"; on wider screens they are always open
   (function () { var d = document.getElementById("moreopts"), wasWide = null;
     function sync() { var wide = window.innerWidth > 900; if (wide !== wasWide) { d.open = wide; wasWide = wide; } }
@@ -2106,7 +2120,7 @@
   if (previewPayload) {
     try { init(JSON.parse(previewPayload)); } catch (e) { stage.appendChild(el("p", null, "The embedded map data could not be read.")).style.cssText = "padding:24px;color:#e3a72f"; }
   } else {
-    fetch("data/claims.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(init).catch(function () {
+    fetch(ROOT + "data/claims.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(init).catch(function () {
       stage.appendChild(el("p", null, "Could not load data/claims.json. If you opened this file directly, serve the docs folder instead (python -m http.server -d docs).")).style.cssText = "padding:24px;color:#e3a72f";
     });
   }

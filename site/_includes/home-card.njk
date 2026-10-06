@@ -1,0 +1,7 @@
+{#- One claim card on the homepage; assets/home.js draws the same markup when it swaps a card. -#}
+<a class="mc-link" href="{{ c.path }}">
+  <span class="mc-top"><span class="badge v-{{ c.v }}">{% if c.pledge %}Pledge: {% endif %}{{ c.label }}</span>{% if c.draft %}<span class="mc-draft" title="Pending right of reply where the verdict needs one">Draft</span>{% endif %}</span>
+  <span class="mc-quote">“{{ c.quote }}”</span>
+  <span class="mc-meta">{{ c.speaker }}{% if c.date %} · {{ c.date }}{% endif %}</span>
+  <span class="mc-id">{{ c.id }} · {{ c.topic }}</span>
+</a>
