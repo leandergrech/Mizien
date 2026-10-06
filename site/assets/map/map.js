@@ -293,6 +293,21 @@
              pattern: (d.tags || []).map(function (t) { labels.pattern[slug(t)] = t; return slug(t); }) } };
     });
     Lens.init({ items: claims.map(function (c) { return c.lens; }), labels: labels, mount: document.getElementById("lensbar"), onChange: lensChanged });
+    if (Tray) Tray.init({ mount: document.querySelector("#lensbar .lens-extra"), onChange: function () { if (view === "map") queueGeoMarks(); } });
+  }
+  // The pinned tray (assets/tray.js): a Pin button on claim, group and place cards; pinned claims are marked in the
+  // web (an amber ring) and on the map (an amber dot on their place).
+  var Tray = window.MizienTray || null;
+  function pinRow(ids, what) {
+    if (!Tray || !ids.length) return el("span");
+    var row = el("div", "pinrow"), b = el("button", "btn ghost pinbtn"); b.type = "button";
+    function all() { return ids.every(function (id) { return Tray.has(id); }); }
+    function sync() { var on = all(); b.textContent = on ? "Unpin" + (ids.length > 1 ? " these " + ids.length : "") : "Pin" + (ids.length > 1 ? " " + (what || "these " + ids.length + " claims") : "");
+      b.setAttribute("aria-pressed", on ? "true" : "false"); }
+    b.onclick = function () { if (all()) ids.forEach(function (id) { Tray.remove(id); }); else Tray.add(ids); sync(); };
+    sync(); row.appendChild(b);
+    row.appendChild(el("span", "small", ids.length > 1 ? "Pinned claims are marked in every view; the Pinned tray finds related ones and compares sets." : "Pinned claims are marked in every view."));
+    return row;
   }
   function lensChanged() {
     syncTimelineLink();
@@ -1197,6 +1212,7 @@
         if (!isRated) { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,.7)"; ctx.lineWidth = 1.1;
           ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 3.4, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
         if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
+        if (Tray && Tray.has(n.id)) { ctx.strokeStyle = "#e3a72f"; ctx.lineWidth = 2.2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 5, 0, 6.283); ctx.stroke(); }   // pinned
         n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: true };
         var focused = F && F.ids[n.id];
         var member = expanded && n.hub === expanded && mode !== "speaker", tagged = labelMode === "tag" || member;   // Who said it: too many claims to name them all
@@ -1502,6 +1518,7 @@
       m.setAttribute("aria-label", G.name + ": " + n + (n === 1 ? " claim, " : " claims, ") + dn + " checked. " +
         (G.places.length > 1 ? "Press to zoom in on these places." : "Press to list the claims."));
       m.title = (G.places.length > 1 ? G.places.map(function (P) { return P.short; }).join(", ") : G.lead.name) + " · " + n + (n === 1 ? " claim" : " claims") + ", " + dn + " checked";
+      m.classList.toggle("has-pin", !!Tray && G.claims.some(function (c) { return Tray.has(c.id); }));
       m.classList.toggle("is-sel", !!gmapSel && G.places.some(function (P) { return P.name === gmapSel || gmapSel.split("|").indexOf(P.name) >= 0; }));
       m.style.transform = "translate(" + (G.x - m._size / 2).toFixed(1) + "px," + (G.y - m._size / 2).toFixed(1) + "px)";
       labels.push({ m: m, G: G, n: n, r: r, e: Math.max(r, (m._ext || r) * 0.84) });
@@ -1536,6 +1553,7 @@
     var cs = G.claims.slice(), done = cs.filter(function (c) { return rated(c.data); }).length;
     sel = { kind: "place", key: G.key, place: { name: G.name, claims: cs } };
     openPanel("PLACE", G.name, "#e3a72f", [cs.length + (cs.length === 1 ? " claim" : " claims"), done + " checked"]);
+    pbody.appendChild(pinRow(cs.map(function (c) { return c.id; }), "the " + cs.length + " claims here"));
     if (G.places && G.places.length > 1) pbody.appendChild(el("p", "small", G.places.map(function (P) { return P.name; }).join(" · ")));
     else if (G.full) pbody.appendChild(el("p", "small", G.full));
     else if (G.places && G.places[0] && G.places[0].name !== G.name) pbody.appendChild(el("p", "small", G.places[0].name));
@@ -1778,6 +1796,7 @@
     var pills = d.verdict ? [d.verdict].concat(d.confidence ? [d.confidence + " confidence"] : []) : d.pledge ? [] : [d.status, "not yet checked"];
     if (d.pledge) pills.push("Pledge: " + d.pledge.status, "as of " + d.pledge.as_of);
     openPanel(d.id + " · " + d.category.toUpperCase(), d.title, colOf(d), pills, ROOT + "claims/" + d.id + "/");
+    pbody.appendChild(pinRow([d.id]));
     syncSelParam();
     if (d.quote) pbody.appendChild(el("blockquote", null, "“" + d.quote + "”"));
     pbody.appendChild(richText("p", null, d.claim));
@@ -1892,6 +1911,7 @@
     if (mode === "speaker" && h.subs) pbody.appendChild(el("p", "small", h.subs.filter(function (x) { return !x.person; }).length + " bodies and " + h.subs.filter(function (x) { return x.person; }).length + " people. Select one to see its claims and the bodies it is linked to."));
     if (view === "graph") expandHub(h);
     var list = h.claims, done = list.filter(function (c) { return rated(c.data); }).length;
+    pbody.appendChild(pinRow(list.map(function (c) { return c.id; }), "the " + list.length + " claims in this group"));
     pbody.appendChild(el("p", "small", list.length + (list.length === 1 ? " claim" : " claims") + ", " + done + " with a verdict. The laurel has a leaf for each " +
       "checked claim, coloured by its verdict; a leaf fades as its evidence review ages and is an outline after a year."));
     if (h.subs && h.subs.length) { // a topic lists its claims by subtopic; a kind of body, by body

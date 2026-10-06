@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 6 October 2026 (step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -28,6 +28,22 @@ on the map (`/?view=map&sel=claim:CC-NNN`, when it has a location) and to the cl
 resolved against the script's own folder, so they work under the `/Mizien/` prefix (they did not before: fixed).
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
+
+## Pinned tray, related claims, compare (6 October 2026)
+
+Step 3. `site/assets/tray.js` (styles in `lens.css`), on /explore/ and /timeline/, as a **Pinned** button at the end of
+the filter bar:
+- **Pin** buttons on claim, group and place cards (web and map) and in the timeline's panel (each claim, or Pin all).
+  Pins are kept in this browser (`mizien.tray`) and in the address (`?pin=CC-001,CC-017`; a shared link wins).
+  Pinned claims are marked in every view: an amber ring in the web, an amber dot on their place, an amber outline on
+  the timeline marker.
+- **Show only pinned** narrows the site-wide filter to the pinned claims (`?only=…`, shown as a chip).
+- **Find related**: claims scored by what they share with the pinned ones, each with its reasons: a theme link
+  (3), the same body (3), the same pattern tag (2), the same place (2), the same topic (1), said within two months
+  (1). Top 12; Pin one or Pin all. No hidden inference: the reasons are the data.
+- **Compare**: keep the pinned claims as A, pin a second set (B), and see both side by side: verdict bar and
+  counts, topics, who said it, places, years.
+- Not done (possible next): "similar wording" as another reason (computed at build time), pinning from claim pages.
 
 ## Laurels and spacing (6 October 2026)
 

@@ -312,6 +312,10 @@ eleventyExcludeFromCollections: true
   #geomap .maplibregl-ctrl-attrib { background: rgba(8,30,21,.72); color: var(--muted); font-size: 11px; }
   #geomap .maplibregl-ctrl-attrib a { color: #cfe2d4; }
   #geomap .maplibregl-ctrl-attrib-button { filter: invert(1) hue-rotate(180deg); }
+  #panel .pinrow { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin: 2px 0 8px; }
+  #panel .pinrow .btn[aria-pressed="true"] { background: #e3a72f; border-color: #e3a72f; color: #13301f; }
+  .gm-m.has-pin::before { content: ""; position: absolute; z-index: 1; left: calc(50% + var(--r) * .5); top: calc(50% + var(--r) * .45); width: 11px; height: 11px;
+    border-radius: 50%; background: #e3a72f; border: 2px solid #08201a; box-shadow: 0 0 0 1px #e3a72f; }
   #panel .vbar { display: flex; gap: 2px; height: 10px; margin: 10px 0 4px; border-radius: 5px; overflow: hidden; }
   #panel .vbar span { flex: 1; min-width: 3px; }
   @media (prefers-reduced-motion: reduce) { .gm-m.is-new .gm-art { animation: none; } .gm-art { transition: none; } }
@@ -476,6 +480,7 @@ eleventyExcludeFromCollections: true
 
 <script src="/assets/lens.js" defer></script>
 <script src="/assets/laurel.js" defer></script>
+<script src="/assets/tray.js" defer></script>
 <script src="/assets/map/map.js" defer></script>
 <script src="/assets/claimrefs.js" defer></script>
 {%- if site.umami.websiteId %}

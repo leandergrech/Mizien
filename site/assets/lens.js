@@ -16,7 +16,7 @@
     { key: "year", label: "Year said" }, { key: "pattern", label: "Pattern" }
   ];
   var VERDICT_ORDER = ["supported", "largely-supported", "not-substantiated", "misleading", "contradicted"];
-  var state = { q: "" }, items = [], labels = {}, onChange = null, bar = null, openFacet = null;
+  var state = { q: "", only: [] }, items = [], labels = {}, onChange = null, bar = null, openFacet = null;
   FACETS.forEach(function (F) { state[F.key] = []; });
 
   function slug(s) { return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/ħ/g, "h").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
@@ -27,11 +27,13 @@
     var q = new URLSearchParams(location.search);
     FACETS.forEach(function (F) { var v = q.get(F.key); state[F.key] = v ? v.split(",").filter(Boolean) : []; });
     state.q = q.get("q") || "";
+    state.only = (q.get("only") || "").split(",").filter(Boolean);   // "only these claims" (the pinned tray's Show only pinned)
   }
   function write() {
     var u = new URL(location.href);
     FACETS.forEach(function (F) { if (state[F.key].length) u.searchParams.set(F.key, state[F.key].join(",")); else u.searchParams.delete(F.key); });
     if (state.q.trim()) u.searchParams.set("q", state.q.trim()); else u.searchParams.delete("q");
+    if (state.only.length) u.searchParams.set("only", state.only.join(",")); else u.searchParams.delete("only");
     history.replaceState(null, "", u);
   }
   // The filter part of the address, to carry into links to the other views.
@@ -39,12 +41,14 @@
     var p = new URLSearchParams();
     FACETS.forEach(function (F) { if (state[F.key].length) p.set(F.key, state[F.key].join(",")); });
     if (state.q.trim()) p.set("q", state.q.trim());
+    if (state.only.length) p.set("only", state.only.join(","));
     return p.toString();
   }
-  function active() { return !!state.q.trim() || FACETS.some(function (F) { return state[F.key].length; }); }
+  function active() { return !!state.q.trim() || state.only.length > 0 || FACETS.some(function (F) { return state[F.key].length; }); }
 
   // Does the item pass every facet (optionally ignoring one, for the counts shown next to that facet's values)?
   function match(it, except) {
+    if (state.only.length && state.only.indexOf(it.id) < 0) return false;
     for (var i = 0; i < FACETS.length; i++) {
       var k = FACETS[i].key, want = state[k];
       if (k === except || !want.length) continue;
@@ -72,7 +76,7 @@
 
   function changed() { write(); render(); if (onChange) onChange(); }
   function toggle(k, v) { var a = state[k], i = a.indexOf(v); if (i >= 0) a.splice(i, 1); else a.push(v); changed(); }
-  function clear() { FACETS.forEach(function (F) { state[F.key] = []; }); state.q = ""; changed(); }
+  function clear() { FACETS.forEach(function (F) { state[F.key] = []; }); state.q = ""; state.only = []; changed(); }
 
   // ---- the bar: search, one button per facet (opening a list with counts), the active filters as chips, the total
   function render() {
@@ -85,10 +89,12 @@
         '" aria-expanded="' + (openFacet === F.key ? "true" : "false") + '">' + esc(F.label) + (on ? ' <b>' + on + "</b>" : "") + ' <span aria-hidden="true">▾</span></button>';
     }).join("");
     bar.querySelector(".lens-facets").innerHTML = facetBtns;
-    bar.querySelector(".lens-chips").innerHTML = chips.map(function (c) {
+    var onlyChip = state.only.length ? '<button type="button" class="lens-chip lens-only" aria-label="Show all claims again, not only the pinned ones">Only the ' +
+      state.only.length + " pinned <span aria-hidden=\"true\">×</span></button>" : "";
+    bar.querySelector(".lens-chips").innerHTML = onlyChip + chips.map(function (c) {
       return '<button type="button" class="lens-chip" data-k="' + c.k + '" data-v="' + esc(c.v) + '" aria-label="Remove filter ' + esc(label(c.k, c.v)) + '">' +
         esc(label(c.k, c.v)) + ' <span aria-hidden="true">×</span></button>'; }).join("");
-    bar.querySelector(".lens-chips").hidden = !chips.length;
+    bar.querySelector(".lens-chips").hidden = !chips.length && !state.only.length;
     var cnt = bar.querySelector(".lens-count");
     cnt.innerHTML = active() ? "<b>" + n + "</b> of " + items.length + " claims" : "<b>" + items.length + "</b> claims";
     bar.querySelector(".lens-clear").hidden = !active();
@@ -108,7 +114,7 @@
     bar.innerHTML = '<div class="lens-row"><label class="lens-q"><span class="visually-hidden">Search the claims</span>' +
       '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4a6.5 6.5 0 1 0 0 13a6.5 6.5 0 1 0 0-13M15.5 15.5 20 20"/></svg>' +
       '<input type="search" placeholder="Search claims, speakers, places" autocomplete="off" spellcheck="false"></label>' +
-      '<div class="lens-facets" role="group" aria-label="Filter the claims"></div>' +
+      '<div class="lens-facets" role="group" aria-label="Filter the claims"></div><div class="lens-extra"></div>' +
       '<p class="lens-count" aria-live="polite"></p><button type="button" class="lens-clear" hidden>Clear filters</button></div>' +
       '<div class="lens-chips" hidden></div><div class="lens-pop" role="group" aria-label="Filter values" hidden></div>';
     var input = bar.querySelector(".lens-q input"), t = 0;
@@ -117,6 +123,7 @@
     bar.addEventListener("click", function (e) {
       var b = e.target.closest("button"); if (!b) return;
       if (b.dataset.facet) { openFacet = openFacet === b.dataset.facet ? null : b.dataset.facet; render(); }
+      else if (b.classList.contains("lens-only")) { state.only = []; changed(); }
       else if (b.classList.contains("lens-chip")) toggle(b.dataset.k, b.dataset.v);
       else if (b.classList.contains("lens-clear")) { input.value = ""; openFacet = null; clear(); }
       else if (b.classList.contains("lens-done")) { var f = openFacet; openFacet = null; render(); var fb = bar.querySelector('[data-facet="' + f + '"]'); if (fb) fb.focus(); }
@@ -134,6 +141,7 @@
     slug: slug,
     init: function (o) { read(); items = o.items || []; labels = o.labels || {}; onChange = o.onChange || null; if (o.mount) mount(o.mount); },
     match: function (it) { return match(it); },
+    only: function (ids) { if (ids === undefined) return state.only.slice(); state.only = (ids || []).slice(); changed(); },
     active: active, query: query, count: count,
     refresh: render
   };

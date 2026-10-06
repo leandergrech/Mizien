@@ -128,3 +128,8 @@
 .tlv-m.is-clump .tlv-head b { width: auto; height: auto; background: none; color: #f6e3b4; font-size: 11.5px; }
 .tlv-m.is-clump.is-selected .tlv-head { border-color: #fff; }
 .tlv-legend .tlv-lkey { flex-basis: 100%; }
+/* pinned claims (assets/tray.js) */
+.tlv-m.has-pin .tlv-head { box-shadow: 0 0 0 3px #08201a, 0 0 0 5px #e3a72f; }
+.tlv-pin { margin-top: 4px; padding: 3px 12px; border-radius: 999px; border: 1px solid rgba(227,167,47,.6); background: none; color: #f6e3b4;
+  font: 600 12px var(--sans); cursor: pointer; }
+.tlv-pin[aria-pressed="true"], .tlv-pinall[aria-pressed="true"] { background: #e3a72f; color: #13301f; border-color: #e3a72f; }
