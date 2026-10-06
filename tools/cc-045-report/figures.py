@@ -36,7 +36,7 @@ def fig1():
             bbox=dict(facecolor="white", edgecolor="none", pad=1.5))
     ax.text(16.3, 0, "16 km", va="center", color=SLATE, fontsize=9)
     ax.axvline(20, color=RED, lw=1.2, ls="--")
-    ax.text(20.2, 1.42, "20 km as claimed", color=RED, fontsize=8.5, va="center")
+    ax.text(20.2, 1.42, "20 km: planned total", color=RED, fontsize=8.5, va="center")
     ax.set_yticks([1, 0]); ax.set_yticklabels(["Department:\nin use and planned", "Press, 2020:\n'some 16 km'"], fontsize=9)
     ax.set_xlim(0, 24); ax.set_ylim(-0.5, 1.7)
     ax.set_xlabel("Kilometres of tunnels, canals and culverts", fontsize=9)
