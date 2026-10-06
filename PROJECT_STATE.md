@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 6 October 2026 (site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -29,6 +29,22 @@ resolved against the script's own folder, so they work under the `/Mizien/` pref
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
 
+## Site-wide filter (6 October 2026)
+
+Step 2. `site/assets/lens.js` (with `lens.css`) is one filter shared by the claims web, the Malta map and the
+timeline. Facets: **Topic**, **Verdict** (pledge labels and "Not yet checked" included), **Who said it** (the kind of
+body, for every body a claim names), **Year said** (or Undated), **Pattern** (pattern tags), plus free-text **search**
+(id, title, speaker, quote, place; accents ignored). Within a facet the values are alternatives; across facets they all
+apply. Each facet opens a list with live counts (claims that would show given the other filters). Active filters show
+as removable chips with "N of 116 claims" and Clear filters.
+- Kept in the address with short keys: `?topic=water&verdict=misleading,contradicted&who=government&year=2026&pattern=selective-metric&q=bus`
+  (keys are slugs of the names, made the same way in lens.js and timeline.11tydata.js). The view switch (Web, Map,
+  Timeline) sits beside the filter bar on /explore/ and /timeline/ and carries the filter between them.
+- Web: claims outside the filter join no group, so groups shrink or empty. Map: places only count claims in the
+  filter. Timeline: points, lanes and counts follow it (the text list below the timeline is not filtered yet).
+- The homepage question "Which claims didn't hold up?" now opens the web by who said it, filtered to Not
+  substantiated, Misleading and Contradicted.
+
 ## Homepage and Explore split (6 October 2026)
 
 Step 1 of the plan agreed with the maintainer (story first, tool second):
@@ -44,8 +60,8 @@ Step 1 of the plan agreed with the maintainer (story first, tool second):
 - Old viewer links (`/?view=…`, `/?group=…`, `/?sel=…`, `/?hide=…`, `/?split=…`) redirect to `/explore/` with the same
   query. Links in templates and timeline.js now point to `/explore/`. The nav's first tab is **Explore**; the brand
   goes home.
-- Next steps (not started): 2) one site-wide filter (topic, verdict, kind of body, place, year, pattern) across the
-  web, map and timeline, kept in the address, with the timeline as a third view inside Explore; 3) pinning claims to a
+- Next steps: 2) done (see Site-wide filter; the timeline is reached from the same view switch rather than drawn
+  inside /explore/); 3) pinning claims to a
   tray shown in every view, "find related" groups with stated reasons, compare two trays; 4) optional "similar
   wording" measure computed at build time.
 

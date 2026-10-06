@@ -16,6 +16,7 @@ eleventyExcludeFromCollections: true
 <meta name="theme-color" content="#0e2a1f">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any">
 <link rel="stylesheet" href="/assets/tabs.css">
+<link rel="stylesheet" href="/assets/lens.css">
 <style>
   :root {
     --bg: #0e2a1f; --bg2: #14452f; --ink: #eef3ef; --muted: #a9c2b1; --sage: #7fa88b;
@@ -49,6 +50,7 @@ eleventyExcludeFromCollections: true
                 radial-gradient(circle at 90% 10%, rgba(86,180,233,.06), transparent 35%); }
   #stage { position: relative; width: 100%; height: 100%; overflow: hidden; }
   #drawer { display: contents; }
+  body > .xbar { flex: none; }
   #drawerbtn, #drawer .dhead { display: none; }
   canvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
   canvas.dragging { cursor: grabbing; }
@@ -408,6 +410,10 @@ eleventyExcludeFromCollections: true
   </div>
   <div class="stats" id="stats" aria-live="polite"></div>
 </header>
+<div class="xbar">
+  <div id="viewby" class="xviews" role="group" aria-label="View"></div>
+  <div id="lensbar"></div>
+</div>
 
 <div id="mapwrap">
   <div id="stage" role="region" aria-label="Interactive 3D map of fact-checked claims" aria-describedby="hint">
@@ -437,7 +443,6 @@ eleventyExcludeFromCollections: true
   <div id="drawer" role="dialog" aria-label="Views and filters">
   <div class="dhead"><b>Views &amp; filters</b><button class="ctl" id="drawerclose" type="button" aria-label="Close views and filters">Done</button></div>
   <div id="legend" class="tx">
-    <div><p class="kicker">VIEW</p><div id="viewby" class="seg" role="group" aria-label="View"></div></div>
     <div id="mapsearch" hidden><p class="kicker"><label for="placeq">FIND CLAIMS BY PLACE</label></p>
       <input id="placeq" type="search" placeholder="A town or site, e.g. Marsa" autocomplete="off" spellcheck="false">
       <div id="placeres" aria-live="polite"></div>
@@ -459,6 +464,7 @@ eleventyExcludeFromCollections: true
 </dialog>
 <noscript>The interactive map needs JavaScript. Every claim is listed on the <a href="/claims/">all claims page</a>.</noscript>
 
+<script src="/assets/lens.js" defer></script>
 <script src="/assets/map/map.js" defer></script>
 <script src="/assets/claimrefs.js" defer></script>
 {%- if site.umami.websiteId %}

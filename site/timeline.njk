@@ -3,7 +3,7 @@ layout: base.njk
 title: Timeline
 description: Every claim Miżien has recorded, placed on a line of calendar days. Zoom from years to months, weeks, days and hours.
 permalink: /timeline/
-styles: [timeline.css]
+styles: [lens.css, timeline.css]
 ---
 {%- set T = timelinePoints -%}
 <nav class="crumbs" aria-label="Breadcrumb">
@@ -17,6 +17,14 @@ styles: [timeline.css]
     month or year is known, so the claim is never placed more precisely than its source allows.</p>
 
   <div class="tlv-card" id="tl" hidden>
+    <div class="xbar">
+      <nav class="xviews" aria-label="Views">
+        <a href="/explore/?view=ghanqbuta" data-view="ghanqbuta">{% icon "links" %}<span>Web</span></a>
+        <a href="/explore/?view=map" data-view="map">{% icon "map" %}<span>Map</span></a>
+        <a href="/timeline/" aria-current="page">{% icon "clock" %}<span>Timeline</span></a>
+      </nav>
+      <div id="lensbar"></div>
+    </div>
     <div class="tlv-bar" role="toolbar" aria-label="Timeline zoom and position">
       <div class="tlv-levels" role="group" aria-label="Group claims by">
         <button type="button" data-level="year" aria-pressed="false">Years</button>
@@ -76,5 +84,6 @@ styles: [timeline.css]
     </div>
   </details>
 </div>
-<script type="application/json" id="tl-data">{{ T.points | dump | replace("<", "\\u003c") | safe }}</script>
+<script type="application/json" id="tl-data">{{ { points: T.points, undated: T.undated, labels: T.labels } | dump | replace("<", "\\u003c") | safe }}</script>
+<script src="/assets/lens.js" defer></script>
 <script src="/assets/timeline.js" defer></script>

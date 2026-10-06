@@ -262,6 +262,7 @@
     });
     var sr = rng("stars");
     for (var i = 0; i < 220; i++) stars.push({ x: sr(), y: sr(), r: sr() * 1.3 + 0.2, a: sr() * 0.32 + 0.04, tw: sr() * 6.28, d: sr() });
+    initLens();
     buildStats(); buildGroupBy(); buildLinkBar(); buildKey(); resize();
     setMode(groupParam(), true);
     buildViewBy(); setHint();
@@ -270,6 +271,38 @@
     if (wantMap) setView("map", true);   // the map library and the tiles load only when the map view is used
     applySelKey(startSel);
     requestAnimationFrame(frame);
+  }
+
+  // ------------------------------------------------------------ site-wide filter (assets/lens.js)
+  // The same filter as the timeline, kept in the address: claims that do not pass it leave the web (their groups
+  // shrink or empty) and the map (their places lose them).
+  var Lens = window.MizienLens || null;
+  function inLens(c) { return !Lens || Lens.match(c.lens); }
+  function initLens() {
+    if (!Lens) return;
+    var slug = Lens.slug, labels = { topic: {}, verdict: {}, who: { unknown: "Not in the register" }, pattern: {} };
+    (DATA.body_types || []).forEach(function (t) { labels.who[t.id] = t.label; });
+    claims.forEach(function (c) {
+      var d = c.data, who = [];
+      (d.bodies || []).forEach(function (id) { var b = bodyById[id]; if (b && b.type && who.indexOf(b.type) < 0) who.push(b.type); });
+      var vl = d.verdict ? d.verdict : d.pledge ? "Pledge: " + d.pledge.status : null, vk = vl ? slug(vl) : "none";
+      labels.verdict[vk] = vl || NOT_YET; labels.topic[slug(d.category)] = d.category;
+      var y = /^\d{4}/.exec(String(d.date || ""));
+      c.lens = { id: d.id, text: [d.id, d.title, d.speaker, d.quote, d.location && d.location.place].filter(Boolean).join(" "),
+        f: { topic: [slug(d.category)], verdict: [vk], who: who.length ? who : ["unknown"], year: [y ? y[0] : "undated"],
+             pattern: (d.tags || []).map(function (t) { labels.pattern[slug(t)] = t; return slug(t); }) } };
+    });
+    Lens.init({ items: claims.map(function (c) { return c.lens; }), labels: labels, mount: document.getElementById("lensbar"), onChange: lensChanged });
+  }
+  function lensChanged() {
+    syncTimelineLink();
+    if (view === "map") { buildPlaces(); if (gmapLayer) { gmapLayer.textContent = ""; gmapMarks = {}; } queueGeoMarks();
+      var q = document.getElementById("placeq"); if (q) q.dispatchEvent(new Event("input")); return; }
+    var keep = selKey(); setMode(mode, false); applySelKey(keep);
+  }
+  function syncTimelineLink() {
+    var a = document.getElementById("tl-link"); if (!a) return;
+    var q = Lens ? Lens.query() : ""; a.href = ROOT + "timeline/" + (q ? "?" + q : "");
   }
 
   function buildStats() {
@@ -380,6 +413,7 @@
     var hid = hiddenSet(m);
     var order = M.order(), groups = {};
     claims.forEach(function (c) {
+      if (!inLens(c)) { c.hidden = true; return; }   // outside the site-wide filter
       var keys = M.key(c.data);
       keys.forEach(function (v, j) { (groups[v] = groups[v] || []).push({ c: c, primary: j === 0 }); });
     });
@@ -1247,6 +1281,7 @@
   function buildPlaces() {
     var by = {}; PLACES = []; UNPLACED = [];
     claims.forEach(function (c) { var L = c.data.location;
+      if (!inLens(c)) { c.place = null; return; }
       if (!L || L.lat == null || L.lon == null) { UNPLACED.push(c); c.place = null; return; }
       var P = by[L.place]; if (!P) { P = by[L.place] = { name: L.place, short: shortPlace(L.place), ll: [+L.lon, +L.lat], icon: L.icon || "pin", claims: [] }; PLACES.push(P); }
       P.claims.push(c); c.place = P; });
@@ -1580,12 +1615,15 @@
     var g = document.getElementById("viewby"); g.textContent = "";
     // "Għanqbuta" is Maltese for spider: a web of claims, with topic hubs, spokes and the threads that link them.
     [["graph", "Għanqbuta", "mode:network", "Għanqbuta (spider): a web of claims, with topic hubs, spokes and the threads that link them"],
-     ["map", "Malta map", "mode:topic", "Claims placed where they happened, across Malta and Gozo"]].forEach(function (v) {
+     ["map", "Map", "mode:topic", "Claims placed where they happened, across Malta and Gozo"]].forEach(function (v) {
       var b = el("button"); b.type = "button"; b.dataset.view = v[0]; b.title = v[3]; b.setAttribute("aria-pressed", view === v[0] ? "true" : "false");
       if (v[0] === "map") { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 L9 4 L15 6.5 L21 4 V17.5 L15 20 L9 17.5 L3 20 Z M9 4 V17.5 M15 6.5 V20" fill="none" stroke="#cfe2d4" stroke-width="1.8" stroke-linejoin="round"/></svg>'; }
       else b.appendChild(iconSvg(v[2], "#cfe2d4"));
       b.appendChild(document.createTextNode(v[1])); b.onclick = function () { setView(v[0]); }; g.appendChild(b);
     });
+    var t = el("a"); t.id = "tl-link"; t.title = "Every dated claim on a timeline, with the same filter";
+    t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l3.5 2" fill="none" stroke="#cfe2d4" stroke-width="1.8" stroke-linecap="round"/></svg>';
+    t.appendChild(document.createTextNode("Timeline")); g.appendChild(t); syncTimelineLink();
   }
   var toastTimer = null;
   function showToast(msg) { var t = document.getElementById("toast"); t.textContent = msg; t.style.display = "block";
