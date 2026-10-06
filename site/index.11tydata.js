@@ -20,7 +20,8 @@ export default {
         if (!c.label) continue;
         cards.push({ id: c.id, title: c.title, path: c.path, topic: c.category, v: c.label_slug || "none", label: c.label,
           pledge: c.label_kind === "pledge", draft: !!c.is_draft, quote: clip(String(c.claim?.quote || c.title).trim().replace(/^[“”"'‘’]+|[“”"'‘’]+$/g, ""), 170),
-          speaker: clip(c.claim?.speaker, 70), date: ukDate(c.claim?.date), reviewed: c.last_reviewed || "" });
+          speaker: clip(c.claim?.speaker, 70), date: ukDate(c.claim?.date), reviewed: c.last_reviewed || "",
+          place: c.location?.place || "", confidence: c.verdict_confidence || "" });
       }
       cards.sort((a, b) => String(b.reviewed).localeCompare(String(a.reviewed)) || a.id.localeCompare(b.id));
       return { total: claims.length, checked: cards.length, bodies: (data.mizien?.bodies || []).length, places: places.size,

@@ -1,0 +1,10 @@
+{#- One claim panel in the homepage deck; assets/home.js draws the same markup for the other cards. -#}
+<a class="dc-link" href="{{ c.path }}">
+  <span class="dc-head"><span class="dc-kicker">{{ c.id }} · {{ c.topic }}</span>
+    <span class="dc-verdict">{% if c.pledge %}Pledge: {% endif %}{{ c.label }}</span>
+    <span class="dc-tags">{% if c.confidence %}<span>{{ c.confidence }} confidence</span>{% endif %}{% if c.draft %}<span class="dc-draft">Draft</span>{% endif %}</span></span>
+  <span class="dc-body"><span class="dc-title">{{ c.title }}</span>
+    <span class="dc-quote">“{{ c.quote }}”</span>
+    <span class="dc-meta">{{ c.speaker }}{% if c.date %} · {{ c.date }}{% endif %}{% if c.place %}<br>{{ c.place }}{% endif %}</span>
+    <span class="dc-go">Read the check →</span></span>
+</a>
