@@ -1,18 +1,15 @@
 # CC-031: Gozo, first climate-neutral region
 
-**Status:** literature not yet collected.
+**Status:** report v1.0 (6 Oct 2026, worker A). Verdict Largely supported (moderate) for the fleet; pledge label Not measurable.
 
-## To collect
+## Wording
+`primary-source.md` (maintainer, 5 Oct 2026); Gozo Today re-read 6 Oct 2026. One sentence is in quotation marks; the fleet statement is the outlet's paraphrase.
 
-Malta Public Transport fleet data; Gozo climate neutrality plan.
+## Routes tried for the plan itself (not found)
+- GRDA site search and conference notice (readable; notice only, no plan PDF); GRDA preliminary market consultation page (no text).
+- TVM News search (no 2026 article on the plan); web searches for the KPMG plan, target year and baseline (only the Gozo Today report and a MaltaToday tender story seen as snippets).
+- gozo.news (bot check), MaltaToday and Independent (403), Transport Malta (403), Wayback (connection reset).
+- Needed: the plan PDF (GRDA / Climate Action Authority / KPMG): target year, baseline, boundary.
 
-## Known leads
-
-See `data/sources.csv` (filter on CC-031) for the source that located this claim. It locates the claim and its context; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
-
-## Run of 5 Oct 2026 (worker A): blocked, source
-- Gozo Today (25 Sep 2026) quotes Clint Camilleri only for: "The plan published today is an important step to continue to realise our vision of Gozo becoming the first climate-neutral region in Malta." "On course" and the fully electric fleet are the outlet's paraphrase.
-- Search results (not retrieved here) report Gozo's buses fully electric from mid-2026 (Independent 27 May 2026, TVMnews, Transport Malta).
-- Needed: the published plan (GRDA/CAA; target date, baseline emissions), via a browser or supplied PDF; and the DOI release with Camilleri's wording.
+## Evidence used
+See `notes.md`. No peer-reviewed literature was needed: the test is an announcement check plus a Eurostat scale check.

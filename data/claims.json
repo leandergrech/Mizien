@@ -1810,10 +1810,12 @@
       "title": "Gozo, first climate-neutral region",
       "category": "Climate & Energy",
       "claim": "Gozo Minister Clint Camilleri (25 Sep 2026), presenting the Gozo climate neutrality plan: 'The plan published today is an important step to continue to realise our vision of Gozo becoming the first climate-neutral region in Malta.' As reported by Gozo Today (paraphrase), he said Gozo had already begun its transition with measures including a fully electric public transport fleet.",
-      "counter": "Check the bus fleet composition and Gozo's emissions baseline; the plan's targets and dates.",
-      "status": "In progress",
-      "verdict": null,
-      "tags": [],
+      "counter": "The fleet is the operator's and government's account (TVM News); Transport Malta's fleet page was not readable. Scale check: the operator's 1.3 kt CO2 a year saving is about 2.6% of a population-proportional estimate of Gozo's road-transport emissions (Eurostat has no Gozo inventory). Malta's road-transport emissions rose 39% from 2005 to 2024. The plan itself, with any target year, baseline and boundary, was not obtained.",
+      "status": "Drafted",
+      "verdict": "Largely supported",
+      "tags": [
+        "Promise-without-baseline"
+      ],
       "subtopic": "Emissions & targets",
       "location": {
         "place": "Victoria, Gozo",
@@ -1822,17 +1824,80 @@
         "scope": "institution",
         "icon": "pin"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Clint Camilleri, Minister for Gozo",
       "bodies": [
         "clint-camilleri"
       ],
+      "subclaims": [
+        {
+          "id": "CC-031A",
+          "text": "Vision of Gozo becoming the first climate-neutral region in Malta",
+          "finding": "A statement of intent. The words give no target year, baseline or boundary. The plan, which may, was not obtained. Rated as a pledge.",
+          "rating": "Not measurable (pledge)",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-031B",
+          "text": "Gozo already has a fully electric public transport fleet",
+          "finding": "TVM News: all Gozo buses electric since late May 2026, end of diesel buses (operator and government statements) [3, 4]. No independent fleet record read.",
+          "rating": "Largely accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-031C",
+          "text": "Gozo has begun its transition (fleet, renewables, mobility, water)",
+          "finding": "Only the fleet could be tested. The renewables, rehabilitation and water items are named without figures in the report we read and are not tested here.",
+          "rating": "Not tested",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-031D",
+          "text": "Scale of the fleet change (our check)",
+          "finding": "About 1.3 kt CO2 a year, roughly 2.6% of a proportional Gozo road-transport estimate: a small part of the total, and not something the statement asserts otherwise.",
+          "rating": "Context",
+          "tone": "amber"
+        }
+      ],
+      "pledge": {
+        "status": "Not measurable",
+        "slug": "pledge-not-measurable",
+        "colour": "#716f8d",
+        "as_of": "6 October 2026",
+        "as_of_iso": "2026-10-06",
+        "made_on": "25 September 2026",
+        "deadline": null,
+        "term_end": null,
+        "target": "Gozo becoming the first climate-neutral region in Malta",
+        "vehicle": "Statement on the Gozo climate neutrality plan (Gozo Today, 25 Sep 2026)",
+        "occasion": "Statement on the Gozo climate neutrality plan (Gozo Today",
+        "note": "No target year, baseline or boundary in the quoted words; the plan itself was not obtained and may set them.",
+        "made_by": [
+          {
+            "id": "clint-camilleri",
+            "name": "Clint Camilleri",
+            "kind": "person",
+            "role": "Minister for Gozo",
+            "path": "/bodies/clint-camilleri/"
+          }
+        ],
+        "made_by_ids": [
+          "clint-camilleri"
+        ],
+        "pure": false,
+        "overlaps": []
+      },
       "date": "2026-09-25",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "The plan published today is an important step to continue to realise our vision of Gozo becoming the first climate-neutral region in Malta.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-06",
+      "outputs": {
+        "report": "claim-files/CC-031/report.pdf",
+        "flyer_pdf": "claim-files/CC-031/flyer.pdf",
+        "flyer_png": "claim-files/CC-031/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-031/claim.yml"
     },
     {
