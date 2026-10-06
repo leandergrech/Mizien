@@ -15,9 +15,10 @@ S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
         "<b>24.5%</b> of gross final energy consumption (summarised as “25%”), up from an earlier 11.5%. "
         "<b>The plan’s own calculation does not count offshore wind</b>, which it says will not be commissioned by 2030; "
         "the 2030 figure rests on solar PV on land, biogas, biofuel blending and heat-pump ambient heat. Malta is "
-        "<b>ahead of the plan’s yearly path</b> (17.2% in 2024 against 15.5%), but the gain has come from heating and "
-        "cooling, not from solar electricity, and the Commission found the 24.5% is below the 28% its formula gives "
-        "and that the plan does not quantify what solar support will deliver.", lead)]
+        "<b>ahead of the plan’s own yearly path</b> (17.2% in 2024 against 15.5%), but the gain has come from heating and "
+        "cooling, not from solar electricity. The Commission found the plan’s 2025 and 2027 points below its EU reference "
+        "points (18%, 22%), the 24.5% below the 28% its formula gives, and that the plan does not quantify what solar "
+        "support will deliver.", lead)]
 S.append(key_points([
     ("The target is 24.5% (25% in summaries), not 11.5%.",
      "The plan says it raises the contribution “from 11.5% to 25%” (p. 22) and projects 24.5% in 2030 (p. 83)."),
@@ -25,19 +26,19 @@ S.append(key_points([
      "“Offshore wind does not contribute to Malta’s RES contribution … as it is not envisaged to be completed and "
      "commissioned by 2030” (p. 83). Yet the plan’s summary table lists offshore technologies among the means (p. 22)."),
     ("Solar PV is part of it, but not quantified in points.",
-     "350 MWp by 2030 (p. 84) needs about 16 MWp a year against 11.5 added in 2024; the Commission notes PV support "
-     "is not quantified."),
-    ("Progress is ahead of the plan, but heat-driven.",
+     "The plan expects 350 MWp by 2030 (p. 84), from 241 MWp at end-2023 (p. 74): about 15.6 MWp a year. The Commission "
+     "notes PV support is not quantified."),
+    ("Progress is ahead of the plan’s own path, but heat-driven.",
      "Eurostat: 17.2% in 2024 (plan 15.5%). The rise came from heating and cooling; the electricity share moved only "
-     "9.5% to 10.7% since 2020. The Commission calls the 24.5% below its 28% formula."),
+     "9.5% to 10.7% since 2020. The Commission rates the 24.5% below its 28% formula."),
     ("Verdict: not substantiated (moderate confidence); pledge: on track.",
-     "The target is on its path; the route named is not supported by the plan’s own sums."),
+     "On the plan’s own path (Commission benchmarks are higher); offshore as a means is not in its 2030 sum."),
 ]))
 S += [Spacer(1, 2.5 * mm), VerdictMeter(2), Spacer(1, 3 * mm),
       tiles([("24.5%", GREEN, "Malta’s projected 2030 renewables share in the plan (summary: 25%)"),
              ("0 MW", RED, "Offshore wind counted in that 24.5% (plan, p. 83)"),
              ("17.2%", GREEN, "Malta’s share in 2024 (Eurostat) against 15.5% on the plan’s path"),
-             ("16 vs 11.5", ORANGE, "MWp of solar PV a year needed to 2030 vs net added in 2024")]),
+             ("350 MWp", ORANGE, "Solar PV the plan expects by 2030, from 241 MWp at end-2023 (pp. 74, 84); points of share not given")]),
       Spacer(1, 4 * mm),
       up_down("A dated, quantified breakdown showing how much each of solar PV, biogas, biofuels and heat pumps adds "
               "to the 24.5%; or a commissioning date and grid connection for offshore wind inside 2030.",
@@ -51,10 +52,11 @@ S.append(PageBreak())
 
 # ================================================================== 1
 S.append(SectionHeading(1, "The claim and what we could verify"))
-S.append(P("The claim record paraphrases Malta’s updated National Energy and Climate Plan (NECP) 2021–2030: that Malta will "
-           "reach its 2030 renewable-energy contribution (“11.5% … in the EU-reported target; 25% cited in summaries”) "
-           "“through solar PV and offshore wind”. That wording was written by our intake from a locator source, so we "
-           "assess the plan’s own words, read in the copy the European Commission publishes [1]."))
+S.append(P("Our intake record paraphrased Malta’s updated National Energy and Climate Plan (NECP) 2021–2030 as saying Malta "
+           "would reach its 2030 renewable-energy contribution “through solar PV and offshore wind”. The plan does not say that, "
+           "so that paraphrase is not rated. We rate only the plan’s own words, read in the copy the European Commission "
+           "publishes [1]: the summary table (p. 22) says it will raise the contribution “through multiple initiatives to focus "
+           "on more diversification in onshore and offshore technologies”, and the projection (pp. 82–83) gives 24.5% in 2030."))
 S.append(std_table([
     [C("Source", cellh), C("What it says", cellh), C("Our access", cellh), C("Status", cellh)],
     [C("<b>Government of Malta</b>, final updated NECP, summary table, pp. 21–22 [1]"),
@@ -69,8 +71,8 @@ S.append(std_table([
      C("24.5% “is below the 28%” from the Annex II formula; trajectories below reference points; support for solar "
        "PV not quantified."), C("Read."), C("<b>Primary evidence</b>")],
     [C("<b>Eurostat</b> nrg_ind_ren; <b>NSO</b> PV release NR 111/2025 [3, 4]"),
-     C("Malta’s actual share to 2025 (provisional); PV capacity 252.3 MWp at end-2024."),
-     C("Eurostat read by API; NSO page blocked (403), figures second-hand."), C("Data")],
+     C("Malta’s actual share to 2025 (provisional); PV capacity 252.3 MWp at end-2024 ◆."),
+     C("Eurostat read by API; NSO page blocked (403), figures second-hand ◆ (context only)."), C("Data")],
     [C("<b>2019 NECP</b> (source of the “11.5%”)"), C("Not read: the agency’s host was refused to scripts."),
      C("The 11.5% is taken from the 2024 plan’s own wording."), C("Gap")],
 ], [40 * mm, 72 * mm, 36 * mm, 22 * mm]))
@@ -124,34 +126,38 @@ S.append(std_table([
     [C("Electricity share, 2020 to 2024"), C("<b>9.5% to 10.7%</b>"), C("EU-27 47.5% (2024)"), C("Eurostat [3]"), grade_tag("C")],
     [C("Heating and cooling share, 2020 to 2024"), C("<b>23.0% to 59.2%</b>"), C("EU-27 26.7% (2024)"), C("Eurostat [3]"), grade_tag("C")],
     [C("Transport share, 2020 to 2024"), C("10.6% to 11.4%"), C("EU-27 11.2% (2024)"), C("Eurostat [3]"), grade_tag("C")],
-    [C("Solar PV capacity, end-2023 / end-2024"), C("241 / 252.3 MWp"), C("Plan: 350 MWp by 2030"), C("Plan p. 74; NSO [4] (second-hand)"), grade_tag("C")],
-    [C("PV to add per year to reach 350 MWp / added in 2024 (net)"), C("<b>16.3 / 11.5 MWp</b>"), C("1.4 times the 2024 pace"), C("calc.py"), grade_tag("C")],
+    [C("Solar PV capacity, end-2023 / end-2024 ◆"), C("241 / 252.3 ◆ MWp"), C("Plan: 350 MWp by 2030"), C("Plan p. 74; NSO [4] ◆ (second-hand)"), grade_tag("C")],
+    [C("PV to add per year to reach 350 MWp from the plan’s 241 MWp (end-2023)"), C("<b>15.6 MWp</b>"), C("2024 net addition 11.5 MWp ◆, context only"), C("Plan pp. 74, 84; calc.py"), grade_tag("C")],
     [C("2030 contribution: plan / Commission formula"), C("24.5% / 28%"), C("3.5 points below"), C("Plan p. 83; [2]"), grade_tag("C")],
 ], [58 * mm, 28 * mm, 40 * mm, 30 * mm, 14 * mm]))
 S.append(P("Values in <i>data/cc-024/checks.csv</i>. Eurostat now shows 14.04% for 2022, the plan 13.4%: the series is revised, so "
            "year-on-year comparisons use one vintage (retrieved 5 Oct 2026).", cap))
 S.append(fig(FIG / "fig_sectors.png"))
 S.append(P("Figure 2. Left: Malta’s renewable share by sector, 2013–2024. Right: the three sector shares in 2024 against the EU-27. "
-           "Almost all of the recent rise is in heating and cooling.", cap))
+           "Almost all of the recent rise is in heating and cooling. The Commission counts ambient heat from air-to-air heat pumps "
+           "as renewable; that counting rule may explain much of the jump, but we cannot split the effect.", cap))
 S.append(P("Reading across the data", h2))
 for t in ["• <b>Malta is ahead of the plan’s own path</b> in 2023, 2024 and (provisionally) 2025, and, if the 2025 figure holds, "
           "above the Commission’s 18% reference point for that year.",
           "• <b>The lead is built on heat, not on solar power.</b> The electricity share, where PV counts, rose about one point in "
           "four years. The heating and cooling share more than doubled from 2020 to 2024, which is consistent with the plan’s "
-          "reliance on ambient heat from heat pumps; we could not split the effect by technology because the plan does not.",
-          "• <b>PV needs to speed up by about 40%.</b> Reaching 350 MWp means adding about 16 MWp a year, against 11.5 MWp net in 2024. At "
-          "2024’s output per kWp (about 1,290 kWh), 350 MWp would give about 450 GWh a year against 326 GWh in 2024. "
-          "How many points of share that is cannot be said from sourced inputs, because the plan does not give it.",
+          "reliance on ambient heat from heat pumps. The Commission’s counting rule for air-to-air heat pumps may drive much of "
+          "that increase; we cannot split the effect by technology because the plan does not.",
+          "• <b>PV needs a faster pace than 2024’s, on second-hand data.</b> The plan’s own figures (241 MWp at end-2023, 350 MWp by "
+          "2030) imply about 15.6 MWp a year. Against that, NSO’s 2024 net addition of 11.5 MWp ◆ (second-hand) is lower. A rough "
+          "output check ◆ (326.5 GWh ÷ 252.3 MWp, about 1,290 kWh per kWp) divides by end-year capacity and so understates the "
+          "yield per kWp; we do not rely on it. How many points of share PV adds cannot be said from sourced inputs, because the "
+          "plan does not give it.",
           "• <b>Cyprus, another island, is 3.6 points ahead of Malta</b> (20.8% vs 17.2% in 2024) and the EU-27 average is 8 points ahead."]:
     S.append(P(t, bul))
 S.append(KeepTogether([fig(FIG / "fig_pv.png"),
-                       P("Figure 3. Installed solar PV: plan’s 350 MWp path against the 2024 pace. NSO figures are second-hand.", cap)]))
+                       P("Figure 3. Installed solar PV: plan’s 350 MWp path against the 2024 pace. The 2024 NSO figures are second-hand ◆.", cap)]))
 
 # ================================================================== 5
 S.append(CondPageBreak(120 * mm))
 S.append(SectionHeading(5, "Where the evidence points different ways"))
 S.append(contested(
-    "Q1  Does the 2030 plan rely on offshore wind?", "NO, BY THE PLAN’S OWN SUM", RED,
+    "Q1  Is offshore wind a means to the 2030 share?", "LISTED, BUT NOT COUNTED", RED,
     "The summary table lists “onshore and offshore technologies” as the means and the plan commits to 350 MW offshore under TEN-E "
     "(pp. 22, 25) [1].",
     "The projection excludes offshore wind in terms, because it is not expected to be commissioned by 2030, and the plan "
@@ -159,18 +165,18 @@ S.append(contested(
     "<b>For this claim:</b> offshore wind is part of the plan’s ambition, not of its 2030 arithmetic.",
     label_a="WHAT THE SUMMARY SAYS", label_b="WHAT THE PROJECTION SAYS"))
 S.append(contested(
-    "Q2  Is Malta on track for 24.5%?", "ON THE PLAN’S PATH; HEAT-DRIVEN", AMBER,
+    "Q2  Is Malta on track for 24.5%?", "ON THE PLAN’S OWN PATH; HEAT-DRIVEN", AMBER,
     "Eurostat shows 17.2% in 2024 against 15.5% on the plan’s path, and 18.8% provisional in 2025 against 16.5% [3].",
-    "The Commission rates the plan’s 2025 and 2027 points below its reference points and the 2030 share below its 28% formula "
-    "result; the lead is in heating and cooling, with electricity share nearly flat [2, 3].",
-    "<b>For this claim:</b> delivery of the plan’s own 2030 number looks on track; the Commission’s higher benchmark is a "
+    "The Commission rates the plan’s 2025 and 2027 points (16.5%, 20.7%) below its reference points (18%, 22%) and the 2030 share "
+    "below its 28% formula result; the lead is in heating and cooling, with electricity share nearly flat [2, 3].",
+    "<b>For this claim:</b> delivery of the plan’s own 2030 number looks on track; the Commission’s higher benchmarks are a "
     "different standard, which the plan does not claim to meet.",
     label_a="EVIDENCE OF PROGRESS", label_b="EVIDENCE OF GAPS"))
 S.append(contested(
     "Q3  Is solar PV enough?", "NOT SHOWN", AMBER,
     "PV is Malta’s main local source, 241 MWp by 2023, and support schemes are kept (pp. 74, 84) [1].",
-    "The plan does not quantify what PV support delivers; the Commission says so [2]. PV additions in 2024 were below the pace "
-    "needed [4].",
+    "The plan does not quantify what PV support delivers; the Commission says so [2]. The 2024 addition reported second-hand "
+    "(11.5 MWp net ◆) was below the 15.6 MWp a year the plan’s figures imply [4].",
     "<b>For this claim:</b> PV is a plausible contributor but the plan shows no sum linking it to the target.",
     label_a="FOR", label_b="AGAINST"))
 
@@ -180,37 +186,42 @@ S.append(SectionHeading(6, "Testing the claim"))
 verd = lambda t, c: chip(t, c, w=29 * mm)
 S.append(std_table([
     [C("Sub-claim", cellh), C("Said by", cellh), C("What the evidence shows", cellh), C("Rating", cellh)],
-    [C("<b>A.</b> The 2030 contribution is 11.5%"), C("Claim record"),
-     C("11.5% is the earlier contribution that the plan raises (p. 22). It is not the 2030 figure."), verd("OUTDATED", RED)],
-    [C("<b>B.</b> It is 25% (or 24.5%)"), C("Plan [1]"),
-     C("25% is the summary ambition; 24.5% is the projection and trajectory end-point (pp. 21, 83)."), verd("ACCURATE, ROUNDED", GREENC)],
-    [C("<b>C.</b> Malta will reach it through solar PV"), C("Claim record"),
-     C("PV is one of four named contributors; 350 MWp by 2030 needs a faster pace; its points of share are not quantified."),
-     verd("PARTLY SUPPORTED", AMBER)],
-    [C("<b>D.</b> …and through offshore wind"), C("Claim record; plan summary"),
-     C("The plan counts no offshore wind in the 2030 share (p. 83)."), verd("NOT SUPPORTED", RED)],
-    [C("<b>E.</b> Malta will reach the 2030 share"), C("Plan"),
-     C("17.2% in 2024 against 15.5% on the plan’s path; Commission: below its formula and reference points. A target, rated as a pledge."),
+    [C("<b>A.</b> “Increase the Renewable Energy contribution from 11.5% to 25%”"), C("Plan p. 22 [1]"),
+     C("11.5% is the earlier contribution; 25% is the summary ambition and 24.5% the projection and trajectory end-point (pp. 21, 82–83)."),
+     verd("ACCURATE, ROUNDED", GREENC)],
+    [C("<b>B.</b> “…diversification in onshore and offshore technologies” as means to the 2030 share"), C("Plan p. 22 [1]"),
+     C("The summary lists offshore technologies as a means; the projection counts no offshore wind in 2030 (p. 83: “not envisaged to be completed and commissioned by 2030”)."),
+     verd("NOT SUPPORTED", RED)],
+    [C("<b>C.</b> Onshore means (solar PV on land, biogas, biofuels, heat pumps) deliver the 24.5%"), C("Plan p. 83 [1]"),
+     C("Named, but the plan gives no points of share per technology; the Commission notes PV support is not quantified [2]. "
+       "PV: 241 MWp (2023) to 350 MWp (2030) is the plan’s own figure (pp. 74, 84)."),
+     verd("NOT QUANTIFIED", AMBER)],
+    [C("<b>D.</b> Malta will reach the 2030 share"), C("Plan [1]"),
+     C("17.2% in 2024 against 15.5% on the plan’s own path; the Commission rates the plan’s 2025/2027 points and its 24.5% below its reference points and formula. A target, rated as a pledge."),
      verd("ON TRACK (PLEDGE)", GREENC)],
 ], [42 * mm, 24 * mm, 70 * mm, 34 * mm], valign="MIDDLE"))
 
 # ================================================================== 7
 S += [Spacer(1, 6 * mm), SectionHeading(7, "Verdict, pledge and requests for evidence"),
-      verdict_box("Not substantiated", "The 2030 share is plausible on current data; the stated route is not shown. Confidence: moderate."),
+      verdict_box("Not substantiated", "On the plan’s own path; offshore technologies, listed as a means, are not in its 2030 sum. Confidence: moderate."),
       Spacer(1, 4 * mm)]
-S.append(P("<b>Why.</b> (1) The claim as worded names solar PV and offshore wind as the route. The plan’s own projection "
-           "counts no offshore wind, and gives no sum for PV. (2) “11.5%” is a superseded figure. (3) The Commission found the "
-           "plan’s ambition below its formula and its support measures unquantified. Under our scale, a statement made more "
-           "strongly than the evidence offered allows is <i>Not substantiated</i>. We did not use <i>Misleading</i>: the plan "
-           "itself discloses the exclusion of offshore wind in its body text."))
+S.append(P("<b>Why.</b> (1) The plan’s summary (p. 22) lists “offshore technologies” among the means of reaching the higher "
+           "contribution, while its own projection counts no offshore wind by 2030 (p. 83): the stated means is not carried "
+           "into its sum. (2) The plan gives no points of share per technology, and the Commission found its support for solar PV "
+           "unquantified and its 24.5% below the 28% its formula gives. Under our scale, a statement made more strongly than the "
+           "evidence offered allows is <i>Not substantiated</i>. We did not use <i>Misleading</i>: the plan itself discloses the "
+           "exclusion of offshore wind in its body text. (The record’s earlier wording, “11.5%” as the 2030 figure, was a record "
+           "issue, not the plan’s, and is not part of this reasoning.)"))
 S.append(callout([P("PLEDGE LABEL: ON TRACK (AS OF 15 SEP 2026)", tag),
                   P("The plan’s target is a pledge-like commitment with a date (2030). Published progress is ahead of the "
                     "plan’s own path and of a straight line from the 2020 outturn: 17.2% against 16.2% in 2024; 18.8% "
                     "(provisional) against 17.6% in 2025. Reaching 24.5% needs 1.2 points a year from 2024, below the 1.6 "
-                    "of 2020–2024. This is delivery against the plan’s figure, not against the Commission’s 28%, and the "
-                    "label should be revisited when Eurostat finalises 2025.", small)], bg=BLUE_PALE, bar=BLUE))
+                    "of 2020–2024. “On track” means on the plan’s own path only: the Commission finds the plan’s 2025 and 2027 "
+                    "points (16.5%, 20.7%) below its EU reference points (18%, 22%) and the 24.5% below its 28% formula "
+                    "result. The pledge is dated 7 January 2025, when the plan was submitted (the plan is dated December 2024). "
+                    "The label should be revisited when Eurostat finalises 2025.", small)], bg=BLUE_PALE, bar=BLUE))
 S.append(P("<b>What this does not say.</b> It does not say the plan is wrong to include offshore wind as an ambition, that "
-           "the 24.5% will be missed, or that anyone acted in bad faith. A fuller statement would read: <i>“Malta projects 24.5% "
+           "the 24.5% will be missed, or that anyone acted in bad faith. A fuller summary would read: <i>“Malta projects 24.5% "
            "renewables in 2030, mainly from solar PV on land, biogas, biofuels and heat pumps; offshore wind is planned but not "
            "counted.”</i>"))
 S.append(KeepTogether([P("Evidence we are asking for", h2), requests_list([
@@ -221,18 +232,22 @@ S.append(KeepTogether([P("Evidence we are asking for", h2), requests_list([
 ])]))
 S += [Spacer(1, 4 * mm),
       callout([P("RIGHT OF REPLY", tag),
-               P("This draft should go to the Energy and Water Agency and the Ministry responsible for energy with a fixed "
+               P("Pending right of reply. This draft should go to the Energy and Water Agency and the Ministry responsible for energy with a fixed "
                  "deadline (suggested 14 days). A <i>Not substantiated</i> verdict is not circulated beyond this site before "
                  "the deadline passes. Responses will be appended and the verdict revisited.", small)],
               bg=AMBER_PALE, bar=AMBER)]
 
 # ================================================================== 8
 S += [Spacer(1, 6 * mm), SectionHeading(8, "Limitations")]
-for l in ["The claim record’s wording is our intake’s paraphrase, not a quotation. We assessed the plan’s own sentences and "
-          "say where they differ from it.",
-          "The NSO PV figures (252.255 MWp, 11.792 MWp connected, 0.262 MW decommissioned, 326.5 GWh) were read from a web-search "
+for l in ["The claim record’s earlier wording was our intake’s paraphrase, not a quotation. We rated only the plan’s own sentences.",
+          "The NSO PV figures ◆ (252.255 MWp, 11.792 MWp connected, 0.262 MW decommissioned, 326.5 GWh) were read from a web-search "
           "summary of release NR 111/2025; nso.gov.mt returns 403 to scripts. They agree with the plan’s 241 MWp at end-2023 "
-          "(implied 240.7). Treat them as second-hand.",
+          "(implied 240.7). They are second-hand, context only, and decide no rating. The yield figure (about 1,290 kWh per kWp) "
+          "divides generation by end-of-year capacity and so understates yield.",
+          "The heating and cooling jump (23.0% to 59.2%) may owe much to the Commission’s counting rule for ambient heat from "
+          "air-to-air heat pumps; we cannot separate that from other causes.",
+          "The pledge is dated 7 January 2025 (submission to the Commission), not December 2024 (the plan’s date), because the "
+          "submission (Commission publication page) is the dated, formal act; the claim record keeps the plan’s own date.",
           "The 2019 NECP could not be read, so “11.5% is the earlier contribution” rests on the 2024 plan’s wording.",
           "Eurostat’s 2025 value is provisional and the series is revised; the 2022 value differs from the plan’s.",
           "We could not convert PV, biofuels or heat pumps into points of share: the plan gives no such sums and we did not "
@@ -241,7 +256,7 @@ for l in ["The claim record’s wording is our intake’s paraphrase, not a quot
           "The Commission’s reference points are for the EU’s 42.5% target and are a benchmark, not a legal limit on Malta."]:
     S.append(P("• " + l, bul))
 
-S += [Spacer(1, 6 * mm), SectionHeading(None, "References")]
+S += [CondPageBreak(70 * mm), Spacer(1, 6 * mm), SectionHeading(None, "References")]
 S += references([
     ("1", "Government of Malta (Dec 2024). Final updated National Energy and Climate Plan 2021–2030 (English), 381 pp., as "
           "published by the European Commission. Printed pages cited: 21–22, 25, 74, 78, 82–84, 279.",
@@ -265,19 +280,25 @@ S += appendix_a("A experiment · B observational study with a control or gradien
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.", pledges=True)
 S += [Spacer(1, 5 * mm)]
 S += revision_log([("1.0", "5 Oct 2026", "First issue. Draft pending right of reply from the Energy and Water Agency and the "
-                                         "responsible Ministry.")])
+                                         "responsible Ministry."),
+                   ("1.1", "6 Oct 2026", "Corrections after the 6 Oct audit: claim restated to the plan’s own words (p. 22) and "
+                                         "sub-claims rebuilt on them; verdict reasoning based on the p. 22 / p. 83 tension; “on "
+                                         "track” qualified as the plan’s own path with the Commission caveat; tag removed; NSO PV "
+                                         "figures marked second-hand and dropped as headline and deciding number; heat-pump "
+                                         "counting caveat added; pledge date explained. Pending right of reply.")])
 
 build_report(Report(
     number="024", out=str(FIG / "report.pdf"), kicker="Climate and energy",
-    title_lines=["Renewables by 2030:", "solar PV and", "offshore wind?"],
+    title_lines=["Renewables by 2030:", "onshore and", "offshore?"],
     subtitle_lines=["Testing Malta’s 2030 renewable-energy target", "against its own plan and Eurostat data"],
     quote_lines=["“Increase the Renewable Energy contribution from", "11.5% to 25% through multiple initiatives …”"], quote_size=15,
     attribution="Government of Malta, final updated National Energy and Climate Plan, p. 22 (December 2024).",
-    context="Summarised in our record as reaching the 2030 share through solar PV and offshore wind.",
-    verdict="Not substantiated", verdict_note="Target on track; route not shown (offshore wind not counted)",
-    footer_lines=["Version 1.0  ·  5 October 2026", "Status: draft for right of reply (Energy and Water Agency; Ministry)",
+    context="The summary lists offshore technologies as a means; the plan’s 2030 projection counts no offshore wind.",
+    pledge_label="On track",
+    verdict="Not substantiated", verdict_note="Plan’s own path; offshore not counted",
+    footer_lines=["Version 1.1  ·  6 October 2026", "Status: draft, pending right of reply",
                   "Prepared from public sources and Eurostat data.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Malta’s 2030 renewables target", version="1.0", date="5 October 2026",
-    pdf_title="Renewables by 2030: solar PV and offshore wind? Claim Check 024",
+    running_head="Malta’s 2030 renewables target", version="1.1", date="6 October 2026",
+    pdf_title="Renewables by 2030: onshore and offshore? Claim Check 024",
     pdf_subject="Tests Malta's 2030 renewables contribution in the updated NECP against Eurostat data",
     story=S))
