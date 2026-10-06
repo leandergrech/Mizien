@@ -1,45 +1,156 @@
 id: CC-035
-title: PM2.5 deaths down two-thirds
+title: PM2.5 death rate down two-thirds
 category: Air
 subtopic: Air quality & health
-status: In progress
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
-  text: 'European Environment Agency: in Malta the rate of deaths attributable to PM2.5 fell by 67.7% between 2005
-    and 2023, to 172 attributable deaths in 2023.'
+  text: 'European Environment Agency (Air pollution country fact sheets 2025: quick country facts): in Malta the rate
+    of all-cause natural deaths attributable to long-term exposure to PM2.5 above 5 µg/m³, per 100 000 inhabitants
+    aged 30 or over, is estimated to have fallen by 67.7% between 2005 and 2023 (from 143.5 to 46.3), resulting in 172
+    (95% CI 131-192) attributable deaths in 2023.'
   speaker: European Environment Agency
-  date: '2025'
-  wording_status: 'Paraphrase: locate quote'
+  date: '2025-12-01'
+  wording_status: Verbatim found
   sources:
-  - title: 'Health impacts of air pollution: Malta (Europe''s environment 2025)'
-    publisher: European Environment Agency
-    date: '2025'
-    url: https://www.eea.europa.eu/en/europe-environment-2025/countries/malta/health-impacts-of-air-pollution
-    note: Primary country page.
   - title: "Air pollution country fact sheets 2025: quick country facts"
     publisher: "European Environment Agency"
-    date: "2025"
+    date: "1 Dec 2025"
     url: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2025/quick-country-facts"
-    note: "States the 67.7% fall (2005-2023) and 172 attributable deaths in 2023 in text; read 5 Oct 2026. Wording in literature/CC-035/primary-source.md."
-counter_evidence: Model estimate against the WHO 5 ug/m3 reference; compare with CC-007 station data.
-tests: EEA burden-of-disease method; station PM2.5 trend.
-why_low_hanging: A specific, attributable statement that public data can test.
+    note: "The claim. Page 'Modified 01 Dec 2025'. Supplied by the maintainer on 5 Oct 2026 (literature/CC-035/primary-source.md)
+      and read again in the page HTML on 6 Oct 2026 (SHA-256 in literature/CC-035/README.md). EEA content is CC BY 4.0."
+  - title: 'Health impacts of air pollution: Malta (Europe''s environment 2025)'
+    publisher: European Environment Agency
+    date: 29 Sep 2025
+    url: https://www.eea.europa.eu/en/europe-environment-2025/countries/malta/health-impacts-of-air-pollution
+    note: Earlier country page; the figures are in a chart covering 2005-2022 (previous release). Context, not the statement
+      checked. Read 6 Oct 2026.
+  - title: 'Burden of disease of air pollution (Countries & NUTS), Table publisher'
+    publisher: European Environment Agency
+    date: retrieved 6 Oct 2026
+    url: https://discomap.eea.europa.eu/App/AQViewer/index.html?fqn=Airquality_Dissem.ebd.countries_and_nuts
+    note: Primary evidence. The EEA's own estimates by year and scenario, with population at risk and population-weighted
+      concentration (data/cc-035/eea_ebd_*.csv).
+  - title: 'Harm to human health from air pollution in Europe: burden of disease status, 2025 (EEA Briefing 16/2025)'
+    publisher: European Environment Agency
+    date: 1 Dec 2025
+    url: https://www.eea.europa.eu/en/analysis/publications/harm-to-human-health-from-air-pollution-burden-of-disease-status-2025
+    note: Method, counterfactuals, and what the 95% CI covers (relative risk only). doi:10.2800/8961999. Read 6 Oct 2026.
+  - title: Assessing the environmental burden of disease related to air pollution in Europe in 2023 (ETC HE Report 2025/8)
+    publisher: European Topic Centre on Human Health and the Environment
+    date: 30 Nov 2025
+    url: https://doi.org/10.5281/zenodo.17658760
+    note: Technical report behind the estimates; Malta 173 (132-193) deaths, 46.3 per 100 000 aged 30+ (Table A4.1). Read
+      in full 6 Oct 2026.
+  - title: Reference air quality maps 2005 and 2009 (ETC/ATNI Report 2020/1)
+    publisher: European Topic Centre on Air pollution, transport, noise and industrial pollution
+    date: 20 Nov 2020
+    url: https://doi.org/10.5281/zenodo.4293744
+    note: How the 2005 map was made (PM2.5 stations plus PM10-based pseudo stations, EMEP model); Malta 2005 21.2 µg/m³.
+      Read in full 6 Oct 2026.
+  - title: EEA Air Quality download service (AirBase and E1a station files, Malta)
+    publisher: European Environment Agency
+    date: retrieved 6 Oct 2026
+    url: https://eeadmz1-downloads-webapp.azurewebsites.net/
+    note: Measured PM2.5 and PM10 at Malta's stations, 2004-2025 (data/cc-035/eea_stations_malta_annual.csv).
+  quote: 'In Malta, the rate of the all-cause natural deaths attributable to long-term exposure to fine particles (number
+    of premature deaths attributable per 100 000 inhabitants 30 years or above) above 5µg/m3 is estimated to have been
+    reduced by 67.7% between 2005 and 2023 (from 143.5 to 46.3, respectively), resulting in 172 (95% CI: 131-192)
+    attributable deaths in 2023.'
+counter_evidence: 'Every figure reproduces from the EEA''s own burden-of-disease table and Eurostat sdg_11_52 (143.5,
+  46.3, 67.74%, 172 (131-192)); the ETC HE technical report rounds the 2023 deaths to 173 (132-193). From Eurostat
+  natural deaths aged 30+ and the EEA''s concentrations we get 346 (2005) and 170 (2023) deaths, within 1.2%. Caveats:
+  the EEA archive has no PM2.5 measurement in Malta before August 2006, so the 2005 value (21.0 µg/m³) comes from a map built from PM10-based
+  estimates and a model; the 95% CI covers the risk function only. The number of deaths fell 50.6% (348 to 172), as the
+  population aged 30+ grew 54%; counting all concentrations the rate fell 54.7%, and from 2007 it fell 56.6%. Measured
+  PM2.5 follows the map from 2007; in 2023 five stations average 10.9 µg/m³, the map''s value.'
+tests: EEA burden-of-disease table (Malta, all scenarios; EU-27; all countries), Eurostat sdg_11_52, demo_pjan, demo_magec,
+  hlth_cd_aro and env_air_emis, recomputed with tools/cc-035-report/calc.py; the EEA's briefing, indicator and ETC
+  technical and map reports for the method; EEA AirBase and E1a station files for Malta's measured PM2.5 and PM10.
+why_low_hanging: 'Done: Claim Check 035 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: 'The statement is the EEA''s modelled estimate, reported accurately. Its 2005 starting value was not measured in
+  Malta (the EEA archive has no Maltese PM2.5 data before August 2006) and the 95% CI leaves exposure error out, so the exact 67.7% is less certain
+  than its decimal suggests. It is a rate per person aged 30+; the number of deaths fell by about half. Largely supported
+  verdict: no right of reply needed.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - EEA burden-of-disease table for Malta, every scenario, retrieved 6 Oct 2026 (data/cc-035/eea_ebd_malta_pm25.csv)
+  - Eurostat sdg_11_52, retrieved 6 Oct 2026 (data/cc-035/eurostat_sdg_11_52.csv)
+  - EEA AirBase and E1a station files for Malta with SHA-256 (data/cc-035/eea_station_file_manifest.csv; annual means in
+    eea_stations_malta_annual.csv)
+  - Recomputation and comparisons (data/cc-035/checks.csv, station_vs_model.csv, eu27_rate_change.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-035A
+    text: "The rate was 143.5 per 100 000 aged 30+ in 2005"
+    finding: "EEA table: 143.5 (348 deaths, 242,534 people aged 30+) [2]; Eurostat: 348 deaths [3]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-035B
+    text: "It was 46.3 in 2023"
+    finding: "EEA table and technical report: 46.3 (35.2–51.7) [2, 6]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-035C
+    text: "“reduced by 67.7% between 2005 and 2023”"
+    finding: "(143.5 − 46.3) / 143.5 = 67.74%. The 2005 value is a map value with no PM2.5 measured in Malta [7, 10]; from 2007 the fall is 56.6%; the 95% CI covers the risk only [4]."
+    rating: "Largely accurate"
+    tone: lime
+  - id: CC-035D
+    text: "“172 (95% CI: 131-192) attributable deaths in 2023”"
+    finding: "EEA table and Eurostat: 172 (131–192) [2, 3]. Technical report: 173 (132–193) [6]; 46.3 × 373,208 / 100 000 = 172.8: consistent with 172 truncated and 173 rounded."
+    rating: "Accurate"
+    tone: green
+  - id: CC-035E
+    text: "Natural deaths, long-term exposure above 5 µg/m³, people aged 30+"
+    finding: "Matches the documented method [4–6]; recomputed from Eurostat deaths within 1.2% (section 3)."
+    rating: "Accurate"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-06'
+thumbnail:
+  figure: 67.7%
+  caption: fall in the EEA's modelled PM2.5 death rate for Malta, 2005-2023 (number of deaths −51%)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: note
+    note: "Worker B attempt: the Europe's environment 2025 Malta page draws the figures in a chart; the maintainer then
+      supplied the quick-facts wording (literature/CC-035/primary-source.md)."
+  - date: 2026-10-06
+    step: started
+    note: "Check started in the maintainer session. EEA burden-of-disease table downloaded through the EEA Table publisher
+      (Malta, every scenario; all countries; EU-27); Eurostat sdg_11_52, demo_pjan, demo_magec, hlth_cd_aro and env_air_emis
+      downloaded with flags; all 30 Malta PM2.5 and PM10 station files downloaded from the EEA download service."
+  - date: 2026-10-06
+    step: wording
+    note: "Verbatim wording read in the quick-facts page HTML (page modified 1 Dec 2025); it matches the maintainer's
+      primary-source.md word for word. Record text and title restated from the EEA's wording: it gives a rate, and the
+      number of deaths fell by about half, so the title is now 'PM2.5 death rate down two-thirds'."
+  - date: 2026-10-06
+    step: note
+    note: "Method read: EEA briefing 16/2025, the EEA indicator page, ETC HE Report 2025/8 (Soares et al.), ETC/ATNI Report
+      2020/1 (2005 reference maps) and ETC HE Report 2025/5 (2023 maps); Chen and Hoek (2020) and Scerri et al. (2018) read
+      as abstracts; DOIs checked in Crossref and DataCite. Figures reproduced (143.5, 46.3, 67.74%, 172 (131-192)); method
+      recomputed within 1.2%; measured PM2.5 compared with the modelled series."
+  - date: 2026-10-06
+    step: version
+    version: "1.0"
+    note: "First issue. Verdict Largely supported (high confidence); no right of reply needed."
