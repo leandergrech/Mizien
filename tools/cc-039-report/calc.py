@@ -53,9 +53,17 @@ add("Specific energy needed in 2025 to keep RO electricity at the 2016 level", e
 add("  fall from 4.85 that this would take", (1 - e16 / ro25 / inp["spec_kwh_2016"]) * 100, "%", "calculated")
 add("Specific energy needed in 2024 to keep RO electricity at the 2016 level", e16 / ro24, "kWh/m3", "calculated")
 add("RO electricity share of 2016 electricity bill", 10082017 / inp["elec_eur_2016"] * 100, "%", "WSC AR 2016 note 2", "nominal euro")
-# second-hand scenario (AR 2024, not read directly): 4.68 kWh/m3 average in 2024
-add("RO electricity 2024 at 4.68 kWh/m3 (second-hand input)", ro24 * 4.68, "GWh", "WSC AR 2024 via search summary, not read directly", "indicative only")
-add("  change vs 2016", (ro24 * 4.68 / e16 - 1) * 100, "%", "calculated", "indicative only")
+# Whole-utility indicator, WSC Impact and Allocation Report FY2024 p.13 (read first-hand 6 Oct 2026).
+# Not an RO figure: 'Total Energy Requirement per m3 produced'; the report does not define its boundary.
+for y in (2022, 2023, 2024):
+    k = inp[f"wsc_total_kwh_m3_{y}"]
+    prod = (inp[f"gw_m3_{y}"] + inp[f"ro_m3_{y}"]) / M
+    add(f"WSC total energy requirement per m3 produced {y}", k, "kWh/m3", "WSC Impact and Allocation Report FY2024 p.13", "whole-utility indicator; boundary not defined")
+    add(f"WSC potable production {y}", prod, "million m3", "WSC AR 2025 Fig 20 (groundwater + RO)")
+    add(f"Implied total energy {y} (indicative)", k * prod, "GWh", "calculated", "intensity x production; assumes 'produced' = potable production in Fig 20; boundary unverified")
+add("Change in implied total energy 2022 to 2024 (indicative)", ((inp["wsc_total_kwh_m3_2024"] * (inp["gw_m3_2024"] + inp["ro_m3_2024"])) / (inp["wsc_total_kwh_m3_2022"] * (inp["gw_m3_2022"] + inp["ro_m3_2022"])) - 1) * 100, "%", "calculated", "indicative only")
+add("Change in total energy per m3 produced 2022 to 2024", (inp["wsc_total_kwh_m3_2024"] / inp["wsc_total_kwh_m3_2022"] - 1) * 100, "%", "calculated")
+add("Hondoq RO specific energy 2024", inp["hondoq_kwh_m3_2024"], "kWh/m3", "WSC Impact and Allocation Report FY2024 p.24, p.28", "2021 pre-commissioning baseline 4.1")
 with open(D / "checks.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f, lineterminator="\n"); w.writerow(["check", "value", "unit", "source", "note"]); w.writerows(rows)
 for r in rows: print(r)
