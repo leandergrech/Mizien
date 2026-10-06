@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 6 October 2026 (step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -28,6 +28,21 @@ on the map (`/?view=map&sel=claim:CC-NNN`, when it has a location) and to the cl
 resolved against the script's own folder, so they work under the `/Mizien/` prefix (they did not before: fixed).
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
+
+## Similar wording (6 October 2026)
+
+Step 4. `scripts/similarity.py`, run by `scripts/build_site_data.py`: each claim's own words (title, claim text,
+verbatim quote; not our counter-evidence) become a TF-IDF vector; two claims are "similar" when the cosine reaches
+0.25 **and** they share at least two words (one shared word such as "Gozo" or "blue" is not enough). Words of the
+reporting (outlet names, "reported", "told") and common filler are ignored. Each claim keeps its 5 most similar,
+with the 3 shared words that weigh most. No library or service; the same result on every run. Calibrated on 5 Oct
+2026 data: 57 pairs over 80 claims; top pairs are the Blue Flag claims (0.70), the fish farms (0.67), the Central Link
+trees (0.65).
+- Written to `data/claims.json` / `docs/data/claims.json` as `similar: [{id, score, terms}]` and to the claim pages'
+  data. Shown as **Similar wording** in the Connections section of each claim page and on its card in Explore,
+  always with the shared words, and as a reason in the pinned tray's **Find related** ("similar wording to CC-056:
+  trees, project"; weight 3 at 0.4 and above, else 2). Labelled as a lead to read together, not a finding.
+- To tune: THRESHOLD, MIN_SHARED, TOP and the ignored words at the top of `scripts/similarity.py`.
 
 ## Pinned tray, related claims, compare (6 October 2026)
 

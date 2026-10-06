@@ -168,7 +168,27 @@
         "flyer_pdf": "claim-files/CC-002/flyer.pdf",
         "flyer_png": "claim-files/CC-002/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-002/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-002/claim.yml",
+      "similar": [
+        {
+          "id": "CC-057",
+          "score": 0.55,
+          "terms": [
+            "trees",
+            "removed",
+            "compensation"
+          ]
+        },
+        {
+          "id": "CC-010",
+          "score": 0.38,
+          "terms": [
+            "trees",
+            "planted",
+            "shrubs"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-003",
@@ -250,7 +270,26 @@
         "flyer_pdf": "claim-files/CC-003/flyer.pdf",
         "flyer_png": "claim-files/CC-003/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-003/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-003/claim.yml",
+      "similar": [
+        {
+          "id": "CC-025",
+          "score": 0.47,
+          "terms": [
+            "capita",
+            "emissions"
+          ]
+        },
+        {
+          "id": "CC-114",
+          "score": 0.27,
+          "terms": [
+            "emissions",
+            "reducing",
+            "average"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-004",
@@ -327,7 +366,18 @@
         "flyer_pdf": "claim-files/CC-004/flyer.pdf",
         "flyer_png": "claim-files/CC-004/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/claim.yml",
+      "similar": [
+        {
+          "id": "CC-081",
+          "score": 0.27,
+          "terms": [
+            "management",
+            "waste",
+            "landfill"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-005",
@@ -516,7 +566,27 @@
         "flyer_pdf": "claim-files/CC-009/flyer.pdf",
         "flyer_png": "claim-files/CC-009/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-009/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-009/claim.yml",
+      "similar": [
+        {
+          "id": "CC-046",
+          "score": 0.55,
+          "terms": [
+            "osmosis",
+            "reverse",
+            "wsc"
+          ]
+        },
+        {
+          "id": "CC-108",
+          "score": 0.26,
+          "terms": [
+            "wsc",
+            "groundwater",
+            "water"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-010",
@@ -615,7 +685,34 @@
         "flyer_pdf": "claim-files/CC-010/flyer.pdf",
         "flyer_png": "claim-files/CC-010/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-010/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-010/claim.yml",
+      "similar": [
+        {
+          "id": "CC-002",
+          "score": 0.38,
+          "terms": [
+            "trees",
+            "planted",
+            "shrubs"
+          ]
+        },
+        {
+          "id": "CC-057",
+          "score": 0.36,
+          "terms": [
+            "trees",
+            "planted"
+          ]
+        },
+        {
+          "id": "CC-056",
+          "score": 0.27,
+          "terms": [
+            "trees",
+            "project"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-011",
@@ -703,7 +800,18 @@
         "flyer_pdf": "claim-files/CC-011/flyer.pdf",
         "flyer_png": "claim-files/CC-011/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/claim.yml",
+      "similar": [
+        {
+          "id": "CC-054",
+          "score": 0.31,
+          "terms": [
+            "green",
+            "spaces",
+            "open"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-012",
@@ -745,7 +853,18 @@
         "flyer_pdf": "claim-files/CC-012/flyer.pdf",
         "flyer_png": "claim-files/CC-012/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-012/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-012/claim.yml",
+      "similar": [
+        {
+          "id": "CC-055",
+          "score": 0.27,
+          "terms": [
+            "public",
+            "park",
+            "back"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-013",
@@ -811,7 +930,17 @@
         "flyer_pdf": "claim-files/CC-013/flyer.pdf",
         "flyer_png": "claim-files/CC-013/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-013/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-013/claim.yml",
+      "similar": [
+        {
+          "id": "CC-095",
+          "score": 0.28,
+          "terms": [
+            "keep",
+            "prices"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-014",
@@ -984,7 +1113,17 @@
         "flyer_pdf": "claim-files/CC-016/flyer.pdf",
         "flyer_png": "claim-files/CC-016/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-016/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-016/claim.yml",
+      "similar": [
+        {
+          "id": "CC-064",
+          "score": 0.39,
+          "terms": [
+            "harbour",
+            "grand"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-017",
@@ -1146,7 +1285,17 @@
         "flyer_pdf": "claim-files/CC-018/flyer.pdf",
         "flyer_png": "claim-files/CC-018/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-018/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-018/claim.yml",
+      "similar": [
+        {
+          "id": "CC-061",
+          "score": 0.35,
+          "terms": [
+            "market",
+            "housing"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-019",
@@ -1211,7 +1360,18 @@
         "flyer_pdf": "claim-files/CC-019/flyer.pdf",
         "flyer_png": "claim-files/CC-019/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-019/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-019/claim.yml",
+      "similar": [
+        {
+          "id": "CC-054",
+          "score": 0.44,
+          "terms": [
+            "square",
+            "metres",
+            "green"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-020",
@@ -1278,7 +1438,27 @@
         "flyer_pdf": "claim-files/CC-020/flyer.pdf",
         "flyer_png": "claim-files/CC-020/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-020/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-020/claim.yml",
+      "similar": [
+        {
+          "id": "CC-104",
+          "score": 0.43,
+          "terms": [
+            "noise",
+            "directive",
+            "petitions"
+          ]
+        },
+        {
+          "id": "CC-105",
+          "score": 0.26,
+          "terms": [
+            "noise",
+            "study",
+            "entertainment"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-021",
@@ -1377,7 +1557,18 @@
         "flyer_pdf": "claim-files/CC-022/flyer.pdf",
         "flyer_png": "claim-files/CC-022/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-022/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-022/claim.yml",
+      "similar": [
+        {
+          "id": "CC-095",
+          "score": 0.3,
+          "terms": [
+            "prices",
+            "electricity",
+            "eur"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-023",
@@ -1408,7 +1599,25 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-023/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-023/claim.yml",
+      "similar": [
+        {
+          "id": "CC-024",
+          "score": 0.28,
+          "terms": [
+            "renewable",
+            "energy"
+          ]
+        },
+        {
+          "id": "CC-080",
+          "score": 0.28,
+          "terms": [
+            "renewable",
+            "electricity"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-024",
@@ -1501,7 +1710,17 @@
         "flyer_pdf": "claim-files/CC-024/flyer.pdf",
         "flyer_png": "claim-files/CC-024/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-024/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-024/claim.yml",
+      "similar": [
+        {
+          "id": "CC-023",
+          "score": 0.28,
+          "terms": [
+            "renewable",
+            "energy"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-025",
@@ -1562,7 +1781,17 @@
         "flyer_pdf": "claim-files/CC-025/flyer.pdf",
         "flyer_png": "claim-files/CC-025/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-025/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-025/claim.yml",
+      "similar": [
+        {
+          "id": "CC-003",
+          "score": 0.47,
+          "terms": [
+            "capita",
+            "emissions"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-026",
@@ -1637,7 +1866,18 @@
         "flyer_pdf": "claim-files/CC-026/flyer.pdf",
         "flyer_png": "claim-files/CC-026/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-026/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-026/claim.yml",
+      "similar": [
+        {
+          "id": "CC-114",
+          "score": 0.49,
+          "terms": [
+            "greenhouse",
+            "gas",
+            "emissions"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-027",
@@ -1861,7 +2101,18 @@
         "flyer_pdf": "claim-files/CC-030/flyer.pdf",
         "flyer_png": "claim-files/CC-030/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-030/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-030/claim.yml",
+      "similar": [
+        {
+          "id": "CC-100",
+          "score": 0.36,
+          "terms": [
+            "airport",
+            "international",
+            "plc"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-031",
@@ -2107,7 +2358,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-036/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-036/claim.yml",
+      "similar": [
+        {
+          "id": "CC-082",
+          "score": 0.31,
+          "terms": [
+            "construction",
+            "era"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-037",
@@ -2180,7 +2441,17 @@
         "flyer_pdf": "claim-files/CC-037/flyer.pdf",
         "flyer_png": "claim-files/CC-037/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-037/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-037/claim.yml",
+      "similar": [
+        {
+          "id": "CC-113",
+          "score": 0.34,
+          "terms": [
+            "share",
+            "highest"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-038",
@@ -2299,7 +2570,27 @@
         "flyer_pdf": "claim-files/CC-039/flyer.pdf",
         "flyer_png": "claim-files/CC-039/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-039/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-039/claim.yml",
+      "similar": [
+        {
+          "id": "CC-108",
+          "score": 0.63,
+          "terms": [
+            "impact",
+            "abstraction",
+            "net"
+          ]
+        },
+        {
+          "id": "CC-101",
+          "score": 0.26,
+          "terms": [
+            "abstraction",
+            "water",
+            "groundwater"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-040",
@@ -2330,7 +2621,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-040/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-040/claim.yml",
+      "similar": [
+        {
+          "id": "CC-046",
+          "score": 0.28,
+          "terms": [
+            "water",
+            "litres",
+            "day"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-041",
@@ -2427,7 +2729,18 @@
         "flyer_pdf": "claim-files/CC-042/flyer.pdf",
         "flyer_png": "claim-files/CC-042/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-042/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-042/claim.yml",
+      "similar": [
+        {
+          "id": "CC-043",
+          "score": 0.71,
+          "terms": [
+            "flag",
+            "blue",
+            "beaches"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-043",
@@ -2458,7 +2771,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-043/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-043/claim.yml",
+      "similar": [
+        {
+          "id": "CC-042",
+          "score": 0.71,
+          "terms": [
+            "flag",
+            "blue",
+            "beaches"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-044",
@@ -2488,7 +2812,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-044/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-044/claim.yml",
+      "similar": [
+        {
+          "id": "CC-045",
+          "score": 0.37,
+          "terms": [
+            "tunnels",
+            "every",
+            "stormwater"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-045",
@@ -2556,7 +2891,18 @@
         "flyer_pdf": "claim-files/CC-045/flyer.pdf",
         "flyer_png": "claim-files/CC-045/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-045/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-045/claim.yml",
+      "similar": [
+        {
+          "id": "CC-044",
+          "score": 0.37,
+          "terms": [
+            "tunnels",
+            "every",
+            "stormwater"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-046",
@@ -2586,7 +2932,27 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-046/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-046/claim.yml",
+      "similar": [
+        {
+          "id": "CC-009",
+          "score": 0.55,
+          "terms": [
+            "osmosis",
+            "reverse",
+            "wsc"
+          ]
+        },
+        {
+          "id": "CC-040",
+          "score": 0.28,
+          "terms": [
+            "water",
+            "litres",
+            "day"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-047",
@@ -2706,7 +3072,18 @@
       "quote": "BirdLife Malta’s 2025 Raptor Camp has once again been instrumental in exposing illegal hunting in Malta with a total of 242 illegal hunting incidents recorded in less than a month between the 12th September and 5th October. … their average response time throughout the period reached an astounding 51 minutes",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-049/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-049/claim.yml",
+      "similar": [
+        {
+          "id": "CC-050",
+          "score": 0.32,
+          "terms": [
+            "hunting",
+            "birdlife",
+            "press"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-050",
@@ -2764,7 +3141,18 @@
         "flyer_pdf": "claim-files/CC-050/flyer.pdf",
         "flyer_png": "claim-files/CC-050/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-050/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-050/claim.yml",
+      "similar": [
+        {
+          "id": "CC-049",
+          "score": 0.32,
+          "terms": [
+            "hunting",
+            "birdlife",
+            "press"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-051",
@@ -2853,7 +3241,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-052/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-052/claim.yml",
+      "similar": [
+        {
+          "id": "CC-096",
+          "score": 0.67,
+          "terms": [
+            "farm",
+            "fish",
+            "offshore"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-053",
@@ -2936,7 +3335,27 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-054/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-054/claim.yml",
+      "similar": [
+        {
+          "id": "CC-019",
+          "score": 0.44,
+          "terms": [
+            "square",
+            "metres",
+            "green"
+          ]
+        },
+        {
+          "id": "CC-011",
+          "score": 0.31,
+          "terms": [
+            "green",
+            "spaces",
+            "open"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-055",
@@ -2967,7 +3386,26 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-055/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-055/claim.yml",
+      "similar": [
+        {
+          "id": "CC-093",
+          "score": 0.31,
+          "terms": [
+            "park",
+            "public"
+          ]
+        },
+        {
+          "id": "CC-012",
+          "score": 0.27,
+          "terms": [
+            "public",
+            "park",
+            "back"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-056",
@@ -2997,7 +3435,26 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-056/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-056/claim.yml",
+      "similar": [
+        {
+          "id": "CC-057",
+          "score": 0.65,
+          "terms": [
+            "trees",
+            "central",
+            "link"
+          ]
+        },
+        {
+          "id": "CC-010",
+          "score": 0.27,
+          "terms": [
+            "trees",
+            "project"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-057",
@@ -3027,7 +3484,35 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-057/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-057/claim.yml",
+      "similar": [
+        {
+          "id": "CC-056",
+          "score": 0.65,
+          "terms": [
+            "trees",
+            "central",
+            "link"
+          ]
+        },
+        {
+          "id": "CC-002",
+          "score": 0.55,
+          "terms": [
+            "trees",
+            "removed",
+            "compensation"
+          ]
+        },
+        {
+          "id": "CC-010",
+          "score": 0.36,
+          "terms": [
+            "trees",
+            "planted"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-058",
@@ -3118,7 +3603,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-060/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-060/claim.yml",
+      "similar": [
+        {
+          "id": "CC-074",
+          "score": 0.34,
+          "terms": [
+            "grants",
+            "eur"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-061",
@@ -3148,7 +3643,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-061/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-061/claim.yml",
+      "similar": [
+        {
+          "id": "CC-018",
+          "score": 0.35,
+          "terms": [
+            "market",
+            "housing"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-062",
@@ -3179,7 +3684,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-062/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-062/claim.yml",
+      "similar": [
+        {
+          "id": "CC-063",
+          "score": 0.29,
+          "terms": [
+            "construction",
+            "developers",
+            "association"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-063",
@@ -3230,7 +3746,26 @@
         "flyer_pdf": "claim-files/CC-063/flyer.pdf",
         "flyer_png": "claim-files/CC-063/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-063/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-063/claim.yml",
+      "similar": [
+        {
+          "id": "CC-082",
+          "score": 0.33,
+          "terms": [
+            "construction",
+            "waste"
+          ]
+        },
+        {
+          "id": "CC-062",
+          "score": 0.29,
+          "terms": [
+            "construction",
+            "developers",
+            "association"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-064",
@@ -3260,7 +3795,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-064/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-064/claim.yml",
+      "similar": [
+        {
+          "id": "CC-016",
+          "score": 0.39,
+          "terms": [
+            "harbour",
+            "grand"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-065",
@@ -3291,7 +3836,26 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-065/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-065/claim.yml",
+      "similar": [
+        {
+          "id": "CC-116",
+          "score": 0.36,
+          "terms": [
+            "buffer",
+            "zone",
+            "decisions"
+          ]
+        },
+        {
+          "id": "CC-066",
+          "score": 0.27,
+          "terms": [
+            "heritage",
+            "planning"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-066",
@@ -3322,7 +3886,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-066/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-066/claim.yml",
+      "similar": [
+        {
+          "id": "CC-065",
+          "score": 0.27,
+          "terms": [
+            "heritage",
+            "planning"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-067",
@@ -3414,7 +3988,34 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-069/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-069/claim.yml",
+      "similar": [
+        {
+          "id": "CC-070",
+          "score": 0.4,
+          "terms": [
+            "bus",
+            "transport"
+          ]
+        },
+        {
+          "id": "CC-073",
+          "score": 0.38,
+          "terms": [
+            "trips",
+            "transport"
+          ]
+        },
+        {
+          "id": "CC-071",
+          "score": 0.34,
+          "terms": [
+            "buses",
+            "transport",
+            "public"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-070",
@@ -3444,7 +4045,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-070/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-070/claim.yml",
+      "similar": [
+        {
+          "id": "CC-069",
+          "score": 0.4,
+          "terms": [
+            "bus",
+            "transport"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-071",
@@ -3474,7 +4085,36 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-071/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-071/claim.yml",
+      "similar": [
+        {
+          "id": "CC-069",
+          "score": 0.34,
+          "terms": [
+            "buses",
+            "transport",
+            "public"
+          ]
+        },
+        {
+          "id": "CC-115",
+          "score": 0.33,
+          "terms": [
+            "cost",
+            "traffic",
+            "eur"
+          ]
+        },
+        {
+          "id": "CC-095",
+          "score": 0.26,
+          "terms": [
+            "eur",
+            "subsidies",
+            "million"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-072",
@@ -3534,7 +4174,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-073/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-073/claim.yml",
+      "similar": [
+        {
+          "id": "CC-069",
+          "score": 0.38,
+          "terms": [
+            "trips",
+            "transport"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-074",
@@ -3564,7 +4214,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-074/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-074/claim.yml",
+      "similar": [
+        {
+          "id": "CC-060",
+          "score": 0.34,
+          "terms": [
+            "grants",
+            "eur"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-075",
@@ -3594,7 +4254,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-075/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-075/claim.yml",
+      "similar": [
+        {
+          "id": "CC-110",
+          "score": 0.29,
+          "terms": [
+            "cars",
+            "passenger"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-076",
@@ -3660,7 +4330,18 @@
         "flyer_pdf": "claim-files/CC-076/flyer.pdf",
         "flyer_png": "claim-files/CC-076/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-076/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-076/claim.yml",
+      "similar": [
+        {
+          "id": "CC-088",
+          "score": 0.39,
+          "terms": [
+            "end",
+            "stood",
+            "office"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-077",
@@ -3753,7 +4434,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-079/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-079/claim.yml",
+      "similar": [
+        {
+          "id": "CC-080",
+          "score": 0.46,
+          "terms": [
+            "waste",
+            "plant",
+            "wasteserv"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-080",
@@ -3783,7 +4475,26 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-080/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-080/claim.yml",
+      "similar": [
+        {
+          "id": "CC-079",
+          "score": 0.46,
+          "terms": [
+            "waste",
+            "plant",
+            "wasteserv"
+          ]
+        },
+        {
+          "id": "CC-023",
+          "score": 0.28,
+          "terms": [
+            "renewable",
+            "electricity"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-081",
@@ -3813,7 +4524,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-081/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-081/claim.yml",
+      "similar": [
+        {
+          "id": "CC-004",
+          "score": 0.27,
+          "terms": [
+            "management",
+            "waste",
+            "landfill"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-082",
@@ -3843,7 +4565,25 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-082/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-082/claim.yml",
+      "similar": [
+        {
+          "id": "CC-063",
+          "score": 0.33,
+          "terms": [
+            "construction",
+            "waste"
+          ]
+        },
+        {
+          "id": "CC-036",
+          "score": 0.31,
+          "terms": [
+            "construction",
+            "era"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-083",
@@ -3873,7 +4613,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-083/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-083/claim.yml",
+      "similar": [
+        {
+          "id": "CC-086",
+          "score": 0.35,
+          "terms": [
+            "tourism",
+            "ian",
+            "borg"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-084",
@@ -3904,7 +4655,17 @@
       "quote": "4 miljun turist fis-sena wisq (\"4 million tourists a year are too many\", ADPD release, 14 Feb 2026, Maltese; Newsbook translation). No tripling wording in quotation marks.",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-084/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-084/claim.yml",
+      "similar": [
+        {
+          "id": "CC-085",
+          "score": 0.36,
+          "terms": [
+            "tourists",
+            "million"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-085",
@@ -3934,7 +4695,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-085/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-085/claim.yml",
+      "similar": [
+        {
+          "id": "CC-084",
+          "score": 0.36,
+          "terms": [
+            "tourists",
+            "million"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-086",
@@ -3964,7 +4735,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-086/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-086/claim.yml",
+      "similar": [
+        {
+          "id": "CC-083",
+          "score": 0.35,
+          "terms": [
+            "tourism",
+            "ian",
+            "borg"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-087",
@@ -4054,7 +4836,34 @@
         "flyer_pdf": "claim-files/CC-088/flyer.pdf",
         "flyer_png": "claim-files/CC-088/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-088/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-088/claim.yml",
+      "similar": [
+        {
+          "id": "CC-076",
+          "score": 0.39,
+          "terms": [
+            "end",
+            "stood",
+            "office"
+          ]
+        },
+        {
+          "id": "CC-106",
+          "score": 0.39,
+          "terms": [
+            "population",
+            "estimated"
+          ]
+        },
+        {
+          "id": "CC-112",
+          "score": 0.3,
+          "terms": [
+            "population",
+            "rose"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-089",
@@ -4114,7 +4923,27 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-090/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-090/claim.yml",
+      "similar": [
+        {
+          "id": "CC-103",
+          "score": 0.54,
+          "terms": [
+            "deaths",
+            "heat",
+            "linked"
+          ]
+        },
+        {
+          "id": "CC-097",
+          "score": 0.27,
+          "terms": [
+            "heat",
+            "heatwave",
+            "extreme"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-091",
@@ -4173,7 +5002,18 @@
         "flyer_pdf": "claim-files/CC-091/flyer.pdf",
         "flyer_png": "claim-files/CC-091/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-091/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-091/claim.yml",
+      "similar": [
+        {
+          "id": "CC-097",
+          "score": 0.27,
+          "terms": [
+            "workers",
+            "safety",
+            "health"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-092",
@@ -4203,7 +5043,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-092/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-092/claim.yml",
+      "similar": [
+        {
+          "id": "CC-107",
+          "score": 0.62,
+          "terms": [
+            "afforestation",
+            "zero",
+            "net"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-093",
@@ -4233,7 +5084,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-093/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-093/claim.yml",
+      "similar": [
+        {
+          "id": "CC-055",
+          "score": 0.31,
+          "terms": [
+            "park",
+            "public"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-094",
@@ -4263,7 +5124,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-094/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-094/claim.yml",
+      "similar": [
+        {
+          "id": "CC-109",
+          "score": 0.44,
+          "terms": [
+            "sharing",
+            "effort",
+            "commission"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-095",
@@ -4293,7 +5165,43 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-095/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-095/claim.yml",
+      "similar": [
+        {
+          "id": "CC-022",
+          "score": 0.3,
+          "terms": [
+            "prices",
+            "electricity",
+            "eur"
+          ]
+        },
+        {
+          "id": "CC-113",
+          "score": 0.29,
+          "terms": [
+            "fuel",
+            "subsidies"
+          ]
+        },
+        {
+          "id": "CC-013",
+          "score": 0.28,
+          "terms": [
+            "keep",
+            "prices"
+          ]
+        },
+        {
+          "id": "CC-071",
+          "score": 0.26,
+          "terms": [
+            "eur",
+            "subsidies",
+            "million"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-096",
@@ -4324,7 +5232,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-096/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-096/claim.yml",
+      "similar": [
+        {
+          "id": "CC-052",
+          "score": 0.67,
+          "terms": [
+            "farm",
+            "fish",
+            "offshore"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-097",
@@ -4354,7 +5273,27 @@
       "quote": "The dispute follows a lack of action, poor communication and the absence of responses to correspondence exchanged between the parties, particularly regarding the health and safety of workers exposed to extreme heat, especially those working on Malta’s beaches. This comes at a time when official warnings have been issued about a heatwave and exceptionally high temperatures.",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-097/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-097/claim.yml",
+      "similar": [
+        {
+          "id": "CC-090",
+          "score": 0.27,
+          "terms": [
+            "heat",
+            "heatwave",
+            "extreme"
+          ]
+        },
+        {
+          "id": "CC-091",
+          "score": 0.27,
+          "terms": [
+            "workers",
+            "safety",
+            "health"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-098",
@@ -4466,7 +5405,18 @@
         "flyer_pdf": "claim-files/CC-100/flyer.pdf",
         "flyer_png": "claim-files/CC-100/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-100/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-100/claim.yml",
+      "similar": [
+        {
+          "id": "CC-030",
+          "score": 0.36,
+          "terms": [
+            "airport",
+            "international",
+            "plc"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-101",
@@ -4496,7 +5446,27 @@
       "quote": "Malta has failed to put in place a registration requirement for surface water abstraction and a prior authorisation regime to control the abstraction of surface and groundwater.",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-101/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-101/claim.yml",
+      "similar": [
+        {
+          "id": "CC-108",
+          "score": 0.29,
+          "terms": [
+            "abstraction",
+            "groundwater",
+            "water"
+          ]
+        },
+        {
+          "id": "CC-039",
+          "score": 0.26,
+          "terms": [
+            "abstraction",
+            "water",
+            "groundwater"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-102",
@@ -4586,7 +5556,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-103/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-103/claim.yml",
+      "similar": [
+        {
+          "id": "CC-090",
+          "score": 0.54,
+          "terms": [
+            "deaths",
+            "heat",
+            "linked"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-104",
@@ -4617,7 +5598,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-104/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-104/claim.yml",
+      "similar": [
+        {
+          "id": "CC-020",
+          "score": 0.43,
+          "terms": [
+            "noise",
+            "directive",
+            "petitions"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-105",
@@ -4675,7 +5667,18 @@
         "flyer_pdf": "claim-files/CC-105/flyer.pdf",
         "flyer_png": "claim-files/CC-105/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-105/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-105/claim.yml",
+      "similar": [
+        {
+          "id": "CC-020",
+          "score": 0.26,
+          "terms": [
+            "noise",
+            "study",
+            "entertainment"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-106",
@@ -4727,7 +5730,17 @@
         "flyer_pdf": "claim-files/CC-106/flyer.pdf",
         "flyer_png": "claim-files/CC-106/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-106/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-106/claim.yml",
+      "similar": [
+        {
+          "id": "CC-088",
+          "score": 0.39,
+          "terms": [
+            "population",
+            "estimated"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-107",
@@ -4815,7 +5828,18 @@
         "flyer_pdf": "claim-files/CC-107/flyer.pdf",
         "flyer_png": "claim-files/CC-107/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-107/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-107/claim.yml",
+      "similar": [
+        {
+          "id": "CC-092",
+          "score": 0.62,
+          "terms": [
+            "afforestation",
+            "zero",
+            "net"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-108",
@@ -4846,7 +5870,36 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-108/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-108/claim.yml",
+      "similar": [
+        {
+          "id": "CC-039",
+          "score": 0.63,
+          "terms": [
+            "impact",
+            "abstraction",
+            "net"
+          ]
+        },
+        {
+          "id": "CC-101",
+          "score": 0.29,
+          "terms": [
+            "abstraction",
+            "groundwater",
+            "water"
+          ]
+        },
+        {
+          "id": "CC-009",
+          "score": 0.26,
+          "terms": [
+            "wsc",
+            "groundwater",
+            "water"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-109",
@@ -4876,7 +5929,18 @@
       "quote": "Transport is the dominant source of Malta’s effort sharing emissions. It has generated 48% of these emissions in 2024 (141), up by 45% since 2005.",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-109/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-109/claim.yml",
+      "similar": [
+        {
+          "id": "CC-094",
+          "score": 0.44,
+          "terms": [
+            "sharing",
+            "effort",
+            "commission"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-110",
@@ -4935,7 +5999,17 @@
         "flyer_pdf": "claim-files/CC-110/flyer.pdf",
         "flyer_png": "claim-files/CC-110/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-110/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-110/claim.yml",
+      "similar": [
+        {
+          "id": "CC-075",
+          "score": 0.29,
+          "terms": [
+            "cars",
+            "passenger"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-111",
@@ -5046,7 +6120,17 @@
         "flyer_pdf": "claim-files/CC-112/flyer.pdf",
         "flyer_png": "claim-files/CC-112/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-112/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-112/claim.yml",
+      "similar": [
+        {
+          "id": "CC-088",
+          "score": 0.3,
+          "terms": [
+            "population",
+            "rose"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-113",
@@ -5076,7 +6160,25 @@
       "quote": "In 2023, fossil fuel subsidies represented the highest shares of gross domestic product (GDP) in Malta, Poland, and Slovakia (all at or above 1.5%).",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-113/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-113/claim.yml",
+      "similar": [
+        {
+          "id": "CC-037",
+          "score": 0.34,
+          "terms": [
+            "share",
+            "highest"
+          ]
+        },
+        {
+          "id": "CC-095",
+          "score": 0.29,
+          "terms": [
+            "fuel",
+            "subsidies"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-114",
@@ -5108,7 +6210,27 @@
       "quote": "Malta is the only EU Member State that, instead of reducing, has increased the intensity of its greenhouse gas emissions since 2013.",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-114/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-114/claim.yml",
+      "similar": [
+        {
+          "id": "CC-026",
+          "score": 0.49,
+          "terms": [
+            "greenhouse",
+            "gas",
+            "emissions"
+          ]
+        },
+        {
+          "id": "CC-003",
+          "score": 0.27,
+          "terms": [
+            "emissions",
+            "reducing",
+            "average"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-115",
@@ -5159,7 +6281,18 @@
         "flyer_pdf": "claim-files/CC-115/flyer.pdf",
         "flyer_png": "claim-files/CC-115/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-115/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-115/claim.yml",
+      "similar": [
+        {
+          "id": "CC-071",
+          "score": 0.33,
+          "terms": [
+            "cost",
+            "traffic",
+            "eur"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-116",
@@ -5189,7 +6322,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-116/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-116/claim.yml",
+      "similar": [
+        {
+          "id": "CC-065",
+          "score": 0.36,
+          "terms": [
+            "buffer",
+            "zone",
+            "decisions"
+          ]
+        }
+      ]
     }
   ],
   "edges": [
