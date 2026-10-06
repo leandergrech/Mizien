@@ -123,7 +123,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-091 | Health & Safety | Inspections doubled | Drafted | Largely supported |
 | CC-092 | Governance & Promises | PN: Gozo net-zero by afforestation | Not started | - |
 | CC-093 | Governance & Promises | PN: buy land for urban parks | Not started | - |
-| CC-094 | Climate & Energy | Commission: Malta off track for 2030 | Not started | - |
+| CC-094 | Climate & Energy | Commission: Malta to emit more in 2030 than in 2005 | Drafted | Supported |
 | CC-095 | Climate & Energy | EUR 400m to keep bills low | Not started | - |
 | CC-096 | Nature & Wildlife | Fish farms moved 6 km offshore | Not started | - |
 | CC-097 | Health & Safety | Beach workers left exposed to heat | In progress | - |

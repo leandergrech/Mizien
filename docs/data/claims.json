@@ -274,7 +274,7 @@
       "similar": [
         {
           "id": "CC-025",
-          "score": 0.47,
+          "score": 0.44,
           "terms": [
             "capita",
             "emissions"
@@ -282,7 +282,7 @@
         },
         {
           "id": "CC-114",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "emissions",
             "reducing",
@@ -1603,7 +1603,7 @@
       "similar": [
         {
           "id": "CC-024",
-          "score": 0.28,
+          "score": 0.32,
           "terms": [
             "renewable",
             "energy"
@@ -1611,7 +1611,7 @@
         },
         {
           "id": "CC-080",
-          "score": 0.28,
+          "score": 0.31,
           "terms": [
             "renewable",
             "electricity"
@@ -1714,7 +1714,7 @@
       "similar": [
         {
           "id": "CC-023",
-          "score": 0.28,
+          "score": 0.32,
           "terms": [
             "renewable",
             "energy"
@@ -1785,7 +1785,7 @@
       "similar": [
         {
           "id": "CC-003",
-          "score": 0.47,
+          "score": 0.44,
           "terms": [
             "capita",
             "emissions"
@@ -1870,7 +1870,7 @@
       "similar": [
         {
           "id": "CC-114",
-          "score": 0.49,
+          "score": 0.45,
           "terms": [
             "greenhouse",
             "gas",
@@ -3840,7 +3840,7 @@
       "similar": [
         {
           "id": "CC-116",
-          "score": 0.36,
+          "score": 0.37,
           "terms": [
             "buffer",
             "zone",
@@ -4527,7 +4527,7 @@
         },
         {
           "id": "CC-023",
-          "score": 0.28,
+          "score": 0.31,
           "terms": [
             "renewable",
             "electricity"
@@ -5137,12 +5137,13 @@
     },
     {
       "id": "CC-094",
-      "title": "Commission: Malta off track for 2030",
+      "title": "Commission: Malta to emit more in 2030 than in 2005",
       "category": "Climate & Energy",
-      "claim": "European Commission (Climate Action Progress Report 2025): Malta is projected to emit more in 2030 than in 2005 in effort-sharing sectors, missing its target.",
-      "counter": "Compare with the government's per-capita framing (CC-025) and CC-003.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "European Commission (EU Climate Action Progress Report 2025, COM(2025) 668, 6 Nov 2025): before any use of flexibilities, Malta's projected 2030 effort-sharing emissions leave a gap of 49 and 61 percentage points to its 19% reduction target, so Malta \"is projected to emit more in 2030 than in 2005\"; Malta is among the Member States with the largest projected gaps and (after banking, borrowing and the ETS flexibility) is projected to have excess emissions in 2026-2030. The Commission adds that, given the EU-wide surplus, it \"cannot, at this stage, conclude\" that Member States, taken together, are not making sufficient progress.",
+      "counter": "Reproduced. Malta's March 2025 projections (EEA) give 1,323.8 kt with planned measures and 1,450.1 kt with existing ones in 2030, against the legal 2005 level of 1,020.6 kt: +29.7% and +42.1%, gaps of 48.7 and 61.1 points to -19%. Above 2005 against every 2005 figure (EEA estimate 1,007.4 kt; 2013-2020 base year 1,116.1 kt: +18.6% at least) and with projections re-based on reviewed 2023 emissions (+26% / +38%). 2024 approximated emissions +40.8% (1,437 kt); over the yearly limit by 220, 257 and 301 kt in 2022-2024. Gap ranking with planned measures: Malta 48.7, Ireland 20.3, Germany 13.2 points (in tonnes Malta 0.5 Mt, Germany 64 Mt). Context and the other side: 2021-2030 balance -2.09 Mt (planned measures); the ETS flexibility (0.51 Mt) and the maximum land-use credit (0.03 Mt) leave 1.55 Mt to buy from other Member States (about 1% of the 125-175 Mt EU surplus) or cut; no safety reserve for Malta (Decision 2023/863). The Commission says it \"cannot, at this stage, conclude\" that Member States are not making sufficient progress. Malta's plan says the target rests on 2005 forecasts overtaken by population growth (the -19% was in fact set in 2018 on the basis of GDP per capita, with 2005 as the base year; population +41% to 2024; effort-sharing emissions per person flat at 2.53 t), and EU law (Regulation 2023/857) accepts the target is above Malta's cost-effective potential. \"Missing its target\" was the intake's paraphrase, not the Commission's wording.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
       "tags": [],
       "subtopic": "Emissions & targets",
       "location": {
@@ -5152,26 +5153,68 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
-      "date": "2025",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-094A",
+          "text": "“Malta’s gap to target is 49 and 61 percentage points”",
+          "finding": "48.7 (planned measures) and 61.1 (existing) from Malta’s March 2025 projections, the legal 2005 level and the −19% target [4, 6, 7].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-094B",
+          "text": "“…exceeding its 19% reduction target. This means Malta is projected to emit more in 2030 than in 2005.”",
+          "finding": "+29.7% and +42.1% on 2005; above 2005 against every 2005 figure and if re-based on reviewed 2023 data (+26% and +38%) [3, 4].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-094C",
+          "text": "Germany, Ireland and Malta show the largest projected 2030 gaps before flexibilities",
+          "finding": "With planned measures (our reading of the basis), in points: Malta 48.7, Ireland 20.3, Germany 13.2, Austria next at 8.0. Not so with existing measures (Germany eighth) or in tonnes (Malta 0.5 Mt) [4].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-094D",
+          "text": "Malta projected to have excess emissions in 2026–2030",
+          "finding": "Covered to 2025 after the ETS flexibility (+0.07 Mt); −1.58 Mt by 2030 (planned measures), −1.55 Mt with the maximum land-use credit [3–5, 8, 9].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-094E",
+          "text": "“Missing its target” (our claim list’s paraphrase)",
+          "finding": "Not the Commission’s words. Domestically 0.5 Mt over in 2030; legally, compliance possible by buying about 1.6 Mt (1.2% or less of the EU surplus). No safety reserve for Malta [1, 10].",
+          "rating": "Not rated (paraphrase)",
+          "tone": "grey"
+        }
+      ],
+      "date": "2025-11-06",
+      "quote": "Malta’s gap to target is 49 and 61 percentage points, exceeding its 19% reduction target. This means Malta is projected to emit more in 2030 than in 2005.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-06",
+      "outputs": {
+        "report": "claim-files/CC-094/report.pdf",
+        "flyer_pdf": "claim-files/CC-094/flyer.pdf",
+        "flyer_png": "claim-files/CC-094/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-094/claim.yml",
       "similar": [
         {
           "id": "CC-109",
-          "score": 0.44,
+          "score": 0.33,
           "terms": [
             "sharing",
             "effort",
-            "commission"
+            "emissions"
           ]
         }
       ]
@@ -5972,11 +6015,11 @@
       "similar": [
         {
           "id": "CC-094",
-          "score": 0.44,
+          "score": 0.33,
           "terms": [
             "sharing",
             "effort",
-            "commission"
+            "emissions"
           ]
         }
       ]
@@ -6243,7 +6286,7 @@
       "similar": [
         {
           "id": "CC-026",
-          "score": 0.49,
+          "score": 0.45,
           "terms": [
             "greenhouse",
             "gas",
@@ -6252,7 +6295,7 @@
         },
         {
           "id": "CC-003",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "emissions",
             "reducing",
@@ -6355,7 +6398,7 @@
       "similar": [
         {
           "id": "CC-065",
-          "score": 0.36,
+          "score": 0.37,
           "terms": [
             "buffer",
             "zone",
