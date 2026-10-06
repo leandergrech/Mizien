@@ -23,12 +23,12 @@ build_flyer(Flyer(
            ("24.6%", GREEN, "Of 2025 electricity supplied",
             "The farm’s 0.8 TWh a year, against Eurostat’s 3,252 GWh. ICM says about a quarter."),
            ("0", ORANGE, "Public notices of the next stage",
-            "None found by 6 Oct 2026 for the step due “in the first part” of 2026. A EUR 3.6 million survey tender came in April."),
+            "None in ICM’s 22 posts since June 2025, for the step due “in the first part” of 2026. A EUR 3.6 million survey tender came in April."),
            ("2 yrs", GREY, "Of site data to be collected",
-            "The survey for developers runs two years, so a concession looks later. Pledge label: Off track (as of 6 Oct 2026).")],
+            "ICM’s April 2026 survey tender covers two years of site data. Pledge label: Off track (as of 6 Oct 2026).")],
     fair="The project is real and active. A candidate notice may have been sent privately; we rate only what has been published.",
     asks=["When candidates were told the result.", "A current timetable for the dialogue stage.",
           "The metocean tender award.", "The NECP offshore wind assumption."],
-    footer="Version 1.0  ·  6 October 2026  ·  Public data only  ·  Draft pending right of reply (pledge label)",
+    footer="Version 1.1  ·  6 October 2026  ·  Public data only  ·  Pending right of reply (pledge label)",
     pdf_title="Claim Check 029 – Malta's first offshore wind farm: on schedule?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))

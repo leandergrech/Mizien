@@ -17,7 +17,8 @@ claim:
     publisher: offshoreWIND.biz
     date: 23 Jul 2025
     url: https://www.offshorewind.biz/2025/07/23/three-applications-submitted-in-maltas-first-offshore-wind-tender
-    note: Locates the timeline.
+    note: Trade report of the three submissions (23 Jul 2025); page text only, read in part. Locates the timeline; not used
+      as evidence of the ministry's wording.
   - title: Three submissions presented for the first offshore wind farm concession in Malta
     publisher: TVM News
     date: 22 Jul 2025
@@ -26,9 +27,12 @@ claim:
       5 Oct 2026.
   - title: Three firms bid for Malta's first offshore wind farm concession
     publisher: Newsbook
-    date: Jul 2025
+    date: 22 Jul 2025
     url: https://newsbook.com.mt/en/three-firms-bid-for-maltas-first-offshore-wind-farm-concession/
-    note: Next stage to qualifying candidates 'by early next year'; direct quote from Minister Dalli. Read 5 Oct 2026.
+    note: 'Next stage to qualifying candidates "by early next year" (Newsbook''s wording). Newsbook (Jurgen Balzan, 22 Jul 2025,
+      17:58) reports Dalli describing the announcement as "an important step forward for the project and a clear signal that
+      the process has truly kicked off" (Newsbook''s text; TVM paraphrases it without quotation marks). Text checked in the
+      Internet Archive copy of 22 Jul 2025, 6 Oct 2026.'
   - title: Offshore Renewable Energy Project
     publisher: InterConnect Malta
     date: read 6 Oct 2026
@@ -43,15 +47,18 @@ claim:
     publisher: Eurostat
     date: retrieved 6 Oct 2026
     url: https://ec.europa.eu/eurostat/databrowser/view/nrg_cb_e/default/table
-    note: Scale check of the output figure.
+    note: Scale check only (Malta electricity supplied and final consumption, 2025 provisional); it does not test ICM's output
+      figure or the project.
   quote: '"What was once an exploratory initiative has now entered a structured phase" (Minister Miriam Dalli). Ministry statement
     as reported by TVM News, not in quotation marks: located "beyond Malta''s territorial waters"; "installed capacity of
     approximately 300MW"; "The current plan is to inform candidates who qualify for the next phase by the first part of next
     year."'
-counter_evidence: 'No public notice that qualifying candidates were informed, or that the dialogue stage was issued, by 6
-  Oct 2026 (ICM news list to 3 Oct 2026; ICM tenders page: no open tenders). ICM issued a EUR 3.6 million metocean tender
-  on 22 Apr 2026 for two years of site data. A press report seen only in a search summary (MaltaToday, 403) puts the dialogue
-  stage around April 2026 and contractor selection at the end of 2027 (second-hand). A private notice cannot be excluded.'
+counter_evidence: 'No public notice found that qualifying candidates were informed, or that the dialogue stage was issued, by
+  6 Oct 2026: none of the 22 posts ICM published between 1 Jun 2025 and 3 Oct 2026 (website post list) and nothing on its tenders
+  page; web searches found none (log in literature/CC-029/notes.md). ICM issued a EUR 3.6 million metocean tender on 22 Apr
+  2026 for two years of site data. MaltaToday (4 Aug 2025, read via the Internet Archive; live page 403) reports the minister,
+  answering a parliamentary question, putting the dialogue stage around April 2026 and contractor selection towards the end of
+  2027. A private notice cannot be excluded.'
 tests: Tender notices; Interconnect Malta updates; NECP wind assumptions.
 why_low_hanging: A specific, attributable statement that public data can test.
 tags:
@@ -62,7 +69,8 @@ data_readiness: Medium
 caveats: 'Mixed check: the facts (capacity, position, three submissions, output) are rated; the timetable is a pledge rated
   Off track (as of 6 Oct 2026) on the absence of a public notice, not on a statement that the step was missed. The ministry''s
   own release was refused to scripts: the statement is read via TVM News and Newsbook; only the minister''s words are in quotation
-  marks. Tender documents and the NECP offshore wind assumption were not read. Pledge label Off track: pending right of reply.'
+  marks. Tender documents and the NECP offshore wind assumption were not read. Pledge label Off track: pending right of reply. Absence of a notice rests on ICM''s public post list (22 posts from 1 Jun
+  2025), its tenders page and web searches.'
 right_of_reply:
   sent: null
   deadline: null
@@ -104,10 +112,10 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
   - id: CC-029D
     text: "Qualifying candidates informed “by the first part” of 2026"
     said_by: "Energy Ministry [1]"
-    finding: "No public notice by 6 Oct 2026; a metocean tender was issued in April 2026 instead; a private notice cannot be excluded."
+    finding: "No public notice found by 6 Oct 2026 (ICM posts since June 2025, tenders page); a metocean tender was issued in April 2026; a private notice cannot be excluded."
     rating: "Off track (pledge)"
     tone: orange
-version: '1.0'
+version: '1.1'
 last_reviewed: '2026-10-06'
 thumbnail:
   figure: 24.6%
@@ -141,3 +149,24 @@ history:
   note: First issue. Verdict Largely supported (moderate confidence); pledge label Off track (as of 6 Oct 2026); pending right
     of reply.
   version: '1.0'
+- date: '2026-10-06'
+  step: note
+  note: 'Audit follow-up research: ICM post list read through its website post list (22 posts, 1 Jun 2025 to 3 Oct 2026; none on the
+    offshore wind qualification or dialogue stage); MaltaToday report of 4 Aug 2025 read in full via the Internet Archive; Newsbook
+    text and date checked via the Internet Archive; web searches repeated. Log in literature/CC-029/notes.md.'
+- date: '2026-10-06'
+  step: correction
+  note: 'MaltaToday reference (4 Aug 2025, Karl Azzopardi) now cited with its archived title and read in full, replacing a second-hand
+    search summary; the minister''s April 2026 dialogue date and end-2027 selection come from that read. Absence of a public notice
+    now stated as what was searched (22 ICM posts since June 2025, tenders page, web searches). TL;DR no longer says the timetable
+    "has slipped". Dalli''s "important step forward" words attributed to Newsbook''s text (TVM paraphrases without quotation marks).'
+- date: '2026-10-06'
+  step: clarification
+  note: 'Flyer: removed the unsourced inference that a concession looks later. claim.yml source notes made specific; Eurostat marked as a
+    scale check only. Right of reply pending (the check of ICM news back to July 2025 is complete).'
+- date: '2026-10-06'
+  step: version
+  note: '1.1: corrections after the 6 Oct 2026 audit: MaltaToday source read and cited exactly; search log for the absence of a
+    notice; TL;DR and flyer wording; Newsbook quotation checked; source notes. Verdict (Largely supported) and pledge label
+    (Off track) unchanged; pending right of reply.'
+  version: '1.1'

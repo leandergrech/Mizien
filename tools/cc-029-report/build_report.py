@@ -24,14 +24,15 @@ S.append(key_points([
      "ICM says the farm would give up to 0.8 TWh a year, about 25% of Malta’s electricity demand as it stood in 2025. "
      "That implies a 30% capacity factor and matches 25% of the 3,252 GWh Eurostat shows Malta supplied in 2025 "
      "(production plus imports); it is 27% of final consumption."),
-    ("The timetable has slipped, as far as the public record shows.",
+    ("No public sign of the step by the stated time.",
      "The “first part of 2026” step, telling qualifying candidates they may continue, has no public notice. ICM’s news "
      "list to 3 October 2026 and its tenders page record none. It did issue a EUR 3.6 million metocean survey tender in "
      "April 2026, to gather two years of site data for developers."),
     ("What we cannot tell.",
      "The notice to candidates may have been sent privately, and the government may have revised the plan without "
-     "publishing it. A press report we could only see in a search summary says the next stage was expected around April 2026 "
-     "and a contractor by the end of 2027; we mark it second-hand."),
+     "publishing it. MaltaToday reported on 4 August 2025 that the minister, answering a parliamentary question, put the next "
+     "stage (the invitation to dialogue) at around April 2026 and the contractor’s selection towards the end of 2027 [10]; "
+     "we found no public notice of that stage either."),
 ]))
 S += [Spacer(1, 2.5 * mm), VerdictMeter(1), Spacer(1, 3 * mm),
       tiles([("≈300 MW", GREEN, "Capacity, beyond 12 nautical miles (ICM, Energy Ministry)"),
@@ -62,9 +63,10 @@ S.append(std_table([
        "by the first part of next year” (TVM’s rendering of the statement)."),
      C("Read in full, 6 Oct 2026."), C("<b>The claim</b> (statement as reported)")],
     [C("<b>Minister Miriam Dalli</b> [1, 2]"),
-     C("“What was once an exploratory initiative has now entered a structured phase”; “an important step forward for the project and a "
-       "clear signal that the process has truly kicked off.”"),
-     C("Read in full."), C("Quoted")],
+     C("“What was once an exploratory initiative has now entered a structured phase” (TVM News [1]). Newsbook [2] reports him describing "
+       "the announcement as “an important step forward for the project and a clear signal that the process has truly kicked off” "
+       "(Newsbook’s wording; not quoted elsewhere)."),
+     C("Read in full; Newsbook text checked in an Internet Archive copy of 22 Jul 2025."), C("Quoted")],
     [C("<b>InterConnect Malta</b>, project page and news, 5 Dec 2024 to 22 Apr 2026 [3, 4, 5, 6]"),
      C("Around 300 MW; 12 nautical miles or more offshore; up to 0.8 TWh a year; a three-step competitive dialogue (qualification "
        "questionnaire, invitation to dialogue, best and final offer); two sites; submissions deadline extended to 21 Jul 2025; a "
@@ -73,9 +75,10 @@ S.append(std_table([
     [C("<b>Eurostat</b>, nrg_cb_e [7]"), C("Malta electricity production, imports, exports and final consumption, 2019 to 2025."),
      C("Downloaded 6 Oct 2026 (data/cc-029/)."), C("<b>Primary data</b>")],
     [C("<b>Trade and press reports</b> [8, 9, 10]"),
-     C("Repeat the timetable; one (MaltaToday, 403 to us, seen in a search summary only ◆) says the dialogue stage was planned "
-       "around April 2026 and the contractor’s selection for the end of 2027."),
-     C("Trade pages read; MaltaToday not read."), C("Context; second-hand ◆")],
+     C("Repeat the timetable; MaltaToday (4 Aug 2025, a parliamentary reply by the minister) says the dialogue stage was planned "
+       "around April 2026 and the contractor’s selection towards the end of 2027."),
+     C("Trade pages read; MaltaToday read through an Internet Archive copy of 4 Aug 2025 (the live page returns 403)."),
+     C("Context")],
 ], [40 * mm, 72 * mm, 32 * mm, 26 * mm]))
 S += [Spacer(1, 4 * mm),
       callout([P("WHAT WE COULD NOT READ", tag),
@@ -92,8 +95,9 @@ S.append(P("<b>Questions.</b> (A) Is the project as described: a floating farm o
            "(D) Did the next stage happen when the plan said?"))
 S.append(P("<b>Evidence.</b> For A and B we read the ministry statement and ICM’s own pages. For C we downloaded Malta’s electricity "
            "balance from Eurostat (nrg_cb_e, siec E7000, GWh) with <i>fetch.py</i> and computed the shares with <i>calc.py</i> "
-           "(<i>data/cc-029/checks.csv</i>). The 2025 values carry the Eurostat provisional flag. For D we looked for a published notice "
-           "in ICM’s news list, ICM’s tenders page, trade media and a search of the project’s name, between July 2025 and 6 October 2026."))
+           "(<i>data/cc-029/checks.csv</i>). The 2025 values carry the Eurostat provisional flag. For D we listed every post ICM published between 1 June 2025 and 6 October 2026 (22 posts, from its "
+           "website’s public post list), read ICM’s tenders page, and searched the web for the project’s name; the search log is in "
+           "<i>literature/CC-029/notes.md</i>."))
 S.append(P("<b>The limit of D.</b> Absence of a public notice is not proof that nothing happened: candidates can be told privately. "
            "It does show that no progress after the qualification stage has been published, which is what a pledge label judges."))
 S.append(P("<b>Grades.</b> Official statistics and government project documents are grade C; news and trade reports are grade D and are "
@@ -122,8 +126,8 @@ S.append(fig(FIG / "fig2_share.png", width=CW * 0.95))
 S.append(P("Figure 2. The farm’s stated output against Malta’s 2025 electricity supply and consumption (Eurostat, 2025 provisional).", cap))
 S.append(P("<b>The timetable.</b> The 22 July 2025 statement set the plan: tell qualifying candidates “by the first part of next year”, "
            "while ICM prepared technical and financial criteria for them [1]. By 6 October 2026, 98 days after the end of June, the end of "
-           "what we read as “the first part” of 2026, ICM’s news list and tenders page record no notice of qualification or of the "
-           "invitation to dialogue. What ICM did publish, on 22 April 2026, was a EUR 3.6 million tender for two years of metocean "
+           "what we read as “the first part” of 2026, none of ICM’s 22 posts since June 2025, nor its tenders page, records a notice of "
+           "qualification or of the invitation to dialogue. What ICM did publish, on 22 April 2026, was a EUR 3.6 million tender for two years of metocean "
            "measurements at both sites (deadline 21 May 2026), said to let “prospective developers” prepare proposals [6, 9]. That is "
            "progress on the project, but it is not the step the plan named."))
 S.append(callout([P("WHAT THIS DOES AND DOES NOT SHOW", tag),
@@ -140,8 +144,8 @@ S.append(contested("Has the next stage kept to the stated timetable?", "NO PUBLI
                    "dialogue structure; the ministry’s plan was a statement of intent, and evaluation of three bulky submissions "
                    "was said to be thorough [1, 6].",
                    "No public notice of qualification or of the dialogue stage by 6 October 2026, three months after the end of the "
-                   "“first part” of the year. The metocean tender, which comes with two years of data collection, looks like a "
-                   "longer path. A search summary of a press report puts the dialogue stage around April 2026 ◆ [10].",
+                   "“first part” of the year. The metocean tender comes with two years of data collection. The minister’s reply "
+                   "reported on 4 August 2025 also put the dialogue stage around April 2026 [10]; no notice of it was found either.",
                    "Both can be true: the work continues, and the stated date was missed in public terms. Only the candidates and "
                    "ICM know whether the notice was sent. We rate what has been published.",
                    label_a="EVIDENCE OF PROGRESS", label_b="EVIDENCE OF DELAY"))
@@ -162,7 +166,7 @@ S.append(std_table([
      C("0.8 TWh is 24.6% of 2025 electricity supplied and 26.9% of final consumption (Eurostat) [7]."),
      verd("CONSISTENT", GREENC)],
     [C("<b>D.</b> Qualifying candidates informed “by the first part” of 2026"), C("Energy Ministry [1]"),
-     C("No public notice by 6 Oct 2026; a metocean tender was issued in April 2026 instead; a private notice cannot be excluded."),
+     C("No public notice found by 6 Oct 2026 (ICM posts since June 2025, tenders page); a metocean tender was issued in April 2026; a private notice cannot be excluded."),
      verd("OFF TRACK (PLEDGE)", ORANGE)],
 ], [42 * mm, 24 * mm, 70 * mm, 34 * mm], valign="MIDDLE"))
 
@@ -192,26 +196,31 @@ S += [Spacer(1, 4 * mm),
       callout([P("RIGHT OF REPLY", tag),
                P("A reply is sought for the pledge label <i>Off track</i> (maintainer rule of 5 October 2026). The maintainer handles "
                  "it; nothing has been sent. Until the deadline has passed this is a draft label on this site only and is not "
-                 "to be circulated elsewhere.", small)], bg=AMBER_PALE, bar=AMBER)]
+                 "to be circulated elsewhere. The check of ICM’s public posts back to June 2025 is complete (see Method); "
+                 "the label is pending right of reply.", small)], bg=AMBER_PALE, bar=AMBER)]
 
 # ================================================================== 7
 S += [Spacer(1, 6 * mm), SectionHeading(7, "Limitations")]
 for l in ["The ministry’s statement is read through TVM News and Newsbook; the ministry’s own release was refused to scripts. Only the "
           "minister’s words are in quotation marks.",
           "We read no tender documents. Capacity, position and output come from ICM’s web pages; the e-tenders portal was not read.",
-          "The Off track label rests on the absence of a public notice, which is weaker evidence than a dated statement.",
-          "“The first part of 2026” is not defined in the statement; we read it as ending on 30 June 2026. Reading it more "
-          "loosely would shorten the gap but not remove it.",
+          "The Off track label rests on the absence of a public notice, which is weaker evidence than a dated statement. Our reading of "
+          "“the first part of 2026” as ending on 30 June 2026 is ours; the statement gives no date.",
+          "“The first part of 2026” is not defined in the statement. Reading it more loosely than 30 June 2026 would shorten the gap "
+          "but not remove it, and the minister’s reply of 4 August 2025 [10] placed the dialogue stage around April 2026.",
           "Eurostat 2025 values are provisional. ICM’s 25% is compared with supply and consumption as defined by Eurostat; "
           "ICM does not say which measure it used.",
-          "The MaltaToday report of the April 2026 dialogue date and 2027 contractor selection was seen only in a search summary."]:
+          "MaltaToday’s report [10] was read through an Internet Archive copy of 4 August 2025; the live page was not readable and "
+          "we did not check whether it has since been edited (its headline and its address differ: “start of 2028” and “end 2027”).",
+          "The absence of a notice rests on ICM’s public post list and tenders page, the ministry’s release (not readable by "
+          "scripts) and web searches; a notice on a page we did not read cannot be excluded."]:
     S.append(P("• " + l, bul))
 
 S += [Spacer(1, 6 * mm), SectionHeading(None, "References")]
 S += references([
     ("1", "TVM News (22 Jul 2025). Three submissions presented for the first offshore wind farm concession in Malta.",
      "https://tvmnews.mt/en/news/three-submissions-presented-for-the-first-offshore-wind-farm-concession-in-malta/"),
-    ("2", "Balzan J. (22 Jul 2025). Three firms bid for Malta’s first offshore wind farm concession. Newsbook.",
+    ("2", "Balzan J. (22 Jul 2025, 17:58). Three firms bid for Malta’s first offshore wind farm concession. Newsbook.",
      "https://newsbook.com.mt/en/three-firms-bid-for-maltas-first-offshore-wind-farm-concession/"),
     ("3", "InterConnect Malta. News and events list (read 6 Oct 2026).", "https://icm.mt/news-events/"),
     ("4", "InterConnect Malta. Offshore Renewable Energy Project (read 6 Oct 2026).",
@@ -227,9 +236,10 @@ S += references([
      "https://www.offshorewind.biz/2025/07/23/three-applications-submitted-in-maltas-first-offshore-wind-tender"),
     ("9", "offshoreWIND.biz (21 Apr 2026). Malta opens EUR 3.6 million offshore wind metocean survey tender.",
      "https://www.offshorewind.biz/2026/04/21/malta-opens-eur-3-6-million-offshore-wind-metocean-survey-tender"),
-    ("10", "MaltaToday. Miriam Dalli: offshore wind farm contractor to be selected by start of 2028. ◆ Seen only as a search result; "
-           "page returns 403. Second-hand.",
-     "https://www.maltatoday.com.mt/news/national/136333/miriam_dalli_offshore_wind_farm_contractor_to_be_selected_by_end_2027"),
+    ("10", "Azzopardi K. (4 Aug 2025). Miriam Dalli: Offshore wind farm contractor to be selected by start of 2028 (title as archived; "
+           "the address ends “end_2027” and the body says selection “towards the end of 2027”). MaltaToday. Read through the Internet "
+           "Archive copy of 4 Aug 2025; the live page returns 403.",
+     "https://web.archive.org/web/20250804160719/https://www.maltatoday.com.mt/news/national/136333/miriam_dalli_offshore_wind_farm_contractor_to_be_selected_by_end_2027"),
     ("11", "Miżien. Calculation script and outputs: tools/cc-029-report/calc.py; data/cc-029/checks.csv.", ""),
 ])
 
@@ -237,8 +247,11 @@ S.append(PageBreak())
 S += appendix_a("A experiment · B observational study with a control or gradient · C review, guidance or "
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.", pledges=True)
 S += [Spacer(1, 5 * mm)]
-S += revision_log([("1.0", "6 Oct 2026", "First issue. Verdict Largely supported (moderate confidence); pledge label Off track; "
-                                         "pending right of reply.")])
+S += revision_log([("1.0", "6 Oct 2026", "First issue. Verdict Largely supported (moderate confidence); pledge label Off track; pending right of reply."),
+    ("1.1", "6 Oct 2026", "Corrections after audit: MaltaToday report now read (Internet Archive copy) and cited with its exact title; "
+     "ICM post list checked back to June 2025 (22 posts) and the absence statement limited to what was searched; TL;DR wording "
+     "softened; Newsbook quotation checked and attributed to Newsbook; flyer inference removed. Verdict and label unchanged; "
+     "pending right of reply.")])
 
 build_report(Report(
     number="029", out=str(FIG / "report.pdf"), kicker="Climate and energy",
@@ -249,10 +262,9 @@ build_report(Report(
     attribution="Energy Ministry statement, 22 July 2025 (as reported by TVM News).",
     context="Statement as reported; only Minister Dalli’s words are in quotation marks in the source.",
     verdict="Largely supported", verdict_note="Facts hold; the timetable is Off track (pledge)",
-    footer_lines=["Version 1.0  ·  6 October 2026", "Status: draft, pending right of reply (pledge label)",
+    footer_lines=["Version 1.1  ·  6 October 2026", "Status: draft, pending right of reply (pledge label)",
                   "Prepared from public sources and Eurostat data.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Malta’s first offshore wind farm", version="1.0", date="6 October 2026",
-    status_note="pending right of reply",
+    running_head="Malta’s first offshore wind farm", version="1.1", date="6 October 2026", pledge_label="Off track",
     pdf_title="Malta's first offshore wind farm: on schedule? Claim Check 029",
     pdf_subject="Tests the Energy Ministry's statement on Malta's first floating offshore wind concession",
     story=S))
