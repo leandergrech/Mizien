@@ -595,7 +595,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         },
         {
           "id": "CC-108",
-          "score": 0.26,
+          "score": 0.27,
           "terms": [
             "wsc",
             "groundwater",
@@ -2643,11 +2643,20 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.64,
+          "score": 0.63,
           "terms": [
             "impact",
             "abstraction",
             "net"
+          ]
+        },
+        {
+          "id": "CC-101",
+          "score": 0.3,
+          "terms": [
+            "abstraction",
+            "impact",
+            "water"
           ]
         }
       ]
@@ -3891,7 +3900,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-116",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "buffer",
             "zone",
@@ -5591,12 +5600,13 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
     },
     {
       "id": "CC-101",
-      "title": "EU: no permits for water abstraction",
+      "title": "EU: no registration or prior authorisation of water abstraction in Malta",
       "category": "Water",
-      "claim": "European Commission (8 July 2026, letter of formal notice INFR(2026)2115): Malta has not put in place a registration requirement for surface-water abstraction or a prior authorisation regime for surface and groundwater abstraction, and its law does not ensure periodic review of abstraction controls.",
-      "counter": "A letter of formal notice is the first step of an infringement procedure: Malta has two months to reply and the Commission has not issued a reasoned opinion. Malta's reply and the abstraction-licensing rules now in force are not yet read. The Commission frames this as a transposition gap in the Water Framework Directive, not a measured over-abstraction.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "European Commission (July infringements package, 8 July 2026, summarising its letter of formal notice INFR(2026)2115): Malta has failed to put in place a registration requirement for surface water abstraction and a prior authorisation regime to control the abstraction of surface and groundwater; in addition, Maltese law does not ensure a periodic review of the controls over the abstraction of surface and groundwater having a significant impact on water bodies.",
+      "counter": "Malta controls groundwater sources in several ways: every source had to be notified by 20 Nov 2008 (S.L. 549.164; a later route exists for some old sources), drilling is under a moratorium with exceptions (S.L. 549.165), metering is required (S.L. 549.166), and ERA can order a source closed or its abstraction cut. Malta reports (April 2025) that \"Only these registered sources are permitted to extract groundwater\" and that most registered sources are metered; in 2019 it told the Commission that more than 3 000 private sources were metered; and in 2019 Commission staff described \"a concession, authorisation and/or permitting regime to control groundwater and a register of groundwater use\" (SWD(2019) 48). S.L. 549.100 reg. 12(3)(e) repeats the Directive's duty to review abstraction controls. Against that: S.L. 549.164 reg. 6 and S.L. 549.165 reg. 9 say notification and drilling permits give no right to draw water, we found no instrument that authorises abstraction, and the Government's 2023 Green Paper and Measure 053 of the 3rd plan treat an abstraction permit as still to be created (none found in force on 6 Oct 2026).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Water supply & groundwater",
       "location": {
@@ -5606,25 +5616,69 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-101A",
+          "text": "The Directive requires abstraction controls, with registers and prior authorisation, reviewed periodically (the Commission’s premise, not its words)",
+          "finding": "Not rated as a statement of the speaker. For context, Article 11(3)(e) says so; abstractions with no significant impact on water status may be exempted [3].",
+          "rating": "Premise, not rated",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-101B",
+          "text": "Malta has failed to put in place a registration requirement for surface water abstraction",
+          "finding": "Rated on the facts: no instrument read requires registration of surface-water abstraction. Malta’s register covers groundwater sources only [5]; no surface-water provision in the instruments, Acts and titles searched [4–9, 21]; Malta’s 2nd plan notes a “lack of knowledge” of surface-water abstraction [12]. Surface water is small: three watercourses (3.4 km), two pools [17]; Eurostat estimates 2.96 million m³ a year [16].",
+          "rating": "Accurate (laws searched)",
+          "tone": "green"
+        },
+        {
+          "id": "CC-101C",
+          "text": "Malta has failed to put in place a prior authorisation regime to control the abstraction of surface and groundwater",
+          "finding": "Rated on the facts: no permit to abstract water in the instruments read. Notification and drilling permits give no right to draw water [5, 6]; the Green Paper and 3rd plan treat an abstraction permit as still to be created [10, 11], and we found none in force [21]. Caveat: the instruments do contain a register of groundwater sources, drilling permits judged on impact on water resources (reg. 7(3)), metering, and powers to close a source or reduce abstraction [5–7]; Malta’s 2025 report describes the register as the control [11]. Whether these are a “prior authorisation regime” is a legal question, not rated (section 6, Q1).",
+          "rating": "Largely accurate (on the facts)",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-101D",
+          "text": "Maltese law does not ensure a periodic review of the controls over the abstraction of surface and groundwater having a significant impact on water bodies",
+          "finding": "S.L. 549.100 copies the Directive’s review duty (reg. 12(3)(e)) and provides for review of permits and authorisations where objectives are at risk (reg. 12(5)(b)) and of programmes every six years (reg. 12(8)) [4]; the instruments that run the controls set no term, renewal or review for a notified source, while drilling permits may carry a term and be suspended (regs 8(3)(a), 11) [5–7]; the Green Paper proposes fixed terms and periodic review [10]. Whether this “ensures” review is a legal question (section 6, Q2).",
+          "rating": "Not rated (legal assessment)",
+          "tone": "grey"
+        }
+      ],
       "date": "2026-07-08",
-      "quote": "Malta has failed to put in place a registration requirement for surface water abstraction and a prior authorisation regime to control the abstraction of surface and groundwater.",
-      "version": null,
-      "outputs": {},
+      "quote": "Malta has failed to put in place a registration requirement for surface water abstraction and a prior authorisation regime to control the abstraction of surface and groundwater. In addition, Maltese law does not ensure a periodic review of the controls over the abstraction of surface and groundwater having a significant impact on water bodies.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-06",
+      "outputs": {
+        "report": "claim-files/CC-101/report.pdf",
+        "flyer_pdf": "claim-files/CC-101/flyer.pdf",
+        "flyer_png": "claim-files/CC-101/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-101/claim.yml",
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.28,
+          "score": 0.35,
           "terms": [
             "abstraction",
             "groundwater",
+            "impact"
+          ]
+        },
+        {
+          "id": "CC-039",
+          "score": 0.3,
+          "terms": [
+            "abstraction",
+            "impact",
             "water"
           ]
         }
@@ -6036,7 +6090,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-039",
-          "score": 0.64,
+          "score": 0.63,
           "terms": [
             "impact",
             "abstraction",
@@ -6045,16 +6099,16 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         },
         {
           "id": "CC-101",
-          "score": 0.28,
+          "score": 0.35,
           "terms": [
             "abstraction",
             "groundwater",
-            "water"
+            "impact"
           ]
         },
         {
           "id": "CC-009",
-          "score": 0.26,
+          "score": 0.27,
           "terms": [
             "wsc",
             "groundwater",
@@ -6597,7 +6651,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-065",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "buffer",
             "zone",

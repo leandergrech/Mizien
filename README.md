@@ -130,7 +130,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-098 | Tourism & Population | Officials enforce private interests at Blue Lagoon | Not started | - |
 | CC-099 | Tourism & Population | Foreign residents: 31% now, 38% by 2030 | Drafted | Not substantiated |
 | CC-100 | Tourism & Population | Over 10 million airport passengers | Drafted | Supported |
-| CC-101 | Water | EU: no permits for water abstraction | Not started | - |
+| CC-101 | Water | EU: no registration or prior authorisation of water abstraction in Malta | Drafted | Largely supported |
 | CC-102 | Governance & Promises | Ombudsman: 58% of environment recommendations ignored | Drafted | Largely supported |
 | CC-103 | Health & Safety | Heat-death locations "within three months" | Not started | - |
 | CC-104 | Noise | PN: Malta fails EU noise law | In progress | - |
