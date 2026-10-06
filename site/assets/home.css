@@ -88,10 +88,10 @@
 .dc-link { display: flex; flex-direction: column; height: 100%; color: var(--ink); text-decoration: none; -webkit-user-drag: none; }
 .dc-link:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; border-radius: 16px; }
 .dc-head { display: block; padding: 16px 18px 14px; background: var(--v, #5d7468); color: var(--v-ink, #fff); }
-.dc-kicker { display: block; font: 700 11px/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; opacity: .9; }
+.dc-kicker { display: block; font: 700 11px/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
 .dc-verdict { display: block; margin-top: 6px; font: 700 23px/1.15 var(--serif); }
 .dc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; font: 600 11.5px var(--sans); }
-.dc-tags span { padding: 2px 9px; border-radius: 999px; border: 1px solid currentColor; opacity: .9; }
+.dc-tags span { padding: 2px 9px; border-radius: 999px; border: 1px solid currentColor; }
 .dc-tags .dc-draft { border-style: dashed; text-transform: uppercase; letter-spacing: .06em; }
 .dc-body { display: flex; flex-direction: column; gap: 8px; flex: 1; min-height: 0; padding: 14px 18px 16px; }
 .dc-title { font: 700 17px/1.25 var(--serif); color: var(--ink-quote-hi); }
