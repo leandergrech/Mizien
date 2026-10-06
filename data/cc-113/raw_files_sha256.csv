@@ -1,0 +1,15 @@
+file,url,bytes,sha256,retrieved
+eea_page.html,https://www.eea.europa.eu/en/analysis/indicators/fossil-fuel-subsidies,1073162,3fcb35d8c73501159d647c47d3d9a62b832e554ae5528404d414838c46ccf347,2026-10-06
+eea_share.html,https://www.eea.europa.eu/en/analysis/indicators/fossil-fuel-subsidies/fossil-fuel-subsidies-as,934940,3b9900a763ddc3ff3853e4bbab1c4adbd5d1b86aa2fe180706a34ff129ecfd41,2026-10-06
+eea_fig1.html,https://www.eea.europa.eu/en/analysis/indicators/fossil-fuel-subsidies/fossil-fuel-subsidies-by-energy,938973,18adf313231dae3df24c8b594fb92fd6fe1e665197c3d5e40ce2ca424f70f57f,2026-10-06
+eea_fig2.html,https://www.eea.europa.eu/en/analysis/indicators/fossil-fuel-subsidies/fossil-fuel-subsidies-in-eu,938436,68d58f1be7d23808d03c27e07574029ca5fab081477b0a664761d99a6c3d8fb0,2026-10-06
+eea_malta_soer2025.html,https://www.eea.europa.eu/en/europe-environment-2025/countries/malta/fossil-fuel-subsidies,1005520,88b36b48bd67e3b783abca1152c1534b7d87bcff2dbfbfc6a27aee0cfc0cded8,2026-10-06
+eea_fig2_pkg.zip,https://www.eea.europa.eu/en/analysis/indicators/fossil-fuel-subsidies/fossil-fuel-subsidies-in-eu/@@download/file,473288,3f895a91efd095bd8514f7a0df81c03257fcae0b6c6fbf81931fedb6bee971d5,2026-10-06
+eea_fig1_pkg.zip,https://www.eea.europa.eu/en/analysis/indicators/fossil-fuel-subsidies/fossil-fuel-subsidies-by-energy/@@download/file,277137,b41607dc5c50edf043eb0baa133153d02fddef19e9e530ce5cddd9c88d7bfa68,2026-10-06
+ec_energy_subsidies_inventory_2024.xlsx,https://circabc.europa.eu/rest/download/4e6f2b2c-702b-429b-bb19-7aeb48f28f58,2672733,bf2b412b8edc68dea0bdec6e300c62ba415a2c70cf8fbfd12b6f1431baa88044,2026-10-06
+eurostat_nama_10_gdp.json,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_gdp?format=JSON&lang=en&unit=CP_MEUR&na_item=B1GQ&sinceTimePeriod=2015,12404,c5168a7cd3ee4809984b80b8d20991de9863269d5610fab21dc8e4f0ab59c3e6,2026-10-06
+eurostat_gov_10a_main.json,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_main?format=JSON&lang=en&geo=MT&sector=S13&na_item=D3PAY&unit=MIO_EUR&unit=PC_GDP&sinceTimePeriod=2015,3227,289afa7c3863daf91eb9c350a23c54ff1b1beb871c43ca7ca0baa62d7079c861,2026-10-06
+eurostat_nrg_cb_e.json,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_cb_e?format=JSON&lang=en&geo=MT&siec=E7000&unit=GWH&time=2023,9278,0a1e58c0c28c1a0cfc01f421e35cb5ed16b3dfd2b3531c438e3c87fa472ca970,2026-10-06
+imf_ffs.csv,https://opendata.arcgis.com/datasets/d48cfd2124954fb0900cef95f2db2724_0.csv,4375627,d9d3cfaecb514d9de5f3535e2078bea51c12027f8e527176fc26ceb32c513130,2026-10-06
+ffs_tracker.xlsx,https://fossilfuelsubsidytracker.org/wp-content/uploads/2026/01/FossilFuelSubsidiesTracker_CountryData_2024_Update_Jan26.xlsx,15320281,fad68b8c5b10a5d9a748510038370c3c6c00494d20dbdd15af9861f5ca4b494b,2026-10-06
+com2025_17.xhtml,http://publications.europa.eu/resource/cellar/7150e5a9-dd6f-11ef-be2a-01aa75ed71a1.0017.03/DOC_1,14672206,ee99f7d410bf347ff4593384b845b2725dc192232ad32a8977bd9fff05371db0,2026-10-06

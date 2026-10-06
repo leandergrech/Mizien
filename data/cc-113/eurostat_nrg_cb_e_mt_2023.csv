@@ -1,0 +1,4 @@
+freq,nrg_bal,siec,unit,geo,time,value,flag,dataset,updated,retrieved
+A,EXP,E7000,GWH,MT,2023,26.226,,nrg_cb_e,2026-09-11T11:00:00+0200,2026-10-06
+A,GEP,E7000,GWH,MT,2023,2344.307,,nrg_cb_e,2026-09-11T11:00:00+0200,2026-10-06
+A,IMP,E7000,GWH,MT,2023,648.353,,nrg_cb_e,2026-09-11T11:00:00+0200,2026-10-06
