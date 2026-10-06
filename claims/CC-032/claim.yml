@@ -2,50 +2,158 @@ id: CC-032
 title: Solar flowers, first in Europe
 category: Climate & Energy
 subtopic: Renewables
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Contradicted
+verdict_confidence: High
 claim:
-  text: 'Government of Malta: the 15 ''solar flowers'' at Gozo''s Multi-Modal Hub are a first of their kind in Europe
-    and power the charging of electric buses.'
-  speaker: Ministry for Gozo; Ministry for Transport
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  text: "Government statement on the fifteen solar flowers at the Gozo Multi-Modal Hub, Ta' Xħajma (21 Oct 2025), assembled\
+    \ from three texts. Quoted (TVM News, Maltese; Lovin Malta's English): Gozo Minister Clint Camilleri, 'With the installation\
+    \ of these first solar flowers in Europe, we are demonstrating how Gozo can be a model for sustainable innovation'; in\
+    \ the same statement he called it the first of its kind used in Malta and, by number at one site, the second in the world;\
+    \ and (TVM News, English) 'This energy will be used to supply electricity, electric buses which offer transport between\
+    \ Imġarr port and the Park & Ride facility.' The outlets' report of the statement, not quoted: 'the first of its kind\
+    \ in Europe', the energy to 'directly offset' the electricity used to charge the Park and Ride bus fleet, up to 40% more\
+    \ energy than traditional panels, about EUR 850,000. The European Commission's project page, in its own words: 'They are\
+    \ the first of their kind in Europe.'"
+  quote: With the installation of these first solar flowers in Europe, we are demonstrating how Gozo can be a model for sustainable
+    innovation.
+  speaker: Clint Camilleri, Minister for Gozo; Parliamentary Secretariat for Public Works
+  date: '2025-10-21'
+  wording_status: Verbatim found
   sources:
   - title: Innovative solar flowers installed at Gozo's Multi-Modal Hub
     publisher: MaltaToday
     date: n/d
     url: https://www.maltatoday.com.mt/news/national/137696/innovative_solar_flowers_installed_at_gozo_multimodal_hub_
-    note: Locates the claim.
+    note: Locates the claim (403 to scripts; not read).
+  - title: "Installati l-ewwel solar flowers tax-xorta tagħhom fl-Ewropa fil-Gozo Multi-Modal Hub f'Ta' Xħajma"
+    publisher: TVM News
+    date: 21 Oct 2025
+    url: https://tvmnews.mt/news/installati-l-ewwel-solar-flowers-tax-xorta-taghhom-fl-ewropa-fil-gozo-multi-modal-hub-fta-xhajma/
+    note: "Maltese version, read in full 6 Oct 2026. Primary for the quoted words: Camilleri, 'dawn l-ewwel solar flowers fl-Ewropa'\
+      \ and 'l-ewwel tax-xorta tagħha li qiegħda tintuża f'pajjiżna'; Farrugia, 'unika fl-Ewropa'; statement: the energy\
+      \ will 'tikkumpensa' (offset) the electricity used to charge the Park and Ride fleet."
   - title: "First solar flowers in Europe installed at the Gozo Multi-Modal Hub in Ta' Xħajma"
     publisher: "TVM News"
     date: "21 Oct 2025"
     url: "https://tvmnews.mt/en/news/first-solar-flowers-in-europe-installed-at-the-gozo-multi-modal-hub-in-ta-xhajma/"
-    note: "Reports the Government statement (first of its kind in Europe; EUR 850,000); readable from scripts. Read 5 Oct 2026."
+    note: "English version, read 5 and 6 Oct 2026. 'First of its kind in Europe' is the statement in indirect speech; the minister's\
+      \ English quote on the buses; EUR 850,000; 'up to 40% more energy'."
+  - title: Gozo Leads The Way In Europe With First-Ever 'Solar Flowers' At Ta' Xħajma Multi-Modal Hub
+    publisher: Lovin Malta
+    date: 21 Oct 2025
+    url: https://lovinmalta.com/malta/gozo-leads-the-way-in-europe-with-first-ever-solar-flowers-at-ta-xhajma-multi-modal-hub/
+    note: English rendering of the quoted words, read in full 6 Oct 2026.
   - title: "15 solar flowers installed in Gozo for electricity generation, the first project of its kind in Europe"
     publisher: "European Commission (Reforms and Investments)"
     date: "n/d"
     url: "https://reforms-investments.ec.europa.eu/projects/15-solar-flowers-installed-gozo-electricity-generation-first-project-its-kind-europe-0_en"
-    note: "EU project page repeating the claim (RRP C1-I5). Read 5 Oct 2026."
-counter_evidence: '''First in Europe'' and the share of bus charging covered are testable against installed capacity
-  and charging load.'
-tests: Installed kWp; bus charging demand; prior European installations.
-why_low_hanging: A specific, attributable statement that public data can test.
-tags: []
-tags_provisional: true
-priority: Queue
+    note: "EU project page repeating the claim in its own words (RRP C1-I5, EUR 850,000). Read 5 and 6 Oct 2026."
+counter_evidence: "The fifteen units are SmartFlowers (manufacturer, 14 Nov 2025), an Austrian product; dated records show\
+  \ SmartFlowers in Spain (Jun 2015, energynews.es), at the ASFINAG Hinterbrühl motorway rest area in Austria (in service\
+  \ by 7 Dec 2016, MeinBezirk.at) and at Vodafone in Newbury, UK (Aug 2021, Newbury Today); the maker calls Gozo's 'one of\
+  \ the largest installations in Europe', not the first. Bus charging: no capacity, metered output, bus consumption or wiring\
+  \ published; Parliament was told no feasibility study was made (Newsbook, 19 Jan 2026, second-hand). PVGIS models 85.1\
+  \ MWh a year for 37.5 kWp with two-axis tracking (if 2.5 kWp each), 36.5% more than fixed panels; that equals about 2.2-3.2\
+  \ hours a day of the 10-minute shuttle at 1.45-2.1 kWh/km (modelled for other buses; indicative). Cost: PQ figure EUR\
+  \ 699,611.98 excl. VAT (second-hand); likely TED award 742398-2024, EUR 718,830.07, is EUR 848,219 with 18% VAT."
+tests: Manufacturer pages and dated records of earlier European installations; PVGIS 5.3 two-axis and fixed runs at the site;
+  OSRM route length; GRDA and TED records of the Park and Ride shuttle; TED award notice 742398-2024; Council 11894/26 ADD
+  1 (C1-I5); calculations in tools/cc-032-report/calc.py.
+why_low_hanging: 'Done: Claim Check 032 report and flyer.'
+tags: [Promise-without-baseline]
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: "Draft verdict Contradicted (high confidence) on 'first in Europe'; the bus-charging claim is Not substantiated.\
+  \ The capacity of the Gozo units is not published (2.5 kWp each assumed from the maker's current model); PVGIS output is\
+  \ modelled, not metered; bus consumption figures are modelled for other buses and routes and read as abstracts. The\
+  \ parliamentary answers are known only through Newsbook (second-hand). TED notice 742398-2024 is matched to this contract\
+  \ by our identification. Pending right of reply (Ministry for Gozo and Planning; Public Works Department)."
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - SmartFlower news, 14 Nov 2025, and 2025 review, 29 Dec 2025 (Gozo's fifteen SmartFlowers are 'one of the largest installations in Europe')
+  - MeinBezirk.at, 7 Dec 2016 (ASFINAG SmartFlower in service at the Hinterbrühl rest area, Austria); IÖB project page
+  - energynews.es, 2 Jun 2015 (Smartflower presented and installed in Spain); pv magazine, 13 Jul 2016 (Austrian maker, over 1,000 units sold)
+  - Newbury Today, 12 Aug 2021 (Vodafone SmartFlower, Newbury, UK)
+  - data/cc-032/european_records.csv; data/cc-032/checks.csv
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Victoria, Gozo
   lat: 36.04289
   lon: 14.23985
   scope: institution
   icon: cittadella
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-032A
+    text: "Fifteen solar flowers were installed at the Gozo Multi-Modal Hub, Ta’ Xħajma"
+    said_by: "Statement [1–3]; Commission [4]"
+    finding: "The maker reports fifteen SmartFlowers at the hub [5]; Parliament was told all were working [10] ◆."
+    rating: "Accurate"
+    tone: green
+  - id: CC-032B
+    text: "“The first of its kind in Europe”; “these first solar flowers in Europe”"
+    said_by: "Statement [1–3]; Camilleri, quoted [1, 2]; Commission [4]"
+    finding: "SmartFlowers, an Austrian product, were in service in Spain (2015), Austria (2016) and the UK (2021) [11–15]; the maker calls Gozo’s “one of the largest installations in Europe” [5]."
+    rating: "Contradicted"
+    tone: maroon
+  - id: CC-032C
+    text: "The first of its kind used in Malta; second in the world by number at one site"
+    said_by: "Camilleri, quoted [1, 2]"
+    finding: "First in Malta: consistent with the reply to Parliament [10] ◆ and our search. Second in the world: not tested."
+    rating: "Not contradicted"
+    tone: grey
+  - id: CC-032D
+    text: "The energy will supply, or offset the charging of, the Park and Ride electric buses"
+    said_by: "Camilleri, quoted [3]; statement [2]"
+    finding: "No capacity, metered output or bus use published; no feasibility study [10] ◆. Modelled output equals about 2–3 hours a day of the shuttle (indicative) [17, 23–25]."
+    rating: "Not substantiated"
+    tone: orange
+  - id: CC-032E
+    text: "Each flower yields up to 40% more energy than traditional panels"
+    said_by: "Statement [3]; Commission [4]"
+    finding: "PVGIS: 36.5% more than fixed panels at the best angle at the site [17]; studies 18–31% elsewhere [18]. Not measured here."
+    rating: "Largely accurate"
+    tone: lime
+  - id: CC-032F
+    text: "About €850,000, funded by the EU recovery plan (C1-I5)"
+    said_by: "Statement [1, 3]; Commission [4]"
+    finding: "Parliament was told €699,612 excluding VAT [10] ◆; the likely award, €718,830, is €848,219 with VAT [26, 27]; C1-I5 funds solar panels in public spaces [28]."
+    rating: "Consistent"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-06'
+thumbnail:
+  figure: '2016'
+  caption: a solar flower was already in service at an Austrian motorway rest area, nine years before Gozo's 'first in Europe'
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: note
+    note: "Maintainer unblock: wording supplied in literature/CC-032/primary-source.md (TVM News, English; European Commission\
+      \ project page); SmartFlower named as a lead."
+  - date: 2026-10-06
+    step: started
+    note: "Checked in the maintainer session. TVM News (English and Maltese), Lovin Malta and the Commission page read in\
+      \ full; gov.mt, MaltaToday and parlament.mt 403; Wayback unreachable."
+  - date: 2026-10-06
+    step: wording
+    note: "Verbatim wording found: the minister's quoted words 'dawn l-ewwel solar flowers fl-Ewropa' (TVM News, Maltese)\
+      \ and their English in Lovin Malta; 'first of its kind in Europe' in the English article is the statement in indirect\
+      \ speech. Claim text restated from these texts."
+  - date: 2026-10-06
+    step: note
+    note: "Manufacturer pages and dated records of earlier European SmartFlowers read (energynews.es 2015, pv magazine 2016,\
+      \ MeinBezirk.at 2016, IÖB, Newbury Today 2021, dealer lists). PVGIS 5.3 and OSRM runs; TED notices and Council 11894/26\
+      \ ADD 1 read through their APIs; Newsbook's report of the PQ answers (second-hand). Search logs in literature/CC-032/notes.md."
+  - date: 2026-10-06
+    step: version
+    version: "1.0"
+    note: "First issue. Verdict Contradicted (high confidence); pending right of reply (Ministry for Gozo and Planning;\
+      \ Public Works Department)."

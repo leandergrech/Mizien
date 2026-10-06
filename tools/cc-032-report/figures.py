@@ -29,28 +29,28 @@ def fig1():
           (2016.53, "Jul 2016", "Austria", "Maker: over 1,000 units\nsold in Europe, Asia, the\nMiddle East and elsewhere",
            GREY, -1, 2016.53, "center"),
           (2016.93, "Dec 2016", "Austria", "Motorway operator ASFINAG:\nSmartFlower in service at\nHinterbrühl rest area (A21)",
-           BLUE, 1, 2017.25, "left"),
+           BLUE, 1, 2017.5, "left"),
           (2021.61, "Aug 2021", "UK", "Vodafone erects a\nSmartFlower at its Newbury\nheadquarters", BLUE, -1, 2021.61,
            "center"),
           (2025.80, "21 Oct 2025", "Malta", "Government: Gozo’s 15 are\n“the first of its kind\nin Europe”", MAROON, 1,
            2025.55, "right"),
           (2025.87, "14 Nov 2025", "maker", "Maker: Gozo is “one of\nthe largest installations\nin Europe”", GREY, -1,
            2026.45, "right")]
-    fig, ax = plt.subplots(figsize=(9.6, 3.3), dpi=220)
+    fig, ax = plt.subplots(figsize=(8.6, 3.4), dpi=220)
     ax.axhline(0, color=SLATE, lw=1.4, zorder=1)
     for yr in range(2015, 2027):
         ax.plot([yr, yr], [-0.06, 0.06], color=SLATE, lw=0.8)
         if yr < 2026:   # the 2026 label would sit under the last leader line
-            ax.text(yr, -0.12, str(yr), ha="center", va="top", fontsize=8, color=SLATE)
+            ax.text(yr, -0.12, str(yr), ha="center", va="top", fontsize=9, color=SLATE)
     for x, d, c, t, col, side, lx, ha in ev:
         y = 0.62 * side
         ax.plot([x, lx], [0, y * 0.95], color=col, lw=1, zorder=1)
         ax.scatter([x], [0], s=46, color=col, zorder=3, edgecolor="white", linewidth=0.8)
         va = "bottom" if side == 1 else "top"
-        ax.text(lx, y, f"{d} · {c}", ha=ha, va=va, fontsize=8.4, fontweight="bold", color=col)
-        ax.text(lx, y + 0.17 * side, t, ha=ha, va=va, fontsize=7.6, color=SLATE, linespacing=1.15)
+        ax.text(lx, y, f"{d} · {c}", ha=ha, va=va, fontsize=9.4, fontweight="bold", color=col)
+        ax.text(lx, y + 0.19 * side, t, ha=ha, va=va, fontsize=8.6, color=SLATE, linespacing=1.15)
     ax.set_xlim(2014.6, 2026.6)
-    ax.set_ylim(-1.55, 1.55)
+    ax.set_ylim(-1.7, 1.7)
     ax.axis("off")
     fig.savefig(OUT / "fig1_timeline.png", bbox_inches="tight", facecolor="white")
     plt.close(fig)
@@ -67,16 +67,16 @@ def fig2():
     km_h = 6 * route
     m = list(range(1, 13))
     lab = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"]
-    fig, (a, b) = plt.subplots(1, 2, figsize=(9.6, 3.2), dpi=220, gridspec_kw={"wspace": 0.32})
+    fig, (a, b) = plt.subplots(1, 2, figsize=(8.6, 3.3), dpi=220, gridspec_kw={"wspace": 0.34})
     w = 0.38
     a.bar([x - w / 2 for x in m], [pv["two_axis"][x] for x in m], width=w, color=GREEN, label="Two-axis tracking (as the flowers)")
     a.bar([x + w / 2 for x in m], [pv["fixed_optimal"][x] for x in m], width=w, color=SAGE,
           label="Same capacity, fixed at the best angle")
     a.set_xticks(m, lab)
     a.set_ylabel("kWh a day (37.5 kWp)")
-    a.set_ylim(0, 380)
-    a.legend(frameon=False, fontsize=7.6, loc="upper left")
-    a.set_title("A  Modelled output, Ta’ Xħajma (PVGIS)", fontsize=9.4, loc="left", color=SLATE, fontweight="bold")
+    a.set_ylim(0, 400)
+    a.legend(frameon=False, fontsize=8.4, loc="upper left")
+    a.set_title("A  Modelled output, Ta’ Xħajma (PVGIS)", fontsize=10, loc="left", color=SLATE, fontweight="bold")
     a.grid(axis="y", color="#E3E6E8", lw=0.6)
     a.set_axisbelow(True)
     hi = [pv["two_axis"][x] / (km_h * 1.451) for x in m]
@@ -84,12 +84,12 @@ def fig2():
     b.fill_between(m, lo, hi, color=AMBER, alpha=0.35, lw=0)
     b.plot(m, hi, color=ORANGE, lw=1.2)
     b.plot(m, lo, color=ORANGE, lw=1.2)
-    b.text(6.5, max(hi) + 0.25, "at 1.45 kWh/km", ha="center", fontsize=7.6, color=SLATE)
-    b.text(6.5, min(lo[5:7]) - 0.55, "at 2.1 kWh/km", ha="center", fontsize=7.6, color=SLATE)
+    b.text(6.5, max(hi) + 0.25, "at 1.45 kWh/km", ha="center", fontsize=8.6, color=SLATE)
+    b.text(6.5, min(lo[5:7]) - 0.55, "at 2.1 kWh/km", ha="center", fontsize=8.6, color=SLATE)
     b.set_xticks(m, lab)
     b.set_ylim(0, 6)
     b.set_ylabel("hours of service a day")
-    b.set_title("B  Hours of 10-minute shuttle it equals", fontsize=9.4, loc="left", color=SLATE, fontweight="bold")
+    b.set_title("B  Hours of 10-minute shuttle it equals", fontsize=10, loc="left", color=SLATE, fontweight="bold")
     b.grid(axis="y", color="#E3E6E8", lw=0.6)
     b.set_axisbelow(True)
     fig.savefig(OUT / "fig2_output.png", bbox_inches="tight", facecolor="white")

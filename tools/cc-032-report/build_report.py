@@ -14,43 +14,40 @@ S = []
 # ================================================================== TL;DR
 S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
       P("On 21 October 2025 the Government announced fifteen “solar flowers” at the Gozo Multi-Modal Hub in Ta’ "
-        "Xħajma. Its statement, as TVM News reported it, called them “the first of its kind in Europe”, and Gozo "
-        "Minister Clint Camilleri spoke of <b>“these first solar flowers in Europe”</b> [1, 2]. The energy, he said, "
-        "would supply the electric buses that shuttle passengers to Mġarr. We checked both claims against earlier "
-        "installations, the manufacturer’s records, a European Commission solar model and the public record on the "
-        "buses and the cost.", lead)]
+        "Xħajma, “the first of its kind in Europe” in TVM News’s report; Minister Clint Camilleri spoke of <b>“these "
+        "first solar flowers in Europe”</b> and said their energy would supply the Park and Ride buses [1–3]. We "
+        "checked both claims against the record.", lead)]
 S.append(key_points([
     ("Europe had solar flowers before Gozo.",
-     "The fifteen units are SmartFlowers [5], an Austrian product. Dated reports show them in Spain in 2015, at an "
-     "Austrian motorway rest area in 2016 and at Vodafone’s UK headquarters in 2021 [11–15]. The maker calls Gozo’s "
-     "“one of the largest installations in Europe”, not the first [5, 6]."),
+     "The units are SmartFlowers, an Austrian product [5]. Dated reports show them in Spain (2015), at an Austrian "
+     "motorway rest area (2016) and at Vodafone’s UK headquarters (2021) [11–15]. The maker calls Gozo’s “one of the "
+     "largest installations in Europe”, not the first [5]."),
     ("The minister’s quote was narrower in one place.",
-     "In the same statement he called it the first of its kind used in Malta and, by number at one site, the second "
-     "in the world [1, 2]. Nothing we found contradicts the first; we did not test the second."),
+     "He also called it the first of its kind in Malta and, by number at one site, second in the world [1, 2]. "
+     "Nothing we found contradicts the first; we did not test the second."),
     ("How much bus charging the flowers cover has not been shown.",
-     "No capacity, metered output or bus consumption has been published, and Parliament was told no feasibility "
-     "study was made [10] ◆. The modelled output, about 85 MWh a year [17], equals roughly 2–3 hours a day of the "
-     "10-minute shuttle on consumption figures from other studies (indicative) [19, 23–25]."),
+     "No capacity, metered output or bus use is published; Parliament was told no feasibility study was made [10] " + DIAM + ". "
+     "Modelled output, about 85 MWh a year, equals roughly 2–3 hours a day of the 10-minute shuttle (indicative) "
+     "[17, 19, 23–25]."),
     ("The tracking gain and the cost hold up.",
-     "A two-axis tracker at the site yields 36% more than fixed panels in the European Commission’s PVGIS model, "
-     "against “up to 40%” claimed [17]. About €850,000 of EU recovery funds is consistent with the contract figures "
-     "plus VAT [10, 26–28]."),
+     "The Commission’s PVGIS model gives 36% more than fixed panels at the site, against “up to 40%” claimed [17]. "
+     "About €850,000 of EU recovery funds fits the contract figures plus VAT [10, 26–28]."),
     ("Verdict: contradicted (high confidence).",
-     "The headline claim, Europe’s first solar flowers, is contradicted by dated records; the bus-charging claim is "
-     "not substantiated. Pending right of reply."),
+     "Europe’s first solar flowers: contradicted by dated records. Powering the buses: not substantiated. Pending "
+     "right of reply."),
 ]))
-S += [Spacer(1, 4 * mm), VerdictMeter(4), Spacer(1, 3 * mm),
+S += [Spacer(1, 2 * mm), VerdictMeter(4), Spacer(1, 2 * mm),
       tiles([("2016", RED, "a SmartFlower was already in service at an Austrian motorway rest area [13]"),
              ("15", GREEN, "SmartFlowers at Ta’ Xħajma; to the maker, “one of the largest installations in Europe”"),
              ("≈85 MWh", GREEN, "a year modelled for 15 units of 2.5 kWp with two-axis tracking; none metered or published"),
              ("2–3 h", ORANGE, "of the 10-minute shuttle a day is what that output equals (indicative); bus use unpublished")]),
-      Spacer(1, 4 * mm),
+      Spacer(1, 3 * mm),
       up_down("Documents from October 2025 showing that “of its kind” meant a feature no earlier European installation "
               "had (for example the number of units at one site, or offsetting bus charging), and that this was said: "
               "<i>Misleading</i>, since “these first solar flowers in Europe” would still mislead.",
               "Nothing: <i>Contradicted</i> is already the lowest rating. Metered output and charging data would settle "
               "the bus-charging part, not this verdict."),
-      Spacer(1, 5 * mm)]
+      Spacer(1, 3 * mm)]
 S += toc([("1", "The claim and what we could verify"), ("2", "Method"), ("3", "What a solar flower is"),
           ("4", "Were they the first in Europe?"), ("5", "Do they power the buses?"),
           ("6", "Where the evidence points different ways"), ("7", "Testing the claim"),
@@ -99,16 +96,13 @@ S.append(P("<b>Questions.</b> (A) Were these Europe’s first solar flowers, or 
            "and what else could “first” mean? (B) How much electricity can fifteen flowers make, and how does that "
            "compare with what the Park and Ride buses use? (C) Is the stated tracking gain plausible? (D) What did the "
            "project cost and who paid?"))
-S.append(P("<b>Evidence.</b> For (A), the manufacturer’s pages [5–8] and dated reports of earlier installations in "
-           "Europe [11–16], with a search log in <i>literature/CC-032/notes.md</i>. For (B) and (C), the European "
-           "Commission’s Photovoltaic Geographical Information System (PVGIS 5.3, satellite radiation 2005–2023) run for "
-           "the site with two-axis tracking and with fixed panels [17]; the manufacturer’s data sheet [8, 9]; the "
-           "Gozo Regional Development Authority (GRDA) and EU procurement records for the shuttle [19, 20]; road "
-           "distances from OpenStreetMap [23]; and two peer-reviewed estimates of electric-bus consumption [24, 25] and "
-           "one of tracking gains [18], read as abstracts. For (D), the reply to a parliamentary question as reported by "
-           "Newsbook [10] ◆, the EU award notice we identify as this contract [26], the EU VAT table [27] and the "
-           "Council decision on Malta’s recovery plan [28]. Inputs are in <i>data/cc-032/</i>; every figure is "
-           "recomputed by <i>tools/cc-032-report/calc.py</i> (<i>checks.csv</i>)."))
+S.append(P("<b>Evidence.</b> (A) The maker’s pages [5–8] and dated reports of earlier European installations "
+           "[11–16]; search log in <i>literature/CC-032/notes.md</i>. (B, C) The European Commission’s PVGIS 5.3 model "
+           "for the site [17], the data sheet [8, 9], GRDA and EU procurement records for the shuttle [19, 20], "
+           "OpenStreetMap distances [23], and peer-reviewed estimates of bus consumption [24, 25] and tracking gains "
+           "[18], read as abstracts. (D) Newsbook’s report of answers in Parliament [10] ◆, an EU award notice [26], "
+           "the EU VAT table [27] and the Council decision on Malta’s recovery plan [28]. Inputs are in "
+           "<i>data/cc-032/</i>; every figure is recomputed by <i>tools/cc-032-report/calc.py</i>."))
 S.append(P("<b>Grades.</b> Individual news reports and company pages are grade D, but the records of earlier "
            "installations are independent of one another, dated, and from three countries. PVGIS, EU procurement records, "
            "the Council decision and the GRDA are grade C. The tracker study [18] uses measured radiation across a "
@@ -119,15 +113,14 @@ S.append(P("<b>Grades.</b> Individual news reports and company pages are grade D
 S.append(CondPageBreak(70 * mm))
 S.append(SectionHeading(3, "What a solar flower is"))
 S.append(P("A SmartFlower is a free-standing photovoltaic unit with twelve petal-shaped panels that fan open at "
-           "sunrise, follow the sun on two axes through the day and fold away at night or in strong wind [7–9]. The "
-           "maker gives a nominal output of 2.5 kWp and 4,000–6,500 kWh a year per unit, depending on location, with "
-           "an integrated inverter [8, 9]. It describes the product as manufactured in Austria; the company was founded "
-           "there and bought by a Boston firm in 2018 [7]. The Commission page describes Gozo’s units in the same "
-           "terms: they open at sunrise, follow the sun and close at sundown [4]."))
+           "sunrise, follow the sun on two axes and fold away at night or in strong wind [4, 7–9]. The maker gives "
+           "2.5 kWp and 4,000–6,500 kWh a year per unit, depending on location [8, 9]. The product is manufactured in "
+           "Austria, where the company was founded; a Boston firm bought it in 2018 [7]."))
 S.append(P("Tracking raises output because the panels face the sun for more of the day. A study of five tracker types "
            "at locations across Europe and Africa found dual-axis trackers collected 17.7% to 31.2% more solar energy "
            "than panels fixed at the best angle, the gain varying with latitude [18]. The maker and the Government both "
-           "say “up to 40%” [3, 7]."))
+           "say “up to 40%” [3, 7]; the PVGIS model gives 36.5% for this site (Section 5), but no measurements of these "
+           "units are published, and the petal design may not behave like an ideal tracker."))
 S.append(P("The capacity of the Gozo units has not been published in anything we read. If they are the 2.5 kWp model "
            "the maker sells, the fifteen add up to 37.5 kWp; we use that figure below and say so each time."))
 
@@ -234,14 +227,6 @@ S.append(contested(
     "No capacity, metered output, bus consumption or wiring has been published, and no feasibility study was made "
     "[10] ◆. The new depot at the hub charges buses during the night [22], when the flowers are closed [4].",
     "<b>For this claim:</b> a part of the charging can be offset; how much has not been shown."))
-S.append(contested(
-    "Q3  Do they yield “up to 40%” more than fixed panels?", "PLAUSIBLE", LG,
-    "PVGIS models 36.5% more for two-axis tracking than for fixed panels at the best angle at Ta’ Xħajma [17]. Against "
-    "panels at a poorer angle the gain would be larger.",
-    "Studies across Europe and Africa find 18–31% [18]. No measurements of these units are published, and the "
-    "petal design may not behave like an ideal tracker.",
-    "<b>For this claim:</b> close to the modelled gain at this site; “up to” is the maker’s figure.",
-    label_a="EVIDENCE FOR THE CLAIM", label_b="EVIDENCE OF A SMALLER GAIN"))
 
 # ================================================================== 7
 S.append(CondPageBreak(120 * mm))
@@ -280,14 +265,13 @@ S += [Spacer(1, 6 * mm), SectionHeading(8, "Verdict and requests for evidence"),
       verdict_box("Contradicted", "The claim that Gozo’s fifteen solar flowers are Europe’s first is contradicted by dated "
                   "records of the same product elsewhere in Europe since 2015. Confidence: high."),
       Spacer(1, 4 * mm)]
-S.append(P("<b>Why.</b> (1) The headline claim, made in the minister’s own words, in the statement and on the "
-           "Commission’s page, is that these are the first solar flowers, or the first installation of their kind, in "
-           "Europe. (2) The units are SmartFlowers, and independent, dated records show the same Austrian product in "
-           "service in Spain, Austria and the UK years earlier, including a 2016 pilot by an Austrian motorway "
-           "operator. (3) The manufacturer itself calls Gozo’s installation one of the largest in Europe, not the "
-           "first. The evidence points against the claim as worded, so the verdict is <i>Contradicted</i>. The second "
-           "claim, that the energy powers or offsets the buses’ charging, is <i>Not substantiated</i>: no figures were "
-           "published to show how much."))
+S.append(P("<b>Why.</b> (1) The headline claim, in the minister’s words, the statement and the Commission’s page, is "
+           "that these are Europe’s first solar flowers, or its first installation of the kind. (2) The units are "
+           "SmartFlowers, and independent, dated records show the same Austrian product in service in Spain, Austria "
+           "and the UK years earlier, including a 2016 pilot by an Austrian motorway operator. (3) The maker calls "
+           "Gozo’s installation one of the largest in Europe, not the first. The evidence points against the claim as "
+           "worded: <i>Contradicted</i>. That the energy powers or offsets the buses’ charging is <i>Not "
+           "substantiated</i>: no figures show how much."))
 S.append(P("<b>Why high confidence.</b> Several independent lines agree: the maker’s own pages, local and trade "
            "reports in three countries, and an Austrian public-procurement record. <b>Why not Misleading.</b> The words "
            "are not a defensible statement that leaves a wrong impression; they state a fact that the records "
@@ -314,18 +298,17 @@ S += [Spacer(1, 4 * mm),
               bg=AMBER_PALE, bar=AMBER)]
 
 # ================================================================== 9
-S += [Spacer(1, 6 * mm), CondPageBreak(70 * mm), SectionHeading(9, "Limitations")]
-for l in ["The Government’s press release on gov.mt and the parliamentary answers on parlament.mt could not be read "
-          "from our network; we used TVM News, Lovin Malta and Newsbook’s report of the answers ◆.",
-          "We did not establish which European SmartFlower was the first, only that several preceded Gozo’s. The "
-          "records of earlier installations are news reports and dealer pages; we did not visit the sites.",
+S += [Spacer(1, 6 * mm), CondPageBreak(45 * mm), SectionHeading(9, "Limitations")]
+for l in ["gov.mt and parlament.mt could not be read from our network; we used TVM News, Lovin Malta and Newsbook’s "
+          "report of the answers in Parliament ◆.",
+          "We did not establish which European SmartFlower was the first, only that several preceded Gozo’s, from news "
+          "reports and dealer pages.",
           "The capacity of the Gozo units is assumed from the maker’s current 2.5 kWp model. PVGIS models an ideal "
           "two-axis tracker with a default 14% loss; the petal design, shading at the hub and downtime are not modelled.",
           "The bus-consumption figures (1.45–2.1 kWh per km) were modelled for other buses and routes and read as "
           "abstracts; the route length comes from car routing on OpenStreetMap. Figure 2B is an order of magnitude, "
-          "not an estimate of the share covered.",
-          "We identify EU award notice 742398-2024 as this contract from its subject, buyer, date and value; the "
-          "notice names no site or product."]:
+          "not an estimate of the share covered. EU award notice 742398-2024 is matched to this contract by its "
+          "subject, buyer, date and value; it names no site."]:
     S.append(P("• " + l, bul))
 
 S += [Spacer(1, 6 * mm), SectionHeading(None, "References")]
@@ -403,7 +386,7 @@ S += references([
     ("29", "Miżien. Data and calculations: data/cc-032/; tools/cc-032-report/calc.py.", ""),
 ])
 
-S.append(PageBreak())
+S += [Spacer(1, 2 * mm), CondPageBreak(90 * mm)]
 S += appendix_a("A experiment · B observational study with a control or gradient · C review, guidance or "
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 2 * mm)]
@@ -415,8 +398,8 @@ build_report(Report(
     number="032", out=str(FIG / "report.pdf"), kicker="Renewables, Gozo",
     title_lines=["Europe’s first", "solar flowers?"],
     subtitle_lines=["Testing the Government’s claims about Gozo’s fifteen", "solar flowers against the record"],
-    quote_lines=["“With the installation of these first solar flowers", "in Europe, we are demonstrating how Gozo can be",
-                 "a model for sustainable innovation.”"], quote_size=15,
+    quote_lines=["“With the installation of these first solar flowers in Europe,", "we are demonstrating how Gozo can be a model",
+                 "for sustainable innovation.”"], quote_size=13.5,
     attribution="Clint Camilleri, Minister for Gozo and Planning, 21 October 2025.",
     context="Lovin Malta’s English; the Maltese original is in TVM News. Fifteen units at Ta’ Xħajma, Gozo.",
     verdict="Contradicted", verdict_note="Solar flowers were in service elsewhere in Europe from 2015",
