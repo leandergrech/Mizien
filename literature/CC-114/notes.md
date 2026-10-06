@@ -16,6 +16,7 @@ OpenAlex, Eurostat API and website, pn.org.mt, Newsbook, WebSearch).
 | usubiaga2015 | Usubiaga & Acosta-Fernández 2015, Economic Systems Research 27(4):458-477, doi:10.1080/09535314.2015.1049126 | A (OpenAlex; closed access) | Residence-principle (SEEA) and territory-principle emission accounts differ; "the differences are high for many countries and their magnitude is increasing over time". | C |
 | haberl2020 | Haberl et al. 2020, Environmental Research Letters 15:065003, doi:10.1088/1748-9326/ab842a | A (OpenAlex; open access, CC BY) | Relative vs absolute decoupling; relative decoupling of GHG from GDP is frequent. Context for "intensity". | C |
 | CC-025, CC-003 | Miżien claim checks | F | Territorial GHG per unit of GDP since 2005: −72% (volumes), −84% (current prices); reproduced here from the same Eurostat tables. | C |
+| CC-026 | Miżien claim check (same accounts, 2015-2025) | F | Air transport 444 to 4,730 kt CO2e (2015-2024), reproduced here; rated Largely supported because it reported the statistic without drawing a conclusion. | C |
 
 ## Key numbers (recomputed in tools/cc-114-report/calc.py)
 

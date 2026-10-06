@@ -137,6 +137,8 @@ add("Malta: air transport share of NACE-total GHG, 2024", r1(sh), "%",
 add("Malta: increase in NACE-total GHG 2013-2024 accounted for by air transport",
     r1(100 * (em("MT", "H51", 2024) - em("MT", "H51", 2013)) / (em("MT", "TOTAL", 2024) - em("MT", "TOTAL", 2013))),
     "%", "more than 100% means the other activities fell together")
+add("Cross-check with CC-026: Malta air transport (H51) 2015 -> 2024", f"{em('MT', 'H51', 2015):.0f} -> "
+    f"{em('MT', 'H51', 2024):.0f}", "kt CO2e", "CC-026 reported 444 -> 4,730 kt (data/cc-026/)")
 BR = "env_ac_aibrid_r2"
 br = lambda geo, ind, y: g(BR, geo, f"GHG|{ind}", "THS_T", y)
 add("Malta (bridging table): emissions by resident units from fuel bought abroad, air transport, 2013/2019/2022/2023/2024",

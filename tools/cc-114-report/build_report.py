@@ -274,11 +274,13 @@ S.append(P("<b>Why not Contradicted or Largely supported.</b> The headline stati
            "cause the release draws from it. <b>Why high confidence.</b> Four independent lines agree: emissions by "
            "activity, the bridging table, the NSO’s description of its data, and the territorial inventory. The one "
            "soft point, the 2024 estimate, bears on the headline, which we rate accurate, not on the omission."))
-S.append(P("<b>Consistency with other checks.</b> Claim Check 025 rated the Government’s “more than 80%” per unit "
-           "of GDP <i>Largely supported</i>: that figure holds at current prices and its omission (−72% in volumes) is "
-           "of degree. Claim Check 003 rated the Climate Action Authority’s per-person figure <i>Misleading</i> for "
-           "leaving out the projection that Malta will miss its 2030 target [14]. The same test, whether what is left "
-           "out changes the impression, gives this verdict."))
+S.append(P("<b>Consistency with other checks.</b> Claim Check 026 rated a news report of a figure from the same "
+           "accounts (Malta’s emissions up an estimated 169% since 2015, the EU’s largest rise) <i>Largely "
+           "supported</i>: it gave Eurostat’s estimate as such and drew no conclusion from it [15]. This release goes "
+           "further, reading the figure as more pollution per euro and naming a cause the data contradict. Claim "
+           "Check 025 rated the Government’s “more than 80%” per unit of GDP <i>Largely supported</i>, its omission "
+           "(−72% in volumes) being one of degree; Claim Check 003 rated a per-person figure <i>Misleading</i> for "
+           "leaving out a projection that changed the picture [13, 14]."))
 S.append(P("<b>What this verdict does not say.</b> It does not say Malta’s renewable shares are adequate (its "
            "electricity share is the EU’s lowest), that aviation emissions do not matter, or that anyone acted in "
            "bad faith. A statement the data support would read: <i>“On Eurostat’s residence-based measure Malta’s "
@@ -358,7 +360,9 @@ S += references([
      "https://github.com/leandergrech/Mizien/tree/main/claims/CC-025"),
     ("14", "Miżien. Claim Check 003: per-capita emissions vs the 2030 projection, v1.2.",
      "https://github.com/leandergrech/Mizien/tree/main/claims/CC-003"),
-    ("15", "Miżien. Data and calculations: data/cc-114/; tools/cc-114-report/fetch.py and calc.py.", ""),
+    ("15", "Miżien. Claim Check 026: the EU’s largest rise in emissions, v1.0 (same accounts; air transport 444 to "
+           "4,730 kt CO₂e, 2015–2024).", "https://github.com/leandergrech/Mizien/tree/main/claims/CC-026"),
+    ("16", "Miżien. Data and calculations: data/cc-114/; tools/cc-114-report/fetch.py and calc.py.", ""),
 ])
 
 S.append(PageBreak())
