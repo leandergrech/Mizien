@@ -4,7 +4,7 @@ category: Climate & Energy
 subtopic: Emissions & targets
 status: Drafted
 verdict: Misleading
-verdict_confidence: High
+verdict_confidence: Moderate
 claim:
   text: 'Nationalist Party press release signed by Shadow Minister Eve Borg Bonello (26 Jan 2026; in Maltese, our translation),
     citing Eurostat: "Malta is the only EU Member State which, instead of reducing, increased the intensity of greenhouse gas
@@ -56,22 +56,25 @@ claim:
 counter_evidence: 'Eurostat''s figure is quoted correctly (January release +16.6%, EU -34.0%; August 2026 data +14.3%, still
   the only rise; Malta 27th of 27 from every base year 2008-2023; EU-27 values flagged i), but it is a residence-based
   measure. Malta''s resident production units emitted 2.78 Mt CO2e in 2013 and 6.59 Mt in 2024; air transport rose from
-  0.30 to 4.73 Mt (71.8% of 2024), 116% of the net increase; all of the rise is fuel bought abroad by resident air
+  0.30 to 4.73 Mt (71.8% of 2024; 2024 estimate, Eurostat flag i), 116% of the net rise in resident-unit emissions
+  (+3.81 Mt; a share of that rise, not of the intensity indicator); in intensity terms air transport alone went from
+  about 36 g/EUR in 2013 to about 266 g/EUR in 2024 (estimate). All of the rise is fuel bought abroad by resident air
   transport firms (Eurostat bridging table: 299 of 304 kt in 2013, 100% of the 2024 estimate). The NSO attributes the 2023
   jump to airlines that started operating that year. Without air-transport emissions the indicator fell from every base
   year 2008-2023 (-8.5% to -72%): -64.0% since 2013 (2nd-largest fall in the EU; EU -35.2%) but -29.5% since 2016 (17th
   of 27; EU -30.1%). The territorial inventory per euro of GDP also fell from every base year (-6.6% to -69%): -61.3%
   since 2013 (2nd after Estonia; EU -35.5%), -27.1% since 2016 (21st; EU -29.8%). Most of the fall came in 2014-2016, when
   electricity-sector emissions fell from 1,703 to 581 kt (743 kt in 2024, +28% since 2016), so these counter-figures
-  depend on the base year too; in the PN''s favour, from base years 2014-2019 Malta''s rise is +19.5% to +97%. The
-  renewables explanation does not fit: with zero electricity-sector emissions in 2024 the indicator would still be 1.4%
-  above 2013 (329.8 against 325.2 g/EUR), and renewable shares rose over the period (electricity 1.6% to 10.7%, overall
-  3.8% to 17.2%). The release''s next paragraph also cites traffic; households'' own car use is outside the indicator and
-  land transport firms went from 49 to 86 kt. With 2013 as base Malta is the only riser only for end year 2024, a
+  depend on the base year too; in the PN''s favour, from base years 2014-2019 Malta''s rise is +19.5% to +97%. More
+  renewable electricity, on its own, could not have removed the rise: electricity-sector emissions fell about 56% (1,703
+  to 743 kt), and with zero electricity-sector emissions in 2024 the indicator would still be 1.4% above 2013 (329.8
+  against 325.2 g/EUR); this bound tests electricity (NACE D) only. Renewable shares rose over the period (electricity
+  1.6% to 10.7%, overall 3.8% to 17.2%). The release''s next paragraph also cites traffic; households'' own car use is
+  outside the indicator. With 2013 as base Malta is the only riser only for end year 2024, a
   Eurostat estimate; 2013-2023 it fell 8.3% and no state rose. Estonia, Ireland and Finland cut intensity, not
   emissions: residence accounts / territorial inventory 2013-2024, Estonia -55.4% / -53.1% (2024 flagged i), Finland
   -37.9% / -37.6% (i), Ireland +13.7% / -6.9% (flagged e; its air transport, 9.90 to 16.32 Mt, is 87% of its residence-based
-  rise). 10.7% is Malta''s renewable share of electricity (EU 47.5%); its overall share is 17.2%, fourth from last
+  rise). On the residence basis the PN used, emissions per person rose 69.2% 2013-2024 (27th of 27; EU -21.2%). 10.7% is Malta''s renewable share of electricity (EU 47.5%); its overall share is 17.2%, fourth from last
   (EU 25.2%); Eurostat''s release of 18 Dec 2025 named Belgium, Luxembourg and Ireland as the lowest three. In the PN''s
   favour: the statistic is real and Eurostat''s own news item gives no explanation either; Malta''s renewable shares are
   among the EU''s lowest.'
@@ -83,7 +86,7 @@ why_low_hanging: 'Done: Claim Check 114 report and flyer.'
 tags:
 - Selective metric
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: 'High: Eurostat and Crossref reachable; Newsbook and pn.org.mt readable.'
 caveats: 'An opposition claim, held to the same standard and data as the Government''s (CC-025): our own counter-figures are
   tested from every base year, as the PN''s is. Translation of the Maltese release is ours. Malta''s 2024 values in the air
@@ -94,7 +97,7 @@ caveats: 'An opposition claim, held to the same standard and data as the Governm
   2030 effort-sharing target, 24.5% renewables by 2030) are not the PN''s and are not checked here; the 10.7% and "third
   from last" are the PN''s own. "A lack of ambition on several fronts" is a political judgement and is not rated; only
   the renewables link is. The "Selective metric" tag means a metric favourable to the speaker''s argument, not to Malta or
-  any party. Reviewed on 6 Oct 2026 before circulation; version unchanged. Misleading: pending right of reply from the
+  any party. Version 1.1 (6 Oct 2026): confidence lowered from High to Moderate because the deciding sub-claims D and F rest on the same Eurostat air emissions accounts, including the imputed (flag i) 2024 air-transport value; the renewables bound tests electricity-sector emissions only; the 2024 estimates are labelled. Misleading: pending right of reply from the
   Nationalist Party; must not be circulated beyond the site before the reply deadline.'
 right_of_reply:
   sent: null
@@ -111,7 +114,7 @@ outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
+version: '1.1'
 last_reviewed: '2026-10-06'
 location:
   place: City Gate, Valletta (national claim)
@@ -133,7 +136,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: green
   - id: CC-114C
     text: "Estonia reduced emissions by 64%, Ireland by 50%, Finland by 44%"
-    finding: "These are intensity changes, given as emissions and “the fight against air pollution”. Emissions 2013–2024, residence accounts / territorial inventory: Estonia −55% / −53% and Finland −38% / −38% (both 2024 flagged i), Ireland +13.7% / −6.9% (2024 flagged e; 87% of its rise on the residence basis is air transport) [5, 6, 9]."
+    finding: "These are intensity changes, given as emissions and “the fight against air pollution”. Amber because of Ireland, whose emissions rose while its intensity fell, not because of the emissions-for-intensity label as such: the same label in the Malta sentence was excused (B), as that sentence gives the EU’s “average intensity”. Emissions 2013–2024, residence accounts / territorial inventory: Estonia −55% / −53% and Finland −38% / −38% (both 2024 flagged i), Ireland +13.7% / −6.9% (2024 flagged e; 87% of its rise on the residence basis is air transport) [5, 6, 9]."
     rating: "Mislabelled"
     tone: amber
   - id: CC-114D
@@ -148,7 +151,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: grey
   - id: CC-114F
     text: "Renewables as a cause of the rise: “among them, the clear lack of ambition to seriously increase the use of renewable energy”"
-    finding: "Rated only as a cause. Air transport is 116% of the net rise; with zero electricity-sector emissions in 2024 the indicator would still be 1.4% above 2013; renewable shares rose (electricity 1.6% to 10.7%). The release also cites traffic: land transport firms went 0.05 to 0.09 Mt [5, 6, 10]."
+    finding: "Rates the release’s “direct result” causal link as applied to renewables; the “lack of ambition” judgement (E) is not rated. Air transport accounts for the whole increase and electricity-sector emissions fell about 56%; with zero electricity-sector emissions in 2024 the indicator would still be 1.4% above 2013, so more renewable electricity, on its own, could not have removed the rise (the bound tests electricity only); renewable shares rose (electricity 1.6% to 10.7%) [6, 10]."
     rating: "Contradicted"
     tone: maroon
   - id: CC-114G
@@ -158,7 +161,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: amber
 thumbnail:
   figure: 72%
-  caption: "of the emissions in Malta’s 2024 intensity figure are airline fuel bought abroad; without them it fell from every base year, 2008–2023"
+  caption: "of the emissions in Malta’s 2024 intensity figure (2024 estimate) are airline fuel bought abroad; without them it fell from every base year, 2008–2023"
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-06
     step: started
@@ -176,3 +179,13 @@ history:   # research log: the date each step of the research was done (not when
     step: version
     version: "1.0"
     note: "First issue. Verdict Misleading (high confidence); pending right of reply (Nationalist Party)."
+  - date: 2026-10-06
+    step: correction
+    note: "Audit corrections. Sub-claim F and the bound narrowed from 'no renewables policy could have removed the rise' / 'renewables cannot explain the rise' to 'more renewable electricity, on its own, could not have removed the rise' (the bound tests electricity-sector emissions, NACE D, only; zeroing D alone leaves 2024 at 329.8 g/EUR against 325.2 in 2013, +1.4%, checked in calc.py); F stays Contradicted and rates the 'direct result' link as applied to renewables, with 'lack of ambition' (E) not rated. Verdict stays Misleading; confidence lowered from High to Moderate because the deciding sub-claims D and F both rest on the same Eurostat air emissions accounts, including the imputed (flag i) 2024 air-transport value. The 116% is now labelled as the share of the rise in resident-unit emissions (+3.81 Mt), not of the intensity indicator; the 72% and the 4,730 kt air figure are labelled 2024 estimates (flag i); the flyer headline now reads 'since 2013 the rise is airline fuel (2024 estimate)'. The land-transport firms figure (0.05 to 0.09 Mt) was dropped."
+  - date: 2026-10-06
+    step: clarification
+    note: "Sub-claim C stated to be amber because of Ireland (emissions rose while intensity fell), not because of the emissions-for-intensity label as such; intensity view added (air transport alone about 36 g/EUR in 2013, about 266 in 2024, estimate); consistency sentence added on emissions per person on the residence basis (+69.2%, 27th of 27) and why CC-025 and CC-114 differ (a contradicted causal link). Status unchanged: pending right of reply."
+  - date: 2026-10-06
+    step: version
+    version: "1.1"
+    note: "1.1: corrections after the 6 Oct 2026 audit: F wording narrowed, confidence High to Moderate, estimates labelled, C reason stated, land-transport figure dropped. Verdict Misleading (moderate confidence); pending right of reply (Nationalist Party)."

@@ -253,8 +253,16 @@ add("In the PN's favour: published indicator, Malta's rise to 2024 from base yea
 # the bound: could renewables have removed the rise? Remove ALL electricity-sector emissions in 2024.
 bound = intens("MT", 2024) * (1 - d_em("MT", 2024) / em("MT", "TOTAL", 2024))
 add("Bound: Malta's 2024 indicator with zero electricity-sector (D) emissions, vs 2013",
-    f"{bound:.1f} vs {intens('MT', 2013)}", "g/EUR", f"{pc(bound, intens('MT', 2013)):+.1f}%: still above 2013, so no "
-    "renewables policy could have removed the rise (371.69 x (1 - D/TOTAL 2024))")
+    f"{bound:.1f} vs {intens('MT', 2013)}", "g/EUR", f"{pc(bound, intens('MT', 2013)):+.1f}%: still above 2013, so "
+    "more renewable electricity, on its own, could not have removed the rise (371.69 x (1 - D/TOTAL 2024)); "
+    "tests electricity-sector emissions (NACE D) only")
+add("Intensity view: air transport (H51) emissions per euro of Malta's total GVA, 2013 / 2024 (2024 estimate, flag i)",
+    f"{1000 * em('MT', 'H51', 2013) / gva('MT', 'TOTAL', 2013):.1f} / {1000 * em('MT', 'H51', 2024) / gva('MT', 'TOTAL', 2024):.1f}",
+    "g/EUR", "air transport alone, divided by total real GVA; the 2024 value is an estimate")
+add("Is 2024 with D zeroed above 2013? (bound test)", "yes" if bound > intens("MT", 2013) else "no", "",
+    f"{bound:.1f} against {intens('MT', 2013)} g/EUR")
+add("Air transport (H51) 2024 emissions, estimate (flag i)", f"{em('MT', 'H51', 2024):.0f}", "kt CO2e",
+    f"flag {F[(AE, 'MT', 'GHG|H51', 'THS_T', 2024)]}")
 REN = lambda geo, b, y: g("nrg_ind_ren", geo, b, "PC", y)
 add("Malta renewable shares 2013 -> 2024: electricity / overall", f"{REN('MT', 'REN_ELC', 2013):.1f} -> "
     f"{REN('MT', 'REN_ELC', 2024):.1f} / {REN('MT', 'REN', 2013):.1f} -> {REN('MT', 'REN', 2024):.1f}", "%",
