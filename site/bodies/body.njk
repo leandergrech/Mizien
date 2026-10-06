@@ -69,10 +69,11 @@ styles: [lens.css, who.css]
   {%- set ps = mizien.pledges | pledgeStack(mizien.claims, s.pledges | pluck("id")) if s.pledges.length else null %}
   {%- if ps %}
   <section class="pstack-sec" aria-labelledby="h-pledges">
-    <h2 id="h-pledges">Pledges, year by year</h2>
-    <p>Each disk is a year in which {{ b.name }}{% if b.offices.length or b.people.length %} or its offices and people{% endif %}
-      made pledges, the newest on top. Each dot is a pledge, coloured by its label, ringed in the colour of the verdict on
-      its facts where those were checked; similar pledges line up and are joined across the years. The same view for
+    <h2 id="h-pledges">Pledges, election by election</h2>
+    <p>Each disk is an election cycle in which {{ b.name }}{% if b.offices.length or b.people.length %} or its offices and people{% endif %}
+      made pledges, the newest on top: campaign pledges on the outer ring, commitments made in office inside. Each square
+      is a pledge, coloured by its label, with a dot inside in the colour of the verdict on its facts where those were checked;
+      similar pledges line up and are joined across the cycles. The same view for
       every body is on <a href="/bodies/#h-pledges">Who said it</a>.</p>
     {%- include "pledge-stack.njk" %}
   </section>

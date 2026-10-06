@@ -57,7 +57,7 @@ styles: [lens.css, timeline.css]
     <ul class="tlv-legend small" aria-label="Marker colours">
       {%- for v in mizien.verdicts %}<li><span class="tlv-key v-{{ v.slug }}"></span>{{ v.name }}</li>{% endfor %}
       <li><span class="tlv-key v-none"></span>Not yet checked</li>
-      <li><span class="tlv-key tlv-key-pledge"></span>Pledge (coloured by its label)</li>
+      <li><span class="tlv-key tlv-key-pledge"></span>Pledge: a square, coloured by its label; a dot inside is the verdict on its facts</li>
       <li class="tlv-lkey">A numbered disc is a clump of claims. Its laurel has a leaf per checked claim, in its verdict colour,
         fading as the evidence review ages; a full laurel means every claim there is checked.</li>
     </ul>

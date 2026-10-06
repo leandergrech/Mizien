@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 6 October 2026 (pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -83,6 +83,29 @@ on the map (`/?view=map&sel=claim:CC-NNN`, when it has a location) and to the cl
 resolved against the script's own folder, so they work under the `/Mizien/` prefix (they did not before: fixed).
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
+
+## Pledges: stage 1 and squares (6 October 2026)
+
+Maintainer decisions of 6 October 2026: pledges are organised by **election cycle**, not year; a **light list of
+manifesto pledges** is started; agency targets are a separate kind; pledges are **squares** everywhere; the outlier
+types and wordings in `methodology/verdict-scale.md` (Pledges: Kinds, election cycles and links; Outliers).
+- Data: `data/cycles.csv` (2022 and 2026 elections, IFES source; add earlier elections with a source when a pledge
+  needs them), `data/manifesto_pledges.csv` (3 rows to start: Labour 2022 pledge 305, wording still to transcribe from
+  the archived PDF p. 91; Labour 2026 priority 19; PN 2026 Għawdex chapter). `scripts/pledges.py` (cycles, kinds, links,
+  checks), used by `validate_claims.py` (new "pledges:" line) and `build_site_data.py` (pledge `kind`, `kind_label`,
+  `cycle`, `cycle_label`, `follows`, `follows_search`, `drift`, `source_of_commitment`; `pledge_outliers`, `cycles`,
+  `manifesto_pledges` in the site data and claims.json).
+- Kinds set: CC-010, CC-011, CC-107 campaign; CC-024, CC-029, CC-031 government; CC-039 target (WSC). No `follows`
+  or `follows_search` recorded yet, so no outlier is shown: the searches are research steps still to do (stage 1b).
+- Squares: the claims web (a rounded square in the pledge colour; the verdict as a dot inside when the facts were
+  checked; key entry in the legend), the Explore panel lists, the timeline markers and key, the pinned tray, and the
+  pledge stack. Not yet: the homepage deck and cards, claim-list badges, the map medallions' leaves.
+- Who said it: the pledge stack is now **Pledges, election by election**: one disk per cycle (labels "2022–26",
+  "2026–"), campaign pledges on the outer ring, commitments in office on a dashed inner ring; targets are listed apart
+  on their body's card ("Target: …").
+- Next (stage 1b, research): transcribe pledge 305; enter the environment and quality-of-life sections of the 2022
+  and 2026 manifestos into `manifesto_pledges.csv` from the archived PDFs; run the `follows` searches for CC-024,
+  CC-029 and CC-031. Then stage 3 (the Explore pledges grouping as cycle disks) and stage 4 (the `/pledges/` page).
 
 ## Orbit limits, turnable pledge stack, method write-up (6 October 2026)
 

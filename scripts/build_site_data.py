@@ -21,11 +21,14 @@ import yaml
 import bodies as register
 import connections
 import patterns as by_kind
+import pledges
 import similarity
 import timeline
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REPO = "https://github.com/leandergrech/Mizien"
+CYCLES = pledges.load_cycles()          # data/cycles.csv: general elections, oldest first
+MANIFESTO = pledges.load_manifesto()    # data/manifesto_pledges.csv: the light list of manifesto pledges
 
 CATEGORY_COLORS = {
     "Land & Trees": "#3d8b5a",
@@ -117,8 +120,13 @@ def main() -> int:
     # Overlapping pledges, for the map's pledge network (each pair once, with the reasons).
     pledge_links = [{"a": x["id"], "b": o["id"], "why": o["why"]}
                     for x in pledge_network(records, reg, connections.adjacency(edges)) for o in x["overlaps"] if x["id"] < o["id"]]
+    outliers = pledge_outliers(records)
+    for c in claims:
+        if c.get("pledge") and outliers.get(c["id"]):
+            c["pledge"]["outliers"] = outliers[c["id"]]
     out = {"categories": cats, "claims": claims, "edges": edges, "themes": themes, "bodies": map_bodies,
-           "body_types": body_types, "pledge_labels": pledge_labels, "pledge_links": pledge_links}
+           "body_types": body_types, "pledge_labels": pledge_labels, "pledge_links": pledge_links,
+           "cycles": CYCLES, "manifesto_pledges": list(MANIFESTO.values())}
     text = json.dumps(out, ensure_ascii=False, indent=2)
     for target in (ROOT / "data" / "claims.json", ROOT / "docs" / "data" / "claims.json"):
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -329,10 +337,13 @@ PLEDGE_COLOURS = {   # pledge labels (methodology/verdict-scale.md, Pledges): a 
 
 
 def pledge_view(d: dict, reg: dict) -> dict | None:
-    """A pledge block ready to show: the label with its as-of date, who made it, when, in what, and by when."""
+    """A pledge block ready to show: the label with its as-of date, who made it, when, in what, and by when; its kind,
+    election cycle and the earlier pledges it carries forward (scripts/pledges.py)."""
     p = d.get("pledge")
     if not p:
         return None
+    cyc = pledges.cycle_of(p, CYCLES)
+    cyc_label = pledges.cycle_label(cyc, CYCLES)
     fmt = lambda v: (timeline.parse_date(v) or {}).get("label") if v is not None else None
     occasion = p.get("occasion") or str(p.get("vehicle") or "").split(",")[0].strip()
     return {"status": p.get("status"), "slug": "pledge-" + slug(p.get("status") or ""), "colour": PLEDGE_COLOURS.get(p.get("status")),
@@ -341,7 +352,36 @@ def pledge_view(d: dict, reg: dict) -> dict | None:
             "vehicle": p.get("vehicle"), "occasion": occasion, "note": p.get("note"),
             "made_by": [body_ref(reg[b]) for b in p.get("made_by") or [] if b in reg],
             "made_by_ids": [b for b in p.get("made_by") or [] if b in reg],
-            "pure": not d.get("verdict"), "overlaps": [str(x) for x in p.get("overlaps") or []]}
+            "pure": not d.get("verdict"), "overlaps": [str(x) for x in p.get("overlaps") or []],
+            "kind": p.get("kind"), "kind_label": pledges.KINDS.get(p.get("kind")), "cycle": cyc, "cycle_label": cyc_label,
+            "follows": [str(x) for x in p.get("follows") or []], "follows_search": p.get("follows_search"), "drift": p.get("drift"),
+            "source_of_commitment": p.get("source_of_commitment")}
+
+
+def pledge_outliers(records: list) -> dict:
+    """Outliers (scripts/pledges.py): {claim id: [{type, text}]}. Each is stated as a finding with what it rests on;
+    none is inferred from a missing record: 'unanchored' needs a recorded search, 'recycled' a recorded link."""
+    by = {d["id"]: d for d in records if d.get("pledge")}
+    mp = MANIFESTO
+    out = {}
+    for cid, d in by.items():
+        p, found = d["pledge"], []
+        fs = p.get("follows_search") or {}
+        if p.get("kind") == "government" and not p.get("follows") and fs.get("searched"):
+            where = (" Commitment first appears in: " + p["source_of_commitment"] + ".") if p.get("source_of_commitment") else ""
+            found.append({"type": "unanchored", "text": f"No earlier pledge found (searched: {'; '.join(map(str, fs['searched']))}, "
+                          f"{(timeline.parse_date(fs.get('date')) or {}).get('label', fs.get('date'))}).{where}"})
+        for f in [str(x) for x in p.get("follows") or []]:
+            prev = by.get(f)
+            if prev and prev["pledge"].get("status") != "Met":
+                found.append({"type": "recycled", "text": f"Also promised earlier: {f}, {prev['title']} ({prev['pledge'].get('status')})."})
+            elif f in mp:
+                found.append({"type": "follows", "text": f"Carries forward {mp[f]['document']}, {mp[f]['number'] or mp[f]['section']}."})
+        if p.get("drift"):
+            found.append({"type": "drift", "text": f"Changed from the earlier pledge ({p['drift']['type']}): {p['drift']['note']}"})
+        if found:
+            out[cid] = found
+    return out
 
 
 def pledge_network(records: list, reg: dict, adj) -> list:
@@ -543,6 +583,9 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
                                  [n for n, _ in bold_table("verdict-scale.md")], [c["name"] for c in out["categories"]], claim_ref,
                                  [n for n, _ in pledge_label_list()]),
         "pledges": pledge_network(records, reg, adj),
+        "pledge_outliers": pledge_outliers(records),
+        "cycles": CYCLES,
+        "manifesto_pledges": list(MANIFESTO.values()),
         "pledge_labels": out["pledge_labels"],
         "theme_bridges": [{**x, "a_name": theme_names.get(x["a"]), "b_name": theme_names.get(x["b"]),
                            "claims": [claim_ref(by_id[c]) for c in x["claims"]]} for x in connections.bridges(out["themes"])],

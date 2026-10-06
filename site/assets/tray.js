@@ -128,7 +128,10 @@
 
   // ---- the button and its panel
   function row(c, extra) {
-    return '<li><span class="tr-dot" style="background:' + colourOf(c) + '"></span><a href="' + esc(ROOT + "claims/" + c.id + "/") + '"><b>' + esc(c.id) + "</b> " + esc(c.title) +
+    var dot = c.pledge   // a pledge is a square in its label colour, with the verdict on its facts as a dot inside
+      ? '<span class="tr-dot is-pledge" style="background:' + (c.pledge.colour || "#716f8d") + '">' + (c.verdict ? '<i style="background:' + (VC[c.verdict] || "#5d7468") + '"></i>' : "") + "</span>"
+      : '<span class="tr-dot" style="background:' + colourOf(c) + '"></span>';
+    return '<li>' + dot + '<a href="' + esc(ROOT + "claims/" + c.id + "/") + '"><b>' + esc(c.id) + "</b> " + esc(c.title) +
       '</a><span class="tr-v">' + esc(verdictOf(c)) + "</span>" + (extra || "") + "</li>";
   }
   function render() {

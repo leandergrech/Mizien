@@ -122,6 +122,7 @@ thumbnail:
   caption: of Malta's 2025 electricity supply is what the planned offshore wind farm would provide (timetable Off track)
 pledge:
   status: Off track
+  kind: government   # made in office (methodology/verdict-scale.md, Pledges)
   as_of: '2026-10-06'
   made_by:
   - ministry-environment

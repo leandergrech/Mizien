@@ -1,4 +1,4 @@
-/* Pledges, year by year (site/_lib/who.js draws it): drag the stack sideways to turn it, like a turntable, and up or
+/* Pledges, election by election (site/_lib/who.js draws it): drag the stack sideways to turn it, like a turntable, and up or
    down to tilt it. The tilt is limited so the disks are always seen from above, never edge-on or from below, and the
    order of the years (newest on top) never flips. Arrow keys do the same when the figure has focus; Home resets. */
 (function () {
@@ -14,10 +14,12 @@
       function cy(l) { return G.top + ry + l * gap; }
       disks.forEach(function (g) { var c = cy(+g.dataset.l), e = g.querySelectorAll("ellipse"), t = g.querySelectorAll("text");
         e[0].setAttribute("cy", (c + 7).toFixed(1)); e[0].setAttribute("ry", ry.toFixed(1)); e[1].setAttribute("cy", c.toFixed(1)); e[1].setAttribute("ry", ry.toFixed(1));
+        if (e[2]) { e[2].setAttribute("cy", c.toFixed(1)); e[2].setAttribute("ry", (ry * (+e[2].getAttribute("rx") / G.rx)).toFixed(1)); }
         t[0].setAttribute("y", (c + 5).toFixed(1)); t[1].setAttribute("y", (c + 22).toFixed(1)); });
-      var P = dots.map(function (d) { var a = +d.dataset.a + yaw, x = G.cx + Math.cos(a) * G.rx, y = cy(+d.dataset.l) + Math.sin(a) * ry;
-        var c = d.querySelector("circle"), t = d.querySelector("text");
-        c.setAttribute("cx", x.toFixed(1)); c.setAttribute("cy", y.toFixed(1)); t.setAttribute("x", (x + 13).toFixed(1)); t.setAttribute("y", (y + 4).toFixed(1));
+      var P = dots.map(function (d) { var a = +d.dataset.a + yaw, k = +(d.dataset.r || 1), x = G.cx + Math.cos(a) * G.rx * k, y = cy(+d.dataset.l) + Math.sin(a) * ry * k;
+        var r = d.querySelector("rect"), c = d.querySelector("circle"), t = d.querySelector("text");
+        r.setAttribute("x", (x - 9).toFixed(1)); r.setAttribute("y", (y - 9).toFixed(1));
+        if (c) { c.setAttribute("cx", x.toFixed(1)); c.setAttribute("cy", y.toFixed(1)); } t.setAttribute("x", (x + 13).toFixed(1)); t.setAttribute("y", (y + 4).toFixed(1));
         d.style.opacity = Math.sin(a) < -0.2 ? 0.75 : 1;   // the far side of a disk is a little fainter
         return { x: x, y: y }; });
       links.forEach(function (l) { var a = P[+l.dataset.a], b = P[+l.dataset.b];

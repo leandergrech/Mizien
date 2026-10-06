@@ -133,3 +133,8 @@
 .tlv-pin { margin-top: 4px; padding: 3px 12px; border-radius: 999px; border: 1px solid rgb(var(--accent-rgb) / .6); background: none; color: var(--amber-soft);
   font: 600 12px var(--sans); cursor: pointer; }
 .tlv-pin[aria-pressed="true"], .tlv-pinall[aria-pressed="true"] { background: var(--amber); color: #13301f; border-color: var(--accent); }
+
+/* pledges are squares (a promise), in the pledge label colour; a check that also tested facts shows the verdict as a dot inside */
+.tlv-m.is-pledge .tlv-head { border-radius: 3px; display: grid; place-items: center; }
+.tlv-in { width: 42%; height: 42%; border-radius: 50%; background: var(--v); box-shadow: 0 0 0 1.2px rgba(246,244,238,.85); }
+.tlv-key.tlv-key-pledge { border-radius: 2px; }
