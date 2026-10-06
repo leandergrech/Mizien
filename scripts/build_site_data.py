@@ -21,6 +21,7 @@ import yaml
 import bodies as register
 import connections
 import patterns as by_kind
+import similarity
 import timeline
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -88,6 +89,9 @@ def main() -> int:
             "outputs": {k: f"claim-files/{d['id']}/{pathlib.Path(v).name}" for k, v in (d.get("outputs") or {}).items()},
             "record": f"{REPO}/blob/main/claims/{d['id']}/claim.yml",
         })
+    # Claims with similar wording (scripts/similarity.py), with the shared words, for the site's "Find related".
+    for cid, near in similarity.similar(claims).items():
+        next(c for c in claims if c["id"] == cid)["similar"] = near
     cats = []
     for c in claims:
         if c["category"] not in [x["name"] for x in cats]:
@@ -448,6 +452,7 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
     pattern_meanings = dict(bold_table("pattern-tags.md"))
     sources_ev, intake = timeline.source_events(), timeline.intake_dates()
     today = date.today().isoformat()
+    sims = {c["id"]: c.get("similar", []) for c in out["claims"]}   # similar wording (scripts/similarity.py)
     site_claims = []
     for d in records:
         cid, rec = d["id"], jsonable(d)
@@ -486,6 +491,7 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
             "flyer_preview": preview,
             "thumb": thumbs.get(cid),
             "links": links,
+            "similar": [{**claim_ref(by_id[x["id"]]), "score": x["score"], "terms": x["terms"]} for x in sims.get(cid, []) if x["id"] in by_id],
             "bodies": [{**body_ref(reg[b]), "parent": body_ref(reg[reg[b]["parent"]]) if reg[b]["parent"] else None}
                        for b in connections.units(claim_bodies[cid], reg)],
             "connections": claim_connections(cid, d, by_id, adj, out, reg, claim_bodies, profiles, pattern_meanings),

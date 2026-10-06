@@ -299,6 +299,14 @@ permalink: "/claims/{{ claim.id }}/"
         </ul>
       </details>
       {%- endif %}
+      {%- if c.similar and c.similar.length %}
+      <div class="conn-block">
+        <h3>{% icon "pattern" %}Similar wording</h3>
+        <p class="small">Claims whose own words overlap with this one, with the words they share. Found by comparing the
+          wording of the claims, not their verdicts; a lead to read them together, not a finding.</p>
+        <ul class="cref-list">{% for x in c.similar %}<li>{{ m.claim(x) }}<span class="via">shares: {{ x.terms | join(", ") }}</span></li>{% endfor %}</ul>
+      </div>
+      {%- endif %}
     </section>
 
     <section class="timeline-sec" aria-labelledby="h-time">

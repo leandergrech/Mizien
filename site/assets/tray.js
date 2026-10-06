@@ -3,7 +3,8 @@
    so a selection can be shared), marks them in every view, and offers:
      - Show only pinned: the site-wide filter (assets/lens.js) narrowed to the pinned claims;
      - Find related: claims that share something with the pinned ones, each with its reasons (the same body, a
-       theme linking them, the same pattern, place or topic, said within two months), strongest first;
+       theme linking them, similar wording with the shared words, the same pattern, place or topic, said within two
+       months), strongest first;
      - Compare: keep the tray as A, pin a second set, and see the two side by side (verdicts, topics, bodies, places,
        dates).
    The tray never decides anything: every suggestion says why it is there.
@@ -59,6 +60,7 @@
         (c.tags || []).forEach(function (t) { if ((p.tags || []).indexOf(t) >= 0) add(c.id, 2, "same pattern: " + t); });
         if (c.location && p.location && c.location.place === p.location.place) add(c.id, 2, "same place: " + c.location.place);
         if (c.category === p.category) add(c.id, 1, "same topic: " + c.category);
+        (p.similar || []).forEach(function (x) { if (x.id === c.id) add(c.id, x.score >= 0.4 ? 3 : 2, "similar wording to " + p.id + ": " + x.terms.join(", ")); });
         var a = day(c.date), b = day(p.date);
         if (a && b && Math.abs(a - b) <= 61 * 864e5) add(c.id, 1, "said within two months of " + p.id);
       });
@@ -106,7 +108,7 @@
       else { var R = related();
         h += '<p class="tr-note">Claims that share something with the pinned ones, strongest first. Each says why it is here.</p>';
         h += R.length ? '<ul class="tr-list tr-rel">' + R.map(function (o) { return row(byId[o.id], '<button type="button" class="tr-add" data-pin="' + o.id + '" aria-label="Pin ' + o.id + '">Pin</button><span class="tr-why">' +
-          esc(Object.keys(o.why).slice(0, 3).join(" · ")) + "</span>"); }).join("") + "</ul>" +
+          esc(Object.keys(o.why).slice(0, 4).join(" · ")) + "</span>"); }).join("") + "</ul>" +
           '<p class="tr-acts"><button type="button" data-act="addall">Pin all ' + R.length + "</button></p>" : '<p class="tr-note">Nothing shares a body, theme, pattern, place or topic with the pinned claims.</p>';
       }
     } else {

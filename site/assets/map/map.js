@@ -1815,6 +1815,13 @@
       pbody.appendChild(el("p", "small", "Evidence last reviewed " + d.last_reviewed + " · " + (days >= 365 ? "refresh due" : remaining + " days until refresh due") + "."));
     }
     if (d.counter) { label("CONTEXT AND EVIDENCE"); pbody.appendChild(richText("p", null, d.counter)); }
+    if (d.similar && d.similar.length) {   // scripts/similarity.py: shared wording, with the words that make it
+      label("SIMILAR WORDING"); var sw = el("div", "links");
+      d.similar.forEach(function (x) { if (!byId[x.id]) return; var r = el("div", "lrow"); claimLink(x.id, r);
+        r.appendChild(el("span", "small", "shares: " + x.terms.join(", "))); sw.appendChild(r); });
+      pbody.appendChild(sw);
+      pbody.appendChild(el("p", "small", "Found from the words of the claims themselves; a lead to read together, not a finding."));
+    }
     if (d.pledge) {
       label("PLEDGE · " + d.pledge.status.toUpperCase() + " · AS OF " + String(d.pledge.as_of || "").toUpperCase());
       if (d.pledge.target) pbody.appendChild(el("p", null, d.pledge.target));
