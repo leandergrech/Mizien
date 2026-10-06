@@ -51,14 +51,15 @@ a.pl-chip:hover { filter: brightness(1.1); text-decoration: underline; }
 .pstack { display: block; width: 100%; height: auto; font-family: var(--sans); }
 .ps-edge-band { fill: #0a2117; opacity: .9; }
 .ps-top { fill: rgba(127,168,139,.22); stroke: rgba(207,226,212,.55); stroke-width: 1.2; }
+.ps-inner { fill: none; stroke: rgba(207,226,212,.3); stroke-width: 1; stroke-dasharray: 4 5; }
 .ps-year { fill: #eef3ef; font: 700 18px var(--serif); }
 .ps-n { fill: #a9c2b1; font-size: 12px; }
 .ps-link { stroke-width: 3; stroke-linecap: round; opacity: .9; }
 .ps-id { fill: #eef3ef; font: 700 12px var(--sans); paint-order: stroke; stroke: var(--deep); stroke-width: 3px; }
-.ps-dot:hover circle, .ps-dot:focus circle { stroke: var(--amber); }
+.ps-dot:hover rect, .ps-dot:focus rect { stroke: var(--amber); stroke-width: 2.4; }
 .ps-dot:focus { outline: none; }
 .pstack-list { list-style: none; margin: 12px 0 0; padding: 0; }
-.pstack-list > li { display: grid; grid-template-columns: 52px 1fr; gap: 8px; padding: 6px 0; border-top: 1px solid var(--paper-line); }
+.pstack-list > li { display: grid; grid-template-columns: 76px 1fr; gap: 8px; padding: 6px 0; border-top: 1px solid var(--paper-line); }
 .ps-y { font: 700 17px var(--serif); color: var(--paper-link); }
 .pstack-list ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
 .pstack-list .pl-chip { margin-left: 4px; }

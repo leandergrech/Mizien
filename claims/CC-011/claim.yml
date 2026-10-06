@@ -84,6 +84,7 @@ thumbnail:          # headline figure for the claim's thumbnail (from its flyer 
   caption: of residents already near open or green space
 pledge:   # pledge label (methodology/verdict-scale.md, Pledges); shown instead of the verdict
   status: Not measurable
+  kind: campaign   # manifesto or campaign promise, made before an election (methodology/verdict-scale.md, Pledges)
   as_of: '2026-10-05'
   made_by: [pl]
   made_on: 2026-05

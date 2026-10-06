@@ -1,7 +1,7 @@
 {#- The pledge stack (site/_lib/who.js, pledgeStack): expects ps. The SVG, then the same pledges as a list. -#}
 <figure class="pstack-fig">
   <div class="pstack-svg">{{ ps.svg | safe }}</div>
-  <p class="ps-hint small" hidden>Drag sideways to turn the stack, up or down to tilt it (on a phone: sideways only). It is always seen from above, newest year on top. Arrow keys work too; Home resets.</p>
+  <p class="ps-hint small" hidden>Drag sideways to turn the stack, up or down to tilt it (on a phone: sideways only). It is always seen from above, the newest cycle on top. Arrow keys work too; Home resets.</p>
   <figcaption>
     <ol class="pstack-list">
       {%- for r in ps.rows %}
@@ -9,6 +9,7 @@
         <ul>{% for p in r.items %}<li><a href="{{ p.path }}"><b>{{ p.id }}</b> {{ p.title }}</a>
           <span class="pl-chip" style="--pl: {{ p.pledge.colour }}">{% glyph "pledge:" + p.pledge.status %}Pledge: {{ p.pledge.status }}</span>
           {%- if p.factVerdict %} <span class="small">facts: {{ p.factVerdict }}</span>{% endif %}
+          <span class="small">· {{ p.pledge.kind_label }}</span>
           <span class="small">· {{ p.category }}{% if p.pledge.made_by.length %} · {{ p.pledge.made_by[0].name }}{% endif %}</span></li>{% endfor %}</ul></li>
       {%- endfor %}
     </ol>

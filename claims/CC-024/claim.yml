@@ -113,6 +113,7 @@ thumbnail:
   caption: of offshore wind counted in the plan's 24.5% renewables share for 2030
 pledge:
   status: On track
+  kind: government   # made in office (methodology/verdict-scale.md, Pledges)
   as_of: '2026-09-15'
   made_by:
   - government-of-malta

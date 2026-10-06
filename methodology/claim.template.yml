@@ -37,7 +37,11 @@ subclaims: []                 # parts tested separately, as in the report's sub-
 pledge: null                  # for a pledge: a label instead of a verdict (methodology/verdict-scale.md, Pledges), e.g.
                               # {status: Not measurable, as_of: 2026-10-05, made_by: [pl], made_on: 2026,
                               #  vehicle: "...", deadline: null, target: "...", note: "..."}; a pure pledge has verdict null.
-                              # Optional: term_end (date), occasion (what it was pledged in), overlaps: [CC-NNN]
+                              # Required: kind: campaign | government | proposal | target (verdict-scale.md, Pledges).
+                              # Optional: term_end (date), occasion (what it was pledged in), overlaps: [CC-NNN],
+                              # cycle (data/cycles.csv; normally worked out), follows: [CC-NNN or MP-...],
+                              # follows_search: {date, searched: [...], found: [...]}, drift: {type, note},
+                              # source_of_commitment: "where it first appears"
 history: []                   # research log, oldest first: the date each step of the research was DONE, e.g.
                               # - {date: 2026-10-02, step: added}
                               # - {date: 2026-10-03, step: version, version: "1.0", note: "First issue."}

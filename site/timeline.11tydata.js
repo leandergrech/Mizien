@@ -18,6 +18,8 @@ export default {
         const m = DATE.exec(raw);
         const base = { id: c.id, title: c.title, path: c.path, speaker: c.claim?.speaker || "", topic: c.category,
           v: c.label_slug || "none", label: c.label || "Not yet checked", pledge: c.label_kind === "pledge",
+          // a pledge is drawn as a square in its label colour; a check that also tested facts keeps the verdict as a dot inside
+          ps: c.pledge_view ? c.pledge_view.slug : null, pv: c.pledge_view && c.label_kind !== "pledge" ? c.label_slug : null,
           reviewed: c.label ? c.last_reviewed || null : null,   // the laurel leaf's freshness
           // for the lanes: the kind of body that made the claim (its first speaker in the register), and whether it has a place
           who: bodies[c.bodies?.[0]?.id]?.type_label || "Not in the register", place: !!c.location?.lat };

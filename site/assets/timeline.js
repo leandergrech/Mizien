@@ -267,11 +267,11 @@
       var sel = ids.some(function (id) { return selected[id]; });
       var aria = m.single ? m.items[0].id + ": " + m.items[0].title + ", " + pointDate(m.items[0]) + ", " + m.items[0].label
         : m.items.length + " claims, " + periodName(level.name, m.s);
-      html += '<button type="button" class="tlv-m' + (sel ? " is-selected" : "") + (pinned(m.items) ? " has-pin" : "") + (m.single ? " v-" + m.items[0].v : " is-clump") +
+      html += '<button type="button" class="tlv-m' + (sel ? " is-selected" : "") + (pinned(m.items) ? " has-pin" : "") + (m.single ? " v-" + (m.items[0].ps || m.items[0].v) + (m.items[0].ps ? " is-pledge" : "") : " is-clump") +
         '" data-k="' + key + '" style="left:' + (m.x - m.h / 2).toFixed(1) + "px;top:" + top + "px;height:" + m.h + 'px" aria-label="' + esc(aria) + '">' +
         '<i class="tlv-stem" style="left:' + (m.h / 2 - 1) + "px;top:" + m.h + "px;height:" + stem + 'px"></i>' + laurel(m.items, m.h) +
         '<span class="tlv-head" style="width:' + m.h + "px;height:" + m.h + 'px">' +
-        (m.single ? "" : "<b>" + m.items.length + "</b>") + "</span>" +
+        (m.single ? (m.items[0].pv ? '<i class="tlv-in v-' + esc(m.items[0].pv) + '"></i>' : "") : "<b>" + m.items.length + "</b>") + "</span>" +
         (m.lab ? '<span class="tlv-lab" style="max-width:' + maxLab + 'px">' + esc(m.text) + "</span>" : "") + "</button>";
     });
 
@@ -327,9 +327,9 @@
       items[key] = { items: c.items, level: level.name, s: c.s };
       var sel = c.items.some(function (i) { return selected[i.id]; });
       var aria = single ? c.items[0].id + ": " + c.items[0].title + ", " + pointDate(c.items[0]) + ", " + c.items[0].label : c.items.length + " claims, " + LN[c.li].name + ", " + periodName(level.name, c.s);
-      html += '<button type="button" class="tlv-m tlv-lm' + (sel ? " is-selected" : "") + (pinned(c.items) ? " has-pin" : "") + (single ? " v-" + c.items[0].v : " is-clump") + '" data-k="' + key +
+      html += '<button type="button" class="tlv-m tlv-lm' + (sel ? " is-selected" : "") + (pinned(c.items) ? " has-pin" : "") + (single ? " v-" + (c.items[0].ps || c.items[0].v) + (c.items[0].ps ? " is-pledge" : "") : " is-clump") + '" data-k="' + key +
         '" style="left:' + (x - h / 2).toFixed(1) + "px;top:" + (y - h / 2) + "px;height:" + h + 'px" aria-label="' + esc(aria) + '">' + laurel(c.items, h) +
-        '<span class="tlv-head" style="width:' + h + "px;height:" + h + 'px">' + (single ? "" : "<b>" + c.items.length + "</b>") + "</span></button>"; });
+        '<span class="tlv-head" style="width:' + h + "px;height:" + h + 'px">' + (single ? (c.items[0].pv ? '<i class="tlv-in v-' + esc(c.items[0].pv) + '"></i>' : "") : "<b>" + c.items.length + "</b>") + "</span></button>"; });
     finish(html, items, A + 52, level);
   }
   function finish(html, items, H, level) {

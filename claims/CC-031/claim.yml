@@ -108,6 +108,7 @@ thumbnail:
   caption: new electric buses now run all of Gozo's bus services (TVM News, May-Jul 2026)
 pledge:
   status: Not measurable
+  kind: government   # made in office (methodology/verdict-scale.md, Pledges)
   as_of: '2026-10-06'
   made_by:
     - clint-camilleri
