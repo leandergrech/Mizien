@@ -4,22 +4,29 @@ category: Tourism & Population
 subtopic: Population & labour
 status: Drafted
 verdict: Not substantiated
-verdict_confidence: Moderate
+verdict_confidence: Low
 claim:
-  text: 'PwC Malta (press release on its Summer 2026 Economic Update, published by The Malta Business Weekly on 19 Jul 2026):
-    "foreign residents now make up 31% of Malta''s population", and population is expected to grow "with the mix of foreign
-    to local residents potentially reaching around 38% by 2030". The two figures are in different paragraphs of the same
-    release; the 2030 figure comes from PwC''s own demographic model.'
+  text: 'PwC Malta (press release on its Summer 2026 Economic Update, posted by Finance Malta on 17 Jul 2026; same text in
+    The Malta Business Weekly on 19 Jul 2026): "foreign residents now make up 31% of Malta''s population", and population
+    is expected to grow "with the mix of foreign to local residents potentially reaching around 38% by 2030". The two
+    figures are in different paragraphs (2 and 6) of the same release; the 2030 figure comes from PwC''s own demographic
+    model.'
   speaker: PwC Malta
-  date: '2026-07-19'
+  date: '2026-07-17'
   wording_status: Verbatim found
   sources:
+    - title: Malta's rapid population growth creates urgent need to focus on the country's infrastructure demands for the future
+      publisher: Finance Malta (Industry Update / PwC)
+      date: 17 Jul 2026
+      url: https://financemalta.org/industry-updates/malta-s-rapid-population-growth-creates-urgent-need-to-focus-on-the-country-s-infrastructure-demands-for-the-future
+      note: The claim, in PwC Malta's press release (with PwC's boilerplate, "© 2026 PricewaterhouseCoopers"); the earliest copy
+        found. Read in full on 6 Oct 2026. No definition of "foreign" and no source named for the 31%.
     - title: Population growth drives urgent infrastructure needs – PwC Malta Summer 2026 Economic Update
       publisher: The Malta Business Weekly
       date: 19 Jul 2026
       url: https://maltabusinessweekly.com/population-growth-drives-urgent-infrastructure-needs-pwc-malta-summer-2026-economic-update/30680/
-      note: The claim. PwC Malta's press release text, read in full on 6 Oct 2026 (HTML and WordPress API). No definition of
-        "foreign" and no source named for the 31%.
+      note: Later reprint of the same release text (the 38% is paragraph 7 there). Read in full on 6 Oct 2026 (HTML and WordPress
+        API).
     - title: Malta's rapid population growth creates urgent need to focus on the country's infrastructure demands for the future
       publisher: The Malta Chamber
       date: 22 Jul 2026
@@ -35,7 +42,14 @@ claim:
       publisher: Business Now
       date: 15 Jul 2026
       url: https://businessnow.mt/maltas-population-could-reach-636000-by-2030-pwc-projects/
-      note: Second-hand report of the PwC report (range 624,000–660,000; "around 38% in the base case").
+      note: Second-hand report of the PwC report (range 624,000–660,000; "around 38% in the base case"; "In 2019, it was 20 per
+        cent" and a local population "at just over 400,000" are the outlet's paraphrase).
+    - title: "PwC: Malta's population could climb to 660,000 within five years"
+      publisher: Newsbook (Jurgen Balzan)
+      date: 17 Jul 2026
+      url: https://newsbook.com.mt/en/pwc-maltas-population-could-climb-to-660000-within-five-years/
+      note: Second-hand report of the PwC report (quotes its wording on the 38%) and of a parliamentary reply (no formal population
+        projections for the next four years), which we did not read.
     - title: 'World Population Day: 11 July 2026 (NR 120/2026)'
       publisher: National Statistics Office
       date: 9 Jul 2026
@@ -62,21 +76,32 @@ claim:
       date: 2025
       url: https://doi.org/10.2139/ssrn.5356748
       note: Abstract read via Crossref; full text refused (403).
+    - title: "FATTI: Is Malta's Native Population At Risk Of Collapse – And Can Tax Cuts Stop It?"
+      publisher: Amphora Media
+      date: 6 Nov 2025
+      url: https://www.amphora.media/2025/11/fatti-malta-native-population-numbers-budget-tax-cut-child-parent
+      note: Second-hand account of the Central Bank of Malta note (its "native" population leaves out naturalised citizens; about
+        347,000 by 2050).
     - title: "Malta's demographic shift: A growing foreign workforce"
       publisher: Malta Business Weekly
       date: 2 Jun 2025
       url: https://maltabusinessweekly.com/maltas-demographic-shift-a-growing-foreign-workforce/29055/
       note: The intake record's original link. A different article (Silvan Mifsud, on the CBM policy note) that does not
-        contain the claim; read in full 6 Oct 2026.
+        contain the claim; read in full 6 Oct 2026. Source of the CBM baseline figures as reported (405,075 in 2023 to about
+        350,000 by 2050; second-hand).
   quote: The latest figures show that foreign residents now make up 31% of Malta’s population … Nonetheless, population is
     still expected to increase significantly, with the mix of foreign to local residents potentially reaching around 38%
     by 2030.
-counter_evidence: Eurostat migr_pop1ctz gives 29.4% non-Maltese citizens on 1 Jan 2025 and, with 588,254 residents on
-  1 Jan 2026 (demo_gind), a range of 30.9–31.1% for the end of 2025; the NSO's 31.1% (second-hand) agrees, so the 31% holds
-  on citizenship. By country of birth 32.0% (1 Jan 2025); foreign nationals 39.8% of registered employment (Jobsplus, Dec
-  2025). No official projection splits the population by citizenship (EUROPOP2025 gives totals only). 38% of PwC's 636,000
-  needs Maltese citizens to fall by 1,832 a year to end-2030; they rose every year 2010–2024, and the remainder after
-  migration and naturalisations fell by at most 1,441 a year (2021–2024).
+counter_evidence: Eurostat migr_pop1ctz gives 29.4% non-Maltese citizens on 1 Jan 2025; with 588,254 residents on 1 Jan 2026
+  (demo_gind), our calculation gives 30.9–31.1% for the end of 2025 if 2025's change in Maltese citizens lay within the
+  2010–24 range (Eurostat has not published the 2026 split), and the NSO's 31.1% (second-hand) agrees, so the 31% holds on
+  citizenship. By country of birth 32.0% (1 Jan 2025); foreign nationals 39.8% of registered employment (Jobsplus, Dec
+  2025). No official projection splits the population by citizenship (EUROPOP2025 gives totals only). On citizenship,
+  37.5–38.5% of PwC's 636,000 needs Maltese citizens to fall by at least 1,610 a year over 2026–30 (about 2,250 a year for
+  exactly 38%); they rose every year 2010–2024, and the remainder after migration and naturalisations fell by at most
+  1,441 a year (2021–2024). Only a projection that leaves out future naturalisations, as the Central Bank of Malta's
+  baseline does (second-hand, about 2,040–2,230 a year to 2050), gives a fall of that size; the release does not say what
+  PwC assumed.
 tests: Eurostat migr_pop1ctz, migr_pop3ctb, demo_gind, cens_21ctz_r3, cens_21cob_r3, migr_imm1ctz, migr_emi1ctz, migr_acq,
   demo_faczc, demo_maczc and proj_25np (EUROPOP2025), with flags; Jobsplus employment workbooks; recomputed with
   tools/cc-099-report/calc.py.
@@ -85,11 +110,15 @@ tags: []
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: Medium
-caveats: Right of reply on hold until PwC Malta's Summer 2026 Economic Update is read (then to PwC Malta); the report
-  refused automated access (403, no Internet Archive capture) and may explain the 38%. The NSO's end-2025 figure is
-  second-hand (nso.gov.mt 403); Eurostat's own data bound the share to 30.9–31.1%. The intake record's original link (Malta
-  Business Weekly, 2 Jun 2025) is a different article that does not contain the claim; the wording is PwC's press release
-  as published on 19 Jul 2026. The verdict rests on sub-claims A and B; C is context.
+caveats: Right of reply on hold until PwC Malta's Summer 2026 Economic Update is read (then to PwC Malta); the report refused
+  automated access (403, no Internet Archive capture) and may explain the 38%. Confidence is low because the evidence on
+  the 38% points both ways and the deciding document is unread. The NSO's end-2025 figure is second-hand (nso.gov.mt 403);
+  the 30.9–31.1% for the end of 2025 is our calculation from Eurostat data, valid if 2025's change in Maltese citizens
+  lay within the 2010–24 range, because Eurostat has not published the 2026 split. The Central Bank of Malta figures
+  and the figures Business Now and Newsbook attribute to PwC's report are second-hand. The intake record's original link
+  (Malta Business Weekly, 2 Jun 2025) is a different article that does not contain the claim; the wording is PwC's press
+  release, posted by Finance Malta on 17 Jul 2026 (earliest copy found) and reprinted by the Malta Business Weekly on 19
+  Jul 2026. The verdict rests on sub-claims A and B; C is context.
 right_of_reply:
   sent:
   deadline:
@@ -112,22 +141,22 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-099A
     text: "“foreign residents now make up 31% of Malta’s population”"
-    finding: "Eurostat-based range 30.9–31.1% of non-Maltese citizens on 1 January 2026; 29.4% a year earlier [10, 12]. The NSO’s 31.1% agrees ◆ [8]. By country of birth the share is higher (32.0% in 2025) [11]."
+    finding: "Our calculation from Eurostat data: 30.9–31.1% non-Maltese citizens on 1 January 2026 (if 2025’s change was within the 2010–24 range); 29.4% a year earlier [10, 12]. The NSO’s 31.1% agrees ◆ [8]. By country of birth the share is higher (32.0% in 2025) [11]."
     rating: "Accurate"
     tone: green
   - id: CC-099B
     text: "“the mix of foreign to local residents potentially reaching around 38% by 2030”"
-    finding: "PwC’s own model; no Eurostat or NSO projection by citizenship found [16, 20]. At PwC’s 636,000 it needs Maltese citizens to fall by 1,832 a year; they rose every year 2010–2024, and without naturalisations or migration fell by at most 1,441 a year [10, 14]. Report not readable [4]."
+    finding: "PwC’s own model; no Eurostat or NSO projection by citizenship found [16, 20]. On citizenship, 37.5–38.5% of 636,000 needs Maltese citizens to fall by at least 1,610 a year in 2026–30; recorded data show a rise every year 2010–2024 [10, 14]. Only a projection without future naturalisations, like the CBM’s ◆, gives such a fall. PwC states neither its definition nor this assumption; report not readable [4]."
     rating: "Not substantiated"
     tone: orange
   - id: CC-099C
-    text: "“Malta’s population reached 588,254 by year-end 2025 … approximately 14,000 residents (2.4%)” (context)"
+    text: "“…Malta’s population reached 588,254 by year-end 2025 … approximately 14,000 residents (2.4%)” (context)"
     finding: "Eurostat: 588,254 on 1 January 2026; +14,004 (2.44%) in 2025 [12]."
     rating: "Accurate"
     tone: green
 thumbnail:
-  figure: −1,832
-  caption: Maltese citizens a year to end-2030 that PwC's 38% of 636,000 would need; their number rose every year 2010–2024
+  figure: ≥1,610
+  caption: fewer Maltese citizens a year in 2026–30 for 37.5–38.5% of PwC's 636,000; their number rose every year 2010–2024
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-06
     step: started
@@ -135,10 +164,11 @@ history:   # research log: the date each step of the research was done (not when
       \ and does not contain the claim; searched the outlet's WordPress API and the web for the statement."
   - date: 2026-10-06
     step: wording
-    note: "Verbatim wording found: PwC Malta's press release on its Summer 2026 Economic Update, published by The Malta Business\
-      \ Weekly on 19 Jul 2026 (same text on the Malta Chamber site and Mondaq). PwC's report and the NSO release of 9 Jul\
-      \ 2026 (NR 120/2026) refused automated access; the NSO's end-2025 figures read through Newsbook, Lovin Malta, International Adviser\
-      \ and MEETinc."
+    note: "Verbatim wording found: PwC Malta's press release on its Summer 2026 Economic Update, read in full on the Malta Business\
+      \ Weekly (19 Jul 2026), the Malta Chamber site (22 Jul) and Mondaq (23 Jul). On review, the earliest copy was found: Finance\
+      \ Malta posted the identical release on 17 Jul 2026 (read in full 6 Oct 2026), so the claim date is 17 Jul 2026. PwC's report\
+      \ and the NSO release of 9 Jul 2026 (NR 120/2026) refused automated access; the NSO's end-2025 figures read through Newsbook,\
+      \ Lovin Malta, International Adviser and MEETinc."
   - date: 2026-10-06
     step: note
     note: "Data: Eurostat migr_pop1ctz, migr_pop3ctb, demo_gind, Census 2021, migration flows, acquisitions, births and deaths\
@@ -146,7 +176,17 @@ history:   # research log: the date each step of the research was done (not when
       \ in Crossref (abstract read); Eurostat dataset DOIs checked in DataCite. Calculations in tools/cc-099-report/calc.py\
       \ (data/cc-099/checks.csv)."
   - date: 2026-10-06
+    step: note
+    note: "Independent review of the draft, fixes made before the first issue: the 38% was tested on a band of 37.5–38.5% (\"around\
+      \ 38%\") instead of exactly 38.0%, starting from our end-2025 range for Maltese citizens, and the Central Bank of Malta\
+      \ baseline (second-hand: native population 405,075 in 2023 to about 350,000 by 2050, leaving out naturalisations) was added\
+      \ because a projection without naturalisations can fall fast enough for about 38%. The reasoning changed from \"does not follow\" to \"not shown:\
+      \ the definition and the naturalisation assumption are unstated\", and confidence from moderate to low. Also: claim date\
+      \ and earliest copy (Finance Malta, 17 Jul 2026); the 2026 share marked as our calculation; second-hand figures marked;\
+      \ clues to PwC's definition added; the born-abroad series' level shift and its gap to Census 2021 disclosed; figures\
+      \ redrawn."
+  - date: 2026-10-06
     step: version
     version: "1.0"
-    note: "First issue. Verdict Not substantiated (moderate): the 31% is right; the 38% by 2030 has not been shown. Right of\
+    note: "First issue. Verdict Not substantiated (low confidence): the 31% is right; the 38% by 2030 has not been shown. Right of\
       \ reply to PwC Malta on hold until its Summer 2026 Economic Update is read."
