@@ -29,9 +29,17 @@ REQUIRED = ["id", "title", "category", "status", "claim", "tags"]
 STRICT_VERDICTS = {"Misleading", "Contradicted"}
 
 
-# Landmark emblems drawn on the map (docs/index.html PLACE_ICONS); "pin" is the generic fallback.
-PLACE_ICONS = {"parliament", "castille", "citygate", "barrakka", "ravelin", "waterfront", "tower", "landfill",
-               "flyover", "ro_plant", "park", "crane", "ferry", "pin"}
+def _place_icons() -> set:
+    """Landmark emblems for the map: the "place:<key>" glyphs (and shared ones) in site/assets/glyphs.js, the one
+    registry the browser and the site build use. "pin" is the generic fallback."""
+    js = (ROOT / "site" / "assets" / "glyphs.js").read_text(encoding="utf-8")
+    keys = set(re.findall(r'^\s*"place:([A-Za-z0-9_]+)":', js, flags=re.M))
+    if "pin" not in keys:
+        raise SystemExit("site/assets/glyphs.js: no place glyphs found (expected \"place:pin\" and the other emblems)")
+    return keys
+
+
+PLACE_ICONS = _place_icons()
 
 
 def check(path: pathlib.Path) -> list:

@@ -149,3 +149,7 @@
 .tr-load b { color: var(--accent); }
 .tr-load:hover { text-decoration: underline; }
 .tr-sets .tr-dot { background: var(--amber); }
+
+/* the glyph beside a filter value (assets/glyphs.js) */
+.lens .lg { width: 1.2em; height: 1.2em; margin-right: .45em; vertical-align: -.25em; color: var(--accent); }
+.lens-chip .lg { width: 1.05em; height: 1.05em; margin-right: .3em; vertical-align: -.18em; }

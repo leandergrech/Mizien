@@ -77,3 +77,7 @@
 .theme-toggle .i-moon { display: none; }
 :root[data-theme="light"] .theme-toggle .i-sun { display: none; }
 :root[data-theme="light"] .theme-toggle .i-moon { display: block; }
+
+/* ---------------------------------------------------------------- glyphs (assets/glyphs.js, the {% glyph %} shortcode) */
+.gl { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round;
+  stroke-linejoin: round; vertical-align: -.2em; }

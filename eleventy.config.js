@@ -3,6 +3,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { HtmlBasePlugin } from "@11ty/eleventy";
 import markdownIt from "markdown-it";
+import { loadGlyphs } from "./scripts/glyphs.mjs";
 
 // GitHub Pages project site lives under /Mizien/. Set PATH_PREFIX=/ for a custom domain or local root.
 const pathPrefix = process.env.PATH_PREFIX ?? "/Mizien/";
@@ -35,6 +36,10 @@ const ICONS = {
 };
 const icon = (name, cls = "ico") =>
   `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${ICONS[name] || ""}"/></svg>`;
+
+// Glyphs (site/assets/glyphs.js) mark the things the site groups, links and maps: a topic, a pledge label, a place, a kind
+// of body. {% glyph "Land & Trees" %}; {% bodyglyph b %} for a body or person from the register.
+const GLYPHS = loadGlyphs();
 
 // Claim numbers ("CC-012") mentioned anywhere in a page's text become links to that claim. assets/claimrefs.js then
 // shows a short summary with the verdict on a long hover or keyboard focus. Text inside links, buttons, code, scripts
@@ -120,6 +125,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("mdInline", (text) => md.renderInline(String(text ?? "")));
 
   eleventyConfig.addShortcode("icon", icon);
+  eleventyConfig.addShortcode("glyph", (name, cls) => GLYPHS.svg(name, { cls }));
+  eleventyConfig.addShortcode("bodyglyph", (b, cls) => GLYPHS.svg(b && b.kind === "person" ? "person" : b && b.type_label, { cls }));
 
   eleventyConfig.addTransform("claim-mentions", function (content) {
     if (!(this.page.outputPath || "").endsWith(".html")) return content;

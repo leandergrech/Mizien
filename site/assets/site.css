@@ -285,6 +285,19 @@ h1, h2 { font-family: var(--serif); line-height: 1.2; }
 .page-tabs .ico { stroke: #2e7d4f; }
 :target { scroll-margin-top: 64px; }
 
+/* ---------------------------------------------------------------- glyph key (/about/glyphs/) and glyphs beside claim facts */
+.gk-grid { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; max-width: none; }
+.gk-item { display: flex; gap: 12px; align-items: flex-start; margin: 0; padding: 9px 12px; border: 1px solid var(--paper-line); border-radius: 12px; background: #fff; }
+.gk-item.is-shared { border-style: dashed; }
+.gk-glyph { flex: none; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: #14452f; color: #f6f4ee; }
+.gk-glyph .gl { width: 25px; height: 25px; vertical-align: 0; }
+.gk-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.35; }
+.gk-shared { font-size: 13px; font-style: italic; color: var(--paper-muted); }
+.gk-places { font-size: 13px; color: var(--paper-muted); overflow-wrap: anywhere; }
+.facts .gl, .kicker .gl, .body-chip .gl { margin-right: .3em; }
+.body-chip .gl { color: #14452f; }
+.verdictline .verdict .gl, .verdictline .pledge-pill .gl { margin-right: .35em; vertical-align: -.22em; }
+
 /* ---------------------------------------------------------------- claim numbers (Google-style) and previous / next */
 .pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 10px; margin: 26px auto 8px; text-align: center; }
 .pager ol { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin: 0; padding: 0; }

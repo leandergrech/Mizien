@@ -85,66 +85,14 @@
     readCanvasTheme();
     if (typeof gmap !== "undefined" && gmap && typeof gmapReady !== "undefined" && gmapReady) gmap.setStyle(mapStyle());
   });
-  var ICONS = {
-    // topics
-    "Land & Trees": "M12 2.5 L5.5 11 H9 L5 16.5 H19 L15 11 H18.5 Z M12 16.5 V21.5",
-    "Climate & Energy": "M13.5 2.5 L5 13.5 H11 L10 21.5 L19 10 H13 Z",
-    "Waste": "M4 6.5 H20 M9.5 6.5 V4 H14.5 V6.5 M6 6.5 L7 20.5 H17 L18 6.5 M10 10 V17 M14 10 V17",
-    "Water": "M12 2.5 C12 2.5 5.5 10 5.5 14.5 A6.5 6.5 0 0 0 18.5 14.5 C18.5 10 12 2.5 12 2.5 Z",
-    "Nature & Wildlife": "M2.5 13 C6 13 8 11 9 7.5 C10.5 11 13 12.5 16 12.5 L21.5 9 L19.5 14 C17.5 18 14 19.5 10 19.5 C6 19.5 3.5 17 2.5 13 Z M14.5 9.5 L14.6 9.6",
-    "Air": "M3 8.5 H13 A3 3 0 1 0 10 5.5 M3 12.5 H18 A3 3 0 1 1 15 15.5 M3 16.5 H9",
-    "Transport": "M3 13.5 L5.5 7.5 H18.5 L21 13.5 V18 H3 Z M3 13.5 H21 M6 18 V20 M18 18 V20 M7 15.8 H8.5 M15.5 15.8 H17",
-    "Governance & Promises": "M12 3 V20.5 M7.5 20.5 H16.5 M4.5 6.5 H19.5 M4.5 6.5 L2 12.5 H7 Z M19.5 6.5 L17 12.5 H22 Z",
-    "Planning & Housing": "M3 11 L12 3.5 L21 11 M5.5 9 V20.5 H18.5 V9 M10 20.5 V14.5 H14 V20.5",
-    "Noise": "M3.5 9.5 H7.5 L12.5 5 V19 L7.5 14.5 H3.5 Z M16 9 C17.3 10.5 17.3 13.5 16 15 M18.8 6.5 C21.4 9.5 21.4 14.5 18.8 17.5",
-    // verdicts
-    "Supported": "M5 12.5 L10 17.5 L19 7",
-    "Largely supported": "M4 13 L8.5 17.5 L15.5 9 M12.5 17 L14 18.5 L21 10",
-    "Not substantiated": "M8.8 9 A3.3 3.3 0 1 1 13.6 12 C12.4 12.6 12 13.3 12 14.6 M12 18 V18.1",
-    "Misleading": "M12 3.5 L21.5 20 H2.5 Z M12 10 V14.5 M12 17 V17.1",
-    "Contradicted": "M6 6 L18 18 M18 6 L6 18",
-    "Not yet checked": "M5.5 12 V12.1 M12 12 V12.1 M18.5 12 V12.1",
-    // patterns
-    "Selective metric": "M10.5 4 A6.5 6.5 0 1 0 10.51 4 M15.2 15.2 L20.5 20.5",
-    "Input-as-outcome": "M3.5 5 H20.5 L14 12.5 V19.5 L10 17.5 V12.5 Z",
-    "Compliance-not-health": "M12 3 L19 6 V11 C19 15.5 16 19 12 21 C8 19 5 15.5 5 11 V6 Z M9 12 L11 14 L15 10",
-    "Conditional-turned-unconditional": "M6 3.5 V20.5 M6 12 C11 12 12 6 18 6 M15 3 L18 6 L15 9",
-    "Promise-without-baseline": "M5.5 21 V3.5 M5.5 4 H17.5 L15 8 L17.5 12 H5.5",
-    "No pattern tag": "M12 8 A4 4 0 1 0 12.01 8",
-    // stages
-    "Not started": "M12 3 A9 9 0 1 0 12.01 3 M12 7 V12 L15.5 14",
-    "In progress": "M4 12 H19 M13 6 L19 12 L13 18",
-    "Drafted": "M4 20 L8.5 19 L19.5 8 L16 4.5 L5 15.5 Z M14 6.5 L17.5 10",
-    "Right of reply": "M4 4.5 H20 V15 H10.5 L6.5 19.5 V15 H4 Z",
-    "Published": "M3.5 5 H10.5 C11.4 5 12 5.6 12 6.5 V20 C12 19.2 11.4 18.6 10.5 18.6 H3.5 Z M20.5 5 H13.5 C12.6 5 12 5.6 12 6.5 V20 C12 19.2 12.6 18.6 13.5 18.6 H20.5 Z",
-    // speakers
-    "Government & ministers": "M3 9 L12 4 L21 9 Z M5.5 9.5 V17.5 M10 9.5 V17.5 M14 9.5 V17.5 M18.5 9.5 V17.5 M3 20 H21",
-    "Public agencies & companies": "M4 20.5 V8 L9 5 V20.5 M9 9 L15 6 V20.5 M15 10 L20 8 V20.5 M2.5 20.5 H21.5 M6 11 H7 M6 14 H7 M11.5 12 H12.5 M11.5 15 H12.5 M17 13 H18",
-    "Regulators & authorities": "M8.5 3.5 H15.5 V6.5 H8.5 Z M6.5 5 H4.5 V21 H19.5 V5 H17.5 M8 11.5 H16 M8 15.5 H13",
-    "Courts, tribunals & oversight": "M12 3.5 V20 M7.5 20 H16.5 M5 7 H19 M5 7 L2.5 13 H7.5 Z M19 7 L16.5 13 H21.5 Z",
-    "Political parties": "M4.5 10 H19.5 V20.5 H4.5 Z M8.5 10 L12 4 L15.5 10 M9 15 H15",
-    "NGOs & unions": "M8 7.5 A2.8 2.8 0 1 0 8.01 7.5 M16 7.5 A2.8 2.8 0 1 0 16.01 7.5 M2.5 19.5 C2.5 15 13.5 15 13.5 19.5 M10.5 19.5 C10.5 15 21.5 15 21.5 19.5",
-    "Business & industry": "M4 8 H20 V19.5 H4 Z M9 8 V5 H15 V8 M4 13 H20",
-    "Media": "M4 5 H17 V19.5 H6 C4.9 19.5 4 18.6 4 17.5 Z M17 9 H20 V17.5 C20 18.6 19.1 19.5 18 19.5 M7 8.5 H14 M7 12 H14 M7 15.5 H11",
-    "EU & international": "M12 3 A9 9 0 1 0 12.01 3 M3 12 H21 M12 3 C15.5 6.5 15.5 17.5 12 21 C8.5 17.5 8.5 6.5 12 3",
-    "Research & statistics": "M5 20 V11 M10 20 V6 M15 20 V13 M20 20 V16 M3 20.5 H21.5",
-    "person": "M12 11.5 A4 4 0 1 0 12.01 11.5 M4.5 21 C4.5 16.5 8 14.5 12 14.5 C16 14.5 19.5 16.5 19.5 21",
-    // grouping buttons
-    "mode:topic": "M12 3 A9 9 0 1 0 12.01 3 M7 9 A1.5 1.5 0 1 0 7.01 9 M16 8 A1.5 1.5 0 1 0 16.01 8 M11 16 A1.5 1.5 0 1 0 11.01 16",
-    "mode:subtopic": "M12 3 A9 9 0 1 0 12.01 3 M12 7.5 A4.5 4.5 0 1 0 12.01 7.5 M12 3 V7.5 M12 16.5 V21 M3 12 H7.5 M16.5 12 H21",
-    "mode:verdict": "M12 3 V20.5 M7.5 20.5 H16.5 M4.5 6.5 H19.5 M4.5 6.5 L2 12.5 H7 Z M19.5 6.5 L17 12.5 H22 Z",
-    "mode:pattern": "M12 3 A9 9 0 1 0 12.01 3 M12 7 A5 5 0 1 0 12.01 7 M12 11 A1 1 0 1 0 12.01 11",
-    "mode:status": "M3 12 H21 M5 12 A1.5 1.5 0 1 0 5.01 12 M12 12 A1.5 1.5 0 1 0 12.01 12 M19 12 A1.5 1.5 0 1 0 19.01 12",
-    "mode:speaker": "M4 5 H20 V15 H10.5 L6.5 19 V15 H4 Z",
-    "mode:pledges": "M5 21 V4 M5 4.5 H16 L13.8 8.3 L16 12 H5",
-    "pledge": "M5 21 V4 M5 4.5 H16 L13.8 8.3 L16 12 H5",
-    "mode:year": "M4 6.5 H20 V20 H4 Z M4 10.5 H20 M8 4 V8 M16 4 V8 M7.5 14 H9 M11.25 14 H12.75 M15 14 H16.5 M7.5 17 H9 M11.25 17 H12.75",
-    "mode:network": "M5 6 A2 2 0 1 0 5.01 6 M19 7 A2 2 0 1 0 19.01 7 M12 18 A2 2 0 1 0 12.01 18 M6.5 7.5 L11 16 M17.5 8.5 L13 16 M7 6.2 L17 6.8"
-  };
-  function iconKey(name) {   // subtopics reuse their topic's icon; pledge groups use the flag, a calendar or their topic's
+  // Glyphs: one registry (assets/glyphs.js) for every view. Names are the display names the web already uses (topics,
+  // subtopics, verdicts, patterns, stages, kinds of body), "pledge:<label>", "theme:T<n>", "place:<key>" and "mode:<grouping>".
+  var GLY = window.MizienGlyphs, ICONS = GLY.paths;
+  function iconKey(name) {   // pledge groups use their label's glyph, a calendar or their topic's
     name = String(name || "");
     if (ICONS[name]) return name;
-    if (/^Pledge: /.test(name)) return "pledge";
+    var pl = /^Pledge: (.+)$/.exec(name);
+    if (pl) return ICONS["pledge:" + pl[1]] ? "pledge:" + pl[1] : "pledge";
     if (/^When: /.test(name)) return "mode:year";
     if (/^What: /.test(name)) return iconKey(name.slice(6));
     if (/^Who: /.test(name)) return "person";
@@ -152,6 +100,13 @@
   }
   var ICON_PATHS = {};
   Object.keys(ICONS).forEach(function (k) { ICON_PATHS[k] = new Path2D(ICONS[k]); });
+  // The glyph of a node: a person has "person"; a subgroup has a glyph of its own where it has one (a subtopic) and
+  // otherwise its group's (a body shares the glyph of its kind); a group has its own.
+  function nodeGlyph(n) {
+    if (n.person) return "person";
+    var own = iconKey(n.name);
+    return n.sub && !ICONS[own] ? iconKey(n.parent.name) : own;
+  }
 
   var PALETTE = ["#e3a72f", "#56b4e9", "#6fcf97", "#f2994a", "#bb86fc", "#f06292", "#4fc3c8", "#9fa8da", "#cfd8dc"];
   // Who said it: claims are matched to the register of bodies and people (data/bodies.csv) by the site build. A claim
@@ -794,7 +749,8 @@
       if (nested && h.subs && h.subs.length && legendOpen[h.name] && !h.hidden) {
         var kids = el("div", "gsubs");
         h.subs.forEach(function (sh) {
-          var kb = el("button", "gsub" + (sh.person ? " person" : "")); kb.type = "button"; var d = el("span", "dot"); d.style.background = sh.color;
+          var kb = el("button", "gsub" + (sh.person ? " person" : "")); kb.type = "button"; var d = el("span", "sw sm"); d.style.background = sh.color;
+          d.appendChild(iconSvg(nodeGlyph(sh)));
           kb.appendChild(d); kb.appendChild(el("span", "gname", sh.name)); kb.appendChild(el("span", "n", String(sh.count)));
           kb.onclick = function () { selectHub(sh); }; kids.appendChild(kb); });
         g.appendChild(kids); }
@@ -1207,7 +1163,7 @@
         ctx.fillStyle = g2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r, 0, 6.283); ctx.fill();
         ctx.strokeStyle = isSel ? CV.sel : CV.ring; ctx.lineWidth = isSel ? 3 : 1.5;
         if (n.person && !isSel) ctx.setLineDash([3, 3]); ctx.stroke(); ctx.setLineDash([]);
-        var ip = ICON_PATHS[n.person ? "person" : iconKey(n.sub ? n.parent.name : n.name)];
+        var ip = ICON_PATHS[nodeGlyph(n)];
         if (ip) { ctx.save(); var s2 = r * 1.15 / 24; ctx.translate(p.sx - 12 * s2, p.sy - 12 * s2); ctx.scale(s2, s2);
           ctx.strokeStyle = "rgba(10,30,20,.9)"; ctx.lineWidth = 2.3; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.stroke(ip); ctx.restore(); }
         var lr = r;   // where the label goes: below the laurel, if there is one
@@ -1334,23 +1290,8 @@
   var gmapMarks = {}, gmapGroups = [], gmapSel = null, gmapRaf = 0, gmapFailed = false;
   var ISLANDS_BOUNDS = [[14.175, 35.795], [14.585, 36.085]];
   function shortPlace(p) { return String(p || "").split(/[,(]/)[0].trim(); }
-  // Landmark emblems (24 x 24 line art) for every place a claim is about. Keys come from claim.yml location.icon.
-  var PLACE_ICONS = {
-    parliament: "M2 20.5 H22 M4 20.5 V9.5 H11 V20.5 M13 20.5 V9.5 H20 V20.5 M3 9.5 H21 M6 12 V18 M8.5 12 V18 M15.5 12 V18 M18 12 V18 M4 7 H20",
-    castille: "M2 20.5 H22 M3 20.5 V10.5 H21 V20.5 M10 20.5 V16 A2 2 0 0 1 14 16 V20.5 M3 10.5 L12 6.5 L21 10.5 M12 6.5 V2.5 L15.5 3.5 L12 4.6 M6 13 V15.5 M18 13 V15.5",
-    citygate: "M2 21 H22 M4.5 21 V5.5 L8.5 4 V21 M15.5 21 V4 L19.5 5.5 V21 M8.5 21 H15.5 M10.5 9 H13.5 M10.5 13 H13.5",
-    barrakka: "M2 20.5 H22 M3 20.5 V11.5 A3 3 0 0 1 9 11.5 V20.5 M9 11.5 A3 3 0 0 1 15 11.5 V20.5 M15 11.5 A3 3 0 0 1 21 11.5 V20.5 M3 8.5 H21 M17 6 L21 4.5",
-    ravelin: "M12 2.5 L21.5 10 L18 20.5 H6 L2.5 10 Z M7.5 17.5 H16.5 M12 6.5 V11 M9.5 11 H14.5",
-    waterfront: "M2 20.5 H22 M3 20.5 V12 H21 V20.5 M5 20.5 V16 A1.5 1.5 0 0 1 8 16 V20.5 M10.5 20.5 V16 A1.5 1.5 0 0 1 13.5 16 V20.5 M16 20.5 V16 A1.5 1.5 0 0 1 19 16 V20.5 M3 12 L12 8 L21 12",
-    tower: "M8 19 V8.5 H15 V19 M7 8.5 H16 M8 5.5 H15 V8.5 M8 5.5 V4 M11.5 5.5 V4 M15 5.5 V4 M10.5 12 H12.5 M2 21.5 C5 20.5 7 22.5 10 21.5 C13 20.5 15 22.5 18 21.5 C19.5 21 20.5 21.2 22 21.5",
-    landfill: "M2 20.5 C5 13 9 10 13 12 C16 13.5 19 16.5 22 20.5 Z M15.5 9.5 V4 H17.5 V10.5 M7 17.5 L9.5 15 M12 17 L14 14.5",
-    flyover: "M2 18 C8 18 10 10 16 10 H22 M2 12 H8 C14 12 15 18 22 18 M6 18 V21.5 M18 10 V21.5 M12 13.5 V21.5",
-    ro_plant: "M6 21 V12.5 H18 V21 Z M6 16 H18 M9.5 12.5 V21 M14.5 12.5 V21 M12 2.5 C12 2.5 9 6.5 9 8.5 A3 3 0 0 0 15 8.5 C15 6.5 12 2.5 12 2.5 Z",
-    park: "M2 20.5 H22 M7 20.5 V13.5 M7 4 C3 6 3 12 7 13.5 C11 12 11 6 7 4 Z M13 15.5 H21 M14 15.5 L13 20.5 M20 15.5 L21 20.5 M14.5 13 H19.5",
-    crane: "M4.5 21 V5.5 H20.5 M4.5 5.5 L8.5 2.5 H18.5 L20.5 5.5 M15 5.5 V10.5 M12.5 10.5 H17.5 V13.5 H12.5 Z M9.5 21 V17 H21 V21 M2 21 H22",
-    ferry: "M3 15 H21 L19 19 H5 Z M6.5 15 V11.5 H16.5 V15 M8.5 11.5 V8.5 H13.5 V11.5 M17.5 8 V11.5 M2 21.5 C5 20.5 7 22.5 10 21.5 C13 20.5 15 22.5 18 21.5 C19.5 21 20.5 21.2 22 21.5",
-    pin: "M12 21 C12 21 5 14 5 9 A7 7 0 0 1 19 9 C19 14 12 21 12 21 Z M12 9 V9.1"
-  };
+  // Landmark emblems for every place a claim is about: the "place:" glyphs of assets/glyphs.js, keyed by `icon` in claim.yml.
+  var PLACE_ICONS = GLY.places;
   var PLACES = [], UNPLACED = [];
   function buildPlaces() {
     var by = {}; PLACES = []; UNPLACED = [];
