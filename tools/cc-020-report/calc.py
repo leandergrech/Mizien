@@ -50,7 +50,7 @@ n_no, n_yes = T["Transposition table rows marked No"], T["Transposition table ro
 add("Transposition table rows marked No (approx.)", n_no, f"of {n_no + n_yes}", "study Annex 1, our count",
     f"{round(100 * n_no / (n_no + n_yes), 1)}%; authors judge 2 meaningful")
 add("Survey: Malta vs EU28 ratio (21% vs 9%)", round(F["Survey: Malta share ranking noise among top four environmental issues (2019)"] /
-    F["Survey: EU28 average same question"], 2), "ratio", "study chapter 6, second-hand", "not traced to ERA 2023c (403)")
+    F["Survey: EU28 average same question"], 2), "ratio", "study chapter 6, citing ERA 2023c", "in ERA annex pp. 5-6 (read 6 Oct 2026; no survey named); not in Marmara 2019 summary; origin unidentified")
 
 with open(D / "checks.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]))

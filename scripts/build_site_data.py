@@ -285,7 +285,8 @@ REPLY_PLEDGES = {"Not measurable", "Off track", "Missed"}
 
 
 def reply_state(d: dict):
-    """Where a check's right of reply stands: received, sent, not-sought, pending, not-needed, or None (no verdict)."""
+    """Where a check's right of reply stands: received, sent, not-sought, on-hold, pending, not-needed, or None (no verdict).
+    on-hold: a reply would be needed but rests on a document not yet read (right_of_reply.on_hold says which)."""
     ror = d.get("right_of_reply") or {}
     if ror.get("response") or ror.get("response_date"):
         return "received"
@@ -296,12 +297,14 @@ def reply_state(d: dict):
         return "not-sought" if ror.get("sought") is False else None
     if not (verdict in REPLY_VERDICTS or pledge in REPLY_PLEDGES):
         return "not-needed"
-    return "not-sought" if ror.get("sought") is False else "pending"
+    if ror.get("sought") is False:
+        return "not-sought"
+    return "on-hold" if ror.get("on_hold") else "pending"
 
 
 def status_label(d: dict) -> str:
     if d.get("status") == "Drafted":
-        return {"not-sought": "Draft: right of reply not sought",
+        return {"not-sought": "Draft: right of reply not sought", "on-hold": "Draft: right of reply on hold",
                 "not-needed": "Draft: no right of reply needed"}.get(reply_state(d), STATUS_LABELS["Drafted"])
     return STATUS_LABELS.get(d.get("status"), d.get("status"))
 

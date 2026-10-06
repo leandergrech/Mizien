@@ -1,11 +1,12 @@
 # CC-025: primary wording (supplied 5 October 2026)
 
 **Source:** "COP30 Malta National Statement", UNFCCC,
-https://unfccc.int/sites/default/files/resource/MALTA_cop30cmp20cma7_HLS_ENG.pdf, read with a script on
-5 October 2026. Despite the `.pdf` address, the file is a Word document (.docx); file metadata: created
-15 November 2025, modified 18 November 2025 (COP30 high-level segment). SHA-256 of the file as downloaded:
-a64f976ec3328411efb039d87db92d53088a8138e423c1ed3d05a20173ed42d3. The earlier blocker (an Incapsula wall) did
-not recur from this session.
+https://unfccc.int/sites/default/files/resource/MALTA_cop30cmp20cma7_HLS_ENG.pdf. **The wording below is the
+paragraph supplied by the maintainer on 5 October 2026; we did not read the file ourselves.** Our own download was
+refused by a bot check (Incapsula): on 6 October 2026 the address returned a 212-byte HTML page (text/html, HTTP 200),
+not the document. The file behind the `.pdf` address is a Word document (.docx), per the maintainer. The wording is
+therefore not independently verified against the UNFCCC file. (An earlier version of this note said the file was
+read with a script and gave a file hash and metadata; those statements are withdrawn as unverified.)
 
 The statement was read on the Minister's behalf:
 

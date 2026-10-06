@@ -89,12 +89,12 @@ def fig_pv():
     ax.text(2030.1, t, "350 MWp (plan)", fontsize=8.5, va="center", color="#8a5d00", fontweight="bold")
     ax.text(2030.1, c24 + (c24 - c23) * 6, f"{c24 + (c24 - c23) * 6:.0f} if 2024's pace continued", fontsize=8, va="center", color=GREY)
     ax.text(2023, c23 - 12, "241 (plan, end-2023)", fontsize=8, color=GREEN, ha="left")
-    ax.text(2024.05, c24 - 12, "252.3 (NSO, end-2024)", fontsize=8, color=GREEN, ha="left")
+    ax.text(2024.05, c24 - 12, "252.3 (NSO, end-2024; second-hand)", fontsize=8, color=GREEN, ha="left")
     ax.set_xlim(2022.8, 2033); ax.set_ylim(210, 380)
     ax.set_ylabel("Installed solar PV, MWp")
     ax.set_xticks(range(2023, 2031))
     ax.text(2022.9, 215, "Sources: Malta final updated NECP pp.74, 84; NSO NR 111/2025 (second-hand). The straight line to\n"
-            "350 MWp needs about 16 MWp a year; 2024 added 11.5 (net).", fontsize=7, color=GREY)
+            "350 MWp from the plan's own 241 MWp (end-2023) needs about 15.6 MWp a year; the 2024 point and pace (11.5 net) are second-hand.", fontsize=7, color=GREY)
     fig.savefig(OUT / "fig_pv.png", bbox_inches="tight", facecolor="white")
 
 

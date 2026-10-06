@@ -396,6 +396,27 @@ clear the Blocker cell. Workers merge `origin/main` into their branch instead of
   search animate the scale in log space about a fixed screen point; the map is orthographic so the fold is exact.
 - To do: test the trees on phones with real use; new claims must get a `location` (intake routine updated).
 
+## Audit of the worker checks (6 October 2026)
+
+Five independent Sonnet auditors re-checked the ten checks the nightly workers had produced (CC-020, 024, 025, 026,
+029, 031, 037, 039, 045, 102; CC-030 had its own review on 5 Oct). No verdict or pledge label changed; nothing
+material was wrong in any figure or quote, but there were recurring faults, all corrected (v1.1; CC-037 v1.2):
+- **Rated paraphrase:** CC-024 and CC-045 were partly scored against the intake paraphrase or a headline; both now
+  restate the speaker's own words and rate only those. CC-031 put TVM's indirect speech in quotation marks.
+- **Status wording:** cover, footers and logs disagreed (CC-020, CC-026, CC-102). The report template now derives the
+  wording (`reply_status()` in tools/mizien_report.py); `pledge_label=` for mixed checks.
+- **Absence claims without a search log:** CC-029 (ICM news now read back to June 2025: no notice) and CC-045
+  (flood-incident data search logged; an EWA before-and-after comparison exists but was not read).
+- **Second-hand figures in headline places:** CC-039's 4.68 kWh/m³ was not just second-hand but wrong (it is the
+  whole-utility figure for 2022); replaced by first-hand WSC figures. CC-024's PV tile and CC-031's 1,300 t thumbnail
+  replaced.
+- **Right of reply on hold** (new record field `right_of_reply.on_hold`, shown on the site as "right of reply on
+  hold"): CC-031 until the Gozo plan is read; CC-045 until the EWA before-and-after comparison is read.
+- **Worker routine:** new section 5a in methodology/worker-routine.md with the rules above.
+- **For the maintainer:** obtain the Gozo climate-neutrality plan (CC-031) and the EWA before-and-after comparison of
+  the flood relief project (CC-045, 2nd Flood Risk Management Plan, measure FLD1); Newsbook pages for CC-026 and
+  CC-102 could not be re-read (blocked), their wording rests on the 5 Oct reads.
+
 ## Agent batch 2 (5 October 2026, PR #75)
 
 Ten claims checked by Sonnet agents in separate worktrees (shared records written by the lead session from spec files):

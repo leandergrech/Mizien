@@ -9,14 +9,14 @@ claim:
   text: 'Newsbook, reporting Eurostat: Malta recorded the EU''s largest rise in greenhouse gas emissions, an estimated
     169.4% between 2015 and 2025.'
   speaker: Newsbook (reporting Eurostat)
-  date: null
+  date: 2026-06-18
   wording_status: Verbatim found
   sources:
   - title: Malta records EU's largest rise in greenhouse gas emissions
     publisher: Newsbook
-    date: n/d
+    date: 18 Jun 2026
     url: https://newsbook.com.mt/en/malta-records-eus-largest-rise-in-greenhouse-gas-emissions/
-    note: The claim. Read in full 5 Oct 2026. Newsbook reports Eurostat; the wording tested is the outlet's.
+    note: The claim. By Damian Micallef; read in full 5 Oct 2026. Newsbook reports Eurostat; the wording tested is the outlet's. The quote is the article's opening line (the headline is 'Malta records EU's largest rise in greenhouse gas emissions').
   - title: 'EU economy greenhouse gas emissions: -17% since 2015'
     publisher: Eurostat
     date: 16 Jun 2026
@@ -43,7 +43,7 @@ priority: Done (v1.0)
 data_readiness: High
 caveats: No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading
   or Contradicted). The figure reports a Eurostat estimate on the residence principle; the territorial inventory shows
-  +1.6% (2015-2024). 2025 is an early estimate. Central Bank of Malta report not read (second-hand). No operator is assessed.
+  +1.6% (2015-2024). 2025 is an early estimate. Central Bank of Malta report not read (second-hand). No operator is assessed. The Newsbook page was not reachable on 6 Oct 2026 (connection refused, Wayback blocked); its date of 18 Jun 2026 is corroborated by the Malta News Agency copy dated 18 Jun 2026 and by search results, and the author (Damian Micallef) is as recorded when the article was read in full on 5 Oct 2026.
 right_of_reply:
   sent: null
   deadline: null
@@ -58,8 +58,8 @@ outputs:
 thumbnail:
   figure: +169.7%
   caption: Malta emissions in Eurostat's accounts, 2015-2025, 98.6% of the rise from air transport
-version: '1.0'
-last_reviewed: '2026-10-05'
+version: '1.1'
+last_reviewed: '2026-10-06'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
@@ -70,30 +70,44 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-026A
     text: "Eurostat estimates Malta’s emissions rose 169.4% in 2015–2025"
+    said_by: "Newsbook [1]"
     finding: "Eurostat’s release says +169.4% [2]; recomputed from the database +169.7% after revision [3]."
     rating: "Supported"
     tone: green
   - id: CC-026B
     text: "This is the highest increase in the EU; only four rose"
+    said_by: "Newsbook [1]"
     finding: "Malta first, then Cyprus +10.7%, Lithuania, Romania; 23 fell [2][3]."
     rating: "Supported"
     tone: green
   - id: CC-026C
     text: "Eurostat counts Malta-registered aircraft wherever they fly; the UN counts emissions in Malta only"
+    said_by: "Newsbook [1] (outlet’s paraphrase)"
     finding: "Eurostat: residence principle, resident units [4]; inventory: territorial, international aviation a memo item [5]. “Registered” is the outlet’s wording; Eurostat speaks of the resident operator."
     rating: "Largely supported"
     tone: lime
   - id: CC-026D
     text: "Headline: “largest rise in greenhouse gas emissions” (read alone)"
+    said_by: "Newsbook [1] (headline)"
     finding: "True of the accounts; territorial emissions rose 1.6% (2015–2024). The body gives the context."
     rating: "Needs context"
     tone: amber
   - id: CC-026E
     text: "Central Bank of Malta: intensity declining and at historic lows"
+    said_by: "Newsbook [1], citing the Central Bank (second-hand ◆)"
     finding: "Second-hand: we did not read the report ◆. Not tested."
     rating: "Not tested"
     tone: grey
 history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: wording
+    note: "Newsbook article (18 Jun 2026, Damian Micallef) read in full; verbatim wording archived in the report. The quoted sentence is the article's opening line; the headline is 'Malta records EU's largest rise in greenhouse gas emissions'."
+  - date: 2026-10-05
+    step: note
+    note: "Eurostat news item ddn-20260616-2 of 16 Jun 2026 read: Malta +169.4%, Cyprus +10.7%, Lithuania +9.5%, Romania +5.4%."
+  - date: 2026-10-05
+    step: note
+    note: "Eurostat data pulled: env_ac_ainah_r2 (updated 7 Aug 2026) and env_air_gge (updated 2 Jun 2026), plus table metadata (residence principle); recomputed in tools/cc-026-report/calc.py, saved in data/cc-026/."
   - date: 2026-10-05
     step: version
     version: "1.0"
@@ -101,3 +115,16 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: clarification
     note: "Right-of-reply status brought into line with the 5 Oct 2026 rule: a reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none. Cover, page footer, flyer and the standards appendix now say so. Findings, verdict and confidence unchanged."
+  - date: 2026-10-06
+    step: note
+    note: "Re-check of the Newsbook page for date and author: newsbook.com.mt refused connections from scripts and Wayback was blocked. Date corroborated by the Malta News Agency copy (18 Jun 2026) and search results. Logged in literature/CC-026/notes.md."
+  - date: 2026-10-06
+    step: correction
+    note: "Cover status line read 'draft' although the check needs no right of reply (the 5 Oct clarification had not reached the cover); it now reads 'no right of reply needed', derived by the template. The cover and flyer quote is now labelled as the article's opening line, with the headline given separately, instead of appearing as the headline."
+  - date: 2026-10-06
+    step: clarification
+    note: "Record fixes: claim.date and the Newsbook source date set to 18 Jun 2026 (were empty and n/d); report sub-claim table gains a 'Said by' column (speakers added to the sub-claims); research log completed. Findings, verdict and confidence unchanged."
+  - date: 2026-10-06
+    step: version
+    version: "1.1"
+    note: "1.1: corrections after the 6 Oct 2026 audit: cover status, quote labelling, claim date and speaker records."

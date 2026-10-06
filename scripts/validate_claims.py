@@ -76,6 +76,10 @@ def check(path: pathlib.Path) -> list:
         errs.append("status 'Right of reply' needs right_of_reply.sent date")
     if d["status"] == "Published" and reply_needed and not ror.get("sent"):
         errs.append("publishing this verdict needs a right of reply first (right_of_reply.sent date)")
+    if ror.get("on_hold") is not None and not (isinstance(ror["on_hold"], str) and ror["on_hold"].strip()):
+        errs.append("right_of_reply.on_hold must say what the reply waits on (a non-empty string)")
+    if ror.get("on_hold") and ror.get("sent"):
+        errs.append("right_of_reply.on_hold is set but a sent date is recorded")
     if ror.get("sought") is False and ror.get("sent"):
         errs.append("right_of_reply.sought is false but a sent date is recorded")
     if d["status"] == "Published" and c.get("wording_status") != "Verbatim found":

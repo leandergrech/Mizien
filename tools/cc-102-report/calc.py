@@ -36,6 +36,11 @@ assert (tot_s, tot_ni, tot_rep) == (81, 22, 22), (tot_s, tot_ni, tot_rep)
 # Chapter 3 of the 2025 report (Commissioner for Environment and Planning): 5 implemented, 2 implemented after
 # referral to the House, 5 still not implemented, of 12 sustained cases.
 still_open = 5
+# Reconciliation of Table 1.3 (4 implemented + 1 partly, 7 not) with the chapter (5 implemented, 2 later, 5 open):
+e25 = next(r for r in y25 if r["office"] == "Environment and Planning")
+assert int(e25["implemented"]) + int(e25["partly_implemented"]) == 5      # chapter's "five implemented"
+assert int(e25["not_implemented"]) == 2 + still_open == 7                 # 2 implemented later + 5 still open
+assert 5 + 2 + still_open == int(e25["sustained_cases"]) == 12
 out.append({"year": "2025 (chapter 3, at time of writing)", "office": "Environment and Planning", "sustained_cases": 12,
             "not_implemented": still_open, "rate_of_sustained_pct": round(100 * still_open / 12, 1),
             "cases_with_recommendation": 12, "rate_of_cases_with_recommendation_pct": round(100 * still_open / 12, 1),

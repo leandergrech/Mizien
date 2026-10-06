@@ -50,3 +50,11 @@ which collects some items annually and others every three or six years (Annex IV
 - Amphora does not name a source; the match to Eurostat ilc_mddw02 and to Eurostat's 2025 article and release is ours.
 - The noise indicator (ilc_mddw01/ilc_mddw04) is not used in this check and no noise data file is kept; Eurostat's
   2025 article gives Malta 31.3% for noise (2023), the highest in the EU (see CC-020).
+
+## Audit checks, 6 Oct 2026
+
+- doi:10.2908/ILC_MDDW02: doi.org redirects to https://ec.europa.eu/eurostat/databrowser/product/page/ILC_MDDW02; DataCite
+  (api.datacite.org) lists it, creator Eurostat, EN title "Pollution, grime or other environmental problems". Crossref has no
+  record (DataCite DOI). Kept in reference 2.
+- Amphora page (re-fetched 6 Oct 2026, 115,688 bytes, same size as the 5 Oct fetch): post-date element reads "12 May 2026".
+- Wayback capture 20260616063729 opened on 6 Oct 2026: the intro sentence, the body sentences and "12 May 2026" are all present.

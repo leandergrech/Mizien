@@ -13,3 +13,9 @@
 - No technology-by-technology breakdown of the 24.5% in the plan, so PV/biofuel/heat-pump contributions in points of share are untested.
 - Gross final energy consumption not used; no assumed rates anywhere.
 - No peer-reviewed literature tests the plan; none cited.
+
+## Audit corrections, 6 Oct 2026 (v1.1)
+- NSO PV figures remain second-hand (search summary; nso.gov.mt 403); not a headline or deciding number. PV pace uses the plan only: (350-241)/7 = 15.6 MWp a year (pp. 74, 84).
+- Yield (about 1,290 kWh/kWp) divides by end-2024 capacity and so understates yield; not relied on.
+- Heating and cooling jump may owe much to the Commission counting rule for air-to-air heat pumps; not separable.
+- Pledge date 7 Jan 2025 = submission; plan dated December 2024.
