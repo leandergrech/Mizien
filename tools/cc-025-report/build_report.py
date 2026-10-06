@@ -54,19 +54,25 @@ S.append(PageBreak())
 
 # ================================================================== 1
 S.append(SectionHeading(1, "The claim and what we could verify"))
-S.append(P("The wording comes from “COP30 Malta National Statement” on the UNFCCC site [1], read by the maintainer "
-           "from the file itself (a Word document behind a <i>.pdf</i> address, dated 15–18 November 2025) and "
-           "recorded in <i>literature/CC-025/primary-source.md</i>. The statement was delivered on behalf of Malta’s "
-           "Minister for the Environment, Energy and Public Cleanliness; the document does not name the person who "
-           "read it, so we attribute it to the Government of Malta. Our automated access to the UNFCCC file was "
-           "refused (a bot check), so we relied on the supplied text, which covers the opening line and the paragraph "
-           "quoted above."))
+S.append(P("The wording comes from “COP30 Malta National Statement” on the UNFCCC site [1] (a Word document behind a "
+           "<i>.pdf</i> address). <b>The wording is the paragraph supplied by the maintainer on 5 October 2026</b> and "
+           "recorded in <i>literature/CC-025/primary-source.md</i>; the supplied text covers the opening line and the "
+           "paragraph quoted above. Our own download of the file was refused by a bot check: on 6 October 2026 the "
+           "address still returned a 212-byte HTML page, not the document. We therefore could not check the "
+           "wording against the file ourselves. The statement was delivered on behalf of Malta’s "
+           "Minister for the Environment, Energy and Public Cleanliness; the text we have does not name the person who "
+           "read it, so we attribute it to the Government of Malta."))
+S.append(callout([P("TWO THINGS WE COULD NOT SETTLE", tag),
+                  P("(1) The wording is not independently verified against the UNFCCC file (see above). (2) The "
+                    "statement gives no year, so the choice of 2023 and 2024 is ours: 2023 was the latest inventory "
+                    "year available in November 2025, and 2024 is the latest in the current data. Both are shown "
+                    "throughout.", small)], bg=AMBER_PALE, bar=AMBER))
 S.append(std_table([
     [C("Source", cellh), C("What it says", cellh), C("Our access", cellh), C("Status", cellh)],
     [C("<b>Government of Malta</b>, COP30 national statement, Nov 2025 [1]"),
      C("“Importantly, Malta has already reduced its per capita emissions by over 44% compared to 2005 and emissions "
        "per unit of GDP by more than 80%, demonstrating our commitment to decoupling growth from emissions.”"),
-     C("The paragraph, as supplied by the maintainer (5 Oct 2026). Rest of the statement not read."),
+     C("The paragraph, as supplied by the maintainer (5 Oct 2026); our download was refused. Rest of the statement not read."),
      C("<b>The claim</b>")],
     [C("<b>Climate Action Authority</b>, press release, 13 Nov 2025 (CC-003) [2]"),
      C("Per-capita fall of 44% (EU 34%); emissions per unit of GDP down 81.6% (EU 61.9%). Different speaker, same "
@@ -169,6 +175,17 @@ S.append(P("<b>Why.</b> (1) The 44% figure is accurate and matches Eurostat and 
            "headline figure is stated without the basis it needs, and it overstates the fall by about ten points on "
            "the usual basis. Confidence is moderate because we have read the supplied paragraph only, and the "
            "statement’s own source and method are not published."))
+S.append(P("<b>Why a ten-point overstatement is a minor caveat under the scale.</b> The scale reserves "
+           "<i>Not substantiated</i>, <i>Misleading</i> and <i>Contradicted</i> for claims whose central figure fails, or "
+           "whose framing would leave a reader with a wrong picture. Here the 44% figure is right, the decoupling "
+           "the sentence draws from it holds (real GDP +161%, emissions −27%), and “more than 80%” is reproducible "
+           "from Eurostat on a stated, computable basis (current prices: −82% and −84%). The shortfall in volumes "
+           "(−70% and −72%, so 8 to 10 points below the claim) changes the size of one figure, not the conclusion "
+           "that Malta’s intensity fell steeply and faster than the EU’s on either basis. What would have made this "
+           "<i>Not substantiated</i>: no basis, in any year, on which the figure could be reproduced; or evidence that "
+           "the government’s own source uses volumes and obtains a different result. We also keep this consistent "
+           "with CC-003, which rated the Climate Action Authority’s release <i>Misleading</i> on a different ground "
+           "(it left out the Commission’s 2030 projection), not on the accuracy of these figures."))
 S.append(P("<b>What this verdict does not say.</b> It does not say Malta is on course for its 2030 target, which is "
            "a separate question (CC-003: Misleading for the authority’s release, which left out the projection; CC-094; "
            "CC-011). It does not say anyone chose the current-price basis to flatter the result: we found no document "
@@ -189,9 +206,11 @@ S += [Spacer(1, 4 * mm),
 
 # ================================================================== 7
 S += [Spacer(1, 6 * mm), SectionHeading(7, "Limitations")]
-for l in ["We read only the paragraph supplied by the maintainer; our own download of the UNFCCC file was refused. "
-          "Other parts of the statement may qualify or add to it.",
-          "The statement gives no year, scope or GDP basis. We report 2023 and 2024, and the Eurostat total excluding "
+for l in ["We read only the paragraph supplied by the maintainer; our own download of the UNFCCC file was refused by a "
+          "bot check (on 6 October 2026 it still returned a 212-byte HTML page). The wording is therefore not "
+          "independently verified against the file, and other parts of the statement may qualify or add to it.",
+          "The statement gives no year, scope or GDP basis. The choice of 2023 and 2024 is our assumption (2023 was the "
+          "latest inventory year in November 2025); we report both, and the Eurostat total excluding "
           "land use and international transport (TOTX4_MEMO). Eurostat’s other total (TOTXMEMO) changes Malta’s "
           "intensity results by 0.1 point or less (EU-27: up to 0.8 points).",
           "Eurostat’s 2026 inventory may differ slightly from the national submission behind the statement.",
@@ -228,7 +247,13 @@ S += appendix_a("A experiment · B observational study with a control or gradien
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
 S += revision_log([("1.0", "5 Oct 2026", "First issue. Verdict Largely supported (moderate confidence); "
-                                         "no right of reply needed.")])
+                                         "no right of reply needed."),
+                   ("1.1", "6 Oct 2026", "Corrections after audit: explained in section 6 why the roughly ten-point "
+                                         "overstatement in volumes is a minor caveat and what would make the claim Not "
+                                         "substantiated; recorded consistently that the wording is the maintainer-supplied "
+                                         "paragraph and our own UNFCCC download was refused (HTML page returned on "
+                                         "6 Oct); stated the year choice as our assumption. Verdict unchanged; no right "
+                                         "of reply needed.")])
 
 build_report(Report(
     number="025", out=str(FIG / "report.pdf"), kicker="Statistics and EU data",
@@ -239,10 +264,9 @@ build_report(Report(
     attribution="Government of Malta, COP30 national statement, November 2025.",
     context="Delivered on behalf of the Minister for the Environment, Energy and Public Cleanliness.",
     verdict="Largely supported", verdict_note="The 80% holds only at current prices; about 70% in real terms",
-    footer_lines=["Version 1.0  ·  5 October 2026", "Status: no right of reply needed",
+    footer_lines=["Version 1.1  ·  6 October 2026", "Status: no right of reply needed",
                   "Prepared from public sources and Eurostat data.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Per-person and per-GDP emissions – Malta at COP30", version="1.0", date="5 October 2026",
-    status_note="no right of reply needed",
+    running_head="Per-person and per-GDP emissions – Malta at COP30", version="1.1", date="6 October 2026",
     pdf_title="Emissions down 44% per person, 80% per unit of GDP? Claim Check 025",
     pdf_subject="Tests the Government of Malta's COP30 statement on per-capita and per-GDP emissions",
     story=S))

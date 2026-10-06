@@ -11,7 +11,8 @@ Access: F = full text, A = abstract or summary only, S = second-hand. Searches r
 
 ## Gaps
 
-- The rest of the COP30 statement was not read; the UNFCCC file returned a bot-check page to our automated download.
+- The rest of the COP30 statement was not read; the wording is the paragraph supplied by the maintainer. The UNFCCC file returned a bot-check page to our automated download on 5 October and again on 6 October 2026 (212-byte HTML, not the .docx), so the wording is not independently verified.
+- The year (2023 or 2024) is the report's assumption: the statement names none.
 - The statement gives no year, scope or GDP basis. The Climate Action Authority's 81.6% (EU 61.9%) is close to our current-price result for 2023 (-81.9%, EU -62.2%); this suggests the same basis but neither source says so.
 - No Eurostat table of "GHG intensity of GDP" was reachable through the API (sdg_13_20 and env_ac_aigg returned not available), so the ratio is our own calculation from the three source tables.
 - No Malta-specific peer-reviewed decomposition of emissions was searched for again; see literature/CC-003/notes.md.
