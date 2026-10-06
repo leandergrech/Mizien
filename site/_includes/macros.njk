@@ -12,5 +12,5 @@
 
 {#- A body or person: name, and role where the register gives one. -#}
 {% macro body(b) -%}
-<a class="body-chip{% if b.kind == 'person' %} is-person{% endif %}" href="{{ b.path }}">{{ b.name }}{% if b.role %}<span class="body-role">, {{ b.role }}</span>{% endif %}</a>
+<a class="body-chip{% if b.kind == 'person' %} is-person{% endif %}" href="{{ b.path }}">{% bodyglyph b %}{{ b.name }}{% if b.role %}<span class="body-role">, {{ b.role }}</span>{% endif %}</a>
 {%- endmacro %}

@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (partial views fixed in Explore; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 6 October 2026 (partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -15,6 +15,61 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
+
+## Design pass: logo, light theme, glyphs (6 October 2026)
+
+Done at the maintainer's request (aesthetics rework; merged by the "Miżien sota" session, no PR from the working session).
+
+**Logo.** A level balance (beam horizontal, pans at one height) standing in the top notch of an eight-pointed Maltese cross.
+One mark for every page: `site/_includes/brand-mark.njk` (recoloured through the `bm-*` classes and the `--mark-*` tokens;
+the Explore header includes it too, it no longer carries a copy). Favicon: `docs/favicon.svg`, a dark rounded badge so it reads
+on any tab colour. The report PDFs and flyers never drew the old tipping scales, so nothing outside the site changed.
+
+**Light theme.** Deep green `#14452F` as the foreground (our reading of "court green": the colour of the report covers and
+headings) on pale sage `#e8efe8` with cream cards. Dark stays the default and looks as before (pixel-compared against the
+previous build: only the header differs, plus native controls such as checkboxes now follow `color-scheme`).
+- `site/assets/theme.css` holds every colour token for both themes; every page loads it first. Colours with transparency are
+  written `rgb(var(--rim) / .28)` so the base colour flips with the theme. `--amber` is for fills (always `#e3a72f`);
+  `--accent` is amber as text, border, outline or stroke (deeper on light, so focus rings and amber text stay readable).
+  Do not hard-code the dark greens in new CSS: use the tokens.
+- The toggle (`_includes/theme-toggle.njk`, `assets/theme.js`) sits beside the main tabs on every page. The choice is kept in
+  `localStorage` (`mizien.theme`); `?theme=light|dark` shows a theme for one visit (handy for links and for testing).
+  `_includes/theme-init.njk` sets it before first paint (no flash). **With no stored choice the site follows the reader's
+  system setting (maintainer decision, 6 Oct 2026), dark where the browser cannot say; it also follows a change while the page is open.**
+- The claims web (sphere, lines, labels, rings) reads `--cv-*`/`--stage-*` tokens through `map.js` (`readCanvasTheme`); the Malta
+  map has a dark and a light palette (`mapStyle`) and restyles in place when the theme changes.
+- Checked: axe colour-contrast has 0 violations on 12 page types in the light theme (and on the glyph key and claim pages in
+  both); a planted bad colour is caught by the same run, so the audit does evaluate the pages.
+
+**Glyphs.** The idea (the maintainer's): design mirrors information, as map icons are curated in a game, for attention and
+discovery. Rules, also printed on `/about/glyphs/`: one silhouette per kind of thing; the same thing looks the same in every
+view; things that are the same idea share one glyph on purpose; colour is the verdict, the glyph is the kind (verdict glyphs
+repeat the verdict so it reads without colour); **bodies share the glyph of their kind** (no emblem of their own: the register is
+open-ended and neutral, and an emblem could read as a logo or an endorsement).
+- `site/assets/glyphs.js` is the single registry: 129 glyphs, 8 shared (aliases listed in it). Read by `map.js`, `lens.js`, the
+  Eleventy shortcodes `{% glyph name %}` / `{% bodyglyph b %}` (`eleventy.config.js`, via `scripts/glyphs.mjs`) and
+  `scripts/validate_claims.py` (place keys). Keys: display names for topics, subtopics, verdicts, patterns, stages and kinds of
+  body; `pledge:<label>`; `theme:T<n>`; `place:<key>`; `mode:<grouping>`; `person`. 24 x 24 box, stroke only.
+- New in this pass: Health & Safety and Tourism & Population (topics had none), all 32 subtopics (they borrowed their topic's),
+  the six pledge labels, ten themes (T6, T9, T10, T13, T15 share a pattern, topic or subtopic glyph), 18 place emblems; and
+  collisions fixed (the scales meant Governance & Promises, courts and "group by verdict": it is now the verdict glyph only; the
+  speech bubble meant Right of reply and Who said it: Who said it is a microphone; Promise-without-baseline has its own flag;
+  Nature & Wildlife is a bird). Claims about the whole country use the Maltese cross (`cross`).
+- Places: `location.icon` was changed in 63 `claim.yml` files (presentation only). Every claim at a place must carry the same
+  emblem. `methodology/automation.md` says how intake picks one.
+- `site/_data/glyphkey.js` runs on every build: it **fails** on two different things drawn identically or a claim naming an emblem
+  that does not exist, and **warns** (build log, `[glyphs]`) about topics, subtopics, labels, themes or places with no glyph (they
+  fall back to the parent's glyph, or the generic pin). New topic, subtopic, pledge label, theme or place emblem = a glyph in
+  `glyphs.js`.
+- Shown: web nodes and subgroup rows, filter lists and chips (Explore, timeline), claim pages (topic, subtopic, verdict, pledge
+  label, a new "Where" fact with the place emblem, kind of body on every body chip), `/about/glyphs/` (footer and Explore legend).
+- Not done on purpose: verdict glyphs inside every `.badge` (many templates; the claim page and filters have them), glyphs on
+  individual claims' nodes (their colour is the verdict), unique glyphs for individual bodies (see above).
+- Redrawn on 6 Oct 2026 at the maintainer's request: Emissions & targets (an arrow into a target), Open spaces & parks (a
+  round tree and a bench), Construction waste (a wheelbarrow of rubble), Valletta (dome and spire on a bastion), Cittadella
+  (walls and cathedral front on a hill), Gardjola (the domed lookout with its eye).
+- Noticed, not changed: in the Explore panel the "shares: ..." lines under Similar wording (`map.js`, a `span.small` outside
+  `#panel p.small`) render in body size instead of the small type used around them. Same on the previous build.
 
 ## Timeline page
 

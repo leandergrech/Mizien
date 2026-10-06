@@ -60,7 +60,7 @@ location:
   lat: 35.97088
   lon: 14.34888
   scope: site
-  icon: park
+  icon: reeds
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-106A

@@ -1,0 +1,65 @@
+---
+layout: base.njk
+title: Glyph key
+description: The small pictures Miżien uses for topics, subtopics, verdicts, pledge labels, kinds of body, themes and places, and why each kind of thing has its own.
+permalink: /about/glyphs/
+---
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li>About</li><li aria-current="page">Glyph key</li></ol>
+</nav>
+
+<article class="page prose-page">
+  <header class="page-head">
+    <p class="kicker">About</p>
+    <h1>Glyph key</h1>
+    <p class="lead">Every kind of thing in Miżien has a small picture of its own, so it can be recognised before a word is
+      read, the way a map's icons are chosen. {{ glyphkey.total }} glyphs cover the topics, subtopics, verdicts, pledge
+      labels, kinds of body, themes and places; {{ glyphkey.shared }} are shared on purpose.</p>
+  </header>
+
+  <section aria-labelledby="h-rules">
+    <h2 id="h-rules">How the glyphs are chosen</h2>
+    <ul>
+      <li><strong>One silhouette for each kind of thing.</strong> Two different things never share a glyph. The site
+          checks this every time it is built.</li>
+      <li><strong>The same thing looks the same everywhere.</strong> A subtopic has the same glyph in the claims web, on
+          the map, in the filters and on a claim's page.</li>
+      <li><strong>Shared where the idea is the same.</strong> A theme that is the pattern "Selective metric" uses that
+          pattern's glyph; a bus terminus on the map uses the bus.</li>
+      <li><strong>Colour and shape say different things.</strong> A claim's colour is its verdict; the glyph says what kind
+          of thing it is, and the verdict glyphs repeat the verdict so it can be read without colour.</li>
+      <li><strong>Bodies share the glyph of their kind.</strong> The register of bodies is open-ended and neutral, so no
+          body gets an emblem of its own that could read as a logo or an endorsement.</li>
+    </ul>
+  </section>
+
+  {%- for g in glyphkey.groups %}
+  <section class="wide" aria-labelledby="gk-{{ g.id }}">
+    <h2 id="gk-{{ g.id }}">{{ g.title }}</h2>
+    <p>{{ g.note }}</p>
+    <ul class="gk-grid">
+      {%- for it in g.items %}
+      <li class="gk-item{% if it.alias %} is-shared{% endif %}">
+        <span class="gk-glyph" aria-hidden="true">{% glyph it.key %}</span>
+        <span class="gk-text">
+          <b>{{ it.name }}</b>
+          {%- if it.parent %}<span class="small"> in {{ it.parent }}</span>{% endif %}
+          {%- if it.n %}<span class="small"> · {{ it.n }} {{ "claim" if it.n == 1 else "claims" }}</span>{% endif %}
+          {%- if it.alias %}<span class="gk-shared">Shares the glyph of {{ it.aliasName }}</span>{% endif %}
+          {%- if it.places and it.places.length %}
+          <span class="gk-places">{% for p in it.places %}{{ p.place }} ({{ p.n }}){% if not loop.last %}; {% endif %}{% endfor %}</span>
+          {%- elif g.id == "place" and not it.alias %}<span class="gk-places">Not used by any claim yet</span>{%- endif %}
+        </span>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endfor %}
+
+  <section aria-labelledby="h-add">
+    <h2 id="h-add">Adding a glyph</h2>
+    <p class="small">The glyphs are one file, <code>site/assets/glyphs.js</code>, read by the claims web, the map, the filters and
+      these pages. A new topic, subtopic, pledge label or place emblem needs a glyph in the right group there; until it has one it
+      shows its parent's, and the build log says which are missing.</p>
+  </section>
+</article>

@@ -85,9 +85,14 @@ Every run therefore starts with `python scripts/net_check.py`:
   kinds: statement, data, reply, correction, note). New data that bears on a finished check goes there too, as `data`.
 - Gives every new claim a `location` (place, lat, lon from OpenStreetMap or the source; scope `site`, or
   `institution`/`national` with the institution's address) so it appears on the map view, and an `icon` for its
-  landmark medallion: one of parliament, castille, citygate, barrakka, ravelin, waterfront, tower, landfill, flyover,
-  ro_plant, park, crane, ferry, or pin (generic). Reuse the place name exactly when a claim shares a site. A new
-  emblem needs a path in PLACE_ICONS (docs/index.html) and the list in scripts/validate_claims.py.
+  landmark medallion: one of the `place:` emblems in `site/assets/glyphs.js` (the glyph key at `/about/glyphs/` lists them
+  with the places that use each; `pin` is the generic fallback). Use an emblem of its own for a place with an identity
+  (a landmark, a plant, a bay) and share one only for the same kind of place (two ferry terminals). A claim about the
+  whole country uses the Maltese cross (`cross`). Reuse the place name exactly when a claim shares a site, and give
+  every claim at a place the same emblem. A new emblem is a new `place:` entry in `site/assets/glyphs.js` (a 24 x 24
+  stroke-only path, drawn like the others); `scripts/validate_claims.py` and the site build read that file, and the
+  build log warns about any place left on the generic pin. A new topic, subtopic, pledge label or theme needs a glyph in
+  the same file (until it has one it shows its parent's, and the build log says which are missing).
 - Never changes a verdict, a finished report, or a claim that has a report.
 
 ## Queue file
