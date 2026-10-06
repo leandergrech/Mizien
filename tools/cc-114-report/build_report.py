@@ -344,8 +344,8 @@ S.append(P("<b>Consistency with other checks.</b> Claim Check 026 rated a news r
            "the speaker’s argument (not to Malta or to any party) cited while the inventory reported to the UN climate "
            "convention points the other way. On the residence basis the PN used, emissions per person (households "
            "included) rose 69.2% from 2013 to 2024, 27th of 27, against −21.2% for the EU-27 [6, 9]. The verdicts "
-           "differ because this release adds a causal link the data contradict, whereas Claim Check 025 states the "
-           "basis of the figure it rates and the statement it rates draws no causal inference."))
+           "differ because this release adds a causal link the data contradict; the statement rated in Claim Check 025 "
+           "also names no basis, but its figures hold on the territorial inventory and it draws no causal inference."))
 S.append(P("<b>What this verdict does not say.</b> It does not say Malta’s renewable shares are adequate (its "
            "electricity share is the EU’s lowest), that aviation emissions do not matter, or that anyone acted in "
            "bad faith. A statement the data support would read: <i>“On Eurostat’s residence-based measure Malta’s "

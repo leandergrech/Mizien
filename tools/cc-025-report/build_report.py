@@ -147,7 +147,7 @@ S.append(contested("Is “decoupling growth from emissions” fair?", "LARGELY Y
                    label_b="CAVEATS"))
 S.append(Spacer(1, 2 * mm))
 S.append(P("<b>The same period on the residence basis.</b> The statement counts territorial emissions (UNFCCC "
-           "inventory basis) and says so by implication; this report uses that basis throughout. Eurostat’s air emissions "
+           "inventory basis): it names no basis, but its figures hold on that one, and this report uses it throughout. Eurostat’s air emissions "
            "accounts count emissions of Malta-resident units instead, including international aviation fuel bought "
            "abroad. On that basis (env_ac_ainah_r2, all activities and households, per person using nama_10_pe) "
            "Malta’s emissions per person <i>rose</i> 69% from 2013 to 2024 (7.2 to 12.2 t CO2e; the 2024 value is "
