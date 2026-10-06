@@ -8,7 +8,7 @@ of reply needed. See `notes.md` (sources, access, method, search log, gaps) and 
 ## The wording
 
 Supplied by the maintainer on 5 Oct 2026 (`primary-source.md`) and **read again in the page HTML on 6 Oct 2026**
-(EEA, *Air pollution country fact sheets 2025: quick country facts*, page "Modified 01 Dec 2025"; fetched with curl
+(EEA, *Air pollution quick country facts* (2025 country fact sheets), page "Modified 01 Dec 2025"; fetched with curl
 and a browser User-Agent, HTTP 200, 954,977 bytes, SHA-256
 `d8deb81af732a2d9c4fabda44c6af481ef53d4dff187764bcfb5dbda4817e6b8`). The Malta sentence is word for word as in
 `primary-source.md`. The earlier record text ("fell by 67.7% ... to 172 attributable deaths") was the intake's
@@ -27,7 +27,8 @@ paraphrase; the report quotes the page.
 | Eurostat API: `sdg_11_52`, `demo_pjan`, `demo_magec`, `hlth_cd_aro`, `env_air_emis` | Downloaded with flags. |
 | Zenodo (ETC reports, CC BY 4.0) | ETC HE 2025/8, ETC HE 2025/5 and ETC/ATNI 2020/1 downloaded and read (see `notes.md`). Not committed (9.5, 18.9 and 3.9 MB; stable on Zenodo with DOIs); hashes in `notes.md`. |
 | EEA Air Quality download service (`eeadmz1-downloads-api`, AirBase and E1a Parquet) | All 30 Malta PM2.5 and PM10 files downloaded; hashes in `data/cc-035/eea_station_file_manifest.csv`. |
-| Crossref, DataCite, doi.org handle API, Europe PMC | DOIs verified; abstracts for Chen and Hoek (2020) and Scerri et al. (2018). OpenAlex refused (daily budget used up on this network). |
+| EEA station metadata (`PanEuropean_metadata.csv`, discomap.eea.europa.eu/map/fme/metadata/) | Malta's PM10 and PM2.5 sampling points: station types, areas, dates, sampling processes (`data/cc-035/eea_station_metadata_mt.csv`). MT00002 (2005 PM10 only) is not in the current metadata. |
+| Crossref, DataCite, doi.org handle API, Europe PMC | DOIs verified; abstracts for Chen and Hoek (2020) and Scerri et al. (2018); a corrigendum to Scerri et al. (doi:10.1016/j.chemosphere.2018.12.121) exists and was not read (no abstract in Europe PMC). OpenAlex refused (daily budget used up on this network). |
 
 Earlier attempt (5 Oct 2026, worker B): the *Europe's environment 2025* Malta page draws the figures in a JavaScript
 chart, so 67.7% and 172 were not in its text; the maintainer then supplied the quick-facts wording.

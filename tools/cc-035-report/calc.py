@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """CC-035: test the EEA's Malta PM2.5 statement against the EEA's own data and against measurements.
 
-Statement (EEA, Air pollution country fact sheets 2025: quick country facts, modified 1 Dec 2025): the rate of
+Statement (EEA, Air pollution quick country facts (2025 country fact sheets), modified 1 Dec 2025): the rate of
 all-cause natural deaths attributable to long-term exposure to PM2.5 above 5 ug/m3 (per 100 000 inhabitants aged 30 or
 over) "is estimated to have been reduced by 67.7% between 2005 and 2023 (from 143.5 to 46.3, respectively), resulting
 in 172 (95% CI: 131-192) attributable deaths in 2023".
@@ -199,10 +199,12 @@ for r in csv.DictReader(open(D / "eea_stations_malta_annual.csv", encoding="utf-
     st[(r["pollutant"], r["station"])][int(r["year"])] = (f(r["mean_of_valid_days_ug_m3"]), f(r["coverage_pct"]))
 pm25_2005 = [s for (p, s), ys in st.items() if p == "PM2.5" and 2005 in ys]
 pm10_2005 = [f"{NAMES[s]} {ys[2005][0]:.1f} ({ys[2005][1]:.0f}% of days)" for (p, s), ys in st.items() if p == "PM10" and 2005 in ys]
-add("Malta stations with PM2.5 measurements in 2005", len(pm25_2005), "stations", S_ST,
-    "first PM2.5 days: Żejtun Aug 2006, Msida Oct 2006, Għarb Jun 2007")
-add("Malta stations with PM10 measurements in 2005 (annual mean of valid days)", "; ".join(pm10_2005), "ug/m3", S_ST,
-    "PM10 feeds the 'pseudo PM2.5' estimates used in the 2005 map (ETC/ATNI 2020/1)")
+add("Malta stations with PM2.5 reported to the EEA for 2005", len(pm25_2005), "stations", S_ST,
+    "first PM2.5 days in the EEA archive: Żejtun Aug 2006, Msida Oct 2006, Għarb Jun 2007; data never reported to "
+    "the EEA would not appear")
+add("Malta stations with PM10 reported to the EEA for 2005 (annual mean of valid days)", "; ".join(pm10_2005), "ug/m3",
+    S_ST, "PM10 feeds 'pseudo PM2.5' in the maps, but the ETC maps use background and traffic stations only "
+    "(ETC/ATNI 2020/1, Table A.1); Kordin is industrial, MT00002's type is not in the current metadata")
 # the five stations in PQ 29696 (CC-007) for 2023: Msida = MT00005 to 2023, MT00011 from 2024
 five = ["MT00008", "MT00005", "MT00009", "MT00004", "MT00007"]
 v23 = [st[("PM2.5", s)][2023][0] for s in five]
@@ -238,7 +240,42 @@ for s in long3:
         S_ST, f"fall {100 * (1 - ys[2023][0] / ys[y_first][0]):.1f}%; coverage {ys[y_first][1]}% and {ys[2023][1]}%")
 diffs = [o["three_station_mean_ug_m3"] - o["eea_modelled_pwc_ug_m3"] for o in full_years]
 add("Three-station mean minus EEA PWC, years with full coverage", f"{min(diffs):+.2f} to {max(diffs):+.2f}", "ug/m3",
-    "calculated", f"{len(full_years)} years: " + ", ".join(str(o['year']) for o in full_years))
+    "calculated", f"{len(full_years)} years: " + ", ".join(str(o['year']) for o in full_years)
+    + ". Not an independent check: the map interpolates between these stations")
+
+# station types and instruments from the EEA's metadata
+S_META = "EEA station metadata (PanEuropean_metadata.csv), retrieved 6 Oct 2026"
+meta = defaultdict(set)
+proc = defaultdict(set)
+for r in csv.DictReader(open(D / "eea_station_metadata_mt.csv", encoding="utf-8")):
+    meta[r["AirQualityStationEoICode"]].add(f"{r['AirQualityStationType']} {r['AirQualityStationArea']}")
+    if r["AirPollutantCode"].endswith("/6001"):
+        proc[r["AirQualityStationEoICode"]].add(f"{r['SamplingProces']} ({r['ObservationDateBegin'][:10] or 'no date'}"
+                                                f" to {r['ObservationDateEnd'][:10] or 'open'})")
+for s in ("MT00002", "MT00003", "MT00004", "MT00005", "MT00007", "MT00008", "MT00009", "MT00011"):
+    add(f"Station type in EEA metadata: {NAMES[s]} ({s})", "; ".join(sorted(meta[s])) or "not in the current metadata",
+        "type", S_META, "; ".join(sorted(proc[s]))[:300] if proc[s] else "")
+add("2023 five-station mean: station types", "2 traffic (Msida, St Paul's Bay), 2 urban background (Żejtun, Attard), "
+    "1 rural background (Għarb)", "types", S_META, "unweighted mean, not population-weighted")
+
+# PM10 at the same stations did not fall while PM2.5 did
+for s, y0s in (("MT00005", 2009), ("MT00004", 2007)):
+    p10, p25 = st[("PM10", s)], st[("PM2.5", s)]
+    add(f"{NAMES[s]}: PM10 {y0s} -> 2023", f"{p10[y0s][0]} -> {p10[2023][0]}", "ug/m3", S_ST,
+        f"coverage {p10[y0s][1]}% and {p10[2023][1]}%; PM2.5 {p25[y0s][0]} -> {p25[2023][0]} "
+        f"({100 * (p25[2023][0] / p25[y0s][0] - 1):+.1f}%, coverage {p25[y0s][1]}%)")
+
+# indicative test of the 2005 starting value: 2005 PM10 x 2007 PM2.5/PM10 ratios (other sites, another year)
+ratios = {s: st[("PM2.5", s)][2007][0] / st[("PM10", s)][2007][0] for s in ("MT00005", "MT00004")}
+for s, rt in ratios.items():
+    add(f"{NAMES[s]}: PM2.5/PM10 ratio of annual means, 2007", round(rt, 3), "ratio", S_ST,
+        f"PM2.5 coverage {st[('PM2.5', s)][2007][1]}%, PM10 {st[('PM10', s)][2007][1]}%; different valid days")
+for s in ("MT00002", "MT00003"):
+    v = st[("PM10", s)][2005][0]
+    lo, hi = sorted(v * rt for rt in ratios.values())
+    add(f"Indicative 2005 PM2.5 at {NAMES[s]} (2005 PM10 {v} x 2007 ratios)", f"{lo:.1f}-{hi:.1f}", "ug/m3", "calculated",
+        f"map value for Malta {PWC(2005)}; site type: {'; '.join(sorted(meta[s])) or 'not in the current metadata'}; "
+        "indicative only")
 
 # ------------------------------------------------------------------ emissions (context)
 em = defaultdict(dict)

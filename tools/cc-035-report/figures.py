@@ -49,10 +49,13 @@ def fig1():
     for run in runs(YRS):
         a1.fill_between(run, [lo[y] for y in run], [hi[y] for y in run], color=SAGE, alpha=0.35, lw=0)
         a1.plot(run, [rate(y) for y in run], color=GREEN, lw=2.2)
-    a1.plot(YRS, [rate(y) for y in YRS], "o", ms=3.4, color=GREEN)
-    a1.plot([2005], [rate(2005)], "o", ms=6, mfc="white", mec=GREEN, mew=1.6, zorder=4)
-    a1.annotate("143.5 in 2005\n(no PM2.5 measured\nin Malta that year)", (2005, rate(2005)), xytext=(2007.2, 150),
-                fontsize=7.6, color=SLATE, va="top", arrowprops=dict(arrowstyle="-", color=GREY, lw=0.7))
+    a1.plot(YRS[1:], [rate(y) for y in YRS[1:]], "o", ms=3.4, color=GREEN)
+    # 2005 stands alone (no 2006 value): its 95% CI as an error bar, the point hollow
+    a1.errorbar([2005], [rate(2005)], yerr=[[rate(2005) - lo[2005]], [hi[2005] - rate(2005)]], fmt="o", ms=6,
+                mfc="white", mec=GREEN, mew=1.6, ecolor=SAGE, elinewidth=3, capsize=0, zorder=4)
+    a1.annotate("143.5 in 2005 (a map value;\nno Maltese PM2.5 reported\nto the EEA for 2005)", (2005.15, rate(2005)),
+                xytext=(2007.0, 158), fontsize=7.4, color=SLATE, va="top",
+                arrowprops=dict(arrowstyle="-", color=GREY, lw=0.7))
     a1.text(2023.3, rate(2023), "46.3\nin 2023", fontsize=8, color=GREEN, va="center", fontweight="bold")
     a1.text(2006, 12, "no 2006\nvalue", fontsize=6.8, color=GREY, ha="center")
     a1.set_ylim(0, 170); a1.set_xlim(2004.4, 2025.3)
@@ -68,8 +71,10 @@ def fig1():
     for run in runs(YRS):
         a2.fill_between(run, [nlo[y] for y in run], [nhi[y] for y in run], color=SAGE, alpha=0.35, lw=0)
         a2.plot(run, [n[y] for y in run], color=BLUE, lw=2.2)
-    a2.plot(YRS, [n[y] for y in YRS], "o", ms=3.4, color=BLUE)
-    a2.text(2005.4, n[2005] + 14, f"{n[2005]:.0f}", fontsize=8, color=BLUE, fontweight="bold")
+    a2.plot(YRS[1:], [n[y] for y in YRS[1:]], "o", ms=3.4, color=BLUE)
+    a2.errorbar([2005], [n[2005]], yerr=[[n[2005] - nlo[2005]], [nhi[2005] - n[2005]]], fmt="o", ms=6,
+                mfc="white", mec=BLUE, mew=1.6, ecolor=SAGE, elinewidth=3, capsize=0, zorder=4)
+    a2.text(2005.5, n[2005], f"{n[2005]:.0f}", fontsize=8, color=BLUE, fontweight="bold", va="center")
     a2.text(2023.3, n[2023], f"{n[2023]:.0f}", fontsize=8, color=BLUE, va="center", fontweight="bold")
     a2.set_ylim(0, 420); a2.set_xlim(2004.4, 2025.3)
     a2.set_xticks(range(2005, 2024, 3))
@@ -77,7 +82,8 @@ def fig1():
     a2.set_title("Number of deaths (fell by half)", fontsize=9.5, color=SLATE, loc="left")
     fig.text(0.01, -0.06, "Deaths from all natural causes, people aged 30+, attributed to PM2.5 above 5 µg/m³ (WHO 2021 "
              "guideline), EEA burden-of-disease table, retrieved 6 Oct 2026.\nThe rate fell 67.7% while the population aged 30+ "
-             "grew 54% (242,534 to 373,208), so the number fell 50.6%. The EEA gives no 2006 value.", fontsize=7, color=GREY)
+             "grew 54% (242,534 to 373,208), so the number fell 50.6%. No 2006 value: no 2006 PM2.5 map was prepared "
+             "(ETC HE Report 2025/5, p. 76).", fontsize=7, color=GREY)
     fig.tight_layout()
     fig.savefig(OUT / "fig1_rate.png", bbox_inches="tight", facecolor="white")
 
@@ -103,8 +109,9 @@ def fig2():
     ax.annotate(f"{pwc[2005]:.1f} (map only)", (2005, pwc[2005]), xytext=(2005.55, 19.9), fontsize=7.6, va="center",
                 color=SLATE, fontweight="bold", arrowprops=dict(arrowstyle="-", color=GREY, lw=0.7))
     ax.text(2023.35, pwc[2023] - 0.2, f"{pwc[2023]:.1f}", fontsize=7.6, color=SLATE, fontweight="bold", va="top")
-    STY = [("MT00005", "Msida (traffic site)", GREEN, "o"), ("MT00004", "Żejtun", BLUE, "s"),
-           ("MT00007", "Għarb", ORANGE, "^"), ("MT00008", "Attard", PURPLE, "D"), ("MT00009", "St Paul's Bay", RED, "v")]
+    STY = [("MT00005", "Msida (traffic)", GREEN, "o"), ("MT00004", "Żejtun (urban background)", BLUE, "s"),
+           ("MT00007", "Għarb (rural background)", ORANGE, "^"), ("MT00008", "Attard (urban background)", PURPLE, "D"),
+           ("MT00009", "St Paul's Bay (traffic)", RED, "v")]
     handles = [Line2D([], [], color=SLATE, lw=3, label="EEA map (modelled)")]
     for code, name, col, mk in STY:
         ys = sorted(y for y in st[code] if y <= 2023)
@@ -120,15 +127,16 @@ def fig2():
     handles.append(Line2D([], [], color=GREY, lw=0, marker="o", ms=5.6, mfc="white", mew=1.2,
                           label="under 75% of days valid"))
     ax.axvspan(2004.5, 2005.5, color="#F3EEE2", lw=0, zorder=0)
-    ax.text(2005, 0.6, "no PM2.5\nstation", fontsize=6.8, color=SLATE, ha="center")
-    ax.set_ylim(0, 25); ax.set_xlim(2004.5, 2025.8)
+    ax.text(2005, 9.5, "no PM2.5 reported", fontsize=6.8, color=SLATE, ha="center", va="center", rotation=90)
+    ax.set_ylim(0, 29); ax.set_xlim(2004.5, 2025.8)
+    ax.set_yticks(range(0, 26, 5))
     ax.set_xticks(range(2005, 2024, 2))
     ax.set_ylabel("PM2.5 annual mean (µg/m³)")
-    ax.legend(handles=handles, frameon=False, fontsize=7.6, ncol=4, loc="upper right", bbox_to_anchor=(1.0, 1.02))
-    ax.text(2004.5, -4.6, "Station means: valid daily values in the EEA's AirBase (to 2012) and E1a (from 2013) files, "
-            "retrieved 6 Oct 2026; Msida is MT00005 (Scerri et al. 2018 call it a traffic site).\nModelled line: EEA "
-            "burden-of-disease table (population-weighted mean of the 1 km map that combines stations, a chemical "
-            "transport model and other data). No 2006 map value.", fontsize=7, color=GREY)
+    ax.legend(handles=handles, frameon=False, fontsize=7.4, ncol=4, loc="upper right", bbox_to_anchor=(1.0, 1.03))
+    ax.text(2004.5, -5.3, "Station means: valid daily values in the EEA's AirBase (to 2012) and E1a (from 2013) files, "
+            "retrieved 6 Oct 2026; station types from the EEA's station metadata. Msida is MT00005.\nModelled line: EEA "
+            "burden-of-disease table: population-weighted mean of the 1 km map, which interpolates between these stations "
+            "with a chemical transport model and other data. No 2006 map.", fontsize=7, color=GREY)
     fig.savefig(OUT / "fig2_measured.png", bbox_inches="tight", facecolor="white")
 
 
@@ -140,7 +148,7 @@ def fig3():
         ("Rate above 5 µg/m³, 2005–2023 (the statement)", 100 * (1 - rate(2023) / rate(2005)), GREEN),
         ("Number of deaths above 5 µg/m³, 2005–2023", 100 * (1 - n(2023) / n(2005)), SAGE),
         ("Rate above 5 µg/m³, 2007–2023 (no 2006 value)", 100 * (1 - rate(2023) / rate(2007)), SAGE),
-        ("Rate above 5 µg/m³, 2010–2023 (three stations, ≥75% of days)", 100 * (1 - rate(2023) / rate(2010)), SAGE),
+        ("Rate above 5 µg/m³, 2010–2023 (modelled, as all bars)", 100 * (1 - rate(2023) / rate(2010)), SAGE),
         ("Rate, all concentrations (above 0), 2005–2023", sc("Sensitivity: WHO 2021 AQG but CF=0 for NO2 and PM2.5; SOMO10 included"), SAGE),
         ("Rate, previous EEA method (RR 1.062, above 0), 2005–2023", sc("Baseline from WHO 2005 (HRAPIE 2013)"), SAGE),
         ("Rate above 10 µg/m³ (2030 EU limit), 2005–2023", sc("Sensitivity: WHO 2021 AQG but CF=20 for NO2 and CF=10 for PM2.5"), SAGE),

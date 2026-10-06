@@ -13,8 +13,10 @@
 3. EEA station measurements for Malta (Air Quality download service: AirBase 2002-2012 and E1a 2013+ Parquet files,
    PM2.5 and PM10): annual means of valid daily values per station, with the number of valid days
    (eea_stations_malta_annual.csv) and a file manifest with SHA-256 (eea_station_file_manifest.csv).
+4. EEA station metadata (PanEuropean_metadata.csv): Malta's PM10 and PM2.5 sampling points with station type, area,
+   dates and sampling process (instrument) -> eea_station_metadata_mt.csv.
 
-Usage: python fetch.py [ebd] [eurostat] [stations]   (no argument = all three parts)
+Usage: python fetch.py [ebd] [eurostat] [stations] [meta]   (no argument = all four parts)
 """
 import sys
 import csv, datetime, hashlib, io, json, pathlib, urllib.parse, urllib.request, zipfile
@@ -64,7 +66,28 @@ JOBS = [
     ("eea_ebd_eu27_pm25.csv", COMMON | {"CountryOrTerritory": ["European Union Countries"], "Detail": ["Totals"],
                                         "HealthIndicator": ["Attributable deaths (AD)"]}),
 ]
-PARTS = set(sys.argv[1:]) or {"ebd", "eurostat", "stations"}
+PARTS = set(sys.argv[1:]) or {"ebd", "eurostat", "stations", "meta"}
+
+# ------------------------------------------------------------------ 4. EEA station metadata (Malta, PM10 and PM2.5)
+META = "https://discomap.eea.europa.eu/map/fme/metadata/PanEuropean_metadata.csv"
+if "meta" in PARTS:
+    blob = get(META, timeout=300)
+    csv.field_size_limit(10 ** 7)
+    keep = ["AirQualityStationEoICode", "SamplingPoint", "SamplingProces", "AirPollutantCode", "AirQualityStationType",
+            "AirQualityStationArea", "ObservationDateBegin", "ObservationDateEnd", "MeasurementType",
+            "MeasurementEquipment", "EquivalenceDemonstrated", "Longitude", "Latitude"]
+    seen, meta_rows = set(), []
+    for r in csv.DictReader(io.StringIO(blob.decode("utf-8", "replace")), delimiter="\t"):
+        if r["Countrycode"] != "MT" or r["AirPollutantCode"].rsplit("/", 1)[-1] not in ("5", "6001"):
+            continue
+        row = {k: r[k] for k in keep}
+        if tuple(row.values()) not in seen:
+            seen.add(tuple(row.values())); meta_rows.append(row)
+    for r in meta_rows:
+        r["source"], r["retrieved"], r["file_sha256"] = META, TODAY, hashlib.sha256(blob).hexdigest()
+    with open(D / "eea_station_metadata_mt.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(meta_rows[0])); w.writeheader(); w.writerows(meta_rows)
+    print("metadata:", len(meta_rows), "Malta PM sampling-point rows")
 for out, flt in (JOBS if "ebd" in PARTS else []):
     rows, sha = aqviewer(flt)
     # the export uses display labels as column names ("Scenario", "Health Indicator", "Value", ...)
