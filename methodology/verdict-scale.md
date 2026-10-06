@@ -56,9 +56,22 @@ pledge belongs to the election it was made for (the first election on or after t
 pledge to the cycle in force when it was made (at the start of the period its date names, so a commitment dated only
 by the month or year of an election falls in the earlier cycle). An explicit `cycle:` overrides this.
 
-`data/manifesto_pledges.csv` is a light list of manifesto pledges (party, cycle, number, page, wording, archived
-source), most never checked, so that pledges can be linked and promises nobody took up can be found. Wording is entered
-only when transcribed verbatim from the archived document (`wording_status: Verbatim found`).
+`data/manifesto_pledges.csv` is a light list of manifesto pledges (party, cycle, number, section, page, archived
+source), most never checked, so that pledges can be linked and promises nobody took up can be found. Each row has a
+`summary` in our own words (a manifesto is quoted only in short excerpts, for the pledges linked to claims, with
+`wording_status: Verbatim found`), the explicit `target` figures or dates if any, and `measurable` (yes if it states
+a quantity, date or deadline that could be checked). A row can link to an earlier pledge in its `follows` column
+(claim or manifesto ids, separated by ";"), set by a person, by the same rules as `follows:` below.
+
+**Every contesting party, to the same scope** (maintainer decision, 6 Oct 2026). The list covers the programme of every
+party that contested each general election, not only the governing party and the main opposition. The parties are
+taken from the Electoral Commission's nominations record and listed in the `contested` column of `data/cycles.csv`.
+Each programme is listed to the same scope: the whole of its environment chapters and its climate and energy chapters,
+one row per pledge. `data/manifesto_coverage.csv` gives, for each party and election, the document used (with its URL
+and sha256), the chapters covered and the number of rows. Where a party published no programme, or none could be found,
+it says so and records where and when it was searched; no party is left out silently. The validator checks both files.
+The outlier types still apply as defined below: dropped and drift to the governing party's pledges, and recycled to
+every party's. An opposition proposal later taken up by a government is linked as adopted.
 
 Optional fields that link a pledge to earlier ones:
 

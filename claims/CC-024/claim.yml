@@ -114,6 +114,13 @@ thumbnail:
 pledge:
   status: On track
   kind: government   # made in office (methodology/verdict-scale.md, Pledges)
+  follows: [MP-PL-2022-378]   # carries forward this manifesto pledge (data/manifesto_pledges.csv)
+  follows_search:
+    date: '2026-10-06'
+    searched:
+    - 'Labour manifesto 2022 (Malta Flimkien), full text: offshore, riħ, rinnovabbli, climate neutral, karbonju, 2030, Għawdex'
+    found:
+    - 'MP-PL-2022-378 (climate neutral by 2050, emissions cut by 2030 through the NECP; no renewables share is stated)'
   as_of: '2026-09-15'
   made_by:
   - government-of-malta
@@ -154,3 +161,6 @@ history:
   step: version
   version: '1.1'
   note: '1.1: corrections after the 6 Oct 2026 audit: claim restated to the plan''s words, sub-claims rebuilt, second-hand PV figures demoted, pledge caveat added, tag removed.'
+- date: '2026-10-06'
+  step: note
+  note: 'Pledge linked to Labour manifesto 2022 pledge 378 (same cycle): the NECP named there is the plan whose 2030 renewables share this check examines; no renewables share is stated in the manifesto. Search recorded.'
