@@ -56,9 +56,12 @@ pledge belongs to the election it was made for (the first election on or after t
 pledge to the cycle in force when it was made (at the start of the period its date names, so a commitment dated only
 by the month or year of an election falls in the earlier cycle). An explicit `cycle:` overrides this.
 
-`data/manifesto_pledges.csv` is a light list of manifesto pledges (party, cycle, number, page, wording, archived
-source), most never checked, so that pledges can be linked and promises nobody took up can be found. Wording is entered
-only when transcribed verbatim from the archived document (`wording_status: Verbatim found`).
+`data/manifesto_pledges.csv` is a light list of manifesto pledges (party, cycle, number, section, page, archived
+source), most never checked, so that pledges can be linked and promises nobody took up can be found. Each row has a
+`summary` in our own words (a manifesto is quoted only in short excerpts, for the pledges linked to claims, with
+`wording_status: Verbatim found`), the explicit `target` figures or dates if any, and `measurable` (yes if it states
+a quantity, date or deadline that could be checked). A row can link to an earlier pledge in its `follows` column
+(claim or manifesto ids, separated by ";"), set by a person, by the same rules as `follows:` below.
 
 Optional fields that link a pledge to earlier ones:
 

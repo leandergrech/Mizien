@@ -358,6 +358,29 @@ def pledge_view(d: dict, reg: dict) -> dict | None:
             "source_of_commitment": p.get("source_of_commitment")}
 
 
+def manifesto_outliers(records: list) -> dict:
+    """Links recorded on manifesto pledges themselves (the `follows` column of data/manifesto_pledges.csv, ';'-separated):
+    {manifesto id: [{type, text, link}]}, with the same rule as for checked pledges (pledges.link_type)."""
+    by = {d["id"]: d for d in records if d.get("pledge")}
+    out = {}
+    for mid, row in MANIFESTO.items():
+        found = []
+        for f in [x.strip() for x in (row.get("follows") or "").split(";") if x.strip()]:
+            prev = by.get(f)
+            if prev:
+                pp = prev["pledge"]; pc = pledges.cycle_of(pp, CYCLES)
+                kind = pledges.link_type(row.get("cycle"), pc, pp.get("status"))
+                found.append({"type": kind, "link": f, "text": (f"Also promised earlier: {f}, {prev['title']} ({pledges.KINDS.get(pp.get('kind'), 'pledge').lower()}, "
+                              f"{pledges.cycle_label(pc, CYCLES)}, {pp.get('status')})." if kind == "recycled" else f"Carries forward {f}, {prev['title']}.")})
+            elif f in MANIFESTO:
+                p0 = MANIFESTO[f]; linked = by.get(p0.get("claim") or "")
+                kind = pledges.link_type(row.get("cycle"), p0.get("cycle"), linked["pledge"].get("status") if linked else None)
+                found.append({"type": kind, "link": f, "text": f"{'Also promised earlier' if kind == 'recycled' else 'Carries forward'}: {p0['document']}, {p0['number']}."})
+        if found:
+            out[mid] = found
+    return out
+
+
 def pledge_outliers(records: list) -> dict:
     """Outliers (scripts/pledges.py): {claim id: [{type, text}]}. Each is stated as a finding with what it rests on;
     none is inferred from a missing record: 'unanchored' needs a recorded search, 'recycled' a recorded link."""
@@ -594,6 +617,7 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
                                  [n for n, _ in pledge_label_list()]),
         "pledges": pledge_network(records, reg, adj),
         "pledge_outliers": pledge_outliers(records),
+        "manifesto_outliers": manifesto_outliers(records),
         "cycles": CYCLES,
         "manifesto_pledges": list(MANIFESTO.values()),
         "pledge_labels": out["pledge_labels"],

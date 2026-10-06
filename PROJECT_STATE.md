@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 6 October 2026 (pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -83,6 +83,29 @@ on the map (`/?view=map&sel=claim:CC-NNN`, when it has a location) and to the cl
 resolved against the script's own folder, so they work under the `/Mizien/` prefix (they did not before: fixed).
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
+
+## Pledges: stage 1b, manifesto research (6 October 2026)
+
+- **Manifesto list:** `data/manifesto_pledges.csv` now has 235 rows. Labour 2022 (*Malta Flimkien*): chapter 05
+  (environment, pledges 284–377) and chapter 06 (*Malta gżira climate neutral*, 378–412), plus pledge 305 with its
+  verbatim wording (PDF p. 91, printed p. 89). Labour 2026 (*Int Malta*, numbered per chapter, ids MP-PL-2026-<chapter>-<item>):
+  chapter 14 (*Pajjiż sabiħ*, items 1–64), chapter 16 (*Settur tal-enerġija reżiljenti*, 1–39) and item 13.28. Summaries
+  in our own words (drafted from the PDFs by helper agents, spot-checked against the PDFs: 284, 305, 349, 362, 380, 397,
+  16.01); verbatim excerpts only for the rows linked to claims. New columns `summary`, `target`, `measurable`, `follows`.
+  PDFs read from the party URLs already in `data/sources.csv` (sha256 noted in each row); not committed.
+- **Links recorded** (`follows` + `follows_search` in the claims, with a research-log entry):
+  CC-024 → MP-PL-2022-378 (climate neutral by 2050, NECP named; no renewables share in the manifesto);
+  CC-029 → MP-PL-2022-397 (offshore renewables incl. floating wind); CC-031 → MP-PL-2026-13-28 (Gozo the first part of
+  the country to become climate neutral). All same-cycle: shown as "Carries forward", not as outliers.
+- **First recycled pledge:** Labour 2026 item 16.01 (PDF p. 186) promises the first offshore wind farm, 300 MW, with no
+  date: the same project as CC-029, labelled Off track. Linked in the list (`follows: CC-029; MP-PL-2022-397`) and
+  computed as recycled (`manifesto_outliers` in the site data). Not yet shown on a page (stage 4, `/pledges/`).
+- Noted, not linked: 2026 item 14.43 reports 57,000 trees planted 2022–25 and continues afforestation with no new number
+  (2022 pledge 305 was 100,000 in five years; CC-010 Off track).
+- **Still to do:** Labour 2022 chapter 07 (transport) and chapter 13 (Gozo); Labour 2026 chapters 15 and 17; the PN 2022
+  and 2026 programmes (needed for opposition proposals and "adopted by government"); the "dropped" check (after the
+  2022–26 legislature, which has ended: which governing-party 2022 pledges in this list have no follow-up, after a
+  search); archive the manifesto PDFs in the Wayback Machine (reachable from the cloud).
 
 ## Pledges: stage 1 and squares (6 October 2026)
 

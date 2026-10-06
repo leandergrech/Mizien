@@ -172,6 +172,13 @@ def check_files(claim_ids: set) -> list:
             errs.append(f"data/manifesto_pledges.csv: {mid} cycle '{r.get('cycle')}' is not in data/cycles.csv")
         if r.get("claim") and r["claim"] not in claim_ids:
             errs.append(f"data/manifesto_pledges.csv: {mid} claim '{r['claim']}' is not a claim")
+        for f in [x.strip() for x in (r.get("follows") or "").split(";") if x.strip()]:
+            if not (re.fullmatch(r"CC-\d{3}", f) and f in claim_ids) and f not in load_manifesto():
+                errs.append(f"data/manifesto_pledges.csv: {mid} follows '{f}', which is neither a claim nor a manifesto pledge")
+        if r.get("measurable", "") not in ("", "yes", "no"):
+            errs.append(f"data/manifesto_pledges.csv: {mid} measurable must be yes, no or empty")
+        if not (r.get("wording") or r.get("summary")):
+            errs.append(f"data/manifesto_pledges.csv: {mid} needs a summary (own words) or verbatim wording")
         if r.get("wording") and r.get("wording_status") != "Verbatim found":
             errs.append(f"data/manifesto_pledges.csv: {mid} has wording but wording_status is not 'Verbatim found'")
         if not (r.get("source_url") or "").startswith("http"):

@@ -109,6 +109,14 @@ thumbnail:
 pledge:
   status: Not measurable
   kind: government   # made in office (methodology/verdict-scale.md, Pledges)
+  follows: [MP-PL-2026-13-28]   # carries forward this manifesto pledge (data/manifesto_pledges.csv)
+  follows_search:
+    date: '2026-10-06'
+    searched:
+    - 'Labour manifesto 2026 (Int Malta), full text: climate neutral, newtrali, karbonju, Għawdex'
+    - 'Labour manifesto 2022 (Malta Flimkien), full text: offshore, riħ, rinnovabbli, climate neutral, karbonju, 2030, Għawdex'
+    found:
+    - 'MP-PL-2026-13-28 (Gozo the first part of the country to become climate neutral)'
   as_of: '2026-10-06'
   made_by:
     - clint-camilleri
@@ -165,3 +173,6 @@ history:   # research log: the date each step of the research was done (not when
     version: "1.1"
     note: "1.1: corrections after the 6 Oct 2026 audit: paraphrase unquoted, unsourced assertions removed, rhetoric removed,\
       \ plan search repeated and logged, earlier 2030 mentions recorded, label basis and right-of-reply status clarified."
+  - date: '2026-10-06'
+    step: note
+    note: 'Pledge linked to Labour manifesto 2026, chapter 13 item 28 (same cycle): Gozo to be the first part of the country to become climate neutral; no date, baseline or scope is stated. Nothing on a climate-neutral Gozo found in the 2022 manifesto. Search recorded.'

@@ -123,6 +123,13 @@ thumbnail:
 pledge:
   status: Off track
   kind: government   # made in office (methodology/verdict-scale.md, Pledges)
+  follows: [MP-PL-2022-397]   # carries forward this manifesto pledge (data/manifesto_pledges.csv)
+  follows_search:
+    date: '2026-10-06'
+    searched:
+    - 'Labour manifesto 2022 (Malta Flimkien), full text: offshore, riħ, rinnovabbli, climate neutral, karbonju, 2030, Għawdex'
+    found:
+    - 'MP-PL-2022-397 (offshore renewables with the private sector, including floating wind and solar)'
   as_of: '2026-10-06'
   made_by:
   - ministry-environment
@@ -171,3 +178,6 @@ history:
     notice; TL;DR and flyer wording; Newsbook quotation checked; source notes. Verdict (Largely supported) and pledge label
     (Off track) unchanged; pending right of reply.'
   version: '1.1'
+- date: '2026-10-06'
+  step: note
+  note: 'Pledge linked to Labour manifesto 2022 pledge 397 (same cycle): offshore renewables with the private sector, including floating wind; no capacity or date is stated in the manifesto. Search recorded.'
