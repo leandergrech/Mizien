@@ -55,6 +55,8 @@ S.append(P("The claim is a Newsbook news article by Damian Micallef, published o
            "Newsbook is reporting Eurostat, so we compared it with Eurostat’s own news item of 16 June 2026 [2] and "
            "with the database table behind it [3]. The speaker whose words we test is the outlet; Eurostat’s "
            "estimate is the thing reported."))
+S.append(P("Headline of the article: “Malta records EU’s largest rise in greenhouse gas emissions”. The sentences "
+           "quoted below are from its text.", small))
 S.append(std_table([
     [C("What was written or published", cellh), C("Who", cellh), C("Access", cellh)],
     [C("“Malta recorded the highest increase in greenhouse gas emissions among European Union member states over the "
@@ -164,22 +166,25 @@ S.append(CondPageBreak(110 * mm))
 S.append(SectionHeading(6, "Testing the claim"))
 verd = lambda t, c: chip(t, c, w=29 * mm)
 S.append(std_table([
-    [C("Sub-claim", cellh), C("What the evidence shows", cellh), C("Rating", cellh)],
-    [C("<b>A.</b> Eurostat estimates Malta’s emissions rose 169.4% in 2015–2025"),
+    [C("Sub-claim", cellh), C("Said by", cellh), C("What the evidence shows", cellh), C("Rating", cellh)],
+    [C("<b>A.</b> Eurostat estimates Malta’s emissions rose 169.4% in 2015–2025"), C("Newsbook [1]"),
      C("Eurostat’s release says +169.4% [2]; recomputed from the database +169.7% after revision [3]."),
      verd("SUPPORTED", GREENC)],
-    [C("<b>B.</b> This is the highest increase in the EU; only four rose"),
+    [C("<b>B.</b> This is the highest increase in the EU; only four rose"), C("Newsbook [1]"),
      C("Malta first, then Cyprus +10.7%, Lithuania, Romania; 23 fell [2][3]."), verd("SUPPORTED", GREENC)],
     [C("<b>C.</b> Eurostat counts Malta-registered aircraft wherever they fly; the UN counts emissions in Malta only"),
+     C("Newsbook [1] (outlet’s paraphrase)"),
      C("Eurostat: residence principle, resident units [4]; inventory: territorial, international aviation a memo "
        "item [5]. “Registered” is the outlet’s wording; Eurostat speaks of the resident operator."),
      verd("LARGELY SUPPORTED", LG)],
     [C("<b>D.</b> Headline: “largest rise in greenhouse gas emissions” (read alone)"),
+     C("Newsbook [1] (headline)"),
      C("True of the accounts; territorial emissions rose 1.6% (2015–2024). The body gives the context."),
      verd("NEEDS CONTEXT", AMBER)],
     [C("<b>E.</b> Central Bank of Malta: intensity declining and at historic lows"),
+     C("Newsbook [1], citing the Central Bank (second-hand ◆)"),
      C("Second-hand: we did not read the report ◆. Not tested."), verd("NOT TESTED", GREY)],
-], [52 * mm, 88 * mm, 30 * mm], valign="MIDDLE"))
+], [46 * mm, 26 * mm, 70 * mm, 28 * mm], valign="MIDDLE"))
 
 # ================================================================== 7
 S += [Spacer(1, 6 * mm), SectionHeading(7, "Verdict and requests for evidence"),
@@ -231,8 +236,12 @@ S.append(PageBreak())
 S += appendix_a("A experiment · B observational study with a control or gradient · C review, guidance or "
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
-S += revision_log([("1.0", "5 Oct 2026", "First issue. Right of reply not sent: the claim reports a Eurostat "
-                    "estimate; any reply is for the maintainer to decide.")])
+S += revision_log([("1.0", "5 Oct 2026", "First issue. No right of reply needed: the claim reports a Eurostat "
+                    "estimate and the verdict is Largely supported."),
+                   ("1.1", "6 Oct 2026", "Corrections after the 6 Oct audit: cover status line now reads \"no right of "
+                    "reply needed\" (it said draft); cover and flyer label the quoted sentence as the article’s "
+                    "opening line, not the headline; sub-claim table gives who said each part; article date and author "
+                    "recorded in the claim record. Findings, verdict and confidence unchanged.")])
 
 build_report(Report(
     number="026", out=str(FIG / "report.pdf"), kicker="Climate and energy",
@@ -241,13 +250,12 @@ build_report(Report(
                     "against the accounts and the national inventory"],
     quote_lines=["“Malta recorded the highest increase in greenhouse", "gas emissions among European Union member states”"],
     quote_size=14,
-    attribution="Newsbook, 18 June 2026, reporting Eurostat estimates.",
+    attribution="Newsbook, 18 June 2026, opening line of the article, reporting Eurostat.",
     context="Malta’s emissions “rose by an estimated 169.4% between 2015 and 2025”.",
     verdict="Largely supported", verdict_note="The number is right; check what it counts",
-    footer_lines=["Version 1.0  ·  5 October 2026", "Status: draft",
+    footer_lines=["Version 1.1  ·  6 October 2026", "Status:",
                   "Prepared from public sources and Eurostat data.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Malta greenhouse gas emissions – Eurostat estimate", version="1.0", date="5 October 2026",
-    status_note="no right of reply needed",
+    running_head="Malta greenhouse gas emissions – Eurostat estimate", version="1.1", date="6 October 2026",
     pdf_title="Malta’s 169% rise in emissions? Claim Check 026",
     pdf_subject="Tests Newsbook's report of Eurostat's estimate of Malta's greenhouse gas emissions growth",
     story=S))
