@@ -70,3 +70,48 @@
   .lens-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .lens-chip { flex: none; }
 }
+
+/* The pinned tray (assets/tray.js): a button at the end of the filter bar and its panel */
+.lens-extra { display: flex; flex: none; }
+.tr-btn { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(207,226,212,.28);
+  background: rgba(8,30,21,.45); color: #eef3ef; font: 600 13px/1 "Liberation Sans", Arial, sans-serif; cursor: pointer; white-space: nowrap; }
+.tr-btn svg { width: 15px; height: 15px; fill: none; stroke: #e3a72f; stroke-width: 1.9; stroke-linejoin: round; stroke-linecap: round; }
+.tr-btn b { min-width: 18px; padding: 1px 5px; border-radius: 999px; background: #e3a72f; color: #13301f; font-size: 11px; text-align: center; }
+.tr-btn:hover, .tr-btn[aria-expanded="true"] { border-color: #e3a72f; }
+.tr-btn:focus-visible, .tr-pop button:focus-visible { outline: 3px solid #e3a72f; outline-offset: 2px; }
+.tr-pop { position: absolute; right: 0; top: calc(100% + 6px); z-index: 31; width: min(560px, 100%); max-height: min(70vh, 560px); overflow: auto;
+  padding: 10px 14px 12px; border-radius: 14px; background: rgba(8,30,21,.98); border: 1px solid rgba(207,226,212,.22); box-shadow: 0 18px 44px rgba(0,0,0,.55);
+  color: #eef3ef; font: 14px/1.45 "Liberation Sans", Arial, sans-serif; }
+.tr-pop[hidden] { display: none; }
+.tr-tabs { display: flex; gap: 4px; margin-bottom: 8px; border-bottom: 1px solid rgba(207,226,212,.16); }
+.tr-tabs button { padding: 8px 12px; border: 0; border-bottom: 2px solid transparent; background: none; color: #a9c2b1; font: 700 13px "Liberation Sans", Arial, sans-serif; cursor: pointer; }
+.tr-tabs button[aria-selected="true"] { color: #eef3ef; border-bottom-color: #e3a72f; }
+.tr-note { margin: 4px 0 8px; color: #a9c2b1; font-size: 13px; }
+.tr-note b { color: #eef3ef; }
+.tr-list { list-style: none; margin: 0; padding: 0; }
+.tr-list li { display: grid; grid-template-columns: 12px 1fr auto auto; align-items: center; gap: 2px 8px; padding: 6px 0; border-bottom: 1px solid rgba(207,226,212,.1); }
+.tr-dot { width: 10px; height: 10px; border-radius: 50%; }
+.tr-list a { color: #eef3ef; text-decoration: none; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tr-list a b { color: #e3a72f; margin-right: 4px; }
+.tr-list a:hover { text-decoration: underline; }
+.tr-v { color: #a9c2b1; font-size: 12px; white-space: nowrap; }
+.tr-x, .tr-add { min-width: 30px; min-height: 28px; padding: 0 8px; border-radius: 999px; border: 1px solid rgba(207,226,212,.3); background: none; color: #eef3ef; cursor: pointer; font: 700 12px "Liberation Sans", Arial, sans-serif; }
+.tr-x:hover, .tr-add:hover { border-color: #e3a72f; }
+.tr-why { grid-column: 2 / -1; color: #cfe2d4; font-size: 12px; }
+.tr-acts { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.tr-acts button { min-height: 32px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(227,167,47,.6); background: none; color: #f6e3b4; font: 600 12.5px "Liberation Sans", Arial, sans-serif; cursor: pointer; }
+.tr-acts button[aria-pressed="true"], .tr-acts button:hover { background: #e3a72f; color: #13301f; }
+.tr-acts button:disabled { opacity: .45; cursor: default; background: none; color: #f6e3b4; }
+.tr-cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+.tr-cmp section { padding: 10px 12px; border-radius: 10px; background: rgba(20,69,47,.45); border: 1px solid rgba(207,226,212,.14); min-width: 0; }
+.tr-cmp h3 { margin: 0 0 4px; font: 700 15px "Liberation Serif", Georgia, serif; color: #e3a72f; }
+.tr-n { margin: 0 0 6px; color: #a9c2b1; font-size: 12.5px; } .tr-n b { color: #eef3ef; }
+.tr-bar { display: flex; gap: 2px; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 8px; }
+.tr-bar span { flex: 1; min-width: 3px; }
+.tr-cmp dl { margin: 0; font-size: 12.5px; }
+.tr-cmp dt { color: #a9c2b1; font-weight: 700; margin-top: 6px; }
+.tr-cmp dd { margin: 0; color: #eef3ef; }
+@media (max-width: 700px) {
+  .tr-pop { position: fixed; left: 8px; right: 8px; top: auto; bottom: 8px; width: auto; max-height: 75vh; }
+  .tr-cmp { grid-template-columns: 1fr; }
+}

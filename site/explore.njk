@@ -107,6 +107,8 @@ eleventyExcludeFromCollections: true
   .keyrow { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 11.5px; color: #d4e4d9; }
   .keyrow span { display: inline-flex; align-items: center; gap: 6px; }
   .vdot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+  .keyrow .lkey { flex-basis: 100%; display: flex; align-items: flex-start; gap: 8px; margin-top: 6px; color: var(--muted); line-height: 1.4; }
+  .keyrow .lkey svg { flex: none; }
   .vdot.open { border: 1.5px dashed rgba(255,255,255,.75); }
 
   /* bottom bar: line filters */
@@ -142,6 +144,14 @@ eleventyExcludeFromCollections: true
   .switch-label .state { color: var(--muted); font-size: 12px; }
   .switch.small .track { width: 38px; height: 22px; } .switch.small .knob { width: 16px; height: 16px; }
   .switch.small.on .knob { left: 19px; } .switch.small .switch-label { font-size: 12.5px; }
+  #spacing { display: flex; flex-direction: column; gap: 4px; }
+  #spacing label { display: grid; grid-template-columns: 96px 1fr 34px; align-items: center; gap: 8px; font: 12.5px Arial, sans-serif; color: var(--ink); }
+  #spacing input[type=range] { width: 100%; accent-color: var(--amber); margin: 0; min-height: 24px; }
+  #spacing output { color: var(--amber); font: 700 11.5px Arial, sans-serif; text-align: right; }
+  #spacing .sp-reset { align-self: flex-start; margin-top: 2px; padding: 3px 10px; border-radius: 999px; border: 1px solid rgba(207,226,212,.3);
+    background: none; color: var(--ink); font: 600 11.5px Arial, sans-serif; cursor: pointer; }
+  #spacing .sp-reset:hover { border-color: var(--amber); }
+  #spacing .sp-reset:disabled { opacity: .4; cursor: default; }
   #arrange { display: flex; flex-wrap: wrap; gap: 6px; }
   #arrange button { padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(207,226,212,.28); background: rgba(8,30,21,.35);
     color: var(--ink); font: 600 12px Arial, sans-serif; cursor: pointer; }
@@ -285,7 +295,6 @@ eleventyExcludeFromCollections: true
   .gm-art { position: absolute; inset: 0; display: block; transition: transform .15s; filter: drop-shadow(0 3px 6px rgba(0,0,0,.45)); }
   .gm-art svg { display: block; overflow: visible; }
   .gm-art .disc { fill: rgba(8,30,21,.93); stroke: #e3a72f; stroke-width: 1.8; }
-  .gm-art .leaf { stroke: rgba(246,244,238,.9); stroke-width: 1; }
   .gm-art .count { fill: #f6e3b4; font: 700 13px Arial, sans-serif; text-anchor: middle; dominant-baseline: central; }
   .gm-art .emblem { fill: none; stroke: #f6e3b4; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
   .gm-m:hover .gm-art, .gm-m:focus-visible .gm-art { transform: scale(1.1); }
@@ -295,7 +304,7 @@ eleventyExcludeFromCollections: true
   .gm-m.is-sel .disc { fill: #14452f; }
   .gm-badge { position: absolute; left: calc(50% + var(--r) * .55); top: calc(50% - var(--r) - 6px); min-width: 18px; padding: 1px 5px; border-radius: 9px;
     background: #e3a72f; color: #13301f; font: 700 10.5px/14px Arial, sans-serif; text-align: center; pointer-events: none; }
-  .gm-name { position: absolute; left: 50%; top: calc(50% + var(--r) + 4px); transform: translateX(-50%); max-width: 180px; padding: 2px 8px;
+  .gm-name { position: absolute; left: 50%; top: calc(50% + var(--e, var(--r)) + 4px); transform: translateX(-50%); max-width: 180px; padding: 2px 8px;
     border-radius: 999px; background: rgba(8,30,21,.82); border: 1px solid rgba(227,167,47,.45); color: #eef3ef; white-space: nowrap;
     overflow: hidden; text-overflow: ellipsis; font: 700 11.5px/1.25 Arial, sans-serif; pointer-events: none; }
   .gm-m.is-sel .gm-name { border-color: #fff; }
@@ -303,6 +312,10 @@ eleventyExcludeFromCollections: true
   #geomap .maplibregl-ctrl-attrib { background: rgba(8,30,21,.72); color: var(--muted); font-size: 11px; }
   #geomap .maplibregl-ctrl-attrib a { color: #cfe2d4; }
   #geomap .maplibregl-ctrl-attrib-button { filter: invert(1) hue-rotate(180deg); }
+  #panel .pinrow { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin: 2px 0 8px; }
+  #panel .pinrow .btn[aria-pressed="true"] { background: #e3a72f; border-color: #e3a72f; color: #13301f; }
+  .gm-m.has-pin::before { content: ""; position: absolute; z-index: 1; left: calc(50% + var(--r) * .5); top: calc(50% + var(--r) * .45); width: 11px; height: 11px;
+    border-radius: 50%; background: #e3a72f; border: 2px solid #08201a; box-shadow: 0 0 0 1px #e3a72f; }
   #panel .vbar { display: flex; gap: 2px; height: 10px; margin: 10px 0 4px; border-radius: 5px; overflow: hidden; }
   #panel .vbar span { flex: 1; min-width: 3px; }
   @media (prefers-reduced-motion: reduce) { .gm-m.is-new .gm-art { animation: none; } .gm-art { transition: none; } }
@@ -449,6 +462,7 @@ eleventyExcludeFromCollections: true
       <p id="treekey"><span class="gm-art gm-key" aria-hidden="true"></span>
         <span>Each medallion is a <b>place</b>: the number is its claims, and each <b>leaf</b> is a checked claim, coloured by its verdict. Places close together share a medallion until you zoom in. Press a place to list its claims.</span></p></div>
     <div id="groupbox"><p class="kicker">GROUP CLAIMS BY</p><div id="groupby" role="group" aria-label="Group claims by"></div><div id="splitbox"></div></div>
+    <div id="spacingbox"><p class="kicker">SPACING</p><div id="spacing"></div></div>
     <details id="moreopts" class="moreopts"><summary>More options: arrange, show or hide groups, colours</summary>
     <div id="arrangebox"><p class="kicker">ARRANGE GROUPS BY</p><div id="arrange" role="group" aria-label="Arrange groups by"></div><p id="arrangenote"></p></div>
     <div id="groupsbox"><p class="kicker" id="groupsTitle">GROUPS</p><div id="groups"></div><p id="groupnote"></p></div>
@@ -465,6 +479,8 @@ eleventyExcludeFromCollections: true
 <noscript>The interactive map needs JavaScript. Every claim is listed on the <a href="/claims/">all claims page</a>.</noscript>
 
 <script src="/assets/lens.js" defer></script>
+<script src="/assets/laurel.js" defer></script>
+<script src="/assets/tray.js" defer></script>
 <script src="/assets/map/map.js" defer></script>
 <script src="/assets/claimrefs.js" defer></script>
 {%- if site.umami.websiteId %}

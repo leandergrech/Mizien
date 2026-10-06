@@ -58,6 +58,8 @@ styles: [lens.css, timeline.css]
       {%- for v in mizien.verdicts %}<li><span class="tlv-key v-{{ v.slug }}"></span>{{ v.name }}</li>{% endfor %}
       <li><span class="tlv-key v-none"></span>Not yet checked</li>
       <li><span class="tlv-key tlv-key-pledge"></span>Pledge (coloured by its label)</li>
+      <li class="tlv-lkey">A numbered disc is a clump of claims. Its laurel has a leaf per checked claim, in its verdict colour,
+        fading as the evidence review ages; a full laurel means every claim there is checked.</li>
     </ul>
   </div>
 
@@ -86,4 +88,6 @@ styles: [lens.css, timeline.css]
 </div>
 <script type="application/json" id="tl-data">{{ { points: T.points, undated: T.undated, labels: T.labels } | dump | replace("<", "\\u003c") | safe }}</script>
 <script src="/assets/lens.js" defer></script>
+<script src="/assets/laurel.js" defer></script>
+<script src="/assets/tray.js" defer></script>
 <script src="/assets/timeline.js" defer></script>
