@@ -20,7 +20,7 @@ claim:
     publisher: European Parliament, Policy Department for Citizens, Equality and Culture
     date: '2026-02'
     url: https://doi.org/10.2861/6278624
-    note: Primary text (read in full from the EU Publications Office PDF, 5 Oct 2026; maintainer-supplied copy also; key findings and conclusions read). Key findings of chapters 3 and 6 and the conclusions hold
+    note: Primary text (read in full from the EU Publications Office PDF, 5 Oct 2026; maintainer-supplied copy also; key findings and conclusions read). Key findings of chapters 3 and 6 (infringement statement in ch. 4) and the conclusions hold
       the claim; verbatim passages in literature/CC-020/primary-source.md.
   - title: Malta urged to address construction and entertainment noise
     publisher: MaltaToday
@@ -35,22 +35,23 @@ claim:
   quote: The transposition and implementation of the END evidently is not the cause of the noise problems in Malta.
 counter_evidence: The conclusion follows from the study's evidence. The Directive sets only reporting thresholds (55 dB
   Lden and 50 dB Lnight, above the WHO 2018 levels of 53 and 45 dB for roads and 45 and 40 dB for aircraft) and excludes
-  construction, entertainment and neighbourhood noise. Eurostat (ilc_mddw01) puts Malta first in the EU for reported
+  construction, entertainment and neighbourhood noise. Eurostat (ilc_mddw01), an all-source self-reported measure that includes road traffic (which the Directive covers) and so shows the size of the problem, not its cause, puts Malta first in the EU for reported
   street or neighbour noise, 31.3% against 18.1% in 2023, above the EU average in all 12 available years since 2010.
   Action-plan delays (plan due January 2025 unpublished at January 2026) are a genuine END implementation issue.
-  Legal compliance is not the same as exposure below WHO levels. The transposition table, infringement record and
-  the 21% vs 9% survey figure were not independently verified.
+  Legal compliance is not the same as exposure below WHO levels. The transposition table and infringement record were not independently verified. The WHO levels and the EEA exposure figures are second-hand via the study (the study, citing EEA, says the END figures are likely a considerable underestimation). The 21% vs 9% figure is in ERA's consultation annex (pp. 5-6, in the Office of the Superintendent of Public Health's comment, no survey named; annex read via Wayback on 6 Oct 2026); it is not in the Marmarà October 2019 survey summary (mean worry score for noise 3.90 of 5 only), so its origin is unidentified.
 tests: Study text and transposition table; Eurostat ilc_mddw01 for Malta, EU-27 and all Member States; END thresholds
   against WHO 2018 levels as reported in the study; Crossref-verified WHO review literature.
 why_low_hanging: 'Done: Claim Check 020 report and flyer.'
-tags: []
+tags:
+- Compliance-not-health
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: Medium
 caveats: The claimant is an EU body's commissioned study, not a Maltese speaker; the opinions are the authors', not the
   European Parliament's official position. The verdict covers legal conformity only, not whether Malta is quiet. Transposition
-  table, infringement register and the 21% vs 9% survey figure (via ERA 2023c, not opened) not independently verified;
-  WHO and EEA figures are second-hand via the study. No right of reply needed (verdict Largely supported; a reply is sought
+  table and infringement register not independently verified; the 21% vs 9% survey figure is in ERA's consultation
+  annex (read via Wayback) but no survey is named and it is not in the Marmarà 2019 summary, so its origin is unidentified; sub-claim C rests on the
+  study's own reading of the consultation and petition, not re-coded by us; WHO and EEA figures are second-hand via the study. No right of reply needed (verdict Largely supported; a reply is sought
   only for Not substantiated, Misleading or Contradicted).
 right_of_reply:
   sent: null
@@ -64,8 +65,8 @@ outputs:
   report: report.pdf
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
-version: '1.0'
-last_reviewed: '2026-10-05'
+version: '1.1'
+last_reviewed: '2026-10-06'
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
   lat: 35.8959
@@ -86,12 +87,12 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: grey
   - id: CC-020C
     text: "Complaints concern sources outside the END"
-    finding: "Consistent with the Directive’s scope and with Eurostat’s all-source indicator [1, 2]."
-    rating: "Supported"
-    tone: green
+    finding: "The study’s own reading of the 2022 consultation responses and the 2024 petition (ch. 6) [1]: the authors’ judgement, which we did not re-code."
+    rating: "Supported (study)"
+    tone: lime
   - id: CC-020D
     text: "21% vs 9% survey figure"
-    finding: "Second-hand via ERA 2023c; not traced; EU28 source unknown."
+    finding: "In ERA’s annex [7] (a comment, no survey named); not in the Marmarà summary [8]; origin unidentified."
     rating: "Not verified"
     tone: grey
 thumbnail:
@@ -105,3 +106,16 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: clarification
     note: "Right-of-reply status brought into line with the 5 Oct 2026 rule: a reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted, so this check needs none. Cover, page footer, flyer and the standards appendix now say so. Findings, verdict and confidence unchanged."
+  - date: 2026-10-06
+    step: note
+    note: "Traced the 21% vs 9% figure: the ERA consultation annex (Wayback copy, pp. 5-6) carries it in the Office of the Superintendent of Public Health's comment and names no survey; the Marmarà October 2019 summary has no such figure (noise worry score 3.90 of 5 only). Origin unidentified. Search log in literature/CC-020/notes.md."
+  - date: 2026-10-06
+    step: correction
+    note: "Sub-claim C now rated on the study's own analysis of consultation responses and the petition (Supported (study)); removed the statement that Eurostat's indicator captures exactly what the Directive does not (it includes road traffic, which the Directive covers). The 21% vs 9% figure is no longer described as untraceable or unopened: annex read, origin unidentified. The EEA underestimate is attributed to the EEA (the study, citing EEA). Tag Compliance-not-health added. Verdict and confidence unchanged."
+  - date: 2026-10-06
+    step: clarification
+    note: "Right-of-reply wording: the 2026-10-05 version 1.0 entry's 'not yet sent' is superseded; no right of reply is needed for a Largely supported verdict. Cover, footers, flyer, revision log and caveats now say 'no right of reply needed'. Layout fix: the data table on pages 5-6 no longer splits. Flyer verdict note reworded; infringement quote location corrected to chapter 4 in the literature record."
+  - date: 2026-10-06
+    step: version
+    version: "1.1"
+    note: "1.1: corrections after the 6 Oct 2026 audit: sub-claim C evidence, 21% vs 9% tracing, EEA attribution, right-of-reply wording, layout, tag."
