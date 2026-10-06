@@ -17,7 +17,7 @@ S_PROJ = "Eurostat proj_25np (EUROPOP2025), retrieved 6 Oct 2026"
 S_CENS = "Eurostat cens_21ctz_r3 / cens_21cob_r3 (Census 2021), retrieved 6 Oct 2026"
 S_FLOW = "Eurostat migr_imm1ctz, migr_emi1ctz, migr_acq, retrieved 6 Oct 2026"
 S_JP = "Jobsplus workbooks (December of each year), retrieved 6 Oct 2026"
-S_PWC = "PwC Malta press release, as published by The Malta Business Weekly, 19 Jul 2026"
+S_PWC = "PwC Malta press release, as posted by Finance Malta, 17 Jul 2026"
 S_NSO = "◆ NSO World Population Day release (NR 120/2026, 9 Jul 2026) as reported by Newsbook, Lovin Malta, MEETinc"
 
 
@@ -87,9 +87,17 @@ add(f"Stateless, 1 January {LAST}", int(ctz.get(("STLS", LAST), 0)), "persons", 
 add("Flags on the 2010-2025 citizenship series", ", ".join(
     f"{c} {y}:{ctzf[(c, y)]}" for (c, y) in sorted(ctzf) if y in YEARS and ctzf[(c, y)]) or "none", "flags", S_CTZ,
     "earlier years carry 'b' (2001, 2009 total) and 'e' (2006); not used")
-for y in (2019, 2024, LAST):
+for y in (2019, 2022, 2023, 2024, LAST):
     add(f"Born abroad, share, 1 January {y}", r2(born_abroad(y)), "%", S_CTB,
         f"{int(ctb[('FOR', y)]):,} of {int(ctb[('TOTAL', y)]):,}")
+add("Malta-born residents, 1 January 2022 and 1 January 2023 (born-abroad series, level shift)",
+    f"{int(ctb[('NAT', 2022)]):,} -> {int(ctb[('NAT', 2023)]):,}", "persons", S_CTB,
+    f"{int(ctb[('NAT', 2023)] - ctb[('NAT', 2022)]):+,}; no Eurostat flag on either year (flags: "
+    f"{ctbf[('NAT', 2022)] or 'none'}, {ctbf[('NAT', 2023)] or 'none'})")
+add("Born abroad: 1 January 2022 share minus Census 2021 share (21 Nov 2021)",
+    f"{r2(born_abroad(2022))} vs {r2(100 * cens[('cens_21cob_r3', 'FOR')] / cens[('cens_21cob_r3', 'TOTAL')])}", "%",
+    S_CTB + "; " + S_CENS, "1 January 2022 is six weeks after the census date, yet its share is lower; we use only "
+                           "the 2025 level of this series")
 add("Census 2021: non-Maltese citizens (incl. stateless), share",
     r2(100 * (cens[("cens_21ctz_r3", "TOTAL")] - cens[("cens_21ctz_r3", "NAT")]) / cens[("cens_21ctz_r3", "TOTAL")]),
     "%", S_CENS, f"{int(cens[('cens_21ctz_r3', 'TOTAL')] - cens[('cens_21ctz_r3', 'NAT')]):,} of "
@@ -140,30 +148,52 @@ add("Jobsplus: third-country nationals' share of employed foreign nationals, Dec
 # ------------------------------------------------------------------ B: 38% by 2030
 P30 = int(pwc["Population projected for 2030 (base case)"]["value"])
 SH30 = float(pwc["Mix of foreign to local residents by 2030"]["value"])
-loc_req = P30 * (1 - SH30 / 100)
+BAND = (37.5, 38.0, 38.5)    # "around 38%": the values that round to 38, the same tolerance used for every reading
+loc = {s: P30 * (1 - s / 100) for s in BAND}
 add("PwC base case for 2030", P30, "persons", S_PWC)
-add("Local residents implied by 38% of 636,000", int(round(loc_req)), "persons", "calculated", "foreign: "
-    f"{int(round(P30 * SH30 / 100)):,}")
-add("Implied change in local residents from Maltese citizens on 1 January 2025", int(round(loc_req - nat[LAST])), "persons",
-    "calculated from PwC and Eurostat")
-yrs = 2030 - LAST + 1        # 1 Jan 2025 to end-2030 (= 1 Jan 2031): six years, the longest reading of 'by 2030'
-need = (loc_req - nat[LAST]) / yrs
-add("Required change in Maltese citizens a year, 2025-2030 (to end-2030)", int(round(need)), "persons a year",
-    "calculated", f"{yrs} years from 1 January {LAST}; a 1 January 2030 horizon would need "
-                  f"{int(round((loc_req - nat[LAST]) / (yrs - 1))):,} a year")
+for s in BAND:
+    add(f"Local residents left by {s}% of 636,000", int(round(loc[s])), "persons", "calculated",
+        f"foreign: {int(round(P30 * s / 100)):,}")
+# start points: our end-2025 range (first-hand bound from section A) and, for comparison, 1 January 2025
+add("Start: Maltese citizens on 1 January 2026 (our calculation from Eurostat, 2010-24 range of yearly changes)",
+    f"{int(lo_nat):,}-{int(hi_nat):,}", "persons", "calculated from Eurostat")
+for s in BAND:
+    lo_need = (loc[s] - lo_nat) / 5     # 1 Jan 2026 to end-2030 (= 1 Jan 2031): five years
+    hi_need = (loc[s] - hi_nat) / 5
+    add(f"Change in Maltese citizens a year needed for {s}%, 2026-2030 (from our end-2025 range)",
+        f"{int(round(lo_need)):,} to {int(round(hi_need)):,}", "persons a year", "calculated",
+        "smaller fall from the lower start (405,549)")
+    add(f"Change a year needed for {s}%, counted from 1 January 2025 over six years (spreads the fall over 2025, when "
+        "the count rose)", int(round((loc[s] - nat[LAST]) / 6)), "persons a year", "calculated (comparison)")
+    add(f"Change a year needed for {s}%, from the NSO-implied end-2025 count", int(round((loc[s] - (pop26 - nso_for)) / 5)),
+        "persons a year", "calculated (◆ NSO via outlets)")
+NEED_MIN = (loc[37.5] - lo_nat) / 5
+add("Smallest yearly fall needed for 'around 38%' (37.5%, from the lower end-2025 start)", int(round(NEED_MIN)),
+    "persons a year", "calculated", "the figure used in the report's text")
 add("Ratio of non-Maltese to Maltese citizens, 1 January 2025", r1(100 * foreign(LAST) / nat[LAST]), "%", S_CTZ,
     "already above 38%, so 'mix of foreign to local' reaching 38% can only mean a share of all residents")
 add("Share of all residents if 38% were a ratio of foreign to local", r1(100 * SH30 / (100 + SH30)), "%", "calculated",
     "below today's share: this reading would mean a fall, which the release does not describe")
 add("Non-Maltese share at 636,000 with Maltese citizens at their 1 January 2025 count", r2(100 * (P30 - nat[LAST]) / P30),
     "%", "calculated (comparison, not a forecast)")
+add("Non-Maltese share at 636,000 with Maltese citizens at our end-2025 range",
+    f"{100 * (P30 - hi_nat) / P30:.1f}-{100 * (P30 - lo_nat) / P30:.1f}", "%", "calculated (comparison, not a forecast)")
+mb = ctb[("NAT", LAST)]
 add("Born-abroad share at 636,000 with Malta-born residents at their 1 January 2025 count",
-    r2(100 * (P30 - ctb[("NAT", LAST)]) / P30), "%", "calculated (comparison, not a forecast)",
-    f"Malta-born {int(ctb[('NAT', LAST)]):,} on 1 January {LAST}")
+    r2(100 * (P30 - mb) / P30), "%", "calculated (comparison, not a forecast)", f"Malta-born {int(mb):,} on 1 January {LAST}")
+add("Change in Malta-born residents to 2030 for a 37.5-38.5% born-abroad share at 636,000",
+    f"{int(round(loc[38.5] - mb)):+,} to {int(round(loc[37.5] - mb)):+,}", "persons", "calculated (comparison)")
 for lab, P in (("low", "Population range for 2030 (low)"), ("high", "Population range for 2030 (high)")):
     v = int(pwc[P]["value"])
     add(f"◆ Non-Maltese share at PwC's {lab} total ({v:,}) with Maltese citizens at their 1 Jan 2025 count",
         r2(100 * (v - nat[LAST]) / v), "%", "calculated (◆ range as reported by Business Now and Newsbook)")
+
+# clues to PwC's definition (second-hand wording; decide nothing)
+add("Clue: non-Maltese citizens vs born abroad, 1 January 2019", f"{share(2019):.2f} vs {born_abroad(2019):.2f}", "%",
+    S_CTZ + "; " + S_CTB, "◆ Business Now: 'In 2019, it was 20 per cent' (outlet's paraphrase of the report)")
+add("Clue: born abroad, 1 January 2024", r2(born_abroad(2024)), "%", S_CTB, "31% also matches this")
+add("Clue: Maltese citizens vs Malta-born residents, 1 January 2025", f"{int(nat[LAST]):,} vs {int(mb):,}", "persons",
+    S_CTZ + "; " + S_CTB, "◆ Business Now: local population 'has remained at just over 400,000' (outlet's paraphrase)")
 
 # components of the change in Maltese citizens, 2021-2024 (all four first-hand)
 comp = []
@@ -181,14 +211,38 @@ for y in range(2021, LAST):
         "Eurostat demo_faczc, demo_maczc, retrieved 6 Oct 2026",
         f"{int(flows[('demo_faczc', 'NAT', y)]):,} births, {int(flows[('demo_maczc', 'NAT', y)]):,} deaths; "
         "approximate (a child's citizenship can differ from the mother's)")
+R_MIN = min(c[4] for c in comp)
 add("Residual (without naturalisations or migration), 2021-2024: range",
-    f"{int(min(c[4] for c in comp))} to {int(max(c[4] for c in comp))}", "persons a year", "calculated from Eurostat",
+    f"{int(R_MIN)} to {int(max(c[4] for c in comp))}", "persons a year", "calculated from Eurostat",
     "close to births to Maltese mothers minus deaths of Maltese citizens ("
     f"{int(min(c[5] for c in comp))} to {int(max(c[5] for c in comp))})")
 add("Acquisitions of Maltese citizenship, 2021-2024: range",
     f"{int(min(c[3] for c in comp))} to {int(max(c[3] for c in comp))}", "persons a year", S_FLOW)
-add("Required fall (a year) vs the most negative residual 2021-2024", f"{int(round(need))} vs {int(min(c[4] for c in comp))}",
-    "persons a year", "calculated", "38% at 636,000 needs a faster fall than even the residual alone")
+add("Smallest fall needed (37.5%) vs the most negative residual 2021-2024", f"{int(round(NEED_MIN))} vs {int(R_MIN)}",
+    "persons a year", "calculated", "even the residual alone falls more slowly than needed")
+# comparison only: 2024's residual (the largest fall) repeated, i.e. no naturalisations and no Maltese migration
+for start, lab, n in ((nat[LAST], "from 1 January 2025, six years", 6), (lo_nat, "from 405,549 (end-2025), five years", 5),
+                      (hi_nat, "from 406,706 (end-2025), five years", 5)):
+    end = start + n * R_MIN
+    add(f"Comparison: 2024's residual ({int(R_MIN)}) repeated {lab}: non-Maltese share at 636,000",
+        r2(100 * (P30 - end) / P30), "%", "calculated (comparison, not a forecast)", f"Maltese citizens {int(end):,}")
+
+# the Central Bank of Malta's baseline (second-hand; no naturalisations)
+cbm = list(csv.DictReader(open(D / "cbm_secondhand.csv")))
+c0 = float(cbm[0]["value"])
+for r in cbm[1:]:
+    v = float(r["value"])
+    for yrs_ in (26, 27):
+        add(f"◆ CBM baseline native population {int(c0):,} -> {int(v):,} by 2050: average change over {yrs_} years",
+            int(round((v - c0) / yrs_)), "persons a year", "calculated (◆ " + r["outlet"] + ")",
+            "path to 2030 unknown; decides nothing")
+for r in cbm[1:]:
+    v = float(r["value"])
+    for yrs_ in (26, 27):
+        rate = (v - c0) / yrs_
+        end = lo_nat + 5 * rate
+        add(f"◆ Comparison: CBM average ({int(round(rate))}) applied 2026-30 from 405,549: non-Maltese share at 636,000",
+            r2(100 * (P30 - end) / P30), "%", "calculated (comparison, ◆)")
 
 # EUROPOP2025 (Eurostat): totals only, no split by citizenship
 for t in ("BSL", "HMIGR", "LMIGR", "NMIGR"):

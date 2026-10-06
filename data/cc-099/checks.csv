@@ -19,8 +19,12 @@ Latest year with Eurostat's split by citizenship (1 January),2025,year,"Eurostat
 "Stateless, 1 January 2025",0,persons,"Eurostat migr_pop1ctz (1 January, by citizenship), retrieved 6 Oct 2026",
 Flags on the 2010-2025 citizenship series,none,flags,"Eurostat migr_pop1ctz (1 January, by citizenship), retrieved 6 Oct 2026","earlier years carry 'b' (2001, 2009 total) and 'e' (2006); not used"
 "Born abroad, share, 1 January 2019",20.17,%,"Eurostat migr_pop3ctb (1 January, by country of birth), retrieved 6 Oct 2026","99,436 of 492,968"
+"Born abroad, share, 1 January 2022",23.6,%,"Eurostat migr_pop3ctb (1 January, by country of birth), retrieved 6 Oct 2026","122,742 of 520,174"
+"Born abroad, share, 1 January 2023",28.29,%,"Eurostat migr_pop3ctb (1 January, by country of birth), retrieved 6 Oct 2026","153,361 of 542,051"
 "Born abroad, share, 1 January 2024",30.84,%,"Eurostat migr_pop3ctb (1 January, by country of birth), retrieved 6 Oct 2026","173,781 of 563,443"
 "Born abroad, share, 1 January 2025",32.0,%,"Eurostat migr_pop3ctb (1 January, by country of birth), retrieved 6 Oct 2026","183,765 of 574,250"
+"Malta-born residents, 1 January 2022 and 1 January 2023 (born-abroad series, level shift)","397,432 -> 388,690",persons,"Eurostat migr_pop3ctb (1 January, by country of birth), retrieved 6 Oct 2026","-8,742; no Eurostat flag on either year (flags: none, none)"
+Born abroad: 1 January 2022 share minus Census 2021 share (21 Nov 2021),23.6 vs 25.65,%,"Eurostat migr_pop3ctb (1 January, by country of birth), retrieved 6 Oct 2026; Eurostat cens_21ctz_r3 / cens_21cob_r3 (Census 2021), retrieved 6 Oct 2026","1 January 2022 is six weeks after the census date, yet its share is lower; we use only the 2025 level of this series"
 "Census 2021: non-Maltese citizens (incl. stateless), share",22.22,%,"Eurostat cens_21ctz_r3 / cens_21cob_r3 (Census 2021), retrieved 6 Oct 2026","115,453 of 519,564"
 "Census 2021: born abroad, share",25.65,%,"Eurostat cens_21ctz_r3 / cens_21cob_r3 (Census 2021), retrieved 6 Oct 2026",
 Change in the share of non-Maltese citizens during 2024 (1 Jan 2024 to 1 Jan 2025),1.31,points,calculated,
@@ -40,16 +44,32 @@ Implied change in Maltese citizens during 2025,249,persons,calculated (◆),with
 "Jobsplus: foreign nationals' share of total employment, December 2025",39.8,%,"Jobsplus workbooks (December of each year), retrieved 6 Oct 2026","135,417 of 340,463 (full- and part-time)"
 "Jobsplus: foreign nationals' share of full-time employment, December 2025",42.2,%,"Jobsplus workbooks (December of each year), retrieved 6 Oct 2026","128,247 of 304,226"
 "Jobsplus: third-country nationals' share of employed foreign nationals, December 2025",69.5,%,"Jobsplus workbooks (December of each year), retrieved 6 Oct 2026",
-PwC base case for 2030,636000,persons,"PwC Malta press release, as published by The Malta Business Weekly, 19 Jul 2026",
-"Local residents implied by 38% of 636,000",394320,persons,calculated,"foreign: 241,680"
-Implied change in local residents from Maltese citizens on 1 January 2025,-10992,persons,calculated from PwC and Eurostat,
-"Required change in Maltese citizens a year, 2025-2030 (to end-2030)",-1832,persons a year,calculated,"6 years from 1 January 2025; a 1 January 2030 horizon would need -2,198 a year"
+PwC base case for 2030,636000,persons,"PwC Malta press release, as posted by Finance Malta, 17 Jul 2026",
+"Local residents left by 37.5% of 636,000",397500,persons,calculated,"foreign: 238,500"
+"Local residents left by 38.0% of 636,000",394320,persons,calculated,"foreign: 241,680"
+"Local residents left by 38.5% of 636,000",391140,persons,calculated,"foreign: 244,860"
+"Start: Maltese citizens on 1 January 2026 (our calculation from Eurostat, 2010-24 range of yearly changes)","405,549-406,706",persons,calculated from Eurostat,
+"Change in Maltese citizens a year needed for 37.5%, 2026-2030 (from our end-2025 range)","-1,610 to -1,841",persons a year,calculated,"smaller fall from the lower start (405,549)"
+"Change a year needed for 37.5%, counted from 1 January 2025 over six years (spreads the fall over 2025, when the count rose)",-1302,persons a year,calculated (comparison),
+"Change a year needed for 37.5%, from the NSO-implied end-2025 count",-1612,persons a year,calculated (◆ NSO via outlets),
+"Change in Maltese citizens a year needed for 38.0%, 2026-2030 (from our end-2025 range)","-2,246 to -2,477",persons a year,calculated,"smaller fall from the lower start (405,549)"
+"Change a year needed for 38.0%, counted from 1 January 2025 over six years (spreads the fall over 2025, when the count rose)",-1832,persons a year,calculated (comparison),
+"Change a year needed for 38.0%, from the NSO-implied end-2025 count",-2248,persons a year,calculated (◆ NSO via outlets),
+"Change in Maltese citizens a year needed for 38.5%, 2026-2030 (from our end-2025 range)","-2,882 to -3,113",persons a year,calculated,"smaller fall from the lower start (405,549)"
+"Change a year needed for 38.5%, counted from 1 January 2025 over six years (spreads the fall over 2025, when the count rose)",-2362,persons a year,calculated (comparison),
+"Change a year needed for 38.5%, from the NSO-implied end-2025 count",-2884,persons a year,calculated (◆ NSO via outlets),
+"Smallest yearly fall needed for 'around 38%' (37.5%, from the lower end-2025 start)",-1610,persons a year,calculated,the figure used in the report's text
 "Ratio of non-Maltese to Maltese citizens, 1 January 2025",41.7,%,"Eurostat migr_pop1ctz (1 January, by citizenship), retrieved 6 Oct 2026","already above 38%, so 'mix of foreign to local' reaching 38% can only mean a share of all residents"
 Share of all residents if 38% were a ratio of foreign to local,27.5,%,calculated,"below today's share: this reading would mean a fall, which the release does not describe"
 "Non-Maltese share at 636,000 with Maltese citizens at their 1 January 2025 count",36.27,%,"calculated (comparison, not a forecast)",
+"Non-Maltese share at 636,000 with Maltese citizens at our end-2025 range",36.1-36.2,%,"calculated (comparison, not a forecast)",
 "Born-abroad share at 636,000 with Malta-born residents at their 1 January 2025 count",38.6,%,"calculated (comparison, not a forecast)","Malta-born 390,485 on 1 January 2025"
+"Change in Malta-born residents to 2030 for a 37.5-38.5% born-abroad share at 636,000","+655 to +7,015",persons,calculated (comparison),
 "◆ Non-Maltese share at PwC's low total (624,000) with Maltese citizens at their 1 Jan 2025 count",35.05,%,calculated (◆ range as reported by Business Now and Newsbook),
 "◆ Non-Maltese share at PwC's high total (660,000) with Maltese citizens at their 1 Jan 2025 count",38.59,%,calculated (◆ range as reported by Business Now and Newsbook),
+"Clue: non-Maltese citizens vs born abroad, 1 January 2019",18.35 vs 20.17,%,"Eurostat migr_pop1ctz (1 January, by citizenship), retrieved 6 Oct 2026; Eurostat migr_pop3ctb (1 January, by country of birth), retrieved 6 Oct 2026","◆ Business Now: 'In 2019, it was 20 per cent' (outlet's paraphrase of the report)"
+"Clue: born abroad, 1 January 2024",30.84,%,"Eurostat migr_pop3ctb (1 January, by country of birth), retrieved 6 Oct 2026",31% also matches this
+"Clue: Maltese citizens vs Malta-born residents, 1 January 2025","405,312 vs 390,485",persons,"Eurostat migr_pop1ctz (1 January, by citizenship), retrieved 6 Oct 2026; Eurostat migr_pop3ctb (1 January, by country of birth), retrieved 6 Oct 2026","◆ Business Now: local population 'has remained at just over 400,000' (outlet's paraphrase)"
 "Maltese citizens, components of change 2021",331 = 306 + 1156 + -1131,persons,"Eurostat migr_imm1ctz, migr_emi1ctz, migr_acq, retrieved 6 Oct 2026","total change = net migration of Maltese citizens + acquisitions of Maltese citizenship + residual (everything else: births minus deaths, losses of citizenship, statistical adjustment)"
 "Births to Maltese mothers minus deaths of Maltese citizens, 2021",-900,persons,"Eurostat demo_faczc, demo_maczc, retrieved 6 Oct 2026","3,050 births, 3,950 deaths; approximate (a child's citizenship can differ from the mother's)"
 "Maltese citizens, components of change 2022",881 = 1039 + 842 + -1000,persons,"Eurostat migr_imm1ctz, migr_emi1ctz, migr_acq, retrieved 6 Oct 2026","total change = net migration of Maltese citizens + acquisitions of Maltese citizenship + residual (everything else: births minus deaths, losses of citizenship, statistical adjustment)"
@@ -60,7 +80,18 @@ Share of all residents if 38% were a ratio of foreign to local,27.5,%,calculated
 "Births to Maltese mothers minus deaths of Maltese citizens, 2024",-1119,persons,"Eurostat demo_faczc, demo_maczc, retrieved 6 Oct 2026","2,821 births, 3,940 deaths; approximate (a child's citizenship can differ from the mother's)"
 "Residual (without naturalisations or migration), 2021-2024: range",-1441 to -914,persons a year,calculated from Eurostat,close to births to Maltese mothers minus deaths of Maltese citizens (-1119 to -857)
 "Acquisitions of Maltese citizenship, 2021-2024: range",825 to 1156,persons a year,"Eurostat migr_imm1ctz, migr_emi1ctz, migr_acq, retrieved 6 Oct 2026",
-Required fall (a year) vs the most negative residual 2021-2024,-1832 vs -1441,persons a year,calculated,"38% at 636,000 needs a faster fall than even the residual alone"
+Smallest fall needed (37.5%) vs the most negative residual 2021-2024,-1610 vs -1441,persons a year,calculated,even the residual alone falls more slowly than needed
+"Comparison: 2024's residual (-1441) repeated from 1 January 2025, six years: non-Maltese share at 636,000",37.63,%,"calculated (comparison, not a forecast)","Maltese citizens 396,666"
+"Comparison: 2024's residual (-1441) repeated from 405,549 (end-2025), five years: non-Maltese share at 636,000",37.37,%,"calculated (comparison, not a forecast)","Maltese citizens 398,344"
+"Comparison: 2024's residual (-1441) repeated from 406,706 (end-2025), five years: non-Maltese share at 636,000",37.19,%,"calculated (comparison, not a forecast)","Maltese citizens 399,501"
+"◆ CBM baseline native population 405,075 -> 350,000 by 2050: average change over 26 years",-2118,persons a year,calculated (◆ The Malta Business Weekly (Silvan Mifsud)),path to 2030 unknown; decides nothing
+"◆ CBM baseline native population 405,075 -> 350,000 by 2050: average change over 27 years",-2040,persons a year,calculated (◆ The Malta Business Weekly (Silvan Mifsud)),path to 2030 unknown; decides nothing
+"◆ CBM baseline native population 405,075 -> 347,000 by 2050: average change over 26 years",-2234,persons a year,calculated (◆ Amphora Media),path to 2030 unknown; decides nothing
+"◆ CBM baseline native population 405,075 -> 347,000 by 2050: average change over 27 years",-2151,persons a year,calculated (◆ Amphora Media),path to 2030 unknown; decides nothing
+"◆ Comparison: CBM average (-2118) applied 2026-30 from 405,549: non-Maltese share at 636,000",37.9,%,"calculated (comparison, ◆)",
+"◆ Comparison: CBM average (-2040) applied 2026-30 from 405,549: non-Maltese share at 636,000",37.84,%,"calculated (comparison, ◆)",
+"◆ Comparison: CBM average (-2234) applied 2026-30 from 405,549: non-Maltese share at 636,000",37.99,%,"calculated (comparison, ◆)",
+"◆ Comparison: CBM average (-2151) applied 2026-30 from 405,549: non-Maltese share at 636,000",37.93,%,"calculated (comparison, ◆)",
 EUROPOP2025 BSL: population 1 January 2030 / 1 January 2031,"621,470 / 628,876",persons,"Eurostat proj_25np (EUROPOP2025), retrieved 6 Oct 2026",
 EUROPOP2025 HMIGR: population 1 January 2030 / 1 January 2031,"650,230 / 663,463",persons,"Eurostat proj_25np (EUROPOP2025), retrieved 6 Oct 2026",
 EUROPOP2025 LMIGR: population 1 January 2030 / 1 January 2031,"592,712 / 594,292",persons,"Eurostat proj_25np (EUROPOP2025), retrieved 6 Oct 2026",
