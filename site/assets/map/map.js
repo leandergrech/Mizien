@@ -466,7 +466,7 @@
     });
     if (m === "pledges") claims.forEach(function (c) { if (!c.data.pledge) c.hidden = true; });   // only pledges here
     buildSubHubs(m);
-    shownCount = claims.filter(function (c) { return !c.hidden; }).length;
+    shownCount = partial ? claims.filter(function (c) { return !c.hidden; }).length : Infinity;   // partial views only: hiding groups in the legend does not count
     // hub targets
     var n = hubs.length, nAll = Math.max(1, Object.keys(allKeys).length - (m === "pattern" && allKeys["No pattern tag"] ? 1 : 0));
     fill = partial && M.layout !== "force" ? Math.max(0.42, Math.min(1, Math.sqrt(n / nAll))) : 1;   // the web of links fits itself
@@ -1234,7 +1234,7 @@
         // codes give way to the claims' names. A hovered, selected, pinned or highlighted claim is always labelled.
         var pin = Tray && Tray.has(n.id), zfade = Math.max(0, Math.min(1, (cam.zoom - 1.35) / 0.3)), close = cam.zoom >= 2.2;
         var member = expanded && n.hub === expanded && mode !== "speaker", tagged = labelMode === "tag" || member || (close && !expanded);   // Who said it: too many claims to name them all
-        var keep = isHov || isSel || member || focused || pin || shownCount <= 24;   // a small set is always labelled
+        var keep = isHov || isSel || member || focused || pin || shownCount <= 24 || mode === "pledges";   // a small filtered or pinned set, and the pledges, are always labelled
         var hp = member ? P.get(n.sub && n.sub.alpha > 0.3 ? n.sub : expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
         if ((!expanded && (keep || zfade > 0)) || member || isHov || isSel) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: tagged ? d.title : n.id,
           sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (isRated ? " · " + ratedText(d) : " · not yet checked") : d.title) : "",

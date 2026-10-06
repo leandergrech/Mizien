@@ -38,8 +38,9 @@ those (`map.js`):
   0.42) and the view refits to them through `groupSpread()`. On the topic sphere, one to three groups sit round its
   middle (the spiral put one at the centre or two at the poles), and with four or fewer the opaque sphere is dropped so
   none hides behind it.
-- A group with one claim shows the claim above it, clear of the group's label; a set of 24 claims or fewer is always
-  labelled, whatever the zoom.
+- A group with one claim shows the claim above it, clear of the group's label; under the filter or "Show only pinned",
+  a set of 24 claims or fewer is always labelled, whatever the zoom (hiding groups in the legend does not trigger it).
+  The pledges view always labels its claims, filtered or not (maintainer decision, 6 Oct 2026).
 - The web of links centres and scales on the claims shown, not the whole web.
 - Map: places with no claims left are hidden (as before) and the map now zooms to the places that remain (at most to
   zoom 15), on load and whenever the filter changes; Fit returns to them.
