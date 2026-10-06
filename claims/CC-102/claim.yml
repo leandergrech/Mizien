@@ -18,7 +18,7 @@ claim:
     date: 2026-06
     url: https://ombudsman.org.mt/media/0ownfd4k/digital-annual-report-2025-en.pdf
     note: Primary. Read in full 5 Oct 2026 (SHA-256 14fcc0c6...42b0). Quote on p. 15; 22 reports to Parliament in Table 1.22
-      (p. 37).
+      (p. 37). Printed page numbers (PDF page = printed + 1).
   - title: Public entities ignore Ombudsman as defiance reaches record high
     publisher: Newsbook
     date: '2026-07-02'
@@ -39,8 +39,8 @@ claim:
   quote: The Commissioner for Environment and Planning had 12 sustained cases, representing 15% of the total, of which 7 recommendations,
     or 58%, were not implemented.
 counter_evidence: The 58% is 7 of 12 sustained cases closed in 2025 (Table 1.3); the same office had 6 of 13 (46%) in 2023
-  and 2 of 8 (25%) in 2024, so the figure swings with very few cases. The Commissioner's chapter says five of the 12 were
-  still unimplemented when the report was written; two more were implemented after referral to the House. 'Highest' holds
+  and 2 of 8 (25%) in 2024, so the figure swings with very few cases. The Commissioner's chapter (printed pp. 218-219) says five of the 12 were
+  still unimplemented when the report was written; two more were implemented after referral to the House. This reconciles with Table 1.3 only if the one partly implemented case counts as implemented (4+1=5). 'Highest' holds
   against Education (53% of sustained cases) but not if only cases with a recommendation are counted (Education 8 of 12, 67%).
   The Commissioner's remit covers planning, building and transport licensing as well as the environment.
 tests: Ombudsman annual reports 2023-2025 (Table 1.3, Table 1.22, Commissioner chapter); recomputation of rates on two denominators
@@ -48,7 +48,7 @@ tests: Ombudsman annual reports 2023-2025 (Table 1.3, Table 1.22, Commissioner c
 why_low_hanging: 'Done: Claim Check 102 report and flyer.'
 tags: []
 tags_provisional: false
-priority: Done (v1.0)
+priority: Done (v1.1)
 data_readiness: 'High: ombudsman.org.mt reachable; annual-report PDFs read in full.'
 caveats: 'Count of cases, not recommendations; status at closure (2 of the 7 were later implemented). Table 1.22''s per-office
   split differs from Table 1.3 for the Parliamentary Ombudsman (4 vs 5) and Health (3 vs 2); Environment and Planning agrees
@@ -72,14 +72,14 @@ location:
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-102A
-    text: "58% of the Commissioner for Environment and Planning’s recommendations went unimplemented in 2025"
+    text: "58% of the Commissioner for Environment and Planning’s recommendations went unimplemented in 2025 (Table 1.3 counts the 12 sustained cases closed in 2025: 7 not implemented)"
     said_by: "Ombudsman [1]; Newsbook [2]"
-    finding: "7 of 12 sustained cases at closure (Table 1.3). Small count; 5 of 12 still open when the report was written."
+    finding: "7 of 12 sustained cases closed in 2025, status at closure (Table 1.3). Small count; 5 of 12 still open when the report was written."
     rating: "Confirmed"
     tone: grey
   - id: CC-102B
     text: "The highest rate among the commissioners"
-    said_by: "Newsbook [2]"
+    said_by: "Claim record; Newsbook [2] gives 58% and 53%"
     finding: "58% against Education’s 53% of sustained cases; 67% for Education on cases with a recommendation."
     rating: "Depends on base"
     tone: amber
@@ -89,8 +89,8 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "Table 1.22: 22, up from 16 (2024) and 14 (2023)."
     rating: "Confirmed"
     tone: grey
-version: '1.0'
-last_reviewed: '2026-10-05'
+version: '1.1'
+last_reviewed: '2026-10-06'
 thumbnail:
   figure: 7 of 12
   caption: sustained Environment and Planning cases with the Ombudsman’s recommendation not implemented (2025)
@@ -107,3 +107,24 @@ history:
   version: '1.0'
   note: 'First issue. 7 of 12 and 22 reports confirmed from the tables; caveats: small count, status at closure (5 of 12 still
     open), ranking depends on denominator. Largely supported, high confidence.'
+- date: '2026-10-06'
+  step: note
+  note: 'Re-checked Table 1.3 rows for 2023 and 2024 (all offices) and Table 1.22 against the PDFs: all match data/cc-102. Newsbook
+    page could not be re-fetched (timeout, connection refused, no Wayback copy); a web-search summary of it (second-hand)
+    says "sustained (justified)", 58% and 53%, 14/16/22; it does not confirm the "highest" comparison, so sub-claim B is
+    attributed to the claim record. See literature/CC-102/notes.md.'
+- date: '2026-10-06'
+  step: correction
+  note: 'Reconciliation stated: the 42% still open counts the one partly implemented case as implemented (Table 1.3 4+1=5 =
+    chapter five; 7 = 2 later + 5 open); asserted in calc.py. Sub-claim A wording now says the 12 sustained cases closed in
+    2025. Chapter page cite given as printed pp. 218-219 (PDF pp. 219-220); the printed numbers were already right.'
+- date: '2026-10-06'
+  step: clarification
+  note: 'Cover, footers, flyer and revision log say "no right of reply needed" (status derived by the template). Figure 1
+    enlarged with source line moved to the caption; page 6 no longer near-empty. Flyer and cover context attribute "highest"
+    to Newsbook.'
+- date: '2026-10-06'
+  step: version
+  version: '1.1'
+  note: '1.1: corrections after the 6 Oct 2026 audit: reconciliation of Table 1.3 with the chapter, page cite, sub-claim A
+    wording, status wording, layout, re-checks. Verdict unchanged (Largely supported, high).'
