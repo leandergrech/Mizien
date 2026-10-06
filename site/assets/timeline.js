@@ -36,10 +36,14 @@
   var lanes = ["topic", "who", "verdict"].indexOf(q0.get("lanes")) >= 0 ? q0.get("lanes") : "none", checkedOnly = q0.get("checked") === "1";
   var VERDICT_LANES = ["Supported", "Largely supported", "Not substantiated", "Misleading", "Contradicted", "Pledge", "Not yet checked"];
   function laneOf(p) { return lanes === "topic" ? p.topic : lanes === "who" ? p.who : p.pledge ? "Pledge" : p.label; }
-  function shown(p) { return !checkedOnly || p.v !== "none"; }
+  // The site-wide filter (assets/lens.js): the same filter as the claims web and the map, kept in the address.
+  var Lens = window.MizienLens;
+  function lensItem(p) { return p._li || (p._li = { id: p.id, f: p.lens, text: p.text }); }
+  function shown(p) { return (!checkedOnly || p.v !== "none") && (!Lens || Lens.match(lensItem(p))); }
 
   // ------------------------------------------------------------ data
-  var pts = JSON.parse(dataEl.textContent).map(function (p) {
+  var DATA = JSON.parse(dataEl.textContent);
+  var pts = DATA.points.map(function (p) {
     var m = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(p.date);
     var y = +m[1], mo = m[2] ? +m[2] - 1 : null, d = m[3] ? +m[3] : null;
     if (p.precision === "year") { p.start = Date.UTC(y, 0, 1); p.end = Date.UTC(y + 1, 0, 1); p.rank = 0; }
@@ -477,6 +481,13 @@
   }
 
   // ------------------------------------------------------------ start
+  function syncViewLinks() {   // the other views open with the same filter
+    var q = Lens ? Lens.query() : "";
+    root.querySelectorAll(".xviews a[data-view]").forEach(function (a) { a.href = href("/explore/?view=" + a.dataset.view + (q ? "&" + q : "")); });
+  }
+  if (Lens) Lens.init({ items: pts.concat(DATA.undated || []).map(lensItem), labels: DATA.labels, mount: document.getElementById("lensbar"),
+    onChange: function () { syncViewLinks(); render(); } });
+  syncViewLinks();
   root.hidden = false;
   var list = document.getElementById("tl-list"); if (list) list.open = false;
   W = stage.clientWidth || 800;

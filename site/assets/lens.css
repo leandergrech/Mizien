@@ -1,0 +1,72 @@
+/* The view switch (Web, Map, Timeline) and the site-wide filter bar (assets/lens.js), shared by /explore/ and /timeline/. */
+.xbar { position: relative; z-index: 12; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px 14px; padding: 8px 20px 10px;
+  border-bottom: 1px solid rgba(127,168,139,.22); background: rgba(8,30,21,.55); color: #eef3ef; font-family: "Liberation Sans", Arial, Helvetica, sans-serif; }
+.xviews { display: inline-flex; flex: none; border: 1px solid rgba(207,226,212,.28); border-radius: 999px; overflow: hidden; background: rgba(8,30,21,.45); }
+.xviews > button, .xviews > a { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 13px; border: 0; background: none;
+  color: #eef3ef; font: 600 13px/1 "Liberation Sans", Arial, sans-serif; text-decoration: none; cursor: pointer; }
+.xviews > * + * { border-left: 1px solid rgba(207,226,212,.18) !important; }
+.xviews svg { width: 15px; height: 15px; flex: none; }
+.xviews .ico { width: 15px; height: 15px; fill: none; stroke: #cfe2d4; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.xviews > [aria-pressed="true"], .xviews > [aria-current="page"] { background: #e3a72f; color: #13301f; }
+.xviews > [aria-pressed="true"] svg path, .xviews > [aria-current="page"] .ico { stroke: #13301f; }
+.xviews > :hover { background: rgba(127,168,139,.18); }
+.xviews > [aria-pressed="true"]:hover, .xviews > [aria-current="page"]:hover { background: #f0bb4d; }
+.xviews > :focus-visible { outline: 3px solid #e3a72f; outline-offset: -3px; }
+
+.lens .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.lens { position: relative; flex: 1 1 520px; min-width: 0; }
+.lens-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+.lens-q { display: flex; align-items: center; gap: 6px; flex: 0 1 270px; min-width: 170px; height: 36px; padding: 0 12px; border-radius: 999px;
+  border: 1px solid rgba(207,226,212,.3); background: rgba(8,30,21,.6); cursor: text; }
+.lens-q svg { width: 16px; height: 16px; flex: none; fill: none; stroke: #a9c2b1; stroke-width: 2; stroke-linecap: round; }
+.lens-q input { flex: 1; min-width: 0; border: 0; background: none; color: #eef3ef; font: 14px "Liberation Sans", Arial, sans-serif; outline: none; }
+.lens-q input::placeholder { color: #a9c2b1; }
+.lens-q:focus-within { border-color: #e3a72f; box-shadow: 0 0 0 2px rgba(227,167,47,.35); }
+.lens-facets { display: flex; flex-wrap: wrap; gap: 6px; }
+.lens-f { min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(207,226,212,.28); background: rgba(8,30,21,.45);
+  color: #eef3ef; font: 600 13px/1 "Liberation Sans", Arial, sans-serif; cursor: pointer; white-space: nowrap; }
+.lens-f span { font-size: 10px; opacity: .8; }
+.lens-f:hover, .lens-f.is-open { border-color: #e3a72f; }
+.lens-f.is-on { border-color: #e3a72f; color: #f6e3b4; }
+.lens-f b { display: inline-block; min-width: 18px; padding: 1px 5px; margin-left: 2px; border-radius: 999px; background: #e3a72f; color: #13301f; font-size: 11px; }
+.lens-f:focus-visible, .lens-chip:focus-visible, .lens-clear:focus-visible, .lens-done:focus-visible { outline: 3px solid #e3a72f; outline-offset: 2px; }
+.lens-count { margin: 0 0 0 auto; color: #a9c2b1; font-size: 13px; white-space: nowrap; }
+.lens-count b { color: #eef3ef; }
+.lens.is-active .lens-count b { color: #e3a72f; }
+.lens-clear { min-height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(227,167,47,.55); background: none; color: #e3a72f;
+  font: 600 12.5px "Liberation Sans", Arial, sans-serif; cursor: pointer; }
+.lens-clear[hidden], .lens-chips[hidden], .lens-pop[hidden] { display: none; }
+.lens-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.lens-chip { padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(227,167,47,.6); background: rgba(227,167,47,.16); color: #eef3ef;
+  font: 600 12.5px "Liberation Sans", Arial, sans-serif; cursor: pointer; }
+.lens-chip span { color: #e3a72f; margin-left: 2px; }
+.lens-chip:hover { background: rgba(227,167,47,.3); }
+.lens-pop { position: absolute; left: 0; top: calc(100% + 6px); z-index: 30; width: min(400px, 100%); max-height: min(60vh, 460px); overflow: auto;
+  padding: 10px 12px 8px; border-radius: 14px; background: rgba(8,30,21,.98); border: 1px solid rgba(207,226,212,.22); box-shadow: 0 18px 44px rgba(0,0,0,.55); }
+.lens-pop-h { margin: 0 0 6px; font: 700 15px "Liberation Serif", Georgia, serif; color: #eef3ef; }
+.lens-pop-h span { display: block; margin-top: 2px; font: 12px "Liberation Sans", Arial, sans-serif; color: #a9c2b1; }
+.lens-pop ul { list-style: none; margin: 0; padding: 0; }
+.lens-pop label { display: flex; align-items: center; gap: 9px; min-height: 34px; padding: 3px 6px; border-radius: 8px; cursor: pointer; color: #eef3ef; font-size: 14px; }
+.lens-pop label:hover { background: rgba(127,168,139,.14); }
+.lens-pop label.is-zero { opacity: .45; }
+.lens-pop input { width: 17px; height: 17px; margin: 0; accent-color: #e3a72f; flex: none; }
+.lens-pop .lv { flex: 1; min-width: 0; }
+.lens-pop .ln { color: #a9c2b1; font-size: 12.5px; }
+.lens-pop-f { position: sticky; bottom: -8px; margin: 6px -12px -8px; padding: 8px 12px; background: rgba(8,30,21,.98); text-align: right; }
+.lens-done { min-height: 34px; padding: 0 16px; border-radius: 999px; border: 0; background: #e3a72f; color: #13301f; font: 700 13px "Liberation Sans", Arial, sans-serif; cursor: pointer; }
+
+@media (max-width: 700px) {
+  .xbar { padding: 6px 10px 8px; gap: 6px; }
+  .xviews { width: 100%; }
+  .xviews > button, .xviews > a { flex: 1; justify-content: center; min-height: 34px; padding: 0 6px; }
+  .lens { flex-basis: 100%; }
+  .lens-row { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .lens-row::-webkit-scrollbar { display: none; }
+  .lens-q { flex: 0 0 150px; min-width: 150px; }
+  .lens-facets { flex: none; flex-wrap: nowrap; }
+  .lens-f, .lens-count, .lens-clear { flex: none; }
+  .lens-count { margin-left: 4px; }
+  .lens-pop { position: fixed; left: 8px; right: 8px; top: auto; bottom: 8px; width: auto; max-height: 70vh; }
+  .lens-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .lens-chip { flex: none; }
+}
