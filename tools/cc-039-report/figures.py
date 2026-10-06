@@ -44,19 +44,18 @@ def fig1():
 
 def fig2():
     e16 = inp["ro_m3_2016"] / M * inp["spec_kwh_2016"]
-    e24 = inp["ro_m3_2024"] / M * 4.68
     e25 = inp["ro_m3_2025"] / M * inp["spec_kwh_2016"]
     fig, ax = plt.subplots(figsize=(9.6, 3.4), dpi=220)
-    labs = ["2016\n18.6 million m³ × 4.85 kWh/m³\n(WSC report)", "2024, indicative\n25.7 million m³ × 4.68 kWh/m³\n(4.68 is second-hand)",
+    labs = ["2016\n18.6 million m³ × 4.85 kWh/m³\n(WSC report)",
             "2025, scenario\n27.9 million m³ × 4.85 kWh/m³\n(2016 specific energy held)"]
-    vals = [e16, e24, e25]
-    bars = ax.bar(range(3), vals, color=[GREEN, SAGE, SAGE], width=0.55)
-    bars[1].set_hatch("//"); bars[2].set_hatch("..")
+    vals = [e16, e25]
+    bars = ax.bar(range(2), vals, color=[GREEN, SAGE], width=0.45)
+    bars[1].set_hatch("..")
     ax.axhline(e16, color=RED, lw=1.6, ls="--")
     for i, v in enumerate(vals):
         ax.text(i, v + 2, f"{v:.0f} GWh" + ("" if i == 0 else f"\n({(v / e16 - 1) * 100:+.0f}%)"), ha="center", fontsize=8.5,
                 color=SLATE)
-    ax.set_xticks(range(3))
+    ax.set_xticks(range(2))
     ax.set_xticklabels(labs, fontsize=7.4)
     ax.set_ylabel("Electricity for reverse osmosis, GWh")
     ax.set_ylim(0, 165)

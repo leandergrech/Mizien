@@ -14,7 +14,7 @@ build_flyer(Flyer(
     quote_lines=["“The Corporation’s ground water abstraction will be", "reduced by 4 billion litres per year.”"],
     attribution="Water Services Corporation, news release, 2 April 2019",
     context="Same release: “much more water with less energy”.",
-    note="Baseline and date are not stated; we use 2016, the last pre-project WSC report we could read in full.",
+    note="Baseline and date are not stated; we use 2016, the last report before the project framework that we read.",
     verdict="Not measurable", verdict_right=["No baseline,", "no date."],
     cards=[("−2.0 million m³", GREEN, "Groundwater, 2025 vs 2016",
             "WSC borehole production fell from 13.5 to 11.5 million m³: about half of the pledged 4.0."),
@@ -32,7 +32,7 @@ build_flyer(Flyer(
           "Total electricity use (kWh) by year.",
           "Whether all project components are complete.",
           "Specific energy of each RO plant by year."],
-    footer="Version 1.0  ·  5 October 2026  ·  Label as of 5 Oct 2026  ·  Draft pending right of reply from the "
+    footer="Version 1.1  ·  6 October 2026  ·  Label as of 6 Oct 2026  ·  Pending right of reply from the "
            "Water Services Corporation",
     pdf_title="Claim Check 039 – A net-zero-impact water utility?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
