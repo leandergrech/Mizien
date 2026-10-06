@@ -6,15 +6,7 @@ status: Drafted
 verdict: Contradicted
 verdict_confidence: High
 claim:
-  text: "Government statement on the fifteen solar flowers at the Gozo Multi-Modal Hub, Ta' Xħajma (21 Oct 2025), assembled\
-    \ from three texts. Quoted (TVM News, Maltese; Lovin Malta's English): Gozo Minister Clint Camilleri, 'With the installation\
-    \ of these first solar flowers in Europe, we are demonstrating how Gozo can be a model for sustainable innovation'; in\
-    \ the same statement he called it the first of its kind used in Malta and, by number at one site, the second in the world;\
-    \ and (TVM News, English) 'This energy will be used to supply electricity, electric buses which offer transport between\
-    \ Imġarr port and the Park & Ride facility.' The outlets' report of the statement, not quoted: 'the first of its kind\
-    \ in Europe', the energy to 'directly offset' the electricity used to charge the Park and Ride bus fleet, up to 40% more\
-    \ energy than traditional panels, about EUR 850,000. The European Commission's project page, in its own words: 'They are\
-    \ the first of their kind in Europe.'"
+  text: "Government statement on the fifteen solar flowers at the Gozo Multi-Modal Hub, Ta' Xħajma (21 Oct 2025), assembled from three texts. Quoted (TVM News, Maltese; Lovin Malta's English, an article tagged 'Press Release'): Gozo Minister Clint Camilleri, 'With the installation of these first solar flowers in Europe, we are demonstrating how Gozo can be a model for sustainable innovation'; in the same statement he called it the first of its kind used in Malta and, by number at one site, the second in the world; and (TVM News, English) 'This energy will be used to supply electricity, electric buses which offer transport between Imġarr port and the Park & Ride facility.' The statement as published, not in quotation marks: 'the first installation of its kind in Europe' (Lovin Malta's text) or 'the first of its kind in Europe' (TVM News, indirect speech), the energy to 'directly offset' the electricity used to charge the Park and Ride bus fleet (Lovin Malta's text), up to 40% more energy than traditional panels, about EUR 850,000. The European Commission's project page repeats the claim in its own words ('They are the first of their kind in Europe.'); it is not rated, as the claim is the Government's."
   quote: With the installation of these first solar flowers in Europe, we are demonstrating how Gozo can be a model for sustainable
     innovation.
   speaker: Clint Camilleri, Minister for Gozo; Parliamentary Secretariat for Public Works
@@ -49,35 +41,25 @@ claim:
     date: "n/d"
     url: "https://reforms-investments.ec.europa.eu/projects/15-solar-flowers-installed-gozo-electricity-generation-first-project-its-kind-europe-0_en"
     note: "EU project page repeating the claim in its own words (RRP C1-I5, EUR 850,000). Read 5 and 6 Oct 2026."
-counter_evidence: "The fifteen units are SmartFlowers (manufacturer, 14 Nov 2025), an Austrian product; dated records show\
-  \ SmartFlowers in Spain (Jun 2015, energynews.es), at the ASFINAG Hinterbrühl motorway rest area in Austria (in service\
-  \ by 7 Dec 2016, MeinBezirk.at) and at Vodafone in Newbury, UK (Aug 2021, Newbury Today); the maker calls Gozo's 'one of\
-  \ the largest installations in Europe', not the first. Bus charging: no capacity, metered output, bus consumption or wiring\
-  \ published; Parliament was told no feasibility study was made (Newsbook, 19 Jan 2026, second-hand). PVGIS models 85.1\
-  \ MWh a year for 37.5 kWp with two-axis tracking (if 2.5 kWp each), 36.5% more than fixed panels; that equals about 2.2-3.2\
-  \ hours a day of the 10-minute shuttle at 1.45-2.1 kWh/km (modelled for other buses; indicative). Cost: PQ figure EUR\
-  \ 699,611.98 excl. VAT (second-hand); likely TED award 742398-2024, EUR 718,830.07, is EUR 848,219 with 18% VAT."
+counter_evidence: "The fifteen units are SmartFlowers (manufacturer, 14 Nov 2025), an Austrian product. Dated records: two SmartFlowers newly installed at the Umwelt Arena, Spreitenbach, Switzerland (Moneycab, 19 May 2015; text credited to the arena); on sale in Spain from June 2015 (a product launch, not an installation: energynews.es, 3 Jun 2015); an electric-vehicle charging version presented in Spain in January 2016 (smartgridsinfo.es, aimed at public administrations and companies); in service at the ASFINAG Hinterbrühl motorway rest area in Austria by 7 Dec 2016 (MeinBezirk.at community post with an ASFINAG photo; IÖB project page); and at Vodafone in Newbury, UK (Newbury Today, Aug 2021). The maker calls Gozo's 'one of the largest installations in Europe', not the first. Bus charging: no capacity, metered output, bus consumption, hours or wiring published, so the share covered cannot be calculated; Parliament was told no feasibility study was made (Newsbook, 19 Jan 2026, second-hand). PVGIS models 85.1 MWh a year if each unit is 2.5 kWp (37.5 kWp, two-axis tracking), 36.5% more than fixed panels. Cost: PQ figure EUR 699,611.98 excl. VAT (second-hand); the award we identify as this contract, TED 742398-2024, EUR 718,830.07, is EUR 848,219 with 18% VAT."
 tests: Manufacturer pages and dated records of earlier European installations; PVGIS 5.3 two-axis and fixed runs at the site;
   OSRM route length; GRDA and TED records of the Park and Ride shuttle; TED award notice 742398-2024; Council 11894/26 ADD
   1 (C1-I5); calculations in tools/cc-032-report/calc.py.
 why_low_hanging: 'Done: Claim Check 032 report and flyer.'
-tags: [Promise-without-baseline]
+tags: []
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: Medium
-caveats: "Draft verdict Contradicted (high confidence) on 'first in Europe'; the bus-charging claim is Not substantiated.\
-  \ The capacity of the Gozo units is not published (2.5 kWp each assumed from the maker's current model); PVGIS output is\
-  \ modelled, not metered; bus consumption figures are modelled for other buses and routes and read as abstracts. The\
-  \ parliamentary answers are known only through Newsbook (second-hand). TED notice 742398-2024 is matched to this contract\
-  \ by our identification. Pending right of reply (Ministry for Gozo and Planning; Public Works Department)."
+caveats: "Draft verdict Contradicted (high confidence) on 'first in Europe'; the bus-charging claim is Not substantiated. The capacity of the Gozo units is not published (2.5 kWp each is an assumption from the maker's current model); PVGIS output is modelled, not metered. The bus-consumption figures (modelled for other buses and routes, read as abstracts) are used only for a conditional order of magnitude in the report, not for any rating. The Spanish record of June 2015 is a product launch, not an installation. The parliamentary answers are known only through Newsbook (second-hand). TED notice 742398-2024 is matched to this contract by our identification. The European Commission's page repeats the Government's claim and is not rated. Pending right of reply (Ministry for Gozo and Planning; Public Works Department)."
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown:
   - SmartFlower news, 14 Nov 2025, and 2025 review, 29 Dec 2025 (Gozo's fifteen SmartFlowers are 'one of the largest installations in Europe')
-  - MeinBezirk.at, 7 Dec 2016 (ASFINAG SmartFlower in service at the Hinterbrühl rest area, Austria); IÖB project page
-  - energynews.es, 2 Jun 2015 (Smartflower presented and installed in Spain); pv magazine, 13 Jul 2016 (Austrian maker, over 1,000 units sold)
+  - Moneycab, 19 May 2015 (two SmartFlowers newly installed at the Umwelt Arena, Spreitenbach, Switzerland; text credited to the arena)
+  - MeinBezirk.at, 7 Dec 2016 (Regionauten-Community post with an ASFINAG photo: SmartFlower in service at the Hinterbrühl rest area, Austria); IÖB project page (the same pilot)
+  - energynews.es, 3 Jun 2015 (Smartflower product launch in Spain, not an installation); smartgridsinfo.es, 28 Jan 2016 (electric-vehicle charging version presented in Spain); pv magazine, 13 Jul 2016 (Austrian maker, over 1,000 units sold)
   - Newbury Today, 12 Aug 2021 (Vodafone SmartFlower, Newbury, UK)
   - data/cc-032/european_records.csv; data/cc-032/checks.csv
 outputs:
@@ -85,23 +67,23 @@ outputs:
   flyer_pdf: flyer.pdf
   flyer_png: flyer.png
 location:
-  place: Victoria, Gozo
-  lat: 36.04289
-  lon: 14.23985
+  place: Xewkija, Gozo
+  lat: 36.0380
+  lon: 14.2720
   scope: institution
   icon: cittadella
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-032A
     text: "Fifteen solar flowers were installed at the Gozo Multi-Modal Hub, Ta’ Xħajma"
-    said_by: "Statement [1–3]; Commission [4]"
+    said_by: "Statement [1–3]"
     finding: "The maker reports fifteen SmartFlowers at the hub [5]; Parliament was told all were working [10] ◆."
     rating: "Accurate"
     tone: green
   - id: CC-032B
-    text: "“The first of its kind in Europe”; “these first solar flowers in Europe”"
-    said_by: "Statement [1–3]; Camilleri, quoted [1, 2]; Commission [4]"
-    finding: "SmartFlowers, an Austrian product, were in service in Spain (2015), Austria (2016) and the UK (2021) [11–15]; the maker calls Gozo’s “one of the largest installations in Europe” [5]."
+    text: "“These first solar flowers in Europe”; “the first installation of its kind in Europe”"
+    said_by: "Camilleri, quoted [1, 2]; Lovin Malta’s text [2] (TVM’s indirect speech [3]). Commission page not rated"
+    finding: "SmartFlowers, an Austrian product, were installed in Switzerland (2015) and in service in Austria (2016) and the UK (2021) [13–15, 30]; the maker calls Gozo’s “one of the largest installations in Europe” [5]."
     rating: "Contradicted"
     tone: maroon
   - id: CC-032C
@@ -113,26 +95,26 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
   - id: CC-032D
     text: "The energy will supply, or offset the charging of, the Park and Ride electric buses"
     said_by: "Camilleri, quoted [3]; statement [2]"
-    finding: "No capacity, metered output or bus use published; no feasibility study [10] ◆. Modelled output equals about 2–3 hours a day of the shuttle (indicative) [17, 23–25]."
+    finding: "No capacity, metered output or bus use published; no feasibility study [10] ◆. The share of charging covered cannot be calculated."
     rating: "Not substantiated"
     tone: orange
   - id: CC-032E
     text: "Each flower yields up to 40% more energy than traditional panels"
-    said_by: "Statement [3]; Commission [4]"
-    finding: "PVGIS: 36.5% more than fixed panels at the best angle at the site [17]; studies 18–31% elsewhere [18]. Not measured here."
+    said_by: "Lovin Malta’s text [2]; TVM News [3]. Commission page [4] not rated"
+    finding: "PVGIS: 36.5% more than fixed panels at the best angle at the site [17]; one study: 18–31% elsewhere [18]. Not measured here. The Commission page’s flat “40% more power” has no “up to”, so it is stronger than the statement; it is not rated."
     rating: "Largely accurate"
     tone: lime
   - id: CC-032F
     text: "About €850,000, funded by the EU recovery plan (C1-I5)"
-    said_by: "Statement [1, 3]; Commission [4]"
-    finding: "Parliament was told €699,612 excluding VAT [10] ◆; the likely award, €718,830, is €848,219 with VAT [26, 27]; C1-I5 funds solar panels in public spaces [28]."
+    said_by: "Statement [1, 3]"
+    finding: "Parliament was told €699,612 excluding VAT [10] ◆; the award we identify as this contract, €718,830, is €848,219 with VAT [26, 27]; C1-I5 funds solar panels in public spaces [28]."
     rating: "Consistent"
     tone: green
 version: '1.0'
 last_reviewed: '2026-10-06'
 thumbnail:
   figure: '2016'
-  caption: a solar flower was already in service at an Austrian motorway rest area, nine years before Gozo's 'first in Europe'
+  caption: a SmartFlower was in service at an Austrian motorway rest area almost nine years before 'these first solar flowers in Europe'
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-05
     step: note
@@ -152,6 +134,9 @@ history:   # research log: the date each step of the research was done (not when
     note: "Manufacturer pages and dated records of earlier European SmartFlowers read (energynews.es 2015, pv magazine 2016,\
       \ MeinBezirk.at 2016, IÖB, Newbury Today 2021, dealer lists). PVGIS 5.3 and OSRM runs; TED notices and Council 11894/26\
       \ ADD 1 read through their APIs; Newsbook's report of the PQ answers (second-hand). Search logs in literature/CC-032/notes.md."
+  - date: 2026-10-06
+    step: note
+    note: "Review corrections made before any circulation. Read Moneycab (19 May 2015: two SmartFlowers newly installed at the Umwelt Arena, Spreitenbach, Switzerland; text credited to the arena) and smartgridsinfo.es (28 Jan 2016: electric-vehicle charging version presented in Spain). Re-read energynews.es (3 Jun 2015: a product launch in Spain, not an installation), the Commission project page ('-0_en') and the Malta Public Transport page. The shuttle-hours figure, which rests on consumption rates from other buses, was taken out of the headline results and kept only as a conditional order of magnitude in section 5. Tag and map pin changed."
   - date: 2026-10-06
     step: version
     version: "1.0"

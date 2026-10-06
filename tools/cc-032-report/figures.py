@@ -24,15 +24,15 @@ D = ROOT / "data" / "cc-032"
 def fig1():
     """Dated records of SmartFlowers in Europe before the Gozo statement (data/cc-032/european_records.csv)."""
     # (date, label, place, text, colour, side, label x, alignment)
-    ev = [(2015.42, "Jun 2015", "Spain", "SmartFlower, an Austrian\nproduct, presented and\ninstalled in Madrid", BLUE, 1,
+    ev = [(2015.38, "May 2015", "Switzerland", "Two SmartFlowers, an\nAustrian product, installed\nat the Umwelt Arena", BLUE, 1,
            2014.75, "left"),
-          (2016.53, "Jul 2016", "Austria", "Maker: over 1,000 units\nsold in Europe, Asia, the\nMiddle East and elsewhere",
-           GREY, -1, 2016.53, "center"),
+          (2016.08, "Jan 2016", "Spain", "Maker presents an electric-\nvehicle charging version,\npitched at public bodies",
+           GREY, -1, 2017.0, "center"),
           (2016.93, "Dec 2016", "Austria", "Motorway operator ASFINAG:\nSmartFlower in service at\nHinterbrühl rest area (A21)",
-           BLUE, 1, 2017.5, "left"),
+           BLUE, 1, 2017.8, "left"),
           (2021.61, "Aug 2021", "UK", "Vodafone erects a\nSmartFlower at its Newbury\nheadquarters", BLUE, -1, 2021.61,
            "center"),
-          (2025.80, "21 Oct 2025", "Malta", "Government: Gozo’s 15 are\n“the first of its kind\nin Europe”", MAROON, 1,
+          (2025.80, "21 Oct 2025", "Malta", "Minister: “these first\nsolar flowers in Europe”", MAROON, 1,
            2025.55, "right"),
           (2025.87, "14 Nov 2025", "maker", "Maker: Gozo is “one of\nthe largest installations\nin Europe”", GREY, -1,
            2026.45, "right")]
@@ -45,7 +45,7 @@ def fig1():
     for x, d, c, t, col, side, lx, ha in ev:
         y = 0.62 * side
         ax.plot([x, lx], [0, y * 0.95], color=col, lw=1, zorder=1)
-        ax.scatter([x], [0], s=46, color=col, zorder=3, edgecolor="white", linewidth=0.8)
+        ax.scatter([x], [0], s=46, color=col, zorder=4 if col == MAROON else 3, edgecolor="white", linewidth=0.8)
         va = "bottom" if side == 1 else "top"
         ax.text(lx, y, f"{d} · {c}", ha=ha, va=va, fontsize=9.4, fontweight="bold", color=col)
         ax.text(lx, y + 0.19 * side, t, ha=ha, va=va, fontsize=8.6, color=SLATE, linespacing=1.15)

@@ -12,7 +12,7 @@ was committed (the two papers used were read as abstracts only).
 | Claim record URL: MaltaToday, "Innovative solar flowers installed at Gozo's Multi-Modal Hub" | 403 to scripts (as data-sources.md says); not read |
 | TVM News, English, 21 Oct 2025 (`tvmnews.mt/en/news/first-solar-flowers-in-europe-...`) | Read in full. Statement in indirect speech; minister's English quote does not contain "first in Europe" |
 | TVM News, Maltese, 21 Oct 2025 (`tvmnews.mt/news/installati-l-ewwel-solar-flowers-...`, the "Malti" link on the English page) | Read in full. **Minister's direct quote contains "dawn l-ewwel solar flowers fl-Ewropa"**; Farrugia's quote "unika fl-Ewropa"; statement: "tikkumpensa l-elettriku użat biex tiġi ċċarġjata l-flotta" |
-| Lovin Malta, 21 Oct 2025, "Gozo Leads The Way In Europe With First-Ever 'Solar Flowers' ..." (found by web search) | Read in full. English rendering of the same quotes, in quotation marks |
+| Lovin Malta, 21 Oct 2025, "Gozo Leads The Way In Europe With First-Ever 'Solar Flowers' ..." (found by web search) | Read in full. English rendering of the same quotes, in quotation marks; the article is tagged "Press Release" (probably the Government's own release); its text also has "the first installation of its kind in Europe" (not in quotation marks) |
 | European Commission, Reforms and Investments project page | Read in full ("They are the first of their kind in Europe"; RRP C1-I5; EUR 850,000) |
 | Italpress, 22 Oct 2025 | Read; repeats the statement in English |
 | gov.mt (Department of Information press release) | 403 to scripts; not read (TVM and Lovin Malta carry the text) |
@@ -25,9 +25,11 @@ The wording was found: `wording_status: Verbatim found` (Maltese original in TVM
 
 - SmartFlower (manufacturer): news 14 Nov 2025 and review 29 Dec 2025 (Gozo = "one of Europe's largest installations"),
   FAQ, products and company pages; data sheet Rev G (2019, dealer copy on worldofesf.com).
-- Earlier European records: energynews.es (2 Jun 2015), pv magazine (13 Jul 2016), MeinBezirk.at (7 Dec 2016,
-  ASFINAG Hinterbrühl), IÖB project page (ASFINAG), Newbury Today (12 Aug 2021, Vodafone), Green Mole (UK dealer)
-  and Smartflower Benelux reference pages.
+- Earlier European records: Moneycab (19 May 2015, two smartflowers at the Umwelt Arena, Switzerland; text credited to
+  the arena), energynews.es (3 Jun 2015, a product launch in Spain), smartgridsinfo.es (28 Jan 2016, POP-e
+  electric-vehicle charging version), pv magazine (13 Jul 2016), MeinBezirk.at (7 Dec 2016, a Regionauten-Community
+  post with an ASFINAG photo; ASFINAG Hinterbrühl), IÖB project page (ASFINAG), Newbury Today (12 Aug 2021,
+  Vodafone), Green Mole (UK dealer) and Smartflower Benelux reference pages.
 - Newsbook, 19 Jan 2026 (PQ answers: EUR 699,611.98 excl. VAT, three bids, no feasibility study) **second-hand**.
 - TED search API: award notice 742398-2024 (CT3013/2024, dual-axis solar PV for the Public Works Department; our
   identification as this contract); Park and Ride operation notices 288093-2024, 319868-2024, 142379-2025,
@@ -41,6 +43,9 @@ The wording was found: `wording_status: Verbatim found` (Maltese original in TVM
 
 ## Leads not used
 
+- **Unread lead:** a LinkedIn profile (`https://at.linkedin.com/in/robertgarrettsawyer`, HTTP 999 to scripts on 6 Oct
+  2026) reportedly calls Gozo "the largest installation of SmartFlower Solar units in Europe". Not read, not used; the
+  report treats "an installation of this size" as open.
 - Infra-Be (recruitment firm blog) carries quotes not found in any primary text; not used.
 - The Malta Independent opinion piece "Gozo: Charging in the dark" (12 Jul 2026): 403; seen only as a search
   snippet (about Gozo's power cuts); not used.
