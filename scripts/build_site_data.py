@@ -126,7 +126,7 @@ def main() -> int:
             c["pledge"]["outliers"] = outliers[c["id"]]
     out = {"categories": cats, "claims": claims, "edges": edges, "themes": themes, "bodies": map_bodies,
            "body_types": body_types, "pledge_labels": pledge_labels, "pledge_links": pledge_links,
-           "cycles": CYCLES, "manifesto_pledges": list(MANIFESTO.values())}
+           "cycles": CYCLES, "manifesto_pledges": manifesto_rows(records)}
     text = json.dumps(out, ensure_ascii=False, indent=2)
     for target in (ROOT / "data" / "claims.json", ROOT / "docs" / "data" / "claims.json"):
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -425,6 +425,15 @@ def manifesto_coverage(records: list, ref) -> list:
                                "claim": ref(by[r["claim"]]) if r.get("claim") in by else None,
                                "outliers": mo.get(r["id"], [])} for r in rows]})
     return out
+
+
+def manifesto_rows(records: list) -> list:
+    """The manifesto list for the Explore view: each row with its cycle label and, where it is linked, its links
+    (same rule as manifesto_outliers), so the cycle disks can draw a pledge's chain across elections."""
+    links = manifesto_outliers(records)
+    return [{**row, "cycle_label": pledges.cycle_label(row.get("cycle"), CYCLES),
+             **({"links": [{"type": l["type"], "link": l["link"]} for l in links[mid]]} if mid in links else {})}
+            for mid, row in MANIFESTO.items()]
 
 
 def pledge_outliers(records: list) -> dict:
