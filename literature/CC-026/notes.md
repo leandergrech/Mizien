@@ -16,3 +16,8 @@ No peer-reviewed literature used: the claim is a published statistic, tested aga
 
 Gaps: how much of the air transport total arises from flights to/from Malta; Eurostat's bridge items for Malta; the 2025 activity split.
 Pitfall: Newsbook says aircraft "registered" in Malta; Eurostat's concept is the resident operator.
+
+## Search log, 6 Oct 2026 (audit correction)
+- Newsbook article URL (and the alternative slug malta-records-highest-greenhouse-gas-emission-increase-in-the-eu): direct curl with a browser User-Agent and WebFetch both failed (connection refused); Wayback copy not retrievable (404/blocked). The page was therefore not re-read; the verbatim wording rests on the full read of 5 Oct 2026.
+- Web search: results show the Newsbook article dated 18 Jun 2026 by Damian Micallef (search summary, second-hand). Malta News Agency copy (maltanewsagency.com/2026/06/, fetched 6 Oct 2026) is dated 18 Jun 2026, headline 'Malta records EU's largest rise greenhouse emissions', opening 'Malta registered the highest increase...' (different wording from Newsbook's 'recorded'); it confirms the date only.
+- The quoted sentence is the article's opening line, not its headline.

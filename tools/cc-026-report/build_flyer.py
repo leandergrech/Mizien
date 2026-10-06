@@ -12,7 +12,7 @@ build_flyer(Flyer(
     title_lines=["Malta’s 169% rise", "in emissions?"],
     subtitle="A news report of a Eurostat estimate, tested against the data",
     quote_lines=["“Malta recorded the highest increase in greenhouse", "gas emissions among European Union member states”"],
-    attribution="Newsbook, 18 June 2026, reporting Eurostat",
+    attribution="Newsbook, 18 June 2026, opening line of the article (headline: “Malta records EU’s largest rise…”)",
     context="Emissions “rose by an estimated 169.4% between 2015 and 2025”.",
     note="Eurostat’s own release gives +169.4%; today’s database +169.7%. The EU fell 17.2%.",
     verdict="Largely supported", verdict_right=["The number is right;", "check what it counts."],
@@ -31,6 +31,6 @@ build_flyer(Flyer(
           "A national estimate of aviation emissions to and from Malta.",
           "Eurostat’s 2025 activity breakdown.",
           "Which operators drive the total (not assessed)."],
-    footer="Version 1.0  ·  5 October 2026  ·  Public data only  ·  No right of reply needed",
+    footer="Version 1.1  ·  6 October 2026  ·  Public data only  ·  No right of reply needed",
     pdf_title="Claim Check 026 – Malta’s 169% rise in emissions?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
