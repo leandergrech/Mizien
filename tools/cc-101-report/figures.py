@@ -1,4 +1,4 @@
-"""Figures for Claim Check 101, drawn from data/cc-101/ and data/cc-009/ (run fetch.py and calc.py first)."""
+"""Figures for Claim Check 101, drawn from data/cc-101/ (run fetch.py and calc.py first)."""
 import csv
 import pathlib
 
@@ -23,8 +23,7 @@ GREEN, SAGE, AMBER, RED, SLATE, GREY, BLUE, PALE = ("#14452F", "#7FA88B", "#E3A7
 E = {(r["wat_src"], r["wat_proc"], int(r["year"])): (float(r["value"]), r["flag"])
      for r in csv.DictReader(open(D / "eurostat_env_wat_abs.csv"))}
 PR = list(csv.DictReader(open(D / "wise_2022_significant_pressures.csv")))
-ST = [r for r in csv.DictReader(open(ROOT / "data" / "cc-009" / "wise_gwb_status.csv"))
-      if r["reporting_cycle"].startswith("3rd")]
+ST = list(csv.DictReader(open(D / "wise_2022_groundwater_status.csv")))
 
 
 def fig1():
@@ -35,7 +34,7 @@ def fig1():
     sw = {k: E[("FSW", k, y)][0] for k in ("ABST", "ABS_AGR", "ABS_HH")}
     gw_other = gw["ABST"] - gw["ABS_PWS"] - gw["ABS_AGR"]
     sw_other = sw["ABST"] - sw["ABS_AGR"]
-    cats = [("Agriculture", GREEN), ("Public water supply (WSC)", BLUE), ("Households, industry, services", AMBER)]
+    cats = [("Agriculture", GREEN), ("Public water supply (taken as WSC)", BLUE), ("Households, industry, services", AMBER)]
     bars = {"Groundwater": [gw["ABS_AGR"], gw["ABS_PWS"], gw_other], "Surface water": [sw["ABS_AGR"], 0, sw_other]}
     for i, (lab, vals) in enumerate(bars.items()):
         left = 0
@@ -83,10 +82,11 @@ def fig1():
     bx.tick_params(axis="y", length=0)
     bx.set_title("(b) Malta's WFD water bodies, 2022 reporting", fontsize=9.5, loc="left", color=SLATE,
                  fontweight="bold")
-    fig.text(0.01, -0.06, "Sources: Eurostat env_wat_abs (updated 16 Sep 2026; the 2024 values are estimates, flag e), EEA WISE "
-             "WFD 2022 reporting (significant pressures; quantitative status assessed 2021), retrieved 5–6 Oct 2026.\n"
+    fig.text(0.01, -0.09, "Sources: Eurostat env_wat_abs (updated 16 Sep 2026; the 2024 values are estimates, flag e), EEA WISE "
+             "WFD 2022 reporting (significant pressures; quantitative status assessed 2021), retrieved 6 Oct 2026.\n"
              "One square per water body. Watercourses and pools: Malta's three river water bodies (3.4 km in all) and "
-             "two lake water bodies; coastal and transitional waters are not shown.", fontsize=6.8, color=GREY)
+             "two lake water bodies; coastal and transitional waters are not shown.\n"
+             "\"Public water supply\" is Eurostat's category; taking it to be WSC (Water Services Corporation) is our identification.", fontsize=6.8, color=GREY)
     fig.tight_layout(w_pad=2.5)
     fig.savefig(OUT / "fig1_abstraction.png", bbox_inches="tight", facecolor="white")
 
@@ -106,7 +106,7 @@ EVENTS = [  # (year as decimal, "EU" or "Malta", label); one row each, in date o
     (2025.09, "EU", "Commission report: Malta’s 3rd plan not assessed (late)"),
     (2025.3, "Malta", "Interim report: framework “close to being finalised”"),
     (2026.52, "EU", "Letter of formal notice INFR(2026)2115"),
-    (2026.76, "Malta", "6 Oct 2026: no licensing regulation among Legal Notices"),
+    (2026.76, "Malta", "6 Oct 2026: no abstraction permit found in the laws searched"),
 ]
 
 
@@ -134,7 +134,7 @@ def fig2():
     fig.text(0.01, 0.0, "Sources: Directive 2000/60/EC; S.L. 549.100, 549.164–549.166 (legislation.mt); SWD(2019) 48; "
              "COM(2025) 2; Green Paper (Nov 2023);\n2nd and 3rd plans; Malta's interim report (Apr 2025); INF/26/1376. "
              "Points sit at the month of publication or entry into force\n(mid-year where only the year is known). "
-             "Legal Notices of 2024–2026 on legislation.mt checked on 6 Oct 2026.", fontsize=6.8, color=GREY)
+             "Legal Notices and Acts of 2024–2026 and related S.L. titles on legislation.mt searched on 6 Oct 2026.", fontsize=6.8, color=GREY)
     fig.savefig(OUT / "fig2_timeline.png", bbox_inches="tight", facecolor="white")
 
 

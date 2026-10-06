@@ -1,5 +1,5 @@
 id: CC-101
-title: 'EU: no permits for water abstraction'
+title: 'EU: no registration or prior authorisation of water abstraction in Malta'
 category: Water
 subtopic: Water supply & groundwater
 status: Drafted
@@ -7,8 +7,9 @@ verdict: Largely supported
 verdict_confidence: Moderate
 claim:
   text: 'European Commission (July infringements package, 8 July 2026, summarising its letter of formal notice INFR(2026)2115):
-    Malta has failed to put in place a registration requirement for surface-water abstraction and a prior authorisation regime
-    to control the abstraction of surface and groundwater, and Maltese law does not ensure a periodic review of those controls.'
+    Malta has failed to put in place a registration requirement for surface water abstraction and a prior authorisation regime
+    to control the abstraction of surface and groundwater; in addition, Maltese law does not ensure a periodic review of the
+    controls over the abstraction of surface and groundwater having a significant impact on water bodies.'
   speaker: European Commission
   date: '2026-07-08'
   wording_status: Verbatim found
@@ -41,48 +42,60 @@ claim:
       date: 2008, consolidated
       url: https://legislation.mt/eli/sl/549.164/eng
       note: Primary evidence. Registration of groundwater sources and drilling permits; both state they give no right to draw water.
-        Read in full 6 Oct 2026, with S.L. 549.100, 549.166, 549.168, 549.172 and 545.14.
+        Read in full 6 Oct 2026, with S.L. 549.100, 549.166, 549.168, 549.172, 549.21, 549.53, 549.155, 545.14 and 545.02.
     - title: Second River Basin Management Plans - Member State Malta, SWD(2019) 48 final
       publisher: European Commission
       date: 26 Feb 2019
       url: http://publications.europa.eu/resource/celex/52019SC0048
       note: The Commission's earlier description of Malta's Article 11(3)(e) controls ("a concession, authorisation and/or
-        permitting regime to control groundwater"). Read 6 Oct 2026.
+        permitting regime to control groundwater and a register of groundwater use", p. 121; it lists L.N. 254 and 255 of 2008
+        among the regulatory framework, p. 122; abstraction to come under cross compliance "once the legislation on
+        authorisations of abstraction is in place", p. 125; Malta's clarification that more than 3 000 private sources were
+        metered, p. 124 n. 65). Read 6 Oct 2026.
   quote: Malta has failed to put in place a registration requirement for surface water abstraction and a prior authorisation
     regime to control the abstraction of surface and groundwater. In addition, Maltese law does not ensure a periodic review of
     the controls over the abstraction of surface and groundwater having a significant impact on water bodies.
-counter_evidence: 'Malta does control groundwater sources: every source had to be notified by 20 Nov 2008 (S.L. 549.164), drilling
-  is under a moratorium (S.L. 549.165), most private sources are metered (S.L. 549.166), and ERA can order a source closed or
-  its abstraction cut. Malta''s April 2025 report says "Only these registered sources are permitted to extract groundwater",
-  and in 2019 the Commission''s own staff described "a concession, authorisation and/or permitting regime to control groundwater"
-  (SWD(2019) 48). S.L. 549.100 reg. 12(3)(e) repeats the Directive''s duty to review abstraction controls. Against that: both
-  regulations say notification and drilling permits give no right to draw water, no instrument read authorises abstraction,
-  and the Government''s 2023 Green Paper and 3rd-plan Measure 053 propose creating abstraction permits (not in force on 6
-  Oct 2026).'
+counter_evidence: 'Malta controls groundwater sources in several ways: every source had to be notified by 20 Nov 2008 (S.L. 549.164;
+  a later route exists for some old sources), drilling is under a moratorium with exceptions (S.L. 549.165), metering is required
+  (S.L. 549.166), and ERA can order a source closed or its abstraction cut. Malta reports (April 2025) that "Only these registered
+  sources are permitted to extract groundwater" and that most registered sources are metered; in 2019 it told the Commission that
+  more than 3 000 private sources were metered; and in 2019 Commission staff described "a concession, authorisation and/or permitting
+  regime to control groundwater and a register of groundwater use" (SWD(2019) 48). S.L. 549.100 reg. 12(3)(e) repeats the Directive''s
+  duty to review abstraction controls. Against that: S.L. 549.164 reg. 6 and S.L. 549.165 reg. 9 say notification and drilling permits
+  give no right to draw water, we found no instrument that authorises abstraction, and the Government''s 2023 Green Paper and
+  Measure 053 of the 3rd plan treat an abstraction permit as still to be created (none found in force on 6 Oct 2026).'
 tests: Water Framework Directive Art. 11(3)(e), 11(5), 11(7) and 24; Maltese law on legislation.mt (S.L. 549.100, 549.164-549.166,
-  549.168, 549.172, 545.14, Cap. 549, Cap. 355) and the titles of all 2024-2026 Legal Notices; the 2023 Green Paper, Malta's
-  April 2025 interim report and 2nd water plan; Commission SWD(2019) 48, COM(2025) 2 and SWD(2025) 13; Eurostat env_wat_abs
-  and EEA WISE 2022 reporting, recomputed with tools/cc-101-report/calc.py.
+  549.168, 549.172, 549.21, 549.53, 549.155, 545.14, 545.02, Cap. 549, Cap. 355), the titles of all 2024-2026 Legal Notices, the
+  text of all 2024-2026 Acts and the titles of S.L. 549, 423, 545, 355 and 427; the 2023 Green Paper, Malta's April 2025 interim
+  report and 2nd water plan; Commission SWD(2019) 48, COM(2025) 2 and SWD(2025) 13; Eurostat env_wat_abs and EEA WISE 2022
+  reporting, recomputed with tools/cc-101-report/calc.py.
 why_low_hanging: 'Done: Claim Check 101 report and flyer.'
 tags: []
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: 'High: Commission text, legislation.mt, EWA documents, Eurostat and WISE readable; ERA and the 3rd RBMP refuse
   scripts.'
-caveats: 'Largely supported: no right of reply needed. The claim is the Commission''s published summary; the letter of formal notice
-  and Malta''s reply are not public. No legal opinion is given: whether Maltese law "ensures" periodic review (sub-claim D) is
-  not rated, and whether a closed register amounts to "prior authorisation" is for the Commission and the Court. "Not found"
-  statements rest on a bounded search listed in literature/CC-101/notes.md. The record''s headline is the intake''s shorthand:
-  Malta issues permits to drill boreholes, not to abstract water. Do not read the notice as evidence of actual over-abstraction;
-  groundwater status is in CC-009 and CC-047.'
+caveats: 'Largely supported: no right of reply needed. The verdict covers the Commission''s first sentence (registration of surface-water
+  abstraction; prior authorisation to control abstraction), rated on the facts we could check (no register of surface-water
+  abstraction and no permit to abstract water in the instruments read). The second sentence (periodic review, sub-claim D) and
+  whether a register of groundwater sources amounts to a "prior authorisation regime" are legal questions and are not rated;
+  sub-claim A (what the Directive requires) is the Commission''s premise and is not rated. No legal opinion is given. The claim is
+  the Commission''s published summary; the letter of formal notice and Malta''s reply are not public. "Not found" statements rest
+  on a bounded search listed in literature/CC-101/notes.md (instruments read, titles of 943 Legal Notices, text of 101 Acts and
+  titles of 344 subsidiary instruments; none found in force on 6 Oct 2026). The record''s title condenses the Commission''s first
+  sentence and is not itself rated; Malta issues permits to drill boreholes, not to abstract water. Do not read the notice as
+  evidence of actual over-abstraction; groundwater status is in CC-009 and CC-047.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown:
   - Commission INF/26/1376 (8 Jul 2026), section 1, read 6 Oct 2026
-  - S.L. 549.100 reg. 12(3)(e), S.L. 549.164 regs 3 and 6, S.L. 549.165 regs 4, 6, 9 and 10, S.L. 549.166 reg. 3 (legislation.mt,
-    6 Oct 2026; hashes in data/cc-101/legislation_mt_instruments.csv)
+  - S.L. 549.100 regs 12(3)(e), 12(5)(b) and 12(8); S.L. 549.164 regs 3, 3A and 6; S.L. 549.165 regs 4, 6, 7, 8, 9, 10, 11 and 12;
+    S.L. 549.166 reg. 3; S.L. 545.02 (legislation.mt, 6 Oct 2026; hashes in data/cc-101/legislation_mt_instruments.csv)
+  - Search of legislation.mt on 6 Oct 2026 (titles of 943 Legal Notices, text of 101 Acts and titles of 344 subsidiary instruments)
+    (data/cc-101/legislation_mt_legal_notices_2024_2026.csv, legislation_mt_acts_2024_2026.csv, legislation_mt_sl_titles.csv)
+  - Commission SWD(2019) 48, pp. 84, 121-125 (Cellar PDF, read 6 Oct 2026)
   - EWA and ERA Green Paper (Nov 2023) and Malta's interim report (Apr 2025), read 6 Oct 2026
   - Eurostat env_wat_abs and EEA WISE 2022 reporting (data/cc-101/; checks in data/cc-101/checks.csv)
 outputs:
@@ -98,31 +111,30 @@ location:
 subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-101A
-    text: "The Directive requires abstraction controls, with registers and prior authorisation, reviewed periodically"
-    finding: "Article 11(3)(e) says so; abstractions with no significant impact on water status may be exempted [3]."
-    rating: "Accurate"
-    tone: green
+    text: "The Directive requires abstraction controls, with registers and prior authorisation, reviewed periodically (the Commission’s premise, not its words)"
+    finding: "Not rated as a statement of the speaker. For context, Article 11(3)(e) says so; abstractions with no significant impact on water status may be exempted [3]."
+    rating: "Premise, not rated"
+    tone: grey
   - id: CC-101B
-    text: "Malta has no registration requirement for surface-water abstraction"
-    finding: "Malta’s register covers groundwater sources only [5]; no surface-water provision in the instruments searched [4–9, 21]; Malta’s 2nd plan notes a “lack of knowledge” of surface-water abstraction [12]. Surface water is small: three watercourses (3.4 km), two pools [17]; Eurostat estimates 2.96 million m³ a year [16]."
+    text: "Malta has failed to put in place a registration requirement for surface water abstraction"
+    finding: "Rated on the facts: no instrument read requires registration of surface-water abstraction. Malta’s register covers groundwater sources only [5]; no surface-water provision in the instruments, Acts and titles searched [4–9, 21]; Malta’s 2nd plan notes a “lack of knowledge” of surface-water abstraction [12]. Surface water is small: three watercourses (3.4 km), two pools [17]; Eurostat estimates 2.96 million m³ a year [16]."
     rating: "Accurate (laws searched)"
     tone: green
   - id: CC-101C
-    text: "Malta has no prior authorisation regime to control the abstraction of surface and groundwater"
-    finding: "No instrument grants or conditions permission to abstract; notification and drilling permits give no right to draw water [5, 6]; the Government proposes the first abstraction permits, not in force on 6 Oct 2026 [10, 11, 21]. But the register has been closed since 2008 and Malta treats registration as permission to pump [11]; the Commission’s staff called it an authorisation regime in 2019 [13]."
-    rating: "Largely accurate"
+    text: "Malta has failed to put in place a prior authorisation regime to control the abstraction of surface and groundwater"
+    finding: "Rated on the facts: no permit to abstract water in the instruments read. Notification and drilling permits give no right to draw water [5, 6]; the Green Paper and 3rd plan treat an abstraction permit as still to be created [10, 11], and we found none in force [21]. Caveat: the instruments do contain a register of groundwater sources, drilling permits judged on impact on water resources (reg. 7(3)), metering, and powers to close a source or reduce abstraction [5–7]; Malta’s 2025 report describes the register as the control [11]. Whether these are a “prior authorisation regime” is a legal question, not rated (section 6, Q1)."
+    rating: "Largely accurate (on the facts)"
     tone: lime
   - id: CC-101D
-    text: "Maltese law does not ensure a periodic review of abstraction controls"
-    finding: "S.L. 549.100 copies the Directive’s review duty [4]; the instruments that run the controls set no term, renewal or review [5–7]; the Green Paper proposes fixed terms and periodic review [10]. Whether the copied duty “ensures” review is a legal question (section 6, Q2)."
+    text: "Maltese law does not ensure a periodic review of the controls over the abstraction of surface and groundwater having a significant impact on water bodies"
+    finding: "S.L. 549.100 copies the Directive’s review duty (reg. 12(3)(e)) and provides for review of permits and authorisations where objectives are at risk (reg. 12(5)(b)) and of programmes every six years (reg. 12(8)) [4]; the instruments that run the controls set no term, renewal or review for a notified source, while drilling permits may carry a term and be suspended (regs 8(3)(a), 11) [5–7]; the Green Paper proposes fixed terms and periodic review [10]. Whether this “ensures” review is a legal question (section 6, Q2)."
     rating: "Not rated (legal assessment)"
     tone: grey
 version: '1.0'
 last_reviewed: '2026-10-06'
 thumbnail:
-  figure: '3,798'
-  caption: farm and commercial boreholes in Malta; registering one gives no right to draw water, and abstraction permits are
-    still only proposed
+  figure: '2008'
+  caption: deadline to notify groundwater sources; notification gives no right to draw water
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-06
     step: started
@@ -139,6 +151,17 @@ history:   # research log: the date each step of the research was done (not when
       instrument (one match, L.N. 374 of 2024, read in full; it adds a research-borehole exception to the drilling moratorium). Green Paper (Nov 2023), Malta's interim report (Apr 2025), the 2nd water plan, SWD(2019) 48, COM(2025) 2 and
       SWD(2025) 13 read. Eurostat env_wat_abs and WISE 2022 water bodies and pressures downloaded; numbers recomputed in
       tools/cc-101-report/calc.py.
+  - date: 2026-10-06
+    step: note
+    note: Further searches after review, 6 Oct 2026. Searched the text of all 101 Acts of 2024-2026 on legislation.mt (only Act XVII
+      of 2024 mentions groundwater, abstraction or boreholes) and the titles of 344 subsidiary instruments under S.L. 549, 423, 545,
+      355 and 427 (found S.L. 545.02, the Control of Water Pumps and Wells Order, which declares Malta and Gozo water-controlled areas
+      and has no licensing text; read S.L. 549.21, 549.53 and 549.155, none of which registers or licenses abstraction). Re-read
+      SWD(2019) 48 pp. 84 and 121-125 (Malta's statement that more than 3 000 private groundwater sources were metered, p. 124 n. 65;
+      abstraction to come under cross compliance once the legislation on authorisations of abstraction is in place, p. 125) and S.L.
+      549.100 regs 12(5)(b), 12(8), S.L. 549.164 reg. 3A and S.L. 549.165 regs 6-8, 11, 12. Fetched the groundwater-body status from
+      EEA WISE directly. Record title changed to the Commission's own terms; sub-claims C and D restated in the Commission's
+      words and rated on the facts (A, the Directive's requirement, is a premise and not rated).
   - date: 2026-10-06
     step: version
     version: '1.0'

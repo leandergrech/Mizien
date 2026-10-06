@@ -1,4 +1,4 @@
-# CC-101: EU: no permits for water abstraction
+# CC-101: EU: no registration or prior authorisation of water abstraction in Malta
 
 **Status:** Drafted (v1.0, 6 Oct 2026, maintainer session). Verdict **Largely supported** (moderate confidence); no
 right of reply needed. See `notes.md` (sources, access, the search log for every "not found" statement, hashes) and
@@ -38,7 +38,9 @@ published. The same paragraph appears, word for word, in two Commission document
   body to scripts).
 - Maltese law on legislation.mt (readable with curl): S.L. 549.100, 549.164, 549.165, 549.166, 549.168, 549.172,
   the Environment Protection Act (Cap. 549), the Water Services Corporation Act (Cap. 355), S.L. 545.14; titles of
-  S.L. 549.160–549.184; titles of all 943 Legal Notices of 2024–2026 listed in the ELI sitemap.
+  S.L. 549.160–549.184; titles of all 943 Legal Notices of 2024–2026 listed in the ELI sitemap. Added after review (6 Oct
+  2026): the full text of all 101 Acts of 2024–2026, the titles of 344 subsidiary instruments under S.L. 549, 423, 545, 355
+  and 427, and S.L. 545.02, 549.21, 549.53 and 549.155 read (see `notes.md`, search log).
 - EWA and ERA, *Green Paper on the Regulation of Groundwater Abstraction in the Maltese Islands* (Nov 2023), and
   Malta's *Interim reporting on the implementation of the Programme of Measures* (3rd RBMP, April 2025), both from
   energywateragency.gov.mt (readable with curl at first; later requests met an `sgcaptcha` wall).
