@@ -3,6 +3,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { HtmlBasePlugin } from "@11ty/eleventy";
 import markdownIt from "markdown-it";
+import { whoSummary, pledgeStack } from "./site/_lib/who.js";
 import { loadGlyphs } from "./scripts/glyphs.mjs";
 
 // GitHub Pages project site lives under /Mizien/. Set PATH_PREFIX=/ for a custom domain or local root.
@@ -139,6 +140,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("where", (list, key, value) => (list || []).filter((x) => x[key] === value));
   eleventyConfig.addFilter("having", (list, path) =>
     (list || []).filter((x) => path.split(".").reduce((o, k) => (o == null ? o : o[k]), x)));
+  // "Who said it": verdict bar or tentative balance per body, and the stack of pledges by year (site/_lib/who.js)
+  eleventyConfig.addFilter("whoSummary", (body, pledges, bodies) => whoSummary(body, pledges, bodies));
+  eleventyConfig.addFilter("pledgeStack", (pledges, claims, ids) => pledgeStack(pledges, claims, ids));
+  eleventyConfig.addFilter("pluck", (list, key) => (list || []).map((x) => x[key]));
   eleventyConfig.addFilter("tagged", (list, tag) => (list || []).filter((x) => (x.tags || []).includes(tag)));
 }
 
