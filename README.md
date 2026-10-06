@@ -104,7 +104,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-072 | Transport | EUR 15m to take cars off the road | Not started | - |
 | CC-073 | Transport | Cab trips up 68% | Not started | - |
 | CC-074 | Transport | 8,144 EV grants | Not started | - |
-| CC-075 | Transport | Seventh in the EU for cars | Not started | - |
+| CC-075 | Transport | Seventh in the EU for cars | Drafted | Misleading |
 | CC-076 | Transport | 36 more vehicles a day | Drafted | Supported |
 | CC-077 | Transport | Metro: first section early 2030s | Not started | - |
 | CC-078 | Transport | Gozo Channel: +511,000 passengers | Not started | - |
