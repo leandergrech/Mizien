@@ -3,6 +3,7 @@ layout: base.njk
 title: Who said it
 description: Every claim on Miżien is matched to the body or person who made it. Government, agencies, regulators, parties, NGOs, business and media, with their claims and the bodies their claims connect to.
 permalink: /bodies/
+styles: [who.css]
 ---
 {%- import "macros.njk" as m -%}
 <nav class="crumbs" aria-label="Breadcrumb">
@@ -20,9 +21,33 @@ permalink: /bodies/
 
   <aside class="notice" aria-label="What these pages show">
     <p><strong>A record, not a score.</strong> Claims are picked because they are public and can be checked, not to
-      sample anyone's statements fairly. A body with more claims here has simply been checked more often; the pages
-      do not rate anyone's accuracy. <a href="/methodology/connections/#bodies">How claims are matched to bodies</a>.</p>
+      sample anyone's statements fairly. A body with more claims here has simply been checked more often; the bars
+      summarise the checks so far, not anyone's accuracy in general. <a href="/methodology/connections/#bodies">How
+      claims are matched to bodies</a>.</p>
   </aside>
+
+  <section class="who-key" aria-labelledby="h-key">
+    <h2 id="h-key" class="visually-hidden">How to read the cards</h2>
+    <ul>
+      <li><b>Verdict bar</b> from {{ 5 }} checked claims: how many checks ended in each verdict, as counts.</li>
+      <li><b>Tentative balance</b> at 3 or 4: where the checks so far sit between Contradicted and Supported, recent
+        claims counting more (by the date of the claim, not of the check). Work in progress, not a rating.</li>
+      <li><b>Pledges</b> keep their own labels (on track, off track, not measurable…), always shown, never mixed into the
+        verdicts.</li>
+    </ul>
+  </section>
+
+  {%- set ps = mizien.pledges | pledgeStack(mizien.claims) %}
+  {%- if ps %}
+  <section class="pstack-sec" aria-labelledby="h-pledges">
+    <h2 id="h-pledges">Pledges, year by year</h2>
+    <p>Each disk is a year in which pledges were made, the newest on top; each dot is a pledge, coloured by its label,
+      with a ring in the colour of the verdict on the facts it rests on, where those were checked. Pledges on the same
+      topic sit at the same place on every disk, so similar pledges line up; lines join them across the years,
+      coloured by the average verdict of their facts (dashed: none checked yet).</p>
+    {%- include "pledge-stack.njk" %}
+  </section>
+  {%- endif %}
 
   <p class="see-also">{% icon "pattern" %}<a href="/bodies/patterns/">Patterns by kind of body</a>: which pattern
     tags, verdicts and topics turn up in claims by each kind of body, and what each side said, when, on each issue.</p>
@@ -38,11 +63,12 @@ permalink: /bodies/
     <h2 id="h-{{ t.id }}">{{ t.label }}</h2>
     <ul class="body-grid">
       {%- for o in orgs %}
-      {%- set checked = o.claims | selectattr("label") | length %}
-      <li class="body-card">
+      {%- set s = o | whoSummary(mizien.pledges, mizien.bodies) %}
+      <li class="body-card who-card">
         <a class="bc-name" href="{{ o.path }}">{{ o.name }}</a>
-        <span class="bc-count">{{ o.claims.length }} claim{% if o.claims.length != 1 %}s{% endif %}{% if checked %} · {{ checked }} with a verdict{% endif %}</span>
         {%- if o.parent %}<span class="bc-parent">part of {{ o.parent.name }}</span>{% endif %}
+        <span class="bc-count">{{ s.total }} claim{% if s.total != 1 %}s{% endif %} · {{ s.checked }} checked</span>
+        {%- set big = false %}{% include "who-meter.njk" %}
         {%- if o.people.length %}
         <span class="bc-people">{% for x in o.people %}<a href="{{ x.path }}">{{ x.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</span>
         {%- endif %}

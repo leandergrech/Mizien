@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 6 October 2026 (Who said it: cards with verdict bars, tentative balance and the pledge stack; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -28,6 +28,31 @@ on the map (`/?view=map&sel=claim:CC-NNN`, when it has a location) and to the cl
 resolved against the script's own folder, so they work under the `/Mizien/` prefix (they did not before: fixed).
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
+
+## Who said it: cards, balance, pledge stack (6 October 2026)
+
+Maintainer decisions of 6 October 2026: cards with verdict bars; a bar from 5 checked claims; at 3 or 4 a tentative
+score that shows the work in progress, weighted by the freshness of the claim date (not the verdict date); pledge
+labels always shown; pledges on stacked disks, one per year, similar pledges aligned and joined by lines coloured by
+the average verdict. Built from the same `build/site-data.json` as every other view (`site/_lib/who.js`, filters
+`whoSummary`, `pledgeStack` and `pluck` in `eleventy.config.js`; `_includes/who-meter.njk`, `_includes/pledge-stack.njk`;
+styles in `assets/who.css`).
+- **Index** (`site/bodies/index.njk`): each body's card shows claims and checks, then its verdict summary and its
+  pledge labels. Verdict bar (counts per verdict, never percentages) from 5 checked claims. At 3 or 4: a tentative
+  balance, a hollow dashed marker on a scale from Contradicted (0) to Supported (1), each check weighted by the age of
+  the claim (weight halves every 2 years; an undated claim counts as 3 years old), with progress dots towards 5. Below
+  3: "n of 5 checks: too few to summarise", or "No checks yet". A key above the cards explains the three.
+- **Pledges, year by year** on the index (all pledges) and on each body page (its own, with its offices and people):
+  an SVG of stacked disks, the newest year on top. A pledge is a dot in its label colour, ringed in the colour of the
+  verdict on its facts; pledges on the same topic sit at the same angle on every disk, so similar ones line up; lines
+  join pledges from different years with similar wording, the same subtopic or the same topic, coloured by the average
+  verdict of their facts (dashed when none is checked). A list of the same pledges follows the drawing.
+  A body's pledges are those it made itself or through its offices and people (the pledge's "made by").
+- **Body page:** the summary panel under the title (bar, balance or count; pledge labels) with links to the claims web,
+  the map and the timeline (filtered to the kind of body), its own statements over time, and "Pin all n claims" with
+  the Pinned tray. People get no bar or balance: their checks count towards the body they spoke for.
+- Not done: a filter for a single body in the site-wide filter (decision 3 of the proposal is still open; it touches
+  `map.js`, which is on hold while the aesthetics session works).
 
 ## Homepage deck and phone fixes (6 October 2026)
 

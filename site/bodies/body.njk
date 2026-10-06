@@ -5,6 +5,7 @@ pagination:
   size: 1
   alias: body
 permalink: "/bodies/{{ body.id }}/"
+styles: [lens.css, who.css]
 ---
 {%- import "macros.njk" as m -%}
 {%- set b = body -%}
@@ -23,12 +24,30 @@ permalink: "/bodies/{{ body.id }}/"
     <p class="lead">{{ b.role }}{% if b.role and b.parent %}, {% endif %}{% if b.kind == "person" and b.parent %}speaking for <a href="{{ b.parent.path }}">{{ b.parent.name }}</a>{% endif %}</p>
     {%- endif %}
     {%- if b.note %}<p class="small">{{ b.note }}</p>{% endif %}
+    {%- set s = b | whoSummary(mizien.pledges, mizien.bodies) %}
     <ul class="body-stats">
-      <li><b>{{ b.claims.length }}</b> claim{% if b.claims.length != 1 %}s{% endif %} listed</li>
-      <li><b>{{ withVerdict }}</b> with a verdict</li>
+      <li><b>{{ s.total }}</b> claim{% if s.total != 1 %}s{% endif %} listed</li>
+      <li><b>{{ s.checked }}</b> checked</li>
+      {%- if s.pledges.length %}<li><b>{{ s.pledges.length }}</b> pledge{% if s.pledges.length != 1 %}s{% endif %}</li>{% endif %}
       <li><b>{{ b.links.length }}</b> linked bod{% if b.links.length == 1 %}y{% else %}ies{% endif %}</li>
     </ul>
-    <p class="small"><a href="/explore/?group=speaker&amp;sel=body:{{ b.id }}">See {{ b.name }} in the claims web</a>, with the bodies its claims link to.</p>
+    <div class="who-panel">
+      {%- if b.kind == "person" %}
+      <p class="small">Checks of claims by {{ b.name }}{% if b.parent %} count towards <a href="{{ b.parent.path }}">{{ b.parent.name }}</a>, the body they spoke for{% endif %}:
+        Miżien summarises bodies, not people.</p>
+      {%- if s.pledges.length %}<p class="wm-pledges">{% for p in s.pledges %}<a class="pl-chip" href="{{ p.path }}" style="--pl: {{ p.colour }}">Pledge: {{ p.status }} <span>{{ p.id }}</span></a>{% endfor %}</p>{% endif %}
+      {%- else %}
+      {%- set big = true %}{% include "who-meter.njk" %}
+      {%- endif %}
+      <nav class="who-tools" aria-label="{{ b.name }} in the other views">
+        <a href="/explore/?group=speaker&amp;sel=body:{{ b.id }}">{% icon "links" %}<span>In the claims web</span></a>
+        <a href="/explore/?view=map&amp;who={{ b.type }}">{% icon "map" %}<span>{{ b.type_label }} on the map</span></a>
+        <a href="/timeline/?who={{ b.type }}&amp;lanes=verdict">{% icon "clock" %}<span>{{ b.type_label }} on the timeline</span></a>
+        <a href="#h-time">{% icon "clock" %}<span>Its statements over time</span></a>
+        <button type="button" class="who-pin" data-ids="{% for c in b.claims %}{{ c.id }}{% if not loop.last %},{% endif %}{% endfor %}" hidden>Pin all {{ s.total }} claims</button>
+        <span class="who-tray" id="who-tray"></span>
+      </nav>
+    </div>
   </header>
 
   <aside class="notice" aria-label="What this page shows">
@@ -44,6 +63,18 @@ permalink: "/bodies/{{ body.id }}/"
     <h2 id="h-under">{% if b.offices.length %}Offices and people{% else %}People{% endif %}</h2>
     <p>Claims made by {% if b.offices.length %}these offices and people{% else %}these people{% endif %} on behalf of {{ b.name }} are counted here too.</p>
     <p class="conn-bodies">{% for x in b.offices %}{{ m.body(x) }} {% endfor %}{% for x in b.people %}{{ m.body(x) }} {% endfor %}</p>
+  </section>
+  {%- endif %}
+
+  {%- set ps = mizien.pledges | pledgeStack(mizien.claims, s.pledges | pluck("id")) if s.pledges.length else null %}
+  {%- if ps %}
+  <section class="pstack-sec" aria-labelledby="h-pledges">
+    <h2 id="h-pledges">Pledges, year by year</h2>
+    <p>Each disk is a year in which {{ b.name }}{% if b.offices.length or b.people.length %} or its offices and people{% endif %}
+      made pledges, the newest on top. Each dot is a pledge, coloured by its label, ringed in the colour of the verdict on
+      its facts where those were checked; similar pledges line up and are joined across the years. The same view for
+      every body is on <a href="/bodies/#h-pledges">Who said it</a>.</p>
+    {%- include "pledge-stack.njk" %}
   </section>
   {%- endif %}
 
@@ -138,3 +169,14 @@ permalink: "/bodies/{{ body.id }}/"
     {%- endif %}
   </section>
 </article>
+<script src="/assets/tray.js" defer></script>
+<script>
+  // Pin all of this body's claims to the tray (assets/tray.js) shared with Explore, the timeline and claim pages.
+  addEventListener("DOMContentLoaded", function () {
+    var T = window.MizienTray, b = document.querySelector(".who-pin"), m = document.getElementById("who-tray"); if (!T || !b || !m) return;
+    var ids = b.dataset.ids.split(",").filter(Boolean);
+    function sync() { var all = ids.every(function (id) { return T.has(id); }); b.textContent = all ? "Unpin these " + ids.length + " claims" : "Pin all " + ids.length + " claims"; b.setAttribute("aria-pressed", all ? "true" : "false"); }
+    b.addEventListener("click", function () { if (ids.every(function (id) { return T.has(id); })) ids.forEach(function (id) { T.remove(id); }); else T.add(ids); });
+    T.init({ mount: m, url: false, onChange: sync }); b.hidden = false; sync();
+  });
+</script>

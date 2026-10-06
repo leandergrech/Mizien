@@ -1,0 +1,30 @@
+{#- The verdict summary for one body (site/_lib/who.js, whoSummary): a bar from 5 checked claims, a tentative balance
+    at 3 or 4, a count below that. Expects s (the summary) and big (true on the body page). -#}
+{%- if s.tier == "bar" %}
+<div class="wm wm-bar-wrap">
+  <div class="wm-bar" role="img" aria-label="Verdicts on {{ s.checked }} checked claims: {% for v in s.counts %}{{ v.name }} {{ v.n }}{% if not loop.last %}, {% endif %}{% endfor %}">
+    {%- for v in s.counts %}<span class="v-{{ v.slug }}" style="flex: {{ v.n }}" title="{{ v.name }}: {{ v.n }}"></span>{% endfor %}
+  </div>
+  <p class="wm-key">{% for v in s.counts %}<span><i class="v-{{ v.slug }}"></i>{% if big %}{{ v.name }} {% endif %}<b>{{ v.n }}</b></span>{% endfor %}</p>
+</div>
+{%- elif s.tier == "tentative" %}
+<div class="wm wm-tent" role="img" aria-label="Tentative balance from {{ s.checked }} checked claims, at {{ (s.score * 100) | round }} on a scale from Contradicted (0) to Supported (100); recent claims count more. {{ s.need }} more checks before a verdict bar.">
+  <div class="wm-scale"><span class="wm-mark" style="left: {{ (s.score * 100) | round(1) }}%"></span></div>
+  <p class="wm-ends"><span>Contradicted</span><span>Supported</span></p>
+  <p class="wm-note">Tentative, from {{ s.checked }} checks{% if big %}; recent claims count more{% endif %} ·
+    <span class="wm-dots" aria-hidden="true">{% for i in range(0, s.barMin) %}<i{% if i < s.checked %} class="on"{% endif %}></i>{% endfor %}</span>
+    {{ s.need }} more for a verdict bar</p>
+</div>
+{%- else %}
+<div class="wm wm-few">
+  {%- if s.checked == 0 %}
+  <p class="wm-note">No checks yet{% if big %}: a summary appears from 3 checked claims{% endif %}</p>
+  {%- else %}
+  <p class="wm-note"><span class="wm-dots" aria-hidden="true">{% for i in range(0, s.barMin) %}<i{% if i < s.checked %} class="on"{% endif %}></i>{% endfor %}</span>
+    {{ s.checked }} of {{ s.barMin }} checks: too few to summarise</p>
+  {%- endif %}
+</div>
+{%- endif %}
+{%- if s.pledges.length %}
+<p class="wm-pledges">{% for p in s.pledges %}<a class="pl-chip" href="{{ p.path }}" style="--pl: {{ p.colour }}" title="{{ p.id }} {{ p.title }}: {{ p.status }}, as of {{ p.as_of }}">Pledge: {{ p.status }}{% if big %} <span>{{ p.id }}</span>{% endif %}</a>{% endfor %}</p>
+{%- endif %}
