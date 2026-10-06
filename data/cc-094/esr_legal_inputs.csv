@@ -1,0 +1,78 @@
+item,country,year,value,unit,source,where,url,note
+# Typed from EU legal texts read via the EU Publications Office (Cellar) on 6 Oct 2026 (EUR-Lex itself returned HTTP 202 with an empty body to scripts). Values copied exactly; tonnes of CO2 equivalent unless stated.,,,,,,,,
+2005 ESR base,BE,2005,81605589,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,value used to set the annual emission allocations
+2005 ESR base,BG,2005,22326386,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,CZ,2005,64965295,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,DK,2005,40368089,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,DE,2005,484694619,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,EE,2005,6196136,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,IE,2005,47687589,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,EL,2005,62985180,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,ES,2005,241979192,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,FR,2005,401113722,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,HR,2005,18056312,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,IT,2005,343101747,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,CY,2005,4266823,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,LV,2005,8597807,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,LT,2005,13062124,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,LU,2005,10116187,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,HU,2005,47826909,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,MT,2005,1020601,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,Malta's NECP (p. 54) gives the 2030 limit as 826.7 kt = 81% of this value
+2005 ESR base,NL,2005,128112158,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,AT,2005,56991984,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,PL,2005,192472253,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,PT,2005,48635827,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,RO,2005,78235752,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,SI,2005,11826308,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,SK,2005,23137112,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,FI,2005,34439858,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2005 ESR base,SE,2005,43228505,t CO2e,Implementing Decision (EU) 2020/2126,Annex I,https://data.europa.eu/eli/dec_impl/2020/2126/oj,
+2030 target vs 2005,BE,2030,-47,%,Regulation (EU) 2023/857,"Annex, point (1), replacing Annex I to Regulation (EU) 2018/842: column 2",https://data.europa.eu/eli/reg/2023/857/oj,column 1 (old target) -35%
+2030 target vs 2005,BG,2030,-10,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,CZ,2030,-26,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,DK,2030,-50,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,DE,2030,-50,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,EE,2030,-24,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,IE,2030,-42,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,EL,2030,-22.7,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,ES,2030,-37.7,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,FR,2030,-47.5,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,HR,2030,-16.7,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,IT,2030,-43.7,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,CY,2030,-32,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,LV,2030,-17,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,LT,2030,-21,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,LU,2030,-50,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,HU,2030,-18.7,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,MT,2030,-19,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,"unchanged: column 1 (2018 target) is also -19%"
+2030 target vs 2005,NL,2030,-48,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,AT,2030,-48,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,PL,2030,-17.7,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,PT,2030,-28.7,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,RO,2030,-12.7,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,SI,2030,-27,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,SK,2030,-22.7,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,FI,2030,-50,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+2030 target vs 2005,SE,2030,-50,%,Regulation (EU) 2023/857,"Annex I, column 2",https://data.europa.eu/eli/reg/2023/857/oj,
+Annual emission allocation,MT,2021,2065044,t CO2e,Implementing Decision (EU) 2026/895,"Annex (replacing Annex II to Decision 2020/2126)",https://data.europa.eu/eli/dec_impl/2026/895/oj,same value in Decisions 2020/2126 and 2023/1319
+Annual emission allocation,MT,2022,1239449,t CO2e,Implementing Decision (EU) 2026/895,"Annex (replacing Annex II to Decision 2020/2126)",https://data.europa.eu/eli/dec_impl/2026/895/oj,same value in Decisions 2020/2126 and 2023/1319
+Annual emission allocation,MT,2023,1187854,t CO2e,Implementing Decision (EU) 2026/895,"Annex (replacing Annex II to Decision 2020/2126)",https://data.europa.eu/eli/dec_impl/2026/895/oj,set in Decision 2023/1319
+Annual emission allocation,MT,2024,1136258,t CO2e,Implementing Decision (EU) 2026/895,"Annex (replacing Annex II to Decision 2020/2126)",https://data.europa.eu/eli/dec_impl/2026/895/oj,set in Decision 2023/1319
+Annual emission allocation,MT,2025,1084663,t CO2e,Implementing Decision (EU) 2026/895,"Annex (replacing Annex II to Decision 2020/2126)",https://data.europa.eu/eli/dec_impl/2026/895/oj,set in Decision 2023/1319
+Annual emission allocation,MT,2026,1199907,t CO2e,Implementing Decision (EU) 2026/895,"Annex (replacing Annex II to Decision 2020/2126)",https://data.europa.eu/eli/dec_impl/2026/895/oj,"set 24 Apr 2026 after the 2025 comprehensive review (trajectory from the 2021-2023 average); the Commission's Nov 2025 estimate was 1.2 Mt (SWD Table 26)"
+Annual emission allocation,MT,2027,1106602,t CO2e,Implementing Decision (EU) 2026/895,"Annex (replacing Annex II to Decision 2020/2126)",https://data.europa.eu/eli/dec_impl/2026/895/oj,estimate in SWD Table 26: 1.1 Mt
+Annual emission allocation,MT,2028,1013297,t CO2e,Implementing Decision (EU) 2026/895,"Annex (replacing Annex II to Decision 2020/2126)",https://data.europa.eu/eli/dec_impl/2026/895/oj,estimate in SWD Table 26: 1.0 Mt
+Annual emission allocation,MT,2029,919992,t CO2e,Implementing Decision (EU) 2026/895,"Annex (replacing Annex II to Decision 2020/2126)",https://data.europa.eu/eli/dec_impl/2026/895/oj,estimate in SWD Table 26: 0.9 Mt
+Annual emission allocation,MT,2030,826687,t CO2e,Implementing Decision (EU) 2026/895,"Annex (replacing Annex II to Decision 2020/2126)",https://data.europa.eu/eli/dec_impl/2026/895/oj,"= 81% of 1,020,601 (the -19% target); same value in Decision 2020/2126"
+ETS flexibility total 2021-2030,MT,2021-2030,510300,t CO2e,Implementing Decision (EU) 2024/1884,"Annex (replacing Annex III to Decision 2020/2126)",https://data.europa.eu/eli/dec_impl/2024/1884/oj,"2% of 2005 emissions for 2021-2024 and 7% for 2025-2030 (Malta notified by 31 Dec 2023); was 204,120 t at 2% in Decision 2020/2126"
+ETS flexibility percentage 2021-2024,MT,2021-2024,2,% of 2005 emissions per year,Regulation (EU) 2018/842,Annex II,https://data.europa.eu/eli/reg/2018/842/oj,
+ETS flexibility percentage 2025-2030,MT,2025-2030,7,% of 2005 emissions per year,Regulation (EU) 2023/857,"Annex, point (2), replacing Malta's entry in Annex II; Article 6(3a)",https://data.europa.eu/eli/reg/2023/857/oj,recital: Malta's GDP-based target 'significantly above its cost-effective reduction potential'
+LULUCF flexibility maximum 2021-2030,MT,2021-2030,0.03,Mt CO2e,Regulation (EU) 2018/842,Annex III,https://data.europa.eu/eli/reg/2018/842/oj,"half usable in 2021-2025 and half in 2026-2030 (Article 7(1)(a) and (aa) as amended by Regulation 2023/857); only if LULUCF credits exist"
+Borrowing limit 2021-2025,all,2021-2025,7.5,% of next year's allocation,Regulation (EU) 2023/857,"Article 1(4)(a), replacing Article 5(1)",https://data.europa.eu/eli/reg/2023/857/oj,
+Borrowing limit 2026-2029,all,2026-2029,5,% of next year's allocation,Regulation (EU) 2018/842,Article 5(2),https://data.europa.eu/eli/reg/2018/842/oj,
+Banking limit 2021,all,2021,75,% of the 2021 allocation,Regulation (EU) 2023/857,"Article 1(4)(b), replacing Article 5(3)(a)",https://data.europa.eu/eli/reg/2023/857/oj,
+Banking limit 2022-2029,all,2022-2029,25,% of allocations up to that year,Regulation (EU) 2023/857,"Article 1(4)(b), replacing Article 5(3)(b)",https://data.europa.eu/eli/reg/2023/857/oj,
+Transfer limit for the seller 2026-2030,all,2026-2030,15,% of the seller's allocation,Regulation (EU) 2023/857,"Article 1(4)(b), replacing Article 5(4)",https://data.europa.eu/eli/reg/2023/857/oj,"10% for 2021-2025; Article 5 sets no limit for the receiving Member State; transfers of a reviewed surplus under Article 5(5) are also allowed"
+Excess penalty factor,all,,1.08,multiplier,Regulation (EU) 2018/842,Article 9(1)(a),https://data.europa.eu/eli/reg/2018/842/oj,"excess after flexibilities is added x1.08 to the next year's emissions; transfers out barred until compliant"
+Safety reserve eligibility,MT,2013-2020,0,eligible (1) / not (0),Commission Decision (EU) 2023/863,Recital (5) and Annex,https://data.europa.eu/eli/dec/2023/863/oj,"Malta's 2013-2020 ESD emissions exceeded its allocations, so it is the only Member State with below-average 2013 GDP per capita that does not meet Article 11(2)(b)"
+2021 one-off adjustment,MT,2021,774000,t CO2e,Regulation (EU) 2018/842,"Annex IV, Article 10(2)",https://data.europa.eu/eli/reg/2018/842/oj,"added to the 2021 allocation of eleven lower-income Member States, Malta among them"

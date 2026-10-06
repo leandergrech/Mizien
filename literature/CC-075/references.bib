@@ -1,0 +1,153 @@
+% Literature and primary sources for CC-075 (Malta seventh in the EU with 585 passenger cars per 1,000 inhabitants).
+% Journal-article metadata verified against Crossref and OpenAlex on 6 October 2026; Eurostat dataset DOIs checked
+% against DataCite and doi.org on the same day. Revised the same day after the data-vintage finding (Statistics
+% Explained revisions 627098 and 647912 added; the January 2024 release's chart does show Malta).
+
+@misc{lovin_2024_cars,
+  author       = {Darmanin, Josmar},
+  title        = {Malta Ranked Number Seven On Eurostat's 'Passenger Cars Per 1,000 Inhabitants' Dataset},
+  year         = {2024},
+  month        = sep,
+  howpublished = {Lovin Malta, web article, 21 Sep 2024 (15:15 Malta time; 13:15 UTC)},
+  url          = {https://lovinmalta.com/malta/malta-ranked-number-seven-on-eurostats-passenger-cars-per-1000-inhabitants-dataset/},
+  note         = {The claim. Read in full on 6 Oct 2026 (page and WordPress API, post 148257). The outlet's own text: calls Eurostat's dataset "as of 2023" and dates its graphic (Paula Lago via The European Correspondent) "up to the year 2022"; gives no year for the 585 and states the rank in the present tense.}
+}
+
+@misc{eurostat_road_eqs_carhab,
+  author       = {{Eurostat}},
+  title        = {Passenger cars -- per thousand inhabitants (road_eqs_carhab)},
+  year         = {2026},
+  howpublished = {Database, updated 30 Jul 2026, retrieved 6 Oct 2026 with Eurostat's flags},
+  doi          = {10.2908/ROAD_EQS_CARHAB},
+  url          = {https://ec.europa.eu/eurostat/databrowser/view/road_eqs_carhab/default/table?lang=en},
+  note         = {Primary evidence. DataCite record checked 6 Oct 2026 (creator Eurostat). Grade C (official statistics).}
+}
+
+@misc{eurostat_road_eqs_carmot,
+  author       = {{Eurostat}},
+  title        = {Passenger cars, by type of motor energy and size of engine (road_eqs_carmot)},
+  year         = {2026},
+  howpublished = {Database, updated 1 Sep 2026, retrieved 6 Oct 2026 with Eurostat's flags},
+  doi          = {10.2908/ROAD_EQS_CARMOT},
+  url          = {https://ec.europa.eu/eurostat/databrowser/view/road_eqs_carmot/default/table?lang=en},
+  note         = {Stock of passenger cars at 31 December, the numerator of road_eqs_carhab. DataCite record checked 6 Oct 2026. Grade C.}
+}
+
+@misc{eurostat_demo_gind,
+  author       = {{Eurostat}},
+  title        = {Population change -- demographic balance and crude rates at national level (demo_gind)},
+  year         = {2026},
+  howpublished = {Database, updated 30 Sep 2026, retrieved 6 Oct 2026 (population on 1 January)},
+  url          = {https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table?lang=en},
+  note         = {Denominator: road_eqs_carhab equals stock at 31 Dec divided by population on 1 Jan of the next year, for all 27 Member States in 2022 (calc.py). Grade C.}
+}
+
+@misc{eurostat_reg_area3,
+  author       = {{Eurostat}},
+  title        = {Area by NUTS 3 region (reg_area3)},
+  year         = {2026},
+  howpublished = {Database, updated 22 Jan 2026, retrieved 6 Oct 2026 (land area, km2)},
+  url          = {https://ec.europa.eu/eurostat/databrowser/view/reg_area3/default/table?lang=en},
+  note         = {Malta land area 313 km2 (Malta island MT001 245 km2; Gozo and Comino MT002 68 km2), 2022. Grade C.}
+}
+
+@misc{eurostat_news_20240117,
+  author       = {{Eurostat}},
+  title        = {Passenger cars per 1 000 inhabitants reached 560 in 2022},
+  year         = {2024},
+  month        = jan,
+  howpublished = {Eurostat news, 17 Jan 2024},
+  url          = {https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20240117-1},
+  note         = {Read 6 Oct 2026. Eurostat's own release of the 2022 figures (source dataset road_eqs_carhab): EU 560; Italy 684, Luxembourg 678, Finland 661, Cyprus 658; Latvia 414, Romania 417, Hungary 424. Its chart 'Motorisation rate of passenger cars in the EU, 2012 and 2022' (full-size file sha1 236d45653d90aafb00b253f37cf51029bd678a2d, saved as data/cc-075/news_20240117_infographic.png) shows every Member State: Malta sixth at about 602 (pixel reading, data/cc-075/chart_reads.csv), Germany about 585, Poland about 571. Malta's 2022 value was later revised to 585. Grade C.}
+}
+
+@misc{eurostat_news_20240506,
+  author       = {{Eurostat}},
+  title        = {Passenger cars per inhabitant remain stable in 2022},
+  year         = {2024},
+  month        = may,
+  howpublished = {Eurostat news, 6 May 2024},
+  url          = {https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20240506-2},
+  note         = {Read 6 Oct 2026. Regional release (tran_r_vehst, a different dataset): EU 0.56 cars per inhabitant in 2022. No Malta figure. Consulted, not cited in the report.}
+}
+
+@misc{eurostat_news_20250521,
+  author       = {{Eurostat}},
+  title        = {Passenger cars per inhabitant stable in 2023},
+  year         = {2025},
+  month        = may,
+  howpublished = {Eurostat news, 21 May 2025},
+  url          = {https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250521-1},
+  note         = {Read 6 Oct 2026. Regional release for 2023 (tran_r_vehst, a different dataset). No Malta figure. Consulted, not cited in the report.}
+}
+
+@misc{eurostat_se_passenger_cars,
+  author       = {{Eurostat}},
+  title        = {Passenger cars in the EU},
+  year         = {2026},
+  howpublished = {Statistics Explained article, data extracted July 2026 (PDF cache 25886, generated 31 Jul 2026)},
+  url          = {https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Passenger_cars_in_the_EU},
+  note         = {Read 6 Oct 2026 (PDF). Defines the motorisation rate as passenger cars per 1 000 inhabitants; passenger cars include company cars, taxis, private hire cars, shared cars and rented cars. Context section: data from the Common Questionnaire, collection methods "not harmonised at EU level", and vehicle registers "may include very old vehicles without signs of life". 2025: EU 584, Italy 709. Grade C.}
+}
+
+@misc{eurostat_se_transport_equipment,
+  author       = {{Eurostat}},
+  title        = {Transport equipment statistics},
+  year         = {2025},
+  howpublished = {Statistics Explained article, data extracted December 2025 (PDF cache 35972, generated 25 Aug 2026)},
+  url          = {https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Transport_equipment_statistics},
+  note         = {Read 6 Oct 2026 (PDF). 2024: EU 578, 12 countries above it (Malta not among those named); "some vehicles no longer on the road may still linger in certain national vehicle registers". Grade C.}
+}
+
+@article{warren_enoch_2010,
+  author  = {Warren, James P. and Enoch, Marcus P.},
+  title   = {Island Transport, Car Ownership and Use: A Focus on Practices in Cuba, Malta, Mauritius and Singapore},
+  journal = {Island Studies Journal},
+  year    = {2010},
+  volume  = {5},
+  number  = {2},
+  pages   = {193--216},
+  doi     = {10.24043/isj.244},
+  url     = {https://islandstudiesjournal.org/article/81248-island-transport-car-ownership-and-use-a-focus-on-practices-in-cuba-malta-mauritius-and-singapore},
+  note    = {Crossref and OpenAlex checked 6 Oct 2026 (title, authors, volume, pages match). Full text read. Says car ownership in Malta was then "the highest in the European Union" and gives vehicle ownership of 675 per 1,000 (definition and year not those of road_eqs_carhab). Open access: the journal page shows CC BY 4.0, OpenAlex lists CC BY-ND, and the PDF carries only a 2010 copyright line, so the PDF is not committed. Grade C (comparative review).}
+}
+
+@misc{nso_motor_vehicles_q4_2022,
+  author       = {{National Statistics Office Malta}},
+  title        = {Motor Vehicles: Q4/2022 (News Release 023/2023)},
+  year         = {2023},
+  month        = feb,
+  howpublished = {NSO news release, 15 Feb 2023},
+  url          = {https://nso.gov.mt/wp-content/uploads/News2023_023.pdf},
+  note         = {SECOND-HAND: the PDF returned 403 to curl and to WebFetch on 6 Oct 2026; figures (424,904 licensed motor vehicles at end-December 2022, 74.7\% passenger cars) come from a web-search summary. Not read.}
+}
+
+@misc{newsbook_2025_vehicles,
+  author       = {Balzan, Jurgen},
+  title        = {Over 450,000 licensed vehicles on Malta's roads, NSO confirms},
+  year         = {2025},
+  month        = jul,
+  howpublished = {Newsbook, 30 Jul 2025},
+  url          = {https://newsbook.com.mt/en/over-450000-licensed-vehicles-on-maltas-roads-nso-confirms/},
+  note         = {Read in full 6 Oct 2026. A news report of NSO's Q2/2025 release (second-hand for NSO's figures): 450,794 licensed motor vehicles at end-June 2025; 9,366 vehicles "taken off the road due to restrictions" in the quarter (39.4\% garaged, 29.6\% resold, 29\% scrapped). Its passenger-car counts are internally inconsistent (73.8\% of 450,794 is not 315,763) and are not used.}
+}
+
+@misc{eurostat_se_passenger_cars_rev647912,
+  author       = {{Eurostat}},
+  title        = {Passenger cars in the EU (Statistics Explained), revision 647912},
+  year         = {2024},
+  month        = aug,
+  howpublished = {Statistics Explained article, revision saved 19 Aug 2024, replaced by revision 655141 on 5 Nov 2024; "Data extracted in July 2024"},
+  url          = {https://ec.europa.eu/eurostat/statistics-explained/api.php?action=query&prop=revisions&revids=647912&rvprop=content|timestamp&rvslots=main&format=json},
+  note         = {Read 6 Oct 2026 through the MediaWiki API (saved as data/cc-075/es_passenger_cars_rev647912.json). The version online on 21 Sep 2024. Text: Italy 694, Luxembourg 675, Cyprus 665, Finland 664, Estonia 630, Latvia 418, EU average 571 (2023). Figure 3 "Motorisation rate, 2023" (file uploaded 25 Jul 2024, sha1 7dd8b8d6c18bfdce7c98b5baf50fff8743d2125b): all 27 Member States; Malta 12th at about 575 (pixel reading). Table 2 (file sha1 ae9c01be1a759ad2a2ee2a225a190129652dbeda): Malta stock 317,234 (2022), 323,852 (2023). The 2023 values first appear in revision 646192 (23 Jul 2024). Grade C.}
+}
+
+@misc{eurostat_se_passenger_cars_rev627098,
+  author       = {{Eurostat}},
+  title        = {Passenger cars in the EU (Statistics Explained), revision 627098},
+  year         = {2024},
+  month        = jan,
+  howpublished = {Statistics Explained article, revision saved 31 Jan 2024; "Data extracted in December 2023"},
+  url          = {https://ec.europa.eu/eurostat/statistics-explained/api.php?action=query&prop=revisions&revids=627098&rvprop=content|timestamp&rvslots=main&format=json},
+  note         = {Read 6 Oct 2026 through the MediaWiki API (data/cc-075/es_passenger_cars_rev627098.json). Figure 3 "Motorisation rate, 2022" (file uploaded 16 Jan 2024, sha1 2eb4c04f87a2be0c844e324e0dd5aa44a81c01a7): Malta sixth at about 602 (pixel reading), matching the 17 Jan 2024 release. Grade C.}
+}

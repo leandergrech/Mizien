@@ -1,0 +1,9 @@
+freq,citizen,sex,age,unit,geo,time,value,flag,dataset,label,updated,retrieved,c_birth
+A,NAT,T,TOTAL,NR,MT,2021,404111,,cens_21ctz_r3,"Population by country of citizenship, age groups and NUTS 3 region",2025-05-21T23:00:00+0200,2026-10-06,
+A,STLS,T,TOTAL,NR,MT,2021,172,,cens_21ctz_r3,"Population by country of citizenship, age groups and NUTS 3 region",2025-05-21T23:00:00+0200,2026-10-06,
+A,TOTAL,T,TOTAL,NR,MT,2021,519564,,cens_21ctz_r3,"Population by country of citizenship, age groups and NUTS 3 region",2025-05-21T23:00:00+0200,2026-10-06,
+A,UNK,T,TOTAL,NR,MT,2021,0,,cens_21ctz_r3,"Population by country of citizenship, age groups and NUTS 3 region",2025-05-21T23:00:00+0200,2026-10-06,
+A,,T,TOTAL,NR,MT,2021,133284,,cens_21cob_r3,"Population by country of birth, age groups and NUTS 3 region",2025-05-21T23:00:00+0200,2026-10-06,FOR
+A,,T,TOTAL,NR,MT,2021,386282,,cens_21cob_r3,"Population by country of birth, age groups and NUTS 3 region",2025-05-21T23:00:00+0200,2026-10-06,NAT
+A,,T,TOTAL,NR,MT,2021,519564,,cens_21cob_r3,"Population by country of birth, age groups and NUTS 3 region",2025-05-21T23:00:00+0200,2026-10-06,TOTAL
+A,,T,TOTAL,NR,MT,2021,0,,cens_21cob_r3,"Population by country of birth, age groups and NUTS 3 region",2025-05-21T23:00:00+0200,2026-10-06,UNK

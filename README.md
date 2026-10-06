@@ -61,10 +61,10 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-029 | Climate & Energy | First offshore wind farm | Drafted | Largely supported (pledge: Off track) |
 | CC-030 | Climate & Energy | Carbon-neutral airport | Drafted | Not substantiated |
 | CC-031 | Climate & Energy | Gozo, first climate-neutral region | Drafted | Largely supported (pledge: Not measurable) |
-| CC-032 | Climate & Energy | Solar flowers, first in Europe | Not started | - |
+| CC-032 | Climate & Energy | Solar flowers, first in Europe | Drafted | Contradicted |
 | CC-033 | Air | Delimara: 'much cleaner air' | Not started | - |
-| CC-034 | Air | Air Quality Plan 'already yielding results' | In progress | - |
-| CC-035 | Air | PM2.5 deaths down two-thirds | In progress | - |
+| CC-034 | Air | Air Quality Plan 'already yielding results' | Drafted | Not substantiated |
+| CC-035 | Air | PM2.5 death rate down two-thirds | Drafted | Largely supported |
 | CC-036 | Air | Construction dust 'a nuisance, not a health issue' | Not started | - |
 | CC-037 | Air | Highest share reporting pollution | Drafted | Supported |
 | CC-038 | Air | Saharan dust behind PM10 spikes | Not started | - |
@@ -104,7 +104,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-072 | Transport | EUR 15m to take cars off the road | Not started | - |
 | CC-073 | Transport | Cab trips up 68% | Not started | - |
 | CC-074 | Transport | 8,144 EV grants | Not started | - |
-| CC-075 | Transport | Seventh in the EU for cars | Not started | - |
+| CC-075 | Transport | Seventh in the EU for cars | Drafted | Misleading |
 | CC-076 | Transport | 36 more vehicles a day | Drafted | Supported |
 | CC-077 | Transport | Metro: first section early 2030s | Not started | - |
 | CC-078 | Transport | Gozo Channel: +511,000 passengers | Not started | - |
@@ -123,14 +123,14 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-091 | Health & Safety | Inspections doubled | Drafted | Largely supported |
 | CC-092 | Governance & Promises | PN: Gozo net-zero by afforestation | Not started | - |
 | CC-093 | Governance & Promises | PN: buy land for urban parks | Not started | - |
-| CC-094 | Climate & Energy | Commission: Malta off track for 2030 | Not started | - |
+| CC-094 | Climate & Energy | Commission: Malta to emit more in 2030 than in 2005 | Drafted | Supported |
 | CC-095 | Climate & Energy | EUR 400m to keep bills low | Not started | - |
 | CC-096 | Nature & Wildlife | Fish farms moved 6 km offshore | Not started | - |
 | CC-097 | Health & Safety | Beach workers left exposed to heat | In progress | - |
 | CC-098 | Tourism & Population | Officials enforce private interests at Blue Lagoon | Not started | - |
-| CC-099 | Tourism & Population | Foreigners are 31% of residents | Not started | - |
+| CC-099 | Tourism & Population | Foreign residents: 31% now, 38% by 2030 | Drafted | Not substantiated |
 | CC-100 | Tourism & Population | Over 10 million airport passengers | Drafted | Supported |
-| CC-101 | Water | EU: no permits for water abstraction | Not started | - |
+| CC-101 | Water | EU: no registration or prior authorisation of water abstraction in Malta | Drafted | Largely supported |
 | CC-102 | Governance & Promises | Ombudsman: 58% of environment recommendations ignored | Drafted | Largely supported |
 | CC-103 | Health & Safety | Heat-death locations "within three months" | Not started | - |
 | CC-104 | Noise | PN: Malta fails EU noise law | In progress | - |
@@ -138,12 +138,12 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-106 | Nature & Wildlife | Shearwaters: 10% of the world population | Drafted | Largely supported |
 | CC-107 | Governance & Promises | A net-zero Gozo by 2040 | Drafted | Pledge: Not measurable |
 | CC-108 | Water | WSC: a net-zero impact on groundwater | Not started | - |
-| CC-109 | Transport | EU: transport is 48% of effort-sharing emissions | Not started | - |
+| CC-109 | Transport | EU: transport is 48% of effort-sharing emissions | Drafted | Largely supported |
 | CC-110 | Transport | EU: 37.7% of new cars zero-emission | Drafted | Supported |
 | CC-111 | Waste | EU: 621 kg of waste a head, 74% landfilled | Drafted | Supported |
 | CC-112 | Tourism & Population | IMF: population up 25% in a decade | Drafted | Largely supported |
-| CC-113 | Climate & Energy | EEA: Malta among highest fossil-fuel subsidies | Not started | - |
-| CC-114 | Climate & Energy | PN: only EU state with rising emissions intensity | Not started | - |
+| CC-113 | Climate & Energy | EEA: Malta among highest fossil-fuel subsidies relative to GDP | Drafted | Largely supported |
+| CC-114 | Climate & Energy | PN: only EU state with rising emissions intensity | Drafted | Misleading |
 | CC-115 | Transport | Chamber: congestion cost EUR 770m, 3.4% of GDP | Drafted | Not substantiated |
 | CC-116 | Planning & Housing | UNESCO: Valletta setting not safeguarded | Not started | - |
 

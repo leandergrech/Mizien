@@ -1,0 +1,50 @@
+check,value,unit,source,note
+"Fresh surface water abstraction, 2024",2.96,million m3,"Eurostat env_wat_abs (updated 16 Sep 2026), retrieved 2026-10-06",flag 'e'
+"Fresh groundwater abstraction, 2024",38.46,million m3,"Eurostat env_wat_abs (updated 16 Sep 2026), retrieved 2026-10-06",flag 'e'
+"Fresh surface and groundwater abstraction, 2024",41.42,million m3,"Eurostat env_wat_abs (updated 16 Sep 2026), retrieved 2026-10-06",flag 'e'
+"Surface + groundwater equals the total, 2024",True,check,calculated,
+"Surface water share of freshwater abstraction, 2024",7.1,%,calculated,both inputs estimated (flag e)
+"Groundwater share of freshwater abstraction, 2024",92.9,%,calculated,both inputs estimated (flag e); desalinated seawater is not freshwater abstraction
+"Fresh surface water abstraction, distinct values 2010-2024",2.62 (2010-2018); 2.96 (2019-2024),million m3,"Eurostat env_wat_abs (updated 16 Sep 2026), retrieved 2026-10-06","flat within each period: an estimate, not a metered series (our reading)"
+"Fresh surface water abstraction by households, 2024",1.71,million m3,"Eurostat env_wat_abs (updated 16 Sep 2026), retrieved 2026-10-06",flag 'e'
+"Fresh surface water abstraction by agriculture, forestry, fishing, 2024",1.25,million m3,"Eurostat env_wat_abs (updated 16 Sep 2026), retrieved 2026-10-06",flag 'e'
+"Groundwater abstraction for public water supply, 2024",14.28,million m3,"Eurostat env_wat_abs (updated 16 Sep 2026), retrieved 2026-10-06",flag 'e'
+"Groundwater abstraction by agriculture, forestry, fishing, 2024",21.77,million m3,"Eurostat env_wat_abs (updated 16 Sep 2026), retrieved 2026-10-06",flag 'e'
+"Groundwater abstraction by everyone else (households, industry, services, mining), 2024",2.41,million m3,calculated,total minus public supply minus agriculture
+"Share of groundwater abstraction outside the public water supply, 2024",62.9,%,calculated,"Eurostat's 'public water supply' category taken as the Water Services Corporation (our identification, not Eurostat's); the Green Paper's proposed framework would exclude WSC sources"
+"Share of groundwater abstraction by agriculture, 2024",56.6,%,calculated,
+"Eurostat flags on Malta's groundwater total, 2010-2024","2010:e, 2011:e, 2012:e, 2013:e, 2014:e, 2015:e, 2016:e, 2017:e, 2018:e, 2019:e, 2020:be, 2021:e, 2022:e, 2023:e, 2024:e",flags,"Eurostat env_wat_abs (updated 16 Sep 2026), retrieved 2026-10-06",e = estimated; b = break in series
+Surface water bodies reported (excluding territorial waters),19,bodies,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06","coastalWaterBody: 9, lakeWaterBody: 2, riverWaterBody: 3, transitionalWaterBody: 5"
+River water bodies (watercourses),3,bodies,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06",WIED TAL-BAHRIJA 1.5 km; WIED IL-LUQ 1.3 km; WIED IL-LUNZJATA 0.6 km
+Total length of river water bodies,3.4,km,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06",
+Lake water bodies (pools),2,bodies,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06",IL-QATTARA 0 km2; L-GHADIRA TA' SARRAFLU 0.001 km2
+Largest lake water body,0.001,km2,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06",
+Surface water bodies with abstraction (P3) as a significant pressure,0,of 19,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06",
+Inland fresh surface water bodies (rivers and lakes) with abstraction as a significant pressure,0,of 5,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06",pressures reported for them: P2-1 - Diffuse - Urban run-off; P2-2 - Diffuse - Agricultural; P2-4 - Diffuse - Transport
+Groundwater bodies with abstraction (P3) as a significant pressure,7,of 15,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06",MT001 Malta Mean Sea Level (public supply); MT002 Rabat-Dingli Perched (agriculture); MT003 Mgarr-Wardija Perched (agriculture); MT005 Pwales Coastal (agriculture); MT006 Mizieb Mean Sea Level (public supply); MT013 Gozo Mean Sea Level (public supply); MT014 Ghajnsielem Perched (public supply)
+Groundwater bodies with alteration of water level or volume (P6-2) as a significant pressure,7,of 15,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06","MT001, MT005, MT006, MT009, MT010, MT012, MT013"
+Groundwater bodies with P3 or P6-2,10,of 15,calculated,"MT001, MT002, MT003, MT005, MT006, MT009, MT010, MT012, MT013, MT014"
+"Groundwater bodies in poor quantitative status (3rd cycle, assessed 2021)",4,of 15,"EEA WISE WFD 2022 reporting (WFD2022_GroundWaterBody_WM layer 0), retrieved 2026-10-06","MT001, MT005, MT010, MT013"
+Poor quantitative status bodies that also report abstraction or water-level pressure,4,of 4,calculated,
+Agricultural boreholes,3553,boreholes,"EWA and ERA, Green Paper on the Regulation of Groundwater Abstraction (Nov 2023)",PDF p. 5
+Commercial boreholes (registered),245,boreholes,"EWA and ERA, Green Paper on the Regulation of Groundwater Abstraction (Nov 2023)",PDF p. 5
+Agricultural plus commercial boreholes,3798,boreholes,calculated,"domestic boreholes (pools, gardens) have no count in the Green Paper; spieri counted separately"
+"Registered low-yield sources (spieri), not metered",3405,sources,"EWA and ERA, Green Paper on the Regulation of Groundwater Abstraction (Nov 2023)",PDF p. 7
+WSC boreholes,110,boreholes,"EWA and ERA, Green Paper on the Regulation of Groundwater Abstraction (Nov 2023)",PDF p. 4; plus 12 pumping stations
+WSC share of the boreholes counted (agricultural + commercial + WSC),2.8,%,calculated,
+Private abstraction by sector (agriculture / commercial / domestic),76 / 16 / 8,%,"EWA and ERA, Green Paper on the Regulation of Groundwater Abstraction (Nov 2023)",Figure 6; sums to 100
+Second-hand: registered commercial boreholes with no abstraction data,more than 63,%,"Amphora Media, Aug 2026, reporting ERA records (not seen by us)",SECOND-HAND; not used for any rating
+Years from the WFD transposition deadline to the letter of formal notice,22.5,years,calculated,22 Dec 2003 to 8 Jul 2026
+Years from the deadline for operational measures to the letter,13.5,years,calculated,22 Dec 2012 to 8 Jul 2026
+Years since the notification deadline for existing groundwater sources,17.9,years,calculated,20 Nov 2008 to 6 Oct 2026
+Months from the Green Paper to the letter of formal notice,31.5,months,calculated,
+Months from the Green Paper to this check,34.4,months,calculated,
+Reply deadline (two months from the letter),2026-09-08,date,INF/26/1376: 'two months to respond',approximate: the date of receipt of the letter is not public
+Legal Notices 2024-2026 read (titles),943,of 943 in the ELI sitemap,"legislation.mt, retrieved 2026-10-06","2024: 379, 2025: 307, 2026: 257"
+"Titles matching groundwater, abstraction, borehole, water policy or well(s)",1,notices,calculated,"374 of 2024 - Borehole Drilling and Excavation Works within the Saturated Zone (Amendment) Regulations, 2024 Government "
+What the matching notice does,L.N. 374 of 2024,instrument,"legislation.mt, read 6 Oct 2026","adds to S.L. 549.165 reg. 6(2) a new exception to the drilling moratorium: boreholes by a public entity for research and development, with ERA's prior approval; no abstraction permit"
+Acts 2024-2026 read (title and full text searched),101,Acts,"legislation.mt ELI sitemap, retrieved 2026-10-06","2024: 41, 2025: 42, 2026: 18; 18 further numbers after the last listed one in each year probed: 0 exist"
+"Acts 2024-2026 whose text mentions groundwater, abstract or borehole",1,Acts,calculated,"XVII of 2024 – Environment Protection (Amendment) Act, 2024 Government"
+"S.L. titles read under 549, 423, 545, 355 and 427",344,instruments,"legislation.mt ELI sitemap, retrieved 2026-10-06",0 without a title
+"S.L. titles mentioning groundwater, abstraction, boreholes, wells, pumps or water-controlled areas",14,instruments,calculated,S.L. 423.12; S.L. 423.16; S.L. 423.32; S.L. 423.40; S.L. 423.45; S.L. 545.2; S.L. 549.21; S.L. 549.53; S.L. 549.100; S.L. 549.155; S.L. 549.164; S.L. 549.165; S.L. 549.166; S.L. 549.168
+Malta's 2019 statement of private groundwater sources metered,"more than 3,000",sources,"European Commission, SWD(2019) 48 final (2nd RBMPs, Malta), footnote 65 (Malta's clarification), p. 124 (repeated in footnote 68, p. 125)","Malta's clarification to the Commission, not a count by us; no current count found"

@@ -1,0 +1,72 @@
+check,value,unit,source,note
+"Published GHG intensity of GVA (g per EUR, chain-linked 2020), change 2013-2024: Malta",14.3,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",325.21 -> 371.69 g/EUR; 2024 flagged 'i'
+"Same, EU-27",-34.0,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",291.66 -> 192.39 g/EUR
+Same: Member States with an increase,MT,list,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",1 of 27
+Same: Malta's rank (1 = largest fall),27,of 27,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+Same: next-weakest Member State,Luxembourg -13.6%,,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+"Same, Estonia",-63.9,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+"Same, Ireland",-50.2,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+"Same, Finland",-43.9,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+Same: unweighted mean of the 27 national changes,-32.4,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","the -34% is the EU aggregate (EU emissions / EU GVA), not a mean of countries"
+"Published GHG intensity at current prices, change 2013-2024: Malta",-20.3,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",risers at current prices: none; EU-27 -49.3%
+"Malta: published intensity, change 2013-2016 and 2013-2021",-39.6 / -39.0,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+"January 2026 vintage (Eurostat map, 20 Jan 2026): Malta",16.6,%,data/cc-114/eurostat_map_jan2026.csv,
+January 2026 vintage: EU-27,-34.0,%,data/cc-114/eurostat_map_jan2026.csv,
+January 2026 vintage: Member States with an increase,MT,list,data/cc-114/eurostat_map_jan2026.csv,
+"Revisions between the January map and the August 2026 data (points, >=0.15)",DK -25.1->-25.8; CY -28.9->-29.1; MT +16.6->+14.3; FI -43.7->-43.9,,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",Malta's NSO revised 2013-2018 air transport in Feb 2026
+End year 2023 (last year Malta reported; 2024 is a Eurostat estimate): Malta 2013-2023,-8.3,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",risers 2013-2023: none
+End year 2022: Malta 2013-2022,-29.8,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+End years (base 2013) in which Malta is the only riser,2024,years,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+Base years (end 2024) in which Malta is the only riser,"2014, 2015, 2016, 2017, 2018, 2019",years,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+"Malta: published intensity 2008, 2013, 2016, 2020, 2022, 2023, 2024","408, 325, 196, 186, 228, 298, 372",g/EUR,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+Malta: change 2022-2024,62.9,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+Malta: recomputed intensity 2013 (ainah TOTAL / a64 GVA),325.2,g/EUR,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",published 325.21; GVA vintage of 6 Oct 2026
+Malta: recomputed intensity 2024 (ainah TOTAL / a64 GVA),369.8,g/EUR,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",published 371.69; GVA vintage of 6 Oct 2026
+"Malta: GHG of resident production units (NACE total), 2013 -> 2024",2.78 -> 6.59,Mt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",+137%
+Malta: real GVA change 2013-2024,108.5,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","nama_10_a64, chain-linked volumes 2020"
+EU-27: real GVA change 2013-2024,20.3,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+"Malta: air transport (H51), 2013 -> 2024",304 -> 4730,kt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",+1456%
+"Malta: electricity, gas, steam (D), 2013 -> 2024",1703 -> 743,kt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",-56%
+"Malta: water transport (H50), 2013 -> 2024",56 -> 113,kt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",+100%
+"Malta: land transport (H49), 2013 -> 2024",49 -> 86,kt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",+75%
+"Malta: households (not in the intensity) (HH), 2013 -> 2024",289 -> 362,kt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",+25%
+"Malta: all other activities (NACE total less transport and electricity), 2013 -> 2024",592 -> 858,kt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",+45%
+"Malta: air transport share of NACE-total GHG, 2024",71.8,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",2013: 10.9%
+Malta: increase in NACE-total GHG 2013-2024 accounted for by air transport,116.2,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",more than 100% means the other activities fell together
+Cross-check with CC-026: Malta air transport (H51) 2015 -> 2024,444 -> 4730,kt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","CC-026 reported 444 -> 4,730 kt (data/cc-026/)"
+"Malta (bridging table): emissions by resident units from fuel bought abroad, air transport, 2013/2019/2022/2023/2024",299 / 912 / 1589 / 3109 / 4730,kt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",2024 imputed by Eurostat (i)
+"Malta: fuel-bought-abroad air emissions as % of air transport (H51), 2024",100.0,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+"Malta (bridging table): territorial inventory total (no LULUCF), 2013 -> 2024",2835 -> 2198,kt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",-22%; residence total incl. households 3069 -> 6951
+"Malta's share of EU-27 air-transport emissions from fuel bought abroad by resident units, 2013 / 2024",0.4 / 4.4,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",Malta's share of EU-27 real GVA 2024: 0.13%
+"EU-27 (bridging table): fuel bought abroad by resident units, air transport, 2013 -> 2024",84.0 -> 107.4,Mt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",+28%
+"Published: GHG of resident units per euro of GVA (Eurostat), change 2013-2024: Malta",14.3,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",EU-27 -34.0%; Malta rank 27 of 27 (1 = largest fall); risers: MT
+"Same, without air transport emissions (H51), change 2013-2024: Malta",-64.0,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",EU-27 -35.2%; Malta rank 2 of 27 (1 = largest fall); risers: none
+"Same, without transport and storage (H) in emissions and GVA, change 2013-2024: Malta",-66.3,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",EU-27 -38.3%; Malta rank 2 of 27 (1 = largest fall); risers: none
+"Territorial inventory per euro of GDP (volumes), change 2013-2024: Malta",-61.3,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",EU-27 -35.5%; Malta rank 2 of 27 (1 = largest fall); risers: none
+"Territorial inventory per euro of GDP (current prices), change 2013-2024: Malta",-72.9,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",EU-27 -50.4%; Malta rank 2 of 27 (1 = largest fall); risers: none
+"Territorial inventory per person, change 2013-2024: Malta",-42.6,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",EU-27 -24.2%; Malta rank 3 of 27 (1 = largest fall); risers: HR
+"Residence accounts incl. households, per person, change 2013-2024: Malta",69.2,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","EU-27 -21.2%; Malta rank 27 of 27 (1 = largest fall); risers: HR, LV, LT, MT, RO"
+"Cross-check with CC-025: territorial GHG per unit of GDP, Malta 2005-2024, volumes / current prices",-72.2 / -83.8,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",CC-025 reported -72% (volumes) and -84% (current prices)
+"EU-27: territorial GHG per unit of GDP 2005-2024, volumes / current prices",-47.9 / -64.7,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+"CC-025 checks.csv, same figures",-72.2 / -83.8,%,data/cc-025/checks.csv,
+"Malta: inventory memo items, international navigation / aviation bunkers sold in Malta, 2024",6.81 / 0.53,Mt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",fuel sold on the territory to ships and aircraft of any residence; outside both measures above
+Without air transport: Malta's change to 2024 from every base year 2008-2023 (all falls?),yes: -8.5% (base 2023) to -72.3% (base 2008),%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",rank 1 = largest fall; data/cc-114/sensitivity_base_years.csv
+Territorial inventory per euro of GDP: Malta's change to 2024 from every base year 2008-2023 (all falls?),yes: -6.6% to -69.3%,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+"From base 2016 to 2024: without air transport / territorial per euro of GDP (Malta, rank, EU-27)",-29.5% (17th; EU -30.1%) / -27.1% (21st; EU -29.8%),%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",the falls since 2013 come mostly from 2014-2016
+"Malta: electricity, gas, steam (D) emissions 2013 / 2016 / 2024; change from 2016",1703 / 581 / 743,kt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",+28% from 2016
+"In the PN's favour: published indicator, Malta's rise to 2024 from base years 2014-2019",+19.5% to +97.0%,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",2013 is not a convenient base for the PN
+"Bound: Malta's 2024 indicator with zero electricity-sector (D) emissions, vs 2013",329.8 vs 325.21,g/EUR,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","+1.4%: still above 2013, so no renewables policy could have removed the rise (371.69 x (1 - D/TOTAL 2024))"
+Malta renewable shares 2013 -> 2024: electricity / overall,1.6 -> 10.7 / 3.8 -> 17.2,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",shares rose over the period
+Malta: components of NACE-total GHG 2013 -> 2024: air transport / electricity (D) / other transport (H less H51) / all other activities,0.30 -> 4.73 / 1.70 -> 0.74 / 0.18 -> 0.26 / 0.59 -> 0.86,Mt CO2e,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",sum = NACE total; Figure 2's 'other activities' = other transport + all other
+"Malta (bridging table): air-transport fuel bought abroad as share of air transport (H51), 2013 / 2024",299 of 304 kt / 100%,,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",rise in fuel bought abroad 4431 kt >= rise in H51 4426 kt: all of the rise
+"Estonia: emissions change 2013-2024, residence accounts / territorial inventory (the release says 'reduced emissions by')",-55.4 / -53.1,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","intensity change -63.9%; 2024 flags: accounts 'i', intensity 'i', inventory ''"
+"Ireland: emissions change 2013-2024, residence accounts / territorial inventory (the release says 'reduced emissions by')",+13.7 / -6.9,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","intensity change -50.2%; 2024 flags: accounts 'e', intensity 'e', inventory ''"
+"Finland: emissions change 2013-2024, residence accounts / territorial inventory (the release says 'reduced emissions by')",-37.9 / -37.6,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","intensity change -43.9%; 2024 flags: accounts 'i', intensity 'i', inventory ''"
+Ireland: air transport (H51) 2013 -> 2024 and its share of the rise in residence emissions,9.90 -> 16.32 Mt; 87%,,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",territorial inventory 57.95 -> 53.93 Mt
+EU-27 published intensity flags 2013 / 2023 / 2024,i / i / i,flags,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",
+Eurostat news 18 Dec 2025: EU share and three lowest (vs current nrg_ind_ren),"EU 25.2; BE 14.3 (now 14.3), LU 14.7 (now 14.7), IE 16.1 (now 16.1)",%,data/cc-114/eurostat_ren_news_dec2025.csv,Malta not among them in the release the PN could have used; Malta now 17.2
+"Renewable share, overall (gross final energy consumption), 2023: Malta / EU-27",15.4 / 24.6,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","Malta 4 from the bottom of 27; lowest three: LU 14.3, BE 14.7, IE 15.2"
+"Renewable share, overall (gross final energy consumption), 2024: Malta / EU-27",17.2 / 25.2,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","Malta 4 from the bottom of 27; lowest three: BE 14.3, LU 14.7, IE 16.1"
+"Renewable share, electricity, 2023: Malta / EU-27",10.7 / 45.4,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","Malta 1 from the bottom of 27; lowest three: MT 10.7, CZ 16.4, LU 18.2"
+"Renewable share, electricity, 2024: Malta / EU-27",10.7 / 47.5,%,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)","Malta 1 from the bottom of 27; lowest three: MT 10.7, CZ 17.9, LU 20.5"
+Eurostat status flags on Malta values used,env_ac_aeint_r2 2024:i; env_ac_aibrid_r2 2024:i; env_ac_ainah_r2 2024:i,flags,"Eurostat (data/cc-114/eurostat_extract.csv, retrieved 6 Oct 2026)",i = imputed by Eurostat or other receiving agencies; e = estimated; p = provisional
