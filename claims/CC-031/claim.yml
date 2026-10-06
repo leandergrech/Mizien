@@ -6,7 +6,7 @@ status: Drafted
 verdict: Largely supported
 verdict_confidence: Moderate
 claim:
-  text: "Gozo Minister Clint Camilleri (25 Sep 2026), presenting the Gozo climate neutrality plan: 'The plan published today is an important step to continue to realise our vision of Gozo becoming the first climate-neutral region in Malta.' As reported by Gozo Today (paraphrase), he said Gozo had already begun its transition with measures including a fully electric public transport fleet."
+  text: "Quoted (Gozo Today, 25 Sep 2026): Gozo Minister Clint Camilleri, presenting the Gozo climate neutrality plan, said 'The plan published today is an important step to continue to realise our vision of Gozo becoming the first climate-neutral region in Malta.' Gozo Today's own paraphrase, not his quoted words: he said Gozo had already begun its transition with measures including a fully electric public transport fleet."
   quote: The plan published today is an important step to continue to realise our vision of Gozo becoming the first climate-neutral region in Malta.
   speaker: Clint Camilleri, Minister for Gozo
   date: '2026-09-25'
@@ -32,14 +32,14 @@ claim:
     date: 30 Sep 2026
     url: https://grda.mt/gozo-towards-climate-neutrality-conference/
     note: "Says KPMG presented the plan as a strategic reference framework. The plan itself was not found. Read 6 Oct 2026."
-counter_evidence: "The fleet is the operator's and government's account (TVM News); Transport Malta's fleet page was not readable. Scale check: the operator's 1.3 kt CO2 a year saving is about 2.6% of a population-proportional estimate of Gozo's road-transport emissions (Eurostat has no Gozo inventory). Malta's road-transport emissions rose 39% from 2005 to 2024. The plan itself, with any target year, baseline and boundary, was not obtained."
+counter_evidence: "The fleet is the operator's and government's account (TVM News); Transport Malta's fleet page was not readable. Scale check: the operator's 1.3 kt CO2 a year saving is about 2.6% of a population-proportional estimate of Gozo's road-transport emissions (Eurostat has no Gozo inventory). Malta's road-transport emissions rose 39% from 2005 to 2024 (national figure; there is no Gozo series). The plan itself, with any target year, baseline and boundary, was not obtained. Earlier sources mention 2030 for Gozo's aim (GRDA, Apr 2022, EU Mission; Greening the Islands, May 2022, its own wording), not in the minister's 2026 words."
 tests: TVM News reports of the Gozo bus electrification; Eurostat env_air_gge and demo_r_pjangrp3 (scale check, tools/cc-031-report/calc.py); the plan itself (not obtained).
 why_low_hanging: 'Done: Claim Check 031 report and flyer.'
 tags: [Promise-without-baseline]
 tags_provisional: false
 priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Mixed check: the factual part (electric fleet) is rated; the quoted vision is a pledge rated Not measurable (as of 6 Oct 2026). The fleet statement is Gozo Today''s paraphrase of the minister. Evidence is operator and government reporting; the plan was not obtained, so the label may change. Gozo emission figures are population-proportional approximations, not Gozo data. Pledge label Not measurable: pending right of reply.'
+caveats: 'Mixed check: the factual part (electric fleet) is rated; the quoted vision is a pledge rated Not measurable (as of 6 Oct 2026). The fleet statement is Gozo Today''s paraphrase of the minister. Evidence is operator and government reporting; the plan was not obtained, so the label (a judgement on the quoted words only) may change. Gozo emission figures are population-proportional approximations, not Gozo data. Pledge label Not measurable: right of reply on hold until the Gozo plan is read.'
 right_of_reply:
   sent: null
   deadline: null
@@ -62,7 +62,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
   - id: CC-031A
     text: "Vision of Gozo becoming the first climate-neutral region in Malta"
     said_by: "Camilleri (quoted) [1]"
-    finding: "A statement of intent. The words give no target year, baseline or boundary. The plan, which may, was not obtained. Rated as a pledge."
+    finding: "A statement of intent. The quoted words give no target year, baseline or boundary (plan not read; it may). Rated as a pledge, on those words only."
     rating: "Not measurable (pledge)"
     tone: grey
   - id: CC-031B
@@ -83,7 +83,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     finding: "About 1.3 kt CO2 a year, roughly 2.6% of a proportional Gozo road-transport estimate: a small part of the total, and not something the statement asserts otherwise."
     rating: "Context"
     tone: amber
-version: '1.0'
+version: '1.1'
 last_reviewed: '2026-10-06'
 thumbnail:
   figure: ≈2.6%
@@ -97,7 +97,7 @@ pledge:
   vehicle: Statement on the Gozo climate neutrality plan (Gozo Today, 25 Sep 2026)
   deadline: null
   target: Gozo becoming the first climate-neutral region in Malta
-  note: No target year, baseline or boundary in the quoted words; the plan itself was not obtained and may set them.
+  note: Not in the quoted words; plan not read (it may set a target year, baseline and boundary). Label is a judgement on the quoted words only.
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-05
     step: note
@@ -115,3 +115,16 @@ history:   # research log: the date each step of the research was done (not when
     step: version
     version: "1.0"
     note: "First issue. Verdict Largely supported (moderate confidence) for the fleet; pledge label Not measurable (as of 6 Oct 2026); pending right of reply."
+  - date: 2026-10-06
+    step: note
+    note: "Audit follow-up research: plan searched for again (GRDA documents pages, GRDA transport master plan, web, Wayback) and not found. gozo.news 25 Sep 2026 article read via a summarising tool: no target year. Greening the Islands 31 May 2022 (Wayback): 'Gozo wants to become carbon neutral by 2030' (GTI's wording); GRDA 29 Apr 2022: EU Mission 100 climate-neutral cities by 2030. Neither is a 2026 commitment by the minister or the plan; label kept, flagged to the maintainer. Search log in literature/CC-031/notes.md."
+  - date: 2026-10-06
+    step: correction
+    note: "Report section 3: TVM News's indirect speech about the minister ('biggest ever investment in public transport in Gozo') was in quotation marks; now TVM News's own words, unquoted. Removed unsourced assertions (Gozo has no power station; most road emissions are private vehicles; ferry fuel may be counted elsewhere). Removed 'so the pressure runs against the plan' (the +39% is Malta's road emissions, now stated as a national figure). Flyer card '0 Target years found' replaced by 'Not in the quoted words; plan not read'."
+  - date: 2026-10-06
+    step: clarification
+    note: "claim.text now separates the quoted sentence from Gozo Today's paraphrase. Pledge label stated as a judgement on the quoted words only. Right of reply on hold until the Gozo plan is read (maintainer decision), replacing 'pending right of reply'."
+  - date: 2026-10-06
+    step: version
+    version: "1.1"
+    note: "1.1: corrections after the 6 Oct 2026 audit: paraphrase unquoted, unsourced assertions removed, rhetoric removed, plan search repeated and logged, earlier 2030 mentions recorded, label basis and right-of-reply status clarified."
