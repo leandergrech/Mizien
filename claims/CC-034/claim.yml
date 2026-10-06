@@ -30,9 +30,10 @@ claim:
     publisher: "ERA"
     date: "Jan 2025"
     url: "https://era.org.mt/wp-content/uploads/2025/02/DIGITAL-Air-Quality-Plan.pdf"
-    note: "104 pages, ISBN 978-9918-628-10-0; read in full (pp. 3, 21-67, 91, 95) on 6 Oct 2026 from the Wayback copy
-      saved 5 Oct 2026. Executive summary, p. 3: measures 'have already contributed to improvements in air quality'.
-      Evidence of effect given only for the power-sector reform (pp. 57-58) and free school transport (pp. 59-60)."
+    note: "104 pages, ISBN 978-9918-628-10-0; pages 3, 21-67, 91 and 95 read on 6 Oct 2026 from the Wayback copy saved
+      5 Oct 2026; pp. 4-20, 68-90 and 96-104 skimmed for effect estimates of the six measures (none found). Executive
+      summary, p. 3: measures 'have already contributed to improvements in air quality'. Evidence of effect given only
+      for the power-sector reform (pp. 57-58) and free school transport (pp. 59-60)."
   - title: "Air Quality download service: Malta, PM10, PM2.5, NO2, SO2, CO, all sampling points"
     publisher: "European Environment Agency"
     date: "retrieved 6 Oct 2026"
@@ -50,22 +51,36 @@ claim:
     date: "updated 7 Sep 2026; retrieved 6 Oct 2026"
     url: "https://ec.europa.eu/eurostat/databrowser/view/env_air_emis/default/table"
     note: "Power-sector (NFR 1A1a) and road-transport emissions; car stock."
+  - title: "IMO 2020: cutting sulphur oxide emissions"
+    publisher: "International Maritime Organization"
+    date: "read 6 Oct 2026"
+    url: "https://www.imo.org/en/MediaCentre/HotTopics/Pages/Sulphur-2020.aspx"
+    note: "Sulphur limit for ships' fuel oil outside emission control areas: 0.50% m/m from 1 January 2020, down from 3.50%. A co-driver of SO2 at Żejtun."
   quote: "The plan outlines actions that have already yielded positive results for Malta's air quality, measures
     committed to by the Government for imminent implementation, and additional proposed measures designed to further
     enhance air quality in Malta."
-counter_evidence: 'Power-sector reform is shown to have helped: power-station sulphur oxides fell 99.9% (2008-2018) and
-  SO2 in the air fell 82% at Żejtun. NO2 and PM2.5 at the Msida roadside fell 22% and 17% (2015-17 to 2021-23), in step
-  with a cleaner fleet, but no named transport measure is shown to have caused it. PM10 at Msida, the reason for the
-  plan, did not improve: after ERA''s natural-source deduction 2023 had 52 days over the limit (35 allowed), the most of
-  2015-2025, after free school transport, the fast ferry and free public transport began. The plan gives uptake or
-  passenger figures, not air-quality effects, for grants, ferry landing places, the fast ferry and free public transport;
-  its one test (free school transport, NO2 "around 10 µg/m³" lower at rush hour) does not reproduce in validated data
-  (-1.0 µg/m³ at 07:00; autumn 2018 the highest morning NO2 of 2013-2023). In the 12 months after free public transport
-  began, 10 of 11 station readings were higher than in the 12 months before.'
+counter_evidence: 'Power-sector reform is shown to have helped: power-station sulphur oxides fell 99.8% in the reform
+  years (2014-2018; 99.9% since 2008, but 55% of that fall came before 2015) and SO2 in the air fell 83% at Żejtun
+  (2008-12 to 2018-23, leaving out 2011 with 28.5% of the year measured; the ships'' fuel-sulphur cap of 1 January 2020
+  is a co-driver the data cannot separate); SO2 at Kordin was already 2.6 µg/m³ in 2014, before the reform. NO2 and
+  PM2.5 at the Msida roadside fell 22% and 17% (2015-17 to 2021-23; NO2 -20% to 2022-23 alone), in step with a cleaner
+  fleet, but no named transport measure is shown to have caused it. PM10 at Msida, the reason for the plan, did not
+  improve: after ERA''s natural-source deduction 2023 had 52 days over the limit (35 allowed), the most of 2015-2023 at
+  the old Msida point (ERA''s 2024-25 zone counts, 20 and 23, come from other stations and are not comparable), after
+  free school transport, the fast ferry and free public transport began; a single-site, single-year comparison with no
+  weather adjustment. The plan gives uptake or passenger figures, not air-quality effects, for grants, ferry landing
+  places, the fast ferry and free public transport (plan pages 3, 21-67, 91 and 95 read; pp. 4-20, 68-90 and 96-104
+  skimmed for effect estimates, none found). Its one test (free school transport, NO2 "around 10 µg/m³" lower at rush
+  hour) does not reproduce in validated data: the peak falls by 1.0 µg/m³ (62.3 to 61.3 at Start 07; +0.7 on weekdays
+  only); the plan''s 2018-19 curves reproduce only with hour-ending labels and its 2014-17 baseline does not reproduce
+  under either labelling, so its gap sits in the baseline. A sustained fall of 11.5 µg/m³ in October-December
+  weekday-morning NO2 (2013-17 to 2019-23) began in 2019, not 2018, and cannot be tied to the measure. In the 12 months
+  after free public transport began, 10 of 11 station readings were higher than in the 12 months before.'
 tests: EEA validated station data (AirBase, E1a) for PM10, PM2.5, NO2, SO2 and CO at every ERA station, 2006-2025;
   ERA's attainment reports (dataflow G) 2015-2025; Eurostat env_air_emis and road_eqs_carpda; traffic site vs
   background stations; before/after windows around each dated measure; the plan's own school-transport comparison
-  recomputed (tools/cc-034-report/calc.py, data/cc-034/checks.csv).
+  recomputed, with a test of the hour labels of its Figure 26 against the EEA hourly profiles (tools/cc-034-report/
+  calc.py, digitise_fig26.py, data/cc-034/checks.csv).
 why_low_hanging: 'Done: Claim Check 034 report and flyer.'
 tags:
 - Input-as-outcome
@@ -73,9 +88,15 @@ tags_provisional: false
 priority: Done (v1.0)
 data_readiness: Medium
 caveats: 'Draft verdict Not substantiated (moderate), pending right of reply from ERA. Missing evidence, not evidence
-  against: flat PM10 does not prove the measures did nothing (car numbers +31%, 2013-2025). No weather normalisation or
-  traffic data; the Msida monitor moved about 300 m in January 2024, so 2024-25 are not compared with earlier years.
-  ERA''s page and plan were read from Wayback copies saved on 5 Oct 2026. Scerri et al. (2016) is second-hand.'
+  against: flat PM10 does not prove the measures did nothing (car numbers +31%, 2013-2025). Wording rated: the six
+  measures the plan names (our reading); read as any action that worked, the power-sector reform alone would meet the
+  claim. No weather normalisation or traffic data; the 2023 PM10 count and the +8.1 µg/m³ after free public transport
+  are single-site, single-year comparisons; the Msida monitor moved about 300 m in January 2024, so 2024-25 are not
+  compared with earlier years, and the Msida Creek works lie 112 m from the old point (when work near it began is not
+  verified). The plan''s Figure 26 was read off the PDF (±1 µg/m³ at the peaks) and its hour convention is not stated.
+  ERA''s page and plan were read from Wayback copies saved on 5 Oct 2026 (plan pages 3, 21-67, 91 and 95 read; pp. 4-20,
+  68-90 and 96-104 skimmed for effect estimates of the six measures, none found); ERA''s consultation report was not
+  read. Scerri et al. (2016) and the EEA''s UTC+1 convention for hourly times are second-hand.'
 right_of_reply:
   sent: null
   deadline: null
@@ -85,6 +106,8 @@ evidence_shown:
   diurnal.csv; files and SHA-256 in eea_files.csv)
 - ERA attainment reports to the EEA, 2015-2025 (data/cc-034/g_attainment.csv)
 - Eurostat env_air_emis and road_eqs_carpda (data/cc-034/eurostat_emissions.csv, eurostat_cars.csv)
+- The plan's Figure 26 read off the PDF (data/cc-034/plan_fig26_digitised.csv, tools/cc-034-report/digitise_fig26.py)
+  and the EEA clock check (data/cc-034/clock_check.csv)
 - Calculations in data/cc-034/checks.csv (tools/cc-034-report/calc.py)
 outputs:
   report: report.pdf
@@ -100,7 +123,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
              # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
   - id: CC-034A
     text: "The reform in the power generation sector has contributed to improvements in air quality"
-    finding: "Power-station sulphur oxides −99.9% and nitrogen oxides −95%, 2008 to 2018 [5]; SO₂ in the air 16.0 to 1.5 µg/m³ at Kordin (2012 to 2015) and −82% at Żejtun [3]; nickel down at Kordin (plan) [2]."
+    finding: "Power-station sulphur oxides −99.8% and nitrogen oxides −90%, 2014 to 2018 (−99.9% and −95% from 2008; 55% of the sulphur fall came before 2015) [5]; SO₂ in the air −83% at Żejtun (2008–12 to 2018–23); Kordin already 2.6 µg/m³ in 2014 [3]; nickel down at Kordin (plan) [2]."
     rating: "Supported"
     tone: green
   - id: CC-034B
@@ -110,7 +133,7 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: amber
   - id: CC-034C
     text: "Free school transport (from 2018) has contributed"
-    finding: "The plan’s NO₂ fall of “around 10 µg/m³” at rush hour does not reproduce (−1.0 at 07:00); autumn 2018 had the highest morning NO₂ of 2013–2023; the term-time change matches the Attard background [2, 3]."
+    finding: "The plan’s NO₂ fall of “around 10 µg/m³” at rush hour does not reproduce: peak to peak −1.0 in the EEA data, and its 2014–17 baseline cannot be matched; autumn 2018 had the highest morning NO₂ of 2013–2023; a sustained fall of 11.5 came from 2019 and cannot be tied to the measure; the term-time change matches the Attard background [2, 3]."
     rating: "Not shown"
     tone: orange
   - id: CC-034D
@@ -120,12 +143,12 @@ subclaims:   # parts of the claim tested separately (the report's sub-claim tabl
     tone: orange
   - id: CC-034E
     text: "Free public transport for all (from October 2022) has contributed"
-    finding: "The plan offers no measured effect [2]. In the year after it began, 10 of 11 station readings were higher; Msida PM10 +8.1 µg/m³, 90 days over 50 against 48 [3]."
+    finding: "The plan offers no measured effect [2]. In the year after it began, 10 of 11 station readings were higher; Msida PM10 +8.1 µg/m³, 90 days over 50 against 48 (one site, one year, no weather adjustment) [3]."
     rating: "Not shown"
     tone: orange
   - id: CC-034F
     text: "Msida exceeded the PM10 daily limit in 2018 and 2023 (the plan’s reason)"
-    finding: "ERA’s reports: 41 and 52 days after natural deduction, 86 and 84 before; 35 allowed [4]. 2023 is the highest of 2015–2025."
+    finding: "ERA’s reports: 41 and 52 days after natural deduction, 86 and 84 before; 35 allowed [4]. 2023 is the highest of 2015–2023 at the old Msida point; ERA’s 2024–25 counts (20, 23) are zone counts from other stations."
     rating: "Accurate"
     tone: green
 version: '1.0'
@@ -148,11 +171,24 @@ history:   # research log: the date each step of the research was done (not when
       The claim record combines the two documents."
   - date: 2026-10-06
     step: note
-    note: "Findings: power-station SOx -99.9% and NOx -95% (2008-2018), SO2 in the air -82% at Żejtun; Msida NO2 -22%
-      and PM2.5 -17% (2015-17 to 2021-23), PM10 flat; ERA's own counts after natural deduction 41 days (2018) and
-      52 (2023), the most of 2015-2025; the plan's school-transport NO2 fall does not reproduce; 10 of 11 station
-      readings higher in the year after free public transport began. CC-007 and CC-008 data reused for station
-      metadata; CC-033 and CC-038 have no data on this branch."
+    note: "Findings (figures as revised in the review fixes below): power-station SOx -99.8% and NOx -90% (2014-2018;
+      -99.9% and -95% from 2008), SO2 in the air -83% at Żejtun; Msida NO2 -22% and PM2.5 -17% (2015-17 to 2021-23),
+      PM10 flat; ERA's own counts after natural deduction 41 days (2018) and 52 (2023), the most of 2015-2023 at the old
+      Msida point; the plan's school-transport NO2 fall does not reproduce; 10 of 11 station readings higher in the year
+      after free public transport began. CC-007 and CC-008 data reused for station metadata; CC-033 and CC-038 have no
+      data on this branch."
+  - date: 2026-10-06
+    step: note
+    note: "Review fixes before release (independent review, 15 findings). Added a test of the hour labels of the plan's
+      Figure 26 against the EEA hourly profiles (clock check, peak hours, fits under two labellings; calc.py section G,
+      digitise_fig26.py): the plan's 2018-19 curves reproduce only with hour-ending labels, its 2014-17 baseline under
+      neither. Stated the plan pages read (3, 21-67, 91, 95) and skimmed (4-20, 68-90, 96-104) and logged the skim.
+      Re-based sub-claim A (2014 baseline; Kordin and Żejtun baselines and coverage flagged; ships' fuel-sulphur cap
+      noted). Qualified 'highest of 2015-2023 at the old Msida point' (ERA's 2024-25 counts are zone counts from other
+      stations). Added the sustained 2013-17 to 2019-23 fall, morning-hour coverage and the CO window, the NO2 2022-23
+      sensitivity, construction PM10 and the Msida Creek works. PM10 day counts now use unrounded daily values (2020:
+      37). Stated which wording is rated and why not Largely supported. Layout: figure notes moved into captions and the
+      report cut to 10 pages (Figure 5 dropped; its numbers stay in the text)."
   - date: 2026-10-06
     step: version
     version: "1.0"
