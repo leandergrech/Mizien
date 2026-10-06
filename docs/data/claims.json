@@ -2489,7 +2489,7 @@
       "similar": [
         {
           "id": "CC-113",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "share",
             "highest"
@@ -5295,20 +5295,20 @@
           ]
         },
         {
-          "id": "CC-113",
-          "score": 0.27,
-          "terms": [
-            "fuel",
-            "subsidies"
-          ]
-        },
-        {
           "id": "CC-071",
           "score": 0.26,
           "terms": [
             "eur",
             "subsidies",
             "million"
+          ]
+        },
+        {
+          "id": "CC-113",
+          "score": 0.26,
+          "terms": [
+            "fuel",
+            "subsidies"
           ]
         }
       ]
@@ -6297,12 +6297,13 @@
     },
     {
       "id": "CC-113",
-      "title": "EEA: Malta among highest fossil-fuel subsidies",
+      "title": "EEA: Malta among highest fossil-fuel subsidies relative to GDP",
       "category": "Climate & Energy",
       "claim": "European Environment Agency (indicator page, 29 Jan 2025): in 2023 fossil-fuel subsidies represented the highest shares of GDP in Malta, Poland and Slovakia, all at or above 1.5%.",
-      "counter": "The IMF's 2025 Article IV report estimates Malta's energy subsidy cost falling from about 1.8% of GDP in 2022 to about 0.8% in 2025 (see CC-022); the Government plans about EUR 400 million of energy support to 2027 (CC-095). The EEA's definition of a fossil-fuel subsidy (including support that lowers consumer prices) differs from budget lines.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "The ranking reproduces exactly from the Commission's subsidy database (2024 edition) that the EEA used, and holds with Eurostat GDP (as of 6 Oct 2026, which the EEA could not have had) and, as a lower bound, with the unconfirmed items set to zero; but Slovakia's \"at or above 1.5%\" holds only on the EEA's basis (1.507%; 1.49% with Eurostat GDP; 1.39% with the unconfirmed items set to zero). Malta's 2023 figure (EUR 605m, or 633m with a stand-in) is 96% one line, compensation to Enemalta for frozen energy prices, booked as actual costs and wholly to natural gas; it is 2.1 times the IMF Article IV energy-subsidy cost for 2023 (1.4% of GDP, CR 26/29) and 1.7 times the Government's expected cost (1.7% of GDP, DBP 2024, other basic commodities included), a gap we could not reconcile. For 2022 the database was lower (1.71% of GDP, the line EUR 246.6m) than the Government (2.5%, about EUR 451m) and the IMF (1.8%, about EUR 325m); over 2022-23 the line (EUR 826.5m) is close to the Government's expected cost (about EUR 806m), which points to timing or basis; the 2024 gap (about 1.8% against 0.87%) persists. The IMF's price-gap database records no explicit subsidy for Malta; the OECD/IISD tracker has no OECD or IEA estimate for Malta. Malta was 0.08-0.10% of GDP in 2015-2020 (24th-27th of 27) and is first again for 2024 in COM(2026) 472. In euros Malta's EUR 0.63bn is 19th of 27.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Electricity & grid",
       "location": {
@@ -6312,22 +6313,57 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "European Environment Agency",
       "bodies": [
         "eea"
       ],
+      "subclaims": [
+        {
+          "id": "CC-113A",
+          "text": "In 2023 the highest shares of GDP were in Malta, Poland and Slovakia",
+          "finding": "Rebuilt from the Commission database: Malta 3.37%, Poland 2.09%, Slovakia 1.51%, then Croatia 1.15% [3, 4]; the Commission’s own chart of 28 Jan 2025 shows the same [19]. The same three lead with Eurostat’s GDP and, as a lower bound, with the unconfirmed items set to zero [5].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-113B",
+          "text": "“all at or above 1.5%”",
+          "finding": "True on the EEA’s basis (Slovakia 1.507%). With Eurostat’s GDP of 6 Oct 2026 (later than the EEA could have used) Slovakia is 1.49%; with the unconfirmed items set to zero (a lower bound), 1.39%. Malta and Poland clear the line in every version [4, 5].",
+          "rating": "Largely accurate",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-113C",
+          "text": "Malta’s share, 3.37% of GDP, the highest (the EEA’s linked chart)",
+          "finding": "Reproduced exactly; 3.03% with Eurostat’s GDP of 6 Oct 2026; first in the Commission’s 2024 data too [8]. 96% is one EUR 580m line; the total is 2.1 times the IMF Article IV estimate of the 2023 cost and 1.7 times the Government’s, though in 2022 the database was lower than both [10, 12].",
+          "rating": "Largely accurate",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-113D",
+          "text": "Malta’s support is a fossil-fuel subsidy",
+          "finding": "Yes under the EU reporting method, which the EEA states; the IMF’s price-gap database records none, and the OECD/IISD tracker has no OECD or IEA estimate for Malta [9, 13, 14]. The database books Malta’s main line wholly to natural gas, although 21.7% of the 2023 electricity supply was imported [4, 20]; the rank does not change.",
+          "rating": "Accurate (official method)",
+          "tone": "green"
+        }
+      ],
       "date": "2025-01-29",
       "quote": "In 2023, fossil fuel subsidies represented the highest shares of gross domestic product (GDP) in Malta, Poland, and Slovakia (all at or above 1.5%).",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-06",
+      "outputs": {
+        "report": "claim-files/CC-113/report.pdf",
+        "flyer_pdf": "claim-files/CC-113/flyer.pdf",
+        "flyer_png": "claim-files/CC-113/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-113/claim.yml",
       "similar": [
         {
           "id": "CC-037",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "share",
             "highest"
@@ -6335,7 +6371,7 @@
         },
         {
           "id": "CC-095",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "fuel",
             "subsidies"
