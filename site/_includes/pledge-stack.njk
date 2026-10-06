@@ -1,6 +1,7 @@
 {#- The pledge stack (site/_lib/who.js, pledgeStack): expects ps. The SVG, then the same pledges as a list. -#}
 <figure class="pstack-fig">
   <div class="pstack-svg">{{ ps.svg | safe }}</div>
+  <p class="ps-hint small" hidden>Drag sideways to turn the stack, up or down to tilt it (on a phone: sideways only). It is always seen from above, newest year on top. Arrow keys work too; Home resets.</p>
   <figcaption>
     <ol class="pstack-list">
       {%- for r in ps.rows %}
@@ -13,3 +14,4 @@
     </ol>
   </figcaption>
 </figure>
+<script src="/assets/pstack.js" defer></script>

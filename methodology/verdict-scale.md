@@ -41,3 +41,14 @@ Rules for pledges:
 - *Missed* needs the deadline or term to have passed and evidence that can be shown, as for *Misleading* and *Contradicted*. Without a count at the deadline, the label stays at the last one the evidence supports.
 - A label judges delivery against the pledge as worded, not anyone's intent. Revisit it when new data are published or the deadline passes, and record the change in the claim's research log.
 - In `claim.yml` the label sits in a `pledge:` block: `status` (one of the labels above), `as_of`, `made_by` (ids in `data/bodies.csv`), `made_on`, `vehicle` (the manifesto, budget or plan), `deadline` (a date, or null when none is stated), `target`, and an optional `note`.
+
+## Summaries on Who said it
+
+The "Who said it" pages summarise the verdicts on each body's claims (its own, its offices' and its people's), never a
+person's. Five or more checked claims: a verdict bar of counts (no percentages). Three or four: a tentative balance on
+a line from Contradicted (0) through Misleading (0.25), Not substantiated (0.5) and Largely supported (0.75) to
+Supported (1), the average weighted by the age of each claim (the date it was made, not checked): the weight halves
+every two years; an undated claim counts as three years older than the body's oldest dated checked claim, and if none
+is dated all count the same, so the balance changes only when claims or verdicts do. Fewer than three: a count only.
+Draft verdicts are counted. Pledge labels are shown separately and never counted as verdicts. Computed at build time
+in `site/_lib/who.js`; explained to readers on the Connections page (`/methodology/connections/#summaries`).

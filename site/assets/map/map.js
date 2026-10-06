@@ -2105,10 +2105,21 @@
     cam.zoom = z1;
   }
   function panBy(dx, dy) { cam.tpx = cam.px += dx; cam.tpy = cam.py += dy; }
+  // Orbit limits. The sphere and the web of links can be turned any way. Flat arrangements cannot: a plate or ring
+  // (patterns, who said it, pledges) is always seen from above, never edge-on or from below, so it is clear which side
+  // is up; a row (verdicts, stages, years) only swings so far either side and never turns round, so its order still
+  // reads left to right.
+  function orbitLimits() {
+    var L = MODES[mode] && MODES[mode].layout;
+    if (L === "ring") return { lo: -1.25, hi: -0.12, yaw: null };
+    if (L === "arc" || L === "line") return { lo: -0.75, hi: 0.2, yaw: 0.85 };
+    return { lo: -1.35, hi: 1.35, yaw: null };
+  }
   function orbitBy(dx, dy) {
+    var O = orbitLimits();
     cam.yaw += dx * 0.006; if (cam.tyaw !== null) cam.tyaw += dx * 0.006;
-    var lo = -1.35, hi = 1.35;
-    cam.tpitch = cam.pitch = Math.max(lo, Math.min(hi, cam.pitch + dy * 0.006));
+    if (O.yaw != null) { cam.yaw = Math.max(-O.yaw, Math.min(O.yaw, cam.yaw)); if (cam.tyaw !== null) cam.tyaw = Math.max(-O.yaw, Math.min(O.yaw, cam.tyaw)); }
+    cam.tpitch = cam.pitch = Math.max(O.lo, Math.min(O.hi, cam.pitch + dy * 0.006));
   }
   function midpoint() { var pts = Object.keys(activePointers).map(function (id) { return activePointers[id]; });
     return { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 }; }

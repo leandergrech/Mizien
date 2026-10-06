@@ -82,9 +82,13 @@ export function pledgeStack(pledges, claims, ids) {
   const years = [...new Set(list.map(pledgeYear))].sort((a, b) => a - b);
   const topics = [...new Set(list.map((p) => p.category))].sort();
   // geometry: flat disks seen from slightly above, the newest on top
-  const W = 660, rx = 230, ry = 44, gap = 132, cx = 340, top = 30;   // gap > 2 ry + room: the back of a disk stays clear of the front of the one above
+  // geometry, shared with assets/pstack.js (which turns and tilts the stack): rx the disk radius, ry its height on
+  // screen at the starting tilt; the gap between disks grows with the tilt so the back of a disk stays clear of the
+  // front of the one above
+  const W = 660, rx = 230, ry = 44, cx = 340, top = 30, gap = Math.max(132, 2 * ry + 44);
   const H = top + ry + (years.length - 1) * gap + ry + 30;
-  const cyOf = (y) => top + ry + (years.length - 1 - years.indexOf(y)) * gap;
+  const level = (y) => years.length - 1 - years.indexOf(y);   // 0 = the top (newest) disk
+  const cyOf = (y) => top + ry + level(y) * gap;
   const sector = (t) => topics.indexOf(t) / topics.length * Math.PI * 2 + Math.PI * 0.5;   // topics spaced round the disk, the first at the front
   const slot = {};
   const dots = list.map((p) => {
@@ -107,21 +111,21 @@ export function pledgeStack(pledges, claims, ids) {
     edges.push({ a: A, b: B, why, avg, ...(avg == null ? { colour: "#8a9a90", name: null } : verdictColour(avg)) });
   }
   const svg = [];
-  svg.push(`<svg class="pstack" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="pstack-t pstack-d">`);
+  svg.push(`<svg class="pstack" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="pstack-t pstack-d" data-geo='${JSON.stringify({ W, rx, ry, cx, top, n: years.length })}'>`);
   svg.push(`<title id="pstack-t">Pledges by the year they were made</title><desc id="pstack-d">${esc(years.length)} disks, one per year, newest on top; ${esc(list.length)} pledges; lines join similar pledges made in different years.</desc>`);
   // disks, oldest (bottom) first so newer ones lie over them
   for (const y of years) {
     const cy = cyOf(y), n = list.filter((p) => pledgeYear(p) === y).length;
-    svg.push(`<g class="ps-disk"><ellipse cx="${cx}" cy="${cy + 7}" rx="${rx}" ry="${ry}" class="ps-edge-band"/><ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" class="ps-top"/>` +
+    svg.push(`<g class="ps-disk" data-l="${level(y)}"><ellipse cx="${cx}" cy="${cy + 7}" rx="${rx}" ry="${ry}" class="ps-edge-band"/><ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" class="ps-top"/>` +
       `<text x="${cx - rx - 22}" y="${cy + 5}" class="ps-year" text-anchor="end">${y}</text><text x="${cx - rx - 22}" y="${cy + 22}" class="ps-n" text-anchor="end">${n} pledge${n === 1 ? "" : "s"}</text></g>`);
   }
   for (const e of edges) {
     const dash = e.avg == null ? ` stroke-dasharray="5 4"` : "";
-    svg.push(`<line x1="${e.a.x.toFixed(1)}" y1="${e.a.yy.toFixed(1)}" x2="${e.b.x.toFixed(1)}" y2="${e.b.yy.toFixed(1)}" class="ps-link" stroke="${e.colour}"${dash}><title>${esc(e.a.p.id)} and ${esc(e.b.p.id)}: ${esc(e.why)}${e.name ? `; average verdict of the facts checked: ${esc(e.name)}` : "; no verdict on the facts yet"}</title></line>`);
+    svg.push(`<line data-a="${dots.indexOf(e.a)}" data-b="${dots.indexOf(e.b)}" x1="${e.a.x.toFixed(1)}" y1="${e.a.yy.toFixed(1)}" x2="${e.b.x.toFixed(1)}" y2="${e.b.yy.toFixed(1)}" class="ps-link" stroke="${e.colour}"${dash}><title>${esc(e.a.p.id)} and ${esc(e.b.p.id)}: ${esc(e.why)}${e.name ? `; average verdict of the facts checked: ${esc(e.name)}` : "; no verdict on the facts yet"}</title></line>`);
   }
   for (const d of dots) {
     const pv = d.p.pledge || {}, ring = d.verdict ? COLOUR[d.verdict] : "#eef3ef";
-    svg.push(`<a href="${esc(d.p.path)}" class="ps-dot"><title>${esc(d.p.id)} ${esc(d.p.title)}: pledge ${esc(pv.status)}${d.verdict ? `; facts: ${esc(d.verdict)}` : ""}</title>` +
+    svg.push(`<a href="${esc(d.p.path)}" class="ps-dot" data-a="${d.a.toFixed(4)}" data-l="${level(d.y)}"><title>${esc(d.p.id)} ${esc(d.p.title)}: pledge ${esc(pv.status)}${d.verdict ? `; facts: ${esc(d.verdict)}` : ""}</title>` +
       `<circle cx="${d.x.toFixed(1)}" cy="${d.yy.toFixed(1)}" r="9" fill="${esc(pv.colour || "#716f8d")}" stroke="${ring}" stroke-width="2.6"/>` +
       `<text x="${(d.x + 13).toFixed(1)}" y="${(d.yy + 4).toFixed(1)}" class="ps-id">${esc(d.p.id)}</text></a>`);
   }

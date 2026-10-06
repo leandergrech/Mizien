@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 6 October 2026 (orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -83,6 +83,22 @@ on the map (`/?view=map&sel=claim:CC-NNN`, when it has a location) and to the cl
 resolved against the script's own folder, so they work under the `/Mizien/` prefix (they did not before: fixed).
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
+
+## Orbit limits, turnable pledge stack, method write-up (6 October 2026)
+
+- **Orbit limits** (`map.js`, `orbitLimits()`, maintainer request: "it gets confusing which side is up"). Flat
+  arrangements can no longer be turned over: a plate or ring (patterns, who said it, pledges) is always seen from above,
+  pitch between -1.25 and -0.12 (never edge-on or from below); a row (verdicts, stages, years) tilts between -0.75 and
+  0.2 and swings at most 0.85 rad either side, so its left-to-right order never reverses. The topic sphere and the web of
+  links still turn freely.
+- **Pledges, year by year** can be turned (`assets/pstack.js`): drag sideways to turn the disks like a turntable, up
+  or down to tilt them between about 6 and 17 degrees (always from above, newest year on top); on touch only sideways
+  (vertical drags scroll the page); arrow keys and Home. A drag is not a click on a pledge. The server-drawn SVG is the
+  no-JavaScript version; `who.js` writes the geometry into `data-geo` and each dot's angle and level.
+- **Method:** "How a body's checks are summarised" on `/methodology/connections/#summaries` (bar, tentative balance
+  with the scale values, the two-year half-life, undated claims, drafts counted, pledges apart, the pledge stack's
+  lines), linked from the key on Who said it; the same in `methodology/verdict-scale.md` ("Summaries on Who said it").
+- Body pages no longer repeat the verdict counts under "What the claims are about" (the bar above shows them).
 
 ## Who said it: cards, balance, pledge stack (6 October 2026)
 

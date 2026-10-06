@@ -48,7 +48,7 @@ a.pl-chip:hover { filter: brightness(1.1); text-decoration: underline; }
 /* the pledge stack: a dark panel so the disks read as objects */
 .pstack-fig { margin: 12px 0 0; }
 .pstack-svg { border-radius: 14px; background: radial-gradient(ellipse at 40% 20%, rgba(127,168,139,.28), transparent 70%), var(--deep); padding: 8px; }   /* a dark figure in both themes */
-.pstack { display: block; width: 100%; height: auto; max-height: 560px; font-family: var(--sans); }
+.pstack { display: block; width: 100%; height: auto; font-family: var(--sans); }
 .ps-edge-band { fill: #0a2117; opacity: .9; }
 .ps-top { fill: rgba(127,168,139,.22); stroke: rgba(207,226,212,.55); stroke-width: 1.2; }
 .ps-year { fill: #eef3ef; font: 700 18px var(--serif); }
@@ -63,3 +63,9 @@ a.pl-chip:hover { filter: brightness(1.1); text-decoration: underline; }
 .pstack-list ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
 .pstack-list .pl-chip { margin-left: 4px; }
 @media (max-width: 600px) { .who-panel { padding: 12px; } .pstack-list > li { grid-template-columns: 1fr; } }
+.pstack.is-live { cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.pstack.is-turning { cursor: grabbing; }
+.pstack:focus { outline: none; }
+.pstack.kb:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 10px; }
+.ps-hint { margin: 6px 0 0; color: var(--paper-muted); font-size: 12.5px; }
+.ps-hint[hidden] { display: none; }

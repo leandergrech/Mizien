@@ -130,7 +130,6 @@ styles: [lens.css, who.css]
     <h2 id="h-about">What the claims are about</h2>
     <dl class="facts body-facts">
       <div><dt>Topics</dt><dd>{% for k, v in b.topics %}<span class="tally">{{ k }} <b>{{ v }}</b></span>{% endfor %}</dd></div>
-      <div><dt>Verdicts so far</dt><dd>{% for k, v in b.verdicts %}<span class="tally">{{ k }} <b>{{ v }}</b></span>{% endfor %}</dd></div>
       {%- if b.patterns | length %}
       <div><dt>Pattern tags</dt><dd>{% for k, v in b.patterns %}<span class="tally">{{ k }} <b>{{ v }}</b></span>{% endfor %}</dd></div>
       {%- endif %}
