@@ -381,6 +381,52 @@ def manifesto_outliers(records: list) -> dict:
     return out
 
 
+OUTLIER_ORDER = ["recycled", "drift", "unanchored", "dropped", "follows"]
+
+
+def manifesto_name(mid: str) -> str:
+    """A manifesto pledge as readers know it: party, year and number, e.g. 'Labour Party 2022 manifesto, no. 397'."""
+    row = MANIFESTO[mid]
+    cov = pledges.load_coverage().get((row.get("cycle"), row.get("party")), {})
+    name = re.sub(r"^.*\(([^)]+)\)\s*$", r"\1", cov.get("party_name") or row.get("party", "").upper())
+    return f"{name} {row.get('cycle')} manifesto, " + (f"no. {row['number']}" if row.get("number") else row.get("section", ""))
+
+
+def outlier_list(records: list, ref) -> list:
+    """Every outlier and every recorded link, for the Pledges page, ordered by type (OUTLIER_ORDER): the checked pledge
+    or manifesto pledge it is about, and the finding as worded by pledge_outliers / manifesto_outliers."""
+    by = {d["id"]: d for d in records}
+    out = []
+    for cid, found in pledge_outliers(records).items():
+        for o in found:
+            out.append({"type": o["type"], "claim": ref(by[cid]), "text": o["text"]})
+    for mid, found in manifesto_outliers(records).items():
+        row = MANIFESTO[mid]
+        for o in found:
+            out.append({"type": o["type"], "manifesto": {"id": mid, "name": manifesto_name(mid), "summary": row.get("summary"),
+                                                       "url": row.get("source_url"), "anchor": f"{row.get('party')}-{row.get('cycle')}"},
+                        "text": o["text"]})
+    return sorted(out, key=lambda x: (OUTLIER_ORDER.index(x["type"]) if x["type"] in OUTLIER_ORDER else 99,
+                                      (x.get("claim") or x.get("manifesto"))["id"]))
+
+
+def manifesto_coverage(records: list, ref) -> list:
+    """The manifesto list by election and party (data/manifesto_coverage.csv), each with its rows, for the Pledges pages."""
+    by = {d["id"]: d for d in records}
+    mo = manifesto_outliers(records)
+    out = []
+    for c in sorted(pledges.load_coverage().values(), key=lambda c: (c["cycle"], c["party_name"].lower())):   # alphabetical: no party first
+        rows = [r for r in MANIFESTO.values() if r.get("cycle") == c["cycle"] and r.get("party") == c["party"]]
+        out.append({**c, "anchor": f"{c['party']}-{c['cycle']}", "cycle_label": pledges.cycle_label(c["cycle"], CYCLES),
+                    "measurable": sum(1 for r in rows if r.get("measurable") == "yes"),
+                    "items": [{"id": r["id"], "number": r.get("number"), "section": r.get("section"), "page": r.get("page"),
+                               "summary": r.get("summary") or r.get("wording"), "target": r.get("target"),
+                               "measurable": r.get("measurable") == "yes", "url": r.get("source_url"),
+                               "claim": ref(by[r["claim"]]) if r.get("claim") in by else None,
+                               "outliers": mo.get(r["id"], [])} for r in rows]})
+    return out
+
+
 def manifesto_rows(records: list) -> list:
     """The manifesto list for the Explore view: each row with its cycle label and, where it is linked, its links
     (same rule as manifesto_outliers), so the cycle disks can draw a pledge's chain across elections."""
@@ -627,6 +673,8 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
         "pledges": pledge_network(records, reg, adj),
         "pledge_outliers": pledge_outliers(records),
         "manifesto_outliers": manifesto_outliers(records),
+        "outlier_list": outlier_list(records, claim_ref),
+        "manifesto_coverage": manifesto_coverage(records, claim_ref),
         "cycles": CYCLES,
         "manifesto_pledges": list(MANIFESTO.values()),
         "pledge_labels": out["pledge_labels"],

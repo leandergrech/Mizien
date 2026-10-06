@@ -57,6 +57,76 @@ permalink: /pledges/
     {%- endif %}
   </section>
 
+  {%- set OL = mizien.outlier_list %}
+  <section aria-labelledby="h-outliers">
+    <h2 id="h-outliers">Outliers</h2>
+    <p>The usual chain runs from a campaign promise to a commitment in office to an outcome. An outlier breaks that chain.
+      Each is stated as a finding with the record it rests on, never inferred from a gap, and never about motive. The
+      rules are in the Outliers part of <a href="{{ site.repo }}/blob/main/methodology/verdict-scale.md#pledges">the verdict scale</a>.</p>
+    {%- set types = [
+      ["recycled", "Recycled", "The same promise made again in a later election while the earlier one was not met. Applies to every party."],
+      ["drift", "Drift", "A commitment linked to an earlier promise, but changed from it: a target lowered, a deadline moved, the scope narrowed or the measure changed."],
+      ["unanchored", "Unanchored", "A government commitment with no earlier pledge behind it. Shown only after a recorded search of the manifestos."],
+      ["dropped", "Dropped", "A campaign pledge of the governing party with no follow-up in office. Shown only after the legislature has ended and a search is recorded."]
+    ] %}
+    {%- for t in types %}
+    {%- set items = OL | where("type", t[0]) %}
+    <h3 id="outlier-{{ t[0] }}">{{ t[1] }} <span class="small">({{ items.length }})</span></h3>
+    <p class="small">{{ t[2] }}</p>
+    {%- if items.length %}
+    <ul class="outliers">
+      {%- for o in items %}
+      <li>{% if o.claim %}{{ m.claim(o.claim) }}{% else %}<a href="/pledges/manifestos/#{{ o.manifesto.id }}">{{ o.manifesto.name }}</a>
+        <span class="small">({{ o.manifesto.summary | replace(r/\.$/, "") }}; in the manifesto list, not checked)</span>{% endif %}
+        <br>{{ o.text | mdInline | safe }}</li>
+      {%- endfor %}
+    </ul>
+    {%- elif t[0] == "dropped" %}
+    <p class="none">None recorded yet. The 2022–26 legislature has ended; the check of the governing party's 2022
+      pledges for a follow-up in office has not been done.</p>
+    {%- elif t[0] == "unanchored" %}
+    <p class="none">None recorded yet. A commitment is listed here only after a recorded search finds no earlier pledge.</p>
+    {%- else %}
+    <p class="none">None recorded yet.</p>
+    {%- endif %}
+    {%- endfor %}
+    {%- set fw = OL | where("type", "follows") %}
+    {%- if fw.length %}
+    <h3 id="carried-forward">Carried forward <span class="small">({{ fw.length }})</span></h3>
+    <p class="small">Not outliers: a commitment that takes forward an earlier pledge, as recorded. Shown so that the chains
+      can be followed, and on <a href="/explore/?group=pledges">the cycle disks in Explore</a>.</p>
+    <ul class="outliers">
+      {%- for o in fw %}
+      <li>{% if o.claim %}{{ m.claim(o.claim) }}{% else %}<a href="/pledges/manifestos/#{{ o.manifesto.id }}">{{ o.manifesto.name }}</a>{% endif %}
+        <br>{{ o.text | mdInline | safe }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </section>
+
+  {%- set MC = mizien.manifesto_coverage %}
+  <section aria-labelledby="h-manifestos">
+    <h2 id="h-manifestos">The manifesto list</h2>
+    <p>So that pledges can be linked across elections, Miżien keeps a light list of the pledges in each programme: the
+      whole of every environment chapter and every climate and energy chapter, for every party that contested the
+      election, to the same scope. Each is a summary in our own words with its number and page. Most have not been
+      checked; a listed pledge carries no label until it is.</p>
+    <div class="table-scroll">
+    <table class="claims mp-coverage">
+      <thead><tr><th scope="col">Election</th><th scope="col">Party</th><th scope="col">Programme</th><th scope="col">Pledges listed</th><th scope="col">With a target</th></tr></thead>
+      <tbody>
+      {%- for c in MC %}
+        <tr><td>{{ c.cycle }}</td><td>{{ c.party_name }}</td>
+          <td>{% if c.status == "listed" %}<a href="/pledges/manifestos/#{{ c.anchor }}">{{ c.document }}</a>{% else %}<span class="small">{{ c.status | capitalize }}. {{ c.searched }}</span>{% endif %}</td>
+          <td>{{ c.rows if c.status == "listed" else "–" }}</td><td>{{ c.measurable if c.status == "listed" else "–" }}</td></tr>
+      {%- endfor %}
+      </tbody>
+    </table>
+    </div>
+    <p class="small">Counts differ because programmes differ in length and layout, not in scope. "With a target": the
+      pledge states a quantity, date or deadline that could be checked. <a href="/pledges/manifestos/">Browse the list</a>.</p>
+  </section>
+
   {%- set overlapping = P | having("overlaps.length") %}
   {%- if overlapping.length %}
   <section aria-labelledby="h-overlaps">

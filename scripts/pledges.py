@@ -191,6 +191,8 @@ def check_files(claim_ids: set) -> list:
                 errs.append(f"data/manifesto_coverage.csv: {cid} {party} status must be one of {', '.join(COVERAGE_STATUS)}")
             elif cov["status"] == "listed" and str(n) != (cov.get("rows") or "").strip():
                 errs.append(f"data/manifesto_coverage.csv: {cid} {party} says {cov.get('rows')} rows, the list has {n}")
+            elif not (cov.get("party_name") or "").strip():
+                errs.append(f"data/manifesto_coverage.csv: {cid} {party} needs a party_name")
             elif cov["status"] != "listed" and not (cov.get("searched") or "").strip():
                 errs.append(f"data/manifesto_coverage.csv: {cid} {party} needs `searched` (where and when)")
     for key in coverage:

@@ -72,6 +72,8 @@ and sha256), the chapters covered and the number of rows. Where a party publishe
 it says so and records where and when it was searched; no party is left out silently. The validator checks both files.
 The outlier types still apply as defined below: dropped and drift to the governing party's pledges, and recycled to
 every party's. An opposition proposal later taken up by a government is linked as adopted.
+The list is published on the site at /pledges/manifestos/ (by election and party), and every outlier and recorded link
+on the Pledges page (/pledges/#h-outliers), where a type with none recorded says so and why.
 
 Optional fields that link a pledge to earlier ones:
 
