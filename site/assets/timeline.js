@@ -368,8 +368,8 @@
     var html = '<h2 class="tlv-ph">' + esc(title) + ' <span class="small">· ' + it.items.length + (it.items.length === 1 ? " claim" : " claims") + "</span></h2>";
     if (sub) html += '<p class="small">' + esc(sub) + "</p>";
     html += '<ul class="tlv-claims">' + it.items.map(function (i) {
-      var also = '<span class="tlv-also small">' + (i.place ? '<a href="' + esc(href("/?view=map&sel=claim:" + i.id)) + '">On the map</a> · ' : "") +
-        '<a href="' + esc(href("/?view=ghanqbuta&sel=claim:" + i.id)) + '">In the claims web</a></span>';
+      var also = '<span class="tlv-also small">' + (i.place ? '<a href="' + esc(href("/explore/?view=map&sel=claim:" + i.id)) + '">On the map</a> · ' : "") +
+        '<a href="' + esc(href("/explore/?view=ghanqbuta&sel=claim:" + i.id)) + '">In the claims web</a></span>';
       return '<li><a class="tlv-cl" href="' + esc(href(i.path)) + '"><span class="tlv-cid">' + esc(i.id) + '</span><span class="tlv-ct">' + esc(i.title) + "</span></a>" +
         '<span class="tlv-cm small">' + esc(i.speaker ? i.speaker + " · " : "") + esc(pointDate(i)) + "</span>" +
         '<span class="badge v-' + esc(i.v) + '">' + (i.pledge ? "Pledge: " : "") + esc(i.label) + "</span>" + also + "</li>";

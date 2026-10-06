@@ -28,7 +28,7 @@ permalink: "/bodies/{{ body.id }}/"
       <li><b>{{ withVerdict }}</b> with a verdict</li>
       <li><b>{{ b.links.length }}</b> linked bod{% if b.links.length == 1 %}y{% else %}ies{% endif %}</li>
     </ul>
-    <p class="small"><a href="/?group=speaker&amp;sel=body:{{ b.id }}">See {{ b.name }} on the map</a>, with the bodies its claims link to.</p>
+    <p class="small"><a href="/explore/?group=speaker&amp;sel=body:{{ b.id }}">See {{ b.name }} in the claims web</a>, with the bodies its claims link to.</p>
   </header>
 
   <aside class="notice" aria-label="What this page shows">
