@@ -89,3 +89,6 @@ OpenAlex, Eurostat API and website, pn.org.mt, Newsbook, WebSearch).
   "without air transport" measure removes emissions only; removing the whole transport section (H) from both sides
   gives a similar result (−66%).
 - MaltaToday's report of the statement was not readable (403); not relied on.
+
+## Version 1.1 (6 Oct 2026): audit corrections
+No new searches. Added to calc.py: air transport alone per euro of total GVA (35.6 g/EUR in 2013, 265.5 in 2024, estimate flag i), an explicit test that zeroing electricity (NACE D) alone leaves 2024 (329.8) above 2013 (325.2), and the 2024 air-transport value with its flag (4,730 kt, i). Confidence lowered to Moderate: sub-claims D and F share the same Eurostat accounts, including the imputed 2024 value.
