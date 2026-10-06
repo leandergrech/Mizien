@@ -113,9 +113,10 @@ hour; no claim has a time yet. Undated claims appear in the text list only. The 
 Maintainer decision (relayed by the sota session), now a standing rule in `methodology/verdict-scale.md`: the list
 covers the programme of every party that contested each election, to the same scope (whole environment chapters plus
 climate and energy chapters), and a party with no programme found is logged with where and when it was searched.
-- `data/cycles.csv`: new `contested` and `contested_source` columns. **The party lists are second-hand** (Wikipedia):
-  the Electoral Commission pages (cited) return HTTP 403 from the cloud. **To confirm by hand** against
-  electoral.gov.mt (2022: pr3-06-03-22-en; 2026: Contents/Item/Display/80979).
+- `data/cycles.csv`: new `contested` and `contested_source` columns, citing the Electoral Commission's nomination press
+  releases (2022: "General Election 2022 - All nominations", 6 Mar 2022; 2026: "General Election 2026 - Nominations of
+  candidates", 11 May 2026). The site returns HTTP 403 to the cloud; the maintainer saved copies, read 6 Oct 2026, and both
+  lists match. Note: the DOI release pr261000en (11 Jun 2026) is a casual-election notice for PN seats, not the results.
 - `data/manifesto_coverage.csv`: one row per party per election (status listed / no programme found / not yet listed,
   rows, document, URL, sha256, scope, searched, notes). `scripts/pledges.py` checks every contesting party has a row,
   that the row count matches the list, and that no list row belongs to a party that did not contest.

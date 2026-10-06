@@ -12019,7 +12019,7 @@
       "source": "IFES ElectionGuide, Malta House of Representatives 2026 (previous election date); results source Electoral Commission of Malta",
       "notes": "Legislature ran until the snap election of 30 May 2026.",
       "contested": "pl;pn;adpd;pp;abba;volt",
-      "contested_source": "Electoral Commission of Malta, General Election 2022 nominations (https://electoral.gov.mt/pr3-06-03-22-en): located, not readable from here (HTTP 403, 6 Oct 2026). Party list second-hand from Wikipedia, 2022 Maltese general election (read 6 Oct 2026), which cites it. Four independents also stood. To confirm against the Commission page."
+      "contested_source": "Electoral Commission of Malta press release, General Election 2022 - All nominations, 6 March 2022 (https://electoral.gov.mt/pr3-06-03-22-en; maintainer copy, read 6 Oct 2026). Independents also stood."
     },
     {
       "id": "2026",
@@ -12029,7 +12029,7 @@
       "source": "IFES ElectionGuide, Malta House of Representatives 2026 General (https://electionguide.org/elections/id/5161/); results source Electoral Commission of Malta",
       "notes": "Snap election. Labour won (CC-011).",
       "contested": "pl;pn;adpd;momentum;ahwa;imperium",
-      "contested_source": "Electoral Commission of Malta, General Election 2026 nominations of candidates (https://electoral.gov.mt/Contents/Item/Display/80979): located, not readable from here (HTTP 403, 6 Oct 2026). Party list second-hand from Wikipedia, Candidates in the 2026 Maltese general election (read 6 Oct 2026). Two independents also stood; Volt Malta did not contest. To confirm against the Commission page."
+      "contested_source": "Electoral Commission of Malta press release, General Election 2026 - Nominations of candidates, 11 May 2026 (https://electoral.gov.mt/Contents/Item/Display/80979; maintainer copy, read 6 Oct 2026). Independents also stood; Volt Malta did not contest."
     }
   ],
   "manifesto_pledges": [
