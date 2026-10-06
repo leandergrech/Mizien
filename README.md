@@ -143,7 +143,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-111 | Waste | EU: 621 kg of waste a head, 74% landfilled | Drafted | Supported |
 | CC-112 | Tourism & Population | IMF: population up 25% in a decade | Drafted | Largely supported |
 | CC-113 | Climate & Energy | EEA: Malta among highest fossil-fuel subsidies | Not started | - |
-| CC-114 | Climate & Energy | PN: only EU state with rising emissions intensity | Not started | - |
+| CC-114 | Climate & Energy | PN: only EU state with rising emissions intensity | Drafted | Misleading |
 | CC-115 | Transport | Chamber: congestion cost EUR 770m, 3.4% of GDP | Drafted | Not substantiated |
 | CC-116 | Planning & Housing | UNESCO: Valletta setting not safeguarded | Not started | - |
 
