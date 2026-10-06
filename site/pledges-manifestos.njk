@@ -1,0 +1,62 @@
+---
+layout: base.njk
+title: The manifesto list
+description: The environment, climate and energy pledges in the programmes of every party that contested Malta's 2022 and 2026 general elections, summarised and numbered, most not yet checked.
+permalink: /pledges/manifestos/
+---
+{%- import "macros.njk" as m -%}
+{%- set MC = mizien.manifesto_coverage -%}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/pledges/">Pledges</a></li><li aria-current="page">The manifesto list</li></ol>
+</nav>
+
+<article class="page prose-page pledges-page">
+  <header class="page-head">
+    <p class="kicker">Pledges</p>
+    <h1>The manifesto list</h1>
+    <p class="lead">The environment, climate and energy pledges in the programme of every party that contested each general
+      election, to the same scope. Each is a summary in our own words, with the number and page in the programme.</p>
+  </header>
+
+  <p class="small">Most of these pledges have not been checked, so they carry no label. A pledge that has been checked
+    links to its claim page. The list is there so that a promise can be followed from one election to the next; the
+    links found so far, and any outliers, are on <a href="/pledges/#h-outliers">the Pledges page</a>. Summaries are ours:
+    read the programme itself for the exact wording. Scope and sources are in
+    <a href="{{ site.repo }}/blob/main/data/manifesto_coverage.csv">manifesto_coverage.csv</a>.</p>
+
+  {%- for cyc in ["2022", "2026"] %}
+  {%- set rows = MC | where("cycle", cyc) %}
+  <section aria-labelledby="h-{{ cyc }}">
+    <h2 id="h-{{ cyc }}">{{ cyc }} general election</h2>
+    {%- for c in rows %}
+    <details class="mp-party" id="{{ c.anchor }}">
+      <summary><b>{{ c.party_name }}</b> · {% if c.status == "listed" %}{{ c.rows }} pledges{% else %}{{ c.status }}{% endif %}</summary>
+      {%- if c.status == "listed" %}
+      <p class="small"><a href="{{ c.source_url }}" rel="noopener">{{ c.document }}</a>. Covered: {{ c.scope }}.</p>
+      <div class="table-scroll">
+      <table class="claims mp-table">
+        <thead><tr><th scope="col">No.</th><th scope="col">Pledge (our summary)</th><th scope="col">Target</th><th scope="col">Section and page</th></tr></thead>
+        <tbody>
+        {%- for r in c.items %}
+          <tr id="{{ r.id }}"><td>{{ r.number or "–" }}</td>
+            <td>{{ r.summary }}{% if r.claim %}<br>Checked: {{ m.claim(r.claim) }}{% endif %}
+              {%- for o in r.outliers %}<br><span class="small mp-link mp-{{ o.type }}">{{ o.text }}</span>{% endfor %}</td>
+            <td>{{ r.target or "–" }}</td><td class="small">{{ r.section }}{% if r.page %}<br>{{ r.page }}{% endif %}</td></tr>
+        {%- endfor %}
+        </tbody>
+      </table>
+      </div>
+      {%- else %}
+      <p class="small">{{ c.searched }}</p>
+      {%- endif %}
+    </details>
+    {%- endfor %}
+  </section>
+  {%- endfor %}
+</article>
+<script>
+  // Opening a link to one pledge or one party opens its section.
+  (function () { function open() { var t = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    var d = t && (t.tagName === "DETAILS" ? t : t.closest("details")); if (d) { d.open = true; t.scrollIntoView(); } }
+    open(); window.addEventListener("hashchange", open); })();
+</script>

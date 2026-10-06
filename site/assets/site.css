@@ -589,3 +589,15 @@ a.claimref { text-decoration-style: dotted; text-underline-offset: 3px; font-wei
   .check-head { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .sources a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 11px; word-break: break-all; }
 }
+
+/* Pledges: outliers and the manifesto list (stage 4). */
+.outliers { list-style: none; padding: 0; margin: 6px 0 14px; }
+.outliers > li { padding: 8px 0; border-bottom: 1px solid var(--paper-line); }
+.pledges-page .none { color: var(--paper-muted); font-style: italic; margin: 4px 0 12px; }
+.pledges-page h3 .small { font-weight: 400; }
+.mp-party { border: 1px solid var(--paper-line); border-radius: 10px; margin: 8px 0; padding: 0 12px; }
+.mp-party > summary { cursor: pointer; padding: 10px 0; }
+.mp-party[open] > summary { border-bottom: 1px solid var(--paper-line); margin-bottom: 8px; }
+.mp-table td:first-child { white-space: nowrap; }
+.mp-table tr:target { outline: 2px solid var(--accent); outline-offset: -2px; }
+.mp-link.mp-recycled { color: #b8432a; }
