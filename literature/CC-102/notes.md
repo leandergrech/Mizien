@@ -16,3 +16,14 @@ source check on an official report.
   the five open and two later-implemented cases by subject only.
 - Table 1.22 per-office split (Ombudsman 4, Health 3) differs from Table 1.3 not-implemented counts (5, 2); unexplained.
 - The PDFs are not committed (publisher copyright); SHA-256 hashes are in `data/sources.csv`.
+
+## Search log (6 Oct 2026, audit corrections)
+
+- Annual Reports 2025, 2024, 2023 PDFs re-downloaded from ombudsman.org.mt and read with pdftotext: Table 1.3 (all four offices,
+  all three years) and Table 1.22 match data/cc-102/ombudsman_sustained_cases.csv. 2023/2024 narrative paragraphs agree with
+  the table rows.
+- Commissioner chapter: "Out of these 12 ..." is on printed p. 218 (PDF p. 219); the two later-implemented and five open
+  cases are on printed p. 219 (PDF p. 220). The report cites printed numbers, noting the PDF numbers.
+- Newsbook article: direct fetch (browser User-Agent) timed out; WebFetch connection refused; Wayback copy 404. A web-search
+  summary (second-hand) says "sustained (justified)" cases, 58% for Environment and Planning, 53% for Education, 14, 16, 22
+  escalated; it does not show a "highest" statement. Not re-read in full; "highest" is attributed to the claim record.
