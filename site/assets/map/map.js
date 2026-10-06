@@ -311,7 +311,7 @@
   }
   function lensChanged() {
     syncTimelineLink();
-    if (view === "map") { buildPlaces(); if (gmapLayer) { gmapLayer.textContent = ""; gmapMarks = {}; } queueGeoMarks();
+    if (view === "map") { buildPlaces(); if (gmapLayer) { gmapLayer.textContent = ""; gmapMarks = {}; } queueGeoMarks(); fitPlaces(true);
       var q = document.getElementById("placeq"); if (q) q.dispatchEvent(new Event("input")); return; }
     var keep = selKey(); setMode(mode, false); applySelKey(keep);
   }
@@ -341,7 +341,11 @@
   // the ratios between the levels; the view refits, so wider groups make room rather than leave the screen.
   var SP = { g: 1, s: 1, c: 1 };
   try { var sp0 = JSON.parse(localStorage.getItem("mizien.spacing") || "null"); if (sp0) ["g", "s", "c"].forEach(function (k) { if (+sp0[k] >= 0.4 && +sp0[k] <= 2.5) SP[k] = +sp0[k]; }); } catch (e) {}
-  function groupSpread() { return GROUP_SPREAD * SP.g; }
+  // A partial view (the site-wide filter, or only the pinned claims) keeps fewer groups: they draw in closer together
+  // (fill, from the share of groups still shown) and the view refits to them, rather than leaving a few nodes on the rim
+  // of a layout made for all of them.
+  var fill = 1, shownCount = 0;
+  function groupSpread() { return GROUP_SPREAD * SP.g * fill; }
 
   // ------------------------------------------------------------ arranging groups (topology)
   // Groups sit on fixed slots (points on the sphere or ring). An arrangement pattern scores how strongly two groups
@@ -419,6 +423,9 @@
     var y = 1 - (i / (n - 1)) * 2, rad = Math.sqrt(Math.max(0, 1 - y * y)), th = Math.PI * (3 - Math.sqrt(5)) * i;
     return { x: Math.cos(th) * rad * r, y: y * r, z: Math.sin(th) * rad * r };
   }
+  function equator(n, i, r) { // one to three groups: round the middle of the sphere (the spiral would put one at its centre, or two at the poles)
+    var a = (i / n) * Math.PI * 2 + 0.4; return { x: Math.cos(a) * r, y: n === 3 ? (i - 1) * r * 0.18 : 0, z: Math.sin(a) * r };
+  }
   function clusterRadius(n) { return n <= 1 ? 0 : (34 + 15 * Math.sqrt(n)) * SP.c; }
 
   function modeSub(m) {
@@ -431,11 +438,12 @@
     mode = m; var M = MODES[m];
     Object.keys(hubPool).forEach(function (k) { hubPool[k].talpha = 0; });
     claims.forEach(function (c) { c.hub = null; c.extra = []; c.sub = null; c.hidden = false; });
-    var hid = hiddenSet(m);
+    var hid = hiddenSet(m), partial = !!(Lens && Lens.active()), allKeys = {};
     var order = M.order(), groups = {};
     claims.forEach(function (c) {
-      if (!inLens(c)) { c.hidden = true; return; }   // outside the site-wide filter
       var keys = M.key(c.data);
+      if (keys.length) allKeys[keys[0]] = 1;
+      if (!inLens(c)) { c.hidden = true; return; }   // outside the site-wide filter
       keys.forEach(function (v, j) { (groups[v] = groups[v] || []).push({ c: c, primary: j === 0 }); });
     });
     // unseen values (e.g. a new status) go at the end
@@ -450,7 +458,7 @@
       if (m === "pledges") h.count = members.length;   // pledge view: who, when and what each count every pledge they touch
       if (M.layout === "force") return;
       if (m === "pattern" && v === "No pattern tag") { h.claims.forEach(function (c) { c.hidden = true; }); return; }   // untagged claims have no place in the patterns view
-      if (h.empty && (m === "topic" || m === "speaker" || m === "pattern")) return; // hide empty groups where order is not meaningful
+      if (h.empty && (m === "topic" || m === "speaker" || m === "pattern" || (partial && m !== "pledges"))) return; // hide empty groups where order is not meaningful, and all of them in a partial view
       if (m === "pledges" && !members.length) return;   // pledge view: "when" and "what" groups hold only spokes, and stay
       h.hidden = !!hid[v]; legendGroups.push(h);
       if (h.hidden) { h.claims.forEach(function (c) { c.hidden = true; }); return; }
@@ -458,10 +466,12 @@
     });
     if (m === "pledges") claims.forEach(function (c) { if (!c.data.pledge) c.hidden = true; });   // only pledges here
     buildSubHubs(m);
+    shownCount = partial ? claims.filter(function (c) { return !c.hidden; }).length : Infinity;   // partial views only: hiding groups in the legend does not count
     // hub targets
-    var n = hubs.length;
+    var n = hubs.length, nAll = Math.max(1, Object.keys(allKeys).length - (m === "pattern" && allKeys["No pattern tag"] ? 1 : 0));
+    fill = partial && M.layout !== "force" ? Math.max(0.42, Math.min(1, Math.sqrt(n / nAll))) : 1;   // the web of links fits itself
     if (M.layout === "sphere") {
-      hubs.forEach(function (h, i) { var p = spiral(n, i, R * groupSpread()); h.tx = p.x; h.ty = p.y; h.tz = p.z; });
+      hubs.forEach(function (h, i) { var p = n <= 3 ? equator(n, i, R * groupSpread()) : spiral(n, i, R * groupSpread()); h.tx = p.x; h.ty = p.y; h.tz = p.z; });
     } else if (M.layout === "ring") {
       hubs.forEach(function (h, i) { var a = (i / n) * Math.PI * 2; h.tx = Math.cos(a) * R * 1.12 * groupSpread() / 1.05; h.tz = Math.sin(a) * R * 1.12 * groupSpread() / 1.05; h.ty = m === "pattern" ? 0 : (i % 2 ? 1 : -1) * 34; });
     }
@@ -561,7 +571,8 @@
   var SPHERE_K = 0.94, CORONA_K = 1.38;
   function coronaK() { return 1 + (CORONA_K - 1) * SP.s; }
   // The opaque backdrop under a grouping: a sphere for topics, a flat disc for the patterns (their ring); none elsewhere.
-  function backdrop() { return view !== "graph" ? null : mode === "topic" ? "sphere" : mode === "pattern" ? "disc" : null; }
+  // A partial view with only a few topics drops the sphere, so that none of them hides behind it.
+  function backdrop() { return view !== "graph" ? null : mode === "topic" ? (fill < 1 && hubs.length <= 4 ? null : "sphere") : mode === "pattern" ? "disc" : null; }
   function coronaOn() { return split && backdrop() === "sphere"; }
   function normalOf(x, y, z) { var l = Math.hypot(x, y, z); return l < 1e-6 ? { x: 0, y: 0, z: 1 } : { x: x / l, y: y / l, z: z / l }; }
   function lift(p, n, base) {   // flatten p onto the tangent plane at n, then raise it outward so it clears the surface
@@ -632,7 +643,7 @@
       else if (lifted) p = n === 1 ? { x: nrm.x * 36, y: nrm.y * 36, z: nrm.z * 36 } : lift(spiral(n, i, r), nrm, 0.35 * r);
       else p = spiral(n, i, r);
       c.tx = h.tx + p.x; c.ty = h.ty + p.y; c.tz = h.tz + p.z;
-      if (n === 1 && !lifted) c.ty += open ? 90 : 46;
+      if (n === 1 && !lifted) c.ty += open ? 90 : fill < 1 ? -52 : 46;   // a partial view: above the group, clear of its label
     });
     h.openR = r;
   }
@@ -673,9 +684,13 @@
       P.forEach(function (p) { p.vx -= p.x * 0.012; p.vy -= p.y * 0.012; p.vz -= p.z * 0.012;
         p.x += p.vx * 0.5 * cool; p.y += p.vy * 0.5 * cool; p.z += p.vz * 0.5 * cool; p.vx *= .55; p.vy *= .55; p.vz *= .55; });
     }
-    var mx = 0; P.forEach(function (p) { mx = Math.max(mx, Math.hypot(p.x, p.y, p.z)); });
-    var s = (R * 1.35) / (mx || 1);
-    claims.forEach(function (c, i) { c.tx = P[i].x * s; c.ty = P[i].y * s * 0.8; c.tz = P[i].z * s; });
+    // fit the claims shown (all, or a filtered or pinned set) to the view: centred on them, and as wide as the whole web
+    var on = claims.map(function (c) { return !c.hidden; }), k = 0, cx = 0, cy = 0, cz = 0, mx = 0;
+    P.forEach(function (p, i) { if (on[i]) { cx += p.x; cy += p.y; cz += p.z; k++; } });
+    if (k) { cx /= k; cy /= k; cz /= k; }
+    P.forEach(function (p, i) { if (on[i]) mx = Math.max(mx, Math.hypot(p.x - cx, p.y - cy, p.z - cz)); });
+    var s = (R * 1.35) / Math.max(mx, k > 1 ? 1 : 60, k < claims.length ? 110 : 1);   // a few claims: spread out, but not to the rim
+    claims.forEach(function (c, i) { c.tx = (P[i].x - cx) * s; c.ty = (P[i].y - cy) * s * 0.8; c.tz = (P[i].z - cz) * s; });
   }
 
   // ------------------------------------------------------------ chrome
@@ -1219,7 +1234,7 @@
         // codes give way to the claims' names. A hovered, selected, pinned or highlighted claim is always labelled.
         var pin = Tray && Tray.has(n.id), zfade = Math.max(0, Math.min(1, (cam.zoom - 1.35) / 0.3)), close = cam.zoom >= 2.2;
         var member = expanded && n.hub === expanded && mode !== "speaker", tagged = labelMode === "tag" || member || (close && !expanded);   // Who said it: too many claims to name them all
-        var keep = isHov || isSel || member || focused || pin;
+        var keep = isHov || isSel || member || focused || pin || shownCount <= 24 || mode === "pledges";   // a small filtered or pinned set, and the pledges, are always labelled
         var hp = member ? P.get(n.sub && n.sub.alpha > 0.3 ? n.sub : expanded) : null, ddx = hp ? p.sx - hp.sx : 0, ddy = hp ? p.sy - hp.sy : 1, dl = Math.hypot(ddx, ddy) || 1;
         if ((!expanded && (keep || zfade > 0)) || member || isHov || isSel) labels.push({ x: p.sx, y: p.sy + r2 + 13, text: tagged ? d.title : n.id,
           sub: (isHov || isSel || (member && W > 700)) ? (tagged ? d.id + (isRated ? " · " + ratedText(d) : " · not yet checked") : d.title) : "",
@@ -1419,6 +1434,18 @@
       ]
     };
   }
+  // The map frames the places still shown: all of Malta and Gozo normally, or just the places of a filtered or pinned set.
+  function placesBounds() {
+    if (!(Lens && Lens.active()) || !PLACES.length) return ISLANDS_BOUNDS;
+    var w = 180, s = 90, e = -180, n = -90;
+    PLACES.forEach(function (P) { w = Math.min(w, P.ll[0]); e = Math.max(e, P.ll[0]); s = Math.min(s, P.ll[1]); n = Math.max(n, P.ll[1]); });
+    var px = Math.max(0.004, (e - w) * 0.08), py = Math.max(0.003, (n - s) * 0.08);
+    return [[w - px, s - py], [e + px, n + py]];
+  }
+  function fitPlaces(animate) {
+    if (!gmapReady) return;
+    gmap.fitBounds(placesBounds(), { padding: mapPadding(), maxZoom: 15, duration: animate && !reduce ? 800 : 0 });
+  }
   function mapPadding() {
     var narrow = W <= 900;
     return { left: narrow ? 20 : leftInset() + 10, right: narrow ? 20 : panelInset() + 20, top: narrow ? 60 : 84, bottom: narrow ? sheetInset() + 30 : 40 };
@@ -1443,7 +1470,7 @@
         attributionControl: { compact: true }, fadeDuration: reduce ? 0 : 300, renderWorldCopies: false });
       gmap.touchZoomRotate.disableRotation(); gmap.keyboard.disableRotation();
       gmapLayer = el("div", "gm-layer"); gmap.getContainer().appendChild(gmapLayer);
-      gmap.on("load", function () { gmapReady = true; gmap.setPadding(mapPadding()); layoutGeoMarks(); afterMapReady(); });
+      gmap.on("load", function () { gmapReady = true; gmap.setPadding(mapPadding()); if (Lens && Lens.active() && !pendingMapClaim) fitPlaces(false); layoutGeoMarks(); afterMapReady(); });
       gmap.on("move", queueGeoMarks); gmap.on("zoom", queueGeoMarks); gmap.on("resize", queueGeoMarks);
       gmap.on("click", function (e) { if (!e.originalEvent.target.closest(".gm-m")) clearSel(); });
       gmap.on("error", function (e) { if (window.console) console.warn("Map:", e && e.error ? e.error.message || e.error : e);
@@ -1627,7 +1654,7 @@
   }
   function mapZoomBy(d) { if (gmapReady) gmap.zoomTo(gmap.getZoom() + d, { duration: reduce ? 0 : 300 }); }
   function fitView() {
-    if (view === "map") { if (gmapReady) gmap.fitBounds(ISLANDS_BOUNDS, { padding: mapPadding(), duration: reduce ? 0 : 800 }); return; }
+    if (view === "map") { fitPlaces(true); return; }
     cam.zoom = 1; cam.tpx = 0; cam.tpy = 0; cam.yaw = 0.6; cam.pitch = cam.tpitch; if (sway) cam.yaw = 0;
   }
   function setView(v, instant) {
