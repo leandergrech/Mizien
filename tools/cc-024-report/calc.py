@@ -62,12 +62,16 @@ add("Implied end-2023 capacity from NSO's +4.8%", round(c24 / 1.048, 1), "MWp", 
 net24 = pv["PV_connected_2024"] - pv["PV_decommissioned_2024"]
 add("Net PV added in 2024", round(net24, 2), "MWp", "NSO NR 111/2025 (second-hand)", "11.792 connected minus 0.262 decommissioned")
 tgtpv = inp[("plan_PV_capacity_2030", "2030")]
+c23p = inp[("plan_PV_capacity_end_2023", "2023")]
+need_plan = (tgtpv - c23p) / 7
+add("PV capacity to add per year 2024-2030 to reach 350 MWp (plan figures only)", round(need_plan, 1), "MWp/yr",
+    "calculated from " + PL + " pp.74, 84", f"({tgtpv:g} - {c23p:g}) / 7 years; uses no second-hand figure")
 need = (tgtpv - c24) / 6
-add("PV capacity to add per year 2025-2030 to reach 350 MWp", round(need, 1), "MWp/yr", "calculated from NSO and " + PL,
+add("PV capacity to add per year 2025-2030 to reach 350 MWp (SECOND-HAND start point)", round(need, 1), "MWp/yr", "calculated from NSO (second-hand) and " + PL,
     f"{need / net24:.2f} times the net addition of 2024")
 cf = pv["PV_generation_2024"] / c24 * 1000
-add("PV output per kWp installed, 2024", round(cf), "kWh/kWp", "calculated from NSO NR 111/2025", "grid-connected generation / end-year capacity")
-add("PV output in 2030 at 350 MWp and the 2024 yield", round(tgtpv * cf / 1000), "GWh", "calculated", f"vs {pv['PV_generation_2024']:.1f} GWh in 2024")
+add("PV output per kWp installed, 2024", round(cf), "kWh/kWp", "calculated from NSO NR 111/2025 (second-hand)", "SECOND-HAND inputs; grid-connected generation divided by END-year capacity, so it understates yield per kWp (capacity added during 2024 produced for part of the year only)")
+add("PV output in 2030 at 350 MWp and the 2024 yield", round(tgtpv * cf / 1000), "GWh", "calculated", f"SECOND-HAND, understated yield; vs {pv['PV_generation_2024']:.1f} GWh in 2024")
 # 6. offshore wind
 add("Offshore wind counted in the 24.5% contribution", 0, "MW", "Malta final updated NECP p.83",
     "\"offshore wind does not contribute ... as it is not envisaged to be completed and commissioned by 2030\"")

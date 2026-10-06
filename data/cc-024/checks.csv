@@ -16,9 +16,10 @@ Cyprus total RES share 2020 -> 2024 (island comparator),16.9 -> 20.8,%,"Eurostat
 Solar PV capacity end-2024,252.255,MWp,NSO NR 111/2025 (second-hand),plan: 241 MWp end-2023 (p.74)
 Implied end-2023 capacity from NSO's +4.8%,240.7,MWp,calculated,matches the plan's 241 MWp
 Net PV added in 2024,11.53,MWp,NSO NR 111/2025 (second-hand),11.792 connected minus 0.262 decommissioned
-PV capacity to add per year 2025-2030 to reach 350 MWp,16.3,MWp/yr,"calculated from NSO and Malta final updated NECP, Table 3 (p.83)",1.41 times the net addition of 2024
-"PV output per kWp installed, 2024",1294,kWh/kWp,calculated from NSO NR 111/2025,grid-connected generation / end-year capacity
-PV output in 2030 at 350 MWp and the 2024 yield,453,GWh,calculated,vs 326.5 GWh in 2024
+PV capacity to add per year 2024-2030 to reach 350 MWp (plan figures only),15.6,MWp/yr,"calculated from Malta final updated NECP, Table 3 (p.83) pp.74, 84",(350 - 241) / 7 years; uses no second-hand figure
+PV capacity to add per year 2025-2030 to reach 350 MWp (SECOND-HAND start point),16.3,MWp/yr,"calculated from NSO (second-hand) and Malta final updated NECP, Table 3 (p.83)",1.41 times the net addition of 2024
+"PV output per kWp installed, 2024",1294,kWh/kWp,calculated from NSO NR 111/2025 (second-hand),"SECOND-HAND inputs; grid-connected generation divided by END-year capacity, so it understates yield per kWp (capacity added during 2024 produced for part of the year only)"
+PV output in 2030 at 350 MWp and the 2024 yield,453,GWh,calculated,"SECOND-HAND, understated yield; vs 326.5 GWh in 2024"
 Offshore wind counted in the 24.5% contribution,0,MW,Malta final updated NECP p.83,"""offshore wind does not contribute ... as it is not envisaged to be completed and commissioned by 2030"""
 Plan's offshore capacity figure,350 MW by 2030 (p.25) / by 2050 (p.78),,Malta final updated NECP,non-binding TEN-E commitment; the plan gives both dates
 Plan 2030 contribution vs Commission formula,24.5 vs 28,%,NECP p.83; Commission SWD(2025) 140 s.2.2,3.5 points below
