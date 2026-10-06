@@ -9,8 +9,11 @@
    SHA-256 of the PDF; the PDFs themselves are not committed) and the titles of every Legal Notice of 2024-2026 in
    the ELI sitemap, to look for a new groundwater-abstraction instrument.
 
-    python fetch.py            # all three
-    python fetch.py eurostat   # one part (eurostat | wise | laws | notices)
+4. legislation.mt, added after review: the title and text-search counts of every Act of 2024-2026 (acts) and the titles
+   of the S.L. 549, 423, 545, 355 and 427 series (sl_titles); EEA WISE groundwater-body status (wise_status).
+
+    python fetch.py            # everything
+    python fetch.py eurostat   # one part (eurostat | wise | wise_status | laws | notices | acts | sl_titles)
 """
 import csv
 import datetime
@@ -116,6 +119,30 @@ def wise():
     write("wise_2022_significant_pressures.csv", out)
 
 
+def wise_status():
+    """Quantitative and chemical status of Malta's groundwater bodies, 3rd-cycle (2022) reporting, from WISE directly
+    (the same layer CC-009 used; fetched again so that this check cites the primary source)."""
+    q = urllib.parse.urlencode({"where": "countryCode='MT'", "outFields": "cYear,countryCode,euRBDCode,euGroundWaterBodyCode,"
+                                "groundWaterBodyName,gwQuantitativeStatusValue,gwQuantitativeAssessmentYear,"
+                                "gwChemicalStatusValue,gwChemicalAssessmentYear", "returnGeometry": "false",
+                                "orderByFields": "euGroundWaterBodyCode", "f": "json"})
+    url = f"{WISE}WFD2022_GroundWaterBody_WM/MapServer/0/query?{q}"
+    names = {"2": "Good", "3": "Poor"}   # layer legend: 2 = Good, 3 = Poor
+    rows = []
+    for f in json.loads(get(url))["features"]:
+        a = f["attributes"]
+        rows.append({"eu_groundwater_body_code": a["euGroundWaterBodyCode"], "name": a["groundWaterBodyName"],
+                     "quantitative_status_code": a["gwQuantitativeStatusValue"],
+                     "quantitative_status": names.get(str(a["gwQuantitativeStatusValue"]), "?"),
+                     "quantitative_assessment_year": a["gwQuantitativeAssessmentYear"],
+                     "chemical_status_code": a["gwChemicalStatusValue"],
+                     "chemical_status": names.get(str(a["gwChemicalStatusValue"]), "?"),
+                     "reporting_year": a["cYear"],
+                     "source": "EEA WISE WFD2022_GroundWaterBody_WM layer 0 (legend: 2 = Good, 3 = Poor)", "url": url,
+                     "retrieved": TODAY})
+    write("wise_2022_groundwater_status.csv", rows)
+
+
 # ------------------------------------------------------------------ 3. legislation.mt
 LAWS = [  # (ELI path, what it is)
     ("sl/549.100", "Water Policy Framework Regulations (transposes the WFD)"),
@@ -127,6 +154,10 @@ LAWS = [  # (ELI path, what it is)
     ("cap/549", "Environment Protection Act"),
     ("cap/355", "Water Services Corporation Act"),
     ("sl/545.14", "Water Supply and Sewerage Services Regulations"),
+    ("sl/545.2", "Control of Water Pumps and Wells Order (S.L. 545.02)"),
+    ("sl/549.21", "Quality required of Surface Water intended for the Abstraction of Drinking Water Regulations"),
+    ("sl/549.53", "Protection of Groundwater against Pollution and Deterioration Regulations"),
+    ("sl/549.155", "Groundwater (Prohibition of Discharge to Groundwater Bodies) Regulations"),
 ]
 
 
@@ -188,7 +219,98 @@ def notices(years=(2024, 2025, 2026)):
     print("errors:", sum(r["title_en"].startswith("ERROR") or not r["title_en"] for r in rows))
 
 
+def _titles(urls, cache_name, pattern):
+    """English title and publication date of each legislation.mt ELI page (four at a time, resumable cache)."""
+    cache_f = pathlib.Path(__file__).resolve().parent / "out" / cache_name
+    cache_f.parent.mkdir(exist_ok=True)
+    cache = json.loads(cache_f.read_text()) if cache_f.exists() else {}
+
+    def title_of(u):
+        try:
+            h = get(u, timeout=60).decode("utf-8", "replace")
+            m = re.search(pattern, h)
+            d = re.search(r'property="eli:date_publication" content="([^"]+)"', h)
+            rec = {"title": re.sub(r"\s+", " ", m.group(1)).strip() if m else "", "published": d.group(1) if d else "",
+                   "retrieved": TODAY}
+        except Exception as e:  # noqa: BLE001
+            rec = {"title": f"ERROR {e}", "published": "", "retrieved": TODAY}
+        time.sleep(0.25)
+        return u, rec
+
+    todo = [u for u in urls if u not in cache or cache[u]["title"].startswith("ERROR")]
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        for i, (u, rec) in enumerate(pool.map(title_of, todo)):
+            cache[u] = rec
+            if i % 25 == 0:
+                cache_f.write_text(json.dumps(cache))
+    cache_f.write_text(json.dumps(cache))
+    return {u: cache[u] for u in urls}
+
+
+def acts(years=(2024, 2025, 2026), probe=6):
+    """Titles of every Act of these years listed in the ELI sitemap, plus the next `probe` numbers after the last
+    listed one in each year (a page that does not exist returns an empty generic page), because the sitemap may lag."""
+    sm = get("https://legislation.mt/eli/sitemap.xml").decode("utf-8", "replace")
+    listed = {}
+    for u, y, n in re.findall(r"<loc>(https://legislation\.mt/eli/act/(\d{4})/(\d+))</loc>", sm):
+        if int(y) in years:
+            listed.setdefault(int(y), set()).add(int(n))
+    urls, in_sitemap = [], {}
+    for y in years:
+        top = max(listed.get(y, {0}))
+        for n in range(1, top + probe + 1):
+            u = f"https://legislation.mt/eli/act/{y}/{n}"
+            urls.append(u)
+            in_sitemap[u] = n in listed.get(y, set())
+    t = _titles(urls, "act_cache.json", r'about="mlt:eli/act/[^"]+/eng" property="eli:title" content="([^"]+)"')
+    kw = r"(?i)water|groundwater|abstraction|borehole|environment|resources|agricultur|energy|planning|aquifer|\bwells?\b"
+    found = [u for u in urls if t[u]["title"]]
+
+    def text_counts(u):
+        """Mentions of groundwater / abstraction / borehole in the Act's own consolidated PDF (not kept)."""
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                p = pathlib.Path(tmp) / "x.pdf"
+                p.write_bytes(get(u + "/eng/pdf", timeout=90))
+                txt = subprocess.run(["pdftotext", "-layout", str(p), "-"], capture_output=True, text=True).stdout
+            time.sleep(0.25)
+            return u, [len(re.findall(k, txt, re.I)) for k in ("groundwater", "abstract", "borehole")] + [len(txt)]
+        except Exception:  # noqa: BLE001
+            return u, ["ERROR"] * 4
+
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        counts = dict(pool.map(text_counts, found))
+    rows = [{"year": u.split("/")[5], "number": u.split("/")[6], "url": u, "in_sitemap": in_sitemap[u],
+             "title_en": t[u]["title"], "published": t[u]["published"],
+             "matches_water_or_environment": bool(re.search(kw, t[u]["title"])),
+             "text_mentions_groundwater": counts.get(u, ["", "", "", ""])[0],
+             "text_mentions_abstract": counts.get(u, ["", "", "", ""])[1],
+             "text_mentions_borehole": counts.get(u, ["", "", "", ""])[2],
+             "text_characters": counts.get(u, ["", "", "", ""])[3], "retrieved": t[u]["retrieved"]}
+            for u in urls]
+    write("legislation_mt_acts_2024_2026.csv", rows)
+    print("errors:", sum(r["title_en"].startswith("ERROR") for r in rows))
+
+
+def sl_titles(prefixes=("549", "423", "545", "355", "427")):
+    """Titles of every subsidiary-legislation instrument under S.L. 549 (environment), 423 (old MRA), 545 (energy and
+    water regulator), 355 (WSC) and 427 in the ELI sitemap: a scan for any older abstraction instrument."""
+    sm = get("https://legislation.mt/eli/sitemap.xml").decode("utf-8", "replace")
+    urls = sorted({u for u in re.findall(r"<loc>(https://legislation\.mt/eli/sl/(?:%s)\.[0-9]+)</loc>" % "|".join(prefixes),
+                                         sm)}, key=lambda u: (u.split("/")[-1].split(".")[0],
+                                                              int(u.split(".")[-1])))
+    t = _titles(urls, "sl_cache.json", r'about="mlt:eli/sl/[^"]+/eng" property="eli:title" content="([^"]+)"')
+    kw = r"(?i)groundwater|abstraction|borehole|water polic|\bwells?\b|pump|aquifer|water.controlled|water resources"
+    rows = [{"instrument": "S.L. " + u.rsplit("/", 1)[1], "url": u, "title_en": t[u]["title"],
+             "published": t[u]["published"], "matches_water_abstraction": bool(re.search(kw, t[u]["title"])),
+             "retrieved": t[u]["retrieved"]} for u in urls]
+    write("legislation_mt_sl_titles.csv", rows)
+    print("errors:", sum(r["title_en"].startswith("ERROR") or not r["title_en"] for r in rows))
+
+
 if __name__ == "__main__":
-    parts = sys.argv[1:] or ["eurostat", "wise", "laws", "notices"]
+    parts = sys.argv[1:] or ["eurostat", "wise", "wise_status", "laws", "notices", "acts", "sl_titles"]
     for part in parts:
         globals()[part]()
