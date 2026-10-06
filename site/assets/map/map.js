@@ -64,6 +64,27 @@
   function ratedText(d) { return d.verdict ? d.verdict : d.pledge ? "Pledge: " + d.pledge.status : null; }
   function colOf(d) { return d.verdict ? VC[d.verdict] : d.pledge ? PLEDGE_COL[d.pledge.status] || NOT_YET_COL : NOT_YET_COL; }
   var TONE = { green: "#2e7d4f", lime: "#8db36b", amber: "#e3a72f", orange: "#d9772b", red: "#b5483a", maroon: "#8e2f25", grey: "#7d8f86" };
+  // What the canvas draws (the sphere, lines, labels, rings) follows the site theme: the colours are tokens in
+  // assets/theme.css, read here and read again when the reader switches theme (assets/theme.js).
+  var CV = {};
+  function tok(name, fallback) { var v = getComputedStyle(document.documentElement).getPropertyValue(name).trim(); return v || fallback; }
+  function chan(name, fallback) { return tok(name, fallback).split(/\s+/).join(","); }   // "4 18 12" -> "4,18,12" for rgba()
+  function readCanvasTheme() {
+    CV.light = document.documentElement.dataset.theme === "light";
+    CV.labelBg = tok("--cv-label-bg", "rgba(7,25,17,.78)"); CV.labelBg2 = tok("--cv-label-bg2", "rgba(7,25,17,.82)");
+    CV.labelInk = tok("--cv-label-ink", "#eef3ef"); CV.labelSub = tok("--cv-label-sub", "#a9c2b1");
+    CV.under = chan("--cv-under-rgb", "4 18 12"); CV.pale = chan("--cv-pale-rgb", "246 227 180"); CV.soft = chan("--cv-soft-rgb", "169 194 177");
+    CV.dust = tok("--cv-dust", "#cfe2d4"); CV.dustHi = tok("--cv-dust-hi", "#f6e3b4");
+    CV.sel = tok("--cv-sel", "#fff"); CV.ring = tok("--cv-ring", "rgba(255,255,255,.6)"); CV.ring2 = tok("--cv-ring2", "rgba(255,255,255,.7)");
+    CV.sph0 = tok("--cv-sph-0", "#3a7058"); CV.sph1 = tok("--cv-sph-1", "#1e4433"); CV.sph2 = tok("--cv-sph-2", "#0b2218");
+    CV.disc2 = tok("--cv-disc-2", "#143024"); CV.discSide = tok("--cv-disc-side", "#08170f");
+    CV.sphLine = tok("--cv-sph-line", "rgba(159,214,182,.16)"); CV.sphRim = tok("--cv-sph-rim", "rgba(159,214,182,.5)");
+  }
+  readCanvasTheme();
+  window.addEventListener("mizien:theme", function () {
+    readCanvasTheme();
+    if (typeof gmap !== "undefined" && gmap && typeof gmapReady !== "undefined" && gmapReady) gmap.setStyle(mapStyle());
+  });
   var ICONS = {
     // topics
     "Land & Trees": "M12 2.5 L5.5 11 H9 L5 16.5 H19 L15 11 H18.5 Z M12 16.5 V21.5",
@@ -683,7 +704,7 @@
     var g = document.getElementById("groupby"); g.textContent = "";
     MODE_ORDER.forEach(function (m) {
       if (m === "pledges" && !DATA.claims.some(function (c) { return c.pledge; })) return;
-      var b = el("button"); b.type = "button"; b.dataset.mode = m; b.appendChild(iconSvg("mode:" + m, "#eef3ef"));
+      var b = el("button"); b.type = "button"; b.dataset.mode = m; b.appendChild(iconSvg("mode:" + m, "currentColor"));
       b.appendChild(document.createTextNode(MODES[m].label)); b.onclick = function () { setMode(m); }; g.appendChild(b);
     });
   }
@@ -944,13 +965,13 @@
       var mx = (a.sx + b.sx) / 2, my = (a.sy + b.sy) / 2, dx = b.sx - a.sx, dy = b.sy - a.sy, bend = 0.18;
       var cx = mx - dy * bend, cy = my + dx * bend;
       blinks.push({ q: q, g: { a: a, b: b, c: { x: cx, y: cy } } });
-      if (sameLine(hover, q) || sameLine(sel, q)) { ctx.strokeStyle = "rgba(246,227,180,.3)"; ctx.lineWidth = w + 10; ctx.lineCap = "round";
+      if (sameLine(hover, q) || sameLine(sel, q)) { ctx.strokeStyle = "rgba(" + CV.pale + ",.3)"; ctx.lineWidth = w + 10; ctx.lineCap = "round";
         ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(cx, cy, b.sx, b.sy); ctx.stroke(); }
       ctx.lineCap = "round"; ctx.setLineDash([]);
-      ctx.strokeStyle = "rgba(4,18,12,.55)"; ctx.lineWidth = w + 3;
+      ctx.strokeStyle = "rgba(" + CV.under + ",.55)"; ctx.lineWidth = w + 3;
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(cx, cy, b.sx, b.sy); ctx.stroke();
       ctx.setLineDash(named ? [] : [6, 5]); if (!named && focus && !reduce) ctx.lineDashOffset = -t * 14;
-      ctx.strokeStyle = named ? "rgba(246,227,180,.95)" : "rgba(169,194,177,.9)"; ctx.globalAlpha = focus ? 1 : 0.55; ctx.lineWidth = w;
+      ctx.strokeStyle = named ? "rgba(" + CV.pale + ",.95)" : "rgba(" + CV.soft + ",.9)"; ctx.globalAlpha = focus ? 1 : 0.55; ctx.lineWidth = w;
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(cx, cy, b.sx, b.sy); ctx.stroke();
       ctx.globalAlpha = 1; ctx.lineDashOffset = 0; ctx.setLineDash([]); ctx.lineCap = "butt";
     });
@@ -998,23 +1019,23 @@
     for (var i = 0; i < N; i++) { var a = i / N * 6.2832, x = Math.cos(a) * rd, z = Math.sin(a) * rd; top.push(project({ x: x, y: 0, z: z })); bot.push(project({ x: x, y: 16, z: z })); }
     function poly(pts) { ctx.beginPath(); pts.forEach(function (q, i) { if (i) ctx.lineTo(q.sx, q.sy); else ctx.moveTo(q.sx, q.sy); }); ctx.closePath(); }
     ctx.save(); ctx.globalAlpha = vis;
-    ctx.fillStyle = "#08170f"; poly(bot); ctx.fill();
+    ctx.fillStyle = CV.discSide; poly(bot); ctx.fill();
     var g = ctx.createRadialGradient(c.sx, c.sy, 0, c.sx, c.sy, rd * c.s);
-    g.addColorStop(0, "#3a7058"); g.addColorStop(0.7, "#1e4433"); g.addColorStop(1, "#143024");
+    g.addColorStop(0, CV.sph0); g.addColorStop(0.7, CV.sph1); g.addColorStop(1, CV.disc2);
     ctx.fillStyle = g; poly(top); ctx.fill();
-    ctx.strokeStyle = "rgba(159,214,182,.16)"; ctx.lineWidth = 1;
+    ctx.strokeStyle = CV.sphLine; ctx.lineWidth = 1;
     [1 / 3, 2 / 3].forEach(function (f) { poly(top.map(function (q) { return { sx: c.sx + (q.sx - c.sx) * f, sy: c.sy + (q.sy - c.sy) * f }; })); ctx.stroke(); });
-    ctx.strokeStyle = "rgba(159,214,182,.5)"; ctx.lineWidth = 1.5; poly(top); ctx.stroke();
+    ctx.strokeStyle = CV.sphRim; ctx.lineWidth = 1.5; poly(top); ctx.stroke();
     ctx.restore();
   }
   function drawSphere(S) {
     var c = S.c, r = S.rs, wr = R * groupSpread() * SPHERE_K;
     ctx.save(); ctx.globalAlpha = S.vis;
     var g = ctx.createRadialGradient(c.sx - r * 0.35, c.sy - r * 0.4, r * 0.08, c.sx, c.sy, r);
-    g.addColorStop(0, "#3a7058"); g.addColorStop(0.5, "#1e4433"); g.addColorStop(1, "#0b2218");
+    g.addColorStop(0, CV.sph0); g.addColorStop(0.5, CV.sph1); g.addColorStop(1, CV.sph2);
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(c.sx, c.sy, r, 0, 6.283); ctx.fill();
     ctx.save(); ctx.beginPath(); ctx.arc(c.sx, c.sy, r, 0, 6.283); ctx.clip();
-    ctx.strokeStyle = "rgba(159,214,182,.16)"; ctx.lineWidth = 1;
+    ctx.strokeStyle = CV.sphLine; ctx.lineWidth = 1;
     function trace(fn, n) {   // a graticule line, only the half that faces the viewer
       var pen = false; ctx.beginPath();
       for (var i = 0; i <= n; i++) { var w = fn(i / n), q = project({ x: w.x * wr, y: w.y * wr, z: w.z * wr });
@@ -1024,7 +1045,7 @@
     for (var la = -60; la <= 60; la += 30) trace(function (u) { var a = u * 6.2832, cl = Math.cos(la * Math.PI / 180); return { x: Math.cos(a) * cl, y: Math.sin(la * Math.PI / 180), z: Math.sin(a) * cl }; }, 48);
     for (var lo = 0; lo < 180; lo += 30) trace(function (u) { var a = (u - 0.5) * 3.1416 * 2, b = lo * Math.PI / 180; return { x: Math.cos(a) * Math.cos(b), y: Math.sin(a), z: Math.cos(a) * Math.sin(b) }; }, 48);
     ctx.restore();
-    ctx.strokeStyle = "rgba(159,214,182,.5)"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(c.sx, c.sy, r, 0, 6.283); ctx.stroke();
+    ctx.strokeStyle = CV.sphRim; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(c.sx, c.sy, r, 0, 6.283); ctx.stroke();
     ctx.restore();
   }
 
@@ -1052,7 +1073,7 @@
     ctx.clearRect(0, 0, W, H);
     stars.forEach(function (s) {
       ctx.globalAlpha = s.a * (0.65 + 0.35 * Math.sin(t * 0.7 + s.tw));
-      ctx.fillStyle = s.d > .85 ? "#f6e3b4" : "#cfe2d4";
+      ctx.fillStyle = s.d > .85 ? CV.dustHi : CV.dust;
       var px = (s.x * W + cam.yaw * 30 * s.d) % W; if (px < 0) px += W;
       ctx.beginPath(); ctx.arc(px, s.y * H, s.r, 0, 6.283); ctx.fill();
     });
@@ -1109,7 +1130,7 @@
       var pa = P.get(a), pb = P.get(b), on = !F || F.ids[l.a] || F.ids[l.b];
       var pc = { x: (pa.sx + pb.sx) / 2, y: (pa.sy + pb.sy) / 2 - 40 }, lit = (hover && hover.kind === "plink" && hover.l === l) || (sel && sel.kind === "plink" && sel.l === l);
       plinks.push({ l: l, g: { a: pa, b: pb, c: pc } });
-      ctx.save(); ctx.globalAlpha = on || lit ? 0.95 : 0.25; ctx.strokeStyle = "#f6e3b4"; ctx.lineWidth = lit ? 4.2 : 2.6; ctx.setLineDash([2, 5]); ctx.lineCap = "round";
+      ctx.save(); ctx.globalAlpha = on || lit ? 0.95 : 0.25; ctx.strokeStyle = CV.dustHi; ctx.lineWidth = lit ? 4.2 : 2.6; ctx.setLineDash([2, 5]); ctx.lineCap = "round";
       if (!reduce) ctx.lineDashOffset = -t * 10;
       ctx.beginPath(); ctx.moveTo(pa.sx, pa.sy); ctx.quadraticCurveTo((pa.sx + pb.sx) / 2, (pa.sy + pb.sy) / 2 - 40, pb.sx, pb.sy); ctx.stroke(); ctx.restore();
     });
@@ -1143,7 +1164,7 @@
       var weak = e.strength && (e.strength.indexOf("Weak") === 0 || e.strength.indexOf("Pattern") === 0);
       ctx.lineCap = "round";
       ctx.setLineDash([]);                                   // dark underlay: the line reads on any background
-      ctx.strokeStyle = "rgba(4,18,12," + (dim ? 0.12 : 0.6) + ")"; ctx.lineWidth = strong ? 7 : 4.4;
+      ctx.strokeStyle = "rgba(" + CV.under + "," + (dim ? 0.12 : 0.6) + ")"; ctx.lineWidth = strong ? 7 : 4.4;
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke();
       if (strong) { ctx.strokeStyle = rgba(col, 0.32); ctx.lineWidth = 13;
         ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke(); }
@@ -1153,7 +1174,7 @@
       ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.quadraticCurveTo(c.x, c.y, b.sx, b.sy); ctx.stroke();
       ctx.lineDashOffset = 0; ctx.globalAlpha = 1; ctx.lineCap = "butt";
       if ((hi || hv) && !reduce) { // particles travelling along highlighted links
-        ctx.setLineDash([]); ctx.fillStyle = "#fff";
+        ctx.setLineDash([]); ctx.fillStyle = CV.sel;
         for (var q = 0; q < 3; q++) { var s = ((t * 0.35 + q / 3 + i * 0.07) % 1), pt = qpt(e._g, s);
           ctx.globalAlpha = 0.9 * Math.sin(s * Math.PI); ctx.beginPath(); ctx.arc(pt.x, pt.y, 2.4, 0, 6.283); ctx.fill(); }
         ctx.globalAlpha = 1;
@@ -1184,7 +1205,7 @@
         var g2 = ctx.createRadialGradient(p.sx - r * .35, p.sy - r * .4, r * .1, p.sx, p.sy, r);
         g2.addColorStop(0, rgba("#ffffff", 0.55)); g2.addColorStop(0.25, n.color); g2.addColorStop(1, rgba(n.color, 0.85));
         ctx.fillStyle = g2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r, 0, 6.283); ctx.fill();
-        ctx.strokeStyle = isSel ? "#fff" : "rgba(255,255,255,.6)"; ctx.lineWidth = isSel ? 3 : 1.5;
+        ctx.strokeStyle = isSel ? CV.sel : CV.ring; ctx.lineWidth = isSel ? 3 : 1.5;
         if (n.person && !isSel) ctx.setLineDash([3, 3]); ctx.stroke(); ctx.setLineDash([]);
         var ip = ICON_PATHS[n.person ? "person" : iconKey(n.sub ? n.parent.name : n.name)];
         if (ip) { ctx.save(); var s2 = r * 1.15 / 24; ctx.translate(p.sx - 12 * s2, p.sy - 12 * s2); ctx.scale(s2, s2);
@@ -1209,9 +1230,9 @@
         g3.addColorStop(0, rgba("#ffffff", 0.5)); g3.addColorStop(0.35, col); g3.addColorStop(1, col);
         ctx.fillStyle = g3; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2, 0, 6.283); ctx.fill();
         ctx.strokeStyle = "rgba(246,244,238,.6)"; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 0.6, 0, 6.283); ctx.stroke();
-        if (!isRated) { ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,.7)"; ctx.lineWidth = 1.1;
+        if (!isRated) { ctx.setLineDash([2, 3]); ctx.strokeStyle = CV.ring2; ctx.lineWidth = 1.1;
           ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 3.4, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
-        if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
+        if (isSel) { ctx.strokeStyle = CV.sel; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
         if (Tray && Tray.has(n.id)) { ctx.strokeStyle = "#e3a72f"; ctx.lineWidth = 2.2; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 5, 0, 6.283); ctx.stroke(); }   // pinned
         n._p = { x: p.sx, y: p.sy, r: r2 + 3, live: true };
         var focused = F && F.ids[n.id];
@@ -1251,13 +1272,13 @@
       var box = { x: L.x - bw / 2, y: L.y - 12, w: bw, h: bh };
       if (L.pri < 3.5 && placed.some(function (o) { return box.x < o.x + o.w && box.x + box.w > o.x && box.y < o.y + o.h && box.y + box.h > o.y; })) return;
       placed.push(box); ctx.globalAlpha = L.alpha;
-      if (L.hub) { ctx.fillStyle = "rgba(7,25,17,.78)"; roundRect(box.x, box.y, box.w, box.h, 9); ctx.fill();
+      if (L.hub) { ctx.fillStyle = CV.labelBg; roundRect(box.x, box.y, box.w, box.h, 9); ctx.fill();
         ctx.strokeStyle = rgba(L.color, 0.7); ctx.lineWidth = 1; ctx.stroke(); }
-      else if (L.sub || L.tag) { ctx.fillStyle = "rgba(7,25,17,.82)"; roundRect(box.x, box.y, box.w, box.h, 7); ctx.fill();
+      else if (L.sub || L.tag) { ctx.fillStyle = CV.labelBg2; roundRect(box.x, box.y, box.w, box.h, 7); ctx.fill();
         if (L.tag) { ctx.strokeStyle = rgba(L.color, 0.85); ctx.lineWidth = 1.2; ctx.stroke(); } }
-      ctx.textAlign = "center"; ctx.fillStyle = "#eef3ef"; ctx.font = titleFont;
+      ctx.textAlign = "center"; ctx.fillStyle = CV.labelInk; ctx.font = titleFont;
       ctx.fillText(L.text, L.x, L.y + 1);
-      if (L.sub) { ctx.font = L.hub ? "11px Arial, sans-serif" : "italic 11px Arial, sans-serif"; ctx.fillStyle = "#a9c2b1";
+      if (L.sub) { ctx.font = L.hub ? "11px Arial, sans-serif" : "italic 11px Arial, sans-serif"; ctx.fillStyle = CV.labelSub;
         var sub = L.sub; while (ctx.measureText(sub).width > 220 && sub.length > 4) sub = sub.slice(0, -2);
         ctx.fillText(sub === L.sub ? sub : sub + "…", L.x, L.y + 15); }
       ctx.globalAlpha = 1;
@@ -1281,7 +1302,7 @@
       ctx.save(); ctx.globalAlpha = a;
       ctx.strokeStyle = "rgba(246,244,238,.45)"; ctx.lineWidth = 1;
       ctx.beginPath(); ctx.moveTo(par._p.x + Math.cos(ang) * (par._p.r - 2), par._p.y + Math.sin(ang) * (par._p.r - 2)); ctx.lineTo(x, y); ctx.stroke();
-      ctx.fillStyle = TONE[pt.data.tone] || TONE.grey; ctx.strokeStyle = isSel || isHov ? "#fff" : "rgba(246,244,238,.85)"; ctx.lineWidth = isSel ? 2.2 : 1.1;
+      ctx.fillStyle = TONE[pt.data.tone] || TONE.grey; ctx.strokeStyle = isSel || isHov ? CV.sel : "rgba(246,244,238,.85)"; ctx.lineWidth = isSel ? 2.2 : 1.1;
       ctx.beginPath(); ctx.arc(x, y, r * (isHov || isSel ? 1.35 : 1), 0, 6.283); ctx.fill(); ctx.stroke(); ctx.restore();
       pt._p = { x: x, y: y, r: r + 2, live: focus || cam.zoom >= 1.6 };
       if (focus) labels.push({ x: x, y: y + r + 12, text: pt.id.slice(-1), sub: isHov || isSel ? pt.data.rating || "" : "", hub: false, color: TONE[pt.data.tone] || TONE.grey,
@@ -1365,6 +1386,24 @@
     var land = { type: "FeatureCollection", features: (GEO.islands || []).map(function (I) {   // the land under the tiles, so the sea
       return { type: "Feature", properties: {}, geometry: { type: "Polygon", coordinates: [ll(I.detail || I.coarse)] } }; }) };   // beyond them reads as sea
     var minor = ["minor", "service"], mid = ["tertiary"], main = ["primary", "secondary"], fast = ["motorway", "trunk"];
+    // two palettes: the dark one is the original; the light one is pale land and sea with deep-green lines and names
+    var C = CV.light ? {
+      sea: "#cfe3e0", land: "#f3f1e6", wood: "#d6e6cf", grass: "#e0ecd6", farm: "#e8ecd5", cover: "#e2eadb",
+      industrial: "#dedcd0", quarry: "#d2cfc2", built: "#ebe8dc", park: "#cde5c4", water: "#cfe3e0", waterway: "#9cc6d0",
+      aero: "#e4e2d8", bld: "#d9d4c5", bldLine: "#bdb7a5",
+      path: "rgba(20,69,47,.3)", ferry: "rgba(60,110,143,.55)", ferry2: "rgba(60,110,143,.5)",
+      minor: "rgba(20,69,47,.2)", mid: "rgba(20,69,47,.3)", mainCase: "rgba(255,255,255,.9)", main: "rgba(20,69,47,.55)", fast: "rgba(190,140,50,.7)",
+      roadTxt: "#14452f", roadHalo: "rgba(246,244,238,.95)", waterTxt: "#3c6e8f", waterHalo: "rgba(207,227,224,.95)",
+      locTxt: "rgba(20,69,47,.72)", locHalo: "rgba(246,244,238,.92)", townTxt: "rgba(20,69,47,.92)", townHalo: "rgba(246,244,238,.95)"
+    } : {
+      sea: "#0c2c21", land: "#285c43", wood: "#2a6a48", grass: "#2f6c4c", farm: "#2c6347", cover: "#2b6448",
+      industrial: "#3d6656", quarry: "#5a6b5c", built: "#36684f", park: "#2f7451", water: "#0c2c21", waterway: "#245e66",
+      aero: "#3a5f4e", bld: "#4a7c61", bldLine: "#5c8f73",
+      path: "rgba(207,226,212,.28)", ferry: "rgba(127,179,196,.4)", ferry2: "rgba(127,179,196,.35)",
+      minor: "rgba(207,226,212,.3)", mid: "rgba(207,226,212,.42)", mainCase: "rgba(10,32,23,.75)", main: "rgba(238,243,239,.62)", fast: "rgba(227,194,122,.85)",
+      roadTxt: "#d4e4d9", roadHalo: "rgba(14,42,31,.92)", waterTxt: "#86b8c8", waterHalo: "rgba(12,44,33,.9)",
+      locTxt: "rgba(238,243,239,.6)", locHalo: "rgba(14,42,31,.9)", townTxt: "rgba(238,243,239,.82)", townHalo: "rgba(14,42,31,.92)"
+    };
     function roads(id, classes, minzoom, color, w, extra) {
       return Object.assign({ id: id, type: "line", source: "omt", "source-layer": "transportation", minzoom: minzoom,
         filter: ["all", ["in", ["get", "class"], ["literal", classes]], ["!=", ["get", "brunnel"], "tunnel"]],
@@ -1378,43 +1417,43 @@
         towns: { type: "geojson", data: towns }, land: { type: "geojson", data: land }
       },
       layers: [
-        { id: "sea", type: "background", paint: { "background-color": "#0c2c21" } },
-        { id: "land", type: "fill", source: "land", paint: { "fill-color": "#285c43" } },
+        { id: "sea", type: "background", paint: { "background-color": C.sea } },
+        { id: "land", type: "fill", source: "land", paint: { "fill-color": C.land } },
         { id: "landcover", type: "fill", source: "omt", "source-layer": "landcover",
-          paint: { "fill-color": ["match", ["get", "class"], "wood", "#2a6a48", "grass", "#2f6c4c", "farmland", "#2c6347", "#2b6448"], "fill-opacity": 0.8 } },
+          paint: { "fill-color": ["match", ["get", "class"], "wood", C.wood, "grass", C.grass, "farmland", C.farm, C.cover], "fill-opacity": 0.8 } },
         { id: "landuse", type: "fill", source: "omt", "source-layer": "landuse",
           filter: ["in", ["get", "class"], ["literal", ["residential", "suburb", "neighbourhood", "commercial", "industrial", "retail", "quarry"]]],
-          paint: { "fill-color": ["match", ["get", "class"], "industrial", "#3d6656", "quarry", "#5a6b5c", "#36684f"],
+          paint: { "fill-color": ["match", ["get", "class"], "industrial", C.industrial, "quarry", C.quarry, C.built],
                    "fill-opacity": ["interpolate", ["linear"], ["zoom"], 9, 0.45, 14, 0.85] } },
-        { id: "park", type: "fill", source: "omt", "source-layer": "park", paint: { "fill-color": "#2f7451", "fill-opacity": 0.6 } },
-        { id: "water", type: "fill", source: "omt", "source-layer": "water", paint: { "fill-color": "#0c2c21" } },
-        { id: "waterway", type: "line", source: "omt", "source-layer": "waterway", minzoom: 12, paint: { "line-color": "#245e66", "line-width": 1 } },
+        { id: "park", type: "fill", source: "omt", "source-layer": "park", paint: { "fill-color": C.park, "fill-opacity": 0.6 } },
+        { id: "water", type: "fill", source: "omt", "source-layer": "water", paint: { "fill-color": C.water } },
+        { id: "waterway", type: "line", source: "omt", "source-layer": "waterway", minzoom: 12, paint: { "line-color": C.waterway, "line-width": 1 } },
         { id: "aeroway", type: "fill", source: "omt", "source-layer": "aeroway", filter: ["==", ["geometry-type"], "Polygon"],
-          paint: { "fill-color": "#3a5f4e", "fill-opacity": 0.8 } },
+          paint: { "fill-color": C.aero, "fill-opacity": 0.8 } },
         { id: "building", type: "fill", source: "omt", "source-layer": "building", minzoom: 14,
-          paint: { "fill-color": "#4a7c61", "fill-opacity": ["interpolate", ["linear"], ["zoom"], 14, 0, 15.5, 0.55], "fill-outline-color": "#5c8f73" } },
-        roads("path", ["path", "track"], 15, "rgba(207,226,212,.28)", [15, 0.6, 18, 1.6], { paint: { "line-color": "rgba(207,226,212,.28)", "line-width": 1, "line-dasharray": [2, 2] } }),
-        roads("ferry", ["ferry"], 10, "rgba(127,179,196,.4)", [9, 0.8, 16, 2], { paint: { "line-color": "rgba(127,179,196,.35)", "line-width": 1.2, "line-dasharray": [3, 3] } }),
-        roads("road-minor", minor, 13, "rgba(207,226,212,.3)", [13, 0.4, 16, 3, 18, 9]),
-        roads("road-mid", mid, 11, "rgba(207,226,212,.42)", [11, 0.5, 16, 4, 18, 11]),
-        roads("road-main-case", main.concat(fast), 13, "rgba(10,32,23,.75)", [13, 2.6, 16, 9, 18, 18]),
-        roads("road-main", main, 9, "rgba(238,243,239,.62)", [9, 0.5, 12, 1.3, 16, 6, 18, 14]),
-        roads("road-fast", fast, 8, "rgba(227,194,122,.85)", [8, 0.7, 12, 1.8, 16, 7.5, 18, 16]),
+          paint: { "fill-color": C.bld, "fill-opacity": ["interpolate", ["linear"], ["zoom"], 14, 0, 15.5, 0.55], "fill-outline-color": C.bldLine } },
+        roads("path", ["path", "track"], 15, C.path, [15, 0.6, 18, 1.6], { paint: { "line-color": C.path, "line-width": 1, "line-dasharray": [2, 2] } }),
+        roads("ferry", ["ferry"], 10, C.ferry, [9, 0.8, 16, 2], { paint: { "line-color": C.ferry2, "line-width": 1.2, "line-dasharray": [3, 3] } }),
+        roads("road-minor", minor, 13, C.minor, [13, 0.4, 16, 3, 18, 9]),
+        roads("road-mid", mid, 11, C.mid, [11, 0.5, 16, 4, 18, 11]),
+        roads("road-main-case", main.concat(fast), 13, C.mainCase, [13, 2.6, 16, 9, 18, 18]),
+        roads("road-main", main, 9, C.main, [9, 0.5, 12, 1.3, 16, 6, 18, 14]),
+        roads("road-fast", fast, 8, C.fast, [8, 0.7, 12, 1.8, 16, 7.5, 18, 16]),
         { id: "road-names", type: "symbol", source: "omt", "source-layer": "transportation_name", minzoom: 15,
           layout: { "symbol-placement": "line", "text-field": ["coalesce", ["get", "name"], ["get", "ref"]], "text-font": ["Noto Sans Regular"], "text-size": 11.5 },
-          paint: { "text-color": "#d4e4d9", "text-halo-color": "rgba(14,42,31,.92)", "text-halo-width": 1.3 } },
+          paint: { "text-color": C.roadTxt, "text-halo-color": C.roadHalo, "text-halo-width": 1.3 } },
         { id: "water-names", type: "symbol", source: "omt", "source-layer": "water_name", minzoom: 11,
           layout: { "text-field": ["get", "name"], "text-font": ["Noto Sans Italic"], "text-size": 11.5, "text-max-width": 8 },
-          paint: { "text-color": "#86b8c8", "text-halo-color": "rgba(12,44,33,.9)", "text-halo-width": 1 } },
+          paint: { "text-color": C.waterTxt, "text-halo-color": C.waterHalo, "text-halo-width": 1 } },
         { id: "localities", type: "symbol", source: "omt", "source-layer": "place", minzoom: 14,
           filter: ["in", ["get", "class"], ["literal", ["suburb", "neighbourhood", "hamlet", "locality", "quarter"]]],
           layout: { "text-field": ["get", "name"], "text-font": ["Noto Sans Italic"], "text-size": 11.5, "text-max-width": 9 },
-          paint: { "text-color": "rgba(238,243,239,.6)", "text-halo-color": "rgba(14,42,31,.9)", "text-halo-width": 1.2 } },
+          paint: { "text-color": C.locTxt, "text-halo-color": C.locHalo, "text-halo-width": 1.2 } },
         { id: "towns", type: "symbol", source: "towns", minzoom: 9.6,
           layout: { "text-field": ["get", "name"], "text-font": ["Noto Sans Italic"], "symbol-sort-key": ["-", 0, ["get", "pop"]],
                     "text-size": ["interpolate", ["linear"], ["zoom"], 10, ["case", [">=", ["get", "pop"], 12000], 12.5, 11], 15, 15],
                     "text-padding": 6, "text-max-width": 9 },
-          paint: { "text-color": "rgba(238,243,239,.82)", "text-halo-color": "rgba(14,42,31,.92)", "text-halo-width": 1.5,
+          paint: { "text-color": C.townTxt, "text-halo-color": C.townHalo, "text-halo-width": 1.5,
                    "text-opacity": ["interpolate", ["linear"], ["zoom"], 9.6, 0, 10.2, 1] } }
       ]
     };
@@ -1666,12 +1705,12 @@
     [["graph", "Għanqbuta", "mode:network", "Għanqbuta (spider): a web of claims, with topic hubs, spokes and the threads that link them"],
      ["map", "Map", "mode:topic", "Claims placed where they happened, across Malta and Gozo"]].forEach(function (v) {
       var b = el("button"); b.type = "button"; b.dataset.view = v[0]; b.title = v[3]; b.setAttribute("aria-pressed", view === v[0] ? "true" : "false");
-      if (v[0] === "map") { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 L9 4 L15 6.5 L21 4 V17.5 L15 20 L9 17.5 L3 20 Z M9 4 V17.5 M15 6.5 V20" fill="none" stroke="#cfe2d4" stroke-width="1.8" stroke-linejoin="round"/></svg>'; }
-      else b.appendChild(iconSvg(v[2], "#cfe2d4"));
+      if (v[0] === "map") { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 L9 4 L15 6.5 L21 4 V17.5 L15 20 L9 17.5 L3 20 Z M9 4 V17.5 M15 6.5 V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'; }
+      else b.appendChild(iconSvg(v[2], "currentColor"));
       b.appendChild(document.createTextNode(v[1])); b.onclick = function () { setView(v[0]); }; g.appendChild(b);
     });
     var t = el("a"); t.id = "tl-link"; t.title = "Every dated claim on a timeline, with the same filter";
-    t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l3.5 2" fill="none" stroke="#cfe2d4" stroke-width="1.8" stroke-linecap="round"/></svg>';
+    t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
     t.appendChild(document.createTextNode("Timeline")); g.appendChild(t); syncTimelineLink();
   }
   var toastTimer = null;
@@ -2209,10 +2248,10 @@
 
   var previewPayload = new URLSearchParams(location.search).get("previewData");
   if (previewPayload) {
-    try { init(JSON.parse(previewPayload)); } catch (e) { stage.appendChild(el("p", null, "The embedded map data could not be read.")).style.cssText = "padding:24px;color:#e3a72f"; }
+    try { init(JSON.parse(previewPayload)); } catch (e) { stage.appendChild(el("p", null, "The embedded map data could not be read.")).style.cssText = "padding:24px;color:var(--accent)"; }
   } else {
     fetch(ROOT + "data/claims.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(init).catch(function () {
-      stage.appendChild(el("p", null, "Could not load data/claims.json. If you opened this file directly, serve the docs folder instead (python -m http.server -d docs).")).style.cssText = "padding:24px;color:#e3a72f";
+      stage.appendChild(el("p", null, "Could not load data/claims.json. If you opened this file directly, serve the docs folder instead (python -m http.server -d docs).")).style.cssText = "padding:24px;color:var(--accent)";
     });
   }
 })();

@@ -1,12 +1,12 @@
 /* Main tabs with icons, shared by the map homepage and every other page (site/_includes/nav.njk). */
 .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
 .tab { display: inline-flex; align-items: center; gap: 7px; min-height: 38px; padding: 7px 13px 7px 11px; border-radius: 999px;
-  border: 1px solid rgba(207,226,212,.24); background: rgba(8,30,21,.45); color: #eef3ef; text-decoration: none;
+  border: 1px solid rgb(var(--rim) / .24); background: rgb(var(--panel) / .45); color: var(--ink); text-decoration: none;
   font: 600 14px/1.2 "Liberation Sans", Arial, Helvetica, sans-serif; transition: border-color .15s, background .15s; }
-.tab .ico { width: 18px; height: 18px; flex: none; fill: none; stroke: #e3a72f; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
-.tab:hover { border-color: #e3a72f; background: rgba(20,69,47,.75); }
-.tab:focus-visible { outline: 3px solid #e3a72f; outline-offset: 2px; }
-.tab.is-current { background: #e3a72f; border-color: #e3a72f; color: #13301f; }
+.tab .ico { width: 18px; height: 18px; flex: none; fill: none; stroke: var(--accent); stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.tab:hover { border-color: var(--accent); background: var(--hover); }
+.tab:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.tab.is-current { background: var(--amber); border-color: var(--accent); color: #13301f; }
 .tab.is-current .ico { stroke: #13301f; }
 @media (max-width: 700px) {
   .tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; max-width: 100%; }
