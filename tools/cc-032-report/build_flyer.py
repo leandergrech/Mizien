@@ -27,13 +27,13 @@ build_flyer(Flyer(
            ("None", ORANGE, "Bus-charging figures published",
             "The share covered cannot be calculated. Parliament was told no feasibility study was made "
             "(Newsbook, second-hand).")],
-    fair=("The flowers were EU-funded (about €850,000). Parliament was told they work and are Malta’s first "
+    fair=("The flowers were EU-funded (about €850,000). Parliament was told no other such installation exists in Malta "
           "(Newsbook, second-hand). A claim to be among Europe’s largest would have held."),
     asks=["What “first of its kind in Europe” meant.",
           "The flowers’ capacity and metered output.",
           "The shuttle buses’ charging energy and hours.",
           "How the flowers are wired to the chargers."],
-    footer="Version 1.0  ·  6 October 2026  ·  Draft pending right of reply from the Ministry for Gozo and Planning "
+    footer="Version 1.1  ·  6 October 2026  ·  Draft pending right of reply from the Ministry for Gozo and Planning "
            "and the Public Works Department",
     pdf_title="Claim Check 032 – Europe’s first solar flowers?"))
 flyer_png(str(OUT / "flyer.pdf"), str(OUT / "flyer.png"))
