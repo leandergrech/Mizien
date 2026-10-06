@@ -5210,7 +5210,7 @@
       "similar": [
         {
           "id": "CC-109",
-          "score": 0.33,
+          "score": 0.32,
           "terms": [
             "sharing",
             "effort",
@@ -5987,10 +5987,11 @@
       "id": "CC-109",
       "title": "EU: transport is 48% of effort-sharing emissions",
       "category": "Transport",
-      "claim": "European Commission (2026 Country Report - Malta, 3 Jun 2026): transport is the dominant source of Malta's effort-sharing emissions, generating 48% of them in 2024 and up by 45% since 2005.",
-      "counter": "The same report projects Malta's effort-sharing emissions 29.7% above 2005 in 2030 against a 19% cut target (see CC-094). 'Up by 45%' may refer to transport emissions or to transport's share; the sentence does not say, so the footnoted data must be read. Malta's government points to a fast-growing zero-emission share of new cars (see CC-110).",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "European Commission (2026 Country Report - Malta, 3 Jun 2026): \"Transport is the dominant source of Malta's effort sharing emissions. It has generated 48% of these emissions in 2024, up by 45% since 2005.\"",
+      "counter": "On the effort-sharing definition (all domestic transport, aviation CO2 excluded; the definition of the report's own Graph 3.1) transport was 53.3% of Malta's effort-sharing emissions in 2024 in the EEA approximated inventory and in the report's Graph 3.1, and 53% in the Commission's CAPR 2025 Malta profile; 54.8% on the final 2026 inventory (our estimate of the total). Only road transport alone over an ESR total gives 48% (47.5-48.3%; our identification; the report does not say how 48% was computed). The 45% reproduces exactly as the rise in transport emissions (+45.0% on approximated 2024 data, 0.528 to 0.766 Mt; +48.4% on the final inventory); the share barely moved (52.0% to 53.3%). Footnote (140) and Table A8.1 call the sector \"road transport\", but the table's series includes domestic shipping (11.9% of it in 2024, +184% since 2005). 2024 values are approximated; final data after the 2027 review.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Cars & traffic",
       "location": {
@@ -6000,22 +6001,57 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-109A",
+          "text": "Transport is the dominant source of Malta’s effort sharing emissions",
+          "finding": "53.3% in 2024 on the approximated data; the next sector, small industry, 19%. The largest sector in every year 2005–2024 [5, 6].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-109B",
+          "text": "It has generated 48% of these emissions in 2024",
+          "finding": "53% on the report’s own definition: EEA approximated inventory and Graph 3.1 53.3%, Commission climate profile 53% [1, 5, 8]. Only road-transport-only ratios (47.5–48.3%) give 48% (our identification).",
+          "rating": "Understated",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-109C",
+          "text": "… up by 45% since 2005",
+          "finding": "The rise in emissions, not in the share: +45.0% on approximated 2024 data (0.528 to 0.766 Mt); +48.4% on the final 2026 inventory [1, 5, 6]. The share moved from 52.0% to 53.3%.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-109D",
+          "text": "Effort sharing covers “road transport”; Table A8.1 row “domestic road transport”",
+          "finding": "Effort sharing covers all domestic transport except aviation CO2 [2, 3]. The table row matches that wider series to 0.1 points in 2018–2023 and exactly in 2024 (45.0%); road alone is up to 6.2 points off (2024: +39.4%). Shipping is 11.9% of it [6].",
+          "rating": "Loosely worded",
+          "tone": "amber"
+        }
+      ],
       "date": "2026-06-03",
       "quote": "Transport is the dominant source of Malta’s effort sharing emissions. It has generated 48% of these emissions in 2024 (141), up by 45% since 2005.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-06",
+      "outputs": {
+        "report": "claim-files/CC-109/report.pdf",
+        "flyer_pdf": "claim-files/CC-109/flyer.pdf",
+        "flyer_png": "claim-files/CC-109/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-109/claim.yml",
       "similar": [
         {
           "id": "CC-094",
-          "score": 0.33,
+          "score": 0.32,
           "terms": [
             "sharing",
             "effort",
