@@ -63,8 +63,12 @@ wording. Malta does issue permits to *drill* boreholes (S.L. 549.165); the Commi
    knowledge on surface-water abstraction. Not searched: every other Chapter of the Laws of Malta and local by-laws.
 2. **An instrument that authorises (permits) groundwater abstraction.** Same instruments. The two regimes that issue
    anything (notification, drilling permits) state that they give no right to draw water. The 2023 Green Paper and
-   the 2025 interim report describe an abstraction permit as future legislation. No Legal Notice of 2024–2026 has a
-   title mentioning groundwater, abstraction, boreholes, wells or water policy (see `checks.csv`).
+   the 2025 interim report describe an abstraction permit as future legislation. Of the 943 Legal Notices of
+   2024–2026 (all titles read), one mentions groundwater, abstraction, boreholes, wells or water policy: L.N. 374 of
+   2024 (27 Dec 2024), read in full, which adds to S.L. 549.165 reg. 6(2) an exception to the drilling moratorium for
+   research boreholes by public entities with ERA's prior approval. No other water title concerns abstraction (the
+   others: urban waste water treatment, utilities procurement, fees for fishermen's water and electricity, inland
+   waterway working time). See `checks.csv`.
 3. **A review mechanism in the operative instruments.** S.L. 549.164–549.166 and 549.168 read in full: no term,
    renewal, expiry or periodic review of a notified source or of its use. The general duty in S.L. 549.100 reg.
    12(3)(e) is quoted above.
