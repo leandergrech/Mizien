@@ -1,0 +1,242 @@
+freq,citizen,agedef,age,unit,sex,geo,time,value,flag,dataset,label,updated,retrieved
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2020,5614,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2021,7237,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2022,7122,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2023,6863,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2024,7346,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2010,3387,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2011,3820,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2012,7148,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2013,10386,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2014,13852,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2015,16309,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2016,16462,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2017,20969,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2018,25490,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2019,27323,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2020,13107,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2021,15552,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2022,33145,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2023,39983,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2024,31576,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2010,888,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2011,1645,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2012,2004,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2013,2060,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2014,2076,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2015,1893,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2016,1654,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2017,1781,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2018,1904,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2019,1981,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2020,1644,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2021,1411,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2022,1819,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2023,2256,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2024,2457,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2020,7493,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2021,8315,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2022,26023,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2023,33120,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2024,24230,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2012,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2013,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2014,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2015,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2016,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2017,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2018,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2019,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2020,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2021,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2022,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2023,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2024,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2010,4275,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2011,5465,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2012,9152,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2013,12446,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2014,15928,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2015,18202,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2016,18116,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2017,22750,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2018,27394,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2019,29304,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2020,14751,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2021,16963,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2022,34964,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2023,42239,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2024,34033,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2010,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2011,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2012,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2013,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2014,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2015,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2016,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2017,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2018,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2019,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2020,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2021,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2022,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2023,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2024,0,,migr_imm1ctz,"Immigration by age group, sex and citizenship",2026-05-29T23:00:00+0200,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2020,4683,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2021,5556,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2022,4521,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2023,5952,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2024,5429,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2010,2861,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2011,2447,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2012,3801,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2013,4241,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2014,3984,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2015,6247,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2016,7573,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2017,6163,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2018,8188,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2019,6595,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2020,12470,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2021,12041,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2022,12386,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2023,19512,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,FOR_STLS,COMPLET,TOTAL,NR,T,MT,2024,21495,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2010,1340,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2011,1359,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2012,2145,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2013,2309,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2014,2216,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2015,2008,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2016,1937,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2017,1873,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2018,1831,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2019,1484,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2020,1334,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2021,1105,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2022,780,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2023,1767,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NAT,COMPLET,TOTAL,NR,T,MT,2024,1924,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2020,7787,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2021,6485,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2022,7865,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2023,13560,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2024,16066,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2012,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2013,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2014,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2015,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2016,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2017,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2018,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2019,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2020,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2021,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2022,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2023,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2024,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2010,4201,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2011,3806,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2012,5946,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2013,6550,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2014,6200,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2015,8255,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2016,9510,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2017,8036,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2018,10019,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2019,8079,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2020,13804,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2021,13146,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2022,13166,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2023,21279,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2024,23419,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2010,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2011,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2012,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2013,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2014,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2015,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2016,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2017,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2018,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2019,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2020,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2021,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2022,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2023,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2024,0,,migr_emi1ctz,"Emigration by age group, sex and citizenship",2026-09-22T23:00:00+0200,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2010,38,b,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2011,28,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2012,112,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2013,70,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2014,70,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2015,74,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2016,130,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2017,166,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2018,217,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2019,139,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2020,117,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2021,104,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2022,77,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2023,78,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,EU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2024,86,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2010,264,b,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2011,192,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2012,528,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2013,328,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2014,239,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2015,572,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2016,1365,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2017,1807,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2018,827,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2019,631,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2020,1064,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2021,1052,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2022,765,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2023,747,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,NEU27_2020_FOR,COMPLET,TOTAL,NR,T,MT,2024,1059,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2010,1,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2011,1,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2012,5,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2013,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2014,1,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2015,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2016,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2017,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2018,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2019,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2020,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2021,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2022,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2023,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,STLS,COMPLET,TOTAL,NR,T,MT,2024,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2010,322,b,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2011,236,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2012,661,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2013,418,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2014,314,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2015,646,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2016,1495,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2017,1973,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2018,1044,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2019,770,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2020,1181,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2021,1156,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2022,842,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2023,825,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,TOTAL,COMPLET,TOTAL,NR,T,MT,2024,1145,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2010,19,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2011,15,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2012,16,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2013,20,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2014,4,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2015,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2016,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2017,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2018,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2019,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2020,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2021,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2022,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2023,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
+A,UNK,COMPLET,TOTAL,NR,T,MT,2024,0,,migr_acq,"Acquisition of citizenship by age group, sex and former citizenship",2026-03-27T11:00:00+0100,2026-10-06
