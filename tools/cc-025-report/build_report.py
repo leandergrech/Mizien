@@ -145,6 +145,19 @@ S.append(contested("Is “decoupling growth from emissions” fair?", "LARGELY Y
                    "show it. It is not a statement about the 2030 target, so the second column limits how far the "
                    "sentence can be read, not whether it is true.", label_a="EVIDENCE FOR THE CLAIM",
                    label_b="CAVEATS"))
+S.append(Spacer(1, 2 * mm))
+S.append(P("<b>The same period on the residence basis.</b> The statement counts territorial emissions (UNFCCC "
+           "inventory basis) and says so by implication; this report uses that basis throughout. Eurostat’s air emissions "
+           "accounts count emissions of Malta-resident units instead, including international aviation fuel bought "
+           "abroad. On that basis (env_ac_ainah_r2, all activities and households, per person using nama_10_pe) "
+           "Malta’s emissions per person <i>rose</i> 69% from 2013 to 2024 (7.2 to 12.2 t CO2e; the 2024 value is "
+           "flagged imputed), the largest rise of the 27 Member States (rank 27 of 27; the EU-27 fell 21%; four "
+           "others also rose, Lithuania next at +18.5%). Total residence-basis emissions rose 126% against population "
+           "+34%. This does not contradict the statement, which is about the territorial inventory and a different "
+           "start year (2005; this series begins in our extract at 2013), and it is why we keep "
+           "<i>Largely supported</i>. It is context a reader needs: the territorial fall and the residence-basis rise "
+           "are both real. CC-114 differs because it draws a causal inference from the residence-basis series that the "
+           "data contradict. Data: <i>data/cc-025/residence_basis_per_person.csv</i>."))
 
 # ================================================================== 5
 S.append(CondPageBreak(120 * mm))
@@ -235,7 +248,7 @@ S += references([
     ("5", "Eurostat. Population and employment (nama_10_pe), retrieved 5 Oct 2026.",
      "https://ec.europa.eu/eurostat/databrowser/view/nama_10_pe/default/table"),
     ("6", "MiŻien. CC-003 report and data (per-person figure, 2030 projection): claims/CC-003; data/cc-003/.", ""),
-    ("7", "MiŻien. Calculation script and outputs: tools/cc-025-report/calc.py; data/cc-025/checks.csv.", ""),
+    ("7", "MiŻien. Calculation script and outputs: tools/cc-025-report/calc.py; data/cc-025/checks.csv; residence-basis figures: tools/cc-025-report/residence_basis.py; data/cc-025/residence_basis_per_person.csv (Eurostat env_ac_ainah_r2, nama_10_pe, retrieved 6 Oct 2026).", ""),
     ("8", "Haberl H. et al. (2020). A systematic review of the evidence on decoupling of GDP, resource use and GHG "
           "emissions, part II: synthesizing the insights. <i>Environmental Research Letters</i> 15(6):065003. "
           "doi:10.1088/1748-9326/ab842a. (Abstract read; open access, CC BY.)",
@@ -253,7 +266,11 @@ S += revision_log([("1.0", "5 Oct 2026", "First issue. Verdict Largely supported
                                          "substantiated; recorded consistently that the wording is the maintainer-supplied "
                                          "paragraph and our own UNFCCC download was refused (HTML page returned on "
                                          "6 Oct); stated the year choice as our assumption. Verdict unchanged; no right "
-                                         "of reply needed.")])
+                                         "of reply needed."),
+                   ("1.2", "6 Oct 2026", "Added a paragraph in section 4 on the residence basis (Eurostat air emissions "
+                                         "accounts): per-person emissions +69% 2013-2024, rank 27 of 27, so that the "
+                                         "territorial basis of the statement is set beside it; cross-reference to CC-114. "
+                                         "Verdict, confidence and sub-claim ratings unchanged; no right of reply needed.")])
 
 build_report(Report(
     number="025", out=str(FIG / "report.pdf"), kicker="Statistics and EU data",
@@ -264,9 +281,9 @@ build_report(Report(
     attribution="Government of Malta, COP30 national statement, November 2025.",
     context="Delivered on behalf of the Minister for the Environment, Energy and Public Cleanliness.",
     verdict="Largely supported", verdict_note="The 80% holds only at current prices; about 70% in real terms",
-    footer_lines=["Version 1.1  ·  6 October 2026", "Status: no right of reply needed",
+    footer_lines=["Version 1.2  ·  6 October 2026", "Status: no right of reply needed",
                   "Prepared from public sources and Eurostat data.", "Repository: github.com/leandergrech/Mizien"],
-    running_head="Per-person and per-GDP emissions – Malta at COP30", version="1.1", date="6 October 2026",
+    running_head="Per-person and per-GDP emissions – Malta at COP30", version="1.2", date="6 October 2026",
     pdf_title="Emissions down 44% per person, 80% per unit of GDP? Claim Check 025",
     pdf_subject="Tests the Government of Malta's COP30 statement on per-capita and per-GDP emissions",
     story=S))
