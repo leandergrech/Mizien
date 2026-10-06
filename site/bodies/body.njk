@@ -69,10 +69,11 @@ styles: [lens.css, who.css]
   {%- set ps = mizien.pledges | pledgeStack(mizien.claims, s.pledges | pluck("id")) if s.pledges.length else null %}
   {%- if ps %}
   <section class="pstack-sec" aria-labelledby="h-pledges">
-    <h2 id="h-pledges">Pledges, year by year</h2>
-    <p>Each disk is a year in which {{ b.name }}{% if b.offices.length or b.people.length %} or its offices and people{% endif %}
-      made pledges, the newest on top. Each dot is a pledge, coloured by its label, ringed in the colour of the verdict on
-      its facts where those were checked; similar pledges line up and are joined across the years. The same view for
+    <h2 id="h-pledges">Pledges, election by election</h2>
+    <p>Each disk is an election cycle in which {{ b.name }}{% if b.offices.length or b.people.length %} or its offices and people{% endif %}
+      made pledges, the newest on top: campaign pledges on the outer ring, commitments made in office inside. Each square
+      is a pledge, coloured by its label, with a dot inside in the colour of the verdict on its facts where those were checked;
+      similar pledges line up and are joined across the cycles. The same view for
       every body is on <a href="/bodies/#h-pledges">Who said it</a>.</p>
     {%- include "pledge-stack.njk" %}
   </section>
@@ -130,7 +131,6 @@ styles: [lens.css, who.css]
     <h2 id="h-about">What the claims are about</h2>
     <dl class="facts body-facts">
       <div><dt>Topics</dt><dd>{% for k, v in b.topics %}<span class="tally">{{ k }} <b>{{ v }}</b></span>{% endfor %}</dd></div>
-      <div><dt>Verdicts so far</dt><dd>{% for k, v in b.verdicts %}<span class="tally">{{ k }} <b>{{ v }}</b></span>{% endfor %}</dd></div>
       {%- if b.patterns | length %}
       <div><dt>Pattern tags</dt><dd>{% for k, v in b.patterns %}<span class="tally">{{ k }} <b>{{ v }}</b></span>{% endfor %}</dd></div>
       {%- endif %}

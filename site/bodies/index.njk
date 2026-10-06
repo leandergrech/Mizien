@@ -31,7 +31,8 @@ styles: [who.css]
     <ul>
       <li><b>Verdict bar</b> from {{ 5 }} checked claims: how many checks ended in each verdict, as counts.</li>
       <li><b>Tentative balance</b> at 3 or 4: where the checks so far sit between Contradicted and Supported, recent
-        claims counting more (by the date of the claim, not of the check). Work in progress, not a rating.</li>
+        claims counting more (by the date of the claim, not of the check). Work in progress, not a rating.
+        <a href="/methodology/connections/#summaries">How it is worked out</a>.</li>
       <li><b>Pledges</b> keep their own labels (on track, off track, not measurable…), always shown, never mixed into the
         verdicts.</li>
     </ul>
@@ -40,11 +41,14 @@ styles: [who.css]
   {%- set ps = mizien.pledges | pledgeStack(mizien.claims) %}
   {%- if ps %}
   <section class="pstack-sec" aria-labelledby="h-pledges">
-    <h2 id="h-pledges">Pledges, year by year</h2>
-    <p>Each disk is a year in which pledges were made, the newest on top; each dot is a pledge, coloured by its label,
-      with a ring in the colour of the verdict on the facts it rests on, where those were checked. Pledges on the same
-      topic sit at the same place on every disk, so similar pledges line up; lines join them across the years,
-      coloured by the average verdict of their facts (dashed: none checked yet).</p>
+    <h2 id="h-pledges">Pledges, election by election</h2>
+    <p>Pledges are made in bursts, around elections, so each disk is an election cycle: the election and the
+      legislature after it, the newest on top. Campaign pledges (manifestos, campaign promises) sit on the outer ring,
+      commitments made in office inside. Each square is a pledge, coloured by its label, with a dot inside in the colour
+      of the verdict on the facts it rests on, where those were checked. Pledges on the same topic sit at the same place on
+      every disk, so similar pledges line up; lines join them across the cycles,
+      coloured by the average verdict of their facts (dashed: none checked yet). Targets set by agencies (not political
+      promises) are listed on their bodies' cards, apart from the pledges.</p>
     {%- include "pledge-stack.njk" %}
   </section>
   {%- endif %}

@@ -845,9 +845,13 @@
       .map(function (l) { return "Pledge: " + l.name; });
     Object.keys(VC).concat(pl, [NOT_YET]).forEach(function (v) {
       var col = VC[v] || PLEDGE_COL[v.replace(/^Pledge: /, "")];
-      var s = el("span"), d = el("span", "vdot" + (col ? "" : " open")); d.style.background = col || NOT_YET_COL;
+      var s = el("span"), d = el("span", "vdot" + (col ? "" : " open") + (/^Pledge: /.test(v) ? " is-pledge" : "")); d.style.background = col || NOT_YET_COL;
       s.appendChild(d); s.appendChild(document.createTextNode(v)); k.appendChild(s);
     });
+    var sq = el("span", "lkey"); sq.innerHTML = '<svg width="44" height="22" viewBox="0 0 44 22" aria-hidden="true"><rect x="3" y="4" width="14" height="14" rx="2.5" fill="' + PLEDGE_COL["Off track"] +
+      '" stroke="#f6f4ee" stroke-width="1"/><rect x="25" y="4" width="14" height="14" rx="2.5" fill="' + PLEDGE_COL["Off track"] + '" stroke="#f6f4ee" stroke-width="1"/><circle cx="32" cy="11" r="3.4" fill="' + VC["Largely supported"] +
+      '" stroke="#f6f4ee" stroke-width=".9"/></svg><span>Square: a pledge, in its pledge colour. With a dot inside: the facts it rests on were checked too, the dot in their verdict colour.</span>';
+    k.appendChild(sq);
     // the laurel, with a fresh and an old leaf, drawn by the same code as the groups' laurels
     if (window.MizienLaurel) { var lk = el("span", "lkey"), old = new Date(Date.now() - 500 * 864e5).toISOString().slice(0, 10);
       lk.innerHTML = '<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">' + window.MizienLaurel.svg([{ color: VC.Supported }, { color: VC["Largely supported"] },
@@ -1197,10 +1201,20 @@
         if (isRated) { var gh = ctx.createRadialGradient(p.sx, p.sy, r2, p.sx, p.sy, r2 * 2.8 * pulse);
           gh.addColorStop(0, rgba(col, 0.55)); gh.addColorStop(1, rgba(col, 0)); ctx.fillStyle = gh;
           ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 * 2.8 * pulse, 0, 6.283); ctx.fill(); }
+        if (d.pledge) {   // a pledge is a square (a promise) in its label colour; a check that also tested facts has the verdict as a dot inside
+          var pc = PLEDGE_COL[d.pledge.status] || NOT_YET_COL, hs = r2 * 0.95;
+          var g4 = ctx.createLinearGradient(p.sx - hs, p.sy - hs, p.sx + hs, p.sy + hs);
+          g4.addColorStop(0, mix(pc, "#ffffff", 0.35)); g4.addColorStop(0.45, pc); g4.addColorStop(1, pc);
+          ctx.fillStyle = g4; roundRect(p.sx - hs, p.sy - hs, hs * 2, hs * 2, hs * 0.22); ctx.fill();
+          ctx.strokeStyle = "rgba(246,244,238,.75)"; ctx.lineWidth = 1; ctx.stroke();
+          if (d.verdict) { ctx.fillStyle = VC[d.verdict]; ctx.beginPath(); ctx.arc(p.sx, p.sy, hs * 0.48, 0, 6.283); ctx.fill();
+            ctx.strokeStyle = "rgba(246,244,238,.85)"; ctx.lineWidth = 0.9; ctx.stroke(); }
+        } else {
         var g3 = ctx.createRadialGradient(p.sx - r2 * .4, p.sy - r2 * .4, r2 * .1, p.sx, p.sy, r2);
         g3.addColorStop(0, rgba("#ffffff", 0.5)); g3.addColorStop(0.35, col); g3.addColorStop(1, col);
         ctx.fillStyle = g3; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2, 0, 6.283); ctx.fill();
         ctx.strokeStyle = "rgba(246,244,238,.6)"; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 0.6, 0, 6.283); ctx.stroke();
+        }
         if (!isRated) { ctx.setLineDash([2, 3]); ctx.strokeStyle = CV.ring2; ctx.lineWidth = 1.1;
           ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 3.4, 0, 6.283); ctx.stroke(); ctx.setLineDash([]); }
         if (isSel) { ctx.strokeStyle = CV.sel; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.sx, p.sy, r2 + 7 + 1.5 * Math.sin(t * 3), 0, 6.283); ctx.stroke(); }
@@ -1775,7 +1789,8 @@
   }
   function claimLink(id, box) {
     var c = byId[id].data, b = el("button", "link"); b.type = "button"; b.dataset.claim = id;
-    var dot = el("span", "dot"); dot.style.background = colOf(c);
+    var dot = el("span", "dot" + (c.pledge ? " is-pledge" : "")); dot.style.background = c.pledge ? PLEDGE_COL[c.pledge.status] || NOT_YET_COL : colOf(c);
+    if (c.pledge && c.verdict) { var vin = el("i"); vin.style.background = VC[c.verdict]; dot.appendChild(vin); }   // the verdict on its facts
     b.appendChild(dot); b.appendChild(document.createTextNode(c.id + "  " + c.title));
     b.onclick = function () { selectClaim(id); }; box.appendChild(b);
   }
@@ -2105,10 +2120,21 @@
     cam.zoom = z1;
   }
   function panBy(dx, dy) { cam.tpx = cam.px += dx; cam.tpy = cam.py += dy; }
+  // Orbit limits. The sphere and the web of links can be turned any way. Flat arrangements cannot: a plate or ring
+  // (patterns, who said it, pledges) is always seen from above, never edge-on or from below, so it is clear which side
+  // is up; a row (verdicts, stages, years) only swings so far either side and never turns round, so its order still
+  // reads left to right.
+  function orbitLimits() {
+    var L = MODES[mode] && MODES[mode].layout;
+    if (L === "ring") return { lo: -1.25, hi: -0.12, yaw: null };
+    if (L === "arc" || L === "line") return { lo: -0.75, hi: 0.2, yaw: 0.85 };
+    return { lo: -1.35, hi: 1.35, yaw: null };
+  }
   function orbitBy(dx, dy) {
+    var O = orbitLimits();
     cam.yaw += dx * 0.006; if (cam.tyaw !== null) cam.tyaw += dx * 0.006;
-    var lo = -1.35, hi = 1.35;
-    cam.tpitch = cam.pitch = Math.max(lo, Math.min(hi, cam.pitch + dy * 0.006));
+    if (O.yaw != null) { cam.yaw = Math.max(-O.yaw, Math.min(O.yaw, cam.yaw)); if (cam.tyaw !== null) cam.tyaw = Math.max(-O.yaw, Math.min(O.yaw, cam.tyaw)); }
+    cam.tpitch = cam.pitch = Math.max(O.lo, Math.min(O.hi, cam.pitch + dy * 0.006));
   }
   function midpoint() { var pts = Object.keys(activePointers).map(function (id) { return activePointers[id]; });
     return { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 }; }

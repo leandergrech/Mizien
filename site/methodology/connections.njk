@@ -27,6 +27,7 @@ permalink: /methodology/connections/
       <li><a href="#indirect">Indirect connections</a></li>
       <li><a href="#bridges">Where themes meet</a></li>
       <li><a href="#bodies">Who said it</a></li>
+      <li><a href="#summaries">How a body's checks are summarised</a></li>
       <li><a href="#limits">What a connection does not mean</a></li>
     </ol>
   </nav>
@@ -113,8 +114,43 @@ permalink: /methodology/connections/
     <p>Each body has a page listing its claims, the topics and pattern tags they carry, and the bodies they link to.
       <strong>These pages are a record, not a score.</strong> Claims are picked because they are public and can be
       checked, not to sample anyone's statements fairly. A body with more claims has been checked more often, which says
-      nothing about how accurate it is. No body or person is rated. See <a href="/bodies/">Who said it</a>.</p>
+      nothing about how accurate it is. No person is rated, and a body's checks are only summarised, as set out
+      <a href="#summaries">below</a>. See <a href="/bodies/">Who said it</a>.</p>
     <p>If a claim is matched to the wrong body, please <a href="{{ site.repo }}/issues/new">report it</a>.</p>
+  </section>
+
+  <section aria-labelledby="summaries">
+    <h2 id="summaries">How a body's checks are summarised</h2>
+    <p>Each body's card on <a href="/bodies/">Who said it</a>, and the top of its page, sums up the verdicts on the
+      claims made by the body, its offices and the people who spoke for it. What is shown depends on how many of those
+      claims have a verdict (pledge labels are not verdicts and are never counted here):</p>
+    <ul>
+      <li><strong>Five or more checked claims: a verdict bar.</strong> One segment per verdict, as long as the number of
+        checks that ended in it. Counts are shown, never percentages.</li>
+      <li><strong>Three or four: a tentative balance.</strong> Until there are enough checks for a bar, a marker shows
+        where the checks so far sit on a line from Contradicted to Supported, with dots counting the checks towards five.
+        It is marked as tentative, and it is work in progress, not a rating.</li>
+      <li><strong>Fewer than three:</strong> the number of checks only, as too few to summarise.</li>
+    </ul>
+    <p><strong>How the balance is worked out.</strong> Each verdict is placed on the line: Contradicted 0, Misleading
+      0.25, Not substantiated 0.5, Largely supported 0.75, Supported 1. The balance is the average of these, with more
+      recent claims counting more: a claim's weight halves for every two years between it and the body's most recent
+      checked claim. Age is measured from the date the <em>claim</em> was made, not the date it was checked, because the
+      balance is about what was said, when. A claim with no recorded date counts as three years older than the body's
+      oldest dated checked claim; if none of the checked claims is dated, they all count the same. So the balance moves
+      only when claims or verdicts change, never by itself with the passing of time.</p>
+    <p>Draft verdicts are counted, as they are shown on the claim pages, marked as drafts. A body with few checks can
+      change a great deal with one new check; that is why there is no bar below five.</p>
+    <p><strong>Pledges</strong> keep their own labels (on track, off track, not measurable and so on;
+      <a href="{{ site.repo }}/blob/main/methodology/verdict-scale.md#pledges">how pledges are labelled</a>), shown on every card that has
+      them and never mixed into the verdicts. A pledge belongs to the body that made it, or whose office or person made
+      it. On <em>Pledges, election by election</em>, each election cycle is a disk (the election and the legislature
+      after it), with campaign pledges on the outer ring and commitments made in office inside; pledges on the same topic
+      sit at the same place on every disk, and lines join pledges from different cycles that share wording, a subtopic or a topic,
+      coloured by the average verdict on the facts behind them. A line says the pledges are worth reading together, not
+      that one replaced the other.</p>
+    <p>The summary is computed when the site is built, from the same claim records as every other view
+      (<a href="{{ site.repo }}/blob/main/site/_lib/who.js">site/_lib/who.js</a>).</p>
   </section>
 
   <section aria-labelledby="limits">

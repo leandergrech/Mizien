@@ -213,6 +213,8 @@ def check_pledge(d) -> list:
     for o in p.get("overlaps") or []:
         if not re.fullmatch(r"CC-\d{3}", str(o)) or not (ROOT / "claims" / str(o) / "claim.yml").is_file():
             errs.append(f"pledge overlaps '{o}' is not a claim")
+    import pledges   # kind, cycle, follows, follows_search, drift (scripts/pledges.py)
+    errs += pledges.check(p, {x.name for x in (ROOT / "claims").glob("CC-*") if (x / "claim.yml").is_file()})
     return errs
 
 
@@ -293,7 +295,23 @@ def main() -> int:
     bad += check_queue({p.parent.name for p in files})
     bad += check_register(files)
     bad += check_conflict_markers()
+    bad += check_pledge_files({p.parent.name for p in files})
     return 1 if bad else 0
+
+
+def check_pledge_files(ids: set) -> int:
+    """data/cycles.csv and data/manifesto_pledges.csv (scripts/pledges.py)."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import pledges
+    errs = pledges.check_files(ids)
+    try:
+        pledges._selftest()
+    except AssertionError as e:
+        errs.append(f"scripts/pledges.py self-test failed: {e or 'see the asserts in _selftest()'}")
+    for e in errs:
+        print("FAIL " + e)
+    print(f"pledges: {len(pledges.load_cycles())} election cycles, {len(pledges.load_manifesto())} manifesto pledges listed, {len(errs)} problems.")
+    return 1 if errs else 0
 
 
 def check_queue(ids: set) -> int:

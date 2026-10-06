@@ -25,6 +25,9 @@
   {%- endif %}
 </div>
 {%- endif %}
+{%- if s.targets and s.targets.length %}
+<p class="wm-pledges">{% for p in s.targets %}<a class="pl-chip is-target" href="{{ p.path }}" style="--pl: {{ p.colour }}" title="{{ p.id }} {{ p.title }}: an institutional target, {{ p.status }}, as of {{ p.as_of }}">{% glyph "pledge:" + p.status %}Target: {{ p.status }}{% if big %} <span>{{ p.id }}</span>{% endif %}</a>{% endfor %}</p>
+{%- endif %}
 {%- if s.pledges.length %}
 <p class="wm-pledges">{% for p in s.pledges %}<a class="pl-chip" href="{{ p.path }}" style="--pl: {{ p.colour }}" title="{{ p.id }} {{ p.title }}: {{ p.status }}, as of {{ p.as_of }}">{% glyph "pledge:" + p.status %}Pledge: {{ p.status }}{% if big %} <span>{{ p.id }}</span>{% endif %}</a>{% endfor %}</p>
 {%- endif %}

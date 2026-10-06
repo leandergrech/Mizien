@@ -128,6 +128,7 @@ thumbnail:          # headline figure for the claim's thumbnail (from its flyer 
   caption: trees reported by end-2025, of 100,000 pledged
 pledge:   # pledge label (methodology/verdict-scale.md, Pledges); the verdict above covers the planting counts
   status: Off track
+  kind: campaign   # manifesto or campaign promise, made before an election (methodology/verdict-scale.md, Pledges)
   as_of: '2025-12-31'
   made_by: [pl]
   made_on: '2022-03-11'

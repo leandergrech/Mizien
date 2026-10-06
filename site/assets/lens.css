@@ -156,3 +156,5 @@
 /* the glyph beside a filter value (assets/glyphs.js) */
 .lens .lg { width: 1.2em; height: 1.2em; margin-right: .45em; vertical-align: -.25em; color: var(--accent); }
 .lens-chip .lg { width: 1.05em; height: 1.05em; margin-right: .3em; vertical-align: -.18em; }
+.tr-dot.is-pledge { border-radius: 2px; display: grid; place-items: center; }
+.tr-dot.is-pledge i { width: 5px; height: 5px; border-radius: 50%; box-shadow: 0 0 0 1px rgba(246,244,238,.85); }
