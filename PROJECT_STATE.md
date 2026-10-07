@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 7 October 2026 (pledges shown flat: timeline in lanes in Explore, election-by-party grid and gated promise-to-outcome flow on /pledges/, follow-up data model; pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -96,6 +96,34 @@ and ≥ 15 for normal vision, on the light and dark backgrounds. Three are light
 flyers of CC-011, CC-029, CC-031, CC-039 and CC-107 were rebuilt; CC-011's and CC-107's rebuilds also pick up the
 shared status and right-of-reply wording already on main (the PDFs had not been rebuilt since). Any later pledge report
 picks the palette up from `mizien_report.py`.
+
+## Pledges: flat views replace the 3D disks (7 October 2026)
+
+Maintainer decision (7 Oct 2026, after mockups of four options): pledges are shown flat. Chosen: the timeline in lanes
+(option 1), the election-by-party grid (option 3) and the flow from promise to outcome (option 4, only once the data
+supports it). The chain cards (option 2) were not chosen. Mockups: https://claude.ai/artifact/EoRy31dEQSRaiTohSo63xy (private).
+- **Explore, Pledges grouping** (`map.js`, layout `lanes`, `renderLanes()`): "Pledges over time". One lane per party
+  (campaign pledges and proposals), one for commitments made in office, one for agency targets; time left to right with
+  each election marked; a square per pledge in its label's colour on the date made, a bar to its deadline (far
+  deadlines clipped with an arrow); dashed lines for "carries forward", red for "recycled"; unchecked manifesto pledges
+  in a chain as outline squares in a column under their lane. Drawn as SVG over the stage while the canvas rests; the
+  legend groups are the cycles (hide one to leave its pledges off). The 3D cycle disks (stage 3) are removed.
+  Data: `made_mid` and `deadline_mid` on each pledge in claims.json.
+- **/pledges/ opens with "By election and party"** (`pledge_grid` in the site data): every party that contested each
+  election, alphabetical; per cell the pledges listed (linked to the manifesto list), the checked pledges as squares in
+  their label colour, the listed pledges linked to another pledge, and recycled or dropped counts; a column for
+  commitments made in office; anything else checked listed below.
+- **/pledges/ "From promise to outcome"** (`pledge_flows`, drawn to scale as SVG at build time): shown for a programme
+  only when its follow-up check is complete. None is yet; the section says so. Tested locally with temporary data.
+- **Follow-up check (data model, for the research chat):** `data/manifesto_pledges.csv` gains `followup` ("taken up",
+  "partly taken up", "no follow-up found") and `followup_source`; `data/manifesto_coverage.csv` gains `followup_checked`
+  (a date, set only when every row of that programme has a followup). `pledges.py` checks all three. A governing
+  party's row with "no follow-up found" after its legislature ended is computed as **dropped** (`manifesto_outliers`).
+  Written into `methodology/verdict-scale.md` ("Follow-up check").
+- Fixed: the Pledges page's list of labels (and the colour key) showed the pledge kinds and outlier types as labels;
+  `pledge_label_list()` now keeps only the six labels.
+- The pledge label colours failed a colour-blindness check (On track vs Not measurable); fixed the same day, see
+  "Pledge label colours for colour blindness" above. The "Who said it" pledge stacks (who.js) still use disks.
 
 ## Pledges: stage 4, outliers and the manifesto list on the site (6 October 2026)
 

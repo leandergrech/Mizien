@@ -248,7 +248,9 @@ def bold_table(md_file: str) -> list:
 
 def pledge_label_list() -> list:
     """[(label, meaning)] from the 'Pledges' section of methodology/verdict-scale.md (maintainer decision, 5 Oct 2026)."""
-    return [(m.group(1), m.group(2)) for m in (re.match(r"\*\*(.+?)\*\*:\s*(.+)", x) for x in section_items("verdict-scale.md", "Pledges")) if m]
+    # Only the labels: the section also explains pledge kinds and outlier types in bold, which are not labels.
+    return [(m.group(1), m.group(2)) for m in (re.match(r"\*\*(.+?)\*\*:\s*(.+)", x) for x in section_items("verdict-scale.md", "Pledges"))
+            if m and m.group(1) in PLEDGE_COLOURS]
 
 
 def section_items(md_file: str, heading: str) -> list:
@@ -344,6 +346,11 @@ PLEDGE_INK = {   # text on each colour: the one with the higher contrast (white 
 }
 
 
+def iso_mid(v) -> str | None:
+    """A date as the ISO day a timeline places it on (the middle of a month or year given without a day)."""
+    return (timeline.parse_date(v) or {}).get("mid") if v is not None else None
+
+
 def pledge_view(d: dict, reg: dict) -> dict | None:
     """A pledge block ready to show: the label with its as-of date, who made it, when, in what, and by when; its kind,
     election cycle and the earlier pledges it carries forward (scripts/pledges.py)."""
@@ -357,6 +364,7 @@ def pledge_view(d: dict, reg: dict) -> dict | None:
     return {"status": p.get("status"), "slug": "pledge-" + slug(p.get("status") or ""), "colour": PLEDGE_COLOURS.get(p.get("status")),
             "ink": PLEDGE_INK.get(p.get("status"), "#ffffff"),
             "as_of": fmt(p.get("as_of")), "as_of_iso": str(p.get("as_of") or ""), "made_on": fmt(p.get("made_on")),
+            "made_mid": iso_mid(p.get("made_on")), "deadline_mid": iso_mid(p.get("deadline")),
             "deadline": fmt(p.get("deadline")), "term_end": fmt(p.get("term_end")), "target": p.get("target"),
             "vehicle": p.get("vehicle"), "occasion": occasion, "note": p.get("note"),
             "made_by": [body_ref(reg[b]) for b in p.get("made_by") or [] if b in reg],
@@ -385,6 +393,13 @@ def manifesto_outliers(records: list) -> dict:
                 p0 = MANIFESTO[f]; linked = by.get(p0.get("claim") or "")
                 kind = pledges.link_type(row.get("cycle"), p0.get("cycle"), linked["pledge"].get("status") if linked else None)
                 found.append({"type": kind, "link": f, "text": f"{'Also promised earlier' if kind == 'recycled' else 'Carries forward'}: {p0['document']}, {p0['number']}."})
+        # Dropped: a campaign pledge of the governing party with no follow-up in office, recorded by the follow-up check,
+        # and only once that legislature has ended (a later election is in data/cycles.csv).
+        gov = next((c for c in CYCLES if c["id"] == row.get("cycle")), {})
+        ended = any(c["election_date"] > gov.get("election_date", "9999") for c in CYCLES)
+        if row.get("followup") == "no follow-up found" and row.get("party") == gov.get("governing") and ended:
+            found.append({"type": "dropped", "text": f"No follow-up found in office during the {pledges.cycle_label(row.get('cycle'), CYCLES)} "
+                          f"legislature ({row.get('followup_source')})."})
         if found:
             out[mid] = found
     return out
@@ -419,6 +434,123 @@ def outlier_list(records: list, ref) -> list:
                                       (x.get("claim") or x.get("manifesto"))["id"]))
 
 
+def short_party(name: str) -> str:
+    """'Partit Laburista (Labour Party)' -> 'Labour'; 'ADPD – The Green Party' -> 'ADPD'; others unchanged."""
+    m = re.search(r"\(([^)]+)\)\s*$", name)
+    if m:
+        return re.sub(r" Party$", "", m.group(1))
+    return name.split(" – ")[0]
+
+
+def pledge_grid(records: list, ref) -> dict:
+    """The election-by-party grid for the Pledges page: for each election and each party that contested any, the
+    manifesto pledges listed, the checked pledges (campaign pledges and party proposals), the listed pledges linked to
+    another pledge, and the outliers; plus a column for commitments made in office. Parties alphabetical."""
+    cov = pledges.load_coverage()
+    mo = manifesto_outliers(records)
+    _ref = ref
+    ref = lambda d: {**_ref(d), "pledge_status": d["pledge"].get("status"), "pledge_colour": PLEDGE_COLOURS.get(d["pledge"].get("status"))}
+    targets = set()
+    for d in records:
+        for f in (d.get("pledge") or {}).get("follows") or []:
+            targets.add(str(f))
+    for mid, found in mo.items():
+        targets.add(mid); [targets.add(o["link"]) for o in found if o.get("link")]
+    parties = sorted({k[1]: v["party_name"] for k, v in cov.items()}.items(), key=lambda x: short_party(x[1]).lower())
+    cycles = [c for c in CYCLES]
+    out = {"cycles": [{"id": c["id"], "label": pledges.cycle_label(c["id"], CYCLES), "year": c["election_date"][:4]} for c in cycles],
+           "columns": [{"id": p, "name": short_party(n), "full": n} for p, n in parties] + [{"id": "in-office", "name": "In office", "full": "Commitments made in office"}],
+           "rows": [], "other": []}
+    pledged = [d for d in records if d.get("pledge")]
+    for c in cycles:
+        row = {"cycle": c["id"], "year": c["election_date"][:4], "label": pledges.cycle_label(c["id"], CYCLES), "cells": []}
+        for p, _ in parties:
+            cv = cov.get((c["id"], p))
+            if not cv:
+                row["cells"].append({"party": p, "contested": False}); continue
+            rows = [m for m, r in MANIFESTO.items() if r.get("cycle") == c["id"] and r.get("party") == p]
+            checked = [ref(d) for d in pledged if d["pledge"].get("kind") in ("campaign", "proposal") and p in (d["pledge"].get("made_by") or [])
+                       and pledges.cycle_of(d["pledge"], CYCLES) == c["id"]]
+            outl = [o["type"] for m in rows for o in mo.get(m, []) if o["type"] != "follows"]
+            row["cells"].append({"party": p, "contested": True, "status": cv.get("status"), "listed": len(rows), "anchor": f"{p}-{c['id']}",
+                                 "checked": checked, "linked": sum(1 for m in rows if m in targets and MANIFESTO[m].get("claim") not in {x["id"] for x in checked}),
+                                 "recycled": outl.count("recycled"), "dropped": outl.count("dropped"),
+                                 "followup_checked": cv.get("followup_checked") or ""})
+        row["cells"].append({"party": "in-office", "contested": True, "status": "office",
+                             "checked": [ref(d) for d in pledged if d["pledge"].get("kind") == "government" and pledges.cycle_of(d["pledge"], CYCLES) == c["id"]]})
+        out["rows"].append(row)
+    shown = {x["id"] for r in out["rows"] for cell in r["cells"] for x in cell.get("checked", [])}
+    out["other"] = [{**ref(d), "kind_label": pledges.KINDS.get(d["pledge"].get("kind")), "cycle_label": pledges.cycle_label(pledges.cycle_of(d["pledge"], CYCLES), CYCLES)}
+                    for d in pledged if d["id"] not in shown]
+    return out
+
+
+def sankey(columns: list, links: list, width=880, height=240, gap=12, node_w=12, label_w=230) -> dict:
+    """A small flow layout: columns = [[(key, label, value, colour)], ...] left to right, links = [(from, to, value)].
+    Node heights are to scale (one total for the whole chart); returns rects, link paths and label positions."""
+    total = sum(v for _, _, v, _ in columns[0]) or 1
+    lead = 120   # room for the first column's label, which sits to the left of its bar
+    xs = [lead + round((width - lead - label_w - node_w) * i / (len(columns) - 1)) for i in range(len(columns))]
+    k = (height - gap * max(len(c) - 1 for c in columns)) / total
+    nodes, out = {}, {"nodes": [], "links": [], "width": width, "height": height + 20}
+    for ci, col in enumerate(columns):
+        y = 10
+        for key, label, v, colour in col:
+            h = max(2.0, v * k)
+            nodes[key] = {"x": xs[ci], "y": y, "h": h, "out": y, "in": y}
+            out["nodes"].append({"x": xs[ci], "y": round(y, 1), "w": node_w, "h": round(h, 1), "colour": colour, "label": f"{label} · {v}",
+                                 "lx": xs[ci] - 6 if ci == 0 else xs[ci] + node_w + 6, "anchor": "end" if ci == 0 else "start",
+                                 "ly": round(y + min(h / 2, 9) + 4, 1)})
+            y += h + gap
+    for a, b, v in links:
+        A, B, h = nodes[a], nodes[b], max(1.5, v * k)
+        x0, x1, y0, y1 = A["x"] + node_w, B["x"], A["out"], B["in"]
+        m = (x0 + x1) / 2
+        out["links"].append({"d": f"M{x0} {y0:.1f} C{m} {y0:.1f} {m} {y1:.1f} {x1} {y1:.1f} L{x1} {y1 + h:.1f} C{m} {y1 + h:.1f} {m} {y0 + h:.1f} {x0} {y0 + h:.1f}Z",
+                             "colour": next(n["colour"] for n in out["nodes"] if n["x"] == B["x"] and abs(n["y"] - round(B["y"], 1)) < 0.2), "title": f"{v}"})
+        A["out"] += h; B["in"] += h
+    return out
+
+
+def pledge_flows(records: list) -> list:
+    """For each programme whose follow-up check is complete (followup_checked in manifesto_coverage.csv), the flow from
+    its listed pledges to what happened in office and, where a commitment was checked, its label. Not drawn otherwise."""
+    flows = []
+    followed = {}
+    for d in records:
+        for f in (d.get("pledge") or {}).get("follows") or []:
+            followed.setdefault(str(f), d)
+    grey = "#9aa8a0"
+    for (cid, party), cv in sorted(pledges.load_coverage().items()):
+        if not (cv.get("followup_checked") or "").strip():
+            continue
+        rows = [r for r in MANIFESTO.values() if r.get("cycle") == cid and r.get("party") == party]
+        gov = next((c for c in CYCLES if c["id"] == cid), {})
+        ended = any(c["election_date"] > gov.get("election_date", "9999") for c in CYCLES)
+        miss = "Dropped" if party == gov.get("governing") and ended else "No follow-up found"
+        names = {"taken up": "Taken up in office", "partly taken up": "Partly taken up", "no follow-up found": miss}
+        cols2 = {k: sum(1 for r in rows if r.get("followup") == k) for k in pledges.FOLLOWUP}
+        colours = {"taken up": PLEDGE_COLOURS["On track"], "partly taken up": PLEDGE_COLOURS["Not yet due"], "no follow-up found": PLEDGE_COLOURS["Off track"] if miss == "Dropped" else grey}
+        third = {}
+        for r in rows:
+            if r.get("followup") in ("taken up", "partly taken up"):
+                d = followed.get(r["id"]) or next((x for x in records if x["id"] == r.get("claim")), None)
+                lab = (d or {}).get("pledge", {}).get("status") if d and d.get("pledge") else None
+                key = lab or "Commitment not checked"
+                third.setdefault((r["followup"], key), 0); third[(r["followup"], key)] += 1
+        labs = sorted({k for _, k in third}, key=lambda x: (x == "Commitment not checked", x))
+        columns = [[("all", f"{short_party(cv['party_name'])} {cid}", len(rows), "#3f5f4f")],
+                   [(k, names[k], v, colours[k]) for k, v in cols2.items() if v]]
+        links = [("all", k, v) for k, v in cols2.items() if v]
+        if labs:
+            columns.append([("L:" + l, l, sum(v for (_, kk), v in third.items() if kk == l), PLEDGE_COLOURS.get(l, grey)) for l in labs])
+            links += [(f, "L:" + l, v) for (f, l), v in third.items()]
+        flows.append({"cycle": cid, "party": party, "name": f"{short_party(cv['party_name'])} {cid} manifesto", "checked": cv["followup_checked"],
+                      "counts": [{"label": names[k], "n": v} for k, v in cols2.items() if v], "total": len(rows),
+                      "chart": sankey(columns, links)})
+    return flows
+
+
 def manifesto_coverage(records: list, ref) -> list:
     """The manifesto list by election and party (data/manifesto_coverage.csv), each with its rows, for the Pledges pages."""
     by = {d["id"]: d for d in records}
@@ -441,7 +573,7 @@ def manifesto_rows(records: list) -> list:
     (same rule as manifesto_outliers), so the cycle disks can draw a pledge's chain across elections."""
     links = manifesto_outliers(records)
     return [{**row, "cycle_label": pledges.cycle_label(row.get("cycle"), CYCLES),
-             **({"links": [{"type": l["type"], "link": l["link"]} for l in links[mid]]} if mid in links else {})}
+             **({"links": [{"type": l["type"], "link": l["link"]} for l in links[mid] if l.get("link")]} if any(l.get("link") for l in links.get(mid, [])) else {})}
             for mid, row in MANIFESTO.items()]
 
 
@@ -684,6 +816,8 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
         "manifesto_outliers": manifesto_outliers(records),
         "outlier_list": outlier_list(records, claim_ref),
         "manifesto_coverage": manifesto_coverage(records, claim_ref),
+        "pledge_grid": pledge_grid(records, claim_ref),
+        "pledge_flows": pledge_flows(records),
         "cycles": CYCLES,
         "manifesto_pledges": list(MANIFESTO.values()),
         "pledge_labels": out["pledge_labels"],

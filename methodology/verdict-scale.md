@@ -75,6 +75,13 @@ every party's. An opposition proposal later taken up by a government is linked a
 The list is published on the site at /pledges/manifestos/ (by election and party), and every outlier and recorded link
 on the Pledges page (/pledges/#h-outliers), where a type with none recorded says so and why.
 
+**Follow-up check.** For each manifesto pledge, `followup` in `data/manifesto_pledges.csv` records what happened to it
+in office: "taken up", "partly taken up" or "no follow-up found", with `followup_source` naming the commitment, or where
+and when it was searched for. When every pledge of a programme has been checked, its row in
+`data/manifesto_coverage.csv` gets the date in `followup_checked`. Only then does the site draw that programme's flow from
+promise to outcome, so that a pledge not yet checked is never shown as if it had been dropped. A governing party's pledge
+with "no follow-up found" after its legislature has ended is listed as dropped.
+
 Optional fields that link a pledge to earlier ones:
 
 - `follows: [CC-NNN or MP-...]`: the earlier pledge(s) this one carries forward. Set by a person at check time; similar
