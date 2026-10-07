@@ -73,7 +73,7 @@
     function pillOf(text, bg, ink) { var x = el("span", "cr-pill", text); x.style.background = bg; x.style.color = ink; v.appendChild(x); }
     if (b.part) pillOf(b.rating || "Not rated", b.tone[0], b.tone[1]);                      // a part of a claim: the report's rating
     else if (b.verdict || !b.pledge) pillOf(b.verdict || "Not yet checked", col[0], col[1]);
-    if (b.pledge) { pillOf("Pledge: " + b.pledge.status, b.pledge.colour, "#fff"); meta.push("as of " + b.pledge.as_of); }
+    if (b.pledge) { pillOf("Pledge: " + b.pledge.status, b.pledge.colour, b.pledge.ink || "#fff"); meta.push("as of " + b.pledge.as_of); }
     if (b.confidence) meta.push(b.confidence.toLowerCase() + " confidence");
     var stage = b.draft ? "draft, " + ({ "not-sought": "right of reply not sought", "on-hold": "right of reply on hold", "not-needed": "no right of reply needed" }[b.reply] || "right of reply pending")
       : String(b.status || "").toLowerCase();

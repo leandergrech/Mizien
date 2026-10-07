@@ -115,7 +115,7 @@ def main() -> int:
                    "links": [{"id": l["id"], "named": len(l["named_with"]), "pairs": l["pairs"], "themes": list(l["themes"])}
                              for l in p["links"]]} for p in profiles.values()]
     body_types = [{"id": k, "label": v, "colour": register.TYPE_COLOURS[k]} for k, v in register.TYPES.items()]
-    pledge_labels = [{"name": n, "meaning": m, "slug": "pledge-" + slug(n), "colour": PLEDGE_COLOURS.get(n, "#716f8d")}
+    pledge_labels = [{"name": n, "meaning": m, "slug": "pledge-" + slug(n), "colour": PLEDGE_COLOURS.get(n, "#b0b8c1"), "ink": PLEDGE_INK.get(n, "#ffffff")}
                      for n, m in pledge_label_list()]
     # Overlapping pledges, for the map's pledge network (each pair once, with the reasons).
     pledge_links = [{"a": x["id"], "b": o["id"], "why": o["why"]}
@@ -332,9 +332,17 @@ def claim_ref(d: dict) -> dict:
             "label": label, "label_slug": label_slug, "label_kind": kind, "reply": reply_state(d)}
 
 
-PLEDGE_COLOURS = {   # pledge labels (methodology/verdict-scale.md, Pledges): a family of their own, apart from the verdict hues
-    "Not measurable": "#716f8d", "Not yet due": "#5c7689", "On track": "#337f71", "Off track": "#ae5d33",
-    "Met": "#23705f", "Missed": "#7c2d4a",
+# Pledge labels (methodology/verdict-scale.md, Pledges): a family of their own, apart from the verdict hues. Chosen (7 Oct
+# 2026) so that every pair stays apart for readers with red-green colour blindness (OKLab ΔE ≥ 11.9 under protan and
+# deutan simulation, all pairs) and for normal vision (≥ 15), and each reads on both the light and the dark background.
+# "Not measurable" is a neutral grey on purpose. The label is always printed beside the colour as well.
+PLEDGE_COLOURS = {
+    "Not measurable": "#b0b8c1", "Not yet due": "#475cad", "On track": "#56ae6c", "Off track": "#ad5c15",
+    "Met": "#1f93b8", "Missed": "#a72a68",
+}
+PLEDGE_INK = {   # text on each colour: the one with the higher contrast (white or the site's dark green)
+    "Not measurable": "#13301f", "Not yet due": "#ffffff", "On track": "#13301f", "Off track": "#ffffff",
+    "Met": "#13301f", "Missed": "#ffffff",
 }
 
 
@@ -354,6 +362,7 @@ def pledge_view(d: dict, reg: dict) -> dict | None:
     fmt = lambda v: (timeline.parse_date(v) or {}).get("label") if v is not None else None
     occasion = p.get("occasion") or str(p.get("vehicle") or "").split(",")[0].strip()
     return {"status": p.get("status"), "slug": "pledge-" + slug(p.get("status") or ""), "colour": PLEDGE_COLOURS.get(p.get("status")),
+            "ink": PLEDGE_INK.get(p.get("status"), "#ffffff"),
             "as_of": fmt(p.get("as_of")), "as_of_iso": str(p.get("as_of") or ""), "made_on": fmt(p.get("made_on")),
             "made_mid": iso_mid(p.get("made_on")), "deadline_mid": iso_mid(p.get("deadline")),
             "deadline": fmt(p.get("deadline")), "term_end": fmt(p.get("term_end")), "target": p.get("target"),
@@ -521,7 +530,7 @@ def pledge_flows(records: list) -> list:
         miss = "Dropped" if party == gov.get("governing") and ended else "No follow-up found"
         names = {"taken up": "Taken up in office", "partly taken up": "Partly taken up", "no follow-up found": miss}
         cols2 = {k: sum(1 for r in rows if r.get("followup") == k) for k in pledges.FOLLOWUP}
-        colours = {"taken up": "#337f71", "partly taken up": "#5c7689", "no follow-up found": "#ae5d33" if miss == "Dropped" else grey}
+        colours = {"taken up": PLEDGE_COLOURS["On track"], "partly taken up": PLEDGE_COLOURS["Not yet due"], "no follow-up found": PLEDGE_COLOURS["Off track"] if miss == "Dropped" else grey}
         third = {}
         for r in rows:
             if r.get("followup") in ("taken up", "partly taken up"):

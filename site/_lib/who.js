@@ -130,7 +130,7 @@ export function pledgeStack(pledges, claims, ids) {
     // a pledge is a square (a promise), in its label colour; a check that also tested facts has the verdict as a dot inside
     const pv = d.p.pledge || {};
     svg.push(`<a href="${esc(d.p.path)}" class="ps-dot" data-a="${d.a.toFixed(4)}" data-l="${level(d.y)}" data-r="${d.k2}"><title>${esc(d.p.id)} ${esc(d.p.title)}: pledge ${esc(pv.status)}${d.verdict ? `; facts: ${esc(d.verdict)}` : ""}</title>` +
-      `<rect x="${(d.x - 9).toFixed(1)}" y="${(d.yy - 9).toFixed(1)}" width="18" height="18" rx="2.5" fill="${esc(pv.colour || "#716f8d")}" stroke="#eef3ef" stroke-width="1.6"/>` +
+      `<rect x="${(d.x - 9).toFixed(1)}" y="${(d.yy - 9).toFixed(1)}" width="18" height="18" rx="2.5" fill="${esc(pv.colour || "#b0b8c1")}" stroke="#eef3ef" stroke-width="1.6"/>` +
       (d.verdict ? `<circle cx="${d.x.toFixed(1)}" cy="${d.yy.toFixed(1)}" r="4.6" fill="${COLOUR[d.verdict]}" stroke="#eef3ef" stroke-width="1.2"/>` : "") +
       `<text x="${(d.x + 13).toFixed(1)}" y="${(d.yy + 4).toFixed(1)}" class="ps-id">${esc(d.p.id)}</text></a>`);
   }

@@ -49,7 +49,7 @@
     });
   }
   function verdictOf(c) { return c.verdict || (c.pledge ? "Pledge: " + c.pledge.status : "Not yet checked"); }
-  function colourOf(c) { return VC[c.verdict] || (c.pledge ? "#716f8d" : "#5d7468"); }
+  function colourOf(c) { return VC[c.verdict] || (c.pledge ? (c.pledge.colour || "#b0b8c1") : "#5d7468"); }
   function day(s) { var m = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/.exec(String(s || "")); return m && m[2] ? Date.UTC(+m[1], +m[2] - 1, +(m[3] || 15)) : null; }
 
   // ---- related: every claim not pinned, scored by what it shares with the pinned ones, with the reasons
@@ -129,7 +129,7 @@
   // ---- the button and its panel
   function row(c, extra) {
     var dot = c.pledge   // a pledge is a square in its label colour, with the verdict on its facts as a dot inside
-      ? '<span class="tr-dot is-pledge" style="background:' + (c.pledge.colour || "#716f8d") + '">' + (c.verdict ? '<i style="background:' + (VC[c.verdict] || "#5d7468") + '"></i>' : "") + "</span>"
+      ? '<span class="tr-dot is-pledge" style="background:' + (c.pledge.colour || "#b0b8c1") + '">' + (c.verdict ? '<i style="background:' + (VC[c.verdict] || "#5d7468") + '"></i>' : "") + "</span>"
       : '<span class="tr-dot" style="background:' + colourOf(c) + '"></span>';
     return '<li>' + dot + '<a href="' + esc(ROOT + "claims/" + c.id + "/") + '"><b>' + esc(c.id) + "</b> " + esc(c.title) +
       '</a><span class="tr-v">' + esc(verdictOf(c)) + "</span>" + (extra || "") + "</li>";

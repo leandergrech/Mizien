@@ -84,6 +84,19 @@ resolved against the script's own folder, so they work under the `/Mizien/` pref
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
 
+## Pledge label colours for colour blindness (7 October 2026)
+
+The old pledge palette failed under red-green colour blindness (On track and Not measurable were nearly the same,
+deuteranopia ΔE 4). New palette, in `PLEDGE_COLOURS` (`scripts/build_site_data.py`) and `PLEDGE_COLS`
+(`tools/mizien_report.py`), kept in step: Not measurable #b0b8c1 (neutral grey), Not yet due #475cad, On track
+#56ae6c, Off track #ad5c15, Met #1f93b8, Missed #a72a68. Every pair stays ΔE ≥ 11.9 under protanopia and deuteranopia
+and ≥ 15 for normal vision, on the light and dark backgrounds. Three are light, so each label has a text colour too
+(`PLEDGE_INK` / `PLEDGE_INKS`: #13301f on the light three, white on the others), carried as `ink` in the site data and
+`--pl-ink` / `--v-ink` in the CSS. Labels are always printed as words, so colour is never the only cue. The reports and
+flyers of CC-011, CC-029, CC-031, CC-039 and CC-107 were rebuilt; CC-011's and CC-107's rebuilds also pick up the
+shared status and right-of-reply wording already on main (the PDFs had not been rebuilt since). Any later pledge report
+picks the palette up from `mizien_report.py`.
+
 ## Pledges: flat views replace the 3D disks (7 October 2026)
 
 Maintainer decision (7 Oct 2026, after mockups of four options): pledges are shown flat. Chosen: the timeline in lanes
@@ -109,8 +122,8 @@ supports it). The chain cards (option 2) were not chosen. Mockups: https://claud
   Written into `methodology/verdict-scale.md` ("Follow-up check").
 - Fixed: the Pledges page's list of labels (and the colour key) showed the pledge kinds and outlier types as labels;
   `pledge_label_list()` now keeps only the six labels.
-- Noted, not changed: the pledge label colours fail a colour-blindness check (On track vs Not measurable); every view
-  prints the label as text. The "Who said it" pledge stacks (who.js) still use disks.
+- The pledge label colours failed a colour-blindness check (On track vs Not measurable); fixed the same day, see
+  "Pledge label colours for colour blindness" above. The "Who said it" pledge stacks (who.js) still use disks.
 
 ## Pledges: stage 4, outliers and the manifesto list on the site (6 October 2026)
 

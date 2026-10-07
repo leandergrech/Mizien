@@ -18,9 +18,9 @@ permalink: /pledges/
       measured and, if so, how it is going. Every label carries an <em>as of</em> date, the date of the evidence behind it.</p>
   </header>
 
-  <p class="see-also">{% icon "links" %}<a href="/explore/?group=pledges">See the pledges over time in Explore</a>: one lane per
+  <p class="see-also">{% icon "links" %}<span><a href="/explore/?group=pledges">See the pledges over time in Explore</a>: one lane per
     party and one for commitments made in office, each pledge on the date it was made with a bar to its deadline, and a line
-    from a pledge to the earlier one it carries forward (red where the earlier one was not met).</p>
+    from a pledge to the earlier one it carries forward (red where the earlier one was not met).</span></p>
 
   {%- set PG = mizien.pledge_grid %}
   {%- macro pq(x) -%}<a class="pg-p" href="{{ x.path }}" data-claim="{{ x.id }}" title="{{ x.id }} {{ x.title }}: {{ x.pledge_status }}"><span class="pg-sq" style="background:{{ x.pledge_colour }}" aria-hidden="true"></span>{{ x.id }}<span class="visually-hidden"> ({{ x.pledge_status }})</span></a>{%- endmacro %}
