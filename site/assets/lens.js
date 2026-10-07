@@ -16,7 +16,7 @@
     { key: "year", label: "Year said" }, { key: "pattern", label: "Pattern" }
   ];
   var VERDICT_ORDER = ["supported", "largely-supported", "not-substantiated", "misleading", "contradicted"];
-  var state = { q: "", only: [] }, items = [], labels = {}, onChange = null, bar = null, openFacet = null;
+  var state = { q: "", only: [] }, items = [], labels = {}, onChange = null, bar = null, openFacet = null, ready = false;
   FACETS.forEach(function (F) { state[F.key] = []; });
 
   function slug(s) { return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/ħ/g, "h").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
@@ -80,7 +80,8 @@
     return keys.map(function (v) { return { v: v, n: n[v] || 0, on: state[k].indexOf(v) >= 0 }; });
   }
 
-  function changed() { write(); render(); if (onChange) onChange(); }
+  var hooks = [];   // further listeners: a second view on the same page (the timeline inside Explore) shares one filter
+  function changed() { write(); render(); if (onChange) onChange(); hooks.forEach(function (f) { f(); }); }
   function toggle(k, v) { var a = state[k], i = a.indexOf(v); if (i >= 0) a.splice(i, 1); else a.push(v); changed(); }
   function clear() { FACETS.forEach(function (F) { state[F.key] = []; }); state.q = ""; state.only = []; changed(); }
 
@@ -145,7 +146,9 @@
 
   window.MizienLens = {
     slug: slug,
-    init: function (o) { read(); items = o.items || []; labels = o.labels || {}; onChange = o.onChange || null; if (o.mount) mount(o.mount); },
+    init: function (o) { read(); items = o.items || []; labels = o.labels || {}; onChange = o.onChange || null; if (o.mount) mount(o.mount); ready = true; },
+    ready: function () { return ready; },
+    listen: function (f) { hooks.push(f); },
     match: function (it) { return match(it); },
     only: function (ids) { if (ids === undefined) return state.only.slice(); state.only = (ids || []).slice(); changed(); },
     active: active, query: query, count: count,

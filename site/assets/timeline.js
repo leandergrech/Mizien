@@ -1,4 +1,4 @@
-/* Timeline of claims on a straight line of calendar days (site/timeline.njk).
+/* Timeline of claims on a straight line of calendar days: the Timeline view of /explore/ (_includes/timeline-view.njk).
    Claims are clumped by month, week, day or hour depending on the zoom, and a claim is never placed more finely than
    its recorded date allows: a claim dated only to a month or a year is drawn as a dashed bar across that period.
    All dates are handled as UTC calendar dates, so no daylight-saving or time-zone shift can move a claim. */
@@ -384,7 +384,7 @@
     if (sub) html += '<p class="small">' + esc(sub) + "</p>";
     html += '<ul class="tlv-claims">' + it.items.map(function (i) {
       var also = '<span class="tlv-also small">' + (i.place ? '<a href="' + esc(href("/explore/?view=map&sel=claim:" + i.id)) + '">On the map</a> · ' : "") +
-        '<a href="' + esc(href("/explore/?view=ghanqbuta&sel=claim:" + i.id)) + '">In the claims web</a></span>';
+        '<a href="' + esc(href("/explore/?view=web&sel=claim:" + i.id)) + '">In the claims web</a></span>';
       return '<li><a class="tlv-cl" href="' + esc(href(i.path)) + '"><span class="tlv-cid">' + esc(i.id) + '</span><span class="tlv-ct">' + esc(i.title) + "</span></a>" +
         '<span class="tlv-cm small">' + esc(i.speaker ? i.speaker + " · " : "") + esc(pointDate(i)) + "</span>" +
         '<span class="badge v-' + esc(i.v) + '">' + (i.pledge ? "Pledge: " : "") + esc(i.label) + "</span>" + also +
@@ -499,10 +499,13 @@
     var q = Lens ? Lens.query() : "";
     root.querySelectorAll(".xviews a[data-view]").forEach(function (a) { a.href = href("/explore/?view=" + a.dataset.view + (q ? "&" + q : "")); });
   }
-  if (Lens) Lens.init({ items: pts.concat(DATA.undated || []).map(lensItem), labels: DATA.labels, mount: document.getElementById("lensbar"),
+  // Inside Explore the filter bar and the pinned tray already belong to the page: the timeline only listens to them.
+  if (Lens && Lens.ready()) Lens.listen(function () { syncViewLinks(); render(); });
+  else if (Lens) Lens.init({ items: pts.concat(DATA.undated || []).map(lensItem), labels: DATA.labels, mount: document.getElementById("lensbar"),
     onChange: function () { syncViewLinks(); render(); } });
   // The pinned tray (assets/tray.js): pinned claims are outlined in amber; the panel can pin claims.
-  if (Tray && Lens) Tray.init({ mount: document.querySelector("#lensbar .lens-extra"), onChange: function () { syncPins(); render(); } });
+  if (Tray && Lens && document.querySelector("#lensbar .tray")) Tray.onChange(function () { syncPins(); render(); });
+  else if (Tray && Lens) Tray.init({ mount: document.querySelector("#lensbar .lens-extra"), onChange: function () { syncPins(); render(); } });
   syncViewLinks();
   root.hidden = false;
   var list = document.getElementById("tl-list"); if (list) list.open = false;

@@ -1,0 +1,17 @@
+/* Verdict and pledge label colours, and the badge that shows them: shared by every page (base.njk) and by the
+   Explore viewer (explore.njk), so that the palette lives in one place. Pledge colours kept in step with
+   PLEDGE_COLOURS / PLEDGE_INK in scripts/build_site_data.py. */
+.v-supported { --v: #2e7d4f; --v-ink: #ffffff; }
+.v-largely-supported { --v: #8db36b; --v-ink: #13301f; }
+.v-not-substantiated { --v: #d9772b; --v-ink: #13301f; }
+.v-misleading { --v: #b5483a; --v-ink: #ffffff; }
+.v-contradicted { --v: #8e2f25; --v-ink: #ffffff; }
+.v-none { --v: #5d7468; --v-ink: #ffffff; }
+.v-pledge-not-measurable { --v: #b0b8c1; --v-ink: #13301f; }
+.v-pledge-not-yet-due { --v: #475cad; --v-ink: #ffffff; }
+.v-pledge-on-track { --v: #56ae6c; --v-ink: #13301f; }
+.v-pledge-off-track { --v: #ad5c15; --v-ink: #ffffff; }
+.v-pledge-met { --v: #1f93b8; --v-ink: #13301f; }
+.v-pledge-missed { --v: #a72a68; --v-ink: #ffffff; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--v); color: var(--v-ink);
+  font: 700 12px/1.4 var(--sans); white-space: nowrap; }

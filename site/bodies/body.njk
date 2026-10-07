@@ -42,7 +42,7 @@ styles: [lens.css, who.css]
       <nav class="who-tools" aria-label="{{ b.name }} in the other views">
         <a href="/explore/?group=speaker&amp;sel=body:{{ b.id }}">{% icon "links" %}<span>In the claims web</span></a>
         <a href="/explore/?view=map&amp;who={{ b.type }}">{% icon "map" %}<span>{{ b.type_label }} on the map</span></a>
-        <a href="/timeline/?who={{ b.type }}&amp;lanes=verdict">{% icon "clock" %}<span>{{ b.type_label }} on the timeline</span></a>
+        <a href="/explore/?view=timeline&amp;who={{ b.type }}&amp;lanes=verdict">{% icon "clock" %}<span>{{ b.type_label }} on the timeline</span></a>
         <a href="#h-time">{% icon "clock" %}<span>Its statements over time</span></a>
         <button type="button" class="who-pin" data-ids="{% for c in b.claims %}{{ c.id }}{% if not loop.last %},{% endif %}{% endfor %}" hidden>Pin all {{ s.total }} claims</button>
         <span class="who-tray" id="who-tray"></span>
