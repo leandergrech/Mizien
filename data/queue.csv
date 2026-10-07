@@ -24,13 +24,13 @@ CC-034,A,2026-10-04,intake 4 Oct 2026; unblocked by maintainer 5 Oct 2026 (prima
 CC-035,B,2026-10-04,intake 4 Oct 2026,1,2026-10-06,
 CC-036,C,2026-10-04,intake 4 Oct 2026,1,2026-10-05,"network: era.org.mt (403 to scripts); web.archive.org (its copy of the ERA PDF, snapshot 22 Jun 2021, is truncated at 1 MiB of 1.4 MB, no readable text, then the host went offline); tried: ERA URL, Wayback, web search (finds the chapter but no passage text)"
 CC-037,A,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
-CC-038,B,2026-10-04,intake 4 Oct 2026,0,,
+CC-038,B,2026-10-04,intake 4 Oct 2026,1,2026-10-07,"source: authorities' own wording not found; Italpress/MNA (7 Feb 2026) gives the Met Office only as indirect speech ('Meteorological officials said the dust originated in the Sahara'), no quotation marks, no ERA statement; MaltaToday original 403, Wayback reset; tried: claim URL, Wayback, 3 web searches, Italpress, Guide Me Malta, TVM search, Newsbook/airquality.gov.mt/maltaweather.com (refused or unreachable)"
 CC-039,C,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
 CC-040,A,2026-10-04,intake 4 Oct 2026,1,2026-10-07,
-CC-041,B,2026-10-04,intake 4 Oct 2026,0,,
+CC-041,B,2026-10-04,intake 4 Oct 2026,1,2026-10-07,"source: no government/WSC wording; Lovin Malta (18 Oct 2024) is the outlet's paraphrase, quotes only 'comprehensive analysis' for the ministry and attributes the 2026 compliance date to the court; need the ministry/WSC statement or MaltaToday/TVM report of it; tried: Lovin Malta, web search, MaltaToday (403), Wayback (reset)"
 CC-042,C,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
 CC-043,A,2026-10-04,intake 4 Oct 2026,0,,
-CC-044,B,2026-10-04,intake 4 Oct 2026,0,,
+CC-044,B,2026-10-04,intake 4 Oct 2026,1,2026-10-07,"source: gov.mt press release PR251213 403 and Wayback reset; TVM News (4 Jul 2025) paraphrases 'removed 2,400 tonnes of waste from 16 km' without 'every year'/'annually'; only quoted words are about cleaning generally; need the press release text in a browser; tried: gov.mt, Wayback, TVM, Shift, Lovin Malta, Newsbook (unreachable), web search"
 CC-045,C,2026-10-04,intake 4 Oct 2026,0,2026-10-06,
 CC-046,A,2026-10-04,intake 4 Oct 2026,0,,
 CC-047,B,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
