@@ -1,0 +1,17 @@
+check,year,value,source,retrieved
+MT_all_uses_PWS_l_cap_day,2019,172.7,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_services_PWS_l_cap_day,2019,42.2,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_households_PWS_l_cap_day,2019,114.4,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_all_uses_PWS_l_cap_day,2022,168.6,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_services_PWS_l_cap_day,2022,38.5,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_households_PWS_l_cap_day,2022,115.8,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_all_uses_PWS_l_cap_day,2023,169.1,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_services_PWS_l_cap_day,2023,38.1,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_households_PWS_l_cap_day,2023,116.7,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_all_uses_PWS_l_cap_day,2024,175.7,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_services_PWS_l_cap_day,2024,40.1,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_households_PWS_l_cap_day,2024,120.0,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_households_vs_110_pct_2024,2024,9.1,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+EU27_median_l_cap_day_latest,2024,110.7,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_rank_lowest_first_of_n,2024,13 of 19,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07
+MT_vs_EU_median_pct,2024,8.4,"Eurostat env_wat_cat, demo_pjan (tools/cc-040-report/calc.py)",2026-10-07

@@ -69,7 +69,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-037 | Air | Highest share reporting pollution | Drafted | Supported |
 | CC-038 | Air | Saharan dust behind PM10 spikes | Not started | - |
 | CC-039 | Water | Net Zero Impact Utility | Drafted | Pledge: Not measurable |
-| CC-040 | Water | Low water use per head | Not started | - |
+| CC-040 | Water | Low water use per head | Drafted | Largely supported |
 | CC-041 | Water | Sewage plants compliant by 2026 | Not started | - |
 | CC-042 | Water | 'From Blue Flag to Red Alert' | Drafted | Largely supported |
 | CC-043 | Water | 13 Blue Flag beaches | Not started | - |

@@ -561,7 +561,7 @@
       "similar": [
         {
           "id": "CC-046",
-          "score": 0.56,
+          "score": 0.55,
           "terms": [
             "osmosis",
             "reverse",
@@ -570,7 +570,7 @@
         },
         {
           "id": "CC-108",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "wsc",
             "groundwater",
@@ -2769,7 +2769,7 @@
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.63,
+          "score": 0.62,
           "terms": [
             "impact",
             "abstraction",
@@ -2791,10 +2791,11 @@
       "id": "CC-040",
       "title": "Low water use per head",
       "category": "Water",
-      "claim": "Energy and Water Agency: per capita water consumption in Malta is around 110 litres a day, relatively low compared with other European countries.",
-      "counter": "Tourists reportedly use about 296 litres a day; total demand depends on population and tourism growth.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Energy and Water Agency (Manuel Sapiano, IWRA 1st Island Water Congress keynote, 2024): per capita water consumption in Malta stands at around 110 l/cap/day, and tariffs and engagement have contributed to keeping it low. (The intake's added \"relatively low compared with other European countries\" is not in the deck.)",
+      "counter": "Eurostat env_wat_cat / demo_pjan (estimates): Maltese households 116 l/person/day (2022), 120 (2024), 9% above 110; all uses of the public supply about 176 l per resident (2024, includes services and tourists). Among 19 EU states with a recent household figure Malta ranks 13th lowest, 8% above the median (111 l). The deck makes no EU comparison.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Water supply & groundwater",
       "location": {
@@ -2804,30 +2805,54 @@
         "scope": "institution",
         "icon": "castille"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Energy and Water Agency (Manuel Sapiano)",
       "bodies": [
         "energy-water-agency",
         "manuel-sapiano"
       ],
-      "date": "2024",
-      "quote": "",
-      "version": null,
-      "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-040/claim.yml",
-      "similar": [
+      "subclaims": [
         {
-          "id": "CC-046",
-          "score": 0.29,
-          "terms": [
-            "water",
-            "litres",
-            "day"
-          ]
+          "id": "CC-040A",
+          "text": "“Per capita water consumption, today stands at around 110l/cap/day”",
+          "finding": "Eurostat households: 116 (2022), 120 (2024), estimates [2][3]. Within about 9%; definition of the 110 not stated.",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-040B",
+          "text": "Consumption has been kept “low”",
+          "finding": "No benchmark in the deck. Malta ranks 13th of 19 EU states, 8% above the median [2].",
+          "rating": "Not shown",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-040C",
+          "text": "Tariffs and engagement “contributed” to this; a “90 litres” higher-tariff threshold",
+          "finding": "A causal claim with no evidence in the deck; the WSC tariff schedule was not obtained.",
+          "rating": "Not tested",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-040D",
+          "text": "“Relatively low compared with other European countries” (intake wording)",
+          "finding": "Not in the speaker’s words; headline wording, not rated. For reference, Malta is mid-table [2].",
+          "rating": "Not rated",
+          "tone": "grey"
         }
-      ]
+      ],
+      "date": "2024",
+      "quote": "Per capita water consumption, today stands at around 110l/cap/day.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-07",
+      "outputs": {
+        "report": "claim-files/CC-040/report.pdf",
+        "flyer_pdf": "claim-files/CC-040/flyer.pdf",
+        "flyer_png": "claim-files/CC-040/flyer.png"
+      },
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-040/claim.yml"
     },
     {
       "id": "CC-041",
@@ -3131,20 +3156,11 @@
       "similar": [
         {
           "id": "CC-009",
-          "score": 0.56,
+          "score": 0.55,
           "terms": [
             "osmosis",
             "reverse",
             "wsc"
-          ]
-        },
-        {
-          "id": "CC-040",
-          "score": 0.29,
-          "terms": [
-            "water",
-            "litres",
-            "day"
           ]
         }
       ]
@@ -3874,7 +3890,7 @@
       "similar": [
         {
           "id": "CC-063",
-          "score": 0.27,
+          "score": 0.25,
           "terms": [
             "construction",
             "developers",
@@ -3944,7 +3960,7 @@
         },
         {
           "id": "CC-062",
-          "score": 0.27,
+          "score": 0.25,
           "terms": [
             "construction",
             "developers",
@@ -4032,14 +4048,6 @@
             "zone",
             "decisions"
           ]
-        },
-        {
-          "id": "CC-066",
-          "score": 0.27,
-          "terms": [
-            "heritage",
-            "planning"
-          ]
         }
       ]
     },
@@ -4072,17 +4080,7 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-066/claim.yml",
-      "similar": [
-        {
-          "id": "CC-065",
-          "score": 0.27,
-          "terms": [
-            "heritage",
-            "planning"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-066/claim.yml"
     },
     {
       "id": "CC-067",
@@ -5281,7 +5279,7 @@
       "similar": [
         {
           "id": "CC-107",
-          "score": 0.62,
+          "score": 0.61,
           "terms": [
             "afforestation",
             "zero",
@@ -5790,7 +5788,7 @@
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "abstraction",
             "groundwater",
@@ -6180,7 +6178,7 @@
       "similar": [
         {
           "id": "CC-092",
-          "score": 0.62,
+          "score": 0.61,
           "terms": [
             "afforestation",
             "zero",
@@ -6222,7 +6220,7 @@
       "similar": [
         {
           "id": "CC-039",
-          "score": 0.63,
+          "score": 0.62,
           "terms": [
             "impact",
             "abstraction",
@@ -6231,7 +6229,7 @@
         },
         {
           "id": "CC-101",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "abstraction",
             "groundwater",
@@ -6240,7 +6238,7 @@
         },
         {
           "id": "CC-009",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "wsc",
             "groundwater",
