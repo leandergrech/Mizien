@@ -39,15 +39,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 20px 56px; }
 h1, h2 { font-family: var(--serif); line-height: 1.2; }
 .page h1 { font-size: clamp(28px, 5vw, 38px); margin: 6px 0 10px; }
 
-/* ---------------------------------------------------------------- verdict tokens */
-.v-supported { --v: #2e7d4f; --v-ink: #ffffff; }
-.v-largely-supported { --v: #8db36b; --v-ink: #13301f; }
-.v-not-substantiated { --v: #d9772b; --v-ink: #13301f; }
-.v-misleading { --v: #b5483a; --v-ink: #ffffff; }
-.v-contradicted { --v: #8e2f25; --v-ink: #ffffff; }
-.v-none { --v: #5d7468; --v-ink: #ffffff; }
-.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--v); color: var(--v-ink);
-  font: 700 12px/1.4 var(--sans); white-space: nowrap; }
+/* ---------------------------------------------------------------- verdict tokens: in labels.css */
 
 /* ---------------------------------------------------------------- claim page */
 .check { background: var(--paper); color: var(--paper-ink); border-radius: 16px; overflow: hidden;
@@ -541,13 +533,7 @@ a.claimref { text-decoration-style: dotted; text-underline-offset: 3px; font-wei
 @media (max-width: 640px) { .change-list li { grid-template-columns: 1fr; } }
 
 /* ---------------------------------------------------------------- pledge labels and parts of a claim */
-/* Pledge labels (methodology/pledge-labels.md) have their own colours, apart from the verdict scale. */
-.v-pledge-not-measurable { --v: #b0b8c1; --v-ink: #13301f; }
-.v-pledge-not-yet-due { --v: #475cad; --v-ink: #ffffff; }
-.v-pledge-on-track { --v: #56ae6c; --v-ink: #13301f; }
-.v-pledge-off-track { --v: #ad5c15; --v-ink: #ffffff; }
-.v-pledge-met { --v: #1f93b8; --v-ink: #13301f; }
-.v-pledge-missed { --v: #a72a68; --v-ink: #ffffff; }
+/* Pledge labels (methodology/verdict-scale.md, Pledges) have their own colours, apart from the verdict scale (labels.css). */
 .verdictline .pledge-pill { background: var(--pl); color: var(--pl-ink, #fff); border-color: var(--pl); box-shadow: 0 0 0 1.5px rgba(255,255,255,.75); }
 .pledge-box { margin: 16px 0 6px; padding: 14px 18px 12px; border-radius: 12px; background: #fbfaf6; border: 1px solid var(--paper-line); border-left: 6px solid var(--pl); }
 .check-body .pledge-box h2 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; padding: 0; border: 0; font-size: 20px; }

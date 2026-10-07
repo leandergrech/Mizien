@@ -11,7 +11,7 @@
   var DATA = null, claims = [], edges = [], byId = {}, themeById = {}, stars = [];
   var hubPool = {}, hubs = [];            // hubPool: every hub ever made (key = mode|value); hubs: those of the current mode
   var subHubs = [];                      // topic view: subtopic hubs orbiting their topic hub (claim.yml `subtopic`)
-  // Parts of a claim (claim.yml `subclaims`, numbered CC-017A, B...): drawn in the Għanqbuta view as small satellites
+  // Parts of a claim (claim.yml `subclaims`, numbered CC-017A, B...): drawn in the web view as small satellites
   // of their claim, placed from the claim's position each frame. They are not claims of their own: no groups, no links.
   var parts = [], partById = {};
   // Coarse filtering: groups can be hidden from the legend. A hidden group's hub, claims, spokes and links leave the
@@ -237,9 +237,9 @@
     buildStats(); buildGroupBy(); buildSpacing(); buildLinkBar(); buildKey(); resize();
     setMode(groupParam(), true);
     buildViewBy(); setHint();
-    var wantMap = new URLSearchParams(location.search).get("view") === "map";
-    try { if (!new URLSearchParams(location.search).get("view") && localStorage.getItem("mizien.view") === "map") wantMap = true; } catch (e) {}
-    if (wantMap) setView("map", true);   // the map library and the tiles load only when the map view is used
+    var want = new URLSearchParams(location.search).get("view");
+    try { if (!want) want = localStorage.getItem("mizien.view"); } catch (e) {}
+    if (want === "map" || want === "timeline") setView(want, true);   // the map library and the tiles load only when the map view is used
     applySelKey(startSel);
     requestAnimationFrame(frame);
   }
@@ -281,14 +281,9 @@
     return row;
   }
   function lensChanged() {
-    syncTimelineLink();
     if (view === "map") { buildPlaces(); if (gmapLayer) { gmapLayer.textContent = ""; gmapMarks = {}; } queueGeoMarks(); fitPlaces(true);
       var q = document.getElementById("placeq"); if (q) q.dispatchEvent(new Event("input")); return; }
     var keep = selKey(); setMode(mode, false); applySelKey(keep);
-  }
-  function syncTimelineLink() {
-    var a = document.getElementById("tl-link"); if (!a) return;
-    var q = Lens ? Lens.query() : ""; a.href = ROOT + "timeline/" + (q ? "?" + q : "");
   }
 
   function buildStats() {
@@ -939,7 +934,7 @@
       none.onclick = function () { setLinks(false); }; chips.appendChild(none);
     }
     bar.appendChild(chips);
-    if (view === "graph" && mode !== "network") {          // spokes join each claim to its group (Għanqbuta only)
+    if (view === "graph" && mode !== "network") {          // spokes join each claim to its group (web view only)
       var sp = el("button", "switch small" + (showSpokes ? " on" : "")); sp.type = "button"; sp.setAttribute("role", "switch");
       sp.setAttribute("aria-checked", showSpokes ? "true" : "false");
       sp.appendChild(el("span", "track")).appendChild(el("span", "knob"));
@@ -1066,7 +1061,7 @@
   }
 
   // ------------------------------------------------------------ what the camera centres on
-  // In the Għanqbuta view the selection glides to the centre of the free space (between the controls and the card)
+  // In the web view the selection glides to the centre of the free space (between the controls and the card)
   // and the camera zooms so that it, and what it links to, fills that space.
   function focusTarget() {
     if (view !== "graph") return null;
@@ -1139,7 +1134,7 @@
 
   function frame(now) {
     var t = (now - t0) / 1000, dt = Math.max(0, Math.min(0.4, t - lastT)); lastT = t;
-    if (view === "map") { requestAnimationFrame(frame); return; }   // the map view is drawn by MapLibre
+    if (view === "map" || view === "timeline") { requestAnimationFrame(frame); return; }   // drawn by MapLibre, or by timeline.js
     if (lanesOn()) { ctx.clearRect(0, 0, W, H); requestAnimationFrame(frame); return; }   // the pledges timeline is SVG
     var k = reduce ? 1 : 1 - Math.pow(0.04, dt);            // morph easing, frame-rate independent
     lensK += ((lensWanted() ? 1 : 0) - lensK) * Math.min(1, k * 1.5);
@@ -1765,10 +1760,29 @@
     if (view === "map") { fitPlaces(true); return; }
     cam.zoom = 1; cam.tpx = 0; cam.tpy = 0; cam.yaw = 0.6; cam.pitch = cam.tpitch; if (sway) cam.yaw = 0;
   }
+  // The timeline (assets/timeline.js, _includes/timeline-view.njk) is a page-like view below the bar: the web and the map
+  // rest while it is shown, and its script loads the first time it is opened. It shares the filter and the pinned tray.
+  var tlLoaded = false, under = "graph", spinBeforeTimeline = false;
+  function showTimeline(on) {
+    document.body.classList.toggle("is-timeline", on);
+    document.getElementById("tlview").hidden = !on;
+    if (on && !tlLoaded) { tlLoaded = true; var sc = document.createElement("script"); sc.src = ROOT + "assets/timeline.js"; document.body.appendChild(sc); }
+    else window.dispatchEvent(new Event("resize"));   // whichever view comes back measures itself again
+  }
   function setView(v, instant) {
     var was = view; view = v;
     try { localStorage.setItem("mizien.view", v); } catch (e) {}
-    var u = new URL(location.href); u.searchParams.set("view", v === "map" ? "map" : "ghanqbuta"); history.replaceState(null, "", u);
+    var u = new URL(location.href); u.searchParams.set("view", v === "graph" ? "web" : v); history.replaceState(null, "", u);
+    document.querySelectorAll("#viewby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.view === v ? "true" : "false"); });
+    if (v === "timeline") {   // the web or the map stays as it was underneath, paused
+      if (was !== "timeline") { under = was; spinBeforeTimeline = spinning; setSpin(false); }
+      showTimeline(true); return;
+    }
+    if (was === "timeline") {
+      showTimeline(false); was = under;
+      if (spinBeforeTimeline && under !== "map" && !reduce) setSpin(true);   // as it was; the switch below may pause it again
+      if (v === under) { setHint(); return; }
+    }
     if (v === "map") {
       if (was !== "map") { spinBeforeMap = spinning; setSpin(false); }
       buildPlaces(); openGeoMap(); document.getElementById("crumb").style.display = "none";
@@ -1781,7 +1795,6 @@
     // the map has one arrangement (places): the grouping controls give way to the place search
     ["groupbox", "groupsbox", "arrangebox", "spacingbox"].forEach(function (id) { document.getElementById(id).hidden = v === "map"; });
     document.getElementById("mapsearch").hidden = v !== "map";
-    document.querySelectorAll("#viewby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.view === v ? "true" : "false"); });
     buildLinkBar(); if (v !== "map") { buildArrange(); buildSplit(); }
     var mt = document.getElementById("modeTitle");
     if (v === "map") { mt.querySelector(".t").textContent = "Claims across the islands"; mt.querySelector(".s").textContent = "Each medallion is a place: its number of claims, and a leaf for each one checked · press a place to list its claims"; }
@@ -1797,17 +1810,15 @@
   }
   function buildViewBy() {
     var g = document.getElementById("viewby"); g.textContent = "";
-    // "Għanqbuta" is Maltese for spider: a web of claims, with topic hubs, spokes and the threads that link them.
-    [["graph", "Għanqbuta", "mode:network", "Għanqbuta (spider): a web of claims, with topic hubs, spokes and the threads that link them"],
-     ["map", "Map", "mode:topic", "Claims placed where they happened, across Malta and Gozo"]].forEach(function (v) {
+    [["graph", "Web", "mode:network", "A web of claims, with topic hubs, spokes and the threads that link them"],
+     ["map", "Map", "mode:topic", "Claims placed where they happened, across Malta and Gozo"],
+     ["timeline", "Timeline", "", "Every dated claim on a line of calendar days, with the same filter"]].forEach(function (v) {
       var b = el("button"); b.type = "button"; b.dataset.view = v[0]; b.title = v[3]; b.setAttribute("aria-pressed", view === v[0] ? "true" : "false");
       if (v[0] === "map") { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 L9 4 L15 6.5 L21 4 V17.5 L15 20 L9 17.5 L3 20 Z M9 4 V17.5 M15 6.5 V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'; }
+      else if (v[0] === "timeline") { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'; }
       else b.appendChild(iconSvg(v[2], "currentColor"));
       b.appendChild(document.createTextNode(v[1])); b.onclick = function () { setView(v[0]); }; g.appendChild(b);
     });
-    var t = el("a"); t.id = "tl-link"; t.title = "Every dated claim on a timeline, with the same filter";
-    t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
-    t.appendChild(document.createTextNode("Timeline")); g.appendChild(t); syncTimelineLink();
   }
   var toastTimer = null;
   function showToast(msg) { var t = document.getElementById("toast"); t.textContent = msg; t.style.display = "block";
@@ -2305,6 +2316,7 @@
     if (used) { e.preventDefault(); setSpin(false); }
   });
   document.addEventListener("keydown", function (e) {
+    if (view === "timeline") return;   // the timeline has its own keys
     if (e.key === "Escape") clearSel();
     if ((e.target === document.body || e.target === canvas) && /^[1-7]$/.test(e.key)) setMode(MODE_ORDER[+e.key - 1]);
     if ((e.target === document.body || e.target === canvas) && (e.key === "m" || e.key === "M")) setView(view === "map" ? "graph" : "map");

@@ -27,7 +27,7 @@ styles: [home.css]
   <p class="home-cta">
     <a class="btn-primary" href="/explore/">{% icon "map" %}<span>Explore the claims</span></a>
     <a class="btn-ghost" href="/claims/">{% icon "list" %}<span>All claims</span></a>
-    <a class="btn-ghost" href="/timeline/">{% icon "clock" %}<span>Timeline</span></a>
+    <a class="btn-ghost" href="/explore/?view=timeline">{% icon "clock" %}<span>Timeline</span></a>
   </p>
   </div>
   {#- A deck of claim panels: one check at a time from a random chain. Swipe or drag a card left for the next, right to
@@ -65,9 +65,9 @@ styles: [home.css]
   <h2 id="h-start">Start with a question</h2>
   <ul class="starters">
     <li><a href="/explore/?view=map"><b>What was claimed about my town?</b><span>Every place a claim is about, on a map of Malta and Gozo. Press a place to read its claims.</span></a></li>
-    <li><a href="/explore/?view=ghanqbuta&amp;group=speaker"><b>Who gets checked, and how do they fare?</b><span>Claims grouped by the kind of body that made them: government, agencies, parties, NGOs, business, the EU.</span></a></li>
-    <li><a href="/explore/?view=ghanqbuta&amp;group=speaker&amp;verdict=not-substantiated,misleading,contradicted"><b>Which claims didn't hold up?</b><span>The claims found Not substantiated, Misleading or Contradicted, grouped by who made them.</span></a></li>
-    <li><a href="/timeline/?lanes=verdict"><b>What has been said, and when?</b><span>Every dated claim on a timeline, one lane per verdict, to see when they cluster.</span></a></li>
+    <li><a href="/explore/?view=web&amp;group=speaker"><b>Who gets checked, and how do they fare?</b><span>Claims grouped by the kind of body that made them: government, agencies, parties, NGOs, business, the EU.</span></a></li>
+    <li><a href="/explore/?view=web&amp;group=speaker&amp;verdict=not-substantiated,misleading,contradicted"><b>Which claims didn't hold up?</b><span>The claims found Not substantiated, Misleading or Contradicted, grouped by who made them.</span></a></li>
+    <li><a href="/explore/?view=timeline&amp;lanes=verdict"><b>What has been said, and when?</b><span>Every dated claim on a timeline, one lane per verdict, to see when they cluster.</span></a></li>
   </ul>
 </section>
 

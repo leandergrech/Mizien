@@ -84,6 +84,18 @@ resolved against the script's own folder, so they work under the `/Mizien/` pref
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
 
+## Timeline moved into Explore; "Web" view name back (7 October 2026)
+
+Maintainer request: the Timeline tab is gone from the main menu; the timeline is now the third view of /explore/,
+beside Web and Map (`?view=timeline`). The view is `_includes/timeline-view.njk` inside `explore.njk`; its data
+(`timelinePoints`, now `site/_lib/timeline-points.js`) is computed for Explore, and `assets/timeline.js` loads the
+first time the view opens. The web or the map stays paused underneath and comes back as it was. The filter bar and
+the pinned tray are Explore's own: `lens.js` gained `ready()` and `listen()` so the timeline subscribes instead of
+starting a second filter. `/timeline/` now forwards to `/explore/?view=timeline` with its query (lanes, filter) and
+hash, so old links keep working; it is marked noindex. The view formerly labelled "Għanqbuta" is "Web" again, and
+its address is `?view=web` (the old `?view=ghanqbuta` still opens it). Verdict and pledge colours and `.badge` moved
+from `site.css` to `assets/labels.css`, loaded by every page and by Explore, so the palette is defined once.
+
 ## Pledge label colours for colour blindness (7 October 2026)
 
 The old pledge palette failed under red-green colour blindness (On track and Not measurable were nearly the same,
