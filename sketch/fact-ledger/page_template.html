@@ -1,0 +1,361 @@
+<title>Fact Graph Sketch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Tinos:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a reading column for text; the graph breaks out to a wider band and scrolls sideways inside its own box on small screens. */
+:root {
+  --bg: #e8efe8; --card: #f6f4ee; --ink: #14452f; --ink-2: #2f5a45; --muted: #4a6757; --line: #cfdcd2; --hair: rgba(20,69,47,.13);
+  --accent: #8a5a00; --amber-fill: #e3a72f;
+  --b-territorial: #2a78d6; --b-residence: #4a3aa7; --b-effort: #1baf7a; --b-context: #7d8f85;
+  --t-green: #2f7a4f; --t-lime: #6f9a52; --t-amber: #b07a00; --t-orange: #c4651f; --t-red: #b5483a; --t-grey: #7d8f85;
+  --edge: rgba(20,69,47,.16); --edge-on: #14452f; --dim: .34; --tip-bg: #14452f; --tip-ink: #f6f4ee;
+  --serif: "Tinos", "Liberation Serif", "Times New Roman", serif;
+  --sans: "Arimo", "Liberation Sans", Arial, Helvetica, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e2a1f; --card: #123826; --ink: #eef3ef; --ink-2: #cfe2d4; --muted: #a9c2b1; --line: #1f5a40; --hair: rgba(207,226,212,.13);
+  --accent: #e3a72f; --b-territorial: #3987e5; --b-residence: #9085e9; --b-effort: #199e70; --b-context: #93a89b;
+  --t-green: #6fcf97; --t-lime: #a8cf7a; --t-amber: #e3a72f; --t-orange: #ec8f4e; --t-red: #e57f70; --t-grey: #93a89b;
+  --edge: rgba(207,226,212,.16); --edge-on: #eef3ef; --tip-bg: #eef3ef; --tip-ink: #0e2a1f; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0e2a1f; --card: #123826; --ink: #eef3ef; --ink-2: #cfe2d4; --muted: #a9c2b1; --line: #1f5a40; --hair: rgba(207,226,212,.13);
+  --accent: #e3a72f; --b-territorial: #3987e5; --b-residence: #9085e9; --b-effort: #199e70; --b-context: #93a89b;
+  --t-green: #6fcf97; --t-lime: #a8cf7a; --t-amber: #e3a72f; --t-orange: #ec8f4e; --t-red: #e57f70; --t-grey: #93a89b;
+  --edge: rgba(207,226,212,.16); --edge-on: #eef3ef; --tip-bg: #eef3ef; --tip-ink: #0e2a1f; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--serif); font-size: 1.02rem; line-height: 1.55; margin: 0; padding: 0 16px; }
+main { max-width: 1270px; margin: 0 auto; padding-block: 36px 72px; display: grid; gap: 40px; }
+.col { max-width: 780px; display: grid; gap: 14px; min-width: 0; }
+h1, h2, h3 { font-family: var(--sans); text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: 2.2rem; } h2 { font-size: 1.45rem; } h3 { font-size: 1.05rem; }
+p { margin: 0; max-width: 68ch; }
+a { color: var(--accent); }
+code, .mono { font-family: var(--mono); font-size: .85em; }
+.eyebrow { font: 600 .78rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.dek { font-size: 1.15rem; color: var(--ink-2); }
+header { display: grid; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 20px; max-width: 780px; }
+section { display: grid; gap: 14px; min-width: 0; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; display: grid; gap: 2px; align-content: start; }
+.tile .v { font: 700 1.5rem var(--sans); font-variant-numeric: tabular-nums; }
+.tile .k { font: 600 .74rem var(--sans); color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+.tile .n { font: .82rem/1.4 var(--sans); color: var(--ink-2); }
+
+.stage { background: var(--card); border: 1px solid var(--line); border-radius: 8px; display: grid; gap: 10px; padding: 14px; min-width: 0; }
+.bar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font: .82rem var(--sans); color: var(--ink-2); }
+.bar .lab { font-weight: 600; color: var(--muted); }
+.chipbtn { font: 600 .8rem var(--sans); border: 1px solid var(--line); background: transparent; color: var(--ink); padding: 5px 10px; border-radius: 99px; cursor: pointer; }
+.chipbtn[aria-pressed="true"] { background: var(--ink); color: var(--card); border-color: var(--ink); }
+.chipbtn:focus-visible, .node:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.key { display: flex; flex-wrap: wrap; gap: 6px 16px; font: .8rem var(--sans); color: var(--ink-2); }
+.key span { display: inline-flex; align-items: center; gap: 6px; }
+.key i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+.key svg { width: 26px; height: 8px; }
+.scroller { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+#graph { display: block; }
+#graph text { font-family: var(--sans); font-size: 11.5px; fill: var(--ink); }
+#graph .colhead { font-size: 11px; font-weight: 700; letter-spacing: .06em; fill: var(--muted); text-transform: uppercase; }
+#graph .claimhead { font-weight: 700; font-size: 12px; }
+#graph .sub { fill: var(--ink-2); }
+#graph .muted { fill: var(--muted); }
+#graph .node { cursor: pointer; }
+#graph .node rect.hit { fill: transparent; }
+#graph .node:hover rect.hit { fill: var(--hair); }
+#graph .sel rect.hit { fill: var(--hair); }
+#graph .edge { fill: none; stroke: var(--edge); stroke-width: 1; }
+#graph .edge.on { stroke: var(--edge-on); stroke-width: 1.6; }
+#graph .dim { opacity: var(--dim); }
+#graph .unlinked text { fill: var(--muted); font-style: italic; }
+
+.detail { border-top: 1px solid var(--line); padding-top: 12px; display: grid; gap: 8px; font-family: var(--sans); font-size: .9rem; min-height: 120px; }
+.detail h3 { font-size: 1rem; }
+.detail ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
+.pill { display: inline-flex; align-items: center; gap: 5px; font: 600 .74rem var(--sans); padding: 1px 8px; border-radius: 99px; border: 1px solid var(--line); white-space: nowrap; color: var(--ink); }
+.pill i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.role { font: 600 .72rem var(--sans); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--card); }
+table { border-collapse: collapse; width: 100%; font: .86rem var(--sans); }
+th, td { text-align: left; padding: 7px 11px; border-bottom: 1px solid var(--hair); vertical-align: top; }
+th { color: var(--muted); font-size: .78rem; font-weight: 600; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.status { font: 700 .72rem var(--sans); text-transform: uppercase; letter-spacing: .05em; }
+.status.open { color: var(--t-red); } .status.explained { color: var(--t-green); } .status.revision { color: var(--t-amber); }
+
+.pcs { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.pc { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 14px; display: grid; gap: 8px; align-content: start; font-family: var(--sans); font-size: .86rem; min-width: 0; }
+.pc q { font: italic 1.05rem/1.4 var(--serif); color: var(--ink); }
+.pc .tag { font-size: .74rem; color: var(--muted); }
+.pc ul { margin: 0; padding-left: 1.1em; display: grid; gap: 3px; }
+.pc h4 { margin: 4px 0 0; font: 700 .74rem var(--sans); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.factlink { font-family: var(--mono); font-size: .8rem; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+ol.lessons { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; max-width: 70ch; }
+.tip { position: fixed; pointer-events: none; background: var(--tip-bg); color: var(--tip-ink); font: .78rem/1.4 var(--sans); padding: 7px 9px; border-radius: 5px; max-width: 280px; z-index: 5; }
+footer { border-top: 1px solid var(--line); padding-top: 16px; font: .8rem var(--sans); color: var(--muted); max-width: 780px; }
+</style>
+
+<main>
+  <header>
+    <span class="eyebrow">Miżien · fact ledger · prototype on one cluster</span>
+    <h1>Fact graph sketch</h1>
+    <p class="dek">Six emissions checks by six different speakers, rebuilt as a small ledger: each sub-claim points to the facts it rests on, each fact to its data series, each series to the way emissions are counted. Click anything to follow it through.</p>
+    <p class="eyebrow" style="text-transform:none;letter-spacing:0">Brainstorm only. Built from the repository's own <code>claim.yml</code> and <code>checks.csv</code> files by <code>sketch/fact-ledger/</code>; the site and the claim records do not use it.</p>
+  </header>
+
+  <section class="col">
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section>
+    <div class="col"><h2>The graph</h2>
+      <p>Read it from left to right: what was said, the facts we hold, where the numbers come from, and how emissions are counted. The last column is where the disagreement between speakers comes from: the same country's emissions fall on one basis and nearly triple on another.</p></div>
+    <div class="stage">
+      <div class="bar"><span class="lab">Start from</span><span id="stories"></span></div>
+      <div class="key" aria-hidden="true">
+        <span><i style="background:var(--b-territorial)"></i>Territorial inventory</span>
+        <span><i style="background:var(--b-effort)"></i>Effort-sharing scope</span>
+        <span><i style="background:var(--b-residence)"></i>Residence accounts</span>
+        <span><i style="background:var(--b-context)"></i>Denominators and context</span>
+        <span><svg viewBox="0 0 26 8"><line x1="0" y1="4" x2="26" y2="4" stroke="currentColor" stroke-width="1.6"/></svg>supports</span>
+        <span><svg viewBox="0 0 26 8"><line x1="0" y1="4" x2="26" y2="4" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 3"/></svg>contradicts</span>
+        <span><svg viewBox="0 0 26 8"><line x1="0" y1="4" x2="26" y2="4" stroke="currentColor" stroke-width="1.6" stroke-dasharray="1.5 3"/></svg>context</span>
+      </div>
+      <div class="scroller"><svg id="graph" role="img" aria-label="Graph of six emissions claims, their sub-claims, the facts they rest on, the data series and the counting basis"></svg></div>
+      <div class="detail" id="detail" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="col">
+    <h2>What the build found</h2>
+    <h3>Flags: one fact, two values</h3>
+    <p>The rule: two facts with the same series, measure, period and unit must agree, or someone writes down why not.</p>
+    <div class="tablewrap"><table id="t-flags"><thead><tr><th>Facts</th><th>Values</th><th>Status</th><th>Why</th></tr></thead><tbody></tbody></table></div>
+    <h3>Links the current connections file misses</h3>
+    <p>Pairs of claims that rest on the same fact, computed from the ledger and compared with <code>data/edges.csv</code>.</p>
+    <div class="tablewrap"><table id="t-pairs"><thead><tr><th>Claims</th><th>Shared facts</th><th>In edges.csv</th></tr></thead><tbody></tbody></table></div>
+    <h3>The same figure in two reports, found by text alone</h3>
+    <p>A scan of all 268 check rows, with no ledger, for rows in different reports with similar wording, the same years and the same value. It finds the easy repeats. It cannot see that 2,170 kt and 2,198 kt are meant to be the same total; the ledger's series keys can.</p>
+    <details><summary class="eyebrow" style="cursor:pointer;color:var(--accent)">Show the matches</summary><div class="tablewrap" style="margin-top:8px"><table id="t-same"><thead><tr><th>Row</th><th>Same row elsewhere</th><th class="num">Value</th></tr></thead><tbody></tbody></table></div></details>
+  </section>
+
+  <section>
+    <div class="col"><h2>Pre-check, on four test sentences</h2>
+      <p>What a new claim would meet before any research starts. The four sentences were written for this test; nobody said them. The matcher uses no language model: a small word list maps words to concepts, numbers are compared with fact values, and direction (rise or fall) must agree.</p></div>
+    <div class="pcs" id="pcs"></div>
+  </section>
+
+  <section class="col">
+    <h2>What this test taught the design</h2>
+    <ol class="lessons">
+      <li><b>A fact's key needs the measure, not just the series.</b> The first run of the consistency rule flagged 14 "conflicts", nearly all per-person against total changes from the same series. Adding a measure column left 3, all real.</li>
+      <li><b>References must be checked by machine.</b> 45 of the 57 check-row references I typed by hand pointed at the wrong row, mostly off by one line. The build caught every one.</li>
+      <li><b>Automatic fixes need a person.</b> The script suggested a row for each broken reference; 8 of 45 suggestions were wrong (a row with the same number but a different meaning, such as "+41 vs +11" instead of "+41% vs 2005").</li>
+      <li><b>The basis is the most useful node.</b> It explains why a ministry, a newspaper and an opposition party can all be right about the same country's emissions. It should be a first-class field on every emissions fact.</li>
+      <li><b>Rows already overlap a lot.</b> 37 facts carry 268 check rows for six reports. At about 6 facts and 9 links per report, the 57 reports would need roughly 350 facts and 530 links: in line with the 18–40 h estimate for that phase.</li>
+      <li><b>Gaps become visible.</b> Sub-claims with no linked fact (in italics in the graph) are either untested, rest on documents rather than data, or still need linking.</li>
+    </ol>
+  </section>
+
+  <footer>Built 6 October 2026 by <code>poc/build.py</code> (ledger tables, checks against check rows, SQLite and JSON) and <code>poc/precheck.py</code>, in <code>sketch/fact-ledger/</code>. Facts and links were curated by hand for this test and verified by script against <code>data/cc-*/checks.csv</code>.</footer>
+</main>
+
+<script id="graph-data" type="application/json">__GRAPH__</script>
+<script id="pre-data" type="application/json">__PRECHECK__</script>
+<script>
+(function () {
+  "use strict";
+  const G = JSON.parse(document.getElementById("graph-data").textContent);
+  const P = JSON.parse(document.getElementById("pre-data").textContent);
+  const NS = "http://www.w3.org/2000/svg";
+  const el = (t, a, p, txt) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; if (p) p.appendChild(e); return e; };
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const BASIS_VAR = { territorial: "--b-territorial", residence: "--b-residence", "effort-sharing": "--b-effort", context: "--b-context" };
+  const TONE_VAR = { green: "--t-green", lime: "--t-lime", amber: "--t-amber", orange: "--t-orange", red: "--t-red", grey: "--t-grey" };
+  const VERDICT_TONE = { "Supported": "green", "Largely supported": "lime", "Not substantiated": "orange", "Misleading": "red", "Contradicted": "red" };
+  const ORDER = ["context", "territorial", "effort-sharing", "residence"];
+  const CLAIM_ORDER = ["CC-025", "CC-003", "CC-031", "CC-109", "CC-026", "CC-114"];
+  const ROLE_DASH = { supports: "", contradicts: "5 3", context: "1.5 3" };
+  const SER = Object.fromEntries(G.series.map(s => [s.id, s]));
+  const FACT = Object.fromEntries(G.facts.map(f => [f.id, f]));
+  const BASE = Object.fromEntries(G.bases.map(b => [b.id, b]));
+  const CLAIM = Object.fromEntries(G.claims.map(c => [c.id, c]));
+  const SUB = {}; G.claims.forEach(c => c.subclaims.forEach(s => SUB[s.id] = { ...s, claim: c.id }));
+  const basisOf = f => SER[f.series].basis;
+  const fmtVal = f => { const v = +f.value; const s = (f.unit === "%" && v > 0 && /change|rose|rise/.test(f.measure + f.statement) ? "+" : "") + (Math.abs(v) >= 1000 ? v.toLocaleString("en-GB") : String(v)).replace("-", "−"); return s + (f.unit === "%" ? "%" : " " + f.unit); };
+  const cut = (s, n) => s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s;
+
+  // ---------- tiles
+  const st = G.stats, open = G.tensions.filter(t => t.status === "open").length;
+  document.getElementById("tiles").innerHTML = [
+    ["Check rows read", st.check_rows, "from six reports' checks.csv"],
+    ["Facts", st.facts, `${st.links} links from sub-claims`],
+    ["Broken references", G.problems.length, "after fixing 45 typed by hand"],
+    ["Flags", G.tensions.length, `${open} open, ${G.tensions.length - open} explained or revised`],
+    ["Claim links missing", st.pairs_missing_in_edges, `of ${st.pairs} pairs that share a fact`]
+  ].map(([k, v, n]) => `<div class="tile"><span class="k">${k}</span><span class="v">${v}</span><span class="n">${n}</span></div>`).join("");
+
+  // ---------- layout
+  const X = { claim: 8, fact: 486, series: 856, basis: 1100 }, W = 1250, ROW = 21, HEAD = 26, TOP = 40;
+  const nodes = {}; let y = TOP;
+  CLAIM_ORDER.forEach(cid => { const c = CLAIM[cid]; nodes[cid] = { id: cid, kind: "claim", x: X.claim, y: y }; y += HEAD; c.subclaims.forEach(s => { nodes[s.id] = { id: s.id, kind: "sub", x: X.claim, y }; y += ROW; }); y += 10; });
+  const H1 = y;
+  const facts = [...G.facts].sort((a, b) => ORDER.indexOf(basisOf(a)) - ORDER.indexOf(basisOf(b)) || a.series.localeCompare(b.series) || a.id.localeCompare(b.id));
+  y = TOP; let prev = null; facts.forEach(f => { const b = basisOf(f); if (prev && b !== prev) y += 14; prev = b; nodes[f.id] = { id: f.id, kind: "fact", x: X.fact, y }; y += ROW; });
+  const H2 = y;
+  const H = Math.max(H1, H2) + 10;
+  // series and bases: centred on the facts they hold
+  const sers = [...G.series].sort((a, b) => ORDER.indexOf(a.basis) - ORDER.indexOf(b.basis));
+  sers.forEach(s => { const ys = facts.filter(f => f.series === s.id).map(f => nodes[f.id].y); nodes[s.id] = { id: s.id, kind: "series", x: X.series, y: ys.length ? ys.reduce((a, b) => a + b) / ys.length : TOP }; });
+  let last = -1e9; sers.forEach(s => { const n = nodes[s.id]; if (n.y < last + 30) n.y = last + 30; last = n.y; });
+  ORDER.forEach(b => { const ys = sers.filter(s => s.basis === b).map(s => nodes[s.id].y); nodes["B:" + b] = { id: "B:" + b, kind: "basis", x: X.basis, y: ys.reduce((a, c) => a + c, 0) / ys.length }; });
+
+  // ---------- adjacency
+  const adj = {}; const add = (a, b) => { (adj[a] = adj[a] || new Set()).add(b); (adj[b] = adj[b] || new Set()).add(a); };
+  G.links.forEach(l => add(l.subclaim, l.fact));
+  G.facts.forEach(f => { add(f.id, f.series); f.claims.forEach(c => add("C:" + c, f.id)); });
+  G.series.forEach(s => add(s.id, "B:" + s.basis));
+  G.claims.forEach(c => c.subclaims.forEach(s => add(c.id, s.id)));
+  const linked = new Set(G.links.map(l => l.subclaim));
+
+  function related(id) {
+    const on = new Set([id]); const k = nodes[id]?.kind;
+    const factsOf = new Set();
+    if (k === "claim") CLAIM[id].subclaims.forEach(s => { on.add(s.id); G.links.filter(l => l.subclaim === s.id).forEach(l => factsOf.add(l.fact)); });
+    if (k === "sub") G.links.filter(l => l.subclaim === id).forEach(l => factsOf.add(l.fact));
+    if (k === "fact") factsOf.add(id);
+    if (k === "series") G.facts.filter(f => f.series === id).forEach(f => factsOf.add(f.id));
+    if (k === "basis") G.facts.filter(f => "B:" + basisOf(f) === id).forEach(f => factsOf.add(f.id));
+    factsOf.forEach(fid => { on.add(fid); on.add(FACT[fid].series); on.add("B:" + basisOf(FACT[fid]));
+      G.links.filter(l => l.fact === fid).forEach(l => { on.add(l.subclaim); on.add(SUB[l.subclaim].claim); });
+      FACT[fid].claims.forEach(c => on.add(c)); });
+    if (k === "series") on.add("B:" + SER[id].basis);
+    return on;
+  }
+
+  // ---------- draw
+  const svg = document.getElementById("graph");
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", W); svg.setAttribute("height", H);
+  [["What was said", X.claim], ["Facts we hold", X.fact], ["Data series", X.series], ["How it is counted", X.basis]].forEach(([t, x]) => el("text", { x, y: 16, class: "colhead" }, svg, t));
+  const gE = el("g", {}, svg), gN = el("g", {}, svg);
+  const edges = [];
+  const curve = (x1, y1, x2, y2) => { const m = (x1 + x2) / 2; return `M${x1},${y1} C${m},${y1} ${m},${y2} ${x2},${y2}`; };
+  G.links.forEach(l => { const a = nodes[l.subclaim], b = nodes[l.fact]; if (!a || !b) return; edges.push({ a: l.subclaim, b: l.fact, role: l.role, p: el("path", { d: curve(X.fact - 46, a.y, X.fact - 6, b.y), class: "edge", "stroke-dasharray": ROLE_DASH[l.role] }, gE) }); });
+  G.facts.forEach(f => { const a = nodes[f.id], b = nodes[f.series]; edges.push({ a: f.id, b: f.series, p: el("path", { d: curve(X.series - 52, a.y, X.series - 6, b.y), class: "edge" }, gE) }); });
+  G.series.forEach(s => { const a = nodes[s.id], b = nodes["B:" + s.basis]; edges.push({ a: s.id, b: "B:" + s.basis, p: el("path", { d: curve(X.basis - 54, a.y, X.basis - 6, b.y), class: "edge" }, gE) }); });
+
+  const nodeEls = {};
+  function makeNode(id, x, y, w, draw, label) {
+    const g = el("g", { class: "node", tabindex: 0, role: "button", "aria-label": label, "data-id": id }, gN);
+    el("rect", { class: "hit", x: x - 4, y: y - 13, width: w, height: 19, rx: 4 }, g);
+    draw(g); nodeEls[id] = g;
+    g.addEventListener("click", () => select(id));
+    g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(id); } });
+    return g;
+  }
+  CLAIM_ORDER.forEach(cid => {
+    const c = CLAIM[cid], n = nodes[cid], tone = VERDICT_TONE[c.verdict] || "grey";
+    makeNode(cid, n.x, n.y, 380, g => {
+      el("text", { x: n.x, y: n.y, class: "claimhead" }, g, `${cid} · ${cut(c.speaker.split(";")[0], 34)}`);
+      el("circle", { cx: n.x + 300, cy: n.y - 4, r: 4.5, fill: `var(${TONE_VAR[tone]})` }, g);
+      el("text", { x: n.x + 309, y: n.y, class: "muted" }, g, c.verdict || "pledge");
+    }, `${cid}, ${c.speaker}, ${c.verdict}`);
+    c.subclaims.forEach(s => {
+      const m = nodes[s.id];
+      const g = makeNode(s.id, m.x, m.y, 380, g => {
+        el("circle", { cx: m.x + 14, cy: m.y - 4, r: 4, fill: `var(${TONE_VAR[s.tone] || "--t-grey"})` }, g);
+        el("text", { x: m.x + 24, y: m.y, class: "sub" }, g, `${s.id.slice(-1)} · ${cut(s.text, 50)}`);
+      }, `${s.id}: ${s.text}. ${s.rating}`);
+      if (!linked.has(s.id)) g.classList.add("unlinked");
+    });
+  });
+  facts.forEach(f => { const n = nodes[f.id];
+    makeNode(f.id, n.x, n.y, 316, g => {
+      el("rect", { x: n.x, y: n.y - 9, width: 4, height: 12, rx: 2, fill: `var(${BASIS_VAR[basisOf(f)]})` }, g);
+      el("text", { x: n.x + 10, y: n.y, class: "mono", "font-family": "var(--mono)" }, g, f.id);
+      el("text", { x: n.x + 42, y: n.y }, g, cut(f.statement, 46));
+    }, `${f.id}: ${f.statement}`);
+  });
+  sers.forEach(s => { const n = nodes[s.id];
+    makeNode(s.id, n.x, n.y, 220, g => {
+      el("rect", { x: n.x, y: n.y - 9, width: 4, height: 12, rx: 2, fill: `var(${BASIS_VAR[s.basis]})` }, g);
+      el("text", { x: n.x + 10, y: n.y }, g, s.dataset.split(" ")[0]);
+      el("text", { x: n.x + 10, y: n.y + 13, class: "muted", "font-size": "10.5" }, g, cut(s.label, 36));
+    }, `${s.id}: ${s.label}`);
+  });
+  ORDER.forEach(b => { const n = nodes["B:" + b];
+    makeNode("B:" + b, n.x, n.y, 150, g => {
+      el("rect", { x: n.x, y: n.y - 11, width: 10, height: 14, rx: 3, fill: `var(${BASIS_VAR[b]})` }, g);
+      el("text", { x: n.x + 16, y: n.y, "font-weight": "700" }, g, BASE[b].name.replace("Denominators and context", "Context"));
+    }, BASE[b].name);
+  });
+
+  // ---------- selection
+  const detail = document.getElementById("detail");
+  function pill(text, cssVar) { return `<span class="pill"><i style="background:var(${cssVar})"></i>${esc(text)}</span>`; }
+  function factLine(fid, role) { const f = FACT[fid]; return `<li>${role ? `<span class="role">${role}</span> ` : ""}<button class="factlink" data-sel="${fid}">${fid}</button> ${esc(f.statement)} ${pill(BASE[basisOf(f)].name, BASIS_VAR[basisOf(f)])}</li>`; }
+  function subLine(sid, role) { const s = SUB[sid], c = CLAIM[s.claim]; return `<li>${role ? `<span class="role">${role}</span> ` : ""}<button class="factlink" data-sel="${sid}">${sid}</button> ${esc(c.speaker.split(";")[0])}: “${esc(cut(s.text, 90))}” ${pill(s.rating || "", TONE_VAR[s.tone] || "--t-grey")}</li>`; }
+  function render(id) {
+    const k = nodes[id]?.kind;
+    if (k === "fact") {
+      const f = FACT[id], uses = G.links.filter(l => l.fact === id), tens = G.tensions.filter(t => t.a === id || t.b === id);
+      detail.innerHTML = `<h3>${id} · ${esc(f.statement)}</h3>
+        <div>${pill(BASE[basisOf(f)].name, BASIS_VAR[basisOf(f)])} <span class="mono">${esc(SER[f.series].dataset)}</span> · ${esc(f.measure)} · ${esc(f.period)} · <b>${esc(fmtVal(f))}</b>${f.vintage ? " · " + esc(f.vintage) : ""}</div>
+        ${f.note ? `<p>${esc(f.note)}</p>` : ""}
+        <div><b>Rests on these check rows</b><ul>${f.checks.map(c => `<li><span class="mono">${c.ref}</span> ${esc(c.label)} = <b>${esc(c.value)}</b></li>`).join("")}</ul></div>
+        <div><b>Used by ${uses.length} sub-claim${uses.length === 1 ? "" : "s"}</b><ul>${uses.map(l => subLine(l.subclaim, l.role)).join("") || "<li>none yet</li>"}</ul></div>
+        ${tens.length ? `<div><b>Flag</b><ul>${tens.map(t => `<li><span class="status ${t.status}">${t.status}</span> ${t.a} vs ${t.b}: ${esc(t.explanation)}</li>`).join("")}</ul></div>` : ""}`;
+    } else if (k === "sub") {
+      const s = SUB[id], c = CLAIM[s.claim], ls = G.links.filter(l => l.subclaim === id);
+      const others = new Set(); ls.forEach(l => G.links.filter(m => m.fact === l.fact && m.subclaim.slice(0, 6) !== id.slice(0, 6)).forEach(m => others.add(m.subclaim)));
+      detail.innerHTML = `<h3>${id} · ${esc(c.speaker)}</h3><p>“${esc(s.text)}” ${pill(s.rating || "", TONE_VAR[s.tone] || "--t-grey")}</p><p style="color:var(--ink-2)">${esc(s.finding)}</p>
+        <div><b>Facts</b><ul>${ls.map(l => factLine(l.fact, l.role)).join("") || "<li>No fact linked: untested, or rests on documents rather than data.</li>"}</ul></div>
+        ${others.size ? `<div><b>Other speakers' sub-claims on the same facts</b><ul>${[...others].map(o => subLine(o)).join("")}</ul></div>` : ""}`;
+    } else if (k === "claim") {
+      const c = CLAIM[id], fs = new Set(); c.subclaims.forEach(s => G.links.filter(l => l.subclaim === s.id).forEach(l => fs.add(l.fact)));
+      const pairs = G.pairs.filter(p => p.a === id || p.b === id);
+      detail.innerHTML = `<h3>${id} · ${esc(c.title)}</h3><p>${esc(c.speaker)}, ${esc(c.date)} ${pill(c.verdict || "pledge", TONE_VAR[VERDICT_TONE[c.verdict] || "grey"])}</p>${c.quote ? `<p style="font-style:italic">“${esc(cut(c.quote, 260))}”</p>` : ""}
+        <div><b>Shares facts with</b><ul>${pairs.map(p => { const o = p.a === id ? p.b : p.a; return `<li><button class="factlink" data-sel="${o}">${o}</button> ${esc(CLAIM[o].speaker.split(";")[0])} · ${p.facts.join(", ")} ${p.in_edges_csv ? "" : pill("not in edges.csv", "--t-amber")}</li>`; }).join("")}</ul></div>`;
+    } else if (k === "series") {
+      const s = SER[id];
+      detail.innerHTML = `<h3>${esc(s.label)}</h3><div>${pill(BASE[s.basis].name, BASIS_VAR[s.basis])} <span class="mono">${esc(s.dataset)}</span> · ${esc(s.filter)} · ${esc(s.unit)}</div><div><b>Facts from this series</b><ul>${G.facts.filter(f => f.series === id).map(f => factLine(f.id)).join("")}</ul></div>`;
+    } else if (k === "basis") {
+      const b = BASE[id.slice(2)];
+      const subs = new Set(); G.facts.filter(f => basisOf(f) === b.id).forEach(f => G.links.filter(l => l.fact === f.id).forEach(l => subs.add(l.subclaim)));
+      detail.innerHTML = `<h3>${esc(b.name)}</h3><p>${esc(b.definition)}</p><div><b>Sub-claims resting on it</b><ul>${[...subs].map(s => subLine(s)).join("")}</ul></div>`;
+    }
+    detail.querySelectorAll("[data-sel]").forEach(b => b.addEventListener("click", () => select(b.dataset.sel)));
+  }
+  let current = null;
+  function select(id) {
+    current = id; const on = related(id);
+    Object.entries(nodeEls).forEach(([k, g]) => { g.classList.toggle("dim", !on.has(k)); g.classList.toggle("sel", k === id); });
+    edges.forEach(e => { const lit = on.has(e.a) && on.has(e.b); e.p.classList.toggle("on", lit); e.p.classList.toggle("dim", !lit); });
+    render(id);
+    document.querySelectorAll("#stories .chipbtn").forEach(b => b.setAttribute("aria-pressed", b.dataset.id === id));
+  }
+  const STORIES = [["F03", "Same 44%, two verdicts"], ["F22", "Flights versus the inventory"], ["B:residence", "Residence accounts"], ["F30", "An open conflict"], ["CC-026", "A link edges.csv misses"], ["F08", "Prices change the answer"]];
+  const sb = document.getElementById("stories");
+  STORIES.forEach(([id, t]) => { const b = document.createElement("button"); b.type = "button"; b.className = "chipbtn"; b.id = "st-" + id.replace(":", "-"); b.dataset.id = id; b.textContent = t; b.addEventListener("click", () => select(id)); sb.appendChild(b); sb.append(" "); });
+  select("F03");
+
+  // ---------- tables
+  document.querySelector("#t-flags tbody").innerHTML = G.tensions.map(t => `<tr><td class="mono">${t.a} · ${t.b}</td><td class="num">${esc(fmtVal(FACT[t.a]))} / ${esc(fmtVal(FACT[t.b]))}</td><td><span class="status ${t.status}">${t.status}</span></td><td>${esc(t.explanation)}</td></tr>`).join("");
+  document.querySelector("#t-pairs tbody").innerHTML = G.pairs.map(p => `<tr><td>${p.a} · ${p.b}</td><td class="mono">${p.facts.join(", ")}</td><td>${p.in_edges_csv ? "yes" : "<b>no</b>"}</td></tr>`).join("");
+  document.querySelector("#t-same tbody").innerHTML = G.auto_same.map(s => `<tr><td><span class="mono">${s.a}</span> ${esc(s.label_a)}</td><td><span class="mono">${s.b}</span> ${esc(s.label_b)}</td><td class="num">${esc(s.value)}</td></tr>`).join("");
+
+  // ---------- pre-check cards
+  document.getElementById("pcs").innerHTML = P.map(r => `<div class="pc">
+    <span class="tag">Test sentence</span><q>${esc(r.text)}</q>
+    <span class="tag">Read as: ${r.concepts.join(", ") || "—"}${r.numbers.length ? " · " + r.numbers.map(n => Math.abs(n) + "%").filter((v, i, a) => a.indexOf(v) === i).join(", ") : ""}${r.direction ? " · " + r.direction : ""}</span>
+    <h4>Facts we hold</h4><ul>${r.facts.map(f => `<li><button class="factlink" data-sel="${f.id}">${f.id}</button> ${esc(f.statement)} ${pill(BASE[f.basis].name, BASIS_VAR[f.basis])}</li>`).join("")}</ul>
+    ${r.counterparts.length ? `<h4>On another basis</h4><ul>${r.counterparts.map(c => `<li><button class="factlink" data-sel="${c.id}">${c.id}</button> ${esc(c.statement)} ${pill(BASE[c.basis].name, BASIS_VAR[c.basis])}</li>`).join("")}</ul>` : ""}
+    <h4>Checked before</h4><ul>${r.prior.slice(0, 4).map(p => `<li>${p.claim} ${esc(p.speaker.split(";")[0])}: “${esc(cut(p.subclaim, 60))}” ${pill(p.rating || "", TONE_VAR[p.tone] || "--t-grey")}</li>`).join("")}</ul>
+    ${r.notes.length ? `<h4>Before you start</h4><ul>${r.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
+  </div>`).join("");
+  document.querySelectorAll("#pcs [data-sel]").forEach(b => b.addEventListener("click", () => { select(b.dataset.sel); document.getElementById("graph").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" }); }));
+})();
+</script>

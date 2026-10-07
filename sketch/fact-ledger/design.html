@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Miżien Fact Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Tinos:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column, like a Miżien report page; charts span the column on cards; tables scroll inside their own box. */
+:root {
+  --bg: #e8efe8; --card: #f6f4ee; --ink: #14452f; --ink-2: #2f5a45; --muted: #4a6757; --line: #cfdcd2; --hair: rgba(20,69,47,.14);
+  --accent: #8a5a00; --amber-fill: #e3a72f; --on-amber: #13301f;
+  --s-ledger: #a86b00; --s-today: #6b7f74; --s-ds: #2a78d6; --s-src: #1baf7a; --s-doi: #4a3aa7; --s-none: rgba(20,69,47,.22);
+  --proj: rgba(20,69,47,.06); --tip-bg: #14452f; --tip-ink: #f6f4ee;
+  --good: #2f7a4f; --warn: #a86b00; --bad: #b5483a;
+  --serif: "Tinos", "Liberation Serif", "Times New Roman", serif;
+  --sans: "Arimo", "Liberation Sans", Arial, Helvetica, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --step--1: .82rem; --step-0: 1.02rem; --step-1: 1.2rem; --step-2: 1.55rem; --step-3: 2.3rem;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e2a1f; --card: #123826; --ink: #eef3ef; --ink-2: #cfe2d4; --muted: #a9c2b1; --line: #1f5a40; --hair: rgba(207,226,212,.14);
+  --accent: #e3a72f; --s-ledger: #c98500; --s-today: #93a89b; --s-ds: #3987e5; --s-src: #199e70; --s-doi: #9085e9; --s-none: rgba(207,226,212,.22);
+  --proj: rgba(207,226,212,.05); --tip-bg: #eef3ef; --tip-ink: #0e2a1f; --good: #6fcf97; --warn: #e3a72f; --bad: #e57f70; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0e2a1f; --card: #123826; --ink: #eef3ef; --ink-2: #cfe2d4; --muted: #a9c2b1; --line: #1f5a40; --hair: rgba(207,226,212,.14);
+  --accent: #e3a72f; --s-ledger: #c98500; --s-today: #93a89b; --s-ds: #3987e5; --s-src: #199e70; --s-doi: #9085e9; --s-none: rgba(207,226,212,.22);
+  --proj: rgba(207,226,212,.05); --tip-bg: #eef3ef; --tip-ink: #0e2a1f; --good: #6fcf97; --warn: #e3a72f; --bad: #e57f70; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--serif); font-size: var(--step-0); line-height: 1.55; padding: 0 16px; }
+main { max-width: 780px; margin: 0 auto; padding-block: 40px 72px; display: grid; gap: 44px; }
+h1, h2, h3 { font-family: var(--sans); text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: var(--step-3); font-weight: 700; letter-spacing: -.01em; }
+h2 { font-size: var(--step-2); font-weight: 700; }
+h3 { font-size: var(--step-1); font-weight: 600; }
+p { margin: 0; max-width: 68ch; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+code, .mono { font-family: var(--mono); font-size: .86em; }
+section { display: grid; gap: 16px; min-width: 0; }
+.eyebrow { font-family: var(--sans); font-size: var(--step--1); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.dek { font-size: var(--step-1); color: var(--ink-2); max-width: 62ch; }
+.meta { font-family: var(--sans); font-size: var(--step--1); color: var(--muted); }
+header { display: grid; gap: 14px; border-bottom: 2px solid var(--ink); padding-bottom: 22px; }
+.mark { display: flex; align-items: center; gap: 10px; }
+.mark svg { width: 34px; height: 34px; flex: none; }
+
+/* answer strip: the four questions, answered */
+.answers { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.answer { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.answer .q { font-family: var(--sans); font-size: var(--step--1); color: var(--muted); font-weight: 600; }
+.answer .v { font-family: var(--sans); font-size: 1.55rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.answer .n { font-size: .92rem; color: var(--ink-2); }
+
+ul.tight { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; max-width: 68ch; }
+.callout { border-left: 4px solid var(--amber-fill); background: var(--card); padding: 12px 16px; border-radius: 0 6px 6px 0; max-width: 68ch; }
+
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--card); }
+table { border-collapse: collapse; width: 100%; font-family: var(--sans); font-size: .88rem; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--hair); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: .8rem; letter-spacing: .03em; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+
+/* charts */
+figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px 16px 12px; display: grid; gap: 10px; min-width: 0; }
+figcaption { display: grid; gap: 4px; }
+figcaption .t { font-family: var(--sans); font-weight: 700; font-size: 1.02rem; }
+figcaption .s { font-size: .92rem; color: var(--ink-2); }
+.chart { width: 100%; position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { font-family: var(--sans); fill: var(--muted); font-size: 11.5px; }
+.chart .lbl { fill: var(--ink); font-weight: 600; }
+.chart .grid { stroke: var(--hair); stroke-width: 1; }
+.chart .axis { stroke: var(--line); stroke-width: 1; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--sans); font-size: .82rem; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 14px; height: 4px; border-radius: 2px; display: inline-block; }
+.legend i.dot { width: 9px; height: 9px; border-radius: 50%; }
+.legend i.dash { background: none !important; border-top: 2px dashed currentColor; height: 0; }
+.source { font-family: var(--sans); font-size: .76rem; color: var(--muted); }
+details summary { cursor: pointer; font-family: var(--sans); font-size: .82rem; color: var(--accent); }
+details[open] summary { margin-bottom: 8px; }
+.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.seg button { font: 600 .82rem var(--sans); background: transparent; color: var(--ink-2); border: 0; border-right: 1px solid var(--line); padding: 7px 12px; cursor: pointer; }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--card); }
+.tip { position: absolute; pointer-events: none; background: var(--tip-bg); color: var(--tip-ink); font: .78rem/1.4 var(--sans); padding: 7px 9px; border-radius: 5px; max-width: 240px; z-index: 3; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+.tip b { font-weight: 700; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.tile { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; display: grid; gap: 2px; }
+.tile .k { font: 600 .74rem var(--sans); color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+.tile .v { font: 700 1.3rem var(--sans); font-variant-numeric: tabular-nums; }
+.tile .n { font: .8rem var(--sans); color: var(--ink-2); }
+
+.schema { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+.schema div { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.schema b { font-family: var(--mono); font-size: .9rem; color: var(--accent); }
+.schema span { font-size: .92rem; }
+.flow { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; max-width: 68ch; }
+.flow li { counter-increment: s; display: grid; grid-template-columns: 28px 1fr; gap: 10px; }
+.flow li::before { content: counter(s); font: 700 .8rem var(--sans); width: 24px; height: 24px; border-radius: 50%; background: var(--ink); color: var(--card); display: grid; place-items: center; margin-top: 2px; }
+.pill { font: 600 .72rem var(--sans); padding: 2px 8px; border-radius: 99px; border: 1px solid currentColor; white-space: nowrap; }
+.pill.keep { color: var(--good); } .pill.change { color: var(--warn); } .pill.retire { color: var(--bad); } .pill.new { color: var(--s-ds); }
+footer { border-top: 1px solid var(--line); padding-top: 18px; display: grid; gap: 8px; }
+@media (prefers-reduced-motion: no-preference) { .seg button { transition: background .15s, color .15s; } }
+</style>
+
+<main>
+  <header>
+    <div class="mark">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v15M5 8h14M5 8l-2.5 6h5zM19 8l-2.5 6h5zM8 20h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="eyebrow">Miżien · engine design · draft for the maintainer</span>
+    </div>
+    <h1>Fact ledger</h1>
+    <p class="dek">A shared store of checked facts with sources, so a new claim is first tested against what we already know before anyone opens a PDF. This page sets out the design, what building it would cost, what it saves per claim, and what else it would change.</p>
+    <p class="meta">6 October 2026 · measured on the repository at 116 claims, 57 reports, 54 verdicts · hours are working hours (agent time plus maintainer review) unless marked</p>
+  </header>
+
+  <section aria-labelledby="ans">
+    <h2 id="ans">The short answers</h2>
+    <div class="answers">
+      <div class="answer"><span class="q">Time to build and consolidate</span><span class="v">≈ 120 h</span><span class="n">Range 77–186 h, of which about a fifth is maintainer review. A lean first phase is about 58 h.</span></div>
+      <div class="answer"><span class="q">Saving per new check</span><span class="v" id="a-save">≈ 22%</span><span class="n" id="a-save-n">About 2.6 h on a 12 h check, rising as the store grows. Writing the analysis is not made faster.</span></div>
+      <div class="answer"><span class="q">Pays for itself after</span><span class="v" id="a-be">≈ 50 checks</span><span class="n" id="a-be-n">Lean phase: about 34. There are already 59 claims waiting to be checked.</span></div>
+      <div class="answer"><span class="q">Biggest impact</span><span class="v">Fewer corrections</span><span class="n">23 of the 47 corrections so far were the kind a ledger checks: figures, source records and quoted wording.</span></div>
+    </div>
+    <div class="callout"><p>The time saved is real but moderate. The stronger case is quality and upkeep: one checked value per fact across all reports, a list of the reports to revisit when Eurostat revises a series, and an archive gap of 460 source links made visible. Start with the lean phase, which pays back within the claims already in the queue, and decide on the rest once it has run for about 20 checks.</p></div>
+  </section>
+
+  <section aria-labelledby="have">
+    <h2 id="have">What the project holds today</h2>
+    <p>Everything is already in the repository, but each claim keeps its own copy, in its own layout. Counted on 6 October 2026:</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Layer</th><th class="num">Size</th><th>Problem for reuse</th></tr></thead>
+      <tbody>
+        <tr><td>Per-claim data, <code>data/cc-*/</code></td><td class="num">276 CSVs · 134k rows</td><td>222 different column layouts. The same Eurostat table is fetched again per claim: emissions (<code>env_air_gge</code>) for 6 claims, population (<code>nama_10_pe</code>) for 6, GDP for 5, municipal waste for 4. Six report scripts also carry a copied CC-111 block that loads the waste file and never uses it.</td></tr>
+        <tr><td>Checked figures, <code>checks.csv</code></td><td class="num">1,727 rows in 51 files</td><td>Already a list of facts, but with no IDs and no link to the sub-claim each one supports.</td></tr>
+        <tr><td>Sub-claims in <code>claim.yml</code></td><td class="num">197</td><td>Findings are text. They do not say which figures they rest on.</td></tr>
+        <tr><td>Sources, <code>sources.csv</code></td><td class="num">597 distinct URLs</td><td>460 are not in <code>archive/manifest.csv</code>. Only 68 have an archive copy.</td></tr>
+        <tr><td>Literature</td><td class="num">422 entries · 121 DOIs</td><td>One bibliography per claim; 6 DOIs repeat across claims. Findings sit in 45,400 words of notes.</td></tr>
+        <tr><td>Datasets named</td><td class="num">173 · 62 Eurostat codes</td><td>About 4 per report. Each new report reuses more of them (chart below).</td></tr>
+        <tr><td>Registers already structured</td><td class="num">80 bodies · 625 pledges · 15 themes</td><td>Ready to become entities in the ledger as they are.</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Consistency today:</b> where two reports stored the same Malta data point, all 180 shared points agree once the unit is part of the key. Leave the unit out and a naive merge reports 189 false conflicts (GDP at current prices against chain-linked volumes). The same trap applies to population: 569.2 thousand (2024 average) and 563,443 (1 January 2024) are both right, for different questions. The ledger has to name the concept, scope and unit of every series.</p>
+  </section>
+
+  <section aria-labelledby="sota">
+    <h2 id="sota">What the field does, and what fits Miżien</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Approach</th><th>What it is</th><th>Fit for us</th></tr></thead>
+      <tbody>
+        <tr><td>Fact-checking against knowledge graphs</td><td>Checks subject–relation–object statements against DBpedia or Wikidata (<a href="https://ris.uni-paderborn.de/record/61123">ACM Computing Surveys review, 2025</a>).</td><td>Low. Good for encyclopaedic facts; our claims are about time series, scope and omission.</td></tr>
+        <tr><td>Statistical knowledge graphs</td><td>Google Data Commons: statistical variables with observations. <a href="https://ai.google.dev/gemma/docs/datagemma?hl=it">DataGemma</a> retrieved the right figure <a href="https://www.hpcwire.com/aiwire/2024/09/18/googles-datagemma-tackles-ai-hallucination/">about 58% of the time</a>.</td><td>High, as a model. The hard part is matching a claim's wording to the right series, which is where our corrections cluster.</td></tr>
+        <tr><td>Claim matching</td><td><a href="https://fullfact.org/blog/2025/feb/how-ai-can-help-fact-checkers/">Full Fact</a> turns sentences into vectors, then confirms matches by checking for the same numbers, organisations and people.</td><td>High. <code>scripts/similarity.py</code> is an early version of this.</td></tr>
+        <tr><td>Question-led evidence retrieval</td><td>The AVeriTeC shared tasks: split a claim into questions, find evidence, then judge.</td><td>Already our method (sub-claims).</td></tr>
+        <tr><td>Graphs built by an LLM (GraphRAG)</td><td>An LLM extracts entities and relations from documents.</td><td>Only as suggestions. Unchecked extracted facts break the rule against invented figures.</td></tr>
+        <tr><td>Publishing verdicts</td><td><a href="https://schema.org/ClaimReview">schema.org ClaimReview</a>, which Google's fact-check tools collect.</td><td>Later, and only after the right-of-reply deadline. Otherwise a draft "Misleading" verdict would spread beyond our site.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="design">
+    <h2 id="design">The design</h2>
+    <p>Facts stored as CSV in git are the source of truth. A Python build turns them into a SQLite file (standard library only) and JSON for the site. The graph is built from these tables at build time; there is no graph database. <code>claim.yml</code> stays the source of truth for claims and only gains fact IDs.</p>
+    <div class="schema">
+      <div><b>sources</b><span>One row per document: URL, archive copy, sha256, publisher, kind (primary, dataset, peer-reviewed, news), and whether it is second-hand. Merges <code>sources.csv</code> and the archive manifest.</span></div>
+      <div><b>series · observations</b><span>One shared copy of each Eurostat, EEA or NSO table. The key is dataset, geography, item, unit and concept; each value records the release it came from and its flags.</span></div>
+      <div><b>facts</b><span><span class="mono">F-0001…</span> Kind (figure, target, finding, statement, document), value, unit, period, place or body, source and locator (e.g. "p. 114, Table 25"), grade A–D, checked by whom and when.</span></div>
+      <div><b>links</b><span>Sub-claim → fact, as supports, contradicts or context. This is what turns separate reports into one body of evidence.</span></div>
+      <div><b>entities</b><span>Bodies, places and pledges (already registers), plus EU and national targets and named projects, so a claim about "the 2025 recycling target" finds every earlier check against it.</span></div>
+      <div><b>verbatim</b><span>The archived quoted wording, with source and locator, so a script can confirm every quotation in a report matches its source.</span></div>
+    </div>
+    <h3>What happens when a claim arrives</h3>
+    <ol class="flow">
+      <li><span><code>precheck.py</code> reads the claim's wording and pulls out numbers, units, years, bodies and places, using the existing alias and place lists. An LLM may suggest matches, but each one is confirmed against the tables.</span></li>
+      <li><span>It lists the series and targets that match, earlier sub-claims and their verdicts on the same body and topic, and any stored values a newer release has replaced.</span></li>
+      <li><span>It writes a short brief to <code>claims/CC-NNN/precheck.md</code>: what we already hold, what is missing, and which sources still need archiving. Research starts from there.</span></li>
+      <li><span>New facts go into the ledger with locators as the research finds them. A fact counts only once someone has checked it against the source page.</span></li>
+      <li><span>CI fails when two reports disagree on a value, a quotation is not found in its archived source, or a figure in a report has no fact ID.</span></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="cost">
+    <h2 id="cost">Time to build and consolidate</h2>
+    <p>The estimate covers moving all 57 reports into the ledger: giving every check row an ID, linking the 197 sub-claims, merging the bibliographies, and loading shared copies of the 62 Eurostat tables and other datasets.</p>
+    <figure>
+      <figcaption><span class="t">Effort by phase, in working hours</span><span class="s">Bars run from the low to the high estimate; the mark is the central one. Central total: 122 h (77–186). Manual archiving is listed apart because it is needed with or without a ledger.</span></figcaption>
+      <div class="legend" aria-hidden="true"><span><i style="background:var(--s-ledger)"></i>Range, low to high</span><span><i class="dot" style="background:var(--ink)"></i>Central estimate</span><span><i style="background:var(--s-none)"></i>By hand, needed anyway</span></div>
+      <div class="chart" id="c-phases"></div>
+      <details><summary>Show as a table</summary><div class="tablewrap"><table id="t-phases"><thead><tr><th>Phase</th><th>What it covers</th><th class="num">Low</th><th class="num">Central</th><th class="num">High</th></tr></thead><tbody></tbody></table></div></details>
+      <p class="source">Estimates scaled from the measured counts above. The lean first phase is phases 1–3, IDs for new facts only (not backfilled), the conflict check and <code>precheck.py</code>: about 58 h.</p>
+    </figure>
+  </section>
+
+  <section aria-labelledby="reuse">
+    <h2 id="reuse">Why the saving grows: each new claim reuses more</h2>
+    <p>For each report, in order, I counted how many of its datasets, source links and DOIs an earlier report had already used. Reuse is rising: in the latest batch (CC-109 to CC-115), more than half the datasets and over a quarter of the sources were already held. Today that overlap is fetched and checked again from scratch.</p>
+    <figure>
+      <figcaption><span class="t">Share of a report's inputs already used by an earlier report</span><span class="s">Points: measured, in batches of about ten reports in claim order. Dashed: a fitted saturating curve, projected beyond the 57 reports done (shaded).</span></figcaption>
+      <div class="legend" aria-hidden="true"><span><i style="background:var(--s-ds)"></i>Datasets</span><span><i style="background:var(--s-src)"></i>Source links</span><span><i style="background:var(--s-doi)"></i>Papers (DOIs)</span><span><i class="dash" style="color:var(--muted)"></i>Projection</span></div>
+      <div class="chart" id="c-reuse"></div>
+      <details><summary>Show as a table</summary><div class="tablewrap"><table id="t-reuse"><thead><tr><th>Reports</th><th class="num">Datasets</th><th class="num">Sources</th><th class="num">DOIs</th></tr></thead><tbody></tbody></table></div></details>
+      <p class="source">Measured from <code>data/cc-*/</code>, <code>tools/cc-*-report/</code>, <code>data/sources.csv</code> and <code>literature/*/references.bib</code>. Batches are small and noisy (10–122 items each); the curve's ceiling is an assumption (65%, 35% and 45%).</p>
+    </figure>
+  </section>
+
+  <section aria-labelledby="save">
+    <h2 id="save">Saving over the number of claims</h2>
+    <p>The model splits a check into parts and asks which parts a ledger shortens. Writing the analysis and report (about 4.5 h) is left unchanged. The finding phase gets shorter, reused data costs a lookup instead of a fetch, and some corrections are avoided. Each new check also costs extra time to enter its facts properly.</p>
+    <figure>
+      <figcaption><span class="t">Cumulative working hours for the next 200 checks</span><span class="s">"With ledger" includes the build cost up front. Where the lines cross, the ledger has paid for itself.</span></figcaption>
+      <div class="seg" role="group" aria-label="Scenario" id="scen"></div>
+      <div class="legend" aria-hidden="true"><span><i style="background:var(--s-today)"></i>As today</span><span><i style="background:var(--s-ledger)"></i>With ledger</span><span><i class="dot" style="background:var(--s-ledger)"></i>Break-even</span></div>
+      <div class="chart" id="c-cum"></div>
+      <div class="tiles" id="tiles"></div>
+      <details><summary>Show every scenario as a table</summary><div class="tablewrap"><table id="t-scen"><thead><tr><th>Scenario</th><th class="num">Up front</th><th class="num">Per check at 116 claims</th><th class="num">Saving</th><th class="num">At 200 claims</th><th class="num">Break-even</th></tr></thead><tbody></tbody></table></div></details>
+    </figure>
+    <details><summary>Assumptions behind the model</summary>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Part of a check</th><th>Today (measured count × assumed hours)</th><th>With the ledger</th></tr></thead>
+        <tbody>
+          <tr><td>Finding what we already know</td><td>1.0 h</td><td>30–65% shorter with the pre-check brief</td></tr>
+          <tr><td>Data</td><td>4.0 datasets × 0.5 h</td><td>Reused share costs 0.05 h each; new ones 10–30% faster with shared fetchers</td></tr>
+          <tr><td>Sources</td><td>10 links × 0.15 h</td><td>Reused share costs 0.02 h each</td></tr>
+          <tr><td>Literature</td><td>7.4 entries × 0.25 h</td><td>Reused share (by DOI) costs 0.05 h each; no reuse in the lean phase</td></tr>
+          <tr><td>Analysis and report</td><td>4.5 h</td><td>Unchanged</td></tr>
+          <tr><td>Corrections</td><td>47 entries over 57 reports × 1.5 h</td><td>30–55% fewer (chart below)</td></tr>
+          <tr><td>Entering facts properly</td><td>none</td><td>+0.3 to +0.6 h per check</td></tr>
+        </tbody>
+      </table></div>
+      <p class="source" style="margin-top:8px">The git history covers only 4–6 October, so it cannot time a check. Treat the 12.1 h baseline as an assumption to adjust; the percentage saving depends much less on it than the hours do.</p>
+    </details>
+  </section>
+
+  <section aria-labelledby="impact">
+    <h2 id="impact">Impact beyond time</h2>
+    <p>I read all 47 correction entries in the claims' research logs (31 of the 57 reports have at least one) and sorted them by cause. About half were the kind a ledger checks automatically: a figure out of scope or from an older release, a source dated wrongly or cited second-hand, a quotation that did not match the page.</p>
+    <figure>
+      <figcaption><span class="t">Corrections so far, by cause</span><span class="s">How many each cause had, and how many a ledger with its CI checks would probably have caught before publication (my judgement, entry by entry).</span></figcaption>
+      <div class="legend" aria-hidden="true"><span><i style="background:var(--s-ledger)"></i>Likely caught by the ledger</span><span><i style="background:var(--s-none)"></i>Not caught</span></div>
+      <div class="chart" id="c-corr"></div>
+      <details><summary>Show as a table</summary><div class="tablewrap"><table id="t-corr"><thead><tr><th>Cause</th><th>Examples</th><th class="num">Entries</th><th class="num">Likely caught</th></tr></thead><tbody></tbody></table></div></details>
+    </figure>
+    <ul class="tight">
+      <li><b>One value per fact.</b> Reports cannot drift apart on the same figure, and the denominator (which population, which emissions scope) is named once.</li>
+      <li><b>Re-check alerts.</b> When Eurostat publishes a new inventory, the build lists every sub-claim resting on the revised series. Today nothing does this.</li>
+      <li><b>Archive coverage.</b> 460 source links have no archive record. A single source table makes that list visible and gives a work queue for the about 230 that will need archiving by hand.</li>
+      <li><b>Faster right of reply and corrections.</b> A body's reply that disputes a figure can be traced to every report that used it.</li>
+      <li><b>Readers.</b> Each figure on a claim page can link to its source page and to the other checks that used it.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="views">
+    <h2 id="views">What it does to the site's views</h2>
+    <p>The ledger mainly replaces links we keep by hand with links we can compute. It needs no new graph view; Explore already has enough ways to group claims.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>View or file</th><th>Change</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>Claim pages</td><td>Gain an "Evidence used" list: each fact with its source, page and the other claims using it.</td><td><span class="pill keep">Keep, extend</span></td></tr>
+        <tr><td>Connections (<code>themes.csv</code>, <code>edges.csv</code>)</td><td>Themes stay as editorial labels; links are suggested from shared evidence, targets and places, and confirmed by hand.</td><td><span class="pill change">Partly computed</span></td></tr>
+        <tr><td>Similar wording</td><td>"Same evidence" is a much stronger link. Keep similar wording as a fallback for unchecked claims, inside a "Related" list.</td><td><span class="pill change">Demote</span></td></tr>
+        <tr><td>Second- and third-degree links</td><td>Already described as weak in <code>connections.py</code>. Redundant once shared evidence exists.</td><td><span class="pill retire">Retire</span></td></tr>
+        <tr><td><code>quick_checks.csv</code>, 51 <code>checks.csv</code>, <code>archive/manifest.csv</code></td><td>Folded into the ledger (facts and sources).</td><td><span class="pill retire">Merge</span></td></tr>
+        <tr><td>Series and target pages</td><td>One page per data series or legal target, listing every claim tested against it.</td><td><span class="pill new">New</span></td></tr>
+        <tr><td>Explore, map, timeline, Who said it, pledges</td><td>Unchanged; they read the same site data.</td><td><span class="pill keep">Keep</span></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="next">
+    <h2 id="next">Order of work and decisions needed</h2>
+    <ol class="flow">
+      <li><span><b>Lean phase (about 58 h).</b> Rules and IDs, one source table, shared series copies, the conflict check, <code>precheck.py</code>. New checks write facts with IDs from then on.</span></li>
+      <li><span><b>Review after about 20 checks.</b> Compare the pre-check briefs with what the research found, and measure the time actually saved.</span></li>
+      <li><span><b>Backfill (about 50 h).</b> Link the 197 existing sub-claims to fact IDs, merge the bibliographies, add the quote check.</span></li>
+      <li><span><b>Site.</b> "Evidence used" on claim pages, series and target pages, computed link suggestions, retire the weak links.</span></li>
+    </ol>
+    <p><b>Decisions for the maintainer:</b></p>
+    <ul class="tight">
+      <li>Go ahead with the lean phase now, or the full build?</li>
+      <li>SQLite (recommended: needs nothing beyond Python) or DuckDB for the built database.</li>
+      <li>Whether to retire second- and third-degree links and demote Similar wording.</li>
+      <li>Whether to turn the 45,400 words of notes into finding rows now, or only for new claims.</li>
+      <li>Whether verdicts should ever be published as ClaimReview, and only after the right-of-reply deadline.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="meta">How the numbers were made: counts were read from the repository by script on 6 October 2026 (branch <code>ccr-d6cdde61-ujqvwt</code>, nothing changed). Reuse is measured in claim-ID order, which follows intake order. The correction sort and the hours per task are judgements, labelled as such. Nothing here has been published or sent outside the project.</p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  // ---------- data (measured 6 Oct 2026; hours are estimates) ----------
+  const PHASES = [
+    ["1. Rules and IDs", "Fact kinds, series keys, concept names; methodology/facts.md", 4, 6, 10],
+    ["2. One source table", "Merge 629 source rows and 149 archive rows; IDs; validator", 5, 8, 12],
+    ["3. Shared series copies", "62 Eurostat codes plus EEA and NSO tables; migrate 276 CSVs in 222 layouts", 14, 22, 32],
+    ["4. Facts from checks", "1,727 check rows get IDs and locators; link 197 sub-claims", 18, 28, 40],
+    ["5. Literature", "One bibliography keyed by DOI (422 entries); findings from notes", 12, 20, 32],
+    ["6. Build and CI checks", "SQLite build; conflicting values, out-of-date data, quotes, figures without IDs", 8, 12, 18],
+    ["7. precheck.py", "Pull out numbers, bodies and places; matching; the brief", 8, 12, 20],
+    ["8. Site", "Evidence used, series and target pages, link suggestions", 8, 14, 22],
+    ["Archiving by hand", "About 230 of the 460 unarchived links block automated access, at 2–4 min each", 8, 11, 15, true]
+  ];
+  const REUSE = { // [batch mid (reports already done), share, items, first, last]
+    ds:  [[5,0,21,"CC-001","CC-010"],[15,.115,52,"CC-011","CC-022"],[25,.277,47,"CC-024","CC-037"],[35,.125,32,"CC-039","CC-076"],[45,.226,31,"CC-088","CC-107"],[53.5,.535,43,"CC-109","CC-115"]],
+    src: [[5,.018,112],[15,.055,109],[25,.049,122],[35,.062,65],[45,.092,98],[53.5,.29,62]],
+    doi: [[5,0,18],[15,.026,38],[25,0,21],[35,.2,10],[45,.176,17],[53.5,.176,17]]
+  };
+  const FIT = { ds: [.65, 61], src: [.35, 94], doi: [.45, 121] };
+  const SERIES = [["ds","Datasets","--s-ds"],["src","Source links","--s-src"],["doi","Papers (DOIs)","--s-doi"]];
+  const CORR = [
+    ["Figures, series and dates", 14, 11, "Wrong scope or band (CC-022), series break (CC-013), counts vs EEA (CC-009), range vs checks.csv (CC-039)"],
+    ["Reasoning and framing", 10, 1, "Reversed 'what would move the verdict' boxes (CC-005), narrowed bounds (CC-114)"],
+    ["Source records", 9, 6, "Wrong date (CC-007), wrongly said to cite Eurostat (CC-037), second-hand summary (CC-029)"],
+    ["Quoted wording", 7, 5, "Quotation not on the page (CC-008), paraphrase quoted (CC-017), indirect speech in quotes (CC-031)"],
+    ["Templates and status lines", 7, 0, "Right-of-reply wording on covers and flyers (CC-002, CC-020, CC-026)"]
+  ];
+  const BASE = { orient: 1, ds: 4, dsH: .5, src: 10, srcH: .15, refs: 7.4, refH: .25, analysis: 4.5, corr: 47 / 57, corrH: 1.5 };
+  const SCEN = [
+    { id: "lean", label: "Lean first phase", up: 58, po: .35, ff: .8, c: .35, over: .35, rs: 1, lit: false },
+    { id: "cautious", label: "Cautious", up: 186, po: .3, ff: .9, c: .3, over: .6, rs: .8, lit: true },
+    { id: "central", label: "Central", up: 122, po: .5, ff: .8, c: .45, over: .4, rs: 1, lit: true },
+    { id: "optimistic", label: "Optimistic", up: 77, po: .65, ff: .7, c: .55, over: .3, rs: 1.2, lit: true }
+  ];
+  const DONE = 57, WAITING = 59, HORIZON = 200;
+
+  // ---------- model ----------
+  const reuse = (k, n, s) => Math.min(.95, FIT[k][0] * s) * (1 - Math.exp(-n / FIT[k][1]));
+  const baseline = () => BASE.orient + BASE.ds * BASE.dsH + BASE.src * BASE.srcH + BASE.refs * BASE.refH + BASE.analysis + BASE.corr * BASE.corrH;
+  function withLedger(n, s) {
+    const rd = reuse("ds", n, s.rs), rs = reuse("src", n, s.rs), ro = s.lit ? reuse("doi", n, s.rs) : 0;
+    return BASE.orient * (1 - s.po)
+      + BASE.ds * ((1 - rd) * BASE.dsH * s.ff + rd * .05)
+      + BASE.src * ((1 - rs) * BASE.srcH + rs * .02)
+      + BASE.refs * ((1 - ro) * BASE.refH + ro * .05)
+      + BASE.analysis + BASE.corr * BASE.corrH * (1 - s.c) + s.over;
+  }
+  function run(s) {
+    const B = baseline(); let a = 0, b = s.up, be = null; const pts = [[0, 0, s.up]];
+    for (let i = 1; i <= HORIZON; i++) { a += B; b += withLedger(DONE + i, s); pts.push([i, a, b]); if (be === null && b <= a) be = i; }
+    return { B, pts, be, at116: withLedger(116, s), at200: withLedger(200, s) };
+  }
+
+  // ---------- helpers ----------
+  const NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent, text) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; if (parent) parent.appendChild(e); return e; }
+  const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  const fmt = (x, d = 0) => x.toLocaleString("en-GB", { minimumFractionDigits: d, maximumFractionDigits: d });
+  function tipFor(box) { let t = box.querySelector(".tip"); if (!t) { t = document.createElement("div"); t.className = "tip"; t.hidden = true; box.appendChild(t); } return t; }
+  function showTip(box, html, x, y) { const t = tipFor(box); t.innerHTML = html; t.hidden = false; const w = box.clientWidth, tw = t.offsetWidth; t.style.left = Math.max(0, Math.min(w - tw, x + 12)) + "px"; t.style.top = Math.max(0, y - t.offsetHeight - 10) + "px"; }
+  function hideTip(box) { tipFor(box).hidden = true; }
+  function niceTicks(max, n) { const raw = max / n, p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p, step = (m < 1.5 ? 1 : m < 3 ? 2 : m < 7 ? 5 : 10) * p; const out = []; for (let v = 0; v <= max + 1e-9; v += step) out.push(+v.toFixed(6)); return out; }
+
+  // ---------- chart: phases (range bars) ----------
+  function drawPhases() {
+    const box = document.getElementById("c-phases"); box.querySelectorAll("svg").forEach(s => s.remove());
+    const W = box.clientWidth, rowH = 42, top = 8, padL = 4, padR = 40, H = top + PHASES.length * rowH + 26;
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Effort by phase, low to high estimates in hours" }, null);
+    box.prepend(svg);
+    const max = 45, x = v => padL + (W - padL - padR) * v / max;
+    niceTicks(max, 4).forEach(t => { el("line", { x1: x(t), x2: x(t), y1: top, y2: H - 22, class: "grid" }, svg); el("text", { x: x(t), y: H - 6, "text-anchor": "middle" }, svg, t + " h"); });
+    PHASES.forEach((p, i) => {
+      const y = top + i * rowH, manual = !!p[5];
+      el("text", { x: padL, y: y + 13, class: "lbl" }, svg, p[0]);
+      const by = y + 20;
+      el("rect", { x: x(p[2]), y: by, width: Math.max(4, x(p[4]) - x(p[2])), height: 10, rx: 4, fill: manual ? css("--s-none") : css("--s-ledger") }, svg);
+      el("circle", { cx: x(p[3]), cy: by + 5, r: 5.5, fill: css("--ink"), stroke: css("--card"), "stroke-width": 2 }, svg);
+      el("text", { x: x(p[4]) + 8, y: by + 9 }, svg, p[3] + " h");
+      const hit = el("rect", { x: 0, y: y, width: W, height: rowH, fill: "transparent" }, svg);
+      hit.addEventListener("pointermove", e => { const r = box.getBoundingClientRect(); showTip(box, `<b>${p[0]}</b><br>${p[1]}<br>Low ${p[2]} h · central ${p[3]} h · high ${p[4]} h`, e.clientX - r.left, e.clientY - r.top); });
+      hit.addEventListener("pointerleave", () => hideTip(box));
+    });
+  }
+
+  // ---------- chart: reuse ----------
+  function drawReuse() {
+    const box = document.getElementById("c-reuse"); box.querySelectorAll("svg").forEach(s => s.remove());
+    const W = box.clientWidth, H = Math.max(250, Math.min(330, W * .55)), padL = 38, padR = 92, top = 12, bot = 44;
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Share of each report's inputs already used by an earlier report, measured and projected" }, null);
+    box.prepend(svg);
+    const xmax = 250, ymax = .7, x = v => padL + (W - padL - padR) * v / xmax, y = v => top + (H - top - bot) * (1 - v / ymax);
+    el("rect", { x: x(DONE), y: top, width: x(xmax) - x(DONE), height: H - top - bot, fill: css("--proj") }, svg);
+    el("text", { x: x(DONE) + 6, y: top + 12 }, svg, "projection");
+    [0, .1, .2, .3, .4, .5, .6, .7].forEach(t => { el("line", { x1: padL, x2: x(xmax), y1: y(t), y2: y(t), class: "grid" }, svg); el("text", { x: padL - 6, y: y(t) + 4, "text-anchor": "end" }, svg, Math.round(t * 100) + "%"); });
+    [0, 50, 100, 150, 200, 250].forEach(t => el("text", { x: x(t), y: H - 26, "text-anchor": "middle" }, svg, t));
+    el("text", { x: (padL + x(xmax)) / 2, y: H - 6, "text-anchor": "middle" }, svg, "Reports already done when the check was made");
+    el("line", { x1: padL, x2: x(xmax), y1: y(0), y2: y(0), class: "axis" }, svg);
+    const ends = [];
+    SERIES.forEach(([k, name, col]) => {
+      let d = ""; for (let n = 0; n <= xmax; n += 2) d += (n ? "L" : "M") + x(n).toFixed(1) + "," + y(reuse(k, n, 1)).toFixed(1);
+      el("path", { d, fill: "none", stroke: css(col), "stroke-width": 2, "stroke-dasharray": "5 4", "stroke-linecap": "round" }, svg);
+      ends.push({ y: y(reuse(k, xmax, 1)), name: { ds: "Datasets", src: "Sources", doi: "Papers" }[k], col, v: reuse(k, xmax, 1) });
+    });
+    SERIES.forEach(([k, name, col]) => {
+      REUSE[k].forEach((p, i) => {
+        const c = el("circle", { cx: x(p[0]), cy: y(p[1]), r: 5, fill: css(col), stroke: css("--card"), "stroke-width": 2 }, svg);
+        const hit = el("circle", { cx: x(p[0]), cy: y(p[1]), r: 12, fill: "transparent" }, svg);
+        const lab = REUSE.ds[i];
+        hit.addEventListener("pointermove", e => { const r = box.getBoundingClientRect(); showTip(box, `<b>${name}</b>, reports ${lab[3]} to ${lab[4]}<br>${Math.round(p[1] * 100)}% already used earlier (${p[2]} items)`, e.clientX - r.left, e.clientY - r.top); });
+        hit.addEventListener("pointerleave", () => hideTip(box));
+      });
+    });
+    ends.sort((a, b) => a.y - b.y); for (let i = 1; i < ends.length; i++) if (ends[i].y - ends[i - 1].y < 15) ends[i].y = ends[i - 1].y + 15;
+    ends.forEach(e => el("text", { x: x(xmax) + 6, y: e.y + 4, class: "lbl" }, svg, `${e.name} ${Math.round(e.v * 100)}%`));
+  }
+
+  // ---------- chart: cumulative hours ----------
+  let current = SCEN.find(s => s.id === "central");
+  function drawCum() {
+    const box = document.getElementById("c-cum"); box.querySelectorAll("svg").forEach(s => s.remove());
+    const r = run(current), W = box.clientWidth, H = Math.max(250, Math.min(330, W * .55)), padL = 50, padR = 96, top = 14, bot = 44;
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Cumulative working hours as today and with the ledger, " + current.label }, null);
+    box.prepend(svg);
+    const ymax = Math.ceil(r.pts[HORIZON][1] / 500) * 500, x = v => padL + (W - padL - padR) * v / HORIZON, y = v => top + (H - top - bot) * (1 - v / ymax);
+    niceTicks(ymax, 5).forEach(t => { el("line", { x1: padL, x2: x(HORIZON), y1: y(t), y2: y(t), class: "grid" }, svg); el("text", { x: padL - 6, y: y(t) + 4, "text-anchor": "end" }, svg, fmt(t) + " h"); });
+    [0, 50, 100, 150, 200].forEach(t => el("text", { x: x(t), y: H - 26, "text-anchor": "middle" }, svg, t));
+    el("text", { x: (padL + x(HORIZON)) / 2, y: H - 6, "text-anchor": "middle" }, svg, "New checks after the ledger is built");
+    el("line", { x1: x(WAITING), x2: x(WAITING), y1: top, y2: H - bot, stroke: css("--muted"), "stroke-dasharray": "2 4" }, svg);
+    el("text", { x: x(WAITING) + 5, y: top + 10 }, svg, "59 already waiting");
+    const path = idx => r.pts.map((p, i) => (i ? "L" : "M") + x(p[0]).toFixed(1) + "," + y(p[idx]).toFixed(1)).join("");
+    el("path", { d: path(1), fill: "none", stroke: css("--s-today"), "stroke-width": 2, "stroke-linejoin": "round" }, svg);
+    el("path", { d: path(2), fill: "none", stroke: css("--s-ledger"), "stroke-width": 2, "stroke-linejoin": "round" }, svg);
+    const ya = y(r.pts[HORIZON][1]), yb = y(r.pts[HORIZON][2]); let la = ya, lb = yb; if (Math.abs(la - lb) < 15) { if (la < lb) lb = la + 15; else la = lb + 15; }
+    el("text", { x: x(HORIZON) + 6, y: la + 4, class: "lbl" }, svg, "As today");
+    el("text", { x: x(HORIZON) + 6, y: lb + 4, class: "lbl" }, svg, "With ledger");
+    if (r.be) { const p = r.pts[r.be]; el("circle", { cx: x(p[0]), cy: y(p[2]), r: 6, fill: css("--s-ledger"), stroke: css("--card"), "stroke-width": 2 }, svg); el("text", { x: x(p[0]), y: y(p[2]) - 12, "text-anchor": "middle", class: "lbl" }, svg, "break-even at " + r.be); }
+    const cross = el("line", { x1: 0, x2: 0, y1: top, y2: H - bot, stroke: css("--muted"), "stroke-width": 1, opacity: 0 }, svg);
+    const hit = el("rect", { x: padL, y: top, width: x(HORIZON) - padL, height: H - top - bot, fill: "transparent" }, svg);
+    hit.addEventListener("pointermove", e => {
+      const b = box.getBoundingClientRect(), sx = (e.clientX - b.left) * W / b.width; const i = Math.max(0, Math.min(HORIZON, Math.round((sx - padL) / (x(HORIZON) - padL) * HORIZON))); const p = r.pts[i];
+      cross.setAttribute("x1", x(i)); cross.setAttribute("x2", x(i)); cross.setAttribute("opacity", .6);
+      const d = p[1] - p[2]; showTip(box, `<b>After ${i} new checks</b><br>As today: ${fmt(p[1])} h<br>With ledger: ${fmt(p[2])} h<br>${d >= 0 ? "Saved" : "Still behind"}: ${fmt(Math.abs(d))} h`, e.clientX - b.left, e.clientY - b.top);
+    });
+    hit.addEventListener("pointerleave", () => { cross.setAttribute("opacity", 0); hideTip(box); });
+    const save = 1 - r.at116 / r.B, total200 = r.pts[HORIZON][1] - r.pts[HORIZON][2];
+    document.getElementById("tiles").innerHTML =
+      `<div class="tile"><span class="k">A check today</span><span class="v">${fmt(r.B, 1)} h</span><span class="n">assumed baseline</span></div>` +
+      `<div class="tile"><span class="k">With ledger, at 116 claims</span><span class="v">${fmt(r.at116, 1)} h</span><span class="n">${Math.round(save * 100)}% less per check</span></div>` +
+      `<div class="tile"><span class="k">Up front</span><span class="v">${current.up} h</span><span class="n">${current.label.toLowerCase()}</span></div>` +
+      `<div class="tile"><span class="k">Net after 200 checks</span><span class="v">${total200 >= 0 ? "+" : "−"}${fmt(Math.abs(total200))} h</span><span class="n">${r.be ? "breaks even at check " + r.be : "does not break even"}</span></div>`;
+  }
+  function buildScen() {
+    const g = document.getElementById("scen");
+    SCEN.forEach(s => { const b = document.createElement("button"); b.type = "button"; b.id = "sc-" + s.id; b.textContent = s.label; b.setAttribute("aria-pressed", s === current); b.addEventListener("click", () => { current = s; g.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); drawCum(); }); g.appendChild(b); });
+    const tb = document.querySelector("#t-scen tbody");
+    SCEN.forEach(s => { const r = run(s); tb.insertAdjacentHTML("beforeend", `<tr><td>${s.label}</td><td class="num">${s.up} h</td><td class="num">${fmt(r.at116, 1)} h</td><td class="num">${Math.round((1 - r.at116 / r.B) * 100)}%</td><td class="num">${fmt(r.at200, 1)} h (${Math.round((1 - r.at200 / r.B) * 100)}%)</td><td class="num">${r.be ?? "—"} checks</td></tr>`); });
+    const c = run(SCEN[2]), l = run(SCEN[0]);
+    document.getElementById("a-save").textContent = "≈ " + Math.round((1 - c.at116 / c.B) * 100) + "%";
+    document.getElementById("a-save-n").textContent = `About ${fmt(c.B - c.at116, 1)} h of a ${fmt(c.B, 1)} h check at 116 claims, rising as the store grows. Writing the analysis is not made faster.`;
+    document.getElementById("a-be").textContent = "≈ " + c.be + " checks";
+    document.getElementById("a-be-n").textContent = `Lean phase: about ${l.be}. There are already 59 claims waiting to be checked.`;
+  }
+
+  // ---------- chart: corrections ----------
+  function drawCorr() {
+    const box = document.getElementById("c-corr"); box.querySelectorAll("svg").forEach(s => s.remove());
+    const W = box.clientWidth, rowH = 44, top = 4, padR = 54, H = top + CORR.length * rowH + 22;
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Corrections by cause and how many a ledger would likely catch" }, null);
+    box.prepend(svg);
+    const max = 15, x = v => (W - padR) * v / max;
+    [0, 5, 10, 15].forEach(t => { el("line", { x1: x(t), x2: x(t), y1: top, y2: H - 20, class: "grid" }, svg); el("text", { x: x(t), y: H - 5, "text-anchor": t ? "middle" : "start" }, svg, t); });
+    CORR.forEach((c, i) => {
+      const y = top + i * rowH; el("text", { x: 0, y: y + 13, class: "lbl" }, svg, c[0]);
+      const by = y + 20, gap = 2;
+      if (c[2]) el("rect", { x: 0, y: by, width: x(c[2]), height: 12, rx: 4, fill: css("--s-ledger") }, svg);
+      if (c[1] - c[2]) el("rect", { x: x(c[2]) + (c[2] ? gap : 0), y: by, width: x(c[1] - c[2]) - (c[2] ? gap : 0), height: 12, rx: 4, fill: css("--s-none") }, svg);
+      el("text", { x: x(c[1]) + 8, y: by + 10 }, svg, `${c[2]} of ${c[1]}`);
+      const hit = el("rect", { x: 0, y: y, width: W, height: rowH, fill: "transparent" }, svg);
+      hit.addEventListener("pointermove", e => { const r = box.getBoundingClientRect(); showTip(box, `<b>${c[0]}</b>: ${c[1]} entries, ${c[2]} likely caught<br>${c[3]}`, e.clientX - r.left, e.clientY - r.top); });
+      hit.addEventListener("pointerleave", () => hideTip(box));
+    });
+  }
+
+  // ---------- tables ----------
+  function tables() {
+    const tp = document.querySelector("#t-phases tbody"); PHASES.forEach(p => tp.insertAdjacentHTML("beforeend", `<tr><td>${p[0]}</td><td>${p[1]}</td><td class="num">${p[2]}</td><td class="num">${p[3]}</td><td class="num">${p[4]}</td></tr>`));
+    const sum = i => PHASES.filter(p => !p[5]).reduce((a, p) => a + p[i], 0);
+    tp.insertAdjacentHTML("beforeend", `<tr><td><b>Total, phases 1–8</b></td><td></td><td class="num"><b>${sum(2)}</b></td><td class="num"><b>${sum(3)}</b></td><td class="num"><b>${sum(4)}</b></td></tr>`);
+    const tr = document.querySelector("#t-reuse tbody"); REUSE.ds.forEach((p, i) => tr.insertAdjacentHTML("beforeend", `<tr><td>${p[3]} to ${p[4]}</td><td class="num">${Math.round(p[1] * 100)}% of ${p[2]}</td><td class="num">${Math.round(REUSE.src[i][1] * 100)}% of ${REUSE.src[i][2]}</td><td class="num">${Math.round(REUSE.doi[i][1] * 100)}% of ${REUSE.doi[i][2]}</td></tr>`));
+    const tc = document.querySelector("#t-corr tbody"); CORR.forEach(c => tc.insertAdjacentHTML("beforeend", `<tr><td>${c[0]}</td><td>${c[3]}</td><td class="num">${c[1]}</td><td class="num">${c[2]}</td></tr>`));
+    tc.insertAdjacentHTML("beforeend", `<tr><td><b>All</b></td><td></td><td class="num"><b>47</b></td><td class="num"><b>23</b></td></tr>`);
+  }
+
+  function drawAll() { drawPhases(); drawReuse(); drawCum(); drawCorr(); }
+  tables(); buildScen(); drawAll();
+  let raf; const ro = new ResizeObserver(() => { cancelAnimationFrame(raf); raf = requestAnimationFrame(drawAll); });
+  ["c-phases", "c-reuse", "c-cum", "c-corr"].forEach(id => ro.observe(document.getElementById(id)));
+  const mq = matchMedia("(prefers-color-scheme: dark)"); mq.addEventListener && mq.addEventListener("change", drawAll);
+  new MutationObserver(drawAll).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+})();
+</script>

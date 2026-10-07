@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 6 October 2026 (pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 7 October 2026 (fact ledger design sketch in `sketch/fact-ledger/`: design page, prototype ledger on six emissions checks, matching benchmark; no change to claims, data or site; earlier, 6 October 2026: pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -15,6 +15,62 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
+
+## Fact ledger: design sketch (7 October 2026)
+
+Brainstorm requested by the maintainer: a faster way to start a check than reading a folder of PDFs, by keeping
+checked facts once, with sources, and testing each new claim against them first. **Nothing is decided and nothing in
+the site, the validators or the claim records uses it.** Everything is in `sketch/fact-ledger/` (its `README.md`
+lists the files; `design.html` is the full proposal with charts).
+
+**Proposal (not yet approved).** A *fact ledger*, not a graph database: CSV in git as the source of truth (sources;
+shared copies of data series with their release; facts with IDs, value, unit, period, measure, counting basis,
+locator such as "p. 114, Table 25", grade, who checked it; links sub-claim → fact as supports / contradicts /
+context; entities such as targets and projects), built by Python into SQLite and JSON. `claim.yml` stays the source
+of truth for claims and only gains fact IDs. A `precheck` command reads a new claim and lists the facts held,
+earlier verdicts, the same fact on another basis, out-of-date data and gaps. CI fails on conflicting values,
+quotes not found in their archived source and report figures without a fact ID.
+
+**Inventory (measured 6 Oct 2026, before CC-040).** 276 per-claim CSVs (134k rows) in 222 column layouts;
+1,727 check rows in 51 `checks.csv` (41 share one layout) with no IDs or links to sub-claims; 197 sub-claims;
+597 distinct source URLs, **460 not in `archive/manifest.csv`**, 68 with an archive URL; 422 bib entries, 121 DOIs,
+45,400 words of notes. Same Eurostat tables fetched per claim: `env_air_gge` 6 claims, `nama_10_pe` 6, `nama_10_gdp` 5,
+`env_wasmun` 4. Where two reports hold the same Malta data point, all 180 agree once the unit is in the key (189 false
+"conflicts" without it). Reuse of earlier inputs rises with each batch: datasets 0% → 54% (CC-109 to CC-115),
+sources 2% → 29%, DOIs 0% → 18%. Of 47 correction entries (31 of 57 reports), 23 were judged the kind a ledger
+catches (figures and series 11 of 14, source records 6 of 9, quoted wording 5 of 7, reasoning 1 of 10, templates 0 of 7).
+
+**Estimates (model, adjustable on the design page).** Full build and consolidation of the 57 reports about 122 h
+(77–186), a fifth of it maintainer review; a lean first phase (rules and IDs, one source table, shared series, the
+conflict check, `precheck`) about 58 h. Saving per new check about 21% at 116 claims (13–30% by scenario); writing
+the analysis is not faster. Break-even after about 53 new checks (lean phase about 34; 59 were waiting on 6 Oct).
+Separate, needed anyway: about 230 unarchived sources that block automation, by hand (8–15 h).
+
+**Prototype on six emissions checks** (CC-003, CC-025, CC-026, CC-031, CC-109, CC-114): 37 facts, 56 links, 268
+check rows, 0 broken references; 15 figures repeated across two reports, all agreeing. Lessons: a fact's key needs
+the *measure* (14 false conflicts without it, 3 real ones with it); references must be machine-checked (45 of 57
+typed by hand first pointed at the wrong row); automatic fixes need a person (8 of 45 suggestions wrong); the
+counting basis (territorial inventory, residence accounts, effort-sharing) is the node that explains why a ministry,
+a newspaper and an opposition party can all be right about Malta's emissions; about 6 facts and 9 links per report.
+
+**Benchmark (4 CPU cores, 15 GB RAM; answer keys from the repository; small samples).** TF-IDF, as
+`scripts/similarity.py` uses, matches or beats small embedding models on our corpus (related claims in top 5: 52%
+vs 42–53%); TF-IDF plus bge-small adds about 7 points (59%). Text alone finds about 55–60% of the right facts for a
+sub-claim; the ledger's structured keys and number matching do the rest. Small multilingual models handle Maltese
+poorly (their usual base, XLM-R, left Maltese out): match on our English translation and keep the Maltese beside it.
+For scale: the best open system in AVeriTeC 2025 scored 33% (single 23 GB GPU, under a minute per claim) and
+numerical-claim benchmarks top out near 0.58 macro-F1, so verdicts stay with a person; the gain is finding and consistency.
+
+**Laptop baseline still to build** (if approved; hours): ledger core in the repo 40–60; shared series and refresh for
+about 62 Eurostat codes 15–30; `precheck` with structured keys and hybrid matching 12–20; a frozen test set of 30
+claims to measure every change 6–10; local archiving and quote verification 8–12; optional local LLM helper (4–8B
+via llama.cpp or Ollama, JSON output, always reviewed) 10–20. Steps that still need a person or a large model:
+finding verbatim wording on the web, locating the right table in long reports, judging framing and omission, writing.
+
+**Effect on the site, if adopted (maintainer to decide):** claim pages gain "Evidence used"; links in `edges.csv`
+suggested from shared evidence and confirmed by hand; Similar wording demoted to a fallback; second- and third-degree
+links retired; `quick_checks.csv`, the `checks.csv` files and the archive manifest folded into the ledger; new pages
+per data series and legal target.
 
 ## Design pass: logo, light theme, glyphs (6 October 2026)
 
@@ -826,6 +882,22 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
   403), the ERA shearwater plan page (era.org.mt 403).
 
 ## Outstanding
+
+- [ ] **Fact ledger (maintainer decisions, 7 Oct 2026):** lean phase (about 58 h) or full build (about 122 h), or
+  neither; SQLite (recommended) or DuckDB; retire second- and third-degree links and demote Similar wording?; turn
+  the 45,400 words of notes into finding rows now or only for new claims?; publish verdicts as ClaimReview never, or
+  only after the right-of-reply deadline? See "Fact ledger: design sketch" above and `sketch/fact-ledger/`.
+- [ ] **Malta's 2024 territorial total, 2,170 vs 2,198 kt:** the inventory (`env_air_gge`, used by CC-003, CC-026,
+  CC-031) and the bridging table (`env_ac_aibrid_r2`, CC-114) differ; also in 2013 (2,826 vs 2,835 kt). The bridging
+  table's 2024 values are Eurostat estimates (flag i). Not explained in either report: find out why before either
+  figure is reused.
+- [ ] `data/edges.csv`: consider links the sketch found through shared facts: CC-026–CC-114 (air transport),
+  CC-026–CC-031 (2024 inventory total), CC-031–CC-109 (road transport).
+- [ ] `tools/cc-053-report`, `cc-100`, `cc-106`, `cc-110`, `cc-112` and `cc-115` `figures.py` carry a block copied from
+  CC-111 that loads `data/cc-111/eurostat_env_wasmun.csv` and never uses it, and a docstring saying "Figures for
+  Claim Check 111". Remove both when each report is next revised (outputs are unaffected).
+- [ ] Archive gap: 460 of the 597 distinct source URLs in `data/sources.csv` have no row in `archive/manifest.csv`
+  (counted 6 Oct 2026). Run `scripts/archive_sources.py` over them, then archive by hand what it cannot reach.
 
 - [x] **CC-019:** aerial-imagery spot-check integrated (5 Oct 2026); confidence Moderate. `data/cc-019/imagery_spotcheck.csv` lists Amphora's id, centroid, area and place for the 39 sampled polygons (no geometry); drop those columns if Amphora objects. Imagery not committed (Esri terms).
 - [x] **CC-017:** EMODnet-only redraw integrated (5 Oct 2026). Rows 340 and 344 (UNEP-WCMC) are marked not used. Unverified: that EMODnet's 'EUSM16me' is IFREMER's EUSeaMap compilation.

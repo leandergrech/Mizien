@@ -1,0 +1,5 @@
+id,name,definition
+territorial,Territorial inventory,"UNFCCC national inventory: emissions on Malta's territory, without LULUCF; international aviation and shipping only as memo items (Eurostat env_air_gge)"
+residence,Residence accounts,"Eurostat air emissions accounts: emissions of Malta-resident units and households wherever they occur, including fuel Malta-based airlines buy abroad (env_ac_ainah_r2)"
+effort-sharing,Effort-sharing scope,"The part of the inventory under the EU Effort Sharing Regulation: transport (except aviation CO2), buildings, small industry, waste, agriculture; not power generation"
+context,Denominators and context,"Population, GDP and energy series used to scale or explain emissions"
