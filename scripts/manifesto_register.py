@@ -2,38 +2,53 @@
 """Register a folder of manifesto PDFs against data/manifesto_coverage.csv, changing nothing.
 
 For each PDF in the folder (and its sub-folders) the script records the SHA-256, reads the metadata and the first
-pages, works out which party and which election it is, and compares it with the coverage table:
+pages, decides whether the file is a programme at all, works out which party and which election it is, and compares
+it with the coverage table:
 
   already covered     the same SHA-256 as the copy recorded for that programme (full hash, or the short
                       'c7f65d55…6383' form, prefix and suffix)
   known, not listed   a SHA-256 noted in a coverage row's notes (for example the Maltese edition of a programme
                       whose English edition was listed)
+  same text           (with --fetch) a different file with the same text, page for page, as the listed copy: a
+                      re-saved or compressed copy, nothing to register
   new edition         a different file for a programme already listed (another print, a later web version,
-                      another language)
+                      another language); not compared, or compared and the text differs
   new programme       a programme with no listed copy: a party and election logged as 'no programme found' or
                       'not yet listed', or not in the table at all
-  unidentified        party or election not found in the file; the report shows what was read, so a person can
-                      decide (renaming the file to include the party and year is enough for a re-run)
+  unidentified        a programme whose party or election was not found; renaming the file to include the party
+                      and year is enough for a re-run
+  about a programme   an article, web page or press release that names a programme (news, fact-checks); listed
+                      briefly, with a flag when it names a programme logged as not found
+  other document      everything else (reports, papers, articles on other subjects): counted; --all lists them
 
-Then it lists the coverage rows with no matching PDF in the folder. Party and year come from, in order of weight:
-the programme's own title (from the coverage table and PROGRAMMES below), the file name, the PDF metadata, the
-first pages, and the rest of the text (party names only, case-sensitive, so 'labour' or 'ilkoll' as ordinary words
-do not count). Every guess is printed with the evidence behind it.
+A file is a programme when its name, its metadata or its first pages carry a programme title (PROGRAMMES below) or
+the words manifesto, manifest elettorali, programm elettorali, electoral programme, and its first page has none of
+the marks of a saved web page, news article or press release (WEB_MARKS). Party and year come from, in order of
+weight: the programme's own title, the file name, the PDF metadata, the first pages, and the rest of the text (party
+names only, case-sensitive, so 'labour' or 'ilkoll' as ordinary words do not count). Every guess is printed with the
+evidence behind it. Last, it lists the coverage rows with no matching file.
+
+--fetch downloads each listed copy that a 'new edition' could be a copy of into a temporary folder outside the
+repository (deleted afterwards), checks its SHA-256 against the table and compares the text page by page.
 
 Run from the repository root (needs pdftotext and pdfinfo from poppler, or the pypdf package):
-    python scripts/manifesto_register.py PATH [--pages 3] [--csv OUT.csv]
+    python scripts/manifesto_register.py PATH [--pages 3] [--fetch] [--all] [--csv OUT.csv]
 
 The PDFs are never copied into the repository: only hashes and source links are recorded, by hand, after review.
 """
 import argparse
 import csv
 import datetime as dt
+import difflib
 import hashlib
 import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import unicodedata
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -67,6 +82,14 @@ PROGRAMMES = [
     ("momentum", "2026", r"Bidla\s+ta['’]\s*Vera"),
     ("ahwa", "2026", r"Malta\s+g[ħh]all-Maltin"),
 ]
+PROGRAMME_WORDS = r"\bmanifest(?:o|os)?\b|\bprogramm\w*\s+elettoral\w*|\belectoral\s+(?:programme|program|manifesto)"
+# Marks of a saved web page, news article or press release on the first page: such a file is about a programme, not
+# the programme. A party's own web chapters saved as PDF also carry them, so these files are still listed, briefly.
+WEB_MARKS = (r"MENU \(/\)|View E-Paper|DIGITAL PAPER|Add as a preferred source|Home\s*>\s*\w|Other factchecks|Ixxerjaha|"
+             r"PRESS RELEASE|\bPR\d{6}(?:en|mt)?\b|TVMi\b|\bBy (?:[A-Z][a-z]+ ){1,3}[-–(]")
+WEB_LINKS = 3        # or at least this many '(https://…)' links printed on the first page
+WEB_NAME = r"fact-?check|press release|\bnews\b"
+COPY_SUFFIX = re.compile(r"(?:[-_ ]+(?:compressed|copy|final|ocr|small|web)|\s*\(\d+\))$", re.I)
 ELECTION_WORDS = r"(?:manifest\w*|elettoral\w*|elezzjoni|election\w*|programm\w*|ġenerali|generali|general)"
 HASH = re.compile(r"\b([0-9a-f]{64})\b|\b([0-9a-f]{6,63})(?:…|\.\.\.)([0-9a-f]{3,63})\b")
 W = {"title": 6, "filename": 4, "metadata": 4, "first pages": 2, "text": 1}   # weight of a match by where it was found
@@ -232,15 +255,29 @@ def identify(path: Path, pages: int, cycles: list, coverage: dict, pats: dict) -
         y = first_election_on_or_after(info["created"], cycles)
         if y:
             ys[y] = ys.get(y, 0) + 1; year_why.append(f"{y}: first election after the file was made ({info['created']})")
+    page1 = pdf_text(path, 1, 1)
+    prog = bool(title_hits) or any(re.search(PROGRAMME_WORDS, places[k], re.I) for k in ("filename", "metadata", "first pages"))
+    web = re.search(WEB_MARKS, page1[:3000]) or len(re.findall(r"\(https?://[^)\s]*\)", page1)) >= WEB_LINKS \
+        or re.search(WEB_NAME, path.stem.replace("_", " "), re.I)
+    kind = "other" if not prog else "about" if web else "programme"
+    kind_why = (f"web or press marks: '{web.group(0) if hasattr(web, 'group') else 'links'}'" if web else "") if prog else ""
     past = {y for y in re.findall(r"\b(20[0-3]\d)\b", head) if int(y) <= dt.date.today().year}   # target years such as 2030 are not elections
     other = sorted(y for y in past if y not in years and years_near_election_words(head, {y}))
     yr = sorted(ys.items(), key=lambda kv: -kv[1])
     cycle = yr[0][0] if yr and (len(yr) == 1 or yr[0][1] > yr[1][1]) else ""
-    return {"file": str(path), "name": path.name, "sha256": sha256(path), "bytes": path.stat().st_size, **info,
+    return {"file": str(path), "name": path.name, "sha256": sha256(path), "bytes": path.stat().st_size, **info, "kind": kind, "kind_why": kind_why,
             "language": language(full[:20000]), "party": party, "party_note": party_note,
             "party_evidence": "; ".join(evidence.get(party, [])[:4]) if party else "",
             "cycle": cycle, "cycle_evidence": "; ".join(year_why[:4]),
             "other_years": ", ".join(other), "first_line": " ".join(head.split())[:160]}
+
+
+def stem(name: str) -> str:
+    """A file name without its extension, copy suffixes ('-compressed', ' (1)') and punctuation, for comparing names."""
+    n = Path(urllib.parse.unquote(urllib.parse.urlparse(name).path if "://" in name else name)).stem
+    while COPY_SUFFIX.search(n):
+        n = COPY_SUFFIX.sub("", n)
+    return fold(n)
 
 
 def classify(r: dict, coverage: dict, cycles: list) -> tuple:
@@ -251,10 +288,16 @@ def classify(r: dict, coverage: dict, cycles: list) -> tuple:
     for (cyc, party), row in coverage.items():
         if any(hash_matches(r["sha256"], h) for h in hashes_in(row.get("notes"))):
             return "known, not listed", f"{party} {cyc}: noted in the coverage notes but not extracted: \"{row['notes'][:140]}\""
+    row = coverage.get((r["cycle"], r["party"])) if r["party"] and r["cycle"] else None
+    if r["kind"] == "other":
+        return "other document", "no programme title or programme words in the name, metadata or first pages"
+    if r["kind"] == "about":
+        gap = row is not None and row["status"] != "listed"
+        return "about a programme", (r["kind_why"] + (f"; NOTE: {r['party']} {r['cycle']} is logged as '{row['status']}': check whether "
+                                                       f"this is the programme itself" if gap else ""))
     if not r["party"] or not r["cycle"]:
         missing = " and ".join(x for x, v in (("party", r["party"]), ("election", r["cycle"])) if not v)
         return "unidentified", f"{missing} not found in the file" + (f" ({r['party_note']})" if r["party_note"] else "")
-    row = coverage.get((r["cycle"], r["party"]))
     contested = {c["id"]: {x.strip() for x in (c.get("contested") or "").split(";")} for c in cycles}
     if row is None:
         if r["party"] not in contested.get(r["cycle"], set()):
@@ -262,18 +305,91 @@ def classify(r: dict, coverage: dict, cycles: list) -> tuple:
         return "new programme", f"no coverage row for {r['party']} {r['cycle']}"
     if row["status"] == "listed":
         held = row.get("sha256") or "no hash recorded"
+        hint = ("; same file name as the listed copy, so probably a re-saved or compressed copy (--fetch compares the text)"
+                if stem(r["name"]) == stem(row.get("source_url") or "") else "")
         return "new edition", (f"{r['party']} {r['cycle']} is listed from {row.get('document')} (sha256 {held}; {row.get('source_url')}); "
-                               f"this file differs")
+                               f"this file differs" + hint)
     return "new programme", f"{r['party']} {r['cycle']} is logged as '{row['status']}': {(row.get('notes') or row.get('searched') or '')[:160]}"
 
 
-ORDER = ["already covered", "known, not listed", "new edition", "new programme", "unidentified"]
+def pages_text(path: Path) -> list:
+    """The text of every page, as lists of lower-case words."""
+    if shutil.which("pdftotext"):
+        out = subprocess.run(["pdftotext", "-q", str(path), "-"], capture_output=True, text=True, errors="replace").stdout
+        pages = out.split("\f")
+        if pages and not pages[-1].strip():
+            pages = pages[:-1]
+    else:
+        import pypdf
+        pages = [(p.extract_text() or "") for p in pypdf.PdfReader(str(path)).pages]
+    return [re.findall(r"\w+", t.lower()) for t in pages]
+
+
+def compare_text(copy: Path, listed: Path) -> dict:
+    """Page-by-page comparison: pages with the same text (95% of words in order), pages whose text the copy lost
+    (empty in the copy, e.g. turned into images by a compressor), and pages that differ."""
+    a, b = pages_text(copy), pages_text(listed)
+    same = lost = 0
+    differ = []
+    for i, (x, y) in enumerate(zip(a, b), 1):
+        if x == y or difflib.SequenceMatcher(None, x, y, autojunk=False).ratio() >= 0.95:
+            same += 1
+        elif not x and y:
+            lost += 1
+        else:
+            differ.append(i)
+    n = max(len(a), len(b))
+    verdict = len(a) == len(b) and same + lost >= 0.95 * n and same >= 0.5 * n
+    extra = (f", {len(b) - len(a)} pages only in the listed copy" if len(b) > len(a) else
+             f", {len(a) - len(b)} pages only in this file" if len(a) > len(b) else "")
+    return {"same_text": verdict, "summary": f"{len(a)} pages here, {len(b)} in the listed copy; same text on {same}"
+            + (f", text lost in this copy on {lost}" if lost else "") + (f", different on {len(differ)} (pp. {', '.join(map(str, differ[:8]))}"
+            + ("…" if len(differ) > 8 else "") + ")" if differ else "") + extra + " (pages compared in order)"}
+
+
+def fetch(url: str, folder: Path) -> Path:
+    """Download a listed copy into `folder` (a temporary folder outside the repository). Google Drive view links are
+    turned into their download form."""
+    m = re.search(r"drive\.google\.com/file/d/([^/]+)", url)
+    if m:
+        url = f"https://drive.google.com/uc?export=download&id={m.group(1)}"
+    out = folder / f"listed-{hashlib.sha1(url.encode()).hexdigest()[:10]}.pdf"
+    if not out.exists():
+        req = urllib.request.Request(url, headers={"User-Agent": "Mizien-manifesto-register/1.0 (public claim-checking project)"})
+        with urllib.request.urlopen(req, timeout=120) as resp, out.open("wb") as f:
+            shutil.copyfileobj(resp, f)
+    return out
+
+
+def compare_with_listed(r: dict, row: dict, folder: Path) -> tuple:
+    """For a 'new edition': fetch the listed copy and compare. Returns (category, extra detail)."""
+    url = row.get("source_url") or ""
+    if not (urllib.parse.urlparse(url).path.lower().endswith(".pdf") or "drive.google.com/file/d/" in url):
+        return "new edition", "the listed copy is not a PDF (web chapters): not compared"
+    try:
+        listed = fetch(url, folder)
+    except Exception as e:  # network, 403, timeout: say so and leave the category as it is
+        return "new edition", f"could not fetch the listed copy ({e.__class__.__name__}: {e}): not compared"
+    if open(listed, "rb").read(5) != b"%PDF-":
+        return "new edition", "the listed URL did not return a PDF: not compared"
+    h = sha256(listed)
+    held = hashes_in(row.get("sha256"))
+    note = "" if any(hash_matches(h, x) for x in held) else f"; NOTE: the URL now serves a different file (sha256 {h[:8]}…{h[-4:]}) from the one listed"
+    c = compare_text(Path(r["file"]), listed)
+    return ("same text" if c["same_text"] else "new edition"), c["summary"] + note
+
+
+ORDER = ["already covered", "known, not listed", "same text", "new edition", "new programme", "unidentified", "about a programme",
+         "other document"]
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("path", help="folder of manifesto PDFs (searched recursively)")
     ap.add_argument("--pages", type=int, default=3, help="first pages read for the title and year (default 3)")
+    ap.add_argument("--fetch", action="store_true", help="download the listed copy of each 'new edition' (to a temporary "
+                    "folder outside the repository) and compare the text page by page")
+    ap.add_argument("--all", action="store_true", help="also list every 'other document' by name")
     ap.add_argument("--csv", help="also write the register to this CSV file (keep it outside the repository or in scratch)")
     a = ap.parse_args(argv)
     folder = Path(a.path).expanduser()
@@ -290,28 +406,43 @@ def main(argv=None) -> int:
     pats = party_patterns(coverage)
     files = sorted(p for p in folder.rglob("*") if p.is_file() and p.suffix.lower() == ".pdf")
     rows = []
-    for p in files:
-        r = identify(p, a.pages, cycles, coverage, pats)
-        r["category"], r["detail"] = classify(r, coverage, cycles)
-        rows.append(r)
+    with tempfile.TemporaryDirectory(prefix="mizien-listed-") as tmp:
+        for p in files:
+            r = identify(p, a.pages, cycles, coverage, pats)
+            r["category"], r["detail"] = classify(r, coverage, cycles)
+            if a.fetch and r["category"] == "new edition":
+                r["category"], r["compared"] = compare_with_listed(r, coverage[(r["cycle"], r["party"])], Path(tmp))
+                r["detail"] = r["detail"].replace(" (--fetch compares the text)", "")
+            rows.append(r)
     seen = {}
     for r in rows:
         seen.setdefault(r["sha256"], []).append(r["name"])
 
-    print(f"{len(files)} PDF(s) in {folder}; data/manifesto_coverage.csv has {len(coverage)} rows. Nothing was changed.\n")
+    counts = ", ".join(f"{c} {sum(r['category'] == c for r in rows)}" for c in ORDER if any(r["category"] == c for r in rows))
+    print(f"{len(files)} PDF(s) in {folder}: {counts}.\ndata/manifesto_coverage.csv has {len(coverage)} rows. Nothing was changed.\n")
     for cat in ORDER:
         group = [r for r in rows if r["category"] == cat]
         print(f"== {cat}: {len(group)}")
+        if cat == "other document" and not a.all:
+            if group:
+                print("  not programmes (no programme title or programme words); --all lists them, the CSV has them")
+            print()
+            continue
         for r in group:
             dup = [n for n in seen[r["sha256"]] if n != r["name"]]
             print(f"  {r['name']}  sha256 {r['sha256'][:8]}…{r['sha256'][-4:]}  {r.get('pages', '?')} pages"
                   + (f", {r['language']}" if r["language"] else "") + (f"  (same file as {', '.join(dup)})" if dup else ""))
+            if cat in ("about a programme", "other document"):
+                print(f"    party {r['party'] or '?'}; election {r['cycle'] or '?'}" + (f"; {r['detail']}" if cat != "other document" else ""))
+                continue
             print(f"    party {r['party'] or '?'}"
                   + (f" ({r['party_evidence']})" if r["party_evidence"] else f" ({r['party_note']})" if r["party_note"] else "")
                   + f"; election {r['cycle'] or '?'}" + (f" ({r['cycle_evidence']})" if r["cycle_evidence"] else ""))
             if r["other_years"]:
                 print(f"    also near election words: {r['other_years']} (not in data/cycles.csv)")
             print(f"    {r['detail']}")
+            if r.get("compared"):
+                print(f"    compared with the listed copy: {r['compared']}")
             if cat in ("new edition", "new programme", "unidentified"):
                 print(f"    title: {r.get('title') or '-'}; made {r.get('created') or '?'}; first words: {r['first_line'][:120]}")
         print()
@@ -319,18 +450,21 @@ def main(argv=None) -> int:
     matched = {(c, p) for (c, p), row in coverage.items() for r in rows
                if r["category"] in ("already covered", "known, not listed")
                and any(hash_matches(r["sha256"], h) for h in hashes_in((row.get("sha256") or "") + " " + (row.get("notes") or "")))}
+    matched |= {(r["cycle"], r["party"]) for r in rows if r["category"] == "same text"}
     offered = {(r["cycle"], r["party"]) for r in rows if r["category"] in ("new edition", "new programme")}
+    about = {(r["cycle"], r["party"]) for r in rows if r["category"] == "about a programme"}
     print("== coverage rows with no matching PDF in the folder")
     for (c, p), row in sorted(coverage.items()):
         if (c, p) in matched:
             continue
-        note = "a candidate file is listed above" if (c, p) in offered else "no file found here"
+        note = ("a candidate file is listed above" if (c, p) in offered else
+                "only articles or web pages about it here" if (c, p) in about else "no file found here")
         kind = "listed from web chapters" if "web chapters" in (row.get("document") or "") and row["status"] == "listed" else row["status"]
         print(f"  {c} {p} ({row['party_name']}): {kind}; {note}")
 
     if a.csv:
-        fields = ["category", "detail", "name", "sha256", "bytes", "pages", "language", "party", "party_evidence", "party_note",
-                  "cycle", "cycle_evidence", "other_years", "title", "author", "created", "first_line", "file"]
+        fields = ["category", "detail", "compared", "name", "sha256", "bytes", "pages", "language", "kind_why", "party", "party_evidence",
+                  "party_note", "cycle", "cycle_evidence", "other_years", "title", "author", "created", "first_line", "file"]
         with open(a.csv, "w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
             w.writeheader()
