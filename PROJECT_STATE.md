@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 7 October 2026 (manifesto list: register script, topic and subtopic for 580 of 625 pledges, candidate links between elections for review, all on branch `fact-ledger-sketch`; earlier the same day: fact ledger design sketch in `sketch/fact-ledger/`: design page, prototype ledger on six emissions checks, matching benchmark; no change to claims, data or site; earlier, 6 October 2026: pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 7 October 2026 (manifesto list: register script, a taxonomy of the pledges' own with all 625 placed, candidate links between elections for review, all on branch `fact-ledger-sketch`; earlier the same day: fact ledger design sketch in `sketch/fact-ledger/`: design page, prototype ledger on six emissions checks, matching benchmark; no change to claims, data or site; earlier, 6 October 2026: pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -32,16 +32,19 @@ verdict or `follows` touched).
    documents. **No new programme, so step 4 has nothing to extract**, pending a `--fetch` run to confirm "same text".
    People's Party 2022 and Imperium Europa 2026 are still not found. Limit: ABBA's 2022 PDF names neither the party
    nor a programme, so another ABBA edition is counted as an "other document" unless its file name says so.
-2. **Topics** (`scripts/pledge_topics.py [--write [--force]]`): `data/manifesto_pledges.csv` gains `topic` and
-   `subtopic` (after `section`), in the claims' own vocabulary (`pledges.topic_vocabulary()`), never "Manifestos &
-   pledges". Keyword rules on our English summary (full weight) and the section heading (0.75, one vote per topic);
-   a row checked as a claim takes the claim's topic unless the claim is filed under Governance & Promises. `--write`
-   fills empty cells only, so hand edits are kept. Result: 528 rows with a subtopic, 52 with a topic only, 45 with
-   none. `scripts/pledges.py` checks both columns; `validate_claims.py` prints the count without a topic.
-   **Needs a maintainer decision:** animal welfare (39 rows, no topic fits: new topic, a subtopic of Nature &
-   Wildlife, or unfiled); topic-only groups: biodiversity on land 21, energy efficiency 13, litter and cleanliness 5,
-   local councils 5, climate adaptation 3, other 5; 6 rows no rule matched; 76 close calls listed by the script.
-   Pledge claims (CC-011, CC-107) stay under Governance & Promises while their manifesto rows sit by subject.
+2. **Topics.** First pass: the claims' vocabulary, by keyword rules (580 of 625 placed). Then, at the maintainer's
+   request ("reorganise the topics and subtopics for the pledges in the most meaningful and semantic way, so that they
+   fit"), **the pledges have a taxonomy of their own, `data/pledge_topics.csv`**: 12 topics (Climate, Energy, Transport,
+   Air & noise, Water, Waste, Nature & Wildlife, Animal welfare, Parks & trees, Countryside & coast, Land use &
+   planning, Environmental governance) and 49 subtopics, each with a code (EN-S), a scope note and the nearest topic and
+   subtopic of the claims (`site_topic`, `site_subtopic`; Animal welfare has none). The claims' topics are unchanged.
+   **All 625 rows placed by reading each pledge** (7 Oct 2026); none without a subtopic. `scripts/pledge_topics.py`
+   reads the taxonomy; its keyword rules point to subtopic codes, suggest placements for new rows (`--write` fills
+   empty cells only) and list the rows they read differently (rules agree on the topic for 589 and the subtopic for
+   533; the other 92 are judgement calls worth a second look). `scripts/pledges.py` checks the taxonomy file and that
+   every row's topic and subtopic are a pair in it. Largest subtopics: rooftop and community generation 33,
+   large-scale renewables 28, grid 28, urban parks 27; smallest: noise 1, light pollution 2. Flooding had no pledge
+   of its own, so it is not a subtopic.
 3. **Candidate links** (`scripts/pledge_links.py [--evaluate]`): for each pledge, the top 3 candidates in the other
    election, same party first (topic counts through the score, since rule-set topics can differ for the same
    pledge), plus the best other-party candidate when at least "possible" (rank x). Score: TF-IDF on the site's tokens
@@ -927,8 +930,8 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
 ## Outstanding
 
 - [ ] **Manifesto list (7 Oct 2026, branch `fact-ledger-sketch`):** run `scripts/manifesto_register.py
-  literature/unsorted/ --fetch` to confirm the two Labour copies; decide animal welfare and the topic-only groups
-  (`python scripts/pledge_topics.py` lists them); fill `decision` in `data/review/pledge_link_candidates.csv`, then
+  literature/unsorted/ --fetch` to confirm the two Labour copies; review the pledge taxonomy (`data/pledge_topics.csv`) and the
+  92 placements the rules read differently (`python scripts/pledge_topics.py`); fill `decision` in `data/review/pledge_link_candidates.csv`, then
   copy the yes pairs into `follows` (a person's step). See "Manifesto list: register, topics, candidate links".
 - [ ] **Fact ledger (maintainer decisions, 7 Oct 2026):** lean phase (about 58 h) or full build (about 122 h), or
   neither; SQLite (recommended) or DuckDB; retire second- and third-degree links and demote Similar wording?; turn
