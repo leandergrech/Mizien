@@ -61,7 +61,10 @@ source), most never checked, so that pledges can be linked and promises nobody t
 `summary` in our own words (a manifesto is quoted only in short excerpts, for the pledges linked to claims, with
 `wording_status: Verbatim found`), the explicit `target` figures or dates if any, and `measurable` (yes if it states
 a quantity, date or deadline that could be checked). A row can link to an earlier pledge in its `follows` column
-(claim or manifesto ids, separated by ";"), set by a person, by the same rules as `follows:` below.
+(claim or manifesto ids, separated by ";"), set by a person, by the same rules as `follows:` below. `topic` and
+`subtopic` place the pledge by its subject, in the topics and subtopics the claims use (never "Manifestos & pledges",
+which is for claims about pledges); `scripts/pledge_topics.py` fills them by keyword rules and lists the rows no
+existing subtopic fits, and a value set by hand is kept.
 
 **Every contesting party, to the same scope** (maintainer decision, 6 Oct 2026). The list covers the programme of every
 party that contested each general election, not only the governing party and the main opposition. The parties are
