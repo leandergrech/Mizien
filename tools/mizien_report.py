@@ -59,8 +59,9 @@ METER_LABELS = [("SUPPORTED", ""), ("LARGELY", "SUPPORTED"), ("NOT", "SUBSTANTIA
                 ("CONTRADICTED", "")]
 # Pledge labels (methodology/verdict-scale.md, Pledges): a pure pledge check shows one of these instead of a verdict.
 PLEDGES = ["Not measurable", "Not yet due", "On track", "Off track", "Met", "Missed"]
-# The site's pledge palette: every colour passes 4.5:1 with white text and stays apart from the verdict colours.
-PLEDGE_COLS = [colors.HexColor(h) for h in ("#716F8D", "#5C7689", "#337F71", "#AE5D33", "#23705F", "#7C2D4A")]
+# The site's pledge palette (chosen to stay apart under red-green colour blindness); light ones carry dark text.
+PLEDGE_COLS = [colors.HexColor(h) for h in ("#B0B8C1", "#475CAD", "#56AE6C", "#AD5C15", "#1F93B8", "#A72A68")]   # as PLEDGE_COLOURS in scripts/build_site_data.py
+PLEDGE_INKS = [colors.HexColor(h) for h in ("#13301F", "#FFFFFF", "#13301F", "#FFFFFF", "#13301F", "#FFFFFF")]   # as PLEDGE_INK there
 PLEDGE_METER_LABELS = [("NOT", "MEASURABLE"), ("NOT YET", "DUE"), ("ON", "TRACK"), ("OFF", "TRACK"), ("MET", ""),
                        ("MISSED", "")]
 
@@ -171,7 +172,7 @@ class VerdictMeter(Flowable):
                 c.roundRect(x - 0.6 * mm, y - 0.8 * mm, sw + 1.2 * mm, h + 1.6 * mm, 2 * mm, stroke=1, fill=0)
             else:
                 c.roundRect(x, y, sw, h, 2 * mm, stroke=0, fill=1)
-            c.setFillColor(colors.white)
+            c.setFillColor(PLEDGE_INKS[i] if self.scale == "pledge" else colors.white)
             c.setFont("Sans-B", 6.6 if i == self.active else 6.4)
             if l2:
                 c.drawCentredString(x + sw / 2, y + h / 2 + 0.9 * mm, l1)
@@ -332,11 +333,12 @@ def toc(items):
 
 def verdict_box(verdict, subline):
     kind, _, cols, _, i = scale_of(verdict)
-    vb = Table([[[Paragraph(f'<font color="white">{kind.upper()}</font>',
+    ink = hexs(PLEDGE_INKS[i]) if kind == "pledge" else "white"
+    vb = Table([[[Paragraph(f'<font color="{ink}">{kind.upper()}</font>',
                             ParagraphStyle("v1", fontName="Sans-B", fontSize=8, leading=10)),
-                  Paragraph(f'<font color="white">{verdict.upper()}</font>',
+                  Paragraph(f'<font color="{ink}">{verdict.upper()}</font>',
                             ParagraphStyle("v2", fontName="Sans-B", fontSize=20, leading=24)),
-                  Paragraph(f'<font color="white">{subline}</font>',
+                  Paragraph(f'<font color="{ink}">{subline}</font>',
                             ParagraphStyle("v3", fontName="Sans", fontSize=8.6, leading=11.4))]]], colWidths=[CW])
     vb.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), cols[i]), ("LEFTPADDING", (0, 0), (-1, -1), 12),
                             ("RIGHTPADDING", (0, 0), (-1, -1), 12), ("TOPPADDING", (0, 0), (-1, -1), 9),
@@ -387,7 +389,7 @@ def appendix_a(evidence_note, pledges=False):
               P("A pledge is a promise of future action, so it cannot be true or false when it is made. It gets one of "
                 "these labels instead of a verdict, with the date of the evidence behind it.")]
         S.append(std_table([[C("Pledge label", cellh), C("Meaning", cellh)]] +
-                           [[chip(v.upper(), PLEDGE_COLS[i], w=36 * mm), C(pmean[i])] for i, v in enumerate(PLEDGES)],
+                           [[chip(v.upper(), PLEDGE_COLS[i], PLEDGE_INKS[i], w=36 * mm), C(pmean[i])] for i, v in enumerate(PLEDGES)],
                            [42 * mm, CW - 42 * mm], valign="MIDDLE", zebra=False))
     S += [Spacer(1, 3 * mm), P("Confidence", h2),
           P("<b>High</b>: multiple independent lines of evidence agree. <b>Moderate</b>: evidence is relevant but "
@@ -508,7 +510,7 @@ def build_report(R: Report):
         pill = f"{vkind.upper()}:  {R.verdict.upper()}"
         pw_ = pdfmetrics.stringWidth(pill, "Sans-B", 9) + 14 * mm
         c.roundRect(LM + 9 * mm, y0 + 4.2 * mm, pw_, 7.6 * mm, 3.8 * mm, stroke=0, fill=1)
-        c.setFillColor(colors.white)
+        c.setFillColor(PLEDGE_INKS[vi] if vkind == "pledge" else colors.white)
         c.setFont("Sans-B", 9)
         c.drawCentredString(LM + 9 * mm + pw_ / 2, y0 + 6.7 * mm, pill)
         c.setFillColor(SLATE)
@@ -591,6 +593,7 @@ def build_flyer(F: Flyer):
     M = 20 * mm
     FW = W - 2 * M
     vkind, _, vcols, mlabels, vi = scale_of(F.verdict)
+    vinks = PLEDGE_INKS if vkind == "pledge" else [colors.white] * len(vcols)
     os.makedirs(os.path.dirname(F.out), exist_ok=True)
     c = rl_canvas.Canvas(F.out, pagesize=A4)
     c.setTitle(F.pdf_title)
@@ -668,7 +671,7 @@ def build_flyer(F: Flyer):
     vh = 25 * mm
     c.setFillColor(vcols[vi])
     c.roundRect(M, vt - vh, FW, vh, 3 * mm, stroke=0, fill=1)
-    c.setFillColor(colors.white)
+    c.setFillColor(vinks[vi])
     c.setFont("Sans-B", 8)
     c.drawString(M + 7 * mm, vt - 7 * mm, vkind.upper())
     # Leave a clear gutter before the right-hand summary for longer verdicts.
@@ -692,7 +695,7 @@ def build_flyer(F: Flyer):
             c.roundRect(x - 0.6 * mm, my - 0.7 * mm, sw + 1.2 * mm, mh + 1.4 * mm, 1.8 * mm, stroke=1, fill=0)
         else:
             c.roundRect(x, my, sw, mh, 1.8 * mm, stroke=0, fill=1)
-        c.setFillColor(colors.white)
+        c.setFillColor(vinks[i])
         c.setFont("Sans-B", 6.2)
         if l2:
             c.drawCentredString(x + sw / 2, my + mh / 2 + 0.7 * mm, l1)

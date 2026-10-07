@@ -73,7 +73,7 @@
   border-top: 1px solid var(--line); }
 .tlv-legend li { display: inline-flex; align-items: center; gap: 6px; }
 .tlv-key { width: 12px; height: 12px; border-radius: 50%; background: var(--v); border: 1.5px solid var(--paper); }
-.tlv-key-pledge { background: conic-gradient(#337f71 0 33%, #716f8d 0 66%, #7c2d4a 0); }
+.tlv-key-pledge { background: conic-gradient(#56ae6c 0 33%, #b0b8c1 0 66%, #a72a68 0); }
 
 /* The text version of the same timeline (always available, and the only view without JavaScript). */
 .tlv-list { margin: 8px 0 0; background: var(--paper); color: var(--paper-ink); border-radius: 12px; padding: 4px 20px 14px; }

@@ -642,7 +642,8 @@
       "pledge": {
         "status": "Off track",
         "slug": "pledge-off-track",
-        "colour": "#ae5d33",
+        "colour": "#ad5c15",
+        "ink": "#ffffff",
         "as_of": "31 December 2025",
         "as_of_iso": "2025-12-31",
         "made_on": "11 March 2022",
@@ -765,7 +766,8 @@
       "pledge": {
         "status": "Not measurable",
         "slug": "pledge-not-measurable",
-        "colour": "#716f8d",
+        "colour": "#b0b8c1",
+        "ink": "#13301f",
         "as_of": "5 October 2026",
         "as_of_iso": "2026-10-05",
         "made_on": "May 2026",
@@ -1654,7 +1656,8 @@
       "pledge": {
         "status": "On track",
         "slug": "pledge-on-track",
-        "colour": "#337f71",
+        "colour": "#56ae6c",
+        "ink": "#13301f",
         "as_of": "15 September 2026",
         "as_of_iso": "2026-09-15",
         "made_on": "7 January 2025",
@@ -1993,7 +1996,8 @@
       "pledge": {
         "status": "Off track",
         "slug": "pledge-off-track",
-        "colour": "#ae5d33",
+        "colour": "#ad5c15",
+        "ink": "#ffffff",
         "as_of": "6 October 2026",
         "as_of_iso": "2026-10-06",
         "made_on": "22 July 2025",
@@ -2191,7 +2195,8 @@
       "pledge": {
         "status": "Not measurable",
         "slug": "pledge-not-measurable",
-        "colour": "#716f8d",
+        "colour": "#b0b8c1",
+        "ink": "#13301f",
         "as_of": "6 October 2026",
         "as_of_iso": "2026-10-06",
         "made_on": "25 September 2026",
@@ -2723,7 +2728,8 @@
       "pledge": {
         "status": "Not measurable",
         "slug": "pledge-not-measurable",
-        "colour": "#716f8d",
+        "colour": "#b0b8c1",
+        "ink": "#13301f",
         "as_of": "6 October 2026",
         "as_of_iso": "2026-10-06",
         "made_on": "2 April 2019",
@@ -6132,7 +6138,8 @@
       "pledge": {
         "status": "Not measurable",
         "slug": "pledge-not-measurable",
-        "colour": "#716f8d",
+        "colour": "#b0b8c1",
+        "ink": "#13301f",
         "as_of": "5 October 2026",
         "as_of_iso": "2026-10-05",
         "made_on": "May 2026",
@@ -12261,85 +12268,99 @@
       "name": "Not measurable",
       "meaning": "the pledge as worded has no definition, baseline or date against which delivery could be checked.",
       "slug": "pledge-not-measurable",
-      "colour": "#716f8d"
+      "colour": "#b0b8c1",
+      "ink": "#13301f"
     },
     {
       "name": "Not yet due",
       "meaning": "the pledge is measurable, its deadline or term has not passed, and no progress data have been published yet.",
       "slug": "pledge-not-yet-due",
-      "colour": "#5c7689"
+      "colour": "#475cad",
+      "ink": "#ffffff"
     },
     {
       "name": "On track",
       "meaning": "published progress is at or ahead of a straight-line path (or the pledge's own milestones) to the target by the deadline.",
       "slug": "pledge-on-track",
-      "colour": "#337f71"
+      "colour": "#56ae6c",
+      "ink": "#13301f"
     },
     {
       "name": "Off track",
       "meaning": "published progress is behind that path, and the target has not yet been shown to be met or missed.",
       "slug": "pledge-off-track",
-      "colour": "#ae5d33"
+      "colour": "#ad5c15",
+      "ink": "#ffffff"
     },
     {
       "name": "Met",
       "meaning": "documents or data show the target was reached, by the deadline if one was set.",
       "slug": "pledge-met",
-      "colour": "#23705f"
+      "colour": "#1f93b8",
+      "ink": "#13301f"
     },
     {
       "name": "Missed",
       "meaning": "the deadline or term has passed, and documents or data that can be shown say the target was not reached.",
       "slug": "pledge-missed",
-      "colour": "#7c2d4a"
+      "colour": "#a72a68",
+      "ink": "#ffffff"
     },
     {
       "name": "campaign",
       "meaning": "a manifesto or campaign promise, made before an election.",
       "slug": "pledge-campaign",
-      "colour": "#716f8d"
+      "colour": "#b0b8c1",
+      "ink": "#ffffff"
     },
     {
       "name": "government",
       "meaning": "a commitment made in office (budget speech, strategy, EU plan, ministerial statement).",
       "slug": "pledge-government",
-      "colour": "#716f8d"
+      "colour": "#b0b8c1",
+      "ink": "#ffffff"
     },
     {
       "name": "proposal",
       "meaning": "a party proposal made outside a campaign, or in opposition.",
       "slug": "pledge-proposal",
-      "colour": "#716f8d"
+      "colour": "#b0b8c1",
+      "ink": "#ffffff"
     },
     {
       "name": "target",
       "meaning": "a target set by an agency or company. Not a political promise; it keeps a label but is listed apart from the pledges.",
       "slug": "pledge-target",
-      "colour": "#716f8d"
+      "colour": "#b0b8c1",
+      "ink": "#ffffff"
     },
     {
       "name": "Unanchored",
       "meaning": "a government commitment with no earlier pledge. Shown only after a recorded `follows_search`: \"No earlier pledge found (searched: Labour manifesto 2022, PN manifesto 2022, 5 Oct 2026). Commitment first appears in: Budget Speech 2026.\"",
       "slug": "pledge-unanchored",
-      "colour": "#716f8d"
+      "colour": "#b0b8c1",
+      "ink": "#ffffff"
     },
     {
       "name": "Dropped",
       "meaning": "a campaign pledge of the governing party with no government follow-up. Only after the legislature has ended (or a stated review date) and a recorded search; until then \"no follow-up found yet\".",
       "slug": "pledge-dropped",
-      "colour": "#716f8d"
+      "colour": "#b0b8c1",
+      "ink": "#ffffff"
     },
     {
       "name": "Drift",
       "meaning": "linked, but the commitment differs from the promise: \"Changed from the 2022 manifesto: deadline moved from 2027 to 2030.\"",
       "slug": "pledge-drift",
-      "colour": "#716f8d"
+      "colour": "#b0b8c1",
+      "ink": "#ffffff"
     },
     {
       "name": "Recycled",
       "meaning": "the same promise made again in a later cycle while the earlier one was not met: \"Also promised in 2022 (CC-010, Off track).\"",
       "slug": "pledge-recycled",
-      "colour": "#716f8d"
+      "colour": "#b0b8c1",
+      "ink": "#ffffff"
     }
   ],
   "pledge_links": [
