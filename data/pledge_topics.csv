@@ -1,0 +1,50 @@
+code,topic,subtopic,scope,site_topic,site_subtopic
+CL-T,Climate,Climate targets,"Dates and amounts for climate neutrality or emission cuts, and calls to raise targets.",Climate & Energy,Emissions & targets
+CL-G,Climate,Climate policy & institutions,"Climate authorities and agencies, national climate plans and strategies, climate education, EU and regional climate diplomacy, a fair transition for those affected.",Climate & Energy,Emissions & targets
+CL-B,Climate,Business & industry transition,"Aid, tax, credits and obligations that move firms and operators towards low carbon: industrial decarbonisation, transition funds, ESG reporting, schemes for SMEs and hotels.",Climate & Energy,Emissions & targets
+CL-A,Climate,Adaptation & heat,"Preparing for climate impacts: heat in towns, coastal erosion, adaptation in plans and infrastructure, nature-based solutions.",Health & Safety,Heat & health
+EN-S,Energy,Rooftop & community generation,"Rooftop PV, solar water heaters and micro wind on buildings, shared and community solar, home and business batteries, solar on public buildings and car parks, solar rights against overshadowing and height increases.",Climate & Energy,Renewables
+EN-L,Energy,Large-scale & offshore renewables,"Offshore wind and solar, wave energy, solar farms (including on farmland, quarries and reservoirs), renewables share targets, feed-in tariffs and other long-term support, energy from biogas, research into renewables, renewable cooperation abroad.",Climate & Energy,Renewables
+EN-G,Energy,"Grid, interconnectors & storage","Distribution network, substations, blackouts and voltage, interconnectors and links to other countries, grid-scale storage, smart meters and network monitoring.",Climate & Energy,Electricity & grid
+EN-F,Energy,"Gas, hydrogen & energy security","Gas supply and the Electrogas contracts, gas and hydrogen pipelines, hydrogen projects, biofuels for power stations, supply contracts, energy sovereignty and local generation, opening the electricity market.",Climate & Energy,Electricity & grid
+EN-B,Energy,Bills & tariffs,"Tariffs, subsidies and price stability, meter rent, eco-reduction, refunds, charging rates.",Climate & Energy,Electricity & grid
+EN-E,Energy,Energy efficiency,"Insulation, heat pumps, efficient appliances, energy performance certificates, passive and sustainable building incentives, renovation schemes, energy audits.",Climate & Energy,
+TR-V,Transport,Cleaner vehicles,"Electric cars, buses and goods vehicles, and the switch from fossil fuels in transport.",Transport,Cars & traffic
+TR-C,Transport,"Less traffic, more room for people","Park-and-ride, streets returned to people, localities where daily needs are near, traffic moved underground.",Transport,Cars & traffic
+AN-A,Air & noise,Air quality,"Air-quality monitoring and plans, vehicle emission filters, dust.",Air,Air quality & health
+AN-S,Air & noise,"Ships, port & aviation emissions","Shore power for ships, grid power for parked aircraft, cleaner aviation.",Air,Port & power emissions
+AN-N,Air & noise,Noise,"Noise limits, monitoring and nuisance.",Noise,
+WA-S,Water,Drinking water supply,"Reverse osmosis, reservoirs, distribution network, tap-water quality and filters, public water fountains, investment in water production.",Water,Water supply & groundwater
+WA-C,Water,"Rainwater, groundwater & reuse","Rainwater storage and harvesting, groundwater recharge, greywater and treated-effluent reuse, water audits and conservation.",Water,Water supply & groundwater
+WA-W,Water,Sewage & wastewater,"Sewerage extensions, wastewater treatment, on-site treatment for coastal developments.",Water,Bathing water & sewage
+WS-P,Waste,Waste prevention & reuse,"Single-use plastics and packaging, refill, repair and reuse, food waste, zero-waste targets, the circular economy, resource recovery.",Waste,Recycling & separation
+WS-R,Waste,Recycling & separation,"Separation duties, recycling law, deposit and refund schemes, collection schemes, bulky-waste and civic amenity sites.",Waste,Recycling & separation
+WS-T,Waste,Treatment & disposal,"Incineration and waste-to-energy, landfill, organic-waste plants, waste mining, waste plans and strategy.",Waste,Landfill & treatment
+WS-C,Waste,Construction & demolition waste,"Excavation and demolition waste, dismantling and reuse of building materials, quarries for inert waste, disposal fees.",Waste,Construction waste
+WS-L,Waste,Litter & street cleaning,"Littering, street cleaning, bins and refuse collection, cleanliness standards.",Waste,
+NW-H,Nature & Wildlife,Habitats & species,"Natura 2000 and protected land, biodiversity policy, conservation of habitats and species, pollinators, invasive species, ecological corridors, restoring valleys as habitats.",Nature & Wildlife,
+NW-M,Nature & Wildlife,Marine & coastal protection,"Marine protected areas, seagrass, moorings, marine habitats and pollution, development on protected coastal and marine sites.",Nature & Wildlife,Marine protection
+NW-F,Nature & Wildlife,Fishing & fish farms,"Fishing methods, fishers and recreational fishing, fish farms and their pollution.",Nature & Wildlife,Marine protection
+NW-B,Nature & Wildlife,Hunting & trapping,"Hunting and trapping rules and derogations, enforcement, the turtle dove, the role of hunters.",Nature & Wildlife,Hunting & birds
+NW-D,Nature & Wildlife,Light pollution,Artificial light and dark skies.,Nature & Wildlife,Dark skies
+AW-V,Animal welfare,Veterinary care & neutering,"Animal hospitals and ambulances, affordable veterinary care, neutering, veterinary professions, pet insurance.",,
+AW-S,Animal welfare,"Shelters, strays & adoption","Sanctuaries and shelters, rehoming and adoption, strays and the people who feed them.",,
+AW-L,Animal welfare,Animal welfare law & enforcement,"Strategies, laws and penalties, a commissioner or ministry, animal police, microchipping, licensing, lists of species that may be kept, farm animals.",,
+AW-P,Animal welfare,Pets in public life,"Dog parks and beaches, cafés, pet cemeteries, an equestrian centre, teaching children about animals.",,
+PT-U,Parks & trees,Urban parks & squares,"Named parks, gardens and squares in towns and villages, and sites turned into open space.",Land & Trees,Open spaces & parks
+PT-G,Parks & trees,Green space policy & greening,"Green space near every home, park laws, standards and maps, protecting parks from development, programmes to create open space in every locality, greening roofs and façades, community gardens, greening grants.",Land & Trees,Open spaces & parks
+PT-N,Parks & trees,National parks & valleys,"Large natural and national parks, natural areas returned to the public, valley parks and their paths.",Land & Trees,Open spaces & parks
+PT-T,Parks & trees,Trees & afforestation,"Afforestation programmes, tree planting, removing invasive trees, schools growing trees.",Land & Trees,Trees & planting
+CC-A,Countryside & coast,Countryside access & recreation,"Footpaths and trails, a national trail, access to rural land, picnic and camping sites, buying back countryside.",Land & Trees,Open spaces & parks
+CC-C,Countryside & coast,"Coast, beaches & public domain","Public access to the shore, beach concessions, bays kept free of commercial use, swimming zones and beaches, carrying capacity of coastal sites.",Tourism & Population,Short lets & concessions
+CC-F,Countryside & coast,Farming,"Support for farmers and herders, produce and markets, sustainable farming.",Land & Trees,Land take & agriculture
+LP-S,Land use & planning,Planning system & reform,"Planning law and reform, the Planning Authority, strategic and local plans, masterplans, a national planning strategy, impact assessments, reviews of planning decisions, consultation on projects.",Planning & Housing,Development & construction
+LP-O,Land use & planning,ODZ & land protection,"Land outside the development zone, the 2006 rationalisation, public land kept undeveloped, protecting named sites from development.",Land & Trees,Land take & agriculture
+LP-H,Land use & planning,Building height & design,"Height limits and moratoria, high-rise policy, skyline, design and aesthetics standards.",Planning & Housing,Development & construction
+LP-P,Land use & planning,"Permits, appeals & enforcement","Permits and their conditions, appeals and tribunals, works suspended pending appeal, illegal development and sanctioning, enforcement units.",Planning & Housing,Permits & enforcement
+LP-C,Land use & planning,Construction & neighbours,"Building codes and the Building and Construction Authority, contractors, working hours, site safety, damage to neighbours, unfinished buildings, redevelopment of old blocks, expropriation.",Planning & Housing,Development & construction
+LP-T,Land use & planning,Heritage & townscape,"Conservation areas, scheduled buildings, village cores and historic centres, World Heritage sites, landscape, underground heritage, removing overhead wires, demolition limits and reuse of existing buildings, heritage criteria for new buildings.",Planning & Housing,Heritage & character
+EG-R,Environmental governance,Regulators & boards,"The Environment and Resources Authority and other regulators: powers, independence, reform, performance targets; how boards are appointed, scrutinised and run.",Governance & Promises,Accountability
+EG-P,Environmental governance,"Rights, transparency & participation","Environmental rights in the Constitution, NGOs' funding and voice, public access to information, legal aid, the Ombudsman, the Guardian of Future Generations, civic schemes.",Governance & Promises,Accountability
+EG-L,Environmental governance,Local councils,"Councils' powers, funding and right to be consulted.",Governance & Promises,
+EG-S,Environmental governance,Sustainability strategy,"Overarching sustainability agendas and alliances, the environment as a priority in all policy, green tax principles, pollution as an offence.",Governance & Promises,
