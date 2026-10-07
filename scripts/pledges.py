@@ -40,6 +40,9 @@ def load_cycles() -> list:
 
 
 COVERAGE_STATUS = ["listed", "no programme found", "not yet listed"]
+# The follow-up check of a manifesto pledge (methodology/verdict-scale.md, Outliers): what happened to it in office.
+# Recorded per row; a programme's `followup_checked` date in manifesto_coverage.csv says every row of it was checked.
+FOLLOWUP = ["taken up", "partly taken up", "no follow-up found"]
 
 
 def load_coverage() -> dict:
@@ -198,7 +201,19 @@ def check_files(claim_ids: set) -> list:
     for key in coverage:
         if key[1] not in contested.get(key[0], set()):
             errs.append(f"data/manifesto_coverage.csv: {key[1]} is not listed as contesting {key[0]} in data/cycles.csv")
+    for (cid, party), cov in coverage.items():
+        if (cov.get("followup_checked") or "").strip():
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", cov["followup_checked"].strip()):
+                errs.append(f"data/manifesto_coverage.csv: {cid} {party} followup_checked must be YYYY-MM-DD")
+            todo = [m for m, r in manifesto.items() if r.get("cycle") == cid and r.get("party") == party and not (r.get("followup") or "").strip()]
+            if todo:
+                errs.append(f"data/manifesto_coverage.csv: {cid} {party} is marked followup_checked but {len(todo)} rows have no followup (e.g. {todo[0]})")
     for mid, r in manifesto.items():
+        fu = (r.get("followup") or "").strip()
+        if fu and fu not in FOLLOWUP:
+            errs.append(f"data/manifesto_pledges.csv: {mid} followup must be one of {', '.join(FOLLOWUP)} or empty")
+        if fu and not (r.get("followup_source") or "").strip():
+            errs.append(f"data/manifesto_pledges.csv: {mid} followup needs followup_source (the commitment, or where and when it was searched)")
         if contested.get(r.get("cycle")) and r.get("party") not in contested[r.get("cycle")]:
             errs.append(f"data/manifesto_pledges.csv: {mid} party '{r.get('party')}' did not contest {r.get('cycle')} (data/cycles.csv)")
         if not MP_ID.fullmatch(mid):
