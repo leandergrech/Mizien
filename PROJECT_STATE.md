@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 7 October 2026 (fact ledger design sketch in `sketch/fact-ledger/`: design page, prototype ledger on six emissions checks, matching benchmark; no change to claims, data or site; earlier, 6 October 2026: pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 7 October 2026 (manifesto list: register script, topic and subtopic for 580 of 625 pledges, candidate links between elections for review, all on branch `fact-ledger-sketch`; earlier the same day: fact ledger design sketch in `sketch/fact-ledger/`: design page, prototype ledger on six emissions checks, matching benchmark; no change to claims, data or site; earlier, 6 October 2026: pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -15,6 +15,49 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
+
+## Manifesto list: register, topics, candidate links (7 October 2026)
+
+Maintainer's four-step request, on branch `fact-ledger-sketch` (steps 1 to 3 done, each stopped for review; no claim,
+verdict or `follows` touched).
+
+1. **Register** (`scripts/manifesto_register.py PATH [--fetch] [--all] [--csv OUT]`): hashes every PDF in a folder,
+   reads metadata and first pages, and sorts each file as already covered (same SHA-256, full or short `c7f65d55…6383`
+   form), known but not listed (hash in the coverage notes), same text (`--fetch`: the listed copy is downloaded to a
+   temporary folder, its hash checked and the text compared page by page), new edition, new programme, unidentified,
+   about a programme (news, web pages, press releases), or other document. Read-only; copies nothing.
+   **Maintainer's run, `literature/unsorted` (111 PDFs):** none byte-identical to a listed copy; the only programmes
+   are compressed copies of Labour 2022 and 2026 (same names and page counts, 292 and 268; 2.6 MB and 1.7 MB against
+   14.4 MB and 4.3 MB; the 2022 copy lost its first page's text); 6 articles or web pages about programmes; 103 other
+   documents. **No new programme, so step 4 has nothing to extract**, pending a `--fetch` run to confirm "same text".
+   People's Party 2022 and Imperium Europa 2026 are still not found. Limit: ABBA's 2022 PDF names neither the party
+   nor a programme, so another ABBA edition is counted as an "other document" unless its file name says so.
+2. **Topics** (`scripts/pledge_topics.py [--write [--force]]`): `data/manifesto_pledges.csv` gains `topic` and
+   `subtopic` (after `section`), in the claims' own vocabulary (`pledges.topic_vocabulary()`), never "Manifestos &
+   pledges". Keyword rules on our English summary (full weight) and the section heading (0.75, one vote per topic);
+   a row checked as a claim takes the claim's topic unless the claim is filed under Governance & Promises. `--write`
+   fills empty cells only, so hand edits are kept. Result: 528 rows with a subtopic, 52 with a topic only, 45 with
+   none. `scripts/pledges.py` checks both columns; `validate_claims.py` prints the count without a topic.
+   **Needs a maintainer decision:** animal welfare (39 rows, no topic fits: new topic, a subtopic of Nature &
+   Wildlife, or unfiled); topic-only groups: biodiversity on land 21, energy efficiency 13, litter and cleanliness 5,
+   local councils 5, climate adaptation 3, other 5; 6 rows no rule matched; 76 close calls listed by the script.
+   Pledge claims (CC-011, CC-107) stay under Governance & Promises while their manifesto rows sit by subject.
+3. **Candidate links** (`scripts/pledge_links.py [--evaluate]`): for each pledge, the top 3 candidates in the other
+   election, same party first (topic counts through the score, since rule-set topics can differ for the same
+   pledge), plus the best other-party candidate when at least "possible" (rank x). Score: TF-IDF on the site's tokens
+   less pledge boilerplate (`PLEDGE_STOP`), with half-weight word pairs, section headings and synonym groups
+   (`CONCEPTS`); plus shared figures, same subtopic or topic, same party. Bands: strong >= 0.55, possible >= 0.35.
+   Output `data/review/pledge_link_candidates.csv` (1,979 rows, empty `decision` column); nothing goes into `follows`
+   until the maintainer says yes. Test set `data/review/pledge_link_benchmark.csv` (56 pairs: 1 confirmed, 1 noted,
+   25 the assistant's reading of the summaries and **not confirmed**, 29 repeated ADPD wording). Results: the
+   confirmed pair 2026 16.1 -> 2022 397 ranks first (score 0.39; plain TF-IDF 0.24, also first); 22 of 25 unconfirmed
+   pairs first and 25 in the top 3 (plain TF-IDF 7 and 20); 29 of 29 repeated pairs first. Best candidate per
+   pledge: strong 97, possible 190, weak 338. Same-party strong matches: ADPD 33 of 48 (2022 side), Labour 14 of 129,
+   PN none either way (21 possible). Known false-looking strong pairs: Labour 2026 14.30 -> 2022 291 (two Bormla
+   sites), 16.37 -> 411 (shore power, related).
+4. **New programmes:** none (see step 1).
+
+A graphic summary of steps 1 to 3 was sent to the maintainer as an HTML file (not committed, not published).
 
 ## Fact ledger: design sketch (7 October 2026)
 
@@ -883,6 +926,10 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
 
 ## Outstanding
 
+- [ ] **Manifesto list (7 Oct 2026, branch `fact-ledger-sketch`):** run `scripts/manifesto_register.py
+  literature/unsorted/ --fetch` to confirm the two Labour copies; decide animal welfare and the topic-only groups
+  (`python scripts/pledge_topics.py` lists them); fill `decision` in `data/review/pledge_link_candidates.csv`, then
+  copy the yes pairs into `follows` (a person's step). See "Manifesto list: register, topics, candidate links".
 - [ ] **Fact ledger (maintainer decisions, 7 Oct 2026):** lean phase (about 58 h) or full build (about 122 h), or
   neither; SQLite (recommended) or DuckDB; retire second- and third-degree links and demote Similar wording?; turn
   the 45,400 words of notes into finding rows now or only for new claims?; publish verdicts as ClaimReview never, or
