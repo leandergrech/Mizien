@@ -49,6 +49,19 @@ def load_coverage() -> dict:
     return {(r["cycle"], r["party"]): r for r in csv.DictReader(p.open(encoding="utf-8"))}
 
 
+def topic_vocabulary() -> dict:
+    """{topic: set of subtopics} as used by the claim records (`category`, `subtopic`): the site's own topics, which
+    the manifesto list's `topic` and `subtopic` columns must use (scripts/pledge_topics.py assigns them)."""
+    import yaml
+    out = {}
+    for p in sorted((ROOT / "claims").glob("CC-*/claim.yml")):
+        d = yaml.safe_load(p.read_text(encoding="utf-8"))
+        out.setdefault(d["category"], set())
+        if d.get("subtopic"):
+            out[d["category"]].add(d["subtopic"])
+    return out
+
+
 def load_manifesto() -> dict:
     p = ROOT / "data" / "manifesto_pledges.csv"
     if not p.exists():
@@ -177,6 +190,7 @@ def check_files(claim_ids: set) -> list:
     ids = {c["id"] for c in cycles}
     contested = {c["id"]: {x.strip() for x in (c.get("contested") or "").split(";") if x.strip()} for c in cycles}
     manifesto = load_manifesto()
+    vocab = topic_vocabulary()
     # Fairness rule (maintainer, 6 Oct 2026): every party that contested an election is listed to the same scope, and
     # data/manifesto_coverage.csv records for each one what was listed, or where and when a programme was searched for.
     coverage = load_coverage()
@@ -218,4 +232,11 @@ def check_files(claim_ids: set) -> list:
             errs.append(f"data/manifesto_pledges.csv: {mid} has wording but wording_status is not 'Verbatim found'")
         if not (r.get("source_url") or "").startswith("http"):
             errs.append(f"data/manifesto_pledges.csv: {mid} needs a source_url")
+        topic, sub = (r.get("topic") or "").strip(), (r.get("subtopic") or "").strip()
+        if topic and topic not in vocab:
+            errs.append(f"data/manifesto_pledges.csv: {mid} topic '{topic}' is not a topic used by the claims")
+        elif sub and not topic:
+            errs.append(f"data/manifesto_pledges.csv: {mid} has a subtopic but no topic")
+        elif sub and sub not in vocab.get(topic, set()):
+            errs.append(f"data/manifesto_pledges.csv: {mid} subtopic '{sub}' is not a subtopic of '{topic}' in the claims")
     return errs

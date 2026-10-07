@@ -310,7 +310,10 @@ def check_pledge_files(ids: set) -> int:
         errs.append(f"scripts/pledges.py self-test failed: {e or 'see the asserts in _selftest()'}")
     for e in errs:
         print("FAIL " + e)
-    print(f"pledges: {len(pledges.load_cycles())} election cycles, {len(pledges.load_manifesto())} manifesto pledges listed, {len(errs)} problems.")
+    mp = pledges.load_manifesto()
+    untopiced = sum(1 for r in mp.values() if not (r.get("topic") or "").strip())
+    print(f"pledges: {len(pledges.load_cycles())} election cycles, {len(mp)} manifesto pledges listed"
+          f" ({untopiced} without a topic: python scripts/pledge_topics.py lists them), {len(errs)} problems.")
     return 1 if errs else 0
 
 
