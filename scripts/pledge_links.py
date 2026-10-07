@@ -14,14 +14,13 @@ Score of a candidate, about 0 to 1.4:
             TF-IDF gives pledges that say the same thing in other words a low score (the offshore-wind pair 2026 16.1 /
             2022 397: 0.16 by the maintainer's count, 0.24 with the site's tokens).
   numbers   shared quantities (300MW, 100,000, 30%): +0.10 each; shared years (2030, 2050): +0.04 each; at most 0.20.
-  topic     same subtopic +0.08, else same topic +0.04 (the topic and subtopic columns, scripts/pledge_topics.py).
+  topic     same subtopic +0.08, else same topic +0.04 (the pledges' own taxonomy, data/pledge_topics.csv).
   party     same party +0.10.
 Ranking (the maintainer's rule: same party first, then same topic): candidates of the same party that score at least
 FLOOR come first, then other parties, each by score. The same topic and subtopic raise the score rather than forming a
-group of their own, because topics are set by keyword rules and can differ for the same pledge. The best candidate
-from another party is added as rank "x" when it scores at least CROSS and is not already listed (one party taking up
-another's earlier pledge: ADPD 2022 and Labour 2026 on Manoel Island). Strength: strong >= 0.55, possible >= 0.35,
-else weak.
+group of their own, because a pledge on two subjects sits under only one of them. The best candidate from another
+party is added as rank "x" when it scores at least CROSS and is not already listed (one party taking up another's
+earlier pledge: ADPD 2022 and Labour 2026 on Manoel Island). Strength: strong >= 0.55, possible >= 0.35, else weak.
 
 Run from the repository root:
     python scripts/pledge_links.py              # write data/review/pledge_link_candidates.csv and print a summary
@@ -174,9 +173,8 @@ def score(a: dict, b: dict, va: dict, vb: dict, na: set, nb: set) -> dict:
 
 def tier(s: dict) -> int:
     """Same party first (when the candidate reaches FLOOR), then other parties, each by score. A better match from
-    another party is still shown, as rank "x" (CROSS). The topic counts through the score only, because topics are set
-    by keyword rules and can differ for the same pledge (ADPD 2026 item 9 and 2022 item 4 are word for word the same
-    but filed under Renewables and under Development & construction)."""
+    another party is still shown, as rank "x" (CROSS). The topic counts through the score only: a pledge on two subjects
+    sits under one of them (data/pledge_topics.csv), so the right candidate can sit under the other."""
     if s["score"] < FLOOR:
         return 2
     return 0 if s["same_party"] else 1
