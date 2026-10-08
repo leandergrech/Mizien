@@ -555,6 +555,11 @@ def manifesto_coverage(records: list, ref) -> list:
     """The manifesto list by election and party (data/manifesto_coverage.csv), each with its rows, for the Pledges pages."""
     by = {d["id"]: d for d in records}
     mo = manifesto_outliers(records)
+    similar = {}   # strongly similar wording in the same party's other programme (pledge_similar): both directions
+    for b, olds in (pledge_similar(records).get("similar_of") or {}).items():
+        for a in olds:
+            similar.setdefault(b, []).append(a); similar.setdefault(a, []).append(b)
+    sim = lambda m: {"id": m, "number": MANIFESTO[m].get("number"), "year": next((c["election_date"][:4] for c in CYCLES if c["id"] == MANIFESTO[m].get("cycle")), "")}
     out = []
     for c in sorted(pledges.load_coverage().values(), key=lambda c: (c["cycle"], c["party_name"].lower())):   # alphabetical: no party first
         rows = [r for r in MANIFESTO.values() if r.get("cycle") == c["cycle"] and r.get("party") == c["party"]]
@@ -564,8 +569,86 @@ def manifesto_coverage(records: list, ref) -> list:
                                "summary": r.get("summary") or r.get("wording"), "target": r.get("target"),
                                "measurable": r.get("measurable") == "yes", "url": r.get("source_url"),
                                "claim": ref(by[r["claim"]]) if r.get("claim") in by else None,
-                               "outliers": mo.get(r["id"], [])} for r in rows]})
+                               "outliers": mo.get(r["id"], []), "topic": r.get("topic"), "topic_slug": slug(r.get("topic") or ""),
+                               "subtopic": r.get("subtopic"), "similar": [sim(m) for m in similar.get(r["id"], [])]} for r in rows]})
     return out
+
+
+SIMILAR_FILE = ROOT / "data" / "review" / "pledge_link_candidates.csv"   # scripts/pledge_links.py: automatic, not reviewed
+BAND = {"strong": 2, "possible": 1, "weak": 0}
+
+
+def pledge_topic_matrix() -> dict:
+    """What each programme promised, by subject: the manifesto list's own taxonomy (data/pledge_topics.csv, placements
+    read by a person) as a table of topics by party for each election, with each cell's subtopics."""
+    tax = pledges.load_pledge_topics()
+    order = list(dict.fromkeys(t["topic"] for t in tax))
+    cov = pledges.load_coverage()
+    out = {"topics": [{"name": t, "slug": slug(t), "subtopics": [x["subtopic"] for x in tax if x["topic"] == t]} for t in order],
+           "cycles": []}
+    for c in CYCLES:
+        parties = sorted(((k[1], short_party(v["party_name"])) for k, v in cov.items() if k[0] == c["id"] and v.get("status") == "listed"),
+                         key=lambda x: x[1].lower())
+        rows = [r for r in MANIFESTO.values() if r.get("cycle") == c["id"]]
+        cells = {}
+        for r in rows:
+            cell = cells.setdefault((r.get("topic"), r.get("party")), {"n": 0, "sub": {}})
+            cell["n"] += 1; cell["sub"][r.get("subtopic")] = cell["sub"].get(r.get("subtopic"), 0) + 1
+        top = max([v["n"] for v in cells.values()] or [1])
+        out["cycles"].append({
+            "id": c["id"], "year": c["election_date"][:4], "label": pledges.cycle_label(c["id"], CYCLES),
+            "parties": [{"id": p, "name": n, "total": sum(1 for r in rows if r.get("party") == p)} for p, n in parties],
+            "rows": [{"topic": t, "slug": slug(t), "total": sum(1 for r in rows if r.get("topic") == t),
+                      "cells": [{"party": p, "n": cells.get((t, p), {}).get("n", 0),
+                                 "shade": round(cells.get((t, p), {}).get("n", 0) / top, 2),
+                                 "sub": "; ".join(f"{k} {v}" for k, v in sorted(cells.get((t, p), {}).get("sub", {}).items(), key=lambda x: -x[1]))}
+                                for p, _ in parties]} for t in order]})
+    return out
+
+
+def pledge_similar(records: list) -> dict:
+    """Similar wording between a party's two programmes, found automatically (scripts/pledge_links.py) and not reviewed:
+    shown as "similar wording", never as a link (methodology/verdict-scale.md). For the parties that published a
+    programme for both elections, each later pledge is counted by its closest earlier pledge of the same party (strong,
+    possible, or none among the candidates); the strong pairs are listed. Pairs a person has confirmed (`follows`) are
+    marked as such. Other parties' similar wording is not shown: it says nothing about who proposed what first."""
+    if not SIMILAR_FILE.exists() or len(CYCLES) < 2:
+        return {}
+    first, last = CYCLES[-2]["id"], CYCLES[-1]["id"]
+    cov = pledges.load_coverage()
+    both = sorted({p for (c, p), v in cov.items() if c == last and v.get("status") == "listed"} &
+                  {p for (c, p), v in cov.items() if c == first and v.get("status") == "listed"},
+                  key=lambda p: short_party(cov[(last, p)]["party_name"]).lower())
+    confirmed = set()
+    for mid, r in MANIFESTO.items():
+        for f in (r.get("follows") or "").split(";"):
+            if f.strip(): confirmed.add(frozenset((mid, f.strip())))
+    best, pairs = {}, {}
+    for r in csv.DictReader(SIMILAR_FILE.open(encoding="utf-8")):
+        if r["party"] != r["candidate_party"] or r["party"] not in both:
+            continue
+        a, b = (r["pledge"], r["candidate"]) if r["election"] == first else (r["candidate"], r["pledge"])
+        if a not in MANIFESTO or b not in MANIFESTO:
+            continue
+        best[b] = max(best.get(b, 0), BAND.get(r["strength"], 0))
+        if r["strength"] == "strong":
+            pairs[(a, b)] = max(pairs.get((a, b), 0), float(r["score"] or 0))
+    item = lambda m: {"id": m, "number": MANIFESTO[m].get("number"), "summary": MANIFESTO[m].get("summary"),
+                      "page": MANIFESTO[m].get("page"), "anchor": f"{MANIFESTO[m]['party']}-{MANIFESTO[m]['cycle']}"}
+    later = [m for m, r in MANIFESTO.items() if r.get("cycle") == last and r.get("party") in both]
+    bands = lambda ms: {"strong": sum(1 for m in ms if best.get(m) == 2), "possible": sum(1 for m in ms if best.get(m) == 1),
+                        "unmatched": sum(1 for m in ms if best.get(m, 0) == 0), "total": len(ms)}
+    topics = list(dict.fromkeys(t["topic"] for t in pledges.load_pledge_topics()))
+    return {"first": pledges.cycle_label(first, CYCLES), "last": pledges.cycle_label(last, CYCLES),
+            "first_year": CYCLES[-2]["election_date"][:4], "last_year": CYCLES[-1]["election_date"][:4],
+            "parties": [{"id": p, "name": short_party(cov[(last, p)]["party_name"]),
+                         **bands([m for m in later if MANIFESTO[m]["party"] == p]),
+                         "pairs": [{"before": item(a), "after": item(b), "score": round(sc, 2), "topic": MANIFESTO[b].get("topic"),
+                                    "confirmed": frozenset((a, b)) in confirmed}
+                                   for (a, b), sc in sorted(pairs.items(), key=lambda x: (MANIFESTO[x[0][1]].get("topic") or "", -x[1]))
+                                   if MANIFESTO[b]["party"] == p]} for p in both],
+            "topics": [{"topic": t, "slug": slug(t), **bands([m for m in later if MANIFESTO[m].get("topic") == t])} for t in topics],
+            "similar_of": {b: [a for (a, b2) in pairs if b2 == b] for (_, b) in pairs}}
 
 
 def manifesto_rows(records: list) -> list:
@@ -818,6 +901,8 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
         "manifesto_coverage": manifesto_coverage(records, claim_ref),
         "pledge_grid": pledge_grid(records, claim_ref),
         "pledge_flows": pledge_flows(records),
+        "pledge_topic_matrix": pledge_topic_matrix(),
+        "pledge_similar": pledge_similar(records),
         "cycles": CYCLES,
         "manifesto_pledges": list(MANIFESTO.values()),
         "pledge_labels": out["pledge_labels"],

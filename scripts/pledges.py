@@ -52,6 +52,28 @@ def load_coverage() -> dict:
     return {(r["cycle"], r["party"]): r for r in csv.DictReader(p.open(encoding="utf-8"))}
 
 
+def load_pledge_topics() -> list:
+    """The manifesto list's own taxonomy, data/pledge_topics.csv: one row per subtopic (code, topic, subtopic, scope,
+    and the nearest topic and subtopic of the claims, site_topic and site_subtopic). scripts/pledge_topics.py."""
+    p = ROOT / "data" / "pledge_topics.csv"
+    if not p.exists():
+        return []
+    return list(csv.DictReader(p.open(encoding="utf-8")))
+
+
+def topic_vocabulary() -> dict:
+    """{topic: set of subtopics} as used by the claim records (`category`, `subtopic`): the site's own topics, which
+    the pledge taxonomy maps onto (site_topic, site_subtopic in data/pledge_topics.csv)."""
+    import yaml
+    out = {}
+    for p in sorted((ROOT / "claims").glob("CC-*/claim.yml")):
+        d = yaml.safe_load(p.read_text(encoding="utf-8"))
+        out.setdefault(d["category"], set())
+        if d.get("subtopic"):
+            out[d["category"]].add(d["subtopic"])
+    return out
+
+
 def load_manifesto() -> dict:
     p = ROOT / "data" / "manifesto_pledges.csv"
     if not p.exists():
@@ -180,6 +202,24 @@ def check_files(claim_ids: set) -> list:
     ids = {c["id"] for c in cycles}
     contested = {c["id"]: {x.strip() for x in (c.get("contested") or "").split(";") if x.strip()} for c in cycles}
     manifesto = load_manifesto()
+    vocab = topic_vocabulary()
+    tax = load_pledge_topics()
+    pairs = {(t["topic"], t["subtopic"]) for t in tax}
+    seen_codes, seen_pairs = set(), set()
+    for t in tax:
+        where = f"data/pledge_topics.csv: {t.get('code')}"
+        if not re.fullmatch(r"[A-Z]{2}-[A-Z]", t.get("code") or "") or t["code"] in seen_codes:
+            errs.append(f"{where}: code must look like EN-S and be unique")
+        if (t["topic"], t["subtopic"]) in seen_pairs or not t["topic"].strip() or not t["subtopic"].strip():
+            errs.append(f"{where}: needs a topic and a subtopic, and the pair must be unique")
+        if not (t.get("scope") or "").strip():
+            errs.append(f"{where}: needs a scope (what belongs there)")
+        st, ss = (t.get("site_topic") or "").strip(), (t.get("site_subtopic") or "").strip()
+        if st and st not in vocab:
+            errs.append(f"{where}: site_topic '{st}' is not a topic of the claims")
+        elif ss and ss not in vocab.get(st, set()):
+            errs.append(f"{where}: site_subtopic '{ss}' is not a subtopic of '{st}' in the claims")
+        seen_codes.add(t.get("code")); seen_pairs.add((t["topic"], t["subtopic"]))
     # Fairness rule (maintainer, 6 Oct 2026): every party that contested an election is listed to the same scope, and
     # data/manifesto_coverage.csv records for each one what was listed, or where and when a programme was searched for.
     coverage = load_coverage()
@@ -233,4 +273,7 @@ def check_files(claim_ids: set) -> list:
             errs.append(f"data/manifesto_pledges.csv: {mid} has wording but wording_status is not 'Verbatim found'")
         if not (r.get("source_url") or "").startswith("http"):
             errs.append(f"data/manifesto_pledges.csv: {mid} needs a source_url")
+        topic, sub = (r.get("topic") or "").strip(), (r.get("subtopic") or "").strip()
+        if (topic or sub) and (topic, sub) not in pairs:
+            errs.append(f"data/manifesto_pledges.csv: {mid} topic and subtopic '{topic} / {sub}' are not a pair in data/pledge_topics.csv")
     return errs
