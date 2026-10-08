@@ -1,13 +1,6 @@
-# CC-062: Construction is 9-14% of the economy
+# CC-062: KPMG/MDA: construction and real estate share of GVA
 
-**Status:** literature not yet collected.
+**Status:** report v1.0 (8 Oct 2026). Verdict: Largely supported (moderate).
 
-## To collect
-
-NSO GVA by industry (F and L); input-output tables.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-062) for the source that located this claim. It locates the claim and its context; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+Primary wording: foreword of the KPMG report (PDF p. 10), signed by Steve Stivala, Director, Advisory Services; the
+claim record's attribution to the MDA is the report's commissioner, not the author of the sentence. See `notes.md`.

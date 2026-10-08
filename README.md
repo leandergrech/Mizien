@@ -85,13 +85,13 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-053 | Nature & Wildlife | Milky Way visible from 13% of Malta | Drafted | Supported |
 | CC-054 | Land & Trees | Project Green: 100,000 m2 a year | Not started | - |
 | CC-055 | Land & Trees | Manoel Island back to the public | Not started | - |
-| CC-056 | Land & Trees | Central Link: 'only 254 trees' | Not started | - |
+| CC-056 | Land & Trees | Central Link: 'only 254 trees' | In progress | - |
 | CC-057 | Land & Trees | 1,649 compensation trees | Not started | - |
 | CC-058 | Land & Trees | 96% of farmland in use | Not started | - |
-| CC-059 | Land & Trees | Subsidies are 20% of farm output | Not started | - |
+| CC-059 | Land & Trees | Subsidies are 20% of farm output | In progress | - |
 | CC-060 | Planning & Housing | 7,000 first-time buyers helped | Not started | - |
 | CC-061 | Planning & Housing | 260 homes 30% below market | Not started | - |
-| CC-062 | Planning & Housing | Construction is 9-14% of the economy | Not started | - |
+| CC-062 | Planning & Housing | Construction is 9-14% of the economy | Drafted | Largely supported |
 | CC-063 | Waste | Construction waste: 'standstill' warning | Drafted | Not substantiated |
 | CC-064 | Planning & Housing | Grand Harbour regeneration | Not started | - |
 | CC-065 | Planning & Housing | Ġgantija buffer zone permit | Not started | - |

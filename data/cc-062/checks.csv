@@ -1,0 +1,49 @@
+check,value,unit,source,note
+"KPMG Table 1.1: (F + L excl. imputed rents) / total GVA less imputed rents, 2024",9.09,%,KPMG Table 1.1 (p. 23),recomputed; KPMG prints 9.1%
+"KPMG Table 1.1 share, 2020",8.9,%,KPMG Table 1.1 (p. 23),
+"KPMG Table 1.1 share, 2021",8.9,%,KPMG Table 1.1 (p. 23),
+"KPMG Table 1.1 share, 2022",8.6,%,KPMG Table 1.1 (p. 23),
+"KPMG Table 1.1 share, 2023",9.0,%,KPMG Table 1.1 (p. 23),
+"Imputed rents implied by KPMG (total GVA 21,378 less 20,617)",761.0,EUR million,"KPMG Tables 1.1, 1.2",implied; Eurostat L68A for 2024 is 737.5
+Eurostat 2018: (F + L - imputed rents) / (total GVA - imputed rents),8.5,%,Eurostat nama_10_a64,
+"Eurostat 2018: (F + L) / total GVA, imputed rents included in both",11.13,%,Eurostat nama_10_a64,
+Eurostat 2019: (F + L - imputed rents) / (total GVA - imputed rents),9.82,%,Eurostat nama_10_a64,
+"Eurostat 2019: (F + L) / total GVA, imputed rents included in both",12.47,%,Eurostat nama_10_a64,
+Eurostat 2020: (F + L - imputed rents) / (total GVA - imputed rents),8.94,%,Eurostat nama_10_a64,
+"Eurostat 2020: (F + L) / total GVA, imputed rents included in both",11.63,%,Eurostat nama_10_a64,
+Eurostat 2021: (F + L - imputed rents) / (total GVA - imputed rents),8.76,%,Eurostat nama_10_a64,
+"Eurostat 2021: (F + L) / total GVA, imputed rents included in both",11.14,%,Eurostat nama_10_a64,
+Eurostat 2022: (F + L - imputed rents) / (total GVA - imputed rents),8.65,%,Eurostat nama_10_a64,
+"Eurostat 2022: (F + L) / total GVA, imputed rents included in both",10.43,%,Eurostat nama_10_a64,
+Eurostat 2023: (F + L - imputed rents) / (total GVA - imputed rents),9.02,%,Eurostat nama_10_a64,
+"Eurostat 2023: (F + L) / total GVA, imputed rents included in both",11.96,%,Eurostat nama_10_a64,
+Eurostat 2024: (F + L - imputed rents) / (total GVA - imputed rents),9.61,%,Eurostat nama_10_a64,
+"Eurostat 2024: (F + L) / total GVA, imputed rents included in both",12.73,%,Eurostat nama_10_a64,
+Eurostat 2025: (F + L - imputed rents) / (total GVA - imputed rents),9.69,%,Eurostat nama_10_a64,2025 is the latest annual value in the dataset on 8 Oct 2026; see report limitations
+"Eurostat 2025: (F + L) / total GVA, imputed rents included in both",12.12,%,Eurostat nama_10_a64,
+Eurostat 2024 GVA: total economy,21378.0,EUR million,Eurostat nama_10_a64,"KPMG Table 1.2: 21,378.2"
+Eurostat 2024 GVA: construction (F),893.6,EUR million,Eurostat nama_10_a64,KPMG Table 1.2: 809.0 (an earlier vintage; Eurostat is 10% higher)
+Eurostat 2024 GVA: real estate (L) including imputed rents,1827.0,EUR million,Eurostat nama_10_a64,"KPMG Table 1.2: 1,826.9"
+Eurostat 2024 GVA: imputed rents (L68A),737.5,EUR million,Eurostat nama_10_a64,
+Table 1.3: construction output x 0.55,1317.2,EUR million,KPMG Table 1.3 (p. 30),"KPMG prints 1,317"
+Table 1.3: real estate output x 0.78,1901.6,EUR million,KPMG Table 1.3 (p. 30),"KPMG prints 1,901"
+Table 1.3: unrounded sum less inter-industry linkages (216),3002.9,EUR million,KPMG Table 1.3,"KPMG prints 3,002 (3,219 - 216 = 3,003 on its rounded lines)"
+"Table 1.3: 3,002 / total GVA 21,378 (incl. imputed rents)",14.04,%,"KPMG Tables 1.2, 1.3",KPMG prints 14.04%
+"Table 1.3: construction share 1,317 / 21,378",6.16,%,KPMG Table 1.3,KPMG prints 6.16%
+"Table 1.3: real estate share 1,901 / 21,378",8.89,%,KPMG Table 1.3,KPMG prints 8.89%
+Eurostat 2024 output: construction (F),2396.2,EUR million,Eurostat nama_10_a64,"KPMG Table 1.3 uses 2,395"
+"Eurostat 2024 output: real estate (L, incl. imputed rents)",2438.5,EUR million,Eurostat nama_10_a64,"KPMG Table 1.3 uses 2,438"
+"Direct F + L including imputed rents, KPMG's figures",2635.9,EUR million,KPMG Table 1.2 (p. 25),
+Direct share incl. imputed rents (same basis as the 14%),12.33,%,KPMG Table 1.2 (p. 25),
+"Step 1: change of basis (imputed rents in), 9.1% -> direct incl. imputed",3.24,pp,calculated,
+"Step 2: indirect linkages on the same basis, direct incl. imputed -> 14.04%",1.71,pp,calculated,
+Total step 9.1% -> 14.04%,4.95,pp,calculated,
+Share of the step due to change of basis,65,%,calculated,
+"Same, with Eurostat's current vintage: direct incl. imputed rents",12.73,%,Eurostat nama_10_a64,indirect step would be 14.04 - this
+"Multiplier-based value added beyond direct, construction (1,317 - 809)",508.0,EUR million,calculated,"multiplier-based, not observed"
+"Multiplier-based value added beyond direct, real estate (1,901 - 1,827)",75.0,EUR million,calculated,"multiplier-based, not observed"
+"Direct value added per EUR of output, construction (KPMG 809 / 2,395)",0.338,ratio,calculated,compare Type 1 multiplier 0.55: indirect adds 0.55 - this
+Eurostat naio_10_cp1750 Malta 2015: value added in industries with a published column,6443.0,EUR million,Eurostat naio_10_cp1750,of total 8889.0: 72.0%
+Eurostat naio_10_cp1750 Malta 2015: industry columns with output > 0,37,columns,Eurostat naio_10_cp1750,"of 121 listed codes, including aggregates and sub-items"
+Eurostat naio_10_cp1750 Malta 2020: value added in industries with a published column,12104.0,EUR million,Eurostat naio_10_cp1750,of total 13150.0: 92.0%
+Eurostat naio_10_cp1750 Malta 2020: industry columns with output > 0,55,columns,Eurostat naio_10_cp1750,"of 121 listed codes, including aggregates and sub-items"

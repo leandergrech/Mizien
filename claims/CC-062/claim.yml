@@ -2,39 +2,84 @@ id: CC-062
 title: Construction is 9-14% of the economy
 category: Planning & Housing
 subtopic: Development & construction
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Malta Developers Association (KPMG report, Dec 2025): construction and real estate account for about 9%
-    of gross value added, 14% including indirect effects.'
-  speaker: Malta Developers Association; KPMG
+  text: 'KPMG (Steve Stivala, Director, Advisory Services), foreword to the Construction Industry and Property Market Report
+    2025, commissioned by the Malta Development Association (Dec 2025): construction and real estate account for around 9%
+    of gross value added on direct effects alone, and approximately 14% once indirect linkages are factored in.'
+  speaker: KPMG
   date: 2025-12
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
-  - title: Construction Industry and Property Market Report 2025
-    publisher: KPMG for the MDA
+  - title: Construction Industry and Property Market Report 2025 (foreword, PDF p. 10; Tables 1.1-1.3, pp. 23-30)
+    publisher: KPMG for the Malta Development Association
     date: Dec 2025
     url: https://assets.kpmg.com/content/dam/kpmgsites/mt/pdf/2025/12/kpmg-mda-construction-industry-and-property-market-report-2025.pdf
-    note: Commissioned report.
-counter_evidence: Check against NSO national accounts by NACE section; indirect multipliers.
-tests: NSO GVA by industry (F and L); input-output tables.
-why_low_hanging: A specific, attributable statement that public data can test.
+    note: The claim, in the foreword. Read 8 Oct 2026 (foreword, executive summary, Chapter 1); not committed (copyright);
+      SHA-256 in data/cc-062/source_hash.txt.
+  quote: Construction and real estate collectively account for around 9% of Gross Value Added (GVA) when considering direct
+    effects alone, rising to approximately 14% once indirect linkages are factored in.
+counter_evidence: 'Both figures reproduce: 9.1% (KPMG Table 1.1; Eurostat 9.6% for 2024, same definition) and 14.04% (Table
+  1.3; output inputs match Eurostat). They are not on one basis: the 9% excludes imputed rents and the 14% includes them;
+  on KPMG''s own figures the direct share with imputed rents is 12.3%, so indirect linkages add 1.7 points, not 5. The multipliers
+  (0.55, 0.78; Central Bank of Malta, 2015 table, second-hand) could not be re-derived: Eurostat''s Malta input-output table
+  covers 72% of value added.'
+tests: KPMG Tables 1.1-1.3; Eurostat nama_10_a64 (GVA and output by industry); Eurostat naio_10_cp1750 (tools/cc-062-report/calc.py).
+why_low_hanging: 'Done: Claim Check 062 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Largely supported: no right of reply needed. The 14% includes imputed rents and the 9% does not; the multipliers
+  are 2015-based and second-hand (not retrieved).'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- KPMG Tables 1.1-1.3 (data/cc-062/kpmg_tables.csv); Eurostat nama_10_a64 (data/cc-062/nama_10_a64_MT.json); checks in data/cc-062/checks.csv
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-062A
+    text: "Construction and real estate account for around 9% of GVA, direct effects alone"
+    finding: "KPMG Table 1.1: 9.1% (2024); Eurostat: 9.6% (2024), 9.7% (2025), same definition (imputed rents excluded)."
+    rating: "Supported"
+    tone: green
+  - id: CC-062B
+    text: "About 14% once indirect linkages are factored in"
+    finding: "Reproduces from KPMG Table 1.3 (14.04%); outputs match Eurostat. Modelled with 2015 multipliers we could not re-derive; counts imputed rents, which the 9% does not."
+    rating: "Largely supported"
+    tone: lime
+version: '1.0'
+last_reviewed: '2026-10-08'
+thumbnail:
+  figure: 9.1% / 14.0%
+  caption: 'of GVA from construction and real estate: direct (imputed rents excluded) and with modelled indirect linkages'
+history:
+- date: '2026-10-08'
+  step: started
+  note: Worker B picked the claim from the queue (not started).
+- date: '2026-10-08'
+  step: wording
+  note: Verbatim sentence found in the foreword (PDF p. 10) of the KPMG report, signed by Steve Stivala, Director, Advisory
+    Services; the claim record's text was a paraphrase attributing it to the MDA.
+- date: '2026-10-08'
+  step: note
+  note: KPMG Tables 1.1-1.3 transcribed; shares recomputed and compared with Eurostat nama_10_a64; Eurostat's Malta input-output
+    table (naio_10_cp1750) found too incomplete to re-derive the multipliers.
+- date: '2026-10-08'
+  step: version
+  version: '1.0'
+  note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.
