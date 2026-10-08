@@ -1,0 +1,4 @@
+a,b,status,explanation
+F24,F25,explained,"Different denominators: 68% of all resident emissions including households (CC-026), 71.8% of industry emissions without households (CC-114). Both correct."
+F26,F38,revision,"Eurostat revised Malta's 2013-2018 air transport between the January map and the August 2026 data: +16.6% became +14.3% (CC-114)."
+F02,F30,open,"Not explained in either report. The bridging table's inventory line also differs in 2013 (2,835 vs 2,826 kt); its 2024 values are Eurostat estimates (flag i). Needs a look before either figure is reused."
