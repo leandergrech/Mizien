@@ -90,7 +90,10 @@ with "no follow-up found" after its legislature has ended is listed as dropped.
 Optional fields that link a pledge to earlier ones:
 
 - `follows: [CC-NNN or MP-...]`: the earlier pledge(s) this one carries forward. Set by a person at check time; similar
-  wording found automatically is only ever shown as "similar", never as a link.
+  wording found automatically is only ever shown as "similar", never as a link. On the Pledges pages, the closest same-party
+  wording in the other election (`data/review/pledge_link_candidates.csv`, not reviewed) is shown in that way: counted
+  per party and subject, strong pairs listed, labelled as found automatically; other parties' similar wording is not
+  shown, since it says nothing about who proposed what first.
 - `follows_search: {date, searched: [the manifestos or documents searched], found: [...]}`: recorded when looking for
   an earlier pledge, whatever the result.
 - `drift: {type, note}`: how a linked commitment differs from the promise. Types: target lowered, deadline moved, scope

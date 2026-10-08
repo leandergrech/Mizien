@@ -601,6 +601,34 @@ a.claimref { text-decoration-style: dotted; text-underline-offset: 3px; font-wei
 .pgrid .pg-p { font-weight: 700; font-size: .82rem; white-space: nowrap; text-decoration: none; }
 .pg-sq { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
 .pgrid-key { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .82rem; color: var(--paper-muted); margin: 6px 0 0; padding: 0; list-style: none; }
+/* Pledges by subject (pledge_topic_matrix): a shaded table, one hue, the number always printed. */
+.pt-h { margin: 18px 0 4px; font-size: 1.05rem; }
+.ptopics { border-collapse: separate; border-spacing: 3px; min-width: 640px; font-size: .88rem; font-variant-numeric: tabular-nums; }
+.ptopics th { text-align: left; font-weight: 700; padding: 4px 6px; color: var(--paper-ink); vertical-align: bottom; }
+.ptopics tbody th { font-weight: 600; white-space: nowrap; }
+.ptopics td { text-align: center; border-radius: 6px; padding: 0; min-width: 64px;
+  background: color-mix(in srgb, #2e7d4f calc(var(--s, 0) * 88% + 7%), transparent); }
+.ptopics td a { display: block; padding: 6px 4px; color: var(--paper-ink); font-weight: 700; text-decoration: none; }
+.ptopics td.pt-dark a { color: #fff; }
+.ptopics td a:hover { text-decoration: underline; }
+.ptopics td.pt-0 { background: transparent; color: var(--paper-muted); }
+.ptopics .pt-all { background: transparent; color: var(--paper-muted); font-weight: 600; }
+/* Similar wording across elections (pledge_similar): one bar per party, strong / possible / none. */
+.sim-bars { display: grid; gap: 8px; margin: 12px 0 6px; }
+.sim-row { display: grid; grid-template-columns: minmax(90px, 160px) 1fr auto; gap: 4px 12px; align-items: center; }
+.sim-bar { display: flex; height: 16px; border-radius: 4px; overflow: hidden; gap: 2px; }
+.sim-bar i, .sim-key i { display: block; }
+.s2 { background: #1f6b45; } .s1 { background: #8db36b; } .s0 { background: color-mix(in srgb, var(--paper-line) 80%, transparent); }
+.sim-key { display: flex; flex-wrap: wrap; gap: 4px 16px; list-style: none; padding: 0; margin: 4px 0 10px; color: var(--paper-muted); }
+.sim-key i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.sim-topics, .sim-pairs { margin: 10px 0; }
+.sim-topics summary, .sim-pairs summary { cursor: pointer; font-weight: 700; }
+@media (max-width: 560px) { .sim-row { grid-template-columns: 1fr; } }
+.mp-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 14px 0; }
+.mp-filter label { font-weight: 700; }
+.mp-filter select { min-height: 36px; padding: 4px 8px; border-radius: 8px; border: 1px solid var(--paper-line); background: var(--paper); color: var(--paper-ink); font: inherit; }
+.mp-sub { color: var(--paper-muted); }
+.mp-sim { color: var(--paper-muted); }
 .pflow { margin: 10px 0 18px; }
 .pflow figcaption { font-size: .9rem; margin-bottom: 6px; }
 .pflow svg text { fill: var(--paper-ink); font: 12px Arial, sans-serif; }

@@ -57,6 +57,92 @@ permalink: /pledges/
     {%- endif %}
   </section>
 
+  {%- set TM = mizien.pledge_topic_matrix %}
+  {%- if TM.cycles %}
+  <section aria-labelledby="h-topics">
+    <h2 id="h-topics">What each programme promised, by subject</h2>
+    <p>Every pledge in the manifesto list placed under one of {{ TM.topics.length }} subjects, a taxonomy drawn up from the
+      pledges themselves (each placement read by a person). The deeper the shade, the more pledges; hover over a number
+      for its subtopics, or press it to read the pledges. A party with more pledges on a subject has not necessarily
+      promised more: programmes differ in length and in how finely they split a promise.</p>
+    {%- for c in TM.cycles %}
+    <h3 class="pt-h">{{ c.year }} election</h3>
+    <div class="table-scroll">
+    <table class="ptopics">
+      <thead><tr><th scope="col">Subject</th>
+        {%- for p in c.parties %}<th scope="col">{{ p.name }}<span class="small"> · {{ p.total }}</span></th>{% endfor %}
+        <th scope="col" class="pt-all">All</th></tr></thead>
+      <tbody>
+      {%- for r in c.rows %}
+        <tr><th scope="row">{{ r.topic }}</th>
+        {%- for cell in r.cells %}
+          {%- if cell.n %}<td style="--s: {{ cell.shade }}"{% if cell.shade > 0.5 %} class="pt-dark"{% endif %}><a href="/pledges/manifestos/?topic={{ r.slug }}#{{ cell.party }}-{{ c.id }}" title="{{ cell.sub }}">{{ cell.n }}</a></td>
+          {%- else %}<td class="pt-0"><span aria-label="none">·</span></td>{% endif %}
+        {%- endfor %}
+        <td class="pt-all">{{ r.total }}</td></tr>
+      {%- endfor %}
+      </tbody>
+    </table>
+    </div>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+
+  {%- set SM = mizien.pledge_similar %}
+  {%- if SM.parties %}
+  <section aria-labelledby="h-similar">
+    <h2 id="h-similar">Promised again? Similar wording in {{ SM.first_year }} and {{ SM.last_year }}</h2>
+    <p>For the parties with a programme at both elections, each {{ SM.last_year }} pledge is compared with the party's own
+      {{ SM.first_year }} programme. <strong>Found automatically and not yet reviewed:</strong> similar wording is a lead,
+      not a link. A pledge can carry an earlier one forward in new words (and score low), or share words with a different
+      promise (and score high). Only a person's reading makes it a link, which then appears in the grid above and on the
+      claim pages.</p>
+    <div class="sim-bars">
+    {%- for p in SM.parties %}
+      <div class="sim-row"><span class="sim-name">{{ p.name }}</span>
+        <span class="sim-bar" role="img" aria-label="{{ p.name }}: of {{ p.total }} pledges in {{ SM.last_year }}, {{ p.strong }} with strongly similar wording in {{ SM.first_year }}, {{ p.possible }} possibly similar, {{ p.unmatched }} none found">
+          {%- if p.strong %}<i class="s2" style="flex: {{ p.strong }}"></i>{% endif %}{% if p.possible %}<i class="s1" style="flex: {{ p.possible }}"></i>{% endif %}{% if p.unmatched %}<i class="s0" style="flex: {{ p.unmatched }}"></i>{% endif %}</span>
+        <span class="sim-n small"><b>{{ p.strong }}</b> strong · <b>{{ p.possible }}</b> possible · {{ p.unmatched }} none, of {{ p.total }}</span></div>
+    {%- endfor %}
+    </div>
+    <ul class="sim-key small" aria-hidden="true"><li><i class="s2"></i>Strongly similar wording</li><li><i class="s1"></i>Possibly similar</li><li><i class="s0"></i>None found among the closest candidates</li></ul>
+    <p class="small">How close two programmes' wording is depends on how they are written as well as on what they promise.
+      The Nationalist Party's {{ SM.last_year }} programme was published as web chapters, in a different structure from its
+      {{ SM.first_year }} document, and wording alone cannot tell a promise rewritten from a new one. These counts do not
+      measure how many promises a party repeated, kept or dropped.</p>
+
+    <details class="sim-topics">
+      <summary>By subject</summary>
+      <div class="sim-bars">
+      {%- for t in SM.topics %}{% if t.total %}
+        <div class="sim-row"><span class="sim-name">{{ t.topic }}</span>
+          <span class="sim-bar" role="img" aria-label="{{ t.topic }}: {{ t.strong }} strong, {{ t.possible }} possible, {{ t.unmatched }} none, of {{ t.total }}">
+            {%- if t.strong %}<i class="s2" style="flex: {{ t.strong }}"></i>{% endif %}{% if t.possible %}<i class="s1" style="flex: {{ t.possible }}"></i>{% endif %}{% if t.unmatched %}<i class="s0" style="flex: {{ t.unmatched }}"></i>{% endif %}</span>
+          <span class="sim-n small"><b>{{ t.strong }}</b> · <b>{{ t.possible }}</b> · {{ t.unmatched }} of {{ t.total }}</span></div>
+      {%- endif %}{% endfor %}
+      </div>
+    </details>
+
+    {%- for p in SM.parties %}{% if p.pairs.length %}
+    <details class="sim-pairs">
+      <summary>{{ p.name }}: the {{ p.pairs.length }} strongly similar pairs</summary>
+      <div class="table-scroll">
+      <table class="claims">
+        <thead><tr><th scope="col">{{ SM.first_year }} programme</th><th scope="col">{{ SM.last_year }} programme</th><th scope="col">Subject</th></tr></thead>
+        <tbody>
+        {%- for x in p.pairs %}
+          <tr><td><a href="/pledges/manifestos/#{{ x.before.id }}">No. {{ x.before.number }}</a> {{ x.before.summary }}</td>
+            <td><a href="/pledges/manifestos/#{{ x.after.id }}">No. {{ x.after.number }}</a> {{ x.after.summary }}{% if x.confirmed %}<br><span class="small">Linked by a person.</span>{% endif %}</td>
+            <td class="small">{{ x.topic }}</td></tr>
+        {%- endfor %}
+        </tbody>
+      </table>
+      </div>
+    </details>
+    {%- endif %}{% endfor %}
+  </section>
+  {%- endif %}
+
   <section aria-labelledby="h-labels">
     <h2 id="h-labels">The labels</h2>
     <dl class="pledge-labels">

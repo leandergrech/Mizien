@@ -84,6 +84,76 @@ resolved against the script's own folder, so they work under the `/Mizien/` pref
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
 
+## Pledges page: by subject, and similar wording across elections (8 October 2026)
+
+Maintainer request: update the pledges view with the analysis of how pledges connect. The manifesto work below was
+brought from `fact-ledger-sketch` (its seven manifesto commits, cherry-picked; the fact-ledger sketch stays on that
+branch, undecided). `data/manifesto_pledges.csv` keeps both the follow-up columns (main) and topic/subtopic (branch).
+
+- **/pledges/ "What each programme promised, by subject"** (`pledge_topic_matrix`): per election, the 12 subjects of
+  `data/pledge_topics.csv` by party, a one-hue shaded table with every number printed; a cell's title lists its
+  subtopics and it links to the manifesto list filtered to that subject and opened at that party.
+- **/pledges/ "Promised again? Similar wording"** (`pledge_similar`): for the parties with a programme at both
+  elections (ADPD, Labour, Nationalist), each 2026 pledge counted by its closest same-party 2022 candidate in
+  `data/review/pledge_link_candidates.csv` (strong / possible / none), per party and per subject, and the strong pairs
+  listed side by side. Labelled throughout as found automatically and not reviewed; never drawn as a link (a pair a
+  person confirms in `follows` shows "Linked by a person"). Other parties' similar wording is not shown at all, so
+  nothing reads as one party taking up another's promise. The note says the Nationalist 2026 programme is web
+  chapters in a different structure (0 strong, 24 possible) and that the counts do not measure promises repeated,
+  kept or dropped. Counts on 8 Oct 2026: ADPD 34 strong, 7 possible, of 88; Labour 14, 51, of 105; PN 0, 24, of 96.
+- **/pledges/manifestos/**: a Subject column (topic and subtopic), a subject filter kept in the address
+  (`?topic=water`), and on a row with a strong same-party match "Similar wording in its 2022 programme (found
+  automatically, not reviewed): No. …".
+- `data/review/README.md` and `methodology/verdict-scale.md` now say what the site shows from the candidate file.
+  Regenerating the file (`scripts/pledge_links.py`) changes the page at the next build.
+- Nunjucks note: `from` and `none` are reserved words; keys named so break the template.
+
+## Manifesto list: register, topics, candidate links (7 October 2026)
+
+Maintainer's four-step request, first on branch `fact-ledger-sketch`, brought to `main` without the fact-ledger sketch on 8 Oct 2026 (steps 1 to 3 done, each stopped for review; no claim,
+verdict or `follows` touched).
+
+1. **Register** (`scripts/manifesto_register.py PATH [--fetch] [--all] [--csv OUT]`): hashes every PDF in a folder,
+   reads metadata and first pages, and sorts each file as already covered (same SHA-256, full or short `c7f65d55…6383`
+   form), known but not listed (hash in the coverage notes), same text (`--fetch`: the listed copy is downloaded to a
+   temporary folder, its hash checked and the text compared page by page), new edition, new programme, unidentified,
+   about a programme (news, web pages, press releases), or other document. Read-only; copies nothing.
+   **Maintainer's run, `literature/unsorted` (111 PDFs):** none byte-identical to a listed copy; the only programmes
+   are compressed copies of Labour 2022 and 2026 (same names and page counts, 292 and 268; 2.6 MB and 1.7 MB against
+   14.4 MB and 4.3 MB; the 2022 copy lost its first page's text); 6 articles or web pages about programmes; 103 other
+   documents. **No new programme, so step 4 has nothing to extract**, pending a `--fetch` run to confirm "same text".
+   People's Party 2022 and Imperium Europa 2026 are still not found. Limit: ABBA's 2022 PDF names neither the party
+   nor a programme, so another ABBA edition is counted as an "other document" unless its file name says so.
+2. **Topics.** First pass: the claims' vocabulary, by keyword rules (580 of 625 placed). Then, at the maintainer's
+   request ("reorganise the topics and subtopics for the pledges in the most meaningful and semantic way, so that they
+   fit"), **the pledges have a taxonomy of their own, `data/pledge_topics.csv`**: 12 topics (Climate, Energy, Transport,
+   Air & noise, Water, Waste, Nature & Wildlife, Animal welfare, Parks & trees, Countryside & coast, Land use &
+   planning, Environmental governance) and 49 subtopics, each with a code (EN-S), a scope note and the nearest topic and
+   subtopic of the claims (`site_topic`, `site_subtopic`; Animal welfare has none). The claims' topics are unchanged.
+   **All 625 rows placed by reading each pledge** (7 Oct 2026); none without a subtopic. `scripts/pledge_topics.py`
+   reads the taxonomy; its keyword rules point to subtopic codes, suggest placements for new rows (`--write` fills
+   empty cells only) and list the rows they read differently (rules agree on the topic for 589 and the subtopic for
+   533; the other 92 are judgement calls worth a second look). `scripts/pledges.py` checks the taxonomy file and that
+   every row's topic and subtopic are a pair in it. Largest subtopics: rooftop and community generation 33,
+   large-scale renewables 28, grid 28, urban parks 27; smallest: noise 1, light pollution 2. Flooding had no pledge
+   of its own, so it is not a subtopic.
+3. **Candidate links** (`scripts/pledge_links.py [--evaluate]`): for each pledge, the top 3 candidates in the other
+   election, same party first (topic counts through the score, since rule-set topics can differ for the same
+   pledge), plus the best other-party candidate when at least "possible" (rank x). Score: TF-IDF on the site's tokens
+   less pledge boilerplate (`PLEDGE_STOP`), with half-weight word pairs, section headings and synonym groups
+   (`CONCEPTS`); plus shared figures, same subtopic or topic, same party. Bands: strong >= 0.55, possible >= 0.35.
+   Output `data/review/pledge_link_candidates.csv` (1,979 rows, empty `decision` column); nothing goes into `follows`
+   until the maintainer says yes. Test set `data/review/pledge_link_benchmark.csv` (56 pairs: 1 confirmed, 1 noted,
+   25 the assistant's reading of the summaries and **not confirmed**, 29 repeated ADPD wording). Results: the
+   confirmed pair 2026 16.1 -> 2022 397 ranks first (score 0.39; plain TF-IDF 0.24, also first); 22 of 25 unconfirmed
+   pairs first and 25 in the top 3 (plain TF-IDF 7 and 20); 29 of 29 repeated pairs first. Best candidate per
+   pledge: strong 97, possible 190, weak 338. Same-party strong matches: ADPD 33 of 48 (2022 side), Labour 14 of 129,
+   PN none either way (21 possible). Known false-looking strong pairs: Labour 2026 14.30 -> 2022 291 (two Bormla
+   sites), 16.37 -> 411 (shore power, related).
+4. **New programmes:** none (see step 1).
+
+A graphic summary of steps 1 to 3 was sent to the maintainer as an HTML file (not committed, not published).
+
 ## Timeline moved into Explore; "Web" view name back (7 October 2026)
 
 Maintainer request: the Timeline tab is gone from the main menu; the timeline is now the third view of /explore/,
@@ -880,6 +950,10 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
 
 ## Outstanding
 
+- [ ] **Manifesto list (7 Oct 2026):** run `scripts/manifesto_register.py
+  literature/unsorted/ --fetch` to confirm the two Labour copies; review the pledge taxonomy (`data/pledge_topics.csv`) and the
+  92 placements the rules read differently (`python scripts/pledge_topics.py`); fill `decision` in `data/review/pledge_link_candidates.csv`, then
+  copy the yes pairs into `follows` (a person's step). See "Manifesto list: register, topics, candidate links".
 - [x] **CC-019:** aerial-imagery spot-check integrated (5 Oct 2026); confidence Moderate. `data/cc-019/imagery_spotcheck.csv` lists Amphora's id, centroid, area and place for the 39 sampled polygons (no geometry); drop those columns if Amphora objects. Imagery not committed (Esri terms).
 - [x] **CC-017:** EMODnet-only redraw integrated (5 Oct 2026). Rows 340 and 344 (UNEP-WCMC) are marked not used. Unverified: that EMODnet's 'EUSM16me' is IFREMER's EUSeaMap compilation.
 - [ ] **CC-108:** read WSC's Net Zero Impact Utility pages and the EWA Green Paper (2023) in a browser; record
