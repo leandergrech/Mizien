@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 8 October 2026 (branch `fact-ledger-sketch` merged into `main`: the fact ledger design sketch in `sketch/fact-ledger/`, still undecided, no effect on the site; pledges page: subjects by party and similar wording across elections, from the manifesto taxonomy and candidate links; timeline moved into Explore, "Web" name back; pledge label colours for colour blindness; pledges shown flat: timeline in lanes in Explore, election-by-party grid and gated promise-to-outcome flow on /pledges/, follow-up data model; pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 8 October 2026 (session wrap-up: PRs #98–#108 merged and deployed; branch `fact-ledger-sketch` merged into `main`: the fact ledger design sketch in `sketch/fact-ledger/`, still undecided, no effect on the site; pledges page: subjects by party and similar wording across elections, from the manifesto taxonomy and candidate links; timeline moved into Explore, "Web" name back; pledge label colours for colour blindness; pledges shown flat: timeline in lanes in Explore, election-by-party grid and gated promise-to-outcome flow on /pledges/, follow-up data model; pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -15,6 +15,43 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
+
+## Session wrap-up: pledges and Explore (7–8 October 2026)
+
+**Merged to `main` in this session** (each after its own green "Site" check; merge commits only, no rebase or force-push):
+#98 and #99 (workers B and C blocked on CC-038/041/044 and CC-048/054/057: no verbatim primary wording), #100 (unused
+CC-111 block removed from six figure scripts), #101 (pledges shown flat: lanes in Explore, election-by-party grid, gated
+flow), #102 (pledge label colours for colour blindness; reports and flyers of CC-011, CC-029, CC-031, CC-039, CC-107
+rebuilt), #103 (Timeline moved into Explore; "Web" name back), #107 (pledges by subject and similar wording, with the
+manifesto taxonomy and candidate links cherry-picked from `fact-ledger-sketch`), #108 (`fact-ledger-sketch` brought into
+`main` after main was merged into it: adds only `sketch/fact-ledger/` and notes; the built site was compared file by
+file with main's and is identical). The site deployed after each; `/`, `/pledges/`, `/pledges/manifestos/`,
+`/explore/` and `/timeline/` (redirect) answered 200 after the last.
+
+**How merges were done:** the "Miżien sota" session did not respond on 7 Oct, so the maintainer asked this session to
+merge directly; sota was told to stand down on these PRs. Return to sota for merges when it is back, unless told
+otherwise.
+
+**Branches merged and safe to delete (maintainer's call):** `ccr-b5c27334-pledge-views`, `ccr-b5c27334-pledge-colours`,
+`ccr-b5c27334-explore-timeline`, `ccr-b5c27334-pledge-links`, `ccr-b5c27334-wrapup`, `claude/queue-b-blocked-20261007`,
+`claude/queue-c-blocked-20261007`, `claude/beautiful-turing-c7yst5`. `fact-ledger-sketch` is level with `main`; keep it
+if the fact-ledger chat goes on working there.
+
+**Needs a person:** review `decision` in `data/review/pledge_link_candidates.csv` and copy the yes pairs into
+`follows` (the Pledges page then marks them "Linked by a person"; it shows the rest only as unreviewed similar wording,
+a display the maintainer approved on 8 Oct); the follow-up research (`followup`, `followup_checked`) so the "From
+promise to outcome" flow can appear; the fact ledger decisions (Outstanding).
+
+**Notes for the next session:**
+- Build order matters: `tools/report_html.py` before `scripts/build_site_data.py` (the site data embeds each
+  `claims/CC-NNN/report.html`; built the other way round, claim pages lose their report). CI runs them in this order.
+- Verdict and pledge colours live in `site/assets/labels.css` (every page and Explore); pledge colours and text inks
+  also in `PLEDGE_COLOURS` / `PLEDGE_INK` (`build_site_data.py`) and `PLEDGE_COLS` / `PLEDGE_INKS` (`mizien_report.py`):
+  change all three together, then rebuild the pledge reports (CC-011, CC-029, CC-031, CC-039, CC-107: run each
+  `figures.py`, then `build_report.py` and `build_flyer.py`, and copy `out/` into `claims/CC-NNN/`; needs matplotlib).
+- Nunjucks treats `from` and `none` as reserved words: data keys with those names break a template.
+- Explore's Timeline view shares the filter and the pinned tray through `MizienLens.ready()` / `listen()` and
+  `MizienTray.onChange()`; a further view on the same page should do the same rather than call `init()` again.
 
 ## Fact ledger: design sketch (7 October 2026)
 
@@ -1006,6 +1043,8 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
 
 ## Outstanding
 
+- [ ] Explore, Pledges grouping (lanes): the labels of CC-024 and CC-029 overlap where the two pledges sit close
+  together in the "In office" lane; space them like the ghost labels (`renderLanes()` in `site/assets/map/map.js`).
 - [ ] **Manifesto list (7 Oct 2026):** run `scripts/manifesto_register.py
   literature/unsorted/ --fetch` to confirm the two Labour copies; review the pledge taxonomy (`data/pledge_topics.csv`) and the
   92 placements the rules read differently (`python scripts/pledge_topics.py`); fill `decision` in `data/review/pledge_link_candidates.csv`, then
