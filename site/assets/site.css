@@ -39,15 +39,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 20px 56px; }
 h1, h2 { font-family: var(--serif); line-height: 1.2; }
 .page h1 { font-size: clamp(28px, 5vw, 38px); margin: 6px 0 10px; }
 
-/* ---------------------------------------------------------------- verdict tokens */
-.v-supported { --v: #2e7d4f; --v-ink: #ffffff; }
-.v-largely-supported { --v: #8db36b; --v-ink: #13301f; }
-.v-not-substantiated { --v: #d9772b; --v-ink: #13301f; }
-.v-misleading { --v: #b5483a; --v-ink: #ffffff; }
-.v-contradicted { --v: #8e2f25; --v-ink: #ffffff; }
-.v-none { --v: #5d7468; --v-ink: #ffffff; }
-.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--v); color: var(--v-ink);
-  font: 700 12px/1.4 var(--sans); white-space: nowrap; }
+/* ---------------------------------------------------------------- verdict tokens: in labels.css */
 
 /* ---------------------------------------------------------------- claim page */
 .check { background: var(--paper); color: var(--paper-ink); border-radius: 16px; overflow: hidden;
@@ -541,19 +533,13 @@ a.claimref { text-decoration-style: dotted; text-underline-offset: 3px; font-wei
 @media (max-width: 640px) { .change-list li { grid-template-columns: 1fr; } }
 
 /* ---------------------------------------------------------------- pledge labels and parts of a claim */
-/* Pledge labels (methodology/pledge-labels.md) have their own colours, apart from the verdict scale. */
-.v-pledge-not-measurable { --v: #716f8d; --v-ink: #ffffff; }
-.v-pledge-not-yet-due { --v: #5c7689; --v-ink: #ffffff; }
-.v-pledge-on-track { --v: #337f71; --v-ink: #ffffff; }
-.v-pledge-off-track { --v: #ae5d33; --v-ink: #ffffff; }
-.v-pledge-met { --v: #23705f; --v-ink: #ffffff; }
-.v-pledge-missed { --v: #7c2d4a; --v-ink: #ffffff; }
-.verdictline .pledge-pill { background: var(--pl); color: #fff; border-color: var(--pl); box-shadow: 0 0 0 1.5px rgba(255,255,255,.75); }
+/* Pledge labels (methodology/verdict-scale.md, Pledges) have their own colours, apart from the verdict scale (labels.css). */
+.verdictline .pledge-pill { background: var(--pl); color: var(--pl-ink, #fff); border-color: var(--pl); box-shadow: 0 0 0 1.5px rgba(255,255,255,.75); }
 .pledge-box { margin: 16px 0 6px; padding: 14px 18px 12px; border-radius: 12px; background: #fbfaf6; border: 1px solid var(--paper-line); border-left: 6px solid var(--pl); }
 .check-body .pledge-box h2 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; padding: 0; border: 0; font-size: 20px; }
 .pledge-box h2 .ico, .parts h2 .ico { width: 22px; height: 22px; fill: none; stroke: #14452f; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 .pledge-status { margin: 0 0 4px; }
-.pledge-label { display: inline-block; padding: 4px 12px; border-radius: 999px; background: var(--pl); color: #fff; font: 700 14px/1.3 var(--sans); letter-spacing: .05em; text-transform: uppercase; }
+.pledge-label { display: inline-block; padding: 4px 12px; border-radius: 999px; background: var(--pl); color: var(--pl-ink, #fff); font: 700 14px/1.3 var(--sans); letter-spacing: .05em; text-transform: uppercase; }
 .check-body .parts h2 { display: flex; align-items: center; gap: 8px; }
 .part-list { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
 .part { display: grid; grid-template-columns: 74px 1fr auto; gap: 4px 12px; align-items: start; margin: 0; padding: 9px 12px;
@@ -601,3 +587,48 @@ a.claimref { text-decoration-style: dotted; text-underline-offset: 3px; font-wei
 .mp-table td:first-child { white-space: nowrap; }
 .mp-table tr:target { outline: 2px solid var(--accent); outline-offset: -2px; }
 .mp-link.mp-recycled { color: #b8432a; }
+
+/* Pledges: the election-by-party grid. */
+.pgrid { border-collapse: separate; border-spacing: 4px; min-width: 820px; font-size: .88rem; }
+.pgrid th { text-align: left; font-weight: 700; padding: 4px 6px; vertical-align: bottom; color: var(--paper-ink); }
+.pgrid tbody th { vertical-align: top; white-space: nowrap; }
+.pgrid td { background: color-mix(in srgb, var(--paper-line) 45%, transparent); border-radius: 8px; padding: 8px; vertical-align: top; width: 9%; line-height: 1.5; }
+.pgrid td.pg-na { background: transparent; color: var(--paper-muted); }
+.pgrid td.pg-none { background: transparent; border: 1px dashed var(--paper-line); font-style: italic; }
+.pgrid td.pg-office { background: color-mix(in srgb, var(--paper-line) 25%, transparent); }
+.pgrid .pg-n { font-weight: 700; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.pgrid .pg-flag { color: #b8432a; font-weight: 700; font-size: .8rem; }
+.pgrid .pg-p { font-weight: 700; font-size: .82rem; white-space: nowrap; text-decoration: none; }
+.pg-sq { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
+.pgrid-key { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .82rem; color: var(--paper-muted); margin: 6px 0 0; padding: 0; list-style: none; }
+/* Pledges by subject (pledge_topic_matrix): a shaded table, one hue, the number always printed. */
+.pt-h { margin: 18px 0 4px; font-size: 1.05rem; }
+.ptopics { border-collapse: separate; border-spacing: 3px; min-width: 640px; font-size: .88rem; font-variant-numeric: tabular-nums; }
+.ptopics th { text-align: left; font-weight: 700; padding: 4px 6px; color: var(--paper-ink); vertical-align: bottom; }
+.ptopics tbody th { font-weight: 600; white-space: nowrap; }
+.ptopics td { text-align: center; border-radius: 6px; padding: 0; min-width: 64px;
+  background: color-mix(in srgb, #2e7d4f calc(var(--s, 0) * 88% + 7%), transparent); }
+.ptopics td a { display: block; padding: 6px 4px; color: var(--paper-ink); font-weight: 700; text-decoration: none; }
+.ptopics td.pt-dark a { color: #fff; }
+.ptopics td a:hover { text-decoration: underline; }
+.ptopics td.pt-0 { background: transparent; color: var(--paper-muted); }
+.ptopics .pt-all { background: transparent; color: var(--paper-muted); font-weight: 600; }
+/* Similar wording across elections (pledge_similar): one bar per party, strong / possible / none. */
+.sim-bars { display: grid; gap: 8px; margin: 12px 0 6px; }
+.sim-row { display: grid; grid-template-columns: minmax(90px, 160px) 1fr auto; gap: 4px 12px; align-items: center; }
+.sim-bar { display: flex; height: 16px; border-radius: 4px; overflow: hidden; gap: 2px; }
+.sim-bar i, .sim-key i { display: block; }
+.s2 { background: #1f6b45; } .s1 { background: #8db36b; } .s0 { background: color-mix(in srgb, var(--paper-line) 80%, transparent); }
+.sim-key { display: flex; flex-wrap: wrap; gap: 4px 16px; list-style: none; padding: 0; margin: 4px 0 10px; color: var(--paper-muted); }
+.sim-key i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.sim-topics, .sim-pairs { margin: 10px 0; }
+.sim-topics summary, .sim-pairs summary { cursor: pointer; font-weight: 700; }
+@media (max-width: 560px) { .sim-row { grid-template-columns: 1fr; } }
+.mp-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 14px 0; }
+.mp-filter label { font-weight: 700; }
+.mp-filter select { min-height: 36px; padding: 4px 8px; border-radius: 8px; border: 1px solid var(--paper-line); background: var(--paper); color: var(--paper-ink); font: inherit; }
+.mp-sub { color: var(--paper-muted); }
+.mp-sim { color: var(--paper-muted); }
+.pflow { margin: 10px 0 18px; }
+.pflow figcaption { font-size: .9rem; margin-bottom: 6px; }
+.pflow svg text { fill: var(--paper-ink); font: 12px Arial, sans-serif; }

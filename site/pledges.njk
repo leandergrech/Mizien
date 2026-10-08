@@ -18,9 +18,130 @@ permalink: /pledges/
       measured and, if so, how it is going. Every label carries an <em>as of</em> date, the date of the evidence behind it.</p>
   </header>
 
-  <p class="see-also">{% icon "links" %}<a href="/explore/?group=pledges">See the pledges election by election in Explore</a>: one disk
-    per election cycle, campaign pledges on the outer ring and commitments made in office on the inner ring, with lines from a
-    pledge to the earlier one it carries forward (red where the earlier one was not met) and between pledges that overlap.</p>
+  <p class="see-also">{% icon "links" %}<span><a href="/explore/?group=pledges">See the pledges over time in Explore</a>: one lane per
+    party and one for commitments made in office, each pledge on the date it was made with a bar to its deadline, and a line
+    from a pledge to the earlier one it carries forward (red where the earlier one was not met).</span></p>
+
+  {%- set PG = mizien.pledge_grid %}
+  {%- macro pq(x) -%}<a class="pg-p" href="{{ x.path }}" data-claim="{{ x.id }}" title="{{ x.id }} {{ x.title }}: {{ x.pledge_status }}"><span class="pg-sq" style="background:{{ x.pledge_colour }}" aria-hidden="true"></span>{{ x.id }}<span class="visually-hidden"> ({{ x.pledge_status }})</span></a>{%- endmacro %}
+  <section aria-labelledby="h-grid">
+    <h2 id="h-grid">By election and party</h2>
+    <p>Every party that contested each general election, in alphabetical order. A cell gives the number of pledges listed
+      from its programme, the pledges checked so far, the listed pledges linked to another pledge, and any outlier.
+      Commitments made in office have their own column.</p>
+    <div class="table-scroll">
+    <table class="pgrid">
+      <thead><tr><th scope="col"><span class="visually-hidden">Election</span></th>
+        {%- for c in PG.columns %}<th scope="col" title="{{ c.full }}">{{ c.name }}</th>{% endfor %}</tr></thead>
+      <tbody>
+      {%- for r in PG.rows %}
+        <tr><th scope="row">{{ r.year }}<span class="small"> election</span></th>
+        {%- for cell in r.cells %}
+          {%- if not cell.contested %}<td class="pg-na"><span class="small">did not contest</span></td>
+          {%- elif cell.status == "office" %}<td class="pg-office">{% for x in cell.checked %}{{ pq(x) }} {% else %}<span class="small">none checked</span>{% endfor %}</td>
+          {%- elif cell.status != "listed" %}<td class="pg-none"><a href="/pledges/#h-manifestos">{{ cell.status | capitalize }}</a></td>
+          {%- else %}<td><a class="pg-n" href="/pledges/manifestos/#{{ cell.anchor }}">{{ cell.listed }}</a> <span class="small">listed</span>
+            {%- if cell.checked.length %}<br>{% for x in cell.checked %}{{ pq(x) }} {% endfor %}{% endif %}
+            {%- if cell.linked %}<br><span class="small">{{ cell.linked }} linked</span>{% endif %}
+            {%- if cell.recycled %}<br><a class="pg-flag" href="#outlier-recycled">{{ cell.recycled }} promised again</a>{% endif %}
+            {%- if cell.dropped %}<br><a class="pg-flag" href="#outlier-dropped">{{ cell.dropped }} dropped</a>{% endif %}</td>
+          {%- endif %}
+        {%- endfor %}</tr>
+      {%- endfor %}
+      </tbody>
+    </table>
+    </div>
+    <ul class="pgrid-key" aria-label="Key">{% for l in mizien.pledge_labels %}<li><span class="pg-sq" style="background:{{ l.colour }}" aria-hidden="true"></span>{{ l.name }}</li>{% endfor %}</ul>
+    {%- if PG.other.length %}
+    <p class="small">Also checked, outside these columns: {% for x in PG.other %}{{ pq(x) }} ({{ x.kind_label | lower }}, {{ x.cycle_label }}){% if not loop.last %}, {% endif %}{% endfor %}.</p>
+    {%- endif %}
+  </section>
+
+  {%- set TM = mizien.pledge_topic_matrix %}
+  {%- if TM.cycles %}
+  <section aria-labelledby="h-topics">
+    <h2 id="h-topics">What each programme promised, by subject</h2>
+    <p>Every pledge in the manifesto list placed under one of {{ TM.topics.length }} subjects, a taxonomy drawn up from the
+      pledges themselves (each placement read by a person). The deeper the shade, the more pledges; hover over a number
+      for its subtopics, or press it to read the pledges. A party with more pledges on a subject has not necessarily
+      promised more: programmes differ in length and in how finely they split a promise.</p>
+    {%- for c in TM.cycles %}
+    <h3 class="pt-h">{{ c.year }} election</h3>
+    <div class="table-scroll">
+    <table class="ptopics">
+      <thead><tr><th scope="col">Subject</th>
+        {%- for p in c.parties %}<th scope="col">{{ p.name }}<span class="small"> · {{ p.total }}</span></th>{% endfor %}
+        <th scope="col" class="pt-all">All</th></tr></thead>
+      <tbody>
+      {%- for r in c.rows %}
+        <tr><th scope="row">{{ r.topic }}</th>
+        {%- for cell in r.cells %}
+          {%- if cell.n %}<td style="--s: {{ cell.shade }}"{% if cell.shade > 0.5 %} class="pt-dark"{% endif %}><a href="/pledges/manifestos/?topic={{ r.slug }}#{{ cell.party }}-{{ c.id }}" title="{{ cell.sub }}">{{ cell.n }}</a></td>
+          {%- else %}<td class="pt-0"><span aria-label="none">·</span></td>{% endif %}
+        {%- endfor %}
+        <td class="pt-all">{{ r.total }}</td></tr>
+      {%- endfor %}
+      </tbody>
+    </table>
+    </div>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+
+  {%- set SM = mizien.pledge_similar %}
+  {%- if SM.parties %}
+  <section aria-labelledby="h-similar">
+    <h2 id="h-similar">Promised again? Similar wording in {{ SM.first_year }} and {{ SM.last_year }}</h2>
+    <p>For the parties with a programme at both elections, each {{ SM.last_year }} pledge is compared with the party's own
+      {{ SM.first_year }} programme. <strong>Found automatically and not yet reviewed:</strong> similar wording is a lead,
+      not a link. A pledge can carry an earlier one forward in new words (and score low), or share words with a different
+      promise (and score high). Only a person's reading makes it a link, which then appears in the grid above and on the
+      claim pages.</p>
+    <div class="sim-bars">
+    {%- for p in SM.parties %}
+      <div class="sim-row"><span class="sim-name">{{ p.name }}</span>
+        <span class="sim-bar" role="img" aria-label="{{ p.name }}: of {{ p.total }} pledges in {{ SM.last_year }}, {{ p.strong }} with strongly similar wording in {{ SM.first_year }}, {{ p.possible }} possibly similar, {{ p.unmatched }} none found">
+          {%- if p.strong %}<i class="s2" style="flex: {{ p.strong }}"></i>{% endif %}{% if p.possible %}<i class="s1" style="flex: {{ p.possible }}"></i>{% endif %}{% if p.unmatched %}<i class="s0" style="flex: {{ p.unmatched }}"></i>{% endif %}</span>
+        <span class="sim-n small"><b>{{ p.strong }}</b> strong · <b>{{ p.possible }}</b> possible · {{ p.unmatched }} none, of {{ p.total }}</span></div>
+    {%- endfor %}
+    </div>
+    <ul class="sim-key small" aria-hidden="true"><li><i class="s2"></i>Strongly similar wording</li><li><i class="s1"></i>Possibly similar</li><li><i class="s0"></i>None found among the closest candidates</li></ul>
+    <p class="small">How close two programmes' wording is depends on how they are written as well as on what they promise.
+      The Nationalist Party's {{ SM.last_year }} programme was published as web chapters, in a different structure from its
+      {{ SM.first_year }} document, and wording alone cannot tell a promise rewritten from a new one. These counts do not
+      measure how many promises a party repeated, kept or dropped.</p>
+
+    <details class="sim-topics">
+      <summary>By subject</summary>
+      <div class="sim-bars">
+      {%- for t in SM.topics %}{% if t.total %}
+        <div class="sim-row"><span class="sim-name">{{ t.topic }}</span>
+          <span class="sim-bar" role="img" aria-label="{{ t.topic }}: {{ t.strong }} strong, {{ t.possible }} possible, {{ t.unmatched }} none, of {{ t.total }}">
+            {%- if t.strong %}<i class="s2" style="flex: {{ t.strong }}"></i>{% endif %}{% if t.possible %}<i class="s1" style="flex: {{ t.possible }}"></i>{% endif %}{% if t.unmatched %}<i class="s0" style="flex: {{ t.unmatched }}"></i>{% endif %}</span>
+          <span class="sim-n small"><b>{{ t.strong }}</b> · <b>{{ t.possible }}</b> · {{ t.unmatched }} of {{ t.total }}</span></div>
+      {%- endif %}{% endfor %}
+      </div>
+    </details>
+
+    {%- for p in SM.parties %}{% if p.pairs.length %}
+    <details class="sim-pairs">
+      <summary>{{ p.name }}: the {{ p.pairs.length }} strongly similar pairs</summary>
+      <div class="table-scroll">
+      <table class="claims">
+        <thead><tr><th scope="col">{{ SM.first_year }} programme</th><th scope="col">{{ SM.last_year }} programme</th><th scope="col">Subject</th></tr></thead>
+        <tbody>
+        {%- for x in p.pairs %}
+          <tr><td><a href="/pledges/manifestos/#{{ x.before.id }}">No. {{ x.before.number }}</a> {{ x.before.summary }}</td>
+            <td><a href="/pledges/manifestos/#{{ x.after.id }}">No. {{ x.after.number }}</a> {{ x.after.summary }}{% if x.confirmed %}<br><span class="small">Linked by a person.</span>{% endif %}</td>
+            <td class="small">{{ x.topic }}</td></tr>
+        {%- endfor %}
+        </tbody>
+      </table>
+      </div>
+    </details>
+    {%- endif %}{% endfor %}
+  </section>
+  {%- endif %}
 
   <section aria-labelledby="h-labels">
     <h2 id="h-labels">The labels</h2>
@@ -94,13 +215,38 @@ permalink: /pledges/
     {%- if fw.length %}
     <h3 id="carried-forward">Carried forward <span class="small">({{ fw.length }})</span></h3>
     <p class="small">Not outliers: a commitment that takes forward an earlier pledge, as recorded. Shown so that the chains
-      can be followed, and on <a href="/explore/?group=pledges">the cycle disks in Explore</a>.</p>
+      can be followed, and on <a href="/explore/?group=pledges">the pledges timeline in Explore</a>.</p>
     <ul class="outliers">
       {%- for o in fw %}
       <li>{% if o.claim %}{{ m.claim(o.claim) }}{% else %}<a href="/pledges/manifestos/#{{ o.manifesto.id }}">{{ o.manifesto.name }}</a>{% endif %}
         <br>{{ o.text | mdInline | safe }}</li>
       {%- endfor %}
     </ul>
+    {%- endif %}
+  </section>
+
+  {%- set PF = mizien.pledge_flows %}
+  <section aria-labelledby="h-flows">
+    <h2 id="h-flows">From promise to outcome</h2>
+    {%- if PF.length %}
+    <p>For each programme whose follow-up check is complete: what happened in office to every pledge listed from it, and,
+      where the commitment was checked, its label. Drawn to scale.</p>
+    {%- for f in PF %}
+    <figure class="pflow">
+      <figcaption><b>{{ f.name }}</b> · {{ f.total }} pledges listed · follow-up checked {{ f.checked }}</figcaption>
+      <div class="table-scroll">
+      <svg viewBox="0 0 {{ f.chart.width }} {{ f.chart.height }}" width="{{ f.chart.width }}" height="{{ f.chart.height }}" role="img" aria-label="{{ f.name }}: {% for c in f.counts %}{{ c.label }} {{ c.n }}{% if not loop.last %}, {% endif %}{% endfor %}">
+        {%- for l in f.chart.links %}<path d="{{ l.d }}" fill="{{ l.colour }}" opacity=".45"><title>{{ l.title }}</title></path>{% endfor %}
+        {%- for n in f.chart.nodes %}<rect x="{{ n.x }}" y="{{ n.y }}" width="{{ n.w }}" height="{{ n.h }}" rx="2" fill="{{ n.colour }}"></rect>
+        <text x="{{ n.lx }}" y="{{ n.ly }}" text-anchor="{{ n.anchor }}">{{ n.label }}</text>{% endfor %}
+      </svg>
+      </div>
+    </figure>
+    {%- endfor %}
+    {%- else %}
+    <p class="none">Not drawn yet. A programme's flow appears here once every pledge listed from it has been checked for a
+      follow-up in office, so that a pledge not yet checked is never shown as if it had been dropped. No programme has
+      been fully checked so far.</p>
     {%- endif %}
   </section>
 

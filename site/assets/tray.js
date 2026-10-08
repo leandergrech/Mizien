@@ -1,4 +1,4 @@
-/* The pinned tray, shared by /explore/ (web and map) and /timeline/.
+/* The pinned tray, shared by the views of /explore/ (web, map and timeline).
    A reader pins claims as they explore; the tray keeps them (in this browser, and in the address as ?pin=CC-001,CC-017
    so a selection can be shared), marks them in every view, and offers:
      - In common: what the pinned claims share (verdict, body, kind of body, topic, pattern, place, year, pledges, and
@@ -49,7 +49,7 @@
     });
   }
   function verdictOf(c) { return c.verdict || (c.pledge ? "Pledge: " + c.pledge.status : "Not yet checked"); }
-  function colourOf(c) { return VC[c.verdict] || (c.pledge ? "#716f8d" : "#5d7468"); }
+  function colourOf(c) { return VC[c.verdict] || (c.pledge ? (c.pledge.colour || "#b0b8c1") : "#5d7468"); }
   function day(s) { var m = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/.exec(String(s || "")); return m && m[2] ? Date.UTC(+m[1], +m[2] - 1, +(m[3] || 15)) : null; }
 
   // ---- related: every claim not pinned, scored by what it shares with the pinned ones, with the reasons
@@ -86,11 +86,11 @@
       Object.keys(k).forEach(function (key) { if (k[key].length >= 2) rows.push({ n: k[key].length, what: label, name: names[key], ids: k[key], href: link ? link(key) : null }); });
     }
     var X = ROOT + "explore/?";
-    tally("verdict", function (c) { var v = verdictOf(c); return [[c.verdict || c.pledge ? slug(v) : "none", v]]; }, function (k) { return X + "view=ghanqbuta&verdict=" + k; });
+    tally("verdict", function (c) { var v = verdictOf(c); return [[c.verdict || c.pledge ? slug(v) : "none", v]]; }, function (k) { return X + "view=web&verdict=" + k; });
     tally("said by", function (c) { return (c.bodies || []).map(function (b) { return [b, bodies[b] ? bodies[b].name : b]; }); }, function (k) { return ROOT + "bodies/" + k + "/"; });
-    tally("kind of body", function (c) { return (c.bodies || []).map(function (b) { var t = bodies[b] && bodies[b].type; return t ? [t, types[t] || t] : null; }); }, function (k) { return X + "view=ghanqbuta&group=speaker&who=" + k; });
-    tally("topic", function (c) { return [[slug(c.category), c.category]]; }, function (k) { return X + "view=ghanqbuta&topic=" + k; });
-    tally("pattern", function (c) { return (c.tags || []).map(function (t) { return [slug(t), t]; }); }, function (k) { return X + "view=ghanqbuta&group=pattern&pattern=" + k; });
+    tally("kind of body", function (c) { return (c.bodies || []).map(function (b) { var t = bodies[b] && bodies[b].type; return t ? [t, types[t] || t] : null; }); }, function (k) { return X + "view=web&group=speaker&who=" + k; });
+    tally("topic", function (c) { return [[slug(c.category), c.category]]; }, function (k) { return X + "view=web&topic=" + k; });
+    tally("pattern", function (c) { return (c.tags || []).map(function (t) { return [slug(t), t]; }); }, function (k) { return X + "view=web&group=pattern&pattern=" + k; });
     tally("place", function (c) { return c.location ? [[c.location.place, c.location.place]] : []; }, null);
     tally("year said", function (c) { var y = /^\d{4}/.exec(String(c.date || "")); return y ? [[y[0], y[0]]] : []; }, function (k) { return ROOT + "timeline/?year=" + k; });
     tally("kind of claim", function (c) { return c.pledge ? [["pledge", "a pledge"]] : []; }, null);
@@ -129,7 +129,7 @@
   // ---- the button and its panel
   function row(c, extra) {
     var dot = c.pledge   // a pledge is a square in its label colour, with the verdict on its facts as a dot inside
-      ? '<span class="tr-dot is-pledge" style="background:' + (c.pledge.colour || "#716f8d") + '">' + (c.verdict ? '<i style="background:' + (VC[c.verdict] || "#5d7468") + '"></i>' : "") + "</span>"
+      ? '<span class="tr-dot is-pledge" style="background:' + (c.pledge.colour || "#b0b8c1") + '">' + (c.verdict ? '<i style="background:' + (VC[c.verdict] || "#5d7468") + '"></i>' : "") + "</span>"
       : '<span class="tr-dot" style="background:' + colourOf(c) + '"></span>';
     return '<li>' + dot + '<a href="' + esc(ROOT + "claims/" + c.id + "/") + '"><b>' + esc(c.id) + "</b> " + esc(c.title) +
       '</a><span class="tr-v">' + esc(verdictOf(c)) + "</span>" + (extra || "") + "</li>";

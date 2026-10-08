@@ -24,23 +24,36 @@ permalink: /pledges/manifestos/
     read the programme itself for the exact wording. Scope and sources are in
     <a href="{{ site.repo }}/blob/main/data/manifesto_coverage.csv">manifesto_coverage.csv</a>.</p>
 
+  {%- set TM = mizien.pledge_topic_matrix %}
+  {%- if TM.topics %}
+  <form class="mp-filter" role="search" aria-label="Filter the list by subject" onsubmit="return false">
+    <label for="mp-topic">Subject</label>
+    <select id="mp-topic"><option value="">All subjects</option>
+      {%- for t in TM.topics %}<option value="{{ t.slug }}">{{ t.name }}</option>{% endfor %}</select>
+    <span class="small" id="mp-count" aria-live="polite"></span>
+  </form>
+  {%- endif %}
+
   {%- for cyc in ["2022", "2026"] %}
   {%- set rows = MC | where("cycle", cyc) %}
   <section aria-labelledby="h-{{ cyc }}">
     <h2 id="h-{{ cyc }}">{{ cyc }} general election</h2>
     {%- for c in rows %}
     <details class="mp-party" id="{{ c.anchor }}">
-      <summary><b>{{ c.party_name }}</b> · {% if c.status == "listed" %}{{ c.rows }} pledges{% else %}{{ c.status }}{% endif %}</summary>
+      <summary><b>{{ c.party_name }}</b> · {% if c.status == "listed" %}<span class="mp-n">{{ c.rows }}</span> pledges{% else %}{{ c.status }}{% endif %}</summary>
       {%- if c.status == "listed" %}
       <p class="small"><a href="{{ c.source_url }}" rel="noopener">{{ c.document }}</a>. Covered: {{ c.scope }}.</p>
       <div class="table-scroll">
       <table class="claims mp-table">
-        <thead><tr><th scope="col">No.</th><th scope="col">Pledge (our summary)</th><th scope="col">Target</th><th scope="col">Section and page</th></tr></thead>
+        <thead><tr><th scope="col">No.</th><th scope="col">Pledge (our summary)</th><th scope="col">Subject</th><th scope="col">Target</th><th scope="col">Section and page</th></tr></thead>
         <tbody>
         {%- for r in c.items %}
-          <tr id="{{ r.id }}"><td>{{ r.number or "–" }}</td>
+          <tr id="{{ r.id }}" data-topic="{{ r.topic_slug }}"><td>{{ r.number or "–" }}</td>
             <td>{{ r.summary }}{% if r.claim %}<br>Checked: {{ m.claim(r.claim) }}{% endif %}
-              {%- for o in r.outliers %}<br><span class="small mp-link mp-{{ o.type }}">{{ o.text }}</span>{% endfor %}</td>
+              {%- for o in r.outliers %}<br><span class="small mp-link mp-{{ o.type }}">{{ o.text }}</span>{% endfor %}
+              {%- if r.similar.length %}<br><span class="small mp-sim">Similar wording in its {{ r.similar[0].year }} programme
+                (found automatically, not reviewed): {% for x in r.similar %}<a href="#{{ x.id }}">No. {{ x.number }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}</td>
+            <td class="small">{{ r.topic or "–" }}{% if r.subtopic %}<br><span class="mp-sub">{{ r.subtopic }}</span>{% endif %}</td>
             <td>{{ r.target or "–" }}</td><td class="small">{{ r.section }}{% if r.page %}<br>{{ r.page }}{% endif %}</td></tr>
         {%- endfor %}
         </tbody>
@@ -55,6 +68,25 @@ permalink: /pledges/manifestos/
   {%- endfor %}
 </article>
 <script>
+  // The subject filter (?topic=slug, kept in the address): rows of other subjects are hidden and each party's count
+  // follows; a party with none on the subject stays listed, with 0.
+  (function () {
+    var sel = document.getElementById("mp-topic"); if (!sel) return;
+    var out = document.getElementById("mp-count");
+    function apply(push) {
+      var t = sel.value, shown = 0;
+      document.querySelectorAll("details.mp-party").forEach(function (d) {
+        var n = 0;
+        d.querySelectorAll("tr[data-topic]").forEach(function (tr) { var on = !t || tr.dataset.topic === t; tr.hidden = !on; if (on) n++; });
+        var c = d.querySelector(".mp-n"); if (c) c.textContent = n;
+        if (t && n) d.open = true; shown += n;
+      });
+      out.textContent = t ? shown + " pledges on this subject" : "";
+      if (push) { var u = new URL(location.href); if (t) u.searchParams.set("topic", t); else u.searchParams.delete("topic"); history.replaceState(null, "", u); }
+    }
+    var q = new URLSearchParams(location.search).get("topic"); if (q) sel.value = q;
+    sel.addEventListener("change", function () { apply(true); }); apply(false);
+  })();
   // Opening a link to one pledge or one party opens its section.
   (function () { function open() { var t = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
     var d = t && (t.tagName === "DETAILS" ? t : t.closest("details")); if (d) { d.open = true; t.scrollIntoView(); } }

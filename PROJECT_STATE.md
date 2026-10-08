@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 7 October 2026 (manifesto list: register script, a taxonomy of the pledges' own with all 625 placed, candidate links between elections for review, all on branch `fact-ledger-sketch`; earlier the same day: fact ledger design sketch in `sketch/fact-ledger/`: design page, prototype ledger on six emissions checks, matching benchmark; no change to claims, data or site; earlier, 6 October 2026: pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 8 October 2026 (branch `fact-ledger-sketch` merged into `main`: the fact ledger design sketch in `sketch/fact-ledger/`, still undecided, no effect on the site; pledges page: subjects by party and similar wording across elections, from the manifesto taxonomy and candidate links; timeline moved into Explore, "Web" name back; pledge label colours for colour blindness; pledges shown flat: timeline in lanes in Explore, election-by-party grid and gated promise-to-outcome flow on /pledges/, follow-up data model; pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
 
 ## What the project is
 
@@ -15,52 +15,6 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
-
-## Manifesto list: register, topics, candidate links (7 October 2026)
-
-Maintainer's four-step request, on branch `fact-ledger-sketch` (steps 1 to 3 done, each stopped for review; no claim,
-verdict or `follows` touched).
-
-1. **Register** (`scripts/manifesto_register.py PATH [--fetch] [--all] [--csv OUT]`): hashes every PDF in a folder,
-   reads metadata and first pages, and sorts each file as already covered (same SHA-256, full or short `c7f65d55…6383`
-   form), known but not listed (hash in the coverage notes), same text (`--fetch`: the listed copy is downloaded to a
-   temporary folder, its hash checked and the text compared page by page), new edition, new programme, unidentified,
-   about a programme (news, web pages, press releases), or other document. Read-only; copies nothing.
-   **Maintainer's run, `literature/unsorted` (111 PDFs):** none byte-identical to a listed copy; the only programmes
-   are compressed copies of Labour 2022 and 2026 (same names and page counts, 292 and 268; 2.6 MB and 1.7 MB against
-   14.4 MB and 4.3 MB; the 2022 copy lost its first page's text); 6 articles or web pages about programmes; 103 other
-   documents. **No new programme, so step 4 has nothing to extract**, pending a `--fetch` run to confirm "same text".
-   People's Party 2022 and Imperium Europa 2026 are still not found. Limit: ABBA's 2022 PDF names neither the party
-   nor a programme, so another ABBA edition is counted as an "other document" unless its file name says so.
-2. **Topics.** First pass: the claims' vocabulary, by keyword rules (580 of 625 placed). Then, at the maintainer's
-   request ("reorganise the topics and subtopics for the pledges in the most meaningful and semantic way, so that they
-   fit"), **the pledges have a taxonomy of their own, `data/pledge_topics.csv`**: 12 topics (Climate, Energy, Transport,
-   Air & noise, Water, Waste, Nature & Wildlife, Animal welfare, Parks & trees, Countryside & coast, Land use &
-   planning, Environmental governance) and 49 subtopics, each with a code (EN-S), a scope note and the nearest topic and
-   subtopic of the claims (`site_topic`, `site_subtopic`; Animal welfare has none). The claims' topics are unchanged.
-   **All 625 rows placed by reading each pledge** (7 Oct 2026); none without a subtopic. `scripts/pledge_topics.py`
-   reads the taxonomy; its keyword rules point to subtopic codes, suggest placements for new rows (`--write` fills
-   empty cells only) and list the rows they read differently (rules agree on the topic for 589 and the subtopic for
-   533; the other 92 are judgement calls worth a second look). `scripts/pledges.py` checks the taxonomy file and that
-   every row's topic and subtopic are a pair in it. Largest subtopics: rooftop and community generation 33,
-   large-scale renewables 28, grid 28, urban parks 27; smallest: noise 1, light pollution 2. Flooding had no pledge
-   of its own, so it is not a subtopic.
-3. **Candidate links** (`scripts/pledge_links.py [--evaluate]`): for each pledge, the top 3 candidates in the other
-   election, same party first (topic counts through the score, since rule-set topics can differ for the same
-   pledge), plus the best other-party candidate when at least "possible" (rank x). Score: TF-IDF on the site's tokens
-   less pledge boilerplate (`PLEDGE_STOP`), with half-weight word pairs, section headings and synonym groups
-   (`CONCEPTS`); plus shared figures, same subtopic or topic, same party. Bands: strong >= 0.55, possible >= 0.35.
-   Output `data/review/pledge_link_candidates.csv` (1,979 rows, empty `decision` column); nothing goes into `follows`
-   until the maintainer says yes. Test set `data/review/pledge_link_benchmark.csv` (56 pairs: 1 confirmed, 1 noted,
-   25 the assistant's reading of the summaries and **not confirmed**, 29 repeated ADPD wording). Results: the
-   confirmed pair 2026 16.1 -> 2022 397 ranks first (score 0.39; plain TF-IDF 0.24, also first); 22 of 25 unconfirmed
-   pairs first and 25 in the top 3 (plain TF-IDF 7 and 20); 29 of 29 repeated pairs first. Best candidate per
-   pledge: strong 97, possible 190, weak 338. Same-party strong matches: ADPD 33 of 48 (2022 side), Labour 14 of 129,
-   PN none either way (21 possible). Known false-looking strong pairs: Labour 2026 14.30 -> 2022 291 (two Bormla
-   sites), 16.37 -> 411 (shore power, related).
-4. **New programmes:** none (see step 1).
-
-A graphic summary of steps 1 to 3 was sent to the maintainer as an HTML file (not committed, not published).
 
 ## Fact ledger: design sketch (7 October 2026)
 
@@ -185,6 +139,129 @@ on the map (`/?view=map&sel=claim:CC-NNN`, when it has a location) and to the cl
 resolved against the script's own folder, so they work under the `/Mizien/` prefix (they did not before: fixed).
 Optional `claim.time: "HH:MM"` (only with a full `claim.date`, checked by validate_claims.py) lets a claim sit on an
 hour; no claim has a time yet. Undated claims appear in the text list only. The text list is the no-JavaScript version.
+
+## Pledges page: by subject, and similar wording across elections (8 October 2026)
+
+Maintainer request: update the pledges view with the analysis of how pledges connect. The manifesto work below was
+brought from `fact-ledger-sketch` (its seven manifesto commits, cherry-picked; the fact-ledger sketch stays on that
+branch, undecided). `data/manifesto_pledges.csv` keeps both the follow-up columns (main) and topic/subtopic (branch).
+
+- **/pledges/ "What each programme promised, by subject"** (`pledge_topic_matrix`): per election, the 12 subjects of
+  `data/pledge_topics.csv` by party, a one-hue shaded table with every number printed; a cell's title lists its
+  subtopics and it links to the manifesto list filtered to that subject and opened at that party.
+- **/pledges/ "Promised again? Similar wording"** (`pledge_similar`): for the parties with a programme at both
+  elections (ADPD, Labour, Nationalist), each 2026 pledge counted by its closest same-party 2022 candidate in
+  `data/review/pledge_link_candidates.csv` (strong / possible / none), per party and per subject, and the strong pairs
+  listed side by side. Labelled throughout as found automatically and not reviewed; never drawn as a link (a pair a
+  person confirms in `follows` shows "Linked by a person"). Other parties' similar wording is not shown at all, so
+  nothing reads as one party taking up another's promise. The note says the Nationalist 2026 programme is web
+  chapters in a different structure (0 strong, 24 possible) and that the counts do not measure promises repeated,
+  kept or dropped. Counts on 8 Oct 2026: ADPD 34 strong, 7 possible, of 88; Labour 14, 51, of 105; PN 0, 24, of 96.
+- **/pledges/manifestos/**: a Subject column (topic and subtopic), a subject filter kept in the address
+  (`?topic=water`), and on a row with a strong same-party match "Similar wording in its 2022 programme (found
+  automatically, not reviewed): No. …".
+- `data/review/README.md` and `methodology/verdict-scale.md` now say what the site shows from the candidate file.
+  Regenerating the file (`scripts/pledge_links.py`) changes the page at the next build.
+- Nunjucks note: `from` and `none` are reserved words; keys named so break the template.
+
+## Manifesto list: register, topics, candidate links (7 October 2026)
+
+Maintainer's four-step request, first on branch `fact-ledger-sketch`, brought to `main` without the fact-ledger sketch on 8 Oct 2026 (steps 1 to 3 done, each stopped for review; no claim,
+verdict or `follows` touched).
+
+1. **Register** (`scripts/manifesto_register.py PATH [--fetch] [--all] [--csv OUT]`): hashes every PDF in a folder,
+   reads metadata and first pages, and sorts each file as already covered (same SHA-256, full or short `c7f65d55…6383`
+   form), known but not listed (hash in the coverage notes), same text (`--fetch`: the listed copy is downloaded to a
+   temporary folder, its hash checked and the text compared page by page), new edition, new programme, unidentified,
+   about a programme (news, web pages, press releases), or other document. Read-only; copies nothing.
+   **Maintainer's run, `literature/unsorted` (111 PDFs):** none byte-identical to a listed copy; the only programmes
+   are compressed copies of Labour 2022 and 2026 (same names and page counts, 292 and 268; 2.6 MB and 1.7 MB against
+   14.4 MB and 4.3 MB; the 2022 copy lost its first page's text); 6 articles or web pages about programmes; 103 other
+   documents. **No new programme, so step 4 has nothing to extract**, pending a `--fetch` run to confirm "same text".
+   People's Party 2022 and Imperium Europa 2026 are still not found. Limit: ABBA's 2022 PDF names neither the party
+   nor a programme, so another ABBA edition is counted as an "other document" unless its file name says so.
+2. **Topics.** First pass: the claims' vocabulary, by keyword rules (580 of 625 placed). Then, at the maintainer's
+   request ("reorganise the topics and subtopics for the pledges in the most meaningful and semantic way, so that they
+   fit"), **the pledges have a taxonomy of their own, `data/pledge_topics.csv`**: 12 topics (Climate, Energy, Transport,
+   Air & noise, Water, Waste, Nature & Wildlife, Animal welfare, Parks & trees, Countryside & coast, Land use &
+   planning, Environmental governance) and 49 subtopics, each with a code (EN-S), a scope note and the nearest topic and
+   subtopic of the claims (`site_topic`, `site_subtopic`; Animal welfare has none). The claims' topics are unchanged.
+   **All 625 rows placed by reading each pledge** (7 Oct 2026); none without a subtopic. `scripts/pledge_topics.py`
+   reads the taxonomy; its keyword rules point to subtopic codes, suggest placements for new rows (`--write` fills
+   empty cells only) and list the rows they read differently (rules agree on the topic for 589 and the subtopic for
+   533; the other 92 are judgement calls worth a second look). `scripts/pledges.py` checks the taxonomy file and that
+   every row's topic and subtopic are a pair in it. Largest subtopics: rooftop and community generation 33,
+   large-scale renewables 28, grid 28, urban parks 27; smallest: noise 1, light pollution 2. Flooding had no pledge
+   of its own, so it is not a subtopic.
+3. **Candidate links** (`scripts/pledge_links.py [--evaluate]`): for each pledge, the top 3 candidates in the other
+   election, same party first (topic counts through the score, since rule-set topics can differ for the same
+   pledge), plus the best other-party candidate when at least "possible" (rank x). Score: TF-IDF on the site's tokens
+   less pledge boilerplate (`PLEDGE_STOP`), with half-weight word pairs, section headings and synonym groups
+   (`CONCEPTS`); plus shared figures, same subtopic or topic, same party. Bands: strong >= 0.55, possible >= 0.35.
+   Output `data/review/pledge_link_candidates.csv` (1,979 rows, empty `decision` column); nothing goes into `follows`
+   until the maintainer says yes. Test set `data/review/pledge_link_benchmark.csv` (56 pairs: 1 confirmed, 1 noted,
+   25 the assistant's reading of the summaries and **not confirmed**, 29 repeated ADPD wording). Results: the
+   confirmed pair 2026 16.1 -> 2022 397 ranks first (score 0.39; plain TF-IDF 0.24, also first); 22 of 25 unconfirmed
+   pairs first and 25 in the top 3 (plain TF-IDF 7 and 20); 29 of 29 repeated pairs first. Best candidate per
+   pledge: strong 97, possible 190, weak 338. Same-party strong matches: ADPD 33 of 48 (2022 side), Labour 14 of 129,
+   PN none either way (21 possible). Known false-looking strong pairs: Labour 2026 14.30 -> 2022 291 (two Bormla
+   sites), 16.37 -> 411 (shore power, related).
+4. **New programmes:** none (see step 1).
+
+A graphic summary of steps 1 to 3 was sent to the maintainer as an HTML file (not committed, not published).
+
+## Timeline moved into Explore; "Web" view name back (7 October 2026)
+
+Maintainer request: the Timeline tab is gone from the main menu; the timeline is now the third view of /explore/,
+beside Web and Map (`?view=timeline`). The view is `_includes/timeline-view.njk` inside `explore.njk`; its data
+(`timelinePoints`, now `site/_lib/timeline-points.js`) is computed for Explore, and `assets/timeline.js` loads the
+first time the view opens. The web or the map stays paused underneath and comes back as it was. The filter bar and
+the pinned tray are Explore's own: `lens.js` gained `ready()` and `listen()` so the timeline subscribes instead of
+starting a second filter. `/timeline/` now forwards to `/explore/?view=timeline` with its query (lanes, filter) and
+hash, so old links keep working; it is marked noindex. The view formerly labelled "Għanqbuta" is "Web" again, and
+its address is `?view=web` (the old `?view=ghanqbuta` still opens it). Verdict and pledge colours and `.badge` moved
+from `site.css` to `assets/labels.css`, loaded by every page and by Explore, so the palette is defined once.
+
+## Pledge label colours for colour blindness (7 October 2026)
+
+The old pledge palette failed under red-green colour blindness (On track and Not measurable were nearly the same,
+deuteranopia ΔE 4). New palette, in `PLEDGE_COLOURS` (`scripts/build_site_data.py`) and `PLEDGE_COLS`
+(`tools/mizien_report.py`), kept in step: Not measurable #b0b8c1 (neutral grey), Not yet due #475cad, On track
+#56ae6c, Off track #ad5c15, Met #1f93b8, Missed #a72a68. Every pair stays ΔE ≥ 11.9 under protanopia and deuteranopia
+and ≥ 15 for normal vision, on the light and dark backgrounds. Three are light, so each label has a text colour too
+(`PLEDGE_INK` / `PLEDGE_INKS`: #13301f on the light three, white on the others), carried as `ink` in the site data and
+`--pl-ink` / `--v-ink` in the CSS. Labels are always printed as words, so colour is never the only cue. The reports and
+flyers of CC-011, CC-029, CC-031, CC-039 and CC-107 were rebuilt; CC-011's and CC-107's rebuilds also pick up the
+shared status and right-of-reply wording already on main (the PDFs had not been rebuilt since). Any later pledge report
+picks the palette up from `mizien_report.py`.
+
+## Pledges: flat views replace the 3D disks (7 October 2026)
+
+Maintainer decision (7 Oct 2026, after mockups of four options): pledges are shown flat. Chosen: the timeline in lanes
+(option 1), the election-by-party grid (option 3) and the flow from promise to outcome (option 4, only once the data
+supports it). The chain cards (option 2) were not chosen. Mockups: https://claude.ai/artifact/EoRy31dEQSRaiTohSo63xy (private).
+- **Explore, Pledges grouping** (`map.js`, layout `lanes`, `renderLanes()`): "Pledges over time". One lane per party
+  (campaign pledges and proposals), one for commitments made in office, one for agency targets; time left to right with
+  each election marked; a square per pledge in its label's colour on the date made, a bar to its deadline (far
+  deadlines clipped with an arrow); dashed lines for "carries forward", red for "recycled"; unchecked manifesto pledges
+  in a chain as outline squares in a column under their lane. Drawn as SVG over the stage while the canvas rests; the
+  legend groups are the cycles (hide one to leave its pledges off). The 3D cycle disks (stage 3) are removed.
+  Data: `made_mid` and `deadline_mid` on each pledge in claims.json.
+- **/pledges/ opens with "By election and party"** (`pledge_grid` in the site data): every party that contested each
+  election, alphabetical; per cell the pledges listed (linked to the manifesto list), the checked pledges as squares in
+  their label colour, the listed pledges linked to another pledge, and recycled or dropped counts; a column for
+  commitments made in office; anything else checked listed below.
+- **/pledges/ "From promise to outcome"** (`pledge_flows`, drawn to scale as SVG at build time): shown for a programme
+  only when its follow-up check is complete. None is yet; the section says so. Tested locally with temporary data.
+- **Follow-up check (data model, for the research chat):** `data/manifesto_pledges.csv` gains `followup` ("taken up",
+  "partly taken up", "no follow-up found") and `followup_source`; `data/manifesto_coverage.csv` gains `followup_checked`
+  (a date, set only when every row of that programme has a followup). `pledges.py` checks all three. A governing
+  party's row with "no follow-up found" after its legislature ended is computed as **dropped** (`manifesto_outliers`).
+  Written into `methodology/verdict-scale.md` ("Follow-up check").
+- Fixed: the Pledges page's list of labels (and the colour key) showed the pledge kinds and outlier types as labels;
+  `pledge_label_list()` now keeps only the six labels.
+- The pledge label colours failed a colour-blindness check (On track vs Not measurable); fixed the same day, see
+  "Pledge label colours for colour blindness" above. The "Who said it" pledge stacks (who.js) still use disks.
 
 ## Pledges: stage 4, outliers and the manifesto list on the site (6 October 2026)
 
@@ -929,7 +1006,7 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
 
 ## Outstanding
 
-- [ ] **Manifesto list (7 Oct 2026, branch `fact-ledger-sketch`):** run `scripts/manifesto_register.py
+- [ ] **Manifesto list (7 Oct 2026):** run `scripts/manifesto_register.py
   literature/unsorted/ --fetch` to confirm the two Labour copies; review the pledge taxonomy (`data/pledge_topics.csv`) and the
   92 placements the rules read differently (`python scripts/pledge_topics.py`); fill `decision` in `data/review/pledge_link_candidates.csv`, then
   copy the yes pairs into `follows` (a person's step). See "Manifesto list: register, topics, candidate links".
@@ -943,9 +1020,6 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
   figure is reused.
 - [ ] `data/edges.csv`: consider links the sketch found through shared facts: CC-026–CC-114 (air transport),
   CC-026–CC-031 (2024 inventory total), CC-031–CC-109 (road transport).
-- [ ] `tools/cc-053-report`, `cc-100`, `cc-106`, `cc-110`, `cc-112` and `cc-115` `figures.py` carry a block copied from
-  CC-111 that loads `data/cc-111/eurostat_env_wasmun.csv` and never uses it, and a docstring saying "Figures for
-  Claim Check 111". Remove both when each report is next revised (outputs are unaffected).
 - [ ] Archive gap: 460 of the 597 distinct source URLs in `data/sources.csv` have no row in `archive/manifest.csv`
   (counted 6 Oct 2026). Run `scripts/archive_sources.py` over them, then archive by hand what it cannot reach.
 

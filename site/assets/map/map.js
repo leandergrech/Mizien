@@ -11,7 +11,7 @@
   var DATA = null, claims = [], edges = [], byId = {}, themeById = {}, stars = [];
   var hubPool = {}, hubs = [];            // hubPool: every hub ever made (key = mode|value); hubs: those of the current mode
   var subHubs = [];                      // topic view: subtopic hubs orbiting their topic hub (claim.yml `subtopic`)
-  // Parts of a claim (claim.yml `subclaims`, numbered CC-017A, B...): drawn in the Għanqbuta view as small satellites
+  // Parts of a claim (claim.yml `subclaims`, numbered CC-017A, B...): drawn in the web view as small satellites
   // of their claim, placed from the claim's position each frame. They are not claims of their own: no groups, no links.
   var parts = [], partById = {};
   // Coarse filtering: groups can be hidden from the legend. A hidden group's hub, claims, spokes and links leave the
@@ -47,8 +47,7 @@
   var sel = null, hover = null;
   // Lines other than claim links that can be hovered and selected: between bodies (Who said it) and between
   // overlapping pledges. Their screen geometry is kept from the last frame for picking.
-  var blinks = [], plinks = [], clinks = []; var lastBodyFocus = null;
-  var RECYCLED_COL = "#e0603f";   // a promise made again after the earlier one was not met
+  var blinks = [], plinks = []; var lastBodyFocus = null;
   var W = 0, H = 0, dpr = 1, R = 250, t0 = performance.now(), lastT = 0;
   var MAP_THEME = document.documentElement.getAttribute("data-map-theme") || "botanical";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -155,9 +154,9 @@
              color: function (v) { if (v === "Undated") return NOT_YET_COL;
                var ys = MODES.year.order().filter(function (y) { return y !== "Undated"; }), i = ys.indexOf(v);
                return mix("#56b4e9", "#e3a72f", ys.length > 1 ? i / (ys.length - 1) : 1); } },
-    pledges: { label: "Pledges", title: "Pledges, election by election",
-             sub: "One disk for each election cycle, the oldest at the bottom. Campaign pledges sit on the outer ring, commitments made in office on the inner ring, each at the place of the body that made it, so a pledge and what followed it line up. Lines join a pledge to the earlier one it carries forward: red where the same promise is made again after the first was not met. Gold lines join overlapping pledges.",
-             layout: "stack", key: function (c) { return c.pledge ? [c.pledge.cycle_label || "No cycle"] : []; },
+    pledges: { label: "Pledges", title: "Pledges over time",
+             sub: "One lane per party, and one for commitments made in office. Each pledge sits on the date it was made, in its label's colour, with a bar to its deadline. A line joins a pledge to the earlier one it carries forward: red where the same promise is made again after the first was not met. Press a pledge to open it.",
+             layout: "lanes", key: function (c) { return c.pledge ? [c.pledge.cycle_label || "No cycle"] : []; },
              order: function () { var seen = {}, out = [];
                stackPledges().forEach(function (p) { if (!seen[p.label]) { seen[p.label] = p.rank; out.push(p.label); } });
                return out.sort(function (a, b) { return seen[a] - seen[b]; }); },
@@ -206,6 +205,7 @@
     W = stage.clientWidth; H = stage.clientHeight;
     canvas.width = W * dpr; canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (lanesEl && lanesOn()) renderLanes();
   }
 
   // ------------------------------------------------------------ init
@@ -237,9 +237,9 @@
     buildStats(); buildGroupBy(); buildSpacing(); buildLinkBar(); buildKey(); resize();
     setMode(groupParam(), true);
     buildViewBy(); setHint();
-    var wantMap = new URLSearchParams(location.search).get("view") === "map";
-    try { if (!new URLSearchParams(location.search).get("view") && localStorage.getItem("mizien.view") === "map") wantMap = true; } catch (e) {}
-    if (wantMap) setView("map", true);   // the map library and the tiles load only when the map view is used
+    var want = new URLSearchParams(location.search).get("view");
+    try { if (!want) want = localStorage.getItem("mizien.view"); } catch (e) {}
+    if (want === "map" || want === "timeline") setView(want, true);   // the map library and the tiles load only when the map view is used
     applySelKey(startSel);
     requestAnimationFrame(frame);
   }
@@ -281,14 +281,9 @@
     return row;
   }
   function lensChanged() {
-    syncTimelineLink();
     if (view === "map") { buildPlaces(); if (gmapLayer) { gmapLayer.textContent = ""; gmapMarks = {}; } queueGeoMarks(); fitPlaces(true);
       var q = document.getElementById("placeq"); if (q) q.dispatchEvent(new Event("input")); return; }
     var keep = selKey(); setMode(mode, false); applySelKey(keep);
-  }
-  function syncTimelineLink() {
-    var a = document.getElementById("tl-link"); if (!a) return;
-    var q = Lens ? Lens.query() : ""; a.href = ROOT + "timeline/" + (q ? "?" + q : "");
   }
 
   function buildStats() {
@@ -446,7 +441,6 @@
     } else if (M.layout === "ring") {
       hubs.forEach(function (h, i) { var a = (i / n) * Math.PI * 2; h.tx = Math.cos(a) * R * 1.12 * groupSpread() / 1.05; h.tz = Math.sin(a) * R * 1.12 * groupSpread() / 1.05; h.ty = m === "pattern" ? 0 : (i % 2 ? 1 : -1) * 34; });
     }
-    if (M.layout === "stack") layoutStack();
     if (M.layout === "sphere" || M.layout === "ring") arrangeHubs(); else if (M.layout === "arc" || M.layout === "line") {
       var widths = hubs.map(function (h) { return Math.max(60, clusterRadius(h.count) + 46); });
       var total = widths.reduce(function (a, b) { return a + b * 2; }, 0) + (n - 1) * 22, x = -total / 2;
@@ -466,18 +460,18 @@
         h.x = sx / cs.length; h.y = sy / cs.length; h.z = sz / cs.length;
       }
       h.talpha = 1;
-      if (M.layout !== "stack") layoutMembers(h, false);
+      if (M.layout !== "lanes") layoutMembers(h, false);
     });
     if (M.layout === "force") forceLayout();
     // camera: carousels spin, spectra and pipelines face the viewer and sway
     sway = M.layout === "arc" || M.layout === "line";
-    if (sway) { cam.tyaw = 0; cam.tpitch = -0.12; } else { cam.tyaw = null; cam.tpitch = m === "pattern" ? -0.6 : M.layout === "stack" ? -0.3 : M.layout === "ring" ? -0.38 : -0.22; }
+    if (sway) { cam.tyaw = 0; cam.tpitch = -0.12; } else { cam.tyaw = null; cam.tpitch = m === "pattern" ? -0.6 : M.layout === "ring" ? -0.38 : -0.22; }
     if (instant) { claims.concat(hubs, subHubs).forEach(function (n) { n.x = n.tx; n.y = n.ty; n.z = n.tz; }); hubs.concat(subHubs).forEach(function (h) { h.alpha = 1; }); }
     clearSel();
     var mt = document.getElementById("modeTitle"); mt.querySelector(".t").textContent = M.title; mt.querySelector(".s").textContent = modeSub(m);
     document.querySelectorAll("#groupby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.mode === m ? "true" : "false"); });
     buildGroups(); buildArrange(); buildSplit();
-    syncHideParam();
+    syncHideParam(); renderLanes();
     var u = new URL(location.href); if (m === "topic") u.searchParams.delete("group"); else u.searchParams.set("group", m);
     if (split && splittable(m)) u.searchParams.set("split", "1"); else u.searchParams.delete("split");
     history.replaceState(null, "", u);
@@ -603,7 +597,7 @@
     h.ringR = rs; h.openR = rs + reach;
   }
   function layoutMembers(h, open) {
-    if (MODES[mode].layout === "stack") return;   // the cycle disks keep their places when a disk is opened
+    if (MODES[mode].layout === "lanes") return;   // the pledges timeline is drawn apart from the 3D layout
     if (h.subs && h.subs.length && mode === "topic") return layoutCorona(h, open);
     if (h.subs && h.subs.length) return layoutWithSubs(h, open);
     h.ringR = null;
@@ -638,13 +632,15 @@
     document.getElementById("crumb").style.display = "none";
   }
 
-  // ------------------------------------------------------------ pledges: one disk per election cycle
-  // The disks are stacked, the oldest cycle at the bottom. A pledge sits on its cycle's disk: campaign pledges on the
-  // outer ring, commitments made in office (and the other kinds) on the inner ring. Pledges joined by `follows` form a
-  // chain that shares one angle, so a promise and what came of it line up from disk to disk; chains are grouped round
-  // the disk by the body that first made them. A manifesto pledge in a chain that was not itself checked is an outline
-  // square. The links come from the site data (build_site_data.py), with the methodology's rule for "recycled".
-  var stk = { rd: 0, ghosts: [], links: [], bodies: [], top: 0 }, ghostPool = {};
+  // ------------------------------------------------------------ pledges: a timeline in lanes
+  // Pledges are drawn flat, not in 3D (maintainer decision, 7 Oct 2026): one lane per party for campaign pledges and
+  // party proposals, one for commitments made in office and one for agency targets; time runs left to right with each
+  // general election marked. A pledge is a square in its label's colour on the date it was made, with a bar to its
+  // deadline. A line joins a pledge to the earlier one it carries forward: dashed, or red when the same promise is made
+  // again after the earlier one was not met (the methodology's rule, computed in build_site_data.py). A manifesto pledge
+  // in such a chain that was not itself checked is an outline square. Drawn as SVG over the stage; the canvas rests.
+  var RECYCLED_COL = "#e0603f";   // a promise made again after the earlier one was not met
+  var lanesEl = null;
   function cycleRank(id) {
     if (!id || /^before/.test(id)) return 0;
     var cs = (DATA.cycles || []).slice().sort(function (a, b) { return a.election_date < b.election_date ? -1 : 1; });
@@ -655,74 +651,102 @@
     return DATA.claims.filter(function (d) { return d.pledge; }).map(function (d) {
       return { label: d.pledge.cycle_label || "No cycle", rank: cycleRank(d.pledge.cycle) }; });
   }
-  function shortBody(name) { var m = /\(([^)]+)\)\s*$/.exec(name || ""); return m ? m[1] : String(name || ""); }
+  function shortBody(name) { var m = /\(([^)]+)\)\s*$/.exec(name || ""); return (m ? m[1] : String(name || "")).replace(/ Party$/, ""); }
   function ghostLabel(r) {
-    var b = bodyById[r.party], who = b ? shortBody(b.name).replace(/ Party$/, "") : String(r.party || "").toUpperCase();
+    var b = bodyById[r.party], who = b ? shortBody(b.name) : String(r.party || "").toUpperCase();
     return who + " " + r.cycle + " manifesto · " + (r.number || r.section);
   }
-  function layoutStack() {
-    var n = hubs.length, rd = R * 1.1 * SP.g * Math.max(0.75, fill), gap = 185 * SP.g, yOf = {}, rank = {};
-    hubs.forEach(function (h, i) { var y = ((n - 1) / 2 - i) * gap + 30; yOf[h.name] = y;   // a little low, clear of the title rank[h.name] = i;
-      h.tx = -rd * 1.2; h.ty = y; h.tz = 0; h.openR = rd; });
-    var rows = {}, nodes = {};
-    (DATA.manifesto_pledges || []).forEach(function (r) { rows[r.id] = r; });
-    claims.forEach(function (c) { var p = c.data.pledge;
-      if (!c.hidden && p && yOf[p.cycle_label] != null) nodes[c.id] = { id: c.id, c: c, cycle: p.cycle_label, outer: p.kind === "campaign", body: ((p.made_by || [])[0] || {}).id || "" }; });
-    function canon(id) { var r = rows[id]; return r && r.claim && nodes[r.claim] ? r.claim : id; }   // a manifesto pledge that was checked is its claim
-    function placeable(id) { return nodes[id] || (rows[id] && !rows[id].claim && yOf[rows[id].cycle_label] != null); }
+  function lanesOn() { return view === "graph" && MODES[mode] && MODES[mode].layout === "lanes"; }
+  function laneOfPledge(p) {
+    if (p.kind === "government") return { key: "~office", name: "In office", sub: "commitments" };
+    if (p.kind === "target") return { key: "~~agency", name: "Agencies", sub: "targets" };
+    var b = (p.made_by || [])[0] || {};
+    return { key: b.id || "?", name: shortBody(b.name || "?"), sub: "pledges" };
+  }
+  function renderLanes() {
+    if (!lanesEl) { lanesEl = el("div"); lanesEl.id = "lanes"; document.getElementById("stage").appendChild(lanesEl); }
+    lanesEl.hidden = !lanesOn(); document.getElementById("mapwrap").classList.toggle("is-lanes", lanesOn());
+    if (!lanesOn()) return;
+    var NS = "http://www.w3.org/2000/svg";
+    function E(tag, at, txt) { var e = document.createElementNS(NS, tag); for (var k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; return e; }
+    var rows = {}; (DATA.manifesto_pledges || []).forEach(function (r) { rows[r.id] = r; });
+    var elect = {}; (DATA.cycles || []).forEach(function (c) { elect[c.id] = c.election_date; });
+    var nodes = {}, lanes = {};
+    function addLane(l) { if (!lanes[l.key]) lanes[l.key] = l; return l.key; }
+    claims.forEach(function (c) { var p = c.data.pledge; if (c.hidden || !p || !p.made_mid) return;
+      nodes[c.id] = { id: c.id, c: c, d: p.made_mid, due: p.deadline_mid, lane: addLane(laneOfPledge(p)), s: p.status }; });
+    function canon(id) { var r = rows[id]; return r && r.claim && nodes[r.claim] ? r.claim : id; }
     var links = [];
     claims.forEach(function (c) { if (!nodes[c.id]) return;
-      (c.data.pledge.outliers || []).forEach(function (o) { if (o.link && (o.type === "follows" || o.type === "recycled")) links.push({ a: c.id, b: canon(o.link), type: o.type }); }); });
-    Object.keys(rows).forEach(function (id) { (rows[id].links || []).forEach(function (o) { links.push({ a: canon(id), b: canon(o.link), type: o.type }); }); });
-    links = links.filter(function (l) { return l.a !== l.b && placeable(l.a) && placeable(l.b); });
-    var ghosts = [];
-    links.forEach(function (l) { [l.a, l.b].forEach(function (id) {
-      if (nodes[id]) return; var r = rows[id], g = ghostPool[id];
-      if (!g) { g = ghostPool[id] = { kind: "mp", id: id, x: 0, y: yOf[r.cycle_label], z: 0 }; }
-      g.row = r; ghosts.push(g);
-      nodes[id] = { id: id, g: g, cycle: r.cycle_label, outer: true, body: r.party || "" }; }); });
-    var par = {}; function root(x) { while (par[x] !== x) { par[x] = par[par[x]]; x = par[x]; } return x; }
-    Object.keys(nodes).forEach(function (id) { par[id] = id; });
-    links.forEach(function (l) { par[root(l.a)] = root(l.b); });
-    var lanes = {}; Object.keys(nodes).forEach(function (id) { var k = root(id); (lanes[k] = lanes[k] || []).push(nodes[id]); });
-    var L = Object.keys(lanes).map(function (k) {
-      var ms = lanes[k].sort(function (a, b) { return (rank[a.cycle] - rank[b.cycle]) || ((b.outer ? 1 : 0) - (a.outer ? 1 : 0)) || (a.id < b.id ? -1 : 1); });
-      var b = bodyById[ms[0].body]; return { ms: ms, body: ms[0].body, name: b ? shortBody(b.name) : String(ms[0].body).toUpperCase(), key: ms[0].id }; });
-    L.sort(function (a, b) { return a.name.localeCompare(b.name) || (a.key < b.key ? -1 : 1); });
-    var slot = 0, prev = null;
-    L.forEach(function (l) { if (prev !== null && l.body !== prev) slot += 0.8; l.slot = slot; slot += 1; prev = l.body; });
-    var total = slot + (L.length > 1 && L[0].body !== L[L.length - 1].body ? 0.8 : 0), byBody = {}, bodies = [];
-    L.forEach(function (l) {
-      var a = -Math.PI / 2 + (l.slot / Math.max(1, total)) * Math.PI * 2, seen = {};
-      l.ms.forEach(function (m) {
-        var k = m.cycle + (m.outer ? "o" : "i"), j = seen[k] = (seen[k] || 0) + 1, aa = a + (j - 1) * 0.11, rr = rd * (m.outer ? 0.8 : 0.48);
-        var t = m.c || m.g; t.tx = Math.cos(aa) * rr; t.tz = Math.sin(aa) * rr; t.ty = yOf[m.cycle] - 7; });
-      if (!byBody[l.body]) { byBody[l.body] = { name: l.name, sx: 0, sz: 0, n: 0, y: Infinity }; bodies.push(byBody[l.body]); }
-      var bb = byBody[l.body]; bb.sx += Math.cos(a); bb.sz += Math.sin(a); bb.n++;
-      l.ms.forEach(function (m) { bb.y = Math.min(bb.y, yOf[m.cycle]); });   // named on the highest disk it has a pledge on
-    });
-    bodies.forEach(function (b) { b.a = Math.atan2(b.sz, b.sx); });
-    ghosts.forEach(function (g) { if (!g.shown) { g.x = g.tx; g.y = g.ty; g.z = g.tz; g.shown = true; } });
-    stk = { rd: rd, ghosts: ghosts, links: links, bodies: bodies };
-  }
-  function stackOn() { return view === "graph" && MODES[mode].layout === "stack"; }
-  function stackEnd(id) { return byId[id] || ghostPool[id]; }
-  // A disk: a thin translucent plate with a faint ring at each of the two radii pledges sit on.
-  function drawPlate(y, rd, vis, col) {
-    var N = 72, top = [], bot = [], c = project({ x: 0, y: y, z: 0 });
-    for (var i = 0; i < N; i++) { var a = i / N * 6.2832, x = Math.cos(a) * rd, z = Math.sin(a) * rd;
-      top.push(project({ x: x, y: y, z: z })); bot.push(project({ x: x, y: y + 9, z: z })); }
-    function poly(pts) { ctx.beginPath(); pts.forEach(function (q, i) { if (i) ctx.lineTo(q.sx, q.sy); else ctx.moveTo(q.sx, q.sy); }); ctx.closePath(); }
-    ctx.save(); ctx.globalAlpha = vis * 0.75;
-    ctx.fillStyle = CV.discSide; poly(bot); ctx.fill();
-    ctx.globalAlpha = vis * 0.62;
-    var g = ctx.createRadialGradient(c.sx, c.sy, 0, c.sx, c.sy, rd * c.s);
-    g.addColorStop(0, CV.sph0); g.addColorStop(0.75, CV.sph1); g.addColorStop(1, CV.disc2);
-    ctx.fillStyle = g; poly(top); ctx.fill();
-    ctx.globalAlpha = vis; ctx.strokeStyle = CV.sphLine; ctx.lineWidth = 1; ctx.setLineDash([3, 5]);
-    [0.48, 0.8].forEach(function (f) { poly(top.map(function (q) { return { sx: c.sx + (q.sx - c.sx) * f, sy: c.sy + (q.sy - c.sy) * f }; })); ctx.stroke(); });
-    ctx.setLineDash([]); ctx.strokeStyle = rgba(col, 0.8); ctx.lineWidth = 1.6; poly(top); ctx.stroke();
-    ctx.restore();
+      (c.data.pledge.outliers || []).forEach(function (o) { if (o.link && (o.type === "follows" || o.type === "recycled")) links.push({ a: canon(o.link), b: c.id, type: o.type }); }); });
+    Object.keys(rows).forEach(function (id) { (rows[id].links || []).forEach(function (o) { links.push({ a: canon(o.link), b: canon(id), type: o.type }); }); });
+    links = links.filter(function (l) {
+      [l.a, l.b].forEach(function (id) { if (nodes[id] || !rows[id] || rows[id].claim || !elect[rows[id].cycle]) return;
+        var r = rows[id], b = bodyById[r.party];
+        nodes[id] = { id: id, ghost: r, d: elect[r.cycle], lane: addLane({ key: r.party, name: b ? shortBody(b.name) : String(r.party).toUpperCase(), sub: "pledges" }) }; });
+      return l.a !== l.b && nodes[l.a] && nodes[l.b]; });
+    var gcount = {}; Object.keys(nodes).forEach(function (k) { if (nodes[k].ghost) gcount[nodes[k].lane] = (gcount[nodes[k].lane] || 0) + 1; });
+    var keys = Object.keys(lanes).sort(function (a, b) { return a[0] === "~" || b[0] === "~" ? (a < b ? -1 : 1) : lanes[a].name.localeCompare(lanes[b].name); });
+    var box = lanesEl; box.textContent = "";
+    var mt = document.getElementById("modeTitle"); box.style.top = (mt.offsetTop + mt.offsetHeight + 10) + "px";
+    if (!keys.length) { box.appendChild(el("p", "lanes-empty", "No pledge in this view. Clear the filter to see them all.")); return; }
+    var ds = Object.keys(nodes).map(function (k) { return Date.parse(nodes[k].d); }), now = Date.now();
+    var y0 = new Date(Math.min.apply(null, ds)).getUTCFullYear(), y1 = Math.max(new Date(Math.max.apply(null, ds.concat([now]))).getUTCFullYear() + 3, y0 + 6);
+    Object.keys(nodes).forEach(function (k) { var dy = nodes[k].due && +nodes[k].due.slice(0, 4); if (dy && dy <= new Date(now).getUTCFullYear() + 5) y1 = Math.max(y1, dy); });   // near deadlines in full; far ones clipped
+    var t0 = Date.UTC(y0, 0, 1), t1 = Date.UTC(y1, 11, 31);
+    var Wd = Math.max(760, box.clientWidth - 40), left = 130, right = 110, top = 22, lh = 92, ly = {}, yy = top;
+    keys.forEach(function (k) { var h = Math.max(lh, 60 + (gcount[k] || 0) * 17 + 20); ly[k] = yy + 40; yy += h; });
+    var band = yy - top, Hd = yy + 40;
+    function x(d) { return left + ((typeof d === "number" ? d : Date.parse(d)) - t0) / (t1 - t0) * (Wd - left - right); }
+    var svg = E("svg", { width: Wd, height: Hd, viewBox: "0 0 " + Wd + " " + Hd, role: "img", "aria-label": "Pledges on a timeline, one lane per party, plus commitments made in office" });
+    var cs = (DATA.cycles || []).slice().sort(function (a, b) { return a.election_date < b.election_date ? -1 : 1; });
+    cs.forEach(function (c, i) { var xa = x(c.election_date), xb = i + 1 < cs.length ? x(cs[i + 1].election_date) : Wd - right + 40;
+      if (xa > Wd - right + 40) return;
+      svg.appendChild(E("rect", { class: "ln-band", x: xa, y: top - 6, width: Math.max(0, xb - xa), height: band, opacity: i % 2 ? 0.55 : 1 }));
+      svg.appendChild(E("line", { class: "ln-elect", x1: xa, x2: xa, y1: top - 10, y2: top + band }));
+      svg.appendChild(E("text", { class: "ln-sub", x: xa + 5, y: top + band - 8 }, new Date(c.election_date).getUTCDate() + " " + ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][new Date(c.election_date).getUTCMonth()] + " " + c.election_date.slice(0, 4) + " election")); });
+    for (var yr = y0; yr <= y1; yr++) { var xx = x(Date.UTC(yr, 0, 1));
+      svg.appendChild(E("text", { class: "ln-sub", x: xx, y: Hd - 12, "text-anchor": "middle" }, String(yr))); }
+    keys.forEach(function (k) { var y = ly[k];
+      svg.appendChild(E("line", { class: "ln-axis", x1: left, x2: Wd - right + 30, y1: y, y2: y }));
+      svg.appendChild(E("text", { class: "ln-name", x: 10, y: y - 2 }, lanes[k].name));
+      svg.appendChild(E("text", { class: "ln-sub", x: 10, y: y + 14 }, lanes[k].sub)); });
+    var pos = {}, seen = {};
+    Object.keys(nodes).sort(function (a, b) { return nodes[a].ghost ? 1 : nodes[b].ghost ? -1 : 0; }).forEach(function (id) { var n = nodes[id];
+      var k = n.lane + (n.ghost ? "g" : "") + Math.round(x(n.d) / 16); seen[k] = (seen[k] || 0) + 1;
+      // manifesto pledges sit in a column under their lane, one per row, so their labels never overlap
+      pos[id] = { x: x(n.d) + (n.ghost ? 0 : (seen[k] - 1) * 18), y: ly[n.lane] + (n.ghost ? 22 + (seen[k] - 1) * 17 : 0), up: (seen[k] % 2) === 1 }; });
+    function act(g, label, fn) { g.setAttribute("tabindex", "0"); g.setAttribute("role", "button"); g.setAttribute("aria-label", label); g.appendChild(E("title", {}, label));
+      g.addEventListener("click", fn); g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fn(); } }); }
+    links.forEach(function (l) { var a = pos[l.a], b = pos[l.b], rec = l.type === "recycled", mx = (a.x + b.x) / 2, lift = Math.abs(a.y - b.y) < 4 ? 26 : 0;   // a link along one row arcs above it, clear of the labels
+      var path = E("path", { class: "ln-link" + (rec ? " rec" : ""), d: "M" + a.x + " " + a.y + " C" + mx + " " + (a.y - lift) + " " + mx + " " + (b.y - lift) + " " + b.x + " " + b.y });
+      var g = E("g", { class: "ln-hit" }); g.appendChild(E("path", { class: "ln-linkhit", d: path.getAttribute("d") })); g.appendChild(path); svg.appendChild(g);
+      var nm = function (id) { return nodes[id].ghost ? ghostLabel(nodes[id].ghost) : id; };
+      act(g, (rec ? "Promised again after it was not met: " : "Carries forward: ") + nm(l.b) + " follows " + nm(l.a),
+        function () { var c = [l.b, l.a].filter(function (id) { return byId[id]; })[0]; if (c) selectClaim(c); }); });
+    Object.keys(nodes).forEach(function (id) { var n = nodes[id], q = pos[id], g = E("g", { class: "ln-node" });
+      if (n.ghost) {
+        g.appendChild(E("rect", { class: "ln-ghost", x: q.x - 7, y: q.y - 7, width: 14, height: 14, rx: 3 }));
+        var partner = links.filter(function (l) { return l.a === id || l.b === id; }).map(function (l) { return l.a === id ? l.b : l.a; }).filter(function (k) { return byId[k]; })[0];
+        act(g, ghostLabel(n.ghost) + ": " + n.ghost.summary + " (in the manifesto list, not checked)", function () { if (partner) selectClaim(partner); });
+        g.appendChild(E("text", { class: "ln-gl", x: q.x + 10, y: q.y + 4 }, ghostLabel(n.ghost)));
+      } else {
+        var d = n.c.data, colr = PLEDGE_COL[n.s] || NOT_YET_COL;
+        if (n.due) { var xd = x(n.due), clip = xd > Wd - right + 30;
+          g.appendChild(E("line", { class: "ln-due", x1: q.x, x2: Math.min(xd, Wd - right + 30), y1: q.y, y2: q.y, stroke: colr }));
+          g.appendChild(E("text", { class: "ln-sub", x: Math.min(xd, Wd - right + 30) + 5, y: q.y + 4 }, (clip ? "→ " : "") + "due " + n.due.slice(0, 4))); }
+        g.appendChild(E("rect", { class: "ln-sq" + (sel && sel.kind === "claim" && sel.id === id ? " is-sel" : ""), x: q.x - 8, y: q.y - 8, width: 16, height: 16, rx: 3.5, fill: colr }));
+        g.appendChild(E("text", { class: "ln-id", x: q.x, y: q.up ? q.y - 13 : q.y + 25, "text-anchor": "middle" }, id));
+        act(g, id + " · " + d.title + ". Pledge: " + n.s + (d.pledge.as_of ? ", as of " + d.pledge.as_of : "") + (d.pledge.deadline ? ". Due " + d.pledge.deadline : ""), function () { selectClaim(id); });
+      }
+      svg.appendChild(g); });
+    box.appendChild(svg);
+    var key = el("div", "ln-key");
+    Object.keys(PLEDGE_COL).forEach(function (s) { if (!Object.keys(nodes).some(function (k) { return nodes[k].s === s; })) return;
+      var it = el("span"); var sw = el("i"); sw.style.background = PLEDGE_COL[s]; it.appendChild(sw); it.appendChild(document.createTextNode(s)); key.appendChild(it); });
+    [["ln-k-ghost", "Manifesto pledge, not checked"], ["ln-k-fw", "Carries forward"], ["ln-k-rec", "Promised again after it was not met"], ["ln-k-due", "Bar: until the deadline"]].forEach(function (k) {
+      var it = el("span"); it.appendChild(el("i", k[0])); it.appendChild(document.createTextNode(k[1])); key.appendChild(it); });
+    box.appendChild(key);
   }
 
   function forceLayout() {
@@ -856,7 +880,7 @@
     });
     if (!note.textContent && legendGroups.length > 1) note.textContent = "Hide groups to declutter: their claims and links leave the map.";
     if (mode === "pattern") note.textContent = "Tags are provisional until a report is finished.";
-    if (mode === "pledges") note.textContent = "Each disk is an election cycle. Outer ring: campaign pledges; inner ring: commitments made in office. Dashed line: carries forward an earlier pledge; red line: promised again after the earlier one was not met. Outline squares are manifesto pledges in the list that have not been checked.";
+    if (mode === "pledges") note.textContent = "The groups are election cycles: hide one to leave its pledges off the timeline. The full list of manifesto pledges, and every outlier, is on the Pledges page.";
     if (mode === "speaker") note.textContent = "Each claim sits with the first body named as its speaker. Select a body to see the bodies its claims link to; switch on links to see bodies named together.";
   }
   // Apply a hide/show rule to every group of the current grouping, re-lay out the map, keep it in the URL.
@@ -910,7 +934,7 @@
       none.onclick = function () { setLinks(false); }; chips.appendChild(none);
     }
     bar.appendChild(chips);
-    if (view === "graph" && mode !== "network") {          // spokes join each claim to its group (Għanqbuta only)
+    if (view === "graph" && mode !== "network") {          // spokes join each claim to its group (web view only)
       var sp = el("button", "switch small" + (showSpokes ? " on" : "")); sp.type = "button"; sp.setAttribute("role", "switch");
       sp.setAttribute("aria-checked", showSpokes ? "true" : "false");
       sp.appendChild(el("span", "track")).appendChild(el("span", "knob"));
@@ -1037,7 +1061,7 @@
   }
 
   // ------------------------------------------------------------ what the camera centres on
-  // In the Għanqbuta view the selection glides to the centre of the free space (between the controls and the card)
+  // In the web view the selection glides to the centre of the free space (between the controls and the card)
   // and the camera zooms so that it, and what it links to, fills that space.
   function focusTarget() {
     if (view !== "graph") return null;
@@ -1110,14 +1134,13 @@
 
   function frame(now) {
     var t = (now - t0) / 1000, dt = Math.max(0, Math.min(0.4, t - lastT)); lastT = t;
-    if (view === "map") { requestAnimationFrame(frame); return; }   // the map view is drawn by MapLibre
+    if (view === "map" || view === "timeline") { requestAnimationFrame(frame); return; }   // drawn by MapLibre, or by timeline.js
+    if (lanesOn()) { ctx.clearRect(0, 0, W, H); requestAnimationFrame(frame); return; }   // the pledges timeline is SVG
     var k = reduce ? 1 : 1 - Math.pow(0.04, dt);            // morph easing, frame-rate independent
     lensK += ((lensWanted() ? 1 : 0) - lensK) * Math.min(1, k * 1.5);
     cam.px += (cam.tpx - cam.px) * Math.min(1, k * 1.6); cam.py += (cam.tpy - cam.py) * Math.min(1, k * 1.6);
     var kc = k;
     claims.forEach(function (c) { c.x += (c.tx - c.x) * kc; c.y += (c.ty - c.y) * kc; c.z += (c.tz - c.z) * kc; });
-    var STK = stackOn(), ghosts = STK ? stk.ghosts : [];
-    ghosts.forEach(function (g) { g.x += (g.tx - g.x) * kc; g.y += (g.ty - g.y) * kc; g.z += (g.tz - g.z) * kc; });
     Object.keys(hubPool).forEach(function (key) { var h = hubPool[key];
       h.x += (h.tx - h.x) * k; h.y += (h.ty - h.y) * k; h.z += (h.tz - h.z) * k; h.alpha += (h.talpha - h.alpha) * Math.min(1, k * 1.3); });
     if (cxNow === null) cxNow = cxTarget(); cxNow += (cxTarget() - cxNow) * Math.min(1, k * 1.2);
@@ -1147,7 +1170,7 @@
       ctx.beginPath(); ctx.arc(cxNow, cyNow, LR0 * 1.04, 0, 6.283); ctx.fill(); ctx.restore(); }
 
     var allHubs = Object.keys(hubPool).map(function (k) { return hubPool[k]; }).filter(function (h) { return h.alpha > 0.01; });
-    var P = new Map(); allHubs.concat(claims, ghosts).forEach(function (n) { P.set(n, project(n)); });
+    var P = new Map(); allHubs.concat(claims).forEach(function (n) { P.set(n, project(n)); });
     var F = focusSet(), labels = [];
     function fog(p) { return Math.max(0.35, Math.min(1, 1.05 - p.z / 900)); }
 
@@ -1166,20 +1189,15 @@
     }
     if (SPH) drawCorona(SPH, t);
     if (DSK) drawDisc(sphereVis);
-    if (STK) {   // the cycle disks, bottom to top, then the names of the bodies round the top one
-      hubs.slice().sort(function (a, b) { return b.y - a.y; }).forEach(function (h) { drawPlate(h.y, stk.rd, h.alpha * (F && F.hub && F.hub !== h ? 0.45 : 1), h.color); });
-      stk.bodies.forEach(function (b) { var q = project({ x: Math.cos(b.a) * stk.rd * 1.08, y: b.y - 10, z: Math.sin(b.a) * stk.rd * 1.08 });
-        labels.push({ x: q.sx, y: q.sy, text: b.name, sub: "", hub: false, tag: true, color: "#9fa8da", alpha: 0.9 * fog(q), pri: 2.4 }); });
-    }
 
     // orbit rings around active hubs
     allHubs.forEach(function (h) {
-      if (!h.count || h.sub || SPH || DSK || STK) return; var p = P.get(h), r = (h.ringR || clusterRadius(h.count) + 10) * p.s;
+      if (!h.count || h.sub || SPH || DSK) return; var p = P.get(h), r = (h.ringR || clusterRadius(h.count) + 10) * p.s;
       ctx.save(); ctx.globalAlpha = h.alpha * (F && F.hub !== h ? 0.08 : 0.22) * fog(p); ctx.strokeStyle = h.color; ctx.lineWidth = 1;
       ctx.setLineDash([2, 6]); ctx.beginPath(); ctx.ellipse(p.sx, p.sy, r, r * (0.32 + 0.5 * Math.abs(Math.sin(cam.pitch))), 0, 0, 6.283); ctx.stroke(); ctx.restore();
     });
 
-    edges.forEach(function (e) { e._g = null; }); blinks = []; plinks = []; clinks = [];
+    edges.forEach(function (e) { e._g = null; }); blinks = []; plinks = [];
     function drawLinks(side) {
     // spokes: claim to its group (and faint spokes to secondary groups)
     if (showSpokes && mode !== "network" && view === "graph") subHubs.forEach(function (sh) {
@@ -1191,17 +1209,6 @@
       ctx.setLineDash(sh.person ? [4, 4] : []); ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke(); ctx.setLineDash([]);
     });
     if (mode === "speaker" && split && view === "graph") drawBodyLinks(P, F, t);
-    if (STK && side === "near") stk.links.forEach(function (l) {   // a pledge and the earlier one it carries forward
-      var A = stackEnd(l.a), B = stackEnd(l.b); if (!A || !B || A.hidden || B.hidden) return;
-      var pa = P.get(A), pb = P.get(B); if (!pa || !pb) return;
-      var on = !F || F.ids[l.a] || F.ids[l.b], lit = (hover && hover.kind === "clink" && hover.l === l) || (sel && sel.kind === "clink" && sel.l === l);
-      var rec = l.type === "recycled", pc = { x: (pa.sx + pb.sx) / 2 + (rec ? 18 : 0), y: (pa.sy + pb.sy) / 2 };
-      clinks.push({ l: l, g: { a: pa, b: pb, c: pc } });
-      ctx.save(); ctx.globalAlpha = on || lit ? 0.95 : 0.25; ctx.lineCap = "round";
-      ctx.strokeStyle = rec ? RECYCLED_COL : CV.dustHi; ctx.lineWidth = (rec ? 3 : 2) * (lit ? 1.5 : 1);
-      ctx.setLineDash(rec ? [] : [6, 5]);
-      ctx.beginPath(); ctx.moveTo(pa.sx, pa.sy); ctx.quadraticCurveTo(pc.x, pc.y, pb.sx, pb.sy); ctx.stroke(); ctx.restore();
-    });
     if (mode === "pledges" && view === "graph") (DATA.pledge_links || []).forEach(function (l) {   // overlapping pledges
       var a = byId[l.a], b = byId[l.b]; if (!a || !b || a.hidden || b.hidden) return;
       var pa = P.get(a), pb = P.get(b), on = !F || F.ids[l.a] || F.ids[l.b];
@@ -1211,7 +1218,7 @@
       if (!reduce) ctx.lineDashOffset = -t * 10;
       ctx.beginPath(); ctx.moveTo(pa.sx, pa.sy); ctx.quadraticCurveTo((pa.sx + pb.sx) / 2, (pa.sy + pb.sy) / 2 - 40, pb.sx, pb.sy); ctx.stroke(); ctx.restore();
     });
-    if (showSpokes && mode !== "network" && view === "graph" && !STK) claims.forEach(function (c) {
+    if (showSpokes && mode !== "network" && view === "graph") claims.forEach(function (c) {
       if (c.hidden) return;
       [c.sub && c.sub.alpha > 0.02 ? c.sub : c.hub].concat(c.extra).forEach(function (h, j) {
         if (!h || h.alpha < 0.02) return;
@@ -1262,14 +1269,13 @@
     if (SPH) drawLinks("far");
 
     // nodes, far to near
-    var items = allHubs.concat(claims.filter(function (c) { return !gone(c); }), ghosts).sort(function (m, n) { return P.get(n).z - P.get(m).z; });
+    var items = allHubs.concat(claims.filter(function (c) { return !gone(c); })).sort(function (m, n) { return P.get(n).z - P.get(m).z; });
     var sphereDone = !SPH;
     if (!SPH) drawLinks("near");
     items.forEach(function (n) {
       var p = P.get(n);
       if (!sphereDone && p.z < SPH.cz) { drawSphere(SPH); drawLinks("near"); sphereDone = true; }
       if (SPH && SPH.solid && !sphereDone && Math.hypot(p.sx - SPH.c.sx, p.sy - SPH.c.sy) < SPH.rs * 0.97) { if (n._p) n._p.live = false; return; }   // behind the sphere
-      if (n.kind === "mp") { drawGhost(n, p, F, labels); return; }
       var isHub = n.kind === "hub", sc = nodeScale(p), fg = fog(p);
       var on = !F || (isHub ? F.hub === n || (F.hl && F.hl.indexOf(n) >= 0) || n.claims.some(function (c) { return F.ids[c.id]; }) : F.ids[n.id]);
       var isSel = sel && ((isHub && sel.hub === n) || (!isHub && sel.kind === "claim" && sel.id === n.id));
@@ -1374,18 +1380,6 @@
     requestAnimationFrame(frame);
   }
 
-  // A manifesto pledge in a chain that was not itself checked: an outline square, labelled with its party, year and number.
-  function drawGhost(n, p, F, labels) {
-    var fg = Math.max(0.35, Math.min(1, 1.05 - p.z / 900)), sc = nodeScale(p), hs = 6.4 * sc, isHov = hover && hover.kind === "mp" && hover.id === n.id, on = !F;
-    if (F) stk.links.forEach(function (l) { if ((l.a === n.id && F.ids[l.b]) || (l.b === n.id && F.ids[l.a])) on = true; });
-    ctx.save(); ctx.globalAlpha = (on ? 1 : 0.25) * fg;
-    ctx.fillStyle = CV.labelBg2; roundRect(p.sx - hs, p.sy - hs, hs * 2, hs * 2, hs * 0.22); ctx.fill();
-    ctx.strokeStyle = isHov ? CV.sel : "#cfd3e6"; ctx.lineWidth = isHov ? 2.2 : 1.6; ctx.setLineDash([2.5, 2]); ctx.stroke(); ctx.restore();
-    n._p = { x: p.sx, y: p.sy, r: hs + 3, live: true };
-    labels.push({ x: p.sx, y: p.sy + hs + 13, text: ghostLabel(n.row), sub: isHov ? "Not checked" : "", hub: false, color: "#cfd3e6",
-      alpha: (on ? 0.9 : 0.25) * fg, pri: isHov ? 4 : 1.2 });
-  }
-
   // Parts of a claim: small dots around their claim, faint until the claim (or one of its parts) is hovered or selected.
   function partFocus(par) {
     return (sel && ((sel.kind === "claim" && sel.id === par.id) || (sel.kind === "part" && partById[sel.id].parent === par))) ||
@@ -1414,15 +1408,12 @@
     var best = null, bd = 1e9;
     claims.concat(hubs, subHubs, parts).forEach(function (n) { if (!n._p || !n._p.live || (n.kind === "claim" ? gone(n) : n.hidden) || (n.kind === "hub" && n.alpha < 0.5)) return; var d = Math.hypot(n._p.x - x, n._p.y - y);
       var hit = Math.max(n._p.r + 5, W < 700 ? 16 : 0); if (d < hit && d < bd) { bd = d; best = n; } });
-    if (stackOn()) stk.ghosts.forEach(function (g) { if (!g._p) return; var d = Math.hypot(g._p.x - x, g._p.y - y);
-      if (d < Math.max(g._p.r + 5, W < 700 ? 16 : 0) && d < bd) { bd = d; best = g; } });
-    if (best) return best.kind === "mp" ? { kind: "mp", id: best.id } : best.kind === "hub" ? { kind: "hub", hub: best } : best.kind === "part" ? { kind: "part", id: best.id } : { kind: "claim", id: best.id };
+    if (best) return best.kind === "hub" ? { kind: "hub", hub: best } : best.kind === "part" ? { kind: "part", id: best.id } : { kind: "claim", id: best.id };
     var found = null; bd = W < 700 ? 12 : 8;
     function near(g) { var m = 1e9; for (var q = 0; q <= 24; q++) { var p = qpt(g, q / 24); m = Math.min(m, Math.hypot(p.x - x, p.y - y)); } return m; }
     edges.forEach(function (e, i) { if (!e._g) return; var d = near(e._g); if (d < bd) { bd = d; found = { kind: "edge", index: i, edge: e }; } });
     blinks.forEach(function (b) { var d = near(b.g); if (d < bd) { bd = d; found = { kind: "blink", q: b.q }; } });
     plinks.forEach(function (b) { var d = near(b.g); if (d < bd) { bd = d; found = { kind: "plink", l: b.l }; } });
-    clinks.forEach(function (b) { var d = near(b.g); if (d < bd) { bd = d; found = { kind: "clink", l: b.l }; } });
     return found;
   }
 
@@ -1769,10 +1760,29 @@
     if (view === "map") { fitPlaces(true); return; }
     cam.zoom = 1; cam.tpx = 0; cam.tpy = 0; cam.yaw = 0.6; cam.pitch = cam.tpitch; if (sway) cam.yaw = 0;
   }
+  // The timeline (assets/timeline.js, _includes/timeline-view.njk) is a page-like view below the bar: the web and the map
+  // rest while it is shown, and its script loads the first time it is opened. It shares the filter and the pinned tray.
+  var tlLoaded = false, under = "graph", spinBeforeTimeline = false;
+  function showTimeline(on) {
+    document.body.classList.toggle("is-timeline", on);
+    document.getElementById("tlview").hidden = !on;
+    if (on && !tlLoaded) { tlLoaded = true; var sc = document.createElement("script"); sc.src = ROOT + "assets/timeline.js"; document.body.appendChild(sc); }
+    else window.dispatchEvent(new Event("resize"));   // whichever view comes back measures itself again
+  }
   function setView(v, instant) {
     var was = view; view = v;
     try { localStorage.setItem("mizien.view", v); } catch (e) {}
-    var u = new URL(location.href); u.searchParams.set("view", v === "map" ? "map" : "ghanqbuta"); history.replaceState(null, "", u);
+    var u = new URL(location.href); u.searchParams.set("view", v === "graph" ? "web" : v); history.replaceState(null, "", u);
+    document.querySelectorAll("#viewby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.view === v ? "true" : "false"); });
+    if (v === "timeline") {   // the web or the map stays as it was underneath, paused
+      if (was !== "timeline") { under = was; spinBeforeTimeline = spinning; setSpin(false); }
+      showTimeline(true); return;
+    }
+    if (was === "timeline") {
+      showTimeline(false); was = under;
+      if (spinBeforeTimeline && under !== "map" && !reduce) setSpin(true);   // as it was; the switch below may pause it again
+      if (v === under) { setHint(); return; }
+    }
     if (v === "map") {
       if (was !== "map") { spinBeforeMap = spinning; setSpin(false); }
       buildPlaces(); openGeoMap(); document.getElementById("crumb").style.display = "none";
@@ -1785,12 +1795,11 @@
     // the map has one arrangement (places): the grouping controls give way to the place search
     ["groupbox", "groupsbox", "arrangebox", "spacingbox"].forEach(function (id) { document.getElementById(id).hidden = v === "map"; });
     document.getElementById("mapsearch").hidden = v !== "map";
-    document.querySelectorAll("#viewby button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.view === v ? "true" : "false"); });
     buildLinkBar(); if (v !== "map") { buildArrange(); buildSplit(); }
     var mt = document.getElementById("modeTitle");
     if (v === "map") { mt.querySelector(".t").textContent = "Claims across the islands"; mt.querySelector(".s").textContent = "Each medallion is a place: its number of claims, and a leaf for each one checked · press a place to list its claims"; }
     else { var M = MODES[mode]; mt.querySelector(".t").textContent = M.title; mt.querySelector(".s").textContent = modeSub(mode); }
-    syncLens(); setHint();
+    syncLens(); setHint(); renderLanes();
   }
   function setHint() {
     var h = document.getElementById("hint");
@@ -1801,17 +1810,15 @@
   }
   function buildViewBy() {
     var g = document.getElementById("viewby"); g.textContent = "";
-    // "Għanqbuta" is Maltese for spider: a web of claims, with topic hubs, spokes and the threads that link them.
-    [["graph", "Għanqbuta", "mode:network", "Għanqbuta (spider): a web of claims, with topic hubs, spokes and the threads that link them"],
-     ["map", "Map", "mode:topic", "Claims placed where they happened, across Malta and Gozo"]].forEach(function (v) {
+    [["graph", "Web", "mode:network", "A web of claims, with topic hubs, spokes and the threads that link them"],
+     ["map", "Map", "mode:topic", "Claims placed where they happened, across Malta and Gozo"],
+     ["timeline", "Timeline", "", "Every dated claim on a line of calendar days, with the same filter"]].forEach(function (v) {
       var b = el("button"); b.type = "button"; b.dataset.view = v[0]; b.title = v[3]; b.setAttribute("aria-pressed", view === v[0] ? "true" : "false");
       if (v[0] === "map") { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 L9 4 L15 6.5 L21 4 V17.5 L15 20 L9 17.5 L3 20 Z M9 4 V17.5 M15 6.5 V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'; }
+      else if (v[0] === "timeline") { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'; }
       else b.appendChild(iconSvg(v[2], "currentColor"));
       b.appendChild(document.createTextNode(v[1])); b.onclick = function () { setView(v[0]); }; g.appendChild(b);
     });
-    var t = el("a"); t.id = "tl-link"; t.title = "Every dated claim on a timeline, with the same filter";
-    t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
-    t.appendChild(document.createTextNode("Timeline")); g.appendChild(t); syncTimelineLink();
   }
   var toastTimer = null;
   function showToast(msg) { var t = document.getElementById("toast"); t.textContent = msg; t.style.display = "block";
@@ -1937,6 +1944,7 @@
     var d = c.data;
     if (expanded && c.hub !== expanded) collapse();
     if (view === "map" && c.place) showClaimPlace(c);   // bring its place into view
+    if (lanesOn() && lanesEl) lanesEl.querySelectorAll(".ln-sq").forEach(function (r) { r.classList.toggle("is-sel", r.parentNode.getAttribute("aria-label").indexOf(id + " ") === 0); });
     var pills = d.verdict ? [d.verdict].concat(d.confidence ? [d.confidence + " confidence"] : []) : d.pledge ? [] : [d.status, "not yet checked"];
     if (d.pledge) pills.push("Pledge: " + d.pledge.status, "as of " + d.pledge.as_of);
     openPanel(d.id + " · " + d.category.toUpperCase(), d.title, colOf(d), pills, ROOT + "claims/" + d.id + "/");
@@ -1971,7 +1979,7 @@
       if (d.pledge.target) pbody.appendChild(el("p", null, d.pledge.target));
       pbody.appendChild(el("p", "small", "Made by " + (d.pledge.made_by || []).map(function (b) { return b.name; }).join(", ") + " in " + d.pledge.vehicle +
         (d.pledge.deadline ? "; deadline " + d.pledge.deadline : "; no deadline stated") + (d.verdict ? ". The verdict above is for the factual part." : ".")));
-      if (mode !== "pledges") { var pa = el("div", "acts"), pnb = el("button", "btn ghost", "Show on the pledge disks"); pnb.type = "button";
+      if (mode !== "pledges") { var pa = el("div", "acts"), pnb = el("button", "btn ghost", "Show on the pledges timeline"); pnb.type = "button";
         pnb.onclick = function () { setMode("pledges"); selectClaim(id); }; pa.appendChild(pnb); pbody.appendChild(pa); }
     }
     if (d.subclaims && d.subclaims.length) {
@@ -2176,7 +2184,8 @@
   }
   function clearSel() { sel = null; panel.classList.remove("peek"); panel.style.display = "none"; collapse();
     document.getElementById("mapwrap").classList.remove("panel-open"); syncSelParam();
-    if (view === "map") { gmapSel = null; queueGeoMarks(); syncMapPadding(true); } }
+    if (view === "map") { gmapSel = null; queueGeoMarks(); syncMapPadding(true); }
+    if (lanesEl) lanesEl.querySelectorAll(".ln-sq.is-sel").forEach(function (r) { r.classList.remove("is-sel"); }); }
 
   // ------------------------------------------------------------ the selection survives view switches and is in the URL
   function selKey() {
@@ -2207,7 +2216,6 @@
       if (h) selectHub(h); }
   }
 
-  function stackName(id) { return byId[id] ? id : ghostPool[id] ? ghostLabel(ghostPool[id].row) : id; }
   function showTip(h, x, y) {
     if (!h) { tip.style.display = "none"; return; }
     var txt;
@@ -2217,8 +2225,6 @@
     else if (h.kind === "hub") txt = (h.hub.sub ? h.hub.parent.name + " › " : "") + h.hub.name + " · " + h.hub.count + unitWord(h.hub.count);
     else if (h.kind === "blink") txt = h.q.a.name + " ↔ " + h.q.b.name;
     else if (h.kind === "plink") txt = "Overlapping pledges: " + h.l.a + " ↔ " + h.l.b;
-    else if (h.kind === "mp") { var mr = ghostPool[h.id].row; txt = ghostLabel(mr) + ": " + mr.summary + " (in the manifesto list, not checked)"; }
-    else if (h.kind === "clink") txt = (h.l.type === "recycled" ? "Promised again after it was not met: " : "Carries forward: ") + stackName(h.l.a) + " ← " + stackName(h.l.b);
     else { var th = themeById[h.edge.theme] || {}; txt = (th.name || h.edge.theme) + ": " + h.edge.from + " ↔ " + h.edge.to; }
     tip.textContent = txt; tip.style.display = "block";
     tip.style.left = Math.min(x + 14, W - tip.offsetWidth - 8) + "px"; tip.style.top = (y + 16) + "px";
@@ -2248,7 +2254,6 @@
   function orbitLimits() {
     var L = MODES[mode] && MODES[mode].layout;
     if (L === "ring") return { lo: -1.25, hi: -0.12, yaw: null };
-    if (L === "stack") return { lo: -1.0, hi: -0.2, yaw: null };   // always from above, never edge-on, so the newest disk stays on top
     if (L === "arc" || L === "line") return { lo: -0.75, hi: 0.2, yaw: 0.85 };
     return { lo: -1.35, hi: 1.35, yaw: null };
   }
@@ -2290,9 +2295,6 @@
     if (multiGesture) { down = null; pinch = null; lastMid = null; if (!pointerCount()) { multiGesture = false; canvas.classList.remove("dragging"); } return; }
     canvas.classList.remove("dragging");
     if (moved < 6) { var r = canvas.getBoundingClientRect(); var h = pick(e.clientX - r.left, e.clientY - r.top);
-      if (h && (h.kind === "mp" || h.kind === "clink")) {   // a manifesto pledge or a chain link: open the checked pledge it belongs to
-        var ends = h.kind === "clink" ? [h.l.a, h.l.b] : stk.links.filter(function (l) { return l.a === h.id || l.b === h.id; }).map(function (l) { return l.a === h.id ? l.b : l.a; });
-        h = ends.filter(function (id) { return byId[id]; }).length ? { kind: "claim", id: ends.filter(function (id) { return byId[id]; })[0] } : null; }
       if (!h) clearSel(); else if (h.kind === "claim") selectClaim(h.id); else if (h.kind === "part") selectPart(h.id); else if (h.kind === "hub") selectHub(h.hub); else { clearTimeout(previewTimer); clearTimeout(endTimer); stash = null; previewKey = null; showLine(h, false); } }
     else if (view === "graph" && dragKind === "orbit") setSpin(false);
     down = null;
@@ -2314,6 +2316,7 @@
     if (used) { e.preventDefault(); setSpin(false); }
   });
   document.addEventListener("keydown", function (e) {
+    if (view === "timeline") return;   // the timeline has its own keys
     if (e.key === "Escape") clearSel();
     if ((e.target === document.body || e.target === canvas) && /^[1-7]$/.test(e.key)) setMode(MODE_ORDER[+e.key - 1]);
     if ((e.target === document.body || e.target === canvas) && (e.key === "m" || e.key === "M")) setView(view === "map" ? "graph" : "map");

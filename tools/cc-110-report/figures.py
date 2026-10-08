@@ -1,4 +1,4 @@
-"""Figures for Claim Check 111, drawn from data/cc-111/ (run fetch.py first)."""
+"""Figures for Claim Check 110, drawn from data/cc-110/ (run fetch.py first)."""
 import csv, pathlib
 import matplotlib
 matplotlib.use("Agg")
@@ -15,9 +15,6 @@ plt.rcParams.update({"font.family": "Liberation Sans", "axes.spines.top": False,
                      "axes.edgecolor": "#8A9399", "axes.labelcolor": "#2B3A42", "xtick.color": "#2B3A42",
                      "ytick.color": "#2B3A42"})
 GREEN, AMBER, RED, SLATE, GREY, BLUE = "#14452F", "#E3A72F", "#B5483A", "#2B3A42", "#8A9399", "#3C6E8F"
-v = {}
-for r in csv.DictReader(open(ROOT / "data/cc-111/eurostat_env_wasmun.csv")):
-    v[(r["geo"], r["wst_oper"], r["unit"], int(r["year"]))] = float(r["value"])
 n = {}
 for r in csv.DictReader(open(ROOT / "data/cc-110/eurostat_road_eqr_carpda.csv")):
     n[(r["geo"], r["mot_nrg"], int(r["year"]))] = float(r["value"])

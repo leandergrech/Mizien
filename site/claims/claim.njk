@@ -26,7 +26,7 @@ styles: [lens.css]
       {%- if c.verdict_confidence %} <span class="pill">{{ c.verdict_confidence }} confidence</span>{% endif %}
       {%- endif %}
       {%- if pv %}
-      <span class="{{ 'verdict' if pv.pure else 'pill pledge-pill' }}"{% if not pv.pure %} style="--pl: {{ pv.colour }}"{% endif %}>{% set pglyph = "pledge:" + pv.status %}{% glyph pglyph %}Pledge: {{ pv.status }}</span>
+      <span class="{{ 'verdict' if pv.pure else 'pill pledge-pill' }}"{% if not pv.pure %} style="--pl: {{ pv.colour }}; --pl-ink: {{ pv.ink }}"{% endif %}>{% set pglyph = "pledge:" + pv.status %}{% glyph pglyph %}Pledge: {{ pv.status }}</span>
       <span class="pill">as of {{ pv.as_of }}</span>
       {%- endif %}
       <span class="pill">{{ c.status_label }}</span>
@@ -89,7 +89,7 @@ styles: [lens.css]
 
     {%- if pv %}
     {%- set plabel = mizien.pledge_labels | findBy("name", pv.status) %}
-    <section class="pledge-box" aria-labelledby="h-pledge" style="--pl: {{ pv.colour }}">
+    <section class="pledge-box" aria-labelledby="h-pledge" style="--pl: {{ pv.colour }}; --pl-ink: {{ pv.ink }}">
       <h2 id="h-pledge">{% icon "flag" %}The pledge{% if not pv.pure %} in this claim{% endif %}</h2>
       <p class="pledge-status"><span class="pledge-label">{{ pv.status }}</span> <span class="small">as of {{ pv.as_of }}</span></p>
       {%- if plabel %}<p class="small">{{ pv.status }}: {{ plabel.meaning | mdInline | safe }}</p>{% endif %}
@@ -102,7 +102,7 @@ styles: [lens.css]
         <div><dt>Deadline</dt><dd>{{ pv.deadline or "none stated" }}</dd></div>
         {%- if pv.term_end %}<div><dt>Term ended</dt><dd>{{ pv.term_end }}</dd></div>{% endif %}
       </dl>
-      <p class="small"><a href="/pledges/">All pledges and how they are labelled</a> · <a href="/explore/?group=pledges&amp;sel=claim:{{ c.id }}">See it on the pledge disks</a></p>
+      <p class="small"><a href="/pledges/">All pledges and how they are labelled</a> · <a href="/explore/?group=pledges&amp;sel=claim:{{ c.id }}">See it on the pledges timeline</a></p>
     </section>
     {%- endif %}
 

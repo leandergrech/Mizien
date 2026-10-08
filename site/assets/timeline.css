@@ -1,11 +1,13 @@
-/* Timeline page (site/timeline.njk, assets/timeline.js): a dark instrument card on the same palette as the map. */
-.tlv-page > p { max-width: 78ch; }
+/* Timeline view of /explore/ (_includes/timeline-view.njk, assets/timeline.js): a dark instrument card on the same palette as the map. */
 .tlv-card { background: linear-gradient(180deg, var(--card), var(--bg)); border: 1px solid var(--line); border-radius: 16px;
   box-shadow: var(--card-shadow); overflow: hidden; margin: 16px 0 22px; }
 .tlv-card[hidden] { display: none; }
 .tlv-bar { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: space-between; padding: 12px 14px 4px; }
 .tlv-levels, .tlv-tools { display: inline-flex; gap: 6px; }
-.tlv-levels { gap: 0; border: 1px solid rgb(var(--rim) / .28); border-radius: 999px; overflow: hidden; background: rgb(var(--panel) / .45); }
+.tlv-levels { gap: 0; border: 1px solid rgb(var(--rim) / .28); border-radius: 999px; overflow: hidden; background: rgb(var(--panel) / .45);
+  max-width: 100%; overflow-x: auto; scrollbar-width: none; }   /* on a phone a row too wide scrolls rather than being cut */
+.tlv-levels::-webkit-scrollbar { display: none; }
+.tlv-levels button { flex: none; }
 .tlv-levels button { min-height: 38px; padding: 0 15px; border: 0; background: transparent; color: var(--ink); cursor: pointer;
   font: 600 14px/1 var(--sans); }
 .tlv-levels button + button { border-left: 1px solid rgb(var(--rim) / .18); }
@@ -73,7 +75,7 @@
   border-top: 1px solid var(--line); }
 .tlv-legend li { display: inline-flex; align-items: center; gap: 6px; }
 .tlv-key { width: 12px; height: 12px; border-radius: 50%; background: var(--v); border: 1.5px solid var(--paper); }
-.tlv-key-pledge { background: conic-gradient(#337f71 0 33%, #716f8d 0 66%, #7c2d4a 0); }
+.tlv-key-pledge { background: conic-gradient(#56ae6c 0 33%, #b0b8c1 0 66%, #a72a68 0); }
 
 /* The text version of the same timeline (always available, and the only view without JavaScript). */
 .tlv-list { margin: 8px 0 0; background: var(--paper); color: var(--paper-ink); border-radius: 12px; padding: 4px 20px 14px; }

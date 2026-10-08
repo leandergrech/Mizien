@@ -19,6 +19,8 @@ eleventyExcludeFromCollections: true
 <link rel="stylesheet" href="/assets/theme.css">
 <link rel="stylesheet" href="/assets/tabs.css">
 <link rel="stylesheet" href="/assets/lens.css">
+<link rel="stylesheet" href="/assets/labels.css">
+<link rel="stylesheet" href="/assets/timeline.css">
 <style>
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -38,6 +40,16 @@ eleventyExcludeFromCollections: true
   .meaning { color: var(--sage); font-size: 13px; margin: 4px 0 0; }
   .stats { display: flex; gap: 22px; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
   .stats b { display: block; color: var(--ink); font: 700 20px/1.1 "Liberation Serif", Georgia, serif; letter-spacing: 0; text-transform: none; }
+
+  /* ---------------------------------------------------------------- timeline view (_includes/timeline-view.njk) */
+  #tlview { flex: 1 1 auto; min-height: 0; overflow: auto; padding: 4px 20px 28px; border-top: 1px solid var(--hair);
+    --sans: "Liberation Sans", Arial, Helvetica, sans-serif; --serif: "Liberation Serif", Georgia, serif; }
+  #tlview[hidden] { display: none; }
+  #tlview > * { max-width: 1240px; margin-left: auto; margin-right: auto; }
+  #tlview .tlv-intro { margin-top: 10px; max-width: 1240px; color: var(--muted); }
+  #tlview .small { font-size: 13.5px; }
+  #tlview .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  body.is-timeline #mapwrap { display: none; }
 
   /* ---------------------------------------------------------------- map, full width */
   #mapwrap { position: relative; flex: 1 1 auto; min-height: 0; overflow: hidden;
@@ -178,6 +190,39 @@ eleventyExcludeFromCollections: true
     text-align: center; transition: opacity .4s; }
   #modeTitle .t { font: 700 22px "Liberation Serif", Georgia, serif; color: var(--ink); }
   #modeTitle .s { font-size: 12.5px; color: var(--muted); }
+
+  /* Pledges over time: an SVG timeline in lanes over the stage (map.js, renderLanes); the 3D canvas rests. */
+  #lanes { position: absolute; left: 270px; right: 0; top: 96px; bottom: 16px; overflow: auto; z-index: 2; padding: 4px 16px 12px; }
+  #lanes[hidden] { display: none; }
+  #mapwrap.panel-open #lanes { right: min(390px, 34vw); }
+  #mapwrap.is-lanes #zoomout, #mapwrap.is-lanes #zoomin, #mapwrap.is-lanes #reset, #mapwrap.is-lanes #displaymenu, #mapwrap.is-lanes #hint, #mapwrap.is-lanes #linkbar, #mapwrap.is-lanes #spacingbox, #mapwrap.is-lanes #moreopts #arrangebox { display: none; }
+  #lanes svg { display: block; }
+  #lanes text { font-family: Arial, sans-serif; fill: var(--ink); }
+  #lanes .ln-name { font-weight: 700; font-size: 13px; }
+  #lanes .ln-sub, #lanes .ln-gl { font-size: 11px; fill: var(--muted); }
+  #lanes .ln-id { font-size: 11px; font-weight: 700; }
+  #lanes .ln-band { fill: rgb(var(--rim) / .07); }
+  #lanes .ln-elect { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 3 3; }
+  #lanes .ln-axis { stroke: rgb(var(--rim) / .22); }
+  #lanes .ln-due { stroke-width: 3; opacity: .45; }
+  #lanes .ln-sq { stroke: var(--bg); stroke-width: 2; }
+  #lanes .ln-sq.is-sel { stroke: var(--ink); stroke-width: 2.5; }
+  #lanes .ln-ghost { fill: var(--bg); stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 2.5 2; }
+  #lanes .ln-link { fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-dasharray: 5 4; }
+  #lanes .ln-link.rec { stroke: #e0603f; stroke-width: 2.8; stroke-dasharray: none; }
+  #lanes .ln-linkhit { fill: none; stroke: transparent; stroke-width: 12; }
+  #lanes .ln-node, #lanes .ln-hit { cursor: pointer; }
+  #lanes .ln-node:focus-visible, #lanes .ln-hit:focus-visible { outline: 2px solid var(--accent); }
+  #lanes .ln-node:hover .ln-sq { stroke: var(--ink); }
+  #lanes .ln-hit:hover .ln-link { stroke-width: 3.5; }
+  .ln-key { display: flex; flex-wrap: wrap; gap: 4px 16px; font: 12px Arial, sans-serif; color: var(--muted); margin-top: 8px; }
+  .ln-key i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -2px; }
+  .ln-key i.ln-k-ghost { border: 1.5px dashed var(--muted); background: transparent; }
+  .ln-key i.ln-k-fw { height: 0; border-top: 2px dashed var(--muted); border-radius: 0; width: 18px; vertical-align: 3px; }
+  .ln-key i.ln-k-rec { height: 3px; background: #e0603f; border-radius: 0; width: 18px; vertical-align: 3px; }
+  .ln-key i.ln-k-due { height: 3px; background: var(--muted); opacity: .6; border-radius: 0; width: 18px; vertical-align: 3px; }
+  .lanes-empty { color: var(--muted); padding: 20px; }
+  @media (max-width: 900px) { #lanes { left: 0; bottom: 60px; } }
 
   #tip { position: absolute; display: none; pointer-events: none; max-width: 300px; padding: 6px 10px; border-radius: 8px; z-index: 5;
     background: rgba(246,244,238,.97); color: #14452f; font: 600 12px Arial, sans-serif; box-shadow: 0 6px 18px rgb(var(--shade) / .4); }
@@ -430,6 +475,8 @@ eleventyExcludeFromCollections: true
   <div id="viewby" class="xviews" role="group" aria-label="View"></div>
   <div id="lensbar"></div>
 </div>
+
+<section id="tlview" aria-label="Timeline of claims" hidden>{% include "timeline-view.njk" %}</section>
 
 <div id="mapwrap">
   <div id="stage" role="region" aria-label="Interactive 3D map of fact-checked claims" aria-describedby="hint">
