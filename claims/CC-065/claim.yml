@@ -2,39 +2,115 @@ id: CC-065
 title: Ġgantija buffer zone permit
 category: Planning & Housing
 subtopic: Heritage & character
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'ADPD (May 2026): recent planning decisions endanger Malta''s heritage, including a permit for apartments
-    within the buffer zone of the Ġgantija Temples.'
+  text: 'ADPD - The Green Party (Sandra Gauci and Luke Caruana, statement of 2 May 2026, in Maltese): the Planning Authority
+    approved apartments and garages in the buffer zone around the Ġgantija Temples, which ADPD called a sacrilege against
+    heritage.'
   speaker: ADPD - The Green Party (Sandra Gauci)
-  date: 2026-05
-  wording_status: 'Paraphrase: locate quote'
+  date: '2026-05-02'
+  wording_status: Verbatim found
   sources:
+  - title: 'Forti Chambray: eżempju wieħed biss tas-saltna tar-regħba f’pajjiżna'
+    publisher: ADPD - The Green Party (adpd.mt)
+    date: 2 May 2026
+    url: https://adpd.mt/forti-chambray-ezempju-wiehed-biss-tas-saltna-tar-reghba-fpajjizna/
+    note: 'Primary: the statement in Maltese, signed by Sandra Gauci and Luke Caruana. Read in full 9 Oct 2026.'
+  - title: Fort Chambray debacle just one example of Malta's 'reign of greed' – ADPD
+    publisher: Newsbook
+    date: 2 May 2026
+    url: https://newsbook.com.mt/en/fort-chambray-debacle-just-one-example-of-maltas-reign-of-greed-adpd/
+    note: Outlet's English report of the statement. Read in full 9 Oct 2026.
+  - title: Ġgantija development approved despite heritage fears
+    publisher: Newsbook
+    date: 30 Apr 2026
+    url: https://newsbook.com.mt/en/ggantija-development-approved-despite-heritage-fears/
+    note: Board vote 10 to 1 on 30 Apr 2026 (outlet text). Read in full.
   - title: ADPD slams planning decisions that endanger Malta's heritage
     publisher: MaltaToday
     date: May 2026
     url: https://www.maltatoday.com.mt/news/national/141429/adpd_slams_planning_decisions_that_endanger_maltas_heritage
-    note: Opposition claim.
-counter_evidence: 'PA/00570/21: farmhouse replaced by 22 apartments; UNESCO buffer-zone rules and SCH position.'
-tests: PA file PA/00570/21; UNESCO management plan; SCH consultation reply.
-why_low_hanging: A specific, attributable statement that public data can test.
+    note: Locator only (403 to scripts).
+  quote: 'Ma kienx biżżejjed tapprova l-kostruzzjoni ta’ appartamenti u garaxxijiet fil-buffer zone ta’ madwar il-Ġgantija
+    – sit uniku u meqjus bħala wirt kulturali dinji mill-UNESCO. (ADPD statement, adpd.mt, 2 May 2026; in Maltese, our translation:
+    it was not enough to approve the construction of apartments and garages in the buffer zone around the Ġgantija, a unique
+    site considered world cultural heritage by UNESCO.)'
+counter_evidence: 'Newsbook (30 Apr 2026): board voted 10 to 1 for 22 apartments and 20 garages (PA/00570/21). The Authority
+  revoked the 2023 permit on 7 Mar 2024 after incorrect buffer-zone information (as reported by Newsbook, second-hand). Heritage
+  impact assessment: no negative effect on integrity; the Superintendence withdrew objections; NGOs and Momentum call it contradictory
+  (outlet reports). Management plan 2012-17, Figure 2: the buffer zone reaches 127-477 m from the temple edge in eight directions
+  (our map measurement); reported plot distance 150-157 m.'
+tests: Planning Authority case file PA/00570/21 and decision notice (not read); heritage impact assessment (not read); management
+  plan 2012-17 Figure 2 (measured); UNESCO comment (none found).
+why_low_hanging: 'Done: Claim Check 065 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Facts rated (Largely supported, moderate): approval on 30 Apr 2026 and the site in the buffer zone; "sacrilege"
+  is an opinion and not rated. ADPD''s statement is in Maltese (our translation); its "yesterday" is a one- to two-day slip
+  against the 30 Apr vote. The Planning Authority''s case file, the heritage impact assessment, the permit and any UNESCO
+  comment on the final design were not read; the Authority''s 2023 and 2024 statements are read through TVM News and Newsbook
+  (second-hand). The plot was not placed on the plan''s map by us (the 2012-17 management plan was read; the Shift cites a
+  2015 plan). Fort Chambray, named in the same statement, is CC-066. No right of reply needed.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Management Plan 2012-2017, Figure 2 and section 2.1.3 (hash in data/cc-065/documents.csv)
+- Checks and map measurements in data/cc-065/checks.csv and margins.csv
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-09'
+thumbnail:
+  figure: 30 Apr
+  caption: '2026: Planning Board approved 22 apartments in the Ġgantija buffer zone, as ADPD said'
 location:
   place: Ġgantija Temples, Xagħra
   lat: 36.04723
   lon: 14.26906
   scope: site
   icon: temple
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-065A
+    text: "The Planning Authority approved apartments and garages on the site (“yesterday”)"
+    said_by: "ADPD [1]"
+    finding: "Board vote 10 to 1 on 30 April 2026 for 22 apartments and 20 garages [3, 6]. ADPD’s text, stamped 2 May, says “yesterday”: a two-day gap at most (calc.py). Authority’s record not read."
+    rating: "Accurate"
+    tone: green
+  - id: CC-065B
+    text: "The apartments are in the buffer zone around the Ġgantija"
+    said_by: "ADPD [1]"
+    finding: "Authority acknowledged wrong buffer-zone information in 2024 [8 ◆]; 2026 approval followed the required assessment [9]; Regional Council cites GN 853/10 [10]. Plot not placed on the plan by us."
+    rating: "Accurate"
+    tone: green
+  - id: CC-065C
+    text: "The decision is a “sacrilege” against heritage (endangers it)"
+    said_by: "ADPD [1]"
+    finding: "A judgement. The assessment and the Superintendence find no negative effect; NGOs and Momentum dispute it [3, 5, 9]. No UNESCO comment on the final design found."
+    rating: "Not rated (opinion)"
+    tone: grey
+history:
+- date: '2026-10-09'
+  step: started
+  note: Worker B took the claim. ADPD statement located on adpd.mt (Maltese); readable outlets (Newsbook, TVM News, The Shift)
+    read.
+- date: '2026-10-09'
+  step: wording
+  note: 'Verbatim found: ADPD statement of 2 May 2026 on adpd.mt, in Maltese (signed Gauci and Caruana). The claim record
+    text was a MaltaToday headline summary and is restated; the Fort Chambray part of the statement is CC-066.'
+- date: '2026-10-09'
+  step: note
+  note: Dates and a pixel measurement of the management plan Figure 2 done in tools/cc-065-report/calc.py (data/cc-065/).
+    Searches for a UNESCO comment on the final design and for the plot co-ordinates found nothing (log in literature/CC-065/notes.md).
+- date: '2026-10-09'
+  step: version
+  note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.
+  version: '1.0'

@@ -94,7 +94,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-062 | Planning & Housing | Construction is 9-14% of the economy | Not started | - |
 | CC-063 | Waste | Construction waste: 'standstill' warning | Drafted | Not substantiated |
 | CC-064 | Planning & Housing | Grand Harbour regeneration | Not started | - |
-| CC-065 | Planning & Housing | Ġgantija buffer zone permit | Not started | - |
+| CC-065 | Planning & Housing | Ġgantija buffer zone permit | Drafted | Largely supported |
 | CC-066 | Planning & Housing | Fort Chambray barracks | Not started | - |
 | CC-067 | Planning & Housing | Marsalforn 12 storeys | Not started | - |
 | CC-068 | Planning & Housing | Marsaskala marina shelved | Not started | - |
