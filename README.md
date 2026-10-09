@@ -84,7 +84,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-052 | Nature & Wildlife | Fish-farm slime 'promptly contained' | Not started | - |
 | CC-053 | Nature & Wildlife | Milky Way visible from 13% of Malta | Drafted | Supported |
 | CC-054 | Land & Trees | Project Green: 100,000 m2 a year | Not started | - |
-| CC-055 | Land & Trees | Manoel Island back to the public | Not started | - |
+| CC-055 | Land & Trees | Manoel Island back to the public | Drafted | Supported (pledge: Not measurable) |
 | CC-056 | Land & Trees | Central Link: 'only 254 trees' | Not started | - |
 | CC-057 | Land & Trees | 1,649 compensation trees | Not started | - |
 | CC-058 | Land & Trees | 96% of farmland in use | Not started | - |

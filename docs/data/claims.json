@@ -1119,7 +1119,7 @@
       "similar": [
         {
           "id": "CC-064",
-          "score": 0.39,
+          "score": 0.4,
           "terms": [
             "harbour",
             "grand"
@@ -1366,7 +1366,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.44,
+          "score": 0.45,
           "terms": [
             "square",
             "metres",
@@ -3533,7 +3533,17 @@
         "flyer_pdf": "claim-files/CC-053/flyer.pdf",
         "flyer_png": "claim-files/CC-053/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-053/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-053/claim.yml",
+      "similar": [
+        {
+          "id": "CC-055",
+          "score": 0.26,
+          "terms": [
+            "island",
+            "area"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-054",
@@ -3568,7 +3578,7 @@
       "similar": [
         {
           "id": "CC-019",
-          "score": 0.44,
+          "score": 0.45,
           "terms": [
             "square",
             "metres",
@@ -3590,11 +3600,13 @@
       "id": "CC-055",
       "title": "Manoel Island back to the public",
       "category": "Land & Trees",
-      "claim": "Government of Malta (2026): Manoel Island has been returned to public ownership from MIDI and will become a national park.",
-      "counter": "Reports give EUR 43m and EUR 47m for the deal; park plan, funding and timeline not yet public.",
-      "status": "Not started",
-      "verdict": null,
-      "tags": [],
+      "claim": "Prime Minister Robert Abela (13 May 2026, on the signing of the deed ending MIDI's concession): Manoel Island and Fort Tigné have been returned from MIDI to the public, and Manoel Island will become a national park.",
+      "counter": "The return is documented by MIDI's own announcement (13 May 2026) and reported parliamentary and shareholder approval; MIDI keeps the Tigné Point concession. Cost: MIDI gives EUR 47,321,000 gross, circa EUR 43 million net of VAT (Bonnici: EUR 43m, just over half of the EUR 78m asked). No Maltese Act searched (Cap. 549, 552, 445, 504, 573, 623) uses the term \"national park\"; no designation, management plan or local plan change found by 9 Oct 2026; no date given. On 16 Jul 2026 the Planning Authority sanctioned 20 padel courts and approved 10 more on the former Nicholl ground (Lovin Malta; decision not read).",
+      "status": "Drafted",
+      "verdict": "Supported",
+      "tags": [
+        "Promise-without-baseline"
+      ],
       "subtopic": "Open spaces & parks",
       "location": {
         "place": "Manoel Island, Gżira",
@@ -3603,26 +3615,116 @@
         "scope": "site",
         "icon": "fort"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Robert Abela, Prime Minister; Owen Bonnici, Lands Minister",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Robert Abela, Prime Minister",
       "bodies": [
-        "robert-abela",
-        "owen-bonnici"
+        "robert-abela"
       ],
-      "date": "2026",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-055A",
+          "text": "The MIDI concession over Manoel Island ended and the island returned to Government",
+          "finding": "MIDI’s own announcement of 13 May 2026: public deed, “return thereof to Government”; Parliament and shareholders approved [3, 7].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-055B",
+          "text": "The return is to the public",
+          "finding": "Heritage Malta takes responsibility [2]. MIDI keeps Tigné Point [4]; padel courts and a yacht yard sit on or beside the island [12, 13 ◆]. Deed not read.",
+          "rating": "Accurate, with caveats",
+          "tone": "green"
+        },
+        {
+          "id": "CC-055C",
+          "text": "It will become a national park",
+          "finding": "No definition in six Acts searched; no designation, plan or local plan change found; no date stated.",
+          "rating": "Not measurable (pledge)",
+          "tone": "grey"
+        }
+      ],
+      "pledge": {
+        "status": "Not measurable",
+        "slug": "pledge-not-measurable",
+        "colour": "#b0b8c1",
+        "ink": "#13301f",
+        "as_of": "9 October 2026",
+        "as_of_iso": "2026-10-09",
+        "made_on": "13 May 2026",
+        "made_mid": "2026-05-13",
+        "deadline_mid": null,
+        "deadline": null,
+        "term_end": null,
+        "target": "Manoel Island becomes a national park",
+        "vehicle": "Statement on signing the deed with MIDI (Newsbook, TVM News, 13 May 2026)",
+        "occasion": "Statement on signing the deed with MIDI (Newsbook",
+        "note": "No definition of national park in the Acts searched and no date; no designation, plan or local plan change found by 9 Oct 2026.",
+        "made_by": [
+          {
+            "id": "robert-abela",
+            "name": "Robert Abela",
+            "kind": "person",
+            "role": "Prime Minister",
+            "path": "/bodies/robert-abela/"
+          }
+        ],
+        "made_by_ids": [
+          "robert-abela"
+        ],
+        "pure": false,
+        "overlaps": [],
+        "kind": "campaign",
+        "kind_label": "Campaign pledge",
+        "cycle": "2026",
+        "cycle_label": "2026–",
+        "follows": [
+          "MP-PL-2026-14-5",
+          "MP-PL-2026-14-7"
+        ],
+        "follows_search": {
+          "date": "2026-10-09",
+          "searched": [
+            "data/manifesto_pledges.csv: Manoel, national park"
+          ],
+          "found": [
+            "MP-PL-2026-14-5 (local plan change so no development takes place on Manoel Island)",
+            "MP-PL-2026-14-7 (community green space on Manoel Island)"
+          ]
+        },
+        "drift": null,
+        "source_of_commitment": null,
+        "outliers": [
+          {
+            "type": "follows",
+            "text": "Carries forward: Int Malta: Manifest Elettorali 2026, 14.5 (2026–).",
+            "link": "MP-PL-2026-14-5"
+          },
+          {
+            "type": "follows",
+            "text": "Carries forward: Int Malta: Manifest Elettorali 2026, 14.7 (2026–).",
+            "link": "MP-PL-2026-14-7"
+          }
+        ]
+      },
+      "date": "2026-05-13",
+      "quote": "We are transforming this area into a national park designed according to the wishes of the Maltese and Gozitan people. (Newsbook's report of Prime Minister Abela, 13 May 2026.)",
+      "version": "1.0",
+      "last_reviewed": "2026-10-09",
+      "outputs": {
+        "report": "claim-files/CC-055/report.pdf",
+        "flyer_pdf": "claim-files/CC-055/flyer.pdf",
+        "flyer_png": "claim-files/CC-055/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-055/claim.yml",
       "similar": [
         {
-          "id": "CC-093",
-          "score": 0.29,
+          "id": "CC-053",
+          "score": 0.26,
           "terms": [
-            "park",
-            "public"
+            "island",
+            "area"
           ]
         }
       ]
@@ -4019,7 +4121,7 @@
       "similar": [
         {
           "id": "CC-016",
-          "score": 0.39,
+          "score": 0.4,
           "terms": [
             "harbour",
             "grand"
@@ -5334,17 +5436,7 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-093/claim.yml",
-      "similar": [
-        {
-          "id": "CC-055",
-          "score": 0.29,
-          "terms": [
-            "park",
-            "public"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-093/claim.yml"
     },
     {
       "id": "CC-094",
@@ -8260,12 +8352,6 @@
           "themes": []
         },
         {
-          "id": "ministry-lands",
-          "named": 1,
-          "pairs": 0,
-          "themes": []
-        },
-        {
           "id": "ministry-transport",
           "named": 1,
           "pairs": 0,
@@ -8417,12 +8503,6 @@
         },
         {
           "id": "ministry-finance",
-          "named": 1,
-          "pairs": 0,
-          "themes": []
-        },
-        {
-          "id": "ministry-lands",
           "named": 1,
           "pairs": 0,
           "themes": []
@@ -9264,38 +9344,6 @@
           "themes": [
             "T2"
           ]
-        }
-      ]
-    },
-    {
-      "id": "ministry-lands",
-      "name": "Ministry for Lands",
-      "kind": "organisation",
-      "type": "government",
-      "parent": "government-of-malta",
-      "role": null,
-      "links": [
-        {
-          "id": "opm",
-          "named": 1,
-          "pairs": 0,
-          "themes": []
-        }
-      ]
-    },
-    {
-      "id": "owen-bonnici",
-      "name": "Owen Bonnici",
-      "kind": "person",
-      "type": "government",
-      "parent": "ministry-lands",
-      "role": "Lands Minister",
-      "links": [
-        {
-          "id": "opm",
-          "named": 1,
-          "pairs": 0,
-          "themes": []
         }
       ]
     },
