@@ -2,39 +2,128 @@ id: CC-055
 title: Manoel Island back to the public
 category: Land & Trees
 subtopic: Open spaces & parks
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: Moderate
 claim:
-  text: 'Government of Malta (2026): Manoel Island has been returned to public ownership from MIDI and will become
-    a national park.'
-  speaker: Robert Abela, Prime Minister; Owen Bonnici, Lands Minister
-  date: '2026'
-  wording_status: 'Paraphrase: locate quote'
+  text: 'Prime Minister Robert Abela (13 May 2026, on the signing of the deed ending MIDI''s concession): Manoel Island and
+    Fort Tigné have been returned from MIDI to the public, and Manoel Island will become a national park.'
+  speaker: Robert Abela, Prime Minister
+  date: '2026-05-13'
+  wording_status: Verbatim found
   sources:
+  - title: 'Watch: Agreement over Manoel Island and Fort Tigné signed'
+    publisher: Newsbook
+    date: 13 May 2026
+    url: https://newsbook.com.mt/en/agreement-over-manoel-island-and-fort-tigne-signed/
+    note: Abela quoted in quotation marks on the national park. Read in full 9 Oct 2026.
+  - title: Manoel Island and Fort Tigné agreement finalised to return sites to the public
+    publisher: TVM News
+    date: 13 May 2026
+    url: https://tvmnews.mt/en/news/manoel-island-and-fort-tigne-agreement-finalised-to-return-sites-to-the-public/
+    note: '"Historic moment" quoted; the rest is TVM''s text. Read in full 9 Oct 2026.'
+  - title: Company announcement MDI222, Manoel Island and Fort Tigné
+    publisher: MIDI p.l.c. (Malta Stock Exchange)
+    date: 13 May 2026
+    url: https://cdn.borzamalta.com.mt/download/announcements/MDI222.pdf
+    note: 'Primary: public deed entered into, "resulting in the return thereof to Government". Announcements MDI214 (17 Mar) and MDI215 (20 Mar) read too.'
   - title: Manoel Island officially returned as public land
     publisher: MaltaToday
     date: '2026'
     url: https://www.maltatoday.com.mt/news/national/141742/manoel_island_officially_returned_as_public_land
-    note: Locates the claim.
-counter_evidence: Reports give EUR 43m and EUR 47m for the deal; park plan, funding and timeline not yet public.
-tests: Deed and parliamentary papers; park masterplan.
-why_low_hanging: A specific, attributable statement that public data can test.
-tags: []
-tags_provisional: true
-priority: Queue
+    note: Locator only (403 to scripts).
+  quote: We are transforming this area into a national park designed according to the wishes of the Maltese and Gozitan people.
+    (Newsbook's report of Prime Minister Abela, 13 May 2026.)
+counter_evidence: 'The return is documented by MIDI''s own announcement (13 May 2026) and reported parliamentary and shareholder
+  approval; MIDI keeps the Tigné Point concession. Cost: MIDI gives EUR 47,321,000 gross, circa EUR 43 million net of VAT (Bonnici:
+  EUR 43m, just over half of the EUR 78m asked). No Maltese Act searched (Cap. 549, 552, 445, 504, 573, 623) uses the term
+  "national park"; no designation, management plan or local plan change found by 9 Oct 2026; no date given. On 16 Jul 2026 the
+  Planning Authority sanctioned 20 padel courts and approved 10 more on the former Nicholl ground (Lovin Malta; decision not read).'
+tests: MIDI announcements; statute texts on legislation.mt; deed and shareholder circular (not read); park plan and local plan (none found).
+why_low_hanging: 'Done: Claim Check 055 report and flyer.'
+tags:
+- Promise-without-baseline
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Mixed check: the return is rated (Supported, moderate); "will become a national park" is a pledge rated Not measurable
+  (as of 9 Oct 2026): pending right of reply. The Prime Minister''s words are read through Newsbook and TVM News; the deed, the
+  shareholder circular, the parliamentary resolution and the Planning Authority decision were not read. Absence of a definition or
+  plan rests on six Acts searched, web searches and two outlets'' first result pages (log in literature/CC-055/notes.md). The 21 Jul
+  2026 remarks are second-hand.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- MIDI announcements MDI214, MDI215, MDI222 (hashes in data/cc-055/documents.csv)
+- Consolidated texts of Cap. 549, 552, 445, 504, 573, 623 on legislation.mt, searched 9 Oct 2026
+- Checks in data/cc-055/checks.csv
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-09'
+thumbnail:
+  figure: 13 May
+  caption: 'deed of 2026 returned Manoel Island to Government (national park pledge: Not measurable)'
+pledge:
+  status: Not measurable
+  kind: campaign
+  follows: [MP-PL-2026-14-5, MP-PL-2026-14-7]
+  follows_search:
+    date: '2026-10-09'
+    searched:
+    - 'data/manifesto_pledges.csv: Manoel, national park'
+    found:
+    - 'MP-PL-2026-14-5 (local plan change so no development takes place on Manoel Island)'
+    - 'MP-PL-2026-14-7 (community green space on Manoel Island)'
+  as_of: '2026-10-09'
+  made_by:
+  - robert-abela
+  made_on: '2026-05-13'
+  vehicle: Statement on signing the deed with MIDI (Newsbook, TVM News, 13 May 2026)
+  deadline: null
+  target: Manoel Island becomes a national park
+  note: No definition of national park in the Acts searched and no date; no designation, plan or local plan change found by 9 Oct 2026.
 location:
   place: Manoel Island, Gżira
   lat: 35.90332
   lon: 14.50195
   scope: site
   icon: fort
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-055A
+    text: "The MIDI concession over Manoel Island ended and the island returned to Government"
+    said_by: "Prime Minister [2]; MIDI [3]"
+    finding: "MIDI’s own announcement of 13 May 2026: public deed, “return thereof to Government”; Parliament and shareholders approved [3, 7]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-055B
+    text: "The return is to the public"
+    said_by: "Prime Minister [2]"
+    finding: "Heritage Malta takes responsibility [2]. MIDI keeps Tigné Point [4]; padel courts and a yacht yard sit on or beside the island [12, 13 ◆]. Deed not read."
+    rating: "Accurate, with caveats"
+    tone: green
+  - id: CC-055C
+    text: "It will become a national park"
+    said_by: "Prime Minister [1]"
+    finding: "No definition in six Acts searched; no designation, plan or local plan change found; no date stated."
+    rating: "Not measurable (pledge)"
+    tone: grey
+history:
+- date: '2026-10-09'
+  step: started
+  note: "Worker A took the claim. Wording located in readable outlets (Newsbook, TVM News, Lovin Malta); MIDI's Malta Stock Exchange announcements read."
+- date: '2026-10-09'
+  step: wording
+  note: 'Verbatim found: Abela quoted in quotation marks by Newsbook (13 May 2026); "historic moment" by TVM News. The claim record''s text was a headline summary and is restated.'
+- date: '2026-10-09'
+  step: note
+  note: 'Dates and amounts checked in tools/cc-055-report/calc.py (data/cc-055/checks.csv). Six Acts searched on legislation.mt for "national park": none. Web searches for a designation, plan or local plan change: none found. Log in literature/CC-055/notes.md.'
+- date: '2026-10-09'
+  step: version
+  note: First issue. Verdict Supported (moderate confidence); pledge label Not measurable (as of 9 Oct 2026); pending right of reply.
+  version: '1.0'
