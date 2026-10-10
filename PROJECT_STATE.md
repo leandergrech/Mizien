@@ -63,9 +63,12 @@ ledger now finds no unlinked pair (0 reference problems, 37 facts). No pattern t
   `robots_refused`, a bot wall: gov.mt sites, ERA, NSO, MaltaToday, Times of Malta, Independent, parlament.mt). A full
   run used to wipe hand-recorded rows (21 maintainer copies and transcriptions), duplicate URLs and drop rows whose URL
   left `sources.csv`; it now retries only automated failures, merges duplicates losslessly and checkpoints every 25
-  URLs. A run over the gap (`--no-save`: Wayback saving is unreachable from the cloud; snapshot look-ups work) was
-  in progress at this note (checkpoint of 10 Oct 2026: 218 manifest rows, 430 of 642 source URLs still without a
-  row); the final count is in the commit that adds its last manifest.
+  URLs. A full run over the gap (`--no-save`: Wayback saving is unreachable from the cloud; snapshot look-ups work)
+  finished on 10 Oct 2026: every one of the 642 source URLs now has a row (483 had none). 648 rows: 453 fetched and
+  hashed, 264 with a Wayback snapshot, 129 `robots_refused` (bot walls: MaltaToday 48, ERA 23, Independent 16, NSO 8,
+  gov.mt sites, parlament.mt, PA), 5 `robots_disallowed` (real rules: Eionet CDR, OpenStreetMap, the JRC PVGIS API,
+  ERA's press-release index), 35 HTTP errors, 2 network errors; the 24 hand-made rows kept. A hash records the bytes
+  received, which for a few sites may be a consent or challenge page rather than the article.
 - `data/sources.csv`: the 11 duplicate Refs (29–35, 88, 89, 290, 291) renumbered 667–677.
 - CC-001 `references.bib` verified against Crossref (first task 2): authors, volumes, pages and DOIs for 8 entries;
   north2015 still unidentified (TreeNet page refuses scripts; one candidate recorded, not adopted). The CC-001 report's
@@ -1129,8 +1132,9 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
   accounts-derived line, not the inventory; see "Session wrap-up: consolidation and sheets"). Use `env_air_gge`.
 - [x] `data/edges.csv`: links through shared facts CC-026–CC-114, CC-026–CC-031, CC-031–CC-109 added as theme T16
   (10 Oct 2026).
-- [ ] Archive gap: 460 of the 597 distinct source URLs in `data/sources.csv` have no row in `archive/manifest.csv`
-  (counted 6 Oct 2026). Run `scripts/archive_sources.py` over them, then archive by hand what it cannot reach.
+- [ ] Archive by hand (browser, Save Page Now) the 129 `robots_refused` and 35 `http_error` rows of
+  `archive/manifest.csv`, and ask Wayback to save the fetched pages that have no snapshot (Wayback saving is
+  unreachable from the cloud). The gap itself is closed: every source URL has a row (10 Oct 2026).
 
 - [x] **CC-019:** aerial-imagery spot-check integrated (5 Oct 2026); confidence Moderate. `data/cc-019/imagery_spotcheck.csv` lists Amphora's id, centroid, area and place for the 39 sampled polygons (no geometry); drop those columns if Amphora objects. Imagery not committed (Esri terms).
 - [x] **CC-017:** EMODnet-only redraw integrated (5 Oct 2026). Rows 340 and 344 (UNEP-WCMC) are marked not used. Unverified: that EMODnet's 'EUSM16me' is IFREMER's EUSeaMap compilation.
@@ -1168,9 +1172,8 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
 - [ ] **CC-037 archive (manual):** web.archive.org refused connections from the cloud network on 5 Oct 2026. Open the listed capture of the Amphora guidebook page (16 Jun 2026, URL in `archive/manifest.csv`), check it shows the quoted wording, and save a fresh capture in a browser. Page hashes are in `literature/CC-037/notes.md`.
 - [x] `scripts/archive_sources.py` reads robots.txt with its own User-Agent (10 Oct 2026); of 86 rows marked
   robots_disallowed, 38 were false positives and 48 are bot walls (`robots_refused`); none is a robots.txt rule.
-- [ ] Archive by hand the 27 robots-disallowed sources in `archive/manifest.csv` (gov.mt, ERA, NSO, MaltaToday,
-  Newsbook, Italpress, arja.mt, Independent, Chambers). gov.mt sites (climateaction, publicservice, DOI) block
-  automated access with Cloudflare; read them in a browser.
+- [x] The old "robots-disallowed" list is superseded: see the hand-archiving item above (10 Oct 2026; Newsbook,
+  Italpress and arja.mt allow the archiver and are now fetched; the chambers.com article failed with a network error).
 - [ ] Add the new CC-003/004/011 primary sources to the archive (CAA press release, PR260072en, PL manifesto PDF,
   PN programme pages). The PL manifesto SHA-256 is recorded in `literature/CC-011/references.bib`.
 - [ ] Send right-of-reply drafts: CC-003 to the Climate Action Authority and Environment Ministry; CC-004 to the
