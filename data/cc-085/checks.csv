@@ -1,0 +1,49 @@
+check,value,unit,source,note
+"2022 study p. 27, Base FY19: rented arrivals = (collective + private demand nights) / 2019 stay (7.024)","2,239,319",arrivals,"Deloitte for MHRA, Carrying Capacity Study (2022), p. 27","collective 38,000 beds x 365 x 76.71% = 10,639,085 nights; private 23,502 beds, 5,089,972 nights (occupancy 59.34%); printed 2,239,319"
+"2022 study p. 27, Sc1: rented arrivals = (collective + private demand nights) / 2019 stay (7.024)","3,632,216",arrivals,"Deloitte for MHRA, Carrying Capacity Study (2022), p. 27","collective 68,400 beds x 365 x 76.71% = 19,150,354 nights; private 29,378 beds, 6,362,466 nights (occupancy 59.34%); printed 3,632,216"
+"2022 study p. 27, Sc2: rented arrivals = (collective + private demand nights) / 2019 stay (7.024)","3,819,915",arrivals,"Deloitte for MHRA, Carrying Capacity Study (2022), p. 27","collective 72,200 beds x 365 x 76.71% = 20,214,262 nights; private 30,553 beds, 6,616,964 nights (occupancy 59.34%); printed 3,819,916"
+"2022 study p. 27, Sc3: rented arrivals = (collective + private demand nights) / 2019 stay (7.024)","4,007,615",arrivals,"Deloitte for MHRA, Carrying Capacity Study (2022), p. 27","collective 76,000 beds x 365 x 76.71% = 21,278,171 nights; private 31,728 beds, 6,871,463 nights (occupancy 59.34%); printed 4,007,615"
+2022 study: tourists in non-rented accommodation in 2019 (p. 66 total minus p. 27 rented),"513,921",arrivals,"Deloitte for MHRA, Carrying Capacity Study (2022), pp. 27 and 66","2,753,240 - 2,239,319; held constant in the slides' scenarios"
+"2022 slides, Sc1: arrivals required for 2019 occupancy (rented + non-rented)",4.15,million,"Deloitte for MHRA, Carrying Capacity Study (2022) p. 27 and Deloitte for MHRA, launch slides (Sep 2022) slide 11","slide prints 4.1m; reproduced 4,146,137"
+"2022 slides, Sc2: arrivals required for 2019 occupancy (rented + non-rented)",4.33,million,"Deloitte for MHRA, Carrying Capacity Study (2022) p. 27 and Deloitte for MHRA, launch slides (Sep 2022) slide 11","slide prints 4.3m; reproduced 4,333,836"
+"2022 slides, Sc3: arrivals required for 2019 occupancy (rented + non-rented)",4.52,million,"Deloitte for MHRA, Carrying Capacity Study (2022) p. 27 and Deloitte for MHRA, launch slides (Sep 2022) slide 11","slide prints 4.5m; reproduced 4,521,536"
+2022 study: 2019 average length of stay = 2019 guest nights / 2019 arrivals,7.024,nights,"Deloitte for MHRA, Carrying Capacity Study (2022), p. 66 (NSO data, second-hand (◆) for NSO)","19,338,860 / 2,753,240; table labels it 7"
+"2022 study p. 66, Sc1 (+60% guest nights): arrivals = 2019 arrivals x 1.6","4,405,184",arrivals,"Deloitte for MHRA, Carrying Capacity Study (2022), p. 66","printed 4,405,184; difference +0"
+"2022 study p. 66, Sc2 (+70% guest nights): arrivals = 2019 arrivals x 1.7","4,680,508",arrivals,"Deloitte for MHRA, Carrying Capacity Study (2022), p. 66","printed 4,680,509; difference +1"
+"2022 study p. 66, Sc3 (+80% guest nights): arrivals = 2019 arrivals x 1.8","4,955,832",arrivals,"Deloitte for MHRA, Carrying Capacity Study (2022), p. 66","printed 4,955,833; difference +1"
+2022 study: the claim's 4.7 million is p. 66's Sc2,"4,680,509",arrivals,"Deloitte for MHRA, Carrying Capacity Study (2022), p. 66","Sc2 = +70% guest nights on 2019 at 2019 occupancy and 7-night stays; Sc1 4.41m, Sc3 4.96m"
+"2022 study beds, Sc1, at 80% occupancy in collective and private rented beds (2019 stay, + non-rented)",4.58,million,"Deloitte for MHRA, Carrying Capacity Study (2022) p. 27 inputs; 80% from the claim","4,578,702"
+"2022 study beds, Sc1, at 80% occupancy in collective beds only (private at 59.3%)",4.26,million,"Deloitte for MHRA, Carrying Capacity Study (2022) p. 27 inputs; 80% from the claim","4,263,227"
+"2022 study beds, Sc2, at 80% occupancy in collective and private rented beds (2019 stay, + non-rented)",4.79,million,"Deloitte for MHRA, Carrying Capacity Study (2022) p. 27 inputs; 80% from the claim","4,785,521"
+"2022 study beds, Sc2, at 80% occupancy in collective beds only (private at 59.3%)",4.46,million,"Deloitte for MHRA, Carrying Capacity Study (2022) p. 27 inputs; 80% from the claim","4,457,431"
+"2022 study beds, Sc3, at 80% occupancy in collective and private rented beds (2019 stay, + non-rented)",4.99,million,"Deloitte for MHRA, Carrying Capacity Study (2022) p. 27 inputs; 80% from the claim","4,992,339"
+"2022 study beds, Sc3, at 80% occupancy in collective beds only (private at 59.3%)",4.65,million,"Deloitte for MHRA, Carrying Capacity Study (2022) p. 27 inputs; 80% from the claim","4,651,636"
+2024 update: MTA-approved pipeline as a share of 2023 licensed collective beds,62.9,%,"Deloitte for MHRA, Market update (24 Sep 2024), pp. 69 and 72 (MTA data, end April 2024)","27,672 beds / 43,965 beds; 13,543 rooms in 483 establishments"
+"2024 update, Sc1: collective arrivals = beds x 365 x 65.8% / 4.7 - local demand","2,594,704",arrivals,"Deloitte for MHRA, Market update (24 Sep 2024), p. 72","beds 58,370 (printed 58,370); printed 2,603,000 (within 0.4%: occupancy and stay are printed rounded)"
+"2024 update, Sc2: collective arrivals = beds x 365 x 65.8% / 4.7 - local demand","2,765,182",arrivals,"Deloitte for MHRA, Market update (24 Sep 2024), p. 72","beds 61,706 (printed 61,706); printed 2,774,000 (within 0.4%: occupancy and stay are printed rounded)"
+"2024 update, Sc3: collective arrivals = beds x 365 x 65.8% / 4.7 - local demand","2,935,659",arrivals,"Deloitte for MHRA, Market update (24 Sep 2024), p. 72","beds 65,042 (printed 65,043); printed 2,944,000 (within 0.4%: occupancy and stay are printed rounded)"
+"2024 update, Sc3 (full pipeline, 15% retired): total arrivals","4,438",thousand,"Deloitte for MHRA, Market update (24 Sep 2024), p. 74","printed 4,438 thousand ('4.4m')"
+"2024 update: extra collective arrivals if no beds retired (6,595 beds x 365 x 65.8% / 4.7)","336,992",arrivals,"Deloitte for MHRA, Market update (24 Sep 2024), pp. 9 and 72",printed 338 thousand; total 4.77m ('4.8m')
+"Hotels: net room occupancy, 2019",75.4,%,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026 (tour_occ_anor)",bed-places 66.2%
+"Hotels: net room occupancy, 2025",75.8,%,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026 (tour_occ_anor)",bed-places 67.3%
+"Hotels: highest net room occupancy, 2012-2025",77.8,%,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026 (tour_occ_anor)",in 2018; years at or above 80%: 0
+2022 study: 2019 occupancy assumed for collective / private rented beds,76.7 / 59.3,%,"Deloitte for MHRA, Carrying Capacity Study (2022), p. 27",the scenarios hold these rates; no 80% occupancy condition appears in the report or slides (text searched)
+"MHRA/Deloitte hotel performance survey: 5-star occupancy, 2019",72.7,%,"Deloitte for MHRA, Market update (24 Sep 2024), p. 27 (chart label)",2023: 67.2%
+"MHRA/Deloitte hotel performance survey: 4-star occupancy, 2019",81.2,%,"Deloitte for MHRA, Market update (24 Sep 2024), p. 27 (chart label)",2023: 82.3%
+"Bed-places in hotels, 2019 to 2025",+20.9,%,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026 (tour_cap_nat)","46,350 -> 56,034"
+"Bed-places in all tourist accommodation establishments, 2019 to 2025",+20.8,%,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026 (tour_cap_nat)","48,096 -> 58,099"
+"Hotel bedrooms, 2019 to 2025",+22.0,%,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026 (tour_cap_nat)","20,133 -> 24,555"
+"Hotel bed-places, 2024 to 2025",+10.7,%,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026 (tour_cap_nat)","50,611 -> 56,034"
+"Hotels and similar establishments, 2019 to 2025",+136,establishments,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026 (tour_cap_nat)",224 -> 360
+2022 study scenarios: collective bed stock growth assumed over 4-5 years,+80 to +100,%,"Deloitte for MHRA, Carrying Capacity Study (2022), pp. 25 and 27","stakeholder consensus; c. 35,000 beds in open permits"
+"Nights per arrival at tourist accommodation establishments, 2019",4.90,nights,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026 (tour_occ_ninat / tour_occ_arnat)","9,911,282 / 2,022,912; foreign residents 5.18"
+"Nights per arrival at tourist accommodation establishments, 2025",4.41,nights,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026 (tour_occ_ninat / tour_occ_arnat)","12,469,412 / 2,828,134; foreign residents 4.60"
+"Change in nights per arrival at establishments, 2019 to 2025",-10.0,%,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026",shorter stays need more arrivals for the same nights
+2022 study Sc2 arrivals if stays were shorter by that change,5.20,million,"Deloitte for MHRA, Carrying Capacity Study (2022) p. 66 and Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026","sensitivity: the study's nights held, the stay shortened in proportion"
+"Nights at tourist accommodation establishments, 2019 to 2025",+25.8,%,"Eurostat (2026-09-22, 2026-10-09 releases), retrieved 10 Oct 2026 (tour_occ_ninat)","9,911,282 -> 12,469,412"
+"Inbound tourists, 2025","4,022,310",tourists,"second-hand (◆): Malta Business Weekly, 12 Feb 2026, reporting NSO (NR 020/2026); nights given as 25.4 million",NSO release itself 403
+"Inbound tourists, 2019 to 2025",+46.1,%,second-hand (◆): NSO via the 2022 study and Malta Business Weekly,
+Inbound tourists in 2025 as a share of 4.7 million,85.6,%,second-hand (◆),
+"Average stay of inbound tourists, 2019",7.02,nights,"second-hand (◆): Deloitte for MHRA 2022, p. 66 (FY19; NSO data)",
+"Average stay of inbound tourists, 2023",6.80,nights,"second-hand (◆): Deloitte for MHRA 2024, p. 74 (thousands; NSO data)",
+"Average stay of inbound tourists, 2025",6.31,nights,"second-hand (◆): Malta Business Weekly, 12 Feb 2026, reporting NSO (NR 020/2026); nights given as 25.4 million",
