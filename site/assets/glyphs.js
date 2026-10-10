@@ -200,6 +200,7 @@
     "theme:T10": "Tourism & Population",
     "theme:T13": "Noise",
     "theme:T15": "Heritage & character",
+    "theme:T16": "Emissions & targets",
     "place:bus": "Public transport",
     "place:pylon": "Electricity & grid",
     "mode:pledges": "pledge"

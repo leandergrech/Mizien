@@ -41,8 +41,9 @@ Every run therefore starts with `python scripts/net_check.py`:
   way go in `data/sources.csv` (marked not retrieved) and `literature/CC-NNN/README.md`. At 3 attempts set
   `Blocker` to `needs maintainer: <what to supply>`; workers then skip the claim.
 - **Waiting on the maintainer:** when the `Blocker` starts with `source:` or `needs maintainer` (browser-only
-  sources included), set the claim's status to `In progress` in `claim.yml` and `data/claims.csv`, so the site
-  shows it as started. A `network:` blocker leaves the status unchanged, since no work could be done.
+  sources included), set the claim's status to `In progress` in `claim.yml` (`data/claims.csv` follows it), so the
+  site shows it as started, and log the attempt in the claim's `history:` (`started`, then `note` for later attempts).
+  A `network:` blocker leaves the status unchanged, since no work could be done.
 - **Maintainer unblock:** paste the verbatim passages (with URL, outlet, date and date read) into
   `literature/CC-NNN/primary-source.md`, as for CC-007, and clear the `Blocker` cell. Workers treat that file as
   the archived primary wording.
@@ -94,6 +95,17 @@ Every run therefore starts with `python scripts/net_check.py`:
   build log warns about any place left on the generic pin. A new topic, subtopic, pledge label or theme needs a glyph in
   the same file (until it has one it shows its parent's, and the build log says which are missing).
 - Never changes a verdict, a finished report, or a claim that has a report.
+
+## Sheets
+
+`claims/CC-NNN/claim.yml` is the source of truth; the tracker sheets are generated from it by `scripts/sheets.py`,
+which `scripts/build_site_data.py` runs on every build: `data/claims.csv` (the claim sheet), `data/facts.csv` (every
+row of every `data/cc-nnn/checks.csv`: the fact sheet), `data/actors.csv` (organisations and their claims, from the
+register), the themes' edge counts in `data/themes.csv`, and the README claims table. Do not edit them by hand. The
+workbook `data/candidates.xlsx` gathers every sheet (claims, facts, quick checks, patterns, themes, edges, sources,
+bodies, actors, queue); it is binary, so only the maintainer's session rebuilds it (`python scripts/sheets.py --xlsx`),
+at the end of a session. Hand-curated: `data/edges.csv`, `data/themes.csv` (except the counts), `data/sources.csv`,
+`data/quick_checks.csv`, `data/queue.csv`, `data/bodies.csv`.
 
 ## Queue file
 

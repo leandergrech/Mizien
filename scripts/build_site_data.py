@@ -22,6 +22,7 @@ import bodies as register
 import connections
 import patterns as by_kind
 import pledges
+import sheets
 import similarity
 import timeline
 
@@ -155,6 +156,9 @@ def main() -> int:
                 shutil.copy2(source, dest)
     write_site_data(records, out, reg, claim_bodies, profiles)
     print(f"Wrote {len(claims)} claims, {len(edges)} edges, {len(themes)} themes.")
+    # The tracker sheets (data/claims.csv, facts.csv, actors.csv, the README table) follow the records too.
+    changed = sheets.write_text_sheets(records)
+    print("Sheets: " + (", ".join(changed) + " updated." if changed else "current."))
     return 0
 
 

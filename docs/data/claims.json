@@ -7868,6 +7868,27 @@
       "theme": "T4",
       "link_type": "Shared driver",
       "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-026",
+      "to": "CC-031",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-026",
+      "to": "CC-114",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-031",
+      "to": "CC-109",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Strong"
     }
   ],
   "themes": [
@@ -8130,6 +8151,21 @@
         "CC-066",
         "CC-116"
       ]
+    },
+    {
+      "id": "T16",
+      "name": "Shared emissions figures",
+      "color": "#a1887f",
+      "dashed": false,
+      "link_type": "Shared data",
+      "strength": "Strong",
+      "description": "Finished checks that rest on the same Eurostat emissions figure, verified to agree by the fact-ledger build (sketch/fact-ledger): Malta's 2024 territorial total (CC-026, CC-031), road transport +39.4% since 2005 (CC-031, CC-109), air transport 444 to 4,730 kt (CC-026, CC-114).",
+      "members": [
+        "CC-026",
+        "CC-031",
+        "CC-109",
+        "CC-114"
+      ]
     }
   ],
   "bodies": [
@@ -8153,6 +8189,18 @@
           ]
         },
         {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 9,
+          "themes": [
+            "T16",
+            "T3",
+            "T4",
+            "T5",
+            "T7"
+          ]
+        },
+        {
           "id": "era",
           "named": 1,
           "pairs": 5,
@@ -8163,21 +8211,11 @@
           ]
         },
         {
-          "id": "european-commission",
+          "id": "newsbook",
           "named": 0,
           "pairs": 8,
           "themes": [
-            "T3",
-            "T4",
-            "T5",
-            "T7"
-          ]
-        },
-        {
-          "id": "newsbook",
-          "named": 0,
-          "pairs": 7,
-          "themes": [
+            "T16",
             "T4",
             "T6"
           ]
@@ -9240,6 +9278,22 @@
           "named": 1,
           "pairs": 0,
           "themes": []
+        },
+        {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "newsbook",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
         }
       ]
     },
@@ -9256,6 +9310,22 @@
           "named": 1,
           "pairs": 0,
           "themes": []
+        },
+        {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "newsbook",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
         }
       ]
     },
@@ -11025,6 +11095,14 @@
           ]
         },
         {
+          "id": "newsbook",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
           "id": "wirt-artna",
           "named": 0,
           "pairs": 1,
@@ -11955,6 +12033,14 @@
           ]
         },
         {
+          "id": "ministry-gozo",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
           "id": "ministry-transport",
           "named": 0,
           "pairs": 1,
@@ -11976,6 +12062,14 @@
           "pairs": 1,
           "themes": [
             "T6"
+          ]
+        },
+        {
+          "id": "pn",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
           ]
         },
         {
@@ -12175,6 +12269,14 @@
           "pairs": 1,
           "themes": [
             "T3"
+          ]
+        },
+        {
+          "id": "ministry-gozo",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
           ]
         },
         {
