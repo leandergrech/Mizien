@@ -2,39 +2,153 @@ id: CC-085
 title: 4.7 million tourists needed
 category: Tourism & Population
 subtopic: Tourism numbers & capacity
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Malta Hotels and Restaurants Association: if all planned hotels are built, Malta would need about 4.7 million
-    tourists a year to keep occupancy at 80%.'
-  speaker: Malta Hotels and Restaurants Association (MHRA)
-  date: '2022'
-  wording_status: 'Paraphrase: locate quote'
+  text: 'Malta Hotels and Restaurants Association president Tony Zahra (Horeca Malta, 23 Dec 2022): counting the beds
+    operating and new beds "approved or are in the course of being approved", the MHRA''s Deloitte report "concluded
+    that Malta will need to attract 4.7 million tourists each spending an average of 7 nights in Malta" to "reach 80
+    percent occupancy throughout the year". Repeated in November 2024: "If we want the 80% occupancy rate of hotels
+    we had in 2019, with the number of beds we have, we need 4.7 million tourists."'
+  speaker: Malta Hotels and Restaurants Association (Tony Zahra, President)
+  date: '2022-12-23'
+  wording_status: Verbatim found
   sources:
+  - title: Will Winter 2022-2023 build further on the Results achieved in Summer of '22?
+    publisher: Horeca Malta (Tony Zahra, President - MHRA)
+    date: 23 Dec 2022
+    url: https://horecamalta.com.mt/2022/12/23/will-winter-2022-2023-build-further-on-the-results-achieved-in-summer-of-22/
+    note: 'Primary: signed column by the MHRA president, read in full 10 Oct 2026 (WordPress API). The 4.7 million,
+      7 nights and 80 percent occupancy sentence; the source prints "oi" for "to".'
+  - title: '''Only divine intervention can solve some bottlenecks created by tourist over-capacity'' - Tony Zahra'
+    publisher: The Malta Business Weekly
+    date: 28 Nov 2024
+    url: https://maltabusinessweekly.com/only-divine-intervention-can-solve-some-bottlenecks-created-by-tourist-over-capacity-tony-zahra/27747/
+    note: Reprint of Zahra's interview with The Malta Independent on Sunday (original on independent.com.mt not read,
+      403). Direct quote with 4.7 million and the 80% occupancy of 2019. Read in full.
+  - title: Carrying Capacity Study for Tourism in the Maltese islands (final report, 4 Jul 2022)
+    publisher: Deloitte for the MHRA
+    date: 4 Jul 2022
+    url: https://mhra.org.mt/wp-content/uploads/2022/09/TCC-Final-Report.pdf
+    note: The study the statement describes. Read in full 10 Oct 2026; p. 66 gives 4,680,509 arrivals (Sc2) at 2019
+      occupancy; p. 27 bed-stock scenarios. Not committed (copyright).
+  - title: Carrying Capacity Study for Tourism in the Maltese islands, executive presentation
+    publisher: Deloitte for the MHRA (linked by The Malta Business Weekly)
+    date: Sep 2022
+    url: https://maltabusinessweekly.com/wp-content/uploads/2022/09/TCC-executive-presentation-final-original.pdf
+    note: 'Launch slides, read in full. Slide 11: 4.1m, 4.3m and 4.5m arrivals required for FY19 occupancy.'
+  - title: 'Future proofing the Maltese tourism industry: Market update (final report)'
+    publisher: Deloitte for the MHRA
+    date: 24 Sep 2024
+    url: https://mhra.org.mt/wp-content/uploads/2024/11/20240924_Future-Proofing-the-Tourism-Industry_Final-report-1.pdf
+    note: 'Follow-up study, read in the relevant parts: MTA pipeline 27,672 beds; 4.4m to 4.8m arrivals at 2023 occupancy;
+      describes the original estimate as 4.5m.'
   - title: Malta would need 4.7m tourists a year if planned hotels are built
     publisher: Newsbook
-    date: n/d
+    date: 22 Sep 2022
     url: https://newsbook.com.mt/en/malta-would-need-4-7m-tourists-a-year-if-planned-hotels-are-built/
-    note: Industry claim.
-counter_evidence: Bed-stock pipeline vs arrivals; 2025 arrivals already above 4 million.
-tests: MTA bed-stock data; PA hotel approvals; NSO arrivals.
-why_low_hanging: A specific, attributable statement that public data can test.
+    note: Locator (the record's original source). Outlet's paraphrase of the study launch; no MHRA words in quotation
+      marks. Not rated.
+  quote: '"the Deloitte report concluded that Malta will need to attract 4.7 million tourists each spending an average
+    of 7 nights in Malta oi [to] reach 80 percent occupancy throughout the year" (Tony Zahra, MHRA President, Horeca
+    Malta, 23 Dec 2022). "If we want the 80% occupancy rate of hotels we had in 2019, with the number of beds we have,
+    we need 4.7 million tourists." (Tony Zahra, Malta Independent on Sunday interview, reprinted by The Malta Business
+    Weekly, 28 Nov 2024).'
+counter_evidence: 'The study holds 2019 occupancy (76.7% collective, 59.3% private rented beds), not 80%; 4.7 million
+  is the middle scenario of its airport table (4,680,509, p. 66), its bed-stock table and launch slides give 4.1m to
+  4.5m, and the 2024 update calls the original estimate 4.5m. Eurostat hotel room occupancy 75.4% in 2019 (bed-places
+  66.2%), no year at 80% in 2012-2025; MHRA survey 4-star 81.2%, 5-star 72.7%. Hotel bed-places +20.9% 2019-2025
+  against +80% to +100% collective beds assumed. Arrivals 4,022,310 in 2025 (second-hand, NSO via an outlet).'
+tests: Deloitte/MHRA study tables recomputed (data/cc-085/mhra_studies.csv); Eurostat tour_cap_nat, tour_occ_anor,
+  tour_occ_arnat, tour_occ_ninat; NSO inbound tourism (second-hand).
+why_low_hanging: 'Done: Claim Check 085 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Verdict Largely supported (moderate): 4.7 million is the middle scenario of the study''s airport table
+  (4,680,509 at 2019 occupancy and 7-night stays), reproduced exactly; the study''s condition is 2019 occupancy (76.7%
+  collective, 59.3% private rented), not 80%, and its other tables give 4.1m to 4.5m; at 80% its beds need 4.6m to
+  5.0m. The planned stock is a stakeholder estimate (the Planning Authority''s count was not shared with the study);
+  arrivals for 2019-2025 are second-hand (nso.gov.mt 403). The record''s text was the outlets'' paraphrase and is
+  restated to the MHRA president''s words. The rating applies to the statement, not to anyone''s motives. No right
+  of reply needed.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-10'
+thumbnail:
+  figure: 4.68m
+  caption: tourists a year in the MHRA study's middle scenario, at 2019 occupancy (not 80%) and 7-night stays
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-085A
+    text: "“the Deloitte report concluded that Malta will need to attract 4.7 million tourists”"
+    said_by: "MHRA president, 2022 [1]"
+    finding: "4,680,509 in the airport table’s middle scenario (p. 66), reproduced exactly; the report’s tables range from 4.1 to 5.0 million and its slides headline 4.5 million [3, 4]."
+    rating: "In the study"
+    tone: green
+  - id: CC-085B
+    text: "“each spending an average of 7 nights”"
+    said_by: "MHRA president, 2022 [1]"
+    finding: "The study’s stay: 7 nights as labelled, 7.024 in its arithmetic (2019 nights over arrivals) [3]. Stays have shortened since (Section 5)."
+    rating: "As in the study"
+    tone: green
+  - id: CC-085C
+    text: "to “reach 80 percent occupancy throughout the year”"
+    said_by: "MHRA president, 2022 [1]"
+    finding: "The study keeps 2019 occupancy (76.7% collective, 59.3% private rented); no 80% occupancy condition in its text [3, 4]. At 80% its beds need 4.6 to 5.0 million."
+    rating: "Not the study’s condition"
+    tone: amber
+  - id: CC-085D
+    text: "Beds operating plus new beds “approved or are in the course of being approved”"
+    said_by: "MHRA president, 2022 [1]"
+    finding: "The study’s pipeline: about 35,000 collective beds in open permits and a stakeholder consensus of +80% to +100%; the Planning Authority’s own count was not shared with it [3]. MTA list in 2024: 27,672 beds [5]."
+    rating: "Estimate"
+    tone: amber
+  - id: CC-085E
+    text: "“the 80% occupancy rate of hotels we had in 2019”"
+    said_by: "MHRA president, 2024 [2]"
+    finding: "4-star hotels 81.2%, 5-star 72.7% in the MHRA survey [5]; all hotels 75.4% of rooms and 66.2% of bed-places (Eurostat) [6]."
+    rating: "Partly supported"
+    tone: amber
+  - id: CC-085F
+    text: "“with the number of beds we have, we need 4.7 million tourists”"
+    said_by: "MHRA president, 2024 [2]"
+    finding: "With the planned beds, as the interview’s context suggests, the 2024 update gives 4.4 to 4.8 million [5]. With the beds operating alone it is not shown: hotel rooms were 75.8% full in 2025 [6] with about 4.0 million tourists ◆ [9]."
+    rating: "Depends on reading"
+    tone: amber
+history:   # research log: the date each step of the research was done (not when the site changed)
+- date: '2026-10-10'
+  step: started
+  note: Claim taken for a full check. The record's Newsbook locator (22 Sep 2022) read in full via its WordPress API; it
+    gives 4.7 million in the outlet's own words, with no MHRA wording in quotation marks.
+- date: '2026-10-10'
+  step: wording
+  note: 'Verbatim found: MHRA president Tony Zahra''s signed column in Horeca Malta (23 Dec 2022) and his Malta Independent
+    on Sunday interview reprinted by The Malta Business Weekly (28 Nov 2024). The record''s text (outlets'' paraphrase)
+    is restated to these words and the date set to 23 Dec 2022.'
+- date: '2026-10-10'
+  step: note
+  note: 'Research: the Deloitte study for the MHRA (4 Jul 2022), its launch slides (Sep 2022) and the 2024 market update
+    read; every table used transcribed with page numbers and recomputed (4.7 million = p. 66 Sc2, 4,680,509). Eurostat
+    tour_cap_nat, tour_occ_anor, tour_occ_arnat and tour_occ_ninat downloaded. Not readable: NSO releases and
+    MaltaToday (403), the Independent''s original page (403), Wayback (reset). Search log in literature/CC-085/notes.md.'
+- date: '2026-10-10'
+  step: version
+  version: '1.0'
+  note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.
