@@ -1,0 +1,19 @@
+check,value,unit,source,retrieved,note
+Sum of the three 2025 components reported by the Shift,93.4,EUR million,The Shift News 26 Feb 2026 (second-hand: parliamentary reply not read),2026-10-10,59.0 + 31.2 + 3.2
+Shortfall of that sum against EUR 100 million,6.6,EUR million,The Shift News 26 Feb 2026 (second-hand: parliamentary reply not read),2026-10-10,
+Shortfall as a share of EUR 100 million,6.6,per cent,The Shift News 26 Feb 2026 (second-hand: parliamentary reply not read),2026-10-10,
+"Operating payments only (PSO fee + Tallinja card), excluding bus investment",90.2,EUR million,The Shift News 26 Feb 2026 (second-hand: parliamentary reply not read),2026-10-10,"bus purchases are capital investment, not an operating subsidy"
+2025 sum against the Shift's 2024 total (EUR 84 million),11.2,per cent,The Shift News 26 Feb 2026 (second-hand: parliamentary reply not read); 2024 total also from the Shift,2026-10-10,
+2025 sum against 2023 payments (EUR 69.4 million),34.6,per cent,Shift 26 Feb 2026; Business Now 18 Apr 2024 (both second-hand),2026-10-10,
+"2024 budget allocation (PSO 49 + free-ride scheme 25), as reported",74.0,EUR million,Business Now 18 Apr 2024 (second-hand),2026-10-10,Budget 2024 documents not readable (finance.gov.mt 403)
+2024 payment above the 2024 allocation,10,EUR million,Shift 26 Feb 2026; Business Now 18 Apr 2024 (second-hand),2026-10-10,
+2025 sum per resident (population 1 Jan 2025),163,EUR,Shift 26 Feb 2026 (second-hand); Eurostat demo_gind,2026-10-10,
+"Passenger cars, growth 2024 to 2025",1.6,per cent,Eurostat road_eqs_carmot,2026-10-10,
+"Passenger cars, growth 2022 to 2025 (free buses from 1 Oct 2022)",5.8,per cent,Eurostat road_eqs_carmot,2026-10-10,
+"Passenger cars, growth 2019 to 2022",3.3,per cent,Eurostat road_eqs_carmot,2026-10-10,
+"Population (1 Jan), growth 2022 to 2025",10.4,per cent,Eurostat demo_gind,2026-10-10,
+"Cars per 1,000 residents, 2022 (cars at 31 Dec / population 1 Jan same year)",610,cars,Eurostat; our ratio,2026-10-10,Eurostat's own rate (road_eqs_carhab) uses the next 1 January; ours is a like-for-like ratio for both years
+"Cars per 1,000 residents, 2025",585,cars,Eurostat; our ratio,2026-10-10,
+"Cars added per day, 2024 to 2025",14.3,cars/day,Eurostat road_eqs_carmot,2026-10-10,net change in passenger cars only; Newsbook (27 Feb 2026) writes of an average of 35 vehicles a day (all vehicles; not tested)
+"Valletta metro congestion level, change 2024 to 2025",1.1,percentage points,TomTom Traffic Index,2026-10-10,congestion level = extra travel time against free flow; Valletta page shows +1.1; only two years read by us
+"Valletta metro mean speed, change 2024 to 2025",-0.5,km/h,TomTom Traffic Index,2026-10-10,

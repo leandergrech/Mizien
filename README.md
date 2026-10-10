@@ -100,7 +100,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-068 | Planning & Housing | Marsaskala marina shelved | Not started | - |
 | CC-069 | Transport | 82 million bus trips | Not started | - |
 | CC-070 | Transport | 'Only one overcrowded bus' | Not started | - |
-| CC-071 | Transport | EUR 100m a year for free buses | Not started | - |
+| CC-071 | Transport | EUR 100m a year for free buses | Drafted | Not substantiated |
 | CC-072 | Transport | EUR 15m to take cars off the road | Not started | - |
 | CC-073 | Transport | Cab trips up 68% | Not started | - |
 | CC-074 | Transport | 8,144 EV grants | Not started | - |

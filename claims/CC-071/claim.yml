@@ -2,39 +2,98 @@ id: CC-071
 title: EUR 100m a year for free buses
 category: Transport
 subtopic: Public transport
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Low
 claim:
-  text: 'The Shift News (Feb 2026): ''free'' public transport now costs about EUR 100 million a year in subsidies
-    while traffic gridlock worsens.'
+  text: 'The Shift News (Ivan Camilleri, 26 Feb 2026): headline "''Free'' public transport reaches €100 million a year in subsidies as traffic gridlock worsens"; body: Malta''s "''free'' public transport system cost taxpayers almost €100 million in 2025, according to figures tabled in Parliament", while "traffic congestion continues to worsen".'
   speaker: The Shift News
   date: '2026-02-26'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
   - title: '''Free'' public transport reaches EUR 100 million a year in subsidies as traffic gridlock worsens'
     publisher: The Shift News
     date: 26 Feb 2026
     url: https://theshiftnews.com/2026/02/26/free-public-transport-reaches-e100-million-a-year-in-subsidies-as-traffic-gridlock-worsens/
-    note: Media claim.
-counter_evidence: Subsidy lines in the budget; congestion indicators.
-tests: Budget estimates; TM traffic counts; TomTom-type indices.
-why_low_hanging: A specific, attributable statement that public data can test.
+    note: 'Primary: the article is the claim (the speaker is the outlet). Read in full 10 Oct 2026. Its figures come from replies to PQs by Chris Said, not read.'
+  - title: Nefqa ta’ €100 miljun fis-sena għal trasport pubbliku b’xejn
+    publisher: Newsbook
+    date: 27 Feb 2026
+    url: https://newsbook.com.mt/nefqa-ta-e100-miljun-fis-sena-ghal-trasport-pubbliku-bxejn/
+    note: Outlet report of the same tabled document (second-hand). Read in full.
+  quote: 'Malta’s ‘free’ public transport system cost taxpayers almost €100 million in 2025, according to figures tabled in Parliament (The Shift News, 26 Feb 2026).'
+counter_evidence: 'The article''s three 2025 payments (59.0 + 31.2 + 3.2) sum to EUR 93.4 million (second-hand: the parliamentary reply was not read; Newsbook reports the same). TomTom Valletta metro congestion 49.2% (2024) to 50.3% (2025); Eurostat passenger cars +5.8% 2022-2025 but cars per 1,000 residents 610 to 585 (population +10.4%).'
+tests: Parliamentary reply (not read); Financial Estimates (403); Eurostat road_eqs_carmot and demo_gind; TomTom Traffic Index.
+why_low_hanging: 'Done: Claim Check 071 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'Verdict Not substantiated (low): the article''s own components sum to EUR 93.4m, not 100m; every euro figure is second-hand (the PQ replies, Financial Estimates and accounts were not read; parlament.mt and finance.gov.mt are 403). Congestion is only slightly up (TomTom, Valletta area, two years); car stock up but cars per head down; the implied failure of free travel is not tested (no counterfactual). The rating applies to the claim as the outlet worded it, not to its motives. Pending right of reply.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Eurostat road_eqs_carmot and demo_gind (data/cc-071/cars_population.csv)
+- TomTom Traffic Index, Valletta (data/cc-071/tomtom_valletta.csv)
+- Checks in data/cc-071/checks.csv and subsidy_series.csv (second-hand inputs marked)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-10'
+thumbnail:
+  figure: +5.8%
+  caption: 'more passenger cars in Malta since free buses began (2022 to 2025); population grew 10.4%'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-071A
+    text: "The system cost “almost €100 million in 2025” (headline: “reaches €100 million a year”)"
+    said_by: "The Shift [1]"
+    rating: "Unverified"
+    tone: amber
+  - id: CC-071B
+    text: "Payments are the highest yet and still rising"
+    said_by: "The Shift [1]"
+    rating: "Consistent"
+    tone: amber
+  - id: CC-071C
+    text: "“Traffic congestion continues to worsen”"
+    said_by: "The Shift [1]"
+    finding: "TomTom Valletta-area congestion level 49.2% to 50.3% (+1.1 points), speed down 0.5 km/h; two years only, one area [5]."
+    rating: "Partly supported"
+    tone: amber
+  - id: CC-071D
+    text: "“Vehicle imports and private car use have continued to increase”"
+    said_by: "The Shift [1]"
+    finding: "Passenger cars +1.6% in 2025, +5.8% since 2022 [3]; but cars per 1,000 residents fell 610 to 585 [3, 4]. Imports and car use not measured by us."
+    rating: "Needs context"
+    tone: amber
+  - id: CC-071E
+    text: "The spending has brought “no measurable reduction in congestion” (the article’s framing)"
+    said_by: "The Shift’s experts [1]"
+    finding: "No counterfactual and no congestion series that straddles October 2022 in the sources we could read. Not tested."
+    rating: "Not tested"
+    tone: grey
+history:
+- date: '2026-10-10'
+  step: started
+  note: Worker B took the claim. The Shift article read in full; Newsbook (Maltese), Business Now and the Shift 2024 article read.
+- date: '2026-10-10'
+  step: wording
+  note: 'Verbatim found: the speaker is The Shift News, so its article is the wording (headline and first sentence quoted). The record text paraphrased it as "about EUR 100 million" and is restated. Figures come from PQ replies we could not read (parlament.mt 403).'
+- date: '2026-10-10'
+  step: note
+  note: 'Research: Eurostat road_eqs_carmot and demo_gind; TomTom Valletta page data (2025 and previous-year block); payments series from outlet reports (second-hand). Not found: PQ text, Financial Estimates 2026 and Budget Speech 2026 (finance.gov.mt 403), Transport Malta (403), Wayback (reset). Log in literature/CC-071/notes.md.'
+- date: '2026-10-10'
+  step: version
+  note: First issue. Verdict Not substantiated (low confidence); pending right of reply.
+  version: '1.0'
