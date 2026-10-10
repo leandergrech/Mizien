@@ -361,7 +361,7 @@
       "similar": [
         {
           "id": "CC-081",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "management",
             "waste",
@@ -817,7 +817,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.31,
+          "score": 0.3,
           "terms": [
             "green",
             "spaces",
@@ -3587,7 +3587,7 @@
         },
         {
           "id": "CC-011",
-          "score": 0.31,
+          "score": 0.3,
           "terms": [
             "green",
             "spaces",
@@ -3719,6 +3719,14 @@
       },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-055/claim.yml",
       "similar": [
+        {
+          "id": "CC-093",
+          "score": 0.26,
+          "terms": [
+            "park",
+            "public"
+          ]
+        },
         {
           "id": "CC-053",
           "score": 0.25,
@@ -4832,11 +4840,14 @@
       "id": "CC-079",
       "title": "Waste-to-energy: 4.5% of energy",
       "category": "Waste",
-      "claim": "Government / WasteServ (ECOHIVE): the Magħtab waste-to-energy plant will convert 192,000 tonnes of non-recyclable waste into 4.5% of the nation's energy.",
-      "counter": "Energy share vs national demand; recycling targets; landfill share still near 79% in 2024.",
-      "status": "Not started",
-      "verdict": null,
-      "tags": [],
+      "claim": "WasteServ (ECOHIVE news, 26 Jun 2023): the Magħtab waste-to-energy plant \"will be treating around 192,000 tonnes of non-recyclable waste generated locally\" and \"is expected to meet around 4.5% of Malta's total energy needs\". In October and November 2020 WasteServ wrote that the plant would add \"an impressive 4.5% as green energy to Malta's total energy demand\".",
+      "counter": "WasteServ's own output figure for the plant is 126 GWh of electricity a year (project page); the NECP design (2 lines x 12 t/h, 14-16 MW net) gives 112-128 GWh at the 8,000 full-load hours that 192,000 t implies, and a net efficiency of 23.6% (design calorific value 10 GJ/t, read per line), within the 20-24% Lombardi et al. (2015) give for small-medium plants. 126 GWh was 4.4-4.7% of Malta's electricity use in 2022 (inland demand 2,880 GWh; final consumption 2,698 GWh) and 4.1-4.4% in 2024, but 1.5% of final energy consumption (FEC_EED, 8,136 GWh), 1.8% of final energy use without international aviation, 1.2% of primary energy consumption and of gross inland consumption, and 0.4% of gross available energy (2022; 2024: 1.5%, 1.8%, 1.2%, 1.1%, 0.4%). On the NECP's 2030 projections it is 3.2% of electricity supply (3,951 GWh), 1.3% of final and 1.1% of primary energy consumption. 126 GWh is exactly 4.5% of 2,800 GWh (241 ktoe), against Malta's 964 ktoe gross inland consumption in 2024. The only total-energy reading near 4.5% counts the waste's whole energy content (533 GWh): 5.0-5.2% of primary energy consumption 2022-2024, though the plant would deliver under a quarter of it as electricity and no heat user is named. EU law counts only the biodegradable fraction of waste as renewable (Directive 2018/2001, Art. 2(24)), and the NECP says the plant \"is not expected to contribute to Malta's RES share\". In the speaker's favour: the tonnage matches the NECP design and the Commission's 190,000 t; Malta landfilled 255 kt of municipal waste in 2024 (192 kt = 75%); 4.5% is a fair figure for electricity. Against the capacity: meeting the 2035 recycling target (65%) at 2024 generation would leave at most 124 kt of municipal waste for burning or landfill. The project page's \"40% of non-recyclable waste\" implies 480 kt, which no published statistic matches (192 kt is 67-75% of waste landfilled, 32% of all non-mineral waste generated in 2022).",
+      "status": "Drafted",
+      "verdict": "Misleading",
+      "tags": [
+        "Selective metric",
+        "Promise-without-baseline"
+      ],
       "subtopic": "Landfill & treatment",
       "location": {
         "place": "Magħtab waste complex",
@@ -4845,27 +4856,68 @@
         "scope": "site",
         "icon": "landfill"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "WasteServ; Ministry for the Environment",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "WasteServ",
       "bodies": [
-        "wasteserv",
-        "ministry-environment"
+        "wasteserv"
       ],
-      "date": "",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-079A",
+          "text": "The plant will treat around 192,000 tonnes of non-recyclable waste generated locally a year",
+          "finding": "Matches the NECP design (24 t/h for 8,000 hours) and the Commission’s 190,000 t. Malta landfilled 255,000 t of municipal waste in 2024, but meeting the 2035 recycling target would leave at most 124,000 t.",
+          "rating": "Consistent",
+          "tone": "green"
+        },
+        {
+          "id": "CC-079B",
+          "text": "It is expected to meet around 4.5% of Malta’s total energy needs",
+          "finding": "126 GWh is 1.5% of final and 1.2% of primary energy consumption (2022), but 4.4–4.7% of electricity use. 3.2% of the NECP’s 2030 electricity supply.",
+          "rating": "Misleading",
+          "tone": "red"
+        },
+        {
+          "id": "CC-079C",
+          "text": "The waste is converted into green energy",
+          "finding": "Only the biodegradable fraction counts as renewable under EU law; the NECP says the plant is not expected to contribute to Malta’s renewable share.",
+          "rating": "Partly",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-079D",
+          "text": "The plant will generate 126 GWh a year to the grid",
+          "finding": "Consistent with the NECP’s 14–16 MW net (112–128 GWh) and a net efficiency of 23.6%, within the 20–24% reported for plants of this size.",
+          "rating": "Plausible",
+          "tone": "green"
+        },
+        {
+          "id": "CC-079E",
+          "text": "The plant will treat 40% of the non-recyclable waste generated in Malta",
+          "finding": "With 192,000 t this implies 480,000 t of non-recyclable waste. 192,000 t is 67–75% of the waste Malta landfills and 32% of all non-mineral waste it generates; no basis is given.",
+          "rating": "Unclear basis",
+          "tone": "amber"
+        }
+      ],
+      "date": "2023-06-26",
+      "quote": "This plant will be treating around 192,000 tonnes of non-recyclable waste generated locally diverting it away from landfills and converting it into green energy. It is expected to meet around 4.5% of Malta's total energy needs.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-10",
+      "outputs": {
+        "report": "claim-files/CC-079/report.pdf",
+        "flyer_pdf": "claim-files/CC-079/flyer.pdf",
+        "flyer_png": "claim-files/CC-079/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-079/claim.yml",
       "similar": [
         {
           "id": "CC-080",
-          "score": 0.48,
+          "score": 0.41,
           "terms": [
-            "waste",
             "plant",
-            "wasteserv"
+            "wasteserv",
+            "tonnes"
           ]
         }
       ]
@@ -4902,11 +4954,11 @@
       "similar": [
         {
           "id": "CC-079",
-          "score": 0.48,
+          "score": 0.41,
           "terms": [
-            "waste",
             "plant",
-            "wasteserv"
+            "wasteserv",
+            "tonnes"
           ]
         }
       ]
@@ -4943,7 +4995,7 @@
       "similar": [
         {
           "id": "CC-004",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "management",
             "waste",
@@ -5281,7 +5333,7 @@
         },
         {
           "id": "CC-112",
-          "score": 0.31,
+          "score": 0.32,
           "terms": [
             "population",
             "rose"
@@ -5499,7 +5551,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-093/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-093/claim.yml",
+      "similar": [
+        {
+          "id": "CC-055",
+          "score": 0.26,
+          "terms": [
+            "park",
+            "public"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-094",
@@ -6663,7 +6725,7 @@
       "similar": [
         {
           "id": "CC-088",
-          "score": 0.31,
+          "score": 0.32,
           "terms": [
             "population",
             "rose"
@@ -7889,6 +7951,20 @@
       "theme": "T16",
       "link_type": "Shared data",
       "strength": "Strong"
+    },
+    {
+      "from": "CC-079",
+      "to": "CC-080",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-079",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
     }
   ],
   "themes": [
@@ -7986,6 +8062,7 @@
         "CC-017",
         "CC-063",
         "CC-079",
+        "CC-080",
         "CC-081",
         "CC-082",
         "CC-111"
@@ -8008,6 +8085,7 @@
         "CC-025",
         "CC-026",
         "CC-051",
+        "CC-079",
         "CC-110",
         "CC-114"
       ]
@@ -8189,18 +8267,6 @@
           ]
         },
         {
-          "id": "european-commission",
-          "named": 0,
-          "pairs": 9,
-          "themes": [
-            "T16",
-            "T3",
-            "T4",
-            "T5",
-            "T7"
-          ]
-        },
-        {
           "id": "era",
           "named": 1,
           "pairs": 5,
@@ -8208,6 +8274,18 @@
             "T1",
             "T2",
             "T5"
+          ]
+        },
+        {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 8,
+          "themes": [
+            "T16",
+            "T3",
+            "T4",
+            "T5",
+            "T7"
           ]
         },
         {
@@ -8241,12 +8319,6 @@
           "themes": []
         },
         {
-          "id": "wasteserv",
-          "named": 2,
-          "pairs": 0,
-          "themes": []
-        },
-        {
           "id": "pl",
           "named": 1,
           "pairs": 2,
@@ -8261,6 +8333,15 @@
           "themes": [
             "T6",
             "T7"
+          ]
+        },
+        {
+          "id": "wasteserv",
+          "named": 1,
+          "pairs": 1,
+          "themes": [
+            "T5",
+            "T6"
           ]
         },
         {
@@ -8748,12 +8829,6 @@
           ]
         },
         {
-          "id": "wasteserv",
-          "named": 2,
-          "pairs": 0,
-          "themes": []
-        },
-        {
           "id": "infrastructure-malta",
           "named": 0,
           "pairs": 5,
@@ -8770,15 +8845,6 @@
           "themes": [
             "T4",
             "T5"
-          ]
-        },
-        {
-          "id": "european-commission",
-          "named": 0,
-          "pairs": 4,
-          "themes": [
-            "T5",
-            "T7"
           ]
         },
         {
@@ -8807,10 +8873,28 @@
           ]
         },
         {
+          "id": "wasteserv",
+          "named": 1,
+          "pairs": 1,
+          "themes": [
+            "T5",
+            "T6"
+          ]
+        },
+        {
           "id": "climate-action-authority",
           "named": 1,
           "pairs": 0,
           "themes": []
+        },
+        {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T5",
+            "T7"
+          ]
         },
         {
           "id": "interconnect-malta",
@@ -8936,7 +9020,8 @@
           "named": 1,
           "pairs": 1,
           "themes": [
-            "T5"
+            "T5",
+            "T6"
           ]
         },
         {
@@ -9948,7 +10033,7 @@
       "links": [
         {
           "id": "ministry-environment",
-          "named": 2,
+          "named": 1,
           "pairs": 2,
           "themes": [
             "T6"
@@ -12167,7 +12252,7 @@
         {
           "id": "ministry-environment",
           "named": 0,
-          "pairs": 4,
+          "pairs": 3,
           "themes": [
             "T5",
             "T7"

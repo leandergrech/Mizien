@@ -1203,6 +1203,133 @@ CC-076,CC-076:24,"Gross newly licensed per day, Q1 2026",63,vehicles per day,"NS
 CC-076,CC-076:25,Stock by NSO note 6 (previous stock + new - restricted + restrictions ended),460260,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",differs from the published stock by 388; NSO says cut-off dates of databases can cause small differences,
 CC-076,CC-076:26,Net change by the flow identity,2857,vehicles,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",31.7 per day,
 CC-076,CC-076:27,"Net as share of gross newly licensed, Q1 2026",57.1,%,"NSO NR 085/2026 Table 1, via Internet Archive, retrieved 5 Oct 2026",36 net a day against 63 newly licensed a day,
+CC-079,CC-079:2,"GWh per ktoe (Eurostat GIC 2024, GWh / ktoe)",11.63,GWh/ktoe,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",Eurostat's own conversion; used for the NECP's ktoe projections,group: units
+CC-079,CC-079:3,Plant throughput in the NECP design (2 lines x 12 t/h),24.0,t/h,"Government of Malta, NECP (updated), December 2024, p. 132",,group: A capacity
+CC-079,CC-079:4,"Full-load hours a year implied by 192,000 t at 24 t/h",8000,h,calc: WasteServ capacity / NECP throughput,"91.3% of the 8,760 hours in a year",group: A capacity
+CC-079,CC-079:5,"Commission EIR 2025 capacity vs WasteServ's 192,000 t",190000.0,t/yr,"European Commission, 2025 Environmental Implementation Review: Malta, SWD(2025) 318 final, pp. 8-9",difference 1.1%,group: A capacity
+CC-079,CC-079:6,"Malta municipal waste generated, 2019",351.0,kt,"Eurostat env_wasmun (updated 2026-03-30), retrieved 2026-10-10",,group: A capacity
+CC-079,CC-079:7,"Malta municipal waste landfilled (D1-D7, D12), 2019",321.0,kt,"Eurostat env_wasmun (updated 2026-03-30), retrieved 2026-10-10",,group: A capacity
+CC-079,CC-079:8,"192,000 t as a share of municipal waste landfilled, 2019",59.8,%,calc,,group: A capacity
+CC-079,CC-079:9,"192,000 t as a share of municipal waste generated, 2019",54.7,%,calc,,group: A capacity
+CC-079,CC-079:10,"Malta municipal waste generated, 2022",328.0,kt,"Eurostat env_wasmun (updated 2026-03-30), retrieved 2026-10-10",,group: A capacity
+CC-079,CC-079:11,"Malta municipal waste landfilled (D1-D7, D12), 2022",273.0,kt,"Eurostat env_wasmun (updated 2026-03-30), retrieved 2026-10-10",,group: A capacity
+CC-079,CC-079:12,"192,000 t as a share of municipal waste landfilled, 2022",70.3,%,calc,,group: A capacity
+CC-079,CC-079:13,"192,000 t as a share of municipal waste generated, 2022",58.5,%,calc,,group: A capacity
+CC-079,CC-079:14,"Malta municipal waste generated, 2024",354.0,kt,"Eurostat env_wasmun (updated 2026-03-30), retrieved 2026-10-10",,group: A capacity
+CC-079,CC-079:15,"Malta municipal waste landfilled (D1-D7, D12), 2024",255.0,kt,"Eurostat env_wasmun (updated 2026-03-30), retrieved 2026-10-10",,group: A capacity
+CC-079,CC-079:16,"192,000 t as a share of municipal waste landfilled, 2024",75.3,%,calc,,group: A capacity
+CC-079,CC-079:17,"192,000 t as a share of municipal waste generated, 2024",54.2,%,calc,,group: A capacity
+CC-079,CC-079:18,"All waste excluding major mineral wastes, landfilled (D1-D7, D12), 2022",286515.0,t,"Eurostat env_wastrt (updated 2025-09-23), retrieved 2026-10-10","includes non-municipal waste; biennial data, 2022 latest",group: A capacity
+CC-079,CC-079:19,"192,000 t as a share of non-mineral waste landfilled, 2022",67.0,%,calc,,group: A capacity
+CC-079,CC-079:20,"All waste excluding major mineral wastes, generated, 2022",597957.0,t,"Eurostat env_wasgen (updated 2025-09-22), retrieved 2026-10-10",includes separately collected recyclables,group: A capacity
+CC-079,CC-079:21,"Municipal waste left after the 2035 recycling target (65%), at 2024 generation",123.9,kt,"Directive (EU) 2018/851 amending Directive 2008/98/EC, Art. 11(2)(e) of Directive 2008/98/EC as amended; Eurostat env_wasmun (updated 2026-03-30), retrieved 2026-10-10",the most that could go to energy recovery or landfill if the target were met and generation stayed at 2024 level,group: A capacity
+CC-079,CC-079:22,Plant capacity minus that residual,68.1,kt,calc,"positive: the plant would need other waste streams, or the target missed, to run full",group: A capacity
+CC-079,CC-079:23,"Generation at which 35% of municipal waste equals 192,000 t",548.6,kt,calc,55% above 2024 generation,group: A capacity
+CC-079,CC-079:24,"Non-recyclable waste implied by '40%' with 192,000 t",480000,t,"calc: 192,000 / 0.40",,group: E 40%
+CC-079,CC-079:25,"192,000 t as a share of all non-mineral waste generated, 2022",32.1,%,calc,the widest basis: includes waste already collected for recycling,group: E 40%
+CC-079,CC-079:26,Net electricity from the NECP's 14-16 MW at the implied full-load hours,112-128,GWh/yr,"Government of Malta, NECP (updated), December 2024, p. 132",,group: D output
+CC-079,CC-079:27,Average net output implied by 126 GWh at the implied hours,15.75,MW,calc,,group: D output
+CC-079,CC-079:28,NECP Figure 120 slice nearest the plant (2030),127.0,GWh,"Government of Malta, NECP (updated), December 2024, Figure 120 p. 344",,group: D output
+CC-079,CC-079:29,Net calorific value implied (33.33 MWth per line at 12 t/h),10.0,GJ/t,calc from NECP p. 132,the design calorific value of the waste,group: D output
+CC-079,CC-079:30,"Energy content of 192,000 t at that value (fuel input)",533.3,GWh/yr,calc,,group: D output
+CC-079,CC-079:31,Net electrical efficiency: 126 GWh / fuel input,23.6,%,calc,"literature, small-medium plants: 20-24%; large plants up to 31%",group: D output
+CC-079,CC-079:32,Net electrical efficiency: NECP 14-16 MW / 66.67 MWth,21.0-24.0,%,calc,heat input read as per line,group: D output
+CC-079,CC-079:33,"Same, if 33.33 MWth were the total for both lines",42-48,%,calc,above the 31% the literature gives for the largest plants: reading rejected,group: D output
+CC-079,CC-079:34,"Electricity per tonne (126 GWh / 192,000 t)",656,kWh/t,calc,,group: D output
+CC-079,CC-079:35,2019 Electricity: final consumption (nrg_cb_e FC),2479.3,GWh,"Eurostat nrg_cb_e (updated 2026-10-09), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:36,2019 126 GWh as % of Electricity: final consumption (nrg_cb_e FC),5.082,%,calc,,group: B share
+CC-079,CC-079:37,2019 Electricity: inland demand (nrg_cb_e ID),2637.5,GWh,"Eurostat nrg_cb_e (updated 2026-10-09), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:38,2019 126 GWh as % of Electricity: inland demand (nrg_cb_e ID),4.777,%,calc,,group: B share
+CC-079,CC-079:39,2019 Total energy: final energy consumption (nrg_bal_c FEC_EED),8114.2,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:40,2019 126 GWh as % of Total energy: final energy consumption (nrg_bal_c FEC_EED),1.553,%,calc,,group: B share
+CC-079,CC-079:41,2019 fuel input (533 GWh) as % of Total energy: final energy consumption (nrg_bal_c FEC_EED),6.572,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:42,2019 Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),6343.3,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:43,2019 126 GWh as % of Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),1.986,%,calc,,group: B share
+CC-079,CC-079:44,2019 fuel input (533 GWh) as % of Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),8.407,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:45,2019 Total energy: primary energy consumption (nrg_bal_c PEC_EED),10155.1,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:46,2019 126 GWh as % of Total energy: primary energy consumption (nrg_bal_c PEC_EED),1.241,%,calc,,group: B share
+CC-079,CC-079:47,2019 fuel input (533 GWh) as % of Total energy: primary energy consumption (nrg_bal_c PEC_EED),5.251,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:48,2019 Total energy: gross inland consumption (nrg_bal_c GIC),10481.8,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:49,2019 126 GWh as % of Total energy: gross inland consumption (nrg_bal_c GIC),1.202,%,calc,,group: B share
+CC-079,CC-079:50,2019 fuel input (533 GWh) as % of Total energy: gross inland consumption (nrg_bal_c GIC),5.088,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:51,2019 Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),36793.1,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:52,2019 126 GWh as % of Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),0.342,%,calc,,group: B share
+CC-079,CC-079:53,2019 fuel input (533 GWh) as % of Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),1.449,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:54,2022 Electricity: final consumption (nrg_cb_e FC),2698.4,GWh,"Eurostat nrg_cb_e (updated 2026-10-09), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:55,2022 126 GWh as % of Electricity: final consumption (nrg_cb_e FC),4.669,%,calc,,group: B share
+CC-079,CC-079:56,2022 Electricity: inland demand (nrg_cb_e ID),2880.4,GWh,"Eurostat nrg_cb_e (updated 2026-10-09), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:57,2022 126 GWh as % of Electricity: inland demand (nrg_cb_e ID),4.374,%,calc,,group: B share
+CC-079,CC-079:58,2022 Total energy: final energy consumption (nrg_bal_c FEC_EED),8135.8,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:59,2022 126 GWh as % of Total energy: final energy consumption (nrg_bal_c FEC_EED),1.549,%,calc,,group: B share
+CC-079,CC-079:60,2022 fuel input (533 GWh) as % of Total energy: final energy consumption (nrg_bal_c FEC_EED),6.555,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:61,2022 Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),6903.5,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:62,2022 126 GWh as % of Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),1.825,%,calc,,group: B share
+CC-079,CC-079:63,2022 fuel input (533 GWh) as % of Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),7.725,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:64,2022 Total energy: primary energy consumption (nrg_bal_c PEC_EED),10318.3,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:65,2022 126 GWh as % of Total energy: primary energy consumption (nrg_bal_c PEC_EED),1.221,%,calc,,group: B share
+CC-079,CC-079:66,2022 fuel input (533 GWh) as % of Total energy: primary energy consumption (nrg_bal_c PEC_EED),5.168,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:67,2022 Total energy: gross inland consumption (nrg_bal_c GIC),10677.7,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:68,2022 126 GWh as % of Total energy: gross inland consumption (nrg_bal_c GIC),1.18,%,calc,,group: B share
+CC-079,CC-079:69,2022 fuel input (533 GWh) as % of Total energy: gross inland consumption (nrg_bal_c GIC),4.994,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:70,2022 Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),35389.6,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:71,2022 126 GWh as % of Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),0.356,%,calc,,group: B share
+CC-079,CC-079:72,2022 fuel input (533 GWh) as % of Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),1.507,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:73,2023 Electricity: final consumption (nrg_cb_e FC),2709.4,GWh,"Eurostat nrg_cb_e (updated 2026-10-09), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:74,2023 126 GWh as % of Electricity: final consumption (nrg_cb_e FC),4.65,%,calc,,group: B share
+CC-079,CC-079:75,2023 Electricity: inland demand (nrg_cb_e ID),2917.7,GWh,"Eurostat nrg_cb_e (updated 2026-10-09), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:76,2023 126 GWh as % of Electricity: inland demand (nrg_cb_e ID),4.318,%,calc,,group: B share
+CC-079,CC-079:77,2023 Total energy: final energy consumption (nrg_bal_c FEC_EED),8238.3,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:78,2023 126 GWh as % of Total energy: final energy consumption (nrg_bal_c FEC_EED),1.529,%,calc,,group: B share
+CC-079,CC-079:79,2023 fuel input (533 GWh) as % of Total energy: final energy consumption (nrg_bal_c FEC_EED),6.473,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:80,2023 Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),6745.5,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:81,2023 126 GWh as % of Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),1.868,%,calc,,group: B share
+CC-079,CC-079:82,2023 fuel input (533 GWh) as % of Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),7.906,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:83,2023 Total energy: primary energy consumption (nrg_bal_c PEC_EED),10462.6,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:84,2023 126 GWh as % of Total energy: primary energy consumption (nrg_bal_c PEC_EED),1.204,%,calc,,group: B share
+CC-079,CC-079:85,2023 fuel input (533 GWh) as % of Total energy: primary energy consumption (nrg_bal_c PEC_EED),5.097,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:86,2023 Total energy: gross inland consumption (nrg_bal_c GIC),10936.1,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:87,2023 126 GWh as % of Total energy: gross inland consumption (nrg_bal_c GIC),1.152,%,calc,,group: B share
+CC-079,CC-079:88,2023 fuel input (533 GWh) as % of Total energy: gross inland consumption (nrg_bal_c GIC),4.876,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:89,2023 Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),37124.9,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:90,2023 126 GWh as % of Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),0.339,%,calc,,group: B share
+CC-079,CC-079:91,2023 fuel input (533 GWh) as % of Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),1.436,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:92,2024 Electricity: final consumption (nrg_cb_e FC),2868.2,GWh,"Eurostat nrg_cb_e (updated 2026-10-09), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:93,2024 126 GWh as % of Electricity: final consumption (nrg_cb_e FC),4.393,%,calc,,group: B share
+CC-079,CC-079:94,2024 Electricity: inland demand (nrg_cb_e ID),3106.1,GWh,"Eurostat nrg_cb_e (updated 2026-10-09), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:95,2024 126 GWh as % of Electricity: inland demand (nrg_cb_e ID),4.057,%,calc,,group: B share
+CC-079,CC-079:96,2024 Total energy: final energy consumption (nrg_bal_c FEC_EED),8632.4,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:97,2024 126 GWh as % of Total energy: final energy consumption (nrg_bal_c FEC_EED),1.46,%,calc,,group: B share
+CC-079,CC-079:98,2024 fuel input (533 GWh) as % of Total energy: final energy consumption (nrg_bal_c FEC_EED),6.178,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:99,2024 Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),7004.6,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:100,2024 126 GWh as % of Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),1.799,%,calc,,group: B share
+CC-079,CC-079:101,2024 fuel input (533 GWh) as % of Total energy: final energy use excl. international aviation (nrg_bal_c FC_E),7.613,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:102,2024 Total energy: primary energy consumption (nrg_bal_c PEC_EED),10762.4,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:103,2024 126 GWh as % of Total energy: primary energy consumption (nrg_bal_c PEC_EED),1.171,%,calc,,group: B share
+CC-079,CC-079:104,2024 fuel input (533 GWh) as % of Total energy: primary energy consumption (nrg_bal_c PEC_EED),4.955,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:105,2024 Total energy: gross inland consumption (nrg_bal_c GIC),11214.7,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:106,2024 126 GWh as % of Total energy: gross inland consumption (nrg_bal_c GIC),1.124,%,calc,,group: B share
+CC-079,CC-079:107,2024 fuel input (533 GWh) as % of Total energy: gross inland consumption (nrg_bal_c GIC),4.755,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:108,2024 Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),35643.2,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: B share
+CC-079,CC-079:109,2024 126 GWh as % of Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),0.354,%,calc,,group: B share
+CC-079,CC-079:110,2024 fuel input (533 GWh) as % of Total energy: gross available energy incl. marine bunkers (nrg_bal_c GAE),1.496,%,calc,"upper bound: counts the waste's whole energy content, most of which is not delivered",group: B share
+CC-079,CC-079:111,"2030 NECP electricity generation, all sources (sum of Figure 120)",3951.0,GWh,"Government of Malta, NECP (updated), December 2024, Figure 120 p. 344",,group: B share
+CC-079,CC-079:112,2030 126 GWh as % of NECP electricity,3.189,%,calc,,group: B share
+CC-079,CC-079:113,2030 NECP primary energy consumption (964 ktoe),11211.3,GWh,"Government of Malta, NECP (updated), December 2024, p. 94 (PDF p. 95)",,group: B share
+CC-079,CC-079:114,2030 126 GWh as % of NECP primary energy consumption,1.124,%,calc,,group: B share
+CC-079,CC-079:115,2030 fuel input as % of NECP primary energy consumption,4.757,%,calc,"upper bound, as above",group: B share
+CC-079,CC-079:116,2030 NECP final energy consumption (803 ktoe),9338.9,GWh,"Government of Malta, NECP (updated), December 2024, p. 94",,group: B share
+CC-079,CC-079:117,2030 126 GWh as % of NECP final energy consumption,1.349,%,calc,,group: B share
+CC-079,CC-079:118,2030 fuel input as % of NECP final energy consumption,5.71,%,calc,"upper bound, as above",group: B share
+CC-079,CC-079:119,2022 electricity final consumption as % of final energy consumption (FEC_EED),33.2,%,"calc from Eurostat nrg_cb_e (updated 2026-10-09), retrieved 2026-10-10; Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",electricity is about a third of the final energy Malta uses,group: B share
+CC-079,CC-079:120,2024 electricity final consumption as % of final energy consumption (FEC_EED),33.2,%,"calc from Eurostat nrg_cb_e (updated 2026-10-09), retrieved 2026-10-10; Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",electricity is about a third of the final energy Malta uses,group: B share
+CC-079,CC-079:121,Denominator for which 126 GWh is exactly 4.5%,2800,GWh,calc,= 241 ktoe; Malta's 2024 gross inland consumption was 964 ktoe,group: B share
+CC-079,CC-079:122,"Ratio of the claimed share to the share of final energy consumption, 2022",2.9,times,calc,,group: B share
+CC-079,CC-079:123,PEC_EED 2022: Eurostat (ktoe) vs NECP Table 27,887.2 vs 886.6,ktoe,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10; Government of Malta, NECP (updated), December 2024, Table 27 p. 286",,group: cross-check
+CC-079,CC-079:124,FEC_EED 2022: Eurostat (ktoe) vs NECP Table 27,699.6 vs 698.7,ktoe,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10; Government of Malta, NECP (updated), December 2024, Table 27 p. 286",,group: cross-check
+CC-079,CC-079:125,GIC - international aviation = total energy supply (2024),9312.6 vs 9312.6,GWh,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",so final energy use (FC_E) excludes international aviation,group: cross-check
+CC-079,CC-079:126,Inland demand = net production + imports - exports (2024),3106.1 vs 3106.1,GWh,"Eurostat nrg_cb_e (updated 2026-10-09), retrieved 2026-10-10",,group: cross-check
+CC-079,CC-079:127,"Municipal waste incinerated with energy recovery in Malta, 2024",8.0,kt,"Eurostat env_wasmun (updated 2026-03-30), retrieved 2026-10-10",Malta burns almost no municipal waste for energy today,group: cross-check
+CC-079,CC-079:128,"Electricity from municipal waste in Malta (renewable + non-renewable), 2024",0.0,GWh fuel input,"Eurostat nrg_bal_c (updated 2026-08-27), retrieved 2026-10-10",,group: cross-check
 CC-088,CC-088:2,Population end 2025 (1 Jan 2026),588254,people,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 5 Oct 2026",,nso_release: 588254; reproduces: True
 CC-088,CC-088:3,Growth over 2025,2.44,%,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 5 Oct 2026","574,250 -> 588,254",nso_release: 2.4; reproduces: True
 CC-088,CC-088:4,Net migration 2025,13906,people,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 5 Oct 2026",,nso_release: 13906; reproduces: True

@@ -65,7 +65,7 @@ CC-075,C,2026-10-04,intake 4 Oct 2026,0,2026-10-06,
 CC-076,A,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
 CC-077,B,2026-10-04,intake 4 Oct 2026,0,,
 CC-078,C,2026-10-04,intake 4 Oct 2026,1,2026-10-09,"source: browser-only (https://investgozo.gov.mt/investment-malta-gozo-sea-transport/): page returns 403 to scripts and WebFetch, Wayback has no copy; the 1,707 trips / more than 511,000 passengers / 35,518 trips / 6.1 million passengers wording is seen only in web-search summaries (second-hand); 'early 2029' not found in any readable text (Newsbook and Business Now, 14 Jan 2026, say 'by 2029'); NSO Q4 2025 release (403; search summary) gives 1,707 trips (3.8%) and 511,306 passengers (7.4%) for Gozo Channel PLUS the fast ferry, so the page's attribution to Gozo Channel alone needs checking; need the page text and date from a browser, and the NSO release; tried: Invest Gozo URL, Wayback, WebFetch, wp-json, ?p= id, gozochannel.com (no figures), TVM/Newsbook searches, Newsbook and Business Now articles on the EUR 130m plan, 2 web searches"
-CC-079,A,2026-10-04,intake 4 Oct 2026,0,,
+CC-079,A,2026-10-04,intake 4 Oct 2026,1,2026-10-10,
 CC-080,B,2026-10-04,intake 4 Oct 2026,0,,
 CC-081,C,2026-10-04,intake 4 Oct 2026,1,2026-10-05,"source: the text of The Shift News article of 19 Feb 2026 (theshiftnews.com/2026/02/19/maltas-waste-management-is-going-in-reverse/) pasted into literature/CC-081/primary-source.md (page returns 404 to us). tried: direct URL, Wayback (not archived), wp-json slug/search, site search, WebFetch, web search (summary only). Numbers already reproduce: Eurostat env_wasmun landfilled/treated 78.6% (2023), 79.2% (2024); landfilled/generated 73.6%, 72.1% (see CC-111)."
 CC-082,A,2026-10-04,intake 4 Oct 2026,0,,
