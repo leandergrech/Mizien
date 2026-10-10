@@ -146,10 +146,14 @@ add("Malta (bridging table): emissions by resident units from fuel bought abroad
     "2024 imputed by Eurostat (i)")
 add("Malta: fuel-bought-abroad air emissions as % of air transport (H51), 2024",
     r1(100 * br("MT", "AEMIS_RES_ABR_ATR", 2024) / em("MT", "H51", 2024)), "%")
-add("Malta (bridging table): territorial inventory total (no LULUCF), 2013 -> 2024",
+# AEMIS_TER is the territory-principle line the table derives from the accounts (residents' emissions, less fuel bought
+# abroad, plus non-residents and other adjustments); 2024 is a Eurostat early estimate (flag i). It is not the inventory
+# total, which the same table gives as AEMIS_TER_LULUCF less LULUCF (= env_air_gge): see the last row (10 Oct 2026).
+add("Malta (bridging table): territory-principle line derived from the accounts (AEMIS_TER, no LULUCF), 2013 -> 2024",
     f"{br('MT', 'AEMIS_TER', 2013):.0f} -> {br('MT', 'AEMIS_TER', 2024):.0f}", "kt CO2e",
     f"{pc(br('MT', 'AEMIS_TER', 2024), br('MT', 'AEMIS_TER', 2013)):+.0f}%; residence total incl. households "
-    f"{br('MT', 'AEMIS_RES', 2013):.0f} -> {br('MT', 'AEMIS_RES', 2024):.0f}")
+    f"{br('MT', 'AEMIS_RES', 2013):.0f} -> {br('MT', 'AEMIS_RES', 2024):.0f}; 2024 a Eurostat estimate (i); not the "
+    "inventory total (last row)")
 add("Malta's share of EU-27 air-transport emissions from fuel bought abroad by resident units, 2013 / 2024",
     f"{100 * br('MT', 'AEMIS_RES_ABR_ATR', 2013) / br('EU27_2020', 'AEMIS_RES_ABR_ATR', 2013):.1f} / "
     f"{100 * br('MT', 'AEMIS_RES_ABR_ATR', 2024) / br('EU27_2020', 'AEMIS_RES_ABR_ATR', 2024):.1f}", "%",
@@ -309,6 +313,13 @@ for b, lab in (("REN", "overall (gross final energy consumption)"), ("REN_ELC", 
 fl = sorted({(ds, y, f) for ds, geo, y, f in used_flags if geo == "MT"})
 add("Eurostat status flags on Malta values used", "; ".join(f"{ds} {y}:{f}" for ds, y, f in fl) or "none", "flags",
     "i = imputed by Eurostat or other receiving agencies; e = estimated; p = provisional")
+# Added 10 Oct 2026 after the rows above, so earlier row numbers (cited by sketch/fact-ledger) do not move.
+inv = lambda y: br("MT", "AEMIS_TER_LULUCF", y) - br("MT", "LULUCF", y)
+add("Malta (bridging table): inventory total, AEMIS_TER_LULUCF less LULUCF, 2013 -> 2024",
+    f"{inv(2013):.1f} -> {inv(2024):.1f}", "kt CO2e",
+    f"{pc(inv(2024), inv(2013)):+.1f}%; equals env_air_gge (2026 submission); the accounts-derived line (AEMIS_TER) is "
+    f"{br('MT', 'AEMIS_TER', 2013) - inv(2013):.1f} kt higher in 2013 and {br('MT', 'AEMIS_TER', 2024) - inv(2024):.1f} kt "
+    "in 2024; Eurostat gives no reason; every 2024 component of that line is a Eurostat estimate (i)")
 with open(D / "checks.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]))
     w.writeheader()

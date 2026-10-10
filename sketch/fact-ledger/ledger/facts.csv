@@ -28,7 +28,7 @@ F26,S-INT-R,published intensity change,2013-2024,Published GHG intensity rose 14
 F27,S-INT-R,intensity change without air transport,2013-2024,Without air transport the intensity fell 64.0%,-64.0,%,CC-114:43,,
 F28,S-GHG-R,per-person change,2013-2024,Resident emissions per person rose 69.2%,69.2,%,CC-025:41;CC-114:48,,
 F29,S-GHG-T,per-person change,2013-2024,Territorial emissions per person fell 42.6%,-42.6,%,CC-114:47,,
-F30,S-GHG-T,total level,2024,"Territorial inventory total 2024 as printed in the bridging table (env_ac_aibrid_r2): 2,198 kt",2198,kt CO2e,CC-114:39,"bridging table, 2024 flagged i",
+F30,S-GHG-T,total level,2024,"Territory-principle line derived from the air emissions accounts in the bridging table (env_ac_aibrid_r2, AEMIS_TER), 2024: 2,198 kt; not the inventory total",2198,kt CO2e,CC-114:39,"bridging table, 2024 flagged i (Eurostat estimate)",
 F32,S-REN,electricity share,2024,Renewables: 10.7% of electricity,10.7,%,CC-003:60;CC-114:74,,
 F33,S-REN,overall share,2024,Renewables: 17.2% of gross final energy,17.2,%,CC-003:59;CC-114:72,,
 F34,S-POP-G,Gozo population share,2024,Gozo and Comino: 7.26% of Malta's population,7.26,%,CC-031:11,,
