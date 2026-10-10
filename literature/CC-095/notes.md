@@ -78,6 +78,12 @@ The record's date (2025) was wrong: the statement is of 30 September 2026.
   "Energy Support Measures" line for 2026, EUR 183.2m actual 2024, EUR 152m approved 2025; CBM 0.8%/0.6%/0.5% of GDP for
   2026–2028): leads, not used.
 - **"No Half-Yearly Report in 2026"** is MFAC's statement (Council Note 03/2026, p. 2), not our search.
+- **"No 2026 spending figure for energy subsidies has been published."** Searched 10 Oct 2026: Eurostat gov_10a_exp
+  (COFOG, latest year 2024) and gov_10a_main; MFAC's reports listed by its media API (latest: Council Note 03/2026, which
+  gives all-purpose subsidies for Q1 2026 only, EUR 119.0m, with no energy breakdown); the five outlets of 30 Sep 2026 (a
+  projection only). Not searched because refused: nso.gov.mt (government finance releases) and finance.gov.mt (the
+  Financial Estimates 2027, due with the Budget on 26 Oct 2026, would carry a 2026 forecast outturn). So the statement
+  is limited to what is public and readable from here.
 
 ## Gaps
 

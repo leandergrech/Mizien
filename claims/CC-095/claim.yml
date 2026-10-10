@@ -2,39 +2,187 @@ id: CC-095
 title: EUR 400m to keep bills low
 category: Climate & Energy
 subtopic: Electricity & grid
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Moderate
 claim:
-  text: 'Government of Malta: about EUR 400 million in energy subsidies will keep electricity and fuel prices stable
-    through 2027.'
-  speaker: Government of Malta
-  date: '2025'
-  wording_status: 'Paraphrase: locate quote'
+  text: 'Finance Minister Clyde Caruana, launching the Pre-Budget Document 2027 (30 Sep 2026): energy subsidies will
+    cost about EUR 400 million this year (EUR 391.7 million in the figures presented) and about the same in 2027; the
+    prices of fuel, electricity and gas in Malta have not changed; and the support will remain "come what may".'
+  speaker: Clyde Caruana, Minister for Finance (Pre-Budget Document 2027)
+  date: '2026-09-30'
+  wording_status: Verbatim found
   sources:
+  - title: Subsidies expected to hit EUR 400 million, minister warns of 'economic catastrophe' if stopped
+    publisher: BusinessNow.mt (K. Schembri Orland)
+    date: '2026-09-30'
+    url: https://businessnow.mt/subsidies-expected-to-hit-e400-million-minister-warns-of-economic-catastrophe-if-stopped/
+    note: 'Read in full 10 Oct 2026. The minister''s words on the cost in quotation marks ("I expect those numbers to
+      remain at the same level next year. If things worsen ... that bill will continue to rise"); "EUR 400 million"
+      for this year and "the same" next year are the reporter''s text.'
+  - title: Malta To Spend Around EUR 400 Million On Energy Subsidies Again In 2027
+    publisher: Lovin Malta (G. Falzon)
+    date: '2026-09-30'
+    url: https://lovinmalta.com/news/local/malta-to-spend-around-e400-million-on-energy-subsidies-again-in-2027/
+    note: 'Read in full 10 Oct 2026. Quotes on prices and "the only country"; the figures presented by the minister
+      (reporter''s text): energy and food subsidies EUR 242.5m (2023), 188.1m (2025), 391.7m (2026), about 400m (2027).'
+  - title: Finance Minister warns that without energy subsidies, the country will face "an economic catastrophe" (English
+      and Maltese versions)
+    publisher: TVM News
+    date: '2026-09-30'
+    url: https://tvmnews.mt/en/news/finance-minister-warns-that-without-energy-subsidies-the-country-will-face-an-economic-catastrophe/
+    note: Read in full 10 Oct 2026, with the Maltese version (block quotes in the original Maltese).
+  - title: Caruana jgħid li s-sussidji se jkomplu, imma jispjega x'jiġri kieku jieqfu (and English version)
+    publisher: Newsbook
+    date: '2026-09-30'
+    url: https://newsbook.com.mt/caruana-jghid-li-s-sussidji-se-jkomplu-imma-jispjega-xjigri-kieku-jieqfu/
+    note: 'Read in full 10 Oct 2026. "Dak li qed nagħmlu bħalissa se nsostnuh" ("What we are doing right now, we will
+      sustain").'
   - title: 'Malta EUR 400m Energy Subsidies: 2027 Plan Confirmed'
     publisher: The Malta Post
-    date: '2025'
+    date: '2026-10-02'
     url: https://themaltapost.com/posts/malta-spends-400-million-to-keep-energy-bills-low-through-2027
-    note: Locator; confirm in budget documents.
-counter_evidence: Energy measures were 46% of the rise in public debt 2022-2025 by one estimate; check budget lines.
-tests: Budget estimates; NAO reports; IMF Article IV (literature/CC-018).
-why_low_hanging: A specific, attributable statement that public data can test.
+    note: 'Locator (read 10 Oct 2026). Dated 2 Oct 2026, not 2025 as first recorded; quotes no one; "through 2027" is
+      its headline framing.'
+  - title: 'Pre-Budget Document 2027: Bis-Saħħa Tiegħek'
+    publisher: Ministry for Finance
+    date: '2026-09-30'
+    url: https://finance.gov.mt/
+    note: Not read (finance.gov.mt 403 to every request on 10 Oct 2026; Wayback unreachable). Holds the figures; to be
+      read in a browser.
+  quote: '"I expect those numbers to remain at the same level next year." (BusinessNow) ... "In just a few months, energy
+    prices have risen very significantly. However, in our country, the prices of fuel, electricity and gas have not
+    changed." (Lovin Malta)'
+counter_evidence: 'Prices: confirmed. Petrol EUR 1.34 and diesel EUR 1.21 a litre in every weekly EU Oil Bulletin from
+  15 Jun 2020 to 5 Oct 2026 (cheapest of 26; EU average diesel 2.15); Malta''s HICP electricity unchanged since Apr 2014,
+  LPG since Apr 2020, diesel and petrol since Jul 2020; energy 0.0% in the year to Aug 2026 against EU-27 +13.0%, the only
+  EU country with no rise (Hungary +1.6%). Cost: the EUR 391.7m (2026, energy and food) is a projection for a year in
+  progress and the EUR 400m (2027) a forecast the minister made conditional on prices; no 2026 spending figure for energy subsidies has been published. The
+  Government''s forecasts rose during 2026 (total subsidies EUR 493.3m in Oct 2025, 560.0m in Apr 2026 with energy about
+  0.3% of GDP higher; MFAC) and the Commission expects a higher cost in 2026, but no independent source gives the amount.
+  Past figures fit: 2023 EUR 242.5m against Eurostat COFOG 04.3 subsidies EUR 295.9m (258.5m above 2019) and the IMF''s
+  EUR 292.8m; but EUR 595m had been planned for 2023 in Oct 2022 (MFAC Box C), and the Commission subsidy database''s 2023
+  entries for Malta (EUR 580m + 15m, CC-113) equal that allocation. "The only country": true for fixed prices; not for
+  support, since Hungary (1.3% of GDP), Bulgaria and Slovakia (1.1%) subsidised fuel and energy as much as Malta (1.1%)
+  in 2024.'
+tests: Eurostat prc_hicp_minr (every EU country, Jan 2025 to Aug 2026; Malta and EU from 2014), nrg_pc_204 band DC,
+  nrg_pc_205 band ID, gov_10a_exp COFOG 04.3 D.3, nama_10_gdp; Weekly Oil Bulletin history (2019 to 5 Oct 2026); MFAC
+  assessments of the DBP 2023, USP 2023-2026, DBP 2026, APR 2026 and Council Note 03/2026; Commission Spring 2026
+  forecast; Draft Budgetary Plans 2024/2025, IMF CR 26/29 and the Commission subsidy database via CC-113
+  (tools/cc-095-report/calc.py, data/cc-095/checks.csv).
+why_low_hanging: 'Done: Claim Check 095 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High: Eurostat, the Oil Bulletin, MFAC and the Commission reachable; the Pre-Budget Document and the
+  Financial Estimates are not (finance.gov.mt 403).'
+caveats: 'The record first held The Malta Post''s headline (2 Oct 2026, dated 2025 in error); the claim is now the
+  minister''s own words of 30 Sep 2026, as quoted by BusinessNow, Lovin Malta, TVM News and Newsbook (English renderings
+  of remarks made partly in Maltese). The figures (EUR 391.7m, about 400m) are reporters'' text of figures he presented;
+  the Pre-Budget Document 2027 could not be read. The minister''s series covers energy and food subsidies. The 2027 cost
+  is a forecast and is not rated; keeping the support in 2027 is a pledge, labelled Not yet due. Not substantiated
+  verdict: right of reply on hold until the Pre-Budget Document 2027 is read.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+  on_hold: until the Pre-Budget Document 2027 is read
+evidence_shown:
+- Eurostat prc_hicp_minr, nrg_pc_204, nrg_pc_205, gov_10a_exp and nama_10_gdp, retrieved 10 Oct 2026 with flags (data/cc-095/eurostat_*.csv)
+- European Commission Weekly Oil Bulletin history to 5 Oct 2026 (data/cc-095/oil_bulletin_*.csv; workbook SHA-256 in raw_files_sha256.csv)
+- MFAC assessments (USP 2023-2026 Box C p. 89; DBP 2026; APR 2026; Council Note 03/2026) and the Commission Spring 2026 forecast, transcribed with page numbers in data/cc-095/statements_and_estimates.csv
+- Checks recomputed by tools/cc-095-report/calc.py (data/cc-095/checks.csv, cost_series.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-10'
+thumbnail:
+  figure: 0.0%
+  caption: change in Malta's energy prices in the year to Aug 2026 (EU-27 +13.0%); the EUR 400m cost cannot yet be tested
 location:
   place: Auberge de Castille (Office of the Prime Minister), Valletta
   lat: 35.8959
   lon: 14.51136
   scope: institution
   icon: castille
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-095A
+    text: "“in our country, the prices of fuel, electricity and gas have not changed”"
+    finding: "Pump prices fixed since 15 Jun 2020 (325 weekly reports); electricity index unchanged since Apr 2014, LPG since Apr 2020; energy 0.0% in the year to Aug 2026 against EU +13.0% [8, 9, 10]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-095B
+    text: "Energy subsidies of about EUR 400 million this year (EUR 391.7 million presented)"
+    finding: "A projection for a year not yet over; no energy-subsidy spending figure yet. Official forecasts rose during 2026 and the Commission expects a higher cost, but no independent source gives the amount; it includes food; the Pre-Budget Document was not read [14, 15, 17]."
+    rating: "Plausible, not shown"
+    tone: amber
+  - id: CC-095C
+    text: "Past figures: EUR 242.5m (2023), 188.1m (2025), 1,350m over five years"
+    finding: "2023 close to Eurostat’s crisis rise (258.5) and the IMF (292.8); 2025 between the Government’s plan (177.6) and the IMF (197.3); the five-year total fits Eurostat’s 2022 and 2024 [11, 19, 20]."
+    rating: "Consistent"
+    tone: green
+  - id: CC-095D
+    text: "“I expect those numbers to remain at the same level next year”"
+    finding: "A forecast the minister made conditional on prices; past forecasts of this spending missed widely [1, 13]."
+    rating: "Not rated (forecast)"
+    tone: grey
+  - id: CC-095E
+    text: "“Malta is the only country that has continued to protect families and businesses ...”"
+    finding: "Only EU country with no rise in energy prices (Hungary +1.6%); cheapest fuel of 26. But Hungary, Bulgaria and Slovakia spent as much or more on fuel and energy subsidies relative to GDP in 2024 [8, 9, 11]."
+    rating: "Largely accurate"
+    tone: lime
+  - id: CC-095F
+    text: "“what there is in the energy sector, come what may, will remain” (in 2027)"
+    finding: "A commitment for 2027; prices are measurable; the year has not begun [1, 4]."
+    rating: "Not yet due (pledge)"
+    tone: grey
+pledge:
+  status: Not yet due
+  kind: government   # made in office (methodology/verdict-scale.md, Pledges)
+  follows: [MP-PL-2026-16-11]   # Labour manifesto 2026: keep defending the price-stability policy in the coming years
+  follows_search:
+    date: '2026-10-10'
+    searched:
+    - 'data/manifesto_pledges.csv, all parties, 2022 and 2026: rows matching subsid, stable or stabbl, price, tariff or bills together with energy, electricity or fuel'
+    - 'Labour manifesto 2026 (Int Malta), chapter 16, PDF p. 187, read'
+    found:
+    - 'MP-PL-2026-16-11 (subsidy on electricity and fuel above EUR 1 billion; the price-stability policy defended in the coming years)'
+  as_of: '2026-10-10'
+  made_by:
+  - clyde-caruana
+  made_on: '2026-09-30'
+  vehicle: Launch of the Pre-Budget Document 2027 (BusinessNow, Lovin Malta, TVM News, Newsbook, 30 Sep 2026)
+  deadline: '2027-12-31'
+  target: 'Energy support kept in 2027, so that retail prices of fuel, electricity and gas stay unchanged ("what there is
+    in the energy sector, come what may, will remain")'
+  note: Measurable with the Oil Bulletin and Eurostat price data; the year has not begun. Revisit when 2027 price data are
+    published. The EUR 400m forecast is not part of the pledge.
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-10
+    step: started
+    note: "Check started. The record's locator (The Malta Post) turned out to be dated 2 Oct 2026, quote no one and point\
+      \ to the Finance Minister's launch of the Pre-Budget Document 2027 on 30 Sep 2026. finance.gov.mt (the document,\
+      \ the Financial Estimates) and gov.mt returned 403; Wayback was unreachable."
+  - date: 2026-10-10
+    step: wording
+    note: "Verbatim wording found in four readable outlets of 30 Sep 2026: BusinessNow (the cost: 'I expect those numbers\
+      \ to remain at the same level next year'), Lovin Malta (prices 'have not changed'; 'the only country'; the figures\
+      \ presented), TVM News and Newsbook in English and Maltese. Claim text, speaker and date (2026-09-30, not 2025)\
+      \ restated to the minister's words; the EUR 391.7m and 400m are reporters' text of figures he presented."
+  - date: 2026-10-10
+    step: note
+    note: "Data: Eurostat HICP (ECOICOP ver.2; prc_hicp_manr ends in Dec 2025), electricity prices, COFOG 04.3 and GDP;\
+      \ the Weekly Oil Bulletin history; MFAC assessments of the Government's forecasts (DBP 2023, USP 2023-2026, DBP\
+      \ 2026, APR 2026, Council Note 03/2026); the Commission's spring 2026 forecast. Malta's energy prices 0.0% in the\
+      \ year to Aug 2026 (EU-27 +13.0%); pump prices fixed since 15 Jun 2020. The October 2022 plan allocated EUR 595m\
+      \ of energy subsidies for 2023 (500 + 15 + 80), the same as the Commission database's 2023 entries for Malta\
+      \ (580 + 15; CC-113); the Government now reports EUR 242.5m (energy and food)."
+  - date: 2026-10-10
+    step: version
+    version: "1.0"
+    note: "First issue. Verdict Not substantiated (moderate confidence): prices unchanged, as stated; the central figure,\
+      \ about EUR 400m in 2026 and 2027, is an estimate and a forecast that cannot yet be tested. Pledge label Not yet\
+      \ due (support kept in 2027). Right of reply on hold until the Pre-Budget Document 2027 is read."

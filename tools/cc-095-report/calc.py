@@ -119,6 +119,8 @@ mt_pre = ser[("MT", "diesel", "without taxes")][-1][1]
 add("Malta diesel price before taxes as share of the EU average before taxes (latest week)",
     round(100 * mt_pre / ser[("EU", "diesel", "without taxes")][-1][1], 1), "%", S_WOB,
     "the regulated Maltese price leaves less than half the EU's average pre-tax margin and product cost")
+add("EU average diesel price before taxes as a multiple of Malta's (latest week)",
+    round(ser[("EU", "diesel", "without taxes")][-1][1] / mt_pre, 1), "times", S_WOB)
 
 lat = rd(D / "oil_bulletin_latest_all.csv")
 for prod, name in (("diesel", "diesel"), ("euro95", "petrol")):
@@ -203,6 +205,8 @@ add("Update of Stability Programme (spring 2023): energy subsidies for 2023", fl
     "MFAC Box C, p. 89")
 add("Minister's 2023 figure (energy and food) as share of the Oct 2022 allocation", round(100 * m23 / plan23), "%",
     "calculated")
+add("Oct 2022 allocation for 2023 as a multiple of the minister's 2023 figure", round(plan23 / m23, 1), "times",
+    "calculated", "the allocation equals the Commission database's 2023 entries for Malta (CC-113)")
 add("Commission inventory 2023, Enemalta line plus Gas Stabilisation Fund", float(inv["Energy Support Measures (compensation to Enemalta)"]["y2023"]) +
     float(inv["Gas Stabilisation Fund"]["y2023"]), "EUR million", "data/cc-113/ec_inventory_malta_facts.csv",
     "equals the DBP 2023 allocation (500 + 80 + 15 = 595); the Enemalta line 580 = 500 + 80")

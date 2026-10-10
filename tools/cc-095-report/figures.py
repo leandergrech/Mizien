@@ -40,7 +40,7 @@ def fig1():
     for r in w:
         if r["product"] == "diesel" and r["basis"] == "with taxes":
             o.setdefault(r["geo"], []).append((dt.datetime.strptime(r["date"], "%Y-%m-%d"), float(r["eur_per_1000"]) / 1000))
-    fig, (a, b) = plt.subplots(1, 2, figsize=(9.6, 3.3), dpi=220, gridspec_kw={"wspace": 0.28})
+    fig, (a, b) = plt.subplots(1, 2, figsize=(9.6, 3.0), dpi=220, gridspec_kw={"wspace": 0.28})
     for geo, col, lab in (("EU27_2020", BLUE, "EU-27"), ("MT", GREEN, "Malta")):
         xs, ys = zip(*sorted(s[geo]))
         a.plot(xs, ys, color=col, lw=2.0 if geo == "MT" else 1.6)
@@ -81,7 +81,7 @@ def fig2():
     d = {r["geo"]: float(r["value"]) for r in rd("eurostat_hicp_energy_eu_2025_2026.csv")
          if r["coicop18"] == "NRG" and r["unit"] == "RCH_A" and r["time"] == "2026-08" and r["value"]}
     order = sorted(eu27, key=lambda g: d[g])
-    fig, ax = plt.subplots(figsize=(9.6, 2.9), dpi=220)
+    fig, ax = plt.subplots(figsize=(9.6, 2.4), dpi=220)
     ax.bar(range(len(order)), [d[g] for g in order], width=0.7, color=[GREEN if g == "MT" else SAGE for g in order],
            zorder=2)
     ax.axhline(d["EU27_2020"], color=BLUE, lw=1.1, ls="--", zorder=3)

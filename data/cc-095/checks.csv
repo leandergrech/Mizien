@@ -57,6 +57,7 @@ Malta HICP energy: change Jan 2020 to Aug 2026,-3.5,%,"Eurostat prc_hicp_minr (E
 "EU petrol (Euro-super 95) price before taxes, 2026-10-05",1.076,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
 "IT petrol (Euro-super 95) price before taxes, 2026-10-05",1.026,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
 Malta diesel price before taxes as share of the EU average before taxes (latest week),41.8,%,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",the regulated Maltese price leaves less than half the EU's average pre-tax margin and product cost
+EU average diesel price before taxes as a multiple of Malta's (latest week),2.4,times,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
 Oil Bulletin 2026-10-05: Malta's rank for diesel (1 = cheapest),1,of 26 reporting,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",next cheapest PL EUR 1.764
 Oil Bulletin 2026-10-05: median diesel price of reporting countries,2.107,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026","the minister: 'the EU median is EUR 2 per litre' (Newsbook, outlet paraphrase)"
 Oil Bulletin 2026-10-05: Malta's rank for petrol (1 = cheapest),1,of 26 reporting,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",next cheapest PL EUR 1.520
@@ -89,6 +90,7 @@ COFOG 04.3 subsidies 2022 plus 2024,630.3,EUR million,"Eurostat gov_10a_exp COFO
 Draft Budgetary Plan 2023 (Oct 2022): energy subsidies allocated for 2023,595.0,EUR million,"MFAC USP 2023-2026 assessment, Box C, p. 89",electricity 500 + gas fund 15 + petroleum 80
 Update of Stability Programme (spring 2023): energy subsidies for 2023,262.0,EUR million,"MFAC Box C, p. 89",
 Minister's 2023 figure (energy and food) as share of the Oct 2022 allocation,41,%,calculated,
+Oct 2022 allocation for 2023 as a multiple of the minister's 2023 figure,2.5,times,calculated,the allocation equals the Commission database's 2023 entries for Malta (CC-113)
 "Commission inventory 2023, Enemalta line plus Gas Stabilisation Fund",595.0,EUR million,data/cc-113/ec_inventory_malta_facts.csv,equals the DBP 2023 allocation (500 + 80 + 15 = 595); the Enemalta line 580 = 500 + 80
 Total subsidies 2026: DBP 2026 forecast (Oct 2025),493.3,EUR million,MFAC DBP26 assessment,
 Total subsidies 2026: APR 2026 forecast (Apr 2026),560.0,EUR million,MFAC APR26 assessment,+66.7 on the DBP 2026 forecast
