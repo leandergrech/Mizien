@@ -1,40 +1,202 @@
 id: CC-092
-title: 'PN: Gozo net-zero by afforestation'
+title: 'PN: afforestation in a net-zero Gozo'
 category: Governance & Promises
 subtopic: Manifestos & pledges
-status: Not started
-verdict: null
+status: Drafted
+verdict: null   # a pure pledge check: the pledge label below is shown instead of a verdict
 verdict_confidence: null
 claim:
-  text: 'Nationalist Party (2026 manifesto): Gozo will become a net-zero island through afforestation, alongside
-    a national indigenous-tree strategy.'
+  text: 'PN programme 2026 (Nifs Ġdid, in Maltese; our translation), chapter Għawdex, item 46: a plan so that by 2040 Gozo
+    becomes a Net-Zero Island, "where every unit of emissions generated is reduced or offset" by initiatives such as
+    solar panels, electric vehicles, building efficiency, ecological restoration, "afforestation" and water and soil
+    conservation, "among others". The environment chapter adds "more afforestation and open spaces in both Malta and
+    Gozo" (item 01) and tree planting and afforestation against heat, flooding and pollution (item 20). News summaries
+    said Gozo would become net zero "through afforestation" and reported a national indigenous-tree strategy; neither
+    is in the programme.'
+  quote: every unit of emissions generated is reduced or offset by concrete and sustainable initiatives, such as ...
+    afforestation ... among others (our translation of "kull unità ta’ emissjonijiet iġġenerata tkun imnaqqsa jew
+    ikkumpensata b’inizjattivi konkreti u sostenibbli, bħal ... afforestazzjoni ... fost l‑oħrajn")
   speaker: Nationalist Party (PN)
-  date: 2026-05
-  wording_status: 'Paraphrase: locate quote'
+  date: '2026-05-18'
+  wording_status: Verbatim found
   sources:
+  - title: 'Nifs Ġdid: Programm Elettorali 2026, chapter Għawdex (item 46)'
+    publisher: Partit Nazzjonalista
+    date: '2026-05-18'
+    url: https://pn.org.mt/nifsgdid/ghawdex/
+    note: 'The claim. Read in full 10 Oct 2026 (web page and chapter PDF 10-Ghawdex.pdf, p. 16; HTTP 200 with a browser
+      User-Agent); page datePublished 18 May 2026. Afforestation is one of the listed initiatives; no area, species, rate
+      or date. Translation ours (literature/CC-092/primary-source.md).'
+  - title: 'Nifs Ġdid: Programm Elettorali 2026, chapter Ambjent (items 01, 20, 25)'
+    publisher: Partit Nazzjonalista
+    date: '2026-05-18'
+    url: https://pn.org.mt/nifsgdid/ambjent/
+    note: 'Read in full 10 Oct 2026 (PDF 13-Ambjent.pdf, pp. 8, 12, 13): more afforestation in Malta and Gozo (01); tree
+      planting and afforestation against heat, flooding and pollution (20); garrigue in the Malta Nature Network (25).'
+  - title: 'Nifs Ġdid: Programm Elettorali 2026, chapter Agrikoltura u Sajd (item 31)'
+    publisher: Partit Nazzjonalista
+    date: '2026-05-18'
+    url: https://pn.org.mt/nifsgdid/agrikoltura-u-sajd/
+    note: 'Read in full 10 Oct 2026 (PDF 14-Agrikoltura.pdf, p. 13). The only use of "indigenous" (indiġeni) in the 16
+      chapters: local farm plant varieties and livestock breeds, with a gene bank and nursery in three years.'
   - title: 'PN published its manifesto: Here is a breakdown'
     publisher: MaltaToday
     date: May 2026
     url: https://www.maltatoday.com.mt/news/election-2026/142040/pn_published_its_manifesto_here_is_a_breakdown
-    note: Opposition pledge.
-counter_evidence: Carbon uptake of feasible afforestation area vs Gozo's emissions.
-tests: Gozo emissions estimate; sequestration rates; available land.
-why_low_hanging: A specific, attributable statement that public data can test.
-tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+    note: 'Locator (intake). HTTP 403 on 10 Oct 2026 and the Internet Archive unreachable; known only from a search
+      engine''s summary (second-hand): a nationwide afforestation strategy prioritising indigenous trees.'
+  - title: PN approves its electoral manifesto
+    publisher: MaltaToday
+    date: May 2026
+    url: https://www.maltatoday.com.mt/news/election-2026/141891/pn_approves_its_electoral_manifesto
+    note: News summary ("net-zero island through afforestation"), read via Wayback for Claim Check 107 on 5 Oct 2026.
+  - title: 'Clean energy for EU islands: Energy Baseline Scenario for Gozo'
+    publisher: Clean energy for EU islands secretariat (European Commission)
+    date: 25 Jan 2023
+    url: https://clean-energy-islands.ec.europa.eu/system/files/2025-06/REPORT_TechnicalAssistance_Gozo_20230223.pdf
+    note: 'Re-read 10 Oct 2026 (same SHA-256 as for Claim Check 107). Table 16, p. 25: energy-related CO2 118,333-153,997 t
+      a year, 2016-2020. Not official statistics.'
+  - title: Initial soil carbon losses may offset decades of biomass carbon accumulation in Mediterranean afforestation
+    publisher: Geoderma Regional 36:e00768 (Renna et al.)
+    date: '2024'
+    url: https://doi.org/10.1016/j.geodrs.2024.e00768
+    note: 'Low rate: native holm and cork oak, biomass 25-75 g C/m2 a year; soil carbon not higher. Abstract; DOI verified.'
+  - title: Biogeochemical factors contributing to enhanced carbon storage following afforestation of a semi-arid shrubland
+    publisher: Biogeosciences 4:891-904 (Grünzweig et al.)
+    date: '2007'
+    url: https://doi.org/10.5194/bg-4-891-2007
+    note: 'Central rate: 3.62 t CO2/ha a year over 35 years (trees and soil), Yatir. Full text; DOI verified.'
+  - title: Global carbon dioxide removal rates from forest landscape restoration activities
+    publisher: Carbon Balance and Management 13:22 (Bernal et al.)
+    date: '2018'
+    url: https://doi.org/10.1186/s13021-018-0110-8
+    note: 'High rate: planted pine, temperate dry, 7.6 t CO2/ha a year (biomass, first 20 years), Table 1. Full text; DOI verified.'
+  - title: Eurostat env_air_gge, demo_r_pjangrp3, reg_area3, for_area, sdg_06_60; EEA CORINE Land Cover 2018 and Natura
+      2000 sites; NASA POWER
+    publisher: Eurostat; European Environment Agency; NASA
+    date: retrieved 10 Oct 2026
+    url: https://ec.europa.eu/eurostat/cache/metadata/en/sdg_06_60_esmsip2.htm
+    note: Extracts and checks in data/cc-092/ (eurostat_extract.csv, clc2018_gozo_polygons.csv, natura2000_overlap.csv,
+      nasa_power_*.json, checks.csv).
+counter_evidence: 'The programme lists afforestation among the ways Gozo''s emissions would be "reduced or offset" by 2040
+  but gives no area, number of trees, species, sites, carbon rate or date. Offsetting Gozo''s energy CO2 (118,333-153,997 t
+  a year in 2016-2020, a study for the EU islands secretariat) by trees alone would need new forest 4.9-6.3 times Gozo''s
+  67 km2 at a rate measured in the Yatir pine forest (3.62 t CO2/ha a year), 2.3-3.0 times at a review''s plantation rate
+  (7.6 t) and 19-25 times at the rate measured for native oaks in Spain (0.92 t). CORINE 2018 maps no forest on Gozo;
+  planting all of its semi-natural land (1,265 ha, mostly garrigue and maquis, 36% of it in Natura 2000 sites) would offset
+  3.0-3.9% (0.8-8.1% across rates). Malta''s whole forest is 470 ha (FAO definition, 2025); Malta''s water exploitation
+  index was 30% in 2023 (Eurostat: permanent water scarcity); 20-year survival of planted pines was 30-58% in an arid
+  Spanish trial. No indigenous-tree strategy appears in the programme''s 16 chapters; "indigenous" is used once, for farm
+  varieties and breeds. "Through afforestation" is a news summary, not the PN''s wording.'
+tests: 'PN programme read in full and searched (tools/cc-092-report/search_programme.py); forest area and offset shares in
+  tools/cc-092-report/calc.py from the 2023 Energy Baseline Scenario for Gozo, Eurostat, CORINE 2018 and literature rates
+  verified in Crossref (Grünzweig et al. 2007; Renna et al. 2024; Bernal et al. 2018); Natura 2000 overlap
+  (tools/cc-092-report/natura.py).'
+why_low_hanging: 'Done: Claim Check 092 report and flyer.'
+tags:
+- Promise-without-baseline
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High: pn.org.mt readable with a browser User-Agent; Eurostat, EEA map services, NASA POWER and Crossref
+  reachable.'
+caveats: 'A pure pledge check, labelled Not measurable as of 10 Oct 2026: pending right of reply from the Partit
+  Nazzjonalista. An opposition proposal (Labour won the 30 May 2026 election); the Government''s climate-neutral Gozo
+  (CC-031) and Labour''s tree pledge (CC-010) are held to the same standard. The net-zero plan itself is Claim Check 107;
+  this check covers afforestation and the reported indigenous-tree strategy. Translation of the Maltese programme is ours.
+  Gozo''s emissions come from an energy-only study (not official statistics) and a population share of Malta''s
+  inventory. No Maltese afforestation carbon measurement was found; rates are from Spain, Israel and a global review.
+  The offsets are ceilings (every hectare planted and reaching the rate). The indigenous-tree wording is MaltaToday''s,
+  known only second-hand (403); it is not rated. Title restated from the intake''s "Gozo net-zero by afforestation" to
+  what the programme says.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- PN programme 2026 (Nifs Ġdid), chapters Għawdex (item 46), Ambjent (items 01, 20, 25) and Agrikoltura u Sajd (item 31);
+  search log with hashes in data/cc-092/pn_programme_search.csv
+- Forest-area arithmetic and offset shares (data/cc-092/afforestation_offset.csv, data/cc-092/checks.csv)
+- Energy Baseline Scenario for Gozo (2023), Table 16
+- EEA CORINE Land Cover 2018 and Natura 2000 sites (data/cc-092/clc2018_gozo_polygons.csv, natura2000_overlap.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-10'
 location:
   place: Victoria, Gozo
   lat: 36.04289
   lon: 14.23985
   scope: institution
   icon: cittadella
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-092A
+    text: "Every unit of Gozo’s emissions “reduced or offset” by 2040, with afforestation among the initiatives"
+    said_by: "PN [1]"
+    finding: "The PN gives afforestation no share. Trees alone would need 4.9–6.3 times Gozo’s area at a measured rate (2.3–25 times across rates); planting all of Gozo’s semi-natural land would offset about 3–4% (1–8%) of its energy CO2 [6–9, 18]."
+    rating: "A small part at most"
+    tone: amber
+  - id: CC-092B
+    text: "“More afforestation and open spaces in both Malta and Gozo”"
+    said_by: "PN [2]"
+    finding: "No area, number of trees, species, sites or date, so delivery cannot be checked. CORINE maps no forest on Gozo; Malta’s whole forest is 470 ha [17, 18]."
+    rating: "Not measurable (pledge)"
+    tone: grey
+  - id: CC-092C
+    text: "Gozo net zero “through afforestation”"
+    said_by: "MaltaToday [4]"
+    finding: "Not the PN’s words: the programme lists afforestation among many measures [1]. Not rated."
+    rating: "Headline wording, not rated"
+    tone: grey
+  - id: CC-092D
+    text: "A national indigenous-tree strategy"
+    said_by: "MaltaToday [5 ◆]"
+    finding: "Not in any of the 16 chapters (web and PDF, searched 10 Oct 2026). Nearest: local farm varieties and breeds with a gene bank and nursery (Agrikoltura 31) [3]; tree planting and afforestation against heat and flooding (Ambjent 20) [2]."
+    rating: "Not in the programme"
+    tone: grey
+  - id: CC-092E
+    text: "Water and land limits on planting (our check)"
+    said_by: "Not claimed"
+    finding: "Malta in permanent water scarcity (WEI+ 30% in 2023) [17]; 30–58% 20-year survival in arid Spain [12]; the only land neither built on nor farmed is mostly CORINE class 323, which includes garrigue and maquis [18]; 36% of it lies in Natura 2000 sites [23], and the PN’s item 25 lists garrigue among the habitats to protect [2]."
+    rating: "Context"
+    tone: amber
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 3–4%
+  caption: of Gozo's energy CO2 offset if all its semi-natural land were planted (measured rate)
+pledge:   # pledge label (methodology/verdict-scale.md, Pledges); shown instead of the verdict
+  status: Not measurable
+  kind: campaign   # manifesto or campaign promise, made before an election (methodology/verdict-scale.md, Pledges)
+  as_of: '2026-10-10'
+  made_by: [pn]
+  made_on: '2026-05-18'
+  vehicle: 'PN electoral programme 2026 (Nifs Ġdid), chapters Għawdex (item 46) and Ambjent (items 01, 20)'
+  deadline: null
+  target: Afforestation among the initiatives to make Gozo a Net-Zero Island by 2040, and more afforestation in Malta and
+    Gozo; no area, number of trees, species, sites or date
+  follows_search:
+    date: '2026-10-10'
+    searched:
+    - 'PN programme 2022 (Viżjoni Għal Malta 2030 +1), rows in data/manifesto_pledges.csv: afforestation, trees, Gozo,
+      net zero'
+    found:
+    - 'MP-PN-2022-189 (the largest afforestation programme in Malta''s history, for community green spaces): similar
+      subject, national, no Gozo or carbon element; not linked'
+  note: No date is given for afforestation itself; the net-zero target it would serve is 2040 (Claim Check 107). The
+    national indigenous-tree strategy reported by MaltaToday is not in the programme. The PN lost the 30 May 2026
+    election, so this is an opposition proposal.
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-10
+    step: started
+    note: "Claim taken in an orchestrated run. Intake source (MaltaToday breakdown, 142040) returns 403 and the Internet Archive was unreachable; a search engine's summary of it mentions an afforestation strategy prioritising indigenous trees (second-hand)."
+  - date: 2026-10-10
+    step: wording
+    note: "Verbatim wording found in the PN's own programme (pn.org.mt, readable with a browser User-Agent): Għawdex item 46 lists afforestation among the initiatives by which every unit of Gozo's emissions would be reduced or offset by 2040; Ambjent items 01 and 20 promise more afforestation. All 16 chapters (web and PDF) searched: no indigenous-tree strategy; 'indigenous' appears once, for farm varieties and breeds (Agrikoltura 31). Claim text and title restated to the programme's words (translation ours)."
+  - date: 2026-10-10
+    step: note
+    note: "Literature verified in Crossref (Grünzweig et al. 2007; Renna et al. 2024; Bernal et al. 2018; Hoogmoed et al. 2012; Maestre and Cortina 2004; Oliet et al. 2023; Jackson et al. 2005; Rotenberg and Yakir 2010; Yosef et al. 2018; Veldman et al. 2015). Eurostat, EEA CORINE 2018 and Natura 2000, and NASA POWER data downloaded; the Gozo energy baseline re-read. Trees alone would need 4.9-6.3 times Gozo's area at the measured rate (2.3-25 times across rates); all semi-natural land planted would offset 3.0-3.9% (0.8-8.1%); 36% of that land is in Natura 2000 sites; no forest mapped on Gozo."
+  - date: 2026-10-10
+    step: version
+    version: "1.0"
+    note: "First issue. Pledge label Not measurable as of 10 October 2026; pending right of reply from the Partit Nazzjonalista. Complements Claim Check 107 (the net-zero plan) with the afforestation arithmetic, Gozo's land cover, water limits and the search for an indigenous-tree strategy."

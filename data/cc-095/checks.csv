@@ -1,0 +1,104 @@
+check,value,unit,source,note
+Malta HICP electricity: month from which the index has not changed,2014-04,month,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",index 100.00 (2025=100) in 2026-08
+Malta HICP electricity: latest month,2026-08,month,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",value 100.00
+Malta HICP gas (LPG in Malta): month from which the index has not changed,2020-04,month,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",index 100.00 (2025=100) in 2026-08
+Malta HICP gas (LPG in Malta): latest month,2026-08,month,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",value 100.00
+Malta HICP diesel: month from which the index has not changed,2020-07,month,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",index 100.00 (2025=100) in 2026-08
+Malta HICP diesel: latest month,2026-08,month,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",value 100.00
+Malta HICP petrol: month from which the index has not changed,2020-07,month,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",index 100.00 (2025=100) in 2026-08
+Malta HICP petrol: latest month,2026-08,month,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",value 100.00
+Malta HICP all energy: month from which the index has not changed,2020-07,month,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",index 100.00 (2025=100) in 2026-09 (flag e)
+Malta HICP all energy: latest month,2026-09,month,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",value 100.00
+EU-27 HICP energy: change Dec 2025 to Aug 2026,12.9,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+Malta HICP energy: change Dec 2025 to Aug 2026,0.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+EU-27 HICP diesel: change Dec 2025 to Aug 2026,31.2,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+Malta HICP diesel: change Dec 2025 to Aug 2026,0.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+EU-27 HICP petrol: change Dec 2025 to Aug 2026,20.5,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+Malta HICP petrol: change Dec 2025 to Aug 2026,0.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+EU-27 HICP electricity: change Dec 2025 to Aug 2026,2.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+Malta HICP electricity: change Dec 2025 to Aug 2026,0.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+EU-27 HICP gas: change Dec 2025 to Aug 2026,7.2,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+Malta HICP gas: change Dec 2025 to Aug 2026,0.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+EU-27 HICP energy: change Jan 2020 to Aug 2026,55.4,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+Malta HICP energy: change Jan 2020 to Aug 2026,-3.5,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",Malta's energy index fell in Jun-Jul 2020 (fuel price cut) and has not moved since
+"HICP energy, annual change Aug 2026: Malta",0.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"HICP energy, annual change Aug 2026: EU-27",13.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"HICP energy, annual change Aug 2026: countries at 0.0% or below",1,of 27,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",MT 0.0
+"HICP energy, annual change Aug 2026: lowest three",MT 0.0; HU 1.6; CZ 2.2,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"HICP energy, annual change Aug 2026: countries below 2%",2,of 27,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026","MT 0.0, HU 1.6"
+"HICP liquid and transport fuels, annual change Aug 2026: Malta",0.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"HICP liquid and transport fuels, annual change Aug 2026: EU-27",25.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"HICP liquid and transport fuels, annual change Aug 2026: countries at 0.0% or below",1,of 27,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",MT 0.0
+"HICP liquid and transport fuels, annual change Aug 2026: lowest three",MT 0.0; HU 1.3; SE 6.1,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"HICP diesel, annual change Aug 2026: Malta",0.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"HICP diesel, annual change Aug 2026: EU-27",32.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"HICP diesel, annual change Aug 2026: countries at 0.0% or below",1,of 27,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",MT 0.0
+"HICP diesel, annual change Aug 2026: lowest three",MT 0.0; HU 11.1; IE 15.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"HICP electricity, annual change Aug 2026: Malta",0.0,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"HICP electricity, annual change Aug 2026: EU-27",2.3,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"HICP electricity, annual change Aug 2026: countries at 0.0% or below",9,of 27,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026","LU -22.9, DK -17.9, CZ -11.3, AT -10.7, DE -5.6, FI -1.9, EL -1.2, NL -0.1, MT 0.0"
+"HICP electricity, annual change Aug 2026: lowest three",LU -22.9; DK -17.9; CZ -11.3,%,"Eurostat prc_hicp_minr (ECOICOP ver.2), updated 2 Oct 2026, retrieved 10 Oct 2026",
+"Malta diesel pump price (with taxes), unchanged since",2020-06-15,week,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",EUR 1.21 per litre in 325 weekly reports to 2026-10-05; before: EUR 1.28
+"Malta diesel pump price, latest week",1.21,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",2026-10-05
+"EU weighted average diesel pump price, 2026-10-05",2.149,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+"EU weighted average diesel pump price, 2026-09-28",2.237,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",the week before the minister's comparison (30 Sep 2026)
+"Italy diesel pump price, 2026-10-05",2.273,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+"Italy diesel pump price, 2026-09-28",2.351,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",the week before the minister's comparison (30 Sep 2026)
+"MT diesel price before taxes, 2026-10-05",0.553,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+"EU diesel price before taxes, 2026-10-05",1.324,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+"IT diesel price before taxes, 2026-10-05",1.241,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+"Malta petrol (Euro-super 95) pump price (with taxes), unchanged since",2020-06-15,week,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",EUR 1.34 per litre in 325 weekly reports to 2026-10-05; before: EUR 1.41
+"Malta petrol (Euro-super 95) pump price, latest week",1.34,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",2026-10-05
+"EU weighted average petrol (Euro-super 95) pump price, 2026-10-05",2.006,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+"EU weighted average petrol (Euro-super 95) pump price, 2026-09-28",2.104,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",the week before the minister's comparison (30 Sep 2026)
+"Italy petrol (Euro-super 95) pump price, 2026-10-05",2.073,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+"Italy petrol (Euro-super 95) pump price, 2026-09-28",2.156,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",the week before the minister's comparison (30 Sep 2026)
+"MT petrol (Euro-super 95) price before taxes, 2026-10-05",0.586,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+"EU petrol (Euro-super 95) price before taxes, 2026-10-05",1.076,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+"IT petrol (Euro-super 95) price before taxes, 2026-10-05",1.026,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+Malta diesel price before taxes as share of the EU average before taxes (latest week),41.8,%,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",the regulated Maltese price leaves less than half the EU's average pre-tax margin and product cost
+EU average diesel price before taxes as a multiple of Malta's (latest week),2.4,times,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+Oil Bulletin 2026-10-05: Malta's rank for diesel (1 = cheapest),1,of 26 reporting,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",next cheapest PL EUR 1.764
+Oil Bulletin 2026-10-05: median diesel price of reporting countries,2.107,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026","the minister: 'the EU median is EUR 2 per litre' (Newsbook, outlet paraphrase)"
+Oil Bulletin 2026-10-05: Malta's rank for petrol (1 = cheapest),1,of 26 reporting,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",next cheapest PL EUR 1.520
+Oil Bulletin 2026-10-05: median petrol price of reporting countries,1.868,EUR per litre,"European Commission Weekly Oil Bulletin, history workbook, retrieved 10 Oct 2026",
+"Malta electricity price, households, band DC (all taxes): range 2019-S1 to 2026-S1",0.1261-0.1318,EUR per kWh,"Eurostat nrg_pc_204 band DC, all taxes, updated 9 Oct 2026, retrieved 10 Oct 2026",latest 0.1268 (flag p)
+"EU-27 electricity price, households, band DC (all taxes): 2025-S2",0.2896,EUR per kWh,"Eurostat nrg_pc_204 band DC, all taxes, updated 9 Oct 2026, retrieved 10 Oct 2026",2019-S1 0.2168; peak 2024-S1 0.2916
+"Malta household price as share of the EU-27 average, band DC, 2025-S2",44.8,%,"Eurostat nrg_pc_204 band DC, all taxes, updated 9 Oct 2026, retrieved 10 Oct 2026",
+"Malta electricity price, non-households, band ID (excl. VAT): range 2019-S1 to 2026-S1",0.1342-0.1411,EUR per kWh,"Eurostat nrg_pc_205 band ID, excl. VAT, retrieved 10 Oct 2026",latest 0.1358 (flag p)
+"EU-27 electricity price, non-households, band ID (excl. VAT): 2025-S2",0.1837,EUR per kWh,"Eurostat nrg_pc_205 band ID, excl. VAT, retrieved 10 Oct 2026",2019-S1 0.1218; peak 2023-S1 0.2151
+Minister's figures (as reported): energy and food subsidies 2023,242.5,EUR million,"Lovin Malta, 30 Sep 2026",
+Minister's figures (as reported): 2025,188.1,EUR million,"Lovin Malta, 30 Sep 2026",
+Minister's figures (as reported): 2026 (projection),391.7,EUR million,"Lovin Malta, 30 Sep 2026",Italpress/MNA: EUR 392 million; BusinessNow: EUR 400 million 'for this year'
+Minister's figures (as reported): 2027 (forecast),400.0,EUR million (rounded),"Lovin Malta, 30 Sep 2026",
+2026 projection against 2025,2.08,times,calculated,+EUR 203.6 million
+Minister's 2023 figure as % of GDP,1.16,% of GDP,"Eurostat nama_10_gdp CP_MEUR, retrieved 10 Oct 2026",GDP 20914.5
+Minister's 2025 figure as % of GDP,0.76,% of GDP,"Eurostat nama_10_gdp CP_MEUR, retrieved 10 Oct 2026",GDP 24664.0
+"Eurostat COFOG 04.3 fuel and energy subsidies (D.3), Malta 2019",37.4,EUR million,"Eurostat gov_10a_exp COFOG 04.3, updated 16 Sep 2026, retrieved 10 Oct 2026",pre-crisis level
+"Eurostat COFOG 04.3 fuel and energy subsidies (D.3), Malta 2021",106.0,EUR million,"Eurostat gov_10a_exp COFOG 04.3, updated 16 Sep 2026, retrieved 10 Oct 2026",0.6% of GDP
+"Eurostat COFOG 04.3 fuel and energy subsidies (D.3), Malta 2022",375.0,EUR million,"Eurostat gov_10a_exp COFOG 04.3, updated 16 Sep 2026, retrieved 10 Oct 2026",2.1% of GDP
+"Eurostat COFOG 04.3 fuel and energy subsidies (D.3), Malta 2023",295.9,EUR million,"Eurostat gov_10a_exp COFOG 04.3, updated 16 Sep 2026, retrieved 10 Oct 2026",1.4% of GDP
+"Eurostat COFOG 04.3 fuel and energy subsidies (D.3), Malta 2024",255.3,EUR million,"Eurostat gov_10a_exp COFOG 04.3, updated 16 Sep 2026, retrieved 10 Oct 2026",1.1% of GDP
+COFOG 2023 above the 2019 level,258.5,EUR million,calculated,a rough measure of the crisis support; the minister's 2023 figure is EUR 242.5 million (energy and food)
+IMF Article IV 2023 (1.4% of GDP) in euros,292.8,EUR million,IMF CR 26/29 Table 2 (data/cc-113/other_estimates_transcribed.csv) x Eurostat GDP,
+"Government DBP 2024: 2023 expected (1.7% of GDP, other basic commodities included) in euros",355.5,EUR million,DBP 2024 (data/cc-113/) x Eurostat GDP,
+"Commission subsidy inventory, Malta 2023 (fossil-fuel subsidies; with stand-in)",604.7,EUR million,data/cc-113/ec_inventory_malta_facts.csv,with the EUR 28.2m stand-in 632.9
+Government DBP 2025: 2025 planned (0.72% of GDP) in euros,177.6,EUR million,DBP 2025 (data/cc-113/) x Eurostat GDP,
+IMF Article IV 2025 projection (0.8% of GDP) in euros,197.3,EUR million,IMF CR 26/29 x Eurostat GDP,
+"Five-year total (EUR 1,350 million) less the three years given: implied 2022 plus 2024",527.7,EUR million,"calculated from S01-S03, S07",
+COFOG 04.3 subsidies 2022 plus 2024,630.3,EUR million,"Eurostat gov_10a_exp COFOG 04.3, updated 16 Sep 2026, retrieved 10 Oct 2026",555.5 above twice the 2019 level
+Draft Budgetary Plan 2023 (Oct 2022): energy subsidies allocated for 2023,595.0,EUR million,"MFAC USP 2023-2026 assessment, Box C, p. 89",electricity 500 + gas fund 15 + petroleum 80
+Update of Stability Programme (spring 2023): energy subsidies for 2023,262.0,EUR million,"MFAC Box C, p. 89",
+Minister's 2023 figure (energy and food) as share of the Oct 2022 allocation,41,%,calculated,
+Oct 2022 allocation for 2023 as a multiple of the minister's 2023 figure,2.5,times,calculated,the allocation equals the Commission database's 2023 entries for Malta (CC-113)
+"Commission inventory 2023, Enemalta line plus Gas Stabilisation Fund",595.0,EUR million,data/cc-113/ec_inventory_malta_facts.csv,equals the DBP 2023 allocation (500 + 80 + 15 = 595); the Enemalta line 580 = 500 + 80
+Total subsidies 2026: DBP 2026 forecast (Oct 2025),493.3,EUR million,MFAC DBP26 assessment,
+Total subsidies 2026: APR 2026 forecast (Apr 2026),560.0,EUR million,MFAC APR26 assessment,+66.7 on the DBP 2026 forecast
+"APR 2026: higher allocation for energy-related subsidies, about 0.3% of GDP",78.3,EUR million,"MFAC APR26 assessment p. 29; GDP 2026 forecast 26,087.5 (same report)",
+Minister's 2026 increase on 2025 less the APR 2026 energy uplift,125.3,EUR million,calculated,"the September figure implies a further upward revision after April; different bases (energy and food subsidies vs ESA subsidies), so indicative only"
+Total subsidies 2025 outturn,536.6,EUR million,"MFAC Council Note 03/2026, p. 7",
+Total subsidies Q1 2026,119.0,EUR million,"MFAC Council Note 03/2026, p. 7",21.2% of the APR 2026 forecast for the year
+"COFOG 04.3 subsidies as % of GDP, 2022: Malta and rank",2.1 (3 of 27),% of GDP,"Eurostat gov_10a_exp COFOG 04.3, updated 16 Sep 2026, retrieved 10 Oct 2026","top five: EL 4.4, BG 3.9, MT 2.1, RO 1.5, LT 1.2; EU-27 0.6"
+"COFOG 04.3 subsidies as % of GDP, 2023: Malta and rank",1.4 (5 of 27),% of GDP,"Eurostat gov_10a_exp COFOG 04.3, updated 16 Sep 2026, retrieved 10 Oct 2026","top five: SK 2.7, HU 1.9, PL 1.6, EL 1.5, MT 1.4; EU-27 0.7"
+"COFOG 04.3 subsidies as % of GDP, 2024: Malta and rank",1.1 (joint 2-4 of 27),% of GDP,"Eurostat gov_10a_exp COFOG 04.3, updated 16 Sep 2026, retrieved 10 Oct 2026","top five: HU 1.3, BG 1.1, MT 1.1, SK 1.1, EL 1.0; EU-27 0.4"
+EU: budgetary cost of 2026 energy measures adopted 1 Mar-4 May 2026,14.5,EUR billion,"European Commission, Spring 2026 forecast box",0.07% of EU GDP

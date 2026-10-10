@@ -181,7 +181,7 @@
         },
         {
           "id": "CC-010",
-          "score": 0.38,
+          "score": 0.37,
           "terms": [
             "trees",
             "planted",
@@ -361,7 +361,7 @@
       "similar": [
         {
           "id": "CC-081",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "management",
             "waste",
@@ -691,7 +691,7 @@
       "similar": [
         {
           "id": "CC-002",
-          "score": 0.38,
+          "score": 0.37,
           "terms": [
             "trees",
             "planted",
@@ -700,7 +700,7 @@
         },
         {
           "id": "CC-057",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "trees",
             "planted"
@@ -708,7 +708,7 @@
         },
         {
           "id": "CC-056",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "trees",
             "project"
@@ -816,8 +816,17 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/claim.yml",
       "similar": [
         {
+          "id": "CC-092",
+          "score": 0.29,
+          "terms": [
+            "zero",
+            "net",
+            "spaces"
+          ]
+        },
+        {
           "id": "CC-054",
-          "score": 0.31,
+          "score": 0.26,
           "terms": [
             "green",
             "spaces",
@@ -932,17 +941,7 @@
         "flyer_pdf": "claim-files/CC-013/flyer.pdf",
         "flyer_png": "claim-files/CC-013/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-013/claim.yml",
-      "similar": [
-        {
-          "id": "CC-095",
-          "score": 0.28,
-          "terms": [
-            "keep",
-            "prices"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-013/claim.yml"
     },
     {
       "id": "CC-014",
@@ -1291,7 +1290,7 @@
       "similar": [
         {
           "id": "CC-061",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "market",
             "housing"
@@ -1366,7 +1365,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.44,
+          "score": 0.49,
           "terms": [
             "square",
             "metres",
@@ -1563,7 +1562,7 @@
       "similar": [
         {
           "id": "CC-095",
-          "score": 0.29,
+          "score": 0.27,
           "terms": [
             "prices",
             "electricity",
@@ -1872,7 +1871,7 @@
       "similar": [
         {
           "id": "CC-114",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "greenhouse",
             "emissions",
@@ -2647,7 +2646,7 @@
       "similar": [
         {
           "id": "CC-113",
-          "score": 0.28,
+          "score": 0.29,
           "terms": [
             "share",
             "highest"
@@ -3054,7 +3053,7 @@
       "similar": [
         {
           "id": "CC-045",
-          "score": 0.35,
+          "score": 0.33,
           "terms": [
             "tunnels",
             "every",
@@ -3133,7 +3132,7 @@
       "similar": [
         {
           "id": "CC-044",
-          "score": 0.35,
+          "score": 0.33,
           "terms": [
             "tunnels",
             "every",
@@ -3533,17 +3532,7 @@
         "flyer_pdf": "claim-files/CC-053/flyer.pdf",
         "flyer_png": "claim-files/CC-053/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-053/claim.yml",
-      "similar": [
-        {
-          "id": "CC-055",
-          "score": 0.25,
-          "terms": [
-            "island",
-            "area"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-053/claim.yml"
     },
     {
       "id": "CC-054",
@@ -3578,7 +3567,7 @@
       "similar": [
         {
           "id": "CC-019",
-          "score": 0.44,
+          "score": 0.49,
           "terms": [
             "square",
             "metres",
@@ -3587,7 +3576,7 @@
         },
         {
           "id": "CC-011",
-          "score": 0.31,
+          "score": 0.26,
           "terms": [
             "green",
             "spaces",
@@ -3720,11 +3709,11 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-055/claim.yml",
       "similar": [
         {
-          "id": "CC-053",
+          "id": "CC-093",
           "score": 0.25,
           "terms": [
-            "island",
-            "area"
+            "park",
+            "public"
           ]
         }
       ]
@@ -3770,7 +3759,7 @@
         },
         {
           "id": "CC-010",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "trees",
             "project"
@@ -3828,7 +3817,7 @@
         },
         {
           "id": "CC-010",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "trees",
             "planted"
@@ -3929,7 +3918,7 @@
       "similar": [
         {
           "id": "CC-074",
-          "score": 0.31,
+          "score": 0.32,
           "terms": [
             "grants",
             "eur"
@@ -3969,7 +3958,7 @@
       "similar": [
         {
           "id": "CC-018",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "market",
             "housing"
@@ -4192,7 +4181,7 @@
       "similar": [
         {
           "id": "CC-116",
-          "score": 0.37,
+          "score": 0.38,
           "terms": [
             "unesco",
             "buffer",
@@ -4201,7 +4190,7 @@
         },
         {
           "id": "CC-084",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "adpd",
             "sandra",
@@ -4427,14 +4416,14 @@
         {
           "id": "CC-071A",
           "text": "The system cost “almost €100 million in 2025” (headline: “reaches €100 million a year”)",
-          "finding": null,
+          "finding": "The article’s own components sum to €93.4 million, 6.6% under €100 million; €3.2 million is bus investment. The parliamentary reply was not read; Newsbook reports the same document ◆ [2].",
           "rating": "Unverified",
           "tone": "amber"
         },
         {
           "id": "CC-071B",
           "text": "Payments are the highest yet and still rising",
-          "finding": null,
+          "finding": "€36.3m, €42.8m, €69.4m, €84m, €93.4m for 2021–2025 as reported ◆ [1, 6]; bases may differ. Consistent with the article; not verified at source.",
           "rating": "Consistent",
           "tone": "amber"
         },
@@ -4473,7 +4462,7 @@
       "similar": [
         {
           "id": "CC-115",
-          "score": 0.26,
+          "score": 0.25,
           "terms": [
             "cost",
             "traffic",
@@ -4584,7 +4573,7 @@
       "similar": [
         {
           "id": "CC-060",
-          "score": 0.31,
+          "score": 0.32,
           "terms": [
             "grants",
             "eur"
@@ -4832,11 +4821,14 @@
       "id": "CC-079",
       "title": "Waste-to-energy: 4.5% of energy",
       "category": "Waste",
-      "claim": "Government / WasteServ (ECOHIVE): the Magħtab waste-to-energy plant will convert 192,000 tonnes of non-recyclable waste into 4.5% of the nation's energy.",
-      "counter": "Energy share vs national demand; recycling targets; landfill share still near 79% in 2024.",
-      "status": "Not started",
-      "verdict": null,
-      "tags": [],
+      "claim": "WasteServ (ECOHIVE news, 26 Jun 2023): the Magħtab waste-to-energy plant \"will be treating around 192,000 tonnes of non-recyclable waste generated locally\" and \"is expected to meet around 4.5% of Malta's total energy needs\". In October and November 2020 WasteServ wrote that the plant would add \"an impressive 4.5% as green energy to Malta's total energy demand\".",
+      "counter": "WasteServ's own output figure for the plant is 126 GWh of electricity a year (project page); the NECP design (2 lines x 12 t/h, 14-16 MW net) gives 112-128 GWh at the 8,000 full-load hours that 192,000 t implies, and a net efficiency of 23.6% (design calorific value 10 GJ/t, read per line), within the 20-24% Lombardi et al. (2015) give for small-medium plants. 126 GWh was 4.4-4.7% of Malta's electricity use in 2022 (inland demand 2,880 GWh; final consumption 2,698 GWh) and 4.1-4.4% in 2024, but 1.5% of final energy consumption (FEC_EED, 8,136 GWh), 1.8% of final energy use without international aviation, 1.2% of primary energy consumption and of gross inland consumption, and 0.4% of gross available energy (2022; 2024: 1.5%, 1.8%, 1.2%, 1.1%, 0.4%). On the NECP's 2030 projections it is 3.2% of electricity supply (3,951 GWh), 1.3% of final and 1.1% of primary energy consumption. 126 GWh is exactly 4.5% of 2,800 GWh (241 ktoe), against Malta's 964 ktoe gross inland consumption in 2024. The only total-energy reading near 4.5% counts the waste's whole energy content (533 GWh): 5.0-5.2% of primary energy consumption 2022-2024, though the plant would deliver under a quarter of it as electricity and no heat user is named. EU law counts only the biodegradable fraction of waste as renewable (Directive 2018/2001, Art. 2(24)), and the NECP says the plant \"is not expected to contribute to Malta's RES share\". In the speaker's favour: the tonnage matches the NECP design and the Commission's 190,000 t; Malta landfilled 255 kt of municipal waste in 2024 (192 kt = 75%); 4.5% is a fair figure for electricity. Against the capacity: meeting the 2035 recycling target (65%) at 2024 generation would leave at most 124 kt of municipal waste for burning or landfill. The project page's \"40% of non-recyclable waste\" implies 480 kt, which no published statistic matches (192 kt is 67-75% of waste landfilled, 32% of all non-mineral waste generated in 2022).",
+      "status": "Drafted",
+      "verdict": "Misleading",
+      "tags": [
+        "Selective metric",
+        "Promise-without-baseline"
+      ],
       "subtopic": "Landfill & treatment",
       "location": {
         "place": "Magħtab waste complex",
@@ -4845,27 +4837,68 @@
         "scope": "site",
         "icon": "landfill"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "WasteServ; Ministry for the Environment",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "WasteServ",
       "bodies": [
-        "wasteserv",
-        "ministry-environment"
+        "wasteserv"
       ],
-      "date": "",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-079A",
+          "text": "The plant will treat around 192,000 tonnes of non-recyclable waste generated locally a year",
+          "finding": "Matches the NECP design (24 t/h for 8,000 hours) and the Commission’s 190,000 t. Malta landfilled 255,000 t of municipal waste in 2024, but meeting the 2035 recycling target would leave at most 124,000 t.",
+          "rating": "Consistent",
+          "tone": "green"
+        },
+        {
+          "id": "CC-079B",
+          "text": "It is expected to meet around 4.5% of Malta’s total energy needs",
+          "finding": "126 GWh is 1.5% of final and 1.2% of primary energy consumption (2022), but 4.4–4.7% of electricity use. 3.2% of the NECP’s 2030 electricity supply.",
+          "rating": "Misleading",
+          "tone": "red"
+        },
+        {
+          "id": "CC-079C",
+          "text": "The waste is converted into green energy",
+          "finding": "Only the biodegradable fraction counts as renewable under EU law; the NECP says the plant is not expected to contribute to Malta’s renewable share.",
+          "rating": "Partly",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-079D",
+          "text": "The plant will generate 126 GWh a year to the grid",
+          "finding": "Consistent with the NECP’s 14–16 MW net (112–128 GWh) and a net efficiency of 23.6%, within the 20–24% reported for plants of this size.",
+          "rating": "Plausible",
+          "tone": "green"
+        },
+        {
+          "id": "CC-079E",
+          "text": "The plant will treat 40% of the non-recyclable waste generated in Malta",
+          "finding": "With 192,000 t this implies 480,000 t of non-recyclable waste. 192,000 t is 67–75% of the waste Malta landfills and 32% of all non-mineral waste it generates; no basis is given.",
+          "rating": "Unclear basis",
+          "tone": "amber"
+        }
+      ],
+      "date": "2023-06-26",
+      "quote": "This plant will be treating around 192,000 tonnes of non-recyclable waste generated locally diverting it away from landfills and converting it into green energy. It is expected to meet around 4.5% of Malta's total energy needs.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-10",
+      "outputs": {
+        "report": "claim-files/CC-079/report.pdf",
+        "flyer_pdf": "claim-files/CC-079/flyer.pdf",
+        "flyer_png": "claim-files/CC-079/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-079/claim.yml",
       "similar": [
         {
           "id": "CC-080",
-          "score": 0.48,
+          "score": 0.41,
           "terms": [
-            "waste",
             "plant",
-            "wasteserv"
+            "wasteserv",
+            "tonnes"
           ]
         }
       ]
@@ -4902,11 +4935,11 @@
       "similar": [
         {
           "id": "CC-079",
-          "score": 0.48,
+          "score": 0.41,
           "terms": [
-            "waste",
             "plant",
-            "wasteserv"
+            "wasteserv",
+            "tonnes"
           ]
         }
       ]
@@ -4943,7 +4976,7 @@
       "similar": [
         {
           "id": "CC-004",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "management",
             "waste",
@@ -5073,20 +5106,20 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-084/claim.yml",
       "similar": [
         {
-          "id": "CC-085",
-          "score": 0.33,
-          "terms": [
-            "tourists",
-            "million"
-          ]
-        },
-        {
           "id": "CC-065",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "adpd",
             "sandra",
             "gauci"
+          ]
+        },
+        {
+          "id": "CC-085",
+          "score": 0.25,
+          "terms": [
+            "tourists",
+            "million"
           ]
         }
       ]
@@ -5095,10 +5128,11 @@
       "id": "CC-085",
       "title": "4.7 million tourists needed",
       "category": "Tourism & Population",
-      "claim": "Malta Hotels and Restaurants Association: if all planned hotels are built, Malta would need about 4.7 million tourists a year to keep occupancy at 80%.",
-      "counter": "Bed-stock pipeline vs arrivals; 2025 arrivals already above 4 million.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Malta Hotels and Restaurants Association president Tony Zahra (Horeca Malta, 23 Dec 2022): counting the beds operating and new beds \"approved or are in the course of being approved\", the MHRA's Deloitte report \"concluded that Malta will need to attract 4.7 million tourists each spending an average of 7 nights in Malta\" to \"reach 80 percent occupancy throughout the year\". Repeated in November 2024: \"If we want the 80% occupancy rate of hotels we had in 2019, with the number of beds we have, we need 4.7 million tourists.\"",
+      "counter": "The study holds 2019 occupancy (76.7% collective, 59.3% private rented beds), not 80%; 4.7 million is the middle scenario of its airport table (4,680,509, p. 66), its bed-stock table and launch slides give 4.1m to 4.5m, and the 2024 update calls the original estimate 4.5m. Eurostat hotel room occupancy 75.4% in 2019 (bed-places 66.2%), no year at 80% in 2012-2025; MHRA survey 4-star 81.2%, 5-star 72.7%. Hotel bed-places +20.9% 2019-2025 against +80% to +100% collective beds assumed. Arrivals 4,022,310 in 2025 (second-hand, NSO via an outlet).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Tourism numbers & capacity",
       "location": {
@@ -5108,22 +5142,71 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Malta Hotels and Restaurants Association (MHRA)",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Malta Hotels and Restaurants Association (Tony Zahra, President)",
       "bodies": [
         "mhra"
       ],
-      "date": "2022",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-085A",
+          "text": "“the Deloitte report concluded that Malta will need to attract 4.7 million tourists”",
+          "finding": "4,680,509 in the airport table’s middle scenario (p. 66), reproduced exactly; the report’s tables range from 4.1 to 5.0 million and its slides headline 4.5 million [3, 4].",
+          "rating": "In the study",
+          "tone": "green"
+        },
+        {
+          "id": "CC-085B",
+          "text": "“each spending an average of 7 nights”",
+          "finding": "The study’s stay: 7 nights as labelled, 7.024 in its arithmetic (2019 nights over arrivals) [3]. Stays have shortened since (Section 5).",
+          "rating": "As in the study",
+          "tone": "green"
+        },
+        {
+          "id": "CC-085C",
+          "text": "to “reach 80 percent occupancy throughout the year”",
+          "finding": "The study keeps 2019 occupancy (76.7% collective, 59.3% private rented); no 80% occupancy condition in its text [3, 4]. At 80% its beds need 4.6 to 5.0 million.",
+          "rating": "Not the study’s condition",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-085D",
+          "text": "Beds operating plus new beds “approved or are in the course of being approved”",
+          "finding": "The study’s pipeline: about 35,000 collective beds in open permits and a stakeholder consensus of +80% to +100%; the Planning Authority’s own count was not shared with it [3]. MTA list in 2024: 27,672 beds [5].",
+          "rating": "Estimate",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-085E",
+          "text": "“the 80% occupancy rate of hotels we had in 2019”",
+          "finding": "4-star hotels 81.2%, 5-star 72.7% in the MHRA survey [5]; all hotels 75.4% of rooms and 66.2% of bed-places (Eurostat) [6].",
+          "rating": "Partly supported",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-085F",
+          "text": "“with the number of beds we have, we need 4.7 million tourists”",
+          "finding": "With the planned beds, as the interview’s context suggests, the 2024 update gives 4.4 to 4.8 million [5]. With the beds operating alone it is not shown: hotel rooms were 75.8% full in 2025 [6] with about 4.0 million tourists ◆ [9].",
+          "rating": "Depends on reading",
+          "tone": "amber"
+        }
+      ],
+      "date": "2022-12-23",
+      "quote": "\"the Deloitte report concluded that Malta will need to attract 4.7 million tourists each spending an average of 7 nights in Malta oi [to] reach 80 percent occupancy throughout the year\" (Tony Zahra, MHRA President, Horeca Malta, 23 Dec 2022). \"If we want the 80% occupancy rate of hotels we had in 2019, with the number of beds we have, we need 4.7 million tourists.\" (Tony Zahra, Malta Independent on Sunday interview, reprinted by The Malta Business Weekly, 28 Nov 2024).",
+      "version": "1.0",
+      "last_reviewed": "2026-10-10",
+      "outputs": {
+        "report": "claim-files/CC-085/report.pdf",
+        "flyer_pdf": "claim-files/CC-085/flyer.pdf",
+        "flyer_png": "claim-files/CC-085/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-085/claim.yml",
       "similar": [
         {
           "id": "CC-084",
-          "score": 0.33,
+          "score": 0.25,
           "terms": [
             "tourists",
             "million"
@@ -5281,7 +5364,7 @@
         },
         {
           "id": "CC-112",
-          "score": 0.31,
+          "score": 0.32,
           "terms": [
             "population",
             "rose"
@@ -5432,13 +5515,15 @@
     },
     {
       "id": "CC-092",
-      "title": "PN: Gozo net-zero by afforestation",
+      "title": "PN: afforestation in a net-zero Gozo",
       "category": "Governance & Promises",
-      "claim": "Nationalist Party (2026 manifesto): Gozo will become a net-zero island through afforestation, alongside a national indigenous-tree strategy.",
-      "counter": "Carbon uptake of feasible afforestation area vs Gozo's emissions.",
-      "status": "Not started",
+      "claim": "PN programme 2026 (Nifs Ġdid, in Maltese; our translation), chapter Għawdex, item 46: a plan so that by 2040 Gozo becomes a Net-Zero Island, \"where every unit of emissions generated is reduced or offset\" by initiatives such as solar panels, electric vehicles, building efficiency, ecological restoration, \"afforestation\" and water and soil conservation, \"among others\". The environment chapter adds \"more afforestation and open spaces in both Malta and Gozo\" (item 01) and tree planting and afforestation against heat, flooding and pollution (item 20). News summaries said Gozo would become net zero \"through afforestation\" and reported a national indigenous-tree strategy; neither is in the programme.",
+      "counter": "The programme lists afforestation among the ways Gozo's emissions would be \"reduced or offset\" by 2040 but gives no area, number of trees, species, sites, carbon rate or date. Offsetting Gozo's energy CO2 (118,333-153,997 t a year in 2016-2020, a study for the EU islands secretariat) by trees alone would need new forest 4.9-6.3 times Gozo's 67 km2 at a rate measured in the Yatir pine forest (3.62 t CO2/ha a year), 2.3-3.0 times at a review's plantation rate (7.6 t) and 19-25 times at the rate measured for native oaks in Spain (0.92 t). CORINE 2018 maps no forest on Gozo; planting all of its semi-natural land (1,265 ha, mostly garrigue and maquis, 36% of it in Natura 2000 sites) would offset 3.0-3.9% (0.8-8.1% across rates). Malta's whole forest is 470 ha (FAO definition, 2025); Malta's water exploitation index was 30% in 2023 (Eurostat: permanent water scarcity); 20-year survival of planted pines was 30-58% in an arid Spanish trial. No indigenous-tree strategy appears in the programme's 16 chapters; \"indigenous\" is used once, for farm varieties and breeds. \"Through afforestation\" is a news summary, not the PN's wording.",
+      "status": "Drafted",
       "verdict": null,
-      "tags": [],
+      "tags": [
+        "Promise-without-baseline"
+      ],
       "subtopic": "Manifestos & pledges",
       "location": {
         "place": "Victoria, Gozo",
@@ -5447,26 +5532,124 @@
         "scope": "institution",
         "icon": "cittadella"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
       "confidence": null,
       "speaker": "Nationalist Party (PN)",
       "bodies": [
         "pn"
       ],
-      "date": "2026-05",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-092A",
+          "text": "Every unit of Gozo’s emissions “reduced or offset” by 2040, with afforestation among the initiatives",
+          "finding": "The PN gives afforestation no share. Trees alone would need 4.9–6.3 times Gozo’s area at a measured rate (2.3–25 times across rates); planting all of Gozo’s semi-natural land would offset about 3–4% (1–8%) of its energy CO2 [6–9, 18].",
+          "rating": "A small part at most",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-092B",
+          "text": "“More afforestation and open spaces in both Malta and Gozo”",
+          "finding": "No area, number of trees, species, sites or date, so delivery cannot be checked. CORINE maps no forest on Gozo; Malta’s whole forest is 470 ha [17, 18].",
+          "rating": "Not measurable (pledge)",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-092C",
+          "text": "Gozo net zero “through afforestation”",
+          "finding": "Not the PN’s words: the programme lists afforestation among many measures [1]. Not rated.",
+          "rating": "Headline wording, not rated",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-092D",
+          "text": "A national indigenous-tree strategy",
+          "finding": "Not in any of the 16 chapters (web and PDF, searched 10 Oct 2026). Nearest: local farm varieties and breeds with a gene bank and nursery (Agrikoltura 31) [3]; tree planting and afforestation against heat and flooding (Ambjent 20) [2].",
+          "rating": "Not in the programme",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-092E",
+          "text": "Water and land limits on planting (our check)",
+          "finding": "Malta in permanent water scarcity (WEI+ 30% in 2023) [17]; 30–58% 20-year survival in arid Spain [12]; the only land neither built on nor farmed is mostly CORINE class 323, which includes garrigue and maquis [18]; 36% of it lies in Natura 2000 sites [23], and the PN’s item 25 lists garrigue among the habitats to protect [2].",
+          "rating": "Context",
+          "tone": "amber"
+        }
+      ],
+      "pledge": {
+        "status": "Not measurable",
+        "slug": "pledge-not-measurable",
+        "colour": "#b0b8c1",
+        "ink": "#13301f",
+        "as_of": "10 October 2026",
+        "as_of_iso": "2026-10-10",
+        "made_on": "18 May 2026",
+        "made_mid": "2026-05-18",
+        "deadline_mid": null,
+        "deadline": null,
+        "term_end": null,
+        "target": "Afforestation among the initiatives to make Gozo a Net-Zero Island by 2040, and more afforestation in Malta and Gozo; no area, number of trees, species, sites or date",
+        "vehicle": "PN electoral programme 2026 (Nifs Ġdid), chapters Għawdex (item 46) and Ambjent (items 01, 20)",
+        "occasion": "PN electoral programme 2026 (Nifs Ġdid)",
+        "note": "No date is given for afforestation itself; the net-zero target it would serve is 2040 (Claim Check 107). The national indigenous-tree strategy reported by MaltaToday is not in the programme. The PN lost the 30 May 2026 election, so this is an opposition proposal.",
+        "made_by": [
+          {
+            "id": "pn",
+            "name": "Partit Nazzjonalista (Nationalist Party)",
+            "kind": "organisation",
+            "role": null,
+            "path": "/bodies/pn/"
+          }
+        ],
+        "made_by_ids": [
+          "pn"
+        ],
+        "pure": true,
+        "overlaps": [],
+        "kind": "campaign",
+        "kind_label": "Campaign pledge",
+        "cycle": "2026",
+        "cycle_label": "2026–",
+        "follows": [],
+        "follows_search": {
+          "date": "2026-10-10",
+          "searched": [
+            "PN programme 2022 (Viżjoni Għal Malta 2030 +1), rows in data/manifesto_pledges.csv: afforestation, trees, Gozo, net zero"
+          ],
+          "found": [
+            "MP-PN-2022-189 (the largest afforestation programme in Malta's history, for community green spaces): similar subject, national, no Gozo or carbon element; not linked"
+          ]
+        },
+        "drift": null,
+        "source_of_commitment": null
+      },
+      "date": "2026-05-18",
+      "quote": "every unit of emissions generated is reduced or offset by concrete and sustainable initiatives, such as ... afforestation ... among others (our translation of \"kull unità ta’ emissjonijiet iġġenerata tkun imnaqqsa jew ikkumpensata b’inizjattivi konkreti u sostenibbli, bħal ... afforestazzjoni ... fost l‑oħrajn\")",
+      "version": "1.0",
+      "last_reviewed": "2026-10-10",
+      "outputs": {
+        "report": "claim-files/CC-092/report.pdf",
+        "flyer_pdf": "claim-files/CC-092/flyer.pdf",
+        "flyer_png": "claim-files/CC-092/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-092/claim.yml",
       "similar": [
         {
           "id": "CC-107",
-          "score": 0.62,
+          "score": 0.51,
           "terms": [
             "afforestation",
             "zero",
             "net"
+          ]
+        },
+        {
+          "id": "CC-011",
+          "score": 0.29,
+          "terms": [
+            "zero",
+            "net",
+            "spaces"
           ]
         }
       ]
@@ -5499,7 +5682,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-093/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-093/claim.yml",
+      "similar": [
+        {
+          "id": "CC-055",
+          "score": 0.25,
+          "terms": [
+            "park",
+            "public"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-094",
@@ -5576,7 +5769,7 @@
       "similar": [
         {
           "id": "CC-109",
-          "score": 0.32,
+          "score": 0.31,
           "terms": [
             "sharing",
             "effort",
@@ -5589,10 +5782,10 @@
       "id": "CC-095",
       "title": "EUR 400m to keep bills low",
       "category": "Climate & Energy",
-      "claim": "Government of Malta: about EUR 400 million in energy subsidies will keep electricity and fuel prices stable through 2027.",
-      "counter": "Energy measures were 46% of the rise in public debt 2022-2025 by one estimate; check budget lines.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Finance Minister Clyde Caruana, launching the Pre-Budget Document 2027 (30 Sep 2026): energy subsidies will cost about EUR 400 million this year (EUR 391.7 million in the figures presented) and about the same in 2027; the prices of fuel, electricity and gas in Malta have not changed; and the support will remain \"come what may\".",
+      "counter": "Prices: confirmed. Petrol EUR 1.34 and diesel EUR 1.21 a litre in every weekly EU Oil Bulletin from 15 Jun 2020 to 5 Oct 2026 (cheapest of 26; EU average diesel 2.15); Malta's HICP electricity unchanged since Apr 2014, LPG since Apr 2020, diesel and petrol since Jul 2020; energy 0.0% in the year to Aug 2026 against EU-27 +13.0%, the only EU country with no rise (Hungary +1.6%). Cost: the EUR 391.7m (2026, energy and food) is a projection for a year in progress and the EUR 400m (2027) a forecast the minister made conditional on prices; no 2026 spending figure for energy subsidies has been published. The Government's forecasts rose during 2026 (total subsidies EUR 493.3m in Oct 2025, 560.0m in Apr 2026 with energy about 0.3% of GDP higher; MFAC) and the Commission expects a higher cost in 2026, but no independent source gives the amount. Past figures fit: 2023 EUR 242.5m against Eurostat COFOG 04.3 subsidies EUR 295.9m (258.5m above 2019) and the IMF's EUR 292.8m; but EUR 595m had been planned for 2023 in Oct 2022 (MFAC Box C), and the Commission subsidy database's 2023 entries for Malta (EUR 580m + 15m, CC-113) equal that allocation. \"The only country\": true for fixed prices; not for support, since Hungary (1.3% of GDP), Bulgaria and Slovakia (1.1%) subsidised fuel and energy as much as Malta (1.1%) in 2024.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [],
       "subtopic": "Electricity & grid",
       "location": {
@@ -5602,42 +5795,132 @@
         "scope": "institution",
         "icon": "castille"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Government of Malta",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Clyde Caruana, Minister for Finance (Pre-Budget Document 2027)",
       "bodies": [
-        "government-of-malta"
+        "clyde-caruana"
       ],
-      "date": "2025",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-095A",
+          "text": "“in our country, the prices of fuel, electricity and gas have not changed”",
+          "finding": "Pump prices fixed since 15 Jun 2020 (325 weekly reports); electricity index unchanged since Apr 2014, LPG since Apr 2020; energy 0.0% in the year to Aug 2026 against EU +13.0% [8, 9, 10].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-095B",
+          "text": "Energy subsidies of about EUR 400 million this year (EUR 391.7 million presented)",
+          "finding": "A projection for a year not yet over; no energy-subsidy spending figure yet. Official forecasts rose during 2026 and the Commission expects a higher cost, but no independent source gives the amount; it includes food; the Pre-Budget Document was not read [14, 15, 17].",
+          "rating": "Plausible, not shown",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-095C",
+          "text": "Past figures: EUR 242.5m (2023), 188.1m (2025), 1,350m over five years",
+          "finding": "2023 close to Eurostat’s crisis rise (258.5) and the IMF (292.8); 2025 between the Government’s plan (177.6) and the IMF (197.3); the five-year total fits Eurostat’s 2022 and 2024 [11, 19, 20].",
+          "rating": "Consistent",
+          "tone": "green"
+        },
+        {
+          "id": "CC-095D",
+          "text": "“I expect those numbers to remain at the same level next year”",
+          "finding": "A forecast the minister made conditional on prices; past forecasts of this spending missed widely [1, 13].",
+          "rating": "Not rated (forecast)",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-095E",
+          "text": "“Malta is the only country that has continued to protect families and businesses ...”",
+          "finding": "Only EU country with no rise in energy prices (Hungary +1.6%); cheapest fuel of 26. But Hungary, Bulgaria and Slovakia spent as much or more on fuel and energy subsidies relative to GDP in 2024 [8, 9, 11].",
+          "rating": "Largely accurate",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-095F",
+          "text": "“what there is in the energy sector, come what may, will remain” (in 2027)",
+          "finding": "A commitment for 2027; prices are measurable; the year has not begun [1, 4].",
+          "rating": "Not yet due (pledge)",
+          "tone": "grey"
+        }
+      ],
+      "pledge": {
+        "status": "Not yet due",
+        "slug": "pledge-not-yet-due",
+        "colour": "#475cad",
+        "ink": "#ffffff",
+        "as_of": "10 October 2026",
+        "as_of_iso": "2026-10-10",
+        "made_on": "30 September 2026",
+        "made_mid": "2026-09-30",
+        "deadline_mid": "2027-12-31",
+        "deadline": "31 December 2027",
+        "term_end": null,
+        "target": "Energy support kept in 2027, so that retail prices of fuel, electricity and gas stay unchanged (\"what there is in the energy sector, come what may, will remain\")",
+        "vehicle": "Launch of the Pre-Budget Document 2027 (BusinessNow, Lovin Malta, TVM News, Newsbook, 30 Sep 2026)",
+        "occasion": "Launch of the Pre-Budget Document 2027 (BusinessNow",
+        "note": "Measurable with the Oil Bulletin and Eurostat price data; the year has not begun. Revisit when 2027 price data are published. The EUR 400m forecast is not part of the pledge.",
+        "made_by": [
+          {
+            "id": "clyde-caruana",
+            "name": "Clyde Caruana",
+            "kind": "person",
+            "role": "Minister for Finance",
+            "path": "/bodies/clyde-caruana/"
+          }
+        ],
+        "made_by_ids": [
+          "clyde-caruana"
+        ],
+        "pure": false,
+        "overlaps": [],
+        "kind": "government",
+        "kind_label": "Government commitment",
+        "cycle": "2026",
+        "cycle_label": "2026–",
+        "follows": [
+          "MP-PL-2026-16-11"
+        ],
+        "follows_search": {
+          "date": "2026-10-10",
+          "searched": [
+            "data/manifesto_pledges.csv, all parties, 2022 and 2026: rows matching subsid, stable or stabbl, price, tariff or bills together with energy, electricity or fuel",
+            "Labour manifesto 2026 (Int Malta), chapter 16, PDF p. 187, read"
+          ],
+          "found": [
+            "MP-PL-2026-16-11 (subsidy on electricity and fuel above EUR 1 billion; the price-stability policy defended in the coming years)"
+          ]
+        },
+        "drift": null,
+        "source_of_commitment": null,
+        "outliers": [
+          {
+            "type": "follows",
+            "text": "Carries forward: Int Malta: Manifest Elettorali 2026, 16.11 (2026–).",
+            "link": "MP-PL-2026-16-11"
+          }
+        ]
+      },
+      "date": "2026-09-30",
+      "quote": "\"I expect those numbers to remain at the same level next year.\" (BusinessNow) ... \"In just a few months, energy prices have risen very significantly. However, in our country, the prices of fuel, electricity and gas have not changed.\" (Lovin Malta)",
+      "version": "1.0",
+      "last_reviewed": "2026-10-10",
+      "outputs": {
+        "report": "claim-files/CC-095/report.pdf",
+        "flyer_pdf": "claim-files/CC-095/flyer.pdf",
+        "flyer_png": "claim-files/CC-095/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-095/claim.yml",
       "similar": [
         {
           "id": "CC-022",
-          "score": 0.29,
+          "score": 0.27,
           "terms": [
             "prices",
             "electricity",
             "eur"
-          ]
-        },
-        {
-          "id": "CC-013",
-          "score": 0.28,
-          "terms": [
-            "keep",
-            "prices"
-          ]
-        },
-        {
-          "id": "CC-113",
-          "score": 0.26,
-          "terms": [
-            "fuel",
-            "subsidies"
           ]
         }
       ]
@@ -6345,7 +6628,7 @@
       "similar": [
         {
           "id": "CC-092",
-          "score": 0.62,
+          "score": 0.51,
           "terms": [
             "afforestation",
             "zero",
@@ -6482,7 +6765,7 @@
       "similar": [
         {
           "id": "CC-094",
-          "score": 0.32,
+          "score": 0.31,
           "terms": [
             "sharing",
             "effort",
@@ -6663,7 +6946,7 @@
       "similar": [
         {
           "id": "CC-088",
-          "score": 0.31,
+          "score": 0.32,
           "terms": [
             "population",
             "rose"
@@ -6739,18 +7022,10 @@
       "similar": [
         {
           "id": "CC-037",
-          "score": 0.28,
+          "score": 0.29,
           "terms": [
             "share",
             "highest"
-          ]
-        },
-        {
-          "id": "CC-095",
-          "score": 0.26,
-          "terms": [
-            "fuel",
-            "subsidies"
           ]
         }
       ]
@@ -6845,7 +7120,7 @@
       "similar": [
         {
           "id": "CC-026",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "greenhouse",
             "emissions",
@@ -6907,7 +7182,7 @@
       "similar": [
         {
           "id": "CC-071",
-          "score": 0.26,
+          "score": 0.25,
           "terms": [
             "cost",
             "traffic",
@@ -6948,7 +7223,7 @@
       "similar": [
         {
           "id": "CC-065",
-          "score": 0.37,
+          "score": 0.38,
           "terms": [
             "unesco",
             "buffer",
@@ -7889,6 +8164,55 @@
       "theme": "T16",
       "link_type": "Shared data",
       "strength": "Strong"
+    },
+    {
+      "from": "CC-079",
+      "to": "CC-080",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-079",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-084",
+      "to": "CC-085",
+      "theme": "T10",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-085",
+      "to": "CC-100",
+      "theme": "T10",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-031",
+      "to": "CC-092",
+      "theme": "T17",
+      "link_type": "Shared target",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-031",
+      "to": "CC-107",
+      "theme": "T17",
+      "link_type": "Shared target",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-092",
+      "to": "CC-107",
+      "theme": "T17",
+      "link_type": "Shared target",
+      "strength": "Strong"
     }
   ],
   "themes": [
@@ -7986,6 +8310,7 @@
         "CC-017",
         "CC-063",
         "CC-079",
+        "CC-080",
         "CC-081",
         "CC-082",
         "CC-111"
@@ -8008,6 +8333,7 @@
         "CC-025",
         "CC-026",
         "CC-051",
+        "CC-079",
         "CC-110",
         "CC-114"
       ]
@@ -8131,7 +8457,7 @@
       "dashed": true,
       "link_type": "Shared driver",
       "strength": "Weak (indicative)",
-      "description": "Claims about what energy support costs and what it shields: the lowest-electricity-burden claim, the EUR 400 million to 2027, and the EEA ranking of fossil-fuel subsidies by share of GDP. They rest on different definitions of subsidy; indicative until a report tests them together.",
+      "description": "Claims about what energy support costs and what it shields: the lowest-electricity-burden claim, the Finance Minister's EUR 400 million a year (2026-27), and the EEA ranking of fossil-fuel subsidies by share of GDP. They rest on different definitions of subsidy. CC-095 (10 Oct 2026) set them side by side: the IMF figures used in CC-022 and the Government's own 2023 figure fit Eurostat's COFOG fuel-and-energy subsidies, while the Commission database's 2023 entries for Malta used in CC-113 equal the October 2022 budget allocation (EUR 595m), 2.5 times the Government's later 2023 figure (EUR 242.5m, energy and food).",
       "members": [
         "CC-022",
         "CC-095",
@@ -8166,6 +8492,20 @@
         "CC-109",
         "CC-114"
       ]
+    },
+    {
+      "id": "T17",
+      "name": "Net-zero Gozo",
+      "color": "#90a4ae",
+      "dashed": false,
+      "link_type": "Shared target",
+      "strength": "Strong",
+      "description": "Pledges that Gozo will be climate neutral or net zero: the Government's 'first climate-neutral region' (CC-031), the PN's net-zero Gozo by 2040 (CC-107) and the afforestation it lists (CC-092). None states a Gozo inventory or boundary; the 2023 Energy Baseline Scenario for Gozo is the only Gozo-specific baseline found.",
+      "members": [
+        "CC-031",
+        "CC-092",
+        "CC-107"
+      ]
     }
   ],
   "bodies": [
@@ -8189,18 +8529,6 @@
           ]
         },
         {
-          "id": "european-commission",
-          "named": 0,
-          "pairs": 9,
-          "themes": [
-            "T16",
-            "T3",
-            "T4",
-            "T5",
-            "T7"
-          ]
-        },
-        {
           "id": "era",
           "named": 1,
           "pairs": 5,
@@ -8211,6 +8539,18 @@
           ]
         },
         {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 8,
+          "themes": [
+            "T16",
+            "T3",
+            "T4",
+            "T5",
+            "T7"
+          ]
+        },
+        {
           "id": "newsbook",
           "named": 0,
           "pairs": 8,
@@ -8218,6 +8558,16 @@
             "T16",
             "T4",
             "T6"
+          ]
+        },
+        {
+          "id": "pn",
+          "named": 1,
+          "pairs": 4,
+          "themes": [
+            "T17",
+            "T6",
+            "T7"
           ]
         },
         {
@@ -8241,12 +8591,6 @@
           "themes": []
         },
         {
-          "id": "wasteserv",
-          "named": 2,
-          "pairs": 0,
-          "themes": []
-        },
-        {
           "id": "pl",
           "named": 1,
           "pairs": 2,
@@ -8255,12 +8599,12 @@
           ]
         },
         {
-          "id": "pn",
+          "id": "wasteserv",
           "named": 1,
-          "pairs": 2,
+          "pairs": 1,
           "themes": [
-            "T6",
-            "T7"
+            "T5",
+            "T6"
           ]
         },
         {
@@ -8748,12 +9092,6 @@
           ]
         },
         {
-          "id": "wasteserv",
-          "named": 2,
-          "pairs": 0,
-          "themes": []
-        },
-        {
           "id": "infrastructure-malta",
           "named": 0,
           "pairs": 5,
@@ -8770,15 +9108,6 @@
           "themes": [
             "T4",
             "T5"
-          ]
-        },
-        {
-          "id": "european-commission",
-          "named": 0,
-          "pairs": 4,
-          "themes": [
-            "T5",
-            "T7"
           ]
         },
         {
@@ -8807,10 +9136,28 @@
           ]
         },
         {
+          "id": "wasteserv",
+          "named": 1,
+          "pairs": 1,
+          "themes": [
+            "T5",
+            "T6"
+          ]
+        },
+        {
           "id": "climate-action-authority",
           "named": 1,
           "pairs": 0,
           "themes": []
+        },
+        {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T5",
+            "T7"
+          ]
         },
         {
           "id": "interconnect-malta",
@@ -8823,6 +9170,15 @@
           "named": 1,
           "pairs": 0,
           "themes": []
+        },
+        {
+          "id": "ministry-finance",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T14",
+            "T5"
+          ]
         },
         {
           "id": "ministry-health",
@@ -8862,14 +9218,6 @@
           "pairs": 1,
           "themes": [
             "T2"
-          ]
-        },
-        {
-          "id": "ministry-finance",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T5"
           ]
         },
         {
@@ -8936,7 +9284,8 @@
           "named": 1,
           "pairs": 1,
           "themes": [
-            "T5"
+            "T5",
+            "T6"
           ]
         },
         {
@@ -9045,6 +9394,15 @@
           ]
         },
         {
+          "id": "ministry-environment",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T14",
+            "T5"
+          ]
+        },
+        {
           "id": "planning-authority",
           "named": 0,
           "pairs": 2,
@@ -9061,6 +9419,14 @@
           ]
         },
         {
+          "id": "eea",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T14"
+          ]
+        },
+        {
           "id": "era",
           "named": 0,
           "pairs": 1,
@@ -9070,14 +9436,6 @@
         },
         {
           "id": "infrastructure-malta",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T5"
-          ]
-        },
-        {
-          "id": "ministry-environment",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -9118,6 +9476,15 @@
           ]
         },
         {
+          "id": "ministry-environment",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T14",
+            "T5"
+          ]
+        },
+        {
           "id": "planning-authority",
           "named": 0,
           "pairs": 2,
@@ -9134,6 +9501,14 @@
           ]
         },
         {
+          "id": "eea",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T14"
+          ]
+        },
+        {
           "id": "era",
           "named": 0,
           "pairs": 1,
@@ -9143,14 +9518,6 @@
         },
         {
           "id": "infrastructure-malta",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T5"
-          ]
-        },
-        {
-          "id": "ministry-environment",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -9280,6 +9647,14 @@
           "themes": []
         },
         {
+          "id": "pn",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T17"
+          ]
+        },
+        {
           "id": "european-commission",
           "named": 0,
           "pairs": 1,
@@ -9310,6 +9685,14 @@
           "named": 1,
           "pairs": 0,
           "themes": []
+        },
+        {
+          "id": "pn",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T17"
+          ]
         },
         {
           "id": "european-commission",
@@ -9948,7 +10331,7 @@
       "links": [
         {
           "id": "ministry-environment",
-          "named": 2,
+          "named": 1,
           "pairs": 2,
           "themes": [
             "T6"
@@ -11020,6 +11403,14 @@
           ]
         },
         {
+          "id": "ministry-gozo",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T17"
+          ]
+        },
+        {
           "id": "adpd",
           "named": 0,
           "pairs": 1,
@@ -11205,6 +11596,14 @@
           ]
         },
         {
+          "id": "mhra",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
           "id": "ministry-tourism",
           "named": 0,
           "pairs": 1,
@@ -11256,6 +11655,14 @@
         },
         {
           "id": "malta-airport",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
+          "id": "mhra",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -11614,6 +12021,22 @@
       "role": null,
       "links": [
         {
+          "id": "adpd",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
+          "id": "malta-airport",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
           "id": "malta-chamber",
           "named": 0,
           "pairs": 1,
@@ -11733,6 +12156,14 @@
         },
         {
           "id": "adpd",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
+          "id": "mhra",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -12167,7 +12598,7 @@
         {
           "id": "ministry-environment",
           "named": 0,
-          "pairs": 4,
+          "pairs": 3,
           "themes": [
             "T5",
             "T7"
@@ -12298,7 +12729,7 @@
       "role": null,
       "links": [
         {
-          "id": "government-of-malta",
+          "id": "ministry-environment",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -12306,7 +12737,7 @@
           ]
         },
         {
-          "id": "ministry-environment",
+          "id": "ministry-finance",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -12585,6 +13016,13 @@
     },
     {
       "a": "CC-011",
+      "b": "CC-092",
+      "why": [
+        "same subtopic (Manifestos & pledges)"
+      ]
+    },
+    {
+      "a": "CC-011",
       "b": "CC-107",
       "why": [
         "same subtopic (Manifestos & pledges)"
@@ -12595,6 +13033,28 @@
       "b": "CC-029",
       "why": [
         "same subtopic (Renewables)"
+      ]
+    },
+    {
+      "a": "CC-031",
+      "b": "CC-092",
+      "why": [
+        "share a theme"
+      ]
+    },
+    {
+      "a": "CC-031",
+      "b": "CC-107",
+      "why": [
+        "share a theme"
+      ]
+    },
+    {
+      "a": "CC-092",
+      "b": "CC-107",
+      "why": [
+        "same subtopic (Manifestos & pledges)",
+        "share a theme"
       ]
     }
   ],

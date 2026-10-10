@@ -33,11 +33,36 @@ def _strip(s):
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", s or "")).strip()
 
 
-def _text(node):
+def _constants(tree):
+    """Module-level names bound to string or number literals (NAME = "..."), for reading f-strings."""
+    out = {}
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and isinstance(node.value, ast.Constant) and \
+                isinstance(node.value.value, (str, int, float)):
+            out.update({t.id: str(node.value.value) for t in node.targets if isinstance(t, ast.Name)})
+    return out
+
+
+# names the reports import from the shared design module (DIAM, the second-hand marker, and the like)
+SHARED = _constants(ast.parse((ROOT / "tools" / "mizien_report.py").read_text(encoding="utf-8")))
+
+
+def _text(node, names=None):
     if isinstance(node, ast.Constant) and isinstance(node.value, str):
         return node.value
+    if isinstance(node, ast.JoinedStr):   # f-string: only when every interpolated name is a known constant
+        parts = []
+        for v in node.values:
+            if isinstance(v, ast.Constant):
+                parts.append(str(v.value))
+            elif isinstance(v, ast.FormattedValue) and isinstance(v.value, ast.Name) and v.format_spec is None \
+                    and v.value.id in (names or {}):
+                parts.append(names[v.value.id])
+            else:
+                return None   # a value computed when the report is built: not readable here
+        return "".join(parts)
     if isinstance(node, ast.Call) and node.args:
-        return _text(node.args[0])
+        return _text(node.args[0], names)
     return None
 
 
@@ -66,22 +91,24 @@ def from_report(cid):
     path = ROOT / "tools" / f"cc-{cid[3:]}-report" / "build_report.py"
     if not path.is_file():
         return None
-    for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"))):
+    tree = ast.parse(path.read_text(encoding="utf-8"))
+    names = {**SHARED, **_constants(tree)}
+    for node in ast.walk(tree):
         if not isinstance(node, ast.List) or not node.elts or not isinstance(node.elts[0], ast.List):
             continue
-        head = [_strip(_text(c)) for c in node.elts[0].elts]
+        head = [_strip(_text(c, names)) for c in node.elts[0].elts]
         if not head or not re.match(r"(?i)sub-?claim", head[0]):
             continue
         rows = []
         for r in node.elts[1:]:
             if not isinstance(r, ast.List) or not r.elts:
                 continue
-            m = re.match(r"^([A-Z])[.)]\s*(.+)$", _strip(_text(r.elts[0])))
+            m = re.match(r"^([A-Z])[.)]\s*(.+)$", _strip(_text(r.elts[0], names)))
             if not m:
                 continue
             row = {"id": cid + m.group(1), "text": m.group(2)}
             for h, c in zip(head[1:], r.elts[1:]):
-                t = _strip(_text(c))
+                t = _strip(_text(c, names))
                 if re.match(r"(?i)said by", h):
                     row["said_by"] = t
                 elif re.match(r"(?i)what the evidence|evidence|finding", h):

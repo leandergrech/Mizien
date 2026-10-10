@@ -1,0 +1,13 @@
+emissions_case,emissions_t,rate_case,rate_source,t_co2_per_ha_yr,forest_needed_ha,forest_needed_km2,multiple_of_gozo_area,multiple_of_malta_forest_2025,offset_pct_if_Semi-natural land (CORINE 323 + 333),offset_pct_if_All farmland and semi-natural land (CORINE 2xx + 3xx),offset_pct_if_All of Gozo (67 km2)
+EU islands baseline 2020 (lowest year),118333,low,"Renna et al. 2024 (native oaks, biomass, lower end)",0.92,129091,1290.9,19.3,274.7,1.0,3.9,5.2
+EU islands baseline 2020 (lowest year),118333,central,"Grünzweig et al. 2007 (Yatir, ecosystem, 35-year mean)",3.62,32646,326.5,4.9,69.5,3.9,15.5,20.5
+EU islands baseline 2020 (lowest year),118333,high,"Bernal et al. 2018 (planted pine, temperate dry, biomass, 0-20 years)",7.6,15570,155.7,2.3,33.1,8.1,32.5,43.0
+EU islands baseline 2019 (highest year),153997,low,"Renna et al. 2024 (native oaks, biomass, lower end)",0.92,167997,1680.0,25.1,357.4,0.8,3.0,4.0
+EU islands baseline 2019 (highest year),153997,central,"Grünzweig et al. 2007 (Yatir, ecosystem, 35-year mean)",3.62,42485,424.8,6.3,90.4,3.0,11.9,15.8
+EU islands baseline 2019 (highest year),153997,high,"Bernal et al. 2018 (planted pine, temperate dry, biomass, 0-20 years)",7.6,20263,202.6,3.0,43.1,6.2,25.0,33.1
+"EU islands baseline, mean 2016-2020",134428,low,"Renna et al. 2024 (native oaks, biomass, lower end)",0.92,146649,1466.5,21.9,312.0,0.9,3.5,4.6
+"EU islands baseline, mean 2016-2020",134428,central,"Grünzweig et al. 2007 (Yatir, ecosystem, 35-year mean)",3.62,37086,370.9,5.5,78.9,3.4,13.7,18.1
+"EU islands baseline, mean 2016-2020",134428,high,"Bernal et al. 2018 (planted pine, temperate dry, biomass, 0-20 years)",7.6,17688,176.9,2.6,37.6,7.2,28.6,37.9
+Population share of Malta's 2024 inventory (all GHG),157634,low,"Renna et al. 2024 (native oaks, biomass, lower end)",0.92,171965,1719.6,25.7,365.9,0.7,2.9,3.9
+Population share of Malta's 2024 inventory (all GHG),157634,central,"Grünzweig et al. 2007 (Yatir, ecosystem, 35-year mean)",3.62,43488,434.9,6.5,92.5,2.9,11.6,15.4
+Population share of Malta's 2024 inventory (all GHG),157634,high,"Bernal et al. 2018 (planted pine, temperate dry, biomass, 0-20 years)",7.6,20741,207.4,3.1,44.1,6.1,24.4,32.3

@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 10 October 2026 (consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
+*Last updated: 10 October 2026 (later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
 
 ## What the project is
 
@@ -75,6 +75,16 @@ ledger now finds no unlinked pair (0 reference problems, 37 facts). No pattern t
   reference list predates this: update it at the next revision. cui2022 is CC BY 4.0 and may be committed under
   `literature/CC-001/open-access/`.
 - Explore, Pledges lanes: CC-024 and CC-029 labels no longer overlap (labels placed in date order per lane).
+
+**Claim checks run the same day (10 Oct 2026, four agents in parallel, reviewed before merging):** CC-079 Misleading,
+CC-085 Largely supported, CC-092 pledge Not measurable, CC-095 Not substantiated with pledge Not yet due (status rows
+above). Review checked each verbatim quote at source and recomputed the headline numbers (ECOHIVE page; Horeca Malta and
+the Deloitte study p. 66; PN Għawdex PDF p. 16 and Grünzweig et al. 2007; BusinessNow and Eurostat HICP `NRG`, not
+`AP_NRG`, which is administered prices). Also fixed: `scripts/subclaims.py` dropped sub-claim findings written as
+f-strings (CC-071 A and B restored). Follow-ups: read the Pre-Budget Document 2027 for CC-095 (may move the verdict);
+CC-095's finding that the Commission subsidy database's 2023 Malta entries (EUR 580m + 15m) equal the Oct 2022 budget
+allocation probably explains CC-113's unreconciled EUR 580m (CC-113 not edited); whether to link CC-092 to manifesto
+row MP-PN-2026-AMB-01 (its main pledge, a park per locality, is measurable; the agent did not link it).
 
 **Not resolvable from here (browser or maintainer):** the Times of Malta URL for CC-001 (timesofmalta.com refuses
 automated access, including search); the CC-002 leads above; every blocker listed in `data/queue.csv`.
@@ -780,6 +790,10 @@ Proposed next, for user-derived pattern matching (not done; needs a maintainer d
 | CC-062 KPMG/MDA: construction 9% / 14% of GVA | Report v1.0 and flyer (8 Oct 2026, worker B). **Verdict: Largely supported (moderate); no right of reply needed.** Wording: foreword of the KPMG report (PDF p. 10, Steve Stivala). 9.1% (Eurostat 9.6%) and 14.04% both reproduce; they are not on one basis (14% includes imputed rents: 3.2 of the 4.9 points; indirect adds 1.7). Multipliers (CBM, 2015) second-hand and not re-derivable (Eurostat Malta SIOT 2015 covers 72% of value added). KPMG PDF not committed (hash in data/cc-062/). archive_sources.py for CC-062/056/059 did not finish in the run (slow): archive by hand or re-run with --claim-id. |
 | CC-056 Central Link 'only 254 trees' | Blocked (source), attempt 1, 8 Oct 2026. Lovin Malta (25 Jul 2019) states 254 in its own voice; only the 4 m tree height is quoted from IM. Need the IM statement. Leads: The Shift 21 Jan 2020 (439 removed, 185 transplanted, ERA 1,274). Status In progress. |
 | CC-059 Subsidies 20% of farm output | Blocked (source, browser-only), attempt 1, 8 Oct 2026. NSO Economic Accounts for Agriculture 2025 release needed (nso.gov.mt 403); Newsbook/Italpress give it as indirect speech. Test plan: Eurostat aact_eaa01. Status In progress. |
+| CC-079 Waste-to-energy: 4.5% of energy | Report v1.0 and flyer (10 Oct 2026, orchestrated run). **Verdict: Misleading (moderate); pending right of reply (WasteServ).** WasteServ's own wording (ECOHIVE news, 26 Jun 2023: "around 4.5% of Malta's total energy needs"; 2020: "as green energy"). 126 GWh/yr (WasteServ; NECP 14-16 MW) is 4.4-4.7% of electricity (2022) but 1.1-1.8% of total energy (1.5% of final energy, EED definition); 3.2% of 2030 electricity (NECP). NECP: the plant is "not expected to contribute to Malta's RES share". 192,000 t consistent; "40% of non-recyclable waste" has no stated basis. Procurement reported abandoned (The Shift, Mar 2026). |
+| CC-085 MHRA: 4.7 million tourists needed | Report v1.0 and flyer (10 Oct 2026, orchestrated run). **Verdict: Largely supported (moderate); no right of reply needed.** Wording: Tony Zahra (MHRA president), Horeca Malta 23 Dec 2022 and MIoS/MBW 28 Nov 2024. 4.7m = Deloitte study p. 66 Sc2 (4,680,509) at 2019 occupancy (76.7% / 59.3%), not 80% (the study's "80%" is an 80% rise in bed stock in Sc1); study range 4.1-5.0m; at 80% its beds need 4.6-5.0m; Eurostat hotel room occupancy 75.4% (2019); hotel bed-places +20.9% 2019-2025. NSO arrivals second-hand (403). |
+| CC-092 PN: afforestation in a net-zero Gozo | Report v1.0 and flyer (10 Oct 2026, orchestrated run). **Pledge label Not measurable (as of 10 Oct 2026); pending right of reply (PN).** Verbatim from *Nifs Ġdid* (Għawdex 46: emissions "imnaqqsa jew ikkumpensata", afforestation one item in a list; Ambjent 01, 20, 25): no area, species, rate or date; no indigenous-tree strategy in any of the 16 chapters (MaltaToday's wording, second-hand). Trees alone would need 4.9-6.3x Gozo's area at the Yatir rate (3.62 t CO2/ha/yr; 2.3-25x across rates); all 1,265 ha of semi-natural land would offset 3-4%; Malta's forest 470 ha; WEI+ 30%. Complements CC-107. New theme T17 Net-zero Gozo. |
+| CC-095 EUR 400m to keep bills low | Report v1.0 and flyer (10 Oct 2026, orchestrated run). **Verdict: Not substantiated (moderate); pledge Not yet due.** Speaker restated to Finance Minister Clyde Caruana, 30 Sep 2026 (Pre-Budget Document 2027 launch; quotes in BusinessNow, Lovin Malta, TVM, Newsbook; the record had wrongly said 2025 and took a headline). Prices unchanged: HICP energy (NRG) 0.0% vs EU +13.0% (Aug 2026), the only EU country with no rise; pump prices fixed since 15 Jun 2020. EUR 391.7m (2026) is a projection and about EUR 400m (2027) a conditional forecast: not testable yet. Right of reply on hold until the Pre-Budget Document 2027 is read (finance.gov.mt 403; likely /wp-content/uploads/2026/09/PRE-BUDGET-DOCUMENT-2027.pdf). |
 | CC-049 BirdLife: 242 illegal hunting incidents | Wording found (BirdLife release 10 Oct 2025: Raptor Camp 12 Sep-5 Oct 2025; 51-minute police response). In progress: waiting on the incident log and police/WBRU data (queue blocker). |
 | CC-104 PN: Malta fails EU noise law | Petition 1150/2024 located; only a summary, a paraphrase and general quotes are public. Evidence from EP study PE 783.089 in literature/CC-104/README.md. In progress: waiting on the petition text. |
 | CC-097 GWU: beach workers and heat | Wording found (GWU statement 17 Jul 2026). In progress: waiting on Securital/ERA responses, OHS heat rules and Met Office warnings. |
@@ -1117,6 +1131,16 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
   403), the ERA shearwater plan page (era.org.mt 403).
 
 ## Outstanding
+
+- [ ] **CC-095:** read the Pre-Budget Document 2027 in a browser (finance.gov.mt 403; likely
+  `/wp-content/uploads/2026/09/PRE-BUDGET-DOCUMENT-2027.pdf`): the EUR 391.7m and about EUR 400m figures and what the
+  "energy and food" series covers. The verdict (Not substantiated, not yet testable) and the right of reply (on hold)
+  depend on it.
+- [ ] **CC-113:** the Commission subsidy database's 2023 Malta entries (EUR 580m + 15m) appear to equal the October
+  2022 budget allocation (EUR 500m electricity + 80m petroleum + 15m gas fund; MFAC Box C, p. 89), 2.5 times the
+  Government's later 2023 outturn (found by CC-095). Check and, if it holds, add a clarification to CC-113.
+- [ ] **CC-092:** decide whether to link manifesto row MP-PN-2026-AMB-01 to CC-092 (its main pledge, a park per
+  locality, is measurable; linking would show it as Not measurable).
 
 - [x] Explore, Pledges grouping (lanes): CC-024 and CC-029 labels overlapped (fixed 10 Oct 2026: labels placed in date
   order per lane, `renderLanes()` in `site/assets/map/map.js`).
