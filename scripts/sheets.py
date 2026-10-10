@@ -184,9 +184,9 @@ def fact_rows():
         cid = "CC-" + path.parent.name[3:]
         with open(path, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
-            for i, row in enumerate(reader, start=2):
-                if any(text(v) for v in row.values()):
-                    out.append(_fact(cid, i, row, reader.fieldnames))
+            for row in reader:
+                if any(text(v) for v in row.values()):   # line_num: the file's own line (header = 1)
+                    out.append(_fact(cid, reader.line_num, row, reader.fieldnames))
     return out
 
 
