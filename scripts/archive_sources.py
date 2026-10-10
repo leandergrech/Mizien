@@ -125,13 +125,20 @@ def main() -> int:
         if url not in todo:
             todo.append(url)
     titles = {s["URL"]: s for s in reversed(sources)}
+
+    def write():
+        manifest_path.parent.mkdir(exist_ok=True)
+        with open(manifest_path, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=FIELDS)
+            w.writeheader()
+            w.writerows(list(out.values()) + extra)
     for i, url in enumerate(todo):
         if args.limit and i >= args.limit:
             break
         prev, s = out.get(url), titles[url]
         if prev and prev.get("status") == "fetched":      # hashed before; only the snapshot is missing
             prev["archived_url"] = wayback_lookup(url) or ("" if args.no_save else wayback_save(url))
-            print(f"[{i + 1}/{len(todo)}] {'snapshot' if prev['archived_url'] else 'no snapshot':>18}  {url[:80]}")
+            print(f"[{i + 1}/{len(todo)}] {'snapshot' if prev['archived_url'] else 'no snapshot':>18}  {url[:80]}", flush=True)
             time.sleep(2)
             continue
         row = {"claim_ids": (prev or {}).get("claim_ids") or s["Claim IDs"], "title": s["Source"], "url": url,
@@ -156,15 +163,13 @@ def main() -> int:
         if not row["archived_url"] and not args.no_save:
             row["archived_url"] = wayback_save(url)
         out[url] = row
-        print(f"[{i + 1}/{len(todo)}] {row['status']:>18}  {url[:80]}")
+        print(f"[{i + 1}/{len(todo)}] {row['status']:>18}  {url[:80]}", flush=True)
+        if (i + 1) % 25 == 0:
+            write()      # a long run that is stopped keeps what it has done
         time.sleep(4)
 
     rows = list(out.values()) + extra
-    manifest_path.parent.mkdir(exist_ok=True)
-    with open(manifest_path, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=FIELDS)
-        w.writeheader()
-        w.writerows(rows)
+    write()
     print(f"Wrote {len(rows)} rows to {manifest_path.relative_to(ROOT)}")
     return 0
 
