@@ -38,29 +38,29 @@ rows = [
      [val("2024 update, Sc3 (full pipeline") / 1000, val("2024 update, Sc3 (full pipeline") / 1000
       + val("2024 update: extra collective arrivals") / 1e6], ["15% retired", "none retired"]),
 ]
-fig, ax = plt.subplots(figsize=(9.0, 4.3), dpi=220)
+fig, ax = plt.subplots(figsize=(9.0, 4.0), dpi=220)
 ys = list(range(len(rows)))[::-1]
+box = {"facecolor": "white", "edgecolor": "none", "pad": 0.6}
 for y, (lab, xs, names) in zip(ys, rows):
     ax.plot([min(xs), max(xs)], [y, y], color=SAGE, lw=2, zorder=1, solid_capstyle="round")
+    ax.text(min(xs) - 0.07, y, lab, ha="right", va="center", fontsize=7.8, color=SLATE, bbox=box, zorder=4, linespacing=1.25)
     for x, n in zip(xs, names):
         hit = abs(x - 4.68) < 0.005
-        ax.scatter([x], [y], s=60 if hit else 42, color=ORANGE if hit else GREEN, zorder=3, edgecolor="white", linewidth=1.2)
-        box = {"facecolor": "white", "edgecolor": "none", "pad": 0.6}
+        ax.scatter([x], [y], s=60 if hit else 42, color=ORANGE if hit else GREEN, zorder=5, edgecolor="white", linewidth=1.2)
         ax.text(x, y + 0.2, f"{x:.2f}", ha="center", va="bottom", fontsize=8, color=SLATE, bbox=box, zorder=4)
         ax.text(x, y - 0.22, n, ha="center", va="top", fontsize=6.8, color=GREY, bbox=box, zorder=4)
 ax.axvline(4.7, color=ORANGE, lw=1.2, ls="--", zorder=0)
-ax.text(4.71, 3.62, "4.7 million\n(the claim)", fontsize=7.8, color=ORANGE, va="top")
+ax.text(4.71, 3.72, "4.7 million (the claim)", fontsize=7.8, color=ORANGE, va="top")
 ax.axvline(2.75, color=GREY, lw=1, ls=":", zorder=0)
-ax.text(2.77, 3.62, "2019 arrivals:\n2.75 million", fontsize=7.6, color=GREY, va="top")
+ax.text(2.77, 3.72, "2019 arrivals: 2.75 million", fontsize=7.6, color=GREY, va="top")
 ax.axvline(4.02, color=GREY, lw=1, ls=":", zorder=0)
-ax.text(4.0, -0.62, "2025 arrivals: 4.02 million (second-hand ◆)", fontsize=7.6, color=GREY, ha="right", va="center", fontfamily="DejaVu Sans")
-ax.set_yticks(ys)
-ax.set_yticklabels([r[0] for r in rows], fontsize=8, color=SLATE)
-ax.set_ylim(-0.85, 3.75)
-ax.set_xlim(2.6, 5.25)
+ax.text(4.0, -0.66, "2025 arrivals: 4.02 million (second-hand ◆)", fontsize=7.6, color=GREY, ha="right", va="center",
+        fontfamily="DejaVu Sans")
+ax.set_yticks([])
+ax.set_ylim(-0.9, 3.8)
+ax.set_xlim(2.6, 5.2)
 ax.set_xlabel("Tourist arrivals a year needed, million", fontsize=8.5, color=SLATE)
 ax.tick_params(axis="x", labelsize=8.5, colors=SLATE)
-ax.tick_params(axis="y", length=0)
 ax.spines["left"].set_visible(False)
 ax.grid(axis="x", color="#E3E7E4", lw=0.6)
 ax.set_axisbelow(True)
