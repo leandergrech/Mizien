@@ -56,28 +56,30 @@ def fig1():
 def fig2():
     """126 GWh as a share of Malta's electricity and of its total energy, 2022, 2024 and the NECP's 2030."""
     rows = [("Electricity: final consumption", "Electricity: final consumption (nrg_cb_e FC)", None),
-            ("Electricity: inland demand", "Electricity: inland demand (nrg_cb_e ID)", "2030 126 GWh as % of NECP electricity"),
+            ("Electricity: inland demand", "Electricity: inland demand (nrg_cb_e ID)",
+             "2030 NECP electricity generation, all sources (sum of Figure 120)"),
             ("All energy: final energy use\n(excluding international aviation)",
              "Total energy: final energy use excl. international aviation (nrg_bal_c FC_E)", None),
             ("All energy: final energy consumption", "Total energy: final energy consumption (nrg_bal_c FEC_EED)",
-             "2030 126 GWh as % of NECP final energy consumption"),
+             "2030 NECP final energy consumption (803 ktoe)"),
             ("All energy: primary energy consumption", "Total energy: primary energy consumption (nrg_bal_c PEC_EED)",
-             "2030 126 GWh as % of NECP primary energy consumption"),
+             "2030 NECP primary energy consumption (964 ktoe)"),
             ("All energy: gross inland consumption", "Total energy: gross inland consumption (nrg_bal_c GIC)", None)]
+    E = F["wasteserv_output_gwh"]
     fig, ax = plt.subplots(figsize=(9.6, 4.4), dpi=220)
     n = len(rows)
     for i, (lab, key, k30) in enumerate(rows):
         y = n - 1 - i
         col = BLUE if lab.startswith("Electricity") else GREEN
-        v22 = val(f"2022 126 GWh as % of {key}")
-        v24 = val(f"2024 126 GWh as % of {key}")
+        v22 = 100 * E / val(f"2022 {key}")          # from the saved denominators, rounded once
+        v24 = 100 * E / val(f"2024 {key}")
         ax.barh(y + 0.18, v22, height=0.34, color=col)
         ax.barh(y - 0.18, v24, height=0.34, color=col, alpha=0.45)
         box = dict(facecolor="white", edgecolor="none", pad=0.6, alpha=0.85)
         ax.text(v22 + 0.06, y + 0.18, f"{v22:.1f}% (2022)", va="center", fontsize=7.8, color=SLATE, bbox=box, zorder=6)
         ax.text(v24 + 0.06, y - 0.18, f"{v24:.1f}% (2024)", va="center", fontsize=7.8, color=SLATE, bbox=box, zorder=6)
         if k30:
-            v30 = val(k30)
+            v30 = 100 * E / val(k30)
             ax.plot([v30], [y - 0.18], marker="D", color=ORANGE, ms=6, zorder=5)
     ax.plot([], [], marker="D", color=ORANGE, ls="", ms=6, label="2030, NECP projection")
     ax.axvline(F["wasteserv_share_pct"], color=RED, ls="--", lw=1.4, zorder=2)

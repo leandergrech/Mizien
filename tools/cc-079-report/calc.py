@@ -132,19 +132,23 @@ for y in (2019, 2022, 2023, 2024):
         den = fn(y)
         src = ELESRC if name.startswith("Electricity") else BALSRC
         add("B share", f"{y} {name}", r1(den), "GWh", src)
-        add("B share", f"{y} 126 GWh as % of {name}", round(100 * e_ws / den, 2), "%", "calc")
+        add("B share", f"{y} 126 GWh as % of {name}", round(100 * e_ws / den, 3), "%", "calc")
         if not name.startswith("Electricity"):
-            add("B share", f"{y} fuel input ({fuel:.0f} GWh) as % of {name}", round(100 * fuel / den, 2), "%", "calc",
+            add("B share", f"{y} fuel input ({fuel:.0f} GWh) as % of {name}", round(100 * fuel / den, 3), "%", "calc",
                 "upper bound: counts the waste's whole energy content, most of which is not delivered")
 el2030 = sum(F[k] for k in ("necp_2030_conventional_gwh", "necp_2030_slice_1062_gwh", "necp_2030_slice_453_gwh",
                             "necp_2030_slice_127_gwh", "necp_2030_slice_28_gwh"))
 add("B share", "2030 NECP electricity generation, all sources (sum of Figure 120)", el2030, "GWh", SRCF["necp_2030_conventional_gwh"])
-add("B share", "2030 126 GWh as % of NECP electricity", round(100 * e_ws / el2030, 2), "%", "calc")
+add("B share", "2030 126 GWh as % of NECP electricity", round(100 * e_ws / el2030, 3), "%", "calc")
 for k, lab in (("necp_2030_pec_ktoe", "primary energy consumption"), ("necp_2030_fec_ktoe", "final energy consumption")):
     den = F[k] * gwh_per_ktoe
     add("B share", f"2030 NECP {lab} ({F[k]:.0f} ktoe)", r1(den), "GWh", SRCF[k])
-    add("B share", f"2030 126 GWh as % of NECP {lab}", round(100 * e_ws / den, 2), "%", "calc")
-    add("B share", f"2030 fuel input as % of NECP {lab}", round(100 * fuel / den, 2), "%", "calc", "upper bound, as above")
+    add("B share", f"2030 126 GWh as % of NECP {lab}", round(100 * e_ws / den, 3), "%", "calc")
+    add("B share", f"2030 fuel input as % of NECP {lab}", round(100 * fuel / den, 3), "%", "calc", "upper bound, as above")
+for y in (2022, 2024):
+    add("B share", f"{y} electricity final consumption as % of final energy consumption (FEC_EED)",
+        r1(100 * ele[("FC", y)] / bal[("FEC_EED", "TOTAL", "GWH", y)]), "%", "calc from " + ELESRC + "; " + BALSRC,
+        "electricity is about a third of the final energy Malta uses")
 need = e_ws / (F["wasteserv_share_pct"] / 100)
 add("B share", "Denominator for which 126 GWh is exactly 4.5%", round(need), "GWh", "calc",
     f"= {need / gwh_per_ktoe:.0f} ktoe; Malta's 2024 gross inland consumption was {bal[('GIC', 'TOTAL', 'KTOE', 2024)]:.0f} ktoe")

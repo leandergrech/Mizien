@@ -2,39 +2,168 @@ id: CC-079
 title: 'Waste-to-energy: 4.5% of energy'
 category: Waste
 subtopic: Landfill & treatment
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Misleading
+verdict_confidence: Moderate
 claim:
-  text: 'Government / WasteServ (ECOHIVE): the Magħtab waste-to-energy plant will convert 192,000 tonnes of non-recyclable
-    waste into 4.5% of the nation''s energy.'
-  speaker: WasteServ; Ministry for the Environment
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  text: 'WasteServ (ECOHIVE news, 26 Jun 2023): the Magħtab waste-to-energy plant "will be treating around 192,000 tonnes
+    of non-recyclable waste generated locally" and "is expected to meet around 4.5% of Malta''s total energy needs". In
+    October and November 2020 WasteServ wrote that the plant would add "an impressive 4.5% as green energy to Malta''s
+    total energy demand".'
+  speaker: WasteServ
+  date: '2023-06-26'
+  wording_status: Verbatim found
+  quote: This plant will be treating around 192,000 tonnes of non-recyclable waste generated locally diverting it away
+    from landfills and converting it into green energy. It is expected to meet around 4.5% of Malta's total energy needs.
   sources:
+  - title: Malta's Waste-to-Energy Project Procurement Reaches its Final Stage
+    publisher: WasteServ (ECOHIVE news)
+    date: '2023-06-26'
+    url: https://www.ecohive.com.mt/en/article?id=872332ec-b93b-4e6d-8746-732b1c175bb5
+    note: 'The claim. Read in full 10 Oct 2026 (fourth paragraph). WasteServ''s own text on its project website.'
+  - title: Three world leading giants shortlisted to design, build & operate the ECOHIVE Waste to Energy Plant
+    publisher: WasteServ (ECOHIVE news); reprinted by The Malta Business Weekly
+    date: '2020-10-23'
+    url: https://www.ecohive.com.mt/en/article?id=b688333c-9004-403c-8643-cb92837b7143
+    note: 'Earlier wording, read in full 10 Oct 2026: "adding an impressive 4.5% as green energy to Malta''s total energy
+      demand". Repeated in the release of 2 Nov 2020 (https://www.ecohive.com.mt/en/article?id=4776b9e2-6a1f-4db7-af40-8a35dca3451d).'
+  - title: 'ECOHIVE: The Project (Waste-to-Energy Facility)'
+    publisher: WasteServ
+    date: undated (read 10 Oct 2026)
+    url: https://www.ecohive.com.mt/
+    note: 'Speaker''s own figures: "the plant will generate 126GWh annually to the grid"; "40% of non-recyclable waste
+      generated in Malta"; capacity 192,000 t; commissioning December 2026.'
   - title: 'Analysis: Is Burning Waste At Magħtab The Only Way Out Of Malta''s Waste Crisis?'
     publisher: Amphora Media
-    date: Jun 2025
+    date: '2025-06-06'
     url: https://www.amphora.media/2025/06/waste-energy-maghtab-recycling-sustainable
-    note: Locates the figures.
-counter_evidence: Energy share vs national demand; recycling targets; landfill share still near 79% in 2024.
-tests: ECOHIVE EIA; Enemalta demand; Eurostat env_wasmun.
-why_low_hanging: A specific, attributable statement that public data can test.
-tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+    note: 'Locator. Reports, in its own words, a January 2025 parliamentary answer by the Environment Minister (40% of
+      non-recyclable waste; 4.5% of the country''s energy needs). The answer was not read (parlament.mt 403); not rated.'
+  - title: Malta's National Energy and Climate Plan (updated), 2021-2030
+    publisher: Government of Malta (hosted by the European Commission)
+    date: Dec 2024
+    url: https://clean-energy-islands.ec.europa.eu/system/files/2025-03/MT%20FINAL%20UPDATED%20NECP%202021-%202030%20%28English%29.pdf
+    note: 'Plant design (p. 132: 2 lines x 12 t/h, 14-16 MW net); 2030 projections (pp. 94, 344); "This is not expected
+      to contribute to Malta''s RES share" (p. 144). Printed page numbers.'
+  - title: Complete energy balances (nrg_bal_c); electricity (nrg_cb_e); municipal waste (env_wasmun); waste treatment and
+      generation (env_wastrt, env_wasgen)
+    publisher: Eurostat
+    date: retrieved 10 Oct 2026
+    url: https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_c/default/table
+    note: Primary data; extracts and checks in data/cc-079/.
+counter_evidence: 'WasteServ''s own output figure for the plant is 126 GWh of electricity a year (project page); the NECP
+  design (2 lines x 12 t/h, 14-16 MW net) gives 112-128 GWh at the 8,000 full-load hours that 192,000 t implies, and a net
+  efficiency of 23.6% (design calorific value 10 GJ/t, read per line), within the 20-24% Lombardi et al. (2015) give for
+  small-medium plants. 126 GWh was 4.4-4.7% of Malta''s electricity use in 2022 (inland demand 2,880 GWh; final
+  consumption 2,698 GWh) and 4.1-4.4% in 2024, but 1.5% of final energy consumption (FEC_EED, 8,136 GWh), 1.8% of final
+  energy use without international aviation, 1.2% of primary energy consumption and of gross inland consumption, and 0.4%
+  of gross available energy (2022; 2024: 1.5%, 1.8%, 1.2%, 1.1%, 0.4%). On the NECP''s 2030 projections it is 3.2% of
+  electricity supply (3,951 GWh), 1.3% of final and 1.1% of primary energy consumption. 126 GWh is exactly 4.5% of
+  2,800 GWh (241 ktoe), against Malta''s 964 ktoe gross inland consumption in 2024. The only total-energy reading near
+  4.5% counts the waste''s whole energy content (533 GWh): 5.0-5.2% of primary energy consumption 2022-2024, though the
+  plant would deliver under a quarter of it as electricity and no heat user is named. EU law counts only the
+  biodegradable fraction of waste as renewable (Directive 2018/2001, Art. 2(24)), and the NECP says the plant "is not
+  expected to contribute to Malta''s RES share". In the speaker''s favour: the tonnage matches the NECP design and the
+  Commission''s 190,000 t; Malta landfilled 255 kt of municipal waste in 2024 (192 kt = 75%); 4.5% is a fair figure for
+  electricity. Against the capacity: meeting the 2035 recycling target (65%) at 2024 generation would leave at most 124 kt
+  of municipal waste for burning or landfill. The project page''s "40% of non-recyclable waste" implies 480 kt, which
+  no published statistic matches (192 kt is 67-75% of waste landfilled, 32% of all non-mineral waste generated in 2022).'
+tests: Eurostat nrg_bal_c and nrg_cb_e (Malta, 2010-2024) for every reading of "total energy needs" (electricity, final,
+  primary, gross inland, gross available energy); the NECP's design figures and 2030 projections; env_wasmun, env_wastrt
+  and env_wasgen for the tonnage; literature on electrical efficiency and the biogenic share of burnt waste. Recomputed in
+  tools/cc-079-report/calc.py (data/cc-079/checks.csv).
+why_low_hanging: 'Done: Claim Check 079 report and flyer.'
+tags:
+- Selective metric
+- Promise-without-baseline
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High: Eurostat API, WasteServ''s ECOHIVE site and the Commission-hosted NECP readable; gov.mt, parlament.mt,
+  ERA and MaltaToday return 403.'
+caveats: 'Misleading: pending right of reply from WasteServ; must not be circulated beyond the site before the reply
+  deadline. The claim record''s earlier text joined figures from several documents; the rated wording is WasteServ''s own
+  (26 Jun 2023, with the 2020 wording for "green energy" and the project page for 126 GWh and 40%). WasteServ published no
+  method for the 4.5%; every plausible reading was tested. The plant has not been built and its design may change; its EIA
+  was not read (no readable copy found), so the calorific value and heat use come from the NECP, whose heat-input figure
+  does not say whether it is per line (both readings tested). The Minister''s January 2025 parliamentary answer, reported
+  by Amphora Media, is the outlet''s paraphrase and is not rated. Journal studies were read as abstracts; the Swiss
+  biogenic shares are context only. The NECP''s Figure 120 legend is ambiguous: only the total of its slices is used.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- WasteServ, ECOHIVE project page (126 GWh a year to the grid) and ECOHIVE news of 26 Jun 2023 and 23 Oct / 2 Nov 2020 (the
+  claim), read 10 Oct 2026
+- Eurostat nrg_bal_c (updated 27 Aug 2026) and nrg_cb_e (updated 9 Oct 2026), retrieved 10 Oct 2026 (data/cc-079/; checks
+  in data/cc-079/checks.csv)
+- Malta's National Energy and Climate Plan (updated, Dec 2024), pp. 84, 94, 132, 144, 286 and 344 (figures transcribed in
+  data/cc-079/document_figures.csv)
+- Eurostat env_wasmun, env_wastrt and env_wasgen, retrieved 10 Oct 2026 (data/cc-079/)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Magħtab waste complex
   lat: 35.93923
   lon: 14.44073
   scope: site
   icon: landfill
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-079A
+    text: "The plant will treat around 192,000 tonnes of non-recyclable waste generated locally a year"
+    said_by: "WasteServ [1]"
+    finding: "Matches the NECP design (24 t/h for 8,000 hours) and the Commission’s 190,000 t. Malta landfilled 255,000 t of municipal waste in 2024, but meeting the 2035 recycling target would leave at most 124,000 t."
+    rating: "Consistent"
+    tone: green
+  - id: CC-079B
+    text: "It is expected to meet around 4.5% of Malta’s total energy needs"
+    said_by: "WasteServ [1, 2]"
+    finding: "126 GWh is 1.5% of final and 1.2% of primary energy consumption (2022), but 4.4–4.7% of electricity use. 3.2% of the NECP’s 2030 electricity supply."
+    rating: "Misleading"
+    tone: red
+  - id: CC-079C
+    text: "The waste is converted into green energy"
+    said_by: "WasteServ [1, 2]"
+    finding: "Only the biodegradable fraction counts as renewable under EU law; the NECP says the plant is not expected to contribute to Malta’s renewable share."
+    rating: "Partly"
+    tone: amber
+  - id: CC-079D
+    text: "The plant will generate 126 GWh a year to the grid"
+    said_by: "WasteServ [3]"
+    finding: "Consistent with the NECP’s 14–16 MW net (112–128 GWh) and a net efficiency of 23.6%, within the 20–24% reported for plants of this size."
+    rating: "Plausible"
+    tone: green
+  - id: CC-079E
+    text: "The plant will treat 40% of the non-recyclable waste generated in Malta"
+    said_by: "WasteServ [3]"
+    finding: "With 192,000 t this implies 480,000 t of non-recyclable waste. 192,000 t is 67–75% of the waste Malta landfills and 32% of all non-mineral waste it generates; no basis is given."
+    rating: "Unclear basis"
+    tone: amber
+version: '1.0'
+last_reviewed: '2026-10-10'
+thumbnail:
+  figure: 1.5%
+  caption: "of Malta's final energy consumption in 2022: the plant's 126 GWh, not the 4.5% WasteServ gave"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-10
+    step: started
+    note: Amphora Media (6 Jun 2025) read; it locates the 4.5% and 40% (as the outlet's account of a January 2025
+      parliamentary answer) but not 192,000 t. parlament.mt, pq.gov.mt and gov.mt returned 403.
+  - date: 2026-10-10
+    step: wording
+    note: 'WasteServ''s own wording found on its ECOHIVE site and read in full: news of 26 Jun 2023 (192,000 t; "around
+      4.5% of Malta''s total energy needs"), 23 Oct and 2 Nov 2020 ("4.5% as green energy to Malta''s total energy
+      demand") and the project page (126 GWh a year to the grid; 40% of non-recyclable waste). Claim text restated from
+      the primary wording; speaker WasteServ.'
+  - date: 2026-10-10
+    step: note
+    note: Eurostat nrg_bal_c, nrg_cb_e, env_wasmun, env_wastrt and env_wasgen downloaded; Malta's updated NECP (Dec 2024)
+      read for the plant design, 2030 projections and renewable share; literature on efficiency and biogenic share
+      verified in Crossref (abstracts via Europe PMC). Every reading of the 4.5% recomputed (tools/cc-079-report/calc.py).
+  - date: 2026-10-10
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Misleading (moderate confidence); pending right of reply.
