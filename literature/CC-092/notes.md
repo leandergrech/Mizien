@@ -17,7 +17,7 @@ contribute on Gozo and whether the programme has an indigenous-tree strategy.
 | maestre2004 | Maestre and Cortina 2004 | A | Aleppo pine plantations in semi-arid Mediterranean areas: more runoff and soil loss than shrubland in many studies, higher water use, mostly negative effects on spontaneous vegetation. | C |
 | oliet2023 | Oliet et al. 2023 | A (PDF committed) | 20-year survival of planted Aleppo pine 29.5-57.5% in arid Spain; mortality settled only after 15 years. | A |
 | jackson2005 | Jackson et al. 2005 | A | Plantations cut stream flow by 227 mm a year (52%) globally. | C |
-| rotenberg2010 | Rotenberg and Yakir 2010 | A | Dry forests (200-600 mm) keep sequestering, but need several decades to balance their albedo and longwave warming. | B |
+| rotenberg2010 | Rotenberg and Yakir 2010 | A | Nine-year study at the dry timberline: dry forests (200-600 mm) keep sequestering, but need several decades to balance their albedo and longwave warming. | B |
 | yosef2018 | Yosef et al. 2018 | A | Model: at about 200 million ha, semi-arid afforestation would overwhelm the warming within about 6 years; Yatir about 300 mm rain. | C |
 | veldman2015 | Veldman et al. 2015 | A | Planting trees in open, grassy ecosystems harms biodiversity and ecosystem services. | C |
 | euislands2023gozo | Energy Baseline Scenario for Gozo (2023) | F | Energy CO2 118,333-153,997 t a year, 2016-2020 (Table 16, p. 25). Not official statistics. | C |

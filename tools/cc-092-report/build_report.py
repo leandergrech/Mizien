@@ -18,8 +18,8 @@ S += [SectionHeading(None, "TL;DR"), Spacer(1, 1 * mm),
         "forest could do on Gozo.", lead)]
 S.append(key_points([
     ("One item in a list, with no numbers.",
-     "Afforestation appears once in the Gozo chapter and as “more afforestation” in the environment chapter [1, 2], "
-     "with no area, species, sites, carbon rate or date."),
+     "Afforestation appears once in the Gozo chapter and twice in the environment chapter, including “more "
+     "afforestation” in Malta and Gozo [1, 2], with no area, species, sites, carbon rate or date."),
     ("Trees alone could not do it.",
      "Offsetting Gozo’s energy CO<sub>2</sub> (118,000–154,000 t a year, 2016–2020 [6]) would take new forest 4.9–6.3 "
      "times Gozo’s area at a rate measured in a dry pine forest [7], and 2.3–25 times across published rates [8, 9]."),
@@ -117,10 +117,10 @@ S.append(P("<b>Grades.</b> A experiment; B observational study with a control; C
 # ================================================================== 3
 S.append(CondPageBreak(60 * mm))
 S.append(SectionHeading(3, "How new forests store carbon"))
-S.append(P("A new forest takes CO<sub>2</sub> from the air as its trees grow, storing carbon in wood and roots and, more "
-           "slowly, in litter and soil. The rate depends on rainfall, soil, species, planting density and what the land "
+S.append(P("A new forest takes CO<sub>2</sub> from the air as its trees grow and stores the carbon in wood and roots "
+           "and in the soil [7, 9]. The rate varies with climate, site, species and management [9], and with what the land "
            "held before: in the Yatir forest, half the measured gain was in the soil [7], while native oaks planted on "
-           "former cropland in Spain gained carbon in their wood but not in the soil [8]. Rates in reviews usually count "
+           "former cropland in Spain gained carbon in their wood but not in the soil [8]. The review rates used here count "
            "tree biomass only [9]. Trees must also survive: in an arid Spanish trial, 30–58% of planted pines were alive "
            "after 20 years [12]. Figure 1 sets the measured rates against what Gozo would need: to offset its energy "
            "CO<sub>2</sub> on its own 6,700 ha, every hectare would have to store 17.7–23.0 t a year."))
@@ -141,12 +141,12 @@ S.append(std_table([
                                    "old against unplanted controls."),
      C("Tree biomass 25–75 g C/m² a year (0.92–2.75 t CO<sub>2</sub>/ha); soil carbon not higher, so total carbon was "
        "not significantly higher; may take decades to become a sink."), grade_tag("B")],
-    [C("Bernal et al. 2018 [9]"), C("Global synthesis of 335 studies; plantation growth by species and climate."),
+    [C("Bernal et al. 2018 [9]"), C("Global synthesis of more than 335 studies and reports; plantation growth by species and climate."),
      C("Planted forests, dry temperate climates, first 20 years: oak 5.3, other conifers 6.4, pine 7.6 t CO<sub>2</sub>/ha "
        "a year (biomass only)."), grade_tag("C")],
     [C("Hoogmoed et al. 2012 [10]"), C("Meta-analysis of pasture afforestation in Mediterranean climates."),
      C("No substantial change in soil carbon across three decades."), grade_tag("C")],
-    [C("Rotenberg and Yakir 2010 [14]"), C("Nine-year study at the dry timberline (Yatir)."),
+    [C("Rotenberg and Yakir 2010 [14]"), C("Nine-year field study at the forests’ dry timberline."),
      C("Forests where 200–600 mm of rain falls keep sequestering, but need several decades of carbon gain to balance "
        "the warming from their darker surface."), grade_tag("B")],
     [C("Oliet et al. 2023 [12]"), C("Field experiment, Aleppo pine, arid south-eastern Spain, 20 years."),
@@ -180,9 +180,9 @@ S.append(contested(
     "How soon does a new dry-land forest cool the climate?", "DEPENDS ON SCALE", AMBER,
     "In a climate model, semi-arid afforestation on the scale of about 200 million hectares changed rainfall and would "
     "outweigh its surface warming within about six years [15].",
-    "Measured at Yatir, the darker forest surface warms the climate enough that several decades of carbon gain are "
-    "needed to balance it [14].",
-    "One is a field study of a 2,000 ha forest, the other a model of a continent-sized planting. For a small island and a "
+    "Measured over nine years at the forests’ dry timberline, the darker forest surface warms the climate enough that "
+    "several decades of carbon gain are needed to balance it [14].",
+    "One is a field study at the dry edge of forests, the other a model of a continent-sized planting. For a small island and a "
     "2040 deadline, the field result is the closer guide: carbon accounting alone would overstate what young trees do "
     "for the climate by 2040. We do not adjust our figures for this.",
     label_a="FASTER BENEFIT", label_b="SLOWER BENEFIT"))
@@ -261,7 +261,7 @@ S.append(std_table([
     [C("<b>D.</b> A national indigenous-tree strategy"), C("MaltaToday [5 ◆]"),
      C("Not in any of the 16 chapters (web and PDF, searched 10 Oct 2026). Nearest: local farm varieties and breeds "
        "with a gene bank and nursery (Agrikoltura 31) [3]; tree planting and afforestation against heat and flooding "
-       "(Ambjent 20) [2]."), verd("NOT IN THE PN’S TEXT", GREY)],
+       "(Ambjent 20) [2]."), verd("NOT IN THE PROGRAMME", GREY)],
     [C("<b>E.</b> Water and land limits on planting (our check)"), C("Not claimed"),
      C("Malta in permanent water scarcity (WEI+ 30% in 2023) [17]; 30–58% 20-year survival in arid Spain [12]; the "
        "only land neither built on nor farmed is mostly CORINE class 323, which includes garrigue and maquis [18]; 36% of "
