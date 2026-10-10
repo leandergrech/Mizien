@@ -136,3 +136,6 @@ CC-079,CC-080,T5,Waste and construction,Shared material flow,Weak (indicative)
 CC-004,CC-079,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
 CC-084,CC-085,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
 CC-085,CC-100,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-031,CC-092,T17,Net-zero Gozo,Shared target,Strong
+CC-031,CC-107,T17,Net-zero Gozo,Shared target,Strong
+CC-092,CC-107,T17,Net-zero Gozo,Shared target,Strong
