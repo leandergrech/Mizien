@@ -936,7 +936,7 @@
       "similar": [
         {
           "id": "CC-095",
-          "score": 0.28,
+          "score": 0.3,
           "terms": [
             "keep",
             "prices"
@@ -1119,7 +1119,7 @@
       "similar": [
         {
           "id": "CC-064",
-          "score": 0.4,
+          "score": 0.39,
           "terms": [
             "harbour",
             "grand"
@@ -1366,7 +1366,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.44,
+          "score": 0.48,
           "terms": [
             "square",
             "metres",
@@ -1563,7 +1563,7 @@
       "similar": [
         {
           "id": "CC-095",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "prices",
             "electricity",
@@ -3305,7 +3305,7 @@
       "similar": [
         {
           "id": "CC-050",
-          "score": 0.31,
+          "score": 0.3,
           "terms": [
             "hunting",
             "birdlife",
@@ -3374,7 +3374,7 @@
       "similar": [
         {
           "id": "CC-049",
-          "score": 0.31,
+          "score": 0.3,
           "terms": [
             "hunting",
             "birdlife",
@@ -3533,17 +3533,7 @@
         "flyer_pdf": "claim-files/CC-053/flyer.pdf",
         "flyer_png": "claim-files/CC-053/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-053/claim.yml",
-      "similar": [
-        {
-          "id": "CC-055",
-          "score": 0.25,
-          "terms": [
-            "island",
-            "area"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-053/claim.yml"
     },
     {
       "id": "CC-054",
@@ -3578,7 +3568,7 @@
       "similar": [
         {
           "id": "CC-019",
-          "score": 0.44,
+          "score": 0.48,
           "terms": [
             "square",
             "metres",
@@ -3717,17 +3707,7 @@
         "flyer_pdf": "claim-files/CC-055/flyer.pdf",
         "flyer_png": "claim-files/CC-055/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-055/claim.yml",
-      "similar": [
-        {
-          "id": "CC-053",
-          "score": 0.25,
-          "terms": [
-            "island",
-            "area"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-055/claim.yml"
     },
     {
       "id": "CC-056",
@@ -4122,7 +4102,7 @@
       "similar": [
         {
           "id": "CC-016",
-          "score": 0.4,
+          "score": 0.39,
           "terms": [
             "harbour",
             "grand"
@@ -5073,20 +5053,20 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-084/claim.yml",
       "similar": [
         {
-          "id": "CC-085",
-          "score": 0.33,
-          "terms": [
-            "tourists",
-            "million"
-          ]
-        },
-        {
           "id": "CC-065",
           "score": 0.28,
           "terms": [
             "adpd",
             "sandra",
             "gauci"
+          ]
+        },
+        {
+          "id": "CC-085",
+          "score": 0.25,
+          "terms": [
+            "tourists",
+            "million"
           ]
         }
       ]
@@ -5095,10 +5075,11 @@
       "id": "CC-085",
       "title": "4.7 million tourists needed",
       "category": "Tourism & Population",
-      "claim": "Malta Hotels and Restaurants Association: if all planned hotels are built, Malta would need about 4.7 million tourists a year to keep occupancy at 80%.",
-      "counter": "Bed-stock pipeline vs arrivals; 2025 arrivals already above 4 million.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Malta Hotels and Restaurants Association president Tony Zahra (Horeca Malta, 23 Dec 2022): counting the beds operating and new beds \"approved or are in the course of being approved\", the MHRA's Deloitte report \"concluded that Malta will need to attract 4.7 million tourists each spending an average of 7 nights in Malta\" to \"reach 80 percent occupancy throughout the year\". Repeated in November 2024: \"If we want the 80% occupancy rate of hotels we had in 2019, with the number of beds we have, we need 4.7 million tourists.\"",
+      "counter": "The study holds 2019 occupancy (76.7% collective, 59.3% private rented beds), not 80%; 4.7 million is the middle scenario of its airport table (4,680,509, p. 66), its bed-stock table and launch slides give 4.1m to 4.5m, and the 2024 update calls the original estimate 4.5m. Eurostat hotel room occupancy 75.4% in 2019 (bed-places 66.2%), no year at 80% in 2012-2025; MHRA survey 4-star 81.2%, 5-star 72.7%. Hotel bed-places +20.9% 2019-2025 against +80% to +100% collective beds assumed. Arrivals 4,022,310 in 2025 (second-hand, NSO via an outlet).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Tourism numbers & capacity",
       "location": {
@@ -5108,22 +5089,71 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "Malta Hotels and Restaurants Association (MHRA)",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "Malta Hotels and Restaurants Association (Tony Zahra, President)",
       "bodies": [
         "mhra"
       ],
-      "date": "2022",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-085A",
+          "text": "“the Deloitte report concluded that Malta will need to attract 4.7 million tourists”",
+          "finding": "4,680,509 in the airport table’s middle scenario (p. 66), reproduced exactly; the report’s tables range from 4.1 to 5.0 million and its slides headline 4.5 million [3, 4].",
+          "rating": "In the study",
+          "tone": "green"
+        },
+        {
+          "id": "CC-085B",
+          "text": "“each spending an average of 7 nights”",
+          "finding": "The study’s stay: 7 nights as labelled, 7.024 in its arithmetic (2019 nights over arrivals) [3]. Stays have shortened since (Section 5).",
+          "rating": "As in the study",
+          "tone": "green"
+        },
+        {
+          "id": "CC-085C",
+          "text": "to “reach 80 percent occupancy throughout the year”",
+          "finding": "The study keeps 2019 occupancy (76.7% collective, 59.3% private rented); no 80% occupancy condition in its text [3, 4]. At 80% its beds need 4.6 to 5.0 million.",
+          "rating": "Not the study’s condition",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-085D",
+          "text": "Beds operating plus new beds “approved or are in the course of being approved”",
+          "finding": "The study’s pipeline: about 35,000 collective beds in open permits and a stakeholder consensus of +80% to +100%; the Planning Authority’s own count was not shared with it [3]. MTA list in 2024: 27,672 beds [5].",
+          "rating": "Estimate",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-085E",
+          "text": "“the 80% occupancy rate of hotels we had in 2019”",
+          "finding": "4-star hotels 81.2%, 5-star 72.7% in the MHRA survey [5]; all hotels 75.4% of rooms and 66.2% of bed-places (Eurostat) [6].",
+          "rating": "Partly supported",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-085F",
+          "text": "“with the number of beds we have, we need 4.7 million tourists”",
+          "finding": "With the planned beds, as the interview’s context suggests, the 2024 update gives 4.4 to 4.8 million [5]. With the beds operating alone it is not shown: hotel rooms were 75.8% full in 2025 [6] with about 4.0 million tourists ◆ [9].",
+          "rating": "Depends on reading",
+          "tone": "amber"
+        }
+      ],
+      "date": "2022-12-23",
+      "quote": "\"the Deloitte report concluded that Malta will need to attract 4.7 million tourists each spending an average of 7 nights in Malta oi [to] reach 80 percent occupancy throughout the year\" (Tony Zahra, MHRA President, Horeca Malta, 23 Dec 2022). \"If we want the 80% occupancy rate of hotels we had in 2019, with the number of beds we have, we need 4.7 million tourists.\" (Tony Zahra, Malta Independent on Sunday interview, reprinted by The Malta Business Weekly, 28 Nov 2024).",
+      "version": "1.0",
+      "last_reviewed": "2026-10-10",
+      "outputs": {
+        "report": "claim-files/CC-085/report.pdf",
+        "flyer_pdf": "claim-files/CC-085/flyer.pdf",
+        "flyer_png": "claim-files/CC-085/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-085/claim.yml",
       "similar": [
         {
           "id": "CC-084",
-          "score": 0.33,
+          "score": 0.25,
           "terms": [
             "tourists",
             "million"
@@ -5616,20 +5646,20 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-095/claim.yml",
       "similar": [
         {
+          "id": "CC-013",
+          "score": 0.3,
+          "terms": [
+            "keep",
+            "prices"
+          ]
+        },
+        {
           "id": "CC-022",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "prices",
             "electricity",
             "eur"
-          ]
-        },
-        {
-          "id": "CC-013",
-          "score": 0.28,
-          "terms": [
-            "keep",
-            "prices"
           ]
         },
         {
@@ -7889,6 +7919,20 @@
       "theme": "T16",
       "link_type": "Shared data",
       "strength": "Strong"
+    },
+    {
+      "from": "CC-084",
+      "to": "CC-085",
+      "theme": "T10",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-085",
+      "to": "CC-100",
+      "theme": "T10",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
     }
   ],
   "themes": [
@@ -11205,6 +11249,14 @@
           ]
         },
         {
+          "id": "mhra",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
           "id": "ministry-tourism",
           "named": 0,
           "pairs": 1,
@@ -11256,6 +11308,14 @@
         },
         {
           "id": "malta-airport",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
+          "id": "mhra",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -11614,6 +11674,22 @@
       "role": null,
       "links": [
         {
+          "id": "adpd",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
+          "id": "malta-airport",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
           "id": "malta-chamber",
           "named": 0,
           "pairs": 1,
@@ -11733,6 +11809,14 @@
         },
         {
           "id": "adpd",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
+          "id": "mhra",
           "named": 0,
           "pairs": 1,
           "themes": [
