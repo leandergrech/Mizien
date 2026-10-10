@@ -95,3 +95,6 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: correction
     note: "Right-of-reply status made consistent: the cover, page footer, closing line and flyer said the draft was pending right of reply or that it remained with the maintainer, while the report body said right of reply was not sought, at the maintainer's direction. All now say no right of reply is needed, under the 5 Oct 2026 rule that a reply is sought only for Not substantiated, Misleading or Contradicted verdicts. Findings, verdict and confidence unchanged."
+  - date: 2026-10-10
+    step: note
+    note: "An unmerged follow-up of 3 Oct 2026 recorded two leads: the developer's Comino page (native mother plants grown in an on-site nursery since 2023; no stock or survival data) and ERA's board list (EP 1472/22 approved 7 Aug 2026). Neither page could be re-read on 10 Oct 2026 (403 to scripts; Wayback unreachable), so the report is unchanged. Details in literature/CC-002/notes.md."
