@@ -4417,14 +4417,14 @@
         {
           "id": "CC-071A",
           "text": "The system cost “almost €100 million in 2025” (headline: “reaches €100 million a year”)",
-          "finding": null,
+          "finding": "The article’s own components sum to €93.4 million, 6.6% under €100 million; €3.2 million is bus investment. The parliamentary reply was not read; Newsbook reports the same document ◆ [2].",
           "rating": "Unverified",
           "tone": "amber"
         },
         {
           "id": "CC-071B",
           "text": "Payments are the highest yet and still rising",
-          "finding": null,
+          "finding": "€36.3m, €42.8m, €69.4m, €84m, €93.4m for 2021–2025 as reported ◆ [1, 6]; bases may differ. Consistent with the article; not verified at source.",
           "rating": "Consistent",
           "tone": "amber"
         },
