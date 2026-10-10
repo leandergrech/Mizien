@@ -1,5 +1,5 @@
 Body / actor,Claim IDs,Type,Claims (count)
-Government of Malta,"CC-006, CC-021, CC-023, CC-024, CC-025, CC-041, CC-043, CC-045, CC-060, CC-061, CC-095, CC-096",Government & ministers,12
+Government of Malta,"CC-006, CC-021, CC-023, CC-024, CC-025, CC-041, CC-043, CC-045, CC-060, CC-061, CC-096",Government & ministers,11
 Environment and Resources Authority (ERA),"CC-002, CC-034, CC-036, CC-038, CC-051, CC-052, CC-057, CC-082",Regulators & authorities,8
 Ministry for the Environment,"CC-003, CC-004, CC-010, CC-022, CC-027, CC-029, CC-048, CC-051",Government & ministers,8
 Office of the Prime Minister,"CC-012, CC-016, CC-017, CC-027, CC-055, CC-064, CC-068",Government & ministers,7
@@ -23,6 +23,7 @@ Interconnect Malta,"CC-023, CC-029",Public agencies & companies,2
 Lovin Malta,"CC-058, CC-075",Media,2
 Malta Developers Association (MDA),"CC-018, CC-063",Business & industry,2
 Malta International Airport plc,"CC-030, CC-100",Business & industry,2
+Ministry for Finance,"CC-017, CC-095",Government & ministers,2
 Ministry for Health,"CC-090, CC-103",Government & ministers,2
 Momentum,"CC-012, CC-067",Political parties,2
 National Statistics Office (NSO),"CC-076, CC-088",Research & statistics,2
@@ -51,7 +52,6 @@ Malta Public Transport,CC-069,Business & industry,1
 Malta Tourism Authority,CC-087,Public agencies & companies,1
 MaltaToday,CC-047,Media,1
 "Ministry for Agriculture, Fisheries and Animal Rights",CC-048,Government & ministers,1
-Ministry for Finance,CC-017,Government & ministers,1
 Ministry for Public Cleanliness and Regeneration,CC-054,Government & ministers,1
 Moviment Graffitti,CC-098,NGOs & unions,1
 Occupational Health and Safety Authority (OHSA),CC-091,Regulators & authorities,1
