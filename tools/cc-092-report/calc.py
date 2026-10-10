@@ -11,6 +11,7 @@ search log). Reads only data/cc-092/:
 - sequestration_rates.csv: low / central / high rates from the literature (Renna et al. 2024; Grünzweig et al.
   2007; Bernal et al. 2018), plus sensitivity rates.
 - planting_inputs.csv: planting density and survival from the literature; Malta's recent planting count.
+- natura2000_overlap.csv: Gozo's CORINE land inside Natura 2000 sites (natura.py).
 - nasa_power_gozo.json, nasa_power_yatir.json: 1991-2020 rainfall (MERRA-2), Gozo and the Yatir forest.
 
 Writes data/cc-092/afforestation_offset.csv (every emissions x rate case) and data/cc-092/checks.csv.
@@ -157,6 +158,13 @@ for ln, la in LAND.items():
             f"{100 * la * rate / t16[2019]:.1f}-{100 * la * rate / t16[2020]:.1f}", "%",
             SRC_CLC + "; " + SRC_LIT + "; " + SRC_T16,
             f"{la:.0f} ha x {rate:.2f} t, against {t16[2019]:.0f} t (2019) and {t16[2020]:.0f} t (2020); a ceiling, not a plan")
+n2k = {r["land_group"]: r for r in csv.DictReader(open(D / "natura2000_overlap.csv"))}
+SRC_N2K = "EEA CORINE Land Cover 2018 and Natura 2000 sites (MS='MT'), EPSG:3035, retrieved 10 Oct 2026 (natura.py)"
+for g, lab in (("semi-natural", "Gozo semi-natural land"), ("farmland", "Gozo farmland"),
+               ("all Gozo land (CORINE)", "All Gozo land mapped by CORINE")):
+    r = n2k[g]
+    add(f"{lab} inside Natura 2000 sites (Habitats or Birds Directive)", round(float(r["in_either_ha"])), "ha", SRC_N2K,
+        f"{r['in_either_pct']}% of {float(r['area_ha']):.0f} ha; Habitats Directive sites alone {r['in_Habitats Directive (SAC/SCI)_pct']}%")
 fa = esv("for_area", "MT", "unit=THS_HA|indic_fo=FOR", 2025) * 1000
 add("Malta's forest area (FAO definition), 2025", round(fa), "ha", SRC_ES, "whole country; other wooded land 70 ha")
 add("Forest needed at the central rate (2019 energy CO2) as a multiple of Malta's forest area",

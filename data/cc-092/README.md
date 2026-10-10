@@ -1,6 +1,6 @@
 # CC-092 data
 
-Written by `tools/cc-092-report/fetch.py` (network), `search_programme.py` (network) and `calc.py` (offline), or
+Written by `tools/cc-092-report/fetch.py`, `search_programme.py` and `natura.py` (network) and `calc.py` (offline), or
 transcribed by hand from a source read in full. Retrieved or transcribed 10 Oct 2026 unless stated.
 
 | File | What | Source |
@@ -11,6 +11,7 @@ transcribed by hand from a source read in full. Retrieved or transcribed 10 Oct 
 | `gozo_energy_baseline_table16.csv` | Gozo's energy-related CO2 by sector, 2016-2020 (hand-transcribed) | Energy Baseline Scenario for Gozo (2023), Table 16, PDF p. 25 |
 | `sequestration_rates.csv` | Low, central, high and sensitivity rates, with pools, period and grade (hand-transcribed) | Renna et al. 2024; Grünzweig et al. 2007; Bernal et al. 2018 (see literature/CC-092/references.bib) |
 | `planting_inputs.csv` | Planting density, 20-year survival, Malta's recent planting count (hand-transcribed) | Grünzweig et al. 2007; Oliet et al. 2023; PQ 34270 via Claim Check 010 |
+| `natura2000_overlap.csv` | Gozo's CORINE land by group (built, farmland, semi-natural) inside Natura 2000 sites, ha and % (natura.py; EPSG:3035) | EEA map services CLC2018_WM and Natura2000Sites |
 | `pn_programme_search.csv` | Search log: SHA-256 and term counts for the 16 web chapters and 16 PDFs of the PN programme | pn.org.mt (documents not committed) |
 | `afforestation_offset.csv` | Forest needed and share offset for every emissions case and rate (calc.py) | derived |
 | `checks.csv` | Every figure used in the report (calc.py; feeds data/facts.csv) | derived |

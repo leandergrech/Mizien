@@ -23,6 +23,7 @@ contribute on Gozo and whether the programme has an indigenous-tree strategy.
 | euislands2023gozo | Energy Baseline Scenario for Gozo (2023) | F | Energy CO2 118,333-153,997 t a year, 2016-2020 (Table 16, p. 25). Not official statistics. | C |
 | eurostat_cc092 | Eurostat datasets | data | Malta forest 470 ha (FAO, 2025); forest land -0.16 kt CO2e in 2024; LULUCF +1.39 kt; MT002 land 68 km2; WEI+ 30.1% (2023), 36.7% (2022); metadata: Malta in permanent water scarcity. | C |
 | eea_clc2018 | CORINE Land Cover 2018 | data | Gozo: no forest class mapped; semi-natural (323 + 333) 1,265 ha; farmland 3,801 ha; artificial 1,520 ha (of 6,586 ha). 323 includes maquis and garrigue. | C |
+| eea_natura2000 | EEA Natura 2000 sites (Malta) | data | 453 ha (36%) of Gozo's semi-natural land and 782 ha (12%) of all its CORINE land lie inside Natura 2000 sites. | C |
 | nasa_power | NASA POWER (MERRA-2) | data | Rainfall 1991-2020: Gozo about 570 mm, Yatir about 230 mm a year (reanalysis; Yosef et al. give about 300 mm for Yatir). | C |
 
 ## Our own analysis (data/cc-092/, tools/cc-092-report/calc.py)
@@ -34,6 +35,8 @@ contribute on Gozo and whether the programme has an indigenous-tree strategy.
   that CO2. All farmland and semi-natural land (5,066 ha): 3.0-32.5%. All of Gozo: 4.0-43.0%.
 - Central forest need about 90 times Malta's whole forest area (470 ha, 2025). Malta's forest-land removals in 2024
   (0.16 kt) are 0.1% of Gozo's 2019 energy CO2.
+- Natura 2000 (natura.py): 453 ha (36%) of the semi-natural land, 271 ha (7%) of the farmland and 782 ha (12%) of all
+  Gozo's CORINE land lie inside Habitats or Birds Directive sites.
 - Stocking the semi-natural land at Yatir's 300 trees per ha, allowing for 46% survival after 20 years: about 825,000
   trees, about 52 years at Malta's recent government planting pace (about 60,000 trees from 2022 to end 2025).
 
@@ -68,8 +71,9 @@ contribute on Gozo and whether the programme has an indigenous-tree strategy.
   syntheses.
 - CORINE's 25 ha minimum mapping unit misses small woods, tree rows and valley vegetation; the land shares are
   approximate. Planting all semi-natural land is a ceiling, not a feasible plan: class 323 includes garrigue, which the
-  PN's own item 25 lists among the habitats to protect, and much of it may be protected habitat (Natura 2000 status
-  not checked here).
+  PN's own item 25 lists among the habitats to protect; 453 ha of it (36%) lies inside Natura 2000 sites
+  (`data/cc-092/natura2000_overlap.csv`, measured on generalised CORINE polygons, so approximate). Whether the rest is
+  protected under national law was not checked.
 - Goberna et al. 2007 (Applied Soil Ecology 36:107-115, doi:10.1016/j.apsoil.2006.12.003; verified in Crossref) report
   in their title that Aleppo pine plantations did not restore soil organic carbon in a semi-arid Mediterranean soil.
   Only the title and metadata could be read (abstract withheld by the publisher's metadata); not used in the report.
