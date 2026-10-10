@@ -711,11 +711,24 @@
       svg.appendChild(E("line", { class: "ln-axis", x1: left, x2: Wd - right + 30, y1: y, y2: y }));
       svg.appendChild(E("text", { class: "ln-name", x: 10, y: y - 2 }, lanes[k].name));
       svg.appendChild(E("text", { class: "ln-sub", x: 10, y: y + 14 }, lanes[k].sub)); });
-    var pos = {}, seen = {};
-    Object.keys(nodes).sort(function (a, b) { return nodes[a].ghost ? 1 : nodes[b].ghost ? -1 : 0; }).forEach(function (id) { var n = nodes[id];
-      var k = n.lane + (n.ghost ? "g" : "") + Math.round(x(n.d) / 16); seen[k] = (seen[k] || 0) + 1;
-      // manifesto pledges sit in a column under their lane, one per row, so their labels never overlap
-      pos[id] = { x: x(n.d) + (n.ghost ? 0 : (seen[k] - 1) * 18), y: ly[n.lane] + (n.ghost ? 22 + (seen[k] - 1) * 17 : 0), up: (seen[k] % 2) === 1 }; });
+    var pos = {}, seen = {}, lastSq = {}, lastLab = {}, LABEL_W = 50;
+    // checked pledges, in date order along each lane: a square never overlaps the one before it, and its label takes
+    // the first row clear of the previous label in that row: above the lane, below it (only where no manifesto pledges
+    // sit underneath), then a second row above (pledges a few days apart once drew both labels in the same place)
+    Object.keys(nodes).filter(function (id) { return !nodes[id].ghost; })
+      .sort(function (a, b) { return x(nodes[a].d) - x(nodes[b].d) || (a < b ? -1 : 1); }).forEach(function (id) {
+        var n = nodes[id], L = n.lane, px = x(n.d);
+        var rows = gcount[L] ? [-13, -26] : [-13, 25, -26], last = lastLab[L] || (lastLab[L] = {});
+        if (lastSq[L] !== undefined && px - lastSq[L] < 18) px = lastSq[L] + 18;
+        lastSq[L] = px;
+        var free = rows.filter(function (r) { return last[r] === undefined || px - last[r] >= LABEL_W; });
+        var row = free.length ? free[0] : rows.slice().sort(function (a, b) { return last[a] - last[b]; })[0];
+        last[row] = px;
+        pos[id] = { x: px, y: ly[L], ly: ly[L] + row }; });
+    // manifesto pledges sit in a column under their lane, one per row, so their labels never overlap
+    Object.keys(nodes).filter(function (id) { return nodes[id].ghost; }).forEach(function (id) { var n = nodes[id];
+      var k = n.lane + "g" + Math.round(x(n.d) / 16); seen[k] = (seen[k] || 0) + 1;
+      pos[id] = { x: x(n.d), y: ly[n.lane] + 22 + (seen[k] - 1) * 17 }; });
     function act(g, label, fn) { g.setAttribute("tabindex", "0"); g.setAttribute("role", "button"); g.setAttribute("aria-label", label); g.appendChild(E("title", {}, label));
       g.addEventListener("click", fn); g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fn(); } }); }
     links.forEach(function (l) { var a = pos[l.a], b = pos[l.b], rec = l.type === "recycled", mx = (a.x + b.x) / 2, lift = Math.abs(a.y - b.y) < 4 ? 26 : 0;   // a link along one row arcs above it, clear of the labels
@@ -736,7 +749,7 @@
           g.appendChild(E("line", { class: "ln-due", x1: q.x, x2: Math.min(xd, Wd - right + 30), y1: q.y, y2: q.y, stroke: colr }));
           g.appendChild(E("text", { class: "ln-sub", x: Math.min(xd, Wd - right + 30) + 5, y: q.y + 4 }, (clip ? "→ " : "") + "due " + n.due.slice(0, 4))); }
         g.appendChild(E("rect", { class: "ln-sq" + (sel && sel.kind === "claim" && sel.id === id ? " is-sel" : ""), x: q.x - 8, y: q.y - 8, width: 16, height: 16, rx: 3.5, fill: colr }));
-        g.appendChild(E("text", { class: "ln-id", x: q.x, y: q.up ? q.y - 13 : q.y + 25, "text-anchor": "middle" }, id));
+        g.appendChild(E("text", { class: "ln-id", x: q.x, y: q.ly, "text-anchor": "middle" }, id));
         act(g, id + " · " + d.title + ". Pledge: " + n.s + (d.pledge.as_of ? ", as of " + d.pledge.as_of : "") + (d.pledge.deadline ? ". Due " + d.pledge.deadline : ""), function () { selectClaim(id); });
       }
       svg.appendChild(g); });
