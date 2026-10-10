@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 8 October 2026 (session wrap-up: PRs #98–#108 merged and deployed; branch `fact-ledger-sketch` merged into `main`: the fact ledger design sketch in `sketch/fact-ledger/`, still undecided, no effect on the site; pledges page: subjects by party and similar wording across elections, from the manifesto taxonomy and candidate links; timeline moved into Explore, "Web" name back; pledge label colours for colour blindness; pledges shown flat: timeline in lanes in Explore, election-by-party grid and gated promise-to-outcome flow on /pledges/, follow-up data model; pledges stage 4: outliers and the manifesto list on the site; pledges stage 3: cycle disks in Explore; manifesto list extended to every contesting party: 625 pledges from 8 parties' programmes, coverage logged per party; pledges stage 1b: 235 manifesto pledges listed, three government commitments linked, first recycled pledge found; pledges stage 1: kinds, election cycles, manifesto list, outlier rules; pledges drawn as squares; orbit limits for flat views and a turnable pledge stack; Who said it method written up; Who said it: cards with verdict bars, tentative balance and the pledge stack; partial views fixed in Explore; design pass on branch `ccr-870a0223-rgsmf7`: level balance on the Maltese cross as the logo, a light theme, one glyph registry with a glyph for every kind of thing and a glyph key page; homepage deck of claim panels; phone fixes for the Pinned button and Display menu; pinning from claim pages, labels that follow the zoom, In common and saved sets in the tray; step 4: similar wording; step 3: pinned tray with related claims and compare, laurels and spacing sliders; site-wide filter across the web, map and timeline; homepage split from the viewer: new homepage at `/`, full-screen viewer at `/explore/`; earlier: interface revision on branch `ccr-b5c27334-uals26`: map view rebuilt on MapLibre with self-hosted tiles, timeline lanes, network toolbar, claims list off the homepage; timeline page `/timeline/` added; weekly intake CC-109 to CC-116; CC-030 v1.1: verdict changed to Not substantiated after an independent review, pending right of reply; v1.1 corrections to 14 v1.0 checks, on branch `ccr-bd076c78-ydx75j`; CC-011 split requested; earlier: CC-051 v1.1: maps of all of Malta's reported waters, three reference areas and depth bands, on branch `ccr-bd076c78-ydx75j`; earlier: Miżien favicon added; homepage balance mark enlarged and given a slight tilt; CC-009 v1.0 merged into `main` at `77091be`; CC-010 v1.0 merged at `f638e15`; CC-002 evidence follow-up continues on `codex/cc-002-follow-up`; CC-007 v1.1 merged at `68025d0`).*
+*Last updated: 10 October 2026 (consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
 
 ## What the project is
 
@@ -15,6 +15,66 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
+
+## Session wrap-up: consolidation and sheets (10 October 2026)
+
+The maintainer asked this session to consolidate every started check into the claim records, bring the sheets up to
+date, resolve earlier issues first, and merge to the live site.
+
+**Started checks consolidated**
+- PR #105 (CC-062 Largely supported; CC-056 and CC-059 blocked) and PR #113 (CC-058 blocked) merged into this branch
+  (merge commits; CSV rows merged row by row, CC-062/056/059 sources renumbered 625–629 → 662–666 because `main` had
+  used 625–661). CC-062 re-verified: the foreword sentence is verbatim on PDF p. 10 (signed by Steve Stivala on p. 11),
+  Tables 1.1 and 1.3 match the transcription, the PDF's SHA-256 matches, `calc.py` reproduces `checks.csv`
+  exactly, and Eurostat `nama_10_a64` (live, 10 Oct) matches the saved extract.
+- 25 checks a worker started and found blocked (CC-015, 023, 027, 028, 033, 038, 041, 043, 044, 046, 048, 052, 054,
+  056, 057, 058, 059, 060, 066, 068, 069, 072, 078, 087, 090) had no research log: each now has a `history:`
+  `started` entry (dated the attempt) with what was found, tried and needed, so the claim pages show the attempt.
+  Root cause: `methodology/worker-routine.md` never asked for it on a blocked attempt; it does now.
+- CC-090's record said July 2025; the figures are for week 30 of 2026, reported 13 Aug 2026 (record corrected and
+  logged as a note, as for CC-027). CC-068's record joins a 2022 PM statement and a 2024 PA notice; CC-072's wording
+  ("a EUR 15 million scheme") does not match the readable sources (EUR 15m was the whole package): both noted in
+  their logs, records not rewritten pending the primary text.
+- `codex/cc-002-follow-up` (3 Oct; no common history with `main`): its v1.1 cited the developer's nursery page and
+  ERA's board list. Neither could be re-read (403; Wayback unreachable), so both are logged as unverified leads
+  (`literature/CC-002/notes.md`, claim history) and the report stays v1.0. Its "pending right of reply" wording
+  predates the 5 Oct rule and was not carried over.
+
+**Sheets** (`scripts/sheets.py`, see Conventions): `data/claims.csv` regenerated from the records (21 statuses, 2 pledge
+labels and most text columns had drifted; the CC-002 misaligned row is gone); new `data/facts.csv` (1,826 rows: every
+row of the 56 `checks.csv` files); `data/actors.csv` from the register (64 organisations, was 7); theme edge counts
+recounted (T4 24 → 26); README claims table generated. `data/candidates.xlsx` rebuilt from all of them (was 11 claims,
+2 Oct): Quick checks keep formulas (all 12 reconstructed and recalculated in LibreOffice to the recorded values).
+
+**Patterns and edges:** new theme **T16 Shared emissions figures** (Shared data, Strong; glyph shared with "Emissions &
+targets") links CC-026–CC-031 (2024 inventory total), CC-026–CC-114 (air transport 444 → 4,730 kt) and
+CC-031–CC-109 (road transport +39.4%), the three pairs the fact-ledger build found sharing verified figures; the
+ledger now finds no unlinked pair (0 reference problems, 37 facts). No pattern tag added.
+
+**Earlier issues resolved**
+- Malta's 2024 territorial total, 2,170 vs 2,198 kt: the bridging table's `AEMIS_TER` is the territory-principle
+  line derived from the air emissions accounts (6,951 − 4,783 + 14 + 15 = 2,198; all 2024 values Eurostat early
+  estimates, flag i: Eurostat estimates the accounts one year beyond mandatory reporting). The same table's
+  inventory line, `AEMIS_TER_LULUCF − LULUCF` = 2,170.2 (2013: 2,825.8), equals `env_air_gge`. Use `env_air_gge`.
+  CC-114 `checks.csv` row 39 had called `AEMIS_TER` the inventory total: relabelled in place (ledger refs unchanged),
+  inventory row appended, logged as a clarification (report unaffected). Ledger F02/F30 marked explained.
+- `scripts/archive_sources.py`: robots.txt is now read with the archiver's own User-Agent. Of 86 manifest rows marked
+  `robots_disallowed`, none was a robots.txt rule: 38 hosts allow the archiver, 48 refuse robots.txt itself (now
+  `robots_refused`, a bot wall: gov.mt sites, ERA, NSO, MaltaToday, Times of Malta, Independent, parlament.mt). A full
+  run used to wipe hand-recorded rows (21 maintainer copies and transcriptions), duplicate URLs and drop rows whose URL
+  left `sources.csv`; it now retries only automated failures, merges duplicates losslessly and checkpoints every 25
+  URLs. A run over the gap (`--no-save`: Wayback saving is unreachable from the cloud; snapshot look-ups work) was
+  in progress at this note (checkpoint of 10 Oct 2026: 218 manifest rows, 430 of 642 source URLs still without a
+  row); the final count is in the commit that adds its last manifest.
+- `data/sources.csv`: the 11 duplicate Refs (29–35, 88, 89, 290, 291) renumbered 667–677.
+- CC-001 `references.bib` verified against Crossref (first task 2): authors, volumes, pages and DOIs for 8 entries;
+  north2015 still unidentified (TreeNet page refuses scripts; one candidate recorded, not adopted). The CC-001 report's
+  reference list predates this: update it at the next revision. cui2022 is CC BY 4.0 and may be committed under
+  `literature/CC-001/open-access/`.
+- Explore, Pledges lanes: CC-024 and CC-029 labels no longer overlap (labels placed in date order per lane).
+
+**Not resolvable from here (browser or maintainer):** the Times of Malta URL for CC-001 (timesofmalta.com refuses
+automated access, including search); the CC-002 leads above; every blocker listed in `data/queue.csv`.
 
 ## Session wrap-up: pledges and Explore (7–8 October 2026)
 
@@ -649,15 +709,21 @@ Proposed next, for user-derived pattern matching (not done; needs a maintainer d
   `build_flyer.py`. Outputs go to `out/` (git-ignored) and are copied to `claims/CC-NNN/`.
 - **Numbers:** every figure in a report is recomputed by a script from data saved under `data/cc-NNN/` with the
   source query URL and retrieval date (`checks.csv` lists each check).
-- **Spreadsheet:** `data/candidates.xlsx` is the tracker. `data/*.csv` are exports. After changing claim records run
-  `python scripts/build_site_data.py`.
+- **Sheets (10 Oct 2026):** `claims/CC-NNN/claim.yml` is the source of truth. `scripts/sheets.py` generates the claim
+  sheet `data/claims.csv`, the fact sheet `data/facts.csv` (every row of every `data/cc-nnn/checks.csv`, keyed
+  `CC-NNN:line`), `data/actors.csv` (from the register), the themes' edge counts and the README claims table;
+  `scripts/build_site_data.py` runs it on every build. Do not edit those by hand. `data/candidates.xlsx` is the workbook
+  of every sheet (Guide, Claims, Facts, Quick checks, Patterns, Themes, Edges, Sources, Bodies, Actors, Queue); it is
+  binary, so workers do not commit it: rebuild it at the end of a maintainer session with
+  `python scripts/sheets.py --xlsx` (byte-stable output). Hand-kept: `edges.csv`, `themes.csv` (except counts),
+  `sources.csv`, `quick_checks.csv`, `queue.csv`, `bodies.csv`.
 
 ## Status
 
 | ID | Status |
 |---|---|
 | CC-001 Upper Barrakka concrete | Report v1.1 and flyer done. Verdict: Not substantiated (plausible, not shown). Draft pending right of reply. |
-| CC-002 Comino tree compensation | Report and flyer v1.0 on `main`; a v1.1 (adding the developer's nursery statement) is drafted on the unmerged branch `codex/cc-002-follow-up`. Verdict: Largely supported (moderate) for ERA's announced categories and conditions: 624 + 54 = 678; 92.04% non-protected; 54 × 10 = 540; a separate group of 348 is to be transplanted. The developer reports on-site nursery propagation since 2023, but publishes no stock or survival inventory. The full permit annex, 467/468 oleander discrepancy, transplant results and habitat recovery data remain unresolved. Science-only scope; no legal commentary. Right of reply not sought, at maintainer direction. **Correction (5 Oct 2026):** the cover, page footer, closing line and flyer said 'pending right of reply'; they now say not sought, as the body does (no version change, so the v1.1 on the codex branch keeps its number; that branch has the same wording problem and needs the same fix if merged). |
+| CC-002 Comino tree compensation | Report and flyer v1.0 on `main`. The unmerged `codex/cc-002-follow-up` (3 Oct; no common history with `main`) proposed a v1.1 citing the developer's nursery page and ERA's board list; neither page could be re-read on 10 Oct 2026 (403; Wayback unreachable), so they are logged as unverified leads in `literature/CC-002/notes.md` and the claim's history, and the report is unchanged. Verdict: Largely supported (moderate) for ERA's announced categories and conditions: 624 + 54 = 678; 92.04% non-protected; 54 × 10 = 540; a separate group of 348 is to be transplanted. The developer reports on-site nursery propagation since 2023, but publishes no stock or survival inventory. The full permit annex, 467/468 oleander discrepancy, transplant results and habitat recovery data remain unresolved. Science-only scope; no legal commentary. Right of reply not sought, at maintainer direction. **Correction (5 Oct 2026):** the cover, page footer, closing line and flyer said 'pending right of reply'; they now say not sought, as the body does (no version change, so the v1.1 on the codex branch keeps its number; that branch has the same wording problem and needs the same fix if merged). |
 | CC-003 Per-capita emissions vs 2030 | Report v1.0 and flyer drafted. **Verdict: Misleading (high).** CAA press release 13 Nov 2025 cites the -44% per-capita figure from the Commission's CAPR 2025 but omits its projection: effort-sharing emissions +41% in 2024, +30% to +42% by 2030 vs -19% target (largest gap in the EU). Half the per-capita fall is population growth. Pending right of reply; **must not be circulated beyond the site before the reply deadline.** **v1.1 (5 Oct 2026, corrections):** flyer title says 'per person'; EU projection shown as −31% (WEM) / −38% (WAM); EU industry −36%; 'widest margin' qualified 'in percentage points' (Germany's gap is larger in tonnes); printed page numbers. **v1.2 (5 Oct 2026, upgrade):** EU-27 ranking (Malta 3rd of 27 on the per-person cut, 20th on the total cut; the largest drop between the two rankings); yearly effort-sharing limits vs emissions from the Commission's Tables 25–26 (overshoot 22, 25, 30 points 2022–24; cumulative balance 0.0 Mt by 2024, −2.1 Mt projected 2030; first compliance check 2027); fairness note (per-person target-sector emissions flat, our proxy). Verdict unchanged. |
 | CC-004 Waste separation | Report v1.0 and flyer drafted. Verdict: Not substantiated (moderate). Separation up; recycling rate 16.7% (2024) vs 55% 2025 target; 79% landfilled; 412 million kg 'diverted' not reconcilable with Eurostat (271 kt). Pending right of reply. **v1.1 (5 Oct 2026, upgrade):** COM(2023) 304, SWD(2023) 195 and SWD(2025) 318 read directly via Cellar (open-access copies in literature/CC-004/open-access/); EU-27 comparison (Malta +7.6 pp 2019–24, 4th of 20; 2nd-lowest rate). **Confidence raised to High (maintainer decision).** |
 | CC-005 Bathing water | Styled report and flyer drafted in the shared CC-001 design. The Commission's exact 92% statement matches the EEA 2023 result (80/87); latest 2025 season is 88.5%. Balluta Bay closure and the CJEU wastewater-treatment case are contextual and do not refute the dated statistic. Draft verdict: Supported (high). Right of reply not sought, per maintainer direction. Viewer metadata uses the same Report / Flyer PDF / Flyer image actions as completed checks. **v1.1 (5 Oct 2026, corrections):** up/down boxes fixed; footer 'right of reply not sought'; 2023 samples 2,021 (EEA WISE); Balluta start 'late May 2024' (EHD report blocked; news says 21 vs 31 May). **v1.2 (5 Oct 2026, upgrade):** EEA per-site classes for all 87 sites 2015-2025: excellent 85, 86, 86, 86, 85, 84, 84, 82, 80, 80, 77; lead over the EU-27 coastal average fell from ~11 points (2016) to 0.2 (2025); ten sites account for every rating below excellent; Balluta B08/B09 Sufficient 2022-25. Three figures. Verdict unchanged (Supported, high); the sentence gives no year. |
@@ -708,6 +774,9 @@ Proposed next, for user-derived pattern matching (not done; needs a maintainer d
 | CC-100 MIA: over 10 million passengers | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Supported (high).** Company announcement 461/2026: 10,061,969 movements (+12.3%); Eurostat avia_paoc 10,070,972. |
 | CC-106 BirdLife: shearwaters 10% of world population | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Largely supported (moderate).** Malta 1,600-1,800 pairs (ERA plan 1,795-2,635); share 4-13%, central 6-8%. IUCN/BirdLife global figure second-hand (CIESM). |
 | CC-053 Milky Way visible from 13% | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Supported (high).** Caruana et al. (2020): 12.8% (13.5% on the atlas threshold), 87% Bortle 5+; reproduces; data 2017-2019. |
+| CC-062 KPMG/MDA: construction 9% / 14% of GVA | Report v1.0 and flyer (8 Oct 2026, worker B). **Verdict: Largely supported (moderate); no right of reply needed.** Wording: foreword of the KPMG report (PDF p. 10, Steve Stivala). 9.1% (Eurostat 9.6%) and 14.04% both reproduce; they are not on one basis (14% includes imputed rents: 3.2 of the 4.9 points; indirect adds 1.7). Multipliers (CBM, 2015) second-hand and not re-derivable (Eurostat Malta SIOT 2015 covers 72% of value added). KPMG PDF not committed (hash in data/cc-062/). archive_sources.py for CC-062/056/059 did not finish in the run (slow): archive by hand or re-run with --claim-id. |
+| CC-056 Central Link 'only 254 trees' | Blocked (source), attempt 1, 8 Oct 2026. Lovin Malta (25 Jul 2019) states 254 in its own voice; only the 4 m tree height is quoted from IM. Need the IM statement. Leads: The Shift 21 Jan 2020 (439 removed, 185 transplanted, ERA 1,274). Status In progress. |
+| CC-059 Subsidies 20% of farm output | Blocked (source, browser-only), attempt 1, 8 Oct 2026. NSO Economic Accounts for Agriculture 2025 release needed (nso.gov.mt 403); Newsbook/Italpress give it as indirect speech. Test plan: Eurostat aact_eaa01. Status In progress. |
 | CC-049 BirdLife: 242 illegal hunting incidents | Wording found (BirdLife release 10 Oct 2025: Raptor Camp 12 Sep-5 Oct 2025; 51-minute police response). In progress: waiting on the incident log and police/WBRU data (queue blocker). |
 | CC-104 PN: Malta fails EU noise law | Petition 1150/2024 located; only a summary, a paraphrase and general quotes are public. Evidence from EP study PE 783.089 in literature/CC-104/README.md. In progress: waiting on the petition text. |
 | CC-097 GWU: beach workers and heat | Wording found (GWU statement 17 Jul 2026). In progress: waiting on Securital/ERA responses, OHS heat rules and Met Office warnings. |
@@ -1046,8 +1115,8 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
 
 ## Outstanding
 
-- [ ] Explore, Pledges grouping (lanes): the labels of CC-024 and CC-029 overlap where the two pledges sit close
-  together in the "In office" lane; space them like the ghost labels (`renderLanes()` in `site/assets/map/map.js`).
+- [x] Explore, Pledges grouping (lanes): CC-024 and CC-029 labels overlapped (fixed 10 Oct 2026: labels placed in date
+  order per lane, `renderLanes()` in `site/assets/map/map.js`).
 - [ ] **Manifesto list (7 Oct 2026):** run `scripts/manifesto_register.py
   literature/unsorted/ --fetch` to confirm the two Labour copies; review the pledge taxonomy (`data/pledge_topics.csv`) and the
   92 placements the rules read differently (`python scripts/pledge_topics.py`); fill `decision` in `data/review/pledge_link_candidates.csv`, then
@@ -1056,12 +1125,10 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
   neither; SQLite (recommended) or DuckDB; retire second- and third-degree links and demote Similar wording?; turn
   the 45,400 words of notes into finding rows now or only for new claims?; publish verdicts as ClaimReview never, or
   only after the right-of-reply deadline? See "Fact ledger: design sketch" above and `sketch/fact-ledger/`.
-- [ ] **Malta's 2024 territorial total, 2,170 vs 2,198 kt:** the inventory (`env_air_gge`, used by CC-003, CC-026,
-  CC-031) and the bridging table (`env_ac_aibrid_r2`, CC-114) differ; also in 2013 (2,826 vs 2,835 kt). The bridging
-  table's 2024 values are Eurostat estimates (flag i). Not explained in either report: find out why before either
-  figure is reused.
-- [ ] `data/edges.csv`: consider links the sketch found through shared facts: CC-026–CC-114 (air transport),
-  CC-026–CC-031 (2024 inventory total), CC-031–CC-109 (road transport).
+- [x] **Malta's 2024 territorial total, 2,170 vs 2,198 kt:** explained 10 Oct 2026 (the 2,198 is the bridging table's
+  accounts-derived line, not the inventory; see "Session wrap-up: consolidation and sheets"). Use `env_air_gge`.
+- [x] `data/edges.csv`: links through shared facts CC-026–CC-114, CC-026–CC-031, CC-031–CC-109 added as theme T16
+  (10 Oct 2026).
 - [ ] Archive gap: 460 of the 597 distinct source URLs in `data/sources.csv` have no row in `archive/manifest.csv`
   (counted 6 Oct 2026). Run `scripts/archive_sources.py` over them, then archive by hand what it cannot reach.
 
@@ -1070,7 +1137,7 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
 - [ ] **CC-108:** read WSC's Net Zero Impact Utility pages and the EWA Green Paper (2023) in a browser; record
   verbatim wording, page numbers and archive links before any report.
 - [x] **Right of reply rule (maintainer, 5 Oct 2026):** a reply is sought only where a check finds a claim Not substantiated, Misleading or Contradicted (pledges: Not measurable, Off track, Missed); Supported and Largely supported need none. Reports CC-002, 005, 007, 009, 013, 018, 020, 022 and 026 now say "no right of reply needed" (shared standards text updated in tools/mizien_report.py). Site wording in PR #59. Letter drafts for CC-003, 012, 014, 016, 019 and 051 are in the maintainer's private right-of-reply doc.
-- [ ] `data/sources.csv` has duplicate Ref numbers from parallel branches (29–35, 88, 89, 290, 291). Nothing reads Ref as a key, but renumber them in one pass when no other branch is open. (Three CC-010 rows with unquoted commas were fixed on 5 Oct 2026.)
+- [x] `data/sources.csv` duplicate Ref numbers (29–35, 88, 89, 290, 291) renumbered 667–677 (10 Oct 2026). (Three CC-010 rows with unquoted commas were fixed on 5 Oct 2026.)
 - [ ] **Rebuild the other reports with the byline** when they are next revised (CC-001, 002, 006, 007, 012, 020,
   026, 051 still carry the old cover and flyer footer).
 - [ ] CC-018: the MDA release as first published (before its 17 June 2026 change) was not seen.
@@ -1085,18 +1152,22 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
 - [ ] **v1.1 corrections, browser checks:** Wayback 29 Oct 2024 capture of the IM Msida Creek page (CC-008); MaltaToday
   dates (CC-008, CC-017); EHD Balluta report start date (CC-005); ERA RBMP Chapter 6 groundwater tables and cover date
   (CC-009); PA 2024 annual report outcome categories (CC-014); an official Comino area (CC-019).
-- [ ] Rebuild CC-020 and CC-026 (CC-004 done 5 Oct 2026) to pick up the ◆ fix in reference lists (empty box before 5 Oct 2026).
-- [ ] `data/claims.csv`: the CC-002 row has misaligned columns (an unquoted comma); fix when CC-002's v1.1 branch merges.
+- [ ] Rebuild CC-020 and CC-026 (CC-004 done 5 Oct 2026) to pick up the ◆ fix in reference lists (empty box before 5 Oct 2026); with their next revision, as for the byline.
+- [x] `data/claims.csv`: the CC-002 misaligned row is gone; the file is generated from the records (10 Oct 2026).
 - [x] Upgrades proposed by the 4 Oct review (done 5 Oct 2026 except where noted in the v1.2 section): CC-014 PA reports 2017–23 as primary series; CC-005 time
   series and site map; CC-017 bay map (seagrass, depth); CC-019 Amphora polygon cross-check; CC-004 Commission
   documents; CC-003 ranking and target-path charts; CC-022 band chart; CC-009 abstraction data; CC-018 new MDA
   sub-claims; CC-008 Msida NO2 series; CC-011 Gozo energy baseline.
 
 - [x] Decide author or affiliation line for reports and flyer: project name only, plus a contest link (5 Oct 2026).
-- [ ] Add the Times of Malta article URL to `data/sources.csv` and `claims/CC-001/claim.yml`.
+- [ ] Add the Times of Malta article URL to `data/sources.csv` and `claims/CC-001/claim.yml` (10 Oct 2026: not findable
+  by script; timesofmalta.com refuses automated access, including web search).
+- [ ] CC-002: read the developer's Comino page and ERA's board list in a browser (leads in `literature/CC-002/notes.md`);
+  if they say what the 3 Oct follow-up recorded, issue v1.1 with the nursery statement as a stakeholder account.
 - [x] Run `python scripts/archive_sources.py` to fill `archive/manifest.csv` (committed on branch `archive-manifest`).
 - [ ] **CC-037 archive (manual):** web.archive.org refused connections from the cloud network on 5 Oct 2026. Open the listed capture of the Amphora guidebook page (16 Jun 2026, URL in `archive/manifest.csv`), check it shows the quoted wording, and save a fresh capture in a browser. Page hashes are in `literature/CC-037/notes.md`.
-- [ ] `scripts/archive_sources.py` `robots_ok()` lets `RobotFileParser.read()` fetch robots.txt with Python's default user agent; sites that return 403 to it (amphora.media did on 5 Oct 2026) are then reported as robots-disallowed even when their robots.txt allows the page. Fetch robots.txt with the archiver's user agent and re-check the 27 sources marked robots_disallowed: some may be false positives.
+- [x] `scripts/archive_sources.py` reads robots.txt with its own User-Agent (10 Oct 2026); of 86 rows marked
+  robots_disallowed, 38 were false positives and 48 are bot walls (`robots_refused`); none is a robots.txt rule.
 - [ ] Archive by hand the 27 robots-disallowed sources in `archive/manifest.csv` (gov.mt, ERA, NSO, MaltaToday,
   Newsbook, Italpress, arja.mt, Independent, Chambers). gov.mt sites (climateaction, publicservice, DOI) block
   automated access with Cloudflare; read them in a browser.
@@ -1107,8 +1178,8 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
   Nazzjonalista. Record dates and deadlines in each `claim.yml`. Each report lists the questions to ask.
 - [x] (Decided 5 Oct 2026: keep showing drafts on the site, marked as drafts; no circulation elsewhere before the deadline.) Decide whether the site should show verdicts for drafts before the reply deadline (it currently does, e.g.
   "Misleading (Drafted)" for CC-003 once merged).
-- [ ] `data/candidates.xlsx` is behind the CSVs for CC-003, CC-004, CC-011 (sources, edges, theme T7, quick check).
-  It was not edited because openpyxl drops its drawings; update it by hand or treat the CSVs as the master.
+- [x] `data/candidates.xlsx` rebuilt from the records and CSVs by `scripts/sheets.py --xlsx` (10 Oct 2026; its
+  "drawings" were empty placeholders, nothing lost).
 - [x] (Decided 5 Oct 2026: six pledge labels, methodology/verdict-scale.md.) Decide whether the verdict scale needs a rule for pledges (CC-011 used Not substantiated = not measurable as worded).
 - [ ] CC-003: obtain the CAA "Facts: emissions (June 2026)" factsheet (blocked).
 - [x] CC-004: verify COM(2023) 304 early-warning report directly (read via Cellar, 5 Oct 2026).
@@ -1124,7 +1195,8 @@ above); three wait on documents for the maintainer's drop-box (literature/unsort
 - [ ] CC-009: reconcile WSC's 11.4% narrative with the 11.86% chart-derived change if the underlying workbook is obtainable; follow the Għar Lapsi procurement through award and commissioning. Future aquifer recovery requires comparable body-level abstraction, recharge, water-level, salinity and nitrate data. No right of reply needed (Largely supported; rule of 5 Oct 2026).
 - [x] CC-010: verify manifesto pledge wording, 2024 Project Green counts and end-2025 parliamentary count; calculate the approximate interim proportion; add evidence notes, report, flyer and source records. Two Mediterranean studies provide context only, not a Maltese survival rate.
 - [ ] CC-010: obtain the tree-only project register, pledge scope and post-2025 count; follow pledge deadline in 2027; seek cohort survival, replacements and maintenance records. The manifesto PDF is hosted by Talk.mt; no copy was committed. Archive manifest marks this, Ambjent Malta's annual report, the parliamentary PDF and one secondary lead robots-disallowed.
-- [ ] Verify and fix `literature/CC-001/references.bib` (first task 2 in CLAUDE.md; not done this session).
+- [x] `literature/CC-001/references.bib` verified against Crossref (10 Oct 2026); north2015 still unidentified (TreeNet
+  page, browser only). Update the CC-001 report's reference list at its next revision.
 - [ ] Check the name and a domain are free; enable GitHub Pages (main, /docs).
 - [ ] CC-002: obtain the full permit annex/species schedule and follow-up transplant-survival and habitat-monitoring data if publicly available. Keep all analysis to science; do not comment on the tribunal. The 3 October automated archive attempt hit DNS resolution failures for the two direct ERA releases and most other new sources; do not label these failures robots-disallowed. The older generic ERA press-releases entry is robots-disallowed. Archive direct pages manually when available.
 

@@ -189,3 +189,6 @@ history:   # research log: the date each step of the research was done (not when
     step: version
     version: "1.1"
     note: "1.1: corrections after the 6 Oct 2026 audit: F wording narrowed, confidence High to Moderate, estimates labelled, C reason stated, land-transport figure dropped. Verdict Misleading (moderate confidence); pending right of reply (Nationalist Party)."
+  - date: 2026-10-10
+    step: clarification
+    note: "data/cc-114/checks.csv row 39 called the bridging table's territory-principle line (AEMIS_TER: 2,835 to 2,198 kt, 2013 to 2024; derived from the air emissions accounts, 2024 a Eurostat estimate) the 'territorial inventory total'. It is not: the same table's inventory line (AEMIS_TER_LULUCF less LULUCF) gives 2,825.8 to 2,170.2 kt, as env_air_gge does; that row is now added at the end of the file. The report does not use either figure; findings, verdict and version unchanged."

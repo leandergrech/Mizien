@@ -38,3 +38,7 @@ location:
   lon: 14.54484
   scope: site
   icon: luzzu
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-08
+    step: started
+    note: "Worker A, attempt 1: blocked on source. Atuna (18 Aug 2025) relays the first half of ERA's statement from 'Maltese news sites' (second-hand); the 'about 6 km offshore' sentence was not found in ERA's words (older reports give 5 to 6 km). Needed: ERA's original statement."

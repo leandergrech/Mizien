@@ -38,3 +38,7 @@ location:
   lon: 14.49686
   scope: institution
   icon: pylon
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-05
+    step: started
+    note: "Worker A, attempt 1: blocked on source. TVM News and Newsbook (31 Jul 2026) report Enemalta telling the MCESD that medium-voltage downtime fell about 76% since 2023 (EUR 141 million programme), both in paraphrase; the only quoted words are 'investing ahead of demand delivers tangible benefits'. No press release on enemalta.com.mt; MaltaToday unreachable to scripts. Needed: the statement with its exact wording, the metric and the base period."

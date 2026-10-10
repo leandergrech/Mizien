@@ -22,3 +22,15 @@ Searches run 1-2 October 2026.
 - No study found on short-term (temporary) concrete contact with roots.
 - Few studies on concrete over a membrane around old Mediterranean trees.
 - Full text still to obtain for the A and B studies (check open-access versions; do not commit paywalled PDFs).
+
+## Metadata check, 10 October 2026
+
+Every journal entry in references.bib was looked up in Crossref (api.crossref.org) by DOI or by exact title. The title, year and journal were matched before any field was filled in. Reading status is unchanged: this was a metadata check, not new reading.
+
+- Verified and completed: viswanathan2011 (UFUG 10(2):133-139), savi2015 (pp. 1106-1116, five authors), cui2022 (seven authors, article 1003266, title wording confirmed), volder2009 (UFUG 8(4):249-256), aufreview2014 (Watson, Hewitt, Custic and Lo; pp. 249-271), hauer1994 (Journal of Arboriculture 20(2):94-97; the DOI is registered under the journal's later title), helsinki_aeration (Kämäräinen, Riikonen, Simojoki and Lindén 2018; pp. 174-184), leaching_fresh_concrete (Law, Setunge, Adamson and Dutton 2013, Magazine of Concrete Research 65(15):889-897). DOIs added for all of these. fini2022 was already correct.
+- Publisher record used where Crossref is incomplete: AUF pages 174-184 and the initial "S." (helsinki_aeration), and the middle initials for hauer1994. wadoe_rca2022 has no DOI. Its author (Eric J. Daiber), date (May 2022) and number were checked against the report's own suggested citation and the Ecology summary page.
+- Labels in the table above map to: aufreview2014 = Watson et al. 2014; helsinki_aeration = Kämäräinen et al. 2018; leaching_fresh_concrete = Law et al. 2013; wadoe_rca2022 = Daiber 2022.
+- Still unverified:
+  - north2015 remains unidentified. The TreeNet summary refuses scripted access (HTTP 403), so its reference list could not be read. The only 2015 street-tree paper with a first author North that a Crossref search found is North, Johnson and Burk, UFUG 14(1):65-71, on predicting trunk flare diameter. That does not clearly match "condition falls as pavement nears the trunk", so it is recorded as a candidate only. The Mullaney et al. (2015) Melaleuca papers do not cite North in their Crossref reference lists. Read the TreeNet page by hand before citing this finding.
+  - For leaching_fresh_concrete, the match rests on an exact title with a single Crossref record. The ResearchGate page (HTTP 403) was not opened to confirm it shows the same DOI.
+- Open access: Crossref records cui2022 as CC BY 4.0, so it can legally go in open-access/ (not done in this check). OpenAlex lists hauer1994 and aufreview2014 as free to read on the ISA site with no open licence: read them there but do not commit them. Crossref shows no open licence for the Elsevier, Wiley and ICE papers.

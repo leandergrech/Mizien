@@ -2,7 +2,7 @@ id: CC-056
 title: 'Central Link: ''only 254 trees'''
 category: Land & Trees
 subtopic: Trees & planting
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -38,3 +38,7 @@ location:
   lon: 14.44301
   scope: site
   icon: flyover
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-08
+    step: started
+    note: "Worker B, attempt 1: blocked on source. Lovin Malta (25 Jul 2019) states 'only 254 trees' and mature replacements in its own voice; the only quoted agency words concern the four-metre planting height. 254 equals 439 removals less 185 transplanted (our arithmetic; not stated). The Shift (21 Jan 2020) quotes a later statement of 285 more trees. Needed: the Infrastructure Malta statement."

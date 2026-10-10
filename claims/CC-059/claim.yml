@@ -2,7 +2,7 @@ id: CC-059
 title: Subsidies are 20% of farm output
 category: Land & Trees
 subtopic: Land take & agriculture
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -37,3 +37,7 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-08
+    step: started
+    note: "Worker B, attempt 1: blocked on source. The NSO release on the Economic Accounts for Agriculture 2025 (as reported: subsidies EUR 28.7 million, 20.2% of output) is browser-only; Newsbook (28 Sep 2026) and Italpress/MNA (29 Sep 2026) give it in indirect speech. Needed: the release text; the test is then Eurostat aact_eaa01."

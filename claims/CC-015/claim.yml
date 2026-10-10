@@ -45,3 +45,7 @@ location:
   lon: 14.50314
   scope: institution
   icon: ravelin
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-04
+    step: started
+    note: "Worker A, attempt 1: blocked on source. Newsbook (24 Sep 2026) gives the 'three weeks' remark only in paraphrase; The Maltese Herald's video report returned 403 and Wayback was unreachable. Needed: his exact words (a recording or transcript) in literature/CC-015/primary-source.md; the dates are then a document check."

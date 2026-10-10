@@ -39,3 +39,7 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-04
+    step: started
+    note: "Worker A, attempt 1: blocked on source. No statement found saying the second interconnector is on track for 2026; Newsbook (5 Jul 2021) has Minister Dalli giving 2025 (200 MW, Ragusa). Needed: the dated primary statement."

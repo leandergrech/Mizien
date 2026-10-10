@@ -25,3 +25,24 @@ Search and metadata checks: 3 October 2026. DOIs checked against publisher, PubM
 - Confirm species identities, native status, origin, age/size, condition, transplant location, planting stock provenance and aftercare for each intervention.
 - Publish survival and condition at years 1, 3 and 5, plus vegetation/habitat indicators at removal and compensation sites. Record losses and replacements separately.
 - A site-specific ecological assessment or before-after/control-impact monitoring would be required to demonstrate net restoration or functional compensation.
+
+## Unmerged follow-up of 3 October 2026 (leads, not verified)
+
+A follow-up drafted on 3 October 2026 (branch `codex/cc-002-follow-up`, never merged; its history does not share a
+base with `main`) proposed a v1.1 adding two sources. Neither could be re-read on 10 October 2026, so neither is used
+in the report, and the report stays at v1.0 (no right of reply needed, under the 5 October 2026 rule; the follow-up's
+"pending right of reply" wording predates that rule and is not carried over).
+
+- **Developer's Comino page** (HV Hospitality, https://hilihospitality.com/comino/, read by the follow-up on 3 Oct
+  2026). As recorded by the follow-up: native Comino and Gozo mother plants propagated from seed in an on-site nursery
+  since 2023, and transplanted specimens to be cared for there; no stock list, condition records or survival results.
+  On 10 Oct 2026 the page returned 403 (Cloudflare) to scripts and WebFetch; the only Wayback capture is of 13 Mar 2024,
+  and web.archive.org reset the connection. Even if confirmed, it is the developer's account, not an inventory, and
+  would not close the outcome-evidence gap.
+- **ERA board decision list and ERIS case summary** (read by the follow-up on 3 Oct 2026): EP 1472/22 listed as
+  approved on 7 Aug 2026; the accessible ERIS summary shows applicant, status and activity categories but no species
+  schedule or permit annex. era.org.mt returned 403 to scripts on 10 Oct 2026.
+
+To do (maintainer, browser): read both pages, archive them, and record the wording and dates here. If they say what
+the follow-up recorded, a v1.1 can add the nursery statement as a stakeholder account (the follow-up's paragraph and
+reference [9] are in `tools/cc-002-report/build_report.py` on that branch) without changing the verdict.

@@ -39,3 +39,7 @@ location:
   lon: 14.5208
   scope: site
   icon: park
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-07
+    step: started
+    note: "Worker C, attempt 1: blocked on source. TVM News carries the 100,000 m2 figures only in its own paraphrase of CEO Joseph Cuschieri (Ras imb Ras); the quoted words do not contain them. Needed: Project Green's statement or the programme transcript."

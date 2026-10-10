@@ -2,7 +2,7 @@ id: CC-058
 title: 96% of farmland in use
 category: Land & Trees
 subtopic: Land take & agriculture
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -38,3 +38,7 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-10
+    step: started
+    note: "Worker A, attempt 1: blocked on source. Lovin Malta (18 Oct 2022) gives Minister Anton Refalo's answer to a parliamentary question from Toni Bezzina only in indirect speech, with no PQ number or NSO table; parlament.mt unreachable to scripts. Needed: the PQ number and answer text, and the NSO series cited."

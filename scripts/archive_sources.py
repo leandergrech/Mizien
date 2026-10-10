@@ -10,8 +10,8 @@ Results go to archive/manifest.csv. Run from the repository root:
     python scripts/archive_sources.py [--limit N] [--no-save]
 
 It needs network access and is deliberately slow (one request every few seconds). Sources that block
-automation are marked 'robots_disallowed': archive those by hand in a browser and paste the snapshot URL
-into archive/manifest.csv. Never commit paywalled PDFs; the manifest stores links and hashes only.
+automation are marked 'robots_disallowed' (a robots.txt rule) or 'robots_refused' (robots.txt itself refused the
+archiver: a bot wall): archive those by hand in a browser and paste the snapshot URL into archive/manifest.csv. Never commit paywalled PDFs; the manifest stores links and hashes only.
 """
 import argparse
 import csv
@@ -31,15 +31,26 @@ UA = "Mizien-archiver/1.0 (public claim-checking project)"
 FIELDS = ["claim_ids", "title", "url", "status", "http_status", "sha256", "retrieved_utc", "archived_url", "notes"]
 
 
-def robots_ok(url: str) -> bool:
+def robots_check(url: str) -> str:
+    """'allowed', 'disallowed' (robots.txt has a rule against this page) or 'refused' (robots.txt itself answered
+    401/403 to the archiver: a bot wall, not a rule; skipped all the same, and archived by hand).
+
+    robots.txt is fetched with the archiver's own User-Agent. RobotFileParser.read() would send Python's default
+    one, which some sites refuse even where their robots.txt allows the page (amphora.media did, 5 Oct 2026).
+    """
     p = urllib.parse.urlparse(url)
     rp = urllib.robotparser.RobotFileParser()
-    rp.set_url(f"{p.scheme}://{p.netloc}/robots.txt")
+    req = urllib.request.Request(f"{p.scheme}://{p.netloc}/robots.txt", headers={"User-Agent": UA})
     try:
-        rp.read()
+        with urllib.request.urlopen(req, timeout=30) as r:
+            rp.parse(r.read().decode("utf-8", "surrogateescape").splitlines())
+    except urllib.error.HTTPError as e:
+        if e.code in (401, 403):
+            return "refused"
+        return "disallowed" if e.code >= 500 else "allowed"   # RFC 9309: 4xx allows all, 5xx disallows all
     except Exception:
-        return True  # robots.txt unreachable: proceed politely
-    return rp.can_fetch(UA, url)
+        return "allowed"  # robots.txt unreachable: proceed politely
+    return "allowed" if rp.can_fetch(UA, url) else "disallowed"
 
 
 def fetch(url: str, timeout: int = 40):
@@ -81,29 +92,64 @@ def main() -> int:
         wanted = set(args.claim_id)
         sources = [r for r in sources if wanted.intersection(x.strip() for x in r.get("Claim IDs", "").split(","))]
     manifest_path = ROOT / "archive" / "manifest.csv"
-    done = {}
+    def ids(text):
+        return {x.strip() for x in str(text or "").split(",") if x.strip()}
+
+    # Rows recorded by hand (maintainer copies, browser reads, transcriptions) and rows already fetched and archived
+    # are kept as they are; only automated failures and gaps are tried again. A URL cited by several sources is
+    # fetched once, and rows whose URL has left data/sources.csv stay in the manifest.
+    retry = {"", "error", "http_error", "robots_disallowed", "robots_refused"}
+    out, extra = {}, []    # extra: a second hand-made row for the same URL (two copies), kept as it is
     if manifest_path.exists():
         with open(manifest_path, newline="", encoding="utf-8") as f:
-            done = {r["url"]: r for r in csv.DictReader(f)}
+            for r in csv.DictReader(f):
+                prev = out.get(r["url"])
+                if prev is None:
+                    out[r["url"]] = r
+                    continue
+                keep, drop = (prev, r) if r["status"] in retry else (r, prev)
+                if drop["status"] not in retry:      # both made by hand: keep both
+                    extra.append(r)
+                    continue
+                keep["archived_url"] = keep.get("archived_url") or drop.get("archived_url", "")
+                keep["claim_ids"] = ", ".join(sorted(ids(keep.get("claim_ids")) | ids(drop.get("claim_ids"))))
+                out[r["url"]] = keep
+    todo = []
+    for s in sources:
+        url = s["URL"]
+        prev = out.get(url)
+        if prev is not None:
+            prev["claim_ids"] = ", ".join(sorted(ids(prev.get("claim_ids")) | ids(s.get("Claim IDs"))))
+            if prev.get("status") not in retry and not (prev.get("status") == "fetched" and not prev.get("archived_url")):
+                continue
+        if url not in todo:
+            todo.append(url)
+    titles = {s["URL"]: s for s in reversed(sources)}
 
-    rows = []
-    for i, s in enumerate(sources):
+    def write():
+        manifest_path.parent.mkdir(exist_ok=True)
+        with open(manifest_path, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=FIELDS)
+            w.writeheader()
+            w.writerows(list(out.values()) + extra)
+    for i, url in enumerate(todo):
         if args.limit and i >= args.limit:
             break
-        url = s["URL"]
-        prev = done.get(url)
-        if prev and prev.get("sha256") and prev.get("archived_url"):
-            merged = dict(prev)
-            claim_ids = set(merged.get("claim_ids", "").split(","))
-            claim_ids.update(x.strip() for x in s.get("Claim IDs", "").split(",") if x.strip())
-            merged["claim_ids"] = ", ".join(sorted(x for x in claim_ids if x))
-            rows.append(merged)
+        prev, s = out.get(url), titles[url]
+        if prev and prev.get("status") == "fetched":      # hashed before; only the snapshot is missing
+            prev["archived_url"] = wayback_lookup(url) or ("" if args.no_save else wayback_save(url))
+            print(f"[{i + 1}/{len(todo)}] {'snapshot' if prev['archived_url'] else 'no snapshot':>18}  {url[:80]}", flush=True)
+            time.sleep(2)
             continue
-        row = {"claim_ids": s["Claim IDs"], "title": s["Source"], "url": url, "status": "", "http_status": "",
-               "sha256": "", "retrieved_utc": "", "archived_url": "", "notes": ""}
-        if not robots_ok(url):
+        row = {"claim_ids": (prev or {}).get("claim_ids") or s["Claim IDs"], "title": s["Source"], "url": url,
+               "status": "", "http_status": "", "sha256": "", "retrieved_utc": "", "archived_url": "", "notes": ""}
+        robots = robots_check(url)
+        if robots == "disallowed":
             row["status"] = "robots_disallowed"
             row["notes"] = "Automated access disallowed. Archive manually in a browser."
+        elif robots == "refused":
+            row["status"] = "robots_refused"
+            row["notes"] = "robots.txt refused the archiver (HTTP 401/403; a bot wall, not a rule). Archive manually in a browser."
         else:
             try:
                 code, body = fetch(url)
@@ -113,20 +159,17 @@ def main() -> int:
                 row.update(status="http_error", http_status=str(e.code))
             except Exception as e:  # network error, timeout, bad TLS
                 row.update(status="error", notes=str(e)[:150])
-        row["archived_url"] = wayback_lookup(url)
+        row["archived_url"] = wayback_lookup(url) or (prev or {}).get("archived_url", "")
         if not row["archived_url"] and not args.no_save:
             row["archived_url"] = wayback_save(url)
-        rows.append(row)
-        print(f"[{i + 1}/{len(sources)}] {row['status']:>18}  {url[:80]}")
+        out[url] = row
+        print(f"[{i + 1}/{len(todo)}] {row['status']:>18}  {url[:80]}", flush=True)
+        if (i + 1) % 25 == 0:
+            write()      # a long run that is stopped keeps what it has done
         time.sleep(4)
 
-    if args.claim_id:
-        rows = list({**done, **{r["url"]: r for r in rows}}.values())
-    manifest_path.parent.mkdir(exist_ok=True)
-    with open(manifest_path, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=FIELDS)
-        w.writeheader()
-        w.writerows(rows)
+    rows = list(out.values()) + extra
+    write()
     print(f"Wrote {len(rows)} rows to {manifest_path.relative_to(ROOT)}")
     return 0
 
