@@ -3079,7 +3079,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-045",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "tunnels",
             "every",
@@ -3158,7 +3158,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-044",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "tunnels",
             "every",
@@ -3499,7 +3499,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-096",
-          "score": 0.67,
+          "score": 0.64,
           "terms": [
             "farm",
             "fish",
@@ -4086,7 +4086,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-082",
-          "score": 0.32,
+          "score": 0.3,
           "terms": [
             "waste",
             "construction"
@@ -4281,7 +4281,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "category": "Planning & Housing",
       "claim": "Government of Malta: the Marsaskala yacht marina has been shelved (PM Robert Abela), and the PA withdrew the local-plan reference.",
       "counter": "A ferry terminal for Marsaskala Bay drew objections in 2025; is the marina reference gone from all plans?",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Development & construction",
@@ -4354,15 +4354,6 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
           ]
         },
         {
-          "id": "CC-071",
-          "score": 0.28,
-          "terms": [
-            "buses",
-            "transport",
-            "public"
-          ]
-        },
-        {
           "id": "CC-078",
           "score": 0.25,
           "terms": [
@@ -4416,10 +4407,10 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "id": "CC-071",
       "title": "EUR 100m a year for free buses",
       "category": "Transport",
-      "claim": "The Shift News (Feb 2026): 'free' public transport now costs about EUR 100 million a year in subsidies while traffic gridlock worsens.",
-      "counter": "Subsidy lines in the budget; congestion indicators.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "The Shift News (Ivan Camilleri, 26 Feb 2026): headline \"'Free' public transport reaches €100 million a year in subsidies as traffic gridlock worsens\"; body: Malta's \"'free' public transport system cost taxpayers almost €100 million in 2025, according to figures tabled in Parliament\", while \"traffic congestion continues to worsen\".",
+      "counter": "The article's three 2025 payments (59.0 + 31.2 + 3.2) sum to EUR 93.4 million (second-hand: the parliamentary reply was not read; Newsbook reports the same). TomTom Valletta metro congestion 49.2% (2024) to 50.3% (2025); Eurostat passenger cars +5.8% 2022-2025 but cars per 1,000 residents 610 to 585 (population +10.4%).",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [],
       "subtopic": "Public transport",
       "location": {
@@ -4429,35 +4420,68 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Low",
       "speaker": "The Shift News",
       "bodies": [
         "the-shift"
       ],
+      "subclaims": [
+        {
+          "id": "CC-071A",
+          "text": "The system cost “almost €100 million in 2025” (headline: “reaches €100 million a year”)",
+          "finding": null,
+          "rating": "Unverified",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-071B",
+          "text": "Payments are the highest yet and still rising",
+          "finding": null,
+          "rating": "Consistent",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-071C",
+          "text": "“Traffic congestion continues to worsen”",
+          "finding": "TomTom Valletta-area congestion level 49.2% to 50.3% (+1.1 points), speed down 0.5 km/h; two years only, one area [5].",
+          "rating": "Partly supported",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-071D",
+          "text": "“Vehicle imports and private car use have continued to increase”",
+          "finding": "Passenger cars +1.6% in 2025, +5.8% since 2022 [3]; but cars per 1,000 residents fell 610 to 585 [3, 4]. Imports and car use not measured by us.",
+          "rating": "Needs context",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-071E",
+          "text": "The spending has brought “no measurable reduction in congestion” (the article’s framing)",
+          "finding": "No counterfactual and no congestion series that straddles October 2022 in the sources we could read. Not tested.",
+          "rating": "Not tested",
+          "tone": "grey"
+        }
+      ],
       "date": "2026-02-26",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "Malta’s ‘free’ public transport system cost taxpayers almost €100 million in 2025, according to figures tabled in Parliament (The Shift News, 26 Feb 2026).",
+      "version": "1.0",
+      "last_reviewed": "2026-10-10",
+      "outputs": {
+        "report": "claim-files/CC-071/report.pdf",
+        "flyer_pdf": "claim-files/CC-071/flyer.pdf",
+        "flyer_png": "claim-files/CC-071/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-071/claim.yml",
       "similar": [
         {
-          "id": "CC-069",
-          "score": 0.28,
-          "terms": [
-            "buses",
-            "transport",
-            "public"
-          ]
-        },
-        {
           "id": "CC-115",
-          "score": 0.28,
+          "score": 0.26,
           "terms": [
             "cost",
             "traffic",
-            "eur"
+            "congestion"
           ]
         }
       ]
@@ -4963,19 +4987,19 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-082/claim.yml",
       "similar": [
         {
-          "id": "CC-063",
-          "score": 0.32,
-          "terms": [
-            "waste",
-            "construction"
-          ]
-        },
-        {
           "id": "CC-036",
           "score": 0.3,
           "terms": [
             "construction",
             "era"
+          ]
+        },
+        {
+          "id": "CC-063",
+          "score": 0.3,
+          "terms": [
+            "waste",
+            "construction"
           ]
         }
       ]
@@ -5305,7 +5329,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "category": "Health & Safety",
       "claim": "Health Ministry (2025): at least 20 deaths during one week of the July 2025 heatwave were directly or indirectly linked to extreme heat.",
       "counter": "Excess-mortality methods usually give higher numbers than attributed deaths; 108 deaths that week in total.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Heat & health",
@@ -5410,7 +5434,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-097",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "workers",
             "safety",
@@ -5664,7 +5688,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-052",
-          "score": 0.67,
+          "score": 0.64,
           "terms": [
             "farm",
             "fish",
@@ -5714,7 +5738,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         },
         {
           "id": "CC-091",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "workers",
             "safety",
@@ -6905,11 +6929,11 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-071",
-          "score": 0.28,
+          "score": 0.26,
           "terms": [
             "cost",
             "traffic",
-            "eur"
+            "congestion"
           ]
         }
       ]
@@ -7852,6 +7876,20 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "theme": "T15",
       "link_type": "Shared mechanism",
       "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-071",
+      "to": "CC-072",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-069",
+      "to": "CC-071",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
     }
   ],
   "themes": [
@@ -7926,6 +7964,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "CC-026",
         "CC-035",
         "CC-069",
+        "CC-071",
         "CC-072",
         "CC-076",
         "CC-109",
@@ -8265,6 +8304,15 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
           "themes": []
         },
         {
+          "id": "the-shift",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T4",
+            "T5"
+          ]
+        },
+        {
           "id": "transport-malta",
           "named": 1,
           "pairs": 0,
@@ -8350,14 +8398,6 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
           "pairs": 1,
           "themes": [
             "T12"
-          ]
-        },
-        {
-          "id": "the-shift",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T5"
           ]
         }
       ]
@@ -9147,6 +9187,14 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         },
         {
           "id": "european-commission",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T4"
+          ]
+        },
+        {
+          "id": "the-shift",
           "named": 0,
           "pairs": 2,
           "themes": [
@@ -11672,6 +11720,14 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
           "themes": [
             "T4"
           ]
+        },
+        {
+          "id": "the-shift",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
+          ]
         }
       ]
     },
@@ -11969,6 +12025,14 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "role": null,
       "links": [
         {
+          "id": "ministry-transport",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T4"
+          ]
+        },
+        {
           "id": "european-commission",
           "named": 0,
           "pairs": 1,
@@ -11978,6 +12042,14 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         },
         {
           "id": "malta-chamber",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
+          ]
+        },
+        {
+          "id": "malta-public-transport",
           "named": 0,
           "pairs": 1,
           "themes": [
