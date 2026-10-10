@@ -132,3 +132,5 @@ CC-069,CC-071,T4,"Transport, air and climate",Shared driver,Weak (indicative)
 CC-026,CC-031,T16,Shared emissions figures,Shared data,Strong
 CC-026,CC-114,T16,Shared emissions figures,Shared data,Strong
 CC-031,CC-109,T16,Shared emissions figures,Shared data,Strong
+CC-084,CC-085,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-085,CC-100,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
