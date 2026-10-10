@@ -37,3 +37,7 @@ location:
   lon: 14.23985
   scope: institution
   icon: cittadella
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-08
+    step: started
+    note: "Worker A, attempt 1: blocked on source. The record's source (Smart Water Magazine, 25 Jan 2023) quotes only the contractor; GuideMeMalta (19 Nov 2021) narrates the Ħondoq inauguration without a WSC quote; MaltaToday's report was seen only in search summaries (second-hand). Needed: the WSC or government release of 18-19 Nov 2021, or a report quoting it."

@@ -38,3 +38,7 @@ location:
   lon: 14.50978
   scope: institution
   icon: parliament
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-09
+    step: started
+    note: "Worker C, attempt 1: blocked on source. Only The Shift (11 Nov 2025) reports the 177 units, in its own words, with no PQ number or date; parlament.mt unreachable to scripts. Needed: the PQ number, date and answer text."

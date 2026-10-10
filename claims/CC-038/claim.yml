@@ -39,3 +39,7 @@ location:
   lon: 14.49732
   scope: institution
   icon: era
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-07
+    step: started
+    note: "Worker B, attempt 1: blocked on source. Italpress/MNA (7 Feb 2026) gives the Met Office only in indirect speech (dust from the Sahara) and has no ERA statement; MaltaToday's report unreachable to scripts, Wayback reset. Needed: the authorities' own wording."

@@ -6,15 +6,15 @@ status: In progress
 verdict: null
 verdict_confidence: null
 claim:
-  text: 'Health Ministry (2025): at least 20 deaths during one week of the July 2025 heatwave were directly or indirectly
-    linked to extreme heat.'
+  text: 'Health Ministry (Aug 2026, as reported): at least 20 deaths during one week of the July 2026 heatwave (week 30,
+    20-26 July) were directly or indirectly linked to extreme heat.'
   speaker: Ministry for Health
-  date: 2025-07
+  date: 2026-08-13
   wording_status: 'Paraphrase: locate quote'
   sources:
   - title: At least 20 heat-linked deaths recorded in Malta during July heatwave
     publisher: Newsbook
-    date: Jul 2025
+    date: 13 Aug 2026
     url: https://newsbook.com.mt/en/at-least-20-heat-linked-deaths-recorded-in-malta-during-july-heatwave/
     note: Locates the figure.
 counter_evidence: Excess-mortality methods usually give higher numbers than attributed deaths; 108 deaths that week
@@ -39,3 +39,10 @@ location:
   lon: 14.4766
   scope: institution
   icon: hospital
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-10
+    step: started
+    note: "Worker C, attempt 1: blocked on source. The figures are for week 30 of 2026 (20-26 July), not 2025: Newsbook (13 Aug 2026) reports 20 of 108 deaths that week linked to heat and that the ministry 'confirmed the figures' (indirect speech); Italpress/MNA (14 Aug 2026) and Momentum (26 Aug 2026) paraphrase. Needed: the Ministry for Health's own wording and the weekly deaths series."
+  - date: 2026-10-10
+    step: note
+    note: "Record corrected: the figures are for week 30 of 2026 (20-26 July 2026) and were reported on 13 Aug 2026, not July 2025; the claim's text, date and the Newsbook locator's date now say so. Wording still paraphrase."

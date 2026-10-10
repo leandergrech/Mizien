@@ -5323,7 +5323,7 @@
       "id": "CC-090",
       "title": "20 heat-linked deaths",
       "category": "Health & Safety",
-      "claim": "Health Ministry (2025): at least 20 deaths during one week of the July 2025 heatwave were directly or indirectly linked to extreme heat.",
+      "claim": "Health Ministry (Aug 2026, as reported): at least 20 deaths during one week of the July 2026 heatwave (week 30, 20-26 July) were directly or indirectly linked to extreme heat.",
       "counter": "Excess-mortality methods usually give higher numbers than attributed deaths; 108 deaths that week in total.",
       "status": "In progress",
       "verdict": null,
@@ -5343,7 +5343,7 @@
       "bodies": [
         "ministry-health"
       ],
-      "date": "2025-07",
+      "date": "2026-08-13",
       "quote": "",
       "version": null,
       "outputs": {},
@@ -5351,20 +5351,11 @@
       "similar": [
         {
           "id": "CC-103",
-          "score": 0.54,
+          "score": 0.56,
           "terms": [
             "deaths",
             "heat",
             "linked"
-          ]
-        },
-        {
-          "id": "CC-097",
-          "score": 0.28,
-          "terms": [
-            "heat",
-            "heatwave",
-            "extreme"
           ]
         }
       ]
@@ -5724,15 +5715,6 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-097/claim.yml",
       "similar": [
         {
-          "id": "CC-090",
-          "score": 0.28,
-          "terms": [
-            "heat",
-            "heatwave",
-            "extreme"
-          ]
-        },
-        {
           "id": "CC-091",
           "score": 0.26,
           "terms": [
@@ -6080,7 +6062,7 @@
       "similar": [
         {
           "id": "CC-090",
-          "score": 0.54,
+          "score": 0.56,
           "terms": [
             "deaths",
             "heat",

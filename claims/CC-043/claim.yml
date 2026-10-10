@@ -38,3 +38,7 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-08
+    step: started
+    note: "Worker A, attempt 1: blocked on source. The 13 Blue Flags found are the 2025 season (10 Malta, 3 Gozo; gov.mt press release PR251165, 28 Jun 2025, unreachable to scripts); no 2026 announcement was found, and the record's wording ('a mark of clean, well-managed bathing sites') is in no readable source. Needed: the PR251165 text, and whether a 2026 statement was meant."

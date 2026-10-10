@@ -39,3 +39,7 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-09
+    step: started
+    note: "Worker C, attempt 1: blocked on source. In TVM News (29 Mar 2025, indirect speech) EUR 15 million is the maximum cost of the whole package of more than 45 measures, not of one scheme; the record's wording does not match the readable sources. Needed: the ministry's press release or press-conference transcript of 29 Mar 2025."

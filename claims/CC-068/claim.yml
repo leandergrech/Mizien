@@ -39,3 +39,7 @@ location:
   lon: 14.55919
   scope: site
   icon: bay
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-10
+    step: started
+    note: "Worker B, attempt 1: blocked on source. The record joins two statements: the Prime Minister's of 22 Feb 2022 (Business Now quotes 'the best decision is for this project to stop at once') and the Planning Authority's of 3-4 May 2024 (relayed without quotation marks: it 'has started the process' to withdraw policy SMMS-04). 'Shelved' is the record's paraphrase. Needed: the PA's notice of withdrawal and its outcome."

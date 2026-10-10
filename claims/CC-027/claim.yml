@@ -46,5 +46,8 @@ location:
   icon: castille
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-05
+    step: started
+    note: "Worker C, attempt 1: blocked on source. Lovin Malta paraphrases the Energy Minister with no quoted words; the 'not a lack of generation' contrast, the Prime Minister's statement and the EUR 161 million figure are not in it. Needed: a dated primary text (press release, Hansard or interview transcript)."
+  - date: 2026-10-05
     step: note
     note: "Record corrected: the statements are from 21 July 2026 (TVM News interview with the Prime Minister; Lovin Malta on the Energy Minister), not July 2024. Both report the words as indirect speech; a transcript of the TVM interview or a press release is still needed."
