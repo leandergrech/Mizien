@@ -2,7 +2,7 @@ id: CC-061
 title: 260 homes 30% below market
 category: Planning & Housing
 subtopic: Housing & affordability
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -38,3 +38,7 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-11
+    step: started
+    note: "Worker A, attempt 1: blocked on source. The Budget Speech 2026 PDF (finance.gov.mt) is 403 to scripts and Wayback is unreachable; readable copies are property-agent summaries that paraphrase the 260 homes at 'around 30% below market rates' without quotation marks. The scheme was announced earlier by the PM's Office (7 Jul 2025 release, seen only as a search summary: about 260 units, about 30% below market value, sites in Kirkop, Fgura, St Julian's and Marsaskala; second-hand). Needed: the speech passage in the minister's words (browser) so the check can quote the speaker."

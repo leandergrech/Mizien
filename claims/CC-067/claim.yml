@@ -2,7 +2,7 @@ id: CC-067
 title: Marsalforn 12 storeys
 category: Planning & Housing
 subtopic: Heritage & character
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -38,3 +38,7 @@ location:
   lon: 14.25981
   scope: site
   icon: saltpans
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-11
+    step: started
+    note: "Worker A, attempt 1: verbatim wording found, check blocked on documents. Momentum's own press release (9 Jan 2026, partitmomentum.org) was read in full: it opposes 'a development of up to twelve storeys on the Calypso Hotel site in Marsalforn' that 'marks another step in the steady erosion of Gozo's character and skyline', says 'no comprehensive capacity assessment has ever been carried out' for Gozo, and says the PN leader 'has publicly stated that Gozo, too, should have high-rise buildings'. The Gozo Regional Development Strategy (GRDA, Sept 2023, read) lists 'Re-visiting Gozo Carrying Capacity' as an action and calls for efforts 'towards assessing' stress points on infrastructure: consistent with no completed assessment but not proof of absence. Not testable from readable sources: the application itself (heights, status), the Gozo height limits and 2014 FAR policy, and the PN leader's statements and later correction (all behind refused hosts or second-hand). Needed: those documents in a browser."

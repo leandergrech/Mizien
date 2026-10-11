@@ -2,7 +2,7 @@ id: CC-064
 title: Grand Harbour regeneration
 category: Planning & Housing
 subtopic: Development & construction
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -38,3 +38,7 @@ location:
   lon: 14.51731
   scope: site
   icon: gardjola
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-11
+    step: started
+    note: "Worker A, attempt 1: blocked on source. Malta Business Weekly (5 Feb 2026, read in full) reports the PM's launch of the Grand Harbour Revival Plan in indirect speech (communities, particularly Marsa, to be prioritised; no commercial activities eliminated); the 'fundamental character' wording was not found. The MaltaToday original, the GHRC press release and the consultation document are 403 to scripts. Needed: the PM's statement in his own words (GHRC release or MaltaToday text) and the Grand Harbour Revival Plan consultation PDF."
