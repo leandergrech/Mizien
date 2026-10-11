@@ -2,7 +2,7 @@ id: CC-074
 title: 8,144 EV grants
 category: Transport
 subtopic: Cars & traffic
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -38,3 +38,7 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-11
+    step: started
+    note: "Worker B, attempt 1: blocked on source. TVM News (9 Jan 2025) reports the 8,144 grants and over EUR 69 million for the last three years only as indirect speech (no quotation marks); Newsbook and a later TVM piece give nearly 9,000 grants and nearly EUR 70 million for 2022-2024, so the figures differ between reports. The Transport Malta page and press release are unreachable to scripts (403) and Wayback reset. Needed: the Transport Malta statement text (January 2025)."
