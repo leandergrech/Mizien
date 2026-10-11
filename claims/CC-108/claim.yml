@@ -1,70 +1,127 @@
 id: CC-108
-title: 'WSC: a net-zero impact on groundwater'
+title: Net-zero impact on the groundwater environment
 category: Water
 subtopic: Water supply & groundwater
-status: Not started
+status: Drafted
 verdict: null
 verdict_confidence: null
 claim:
-  text: 'The Water Services Corporation says its Net Zero Impact Utility project (EU co-financed) will give back to the
-    environment at least as much natural freshwater as it abstracts, minimising its impact on the water environment.
-    Government proposals on groundwater abstraction (reported as the Energy and Water Agency''s Green Paper, 2023)
-    exempt WSC''s boreholes from new groundwater tariffs because WSC is said to be moving towards a net-zero impact on
-    the groundwater environment, with its abstraction capped at 14 million m3 a year to 2030.'
-  speaker: Water Services Corporation; Energy and Water Agency
-  date: '2023'
-  wording_status: 'Paraphrase: locate quote'
+  text: 'Energy and Water Agency (Green Paper on groundwater abstraction, Nov 2023): the proposed Groundwater Abstraction
+    Licensing Framework will not apply to groundwater sources operated by the Water Services Corporation, given that the Corporation
+    is moving towards a net-zero impact on the groundwater environment; its annual groundwater abstraction will be capped
+    at 14 Mm3 up to 2030.'
+  speaker: Energy and Water Agency (EWA)
+  date: 2023-11
+  wording_status: Verbatim found
   sources:
-  - title: European Commission Endorses WSC's 'Net Zero-Impact' Utility Project
-    publisher: Water Services Corporation
-    date: n/d
-    url: https://www.wsc.com.mt/european-commission-endorses-wscs-net-zero-impact-utility-project/
-    note: 'Wording from a search summary (5 Oct 2026): "giving back to the environment at least an equivalent volume of
-      the abstracted natural freshwater resources". wsc.com.mt shows a bot challenge to scripts; read in a browser.'
-  - title: 'Towards a Net Zero-Impact Utility: new EUR 100 million EU-funded project'
-    publisher: Water Services Corporation
-    date: n/d
-    url: https://www.wsc.com.mt/towards-a-net-zero-impact-utility-new-e100-million-eu-funded-project-set-to-improve-water-quality-to-all-new-highs/
-    note: Project launch page; read in a browser for the project's targets and timeline.
   - title: Green Paper on the Regulation of Groundwater Abstraction in the Maltese Islands
     publisher: Energy and Water Agency
-    date: Nov 2023
+    date: 2023-11
     url: https://energywateragency.gov.mt/wp-content/uploads/2023/11/GREEN-PAPER.pdf
-    note: 'Likely primary source for the tariff exemption and the 14 million m3 cap (per a search summary: WSC "is moving
-      towards the achievement of a net-zero impact on the groundwater environment"). The Agency''s site shows a bot
-      challenge to scripts; read in a browser and confirm the wording and page.'
-  - title: 'Free no more: a price tag on groundwater'
-    publisher: MaltaToday
-    date: n/d
-    url: https://www.maltatoday.com.mt/environment/planning/126318/free_no_more_a_price_tag_on_groundwater
-    note: Locator for the tariff exemption and the 14 million m3 cap. Returns 403 to scripts.
-counter_evidence: 'Not yet checked. Context from CC-009: WSC''s groundwater production fell to about 11.5 million m3 in
-  2025 while national fresh groundwater abstraction was about 38.5 million m3 in 2024 (Eurostat, estimates), mostly by
-  agriculture; Malta''s 3rd-cycle EU reporting lists 4 of 15 groundwater bodies in poor quantitative status and all 15 in
-  poor chemical status. A net-zero impact claim needs a defined balance (what is "given back", where, and how it is
-  measured), not only lower WSC abstraction.'
-tests: 'WSC annual reports (groundwater production, New Water volumes supplied and their use in place of groundwater);
-  the project''s own targets and EU (Cohesion Fund) monitoring indicators; the Green Paper and any later abstraction
-  regulation; Eurostat env_wat_abs and env_wat_res; groundwater-body status (EEA WISE); Sapiano 2020 water balance.'
-why_low_hanging: Follows directly from CC-009 (maintainer request, 5 Oct 2026); most data are already in data/cc-009/.
-  The question is whether "net-zero impact" is defined and measured, and whether the balance holds.
-tags: []
-tags_provisional: true
-priority: Queue
+    note: Primary wording, p. 12 (printed spread numbers). Read in full 11 Oct 2026; PDF sha256 c75845a6...ed447.
+  - title: Integrated Water Resources Management in the Maltese Islands (Sapiano 2020, p. 31)
+    publisher: Acque Sotterranee 9(3)
+    date: '2020'
+    url: https://doi.org/10.7343/as-2020-477
+    note: Agency author's description of the net-zero impact concept (give back at least as much water as is abstracted).
+  - title: European Commission Endorses WSC's 'Net Zero-Impact' Utility Project
+    publisher: Water Services Corporation
+    date: '2019-04-02'
+    url: https://www.wsc.com.mt/european-commission-endorses-wscs-net-zero-impact-utility-project/
+    note: Read live 11 Oct 2026. Context (4 billion litres; 7 billion litres of recycled water). Does not contain the "equivalent
+      volume" wording.
+  - title: 'Towards a Net Zero-Impact Utility: new EUR 100 million EU-funded project'
+    publisher: Water Services Corporation
+    date: '2018-04-16'
+    url: https://www.wsc.com.mt/towards-a-net-zero-impact-utility-new-e100-million-eu-funded-project-set-to-improve-water-quality-to-all-new-highs/
+    note: Read live 11 Oct 2026. Context; no give-back wording.
+  - title: Closing the water loop
+    publisher: Sustain Europe (unsigned)
+    date: '2018-11-06'
+    url: https://www.sustaineurope.com/closing-the-water-loop-%E2%80%93-improving-the-sustainability-of-malta%E2%80%99s-water-resources-20181105.html
+    note: Carries the "at least an equivalent volume" wording without naming a speaker; not rated.
+  quote: given that the Corporation is moving towards the achievement of a net-zero impact on the groundwater environment
+    through its operations
+counter_evidence: WSC groundwater production was 11.5 million m3 in 2025 (82% of the proposed 14 cap) and 13.5 in 2016 (96%);
+  the cap sits 4% above the highest year read. New Water (treated wastewater) was 1.6 million m3 in 2022 (13% of WSC's abstraction,
+  meant for crop irrigation); no recharge figure found. The Green Paper says good quantitative status 'will not be achieved'
+  for the main sea-level aquifers and that WSC's falling abstraction partly reflects aquifer degradation; 4 of 15 groundwater
+  bodies are in poor quantitative status (EEA WISE, assessed 2021).
+tests: WSC annual reports (groundwater production); Green Paper; Sapiano 2020; Eurostat env_wat_abs and env_wat_res; EEA WISE
+  groundwater-body status.
+why_low_hanging: Follows directly from CC-009 (maintainer request, 5 Oct 2026); most data are already in data/cc-009/. The
+  question is whether "net-zero impact" is defined and measured, and whether the balance holds.
+tags:
+- Promise-without-baseline
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'Medium: Eurostat and EEA reachable; WSC and EWA pages are browser-only (bot challenge).'
-caveats: 'Candidate added 5 Oct 2026 at the maintainer''s request, as the speaker-level counterpart to CC-009 (no quoted
-  speaker there claims recovery). Wording is from search summaries: read the WSC pages and the Green Paper in a browser
-  and record the verbatim text before any report. Check whether "net-zero impact" is a target (pledge) or a claim of
-  achievement.'
-right_of_reply:
-  sent: null
-  deadline: null
-  response: null
+caveats: 'Pending right of reply (Energy and Water Agency; Water Services Corporation). The Green Paper is a consultation
+  proposal; whether the cap and exemption were adopted was not found. The candidate record''s ''give back at least as much
+  natural freshwater'' wording (from a search summary) is not on either WSC page read and is not rated as WSC''s statement.
+  WSC production for 2017-2021 not read; 2022-25 values are chart values transcribed for CC-009. Related: CC-039 (WSC''s 4
+  billion litre pledge), CC-009.'
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Pembroke reverse osmosis plant
   lat: 35.93211
   lon: 14.48285
   scope: site
   icon: ro_plant
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-108A
+    text: "WSC’s annual groundwater abstraction “will be capped at a maximum level of 14 Mm³ up to 2030”"
+    said_by: "Energy and Water Agency [1]"
+    finding: "Production was 11.5 million m³ in 2025 (82% of the cap) and below 14 in every year read (highest 13.5 in 2016). The cap is 4% above that highest year; a proposal, adoption not found."
+    rating: "Within cap so far"
+    tone: green
+  - id: CC-108B
+    text: "WSC “is moving towards the achievement of a net-zero impact on the groundwater environment”"
+    said_by: "Energy and Water Agency [1]"
+    finding: "No definition, baseline or date. Abstraction is 15% below 2016, but part of the fall reflects aquifer degradation [1]; New Water (1.6 million m³ in 2022) and unquantified recharge do not yet show a balance; sea-level aquifers still poor."
+    rating: "Not measurable as worded"
+    tone: grey
+version: '1.0'
+last_reviewed: '2026-10-11'
+thumbnail:
+  figure: '11.5'
+  caption: million m3 of groundwater taken by WSC in 2025 (proposed cap 14; net-zero aim not measurable)
+pledge:
+  status: Not measurable
+  kind: target
+  as_of: '2026-10-11'
+  made_by:
+  - energy-water-agency
+  made_on: 2023-11
+  vehicle: Green Paper on the Regulation of Groundwater Abstraction in the Maltese Islands (EWA, Nov 2023)
+  deadline: '2030-12-31'
+  target: WSC annual groundwater abstraction capped at 14 Mm3 up to 2030; WSC 'moving towards' net-zero impact on the groundwater
+    environment
+  note: The cap is met so far (11.5 million m3 in 2025) but sits near the highest year read; the net-zero aim has no definition,
+    baseline or date.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+history:
+- date: '2026-10-11'
+  step: started
+  note: Candidate taken by worker C. Green Paper PDF, both WSC pages and Sapiano 2020 read; Wayback unreachable (connection
+    reset).
+- date: '2026-10-11'
+  step: wording
+  note: Verbatim wording found in the Green Paper p. 12 (exemption reason and 14 Mm3 cap). The "equivalent volume" wording
+    from the candidate record is not on either WSC page; found only in an unsigned Sustain Europe article (2018), not attributed.
+- date: '2026-10-11'
+  step: note
+  note: Calculations in tools/cc-108-report/calc.py from data/cc-108/inputs.csv (WSC series from CC-039/CC-009, Eurostat,
+    Green Paper, WSC 2019 release). Search for the outcome of the Green Paper (1 web search) found nothing on adoption.
+- date: '2026-10-11'
+  step: version
+  version: '1.0'
+  note: 'First issue. Pledge label: not measurable. Draft pending right of reply.'

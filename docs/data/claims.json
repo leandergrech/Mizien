@@ -561,20 +561,11 @@
       "similar": [
         {
           "id": "CC-046",
-          "score": 0.55,
+          "score": 0.56,
           "terms": [
             "osmosis",
-            "reverse",
-            "wsc"
-          ]
-        },
-        {
-          "id": "CC-108",
-          "score": 0.26,
-          "terms": [
             "wsc",
-            "groundwater",
-            "water"
+            "reverse"
           ]
         }
       ]
@@ -1365,7 +1356,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.49,
+          "score": 0.48,
           "terms": [
             "square",
             "metres",
@@ -2786,16 +2777,16 @@
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.62,
+          "score": 0.63,
           "terms": [
-            "impact",
+            "corporation",
             "abstraction",
-            "net"
+            "impact"
           ]
         },
         {
           "id": "CC-101",
-          "score": 0.3,
+          "score": 0.31,
           "terms": [
             "abstraction",
             "impact",
@@ -3173,11 +3164,11 @@
       "similar": [
         {
           "id": "CC-009",
-          "score": 0.55,
+          "score": 0.56,
           "terms": [
             "osmosis",
-            "reverse",
-            "wsc"
+            "wsc",
+            "reverse"
           ]
         }
       ]
@@ -3567,7 +3558,7 @@
       "similar": [
         {
           "id": "CC-019",
-          "score": 0.49,
+          "score": 0.48,
           "terms": [
             "square",
             "metres",
@@ -3750,7 +3741,7 @@
       "similar": [
         {
           "id": "CC-057",
-          "score": 0.66,
+          "score": 0.65,
           "terms": [
             "trees",
             "central",
@@ -3799,7 +3790,7 @@
       "similar": [
         {
           "id": "CC-056",
-          "score": 0.66,
+          "score": 0.65,
           "terms": [
             "trees",
             "central",
@@ -4462,7 +4453,7 @@
       "similar": [
         {
           "id": "CC-115",
-          "score": 0.25,
+          "score": 0.26,
           "terms": [
             "cost",
             "traffic",
@@ -5434,7 +5425,7 @@
       "similar": [
         {
           "id": "CC-103",
-          "score": 0.56,
+          "score": 0.58,
           "terms": [
             "deaths",
             "heat",
@@ -5769,7 +5760,7 @@
       "similar": [
         {
           "id": "CC-109",
-          "score": 0.31,
+          "score": 0.29,
           "terms": [
             "sharing",
             "effort",
@@ -6235,7 +6226,7 @@
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.35,
+          "score": 0.36,
           "terms": [
             "abstraction",
             "groundwater",
@@ -6244,7 +6235,7 @@
         },
         {
           "id": "CC-039",
-          "score": 0.3,
+          "score": 0.31,
           "terms": [
             "abstraction",
             "impact",
@@ -6345,7 +6336,7 @@
       "similar": [
         {
           "id": "CC-090",
-          "score": 0.56,
+          "score": 0.58,
           "terms": [
             "deaths",
             "heat",
@@ -6639,13 +6630,15 @@
     },
     {
       "id": "CC-108",
-      "title": "WSC: a net-zero impact on groundwater",
+      "title": "Net-zero impact on the groundwater environment",
       "category": "Water",
-      "claim": "The Water Services Corporation says its Net Zero Impact Utility project (EU co-financed) will give back to the environment at least as much natural freshwater as it abstracts, minimising its impact on the water environment. Government proposals on groundwater abstraction (reported as the Energy and Water Agency's Green Paper, 2023) exempt WSC's boreholes from new groundwater tariffs because WSC is said to be moving towards a net-zero impact on the groundwater environment, with its abstraction capped at 14 million m3 a year to 2030.",
-      "counter": "Not yet checked. Context from CC-009: WSC's groundwater production fell to about 11.5 million m3 in 2025 while national fresh groundwater abstraction was about 38.5 million m3 in 2024 (Eurostat, estimates), mostly by agriculture; Malta's 3rd-cycle EU reporting lists 4 of 15 groundwater bodies in poor quantitative status and all 15 in poor chemical status. A net-zero impact claim needs a defined balance (what is \"given back\", where, and how it is measured), not only lower WSC abstraction.",
-      "status": "Not started",
+      "claim": "Energy and Water Agency (Green Paper on groundwater abstraction, Nov 2023): the proposed Groundwater Abstraction Licensing Framework will not apply to groundwater sources operated by the Water Services Corporation, given that the Corporation is moving towards a net-zero impact on the groundwater environment; its annual groundwater abstraction will be capped at 14 Mm3 up to 2030.",
+      "counter": "WSC groundwater production was 11.5 million m3 in 2025 (82% of the proposed 14 cap) and 13.5 in 2016 (96%); the cap sits 4% above the highest year read. New Water (treated wastewater) was 1.6 million m3 in 2022 (13% of WSC's abstraction, meant for crop irrigation); no recharge figure found. The Green Paper says good quantitative status 'will not be achieved' for the main sea-level aquifers and that WSC's falling abstraction partly reflects aquifer degradation; 4 of 15 groundwater bodies are in poor quantitative status (EEA WISE, assessed 2021).",
+      "status": "Drafted",
       "verdict": null,
-      "tags": [],
+      "tags": [
+        "Promise-without-baseline"
+      ],
       "subtopic": "Water supply & groundwater",
       "location": {
         "place": "Pembroke reverse osmosis plant",
@@ -6654,45 +6647,95 @@
         "scope": "site",
         "icon": "ro_plant"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
       "confidence": null,
-      "speaker": "Water Services Corporation; Energy and Water Agency",
+      "speaker": "Energy and Water Agency (EWA)",
       "bodies": [
-        "wsc",
         "energy-water-agency"
       ],
-      "date": "2023",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-108A",
+          "text": "WSC’s annual groundwater abstraction “will be capped at a maximum level of 14 Mm³ up to 2030”",
+          "finding": "Production was 11.5 million m³ in 2025 (82% of the cap) and below 14 in every year read (highest 13.5 in 2016). The cap is 4% above that highest year; a proposal, adoption not found.",
+          "rating": "Within cap so far",
+          "tone": "green"
+        },
+        {
+          "id": "CC-108B",
+          "text": "WSC “is moving towards the achievement of a net-zero impact on the groundwater environment”",
+          "finding": "No definition, baseline or date. Abstraction is 15% below 2016, but part of the fall reflects aquifer degradation [1]; New Water (1.6 million m³ in 2022) and unquantified recharge do not yet show a balance; sea-level aquifers still poor.",
+          "rating": "Not measurable as worded",
+          "tone": "grey"
+        }
+      ],
+      "pledge": {
+        "status": "Not measurable",
+        "slug": "pledge-not-measurable",
+        "colour": "#b0b8c1",
+        "ink": "#13301f",
+        "as_of": "11 October 2026",
+        "as_of_iso": "2026-10-11",
+        "made_on": "November 2023",
+        "made_mid": "2023-11-15",
+        "deadline_mid": "2030-12-31",
+        "deadline": "31 December 2030",
+        "term_end": null,
+        "target": "WSC annual groundwater abstraction capped at 14 Mm3 up to 2030; WSC 'moving towards' net-zero impact on the groundwater environment",
+        "vehicle": "Green Paper on the Regulation of Groundwater Abstraction in the Maltese Islands (EWA, Nov 2023)",
+        "occasion": "Green Paper on the Regulation of Groundwater Abstraction in the Maltese Islands (EWA",
+        "note": "The cap is met so far (11.5 million m3 in 2025) but sits near the highest year read; the net-zero aim has no definition, baseline or date.",
+        "made_by": [
+          {
+            "id": "energy-water-agency",
+            "name": "Energy and Water Agency",
+            "kind": "organisation",
+            "role": null,
+            "path": "/bodies/energy-water-agency/"
+          }
+        ],
+        "made_by_ids": [
+          "energy-water-agency"
+        ],
+        "pure": true,
+        "overlaps": [],
+        "kind": "target",
+        "kind_label": "Institutional target",
+        "cycle": "2022",
+        "cycle_label": "2022–26",
+        "follows": [],
+        "follows_search": null,
+        "drift": null,
+        "source_of_commitment": null
+      },
+      "date": "2023-11",
+      "quote": "given that the Corporation is moving towards the achievement of a net-zero impact on the groundwater environment through its operations",
+      "version": "1.0",
+      "last_reviewed": "2026-10-11",
+      "outputs": {
+        "report": "claim-files/CC-108/report.pdf",
+        "flyer_pdf": "claim-files/CC-108/flyer.pdf",
+        "flyer_png": "claim-files/CC-108/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-108/claim.yml",
       "similar": [
         {
           "id": "CC-039",
-          "score": 0.62,
+          "score": 0.63,
           "terms": [
-            "impact",
+            "corporation",
             "abstraction",
-            "net"
-          ]
-        },
-        {
-          "id": "CC-101",
-          "score": 0.35,
-          "terms": [
-            "abstraction",
-            "groundwater",
             "impact"
           ]
         },
         {
-          "id": "CC-009",
-          "score": 0.26,
+          "id": "CC-101",
+          "score": 0.36,
           "terms": [
-            "wsc",
+            "abstraction",
             "groundwater",
-            "water"
+            "impact"
           ]
         }
       ]
@@ -6765,7 +6808,7 @@
       "similar": [
         {
           "id": "CC-094",
-          "score": 0.31,
+          "score": 0.29,
           "terms": [
             "sharing",
             "effort",
@@ -7182,7 +7225,7 @@
       "similar": [
         {
           "id": "CC-071",
-          "score": 0.25,
+          "score": 0.26,
           "terms": [
             "cost",
             "traffic",
@@ -8212,6 +8255,13 @@
       "to": "CC-107",
       "theme": "T17",
       "link_type": "Shared target",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-039",
+      "to": "CC-108",
+      "theme": "T3",
+      "link_type": "Shared driver",
       "strength": "Strong"
     }
   ],
@@ -10294,22 +10344,24 @@
         {
           "id": "european-commission",
           "named": 0,
-          "pairs": 5,
+          "pairs": 4,
           "themes": [
             "T3"
           ]
-        },
-        {
-          "id": "energy-water-agency",
-          "named": 1,
-          "pairs": 0,
-          "themes": []
         },
         {
           "id": "government-of-malta",
           "named": 1,
           "pairs": 0,
           "themes": []
+        },
+        {
+          "id": "energy-water-agency",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T3"
+          ]
         },
         {
           "id": "maltatoday",
@@ -10602,8 +10654,8 @@
       "links": [
         {
           "id": "wsc",
-          "named": 1,
-          "pairs": 1,
+          "named": 0,
+          "pairs": 2,
           "themes": [
             "T3"
           ]
@@ -12590,7 +12642,7 @@
         {
           "id": "wsc",
           "named": 0,
-          "pairs": 5,
+          "pairs": 4,
           "themes": [
             "T3"
           ]
@@ -13046,6 +13098,14 @@
       "a": "CC-031",
       "b": "CC-107",
       "why": [
+        "share a theme"
+      ]
+    },
+    {
+      "a": "CC-039",
+      "b": "CC-108",
+      "why": [
+        "same subtopic (Water supply & groundwater)",
         "share a theme"
       ]
     },
