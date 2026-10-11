@@ -2,7 +2,7 @@ id: CC-080
 title: EUR 75m organic plant
 category: Waste
 subtopic: Recycling & separation
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -38,3 +38,7 @@ location:
   lon: 14.44073
   scope: site
   icon: landfill
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-11
+    step: started
+    note: "Worker B, attempt 1: blocked on source. Newsbook gives 74,000 tonnes a year only as indirect speech ('According to WasteServ'), and its article dates from the March 2025 tender announcement, not April 2026 as the record says. The 2026 works/contract statement (publicservice.gov.mt) is 403. Needed: the WasteServ statement text and its date."
