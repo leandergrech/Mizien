@@ -1275,6 +1275,36 @@ CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commi
 - Queue: new claims spread across workers A/B/C (open loads 28/27/27). Several claims overlap earlier ones by design (CC-025/CC-094 with CC-003; CC-081 with CC-004; CC-041-043 with CC-005).
 - Site and UI changes (Għanqbuta rename, subtopic sub-hubs, Eleventy build) are owned by the mizien-60 session; do not edit docs/index.html or scripts without checking with it.
 
+## Weekly intake 2026-10-11 (CC-117 to CC-123)
+
+Seven candidates added, not ten: the searches turned up few further specific, checkable, non-duplicate statements (the October 2026 budget is not yet delivered; the pre-budget energy figures duplicate CC-095; OHSA, BirdLife, ADPD and Council transport items duplicate CC-091, CC-050, CC-094/114 and CC-115), and padding was avoided. All are `Not started`, verdict null. Four of the seven are EU speakers.
+
+| ID | Topic / subtopic | Side | Claim | Wording | Source host reachable |
+|---|---|---|---|---|---|
+| CC-117 | Waste / Recycling & separation | EU (Commission) | Reasoned opinion (8 Jul 2026): Malta missed the 2020 50% municipal recycling target and packaging, paper and cardboard and metals targets | Paraphrase: locate quote | Yes |
+| CC-118 | Water / Water supply & groundwater | EU (Council) | WEI+ 66.7% in Q3 2023 (second-highest); 82% of groundwater bodies fail quantity, 100% chemical | Verbatim found (draft Council Recommendation, 3 Jul 2026) | Yes |
+| CC-119 | Climate & Energy / Renewables | EU (Council) | Renewables 17.2% of final energy (2024), 16.7% of electricity (2025), almost all solar, no wind or hydro | Verbatim found | Yes |
+| CC-120 | Noise | EU (EP commissioned study) | 54 000 exposed to road noise over 55 dB Lden, likely underestimated; lowest absolute noise-related deaths | Verbatim found | Yes |
+| CC-121 | Planning & Housing / Heritage & character | NGO (Din l-Art Ħelwa) | Excelsior extension: unacceptable visual impact on Grade 1 bastions; 1,200 m2 of open space lost | Paraphrase: locate quote | Partly (Shift yes; MaltaToday 403) |
+| CC-122 | Tourism & Population / Tourism numbers & capacity | Media (The Shift) | Applications for an estimated 30,000 additional hotel beds | Paraphrase: locate quote | Yes (PA registers may be browser-only) |
+| CC-123 | Planning & Housing / Development & construction | Business (KPMG for the MDA) | 8,716 residential units approved in 2024 (+7.4%); 5,170 permits in H1 2025 (+9.7%) | Verbatim found | Partly (assets.kpmg.com gave 404 to net_check; WebFetch read it) |
+
+- **Queue:** CC-117 to C, CC-118 to C, CC-119 to A, CC-120 to C, CC-121 to A, CC-122 to B, CC-123 to C. Open unblocked loads before 4/5/2 (A/B/C), after 6/6/6 (the 6 Oct list left C short).
+- **Taxonomy:** no category added or renamed; no new subtopic (all reuse existing names; Noise still has none).
+- **Patterns:** no new tag; the new claims carry none. Candidate for a later tag (needs at least two claims): pipeline-as-capacity, applications or permits counted as built stock (CC-122 here, CC-085 and CC-123's permits-versus-units wording). Nothing retagged.
+- **Themes and edges:** CC-118 added to T3, CC-117 to T5, CC-120 to T13, CC-121 to T15, CC-122 to T10, CC-123 to T8. New T18 Renewables delivery (CC-024, CC-029, CC-119), Weak (indicative). 23 edges added (164 total), only between claims that speak to the same issue for the large themes (T3, T5, T8, T10), as on 5 Oct; all pairs for T13, T15, T18. `Linked claims (count)` recounted by the build.
+- **Register:** `council-eu` (Council of the European Union) and `din-l-art-helwa` (Din l-Art Ħelwa) added to `data/bodies.csv`.
+- **Coverage (claims per topic, before to after):** Climate & Energy 16 to 17, Planning & Housing 13 to 15, Water 13 to 14, Tourism & Population 11 to 12, Waste 7 to 8, Noise 3 to 4; others unchanged (Transport 15, Land & Trees 11, Nature 9, Air 8, Governance 6, Health 4). Sides by body type: Government 48, Agencies 23, Regulators 18, EU and international 11 to 15, Parties 14, Business 12 to 13, Media 10 to 11, NGOs 7 to 8, Research 3, Oversight 2. Local speakers 105 to 108; EU, international and foreign speakers 11 to 15. NGOs remain the least covered side (8), then Noise (4) and Health & Safety (4). No government or party claim qualified this week; the 26 Oct 2026 Budget 2027 speech is the next likely source.
+- **Queue state:** 110 claims in the queue; 36 rows carry a `source:` or `needs maintainer` blocker (unchanged by this intake).
+- **Follow-ups (not changed):** CC-118 and CC-119 are from a draft Council text (11130/26): record the adopted text. CC-119's 16.7% electricity share for 2025 differs in year from the 10.7% recorded in CC-114. CC-120 is the same study as CC-020 but a separate claim. CC-123 is the same KPMG report as CC-062. CC-121: the appeal is before the Environment and Planning Review Tribunal, so science only. The Council recital also gives a congestion cost of EUR 917 million by 2030 (the National Transport Master Plan figure behind CC-115) and 58% of residents never using public transport in 2024; neither was added as a claim.
+- **Considered and excluded:** Commission water-abstraction notice (already CC-101), recycling rate 16.7% vs EU 48% and fossil subsidies 1% of GDP in the same Council text (near-duplicates of CC-111, CC-004, CC-113), BirdLife on ORNIS penalties (CC-050), FoE Malta on the Chevron licence (a decision, not a checkable statement), ADPD May 2026 pollution statements (CC-105), OHSA 2025 report (CC-091), the Malta Chamber's pre-budget energy remark (no figure), INFR(2026)2151 on outdoor-equipment noise (procedural).
+- **Network:** `net_check.py` reported Crossref, ec.europa.eu and EEA reachable and Wayback reset; MaltaToday gave 403, and the Independent, MaltaToday and State Department pages gave 403 to WebFetch.
+
+### Needs maintainer (weekly intake 2026-10-11)
+- CC-121: Din l-Art Ħelwa's own words (the appeal or its press release, date) into `literature/CC-121/primary-source.md`; MaltaToday returns 403.
+- CC-117: confirm the Commission's wording against the decision text if the worker cannot reach the press-corner entry.
+- Standing blockers: queue rows starting `source:` or `needs maintainer` (36, unchanged; see the 4 and 5 Oct lists).
+
 ## Weekly intake 2026-10-05 (CC-109 to CC-116)
 
 Eight candidates added, not ten: the searches found few further specific, checkable, non-duplicate statements, and padding was avoided. All are `Not started`, verdict null. Six of the eight come from EU, international or foreign-institution speakers or are about them (the collection was skewed to local speakers).
