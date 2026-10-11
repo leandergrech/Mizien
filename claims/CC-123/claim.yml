@@ -1,0 +1,52 @@
+id: CC-123
+title: 'KPMG: 8,716 residential units approved in 2024, up 7.4%'
+category: Planning & Housing
+subtopic: Development & construction
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'KPMG, Construction Industry and Property Market Report 2025, commissioned by the Malta Development Association (Dec
+    2025, section 2.1), citing NSO data: 8,716 residential units were granted approval in 2024, a 7.4% increase on 2023, and
+    5,170 permits were sanctioned in January to June 2025, a 9.7% year-on-year increase, so the 2025 total is expected to
+    surpass 2024.'
+  speaker: KPMG
+  date: 2025-12
+  wording_status: Verbatim found
+  sources:
+  - title: Construction Industry and Property Market Report 2025 (section 2.1 Residential permits, PDF p. 37)
+    publisher: KPMG for the Malta Development Association
+    date: 2025-12
+    url: https://assets.kpmg.com/content/dam/kpmgsites/mt/pdf/2025/12/kpmg-mda-construction-industry-and-property-market-report-2025.pdf
+    note: The claim. Text extracted and read on 11 Oct 2026; not committed (copyright). The same report is the source of CC-062.
+  quote: According to data published by the NSO, a total of 8,716 residential units were granted approval in 2024, representing
+    a 7.4% increase compared with 2023 ... Between January and June 2025, 5,170 permits were sanctioned, reflecting a significant
+    year-on-year increase of 9.7%.
+counter_evidence: MaltaToday, reporting parliamentary data, gave total building permits falling from a 2018 peak of 2,868
+  to 1,749 in 2024; permits and dwelling units are different counts (one permit can cover many units), and the report moves
+  from 'units' (2024) to 'permits' (H1 2025). The report itself says the full-year projection assumes the first-half growth
+  continues. Developers cite bureaucracy and labour shortages for delays (MDA, reported).
+tests: NSO development permits / residential permits releases (units approved by year and half-year); Planning Authority permit
+  statistics; Eurostat building permits (sts_cobp_a or equivalent) for the index of dwellings permitted; compare the NSO and
+  parliamentary counts and the units-versus-permits definitions.
+why_low_hanging: An annual unit count from the NSO that can be re-read directly and set against a conflicting permits series.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium to high: the report was read as text via WebFetch on 11 Oct 2026, but net_check.py reported assets.kpmg.com as 404 to a scripted request; a worker may need the file supplied. NSO and Eurostat are reachable.'
+caveats: Candidate from the weekly intake of 11 Oct 2026. The claimant is KPMG; the report was commissioned by the Malta Development
+  Association, a developers' body, and the MDA's endorsement of this section is not recorded. The figures restate NSO data,
+  so the check is of the restatement and the units/permits wording. Related to CC-062 (same report) and CC-013, CC-019 in
+  subject.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

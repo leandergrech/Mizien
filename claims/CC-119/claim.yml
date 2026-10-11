@@ -1,0 +1,54 @@
+id: CC-119
+title: 'Council: renewables 17.2% of energy, almost all solar'
+category: Climate & Energy
+subtopic: Renewables
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Council of the European Union (draft Council Recommendation on Malta, 3 Jul 2026, para. 25): Malta''s share of renewables
+    in gross final energy consumption (17.2% in 2024) and in the electricity mix (16.7% in 2025) remains very low and well
+    below the EU average; renewable generation comes almost exclusively from solar, with a very small part from biomass, and
+    no wind or hydropower generation has been recorded.'
+  speaker: Council of the European Union
+  date: '2026-07-03'
+  wording_status: Verbatim found
+  sources:
+  - title: Council Recommendation on the economic, social, employment, structural and budgetary policies of Malta (draft,
+      11130/26)
+    publisher: Council of the European Union, General Secretariat
+    date: '2026-07-03'
+    url: https://data.consilium.europa.eu/doc/document/ST-11130-2026-INIT/en/pdf
+    note: The claim, recital (25). Full text extracted and read on 11 Oct 2026. Draft note; check the adopted text.
+  quote: Malta's share of renewables in gross final energy consumption (17.2% in 2024) and in the electricity mix (16.7% in
+    2025) remains very low and well below the EU average. The renewable energy generation is almost exclusively coming from
+    solar energy, with a very small part of biomass/combustible renewable fuels, and with no wind or hydropower generation
+    recorded.
+counter_evidence: CC-114 (finished) reports the overall renewables share as 17.2% in 2024 and an electricity share of 10.7%
+  for an earlier year, so the 16.7% for 2025 needs a year-matched series. The Government's 2030 target (CC-024) and the floating
+  offshore wind farm (CC-029, 'ready by 2033' in the same recital) are the policy context. The 2025 electricity figure may
+  be provisional or from national data rather than Eurostat.
+tests: Eurostat SHARES / nrg_ind_ren (overall share 2024, Malta against EU); Eurostat nrg_ind_peh or Ember data for the renewable
+  electricity share in 2025; Eurostat nrg_bal_peh for generation by source (solar, biomass, wind, hydro); Enemalta and Energy
+  and Water Agency generation data; the NECP 2021-2030 target.
+why_low_hanging: Percentages and a statement of absence (no wind or hydro) that Eurostat generation statistics can confirm
+  directly.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat is reachable; the Council document was read as text.'
+caveats: Candidate from the weekly intake of 11 Oct 2026. Draft Council text of 3 July 2026; check the adopted version. The
+  2025 electricity share is a very recent figure and its source is not named in the recital. Offshore wind 'by 2033' is a
+  stated plan, not a claim to be graded here.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

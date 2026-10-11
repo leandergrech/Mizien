@@ -274,7 +274,7 @@
       "similar": [
         {
           "id": "CC-025",
-          "score": 0.4,
+          "score": 0.39,
           "terms": [
             "capita",
             "emissions"
@@ -361,7 +361,7 @@
       "similar": [
         {
           "id": "CC-081",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "management",
             "waste",
@@ -561,7 +561,7 @@
       "similar": [
         {
           "id": "CC-046",
-          "score": 0.56,
+          "score": 0.55,
           "terms": [
             "osmosis",
             "wsc",
@@ -808,11 +808,11 @@
       "similar": [
         {
           "id": "CC-092",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "zero",
             "net",
-            "spaces"
+            "every"
           ]
         },
         {
@@ -1109,7 +1109,7 @@
       "similar": [
         {
           "id": "CC-064",
-          "score": 0.4,
+          "score": 0.36,
           "terms": [
             "harbour",
             "grand"
@@ -1281,7 +1281,7 @@
       "similar": [
         {
           "id": "CC-061",
-          "score": 0.34,
+          "score": 0.33,
           "terms": [
             "market",
             "housing"
@@ -1356,11 +1356,20 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.48,
+          "score": 0.46,
           "terms": [
             "square",
             "metres",
             "green"
+          ]
+        },
+        {
+          "id": "CC-121",
+          "score": 0.28,
+          "terms": [
+            "square",
+            "metres",
+            "sep"
           ]
         }
       ]
@@ -1434,20 +1443,20 @@
       "similar": [
         {
           "id": "CC-104",
-          "score": 0.42,
+          "score": 0.39,
           "terms": [
             "noise",
             "directive",
-            "petitions"
+            "implements"
           ]
         },
         {
-          "id": "CC-105",
-          "score": 0.26,
+          "id": "CC-120",
+          "score": 0.33,
           "terms": [
             "noise",
             "study",
-            "entertainment"
+            "directive"
           ]
         }
       ]
@@ -1553,7 +1562,7 @@
       "similar": [
         {
           "id": "CC-095",
-          "score": 0.27,
+          "score": 0.28,
           "terms": [
             "prices",
             "electricity",
@@ -1712,7 +1721,18 @@
         "flyer_pdf": "claim-files/CC-024/flyer.pdf",
         "flyer_png": "claim-files/CC-024/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-024/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-024/claim.yml",
+      "similar": [
+        {
+          "id": "CC-119",
+          "score": 0.31,
+          "terms": [
+            "renewable",
+            "final",
+            "energy"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-025",
@@ -1777,7 +1797,7 @@
       "similar": [
         {
           "id": "CC-003",
-          "score": 0.4,
+          "score": 0.39,
           "terms": [
             "capita",
             "emissions"
@@ -1862,7 +1882,7 @@
       "similar": [
         {
           "id": "CC-114",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "greenhouse",
             "emissions",
@@ -2125,7 +2145,7 @@
       "similar": [
         {
           "id": "CC-100",
-          "score": 0.35,
+          "score": 0.34,
           "terms": [
             "airport",
             "international",
@@ -2554,7 +2574,7 @@
       "similar": [
         {
           "id": "CC-082",
-          "score": 0.3,
+          "score": 0.28,
           "terms": [
             "construction",
             "era"
@@ -2637,7 +2657,7 @@
       "similar": [
         {
           "id": "CC-113",
-          "score": 0.29,
+          "score": 0.27,
           "terms": [
             "share",
             "highest"
@@ -2777,16 +2797,16 @@
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.63,
+          "score": 0.62,
           "terms": [
             "corporation",
             "abstraction",
-            "impact"
+            "net"
           ]
         },
         {
           "id": "CC-101",
-          "score": 0.31,
+          "score": 0.26,
           "terms": [
             "abstraction",
             "impact",
@@ -3044,7 +3064,7 @@
       "similar": [
         {
           "id": "CC-045",
-          "score": 0.33,
+          "score": 0.32,
           "terms": [
             "tunnels",
             "every",
@@ -3123,7 +3143,7 @@
       "similar": [
         {
           "id": "CC-044",
-          "score": 0.33,
+          "score": 0.32,
           "terms": [
             "tunnels",
             "every",
@@ -3164,7 +3184,7 @@
       "similar": [
         {
           "id": "CC-009",
-          "score": 0.56,
+          "score": 0.55,
           "terms": [
             "osmosis",
             "wsc",
@@ -3558,11 +3578,20 @@
       "similar": [
         {
           "id": "CC-019",
-          "score": 0.48,
+          "score": 0.46,
           "terms": [
             "square",
             "metres",
             "green"
+          ]
+        },
+        {
+          "id": "CC-121",
+          "score": 0.4,
+          "terms": [
+            "square",
+            "metres",
+            "open"
           ]
         },
         {
@@ -3949,7 +3978,7 @@
       "similar": [
         {
           "id": "CC-018",
-          "score": 0.34,
+          "score": 0.33,
           "terms": [
             "market",
             "housing"
@@ -4007,7 +4036,18 @@
         "flyer_pdf": "claim-files/CC-062/flyer.pdf",
         "flyer_png": "claim-files/CC-062/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-062/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-062/claim.yml",
+      "similar": [
+        {
+          "id": "CC-123",
+          "score": 0.28,
+          "terms": [
+            "kpmg",
+            "construction",
+            "commissioned"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-063",
@@ -4102,7 +4142,7 @@
       "similar": [
         {
           "id": "CC-016",
-          "score": 0.4,
+          "score": 0.36,
           "terms": [
             "harbour",
             "grand"
@@ -4172,7 +4212,7 @@
       "similar": [
         {
           "id": "CC-116",
-          "score": 0.38,
+          "score": 0.37,
           "terms": [
             "unesco",
             "buffer",
@@ -4181,7 +4221,7 @@
         },
         {
           "id": "CC-084",
-          "score": 0.27,
+          "score": 0.28,
           "terms": [
             "adpd",
             "sandra",
@@ -4791,19 +4831,19 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-078/claim.yml",
       "similar": [
         {
+          "id": "CC-100",
+          "score": 0.26,
+          "terms": [
+            "passenger",
+            "previous"
+          ]
+        },
+        {
           "id": "CC-069",
           "score": 0.25,
           "terms": [
             "passenger",
             "trips"
-          ]
-        },
-        {
-          "id": "CC-100",
-          "score": 0.25,
-          "terms": [
-            "passenger",
-            "previous"
           ]
         }
       ]
@@ -4885,7 +4925,7 @@
       "similar": [
         {
           "id": "CC-080",
-          "score": 0.41,
+          "score": 0.4,
           "terms": [
             "plant",
             "wasteserv",
@@ -4926,7 +4966,7 @@
       "similar": [
         {
           "id": "CC-079",
-          "score": 0.41,
+          "score": 0.4,
           "terms": [
             "plant",
             "wasteserv",
@@ -4967,7 +5007,7 @@
       "similar": [
         {
           "id": "CC-004",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "management",
             "waste",
@@ -5007,19 +5047,19 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-082/claim.yml",
       "similar": [
         {
-          "id": "CC-036",
-          "score": 0.3,
-          "terms": [
-            "construction",
-            "era"
-          ]
-        },
-        {
           "id": "CC-063",
           "score": 0.3,
           "terms": [
             "waste",
             "construction"
+          ]
+        },
+        {
+          "id": "CC-036",
+          "score": 0.28,
+          "terms": [
+            "construction",
+            "era"
           ]
         }
       ]
@@ -5056,7 +5096,7 @@
       "similar": [
         {
           "id": "CC-086",
-          "score": 0.35,
+          "score": 0.34,
           "terms": [
             "tourism",
             "ian",
@@ -5098,19 +5138,11 @@
       "similar": [
         {
           "id": "CC-065",
-          "score": 0.27,
+          "score": 0.28,
           "terms": [
             "adpd",
             "sandra",
             "gauci"
-          ]
-        },
-        {
-          "id": "CC-085",
-          "score": 0.25,
-          "terms": [
-            "tourists",
-            "million"
           ]
         }
       ]
@@ -5196,11 +5228,12 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-085/claim.yml",
       "similar": [
         {
-          "id": "CC-084",
-          "score": 0.25,
+          "id": "CC-122",
+          "score": 0.53,
           "terms": [
-            "tourists",
-            "million"
+            "beds",
+            "hotel",
+            "occupancy"
           ]
         }
       ]
@@ -5237,7 +5270,7 @@
       "similar": [
         {
           "id": "CC-083",
-          "score": 0.35,
+          "score": 0.34,
           "terms": [
             "tourism",
             "ian",
@@ -5425,7 +5458,7 @@
       "similar": [
         {
           "id": "CC-103",
-          "score": 0.58,
+          "score": 0.57,
           "terms": [
             "deaths",
             "heat",
@@ -5636,11 +5669,11 @@
         },
         {
           "id": "CC-011",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "zero",
             "net",
-            "spaces"
+            "every"
           ]
         }
       ]
@@ -5760,11 +5793,20 @@
       "similar": [
         {
           "id": "CC-109",
-          "score": 0.29,
+          "score": 0.3,
           "terms": [
             "sharing",
             "effort",
             "emissions"
+          ]
+        },
+        {
+          "id": "CC-117",
+          "score": 0.28,
+          "terms": [
+            "target",
+            "commission",
+            "stage"
           ]
         }
       ]
@@ -5907,7 +5949,7 @@
       "similar": [
         {
           "id": "CC-022",
-          "score": 0.27,
+          "score": 0.28,
           "terms": [
             "prices",
             "electricity",
@@ -6141,7 +6183,7 @@
       "similar": [
         {
           "id": "CC-030",
-          "score": 0.35,
+          "score": 0.34,
           "terms": [
             "airport",
             "international",
@@ -6150,7 +6192,7 @@
         },
         {
           "id": "CC-078",
-          "score": 0.25,
+          "score": 0.26,
           "terms": [
             "passenger",
             "previous"
@@ -6226,7 +6268,7 @@
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.36,
+          "score": 0.29,
           "terms": [
             "abstraction",
             "groundwater",
@@ -6234,8 +6276,17 @@
           ]
         },
         {
+          "id": "CC-118",
+          "score": 0.29,
+          "terms": [
+            "surface",
+            "bodies",
+            "groundwater"
+          ]
+        },
+        {
           "id": "CC-039",
-          "score": 0.31,
+          "score": 0.26,
           "terms": [
             "abstraction",
             "impact",
@@ -6336,7 +6387,7 @@
       "similar": [
         {
           "id": "CC-090",
-          "score": 0.58,
+          "score": 0.57,
           "terms": [
             "deaths",
             "heat",
@@ -6378,11 +6429,11 @@
       "similar": [
         {
           "id": "CC-020",
-          "score": 0.42,
+          "score": 0.39,
           "terms": [
             "noise",
             "directive",
-            "petitions"
+            "implements"
           ]
         }
       ]
@@ -6443,18 +6494,7 @@
         "flyer_pdf": "claim-files/CC-105/flyer.pdf",
         "flyer_png": "claim-files/CC-105/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-105/claim.yml",
-      "similar": [
-        {
-          "id": "CC-020",
-          "score": 0.26,
-          "terms": [
-            "noise",
-            "study",
-            "entertainment"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-105/claim.yml"
     },
     {
       "id": "CC-106",
@@ -6722,16 +6762,16 @@
       "similar": [
         {
           "id": "CC-039",
-          "score": 0.63,
+          "score": 0.62,
           "terms": [
             "corporation",
             "abstraction",
-            "impact"
+            "net"
           ]
         },
         {
           "id": "CC-101",
-          "score": 0.36,
+          "score": 0.29,
           "terms": [
             "abstraction",
             "groundwater",
@@ -6808,7 +6848,7 @@
       "similar": [
         {
           "id": "CC-094",
-          "score": 0.29,
+          "score": 0.3,
           "terms": [
             "sharing",
             "effort",
@@ -7065,7 +7105,7 @@
       "similar": [
         {
           "id": "CC-037",
-          "score": 0.29,
+          "score": 0.27,
           "terms": [
             "share",
             "highest"
@@ -7163,7 +7203,7 @@
       "similar": [
         {
           "id": "CC-026",
-          "score": 0.36,
+          "score": 0.35,
           "terms": [
             "greenhouse",
             "emissions",
@@ -7266,11 +7306,306 @@
       "similar": [
         {
           "id": "CC-065",
-          "score": 0.38,
+          "score": 0.37,
           "terms": [
             "unesco",
             "buffer",
             "zone"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-117",
+      "title": "EU: Malta missed recycling targets (reasoned opinion)",
+      "category": "Waste",
+      "claim": "European Commission (July 2026 infringement package, 8 Jul 2026): Malta missed the 50% municipal waste preparing-for-reuse-and-recycling target for 2020 and the targets for total packaging, paper and cardboard and metals (2020 to 2023), and the Commission has sent a reasoned opinion (INFR(2024)2135), the second stage of infringement proceedings.",
+      "counter": "The Council's draft recommendation of 3 July 2026 (CC-118 source) gives Malta's municipal recycling rate as 16.7% in 2024 against an EU average of 48%, and says Malta 'is now at risk of having missed the 2025 target of 55%'. The Ministry's 'strong progress in waste separation' statement (CC-004) and the 2026 country report (CC-111) speak to the same indicators. A reasoned opinion is the Commission's position, not a court finding; no Maltese response has been found.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Recycling & separation",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "European Commission",
+      "bodies": [
+        "european-commission"
+      ],
+      "date": "2026-07-08",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-117/claim.yml",
+      "similar": [
+        {
+          "id": "CC-094",
+          "score": 0.28,
+          "terms": [
+            "target",
+            "commission",
+            "stage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-118",
+      "title": "Council: Malta second-highest water stress, groundwater failing",
+      "category": "Water",
+      "claim": "Council of the European Union (draft Council Recommendation on Malta's economic, social, employment, structural and budgetary policies, 3 Jul 2026, para. 30): Malta's seasonal Water Exploitation Index Plus reached 66.7% in the third quarter of 2023, the second-highest among Member States; per Malta's Third River Basin Management Plan only 58% of surface water bodies (by number) reached good or high ecological status and 45% good chemical status, while 82% of groundwater bodies (by area) failed good quantitative status and 100% failed good chemical status.",
+      "counter": "The Council text relays Malta's Third River Basin Management Plan and a Q3 (peak-demand quarter) index value; the WEI+ for a single summer quarter is not an annual figure, and ecological status is counted by number of water bodies while groundwater is counted by area. The same recital says two Maltese agglomerations remain non-compliant with the Urban Wastewater Treatment Directive, and the Commission opened a water-abstraction infringement on 8 Jul 2026 (CC-101). Government and Energy and Water Agency statements stress desalination and new water (CC-009, CC-108).",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Water supply & groundwater",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Verbatim found",
+      "confidence": null,
+      "speaker": "Council of the European Union",
+      "bodies": [
+        "council-eu"
+      ],
+      "date": "2026-07-03",
+      "quote": "Moreover, the seasonal Water Exploitation Index Plus (WEI+), which reached 66.7% in the third quarter of 2023, the second-highest level among EU Member States, indicating severe water scarcity. ... only 58% of surface water bodies (by number) attained good or high ecological status, while just 45% met good chemical status. With regard to groundwater, 82% of groundwater bodies (by area) failed to achieve good quantitative status, and 100% did not meet good chemical status.",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-118/claim.yml",
+      "similar": [
+        {
+          "id": "CC-101",
+          "score": 0.29,
+          "terms": [
+            "surface",
+            "bodies",
+            "groundwater"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-119",
+      "title": "Council: renewables 17.2% of energy, almost all solar",
+      "category": "Climate & Energy",
+      "claim": "Council of the European Union (draft Council Recommendation on Malta, 3 Jul 2026, para. 25): Malta's share of renewables in gross final energy consumption (17.2% in 2024) and in the electricity mix (16.7% in 2025) remains very low and well below the EU average; renewable generation comes almost exclusively from solar, with a very small part from biomass, and no wind or hydropower generation has been recorded.",
+      "counter": "CC-114 (finished) reports the overall renewables share as 17.2% in 2024 and an electricity share of 10.7% for an earlier year, so the 16.7% for 2025 needs a year-matched series. The Government's 2030 target (CC-024) and the floating offshore wind farm (CC-029, 'ready by 2033' in the same recital) are the policy context. The 2025 electricity figure may be provisional or from national data rather than Eurostat.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Renewables",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Verbatim found",
+      "confidence": null,
+      "speaker": "Council of the European Union",
+      "bodies": [
+        "council-eu"
+      ],
+      "date": "2026-07-03",
+      "quote": "Malta's share of renewables in gross final energy consumption (17.2% in 2024) and in the electricity mix (16.7% in 2025) remains very low and well below the EU average. The renewable energy generation is almost exclusively coming from solar energy, with a very small part of biomass/combustible renewable fuels, and with no wind or hydropower generation recorded.",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-119/claim.yml",
+      "similar": [
+        {
+          "id": "CC-024",
+          "score": 0.31,
+          "terms": [
+            "renewable",
+            "final",
+            "energy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-120",
+      "title": "EP study: 54,000 exposed to road noise, likely an underestimate",
+      "category": "Noise",
+      "claim": "Study for the European Parliament's Committee on Petitions (Ecocentric Consulting, PE 783.089, February 2026, key findings): an estimated 54 000 inhabitants of Malta are exposed to road noise levels over 55 dB Lden, compared with 11 100 for aircraft noise; the road figure is likely a considerable underestimation because the Directive covers only major infrastructure and agglomerations over 100 000 inhabitants; and Malta has the lowest number of noise-related premature deaths a year (not per capita) and among the lowest noise-related DALYs per capita of the Member States.",
+      "counter": "The study itself warns that the road figure is probably a considerable underestimate and that the 'lowest number' is an absolute count, not per capita; it also says Malta has the lowest share of urban inhabitants exposed to road noise and over 3% exposed to high air-traffic noise (section 3). Eurostat (ilc_mddw01) puts Malta first in the EU for self-reported street or neighbour noise (31.3% against 18.1% in 2023, as recorded in CC-020). The figures rest on END reporting rounds whose methods changed in 2020, so trends cannot be compared.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Verbatim found",
+      "confidence": null,
+      "speaker": "Peter Hjerp and Clare Coffey (Ecocentric Consulting), study for the European Parliament Committee on Petitions (PE 783.089)",
+      "bodies": [
+        "ep-peti-study"
+      ],
+      "date": "2026-02",
+      "quote": "An estimated 54 000 inhabitants of Malta are being exposed to road noise levels over 55dB (Lden), compared to 11 100 in the case of aircraft noise levels. ... Malta has the lowest number of noise related premature deaths/year rate (not per capita).",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-120/claim.yml",
+      "similar": [
+        {
+          "id": "CC-020",
+          "score": 0.33,
+          "terms": [
+            "noise",
+            "study",
+            "directive"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-121",
+      "title": "Din l-Art Ħelwa: Excelsior extension harms the bastions",
+      "category": "Planning & Housing",
+      "claim": "Din l-Art Ħelwa (appeal against the Planning Authority's approval, reported 8 Sep 2026): the six-storey, 77-room extension to the Grand Hotel Excelsior, Floriana, has an 'unacceptable visual impact' on the Grade 1 scheduled historic bastions, affects the Area of High Landscape Value of the harbour fortifications, and removes over 1,200 square metres of open space.",
+      "counter": "The Planning Authority approved the extension by nine votes to two. A Heritage Impact Assessment found moderate adverse visual impacts from viewpoints across Marsamxett Harbour (Msida, Ta' Xbiex) but judged the overall effect on Valletta's World Heritage status acceptable; the Superintendence of Cultural Heritage, UNESCO's World Heritage Centre and ICOMOS are reported to have endorsed its findings (MaltaToday, reported). An earlier 99-room scheme was judged unacceptable by the Design Advisory Committee and the Superintendence and was reduced to 77 rooms. The developers cite conference-tourism demand.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Heritage & character",
+      "location": {
+        "place": "Grand Hotel Excelsior, Floriana",
+        "lat": 35.89753,
+        "lon": 14.5049,
+        "scope": "site",
+        "icon": "fort"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Din l-Art Ħelwa",
+      "bodies": [
+        "din-l-art-helwa"
+      ],
+      "date": "2026-09-08",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-121/claim.yml",
+      "similar": [
+        {
+          "id": "CC-054",
+          "score": 0.4,
+          "terms": [
+            "square",
+            "metres",
+            "open"
+          ]
+        },
+        {
+          "id": "CC-019",
+          "score": 0.28,
+          "terms": [
+            "square",
+            "metres",
+            "sep"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-122",
+      "title": "The Shift: applications for 30,000 more hotel beds",
+      "category": "Tourism & Population",
+      "claim": "The Shift News (8 Sep 2026): planning applications validated before the new tourism regulations took effect on 15 June include proposals for an estimated 30,000 additional hotel beds; filling them year-round would need roughly 1.8 to 2.2 million extra tourists a year, or about 7.7 million extra guest nights at 70% occupancy.",
+      "counter": "Applications validated are not permits or built beds. CC-085 (finished or in progress) records a Planning Authority pipeline of about 27,672 beds in the Malta Tourism Authority count and about 35,000 collective beds in open permits in a follow-up study, with the Authority's own count not shared. The 70% occupancy and 1.8 to 2.2 million tourist conversions rest on assumptions about length of stay and bed counts that the article does not set out in the text read.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Tourism numbers & capacity",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "The Shift News",
+      "bodies": [
+        "the-shift"
+      ],
+      "date": "2026-09-08",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-122/claim.yml",
+      "similar": [
+        {
+          "id": "CC-085",
+          "score": 0.53,
+          "terms": [
+            "beds",
+            "hotel",
+            "occupancy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-123",
+      "title": "KPMG: 8,716 residential units approved in 2024, up 7.4%",
+      "category": "Planning & Housing",
+      "claim": "KPMG, Construction Industry and Property Market Report 2025, commissioned by the Malta Development Association (Dec 2025, section 2.1), citing NSO data: 8,716 residential units were granted approval in 2024, a 7.4% increase on 2023, and 5,170 permits were sanctioned in January to June 2025, a 9.7% year-on-year increase, so the 2025 total is expected to surpass 2024.",
+      "counter": "MaltaToday, reporting parliamentary data, gave total building permits falling from a 2018 peak of 2,868 to 1,749 in 2024; permits and dwelling units are different counts (one permit can cover many units), and the report moves from 'units' (2024) to 'permits' (H1 2025). The report itself says the full-year projection assumes the first-half growth continues. Developers cite bureaucracy and labour shortages for delays (MDA, reported).",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Development & construction",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Verbatim found",
+      "confidence": null,
+      "speaker": "KPMG",
+      "bodies": [
+        "kpmg"
+      ],
+      "date": "2025-12",
+      "quote": "According to data published by the NSO, a total of 8,716 residential units were granted approval in 2024, representing a 7.4% increase compared with 2023 ... Between January and June 2025, 5,170 permits were sanctioned, reflecting a significant year-on-year increase of 9.7%.",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-123/claim.yml",
+      "similar": [
+        {
+          "id": "CC-062",
+          "score": 0.28,
+          "terms": [
+            "kpmg",
+            "construction",
+            "commissioned"
           ]
         }
       ]
@@ -8263,6 +8598,167 @@
       "theme": "T3",
       "link_type": "Shared driver",
       "strength": "Strong"
+    },
+    {
+      "from": "CC-101",
+      "to": "CC-118",
+      "theme": "T3",
+      "link_type": "Shared cause",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-047",
+      "to": "CC-118",
+      "theme": "T3",
+      "link_type": "Shared cause",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-041",
+      "to": "CC-118",
+      "theme": "T3",
+      "link_type": "Shared cause",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-009",
+      "to": "CC-118",
+      "theme": "T3",
+      "link_type": "Shared cause",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-117",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-111",
+      "to": "CC-117",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-081",
+      "to": "CC-117",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-020",
+      "to": "CC-120",
+      "theme": "T13",
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-104",
+      "to": "CC-120",
+      "theme": "T13",
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-105",
+      "to": "CC-120",
+      "theme": "T13",
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-065",
+      "to": "CC-121",
+      "theme": "T15",
+      "link_type": "Shared mechanism",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-066",
+      "to": "CC-121",
+      "theme": "T15",
+      "link_type": "Shared mechanism",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-116",
+      "to": "CC-121",
+      "theme": "T15",
+      "link_type": "Shared mechanism",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-083",
+      "to": "CC-122",
+      "theme": "T10",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-085",
+      "to": "CC-122",
+      "theme": "T10",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-089",
+      "to": "CC-122",
+      "theme": "T10",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-013",
+      "to": "CC-123",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-014",
+      "to": "CC-123",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-019",
+      "to": "CC-123",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-062",
+      "to": "CC-123",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Strong"
+    },
+    {
+      "from": "CC-024",
+      "to": "CC-029",
+      "theme": "T18",
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-024",
+      "to": "CC-119",
+      "theme": "T18",
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-029",
+      "to": "CC-119",
+      "theme": "T18",
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)"
     }
   ],
   "themes": [
@@ -8317,7 +8813,8 @@
         "CC-043",
         "CC-047",
         "CC-101",
-        "CC-108"
+        "CC-108",
+        "CC-118"
       ]
     },
     {
@@ -8363,7 +8860,8 @@
         "CC-080",
         "CC-081",
         "CC-082",
-        "CC-111"
+        "CC-111",
+        "CC-117"
       ]
     },
     {
@@ -8422,7 +8920,8 @@
         "CC-019",
         "CC-058",
         "CC-060",
-        "CC-062"
+        "CC-062",
+        "CC-123"
       ]
     },
     {
@@ -8455,7 +8954,8 @@
         "CC-089",
         "CC-098",
         "CC-100",
-        "CC-112"
+        "CC-112",
+        "CC-122"
       ]
     },
     {
@@ -8497,7 +8997,8 @@
       "members": [
         "CC-020",
         "CC-104",
-        "CC-105"
+        "CC-105",
+        "CC-120"
       ]
     },
     {
@@ -8525,7 +9026,8 @@
       "members": [
         "CC-065",
         "CC-066",
-        "CC-116"
+        "CC-116",
+        "CC-121"
       ]
     },
     {
@@ -8556,6 +9058,20 @@
         "CC-092",
         "CC-107"
       ]
+    },
+    {
+      "id": "T18",
+      "name": "Renewables delivery",
+      "color": "#ce93d8",
+      "dashed": true,
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)",
+      "description": "Claims about how much of Malta's energy is renewable and when more will arrive: the 2030 renewables target (CC-024), the first offshore wind farm (CC-029) and the Council's July 2026 statement that the share is 17.2% and almost all solar (CC-119). Indicative until a report tests the figures against Eurostat generation data.",
+      "members": [
+        "CC-024",
+        "CC-029",
+        "CC-119"
+      ]
     }
   ],
   "bodies": [
@@ -8579,6 +9095,18 @@
           ]
         },
         {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 9,
+          "themes": [
+            "T16",
+            "T3",
+            "T4",
+            "T5",
+            "T7"
+          ]
+        },
+        {
           "id": "era",
           "named": 1,
           "pairs": 5,
@@ -8586,18 +9114,6 @@
             "T1",
             "T2",
             "T5"
-          ]
-        },
-        {
-          "id": "european-commission",
-          "named": 0,
-          "pairs": 8,
-          "themes": [
-            "T16",
-            "T3",
-            "T4",
-            "T5",
-            "T7"
           ]
         },
         {
@@ -8649,6 +9165,16 @@
           ]
         },
         {
+          "id": "the-shift",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T10",
+            "T4",
+            "T5"
+          ]
+        },
+        {
           "id": "wasteserv",
           "named": 1,
           "pairs": 1,
@@ -8662,6 +9188,15 @@
           "named": 1,
           "pairs": 0,
           "themes": []
+        },
+        {
+          "id": "council-eu",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T18",
+            "T3"
+          ]
         },
         {
           "id": "fee-malta",
@@ -8712,15 +9247,6 @@
           "named": 1,
           "pairs": 0,
           "themes": []
-        },
-        {
-          "id": "the-shift",
-          "named": 0,
-          "pairs": 3,
-          "themes": [
-            "T4",
-            "T5"
-          ]
         },
         {
           "id": "transport-malta",
@@ -9161,6 +9687,15 @@
           ]
         },
         {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T5",
+            "T7"
+          ]
+        },
+        {
           "id": "newsbook",
           "named": 0,
           "pairs": 4,
@@ -9201,15 +9736,6 @@
           "themes": []
         },
         {
-          "id": "european-commission",
-          "named": 0,
-          "pairs": 3,
-          "themes": [
-            "T5",
-            "T7"
-          ]
-        },
-        {
           "id": "interconnect-malta",
           "named": 1,
           "pairs": 0,
@@ -9244,6 +9770,14 @@
           "pairs": 1,
           "themes": [
             "T2"
+          ]
+        },
+        {
+          "id": "council-eu",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T18"
           ]
         },
         {
@@ -9339,6 +9873,14 @@
           ]
         },
         {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T5"
+          ]
+        },
+        {
           "id": "ministry-health",
           "named": 0,
           "pairs": 2,
@@ -9352,14 +9894,6 @@
           "pairs": 1,
           "themes": [
             "T6"
-          ]
-        },
-        {
-          "id": "european-commission",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T5"
           ]
         },
         {
@@ -9799,6 +10333,14 @@
           "themes": [
             "T10"
           ]
+        },
+        {
+          "id": "the-shift",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
         }
       ]
     },
@@ -9828,6 +10370,14 @@
         },
         {
           "id": "mhra",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
+          "id": "the-shift",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -10356,6 +10906,14 @@
           "themes": []
         },
         {
+          "id": "council-eu",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T3"
+          ]
+        },
+        {
           "id": "energy-water-agency",
           "named": 0,
           "pairs": 2,
@@ -10392,7 +10950,7 @@
         {
           "id": "european-commission",
           "named": 0,
-          "pairs": 2,
+          "pairs": 3,
           "themes": [
             "T5"
           ]
@@ -10577,14 +11135,24 @@
         {
           "id": "government-of-malta",
           "named": 1,
-          "pairs": 0,
-          "themes": []
+          "pairs": 1,
+          "themes": [
+            "T18"
+          ]
         },
         {
           "id": "ministry-environment",
           "named": 1,
           "pairs": 0,
           "themes": []
+        },
+        {
+          "id": "council-eu",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T18"
+          ]
         }
       ]
     },
@@ -10995,6 +11563,14 @@
           ]
         },
         {
+          "id": "kpmg",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
           "id": "mda",
           "named": 0,
           "pairs": 2,
@@ -11038,6 +11614,14 @@
       "links": [
         {
           "id": "amphora-media",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "kpmg",
           "named": 0,
           "pairs": 2,
           "themes": [
@@ -11236,6 +11820,14 @@
           ]
         },
         {
+          "id": "din-l-art-helwa",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T15"
+          ]
+        },
+        {
           "id": "unesco-whc",
           "named": 0,
           "pairs": 1,
@@ -11261,6 +11853,14 @@
         },
         {
           "id": "adpd",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T15"
+          ]
+        },
+        {
+          "id": "din-l-art-helwa",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -11446,6 +12046,14 @@
           "themes": []
         },
         {
+          "id": "ep-peti-study",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T13"
+          ]
+        },
+        {
           "id": "european-commission",
           "named": 0,
           "pairs": 2,
@@ -11493,14 +12101,6 @@
           "themes": [
             "T6",
             "T7"
-          ]
-        },
-        {
-          "id": "ep-peti-study",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T13"
           ]
         },
         {
@@ -11564,15 +12164,15 @@
       "role": "PN MP",
       "links": [
         {
-          "id": "adpd",
+          "id": "ep-peti-study",
           "named": 0,
-          "pairs": 1,
+          "pairs": 2,
           "themes": [
             "T13"
           ]
         },
         {
-          "id": "ep-peti-study",
+          "id": "adpd",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -11590,15 +12190,15 @@
       "role": "MEP (PN)",
       "links": [
         {
-          "id": "adpd",
+          "id": "ep-peti-study",
           "named": 0,
-          "pairs": 1,
+          "pairs": 2,
           "themes": [
             "T13"
           ]
         },
         {
-          "id": "ep-peti-study",
+          "id": "adpd",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -11616,6 +12216,14 @@
       "role": null,
       "links": [
         {
+          "id": "ep-peti-study",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T13"
+          ]
+        },
+        {
           "id": "cultural-heritage",
           "named": 0,
           "pairs": 1,
@@ -11624,11 +12232,11 @@
           ]
         },
         {
-          "id": "ep-peti-study",
+          "id": "din-l-art-helwa",
           "named": 0,
           "pairs": 1,
           "themes": [
-            "T13"
+            "T15"
           ]
         },
         {
@@ -11691,6 +12299,14 @@
       "links": [
         {
           "id": "cultural-heritage",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T15"
+          ]
+        },
+        {
+          "id": "din-l-art-helwa",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -12103,6 +12719,14 @@
           "themes": [
             "T10"
           ]
+        },
+        {
+          "id": "the-shift",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
         }
       ]
     },
@@ -12114,6 +12738,15 @@
       "parent": null,
       "role": null,
       "links": [
+        {
+          "id": "the-shift",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T10",
+            "T4"
+          ]
+        },
         {
           "id": "european-commission",
           "named": 0,
@@ -12145,14 +12778,6 @@
           "themes": [
             "T10"
           ]
-        },
-        {
-          "id": "the-shift",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T4"
-          ]
         }
       ]
     },
@@ -12164,6 +12789,22 @@
       "parent": null,
       "role": null,
       "links": [
+        {
+          "id": "planning-authority",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "amphora-media",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
         {
           "id": "mda",
           "named": 0,
@@ -12322,6 +12963,14 @@
           ]
         },
         {
+          "id": "kpmg",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
           "id": "lovin-malta",
           "named": 0,
           "pairs": 1,
@@ -12421,6 +13070,14 @@
       "parent": null,
       "role": null,
       "links": [
+        {
+          "id": "council-eu",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T3"
+          ]
+        },
         {
           "id": "european-commission",
           "named": 0,
@@ -12582,17 +13239,9 @@
       "role": null,
       "links": [
         {
-          "id": "ministry-transport",
-          "named": 0,
-          "pairs": 2,
-          "themes": [
-            "T4"
-          ]
-        },
-        {
           "id": "european-commission",
           "named": 0,
-          "pairs": 1,
+          "pairs": 2,
           "themes": [
             "T5"
           ]
@@ -12600,7 +13249,16 @@
         {
           "id": "malta-chamber",
           "named": 0,
-          "pairs": 1,
+          "pairs": 2,
+          "themes": [
+            "T10",
+            "T4"
+          ]
+        },
+        {
+          "id": "ministry-transport",
+          "named": 0,
+          "pairs": 2,
           "themes": [
             "T4"
           ]
@@ -12614,11 +13272,27 @@
           ]
         },
         {
+          "id": "mhra",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
           "id": "ministry-environment",
           "named": 0,
           "pairs": 1,
           "themes": [
             "T5"
+          ]
+        },
+        {
+          "id": "ministry-tourism",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
           ]
         },
         {
@@ -12640,6 +13314,15 @@
       "role": null,
       "links": [
         {
+          "id": "ministry-environment",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T5",
+            "T7"
+          ]
+        },
+        {
           "id": "wsc",
           "named": 0,
           "pairs": 4,
@@ -12648,12 +13331,11 @@
           ]
         },
         {
-          "id": "ministry-environment",
+          "id": "wasteserv",
           "named": 0,
           "pairs": 3,
           "themes": [
-            "T5",
-            "T7"
+            "T5"
           ]
         },
         {
@@ -12699,11 +13381,19 @@
           ]
         },
         {
-          "id": "wasteserv",
+          "id": "the-shift",
           "named": 0,
           "pairs": 2,
           "themes": [
             "T5"
+          ]
+        },
+        {
+          "id": "council-eu",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T3"
           ]
         },
         {
@@ -12761,14 +13451,6 @@
           "themes": [
             "T16"
           ]
-        },
-        {
-          "id": "the-shift",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T5"
-          ]
         }
       ]
     },
@@ -12817,7 +13499,15 @@
         {
           "id": "adpd",
           "named": 0,
-          "pairs": 1,
+          "pairs": 2,
+          "themes": [
+            "T13"
+          ]
+        },
+        {
+          "id": "pn",
+          "named": 0,
+          "pairs": 2,
           "themes": [
             "T13"
           ]
@@ -12828,14 +13518,6 @@
           "pairs": 1,
           "themes": [
             "T9"
-          ]
-        },
-        {
-          "id": "pn",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T13"
           ]
         }
       ]
@@ -12934,6 +13616,14 @@
           ]
         },
         {
+          "id": "din-l-art-helwa",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T15"
+          ]
+        },
+        {
           "id": "eprt",
           "named": 0,
           "pairs": 1,
@@ -12957,6 +13647,107 @@
           "pairs": 1,
           "themes": [
             "T10"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "council-eu",
+      "name": "Council of the European Union",
+      "kind": "organisation",
+      "type": "eu",
+      "parent": null,
+      "role": null,
+      "links": [
+        {
+          "id": "government-of-malta",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T18",
+            "T3"
+          ]
+        },
+        {
+          "id": "wsc",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T3"
+          ]
+        },
+        {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T3"
+          ]
+        },
+        {
+          "id": "interconnect-malta",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T18"
+          ]
+        },
+        {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T3"
+          ]
+        },
+        {
+          "id": "ministry-environment",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T18"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "din-l-art-helwa",
+      "name": "Din l-Art Ħelwa",
+      "kind": "organisation",
+      "type": "civil_society",
+      "parent": null,
+      "role": null,
+      "links": [
+        {
+          "id": "adpd",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T15"
+          ]
+        },
+        {
+          "id": "cultural-heritage",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T15"
+          ]
+        },
+        {
+          "id": "eprt",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T15"
+          ]
+        },
+        {
+          "id": "unesco-whc",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T15"
           ]
         }
       ]
@@ -13084,7 +13875,8 @@
       "a": "CC-024",
       "b": "CC-029",
       "why": [
-        "same subtopic (Renewables)"
+        "same subtopic (Renewables)",
+        "share a theme"
       ]
     },
     {

@@ -140,3 +140,26 @@ CC-031,CC-092,T17,Net-zero Gozo,Shared target,Strong
 CC-031,CC-107,T17,Net-zero Gozo,Shared target,Strong
 CC-092,CC-107,T17,Net-zero Gozo,Shared target,Strong
 CC-039,CC-108,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared driver,Strong
+CC-101,CC-118,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared cause,Strong
+CC-047,CC-118,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared cause,Strong
+CC-041,CC-118,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared cause,Strong
+CC-009,CC-118,T3,"Water chain: farm waste, sewage, sea, aquifer",Shared cause,Strong
+CC-004,CC-117,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-111,CC-117,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-081,CC-117,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-020,CC-120,T13,Noise governance,Shared target,Weak (indicative)
+CC-104,CC-120,T13,Noise governance,Shared target,Weak (indicative)
+CC-105,CC-120,T13,Noise governance,Shared target,Weak (indicative)
+CC-065,CC-121,T15,Heritage and development control,Shared mechanism,Weak (indicative)
+CC-066,CC-121,T15,Heritage and development control,Shared mechanism,Weak (indicative)
+CC-116,CC-121,T15,Heritage and development control,Shared mechanism,Weak (indicative)
+CC-083,CC-122,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-085,CC-122,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-089,CC-122,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-013,CC-123,T8,"Planning, housing and land take",Shared driver,Strong
+CC-014,CC-123,T8,"Planning, housing and land take",Shared driver,Strong
+CC-019,CC-123,T8,"Planning, housing and land take",Shared driver,Strong
+CC-062,CC-123,T8,"Planning, housing and land take",Shared driver,Strong
+CC-024,CC-029,T18,Renewables delivery,Shared target,Weak (indicative)
+CC-024,CC-119,T18,Renewables delivery,Shared target,Weak (indicative)
+CC-029,CC-119,T18,Renewables delivery,Shared target,Weak (indicative)
