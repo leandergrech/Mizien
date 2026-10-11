@@ -2,7 +2,7 @@ id: CC-077
 title: 'Metro: first section early 2030s'
 category: Transport
 subtopic: Roads & mass transit
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -39,3 +39,7 @@ location:
   lon: 14.49229
   scope: site
   icon: airport
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-11
+    step: started
+    note: "Worker B, attempt 1: blocked on source. Bonett's wording is not in quotation marks in any readable copy: the Malta Independent original (23 Apr 2026) is 403, Wayback reset; Newsbook and Lovin Malta paraphrase the timeline differently (first phase within a decade, construction in about five years, 3-4 years to build). Needed: the press release or the Independent text."
