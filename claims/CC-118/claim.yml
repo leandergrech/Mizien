@@ -1,0 +1,58 @@
+id: CC-118
+title: 'Council: Malta second-highest water stress, groundwater failing'
+category: Water
+subtopic: Water supply & groundwater
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Council of the European Union (draft Council Recommendation on Malta''s economic, social, employment, structural
+    and budgetary policies, 3 Jul 2026, para. 30): Malta''s seasonal Water Exploitation Index Plus reached 66.7% in the third
+    quarter of 2023, the second-highest among Member States; per Malta''s Third River Basin Management Plan only 58% of surface
+    water bodies (by number) reached good or high ecological status and 45% good chemical status, while 82% of groundwater
+    bodies (by area) failed good quantitative status and 100% failed good chemical status.'
+  speaker: Council of the European Union
+  date: '2026-07-03'
+  wording_status: Verbatim found
+  sources:
+  - title: Council Recommendation on the economic, social, employment, structural and budgetary policies of Malta (draft,
+      11130/26)
+    publisher: Council of the European Union, General Secretariat
+    date: '2026-07-03'
+    url: https://data.consilium.europa.eu/doc/document/ST-11130-2026-INIT/en/pdf
+    note: The claim, recital (30). Full text extracted and read on 11 Oct 2026. It is a draft note to Coreper/Council; check
+      the adopted text. The figures are taken from the Commission 2026 country report and from Malta's Third River Basin Management
+      Plan.
+  quote: Moreover, the seasonal Water Exploitation Index Plus (WEI+), which reached 66.7% in the third quarter of 2023, the
+    second-highest level among EU Member States, indicating severe water scarcity. ... only 58% of surface water bodies (by
+    number) attained good or high ecological status, while just 45% met good chemical status. With regard to groundwater,
+    82% of groundwater bodies (by area) failed to achieve good quantitative status, and 100% did not meet good chemical status.
+counter_evidence: The Council text relays Malta's Third River Basin Management Plan and a Q3 (peak-demand quarter) index value;
+  the WEI+ for a single summer quarter is not an annual figure, and ecological status is counted by number of water bodies
+  while groundwater is counted by area. The same recital says two Maltese agglomerations remain non-compliant with the Urban
+  Wastewater Treatment Directive, and the Commission opened a water-abstraction infringement on 8 Jul 2026 (CC-101). Government
+  and Energy and Water Agency statements stress desalination and new water (CC-009, CC-108).
+tests: EEA WISE Water Framework Directive data for Malta (status of surface and groundwater bodies); EEA WEI+ indicator (seasonal
+  and annual, Malta against other Member States); Malta's Third River Basin Management Plan (ERA / Energy and Water Agency);
+  Eurostat water statistics (env_wat_abs); tests of the 'second-highest' ranking across Member States.
+why_low_hanging: A comparison and several percentages that EEA's open WEI+ and WFD datasets can reproduce.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: EEA and Eurostat are reachable; the Council document was read as text. The RBMP itself may be on a
+  refused host.'
+caveats: Candidate from the weekly intake of 11 Oct 2026. The source is a draft Council Recommendation of 3 July 2026 (a General
+  Secretariat note); the Council's adopted text and its date should be recorded. The claimant is the Council, relaying Commission
+  and national figures. Related to CC-101, CC-047, CC-041 and CC-009 in subject.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

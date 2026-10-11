@@ -1,0 +1,61 @@
+id: CC-120
+title: 'EP study: 54,000 exposed to road noise, likely an underestimate'
+category: Noise
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Study for the European Parliament''s Committee on Petitions (Ecocentric Consulting, PE 783.089, February 2026, key
+    findings): an estimated 54 000 inhabitants of Malta are exposed to road noise levels over 55 dB Lden, compared with 11
+    100 for aircraft noise; the road figure is likely a considerable underestimation because the Directive covers only major
+    infrastructure and agglomerations over 100 000 inhabitants; and Malta has the lowest number of noise-related premature
+    deaths a year (not per capita) and among the lowest noise-related DALYs per capita of the Member States.'
+  speaker: Peter Hjerp and Clare Coffey (Ecocentric Consulting), study for the European Parliament Committee on Petitions
+    (PE 783.089)
+  date: 2026-02
+  wording_status: Verbatim found
+  sources:
+  - title: Analysing Malta's implementation of Directive 2002/49/EC on the Assessment and Management of Environmental Noise
+      (PE 783.089)
+    publisher: European Parliament, Policy Department for Citizens, Equality and Culture
+    date: 2026-02
+    url: https://www.europarl.europa.eu/RegData/etudes/STUD/2026/783089/IUST_STU(2026)783089_EN.pdf
+    note: 'The claim: Key findings, PDF p. 14 (also section 3). Text extracted and read on 11 Oct 2026. The same study is
+      the source of CC-020; this is a different claim from it.'
+  - title: Malta noise fact sheet 2022
+    publisher: European Environment Agency
+    date: '2022'
+    url: https://www.eea.europa.eu/en/analysis/maps-and-charts/malta-noise-fact-sheet-2022
+    note: Locator for the Directive exposure figures; not yet read for this claim.
+  quote: An estimated 54 000 inhabitants of Malta are being exposed to road noise levels over 55dB (Lden), compared to 11
+    100 in the case of aircraft noise levels. ... Malta has the lowest number of noise related premature deaths/year rate
+    (not per capita).
+counter_evidence: The study itself warns that the road figure is probably a considerable underestimate and that the 'lowest
+  number' is an absolute count, not per capita; it also says Malta has the lowest share of urban inhabitants exposed to road
+  noise and over 3% exposed to high air-traffic noise (section 3). Eurostat (ilc_mddw01) puts Malta first in the EU for self-reported
+  street or neighbour noise (31.3% against 18.1% in 2023, as recorded in CC-020). The figures rest on END reporting rounds
+  whose methods changed in 2020, so trends cannot be compared.
+tests: EEA Environmental Noise Directive Round 4 data for Malta (people exposed above 55 dB Lden and 50 dB Lnight by source);
+  EEA health-impact estimates of noise (premature deaths, DALYs) for all Member States, rescaled per capita; WHO 2018 Environmental
+  Noise Guidelines thresholds; Eurostat ilc_mddw01.
+why_low_hanging: Numbers the EEA publishes by country, so the study's Malta figures and rankings can be reproduced.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: the study was read in full; EEA and Eurostat are reachable.'
+caveats: Candidate from the weekly intake of 11 Oct 2026. The claimant is an EU commissioned study; the opinions are the authors',
+  not the Parliament's. Distinct from CC-020 (which tests whether the Directive causes Malta's noise problems). The 'lowest
+  number of deaths' statement is absolute and the study says so; the check should separate the exposure figure, the underestimation
+  claim and the health-burden ranking.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

@@ -1,0 +1,59 @@
+id: CC-121
+title: 'Din l-Art Ħelwa: Excelsior extension harms the bastions'
+category: Planning & Housing
+subtopic: Heritage & character
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Din l-Art Ħelwa (appeal against the Planning Authority''s approval, reported 8 Sep 2026): the six-storey, 77-room
+    extension to the Grand Hotel Excelsior, Floriana, has an ''unacceptable visual impact'' on the Grade 1 scheduled historic
+    bastions, affects the Area of High Landscape Value of the harbour fortifications, and removes over 1,200 square metres
+    of open space.'
+  speaker: Din l-Art Ħelwa
+  date: '2026-09-08'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Excelsior expansion appealed as Malta faces 30,000 bed hotel surge
+    publisher: The Shift News
+    date: '2026-09-08'
+    url: https://theshiftnews.com/2026/09/08/excelsior-expansion-appealed-as-malta-faces-30000-bed-hotel-surge/
+    note: 'Locator. Read via a text extractor on 11 Oct 2026: the NGO says Malta "cannot keep sacrificing its heritage for
+      more hotel rooms" and "Our bastions are not a backdrop for development". The wording of the appeal itself was not read.'
+  - title: Din l-Art Ħelwa files appeal against Excelsior Hotel expansion
+    publisher: MaltaToday
+    date: 2026-09
+    url: https://www.maltatoday.com.mt/news/national/144250/din_lart_elwa_files_appeal_against_excelsior_hotel_expansion
+    note: 'Locator: returned 403 to automated reading; content known only from a search summary. Record the NGO''s own words
+      and the date.'
+counter_evidence: The Planning Authority approved the extension by nine votes to two. A Heritage Impact Assessment found moderate
+  adverse visual impacts from viewpoints across Marsamxett Harbour (Msida, Ta' Xbiex) but judged the overall effect on Valletta's
+  World Heritage status acceptable; the Superintendence of Cultural Heritage, UNESCO's World Heritage Centre and ICOMOS are
+  reported to have endorsed its findings (MaltaToday, reported). An earlier 99-room scheme was judged unacceptable by the
+  Design Advisory Committee and the Superintendence and was reduced to 77 rooms. The developers cite conference-tourism demand.
+tests: 'The Planning Authority case file (PA/ reference to record): heights, photomontages, Heritage Impact Assessment, Design
+  Advisory Committee minutes; Grade 1 scheduling of the Floriana and Valletta fortifications (Cultural Heritage register);
+  the Area of High Landscape Value designation in the applicable local plan; the open-space area removed, measured from the
+  plans; UNESCO and ICOMOS documents on the nomination extension.'
+why_low_hanging: Specific, checkable planning facts (scheduling grade, designation, area removed) set against published assessments.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: the Shift page is readable; MaltaToday returned 403; the PA case file and Tribunal documents may
+  be browser-only.'
+caveats: 'Candidate from the weekly intake of 11 Oct 2026. Sub judice: science only. The appeal is before the Environment
+  and Planning Review Tribunal; check only the heritage, landscape and measurable facts, with no legal commentary. ''Unacceptable''
+  is the NGO''s judgement; the checkable parts are the designation, the open-space area and the assessed visual effects. Overlaps
+  in subject, not claimant, with CC-116, CC-065 and CC-066.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Grand Hotel Excelsior, Floriana
+  lat: 35.89753
+  lon: 14.5049
+  scope: site
+  icon: fort
