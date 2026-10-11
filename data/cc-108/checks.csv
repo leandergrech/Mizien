@@ -1,0 +1,34 @@
+check,value,unit,source,note
+Proposed WSC cap to 2030,14.0,million m3 a year,Green Paper p.12,
+WSC groundwater production 2016,13.505,million m3,WSC AR 2016; AR 2025 Fig 20,
+  as share of the cap 2016,96.466,%,calculated,
+  headroom under the cap 2016,0.495,million m3,calculated,
+WSC groundwater production 2022,12.676,million m3,WSC AR 2016; AR 2025 Fig 20,
+  as share of the cap 2022,90.54,%,calculated,
+  headroom under the cap 2022,1.324,million m3,calculated,
+WSC groundwater production 2023,13.157,million m3,WSC AR 2016; AR 2025 Fig 20,
+  as share of the cap 2023,93.981,%,calculated,
+  headroom under the cap 2023,0.843,million m3,calculated,
+WSC groundwater production 2024,13.094,million m3,WSC AR 2016; AR 2025 Fig 20,
+  as share of the cap 2024,93.531,%,calculated,
+  headroom under the cap 2024,0.906,million m3,calculated,
+WSC groundwater production 2025,11.541,million m3,WSC AR 2016; AR 2025 Fig 20,
+  as share of the cap 2025,82.438,%,calculated,
+  headroom under the cap 2025,2.459,million m3,calculated,
+"Highest year read (2016, 2022-25)",13.505,million m3,calculated,
+Cap above the highest year read,3.663,%,calculated,
+Cap above 2025 production,21.304,%,calculated,
+Change in WSC production 2016 to 2025,-1.964,million m3,calculated,
+  as % of 2016,-14.543,%,calculated,
+Change in WSC production 2022 to 2025,-1.134,million m3,calculated,
+  as % of 2022,-8.949,%,calculated,
+Eurostat public-supply groundwater 2024,14.28,million m3,Eurostat env_wat_abs,flag e
+Eurostat public-supply 2024 above the cap,0.28,million m3,calculated,different measure from WSC production; not the capped quantity
+Eurostat public-supply 2024 minus WSC production 2024,1.186,million m3,calculated,
+WSC production as share of national fresh groundwater abstraction 2024,34.047,%,calculated,national total 38.46 (estimated)
+National abstraction as share of estimated recharge 2024,92.63,%,calculated,both estimates
+New Water produced 2022 as share of WSC groundwater production 2022,12.623,%,calculated,"if all counted as give-back; it substitutes farmers' groundwater, not WSC's"
+New Water target (7.0) as share of WSC groundwater production 2025,60.652,%,calculated,"even at the stated maximum, below 100% before any recharge"
+New Water target as share of WSC production 2022,55.224,%,calculated,
+New Water 2022 as share of the 7.0 maximum,22.857,%,calculated,
+"Give-back shortfall at 7.0 maximum, 2025",4.541,million m3,calculated,volume of abstraction not matched by New Water even at the maximum

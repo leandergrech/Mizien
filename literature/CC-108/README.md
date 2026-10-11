@@ -1,12 +1,9 @@
-# CC-108: WSC, a net-zero impact on groundwater
+# CC-108: Net-zero impact on the groundwater environment
 
-**Status:** candidate (5 Oct 2026, maintainer request). Not started. Pairs with CC-009.
+**Status:** report and flyer v1.0 (11 Oct 2026). See `notes.md` and `references.bib`.
 
-To collect:
-- Verbatim wording from WSC's Net Zero Impact Utility pages and the Energy and Water Agency's 2023 Green Paper on
-  groundwater abstraction (both browser-only; bot challenge to scripts). Record page, date and exact sentences in
-  `primary-source.md`.
-- How "net-zero impact" is defined: what volume is "given back" (New Water supplied in place of groundwater? aquifer
-  recharge?), over what period, and how it is measured; whether it is a target or a claim of achievement.
-- WSC annual reports (groundwater production; New Water volumes and uses), project monitoring indicators, Eurostat
-  env_wat_abs / env_wat_res, EEA WISE groundwater-body status (already in data/cc-009/), Sapiano 2020 water balance.
+## Routes tried for the wording
+- Green Paper PDF (energywateragency.gov.mt): readable, verbatim found (p. 12).
+- WSC pages (wsc.com.mt): readable live; no "equivalent volume" wording.
+- Wayback: connection reset. MaltaToday: 403 (not needed).
+- Web searches for the give-back wording: found only the unsigned Sustain Europe article.
