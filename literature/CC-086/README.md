@@ -1,13 +1,8 @@
 # CC-086: Comino kiosks tendered from 2026
 
-**Status:** literature not yet collected.
+**Status:** report v1.0 (pledge label Missed). See `notes.md` for what was read and the search log, `references.bib` for the
+literature, `data/cc-086/` for the transcribed statements and checks.
 
-## To collect
-
-MTA tender notices; site observation; concession records.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-086) for the source that located this claim. It locates the claim and its context; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+## Routes tried for the wording
+Claim record URL (Lovin Malta, read); web searches for the statement; The Shift (readable; carries the Minister's quotation);
+gov.mt (403); Wayback (connection reset); Business Now (2024 article only, no relevant words).

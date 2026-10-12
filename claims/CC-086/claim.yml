@@ -2,39 +2,147 @@ id: CC-086
 title: Comino kiosks tendered from 2026
 category: Tourism & Population
 subtopic: Short lets & concessions
-status: Not started
+status: Drafted
 verdict: null
 verdict_confidence: null
 claim:
-  text: 'Tourism Minister Ian Borg (Feb 2025): from 2026 all Comino kiosks and encroached public spaces will be
-    awarded through competitive tenders and their number reduced.'
+  text: 'Tourism Minister Ian Borg (14 Apr 2025), on Comino''s kiosks and beach concessions, which stayed unchanged for the
+    2025 season: "starting in the summer of 2026, everyone will have to compete and pay the right price".'
   speaker: Ian Borg, then Tourism Minister
-  date: 2025-02
-  wording_status: 'Paraphrase: locate quote'
+  date: '2025-04-14'
+  wording_status: Verbatim found
   sources:
+  - title: Illegal kiosks on protected Comino to be allowed another year, despite promises
+    publisher: The Shift (I. Camilleri)
+    date: '2025-04-14'
+    url: https://theshiftnews.com/2025/04/14/illegal-kiosks-on-protected-comino-to-be-allowed-another-year-despite-promises
+    note: 'Read in full 12 Oct 2026. The Minister''s words in quotation marks: "However, starting in the summer of 2026,
+      everyone will have to compete and pay the right price."; "When I took over this responsibility, it was already too
+      late to conduct a proper tendering process". That the MTA is considering limiting the kiosks is the outlet''s
+      paraphrase.'
   - title: 'Watch: No More Vans? Ian Borg Pledges Major Comino Kiosk Revamp'
     publisher: Lovin Malta
-    date: Feb 2025
+    date: '2025-03-03'
     url: https://lovinmalta.com/news/watch-no-more-vans-ian-borg-pledges-major-comino-kiosk-revamp/
-    note: Locates the pledge.
-counter_evidence: In June 2026 the kiosks remained in place (The Shift, Moviment Graffitti).
-tests: MTA tender notices; site observation; concession records.
-why_low_hanging: A specific, attributable statement that public data can test.
+    note: 'Locator (read 12 Oct 2026; dated 3 Mar 2025, not February). Minister in quotation marks: "around 11 kiosks, but
+      this might be too many". The reduction and redesign are the outlet''s paraphrase.'
+  - title: Yet another promise to address Comino concession problems
+    publisher: The Shift
+    date: '2025-02-28'
+    url: https://theshiftnews.com/2025/02/28/yet-another-promise-to-address-comino-concession-problems/
+    note: 'Read 12 Oct 2026. Ministry spokesperson: "A competitive process (tender) is in the process so that everyone would
+      have the chance to compete".'
+  - title: Broken promise as Comino illegal concessions to stay put for another summer
+    publisher: The Shift
+    date: '2026-02-08'
+    url: https://theshiftnews.com/2026/02/08/broken-promise-as-comino-illegal-concessions-to-stay-put-for-another-summer/
+    note: 'Read in full 12 Oct 2026. MTA spokesperson: "The intention remains to reduce kiosks radically and to issue beach
+      concessions through a competitive tendering process. However, this will have to wait until we have the permit."
+      That no tender will be issued that summer, and the status of application PA00738/26, are the outlet''s paraphrase.'
+  - title: Visit Malta officials filmed telling citizens to leave deckchair-occupied beach in Comino
+    publisher: The Shift
+    date: '2026-06-24'
+    url: https://theshiftnews.com/2026/06/24/visit-malta-officials-filmed-telling-citizens-to-leave-deckchair-occupied-beach-in-comino/
+    note: Read 12 Oct 2026. Outlet's text; no tender reported.
+  - title: Blue Lagoon Strategic Plan
+    publisher: Malta Tourism Authority
+    date: n/d
+    url: https://mta.com.mt/blue-lagoon-strategic-plan/
+    note: 'Read 12 Oct 2026; undated. Names summer 2026 for completing the transformation; no mention of kiosks, concessions
+      or tenders.'
+  quote: '"However, starting in the summer of 2026, everyone will have to compete and pay the right price." (The Shift, 14
+    Apr 2025)'
+counter_evidence: 'MTA spokesperson, 8 Feb 2026 (quoted by The Shift): the intention remains but "this will have to wait until we
+  have the permit"; the outlet reports that no competitive tenders for kiosks or beach concessions would be issued in summer
+  2026 and that the MTA''s planning application PA00738/26 was at an early stage (the Planning Authority record was not
+  opened). The Shift, 24 Jun 2026: kiosks still without valid permits and concessions extended ad hoc; no tender reported.
+  We found no kiosk or beach-concession tender notice between Feb and 12 Oct 2026 (literature/CC-086/notes.md). Number of
+  kiosks: the Minister said "around 11" (Mar 2025); no later count found, so a reduction cannot be tested.'
+tests: The Shift, Lovin Malta and the MTA's Blue Lagoon Strategic Plan page; searches for tender notices; date arithmetic
+  (tools/cc-086-report/calc.py, data/cc-086/checks.csv).
+why_low_hanging: 'Done: Claim Check 086 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'Low: gov.mt, the Planning Authority and the MTA tender pages are browser-only; Wayback unreachable.'
+caveats: 'The record first held an intake paraphrase ("from 2026 all Comino kiosks and encroached public spaces will be
+  awarded through competitive tenders and their number reduced"); the claim is now the Minister''s own quoted words of 14 Apr
+  2025. Reducing the number of kiosks is the outlets'' paraphrase and is not rated. The MTA''s February 2026 words are as The
+  Shift printed them; the Ministry''s press statement of February 2025 and the Planning Authority''s record were not read. Our
+  search for a tender notice was not exhaustive. Missed label: pending right of reply.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- The Shift, 14 Apr 2025: the Minister's quoted words setting summer 2026 as the date
+- The Shift, 8 Feb 2026: MTA spokesperson's quoted words that the tender will wait for the permit, and the outlet's report that no tenders would be issued in summer 2026
+- The Shift, 24 Jun 2026: kiosks and concessions still on ad hoc arrangements, no tender reported
+- Date arithmetic recomputed by tools/cc-086-report/calc.py (data/cc-086/checks.csv, statements.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-12'
+thumbnail:
+  figure: 'No tender'
+  caption: for Comino's kiosks in summer 2026, as promised (the MTA said in Feb 2026 it would wait for a permit)
+pledge:   # pledge label (methodology/verdict-scale.md, Pledges); shown instead of the verdict
+  status: Missed
+  kind: government   # made in office
+  as_of: '2026-10-12'
+  made_by:
+  - ian-borg
+  made_on: '2025-04-14'
+  vehicle: Statement to The Shift (14 Apr 2025)
+  deadline: '2026-08-31'
+  target: 'Comino''s kiosks and beach concessions awarded by competitive tender from summer 2026 ("everyone will have to compete
+    and pay the right price")'
+  note: 'Deadline read as the end of meteorological summer (31 Aug 2026); on the most generous reading, 30 Sep 2026, it had
+    also passed. The MTA says the intention remains; a later tender would move the label to Met, with the date noted. The
+    reduction in the number of kiosks is not rated.'
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-12
+    step: started
+    note: "Check started. The record's locator (Lovin Malta) is dated 3 Mar 2025, not Feb 2025, and gives the Minister's words\
+      \ only on the number of kiosks; the intake's sentence on tenders from 2026 is a paraphrase. gov.mt returned 403 and\
+      \ the Wayback Machine was unreachable."
+  - date: 2026-10-12
+    step: wording
+    note: "Verbatim wording found in The Shift (14 Apr 2025): the Minister's 'starting in the summer of 2026, everyone will have\
+      \ to compete and pay the right price'. Claim text, speaker and date restated to those words; the MTA's reduction of\
+      \ kiosks is the outlet's paraphrase."
+  - date: 2026-10-12
+    step: note
+    note: "Evidence: the MTA spokesperson's quoted words of 8 Feb 2026 (tenders wait for the planning permit; no tenders that\
+      \ summer, as reported), The Shift 24 Jun 2026 (no tender), the MTA's Blue Lagoon Strategic Plan page (summer 2026). No\
+      \ kiosk tender notice found; MTA procurement for Comino found was for security, cleaning and wristbands."
+  - date: 2026-10-12
+    step: version
+    version: "1.0"
+    note: "First issue. Pledge label Missed (moderate): the tender promised from summer 2026 did not take place, by the MTA's\
+      \ own account. Pending right of reply."
 location:
   place: Blue Lagoon, Comino
   lat: 36.01404
   lon: 14.32338
   scope: site
   icon: lagoon
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-086A
+    text: "“starting in the summer of 2026, everyone will have to compete and pay the right price”"
+    finding: "MTA, 8 Feb 2026: no tenders for kiosks or beach concessions that summer; “this will have to wait until we have the permit”. The Shift, 24 Jun 2026: same ad hoc extensions; no tender found since [2, 3]."
+    rating: "Missed"
+    tone: maroon
+  - id: CC-086B
+    text: "Context: the number of kiosks to be reduced (the record’s paraphrase)"
+    finding: "Minister: “around 11 kiosks, but this might be too many” (Mar 2025); the MTA “intention remains to reduce kiosks radically” (Feb 2026). No later count found; not a pledge in the Minister’s quoted words [4, 2]."
+    rating: "Not rated"
+    tone: grey
+  - id: CC-086C
+    text: "Reason given for the delay: the planning permit"
+    finding: "MTA: it “will have to wait until we have the permit” [2]. The application’s status is the outlet’s paraphrase; the Planning Authority record was not opened ◆."
+    rating: "Not rated"
+    tone: grey
