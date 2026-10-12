@@ -2,9 +2,9 @@ id: CC-119
 title: 'Council: renewables 17.2% of energy, almost all solar'
 category: Climate & Energy
 subtopic: Renewables
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
   text: 'Council of the European Union (draft Council Recommendation on Malta, 3 Jul 2026, para. 25): Malta''s share of renewables
     in gross final energy consumption (17.2% in 2024) and in the electricity mix (16.7% in 2025) remains very low and well
@@ -24,31 +24,75 @@ claim:
     2025) remains very low and well below the EU average. The renewable energy generation is almost exclusively coming from
     solar energy, with a very small part of biomass/combustible renewable fuels, and with no wind or hydropower generation
     recorded.
-counter_evidence: CC-114 (finished) reports the overall renewables share as 17.2% in 2024 and an electricity share of 10.7%
-  for an earlier year, so the 16.7% for 2025 needs a year-matched series. The Government's 2030 target (CC-024) and the floating
-  offshore wind farm (CC-029, 'ready by 2033' in the same recital) are the policy context. The 2025 electricity figure may
-  be provisional or from national data rather than Eurostat.
+counter_evidence: Eurostat's own renewable-electricity indicator gives 10.65% (2024) and 11.2% provisional (2025), not 16.7%; the Council's figure reproduces only as renewables in domestic net generation (363.3 of 2,176.3 GWh), which excludes imports (about a third of consumption). Eurostat's annual table records a trace of wind (0.033 GWh in 2024).
 tests: Eurostat SHARES / nrg_ind_ren (overall share 2024, Malta against EU); Eurostat nrg_ind_peh or Ember data for the renewable
   electricity share in 2025; Eurostat nrg_bal_peh for generation by source (solar, biomass, wind, hydro); Enemalta and Energy
   and Water Agency generation data; the NECP 2021-2030 target.
 why_low_hanging: Percentages and a statement of absence (no wind or hydro) that Eurostat generation statistics can confirm
   directly.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: Eurostat is reachable; the Council document was read as text.'
-caveats: Candidate from the weekly intake of 11 Oct 2026. Draft Council text of 3 July 2026; check the adopted version. The
-  2025 electricity share is a very recent figure and its source is not named in the recital. Offshore wind 'by 2033' is a
-  stated plan, not a claim to be graded here.
+caveats: Draft Council text of 3 July 2026; adopted version not checked. The paragraph names no source or measure for 16.7%; we reproduce it from Eurostat nrg_cb_pem (2025 values are early estimates). No right of reply needed (Largely supported). Offshore wind 'by 2033' is a plan, not rated here.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Eurostat nrg_ind_ren, nrg_bal_peh, nrg_cb_pem and nrg_cb_e, retrieved 12 Oct 2026 (data/cc-119/eurostat_extract.csv; checks in data/cc-119/checks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-12'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-119A
+    text: "Renewables are 17.2% of gross final energy consumption in 2024, “very low and well below the EU average”"
+    said_by: "Council, para. (25) [1]"
+    finding: "Eurostat: 17.21%; EU-27 25.24%; fourth lowest of 27 [2]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-119B
+    text: "Renewables are 16.7% of the electricity mix in 2025, “very low and well below the EU average”"
+    said_by: "Council, para. (25) [1]"
+    finding: "Reproduces as the share of domestic net generation (16.69%); Eurostat’s consumption-based indicator gives 11.2% (provisional). EU-27: 47.3% on generation, 49.9% on the indicator [2, 4]. The measure is not named."
+    rating: "Accurate, measure unnamed"
+    tone: lime
+  - id: CC-119C
+    text: "Renewable generation is “almost exclusively” solar, with “a very small part of biomass/combustible renewable fuels”"
+    said_by: "Council, para. (25) [1]"
+    finding: "PV 97.2% (2024) and 96.8% (2025) of renewable generation; biogas 2.8% and 3.2% [3, 4]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-119D
+    text: "“No wind or hydropower generation recorded”"
+    said_by: "Council, para. (25) [1]"
+    finding: "Hydro zero throughout; wind 0.033 GWh in 2024 in the annual balance, 0.0 in monthly net generation [3, 4]."
+    rating: "Accurate, trace of wind"
+    tone: lime
+thumbnail:
+  figure: 16.7%
+  caption: "of Malta's 2025 net electricity generation was renewable (EU-27: 47.3%); Eurostat's consumption-based indicator gives 11.2%"
+history:
+- date: '2026-10-12'
+  step: started
+  note: Worker A started the check from the intake record; Council document 11130/26 re-read in full (para. 25, p. 13).
+- date: '2026-10-12'
+  step: wording
+  note: Verbatim wording confirmed in the Council register copy (draft of 3 Jul 2026); no source named for the figures.
+- date: '2026-10-12'
+  step: note
+  note: Eurostat nrg_ind_ren, nrg_bal_peh, nrg_cb_pem, nrg_cb_e downloaded. 17.2% (2024) exact; 16.7% (2025) reproduces as renewables in net generation (363.3/2,176.3 GWh), not as Eurostat's electricity indicator (11.2% p); PV 97%; hydro zero; wind trace 0.033 GWh.
+- date: '2026-10-12'
+  step: version
+  version: '1.0'
+  note: First issue. Largely supported (high confidence); no right of reply needed.

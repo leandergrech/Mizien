@@ -7402,9 +7402,10 @@
       "title": "Council: renewables 17.2% of energy, almost all solar",
       "category": "Climate & Energy",
       "claim": "Council of the European Union (draft Council Recommendation on Malta, 3 Jul 2026, para. 25): Malta's share of renewables in gross final energy consumption (17.2% in 2024) and in the electricity mix (16.7% in 2025) remains very low and well below the EU average; renewable generation comes almost exclusively from solar, with a very small part from biomass, and no wind or hydropower generation has been recorded.",
-      "counter": "CC-114 (finished) reports the overall renewables share as 17.2% in 2024 and an electricity share of 10.7% for an earlier year, so the 16.7% for 2025 needs a year-matched series. The Government's 2030 target (CC-024) and the floating offshore wind farm (CC-029, 'ready by 2033' in the same recital) are the policy context. The 2025 electricity figure may be provisional or from national data rather than Eurostat.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Eurostat's own renewable-electricity indicator gives 10.65% (2024) and 11.2% provisional (2025), not 16.7%; the Council's figure reproduces only as renewables in domestic net generation (363.3 of 2,176.3 GWh), which excludes imports (about a third of consumption). Eurostat's annual table records a trace of wind (0.033 GWh in 2024).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Renewables",
       "location": {
@@ -7414,17 +7415,52 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "Council of the European Union",
       "bodies": [
         "council-eu"
       ],
+      "subclaims": [
+        {
+          "id": "CC-119A",
+          "text": "Renewables are 17.2% of gross final energy consumption in 2024, “very low and well below the EU average”",
+          "finding": "Eurostat: 17.21%; EU-27 25.24%; fourth lowest of 27 [2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-119B",
+          "text": "Renewables are 16.7% of the electricity mix in 2025, “very low and well below the EU average”",
+          "finding": "Reproduces as the share of domestic net generation (16.69%); Eurostat’s consumption-based indicator gives 11.2% (provisional). EU-27: 47.3% on generation, 49.9% on the indicator [2, 4]. The measure is not named.",
+          "rating": "Accurate, measure unnamed",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-119C",
+          "text": "Renewable generation is “almost exclusively” solar, with “a very small part of biomass/combustible renewable fuels”",
+          "finding": "PV 97.2% (2024) and 96.8% (2025) of renewable generation; biogas 2.8% and 3.2% [3, 4].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-119D",
+          "text": "“No wind or hydropower generation recorded”",
+          "finding": "Hydro zero throughout; wind 0.033 GWh in 2024 in the annual balance, 0.0 in monthly net generation [3, 4].",
+          "rating": "Accurate, trace of wind",
+          "tone": "lime"
+        }
+      ],
       "date": "2026-07-03",
       "quote": "Malta's share of renewables in gross final energy consumption (17.2% in 2024) and in the electricity mix (16.7% in 2025) remains very low and well below the EU average. The renewable energy generation is almost exclusively coming from solar energy, with a very small part of biomass/combustible renewable fuels, and with no wind or hydropower generation recorded.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-12",
+      "outputs": {
+        "report": "claim-files/CC-119/report.pdf",
+        "flyer_pdf": "claim-files/CC-119/flyer.pdf",
+        "flyer_png": "claim-files/CC-119/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-119/claim.yml",
       "similar": [
         {

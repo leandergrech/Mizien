@@ -1,13 +1,8 @@
 # CC-119: Council: renewables 17.2% of energy, almost all solar
 
-**Status:** literature not yet collected.
+**Status:** Drafted, v1.0 (12 Oct 2026, worker A). Verdict: Largely supported (high confidence); no right of reply needed.
+See `notes.md`, `references.bib`. Data: `data/cc-119/`. Build: `tools/cc-119-report/`. No open-access PDFs committed (Eurostat data are in `data/cc-119/`).
 
-## To collect
-
-Eurostat SHARES / nrg_ind_ren (overall share 2024, Malta against EU); Eurostat nrg_ind_peh or Ember data for the renewable electricity share in 2025; Eurostat nrg_bal_peh for generation by source (solar, biomass, wind, hydro); Enemalta and Energy and Water Agency generation data; the NECP 2021-2030 target.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-119) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+## Routes tried for the wording
+The wording was supplied by the intake from the Council register; re-read in full on 12 Oct 2026 (curl, HTTP 200): paragraph (25), p. 13 of 22. The Wayback copy was not needed (web.archive.org refused connections in net_check).
+Archiving via scripts/archive_sources.py not run (the Council register is readable; add to manifest by hand if wanted).
