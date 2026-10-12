@@ -2,7 +2,7 @@ id: CC-083
 title: Record tourism, 'future-proofed'
 category: Tourism & Population
 subtopic: Tourism numbers & capacity
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -38,3 +38,11 @@ location:
   lon: 14.51136
   scope: institution
   icon: castille
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-12
+    step: started
+    note: "Attempt 1 (worker B). gov.mt press release PR260230 returned 403 and the Wayback Machine was unreachable. Malta\
+      \ Business Weekly (12 Feb 2026) reproduces the release: the Minister's words in quotation marks are on 'unprecedented\
+      \ levels of growth' and the strategy 'leaving its mark'; 'over 4 million arrivals' is not in his words (the outlet says\
+      \ about 4 million). The NSO inbound-tourism release that would test arrivals and spend is browser-only. Needed: the gov.mt\
+      \ release and the NSO release text, read in a browser."

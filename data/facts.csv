@@ -1378,6 +1378,13 @@ CC-085,CC-085:46,Inbound tourists in 2025 as a share of 4.7 million,85.6,%,secon
 CC-085,CC-085:47,"Average stay of inbound tourists, 2019",7.02,nights,"second-hand (◆): Deloitte for MHRA 2022, p. 66 (FY19; NSO data)",,
 CC-085,CC-085:48,"Average stay of inbound tourists, 2023",6.80,nights,"second-hand (◆): Deloitte for MHRA 2024, p. 74 (thousands; NSO data)",,
 CC-085,CC-085:49,"Average stay of inbound tourists, 2025",6.31,nights,"second-hand (◆): Malta Business Weekly, 12 Feb 2026, reporting NSO (NR 020/2026); nights given as 25.4 million",,
+CC-086,CC-086:2,Days from Borg's words to the MTA's statement,300,days,"S3, S5",14 Apr 2025 to 8 Feb 2026,
+CC-086,CC-086:3,Days from the MTA's statement to 1 Jun 2026,113,days,S5,the season the pledge named had not begun,
+CC-086,CC-086:4,Days since 31 Aug 2026 (meteorological summer ends),42,days,calendar,to 12 Oct 2026,
+CC-086,CC-086:5,Days since 30 Sep 2026 (most generous reading of summer),12,days,calendar,to 12 Oct 2026,
+CC-086,CC-086:6,Days from 1 Jun 2026 to The Shift's report,23,days,S8,24 Jun 2026: still no tender reported,
+CC-086,CC-086:7,Kiosk concessions stated by the Minister,11,kiosks,S1,"'around 11 kiosks' (3 Mar 2025); no later count found, so a reduction cannot be tested",
+CC-086,CC-086:8,Kiosk tender notices found,0,notices,literature/CC-086/notes.md,none found in the places searched (not a count of all notices),
 CC-088,CC-088:2,Population end 2025 (1 Jan 2026),588254,people,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 5 Oct 2026",,nso_release: 588254; reproduces: True
 CC-088,CC-088:3,Growth over 2025,2.44,%,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 5 Oct 2026","574,250 -> 588,254",nso_release: 2.4; reproduces: True
 CC-088,CC-088:4,Net migration 2025,13906,people,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 5 Oct 2026",,nso_release: 13906; reproduces: True

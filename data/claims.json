@@ -172,7 +172,7 @@
       "similar": [
         {
           "id": "CC-057",
-          "score": 0.55,
+          "score": 0.53,
           "terms": [
             "trees",
             "removed",
@@ -561,7 +561,7 @@
       "similar": [
         {
           "id": "CC-046",
-          "score": 0.55,
+          "score": 0.56,
           "terms": [
             "osmosis",
             "wsc",
@@ -691,7 +691,7 @@
         },
         {
           "id": "CC-057",
-          "score": 0.35,
+          "score": 0.34,
           "terms": [
             "trees",
             "planted"
@@ -812,15 +812,15 @@
           "terms": [
             "zero",
             "net",
-            "every"
+            "space"
           ]
         },
         {
           "id": "CC-054",
-          "score": 0.26,
+          "score": 0.27,
           "terms": [
             "green",
-            "spaces",
+            "space",
             "open"
           ]
         }
@@ -1356,7 +1356,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.46,
+          "score": 0.45,
           "terms": [
             "square",
             "metres",
@@ -1562,7 +1562,7 @@
       "similar": [
         {
           "id": "CC-095",
-          "score": 0.28,
+          "score": 0.26,
           "terms": [
             "prices",
             "electricity",
@@ -2981,7 +2981,7 @@
       "similar": [
         {
           "id": "CC-043",
-          "score": 0.71,
+          "score": 0.74,
           "terms": [
             "flag",
             "blue",
@@ -3023,7 +3023,7 @@
       "similar": [
         {
           "id": "CC-042",
-          "score": 0.71,
+          "score": 0.74,
           "terms": [
             "flag",
             "blue",
@@ -3184,7 +3184,7 @@
       "similar": [
         {
           "id": "CC-009",
-          "score": 0.55,
+          "score": 0.56,
           "terms": [
             "osmosis",
             "wsc",
@@ -3578,7 +3578,7 @@
       "similar": [
         {
           "id": "CC-019",
-          "score": 0.46,
+          "score": 0.45,
           "terms": [
             "square",
             "metres",
@@ -3596,10 +3596,10 @@
         },
         {
           "id": "CC-011",
-          "score": 0.26,
+          "score": 0.27,
           "terms": [
             "green",
-            "spaces",
+            "space",
             "open"
           ]
         }
@@ -3730,7 +3730,7 @@
       "similar": [
         {
           "id": "CC-093",
-          "score": 0.25,
+          "score": 0.26,
           "terms": [
             "park",
             "public"
@@ -3770,7 +3770,7 @@
       "similar": [
         {
           "id": "CC-057",
-          "score": 0.65,
+          "score": 0.63,
           "terms": [
             "trees",
             "central",
@@ -3819,7 +3819,7 @@
       "similar": [
         {
           "id": "CC-056",
-          "score": 0.65,
+          "score": 0.63,
           "terms": [
             "trees",
             "central",
@@ -3828,7 +3828,7 @@
         },
         {
           "id": "CC-002",
-          "score": 0.55,
+          "score": 0.53,
           "terms": [
             "trees",
             "removed",
@@ -3837,7 +3837,7 @@
         },
         {
           "id": "CC-010",
-          "score": 0.35,
+          "score": 0.34,
           "terms": [
             "trees",
             "planted"
@@ -5070,7 +5070,7 @@
       "category": "Tourism & Population",
       "claim": "Deputy PM and Tourism Minister Ian Borg (Feb 2026): record 2025 results (over 4 million arrivals) confirm the strategy to reshape tourism around sustainability and quality.",
       "counter": "Volume growth vs 'quality' indicators (spend per night, length of stay); carrying capacity studies.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Tourism numbers & capacity",
@@ -5092,18 +5092,7 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-083/claim.yml",
-      "similar": [
-        {
-          "id": "CC-086",
-          "score": 0.34,
-          "terms": [
-            "tourism",
-            "ian",
-            "borg"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-083/claim.yml"
     },
     {
       "id": "CC-084",
@@ -5242,9 +5231,9 @@
       "id": "CC-086",
       "title": "Comino kiosks tendered from 2026",
       "category": "Tourism & Population",
-      "claim": "Tourism Minister Ian Borg (Feb 2025): from 2026 all Comino kiosks and encroached public spaces will be awarded through competitive tenders and their number reduced.",
-      "counter": "In June 2026 the kiosks remained in place (The Shift, Moviment Graffitti).",
-      "status": "Not started",
+      "claim": "Tourism Minister Ian Borg (14 Apr 2025), on Comino's kiosks and beach concessions, which stayed unchanged for the 2025 season: \"starting in the summer of 2026, everyone will have to compete and pay the right price\".",
+      "counter": "MTA spokesperson, 8 Feb 2026 (quoted by The Shift): the intention remains but \"this will have to wait until we have the permit\"; the outlet reports that no competitive tenders for kiosks or beach concessions would be issued in summer 2026 and that the MTA's planning application PA00738/26 was at an early stage (the Planning Authority record was not opened). The Shift, 24 Jun 2026: kiosks still without valid permits and concessions extended ad hoc; no tender reported. We found no kiosk or beach-concession tender notice between Feb and 12 Oct 2026 (literature/CC-086/notes.md). Number of kiosks: the Minister said \"around 11\" (Mar 2025); no later count found, so a reduction cannot be tested.",
+      "status": "Drafted",
       "verdict": null,
       "tags": [],
       "subtopic": "Short lets & concessions",
@@ -5255,29 +5244,85 @@
         "scope": "site",
         "icon": "lagoon"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
       "confidence": null,
       "speaker": "Ian Borg, then Tourism Minister",
       "bodies": [
         "ian-borg"
       ],
-      "date": "2025-02",
-      "quote": "",
-      "version": null,
-      "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-086/claim.yml",
-      "similar": [
+      "subclaims": [
         {
-          "id": "CC-083",
-          "score": 0.34,
-          "terms": [
-            "tourism",
-            "ian",
-            "borg"
-          ]
+          "id": "CC-086A",
+          "text": "“starting in the summer of 2026, everyone will have to compete and pay the right price”",
+          "finding": "MTA, 8 Feb 2026: no tenders for kiosks or beach concessions that summer; “this will have to wait until we have the permit”. The Shift, 24 Jun 2026: same ad hoc extensions; no tender found since [2, 3].",
+          "rating": "Missed",
+          "tone": "maroon"
+        },
+        {
+          "id": "CC-086B",
+          "text": "Context: the number of kiosks to be reduced (the record’s paraphrase)",
+          "finding": "Minister: “around 11 kiosks, but this might be too many” (Mar 2025); the MTA “intention remains to reduce kiosks radically” (Feb 2026). No later count found; not a pledge in the Minister’s quoted words [4, 2].",
+          "rating": "Not rated",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-086C",
+          "text": "Reason given for the delay: the planning permit",
+          "finding": "MTA: it “will have to wait until we have the permit” [2]. The application’s status is the outlet’s paraphrase; the Planning Authority record was not opened ◆.",
+          "rating": "Not rated",
+          "tone": "grey"
         }
-      ]
+      ],
+      "pledge": {
+        "status": "Missed",
+        "slug": "pledge-missed",
+        "colour": "#a72a68",
+        "ink": "#ffffff",
+        "as_of": "12 October 2026",
+        "as_of_iso": "2026-10-12",
+        "made_on": "14 April 2025",
+        "made_mid": "2025-04-14",
+        "deadline_mid": "2026-08-31",
+        "deadline": "31 August 2026",
+        "term_end": null,
+        "target": "Comino's kiosks and beach concessions awarded by competitive tender from summer 2026 (\"everyone will have to compete and pay the right price\")",
+        "vehicle": "Statement to The Shift (14 Apr 2025)",
+        "occasion": "Statement to The Shift (14 Apr 2025)",
+        "note": "Deadline read as the end of meteorological summer (31 Aug 2026); on the most generous reading, 30 Sep 2026, it had also passed. The MTA says the intention remains; a later tender would move the label to Met, with the date noted. The reduction in the number of kiosks is not rated.",
+        "made_by": [
+          {
+            "id": "ian-borg",
+            "name": "Ian Borg",
+            "kind": "person",
+            "role": "Deputy Prime Minister and Minister for Tourism",
+            "path": "/bodies/ian-borg/"
+          }
+        ],
+        "made_by_ids": [
+          "ian-borg"
+        ],
+        "pure": true,
+        "overlaps": [],
+        "kind": "government",
+        "kind_label": "Government commitment",
+        "cycle": "2022",
+        "cycle_label": "2022–26",
+        "follows": [],
+        "follows_search": null,
+        "drift": null,
+        "source_of_commitment": null
+      },
+      "date": "2025-04-14",
+      "quote": "\"However, starting in the summer of 2026, everyone will have to compete and pay the right price.\" (The Shift, 14 Apr 2025)",
+      "version": "1.0",
+      "last_reviewed": "2026-10-12",
+      "outputs": {
+        "report": "claim-files/CC-086/report.pdf",
+        "flyer_pdf": "claim-files/CC-086/flyer.pdf",
+        "flyer_png": "claim-files/CC-086/flyer.png"
+      },
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-086/claim.yml"
     },
     {
       "id": "CC-087",
@@ -5673,7 +5718,7 @@
           "terms": [
             "zero",
             "net",
-            "every"
+            "space"
           ]
         }
       ]
@@ -5710,7 +5755,7 @@
       "similar": [
         {
           "id": "CC-055",
-          "score": 0.25,
+          "score": 0.26,
           "terms": [
             "park",
             "public"
@@ -5949,7 +5994,7 @@
       "similar": [
         {
           "id": "CC-022",
-          "score": 0.28,
+          "score": 0.26,
           "terms": [
             "prices",
             "electricity",
