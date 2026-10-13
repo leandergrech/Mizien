@@ -5944,15 +5944,6 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
             "effort",
             "emissions"
           ]
-        },
-        {
-          "id": "CC-117",
-          "score": 0.28,
-          "terms": [
-            "target",
-            "commission",
-            "stage"
-          ]
         }
       ]
     },
@@ -6424,7 +6415,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.29,
+          "score": 0.3,
           "terms": [
             "abstraction",
             "groundwater",
@@ -6433,7 +6424,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         },
         {
           "id": "CC-118",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "surface",
             "bodies",
@@ -6927,7 +6918,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         },
         {
           "id": "CC-101",
-          "score": 0.29,
+          "score": 0.3,
           "terms": [
             "abstraction",
             "groundwater",
@@ -7476,9 +7467,10 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "title": "EU: Malta missed recycling targets (reasoned opinion)",
       "category": "Waste",
       "claim": "European Commission (July 2026 infringement package, 8 Jul 2026): Malta missed the 50% municipal waste preparing-for-reuse-and-recycling target for 2020 and the targets for total packaging, paper and cardboard and metals (2020 to 2023), and the Commission has sent a reasoned opinion (INFR(2024)2135), the second stage of infringement proceedings.",
-      "counter": "The Council's draft recommendation of 3 July 2026 (CC-118 source) gives Malta's municipal recycling rate as 16.7% in 2024 against an EU average of 48%, and says Malta 'is now at risk of having missed the 2025 target of 55%'. The Ministry's 'strong progress in waste separation' statement (CC-004) and the 2026 country report (CC-111) speak to the same indicators. A reasoned opinion is the Commission's position, not a court finding; no Maltese response has been found.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Eurostat reproduces the findings: municipal recycling rate 10.9% in 2020 (target 50%; lowest of the EU-27), 16.7% in 2024 (EU-27 48.1%). Packaging 2020-2023: total 40.0/36.8/30.8/43.4% (target 55%), paper and cardboard 47.8/45.3/40.6/53.6% (60%), metals 57.2/27.1/13.0/15.2% (50%), so metals met the target in 2020. Eurostat also shows plastics (2020-2022), wood (0.0%) and glass (2022, 43.3%) below the page's targets, which the Commission does not list for Malta (unexplained; decision text not read). A reasoned opinion is the Commission's position, not a court finding; no Maltese response found.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Recycling & separation",
       "location": {
@@ -7488,29 +7480,53 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
-      "date": "2026-07-08",
-      "quote": "",
-      "version": null,
-      "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-117/claim.yml",
-      "similar": [
+      "subclaims": [
         {
-          "id": "CC-094",
-          "score": 0.28,
-          "terms": [
-            "target",
-            "commission",
-            "stage"
-          ]
+          "id": "CC-117A",
+          "text": "A reasoned opinion (INFR(2024)2135) was sent to Malta, the second stage, after July 2024 notices",
+          "finding": "Stated on the Commission’s page and reported by Newsbook [2]. We did not see the decision text; no Maltese response found.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-117B",
+          "text": "Malta missed the 50% municipal preparing-for-reuse-and-recycling target for 2020",
+          "finding": "Eurostat: 10.9% in 2020, lowest of the EU-27; never above 17.4% to 2024.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-117C",
+          "text": "Malta missed the targets for total packaging, and paper and cardboard (2020–2023)",
+          "finding": "Total 40.0 / 36.8 / 30.8 / 43.4% against 55%; paper and cardboard 47.8 / 45.3 / 40.6 / 53.6% against 60%.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-117D",
+          "text": "Malta missed the metals target (2020–2023)",
+          "finding": "27.1 / 13.0 / 15.2% against 50% in 2021–2023; 57.2% in 2020 was above target.",
+          "rating": "Accurate, one year met",
+          "tone": "amber"
         }
-      ]
+      ],
+      "date": "2026-07-08",
+      "quote": "Malta (INFR(2024)2135) ... for failing to meet several waste recycling targets ... Bulgaria, Czechia, Germany, Greece, Spain, Croatia, Cyprus, Hungary, Malta, Poland, Portugal and Romania have failed to meet the 50% target of preparing for reuse and recycling of municipal waste ... which was to be reached by 2020. ... Malta missed the targets for total packaging, paper and cardboard and metals.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-13",
+      "outputs": {
+        "report": "claim-files/CC-117/report.pdf",
+        "flyer_pdf": "claim-files/CC-117/flyer.pdf",
+        "flyer_png": "claim-files/CC-117/flyer.png"
+      },
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-117/claim.yml"
     },
     {
       "id": "CC-118",
@@ -7544,7 +7560,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-101",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "surface",
             "bodies",
