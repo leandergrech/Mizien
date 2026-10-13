@@ -2,55 +2,93 @@ id: CC-117
 title: 'EU: Malta missed recycling targets (reasoned opinion)'
 category: Waste
 subtopic: Recycling & separation
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
   text: 'European Commission (July 2026 infringement package, 8 Jul 2026): Malta missed the 50% municipal waste preparing-for-reuse-and-recycling
     target for 2020 and the targets for total packaging, paper and cardboard and metals (2020 to 2023), and the Commission
     has sent a reasoned opinion (INFR(2024)2135), the second stage of infringement proceedings.'
   speaker: European Commission
   date: '2026-07-08'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
   - title: 'July infringements package: key decisions'
     publisher: European Commission, Representation in Malta
     date: '2026-07-08'
     url: https://malta.representation.ec.europa.eu/news/july-infringements-package-key-decisions-2026-07-08_en
-    note: Primary page (Commission). Read via a text extractor on 11 Oct 2026; the short key-wording lines need confirming
-      against the page and the press-corner infringement decision. The page gives the case number and says Malta has two months
-      to respond.
+    note: 'The claim. Full page read 13 Oct 2026 (Commission Representation in Malta; page metadata give 8 Jul 2026 for the decisions). The Commission press-corner version and the decision text were not opened.'
   - title: EU escalates action against Malta over missed recycling targets
     publisher: Newsbook
     date: '2026-07-09'
     url: https://newsbook.com.mt/en/eu-escalates-action-against-malta-over-missed-recycling-targets/
     note: 'Locator: reports the reasoned opinion. No government reaction quoted in the text read.'
-counter_evidence: The Council's draft recommendation of 3 July 2026 (CC-118 source) gives Malta's municipal recycling rate
-  as 16.7% in 2024 against an EU average of 48%, and says Malta 'is now at risk of having missed the 2025 target of 55%'.
-  The Ministry's 'strong progress in waste separation' statement (CC-004) and the 2026 country report (CC-111) speak to the
-  same indicators. A reasoned opinion is the Commission's position, not a court finding; no Maltese response has been found.
+  quote: Malta (INFR(2024)2135) ... for failing to meet several waste recycling targets ... Bulgaria, Czechia, Germany, Greece, Spain, Croatia, Cyprus, Hungary, Malta, Poland, Portugal and Romania have failed to meet the 50% target of preparing for reuse and recycling of municipal waste ... which was to be reached by 2020. ... Malta missed the targets for total packaging, paper and cardboard and metals.
+counter_evidence: 'Eurostat reproduces the findings: municipal recycling rate 10.9% in 2020 (target 50%; lowest of the EU-27), 16.7% in 2024 (EU-27 48.1%). Packaging 2020-2023: total 40.0/36.8/30.8/43.4% (target 55%), paper and cardboard 47.8/45.3/40.6/53.6% (60%), metals 57.2/27.1/13.0/15.2% (50%), so metals met the target in 2020. Eurostat also shows plastics (2020-2022), wood (0.0%) and glass (2022, 43.3%) below the page''s targets, which the Commission does not list for Malta (unexplained; decision text not read). A reasoned opinion is the Commission''s position, not a court finding; no Maltese response found.'
 tests: Eurostat env_wasmun (municipal recycling rate and the 2020 target year, Malta against 50%); Eurostat env_waspac (packaging
   recycling rates by material, 2020 to 2023); the Commission decision text (INFR(2024)2135, July 2024 letter of formal notice);
   Directive 2008/98/EC and Directive 94/62/EC target definitions and calculation rules (including the 2020 target year).
 why_low_hanging: An EU institution's statement about measurable targets that Eurostat publishes year by year.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High for the data: Eurostat and ec.europa.eu are reachable. The Commission''s page is on a reachable host;
   Newsbook sometimes returns 403.'
-caveats: Candidate from the weekly intake of 11 Oct 2026. Wording is from a short summary of the Commission's page; read the
-  decision text before quoting. The packaging, paper and cardboard and metal targets are named without percentages in the
-  text read; the worker should take them from the Directive. Overlaps in subject, not in claimant, with CC-004, CC-111 and
-  CC-081. Malta has two months from 8 Jul 2026 to respond; a referral to the Court of Justice would be a later stage.
+caveats: 'Largely supported: no right of reply needed. We read the Commission''s summary page, not the decision text, the July 2024 letter of formal notice or the Directives; targets are as the page states them. Eurostat rates are not the Commission''s compliance calculation. Malta has two months from 8 Jul 2026 to respond; a referral to the Court would be a later stage.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-117A
+    text: "A reasoned opinion (INFR(2024)2135) was sent to Malta, the second stage, after July 2024 notices"
+    said_by: "EC [1]"
+    finding: "Stated on the Commission’s page and reported by Newsbook [2]. We did not see the decision text; no Maltese response found."
+    rating: "Accurate"
+    tone: green
+  - id: CC-117B
+    text: "Malta missed the 50% municipal preparing-for-reuse-and-recycling target for 2020"
+    said_by: "EC [1]"
+    finding: "Eurostat: 10.9% in 2020, lowest of the EU-27; never above 17.4% to 2024."
+    rating: "Accurate"
+    tone: green
+  - id: CC-117C
+    text: "Malta missed the targets for total packaging, and paper and cardboard (2020–2023)"
+    said_by: "EC [1]"
+    finding: "Total 40.0 / 36.8 / 30.8 / 43.4% against 55%; paper and cardboard 47.8 / 45.3 / 40.6 / 53.6% against 60%."
+    rating: "Accurate"
+    tone: green
+  - id: CC-117D
+    text: "Malta missed the metals target (2020–2023)"
+    said_by: "EC [1]"
+    finding: "27.1 / 13.0 / 15.2% against 50% in 2021–2023; 57.2% in 2020 was above target."
+    rating: "Accurate, one year met"
+    tone: amber
+version: '1.0'
+last_reviewed: '2026-10-13'
+thumbnail:
+  figure: 10.9%
+  caption: "of municipal waste recycled in 2020 (target 50%); Commission reasoned opinion, Jul 2026"
+history:   # research log
+  - date: 2026-10-13
+    step: wording
+    note: 'Commission Representation page (July infringements package, decisions of 8 Jul 2026) read in full; Newsbook 9 Jul 2026 read. Decision text and press-corner version not opened.'
+  - date: 2026-10-13
+    step: note
+    note: 'Eurostat cei_wm011 and env_waspac downloaded; rates compared with the targets the page lists (tools/cc-117-report/calc.py). EUR-Lex (Directives) returned an empty page to scripts.'
+  - date: 2026-10-13
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (high confidence); no right of reply needed.
