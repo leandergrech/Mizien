@@ -561,7 +561,7 @@
       "similar": [
         {
           "id": "CC-046",
-          "score": 0.56,
+          "score": 0.57,
           "terms": [
             "osmosis",
             "wsc",
@@ -1356,7 +1356,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.45,
+          "score": 0.46,
           "terms": [
             "square",
             "metres",
@@ -1452,7 +1452,7 @@
         },
         {
           "id": "CC-120",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "noise",
             "study",
@@ -3064,7 +3064,7 @@
       "similar": [
         {
           "id": "CC-045",
-          "score": 0.32,
+          "score": 0.33,
           "terms": [
             "tunnels",
             "every",
@@ -3143,7 +3143,7 @@
       "similar": [
         {
           "id": "CC-044",
-          "score": 0.32,
+          "score": 0.33,
           "terms": [
             "tunnels",
             "every",
@@ -3184,7 +3184,7 @@
       "similar": [
         {
           "id": "CC-009",
-          "score": 0.56,
+          "score": 0.57,
           "terms": [
             "osmosis",
             "wsc",
@@ -3578,7 +3578,7 @@
       "similar": [
         {
           "id": "CC-019",
-          "score": 0.45,
+          "score": 0.46,
           "terms": [
             "square",
             "metres",
@@ -4759,7 +4759,7 @@
       "similar": [
         {
           "id": "CC-088",
-          "score": 0.39,
+          "score": 0.38,
           "terms": [
             "end",
             "stood",
@@ -5218,7 +5218,7 @@
       "similar": [
         {
           "id": "CC-122",
-          "score": 0.53,
+          "score": 0.52,
           "terms": [
             "beds",
             "hotel",
@@ -5415,20 +5415,20 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-088/claim.yml",
       "similar": [
         {
-          "id": "CC-076",
-          "score": 0.39,
-          "terms": [
-            "end",
-            "stood",
-            "office"
-          ]
-        },
-        {
           "id": "CC-106",
           "score": 0.39,
           "terms": [
             "population",
             "estimated"
+          ]
+        },
+        {
+          "id": "CC-076",
+          "score": 0.38,
+          "terms": [
+            "end",
+            "stood",
+            "office"
           ]
         },
         {
@@ -5445,10 +5445,11 @@
       "id": "CC-089",
       "title": "Growth outpacing infrastructure",
       "category": "Tourism & Population",
-      "claim": "The Malta Chamber: Malta's rapid population growth creates an urgent need to focus on infrastructure demands.",
-      "counter": "Projections of 636,000 by 2030 are cited elsewhere; compare infrastructure capacity indicators.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "PwC Malta (press release on its Summer 2026 Economic Update, posted by the Malta Chamber as Sponsored Content on 22 Jul 2026 under the headline \"Malta's rapid population growth creates urgent need to focus on the country's infrastructure demands for the future\"): \"Infrastructure demands require urgent investment.\" The release gives Malta's population as 588,254 at year-end 2025, a 2030 base case of 636,000, and illustrates the need with hospital beds and imported electricity.",
+      "counter": "Eurostat demo_gind gives 588,254 on 1 Jan 2026, +14,004 (+2.44%) in 2025, the fastest of 27 (EU-27 +0.16%; Cyprus +1.38%); +34.1% since 2015 (EU +2.1%). EUROPOP2025 for 1 Jan 2030, 621,470 (baseline) and 650,230 (higher migration), so PwC's 636,000 is within range. Hospital beds per 100,000 in 2024, 391 (18th of 27; EU-27 507); PwC says 397, 17th, EU 511. Beds to hold the rate at 636,000 residents, +262 to +303 (Eurostat's rate or PwC's 397), against PwC's +329; parity +1,028 against PwC's +1,054. Malta's median age is 40.0 (EU-27 44.9). Electricity imports 970 GWh in 2024 (equal to PwC); PwC's 1,304 is reproduced exactly, but 970 to 1,304 is +34%, not \"circa 25%\". Density 1,865 and 2,016 on Eurostat's area (PwC 1,862 and 2,013). World Bank 2023 has Malta 8th of 263 entries, 5th among sovereign states (1,754 vs Maldives 1,765), so \"fourth\" was not reproduced.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Population & labour",
       "location": {
@@ -5458,18 +5459,92 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
-      "speaker": "The Malta Chamber of Commerce, Enterprise and Industry",
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
+      "speaker": "PwC Malta",
       "bodies": [
-        "malta-chamber"
+        "pwc-malta"
       ],
-      "date": "",
-      "quote": "",
-      "version": null,
-      "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-089/claim.yml"
+      "subclaims": [
+        {
+          "id": "CC-089A",
+          "text": "Population 588,254 at year-end 2025, up about 14,000 (2.4%)",
+          "finding": "Eurostat demo_gind: 588,254 and +14,004 (+2.44%) [3].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-089B",
+          "text": "Malta’s population growth is “rapid”",
+          "finding": "+2.44% in 2025, 1st of 27 (EU-27 +0.16%); +34% since 2015 (EU +2%) [3].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-089C",
+          "text": "Base case of 636,000 by 2030",
+          "finding": "Between Eurostat’s baseline and higher-migration variant, rebased or not; PwC’s model unread [3].",
+          "rating": "Within range",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-089D",
+          "text": "Density 1,862 now and 2,013 by 2030",
+          "finding": "1,865 and 2,016 on Eurostat’s area; within 0.2% [3].",
+          "rating": "Close",
+          "tone": "green"
+        },
+        {
+          "id": "CC-089E",
+          "text": "“Fourth most densely populated country globally”",
+          "finding": "World Bank 2023: 8th of 263 entries, 5th among sovereign states (1,754 vs Maldives 1,765) [4].",
+          "rating": "Not reproduced",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-089F",
+          "text": "Hospital beds: 397 vs EU 511 (17th); +329 to keep standing (15%), +1,054 for parity (48%)",
+          "finding": "391 vs 507 in 2024, 18th (2022: 17th); +262 to +303 to keep standing; +1,028 for parity [3].",
+          "rating": "Close",
+          "tone": "green"
+        },
+        {
+          "id": "CC-089G",
+          "text": "Electricity: 970 GWh imported; 1,304 at 636,000; “circa 25%” rise",
+          "finding": "970 equal; 1,304 reproduced exactly; the rise is +34%, not about 25% [3].",
+          "rating": "One error",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-089H",
+          "text": "“Infrastructure demands require urgent investment”",
+          "finding": "A judgement. The premises hold on two indicators; size and urgency are not shown by the release.",
+          "rating": "Largely supported",
+          "tone": "lime"
+        }
+      ],
+      "date": "2026-07-22",
+      "quote": "Malta's rapid population growth creates urgent need to focus on the country's infrastructure demands for the future … Infrastructure demands require urgent investment.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-13",
+      "outputs": {
+        "report": "claim-files/CC-089/report.pdf",
+        "flyer_pdf": "claim-files/CC-089/flyer.pdf",
+        "flyer_png": "claim-files/CC-089/flyer.png"
+      },
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-089/claim.yml",
+      "similar": [
+        {
+          "id": "CC-099",
+          "score": 0.25,
+          "terms": [
+            "population",
+            "pwc",
+            "release"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-090",
@@ -6172,7 +6247,18 @@
         "flyer_pdf": "claim-files/CC-099/flyer.pdf",
         "flyer_png": "claim-files/CC-099/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-099/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-099/claim.yml",
+      "similar": [
+        {
+          "id": "CC-089",
+          "score": 0.25,
+          "terms": [
+            "population",
+            "pwc",
+            "release"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-100",
@@ -7514,7 +7600,7 @@
       "similar": [
         {
           "id": "CC-020",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "noise",
             "study",
@@ -7605,7 +7691,7 @@
       "similar": [
         {
           "id": "CC-085",
-          "score": 0.53,
+          "score": 0.52,
           "terms": [
             "beds",
             "hotel",
@@ -8803,6 +8889,13 @@
       "to": "CC-119",
       "theme": "T18",
       "link_type": "Shared target",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-089",
+      "to": "CC-099",
+      "theme": "T10",
+      "link_type": "Shared driver",
       "strength": "Weak (indicative)"
     }
   ],
@@ -12750,7 +12843,7 @@
           ]
         },
         {
-          "id": "malta-chamber",
+          "id": "ministry-tourism",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -12758,7 +12851,7 @@
           ]
         },
         {
-          "id": "ministry-tourism",
+          "id": "pwc-malta",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -12784,28 +12877,11 @@
       "role": null,
       "links": [
         {
-          "id": "the-shift",
-          "named": 0,
-          "pairs": 2,
-          "themes": [
-            "T10",
-            "T4"
-          ]
-        },
-        {
           "id": "european-commission",
           "named": 0,
           "pairs": 1,
           "themes": [
             "T4"
-          ]
-        },
-        {
-          "id": "imf",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T10"
           ]
         },
         {
@@ -12817,11 +12893,11 @@
           ]
         },
         {
-          "id": "mhra",
+          "id": "the-shift",
           "named": 0,
           "pairs": 1,
           "themes": [
-            "T10"
+            "T4"
           ]
         }
       ]
@@ -13292,18 +13368,17 @@
           ]
         },
         {
-          "id": "malta-chamber",
+          "id": "ministry-transport",
           "named": 0,
           "pairs": 2,
           "themes": [
-            "T10",
             "T4"
           ]
         },
         {
-          "id": "ministry-transport",
+          "id": "malta-chamber",
           "named": 0,
-          "pairs": 2,
+          "pairs": 1,
           "themes": [
             "T4"
           ]
@@ -13334,6 +13409,14 @@
         },
         {
           "id": "ministry-tourism",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
+          "id": "pwc-malta",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -13611,23 +13694,15 @@
       "role": null,
       "links": [
         {
-          "id": "malta-chamber",
+          "id": "pwc-malta",
           "named": 0,
-          "pairs": 1,
+          "pairs": 2,
           "themes": [
             "T10"
           ]
         },
         {
           "id": "nso",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T10"
-          ]
-        },
-        {
-          "id": "pwc-malta",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -13688,6 +13763,22 @@
       "links": [
         {
           "id": "imf",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
+          "id": "mhra",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T10"
+          ]
+        },
+        {
+          "id": "the-shift",
           "named": 0,
           "pairs": 1,
           "themes": [

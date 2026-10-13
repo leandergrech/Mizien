@@ -1,0 +1,267 @@
+iso3,name,year,people_per_km2_land,url,retrieved
+AFE,Africa Eastern and Southern,2023,50.5146975127966,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+AFW,Africa Western and Central,2023,56.1939927079753,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ARB,Arab World,2023,36.8003818154477,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CSS,Caribbean small states,2023,10.9489127656158,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CEB,Central Europe and the Baltics,2023,90.6580966896622,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+EAR,Early-demographic dividend,2023,105.363343039189,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+EAS,East Asia & Pacific,2023,97.5227482132708,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+EAP,East Asia & Pacific (excluding high income),2023,133.577916991669,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TEA,East Asia & Pacific (IDA & IBRD countries),2023,132.925071716956,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+EMU,Euro area,2023,125.590943523505,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ECS,Europe & Central Asia,2023,33.7126283069936,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ECA,Europe & Central Asia (excluding high income),2023,42.1021454505816,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TEC,Europe & Central Asia (IDA & IBRD countries),2023,19.9519137845936,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+EUU,European Union,2023,112.553231055493,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+FCV,"Fragility, Conflict, and Violence (FCV) situations",2023,55.5507831705648,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+HPC,Heavily indebted poor countries (HIPC),2023,47.205835184396,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+,High income,2023,27.1982249860451,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+IBD,IBRD only,2023,69.9619999801745,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+IBT,IDA & IBRD total,2023,71.3577355202345,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+IDB,IDA blend,2023,135.180658581738,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+IDX,IDA only,2023,60.8242825383503,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+IDA,IDA total,2023,75.2603821185522,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LTE,Late-demographic dividend,2023,52.2339399382844,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LCN,Latin America & Caribbean,2023,32.7895442852982,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LAC,Latin America & Caribbean (excluding high income),2023,32.9281686154836,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TLA,Latin America & the Caribbean (IDA & IBRD countries),2023,32.231742223627,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LDC,Least developed countries: UN classification,2023,56.9649505268161,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LMY,Low & middle income,2023,85.3281404707501,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+,Low income,2023,49.4971885123774,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+,Lower middle income,2023,151.987919406264,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MEA,"Middle East, North Africa, Afghanistan & Pakistan",2023,63.1160102273383,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MNA,"Middle East, North Africa, Afghanistan & Pakistan (excluding high income)",2023,72.4876135406796,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TMN,"Middle East, North Africa, Afghanistan & Pakistan (IDA & IBRD)",2023,72.0171531170022,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MIC,Middle income,2023,93.6440268965279,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+NAC,North America,2023,21.0116626879289,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+,Not classified,2023,,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+OED,OECD members,2023,39.2902393489606,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+OSS,Other small states,2023,46.6435815726675,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PSS,Pacific island small states,2023,41.920872954014,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PST,Post-demographic dividend,2023,35.9838778151555,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PRE,Pre-demographic dividend,2023,53.0075842168783,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SST,Small states,2023,26.6421485673445,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SAS,South Asia,2023,496.764562339512,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TSA,South Asia (IDA & IBRD),2023,496.764562339512,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SSF,Sub-Saharan Africa,2023,52.6639815629256,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SSA,Sub-Saharan Africa (excluding high income),2023,52.6599841253972,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TSS,Sub-Saharan Africa (IDA & IBRD countries),2023,52.6639815629256,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+,Upper middle income,2023,68.8436265101729,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+WLD,World,2023,62.1354378370614,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+AFG,Afghanistan,2023,63.5585008355948,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ALB,Albania,2023,88.0167153284672,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+DZA,Algeria,2023,19.3825602290762,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ASM,American Samoa,2023,238.798994974874,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+AND,Andorra,2023,172.769230769231,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+AGO,Angola,2023,29.4777460495709,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ATG,Antigua and Barbuda,2023,211.938278166151,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ARG,Argentina,2023,16.6399559321662,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ARM,Armenia,2023,105.119108748259,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ABW,Aruba,2023,596.438888888889,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+AUS,Australia,2023,3.46591948538875,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+AUT,Austria,2023,110.661185167232,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+AZE,Azerbaijan,2023,122.854906231095,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BHS,"Bahamas, The",2023,39.9040959040959,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BHR,Bahrain,2023,1971.32375,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BGD,Bangladesh,2023,1317.25428286087,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BRB,Barbados,2023,656.595348837209,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BLR,Belarus,2023,45.217077292187,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BEL,Belgium,2023,386.303731881682,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BLZ,Belize,2023,18.0230600613766,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BEN,Benin,2023,125.142195814118,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BMU,Bermuda,2023,1198.11111111111,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BTN,Bhutan,2023,20.6183796539067,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BOL,Bolivia,2023,11.2542465064539,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BIH,Bosnia and Herzegovina,2023,62.20845703125,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BWA,Botswana,2023,4.37641204806522,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BRA,Brazil,2023,25.2616884857157,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+VGB,British Virgin Islands,2023,258.17880794702,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BRN,Brunei Darussalam,2023,87.0870967741936,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BGR,Bulgaria,2023,59.3827929255711,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BFA,Burkina Faso,2023,84.1585380116959,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+BDI,Burundi,2023,533.078271028037,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CPV,Cabo Verde,2023,129.610669975186,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+KHM,Cambodia,2023,98.7076818490823,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CMR,Cameroon,2023,60.0213386642973,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CAN,Canada,2023,4.5568841808231,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CYM,Cayman Islands,2023,304.325,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CAF,Central African Republic,2023,8.27060419275097,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TCD,Chad,2023,15.342331639136,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CHI,Channel Islands,2023,,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CHL,Chile,2023,26.4647249005172,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CHN,China,2023,150.264001337848,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+COL,Colombia,2023,47.1574150518251,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+COM,Comoros,2023,456.951638903815,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+COD,"Congo, Dem. Rep.",2023,46.6640484329856,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+COG,"Congo, Rep.",2023,18.1050805270864,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CRI,Costa Rica,2023,100.979529272152,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CIV,Cote d'Ivoire,2023,98.0052012578616,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+HRV,Croatia,2023,68.9722301644031,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CUB,Cuba,2023,106.165038535645,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CUW,Curacao,2023,348.31981981982,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CYP,Cyprus,2023,145.560173160173,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CZE,Czechia,2023,140.785547662605,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+DNK,Denmark,2023,148.6738,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+DJI,Djibouti,2023,49.7387402933563,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+DMA,Dominica,2023,88.5619174434088,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+DOM,Dominican Republic,2023,235.098143035751,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ECU,Ecuador,2023,72.3952448059269,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+EGY,"Egypt, Arab Rep.",2023,115.059291777588,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SLV,El Salvador,2023,304.518532818533,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GNQ,Equatorial Guinea,2023,65.8627524374811,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ERI,Eritrea,2023,28.7283940397351,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+EST,Estonia,2023,32.0684764802247,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SWZ,Eswatini,2023,71.5410465116279,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ETH,Ethiopia,2023,114.684699200132,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+FRO,Faroe Islands,2023,39.7065693430657,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+FJI,Fiji,2023,50.5826491516147,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+FIN,Finland,2023,18.3705454665088,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+FRA,France,2023,126.862020595603,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PYF,French Polynesia,2023,80.990492653414,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GAB,Gabon,2023,9.64329956921644,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GMB,"Gambia, The",2023,266.5854743083,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GEO,Georgia,2023,65.0037265124742,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+DEU,Germany,2023,238.351810090719,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GHA,Ghana,2023,148.49676310689,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GIB,Gibraltar,2023,3847.1,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GRC,Greece,2023,80.7397284716835,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GRL,Greenland,2023,0.138543062492386,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GRD,Grenada,2023,340.351744186047,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GUM,Guam,2023,307.77449168207,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GTM,Guatemala,2023,169.138092571855,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GIN,Guinea,2023,58.6255412664822,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GNB,Guinea-Bissau,2023,76.5767780938834,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GUY,Guyana,2023,3.91376811594203,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+HTI,Haiti,2023,422.256821480406,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+HND,Honduras,2023,95.1367503798373,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+HKG,"Hong Kong SAR, China",2023,7177.2380952381,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+HUN,Hungary,2023,105.108327854482,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ISL,Iceland,2023,3.82488346722206,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+IND,India,2023,483.679010086809,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+IDN,Indonesia,2023,148.588336368467,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+IRN,"Iran, Islamic Rep.",2023,55.8451198767334,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+IRQ,Iraq,2023,103.826155759795,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+IRL,Ireland,2023,77.1017273914937,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+IMN,Isle of Man,2023,147.141608391608,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ISR,Israel,2023,455.129390018484,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ITA,Italy,2023,199.459678073854,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+JAM,Jamaica,2023,262.214773776547,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+JPN,Japan,2023,341.609465020576,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+JOR,Jordan,2023,128.828670856139,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+KAZ,Kazakhstan,2023,7.53050487091158,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+KEN,Kenya,2023,95.2681371231706,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+KIR,Kiribati,2023,163.415536374846,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PRK,"Korea, Dem. People's Rep.",2023,219.402076239515,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+KOR,"Korea, Rep.",2023,529.842407786885,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+XKX,Kosovo,2023,,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+KWT,Kuwait,2023,272.358024691358,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+KGZ,Kyrgyz Republic,2023,37.0164233576642,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LAO,Lao PDR,2023,33.2105415944541,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LVA,Latvia,2023,30.2701269484172,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LBN,Lebanon,2023,564.368817204301,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LSO,Lesotho,2023,76.135441370224,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LBR,Liberia,2023,57.0289763289037,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LBY,Libya,2023,4.15202780272117,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LIE,Liechtenstein,2023,249.0375,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LTU,Lithuania,2023,45.87196485623,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LUX,Luxembourg,2023,258.862052624628,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MAC,"Macao SAR, China",2023,20384.3843843844,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MDG,Madagascar,2023,53.6196837401169,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MWI,Malawi,2023,223.84898175647,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MYS,Malaysia,2023,106.913096941105,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MDV,Maldives,2023,1765.08053691275,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MLI,Mali,2023,19.4798572353486,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MLT,Malta,2023,1753.91718229415,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MHL,Marshall Islands,2023,214.513812154696,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MRT,Mauritania,2023,4.87284466867178,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MUS,Mauritius,2023,624.3235,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MEX,Mexico,2023,66.7402757272564,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+FSM,"Micronesia, Fed. Sts.",2023,160.670470756063,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MDA,Moldova,2023,85.437584732506,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MCO,Monaco,2023,18692.8982725528,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MNG,Mongolia,2023,2.23365125312889,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MNE,Montenegro,2023,46.3590334572491,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MAR,Morocco,2023,84.5003473000224,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MOZ,Mozambique,2023,42.7721457819375,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MMR,Myanmar,2023,82.9420656687147,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+NAM,Namibia,2023,3.59909023551847,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+NRU,Naoero,2023,565.47619047619,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+NPL,Nepal,2023,207.147638646669,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+NLD,Netherlands,2023,530.950905850906,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+NCL,New Caledonia,2023,15.6045434969854,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+NZL,New Zealand,2023,19.7485853176864,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+NIC,Nicaragua,2023,56.702783779292,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+NER,Niger,2023,20.6519831057077,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+NGA,Nigeria,2023,250.20910328623,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MKD,North Macedonia,2023,72.474861221253,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MNP,Northern Mariana Islands,2023,98.781181619256,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+NOR,Norway,2023,15.1524995195871,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+OMN,Oman,2023,16.3142778675283,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PAK,Pakistan,2023,321.067474833956,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PLW,Palau,2023,38.6209150326797,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PAN,Panama,2023,60.1072930709086,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PNG,Papua New Guinea,2023,22.9422669257607,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PRY,Paraguay,2023,17.282671943072,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PER,Peru,2023,26.44188828125,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PHL,Philippines,2023,385.321122178623,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+POL,Poland,2023,119.787615502661,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PRT,Portugal,2023,115.475189289738,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PRI,Puerto Rico (US),2023,361.194363021421,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+QAT,Qatar,2023,231.160313315927,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ROU,Romania,2023,82.8453668289291,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+RUS,Russian Federation,2023,8.78227219242749,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+RWA,Rwanda,2023,587.062305427009,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+WSM,Samoa,2023,77.9363309352518,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SMR,San Marino,2023,553.267973856209,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+STP,Sao Tome and Principe,2023,240.490625,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SAU,Saudi Arabia,2023,15.6779493787476,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SEN,Senegal,2023,93.8948371682335,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SRB,Serbia,2023,75.6168661025909,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SYC,Seychelles,2023,262.08533916849,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SLE,Sierra Leone,2023,117.214075921308,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SGP,Singapore,2023,8178.06522940851,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SXM,Sint Maarten (Dutch part),2023,1257.32352941176,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SVK,Slovak Republic,2023,112.868968386023,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SVN,Slovenia,2023,105.31480791676,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SLB,Solomon Islands,2023,28.581814933905,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SOM,"Somalia, Fed. Rep.",2023,29.2642187649441,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ZAF,South Africa,2023,52.1085690262058,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SSD,South Sudan,2023,18.1719082809805,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ESP,Spain,2023,96.7636173412149,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LKA,Sri Lanka,2023,356.239896540576,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+KNA,St. Kitts and Nevis,2023,179.149425287356,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+LCA,St. Lucia,2023,293.909836065574,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+MAF,St. Martin (French part),2023,519.150943396226,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+VCT,St. Vincent and the Grenadines,2023,260.470437017995,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SDN,Sudan,2023,26.7895026766595,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SUR,Suriname,2023,3.91810706046897,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SWE,Sweden,2023,25.8713678886243,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+CHE,Switzerland,2023,224.978619136651,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+SYR,Syrian Arab Republic,2023,128.490023416653,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TJK,Tajikistan,2023,74.8598530153469,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TZA,Tanzania,2023,75.3592828054299,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+THA,Thailand,2023,140.348088629646,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TLS,Timor-Leste,2023,93.0925353059852,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TGO,Togo,2023,151.201507630079,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TON,Tonga,2023,145.273611111111,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TTO,Trinidad and Tobago,2023,266.67511700468,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TUN,Tunisia,2023,78.530065653965,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TUR,Turkiye,2023,110.866214934449,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TKM,Turkmenistan,2023,15.6713510522844,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TCA,Turks and Caicos Islands,2023,48.7202471974099,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+TUV,Tuvalu,2023,377.538461538462,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+UGA,Uganda,2023,242.65210951526,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+UKR,Ukraine,2023,65.1239834311357,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ARE,United Arab Emirates,2023,147.616882568291,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+GBR,United Kingdom,2023,283.247220270326,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+USA,United States,2023,36.8142112202129,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+URY,Uruguay,2023,19.3582504856588,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+UZB,Uzbekistan,2023,80.9084466129581,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+VUT,Vanuatu,2023,26.2867339404381,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+VEN,"Venezuela, RB",2023,32.0853171588912,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+VNM,Viet Nam,2023,320.175197572656,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+VIR,Virgin Islands (U.S.),2023,301.485632183908,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+PSE,West Bank and Gaza,2023,857.390041493776,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+YEM,"Yemen, Rep.",2023,74.6080250771824,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ZMB,Zambia,2023,27.8776483407095,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
+ZWE,Zimbabwe,2023,42.24071862479,https://api.worldbank.org/v2/country/all/indicator/EN.POP.DNST?format=json&date=2023&per_page=400,2026-10-13
