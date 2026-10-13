@@ -2,39 +2,145 @@ id: CC-089
 title: Growth outpacing infrastructure
 category: Tourism & Population
 subtopic: Population & labour
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'The Malta Chamber: Malta''s rapid population growth creates an urgent need to focus on infrastructure demands.'
-  speaker: The Malta Chamber of Commerce, Enterprise and Industry
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  text: 'PwC Malta (press release on its Summer 2026 Economic Update, posted by the Malta Chamber as Sponsored Content on 22 Jul
+    2026 under the headline "Malta''s rapid population growth creates urgent need to focus on the country''s infrastructure demands
+    for the future"): "Infrastructure demands require urgent investment." The release gives Malta''s population as 588,254 at
+    year-end 2025, a 2030 base case of 636,000, and illustrates the need with hospital beds and imported electricity.'
+  speaker: PwC Malta
+  date: '2026-07-22'
+  wording_status: Verbatim found
   sources:
-  - title: Malta's rapid population growth creates urgent need to focus on the country's infrastructure demands
-      for the future
-    publisher: The Malta Chamber
-    date: n/d
+  - title: Malta's rapid population growth creates urgent need to focus on the country's infrastructure demands for the future
+    publisher: The Malta Chamber (Sponsored Content; PwC Malta release)
+    date: 22 Jul 2026
     url: https://maltachamber.org.mt/maltas-rapid-population-growth-creates-urgent-need-to-focus-on-the-countrys-infrastructure-demands-for-the-future/
-    note: Business claim.
-counter_evidence: Projections of 636,000 by 2030 are cited elsewhere; compare infrastructure capacity indicators.
-tests: NSO projections; utility and road capacity data.
-why_low_hanging: A specific, attributable statement that public data can test.
+    note: The claim. Read in full 13 Oct 2026 (SHA-256 a5b734aae5de5b49fb38678c99d0e1da3b2ca3cae981b5699e1521735a31b116). The words
+      are PwC's; the Chamber page adds none of its own.
+  - title: Same release on Finance Malta
+    publisher: Finance Malta (Industry Update / PwC)
+    date: 17 Jul 2026
+    url: https://financemalta.org/industry-updates/malta-s-rapid-population-growth-creates-urgent-need-to-focus-on-the-country-s-infrastructure-demands-for-the-future
+    note: Earliest copy found, read in the CC-099 check (6 Oct 2026); not re-read here.
+  - title: Economic update summer edition 2026
+    publisher: PwC Malta
+    date: Jul 2026
+    url: https://www.pwc.com/mt/en/publications/economic-outlook/economic-outlook-summer-2026.html
+    note: Landing page read 13 Oct 2026; it holds no report text, so PwC's model and definitions were not read.
+  - title: Demographic balance, EUROPOP2025, hospital beds, electricity balances, land area, median age (demo_gind, proj_25np, hlth_rs_bds1, nrg_cb_e, demo_r_d3area, demo_pjanind)
+    publisher: Eurostat
+    date: retrieved 13 Oct 2026
+    url: https://ec.europa.eu/eurostat/databrowser/
+    note: Primary evidence, with status flags (data/cc-089/).
+  - title: Population density (EN.POP.DNST), 2023
+    publisher: World Bank
+    date: retrieved 13 Oct 2026
+    url: https://data.worldbank.org/indicator/EN.POP.DNST
+    note: Used for the "fourth most densely populated" ranking.
+  - title: Dynamics of bed use in accommodating emergency admissions (doi:10.1136/bmj.319.7203.155)
+    publisher: BMJ (Bagust, Place, Posnett)
+    date: 1999
+    url: https://doi.org/10.1136/bmj.319.7203.155
+    note: Crossref-verified; abstract read.
+  - title: How accurate are the United Nations world population projections? (doi:10.2307/2808049)
+    publisher: Population and Development Review (Keilman)
+    date: 1998
+    url: https://doi.org/10.2307/2808049
+    note: Crossref-verified; abstract read.
+  quote: Malta's rapid population growth creates urgent need to focus on the country's infrastructure demands for the future
+    … Infrastructure demands require urgent investment.
+counter_evidence: Eurostat demo_gind gives 588,254 on 1 Jan 2026, +14,004 (+2.44%) in 2025, the fastest of 27 (EU-27 +0.16%; Cyprus
+  +1.38%); +34.1% since 2015 (EU +2.1%). EUROPOP2025 for 1 Jan 2030, 621,470 (baseline) and 650,230 (higher migration), so PwC's
+  636,000 is within range. Hospital beds per 100,000 in 2024, 391 (18th of 27; EU-27 507); PwC says 397, 17th, EU 511. Beds to hold
+  the rate at 636,000 residents, +262 to +303 (Eurostat's rate or PwC's 397), against PwC's +329; parity +1,028 against PwC's
+  +1,054. Malta's median age is 40.0 (EU-27 44.9). Electricity imports 970 GWh in 2024 (equal to PwC); PwC's 1,304 is reproduced
+  exactly, but 970 to 1,304 is +34%, not "circa 25%". Density 1,865 and 2,016 on Eurostat's area (PwC 1,862 and 2,013). World
+  Bank 2023 has Malta 8th of 263 entries, 5th among sovereign states (1,754 vs Maldives 1,765), so "fourth" was not reproduced.
+tests: Eurostat demo_gind, proj_25np, hlth_rs_bds1, nrg_cb_e, demo_r_d3area, demo_pjanind; World Bank EN.POP.DNST; recomputed with
+  tools/cc-089-report/calc.py.
+why_low_hanging: 'Done: Claim Check 089 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading or Contradicted).
+  The speaker is PwC Malta; the Malta Chamber carried the release as sponsored content and added no wording of its own. PwC's report
+  was not readable, so its model, definitions and base populations are unchecked. Electricity for 2025 is provisional and Malta's
+  2023 hospital-bed value carries a break flag. Two indicators (beds, electricity) were tested; other infrastructure was not. The
+  foreign-resident share (31%, 38% by 2030) is tested in CC-099 and not rated here.
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-13'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-089A
+    text: "Population 588,254 at year-end 2025, up about 14,000 (2.4%)"
+    finding: "Eurostat demo_gind: 588,254 and +14,004 (+2.44%) [3]."
+    rating: "Supported"
+    tone: green
+  - id: CC-089B
+    text: "Malta’s population growth is “rapid”"
+    finding: "+2.44% in 2025, 1st of 27 (EU-27 +0.16%); +34% since 2015 (EU +2%) [3]."
+    rating: "Supported"
+    tone: green
+  - id: CC-089C
+    text: "Base case of 636,000 by 2030"
+    finding: "Between Eurostat’s baseline and higher-migration variant, rebased or not; PwC’s model unread [3]."
+    rating: "Within range"
+    tone: lime
+  - id: CC-089D
+    text: "Density 1,862 now and 2,013 by 2030"
+    finding: "1,865 and 2,016 on Eurostat’s area; within 0.2% [3]."
+    rating: "Close"
+    tone: green
+  - id: CC-089E
+    text: "“Fourth most densely populated country globally”"
+    finding: "World Bank 2023: 8th of 263 entries, 5th among sovereign states (1,754 vs Maldives 1,765) [4]."
+    rating: "Not reproduced"
+    tone: amber
+  - id: CC-089F
+    text: "Hospital beds: 397 vs EU 511 (17th); +329 to keep standing (15%), +1,054 for parity (48%)"
+    finding: "391 vs 507 in 2024, 18th (2022: 17th); +262 to +303 to keep standing; +1,028 for parity [3]."
+    rating: "Close"
+    tone: green
+  - id: CC-089G
+    text: "Electricity: 970 GWh imported; 1,304 at 636,000; “circa 25%” rise"
+    finding: "970 equal; 1,304 reproduced exactly; the rise is +34%, not about 25% [3]."
+    rating: "One error"
+    tone: amber
+  - id: CC-089H
+    text: "“Infrastructure demands require urgent investment”"
+    finding: "A judgement. The premises hold on two indicators; size and urgency are not shown by the release."
+    rating: "Largely supported"
+    tone: lime
+thumbnail:
+  figure: +2.44%
+  caption: population growth in 2025, the fastest in the EU (EU-27 +0.16%)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-13
+    step: started
+    note: "Check started by worker B. The record's link (Malta Chamber, 22 Jul 2026) is PwC Malta's press release posted as sponsored content (the same release as CC-099); speaker restated to PwC Malta."
+  - date: 2026-10-13
+    step: wording
+    note: "Verbatim wording found: the Chamber page was read in full on 13 Oct 2026. PwC's report page holds no report text. Eurostat and World Bank data retrieved 13 Oct 2026."
+  - date: 2026-10-13
+    step: version
+    version: "1.0"
+    note: "First issue. Largely supported (moderate). No right of reply needed."

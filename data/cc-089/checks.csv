@@ -1,0 +1,46 @@
+check,value,unit,source,note
+Population 1 Jan 2026 (end-2025),588254,persons,Eurostat demo_gind,PwC: 588254; equal
+Change in 2025,14004,persons,Eurostat demo_gind,PwC: 'approximately 14000'
+Change in 2025,2.44,%,Eurostat demo_gind,PwC: 2.4%
+"Population growth 2025, Malta",2.44,%,Eurostat demo_gind,rank 1 of 27; next CY 1.38%
+"Population growth 2025, EU-27",0.16,%,Eurostat demo_gind,EU-27 values flagged provisional (ep)
+"Population growth 1 Jan 2015 to 1 Jan 2026, Malta",34.1,%,Eurostat demo_gind,rank 1 of 27; next LU 22.7%
+"Population growth 1 Jan 2015 to 1 Jan 2026, EU-27",2.1,%,Eurostat demo_gind,
+EUROPOP2025 BSL: 1 Jan 2030,621470,persons,Eurostat proj_25np,1 Jan 2031: 628876
+EUROPOP2025 LMIGR: 1 Jan 2030,592712,persons,Eurostat proj_25np,1 Jan 2031: 594292
+EUROPOP2025 HMIGR: 1 Jan 2030,650230,persons,Eurostat proj_25np,1 Jan 2031: 663463
+EUROPOP2025 NMIGR: 1 Jan 2030,584120,persons,Eurostat proj_25np,1 Jan 2031: 583309
+EUROPOP2025 baseline: 1 Jan 2026 projected vs actual,585012 vs 588254,persons,"Eurostat proj_25np, demo_gind",actual is +0.55% above the projection
+Growth from 1 Jan 2026 to 1 Jan 2030: PwC 636000 vs EUROPOP2025 baseline,8.1% vs 6.2%,%,Eurostat; PwC release,"baseline rebased on actual 2026 = 624,914; PwC is +1.8% against it"
+Growth from 1 Jan 2026 to 1 Jan 2031: PwC 636000 vs EUROPOP2025 baseline,8.1% vs 7.5%,%,Eurostat; PwC release,"baseline rebased on actual 2026 = 632,361; PwC is +0.6% against it"
+"EUROPOP2025 higher-migration variant rebased on actual 1 Jan 2026, for 1 Jan 2030",653833,persons,Eurostat proj_25np,"PwC's 636,000 lies between the rebased baseline and this variant"
+"Annual growth needed for PwC's 636,000 by 1 Jan 2030 / 1 Jan 2031",1.97 / 1.57,% a year,calculation,compare 2.44% in 2025
+"Land area, Malta",315.4,km2,Eurostat demo_r_d3area,"latest year in the series is 2015 (316.0 km2 in 2008-2014, as PwC; 315.6 before)"
+"Density, end-2025 (PwC 1,862)",1865,per km2,calculation,"588,254 / area"
+"Density, 2030 (PwC 2,013)",2016,per km2,calculation,"636,000 / area"
+"Area implied by PwC's 1,862 and 2,013",315.9 / 315.9,km2,calculation,both round to 316 km2
+"World Bank density 2023, Malta",1754,per km2,World Bank EN.POP.DNST,rank 8 of 263 entries (incl. territories)
+"World Bank density 2023, top entries","Macao SAR, China 20384; Monaco 18693; Singapore 8178; Hong Kong SAR, China 7177; Gibraltar 3847; Bahrain 1971; Maldives 1765; Malta 1754; Bangladesh 1317",per km2,World Bank EN.POP.DNST,"Macao, Hong Kong and Gibraltar are not sovereign states (general context)"
+"Hospital beds per 100,000, 2022: Malta",406.32,per 100k,Eurostat hlth_rs_bds1,rank 17 of 27; EU-27 516.8
+"Hospital beds per 100,000, 2023: Malta",393.85,per 100k,Eurostat hlth_rs_bds1,rank 18 of 27; EU-27 510.6; flag b (break) for Malta
+"Hospital beds per 100,000, 2024: Malta",390.62,per 100k,Eurostat hlth_rs_bds1,rank 18 of 27; EU-27 507.4
+"Hospital beds, Malta 2024 (number)",2222,beds,Eurostat hlth_rs_bds1,2023: 2177 (flag b); 2022: 2158
+"Beds needed: Hold Eurostat's own 2024 rate (390.6) at 636,000",2484,beds,calculation,+262 on 2222 (+11.8%); PwC +329 (+15%)
+"Beds needed: Hold PwC's 397 at 636,000",2525,beds,calculation,+303 on 2222 (+13.6%); PwC +329 (+15%)
+"Beds needed: Hold 2024 beds per resident of 1 Jan 2026 (588,254)",2402,beds,calculation,+180 on 2222 (+8.1%); PwC +329 (+15%)
+"Beds for the EU-27 average (2024: 507.35) at 636,000",3227,beds,calculation,+1005 (+45%)
+"Beds for PwC's EU average 511 at 636,000",3250,beds,calculation,+1028 (+46%); PwC +1054 (+48%)
+"Population base implied by PwC's +329 beds (15%) at 397 per 100,000",553128,persons,calculation,"i.e. beds before = 636,000 x 397 / 100,000 - 329; this base is below the release's 588,254"
+"Median age 2025, Malta / EU-27",40.0 / 44.9,years,Eurostat demo_pjanind,"a younger population needs fewer beds per head (context, not a bed target)"
+Electricity 2024: Eurostat gross production vs PwC 'locally generated',2186 vs 2138,GWh,Eurostat nrg_cb_e,PwC is -2.2%; PwC's wording 'k MWh' = GWh
+Electricity 2024: Eurostat imports vs PwC 'net imported',970 vs 970,GWh,Eurostat nrg_cb_e,exports 2.9 GWh; equal
+Electricity 2024: available for final consumption + distribution losses,3106,GWh,Eurostat nrg_cb_e,PwC total = 2138 + 970 = 3108
+"PwC's 1,304: reproduced with 574,250 residents (1 Jan 2025) as the base",1304,GWh,calculation,"(2138+970) x 636,000 / 574,250 - 2138; PwC 1304; scaling 2024 demand by population"
+"The same with 588,254 residents (1 Jan 2026) as the base",1222,GWh,calculation,
+"Rise in imports 970 -> 1,304: relative to 970",34.4,%,calculation,PwC prints 'circa 25%'
+"Rise in imports 970 -> 1,304: relative to 1,304",25.6,%,calculation,the only reading that gives about 25%
+Rise in total demand implied (population ratio),10.8,%,calculation,"636,000 / 574,250"
+Electricity per resident 2023 (AFC+losses / mean of 1 Jan populations),5279,kWh,"Eurostat nrg_cb_e, demo_gind",
+Electricity per resident 2024 (AFC+losses / mean of 1 Jan populations),5460,kWh,"Eurostat nrg_cb_e, demo_gind",
+Electricity per resident 2025 (AFC+losses / mean of 1 Jan populations),5517,kWh,"Eurostat nrg_cb_e, demo_gind",2025 provisional (flag p)
+Imports 2023 / 2024 / 2025,648 / 970 / 1031,GWh,Eurostat nrg_cb_e,"2025 provisional (flag p); production 2,344 / 2,186 / 2,222: local generation is not constant"
