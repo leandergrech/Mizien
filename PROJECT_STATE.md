@@ -785,6 +785,7 @@ Proposed next, for user-derived pattern matching (not done; needs a maintainer d
 | CC-110 Commission: 37.7% zero-emission new cars | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Supported (high).** Eurostat road_eqr_carpda: 37.65% of 7,683 new cars; Malta 2nd in the EU; EU-27 13.53% (report 13.6%). |
 | CC-112 IMF: population up 25% in a decade | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Largely supported (high).** 25% fits decades ending 2020-2022; the latest decade (2015-2025) is 30.9%; net migration 93-97% of growth. IMF paper read from an Internet Archive copy. |
 | CC-115 Chamber: congestion EUR 770m, 3.4% of GDP | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Not substantiated (moderate); pending right of reply.** Chamber's LEAD PDF quotes the National Transport Master Plan 2030 (p. 124) accurately, but no derivation for 2025 is published; EUR 770m is 3.1% of 2025 GDP at current prices. |
+| CC-116 UNESCO: Valletta setting not safeguarded | Report v1.0 and flyer (14 Oct 2026, worker A). **Verdict: Supported (high); no right of reply needed.** Adopted Decision 47 COM 7B.114 read in full (whc.unesco.org/en/decisions/8838, no trailing slash) with the Committee's document WHC/25/47.COM/7B.Add.3; claim reported accurately; decision has no Danger List request. Not tested: the planning policies themselves (PA site 403) and ICOMOS's review. Revisit after 1 Dec 2026 and the 49th session. |
 | CC-100 MIA: over 10 million passengers | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Supported (high).** Company announcement 461/2026: 10,061,969 movements (+12.3%); Eurostat avia_paoc 10,070,972. |
 | CC-106 BirdLife: shearwaters 10% of world population | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Largely supported (moderate).** Malta 1,600-1,800 pairs (ERA plan 1,795-2,635); share 4-13%, central 6-8%. IUCN/BirdLife global figure second-hand (CIESM). |
 | CC-053 Milky Way visible from 13% | Report v1.0 and flyer (5 Oct 2026, batch). **Verdict: Supported (high).** Caruana et al. (2020): 12.8% (13.5% on the atlas threshold), 87% Bortle 5+; reproduces; data 2017-2019. |
@@ -1372,3 +1373,11 @@ Second intake of the day (the 79-claim bulk intake ran earlier). Six candidates 
 | CC-040 Water use per head | Report v1.0 and flyer drafted (7 Oct 2026, worker A). **Verdict: Largely supported (moderate).** E&WA keynote slides read (slide 10); no EU comparison in deck (intake wording not rated). Eurostat households 120 l/person/day 2024 (est.), Malta 13th of 19. Needs: IWRA PDF archived by hand (Wayback refused); WSC billed data. |
 
 - **CC-068 (worker B, 10 Oct 2026):** blocked on source (attempt 1): the PA's notice of withdrawal of policy SMMS-04 and its outcome are on pa.org.mt (403); TVM and Newsbook relay the PA statement without quotation marks (the PA 'has started the process', consultation to 17 Jun 2024). Abela's 22 Feb 2022 words are in quotation marks in Business Now. See literature/CC-068/README.md.
+
+
+## Worker A run, 14 Oct 2026
+
+- **CC-116 completed** (Supported, high; PR merged if checks passed, see the PR). Opposition and Ministry reactions are second-hand (Newsbook, Lovin Malta, undated in the text read).
+- **CC-070 blocked** (attempt 1, source): Transport Malta's PQ reply text not obtainable; the record's wording ('one bus ... in the incident under scrutiny') appears to misdescribe a count of one overcrowded case across 52,000+ inspections in 2024-25. Maintainer: supply the PQ number/text or the Independent article of 15 Jul 2026, and consider re-wording the claim. Status set to In progress.
+- **Not taken:** CC-073 and CC-082 (open PR #126 mentions them), CC-119 (open PR #123); CC-121 not reached (one claim per run).
+- web.archive.org reset connections again in this run.- Archive: the CC-116 primary sources (decision page, UNESCO PDF) are not yet in archive/manifest.csv (Wayback unreachable from the cloud network); archive by hand.

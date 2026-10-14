@@ -2,7 +2,7 @@ id: CC-070
 title: '''Only one overcrowded bus'''
 category: Transport
 subtopic: Public transport
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -37,3 +37,7 @@ location:
   lon: 14.50827
   scope: site
   icon: bus
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-14
+    step: started
+    note: "Worker A, attempt 1: blocked on source. The statement is Transport Malta's answer to a parliamentary question (July 2026), known only through outlets: Lovin Malta (read) reports one overcrowded bus in more than 52,000 inspections across 2024 and 2025, in its own words; the Independent (403) is seen only in search summaries (second-hand). The record's wording ('one bus ... in the incident under scrutiny') does not match: the one case spans 2024-25. Needed: the PQ number and reply text, or the Independent article."
