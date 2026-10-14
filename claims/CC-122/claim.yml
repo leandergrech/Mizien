@@ -2,46 +2,90 @@ id: CC-122
 title: 'The Shift: applications for 30,000 more hotel beds'
 category: Tourism & Population
 subtopic: Tourism numbers & capacity
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Moderate
 claim:
   text: 'The Shift News (8 Sep 2026): planning applications validated before the new tourism regulations took effect on 15
     June include proposals for an estimated 30,000 additional hotel beds; filling them year-round would need roughly 1.8 to
     2.2 million extra tourists a year, or about 7.7 million extra guest nights at 70% occupancy.'
   speaker: The Shift News
   date: '2026-09-08'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
+  quote: '"The Shift is informed that Planning Authority applications validated by 15 June 2026 include proposals for approximately 30,000 additional hotel beds." "Based on an average stay of between five and six nights, filling all 30,000 new beds throughout the year would require between 1.8 million and 2.2 million additional tourist arrivals annually." "At 70% occupancy, the proposed capacity would generate approximately 7.7 million additional tourist nights annually." (The Shift News, 29 Aug 2026; repeated 8 Sep 2026)'
   sources:
+  - title: 30,000 new hotel beds in the pipeline needing two million more tourists
+    publisher: The Shift News
+    date: 29 Aug 2026
+    url: https://theshiftnews.com/2026/08/29/30000-new-hotel-beds-in-the-pipeline-needing-two-million-more-tourists/
+    note: The original report, read in full 14 Oct 2026. The figure rests on an unnamed source ("The Shift is informed"); the MTA declined to give figures and the Planning Authority did not reply, as the outlet reports.
   - title: Excelsior expansion appealed as Malta faces 30,000 bed hotel surge
     publisher: The Shift News
     date: '2026-09-08'
     url: https://theshiftnews.com/2026/09/08/excelsior-expansion-appealed-as-malta-faces-30000-bed-hotel-surge/
     note: The claim, by the outlet itself ("an estimated 30,000 additional hotel beds"). Read via a text extractor on 11 Oct
       2026; the exact sentence and the basis (which register, which date) must be read in the article.
-counter_evidence: Applications validated are not permits or built beds. CC-085 (finished or in progress) records a Planning
-  Authority pipeline of about 27,672 beds in the Malta Tourism Authority count and about 35,000 collective beds in open permits
-  in a follow-up study, with the Authority's own count not shared. The 70% occupancy and 1.8 to 2.2 million tourist conversions
-  rest on assumptions about length of stay and bed counts that the article does not set out in the text read.
+counter_evidence: 'The arithmetic reproduces (30,000 x 365 x 70% = 7.67 million nights; 1.83 to 2.19 million arrivals at 6 and 5 nights, 100% occupancy; at 70% occupancy 1.28 to 1.53 million). Eurostat: 58,099 bed-places in 2025 (collective accommodation, wider than hotels), so 30,000 beds would be +52%; non-residents stayed 4.6 nights per arrival at establishments in 2025 (article assumes 5 to 6). Other pipeline measures differ in scope and date: MTA list 27,672 beds (end April 2024) and about 35,000 collective beds in open permits (2022), both Deloitte for MHRA, read; 6,239 beds in 44 pending compliance certificates to Oct 2025 (second-hand). No source, list or method for the 30,000 is published.'
 tests: Planning Authority applications and permits (hotels, validation dates before 15 June 2026); Malta Tourism Authority
   licensed bed stock; NSO collective accommodation (bed-nights, occupancy, length of stay); recompute 30 000 beds x 365 x
   70% = 7.67 million guest nights, and the tourist numbers from NSO average stay.
 why_low_hanging: The arithmetic can be reproduced and the application counts compared with PA and MTA data.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'Medium: The Shift is readable; PA application registers may be browser-only; NSO and Eurostat are reachable.'
-caveats: Candidate from the weekly intake of 11 Oct 2026. The claimant is a news outlet reporting its own analysis; its method
-  is not stated in the text read. Applications are not approvals. Related to CC-085, CC-089 and CC-083 in subject.
+caveats: 'Pending right of reply (verdict Not substantiated); maintainer to handle. Not a verdict that the figure is wrong: the Planning Authority register could confirm it. Applications are not permits or built beds. Eurostat bed-places cover all collective accommodation, not only hotels. CC-122 rates the words of The Shift (the outlet is the speaker).'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- The Shift, 29 Aug 2026 and 8 Sep 2026 (read in full): unnamed source, no document, list or method
+- Eurostat tour_cap_nat, tour_occ_arnat, tour_occ_ninat, retrieved 14 Oct 2026 (data/cc-122/eurostat_tourism.csv)
+- Calculations in tools/cc-122-report/calc.py (data/cc-122/checks.csv)
+- Deloitte for MHRA 2022 (p. 25) and 2024 (p. 69), read for CC-085
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-14'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-122A
+    text: "Applications validated by 15 June 2026 include about 30,000 additional hotel beds"
+    finding: "Unnamed source; no list or method; MTA gave no figure and PA did not reply (the outlet’s account). Same order as other pipeline measures, which differ in scope and date [4][5]."
+    rating: "Not substantiated"
+    tone: orange
+  - id: CC-122B
+    text: "At 70% occupancy, about 7.7 million extra guest nights a year"
+    finding: "30,000 × 365 × 0.70 = 7.67 million. Follows from A; no more certain than A."
+    rating: "Reproduces"
+    tone: green
+  - id: CC-122C
+    text: "Filling the beds all year at 5–6 nights needs 1.8–2.2 million extra arrivals"
+    finding: "Reproduces at 100% occupancy (1.83–2.19 million). At 70%, 1.28–1.53 million; at the 4.6-night 2025 stay, 2.38 million (100%)."
+    rating: "Reproduces"
+    tone: green
+  - id: CC-122D
+    text: "Context: 2022 Deloitte study, 4.7 million tourists a year by 2027 at under seven nights"
+    finding: "The outlet’s paraphrase of a study checked in CC-085, which found 4.7 million is a bed-filling scenario at 2019 occupancy; not rated here."
+    rating: "Not rated"
+    tone: grey
+thumbnail:
+  figure: 30,000
+  caption: hotel beds in applications, per The Shift; source not shown (conversions reproduce)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-14
+    step: started
+    note: "Worker B. Verbatim wording found in The Shift's original report (29 Aug 2026) and its repeat (8 Sep 2026), both read in full. The 30,000 rests on an unnamed source; MTA declined and the Planning Authority did not reply (outlet's account). Searched for a published count (see literature/CC-122/notes.md)."
+  - date: 2026-10-14
+    step: version
+    version: "1.0"
+    note: "First issue. Verdict Not substantiated (moderate): conversions reproduce, the 30,000-bed figure is not shown. Right of reply pending."

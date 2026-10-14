@@ -2,7 +2,7 @@ id: CC-098
 title: Officials enforce private interests at Blue Lagoon
 category: Tourism & Population
 subtopic: Short lets & concessions
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -38,3 +38,7 @@ location:
   lon: 14.32338
   scope: site
   icon: lagoon
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-14
+    step: started
+    note: "Worker B, attempt 1: verbatim wording found; check blocked on evidence. Moviment Graffitti's own press release (24 Jun 2026, movimentgraffitti.org, read in full 14 Oct 2026) says the video 'shows Malta Tourism Authority officials forcing a group of friends, who were lying on a rocky part of the public Blue Lagoon beach, to move away', that 'there were no sunbeds or umbrellas in the area' and that officials 'even threatened to call the police', and that the concessions 'in no way grant sunbed operators a permanent right of occupation'. The incident (14 Jun 2026) rests on the group's video (Facebook reels, not viewable by us), so it is the group's account, not tested. No MTA or government response found; concession terms, the legal basis of the officials' powers and the carrying-capacity ruling documents are not readable. Needed: the video reviewed by the maintainer, the Blue Lagoon concession terms (MTA/Lands Authority) and any MTA statement."
