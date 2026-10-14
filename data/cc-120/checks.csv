@@ -1,0 +1,29 @@
+check,value,unit,source,note
+"Malta road, Lden >= 55 dB (EEA Table 2.1)",54000,people,EEA 2025 report p. 23,study: 54000
+"Malta aircraft, Lden >= 55 dB (EEA Table 2.1)",11100,people,EEA 2025 report p. 23,study: 11100
+Malta road exposure matches study,True,bool,calculated,
+Road / aircraft exposed people,4.9,ratio,calculated,
+Malta population 1 Jan 2022,520174,people,Eurostat demo_pjan,
+Malta road Lden>=55 as % of population,10.4,%,calculated (EEA count / Eurostat population),
+"Malta rank by road-exposed share, 1 = lowest of 27",6,of 27,calculated,"ordered list: SK 6.3, PT 6.8, EE 8.1, SI 9.2, EL 9.4"
+"Malta all-source share above END Lden threshold (EEA, rounded)",13,%,EEA Table 2.1,EU-27 range 8-68%; median 19%
+"[END] Malta premature deaths/yr, total",30,deaths,"EEA, END thresholds (EEA Table 3.7)",study states 20
+"[END] Malta rank, absolute deaths (1 = lowest of 27)",1,of 27,calculated,"next lowest: EE 80, SI 150, CY 180"
+"[END] Malta deaths per 100,000 (calculated)",5.8,"per 100,000",calculated,EEA count / Eurostat 2022 population
+"[END] Malta rank, deaths per 100,000 (1 = lowest of 27)",2,of 27,calculated,"lowest five: SK 5.3, MT 5.8, PT 5.9, EE 6.0, SI 7.1"
+"[END] Malta DALYs per 100,000, total",150,"per 100,000","EEA, END thresholds (EEA Table 3.7)",study states 100
+"[END] Malta rank, DALYs per 100,000 (1 = lowest of 27)",4,of 27,calculated,"2 other country/ies tied at the same value; lowest five: PT 110, EE 120, SK 120, EL 150, MT 150, SI 150"
+"[END] Countries with lower DALYs per 100,000 than Malta",3,of 26,calculated,
+"[END] EU-27 median DALYs per 100,000",310,"per 100,000",calculated (unweighted median of country values),
+"[WHO] Malta premature deaths/yr, total",60,deaths,"EEA, WHO levels (EEA Table 3.12)",
+"[WHO] Malta rank, absolute deaths (1 = lowest of 27)",1,of 27,calculated,"next lowest: EE 110, SI 170, CY 200"
+"[WHO] Malta deaths per 100,000 (calculated)",11.5,"per 100,000",calculated,EEA count / Eurostat 2022 population
+"[WHO] Malta rank, deaths per 100,000 (1 = lowest of 27)",9,of 27,calculated,"lowest five: SK 6.3, PT 7.2, SI 8.1, EE 8.3, EL 10.5"
+"[WHO] Malta DALYs per 100,000, total",310,"per 100,000","EEA, WHO levels (EEA Table 3.12)",
+"[WHO] Malta rank, DALYs per 100,000 (1 = lowest of 27)",11,of 27,calculated,"0 other country/ies tied at the same value; lowest five: SK 140, PT 160, SI 170, EL 200, EE 210, DK 230"
+"[WHO] Countries with lower DALYs per 100,000 than Malta",10,of 26,calculated,
+"[WHO] EU-27 median DALYs per 100,000",350,"per 100,000",calculated (unweighted median of country values),
+Study deaths / EEA corrected deaths (END basis),20 vs 30,deaths,study s. 2.3; EEA Table 3.7,difference consistent with the EEA corrigendum of 27 Mar 2026; June 2025 version not opened
+Study DALYs / EEA corrected DALYs (END basis),100 vs 150,"per 100,000",study s. 2.3; EEA Table 3.7,same
+Malta rank by DALYs if the study's value (100) were used,1,of 27,calculated,shows the ranking claim does not depend on the correction
+Malta rank by absolute deaths if the study's value (20) were used,1,of 27,calculated,

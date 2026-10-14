@@ -1,9 +1,9 @@
 id: CC-120
 title: 'EP study: 54,000 exposed to road noise, likely an underestimate'
 category: Noise
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
   text: 'Study for the European Parliament''s Committee on Petitions (Ecocentric Consulting, PE 783.089, February 2026, key
     findings): an estimated 54 000 inhabitants of Malta are exposed to road noise levels over 55 dB Lden, compared with 11
@@ -26,11 +26,21 @@ claim:
     publisher: European Environment Agency
     date: '2022'
     url: https://www.eea.europa.eu/en/analysis/maps-and-charts/malta-noise-fact-sheet-2022
-    note: Locator for the Directive exposure figures; not yet read for this claim.
+    note: Locator for the Directive exposure figures; superseded as the evidence by the EEA report below.
+  - title: Environmental noise in Europe 2025 (EEA Report 05/2025; online version corrected 27 Mar 2026)
+    publisher: European Environment Agency
+    date: 2025-06 (corrected 2026-03-27)
+    url: https://www.eea.europa.eu/en/analysis/publications/environmental-noise-in-europe-2025
+    note: The study's source for the Malta figures. Full report read 14 Oct 2026 (Tables 2.1, 3.7, 3.12; sections 1.4-1.5). doi:10.2800/5134480, resolves via doi.org, not in Crossref. CC BY 4.0.
+  - title: Population on 1 January by age and sex (demo_pjan)
+    publisher: Eurostat
+    date: retrieved 14 Oct 2026
+    url: https://ec.europa.eu/eurostat/databrowser/view/demo_pjan
+    note: Population for per-head calculations (data/cc-120/).
   quote: An estimated 54 000 inhabitants of Malta are being exposed to road noise levels over 55dB (Lden), compared to 11
     100 in the case of aircraft noise levels. ... Malta has the lowest number of noise related premature deaths/year rate
     (not per capita).
-counter_evidence: The study itself warns that the road figure is probably a considerable underestimate and that the 'lowest
+counter_evidence: EEA Table 2.1 reproduces 54,000 (road) and 11,100 (air) above 55 dB Lden for Malta. The study gives 20 premature deaths and 100 DALYs per 100,000; the EEA table as corrected on 27 Mar 2026 shows 30 and 150. Malta is lowest of 27 for absolute deaths (next Estonia 80), 2nd lowest per head (5.8 per 100,000; Slovakia 5.3) and 4th lowest (tied with Greece and Slovenia) for DALYs on the END basis; on the EEA's WHO-level basis (Table 3.12) it has 310, 11th lowest and below the median of 350. The 'considerable underestimation' is the EEA's statement about its whole assessment, not a Malta estimate. The study itself warns that the road figure is probably a considerable underestimate and that the 'lowest
   number' is an absolute count, not per capita; it also says Malta has the lowest share of urban inhabitants exposed to road
   noise and over 3% exposed to high air-traffic noise (section 3). Eurostat (ilc_mddw01) puts Malta first in the EU for self-reported
   street or neighbour noise (31.3% against 18.1% in 2023, as recorded in CC-020). The figures rest on END reporting rounds
@@ -40,22 +50,60 @@ tests: EEA Environmental Noise Directive Round 4 data for Malta (people exposed 
   Noise Guidelines thresholds; Eurostat ilc_mddw01.
 why_low_hanging: Numbers the EEA publishes by country, so the study's Malta figures and rankings can be reproduced.
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'High: the study was read in full; EEA and Eurostat are reachable.'
-caveats: Candidate from the weekly intake of 11 Oct 2026. The claimant is an EU commissioned study; the opinions are the authors',
-  not the Parliament's. Distinct from CC-020 (which tests whether the Directive causes Malta's noise problems). The 'lowest
-  number of deaths' statement is absolute and the study says so; the check should separate the exposure figure, the underestimation
-  claim and the health-burden ranking.
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading or Contradicted). The claimant is an EU-commissioned study; the opinions are the authors', not the Parliament's. The study's Malta health figures (20 deaths, 100 DALYs per 100,000) pre-date the EEA's correction of 27 Mar 2026; we did not open the June 2025 version, so the cause of the difference is inferred. EEA health burdens are modelled and cross-country ranks are indicative (EEA s. 1.5). The size of any underestimate for Malta is not quantified. Distinct from CC-020 (the Directive's transposition).
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-14'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-120A
+    text: "54,000 exposed to road noise and 11,100 to aircraft noise above 55 dB Lden"
+    finding: "Both figures are in the EEA’s Table 2.1 for Malta [2]. Reported counts of exposed people, from Malta’s END reporting."
+    rating: "Supported"
+    tone: green
+  - id: CC-120B
+    text: "The road figure is likely a considerable underestimate"
+    finding: "The EEA says the Directive’s coverage limits mean its findings likely understate the true impact [2, s. 1.4]; the study applies this to Malta. The size for Malta is not quantified."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-120C
+    text: "Malta has the lowest number of premature deaths a year (not per capita)"
+    finding: "30 against Estonia 80, the lowest of 27 [2]; the study’s 20 is superseded. The study correctly says this is not per capita."
+    rating: "Supported"
+    tone: green
+  - id: CC-120D
+    text: "Malta has among the lowest DALYs per capita of the Member States"
+    finding: "4th lowest of 27 on END thresholds (tied); 11th lowest on WHO levels, below the median [2]. The study quotes 100, the EEA now shows 150."
+    rating: "Largely supported"
+    tone: lime
+thumbnail:
+  figure: '30'
+  caption: premature deaths a year from transport noise in Malta, the fewest of 27 (EEA)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-14
+    step: started
+    note: "Check started by worker C. Primary wording (study key findings, PE 783.089) re-read from the europarl PDF; the study takes its Malta figures from the EEA report Environmental noise in Europe 2025."
+  - date: 2026-10-14
+    step: wording
+    note: "Verbatim found in the study (key findings p. 14; s. 2.3 pp. 16-18). EEA report read in full text (Tables 2.1, 3.7, 3.12; ss. 1.4-1.5); Eurostat demo_pjan retrieved. The EEA page notes a corrigendum to health estimates, incorporated 27 Mar 2026."
+  - date: 2026-10-14
+    step: version
+    version: "1.0"
+    note: "First issue. Largely supported (moderate). No right of reply needed."

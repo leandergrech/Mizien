@@ -1,13 +1,5 @@
 # CC-120: EP study: 54,000 exposed to road noise, likely an underestimate
 
-**Status:** literature not yet collected.
+**Status:** checked, report v1.0 drafted (14 Oct 2026, worker C). Verdict: Largely supported (moderate). See `references.bib`, `notes.md`; data in `data/cc-120/`.
 
-## To collect
-
-EEA Environmental Noise Directive Round 4 data for Malta (people exposed above 55 dB Lden and 50 dB Lnight by source); EEA health-impact estimates of noise (premature deaths, DALYs) for all Member States, rescaled per capita; WHO 2018 Environmental Noise Guidelines thresholds; Eurostat ilc_mddw01.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-120) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+Wording: the study's key findings were read in full from the europarl PDF (200). The claim's second locator, the EEA Malta noise fact sheet, is a JavaScript dashboard with no readable figures; the figures were taken from the EEA report PDF tables instead.
