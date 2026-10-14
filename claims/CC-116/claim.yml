@@ -2,52 +2,105 @@ id: CC-116
 title: 'UNESCO: Valletta setting not safeguarded'
 category: Planning & Housing
 subtopic: Heritage & character
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
-  text: 'UNESCO World Heritage Committee (2025 state-of-conservation decision, as reported): Malta''s current planning policies
-    and regulations do not sufficiently safeguard Valletta''s setting; the Committee asked for effective height controls
-    within and around the property, a further-developed buffer zone, and an updated conservation report by 1 December 2026.'
+  text: 'UNESCO World Heritage Committee (Decision 47 COM 7B.114, City of Valletta, 47th session, 2025): notes with concern that the current planning policies and regulations do not sufficiently safeguard the setting of the property; requests revision of the Views and Vistas Analysis and three planning documents to establish effective height controls within and around the property, further development of the buffer zone proposal, and an updated state of conservation report by 1 December 2026.'
   speaker: UNESCO World Heritage Committee
-  date: n/d
-  wording_status: 'Paraphrase: locate quote'
+  date: 2025-07
+  wording_status: 'Verbatim found'
   sources:
-  - title: 'State of Conservation (SOC 2025): City of Valletta (Malta)'
+  - title: 'Decision 47 COM 7B.114: City of Valletta (Malta)'
     publisher: UNESCO World Heritage Centre
     date: '2025'
-    url: https://whc.unesco.org/en/soc/4677
-    note: Primary page; returned 403 to automated reading on 5 Oct 2026. Record the decision number and exact wording.
-  - title: 'UNESCO: 15 years of chasing Malta for Valletta''s conservation report'
+    url: https://whc.unesco.org/en/decisions/8838
+    note: The adopted decision, read in full 14 Oct 2026 (the URL without a trailing slash loads; with one it returns 403).
+  - title: 'State of conservation of properties inscribed on the World Heritage List, WHC/25/47.COM/7B.Add.3, entry 114 (pp. 71-74)'
+    publisher: UNESCO World Heritage Centre
+    date: '2025'
+    url: https://whc.unesco.org/archive/2025/whc25-47com-7BAdd3-en.pdf
+    note: The draft decision (same text) and the analysis of the World Heritage Centre, ICOMOS and ICCROM. Read 14 Oct 2026.
+  - title: "UNESCO: 15 years of chasing Malta for Valletta's conservation report"
     publisher: The Shift News
     date: '2026-06-18'
     url: https://theshiftnews.com/2026/06/18/unesco-15-years-of-chasing-malta-for-vallettas-conservation-report/
-    note: 'Locator: reports the Committee''s requests; wording not verified against the decision text.'
-counter_evidence: The Government treated the later deadline as a sign of confidence in its heritage management and rejected
-  the Opposition's 'alarmism' (Lovin Malta, reported); the PN asked for a local-plan revision (MaltaToday). The Planning
-  Authority's Floor Area Ratio policy and height rules are the policies at issue.
-tests: UNESCO decision text and State of Conservation report; Malta's Floor Area Ratio policy, North Harbour and Grand Harbour
-  Local Plans, the Views and Vistas Analysis; Heritage Impact Assessments for Manoel Island and other major schemes; actual
-  permitted heights near Valletta (PA permits).
-why_low_hanging: An international body's statement about specific planning instruments, which the policy texts and permits
-  can test.
+    note: "Locator: the outlet's summary of the Committee's requests; read."
+  - title: "PN accuses government of failing to protect Valletta's World Heritage status"
+    publisher: Newsbook
+    date: n/d (after July 2025)
+    url: https://newsbook.com.mt/en/pn-accuses-government-of-failing-to-protect-vallettas-world-heritage-status/
+    note: Reactions of the Opposition and the Ministry (second-hand); read.
+  - title: "UNESCO approves Valletta's conservation report as government rejects Opposition 'alarmism'"
+    publisher: Lovin Malta
+    date: n/d (July 2025)
+    url: https://lovinmalta.com/news/unesco-approves-vallettas-conservation-report-as-government-rejects-opposition-alarmism/
+    note: The Ministry's reaction (second-hand); read.
+  quote: Notes with concern that the current planning policies and regulations do not sufficiently safeguard the setting of the property
+counter_evidence: "No evidence against the claim: ten phrases of the claim are in the adopted decision, and the adopted text equals the draft in the Committee's document apart from one comma (data/cc-116/checks.csv). The decision has no request about the List of World Heritage in Danger (0 mentions). The Opposition's message that status was at risk and the Ministry's message that there was no other cause for concern (both second-hand) each go beyond the text. Malta's planning policies were not tested against the finding."
+tests: "Decision text and the Committee's working document (tools/cc-116-report/calc.py). Not done: the 2014 Floor Area Ratio guide, local plans and ICOMOS's review of the Views and Vistas Analysis (the Planning Authority site refuses automated access; the review is not published with the document)."
+why_low_hanging: 'Done: Claim Check 116 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'Low to medium: whc.unesco.org returned 403 to scripts; the Shift page is readable. A maintainer may need
-  to paste the decision text into literature/CC-116/primary-source.md.'
-caveats: 'Candidate from the weekly intake of 5 Oct 2026. Wording is from a locator source; the decision number and exact
-  text must be read in a browser. The 1 December 2026 report deadline falls after this intake: do not mark any follow-up
-  before it passes. Overlaps in subject, not in claimant, with CC-065 and CC-066.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'Medium'
+caveats: "Supported: no right of reply needed. The claim was tested against the decision, not the decision against the ground: the planning policies and ICOMOS's review were not read first-hand. The 1 December 2026 report had not fallen due; revisit after it and the Committee's 49th session."
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Decision 47 COM 7B.114, adopted text (whc.unesco.org/en/decisions/8838, retrieved 14 Oct 2026)
+- WHC/25/47.COM/7B.Add.3, entry 114, pp. 71-74 (retrieved 14 Oct 2026; checks in data/cc-116/checks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City of Valletta World Heritage Site
   lat: 35.8997
   lon: 14.5147
   scope: site
   icon: valletta
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-116A
+    text: "The Committee noted with concern that current planning policies and regulations do not sufficiently safeguard the setting of Valletta"
+    said_by: "World Heritage Committee [1]"
+    finding: "Word for word in paragraph 4 of the adopted decision; the same sentence is in the draft in the Committee’s document [2, p. 73]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-116B
+    text: "It asked for effective height controls within and around the property, through revision of the Views and Vistas Analysis and planning documents"
+    said_by: "World Heritage Committee [1]"
+    finding: "Paragraph 4: revise the VVA, the 2006 North Harbour Local Plan, the 2014 Floor Area Ratio policy guide and the 2022 Grand Harbour Local Plan “to establish effective height controls within and around the property”."
+    rating: "Accurate"
+    tone: green
+  - id: CC-116C
+    text: "It asked for a further-developed buffer zone"
+    said_by: "World Heritage Committee [1]"
+    finding: "Paragraph 5: the draft proposal “be further developed”, especially the northern boundary across Marsamxett Harbour. Paragraph 3 welcomes the proposal’s submission."
+    rating: "Accurate"
+    tone: green
+  - id: CC-116D
+    text: "It asked for an updated report by 1 December 2026"
+    said_by: "World Heritage Committee [1]"
+    finding: "Paragraph 8: “by 1 December 2026”, for examination at the 49th session."
+    rating: "Accurate"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-14'
+thumbnail:
+  figure: '10 of 10'
+  caption: "phrases of the claim found in UNESCO's adopted decision on Valletta (no Danger List request)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+- date: 2026-10-14
+  step: wording
+  note: "Verbatim wording found: the adopted Decision 47 COM 7B.114 on the World Heritage Centre decisions page (the URL without a trailing slash loads) and the draft in WHC/25/47.COM/7B.Add.3, which carries the Advisory Bodies' analysis. The intake's sources (SOC page 403; The Shift) only located the claim."
+- date: 2026-10-14
+  step: note
+  note: "Phrases of the claim compared with the adopted text; adopted text compared with the draft (identical but for one comma); searched the text for Danger/endanger/delist/removal (none). Reactions read in Newsbook and Lovin Malta (second-hand). Planning policies not tested (Planning Authority site refuses automated access)."
+- date: 2026-10-14
+  step: version
+  version: '1.0'
+  note: 'First issue. Verdict Supported (high confidence); no right of reply needed.'
