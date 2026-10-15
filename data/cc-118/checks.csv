@@ -1,0 +1,44 @@
+check,value,unit,source,note
+EU Member States in the EEA chart (2023),27,countries,EEA chart data,Italy..Sweden; list in eea_worst_seasonal_wei_2023.csv
+Malta: worst seasonal WEI+ 2023,66.7,%,EEA chart data,quarter Q3
+Malta's rank among EU Member States (1 = highest),2,rank,calculated,
+Highest: Cyprus,92.1,%,EEA chart data,quarter Q3
+Third highest: Greece,37.4,%,EEA chart data,
+Malta's WEI+ as multiple of the third-highest Member State,1.78,x,calculated,
+Member States at or above 40% in their worst quarter,2,countries,calculated,40% is the severe-scarcity threshold in Eurostat's metadata (document_facts.csv); Cyprus and Malta only
+"Eurostat WEI+ 2023, annual value: Malta",30.08,%,Eurostat sdg_06_60 (VAL_A),calendar year; national
+  Malta's rank among EU Member States,3,rank,calculated,CY 75.29; RO 47.38; MT 30.08
+"Eurostat WEI+ 2023, four-year average: Malta",33.43,%,Eurostat sdg_06_60 (AVG_4Y),calendar year; national
+  Malta's rank among EU Member States,2,rank,calculated,CY 72.15; MT 33.43; RO 27.89
+Romania 2023: EEA worst-quarter WEI+ (Nov 2025 chart),33.9,%,EEA chart data,
+Romania 2023: Eurostat annual WEI+ (updated 28 Apr 2026),47.38,%,Eurostat sdg_06_60,annual above the worst quarter of the EEA chart: the two vintages/methods differ for Romania
+Surface water bodies (excl. territorial waters),19,bodies,EEA WISE,"9 coastal, 5 transitional, 3 river, 2 lake"
+Good or high ecological status/potential,11,bodies,EEA WISE,
+  share by number (denominator 19),57.89,%,calculated,Council: 58%
+  share by number if territorial waters counted (denominator 20),55.0,%,calculated,territorial waters carry no ecological status
+  coastal: good or high / total,8 of 9,bodies,EEA WISE,
+  transitional: good or high / total,3 of 5,bodies,EEA WISE,
+  river: good or high / total,0 of 3,bodies,EEA WISE,
+  lake: good or high / total,0 of 2,bodies,EEA WISE,
+Surface water bodies: total area (river by length excluded),400.33,km2,EEA WISE,rivers have a length only (3.4 km in all)
+  area at good or high ecological status,387.06,km2,EEA WISE,
+  share by area,96.69,%,calculated,contrast with the by-number figure
+  coastal water bodies' share of the area,99.96,%,calculated,
+Good chemical status (all 20 incl. territorial waters),9,bodies,EEA WISE,
+"  share, denominator 20 (territorial waters status 'Unknown')",45.0,%,calculated,Council: 45%
+"  share, denominator 19 (excl. territorial waters)",47.37,%,calculated,
+  bodies 'failing to achieve good' chemical status,10,bodies,EEA WISE,"all river, lake and transitional bodies"
+  chemical status 'without UPBT' differs from headline in,0,bodies,EEA WISE field swChemicalStatusValueWithoutUPBT (queried 2026-10-15),identical for all 20 bodies; see notes.md
+Surface water assessment years,"2017-2020 (coastal), 2021-2022 (other)",,EEA WISE,
+Groundwater bodies,15,bodies,EEA WISE,
+  total area,356.87,km2,EEA WISE,
+  poor quantitative status: bodies,4,bodies,EEA WISE,"MT001, MT005, MT010, MT013"
+  poor quantitative status: share by number,26.67,%,calculated,
+  poor quantitative status: area,292.5,km2,EEA WISE,
+  poor quantitative status: share by area,81.96,%,calculated,Council: 82%
+  largest body (Malta Mean Sea Level) share of total area,61.76,%,calculated,
+  poor chemical status: bodies,15,of 15,EEA WISE,Council: 100%
+  poor chemical status: share by area,100.0,%,calculated,
+EWA monitoring boreholes with a table row,35,boreholes,"EWA technical document (May 2024), Table 1",
+  significant negative trend,21,boreholes,EWA Table 1,text of the document says 62.9% (22 of 35); table rows give 21
+  share with a negative trend (table rows),60.0,%,calculated,

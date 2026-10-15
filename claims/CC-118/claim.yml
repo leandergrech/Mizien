@@ -2,9 +2,9 @@ id: CC-118
 title: 'Council: Malta second-highest water stress, groundwater failing'
 category: Water
 subtopic: Water supply & groundwater
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
   text: 'Council of the European Union (draft Council Recommendation on Malta''s economic, social, employment, structural
     and budgetary policies, 3 Jul 2026, para. 30): Malta''s seasonal Water Exploitation Index Plus reached 66.7% in the third
@@ -27,32 +27,77 @@ claim:
     second-highest level among EU Member States, indicating severe water scarcity. ... only 58% of surface water bodies (by
     number) attained good or high ecological status, while just 45% met good chemical status. With regard to groundwater,
     82% of groundwater bodies (by area) failed to achieve good quantitative status, and 100% did not meet good chemical status.
-counter_evidence: The Council text relays Malta's Third River Basin Management Plan and a Q3 (peak-demand quarter) index value;
-  the WEI+ for a single summer quarter is not an annual figure, and ecological status is counted by number of water bodies
-  while groundwater is counted by area. The same recital says two Maltese agglomerations remain non-compliant with the Urban
-  Wastewater Treatment Directive, and the Commission opened a water-abstraction infringement on 8 Jul 2026 (CC-101). Government
-  and Energy and Water Agency statements stress desalination and new water (CC-009, CC-108).
+counter_evidence: "Council recital (30) figures reproduce from official data. EEA chart (2023): Malta's worst seasonal WEI+ 66.7% (Q3), Cyprus 92.1%, Greece 37.4%, Romania 33.9%; only Cyprus and Malta exceed Eurostat's 40% severe-scarcity line. Eurostat sdg_06_60 annual WEI+ 2023 is 30.1% for Malta, third behind Cyprus (75.3%) and Romania (47.4%); on the four-year average Malta is second (33.4%). The Romania values of the two sources are inconsistent (annual above the EEA worst quarter) and unexplained. EEA WISE (Malta's 2022 reporting): 11 of 19 surface water bodies good or high ecological status (58%; 97% by area); 9 of 20 good chemical status (45%, counting the territorial sea whose status is Unknown; 47% of 19); groundwater poor quantitative status 292.5 of 356.9 km2 (82%; 4 of 15 bodies) and poor chemical status 15 of 15. EWA (May 2024): 21 of 35 monitoring boreholes with a significant negative level trend (text says 22). The Third RBMP, the Commission country report and the adopted Council text were not read."
 tests: EEA WISE Water Framework Directive data for Malta (status of surface and groundwater bodies); EEA WEI+ indicator (seasonal
   and annual, Malta against other Member States); Malta's Third River Basin Management Plan (ERA / Energy and Water Agency);
   Eurostat water statistics (env_wat_abs); tests of the 'second-highest' ranking across Member States.
 why_low_hanging: A comparison and several percentages that EEA's open WEI+ and WFD datasets can reproduce.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: EEA and Eurostat are reachable; the Council document was read as text. The RBMP itself may be on a
   refused host.'
-caveats: Candidate from the weekly intake of 11 Oct 2026. The source is a draft Council Recommendation of 3 July 2026 (a General
-  Secretariat note); the Council's adopted text and its date should be recorded. The claimant is the Council, relaying Commission
-  and national figures. Related to CC-101, CC-047, CC-041 and CC-009 in subject.
+caveats: "No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading or Contradicted). The source is a draft Council Recommendation of 3 July 2026 (a General Secretariat note); the adopted text was not found. The Council relays Commission and national figures, so any difference from them is not an error by Malta. Water-body counts were reproduced from the EEA's WISE copy of Malta's 2022 reporting, not from the Third River Basin Management Plan itself (era.org.mt refused scripts). The ranking depends on the series (EEA seasonal: second; Eurostat annual 2023: third); the 45% needs the territorial sea in the denominator. Related to CC-101, CC-047, CC-041 and CC-009 in subject."
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-15'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-118A
+    text: "Seasonal WEI+ reached 66.7% in Q3 2023, indicating severe water scarcity"
+    finding: "Exact match to the EEA chart [2]; above Eurostat’s 40% severe line [3]. An annual figure would be 30.1%."
+    rating: "Supported"
+    tone: green
+  - id: CC-118B
+    text: "That is the second-highest among EU Member States"
+    finding: "Second after Cyprus on the EEA chart and the four-year average; third on Eurostat’s annual 2023 value (Romania higher)."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-118C
+    text: "58% of surface water bodies (by number) at good or high ecological status"
+    finding: "11 of 19 [4]; 97% by area."
+    rating: "Supported"
+    tone: green
+  - id: CC-118D
+    text: "45% of surface water bodies at good chemical status"
+    finding: "9 of 20 [4]; needs the territorial sea in the denominator; 47% without. Basis not stated."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-118E
+    text: "82% of groundwater bodies (by area) failed quantitative status"
+    finding: "81.96% by area [4]; 27% by number. Corroborated by borehole trends [5]."
+    rating: "Supported"
+    tone: green
+  - id: CC-118F
+    text: "100% of groundwater bodies failed chemical status"
+    finding: "15 of 15 [4]."
+    rating: "Supported"
+    tone: green
+thumbnail:
+  figure: '66.7%'
+  caption: Malta's worst seasonal water-stress index in 2023 (Q3), second-highest in the EU after Cyprus (EEA)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-15
+    step: started
+    note: "Check started by worker C. Council recital (30) of draft Recommendation 11130/26 re-read in full from the Council register (PDF p. 16 of 22)."
+  - date: 2026-10-15
+    step: wording
+    note: "Verbatim found. EEA indicator chart data, Eurostat sdg_06_60 and metadata, EEA WISE Malta 2022 reporting and the EWA May 2024 groundwater technical document retrieved. Third RBMP (era.org.mt) refused to scripts; adopted Council text not found."
+  - date: 2026-10-15
+    step: version
+    version: "1.0"
+    note: "First issue. Largely supported (high). No right of reply needed."
