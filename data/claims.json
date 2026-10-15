@@ -1365,7 +1365,7 @@
         },
         {
           "id": "CC-121",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "square",
             "metres",
@@ -3315,7 +3315,7 @@
       "similar": [
         {
           "id": "CC-050",
-          "score": 0.31,
+          "score": 0.3,
           "terms": [
             "hunting",
             "birdlife",
@@ -3384,7 +3384,7 @@
       "similar": [
         {
           "id": "CC-049",
-          "score": 0.31,
+          "score": 0.3,
           "terms": [
             "hunting",
             "birdlife",
@@ -3484,7 +3484,7 @@
       "similar": [
         {
           "id": "CC-096",
-          "score": 0.64,
+          "score": 0.62,
           "terms": [
             "farm",
             "fish",
@@ -3587,7 +3587,7 @@
         },
         {
           "id": "CC-121",
-          "score": 0.4,
+          "score": 0.39,
           "terms": [
             "square",
             "metres",
@@ -6111,7 +6111,7 @@
       "similar": [
         {
           "id": "CC-052",
-          "score": 0.64,
+          "score": 0.62,
           "terms": [
             "farm",
             "fish",
@@ -6165,10 +6165,11 @@
       "id": "CC-098",
       "title": "Officials enforce private interests at Blue Lagoon",
       "category": "Tourism & Population",
-      "claim": "Moviment Graffitti (June 2026): public officials were filmed telling people to leave a public beach at the Blue Lagoon occupied by concession deckchairs.",
-      "counter": "Concession terms vs public foreshore rights; MTA's response.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Moviment Graffitti (24 Jun 2026): Malta Tourism Authority officials forced a group of friends lying on a rocky part of the public Blue Lagoon beach, where there were no sunbeds or umbrellas, to move away, and threatened to call the police; sunbed and umbrella concessions give operators no permanent right of occupation and no authority to use public officials to remove beachgoers from a public beach.",
+      "counter": "The Prime Minister is reported (Newsbook, 25 Jun 2026; no transcript read) as calling the video an \"isolated episode\" and saying the area was \"not public\"; the Ministry for Tourism and the MTA said the Blue Lagoon and surrounding bathing areas remain public land (TVM News, indirect speech). No denial of the incident found in the four outlets read in full. Concession terms not published or not found; not tested.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Short lets & concessions",
       "location": {
@@ -6178,17 +6179,52 @@
         "scope": "site",
         "icon": "lagoon"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Moviment Graffitti",
       "bodies": [
         "graffitti"
       ],
+      "subclaims": [
+        {
+          "id": "CC-098A",
+          "text": "On 14 Jun 2026 MTA officials ordered a group on a rocky part of the Blue Lagoon beach, with no sunbeds or umbrellas, to leave, and threatened to call the police",
+          "finding": "Same account in The Shift, Lovin Malta and Newsbook; PN asked for an explanation; no denial in the ministry/MTA statement or in the Prime Minister’s reported reply [2, 3, 4, 6]. Video not viewed by us.",
+          "rating": "Consistent",
+          "tone": "green"
+        },
+        {
+          "id": "CC-098B",
+          "text": "The Blue Lagoon beach is public",
+          "finding": "Ministry/MTA say the Blue Lagoon and surrounding bathing areas remain public land [3]; the Lands Authority Act treats foreshores as public domain [5]. The PM is reported as saying the area was “not public” [4].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-098C",
+          "text": "Concessions grant no permanent right of occupation and no authority to use officials to remove beachgoers",
+          "finding": "A legal argument. The ministry/MTA statement says protocols must respect the public’s right of access [3]. Concession texts not published or not found; not tested.",
+          "rating": "Not tested",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-098D",
+          "text": "“Government-sponsored web of commercial interests”",
+          "finding": "Opinion; the carrying-capacity study and visitor caps are context, not rated.",
+          "rating": "Not rated",
+          "tone": "grey"
+        }
+      ],
       "date": "2026-06-24",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "\"...ordered them to leave and even threatened to call the police.\"",
+      "version": "1.0",
+      "last_reviewed": "2026-10-15",
+      "outputs": {
+        "report": "claim-files/CC-098/report.pdf",
+        "flyer_pdf": "claim-files/CC-098/flyer.pdf",
+        "flyer_png": "claim-files/CC-098/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-098/claim.yml"
     },
     {
@@ -7713,7 +7749,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.4,
+          "score": 0.39,
           "terms": [
             "square",
             "metres",
@@ -7722,7 +7758,7 @@
         },
         {
           "id": "CC-019",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "square",
             "metres",

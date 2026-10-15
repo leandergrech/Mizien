@@ -2,39 +2,118 @@ id: CC-098
 title: Officials enforce private interests at Blue Lagoon
 category: Tourism & Population
 subtopic: Short lets & concessions
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Moviment Graffitti (June 2026): public officials were filmed telling people to leave a public beach at
-    the Blue Lagoon occupied by concession deckchairs.'
+  text: 'Moviment Graffitti (24 Jun 2026): Malta Tourism Authority officials forced a group of friends lying on a rocky part
+    of the public Blue Lagoon beach, where there were no sunbeds or umbrellas, to move away, and threatened to call the police;
+    sunbed and umbrella concessions give operators no permanent right of occupation and no authority to use public officials
+    to remove beachgoers from a public beach.'
+  quote: '"...ordered them to leave and even threatened to call the police."'
   speaker: Moviment Graffitti
   date: '2026-06-24'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
   - title: Visit Malta officials filmed telling citizens to leave deckchair-occupied beach in Comino
     publisher: The Shift News
     date: 24 Jun 2026
     url: https://theshiftnews.com/2026/06/24/visit-malta-officials-filmed-telling-citizens-to-leave-deckchair-occupied-beach-in-comino/
-    note: NGO claim with video.
-counter_evidence: Concession terms vs public foreshore rights; MTA's response.
+    note: The outlet's account of the NGO release (read in full 15 Oct 2026); not a separate source for the incident.
+  - title: 'VIDEO: Public officials enforce illegitimate private interests at the Blue Lagoon'
+    publisher: Moviment Graffitti
+    date: 24 Jun 2026
+    url: https://movimentgraffitti.org/2026/06/24/video-public-officials-enforce-illegitimate-private-interests-at-the-blue-lagoon/
+    note: The speaker's own release (EN/MT), read in full 15 Oct 2026. The video it links was not viewed.
+  - title: PN demands answers over Blue Lagoon incident and calls for publication of Comino Capacity Study
+    publisher: TVM News
+    date: 24 Jun 2026
+    url: https://tvmnews.mt/en/news/pn-demands-answers-over-blue-lagoon-incident-and-calls-for-publication-of-comino-capacity-study/
+    note: Carries the Ministry for Tourism and MTA response as indirect speech (no quotation marks).
+  - title: 'Graffitti warns PM over Comino abuse: This is only the tip of the iceberg'
+    publisher: Newsbook
+    date: 25 Jun 2026
+    url: https://newsbook.com.mt/en/graffitti-warns-pm-over-comino-abuse-this-is-only-the-tip-of-the-iceberg/
+    note: Reports the Prime Minister's words with Newsbook's quotation marks ('isolated episode', 'not public').
+  - title: Lands Authority Act (Cap. 563), art. 7(2)(c)
+    publisher: Laws of Malta
+    date: retrieved 15 Oct 2026
+    url: https://legislation.mt/eli/cap/563/eng
+    note: Foreshores and portbeaches listed among public-domain land administered by the Authority.
+counter_evidence: 'The Prime Minister is reported (Newsbook, 25 Jun 2026; no transcript read) as calling the video an "isolated episode" and
+  saying the area was "not public"; the Ministry for Tourism and the MTA said the Blue Lagoon and surrounding bathing areas remain
+  public land (TVM News, indirect speech). No denial of the incident found in the four outlets read in full. Concession terms not
+  published or not found; not tested.'
 tests: Concession contracts; foreshore law; MTA statement.
 why_low_hanging: A specific, attributable statement that public data can test.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+caveats: 'The video was not viewed: the incident is rated on the NGO''s release as repeated by The Shift, Lovin Malta and Newsbook, and
+  on the absence of any denial in the sources read. The ministry/MTA response is read via TVM News (indirect speech) and the Prime
+  Minister via Newsbook; neither original was read. Concession agreements and any MTA instruction to officers were not found.
+  Sub-claim on concession rights is a legal argument, not tested. No right of reply needed.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Moviment Graffitti release, 24 Jun 2026 (own site, read in full)
+- TVM News, 24 Jun 2026 and Newsbook, 25 Jun 2026 (authorities' response)
+- Lands Authority Act, Cap. 563, art. 7(2)(c)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Blue Lagoon, Comino
   lat: 36.01404
   lon: 14.32338
   scope: site
   icon: lagoon
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-098A
+    text: "On 14 Jun 2026 MTA officials ordered a group on a rocky part of the Blue Lagoon beach, with no sunbeds or umbrellas, to leave, and threatened to call the police"
+    said_by: "Moviment Graffitti [1]"
+    finding: "Same account in The Shift, Lovin Malta and Newsbook; PN asked for an explanation; no denial in the ministry/MTA statement or in the Prime Minister’s reported reply [2, 3, 4, 6]. Video not viewed by us."
+    rating: "Consistent"
+    tone: green
+  - id: CC-098B
+    text: "The Blue Lagoon beach is public"
+    said_by: "Moviment Graffitti [1]"
+    finding: "Ministry/MTA say the Blue Lagoon and surrounding bathing areas remain public land [3]; the Lands Authority Act treats foreshores as public domain [5]. The PM is reported as saying the area was “not public” [4]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-098C
+    text: "Concessions grant no permanent right of occupation and no authority to use officials to remove beachgoers"
+    said_by: "Moviment Graffitti [1]"
+    finding: "A legal argument. The ministry/MTA statement says protocols must respect the public’s right of access [3]. Concession texts not published or not found; not tested."
+    rating: "Not tested"
+    tone: grey
+  - id: CC-098D
+    text: "“Government-sponsored web of commercial interests”"
+    said_by: "Moviment Graffitti [1]"
+    finding: "Opinion; the carrying-capacity study and visitor caps are context, not rated."
+    rating: "Not rated"
+    tone: grey
+version: '1.0'
+last_reviewed: '2026-10-15'
+thumbnail:
+  figure: 0
+  caption: denials found of the NGO's account of MTA officials ordering beachgoers off the Blue Lagoon (area public per ministry)
+history:
+- date: '2026-10-15'
+  step: started
+  note: Worker B took the claim. The Shift, Lovin Malta, TVM News and Newsbook read in full.
+- date: '2026-10-15'
+  step: wording
+  note: 'Verbatim found: Moviment Graffitti release of 24 Jun 2026, read on the NGO''s own site (EN/MT). The record''s text was the outlet''s paraphrase and has been restated from it.'
+- date: '2026-10-15'
+  step: note
+  note: 'Lands Authority Act (Cap. 563) read; search for concession texts or legal notice found none (log in literature/CC-098/notes.md). Video not viewed.'
+- date: '2026-10-15'
+  step: version
+  note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.
+  version: '1.0'

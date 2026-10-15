@@ -1736,6 +1736,8 @@ CC-095,CC-095:101,"COFOG 04.3 subsidies as % of GDP, 2022: Malta and rank",2.1 (
 CC-095,CC-095:102,"COFOG 04.3 subsidies as % of GDP, 2023: Malta and rank",1.4 (5 of 27),% of GDP,"Eurostat gov_10a_exp COFOG 04.3, updated 16 Sep 2026, retrieved 10 Oct 2026","top five: SK 2.7, HU 1.9, PL 1.6, EL 1.5, MT 1.4; EU-27 0.7",
 CC-095,CC-095:103,"COFOG 04.3 subsidies as % of GDP, 2024: Malta and rank",1.1 (joint 2-4 of 27),% of GDP,"Eurostat gov_10a_exp COFOG 04.3, updated 16 Sep 2026, retrieved 10 Oct 2026","top five: HU 1.3, BG 1.1, MT 1.1, SK 1.1, EL 1.0; EU-27 0.4",
 CC-095,CC-095:104,EU: budgetary cost of 2026 energy measures adopted 1 Mar-4 May 2026,14.5,EUR billion,"European Commission, Spring 2026 forecast box",0.07% of EU GDP,
+CC-098,CC-098:2,Days from the incident (14 Jun 2026) to the NGO's release,10,days,Moviment Graffitti release 24 Jun 2026; TVM News 24 Jun 2026; Newsbook 25 Jun 2026,incident date as stated by the NGO,
+CC-098,CC-098:3,Days from the release to the Prime Minister's reported response (Newsbook),1,days,Moviment Graffitti release 24 Jun 2026; TVM News 24 Jun 2026; Newsbook 25 Jun 2026,response date taken as the article date; the remarks may predate it,
 CC-099,CC-099:2,Population on 1 January 2026 (= end of 2025),588254,persons,"Eurostat demo_gind, retrieved 6 Oct 2026","no Eurostat flag; PwC: 588,254 at year-end 2025",
 CC-099,CC-099:3,Population change in 2025,14004,persons,"Eurostat demo_gind, retrieved 6 Oct 2026","PwC: approximately 14,000",
 CC-099,CC-099:4,"Population change in 2025, % of 1 January 2025",2.44,%,"Eurostat demo_gind, retrieved 6 Oct 2026",PwC: 2.4%,
