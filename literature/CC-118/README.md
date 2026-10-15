@@ -1,13 +1,7 @@
 # CC-118: Council: Malta second-highest water stress, groundwater failing
 
-**Status:** literature not yet collected.
+**Status:** checked (15 Oct 2026). See `notes.md` and `references.bib`; data in `data/cc-118/`; code in `tools/cc-118-report/`.
 
-## To collect
-
-EEA WISE Water Framework Directive data for Malta (status of surface and groundwater bodies); EEA WEI+ indicator (seasonal and annual, Malta against other Member States); Malta's Third River Basin Management Plan (ERA / Energy and Water Agency); Eurostat water statistics (env_wat_abs); tests of the 'second-highest' ranking across Member States.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-118) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+## Routes tried for the primary wording
+- The claim record's URL (Council register, doc. 11130/26): readable; recital (30) quoted in claim.yml was re-read in full on 15 Oct 2026.
+- Searches for an adopted version: only the draft and the Commission proposal were found (see `notes.md`).
