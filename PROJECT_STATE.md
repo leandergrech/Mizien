@@ -1384,3 +1384,5 @@ Second intake of the day (the 79-claim bulk intake ran earlier). Six candidates 
 - **CC-070 blocked** (attempt 1, source): Transport Malta's PQ reply text not obtainable; the record's wording ('one bus ... in the incident under scrutiny') appears to misdescribe a count of one overcrowded case across 52,000+ inspections in 2024-25. Maintainer: supply the PQ number/text or the Independent article of 15 Jul 2026, and consider re-wording the claim. Status set to In progress.
 - **Not taken:** CC-073 and CC-082 (open PR #126 mentions them), CC-119 (open PR #123); CC-121 not reached (one claim per run).
 - web.archive.org reset connections again in this run.- Archive: the CC-116 primary sources (decision page, UNESCO PDF) are not yet in archive/manifest.csv (Wayback unreachable from the cloud network); archive by hand.
+
+- **CC-123 (16 Oct 2026, worker C):** KPMG residential approvals, Largely supported (moderate), no right of reply needed. NSO release pages and pa.org.mt are 403 to scripts: NSO quarterly figures are second-hand (data/cc-123/); PA 2025 entry assumed a full year. KPMG's 5,170 'permits' are NSO dwelling units.
