@@ -7863,9 +7863,10 @@
       "title": "KPMG: 8,716 residential units approved in 2024, up 7.4%",
       "category": "Planning & Housing",
       "claim": "KPMG, Construction Industry and Property Market Report 2025, commissioned by the Malta Development Association (Dec 2025, section 2.1), citing NSO data: 8,716 residential units were granted approval in 2024, a 7.4% increase on 2023, and 5,170 permits were sanctioned in January to June 2025, a 9.7% year-on-year increase, so the 2025 total is expected to surpass 2024.",
-      "counter": "MaltaToday, reporting parliamentary data, gave total building permits falling from a 2018 peak of 2,868 to 1,749 in 2024; permits and dwelling units are different counts (one permit can cover many units), and the report moves from 'units' (2024) to 'permits' (H1 2025). The report itself says the full-year projection assumes the first-half growth continues. Developers cite bureaucracy and labour shortages for delays (MDA, reported).",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "The figures reproduce: Planning Authority 8,112 (2023) and 8,716 (2024), +7.45%; Eurostat index of dwellings permitted +7.3%; NSO quarters (second-hand) sum to 5,170 dwellings for January-June 2025 (+9.7%). The 5,170 are dwelling units, not permits (about 1,023 building permits, second-hand), so the noun is loose. MaltaToday's falling permit counts (2,868 in 2018 to 1,749 in 2024, second-hand) count permits, not dwellings; the NSO permit counts rose about 3% in 2024 (second-hand). The forecast was borne out: Planning Authority 12,325 units in 2025.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Development & construction",
       "location": {
@@ -7875,17 +7876,52 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "KPMG",
       "bodies": [
         "kpmg"
       ],
+      "subclaims": [
+        {
+          "id": "CC-123A",
+          "text": "8,716 residential units were granted approval in 2024",
+          "finding": "Planning Authority: 8,716 (2024). NSO quarters ◆: 8,717.",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-123B",
+          "text": "A 7.4% increase on 2023",
+          "finding": "8,716 / 8,112 = +7.45%. Eurostat’s index of dwellings permitted: +7.3%.",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-123C",
+          "text": "5,170 permits sanctioned January–June 2025, +9.7% on a year earlier",
+          "finding": "NSO Q1 + Q2 2025 ◆ = 2,143 + 3,027 = 5,170 dwellings, +9.7% on 4,714. These are units; building permits were about 1,023.",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-123D",
+          "text": "2025 is expected to surpass 2024 if the trend persists",
+          "finding": "Planning Authority: 12,325 units in 2025 vs 8,716; NSO Jan–Sep ◆ already 8,838.",
+          "rating": "Supported",
+          "tone": "green"
+        }
+      ],
       "date": "2025-12",
       "quote": "According to data published by the NSO, a total of 8,716 residential units were granted approval in 2024, representing a 7.4% increase compared with 2023 ... Between January and June 2025, 5,170 permits were sanctioned, reflecting a significant year-on-year increase of 9.7%.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-16",
+      "outputs": {
+        "report": "claim-files/CC-123/report.pdf",
+        "flyer_pdf": "claim-files/CC-123/flyer.pdf",
+        "flyer_png": "claim-files/CC-123/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-123/claim.yml",
       "similar": [
         {
