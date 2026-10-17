@@ -2,7 +2,7 @@ id: CC-096
 title: Fish farms moved 6 km offshore
 category: Nature & Wildlife
 subtopic: Marine protection
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -38,3 +38,7 @@ location:
   lon: 14.54484
   scope: site
   icon: luzzu
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-17
+    step: started
+    note: "Worker C, attempt 1: blocked on source. The European MSP Platform practice page (read in full) carries the relocation only as an unattributed timeline entry dated 31 May 2017, not as a statement by the Government or the Aquaculture Directorate, and does not mention stricter environmental conditions. Possible primary documents (Transport Malta Notice to Mariners 33 of 2017; MaltaToday, 2017) return 403 and were seen only as search summaries. Needed: the 2017 ministry press release or the notice text."
