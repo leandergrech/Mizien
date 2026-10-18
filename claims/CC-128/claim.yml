@@ -1,0 +1,53 @@
+id: CC-128
+title: 'EU: Malta missed the water-plan timetable'
+category: Governance & Promises
+subtopic: Accountability
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission, Staff Working Document SWD(2026) 702 final, Malta (2 Oct 2026): ''Malta did not consult on,
+    adopt or report the RBMP according to the WFD timetable.'' The document says Malta''s single national river basin management
+    plan was published in March 2024, against a reporting deadline for third plans of March 2022, and that integration between
+    the Water Framework, Floods and Marine Strategy Directives is ''insufficiently described''.'
+  speaker: European Commission
+  date: '2026-10-02'
+  wording_status: Verbatim found
+  sources:
+  - title: 'Commission Staff Working Document: Third River Basin Management Plans, Second Flood Hazard and Risk Maps and Second
+      Flood Risk Management Plans, Member State: Malta, SWD(2026) 702'
+    publisher: European Commission (copy on the Austrian Parliament website)
+    date: '2026-10-02'
+    url: https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf
+    note: The claim. Full text read on 18 Oct 2026. Sentence in the assessment of consultation and adoption; the 2022 deadline
+      and March 2024 publication are in the same document.
+  quote: Malta did not consult on, adopt or report the RBMP according to the WFD timetable.
+counter_evidence: The WFD sets six-year cycles for river basin management plans; the third-cycle plans were due in 2021 (adoption)
+  with reporting in March 2022 (as the document states). Malta's plan was published in March 2024 according to the document.
+  Whether the delay was by weeks or years for consultation and adoption separately is not stated in the passage; the Energy
+  and Water Agency publishes the plan and consultation dates. The Commission's July 2026 infringement package also opened
+  a case on water permits (INFR(2026)2115; see CC-101).
+tests: WISE/EEA reporting dates for Malta's third RBMP; Energy and Water Agency consultation notices and the adoption notice
+  (dates); WFD Article 13 and 14 timetable; the Commission's WFD implementation report; compare with other Member States'
+  lateness in the same SWD series.
+why_low_hanging: Dates on a public timeline that can be checked against the regulator's own notices.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium to high: the Commission text was read; the Energy and Water Agency site and WISE are reachable except
+  possibly era.org.mt (403).'
+caveats: Candidate from the weekly intake of 18 Oct 2026. The claimant is the Commission; the checkable parts are the dates.
+  A late plan says nothing about the quality of its content, and the check should not infer it. Same source document as CC-127;
+  related to CC-101, CC-118 and CC-009 in subject.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

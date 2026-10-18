@@ -1,0 +1,52 @@
+id: CC-127
+title: 'EU: Malta has the lowest organic share in the EU'
+category: Land & Trees
+subtopic: Land take & agriculture
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission, Staff Working Document SWD(2026) 702 final, Malta, assessing the third river basin management
+    plans and second flood risk management plans (transmitted 2 Oct 2026): ''Malta has the lowest proportion of organic farming
+    in the EU''; of Malta''s 10,700 hectares of agricultural area (34% of the land area), ''only 66 hectares (less than 1%)
+    of this agricultural area was managed organically in 2022, well below the EU average''.'
+  speaker: European Commission
+  date: '2026-10-02'
+  wording_status: Verbatim found
+  sources:
+  - title: 'Commission Staff Working Document: Third River Basin Management Plans, Second Flood Hazard and Risk Maps and Second
+      Flood Risk Management Plans, Member State: Malta, SWD(2026) 702'
+    publisher: European Commission (copy on the Austrian Parliament website)
+    date: '2026-10-02'
+    url: https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf
+    note: The claim. Full text read on 18 Oct 2026 via the Austrian Parliament's copy of the Commission document (section
+      1 and section 3 on pressures). The Commission's own copy was not located.
+  quote: Malta has the lowest proportion of organic farming in the EU.
+counter_evidence: The document gives 66 ha organic in 2022 against 10,700 ha agricultural area, which is 0.6%; Eurostat's
+  organic-area series (org_cropar) and the farm-structure counts may use a different agricultural area. The same document
+  says 90% of Malta's more than 10,400 farms are smaller than two hectares. Whether Malta's rank is first-lowest in every
+  year is not stated.
+tests: Eurostat org_cropar / org_cropar_h (organic area and share of utilised agricultural area, Malta against all Member
+  States, 2022 and latest); Eurostat ef_m_farmleg or the 2020 farm structure survey for utilised agricultural area; Maltese
+  Agriculture Directorate organic register; recompute 66 / 10,700.
+why_low_hanging: A two-number claim that can be recomputed and ranked from one Eurostat dataset.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat is reachable; the Commission text was read in full.'
+caveats: Candidate from the weekly intake of 18 Oct 2026. The claimant is the Commission; the sentence sits in the document's
+  description of the country, not in its findings, and the 66 ha source (Eurostat or the Maltese authorities) is not named
+  in the passage read. The same document is the source of CC-128 and overlaps in subject with CC-047, CC-101 and CC-118 (water),
+  CC-019 and CC-058 (land).
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross
