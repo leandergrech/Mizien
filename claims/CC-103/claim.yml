@@ -53,3 +53,7 @@ location:
   lon: 14.4766
   scope: institution
   icon: hospital
+history:
+  - date: 2026-10-18
+    step: started
+    note: "Worker B, attempt 1: not started on the check; waiting for the deadline. Momentum (26 Aug 2026, partitmomentum.org/?p=6437) reproduces the FOI notice (ref. 260383, 21 Aug 2026, 'Request/Complaint Not Accepted') issued by the Department of Health, Chief Medical Officer, saying the information is publicly available or will be published within three months. The notice does not name the Ministry for Health, and Newsbook's block quote sits in the paragraph on Momentum's request, so the claim's speaker and text need restating before a report. The promise falls due about 21 Nov 2026; the check needs the publication (or its absence). Not read: the original notice file; Newsbook's own request is not shown."
