@@ -1,0 +1,62 @@
+id: CC-126
+title: 'PN: Labour promised a gas pipeline by 2026'
+category: Climate & Energy
+subtopic: Electricity & grid
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Partit Nazzjonalista (statement, 22 Jun 2026): after the Prime Minister announced a gas supply agreement with BP,
+    the Government ''has signed an agreement for just nine months'' without giving the price, and ''the Labour Government
+    had promised that by this year Malta would have a pipeline for gas supply so that the country would no longer depend on
+    the tanker in Marsaxlokk. But here too, it has failed.'''
+  speaker: Partit Nazzjonalista
+  date: '2026-06-22'
+  wording_status: Verbatim found
+  sources:
+  - title: Government must immediately publish the price and conditions of the gas supply agreement with BP
+    publisher: Partit Nazzjonalista
+    date: '2026-06-22'
+    url: https://pn.org.mt/en/?p=29003
+    note: The claim. Read in full on 18 Oct 2026 (HTTP 200). English text as published by the party.
+  - title: Malta secures LNG supply deal with BP until May 2027
+    publisher: Italpress / MNA
+    date: '2026-06-22'
+    url: https://www.italpress.com/?p=703189
+    note: Locates the deal and its term (to the end of May 2027; SOCAR contract expires 13 Aug 2026). Outlet text, not the
+      Government's own.
+  quote: The Government must immediately publish the price, conditions and all guarantees linked to the new LNG supply agreement
+    with BP.
+counter_evidence: Italpress/MNA (22 Jun 2026) reports the deal covers fuel for Delimara until the end of May 2027 and that
+  the SOCAR Trading contract expires on 13 August 2026; from 13 August to the end of May is about nine and a half months,
+  from the announcement about eleven, so 'nine months' depends on the start date. Enemalta is reported to have said the contract
+  is priced against the TTF benchmark and that a process with seven international bidders preceded it. The Energy Minister
+  is reported to have called it a temporary measure on expert advice (MaltaToday, search summary). Labour's 2026 manifesto
+  (pledge MP-PL-2026-16-7 in data/manifesto_pledges.csv) says hydrogen-ready gas pipeline studies are complete; the earlier
+  pipeline promise's wording has not been located.
+tests: Wording of Labour's earlier gas-pipeline promise (2017 and 2022 manifestos; data/manifesto_pledges.csv; Government
+  statements on the pipeline project, EU Projects of Common Interest list); Enemalta and Government announcement of the BP
+  agreement (term, start date); status of the Malta-Italy gas pipeline (European Commission PCI list, Eurostat); the 21 Jun
+  2026 power cuts (CC-027, CC-090) for the 'candles and fans' remark, which is context, not the claim.
+why_low_hanging: 'A dated, verbatim opposition statement with two checkable parts: a contract term and a dated pledge with
+  a status.'
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium to high: pn.org.mt and Italpress are reachable; the Government''s own announcement (gov.mt) is probably
+  refused; manifestos are in the repo.'
+caveats: Candidate from the weekly intake of 18 Oct 2026. The claimant is the Opposition; the subject is a Government pledge
+  and contract. 'Management by crisis' and the transparency demand are opinion and are not tested. The statement is 118 days
+  old at intake. Related to CC-095, CC-113 (energy cost) and CC-027 (power cuts) in subject.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

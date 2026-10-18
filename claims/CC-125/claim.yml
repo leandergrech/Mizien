@@ -1,0 +1,58 @@
+id: CC-125
+title: 'EU: Malta Social Climate Plan EUR 60.6 million'
+category: Climate & Energy
+subtopic: Emissions & targets
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission, DG Employment, Social Affairs and Inclusion (news article, 29 Jul 2026): Malta''s Social Climate
+    Plan will mobilise EUR 60.6 million from 2026 to 2032, of which EUR 45.4 million comes from the Social Climate Fund and
+    the rest (at least 25% of total costs) from Malta; it will ''support renovations of social housing apartments to reduce
+    primary energy use by 60%'', and the Commission ''considers that the Maltese plan gives a strong and lasting response''
+    to the new carbon pricing of fuels in buildings and road transport (ETS2).'
+  speaker: European Commission
+  date: '2026-07-29'
+  wording_status: Verbatim found
+  sources:
+  - title: Commission paves the way for Malta to implement its EUR 60 million Social Climate Plan to support vulnerable households
+      and transport users in the clean transition
+    publisher: European Commission, DG EMPL
+    date: '2026-07-29'
+    url: https://employment-social-affairs.ec.europa.eu/news/commission-paves-way-malta-implement-its-eur60-million-social-climate-plan-support-vulnerable-2026-07-29_en
+    note: The claim. Read in full on 18 Oct 2026. The page links Malta's Social Climate Plan (PDF) and the Commission implementing
+      decision, which carry the measures and baselines; not yet read.
+  quote: Starting this year until 2032, the Maltese Social Climate Plan will mobilise EUR 60.6 million. EUR 45.4 million will
+    be made available from the Social Climate Fund, while Malta will cover the remainder, representing at least 25% of the
+    total costs of the plan.
+counter_evidence: The page gives no baseline for the 60% primary-energy cut (per apartment, per estate, or against which year),
+  no number of apartments, and no emissions figure; these should be in the plan PDF. Secondary reports (Malta Business Weekly,
+  MaltaToday, Italpress, EPP Group release, seen as search results only) repeat the funding split; one reports an expected
+  3,500 tonnes CO2e saving over 2026 to 2032, not found in the Commission page read. 45.4 + 15.2 = 60.6; 15.2 / 60.6 = 25.1%,
+  consistent with 'at least 25%'.
+tests: Malta's Social Climate Plan PDF and the implementing decision (baselines, milestones, targets, apartment counts); arithmetic
+  on the funding split; Housing Authority and social-housing stock data; Eurostat energy-poverty indicators (ilc_mdes01) for
+  Malta; the ETS2 start date and the Commission's own impact assessment for Malta.
+why_low_hanging: Funding figures and a stated 60% target in a primary EU document that can be recomputed and set against the
+  plan's own baseline.
+tags:
+- Promise-without-baseline
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: ec.europa.eu pages are reachable; the plan PDF links from the news page.'
+caveats: Candidate from the weekly intake of 18 Oct 2026. The claimant is the Commission describing a plan Malta drafted with
+  Commission services; it is an approval statement, not a measurement. The checkable parts are the amounts, the share, the
+  60% target and what it is measured against. A pledge-type check (label from methodology/verdict-scale.md) may fit better
+  than a verdict for the delivery parts.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

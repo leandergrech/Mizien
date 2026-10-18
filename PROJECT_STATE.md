@@ -1281,6 +1281,35 @@ CC-005 outputs and viewer metadata were merged and pushed to `main` (merge commi
 - Queue: new claims spread across workers A/B/C (open loads 28/27/27). Several claims overlap earlier ones by design (CC-025/CC-094 with CC-003; CC-081 with CC-004; CC-041-043 with CC-005).
 - Site and UI changes (Għanqbuta rename, subtopic sub-hubs, Eleventy build) are owned by the mizien-60 session; do not edit docs/index.html or scripts without checking with it.
 
+## Weekly intake 2026-10-18 (CC-124 to CC-130)
+
+Seven candidates added, not ten: the searches (WebSearch only; most Maltese outlets return 403) found few further specific, checkable, non-duplicate statements. Considered and excluded as duplicates: PwC's Summer 2026 population and infrastructure release (CC-089, CC-099), the Commission's recycling reasoned opinion and water-permit notice (CC-117, CC-101), the IMF 2025 Article IV statement (subsidy lines duplicate CC-022, CC-095, CC-113), Transport Malta's shore-power deal with Norwegian Cruise Line (overlaps CC-016), Dalli's 14 Oct EU ETS speech (a position, no figure), the Prime Minister's 18 Oct budget remarks (no checkable figure) and Dalli's 18 Oct interconnector progress (92% of the 21 km land cable; overlaps CC-023, left for a later intake or a `timeline:` entry).
+
+| ID | Topic / subtopic | Side | Claim | Wording | Source host reachable |
+|---|---|---|---|---|---|
+| CC-124 | Climate & Energy / Emissions & targets | Foreign researchers (CCPI) | CCPI 2026: Malta 25th, up nine; car use not down since free transport; offshore wind not past planning | Verbatim found | Yes (ccpi.org) |
+| CC-125 | Climate & Energy / Emissions & targets | EU (Commission) | Social Climate Plan: EUR 60.6m to 2032, 60% primary-energy cut in social housing | Verbatim found | Yes |
+| CC-126 | Climate & Energy / Electricity & grid | Party (PN) | BP gas deal covers 'just nine months'; Labour promised a gas pipeline by 2026 | Verbatim found | Yes (pn.org.mt) |
+| CC-127 | Land & Trees / Land take & agriculture | EU (Commission) | Malta has the lowest organic share in the EU (66 ha, under 1%, in 2022) | Verbatim found | Yes (Eurostat); text read via the Austrian Parliament copy |
+| CC-128 | Governance & Promises / Accountability | EU (Commission) | Malta did not consult on, adopt or report its river basin plan on the WFD timetable | Verbatim found | Yes |
+| CC-129 | Air / Air quality & health | EU (Commission) | Letter of formal notice (July 2025): Malta has not submitted its updated air pollution control programme | Verbatim found | Yes (register may be browser-only) |
+| CC-130 | Planning & Housing / Permits & enforcement | NGO (Moviment Graffitti for nine NGOs) | Draft ODZ policy allows five-year obstacle racecourses on agricultural and natural land | Verbatim found | NGO page yes; PA draft policy probably 403 |
+
+- **Queue:** assigned to the worker with the fewest open unblocked claims at each step. Open unblocked loads before 4/2/4 (A/B/C), after 6/6/5; 36 blocked rows unchanged, 117 claims in the queue.
+- **Taxonomy:** no category added or renamed; no new subtopic.
+- **Patterns:** no new tag. CC-125 carries Promise-without-baseline (provisional). Candidate for a later tag (needs two claims): 'finding-restated-as-state', where a Commission document's description of a country (CC-127) is repeated as a finding; not yet in two claims. Nothing retagged.
+- **Themes and edges:** CC-124 added to T14 (energy subsidies) and T18 (renewables delivery). New themes, all Weak (indicative): T19 EU findings of unmet obligations (CC-101, CC-117, CC-128, CC-129), T20 Energy supply security (CC-023, CC-027, CC-028, CC-126), T21 Farmland and farming pressure (CC-019, CC-058, CC-059, CC-127, CC-130). 27 edges added (192 total).
+- **Register:** `ccpi` (Climate Change Performance Index, type research) added to `data/bodies.csv`.
+- **Coverage (claims per topic, before to after):** Climate & Energy 17 to 20, Land & Trees 11 to 12, Governance & Promises 6 to 7, Air 8 to 9, Planning & Housing 15 to 16; others unchanged (Transport 15, Water 14, Tourism & Population 12, Nature 9, Waste 8, Noise 4, Health & Safety 4). Sides by body type (speakers matched to the register, 102 of 130): government 16, regulator 12, party 12 (was 11), business 11, media 11, agency 9, civil society 7 (was 6), oversight 1; EU 19 (was 15) and research 4 (was 3), so EU, international and foreign speakers are 23 of 102 matched claims (was 18 of 95 matched). Least covered topics: Noise, Health & Safety, Waste, Nature; least covered sides: oversight bodies, NGOs, international bodies other than the IMF.
+- **Queue state:** open claims per worker and blocked claims as above; no blocker changed.
+- **Follow-ups (not changed):** CC-127's 66 ha sits in a descriptive passage of the Commission document with no named source; CC-127 and CC-128 are the same document (SWD(2026) 702, read through the Austrian Parliament's copy; the Commission's own copy was not found). CCPI's producers are not named on the country page read (confirm on ccpi.org/about). CC-129's July 2025 notice is older than 60 days; the October 2026 infringement package (reported by LNB News as naming Malta) was not read.
+- **Network:** `net_check.py` reported Crossref, ec.europa.eu and EEA reachable and web.archive.org reset. ccpi.org, pn.org.mt, movimentgraffitti.org, italpress.com and parlament.gv.at read fine; MaltaToday gave 403. Pillow and reportlab had to be installed for `build_site_data.py` (add `pillow` to the environment).
+
+### Needs maintainer (weekly intake 2026-10-18)
+- CC-130: the Planning Authority's draft ODZ policy and consultation notice (pa.org.mt is refused to scripts); paste the provisions on permit duration and land types into `literature/CC-130/primary-source.md`.
+- CC-126: the Government's or Enemalta's own announcement of the BP agreement (term, start date) if gov.mt stays refused.
+- Standing blockers: queue rows starting `source:` or `needs maintainer` (36, unchanged; see the 4, 5 and 11 Oct lists).
+
 ## Weekly intake 2026-10-11 (CC-117 to CC-123)
 
 Seven candidates added, not ten: the searches turned up few further specific, checkable, non-duplicate statements (the October 2026 budget is not yet delivered; the pre-budget energy figures duplicate CC-095; OHSA, BirdLife, ADPD and Council transport items duplicate CC-091, CC-050, CC-094/114 and CC-115), and padding was avoided. All are `Not started`, verdict null. Four of the seven are EU speakers.
