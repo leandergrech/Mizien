@@ -1,13 +1,9 @@
 # CC-128: EU: Malta missed the water-plan timetable
 
-**Status:** literature not yet collected.
+**Status:** checked, report v1.0 (19 Oct 2026). Notes in `notes.md`; data in `data/cc-128/`.
 
-## To collect
+## Routes tried for the primary wording
+SWD(2026) 702 read in full from the Austrian Parliament copy (the claim record's URL). Directive and COM(2025) 2 from the Publications Office by CELEX. ERA pages (403), Wayback (reset), maltabusinessweekly.com (reset), CDR folder (404): not read. Web searches (2) for ERA's consultation dates: summaries only (second-hand).
 
-WISE/EEA reporting dates for Malta's third RBMP; Energy and Water Agency consultation notices and the adoption notice (dates); WFD Article 13 and 14 timetable; the Commission's WFD implementation report; compare with other Member States' lateness in the same SWD series.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-128) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+## References
+No bibliographic references: official texts only (see notes.md).
