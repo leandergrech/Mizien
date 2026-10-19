@@ -1413,3 +1413,10 @@ Second intake of the day (the 79-claim bulk intake ran earlier). Six candidates 
 - **CC-070 blocked** (attempt 1, source): Transport Malta's PQ reply text not obtainable; the record's wording ('one bus ... in the incident under scrutiny') appears to misdescribe a count of one overcrowded case across 52,000+ inspections in 2024-25. Maintainer: supply the PQ number/text or the Independent article of 15 Jul 2026, and consider re-wording the claim. Status set to In progress.
 - **Not taken:** CC-073 and CC-082 (open PR #126 mentions them), CC-119 (open PR #123); CC-121 not reached (one claim per run).
 - web.archive.org reset connections again in this run.- Archive: the CC-116 primary sources (decision page, UNESCO PDF) are not yet in archive/manifest.csv (Wayback unreachable from the cloud network); archive by hand.
+
+
+## Worker A run, 19 Oct 2026
+
+- **CC-126 completed** (Not substantiated, moderate; pending right of reply to PN, not sent). Term: BP supply to end of May 2027 = 9.6 months from SOCAR expiry (13 Aug), 11.3 from the 21 Jun announcement; no price published but Enemalta disclosed a TTF link; pipeline unbuilt (promoter page, updated Dec 2022: construction 2028, commissioning 2030). The dated promise 'by this year' was not found; Labour's 2013/2017/2022 manifestos and Government statements were not opened in the original; the 2017 pledge and the 2024/2025 targets are second-hand (marked ◆).
+- **Maintainer:** if a Labour or Government statement dating the pipeline to 2026 exists (manifesto text, gov.mt, MaltaToday 2019/2020 items, all 403 to scripts), add it to `literature/CC-126/primary-source.md` and re-run; the verdict could move to Largely supported. Archive the Enemalta release, PN statement, Shift article and promoter page by hand (Wayback unreachable).
+- **Not taken:** CC-073, CC-082 (open PR #126), CC-119 (open PR #123), CC-121 (open PR #132); CC-129 not reached (one claim per run).

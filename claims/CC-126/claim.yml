@@ -2,9 +2,9 @@ id: CC-126
 title: 'PN: Labour promised a gas pipeline by 2026'
 category: Climate & Energy
 subtopic: Electricity & grid
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Moderate
 claim:
   text: 'Partit Nazzjonalista (statement, 22 Jun 2026): after the Prime Minister announced a gas supply agreement with BP,
     the Government ''has signed an agreement for just nine months'' without giving the price, and ''the Labour Government
@@ -25,15 +25,23 @@ claim:
     url: https://www.italpress.com/?p=703189
     note: Locates the deal and its term (to the end of May 2027; SOCAR contract expires 13 Aug 2026). Outlet text, not the
       Government's own.
-  quote: The Government must immediately publish the price, conditions and all guarantees linked to the new LNG supply agreement
-    with BP.
-counter_evidence: Italpress/MNA (22 Jun 2026) reports the deal covers fuel for Delimara until the end of May 2027 and that
-  the SOCAR Trading contract expires on 13 August 2026; from 13 August to the end of May is about nine and a half months,
-  from the announcement about eleven, so 'nine months' depends on the start date. Enemalta is reported to have said the contract
-  is priced against the TTF benchmark and that a process with seven international bidders preceded it. The Energy Minister
-  is reported to have called it a temporary measure on expert advice (MaltaToday, search summary). Labour's 2026 manifesto
-  (pledge MP-PL-2026-16-7 in data/manifesto_pledges.csv) says hydrogen-ready gas pipeline studies are complete; the earlier
-  pipeline promise's wording has not been located.
+  - title: Enemalta secures new LNG supply agreement
+    publisher: Enemalta
+    date: '2026-06-21'
+    url: https://enemalta.com.mt/2026/06/21/enemalta-secures-new-lng-supply-agreement/
+    note: Primary for the contract (term, TTF link, seven bidders, no price). Read in full on 19 Oct 2026.
+  - title: Dalli silent on LNG costs as BP deal raises questions over pricing and duration
+    publisher: The Shift News
+    date: '2026-06-22'
+    url: https://theshiftnews.com/2026/06/22/dalli-silent-on-lng-costs-as-bp-deal-raises-questions-over-pricing-and-duration/
+    note: Outlet text; says neither Enemalta nor the Ministry disclosed the expected cost. Read in full on 19 Oct 2026.
+  - title: Melita TransGas hydrogen-ready pipeline (project page, website last updated 22 Dec 2022)
+    publisher: Melita TransGas Company Ltd
+    date: '2022-12-22'
+    url: https://melitatransgas.com.mt/
+    note: Primary (state promoter). Indicative construction 2028, commissioning 2030. Read in full on 19 Oct 2026.
+  quote: The Labour Government had promised that by this year Malta would have a pipeline for gas supply so that the country would no longer depend on the tanker in Marsaxlokk. But here too, it has failed.
+counter_evidence: 'Enemalta (21 Jun 2026) says the BP supply runs till the end of May 2027 (9.6 months from the SOCAR expiry on 13 Aug 2026, 11.3 from the announcement) and that the price is linked to the TTF index, so the formula’s reference was disclosed though no price was (The Shift, 22 Jun 2026: expected cost not disclosed). No Labour statement dating the pipeline to 2026 was found; the pipeline promoter’s page (updated 22 Dec 2022) gives indicative construction from 2028 and commissioning in 2030; earlier targets of 2024 and 2025 are second-hand (Global Energy Monitor summary).'
 tests: Wording of Labour's earlier gas-pipeline promise (2017 and 2022 manifestos; data/manifesto_pledges.csv; Government
   statements on the pipeline project, EU Projects of Common Interest list); Enemalta and Government announcement of the BP
   agreement (term, start date); status of the Malta-Italy gas pipeline (European Commission PCI list, Eurostat); the 21 Jun
@@ -41,22 +49,70 @@ tests: Wording of Labour's earlier gas-pipeline promise (2017 and 2022 manifesto
 why_low_hanging: 'A dated, verbatim opposition statement with two checkable parts: a contract term and a dated pledge with
   a status.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'Medium to high: pn.org.mt and Italpress are reachable; the Government''s own announcement (gov.mt) is probably
   refused; manifestos are in the repo.'
-caveats: Candidate from the weekly intake of 18 Oct 2026. The claimant is the Opposition; the subject is a Government pledge
-  and contract. 'Management by crisis' and the transparency demand are opinion and are not tested. The statement is 118 days
-  old at intake. Related to CC-095, CC-113 (energy cost) and CC-027 (power cuts) in subject.
+caveats: 'Opposition statement about a Government pledge and contract; PN’s own 2022 programme also proposed a pipeline to Sicily. The dated promise "by this year" was not found in any readable source (Labour 2013, 2017 and 2022 manifestos and Government statements not opened in the original; 2017 pledge and 2024/2025 targets are second-hand). Start date of BP supply not published. Opinion ("management by crisis", transparency demand, "candles and fans") not rated. Pending right of reply (Partit Nazzjonalista); not sent by the worker.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Enemalta release of 21 Jun 2026 (term to end of May 2027, TTF link, no price); Italpress/MNA 22 Jun 2026 (SOCAR expiry 13 Aug; price not disclosed); The Shift 22 Jun 2026 (cost not disclosed)
+- Melita TransGas project page (updated 22 Dec 2022): indicative construction start 2028, commissioning 2030; calculation in tools/cc-126-report/calc.py and data/cc-126/checks.csv
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-19'
+thumbnail:
+  figure: 9.6 months
+  caption: "of BP gas supply after the SOCAR contract ends (to May 2027); the dated pipeline promise PN cites was not found"
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-126A
+    text: "The Government “has signed an agreement for just nine months”"
+    said_by: "PN, 22 Jun 2026 [1]"
+    finding: "Supply to end of May 2027: 9.6 months from SOCAR’s expiry, 11.3 from the announcement [2, 3]; start date unpublished."
+    rating: "Accurate"
+    tone: green
+  - id: CC-126B
+    text: "“without providing any details about the price”"
+    said_by: "PN [1]"
+    finding: "No price published; TTF link disclosed [2, 3, 4]."
+    rating: "Largely accurate"
+    tone: green
+  - id: CC-126C
+    text: "“The Labour Government had promised that by this year Malta would have a pipeline for gas supply so that the country would no longer depend on the tanker in Marsaxlokk”"
+    said_by: "PN [1]"
+    finding: "No statement dating the pipeline to 2026 found; second-hand targets 2024 and 2025 ◆; promoter: 2030 [5, 10, 11]."
+    rating: "Not shown"
+    tone: amber
+  - id: CC-126D
+    text: "“But here too, it has failed” (no pipeline in place)"
+    said_by: "PN [1]"
+    finding: "Pipeline not built; construction not started; promoter lists indicative 2030 [5, 8]."
+    rating: "Supported"
+    tone: green
+history:
+- date: '2026-10-19'
+  step: started
+  note: Worker A started the check; PN statement of 22 Jun 2026 re-read in full on pn.org.mt.
+- date: '2026-10-19'
+  step: wording
+  note: Verbatim wording confirmed on pn.org.mt (English text); Enemalta's release of 21 Jun 2026 read as the primary source for the contract.
+- date: '2026-10-19'
+  step: note
+  note: Term arithmetic (9.6 months from SOCAR expiry, 11.3 from the announcement); no price published, TTF link disclosed; pipeline unbuilt, promoter page gives 2030; no Labour statement dating it to 2026 found (2017 pledge and 2024/2025 targets second-hand).
+- date: '2026-10-19'
+  step: version
+  version: '1.0'
+  note: First issue. Not substantiated (moderate confidence); pending right of reply.

@@ -5538,7 +5538,7 @@
       "similar": [
         {
           "id": "CC-103",
-          "score": 0.5,
+          "score": 0.51,
           "terms": [
             "deaths",
             "heat",
@@ -6005,15 +6005,6 @@
             "electricity",
             "eur"
           ]
-        },
-        {
-          "id": "CC-126",
-          "score": 0.25,
-          "terms": [
-            "prices",
-            "gas",
-            "months"
-          ]
         }
       ]
     },
@@ -6463,7 +6454,7 @@
       "similar": [
         {
           "id": "CC-090",
-          "score": 0.5,
+          "score": 0.51,
           "terms": [
             "deaths",
             "heat",
@@ -7875,9 +7866,9 @@
       "title": "PN: Labour promised a gas pipeline by 2026",
       "category": "Climate & Energy",
       "claim": "Partit Nazzjonalista (statement, 22 Jun 2026): after the Prime Minister announced a gas supply agreement with BP, the Government 'has signed an agreement for just nine months' without giving the price, and 'the Labour Government had promised that by this year Malta would have a pipeline for gas supply so that the country would no longer depend on the tanker in Marsaxlokk. But here too, it has failed.'",
-      "counter": "Italpress/MNA (22 Jun 2026) reports the deal covers fuel for Delimara until the end of May 2027 and that the SOCAR Trading contract expires on 13 August 2026; from 13 August to the end of May is about nine and a half months, from the announcement about eleven, so 'nine months' depends on the start date. Enemalta is reported to have said the contract is priced against the TTF benchmark and that a process with seven international bidders preceded it. The Energy Minister is reported to have called it a temporary measure on expert advice (MaltaToday, search summary). Labour's 2026 manifesto (pledge MP-PL-2026-16-7 in data/manifesto_pledges.csv) says hydrogen-ready gas pipeline studies are complete; the earlier pipeline promise's wording has not been located.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Enemalta (21 Jun 2026) says the BP supply runs till the end of May 2027 (9.6 months from the SOCAR expiry on 13 Aug 2026, 11.3 from the announcement) and that the price is linked to the TTF index, so the formula’s reference was disclosed though no price was (The Shift, 22 Jun 2026: expected cost not disclosed). No Labour statement dating the pipeline to 2026 was found; the pipeline promoter’s page (updated 22 Dec 2022) gives indicative construction from 2028 and commissioning in 2030; earlier targets of 2024 and 2025 are second-hand (Global Energy Monitor summary).",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [],
       "subtopic": "Electricity & grid",
       "location": {
@@ -7887,29 +7878,53 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "Partit Nazzjonalista",
       "bodies": [
         "pn"
       ],
-      "date": "2026-06-22",
-      "quote": "The Government must immediately publish the price, conditions and all guarantees linked to the new LNG supply agreement with BP.",
-      "version": null,
-      "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-126/claim.yml",
-      "similar": [
+      "subclaims": [
         {
-          "id": "CC-095",
-          "score": 0.25,
-          "terms": [
-            "prices",
-            "gas",
-            "months"
-          ]
+          "id": "CC-126A",
+          "text": "The Government “has signed an agreement for just nine months”",
+          "finding": "Supply to end of May 2027: 9.6 months from SOCAR’s expiry, 11.3 from the announcement [2, 3]; start date unpublished.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-126B",
+          "text": "“without providing any details about the price”",
+          "finding": "No price published; TTF link disclosed [2, 3, 4].",
+          "rating": "Largely accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-126C",
+          "text": "“The Labour Government had promised that by this year Malta would have a pipeline for gas supply so that the country would no longer depend on the tanker in Marsaxlokk”",
+          "finding": "No statement dating the pipeline to 2026 found; second-hand targets 2024 and 2025 ◆; promoter: 2030 [5, 10, 11].",
+          "rating": "Not shown",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-126D",
+          "text": "“But here too, it has failed” (no pipeline in place)",
+          "finding": "Pipeline not built; construction not started; promoter lists indicative 2030 [5, 8].",
+          "rating": "Supported",
+          "tone": "green"
         }
-      ]
+      ],
+      "date": "2026-06-22",
+      "quote": "The Labour Government had promised that by this year Malta would have a pipeline for gas supply so that the country would no longer depend on the tanker in Marsaxlokk. But here too, it has failed.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-19",
+      "outputs": {
+        "report": "claim-files/CC-126/report.pdf",
+        "flyer_pdf": "claim-files/CC-126/flyer.pdf",
+        "flyer_png": "claim-files/CC-126/flyer.png"
+      },
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-126/claim.yml"
     },
     {
       "id": "CC-127",

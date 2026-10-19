@@ -1,0 +1,10 @@
+check,value,unit,source,note
+Days from announcement (21 Jun 2026) to end of May 2027,344,days,Enemalta press release 21 Jun 2026 (retrieved 19 Oct 2026),
+Months from announcement to end of May 2027,11.3,months,Enemalta press release 21 Jun 2026 (retrieved 19 Oct 2026),days / 30.44
+Days from SOCAR expiry (13 Aug 2026) to end of May 2027,291,days,Italpress/MNA 22 Jun 2026 (retrieved 19 Oct 2026); Enemalta press release 21 Jun 2026 (retrieved 19 Oct 2026),supply start date not published; SOCAR expiry used
+Months of supply cover if it starts when SOCAR ends,9.6,months,Italpress/MNA 22 Jun 2026 (retrieved 19 Oct 2026); Enemalta press release 21 Jun 2026 (retrieved 19 Oct 2026),
+Gap: SOCAR expiry minus announcement,53,days,Italpress/MNA 22 Jun 2026 (retrieved 19 Oct 2026),"'just weeks before' (PN, Italpress)"
+Pipeline target years found: Melita TransGas indicative commissioning,2030,year,melitatransgas.com.mt 'Next Steps' (site last updated 22 Dec 2022; retrieved 19 Oct 2026),construction start 2028 (indicative)
+Years between PN's 'this year' (2026) and the promoter's indicative commissioning,4,years,as above,
+"Earlier target 2024 (completion expected, July 2019)",2024,year,"MaltaToday 26 Jul 2019, second-hand via gem.wiki (not opened)",second-hand
+"Earlier target 2025 (operations commence, Melita Transgas schedule Sept 2020)",2025,year,gem.wiki citing the schedule (not opened),second-hand
