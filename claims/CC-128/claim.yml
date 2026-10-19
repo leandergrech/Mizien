@@ -2,9 +2,9 @@ id: CC-128
 title: 'EU: Malta missed the water-plan timetable'
 category: Governance & Promises
 subtopic: Accountability
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
   text: 'European Commission, Staff Working Document SWD(2026) 702 final, Malta (2 Oct 2026): ''Malta did not consult on,
     adopt or report the RBMP according to the WFD timetable.'' The document says Malta''s single national river basin management
@@ -22,32 +22,72 @@ claim:
     note: The claim. Full text read on 18 Oct 2026. Sentence in the assessment of consultation and adoption; the 2022 deadline
       and March 2024 publication are in the same document.
   quote: Malta did not consult on, adopt or report the RBMP according to the WFD timetable.
-counter_evidence: The WFD sets six-year cycles for river basin management plans; the third-cycle plans were due in 2021 (adoption)
-  with reporting in March 2022 (as the document states). Malta's plan was published in March 2024 according to the document.
-  Whether the delay was by weeks or years for consultation and adoption separately is not stated in the passage; the Energy
-  and Water Agency publishes the plan and consultation dates. The Commission's July 2026 infringement package also opened
-  a case on water permits (INFR(2026)2115; see CC-101).
+counter_evidence: "Nothing found that contradicts the statement. Context rather than counter-evidence: the Commission's 2025 report says many Member States adopted late and that it launched proceedings against all of them (COM(2025) 2, section 2), and Malta was one of five with neither river basin nor flood risk plans submitted at its 30 Sep 2023 cut-off. The Directive's publication date for the third plan is 22 Dec 2021 (Art. 13(7)); the Commission's 'March 2022' is the Art. 15 reporting date. The exact day of publication in March 2024 was not confirmed (ERA pages 403; their dates are second-hand)."
 tests: WISE/EEA reporting dates for Malta's third RBMP; Energy and Water Agency consultation notices and the adoption notice
   (dates); WFD Article 13 and 14 timetable; the Commission's WFD implementation report; compare with other Member States'
   lateness in the same SWD series.
 why_low_hanging: Dates on a public timeline that can be checked against the regulator's own notices.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'Medium to high: the Commission text was read; the Energy and Water Agency site and WISE are reachable except
   possibly era.org.mt (403).'
-caveats: Candidate from the weekly intake of 18 Oct 2026. The claimant is the Commission; the checkable parts are the dates.
-  A late plan says nothing about the quality of its content, and the check should not infer it. Same source document as CC-127;
-  related to CC-101, CC-118 and CC-009 in subject.
+caveats: "No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading or Contradicted). The check is of dates only: a late plan says nothing about its content, and the Commission's remark that coordination between the WFD, Floods and Marine Strategy Directives is 'insufficiently described' is not rated (we did not read the plan). Third RBMP, ERA's consultation and adoption pages (403) and the WISE delivery record were not read; ERA's consultation dates (20 Sep 2023 to 18 Mar 2024; significant-issues consultation 19 Aug 2020 to 19 Feb 2021) are second-hand (web-search summary). BirdLife Malta's comments, dated 18 Mar 2024 on the draft, are first-hand. Same source document as CC-127; related to CC-101, CC-117, CC-118 and CC-009 in subject."
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-19'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-128A
+    text: "Malta did not consult on the RBMP on the timetable"
+    finding: "Draft due 22 Dec 2020 [2]; consultation opened 20 Sep 2023 (second-hand) [5], still open 18 Mar 2024 [4]."
+    rating: "Supported"
+    tone: green
+  - id: CC-128B
+    text: "Malta did not adopt it on the timetable"
+    finding: "Due 22 Dec 2021 [2]; still a draft on 18 Mar 2024 [4]. The adoption date itself was not read."
+    rating: "Supported"
+    tone: green
+  - id: CC-128C
+    text: "Malta did not report it on the timetable"
+    finding: "Reporting due March 2022 [1, 2]; not submitted at 30 Sep 2023 [3]; reported with March 2024 publication [1]."
+    rating: "Supported"
+    tone: green
+  - id: CC-128D
+    text: "Published in March 2024, against a March 2022 reporting deadline"
+    finding: "Both dates as the Commission states them [1]; the 2022 date is the reporting deadline, the Directive’s publication date is 22 Dec 2021; the day in March 2024 is not independently confirmed."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-128E
+    text: "Coordination of WFD, Floods and Marine Strategy Directives ‘insufficiently described’"
+    finding: "A judgement on the plan’s text, which we did not read. Not rated."
+    rating: "Not rated"
+    tone: grey
+thumbnail:
+  figure: '817 days'
+  caption: the least Malta's third river basin plan was late (draft still open 18 Mar 2024; due 22 Dec 2021)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-19
+    step: started
+    note: "Check started by worker C. SWD(2026) 702 re-read in full (copy on parlament.gv.at); the sentence appears in section 2.1 and, with 'in line with', in the Reporting box (p. 8)."
+  - date: 2026-10-19
+    step: wording
+    note: "Verbatim found. Directive 2000/60/EC Articles 13, 14, 15 and 25 and COM(2025) 2 (section 2, note 12) read from the Publications Office; BirdLife Malta's comments of 18 Mar 2024 read. ERA pages (403) and Wayback (reset) unreachable; ERA dates taken from a web-search summary and marked second-hand."
+  - date: 2026-10-19
+    step: version
+    version: "1.0"
+    note: "First issue. Largely supported (high). No right of reply needed."

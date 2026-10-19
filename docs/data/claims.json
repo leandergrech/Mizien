@@ -8016,9 +8016,10 @@
       "title": "EU: Malta missed the water-plan timetable",
       "category": "Governance & Promises",
       "claim": "European Commission, Staff Working Document SWD(2026) 702 final, Malta (2 Oct 2026): 'Malta did not consult on, adopt or report the RBMP according to the WFD timetable.' The document says Malta's single national river basin management plan was published in March 2024, against a reporting deadline for third plans of March 2022, and that integration between the Water Framework, Floods and Marine Strategy Directives is 'insufficiently described'.",
-      "counter": "The WFD sets six-year cycles for river basin management plans; the third-cycle plans were due in 2021 (adoption) with reporting in March 2022 (as the document states). Malta's plan was published in March 2024 according to the document. Whether the delay was by weeks or years for consultation and adoption separately is not stated in the passage; the Energy and Water Agency publishes the plan and consultation dates. The Commission's July 2026 infringement package also opened a case on water permits (INFR(2026)2115; see CC-101).",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Nothing found that contradicts the statement. Context rather than counter-evidence: the Commission's 2025 report says many Member States adopted late and that it launched proceedings against all of them (COM(2025) 2, section 2), and Malta was one of five with neither river basin nor flood risk plans submitted at its 30 Sep 2023 cut-off. The Directive's publication date for the third plan is 22 Dec 2021 (Art. 13(7)); the Commission's 'March 2022' is the Art. 15 reporting date. The exact day of publication in March 2024 was not confirmed (ERA pages 403; their dates are second-hand).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Accountability",
       "location": {
@@ -8028,17 +8029,59 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-128A",
+          "text": "Malta did not consult on the RBMP on the timetable",
+          "finding": "Draft due 22 Dec 2020 [2]; consultation opened 20 Sep 2023 (second-hand) [5], still open 18 Mar 2024 [4].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-128B",
+          "text": "Malta did not adopt it on the timetable",
+          "finding": "Due 22 Dec 2021 [2]; still a draft on 18 Mar 2024 [4]. The adoption date itself was not read.",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-128C",
+          "text": "Malta did not report it on the timetable",
+          "finding": "Reporting due March 2022 [1, 2]; not submitted at 30 Sep 2023 [3]; reported with March 2024 publication [1].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-128D",
+          "text": "Published in March 2024, against a March 2022 reporting deadline",
+          "finding": "Both dates as the Commission states them [1]; the 2022 date is the reporting deadline, the Directive’s publication date is 22 Dec 2021; the day in March 2024 is not independently confirmed.",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-128E",
+          "text": "Coordination of WFD, Floods and Marine Strategy Directives ‘insufficiently described’",
+          "finding": "A judgement on the plan’s text, which we did not read. Not rated.",
+          "rating": "Not rated",
+          "tone": "grey"
+        }
+      ],
       "date": "2026-10-02",
       "quote": "Malta did not consult on, adopt or report the RBMP according to the WFD timetable.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-19",
+      "outputs": {
+        "report": "claim-files/CC-128/report.pdf",
+        "flyer_pdf": "claim-files/CC-128/flyer.pdf",
+        "flyer_png": "claim-files/CC-128/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-128/claim.yml",
       "similar": [
         {
