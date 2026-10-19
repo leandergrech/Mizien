@@ -1,0 +1,13 @@
+series,time,geo,indic_de,value,flag,dataset_updated,url,retrieved
+pop,2015,MT,JAN,438805,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19
+pop,2016,MT,JAN,449635,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19
+pop,2017,MT,JAN,459375,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19
+pop,2018,MT,JAN,474837,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19
+pop,2019,MT,JAN,492968,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19
+pop,2020,MT,JAN,514855,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19
+pop,2021,MT,JAN,516125,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19
+pop,2022,MT,JAN,520174,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19
+pop,2023,MT,JAN,542051,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19
+pop,2024,MT,JAN,563443,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19
+pop,2025,MT,JAN,574250,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19
+pop,2026,MT,JAN,588254,,2026-09-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?geo=MT&indic_de=JAN&sinceTimePeriod=2015&format=JSON&lang=EN,2026-10-19

@@ -1,0 +1,27 @@
+check,value,unit,source,note
+Rank change implied by CCPI text,9,places,Wikipedia CCPI table (second-hand); ccpi.org/country/mlt,"CCPI: 'up nine spots' to 25th; 2025 edition 34th (second-hand): 34 - 25 = 9; internally consistent, scores not tested"
+"Passenger cars registered, 2022",317234,cars,Eurostat road_eqs_carpda,
+"Passenger cars registered, 2025",335693,cars,Eurostat road_eqs_carpda,
+Change in passenger cars 2022-2025,5.8,%,Eurostat road_eqs_carpda,+18459 cars; free public transport began Oct 2022
+Change in population 2022-2025 (1 Jan values 2023 vs 2026),8.5,%,Eurostat demo_gind,denominator for per-head measures; 1 Jan 2023 and 1 Jan 2026
+"Cars per 1,000 inhabitants, Malta 2022 / 2025",585 / 571,"per 1,000",Eurostat road_eqs_carhab,EU-27 564 / 584; Malta falls because population grew faster than the fleet
+"Cars per 1,000 inhabitants, Malta 2018 / 2025",609 / 571,"per 1,000",Eurostat road_eqs_carhab,
+"Road-transport final energy, 2022",232.172,ktoe,Eurostat nrg_bal_c FC_TRA_ROAD_E,all fuels
+"Road-transport final energy, 2024",242.823,ktoe,Eurostat nrg_bal_c FC_TRA_ROAD_E,2025 not yet published
+Change in road-transport energy 2022-2024,4.6,%,Eurostat nrg_bal_c,2019 (pre-COVID) was 226.2 ktoe: 2024 is 7.3% on 2019
+"Road-transport energy per resident, 2022 -> 2024",428 -> 423,kgoe per resident,Eurostat nrg_bal_c; demo_gind,-1.3% (population on 1 Jan 2023 and 1 Jan 2025: a different timing from fuel years)
+"Car share of inland passenger-km, 2022 / 2023 / 2024",82.9 / 82.0 / 80.3,%,Eurostat tran_hv_psmod,flag 'e' (estimated) on every Malta value; shares exclude walking and cycling
+"Bus (incl. coach, trolley) share, 2022 / 2023 / 2024",17.1 / 18.0 / 19.7,%,Eurostat tran_hv_psmod,"change in car share 2022-2024 -2.6 percentage points; 2019: car 81.8, bus 18.2"
+"Battery-electric cars, 2021 -> 2025",1783 -> 9790,cars,Eurostat road_eqs_carpda ELC,x5.5; 2022: 2803
+"Battery-electric share of the fleet, Malta 2025",2.92,%,Eurostat road_eqs_carpda,
+"Battery-electric share of the fleet, EU-27 2025",2.88,%,Eurostat road_eqs_carpda,
+"Battery-electric + plug-in hybrid share, Malta 2025",4.45,%,Eurostat road_eqs_carpda,EU-27: 4.64%
+Fleet growth 2022-2025 explained by battery-electric (gain),6987,cars,Eurostat road_eqs_carpda,total fleet gain 18459
+"Renewable share of gross final energy consumption, Malta 2019",8.23,%,Eurostat nrg_ind_ren,
+"Renewable share of gross final energy consumption, Malta 2024",17.21,%,Eurostat nrg_ind_ren,EU-27 25.241%
+"Renewable share, Malta 2025 (provisional)",18.8,%,Eurostat nrg_ind_ren,EU-27 26.2% (flag p)
+"Rank of Malta from lowest, 2024",4,of 27,Eurostat nrg_ind_ren,"lowest three: BE 14.336, LU 14.742, IE 16.064"
+"Rank of Malta from lowest, 2025 (provisional)",5,of 27,Eurostat nrg_ind_ren,"lowest four: BE 14.9, SK 16.3, IE 17.2, PL 18.7"
+Increase in Malta's renewable share 2019-2024,9.0,percentage points,Eurostat nrg_ind_ren,EU-27 5.4 points
+"GHG per capita excl. LULUCF, Malta 2022 / 2023 / 2024",4.3 / 4.0 / 3.8,t CO2e,Eurostat sdg_13_10,2018: 4.2; change 2022-2024 -11.6%
+"GHG index (1990 = 100), Malta 2022 / 2024",85.9 / 82.7,index,Eurostat sdg_13_10,total 2.3 -> 2.2 Mt CO2e (-4.3%); 2015 index 81.4

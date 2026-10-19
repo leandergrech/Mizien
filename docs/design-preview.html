@@ -1576,7 +1576,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-095",
-          "score": 0.26,
+          "score": 0.25,
           "terms": [
             "prices",
             "electricity",
@@ -6024,7 +6024,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-022",
-          "score": 0.26,
+          "score": 0.25,
           "terms": [
             "prices",
             "electricity",
@@ -6035,8 +6035,8 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
           "id": "CC-126",
           "score": 0.25,
           "terms": [
-            "prices",
             "gas",
+            "prices",
             "months"
           ]
         }
@@ -6369,7 +6369,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-108",
-          "score": 0.3,
+          "score": 0.29,
           "terms": [
             "abstraction",
             "groundwater",
@@ -6378,7 +6378,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         },
         {
           "id": "CC-118",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "surface",
             "bodies",
@@ -6872,7 +6872,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         },
         {
           "id": "CC-101",
-          "score": 0.3,
+          "score": 0.29,
           "terms": [
             "abstraction",
             "groundwater",
@@ -7575,7 +7575,7 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-101",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "surface",
             "bodies",
@@ -7838,9 +7838,10 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "title": "CCPI 2026: Malta 25th, car use not down",
       "category": "Climate & Energy",
       "claim": "Climate Change Performance Index 2026, Malta country page (ccpi.org, read 18 Oct 2026): Malta 'ranks 25th in the CCPI, up nine spots and a medium performer', with medium ratings for GHG emissions, energy use and climate policy and a low rating for renewable energy. The page says the country experts criticise 'the lack of concrete efforts to reduce greenhouse (GHG) emissions', that automobile use 'has not decreased' although public transport has been free since October 2022 for tallinja card holders, and that offshore wind has 'not moved beyond the planning stage'.",
-      "counter": "The index is a composite of emissions, renewables, energy use and a survey of anonymous national experts, so a rank change depends on other countries as well as Malta (not yet checked). MaltaToday reported that Malta had fallen five places to 34th in the 2025 index (reported; search summary). The page itself notes progress in solar and an increase in electric vehicles, and credits the 2024 founding of the Climate Action Authority. No Maltese government response to the 2026 ranking was found.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Per head, car use is flat to slightly lower: cars per 1,000 residents fell from 585 (2022) to 571 (2025) and Eurostat's estimated car share of passenger-km from 82.9% to 80.3% (2022 to 2024; estimates). Greenhouse-gas emissions per resident fell 11.6% from 2022 to 2024 (4.3 to 3.8 t CO2e, excluding LULUCF). Renewables rose 9.0 points from 2019 to 2024 (EU-27 5.4), and battery-electric cars are 2.9% of the fleet, the same as the EU-27. The rank (34th to 25th, second-hand) depends on other countries and on an expert survey and was not reproduced.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Emissions & targets",
       "location": {
@@ -7850,17 +7851,66 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "Climate Change Performance Index (CCPI)",
       "bodies": [
         "ccpi"
       ],
+      "subclaims": [
+        {
+          "id": "CC-124A",
+          "text": "Malta “ranks 25th … up nine spots and a medium performer”",
+          "finding": "Internally consistent with 34th in 2025 (second-hand ◆); scores, weights and method not read [1, 2].",
+          "rating": "Not tested",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-124B",
+          "text": "Low rating for renewable energy; “low renewable energy share”",
+          "finding": "17.2% in 2024, 4th lowest of 27 (EU-27 25.2%); rising faster than the EU [3].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-124C",
+          "text": "“Automobile use has not decreased” since free public transport began",
+          "finding": "Cars +5.8% (2022–25) and road energy +4.6% (2022–24); per resident flat to slightly lower; car share of passenger-km 82.9% to 80.3% (estimate) [3].",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-124D",
+          "text": "“A substantial increase in the number of electric vehicles”",
+          "finding": "Battery-electric cars 1,783 (2021) to 9,790 (2025); 2.9% of the fleet, as in the EU-27 [3].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-124E",
+          "text": "Offshore wind “not moved beyond the planning stage”",
+          "finding": "Competitive dialogue and a metocean data tender (Apr 2026); no wind generation in Malta [4, 5].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-124F",
+          "text": "Experts criticise “the lack of concrete efforts to reduce” GHG emissions",
+          "finding": "A judgement. Emissions per resident −11.6% (2022–24) but 82.7% of the 1990 level [3].",
+          "rating": "Judgement",
+          "tone": "amber"
+        }
+      ],
       "date": "2026",
-      "quote": "Malta climbs nine places in climate change index but progress remains slow",
-      "version": null,
-      "outputs": {},
+      "quote": "Malta ranks 25th in the CCPI, up nine spots and a medium performer.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-19",
+      "outputs": {
+        "report": "claim-files/CC-124/report.pdf",
+        "flyer_pdf": "claim-files/CC-124/flyer.pdf",
+        "flyer_png": "claim-files/CC-124/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-124/claim.yml"
     },
     {
@@ -7929,8 +7979,8 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
           "id": "CC-095",
           "score": 0.25,
           "terms": [
-            "prices",
             "gas",
+            "prices",
             "months"
           ]
         }
