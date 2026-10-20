@@ -1,0 +1,20 @@
+check,value,unit,source,note
+Fund + national contribution,0,EUR,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026","0 means it equals the stated total 60,599,503"
+"Claimed 'EUR 60.6 million' (rounded from 60,599,503)",60.6,EUR million,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",
+"Claimed 'EUR 45.4 million' (rounded from 45,410,023)",45.41,EUR million,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",
+National share of total cost,25.07,%,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",claim says at least 25%
+Sum of 16 payout values (Annex II),45410023,EUR,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026","equals the Fund allocation if 45,410,023"
+Annex II payouts minus Fund allocation,0,EUR,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",
+"Payout value, C1 Buildings",23773776,EUR,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",52.4% of the Fund allocation
+"Payout value, C2 Road transport",20745064,EUR,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",45.7% of the Fund allocation
+"Payout value, C4 Technical assistance",891183,EUR,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",2.0% of the Fund allocation
+Component costs C1+C2+C4 minus total,0.0,EUR,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026","0 means components add to 60,599,503"
+"Retrofitted units as share of social housing stock (236 / 5,031)",4.69,%,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",plan says approximately 4%
+"Retrofit cost per unit (I2 total EUR 15,513,057 / 236)",65733,EUR/unit,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",I2 cost from plan s.2.1.3; includes EPCs
+"Stated saving per retrofitted unit (1,563,195 kWh / 236)",6624,kWh/yr/unit,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026","no pre-renovation consumption is stated, so a percentage cannot be computed"
+Energy-saving totals: Section 2 minus Section 3 figure,-8024,kWh/yr,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",the plan states two totals
+"Buildings CO2 check: 5,220,644 kWh x 0.1249 kg/kWh",0.652,ktCO2/yr,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",plan: 0.65
+Plan CO2 total check: 0.65 + 2.89,3.54,ktCO2/yr,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",plan: 3.54 'annual ... by the year 2032'
+Funds tied to targets/milestones due 2027-2029,19492615,EUR,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",
+Funds tied to targets/milestones due 2030-2032,25917408,EUR,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",
+"Alternative total if Art. 30k applies, as share of baseline total",84.0,%,"data/cc-125/payouts.csv, plan_figures.csv; Decision C(2026) 5266 Annex II/IV; Plan s.2.5.2, s.3.1.2.4; retrieved 20 Oct 2026",plan s.2.5.2
