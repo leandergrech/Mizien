@@ -1,0 +1,19 @@
+item,value,unit,plan_page,note
+Estimated total costs of the Plan,60599503,EUR,117,Table 2.5.2 (baseline column); also Decision recital (24)
+Covered under the Fund,45410023,EUR,117,Decision Art. 2(5)
+National contribution,15189480,EUR,117,Decision recital (25)
+Total if Art. 30k Directive 2003/87/EC applies,50878285,EUR,117,Table 2.5.2 (alternative column); Fund 38130023; national 12748262
+Component C1 buildings total cost,31726014,EUR,33,of which I1 16212957 and I2 15513057 (table in Section 2.1.3)
+Component C2 road transport total cost,27684208,EUR,66,Section 2.2 summary
+Component C4 technical assistance total cost,1189281,EUR,102,Section 2.3 summary
+Public social housing units managed by the Housing Authority (at drafting),5031,units,34,
+Units to be retrofitted (I2),236,units,34,"""approximately 4%"" per the plan"
+Energy saving: heat pump water heaters and PV,3649425,kWh/yr,30,
+Energy saving: renovation of the 236 units,1563195,kWh/yr,30,
+Total energy saving stated (Section 2),5212620,kWh/yr,30,"Section 3.1.2.4.2 (p. 127) states 5,220,644 kWh for the same sum"
+Total energy saving stated (Section 3),5220644,kWh/yr,127,
+Emission factor used,0.1249,kg CO2/kWh,127,Scenario 1 of the Heating and Cooling Assessment (Oct 2024) as cited by the plan
+Annual CO2 reduction by 2032: buildings,0.65,ktCO2,127,
+Annual CO2 reduction by 2032: road transport,2.89,ktCO2e,127,
+Annual CO2 reduction by 2032: total,3.54,ktCO2,127,Stated as annual by 2032 (not cumulative over 2026-2032)
+Stated monetary saving per renovated apartment,828.86,EUR/yr,30,

@@ -1,0 +1,17 @@
+id,component,measure,type,year,quarter,goal,payout_eur,source
+C1.B.I1.1.2028Q1,C1 Buildings,I1 Estates: heat pump water heaters and PV,milestone,2028,Q1,contracts for 954 + 954 installations,607456,Commission Implementing Decision C(2026) 5266 Annex II; retrieved 20 Oct 2026
+C1.B.I1.S2.2029Q4,C1 Buildings,I1 Estates: heat pump water heaters and PV,target,2029,Q4,950 installations (cumulative),5746637,idem
+C1.B.I1.S2.2031Q4,C1 Buildings,I1 Estates: heat pump water heaters and PV,target,2031,Q4,1908 installations (cumulative),5795029,idem
+C1.A.I2.1.2028Q1,C1 Buildings,I2 Retrofit of social housing units,milestone,2028,Q1,contracts signed,581233,idem
+C1.A.I2.I4.2030Q4,C1 Buildings,I2 Retrofit of social housing units,target,2030,Q4,141 units (cumulative; EPC B or better),6597976,idem
+C1.A.I2.I4.2032Q3,C1 Buildings,I2 Retrofit of social housing units,target,2032,Q3,236 units (cumulative; EPC B or better),4445445,idem
+C2.F.I2.1.2027Q1,C2 Road transport,I2 Micro-enterprise EV grants,milestone,2027,Q1,scheme launched,731636,idem
+C2.F.I2.2.2028Q4,C2 Road transport,I2 Micro-enterprise EV grants,milestone,2028,Q4,uptake report,731636,idem
+C2.F.I2.I21.2029Q4,C2 Road transport,I2 Micro-enterprise EV grants,target,2029,Q4,420 vehicles (cumulative),6394412,idem
+C2.F.I2.I21.2032Q3,C2 Road transport,I2 Micro-enterprise EV grants,target,2032,Q3,865 vehicles (cumulative),6775031,idem
+C2.G.I1.1.2028Q1,C2 Road transport,I1 Community transport (local councils),milestone,2028,Q1,contracts for 109 EVs and 80 chargers,305617,idem
+C2.G.I1.2.2030Q4,C2 Road transport,I1 Community transport (local councils),milestone,2030,Q4,awareness and coverage report,305618,idem
+C2.G.I1.I21.2029Q4,C2 Road transport,I1 Community transport (local councils),target,2029,Q4,80 EVs (cumulative),4037515,idem
+C2.G.I1.I21.2030Q4,C2 Road transport,I1 Community transport (local councils),target,2030,Q4,109 EVs (cumulative),1463599,idem
+C4.TA.A1.1.2027Q1,C4 Technical assistance,A1 Technical assistance,milestone,2027,Q1,launch event,356473,idem
+C4.TA.A1.S2.2032Q3,C4 Technical assistance,A1 Technical assistance,target,2032,Q3,2 training activities,534710,idem
