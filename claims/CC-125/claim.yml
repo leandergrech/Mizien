@@ -2,9 +2,9 @@ id: CC-125
 title: 'EU: Malta Social Climate Plan EUR 60.6 million'
 category: Climate & Energy
 subtopic: Emissions & targets
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
   text: 'European Commission, DG Employment, Social Affairs and Inclusion (news article, 29 Jul 2026): Malta''s Social Climate
     Plan will mobilise EUR 60.6 million from 2026 to 2032, of which EUR 45.4 million comes from the Social Climate Fund and
@@ -25,11 +25,7 @@ claim:
   quote: Starting this year until 2032, the Maltese Social Climate Plan will mobilise EUR 60.6 million. EUR 45.4 million will
     be made available from the Social Climate Fund, while Malta will cover the remainder, representing at least 25% of the
     total costs of the plan.
-counter_evidence: The page gives no baseline for the 60% primary-energy cut (per apartment, per estate, or against which year),
-  no number of apartments, and no emissions figure; these should be in the plan PDF. Secondary reports (Malta Business Weekly,
-  MaltaToday, Italpress, EPP Group release, seen as search results only) repeat the funding split; one reports an expected
-  3,500 tonnes CO2e saving over 2026 to 2032, not found in the Commission page read. 45.4 + 15.2 = 60.6; 15.2 / 60.6 = 25.1%,
-  consistent with 'at least 25%'.
+counter_evidence: "Decision C(2026) 5266 (read in full 20 Oct 2026): total cost EUR 60,599,503, Fund EUR 45,410,023, national EUR 15,189,480 (25.07%); Annex II's 16 payout values sum to the Fund share. The 60% is in the plan only (p. 34) as the threshold for a deep renovation, per the Commission's Fund guidance (not read; second-hand); Annex II pays for 141 (2030) and 236 (2032) social housing units reaching at least energy class B, with no 60% indicator and no pre-renovation baseline. 236 is about 4.7% of 5,031 units. The decision's own finding is 'an adequate response' (recital 15), not 'strong and lasting'. The plan's alternative if Art. 30k applies: total EUR 50,878,285 (Fund 38,130,023). Press reports of a saving of 'about 3,500 tonnes' over 2026-2032 (second-hand, seen as search results only) differ from the plan's 3.54 ktCO2 a year by 2032 (p. 127). Eurostat ilc_mdes01: 7.6% of people in Malta unable to keep their home warm in 2025 (EU-27 8.8%)."
 tests: Malta's Social Climate Plan PDF and the implementing decision (baselines, milestones, targets, apartment counts); arithmetic
   on the funding split; Housing Authority and social-housing stock data; Eurostat energy-poverty indicators (ilc_mdes01) for
   Malta; the ETS2 start date and the Commission's own impact assessment for Malta.
@@ -37,22 +33,75 @@ why_low_hanging: Funding figures and a stated 60% target in a primary EU documen
   plan's own baseline.
 tags:
 - Promise-without-baseline
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: ec.europa.eu pages are reachable; the plan PDF links from the news page.'
-caveats: Candidate from the weekly intake of 18 Oct 2026. The claimant is the Commission describing a plan Malta drafted with
-  Commission services; it is an approval statement, not a measurement. The checkable parts are the amounts, the share, the
-  60% target and what it is measured against. A pledge-type check (label from methodology/verdict-scale.md) may fit better
-  than a verdict for the delivery parts.
+caveats: "Largely supported: no right of reply needed. The claimant is the Commission describing a plan Malta drafted with its services; an approval statement, not a measurement. The 60% is the plan's deep-renovation threshold, not an Annex II indicator. The Commission's guidance on the Fund was not read (second-hand through the plan); the plan was read in the relevant sections only; the Housing Authority's project documents were not available. 'Strong and lasting' is an assessment and is not rated. Nothing has been delivered, so no outcome is tested. The press figure on emissions is second-hand and not used."
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-125A
+    text: "EUR 60.6 million over 2026–2032, EUR 45.4 million from the Fund, the rest (at least 25%) from Malta"
+    said_by: "Commission [1]"
+    finding: "EUR 60,599,503; EUR 45,410,023; EUR 15,189,480 (25.07%) in the decision; Annex II payouts sum to the Fund share [2]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-125B
+    text: "The plan will support social housing renovations “to reduce primary energy use by 60%”"
+    said_by: "Commission [1]"
+    finding: "60% is the plan’s threshold for a deep renovation [3]; Annex II pays for 236 units reaching energy class B or better, with no 60% indicator or baseline [2]."
+    rating: "Partly accurate"
+    tone: amber
+  - id: CC-125C
+    text: "The plan is “a strong and lasting response” to ETS2"
+    said_by: "Commission [1]"
+    finding: "An assessment. The decision’s own finding is “an adequate response” [2]; not measurable now."
+    rating: "Not rated"
+    tone: grey
+  - id: CC-125D
+    text: "Delivery of the plan’s targets by 2032"
+    said_by: "Plan [2, 3]"
+    finding: "First milestone due Q1 2027; 16 milestones and targets to Q3 2032; no results yet."
+    rating: "Not yet due (pledge)"
+    tone: grey
+pledge:   # pledge label (methodology/verdict-scale.md, Pledges); the verdict above covers the Commission's description
+  status: Not yet due
+  kind: government   # a commitment made in office (EU plan)
+  as_of: '2026-10-20'
+  made_by:
+  - government-of-malta
+  made_on: '2026-07-29'
+  vehicle: Malta's Social Climate Plan, positively assessed by Commission Implementing Decision C(2026) 5266
+  deadline: '2032-09-30'
+  target: 236 public social housing units retrofitted to at least energy class B by Q3 2032 (141 by Q4 2030); 1,908 heat pump water heater and PV installations in estates by Q4 2031; 109 electric vehicles for local councils by 2030; 865 zero-emission vehicles for micro-enterprises by Q3 2032
+  note: The plan was submitted on 27 Nov 2025 and finalised on 15 Jul 2026; the date is that of the Commission decision. The first milestone is due in Q1 2027 and no results have been published. The Fund pays on the 16 milestones and targets in Annex II.
+version: '1.0'
+last_reviewed: '2026-10-20'
+thumbnail:
+  figure: EUR 60.6m
+  caption: "Social Climate Plan total, 2026-2032: confirmed to the euro (60% energy cut is a definition, not the payout target)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-20
+    step: wording
+    note: Commission DG EMPL news article of 29 Jul 2026 read in full; Implementing Decision C(2026) 5266 with Annexes I-IV and Malta's plan (156 pp.) downloaded (first attempts rate-limited, HTTP 429) and read in the relevant sections; open-access copies in literature/CC-125/open-access/.
+  - date: 2026-10-20
+    step: note
+    note: Figures recomputed (tools/cc-125-report/calc.py, data/cc-125/checks.csv); the 60% located only in the plan (p. 34) as a deep-renovation threshold, with no Annex II indicator; Eurostat ilc_mdes01 retrieved for context. Commission guidance C(2025) 6732 not read; Wayback unreachable (archive host resets connections).
+  - date: 2026-10-20
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (moderate confidence); pledge label Not yet due; no right of reply needed.
