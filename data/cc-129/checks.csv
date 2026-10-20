@@ -1,0 +1,8 @@
+check,value,unit,source,note
+"Update due, reading A (first due date 1 Apr 2019 + 4 years)",2023-04-01,date,"data/cc-129/timeline.csv; Directive 2016/2284 Art. 6(3), 10(1); retrieved 20 Oct 2026",
+Months from reading-A due date to letter of formal notice,27.5,months,"data/cc-129/timeline.csv; Directive 2016/2284 Art. 6(3), 10(1); retrieved 20 Oct 2026",838 days
+"Update due, reading B (March 2020 version + 4 years, second-hand start)",2024-03-01,date,"data/cc-129/timeline.csv; Directive 2016/2284 Art. 6(3), 10(1); retrieved 20 Oct 2026",month only; 1 March assumed
+Months from reading-B due date to letter of formal notice,16.5,months,"data/cc-129/timeline.csv; Directive 2016/2284 Art. 6(3), 10(1); retrieved 20 Oct 2026",503 days (about)
+"Months from letter of formal notice to the 2026 draft consultation (June 2026, month only)",10.5,months,"data/cc-129/timeline.csv; Directive 2016/2284 Art. 6(3), 10(1); retrieved 20 Oct 2026",approximate
+Months from letter of formal notice to today,15.1,months,"data/cc-129/timeline.csv; Directive 2016/2284 Art. 6(3), 10(1); retrieved 20 Oct 2026",
+Member States in the same letters of formal notice (July 2025 package),6,states,"data/cc-129/timeline.csv; Directive 2016/2284 Art. 6(3), 10(1); retrieved 20 Oct 2026","Croatia, Latvia, Hungary, Malta, Portugal, Slovakia"

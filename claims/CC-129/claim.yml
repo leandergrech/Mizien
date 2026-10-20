@@ -2,9 +2,9 @@ id: CC-129
 title: 'EU: Malta has not updated its air pollution programme'
 category: Air
 subtopic: Air quality & health
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
   text: 'European Commission (July 2025 infringements package, 17 Jul 2025): the Commission opened infringement procedures
     against Malta (INFR(2025)2088) and five other Member States, saying that ''to date, these Member States have not submitted
@@ -22,32 +22,65 @@ claim:
       Malta had two months to respond. Later stages for Malta not yet found.
   quote: Commission calls on Member States to update their national air pollution control programmes (NAPCP) to reduce the
     emissions of certain atmospheric pollutants.
-counter_evidence: A letter of formal notice is not a finding of breach by the Court. Malta's response and any later reasoned
-  opinion or closure were not found; the October 2026 package (reported by LNB News as naming Malta) has not been read for
-  this case. ERA published an air quality plan (see CC-034). Whether Malta has since submitted an updated programme is the
-  first thing to check.
+counter_evidence: "Directive 2016/2284 Art. 6(3) requires an update at least every four years; first programmes were due 1 April 2019 (Art. 10(1)), so an update was due by April 2023 (or about March 2024 counting from a March 2020 version, second-hand). A letter of formal notice states the Commission's view, not a ruling. The record of what Malta had submitted (Commission NAPCP library, Reportnet) could not be read. A draft revised programme was issued for consultation in June 2026 (second-hand, Malta News Agency, 17 Jul 2026). No reasoned opinion on the NEC Directive for Malta was found in the Commission packages read (Dec 2025, Jan, Mar, Apr, Jun, Jul, Oct 2026); Sep-Oct 2025, Feb and May 2026 packages were not retrievable and the infringement register did not answer."
 tests: 'Commission infringement decisions register (INFR(2025)2088 status: closed, reasoned opinion or open); ERA / Ministry
   for the Environment national air pollution control programme and its submission date to the Commission (EEA Reportnet NAPCP
   repository); Directive 2016/2284 Article 6; EEA NECD emission inventories for Malta against 2020 and 2030 commitments.'
-why_low_hanging: A dated EU legal step with a public register and a Reportnet submission record that can show whether the
-  gap was closed.
+why_low_hanging: 'Done: Claim Check 129 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'Medium to high: the Representation page is reachable; the Commission infringement register and EEA Reportnet
   may be browser-only.'
-caveats: Candidate from the weekly intake of 18 Oct 2026. The statement is 15 months old at intake, older than the usual 60
-  days, kept because it is a standing legal position whose status can change and be checked. A letter of formal notice states
-  the Commission's view, not a ruling. Related to CC-034, CC-035 and CC-007 in subject (air).
+caveats: "Largely supported: no right of reply needed. A letter of formal notice is the Commission's preliminary view, not a ruling. The submission record was not readable, so the statement that Malta had submitted nothing 'to date' rests on the Commission's own words. The 2026 draft consultation and the March 2020 programme date are second-hand. The statement is 15 months old at intake; the case's later status is unknown."
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-129A
+    text: "The Commission opened INFR(2025)2088 against Malta on 17 July 2025"
+    said_by: "Commission [1]"
+    finding: "Page names Malta and the case number in the letters of formal notice."
+    rating: "Accurate"
+    tone: green
+  - id: CC-129B
+    text: "The NEC Directive requires NAPCP updates at least every four years"
+    said_by: "Commission [1]"
+    finding: "Article 6(3) of the Directive says so [2]; first programmes were due 1 April 2019."
+    rating: "Accurate"
+    tone: green
+  - id: CC-129C
+    text: "“To date” Malta had not submitted the required update"
+    said_by: "Commission [1]"
+    finding: "Consistent with the legal timetable and with a draft update appearing in 2026 ◆; submission record not seen."
+    rating: "Not tested"
+    tone: amber
+version: '1.0'
+last_reviewed: '2026-10-20'
+thumbnail:
+  figure: INFR(2025)2088
+  caption: "Commission letter of formal notice to Malta (17 Jul 2025) over the overdue air pollution programme update"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-20
+    step: wording
+    note: Commission July 2025 package (Representation in Malta page) read in full; Directive 2016/2284 Articles 6 and 10 read from the Publications Office.
+  - date: 2026-10-20
+    step: note
+    note: Later steps searched in the Commission packages of Nov 2025 to Oct 2026 (no NEC reasoned opinion for Malta found; four packages unretrievable); ERA site 403, Commission NAPCP country links unreadable; lateness computed (tools/cc-129-report/calc.py).
+  - date: 2026-10-20
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.
