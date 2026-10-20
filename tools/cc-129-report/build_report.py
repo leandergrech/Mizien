@@ -27,7 +27,7 @@ S.append(key_points([
     ("Malta’s own draft update appeared in June 2026 ◆.",
      "A Malta News Agency report of 17 July 2026 describes a revised programme issued for public consultation. We did "
      "not open the programme; no later step in INFR(2025)2088 was found in the packages we read."),
-    ("Verdict: largely supported (medium confidence).",
+    ("Verdict: largely supported (moderate confidence).",
      "The statement is what the Commission said and fits the legal timetable; the submission record is not independently seen."),
 ]))
 S += [Spacer(1, 2.5 * mm), VerdictMeter(1), Spacer(1, 3 * mm),
@@ -118,7 +118,7 @@ S.append(std_table([
 ], [42 * mm, 18 * mm, 76 * mm, 34 * mm], valign="MIDDLE"))
 
 S += [Spacer(1, 6 * mm), SectionHeading(6, "Verdict and requests for evidence"),
-      verdict_box("Largely supported", "The case and the legal duty are confirmed; the submission record is not independently seen. Confidence: medium."),
+      verdict_box("Largely supported", "The case and the legal duty are confirmed; the submission record is not independently seen. Confidence: moderate."),
       Spacer(1, 4 * mm)]
 S.append(P("<b>Why.</b> The substance backs the Commission’s statement with one minor gap: we could not open the record of "
            "what Malta had submitted. <b>What this verdict does not say.</b> It does not say Malta has breached the Directive "
@@ -156,7 +156,7 @@ S.append(PageBreak())
 S += appendix_a("A experiment · B observational study with a control or gradient · C review, guidance or "
                 "official statistics · D assertion or anecdote. ◆ marks a source known only second-hand.")
 S += [Spacer(1, 5 * mm)]
-S += revision_log([("1.0", "20 Oct 2026", "First issue. Verdict Largely supported (medium confidence); no right of reply needed.")])
+S += revision_log([("1.0", "20 Oct 2026", "First issue. Verdict Largely supported (moderate confidence); no right of reply needed.")])
 
 build_report(Report(
     number="129", out=str(FIG / "report.pdf"), kicker="Air quality and EU law",

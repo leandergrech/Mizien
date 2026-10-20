@@ -83,4 +83,4 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-20
     step: version
     version: '1.0'
-    note: First issue. Verdict Largely supported (medium confidence); no right of reply needed.
+    note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.
