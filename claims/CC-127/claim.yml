@@ -2,9 +2,9 @@ id: CC-127
 title: 'EU: Malta has the lowest organic share in the EU'
 category: Land & Trees
 subtopic: Land take & agriculture
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
   text: 'European Commission, Staff Working Document SWD(2026) 702 final, Malta, assessing the third river basin management
     plans and second flood risk management plans (transmitted 2 Oct 2026): ''Malta has the lowest proportion of organic farming
@@ -22,31 +22,74 @@ claim:
     note: The claim. Full text read on 18 Oct 2026 via the Austrian Parliament's copy of the Commission document (section
       1 and section 3 on pressures). The Commission's own copy was not located.
   quote: Malta has the lowest proportion of organic farming in the EU.
-counter_evidence: The document gives 66 ha organic in 2022 against 10,700 ha agricultural area, which is 0.6%; Eurostat's
-  organic-area series (org_cropar) and the farm-structure counts may use a different agricultural area. The same document
-  says 90% of Malta's more than 10,400 farms are smaller than two hectares. Whether Malta's rank is first-lowest in every
-  year is not stated.
+counter_evidence: "Eurostat (sdg_02_40, org_cropar, retrieved 21 Oct 2026) agrees: Malta 0.62% of farmland organic in 2022 (66 ha: 65 fully converted, 1 in conversion), lowest in every year 2012-2024 (next lowest Bulgaria/Ireland 2.2% in 2022). Austria (from 2021) and Greece (from 2022) are missing from the latest release but were 25.7% (2020) and 12.2% (2021). EU-27 average 9.1% in 2020 (estimate; no later aggregate). The 10,700 ha denominator is unsourced in the document; farm-structure surveys give 9,800 ha (2020) and 8,880 ha (2023); the share stays below 1% on each."
 tests: Eurostat org_cropar / org_cropar_h (organic area and share of utilised agricultural area, Malta against all Member
   States, 2022 and latest); Eurostat ef_m_farmleg or the 2020 farm structure survey for utilised agricultural area; Maltese
   Agriculture Directorate organic register; recompute 66 / 10,700.
 why_low_hanging: A two-number claim that can be recomputed and ranked from one Eurostat dataset.
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'High: Eurostat is reachable; the Commission text was read in full.'
-caveats: Candidate from the weekly intake of 18 Oct 2026. The claimant is the Commission; the sentence sits in the document's
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: 'Supported: no right of reply needed. Commission document read in the Austrian Parliament copy only; the 10,700 ha and 34% are not traced to a named source (tested for consistency only); the EU average used is the 2020 estimate (no later aggregate); the footnote source on CAP plans (p. 29) was not opened. Candidate from the weekly intake of 18 Oct 2026. The claimant is the Commission; the sentence sits in the document''s
   description of the country, not in its findings, and the 66 ha source (Eurostat or the Maltese authorities) is not named
   in the passage read. The same document is the source of CC-128 and overlaps in subject with CC-047, CC-101 and CC-118 (water),
-  CC-019 and CC-058 (land).
+  CC-019 and CC-058 (land).'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - data/cc-127/organic_share_pc_uaa.csv, organic_area_ha.csv, uaa_malta_ef_lus_main.csv, land_area_malta_km2.csv, ranking_2022.csv and checks.csv (Eurostat, retrieved 21 Oct 2026)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-127A
+    text: "Malta has the lowest proportion of organic farming in the EU"
+    said_by: "European Commission [1]"
+    finding: "Lowest of all reporting Member States in each year 2012–2024; 0.62% in 2022 against 2.2% for the next [2]."
+    rating: "Confirmed"
+    tone: green
+  - id: CC-127B
+    text: "Only 66 hectares (less than 1%) were organic in 2022"
+    said_by: "European Commission [1]"
+    finding: "Eurostat: 66 ha (65 + 1 in conversion), 0.62% of farmland [2][3]."
+    rating: "Confirmed"
+    tone: green
+  - id: CC-127C
+    text: "That is well below the EU average"
+    said_by: "European Commission [1]"
+    finding: "EU-27 estimate 9.1% in 2020, the last published; Malta 0.62% that year [2]. No EU aggregate for 2022 was found."
+    rating: "Confirmed"
+    tone: green
+  - id: CC-127D
+    text: "Agricultural area is 10 700 ha, 34% of the land area"
+    said_by: "European Commission [1]"
+    finding: "10 700 / 31 600 ha = 33.9%. Eurostat’s implied area is 10 645 ha; surveys give 8 880–9 800 ha [4]."
+    rating: "Consistent"
+    tone: lime
+version: '1.0'
+last_reviewed: '2026-10-21'
+thumbnail:
+  figure: 0.62%
+  caption: "of Malta's farmland was organic in 2022, the lowest in the EU (Commission: 66 ha)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-21
+    step: wording
+    note: Commission SWD(2026) 702 (Austrian Parliament copy) re-read; sentences on PDF p. 5 and p. 11 quoted verbatim. Footnote on p. 29 repeats 66 ha and cites a Publications Office CAP report (not opened).
+  - date: 2026-10-21
+    step: note
+    note: Eurostat sdg_02_40, org_cropar, ef_lus_main and demo_r_d3area downloaded by API; ranking of Malta in every year 2012-2024, 66 ha, 66/10,700, land share and survey denominators tested in tools/cc-127-report/calc.py.
+  - date: 2026-10-21
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Supported (high confidence); no right of reply needed.
