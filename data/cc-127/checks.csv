@@ -1,0 +1,30 @@
+check,value,unit,note
+2012: Malta share of UAA (%),0.32,%,lowest of 27 reporting; next lowest BG 0.76%; missing: none
+2013: Malta share of UAA (%),0.06,%,lowest of 27 reporting; next lowest BG 1.13%; missing: none
+2014: Malta share of UAA (%),0.29,%,lowest of 27 reporting; next lowest BG 0.96%; missing: none
+2015: Malta share of UAA (%),0.25,%,lowest of 27 reporting; next lowest IE 1.65%; missing: none
+2016: Malta share of UAA (%),0.21,%,lowest of 27 reporting; next lowest RO 1.67%; missing: none
+2017: Malta share of UAA (%),0.35,%,lowest of 27 reporting; next lowest IE 1.66%; missing: none
+2018: Malta share of UAA (%),0.41,%,lowest of 27 reporting; next lowest IE 1.65%; missing: none
+2019: Malta share of UAA (%),0.47,%,lowest of 27 reporting; next lowest IE 1.63%; missing: none
+2020: Malta share of UAA (%),0.62,%,lowest of 27 reporting; next lowest IE 1.66%; missing: none
+2021: Malta share of UAA (%),0.61,%,lowest of 26 reporting; next lowest BG 1.71%; missing: AT
+2022: Malta share of UAA (%),0.62,%,"lowest of 25 reporting; next lowest BG 2.2%; missing: AT, EL"
+2023: Malta share of UAA (%),0.78,%,"lowest of 25 reporting; next lowest BG 2.95%; missing: AT, EL"
+2024: Malta share of UAA (%),0.77,%,"lowest of 25 reporting; next lowest BG 3.95%; missing: AT, EL"
+AT last published share (year 2020),25.69,%,country absent from the 2022 release; far above Malta
+EL last published share (year 2021),12.22,%,country absent from the 2022 release; far above Malta
+2022: next-lowest share / Malta share,3.55,x,BG 2.2% vs Malta 0.62%
+"Malta organic area 2022, fully converted + in conversion (org_cropar)",66.0,ha,Commission: 66
+of which fully converted,65.0,ha,
+of which in conversion,1.0,ha,
+"66 / 10,700 ha",0.617,%,Commission's own two numbers; 'less than 1%'
+UAA implied by Eurostat share (66 / 0.62%),10645,ha,"Eurostat's denominator, close to 10,700"
+"10,700 ha as share of land area (316 km2 = 31,600 ha)",33.9,%,Commission: 34%
+Organic ha 2016 / farm-structure-survey UAA 2016 (11180 ha),0.21,%,survey UAA is a different denominator; still below 1%
+Organic ha 2020 / farm-structure-survey UAA 2020 (9800 ha),0.68,%,survey UAA is a different denominator; still below 1%
+Organic ha 2023 / farm-structure-survey UAA 2023 (8880 ha),0.9,%,survey UAA is a different denominator; still below 1%
+EU-27 average share of UAA 2019,8.49,%,Eurostat estimate (flag e); last year with an EU aggregate in sdg_02_40
+EU-27 average share of UAA 2020,9.1,%,Eurostat estimate (flag e); last year with an EU aggregate in sdg_02_40
+Malta 2020 share / EU-27 2020 share,0.068,ratio,about one fifteenth
+Smallest organic areas 2022 (ha),MT 66; CY 7749; LU 8255; SI 53202,ha,Malta is also lowest in absolute hectares
