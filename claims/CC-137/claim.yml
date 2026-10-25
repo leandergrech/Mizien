@@ -1,0 +1,58 @@
+id: CC-137
+title: 'Malta Chamber: July power cuts were predictable'
+category: Climate & Energy
+subtopic: Electricity & grid
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'The Malta Chamber of Commerce, Enterprise and Industry (21 Jul 2026, on the July power cuts): ''this increase was
+    predictable – given the trends in increase in population''; ''It is evident that the investment carried out was not enough'';
+    and the cuts are ''linked directly with the country''s economic growth model''.'
+  speaker: The Malta Chamber of Commerce, Enterprise and Industry
+  date: '2026-07-21'
+  wording_status: Verbatim found
+  sources:
+  - title: 'Predictable strain, unacceptable disruption: Malta Chamber urges immediate action over power cuts'
+    publisher: Business Now
+    date: '2026-07-21'
+    url: https://businessnow.mt/predictable-strain-unacceptable-disruption-malta-chamber-urges-immediate-action-over-power-cuts/
+    note: The claim. Read through WebFetch on 25 Oct 2026 (the page returns 403 to curl); the three phrases above are the
+      Chamber's words as quoted; the antecedent of 'this increase' (demand, by implication) was not seen in the extract and
+      must be confirmed from the full text.
+  - title: Power cuts linked to Malta's economic model, Chamber of Commerce says
+    publisher: MaltaToday
+    date: 2026-07
+    url: https://www.maltatoday.com.mt/news/national/143356/power_cuts_linked_to_maltas_economic_model_chamber_of_commerce_says
+    note: 'Lead only: 403 to scripts and seen only as a search summary (second-hand). The summary says the Chamber''s president
+      linked outages to construction in Marsaskala, Birkirkara and Naxxar; not verified.'
+  quote: It is evident that the investment carried out was not enough.
+counter_evidence: CC-027 records the Government attributing the July 2026 cuts to heat-driven demand rather than generation,
+  and CC-028 Enemalta saying it is investing ahead of demand. The IMF found peak demand up 43% in 2018-2023, outpacing population
+  and tourists (CC-135), and attributed part of it to higher temperatures. The Opposition's proposal for automatic compensation
+  and a network investment plan is a proposal, not a claim (not tested). No figure for the investment carried out or needed
+  was found in the Chamber's words.
+tests: Enemalta and REWS records of distribution network investment (annual reports, regulator decisions) against peak demand
+  2018-2026; outage records (Enemalta reliability indices, EU benchmarks for Malta); Eurostat population; peak-load series
+  (CC-135); the Government's account of the July 2026 cuts (CC-027).
+why_low_hanging: 'Testable parts: investment against demand growth, and whether the rise in demand tracks population. ''Economic
+  growth model'' is a characterisation to be compared with the numbers.'
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: Business Now readable via WebFetch only; Enemalta and REWS data may be browser-only.'
+caveats: Candidate from the weekly intake of 25 Oct 2026. The claimant is a business body and holds the same standard as the
+  Government. The Chamber's statements on the growth model are opinion; check the measurable parts (investment, demand, outages).
+  Related to CC-027, CC-028, CC-097 and CC-115.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Enemalta, Marsa
+  lat: 35.88129
+  lon: 14.49686
+  scope: institution
+  icon: pylon

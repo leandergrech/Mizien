@@ -1,0 +1,53 @@
+id: CC-139
+title: 'The Shift: unpaid planning fines at EUR 16.5 million'
+category: Planning & Housing
+subtopic: Permits & enforcement
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'The Shift News (8 Jan 2026), reporting figures tabled in Parliament by the Planning Minister: unpaid fines linked
+    to illegal developments ''have risen to €16.5 million''; at the end of 2025 the PA had not collected fines linked to 2,341
+    enforcement cases issued since 2013; daily fines are capped at €50 with a maximum total of €50,000, and ''at least 161
+    illegal developments have already reached the €50,000 cap''.'
+  speaker: The Shift News
+  date: '2026-01-08'
+  wording_status: Verbatim found
+  sources:
+  - title: Unpaid planning fines climb to €16.5 million (Ivan Camilleri)
+    publisher: The Shift News
+    date: '2026-01-08'
+    url: https://theshiftnews.com/2026/01/08/unpaid-planning-fines-climb-to-e16-5-million/
+    note: The claim. Article read in full on 25 Oct 2026 (HTTP 200). The figures are attributed to a parliamentary answer
+      to PN MP Ivan Bartolo; the question number and reply were not seen. The headline says 'climb' but the article gives
+      no earlier figure.
+  quote: Unpaid fines linked to illegal developments in Malta have risen to €16.5 million, underlining the culture of impunity
+    in the construction sector and persistent weaknesses in enforcement by the state.
+counter_evidence: The article's words on 'impunity' and on developers' funding of parties are the outlet's characterisation
+  and not tested. 'Sources familiar with the authority's records' are unnamed. CC-014 (PA enforcement notices) found enforcement
+  notices at 5-10 per 100 complaints in 2017-24 from the PA's annual reports and notes daily fines apply since 2012. The PA's
+  reply to the question, and whether the 2,341 cases and the €16.5 million refer to the same set, were not seen. No Planning
+  Authority comment was found.
+tests: The parliamentary question and reply (parlament.mt, browser-only) and the Planning Authority's annual reports (fines
+  imposed, collected and outstanding); the Development Planning Act provisions on daily fines and the cap; CC-014 data; any
+  earlier published figure for unpaid fines (the trend implied by 'climb').
+why_low_hanging: Specific figures from a tabled reply that can be compared with the PA's own reports and the law.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: The Shift is readable; the parliamentary reply and PA reports may be browser-only or on Issuu.'
+caveats: Candidate from the weekly intake of 25 Oct 2026. The claimant is a news outlet reporting a ministerial reply; the
+  reply is the primary source and the check should obtain it. The statement is 9 months old at intake. Make no claim about
+  people or motives; test the figures and the legal cap.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Planning Authority, St Francis Ravelin, Floriana
+  lat: 35.89
+  lon: 14.50314
+  scope: institution
+  icon: ravelin
