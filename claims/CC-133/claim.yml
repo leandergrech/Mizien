@@ -1,0 +1,52 @@
+id: CC-133
+title: 'EU: Malta''s price-to-income ratio has declined'
+category: Planning & Housing
+subtopic: Housing & affordability
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (2026 Country Report for Malta, 3 Jun 2026): nominal property prices ''have risen steadily since
+    2014 and consistently outpace EU average growth'', but ''with income growth exceeding these gains, the price-to-income
+    ratio has actually declined, tempering the impact on overall affordability''.'
+  speaker: European Commission
+  date: '2026-06-03'
+  wording_status: Verbatim found
+  sources:
+  - title: 2026 Country Report - Malta (Commission staff working document SWD(2026) 218 final), executive summary and Annex
+      16
+    publisher: European Commission (transmitted to the Council, 8 Jun 2026)
+    date: '2026-06-03'
+    url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
+    note: The claim. Passage read in the summary section on housing (the report refers to Annex 16 for the chart 'House prices,
+      rents and price-to-income evolution in MT and EU27 since 2005'). Document read in full from the Council register copy
+      (HTTP 200, text extracted) on 25 Oct 2026.
+  quote: However, with income growth exceeding these gains, the price-to-income ratio has actually declined, tempering the
+    impact on overall affordability
+counter_evidence: 'The same passage says rental prices continue to climb, boosted by high demand from foreign workers and
+  tourists. The report gives no start year or percentage for the decline. CC-013 (PA: permits keep prices in check) and CC-018
+  (MDA: IMF ''confirms'' its view) rest on house price series; CC-123 (KPMG) on permits. The Commission uses nominal prices
+  in one sentence and a ratio in the next, so the series and period must be fixed before testing.'
+tests: Eurostat house price index (nominal and deflated; data-sources.md warns about tipsho20 and tipsho10) and Eurostat or
+  ECB price-to-income indicators for Malta and the EU since 2014; NSO household income and property price index; Central Bank
+  of Malta residential property price index; the report's Annex 16 chart data; CC-013 data.
+why_low_hanging: A direction-of-change claim that can be tested on published price and income series.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat dissemination API and the Council register are reachable; NSO and Central Bank pages may be
+  browser-only.'
+caveats: Candidate from the weekly intake of 25 Oct 2026. The claim is about the ratio of prices to income, not about whether
+  housing is affordable for any group. Specify the period (since 2014 or since 2005) before checking.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

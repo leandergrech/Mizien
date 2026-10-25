@@ -1,0 +1,52 @@
+id: CC-132
+title: 'EU: 58% in Malta never use public transport'
+category: Transport
+subtopic: Public transport
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (2026 Country Report for Malta, 3 Jun 2026): ''In 2024, 58% of people in Malta reported never
+    using public transport, below the EU average of 50.6%'', citing a Eurostat news article.'
+  speaker: European Commission
+  date: '2026-06-03'
+  wording_status: Verbatim found
+  sources:
+  - title: 2026 Country Report - Malta (Commission staff working document SWD(2026) 218 final), Annex 8 (transport)
+    publisher: European Commission (transmitted to the Council, 8 Jun 2026)
+    date: '2026-06-03'
+    url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
+    note: The claim. Sentence read in the Annex 8 transport section; footnote 145 cites a Eurostat news article headed '51%
+      of people didn't use public ...' (title cut off in the extracted text). Document read in full from the Council register
+      copy (HTTP 200, text extracted) on 25 Oct 2026.
+  quote: In 2024, 58% of people in Malta reported never using public transport, below the EU average of 50.6%
+counter_evidence: The sentence compares 58% with an EU average of 50.6% and calls 58% 'below' it, but 58 is above 50.6, so
+  either the word or a figure is wrong; the check should establish which. The same Annex says Malta has extended free access
+  to public transport (Tallinja card), added bus routes and park-and-ride, and that the effectiveness of these measures has
+  been limited. CC-069 (82 million bus trips), CC-070 (overcrowded buses) and CC-071 (free buses) concern use of the same
+  system.
+tests: Eurostat's data behind the news article in footnote 145 (the share of people who never use public transport, Malta
+  and EU, 2024; find the dataset code from the news item); the wording of the Eurostat news item itself; NSO public transport
+  passenger counts; Malta Public Transport ridership; CC-069 data.
+why_low_hanging: A single survey percentage that can be compared with an EU average in a Eurostat table.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat and the Council register are reachable. The Eurostat news page cited is JavaScript-rendered
+  or may need the dissemination API.'
+caveats: Candidate from the weekly intake of 25 Oct 2026. The claimant is the Commission's staff; the survey is Eurostat's,
+  so the check should compare the Commission's sentence with Eurostat's own figures and wording. What 'never' means in the
+  survey question (reference period) must be stated. The check should state plainly whether the 'below' is a wording slip,
+  without any claim about intent.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Valletta bus terminus, Floriana
+  lat: 35.89563
+  lon: 14.50827
+  scope: site
+  icon: bus

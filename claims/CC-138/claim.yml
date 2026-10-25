@@ -1,0 +1,58 @@
+id: CC-138
+title: 'OPM: White Rocks national park protected from development'
+category: Land & Trees
+subtopic: Open spaces & parks
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Office of the Prime Minister (Cabinet decision on the White Rocks legal notice, July 2026, as reported by MaltaToday):
+    the site will be administered by Project Green and will receive legal protection against future development.'
+  speaker: Office of the Prime Minister
+  date: '2026-07-31'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Cabinet approves legal notice classifying White Rocks as national park
+    publisher: MaltaToday
+    date: 2026-07
+    url: https://www.maltatoday.com.mt/news/national/143517/cabinet_approves_legal_notice_classifying_white_rocks_as_national_park
+    note: The claim as reported (OPM statement paraphrased by the outlet). 403 to scripts and WebFetch; wording seen only
+      in a search summary (second-hand). The date of the OPM statement is not confirmed; 31 Jul 2026 is the Gazette date of
+      the notice.
+  - title: L.N. 209 of 2026, Establishment of the White Rocks National Park Regulations, 2026
+    publisher: Government Gazette of Malta (No. 21,695)
+    date: '2026-07-31'
+    url: https://legislation.mt/eli/ln/2026/209/eng
+    note: Primary text. PDF (4 pages) read in full on 25 Oct 2026 (HTTP 200).
+counter_evidence: The gazetted regulations (L.N. 209 of 2026, read 25 Oct 2026) have five regulations. Regulation 3 establishes
+  the park as delineated in a site map in the Schedule; regulation 4 says the designation 'shall not of itself prejudice'
+  lawful existing agricultural activity, access rights, servitudes, permits or authorisations; regulation 5 leaves in place
+  any stricter protection under the Environment Protection Act or other law. No regulation in the text prohibits or restricts
+  development in terms. A secondary summary (S. Sauerborn) attributes an area of 369,000 square metres to a December 2025
+  Project Green release (not verified; the notice's boundary is a map). A MaltaToday headline in its Budget 2026 section reports
+  the Prime Minister announcing the transformation of White Rocks into a national park (not read).
+tests: The gazetted text and the Schedule map (L.N. 209 of 2026); Environment Protection Act (Cap. 549) articles 54-55 and
+  what designation as a national park adds; Planning Authority development control policy for the site (permits, outline permits,
+  Local Plan zoning); the OPM or Project Green statement in its own words.
+why_low_hanging: The regulations are short and public; the claim can be compared with their text and with the planning framework.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: High for the legal text (legislation.mt reachable); the OPM statement wording is behind a refused host (MaltaToday
+  403), so the maintainer may need to supply it.
+caveats: Candidate from the weekly intake of 25 Oct 2026. A Government statement held to the same standard as any other. 'Legal
+  protection against future development' is the outlet's paraphrase of the OPM; the check must first obtain the OPM's own
+  words. The designation may protect the park indirectly through other law (planning, Natura or ecological protection); the
+  check tests what the text and law do, not intentions.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Auberge de Castille (Office of the Prime Minister), Valletta
+  lat: 35.8959
+  lon: 14.51136
+  scope: institution
+  icon: castille

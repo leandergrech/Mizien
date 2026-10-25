@@ -1,0 +1,51 @@
+id: CC-136
+title: 'AFP: Malta the most densely populated country in Europe'
+category: Tourism & Population
+subtopic: Population & labour
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'AFP (6 Jun 2026): ''The tiny Mediterranean island is the most densely populated country in Europe, and approvals
+    for new buildings are soaring despite scandals dogging the development sector''; ''The country''s population has grown
+    nearly 30 percent over a decade.'''
+  speaker: Agence France-Presse (AFP)
+  date: '2026-06-06'
+  wording_status: Verbatim found
+  sources:
+  - title: Picturesque Malta set to 'implode' as concrete jungle devours all (AFP, Ella Ide)
+    publisher: eNCA (AFP wire copy)
+    date: '2026-06-06'
+    url: https://www.enca.com/lifestyle/picturesque-malta-set-implode-concrete-jungle-devours-all
+    note: The claim. Article read in full on 25 Oct 2026 (HTTP 200). AFP's own voice, not a quotation of a source; the activist
+      Andre Callus (Moviment Graffitti) and Michael Briguglio (University of Malta) are quoted separately and their opinions
+      are not part of the check.
+  quote: The tiny Mediterranean island is the most densely populated country in Europe, and approvals for new buildings are
+    soaring despite scandals dogging the development sector.
+counter_evidence: '''Country in Europe'' differs from ''EU Member State'': Monaco and Vatican City are generally listed as
+  denser than Malta (to verify against UN or World Bank data). IMF staff put Malta''s ten-year population rise at 25 percent
+  (CC-112); NSO counts 588,254 residents at end-2025 (CC-088). KPMG reports 8,716 residential units approved in 2024, up 7.4%
+  (CC-123), and the PA''s annual reports give permit series (CC-013).'
+tests: Eurostat population density (demo_r_d3dens or demo_gind with area) for Malta and EU states; UN or World Bank density
+  for European microstates; NSO population 2015-2025; Planning Authority permit and dwelling-approval series (annual reports,
+  CC-013 data) for 'soaring'.
+why_low_hanging: Three checkable statements (density rank, permits trend, population change) with open data.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: the article and Eurostat are reachable; PA series are partly transcribed in data/cc-013/.'
+caveats: Candidate from the weekly intake of 25 Oct 2026. A foreign wire service; held to the same standard as a local outlet.
+  The article is a feature with campaigners' views; only AFP's own factual statements are checked. 'Soaring' needs a stated
+  measure (permits, units, floor area) and period. The AFP original was not read; eNCA carries the wire copy.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

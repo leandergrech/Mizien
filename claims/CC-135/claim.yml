@@ -1,0 +1,52 @@
+id: CC-135
+title: 'IMF: peak electricity demand up 43% in five years'
+category: Climate & Energy
+subtopic: Electricity & grid
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'International Monetary Fund staff (Selected Issues paper ''Taking Stock of Infrastructure in Malta'', Feb 2025):
+    peak electricity demand rose ''from 465 MW in 2018 to 663 MW in 2023 (an increase of 43 percent)'', ''significantly outpaced
+    the growth in population and tourists in the peak summer season (an increase of 13 percent over the same period)''.'
+  speaker: International Monetary Fund
+  date: 2025-02
+  wording_status: Verbatim found
+  sources:
+  - title: Taking Stock of Infrastructure in Malta (Selected Issues Paper SIP/2025/007; also Country Report No. 25/18), para.
+      5
+    publisher: International Monetary Fund
+    date: Feb 2025
+    url: https://meetings.imf.org/-/media/Files/Publications/Selected-Issues-Papers/2025/English/SIPEA2025007.ashx
+    note: The claim. PDF downloaded and text read on 25 Oct 2026 (HTTP 200); information as of 17 Dec 2024. Selected Issues
+      papers carry the author's (Alexander Pitt) and IMF staff views, not the Board's.
+  quote: Peak electricity demand has increased rapidly in recent years, rising from 465 MW in 2018 to 663 MW in 2023 (an increase
+    of 43 percent).
+counter_evidence: The paper itself adds that the rise 'may be related' to the increase in the mean temperature of the hottest
+  month from 27.3 to 29.6 degrees Celsius, says capacity in energy and water supply is currently adequate, and reports that
+  the authorities project peak demand about 30 percent higher by 2040 under a high-temperature and high-population scenario.
+  CC-027 (July 2026 power cuts), CC-028 (Enemalta network downtime) and the Malta Chamber's statement (CC-137) concern the
+  same demand and network.
+tests: Enemalta or Regulator for Energy and Water Services peak load figures for 2018-2023 (and 2024-2026); the paper's own
+  source for the series; Eurostat population and NSO tourist nights for the summer months (the 13 percent); Malta Met Office
+  temperature records; whether the 663 MW is gross or net, and demand met including the interconnector.
+why_low_hanging: Three numbers (465, 663, 13 percent) that can be recomputed from load data, population and tourist series.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: the IMF paper is reachable (meetings.imf.org); load data may be browser-only (Enemalta, REWS).'
+caveats: Candidate from the weekly intake of 25 Oct 2026; the paper is from February 2025 and its data end in 2023. A staff
+  paper's view, not the IMF Board's. The 13 percent combines two series (resident population and peak-season tourists); the
+  check needs the paper's construction of it.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Enemalta, Marsa
+  lat: 35.88129
+  lon: 14.49686
+  scope: institution
+  icon: pylon

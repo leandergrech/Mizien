@@ -1,0 +1,50 @@
+id: CC-134
+title: 'EU: Malta''s environmental tax revenue is below the EU average'
+category: Climate & Energy
+subtopic: Emissions & targets
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (2026 Country Report for Malta, 3 Jun 2026): ''Total environmental tax revenue is lower than
+    the EU average (1.4% of GDP in 2024 against the EU average of 2.1%)'', with 2023 revenue ''primarily derived from energy
+    and transport taxes (around 49% and 41%, respectively)'' and taxes on pollution and resources at 0.18% (EU average 0.08%).'
+  speaker: European Commission
+  date: '2026-06-03'
+  wording_status: Verbatim found
+  sources:
+  - title: 2026 Country Report - Malta (Commission staff working document SWD(2026) 218 final), Annex 10 (circular economy
+      and fiscal tools)
+    publisher: European Commission (transmitted to the Council, 8 Jun 2026)
+    date: '2026-06-03'
+    url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
+    note: The claim. Passage read in the circular economy section, which refers to Annex 3. Document read in full from the
+      Council register copy (HTTP 200, text extracted) on 25 Oct 2026.
+  quote: Total environmental tax revenue is lower than the EU average (1.4% of GDP in 2024 against the EU average of 2.1%)
+counter_evidence: The sentence appears in a section on fiscal tools to encourage circular practices, so the comparison is
+  used to argue for more such tools. The same passage says Malta's taxes on pollution and resources are 0.18% against an EU
+  average of 0.08%, higher than the EU average. CC-095, CC-113 and CC-022 concern what energy support and fossil-fuel subsidies
+  cost, a different measure from tax revenue.
+tests: Eurostat environmental tax revenue by category (Malta and EU-27, 2023-2024; dataset env_ac_tax, to verify) and GDP;
+  the Commission's Annex 3 tax tables; Malta's energy and transport tax rates; the definition of 'environmental taxes' (energy,
+  transport, pollution and resources).
+why_low_hanging: Two numbers that can be recomputed from one Eurostat table.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat and the Council register are reachable.'
+caveats: Candidate from the weekly intake of 25 Oct 2026. Tax revenue as a share of GDP depends on both the tax base and the
+  denominator and is not a direct measure of environmental policy; the check tests the figures and what they do and do not
+  show.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

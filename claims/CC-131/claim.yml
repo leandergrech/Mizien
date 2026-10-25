@@ -1,0 +1,55 @@
+id: CC-131
+title: 'EU: Malta recovers 100% of construction waste'
+category: Waste
+subtopic: Construction waste
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (2026 Country Report for Malta, 3 Jun 2026): ''the rate of recovery of construction and demolition
+    waste is 100'', above the EU average of 89%, citing a 2024 Joint Research Centre assessment.'
+  speaker: European Commission
+  date: '2026-06-03'
+  wording_status: Verbatim found
+  sources:
+  - title: 2026 Country Report - Malta (Commission staff working document SWD(2026) 218 final), Annex 10 (circular economy)
+    publisher: European Commission (transmitted to the Council, 8 Jun 2026)
+    date: '2026-06-03'
+    url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
+    note: The claim. 'By contrast, the rate of recovery of construction and demolition waste is 100 (152), above the EU average
+      of 89%.' (152) is the footnote to 'Techno-economic and environmental assessment of CDW management, JRC, 2024'. The extracted
+      text shows '100' without a percent sign; confirm the unit in the PDF page image. Document read in full from the Council
+      register copy (HTTP 200, text extracted) on 25 Oct 2026.
+  quote: By contrast, the rate of recovery of construction and demolition waste is 100, above the EU average of 89%.
+counter_evidence: The same Annex gives Malta's municipal waste recycling rate as 16.7% in 2024 against an EU average of 48.1%,
+  and the main text says high landfill rates and low recycling rates persist, so the 100 concerns one waste stream. Directive
+  2008/98/EC (Article 11(2)(b)) counts 'other material recovery, including backfilling' towards its 70% construction and demolition
+  waste target, so a recovery rate does not show how much is recycled into products rather than used as fill (to verify against
+  the Directive text). CC-082 (ERA, 35 quarries for construction waste) and CC-063 (MDA, 'standstill' warning) bear on where
+  Malta's mineral waste goes. The JRC report cited was not read.
+tests: 'The JRC 2024 assessment (what the 100 measures: recovery as defined in the Waste Framework Directive, including backfilling,
+  or recycling); Eurostat waste statistics for mineral construction and demolition waste (generation and treatment by operation:
+  recovery, backfilling, disposal), Malta against the EU; ERA and NSO waste statistics; Commission reports on the Article
+  11 target; data in CC-082 and CC-111.'
+why_low_hanging: A single stated figure with a cited source, testable against Eurostat treatment-by-operation data.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: the Council register and Eurostat are reachable; the JRC report (publications.jrc.ec.europa.eu) is
+  untested.'
+caveats: Candidate from the weekly intake of 25 Oct 2026. The claimant is the Commission's staff, writing a country assessment;
+  the figure comes from a JRC study, so the check should trace it to that study. Unit (100 or 100%) and definition to be confirmed.
+  Related to CC-082, CC-111 and CC-117 in subject.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross
