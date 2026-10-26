@@ -1,0 +1,35 @@
+check,value,unit,source,note
+"Malta renewables share of gross final energy consumption, 2024",17.21,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",nrg_ind_ren REN; flag ''
+"EU-27 renewables share, 2024",25.24,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",
+"Gap, Malta to EU-27, 2024",8.0,points,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",
+"Malta's rank, lowest first (1 = lowest share of 27), 2024",4,of 27,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)","lowest five: BE 14.3, LU 14.7, IE 16.1, MT 17.2, PL 17.8"
+Malta renewables share 2025 (Eurostat early estimate),18.8,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",flag 'p' (provisional)
+EU-27 renewables share 2025 (early estimate),26.2,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",flag p
+"Malta renewable electricity, share of gross electricity consumption (SHARES), 2024",10.65,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",
+"Same, 2025 (Eurostat early estimate)",11.2,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",flag 'p'
+"EU-27, same indicator, 2024 / 2025",47.5 / 49.9,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",2025 flag p
+"Malta net electricity generation, 2024: total / renewable",2138.6 / 336.0,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",nrg_cb_pem monthly sums; flags ['e']
+"Malta renewable share of NET GENERATION, 2024",15.71,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",domestic generation only: imports not in the denominator
+"Malta solar PV share of renewable generation, 2024",97.2,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",PV 326.7 GWh
+"Malta combustible renewables (biomass, biogas) share of renewable generation, 2024",2.8,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",9.3 GWh; flags ['e']
+"Malta wind and hydro in monthly net generation, 2024",0.0 / 0.0,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",nrg_cb_pem (rounded to 0.1 GWh); flags ['e']
+"Malta net electricity generation, 2025: total / renewable",2176.3 / 363.3,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",nrg_cb_pem monthly sums; flags ['e']
+"Malta renewable share of NET GENERATION, 2025",16.69,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",domestic generation only: imports not in the denominator
+"Malta solar PV share of renewable generation, 2025",96.8,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",PV 351.5 GWh
+"Malta combustible renewables (biomass, biogas) share of renewable generation, 2025",3.2,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",11.7 GWh; flags ['e']
+"Malta wind and hydro in monthly net generation, 2025",0.0 / 0.0,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",nrg_cb_pem (rounded to 0.1 GWh); flags ['e']
+Malta electricity supply 2024: production / imports / exports / final consumption,2186 / 970 / 3 / 2868,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",nrg_cb_e; flag ''; imports = 33.8% of final consumption
+"Malta renewable generation as share of final consumption (imports in denominator, no SHARES adjustments), 2024",11.7,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)","simple ratio; SHARES applies its own definitions (e.g. gross consumption, statistical adjustments)"
+Malta electricity supply 2025: production / imports / exports / final consumption,2222 / 1031 / 0 / 2970,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",nrg_cb_e; flag 'p'; imports = 34.7% of final consumption
+"Malta renewable generation as share of final consumption (imports in denominator, no SHARES adjustments), 2025",12.2,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)","simple ratio; SHARES applies its own definitions (e.g. gross consumption, statistical adjustments)"
+"EU-27 renewable share of net generation, 2024",47.2,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",1239 of 2623 TWh
+"EU-27 renewable share of net generation, 2025",47.3,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",1260 of 2667 TWh
+"Renewable share of net generation, 2025: Malta's rank, lowest first",2 of 27,,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)","lowest five: CZ 16.6, MT 16.7, SK 17.8, FR 27.0, CY 27.4"
+"Malta electricity generation by source, 2013: wind / hydro / PV / biogas / total renewable",0.085 / 0.000 / 29.470 / 5.892 / 35.447,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)","nrg_bal_peh (annual, three decimals)"
+"Malta electricity generation by source, 2018: wind / hydro / PV / biogas / total renewable",0.058 / 0.000 / 189.981 / 8.956 / 198.995,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)","nrg_bal_peh (annual, three decimals)"
+"Malta electricity generation by source, 2022: wind / hydro / PV / biogas / total renewable",0.058 / 0.000 / 288.972 / 7.389 / 296.419,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)","nrg_bal_peh (annual, three decimals)"
+"Malta electricity generation by source, 2023: wind / hydro / PV / biogas / total renewable",0.033 / 0.000 / 308.621 / 9.611 / 318.265,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)","nrg_bal_peh (annual, three decimals)"
+"Malta electricity generation by source, 2024: wind / hydro / PV / biogas / total renewable",0.033 / 0.000 / 326.676 / 9.297 / 336.006,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)","nrg_bal_peh (annual, three decimals)"
+Years 2013-2024 with any wind generation recorded (nrg_bal_peh),2013: 0.085 GWh; 2014: 0.058 GWh; 2015: 0.058 GWh; 2016: 0.058 GWh; 2017: 0.058 GWh; 2018: 0.058 GWh; 2019: 0.058 GWh; 2020: 0.058 GWh; 2021: 0.058 GWh; 2022: 0.058 GWh; 2023: 0.033 GWh; 2024: 0.033 GWh,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",largest = 0.0039% of 2024 total generation
+Years with any hydro generation recorded,none,GWh,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",
+Wind 2024 as % of renewable generation,0.01,%,"Eurostat (data/cc-119/eurostat_extract.csv, retrieved 12 Oct 2026)",0.033 GWh of 336.0 GWh
