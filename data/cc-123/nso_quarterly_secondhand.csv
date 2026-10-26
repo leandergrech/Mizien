@@ -1,0 +1,12 @@
+year,quarter,permits,dwellings,source,note
+2023,Q1,496,2540,https://nso.gov.mt/residential-building-permits-q1-2023/,"NSO release page refused to scripts (403); figures from a web-search summary of the release (second-hand), retrieved 16 Oct 2026"
+2023,Q2,494,2453,https://maltabusinessweekly.com/nearly-2500-new-dwellings-approved-in-second-quarter-2023-st-pauls-bay-registers-highest-number/23685/,"outlet reporting the NSO release; search-summary figures (second-hand), retrieved 16 Oct 2026"
+2023,Q3,384,1827,https://nso.gov.mt/residential-building-permits-q3-2023/,"search-summary figures (second-hand), retrieved 16 Oct 2026"
+2023,Q4,321,1292,https://maltabusinessweekly.com/last-quarter-of-2023-sees-37-drop-in-number-of-approved-dwellings-nso/25162/,"search-summary figures (second-hand), retrieved 16 Oct 2026"
+2024,Q1,486,2596,https://nso.gov.mt/residential-building-permits-q1-2024/,"search-summary figures (second-hand), retrieved 16 Oct 2026"
+2024,Q2,453,2118,https://nso.gov.mt/residential-building-permits-q2-2024/,"search-summary figures (second-hand), retrieved 16 Oct 2026"
+2024,Q3,394,1744,https://nso.gov.mt/residential-building-permits-q3-2024/,"search-summary figures (second-hand), retrieved 16 Oct 2026"
+2024,Q4,417,2259,https://nso.gov.mt/residential-building-permits-q4-2024/,"search-summary figures (second-hand), retrieved 16 Oct 2026"
+2025,Q1,425,2143,https://nso.gov.mt/residential-building-permits-q1-2025/,"search-summary figures (second-hand), retrieved 16 Oct 2026"
+2025,Q2,598,3027,https://businessnow.mt/residential-building-permits-surge-by-43-in-q2-2025/,"article read in full via fetch (21 Aug 2025): 3,027 dwellings, +42.9% on Q2 2024, 598 permits; reports the NSO release"
+2025,Q3,593,3668,https://nso.gov.mt/residential-building-permits-q3-2025/,"search-summary figures (second-hand), retrieved 16 Oct 2026"

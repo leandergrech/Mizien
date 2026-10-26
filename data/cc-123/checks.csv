@@ -1,0 +1,30 @@
+check,value,unit,source,note
+KPMG prints: units approved 2024,8716,units,KPMG p. 37,
+PA approved dwelling units 2023,8112,units,"PA, via data/cc-013 (transcribed 3 Oct 2026)",
+PA approved dwelling units 2024,8716,units,"PA, via data/cc-013 (transcribed 3 Oct 2026)","equals KPMG's 8,716"
+PA 2024 on 2023,7.45,%,calculated,KPMG prints 7.4%
+"PA 2024 on 2023, rounded to one decimal",7.4,%,calculated,
+"NSO quarterly dwellings, sum Q1-Q4 2023 (second-hand)",8112,dwellings,nso_quarterly_secondhand.csv,"equals PA 2023 (8,112)"
+"NSO quarterly dwellings, sum Q1-Q4 2024 (second-hand)",8717,dwellings,nso_quarterly_secondhand.csv,"PA and KPMG: 8,716; difference 1"
+NSO quarterly 2024 on 2023 (second-hand),7.46,%,calculated,
+"NSO building permits (count), sum 2023 (second-hand)",1695,permits,nso_quarterly_secondhand.csv,
+"NSO building permits (count), sum 2024 (second-hand)",1750,permits,nso_quarterly_secondhand.csv,"MaltaToday, citing parliamentary data, gave 1,749"
+NSO permits 2024 on 2023 (second-hand),3.24,%,calculated,
+"Dwellings per building permit, 2024",4.98,ratio,calculated,
+NSO dwellings January-June 2024 (second-hand),4714,dwellings,nso_quarterly_secondhand.csv,
+NSO dwellings January-June 2025 (second-hand),5170,dwellings,nso_quarterly_secondhand.csv,"equals KPMG's 5,170 'permits'"
+NSO dwellings H1 2025 on H1 2024 (second-hand),9.67,%,calculated,KPMG prints 9.7%
+NSO building permits (count) January-June 2025 (second-hand),1023,permits,nso_quarterly_secondhand.csv,"KPMG's 5,170 is not this count"
+NSO building permits (count) H1 2025 on H1 2024 (second-hand),8.95,%,calculated,
+"KPMG 5,170 less NSO dwellings H1 2025",0,dwellings,calculated,0 means KPMG's 'permits' are dwelling units
+NSO dwellings Q1-Q3 2025 (second-hand),8838,dwellings,nso_quarterly_secondhand.csv,
+NSO dwellings Q1-Q3 2025 less PA 2024 total,122,dwellings,calculated,positive: nine months of 2025 already exceed all of 2024
+PA approved dwelling units 2025,12325,units,"PA, via data/cc-013 (transcribed 3 Oct 2026)",series titled 2007-2025; assumed full year
+PA 2025 on 2024,41.41,%,calculated,
+"Implied Q4 2025 (PA 2025 less NSO Q1-Q3, second-hand)",3487,dwellings,calculated,"implied, not an NSO figure"
+KPMG's own projection logic: 2024 total x (1 + H1 growth),9559,units,calculated,illustration of 'assumption that H1 growth continues'; actual PA 2025 is higher
+"Eurostat sts_cobp_a Malta, dwellings in 2+ dwelling buildings, 2023",108.9,index 2021=100,Eurostat sts_cobp_a,no status flag in the extract
+"Eurostat sts_cobp_a Malta, dwellings in 2+ dwelling buildings, 2024",116.9,index 2021=100,Eurostat sts_cobp_a,no status flag in the extract
+"Eurostat sts_cobp_a Malta, dwellings in 2+ dwelling buildings, 2025",166.6,index 2021=100,Eurostat sts_cobp_a,no status flag in the extract
+Eurostat index 2024 on 2023,7.35,%,calculated,different scope from PA/NSO
+Eurostat index 2025 on 2024,42.51,%,calculated,
