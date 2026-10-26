@@ -8628,9 +8628,10 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "title": "EU: Malta's price-to-income ratio has declined",
       "category": "Planning & Housing",
       "claim": "European Commission (2026 Country Report for Malta, 3 Jun 2026): nominal property prices 'have risen steadily since 2014 and consistently outpace EU average growth', but 'with income growth exceeding these gains, the price-to-income ratio has actually declined, tempering the impact on overall affordability'.",
-      "counter": "The same passage says rental prices continue to climb, boosted by high demand from foreign workers and tourists. The report gives no start year or percentage for the decline. CC-013 (PA: permits keep prices in check) and CC-018 (MDA: IMF 'confirms' its view) rest on house price series; CC-123 (KPMG) on permits. The Commission uses nominal prices in one sentence and a ratio in the next, so the series and period must be fixed before testing.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Eurostat (retrieved 26 Oct 2026): standardised price-to-income ratio tipsho60 for Malta -11.5% 2014-2024 and -23.1% 2007-2024 (peak 2008); EU-27 +5.8% since 2014; Malta 2024 recomputed exactly from prc_hpi_a, B7G and population; the Commission's Graph A16.3 (MT 96.9 and 92.7 in 2023-2024) matches within 0.2. Nominal house prices rose every year 2015-2025 (3.4-6.7%), +83.6% 2014-2025 against EU +65.6%, but EU-27 annual growth was higher in 2020, 2021 and 2022, so 'consistently outpace' is true only cumulatively. Income: adjusted household disposable income per head +95.7% 2014-2024 (prices +73.3%; Malta 2021-2024 provisional); EU-SILC median equivalised income +62.6% over income years 2014-2024, so on median income the ratio rose 6.6% since 2014 (fell 12.3% since 2007). Rents (HICP actual rentals) +15.2% in 2023, +8.9% in 2024, +1.7% in 2025. The ratio is an average measure and says nothing about renters or lower-income households.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Housing & affordability",
       "location": {
@@ -8640,17 +8641,59 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-133A",
+          "text": "Nominal property prices have risen steadily since 2014",
+          "finding": "Up every year 2015–2025, by 3.4% to 6.7%; +83.6% in all [3].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-133B",
+          "text": "…and consistently outpace EU average growth",
+          "finding": "Cumulatively ahead every year (+83.6% vs +65.6% by 2025), but EU-27 annual growth was higher in 2020, 2021 and 2022 [3].",
+          "rating": "Overstated",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-133C",
+          "text": "Income growth exceeding these gains",
+          "finding": "Yes for household adjusted disposable income per head (+95.7% vs prices +73.3%, 2014–2024); no for median household income (+62.6%) [3, 4, 5].",
+          "rating": "Depends on measure",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-133D",
+          "text": "The price-to-income ratio has actually declined",
+          "finding": "Eurostat ratio −11.5% since 2014 and −23.1% since 2007; recomputed; matches the Commission’s Graph A16.3 [1, 2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-133E",
+          "text": "…tempering the impact on overall affordability",
+          "finding": "A fair reading of an average ratio and of borrowing capacity [8]; it does not cover renters or lower-income households [1, 6, 9].",
+          "rating": "Fair, limited",
+          "tone": "lime"
+        }
+      ],
       "date": "2026-06-03",
       "quote": "However, with income growth exceeding these gains, the price-to-income ratio has actually declined, tempering the impact on overall affordability",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-26",
+      "outputs": {
+        "report": "claim-files/CC-133/report.pdf",
+        "flyer_pdf": "claim-files/CC-133/flyer.pdf",
+        "flyer_png": "claim-files/CC-133/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-133/claim.yml"
     },
     {
