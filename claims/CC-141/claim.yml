@@ -1,0 +1,46 @@
+id: CC-141
+title: 'Pre-Budget Document: Malta has the lowest fertility rate in the EU'
+category: Tourism & Population
+subtopic: Population & labour
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Ministry for Finance, Pre-Budget Consultation Document 2027 (September 2026, launched 30 Sep 2026), p. 6: ''Malta''s
+    fertility rate is the lowest in the EU27, while an ageing population will continue to place pressure on pensions, healthcare
+    and long-term care in the years ahead.'''
+  speaker: Ministry for Finance (Pre-Budget Document 2027)
+  date: '2026-09-30'
+  wording_status: Verbatim found
+  sources:
+  - title: Pre-Budget Consultation Document 2027
+    publisher: Ministry for Finance
+    date: '2026-09-30'
+    url: https://finance.gov.mt/wp-content/uploads/2026/09/PRE-BUDGET-2027-DOC.pdf
+    note: The claim. Read through WebFetch on 26 Oct 2026 (finance.gov.mt returns 403 to scripts); the same wording was returned
+      by two separate extractions. Page number from the extracted page markers.
+  quote: Malta's fertility rate is the lowest in the EU27
+counter_evidence: 'Context, not tested: Eurostat''s total fertility rate has put Malta at or near the bottom of the EU in
+  recent years, with Spain and Italy close; the ranking can change with each release and with the year chosen. The document
+  gives no year.'
+tests: Eurostat demo_find (total fertility rate) for all Member States, latest year and the past five; NSO births releases
+  for the latest Maltese figure; whether the claim holds in the latest year Eurostat has published.
+why_low_hanging: A single ranking against one Eurostat table.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat reachable; the document is readable through WebFetch only.'
+caveats: Candidate from the top-up intake of 26 Oct 2026. Population is in scope because the document ties it to pressure
+  on services; the check tests the ranking only, not the policy argument. Confirm the sentence in the PDF.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: cross
