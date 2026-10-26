@@ -1,0 +1,21 @@
+check,value,unit,source,note
+"Malta: persons 16+ never using public transport, 2024",58.6,%,Eurostat ilc_atst01,Commission wrote 58%; 58.6 rounds to 59. Eurostat flags on the value: none
+"EU-27: persons 16+ never using public transport, 2024",50.6,%,Eurostat ilc_atst01,Commission wrote 50.6%; Eurostat news item: 50.6%
+Malta minus EU-27,8.0,percentage points,Eurostat ilc_atst01,positive = Malta above the EU average
+Malta / EU-27,1.16,ratio,Eurostat ilc_atst01,
+Is Malta below the EU-27 average?,no,,Eurostat ilc_atst01,the Commission's sentence says 'below'
+Member States with a higher never-use share than Malta,6,of 26,Eurostat ilc_atst01,tied with Malta: HR
+Rank of Malta (1 = highest never-use share),7 (tied with HR),of 27,Eurostat ilc_atst01,
+Median Member State never-use share,42.3,%,Eurostat ilc_atst01,
+Member States above the EU-27 aggregate,10,of 27,Eurostat ilc_atst01,the aggregate is population-weighted
+Malta vs EU-27: uses public transport every day,9.9 vs 10.7,%,Eurostat ilc_atst01,
+Malta vs EU-27: uses public transport every week,9.7 vs 11.6,%,Eurostat ilc_atst01,
+Malta vs EU-27: uses public transport every month,7.5 vs 10.0,%,Eurostat ilc_atst01,
+Malta vs EU-27: uses public transport less than once a month,14.4 vs 17.1,%,Eurostat ilc_atst01,
+Frequency categories sum to 100 (Malta; EU-27),100.1; 100.0,%,Eurostat ilc_atst01,consistency check
+"Never-users: reason 'financial reasons', Malta vs EU-27",0.0 vs 2.7,%,Eurostat ilc_atst02,share of never-users giving this reason (Eurostat's denominator: see report)
+"Never-users: reason 'service not available', Malta vs EU-27",0.1 vs 12.2,%,Eurostat ilc_atst02,share of never-users giving this reason (Eurostat's denominator: see report)
+"Never-users: reason 'long commute', Malta vs EU-27",7.7 vs 4.8,%,Eurostat ilc_atst02,share of never-users giving this reason (Eurostat's denominator: see report)
+"Never-users: reason 'schedule', Malta vs EU-27",6.0 vs 12.7,%,Eurostat ilc_atst02,share of never-users giving this reason (Eurostat's denominator: see report)
+"Never-users: reason 'other reason', Malta vs EU-27",82.0 vs 62.0,%,Eurostat ilc_atst02,share of never-users giving this reason (Eurostat's denominator: see report)
+Rounding check: 58.6 rounded to whole %,59,%,calculation,Commission's 58% does not match a whole-number rounding of 58.6
