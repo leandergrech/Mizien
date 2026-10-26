@@ -169,7 +169,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-133 | Planning & Housing | EU: Malta's price-to-income ratio has declined | Not started | - |
 | CC-134 | Climate & Energy | EU: Malta's environmental tax revenue is below the EU average | Drafted | Largely supported |
 | CC-135 | Climate & Energy | IMF: peak electricity demand up 43% in five years | Not started | - |
-| CC-136 | Tourism & Population | AFP: Malta the most densely populated country in Europe | Not started | - |
+| CC-136 | Tourism & Population | AFP: Malta the most densely populated country in Europe | Drafted | Largely supported |
 | CC-137 | Climate & Energy | Malta Chamber: July power cuts were predictable | Not started | - |
 | CC-138 | Land & Trees | OPM: White Rocks national park protected from development | Not started | - |
 | CC-139 | Planning & Housing | The Shift: unpaid planning fines at EUR 16.5 million | Not started | - |

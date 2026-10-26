@@ -8687,9 +8687,10 @@
       "title": "AFP: Malta the most densely populated country in Europe",
       "category": "Tourism & Population",
       "claim": "AFP (6 Jun 2026): 'The tiny Mediterranean island is the most densely populated country in Europe, and approvals for new buildings are soaring despite scandals dogging the development sector'; 'The country's population has grown nearly 30 percent over a decade.'",
-      "counter": "'Country in Europe' differs from 'EU Member State': Monaco and Vatican City are generally listed as denser than Malta (to verify against UN or World Bank data). IMF staff put Malta's ten-year population rise at 25 percent (CC-112); NSO counts 588,254 residents at end-2025 (CC-088). KPMG reports 8,716 residential units approved in 2024, up 7.4% (CC-123), and the PA's annual reports give permit series (CC-013).",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "World Bank EN.POP.DNST (2024, land area): Monaco 18,537 people per km2, Malta 1,805, San Marino 555, Netherlands 534; Malta is second of 44 European states and 3.4 times the next EU state. Eurostat demo_r_d3dens (2024): Malta 1,817, Netherlands 530, EU-27 110. Vatican City is in neither dataset and was not tested. Planning Authority approved dwelling units: 12,325 in 2025 (+41% on 2024, 4.6 times 2013) but below the 2018 (12,829) and 2019 peaks. Eurostat demo_gind: population +30.9% (1 Jan 2015-2025) and +30.8% (2016-2026).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Population & labour",
       "location": {
@@ -8699,17 +8700,45 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "Agence France-Presse (AFP)",
       "bodies": [
         "afp"
       ],
+      "subclaims": [
+        {
+          "id": "CC-136A",
+          "text": "Malta is the most densely populated country in Europe",
+          "finding": "1,805 people per km² (2024): first in the EU (3.4× the Netherlands), second in the World Bank’s 44 European states after Monaco (18,537). Vatican City not tested.",
+          "rating": "True for eu; monaco denser",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-136B",
+          "text": "Approvals for new buildings are soaring",
+          "finding": "Dwelling units approved: 12,325 in 2025 (+41%), 4.6× the 2013 level, below the 2018–2019 peaks. No measure given in the article; dwelling units used.",
+          "rating": "Largely accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-136C",
+          "text": "Population has grown nearly 30 percent over a decade",
+          "finding": "+30.9% (2015–2025) and +30.8% (2016–2026); 28.6% to 2023.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
       "date": "2026-06-06",
       "quote": "The tiny Mediterranean island is the most densely populated country in Europe, and approvals for new buildings are soaring despite scandals dogging the development sector.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-26",
+      "outputs": {
+        "report": "claim-files/CC-136/report.pdf",
+        "flyer_pdf": "claim-files/CC-136/flyer.pdf",
+        "flyer_png": "claim-files/CC-136/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-136/claim.yml"
     },
     {
