@@ -1,0 +1,47 @@
+id: CC-144
+title: 'Mongabay: Malta has the highest hunter density in Europe'
+category: Nature & Wildlife
+subtopic: Hunting & birds
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Mongabay (Spoorthy Raman, 5 Oct 2026), reporting the shooting of migratory birds after the storm of 14 Sep 2026:
+    ''Malta has the highest density of hunters in all of Europe.'' The sentence links to a 2015 paper in Biological Conservation
+    (ScienceDirect pii S0006320715300252).'
+  speaker: Mongabay
+  date: '2026-10-05'
+  wording_status: Verbatim found
+  sources:
+  - title: Hunters reportedly kill hundreds of migratory birds stranded by thunderstorm in Malta (Spoorthy Raman)
+    publisher: Mongabay
+    date: '2026-10-05'
+    url: https://news.mongabay.com/short-article/2026/10/hunters-reportedly-kill-hundreds-of-migratory-birds-stranded-by-thunderstorm-in-malta/
+    note: The claim. Read in full with curl on 26 Oct 2026 (HTTP 200); last modified 23 Oct 2026. The density sentence is
+      the outlet's own, with a link to the 2015 paper; the incident figures are attributed to BirdLife Malta.
+  quote: Malta has the highest density of hunters in all of Europe.
+counter_evidence: 'Context, not tested: density depends on the denominator (land area, population, or huntable area) and on
+  which countries count as ''Europe''. The cited paper is from 2015; licence numbers have changed since. FACE (the European
+  hunters'' federation) publishes hunter numbers per country.'
+tests: The 2015 Biological Conservation paper (verify via Crossref); FACE hunter census figures; Malta's Wild Birds Regulation
+  Unit annual reports (hunting licences issued) and Eurostat land area and population; compute hunters per km2 and per 1,000
+  people for EU and other European countries.
+why_low_hanging: A ranking that can be recomputed from licence counts and land area.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: Mongabay readable; FACE and WBRU figures may need a browser.'
+caveats: Candidate from the top-up intake of 26 Oct 2026. Foreign media. Test the density ranking only; make no claim about
+  hunters as people.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: cross

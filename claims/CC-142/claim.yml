@@ -1,0 +1,49 @@
+id: CC-142
+title: 'EU: only 7% of Malta''s urban wastewater treated to the Directive''s standard'
+category: Water
+subtopic: Bathing water & sewage
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission, Staff Working Document SWD(2026) 702 final, Malta (2 Oct 2026), p. 11: ''According to Malta''s
+    2022 reporting under the Urban Waste Water Treatment Directive (UWWTD), only 7% of urban wastewater in Malta is treated
+    in accordance with the Directive''s requirements.'' The same passage recalls the Court of Justice judgment of October
+    2024 (C-304/23) on the Malta North and Malta South agglomerations.'
+  speaker: European Commission
+  date: '2026-10-02'
+  wording_status: Verbatim found
+  sources:
+  - title: 'Commission Staff Working Document: Third River Basin Management Plans, Second Flood Hazard and Risk Maps and Second
+      Flood Risk Management Plans, Member State: Malta, SWD(2026) 702'
+    publisher: European Commission (copy on the Austrian Parliament website)
+    date: '2026-10-02'
+    url: https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf
+    note: The claim. PDF downloaded and read with pdftotext on 26 Oct 2026; sentence on p. 11, with Figure 4. Same document
+      as CC-127 and CC-128.
+  quote: only 7% of urban wastewater in Malta is treated in accordance with the Directive's requirements
+counter_evidence: Government and WSC statements (CC-041) say Ta' Barkat and Iċ-Ċumnija will provide EU-compliant secondary
+  treatment with compliance expected by 2026; the Commission's figure refers to the 2022 reporting round, so the two may describe
+  different years. '7%' may be a share of load (population equivalents) rather than volume.
+tests: The Commission's UWWTD implementation dashboard and the 12th/13th implementation reports (Malta's compliance by agglomeration
+  and load, p.e.); EEA UWWTD data (Waterbase); the CJEU judgment C-304/23; WSC annual reports on the upgrades at Ta' Barkat,
+  Iċ-Ċumnija (Mellieħa) and Ras il-Ħobż (Gozo).
+why_low_hanging: A single share from a named reporting round, testable against the EU dataset it comes from.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: the document and EEA/Commission UWWTD data are reachable from the cloud network.'
+caveats: Candidate from the top-up intake of 26 Oct 2026. The claim concerns 2022 reporting; do not treat it as a statement
+  about 2026. Pairs with the government's CC-041 (compliance by 2026).
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: cross

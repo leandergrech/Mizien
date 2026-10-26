@@ -1,0 +1,50 @@
+id: CC-143
+title: 'EU: Malta''s groundwater status got worse between the second and third plans'
+category: Water
+subtopic: Water supply & groundwater
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission, Staff Working Document SWD(2026) 702 final, Malta (2 Oct 2026), pp. 8-9: since the second river
+    basin management plan ''the percentage of GWBs with a good quantitative status has decreased from 86.7% to 73.3% due to
+    overabstraction''; and ''no GWBs had a good chemical status in 2021, while a fifth of GWBs had a good chemical status
+    in 2015'', with nitrates causing failure in 80% of the 15 groundwater bodies.'
+  speaker: European Commission
+  date: '2026-10-02'
+  wording_status: Verbatim found
+  sources:
+  - title: 'Commission Staff Working Document: Third River Basin Management Plans, Second Flood Hazard and Risk Maps and Second
+      Flood Risk Management Plans, Member State: Malta, SWD(2026) 702'
+    publisher: European Commission (copy on the Austrian Parliament website)
+    date: '2026-10-02'
+    url: https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf
+    note: The claim. PDF downloaded and read with pdftotext on 26 Oct 2026; quantitative status on p. 8, chemical status on
+      p. 9.
+  quote: no GWBs had a good chemical status in 2021, while a fifth of GWBs had a good chemical status in 2015
+counter_evidence: 'Context, not tested: with 15 groundwater bodies, one body is 6.7 points, so 86.7% to 73.3% is 13 to 11
+  bodies and ''a fifth'' is 3 bodies. The Commission notes that 8 of 15 bodies are not under quantitative monitoring. WSC
+  reports lower groundwater production (CC-009) and plans cuts in abstraction (CC-039); the Energy and Water Agency''s licensing
+  framework excludes WSC sources (CC-108). Nitrate levels in the Mean Sea Level Aquifer are reviewed in CC-047.'
+tests: Malta's 2nd and 3rd RBMPs (status tables by groundwater body); EEA WISE-SoW groundwater status data; the Nitrates Directive
+  country report (July 2026) and peer-reviewed work on the Maltese aquifers (e.g. the sources in CC-047); check the counts
+  behind each percentage and whether the methods changed between cycles.
+why_low_hanging: Counts of 15 named water bodies in two reporting cycles, testable against the EEA status data.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: the document and EEA WISE data are reachable; the RBMP is on era.org.mt (403 to scripts).'
+caveats: Candidate from the top-up intake of 26 Oct 2026. A change in status can reflect a change in assessment method; the
+  check must say which.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: cross
