@@ -1,0 +1,15 @@
+dataset,wst_oper,unit,geo,time,value,flag,eurostat_updated,query_url,retrieved
+env_wasmun,GEN,THS_T,MT,2018,326,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,GEN,THS_T,MT,2019,351,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,GEN,THS_T,MT,2020,331,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,GEN,THS_T,MT,2021,317,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,GEN,THS_T,MT,2022,328,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,GEN,THS_T,MT,2023,333,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,GEN,THS_T,MT,2024,354,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,RCY,THS_T,MT,2018,34,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,RCY,THS_T,MT,2019,32,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,RCY,THS_T,MT,2020,36,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,RCY,THS_T,MT,2021,43,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,RCY,THS_T,MT,2022,41,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,RCY,THS_T,MT,2023,58,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
+env_wasmun,RCY,THS_T,MT,2024,59,,2026-03-30T23:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasmun?wst_oper=GEN&wst_oper=RCY&unit=THS_T&geo=MT&sinceTimePeriod=2018,2026-10-13
