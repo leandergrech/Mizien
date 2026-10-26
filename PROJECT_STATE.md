@@ -1464,3 +1464,9 @@ Second intake of the day (the 79-claim bulk intake ran earlier). Six candidates 
 - Unverified: Eurostat vintage used by the Commission (only the current vintage was tested); Annex 3's sources not read. Source archive: run `scripts/archive_sources.py` for the Council register URL if not yet archived (web.archive.org resets connections).
 - **Not taken:** CC-036, CC-093, CC-096 (open PRs #125, #136); CC-117, CC-123, CC-128 (open PRs #128, #135, #141); CC-137 not reached (one claim per run). Other C claims carry `source:` blockers or are Drafted.
 - **CC-123 (16 Oct 2026, worker C):** KPMG residential approvals, Largely supported (moderate), no right of reply needed. NSO release pages and pa.org.mt are 403 to scripts: NSO quarterly figures are second-hand (data/cc-123/); PA 2025 entry assumed a full year. KPMG's 5,170 'permits' are NSO dwelling units.
+
+## Worker A run, 19 Oct 2026
+
+- **CC-126 completed** (Not substantiated, moderate; pending right of reply to PN, not sent). Term: BP supply to end of May 2027 = 9.6 months from SOCAR expiry (13 Aug), 11.3 from the 21 Jun announcement; no price published but Enemalta disclosed a TTF link; pipeline unbuilt (promoter page, updated Dec 2022: construction 2028, commissioning 2030). The dated promise 'by this year' was not found; Labour's 2013/2017/2022 manifestos and Government statements were not opened in the original; the 2017 pledge and the 2024/2025 targets are second-hand (marked ◆).
+- **Maintainer:** if a Labour or Government statement dating the pipeline to 2026 exists (manifesto text, gov.mt, MaltaToday 2019/2020 items, all 403 to scripts), add it to `literature/CC-126/primary-source.md` and re-run; the verdict could move to Largely supported. Archive the Enemalta release, PN statement, Shift article and promoter page by hand (Wayback unreachable).
+- **Not taken:** CC-073, CC-082 (open PR #126), CC-119 (open PR #123), CC-121 (open PR #132); CC-129 not reached (one claim per run).
