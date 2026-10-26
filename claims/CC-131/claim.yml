@@ -2,54 +2,97 @@ id: CC-131
 title: 'EU: Malta recovers 100% of construction waste'
 category: Waste
 subtopic: Construction waste
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
-  text: 'European Commission (2026 Country Report for Malta, 3 Jun 2026): ''the rate of recovery of construction and demolition
-    waste is 100'', above the EU average of 89%, citing a 2024 Joint Research Centre assessment.'
+  text: 'European Commission (2026 Country Report for Malta, Annex 8, 3 Jun 2026): ''By contrast, the rate of recovery of
+    construction and demolition waste is 100, above the EU average of 89%.'', citing a 2024 Joint Research Centre assessment;
+    the sentence follows Malta''s low municipal and plastic packaging recycling rates.'
   speaker: European Commission
   date: '2026-06-03'
   wording_status: Verbatim found
   sources:
-  - title: 2026 Country Report - Malta (Commission staff working document SWD(2026) 218 final), Annex 10 (circular economy)
+  - title: 2026 Country Report - Malta (Commission staff working document SWD(2026) 218 final), Annex 8 (industry decarbonisation,
+      circularity and climate)
     publisher: European Commission (transmitted to the Council, 8 Jun 2026)
     date: '2026-06-03'
     url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
-    note: The claim. 'By contrast, the rate of recovery of construction and demolition waste is 100 (152), above the EU average
-      of 89%.' (152) is the footnote to 'Techno-economic and environmental assessment of CDW management, JRC, 2024'. The extracted
-      text shows '100' without a percent sign; confirm the unit in the PDF page image. Document read in full from the Council
-      register copy (HTTP 200, text extracted) on 25 Oct 2026.
+    note: The claim, PDF p. 76 (printed p. 74), footnote 152; Table A8.1 on PDF p. 79 (Malta 100 in 2018 and 2020, EU 88 and
+      89). The page image shows '100' without a percent sign; Table A8.1 and the cited JRC Table 10 ('in %') confirm a percentage.
+      Read in full 25-26 Oct 2026 (same file as the Wayback copy of 5 Oct 2026).
+  - title: Techno-economic and environmental assessment of construction and demolition waste management in the European Union
+      (JRC135470, EUR 31784 EN)
+    publisher: European Commission, Joint Research Centre
+    date: '2024'
+    url: https://doi.org/10.2760/721895
+    note: The source cited in footnote 152. Section 4.5 and Table 10 (pp. 41-43) give 100% for Malta and 89% for the EU in 2020
+      from Eurostat env_wastrt. Read in full; CC BY 4.0.
+  - title: Treatment of waste by waste category, hazardousness and waste management operations (env_wastrt)
+    publisher: Eurostat
+    date: updated 23 Sep 2025
+    url: https://ec.europa.eu/eurostat/databrowser/view/env_wastrt
+    note: Primary data, retrieved 26 Oct 2026 (data/cc-131/).
+  - title: Construction and Demolition Waste management in Malta, V2 (screening factsheet)
+    publisher: Deloitte and BIO by Deloitte for the European Commission
+    date: 2015-09
+    url: https://ec.europa.eu/environment/pdf/waste/studies/deliverables/CDW_Malta_Factsheet_Final.pdf
+    note: Records the reclassification of deposits in spent quarries from landfill to backfilling (pp. 4-5). Read in full.
   quote: By contrast, the rate of recovery of construction and demolition waste is 100, above the EU average of 89%.
-counter_evidence: The same Annex gives Malta's municipal waste recycling rate as 16.7% in 2024 against an EU average of 48.1%,
-  and the main text says high landfill rates and low recycling rates persist, so the 100 concerns one waste stream. Directive
-  2008/98/EC (Article 11(2)(b)) counts 'other material recovery, including backfilling' towards its 70% construction and demolition
-  waste target, so a recovery rate does not show how much is recycled into products rather than used as fill (to verify against
-  the Directive text). CC-082 (ERA, 35 quarries for construction waste) and CC-063 (MDA, 'standstill' warning) bear on where
-  Malta's mineral waste goes. The JRC report cited was not read.
-tests: 'The JRC 2024 assessment (what the 100 measures: recovery as defined in the Waste Framework Directive, including backfilling,
-  or recycling); Eurostat waste statistics for mineral construction and demolition waste (generation and treatment by operation:
-  recovery, backfilling, disposal), Malta against the EU; ERA and NSO waste statistics; Commission reports on the Article
-  11 target; data in CC-082 and CC-111.'
-why_low_hanging: A single stated figure with a cited source, testable against Eurostat treatment-by-operation data.
-tags:
-- Selective metric
-tags_provisional: true
-priority: Queue
-data_readiness: 'High: the Council register and Eurostat are reachable; the JRC report (publications.jrc.ec.europa.eu) is
-  untested.'
-caveats: Candidate from the weekly intake of 25 Oct 2026. The claimant is the Commission's staff, writing a country assessment;
-  the figure comes from a JRC study, so the check should trace it to that study. Unit (100 or 100%) and definition to be confirmed.
-  Related to CC-082, CC-111 and CC-117 in subject.
+counter_evidence: "Eurostat env_wastrt (retrieved 26 Oct 2026), non-hazardous mineral C&D waste: Malta recovered 99.9996% in 2020 (12 t of 2.95 Mt not recovered) and 99.9998% in 2022 (estimated). EU-27 90.9% (2020) and 91.4% (2022); the 89% is the JRC's 2020 value from an earlier release (France since revised 74 to 81.7). The rate counts backfilling (WFD Art. 11(2)(b)): in 2020 Malta's total was 41.8% recycling and 58.2% backfilling (EU 78.7% and 12.2%); recycling alone ranked 21st of 27 (18th of 26 in 2022, 67.3%). Malta reported 84.1% landfill in 2010; the Commission's 2015 factsheet records that quarry deposits were then reclassified from landfill to backfilling. NSO's 2024 release reports backfilling up 58.0% and recycling down 13.6% (second-hand, read via WebFetch)."
+tests: Eurostat env_wastrt and env_wasgen (W121, W126), all Member States, 2010-2022 (tools/cc-131-report/calc.py, data/cc-131/);
+  JRC 2024 Table 10; WFD Art. 11(2)(b), Decision 2011/753/EU, Directive 2018/851 Art. 3(17a); Commission factsheet 2015.
+why_low_hanging: 'Done: Claim Check 131 report and flyer.'
+tags: []
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High: the Council register, the JRC report and Eurostat are reachable; NSO and ERA are 403 to scripts.'
+caveats: "Largely supported: no right of reply needed. The figure is a percentage although the report prints '100'; the EU value (89%) is from an earlier Eurostat release (now 90.9% for 2020). The rate is the legal 'recovery' measure and counts backfilling, 58% of Malta's total in 2020; the sentence, set against recycling rates, does not say so. Malta's rate rose from 16% (2010) to 100% when quarry deposits were reclassified as backfilling. No regulator finding on whether the deposits meet the 2018 backfilling definition was found. NSO 2024 figures are second-hand (release text via WebFetch; tables 403). The intake record placed the sentence in Annex 10; it is in Annex 8. The provisional tag Selective metric was dropped: the Commission cites the regulator-relevant metric."
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-131A
+    text: "The rate of recovery of construction and demolition waste is 100"
+    finding: "A percentage (unit not printed): 99.9996% in 2020 and 99.9998% in 2022 in Eurostat; 100 in the JRC table [2, 3]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-131B
+    text: "Above the EU average of 89%"
+    finding: "89% is the JRC’s 2020 value from an earlier release; current data give 90.9% (2020) and 91.4% (2022). Malta is still above [2, 3]."
+    rating: "Older figure"
+    tone: lime
+  - id: CC-131C
+    text: "Presented “by contrast” with low recycling rates, as a strong result"
+    finding: "The rate counts backfilling: 58% of Malta’s 2020 total (EU 12%); recycling alone 42%, 21st of 27. Quarry deposits counted as landfill until the 2012 data [3, 8]."
+    rating: "Needs context"
+    tone: amber
+version: '1.0'
+last_reviewed: '2026-10-26'
+thumbnail:
+  figure: 100%
+  caption: "of Malta's construction waste 'recovered' in 2020, but 58% of it was backfilling (EU 12%)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-26
+    step: wording
+    note: Commission 2026 Country Report for Malta (Council register copy ST-10135-2026-ADD-1, 126 pp.) read; the sentence is in Annex 8 on PDF p. 76 (not Annex 10), Table A8.1 on p. 79. Page image shows '100' without a unit; the JRC report linked from footnote 152 (Table 10, 'in %') gives 100% for Malta and 89% for the EU in 2020.
+  - date: 2026-10-26
+    step: note
+    note: Eurostat env_wastrt and env_wasgen downloaded (tools/cc-131-report/fetch.py) and recomputed (calc.py, data/cc-131/checks.csv); reproduces 25 of 27 JRC 2020 values. cei_wm040 no longer published. Recycling/backfilling split, 2010-2012 reclassification (Commission factsheet 2015), WFD and Decision 2011/753/EU texts read. Crossref check of Moschen-Schimek et al. 2023 and Villoria Saez and Osmani 2019 (abstracts only). NSO 2024 release read via WebFetch only.
+  - date: 2026-10-26
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (high confidence); no right of reply needed.

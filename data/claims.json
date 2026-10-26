@@ -4999,7 +4999,7 @@
       "similar": [
         {
           "id": "CC-131",
-          "score": 0.45,
+          "score": 0.36,
           "terms": [
             "waste",
             "construction"
@@ -7043,7 +7043,7 @@
       "similar": [
         {
           "id": "CC-131",
-          "score": 0.4,
+          "score": 0.34,
           "terms": [
             "waste",
             "rate",
@@ -7501,7 +7501,18 @@
         "flyer_pdf": "claim-files/CC-117/flyer.pdf",
         "flyer_png": "claim-files/CC-117/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-117/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-117/claim.yml",
+      "similar": [
+        {
+          "id": "CC-131",
+          "score": 0.33,
+          "terms": [
+            "recycling",
+            "waste",
+            "packaging"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-118",
@@ -8456,13 +8467,12 @@
       "id": "CC-131",
       "title": "EU: Malta recovers 100% of construction waste",
       "category": "Waste",
-      "claim": "European Commission (2026 Country Report for Malta, 3 Jun 2026): 'the rate of recovery of construction and demolition waste is 100', above the EU average of 89%, citing a 2024 Joint Research Centre assessment.",
-      "counter": "The same Annex gives Malta's municipal waste recycling rate as 16.7% in 2024 against an EU average of 48.1%, and the main text says high landfill rates and low recycling rates persist, so the 100 concerns one waste stream. Directive 2008/98/EC (Article 11(2)(b)) counts 'other material recovery, including backfilling' towards its 70% construction and demolition waste target, so a recovery rate does not show how much is recycled into products rather than used as fill (to verify against the Directive text). CC-082 (ERA, 35 quarries for construction waste) and CC-063 (MDA, 'standstill' warning) bear on where Malta's mineral waste goes. The JRC report cited was not read.",
-      "status": "Not started",
-      "verdict": null,
-      "tags": [
-        "Selective metric"
-      ],
+      "claim": "European Commission (2026 Country Report for Malta, Annex 8, 3 Jun 2026): 'By contrast, the rate of recovery of construction and demolition waste is 100, above the EU average of 89%.', citing a 2024 Joint Research Centre assessment; the sentence follows Malta's low municipal and plastic packaging recycling rates.",
+      "counter": "Eurostat env_wastrt (retrieved 26 Oct 2026), non-hazardous mineral C&D waste: Malta recovered 99.9996% in 2020 (12 t of 2.95 Mt not recovered) and 99.9998% in 2022 (estimated). EU-27 90.9% (2020) and 91.4% (2022); the 89% is the JRC's 2020 value from an earlier release (France since revised 74 to 81.7). The rate counts backfilling (WFD Art. 11(2)(b)): in 2020 Malta's total was 41.8% recycling and 58.2% backfilling (EU 78.7% and 12.2%); recycling alone ranked 21st of 27 (18th of 26 in 2022, 67.3%). Malta reported 84.1% landfill in 2010; the Commission's 2015 factsheet records that quarry deposits were then reclassified from landfill to backfilling. NSO's 2024 release reports backfilling up 58.0% and recycling down 13.6% (second-hand, read via WebFetch).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
+      "tags": [],
       "subtopic": "Construction waste",
       "location": {
         "place": "City Gate, Valletta (national claim)",
@@ -8471,22 +8481,50 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-131A",
+          "text": "The rate of recovery of construction and demolition waste is 100",
+          "finding": "A percentage (unit not printed): 99.9996% in 2020 and 99.9998% in 2022 in Eurostat; 100 in the JRC table [2, 3].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-131B",
+          "text": "Above the EU average of 89%",
+          "finding": "89% is the JRC’s 2020 value from an earlier release; current data give 90.9% (2020) and 91.4% (2022). Malta is still above [2, 3].",
+          "rating": "Older figure",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-131C",
+          "text": "Presented “by contrast” with low recycling rates, as a strong result",
+          "finding": "The rate counts backfilling: 58% of Malta’s 2020 total (EU 12%); recycling alone 42%, 21st of 27. Quarry deposits counted as landfill until the 2012 data [3, 8].",
+          "rating": "Needs context",
+          "tone": "amber"
+        }
+      ],
       "date": "2026-06-03",
       "quote": "By contrast, the rate of recovery of construction and demolition waste is 100, above the EU average of 89%.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-26",
+      "outputs": {
+        "report": "claim-files/CC-131/report.pdf",
+        "flyer_pdf": "claim-files/CC-131/flyer.pdf",
+        "flyer_png": "claim-files/CC-131/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-131/claim.yml",
       "similar": [
         {
           "id": "CC-082",
-          "score": 0.45,
+          "score": 0.36,
           "terms": [
             "waste",
             "construction"
@@ -8494,7 +8532,7 @@
         },
         {
           "id": "CC-111",
-          "score": 0.4,
+          "score": 0.34,
           "terms": [
             "waste",
             "rate",
@@ -8502,12 +8540,12 @@
           ]
         },
         {
-          "id": "CC-132",
-          "score": 0.26,
+          "id": "CC-117",
+          "score": 0.33,
           "terms": [
-            "average",
-            "citing",
-            "jun"
+            "recycling",
+            "waste",
+            "packaging"
           ]
         }
       ]
@@ -8578,15 +8616,6 @@
       },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-132/claim.yml",
       "similar": [
-        {
-          "id": "CC-131",
-          "score": 0.26,
-          "terms": [
-            "average",
-            "citing",
-            "jun"
-          ]
-        },
         {
           "id": "CC-134",
           "score": 0.25,
