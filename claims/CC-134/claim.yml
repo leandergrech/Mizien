@@ -2,9 +2,9 @@ id: CC-134
 title: 'EU: Malta''s environmental tax revenue is below the EU average'
 category: Climate & Energy
 subtopic: Emissions & targets
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
   text: 'European Commission (2026 Country Report for Malta, 3 Jun 2026): ''Total environmental tax revenue is lower than
     the EU average (1.4% of GDP in 2024 against the EU average of 2.1%)'', with 2023 revenue ''primarily derived from energy
@@ -21,30 +21,61 @@ claim:
     note: The claim. Passage read in the circular economy section, which refers to Annex 3. Document read in full from the
       Council register copy (HTTP 200, text extracted) on 25 Oct 2026.
   quote: Total environmental tax revenue is lower than the EU average (1.4% of GDP in 2024 against the EU average of 2.1%)
-counter_evidence: The sentence appears in a section on fiscal tools to encourage circular practices, so the comparison is
-  used to argue for more such tools. The same passage says Malta's taxes on pollution and resources are 0.18% against an EU
-  average of 0.08%, higher than the EU average. CC-095, CC-113 and CC-022 concern what energy support and fossil-fuel subsidies
-  cost, a different measure from tax revenue.
+counter_evidence: "Eurostat env_ac_tax (retrieved 26 Oct 2026): Malta 1.35% and EU-27 2.08% of GDP in 2024 (Malta recomputed 312.5 / 23,079 = 1.354%); Malta 25th of 27. 2023 shares: energy 48.5%, transport 41.6%. The 0.18% for pollution and resources is Eurostat's 2022 value; 2023 is 0.15% (EU 0.08%). On the share of total taxes and social contributions Malta was above the EU-27 in 2023 (5.68% vs 5.29%) and below in 2024 (4.69% vs 5.28%). The comparison is used in the report to argue for more fiscal tools; revenue as a share of GDP is not a measure of policy stringency."
 tests: Eurostat environmental tax revenue by category (Malta and EU-27, 2023-2024; dataset env_ac_tax, to verify) and GDP;
   the Commission's Annex 3 tax tables; Malta's energy and transport tax rates; the definition of 'environmental taxes' (energy,
   transport, pollution and resources).
 why_low_hanging: Two numbers that can be recomputed from one Eurostat table.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: Eurostat and the Council register are reachable.'
-caveats: Candidate from the weekly intake of 25 Oct 2026. Tax revenue as a share of GDP depends on both the tax base and the
-  denominator and is not a direct measure of environmental policy; the check tests the figures and what they do and do not
-  show.
+caveats: "Largely supported: no right of reply needed. One figure (0.18%, pollution and resources) is the 2022 value, not the 2023 value the sentence implies; the Eurostat vintage the Commission used is unknown. Revenue as a share of GDP depends on both the tax base and the denominator and is not a direct measure of environmental policy. The report was read as the Council register copy; the Annex 3 sources behind it were not read."
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-134A
+    text: "Total environmental tax revenue is lower than the EU average: 1.4% of GDP in 2024, EU 2.1%"
+    finding: "Eurostat: 1.35% and 2.08%; recomputed from euro revenue and GDP; Malta 25th of 27 [2, 3]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-134B
+    text: "In 2023 revenues were primarily from energy and transport taxes, around 49% and 41%"
+    finding: "48.5% and 41.6% [2]; together 90.2%."
+    rating: "Accurate"
+    tone: green
+  - id: CC-134C
+    text: "Pollution and resource taxes 0.18% of GDP (EU average 0.08%), in the 2023 sentence"
+    finding: "0.18% is Eurostat’s 2022 value; 2023 is 0.15%, 2024 is 0.14%; EU 0.08% in each year [2]. Still above the EU average."
+    rating: "Minor error of year"
+    tone: lime
+version: '1.0'
+last_reviewed: '2026-10-26'
+thumbnail:
+  figure: 1.35%
+  caption: "of GDP raised by environmental taxes in 2024 (EU 2.08%); Malta is 25th of 27"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-26
+    step: wording
+    note: Commission 2026 Country Report for Malta (Council register copy ST-10135-2026-ADD-1, 126 pp.) read; the sentence is on PDF p. 44 and the Annex 3 table on p. 77. Verbatim wording confirmed.
+  - date: 2026-10-26
+    step: note
+    note: Eurostat env_ac_tax and nama_10_gdp downloaded (tools/cc-134-report/fetch.py) and recomputed (calc.py, data/cc-134/checks.csv). Headline and 2023 split confirmed; the 0.18% is Eurostat's 2022 value (2023 is 0.15%). Crossref check of Turan et al. 2026 (DOI verified, abstract only).
+  - date: 2026-10-26
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (high confidence); no right of reply needed.

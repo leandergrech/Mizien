@@ -1,13 +1,4 @@
-# CC-134: EU: Malta's environmental tax revenue is below the EU average
+# CC-134: Malta's environmental taxes below the EU average (European Commission, Country Report 2026)
 
-**Status:** literature not yet collected.
-
-## To collect
-
-Eurostat environmental tax revenue by category (Malta and EU-27, 2023-2024; dataset env_ac_tax, to verify) and GDP; the Commission's Annex 3 tax tables; Malta's energy and transport tax rates; the definition of 'environmental taxes' (energy, transport, pollution and resources).
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-134) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+Verbatim wording read in the Commission's Council-register copy (ST-10135-2026-ADD-1, PDF p. 44; Annex 3 table p. 77). No blocker.
+Routes: the claim record's URL (HTTP 200). See `notes.md` and `references.bib`. Report: `claims/CC-134/`; calculations `tools/cc-134-report/calc.py`.
