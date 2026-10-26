@@ -1,17 +1,18 @@
 Body / actor,Claim IDs,Type,Claims (count)
-European Commission,"CC-005, CC-094, CC-101, CC-109, CC-110, CC-111, CC-117, CC-125, CC-127, CC-128, CC-129, CC-131, CC-132, CC-133, CC-134",EU & international,15
+European Commission,"CC-005, CC-094, CC-101, CC-109, CC-110, CC-111, CC-117, CC-125, CC-127, CC-128, CC-129, CC-131, CC-132, CC-133, CC-134, CC-142, CC-143",EU & international,17
 Government of Malta,"CC-006, CC-021, CC-023, CC-024, CC-025, CC-041, CC-043, CC-045, CC-060, CC-061, CC-096",Government & ministers,11
 Environment and Resources Authority (ERA),"CC-002, CC-034, CC-036, CC-038, CC-051, CC-052, CC-057, CC-082",Regulators & authorities,8
 Ministry for the Environment,"CC-003, CC-004, CC-010, CC-022, CC-027, CC-029, CC-048, CC-051",Government & ministers,8
 Office of the Prime Minister,"CC-012, CC-016, CC-017, CC-027, CC-055, CC-064, CC-068, CC-138",Government & ministers,8
 Partit Nazzjonalista (Nationalist Party),"CC-012, CC-042, CC-092, CC-093, CC-104, CC-107, CC-114, CC-126",Political parties,8
 Ministry for Transport,"CC-016, CC-069, CC-072, CC-073, CC-077",Government & ministers,5
+BirdLife Malta,"CC-049, CC-050, CC-106, CC-145",NGOs & unions,4
 Infrastructure Malta,"CC-008, CC-016, CC-021, CC-056",Public agencies & companies,4
+Ministry for Finance,"CC-017, CC-095, CC-140, CC-141",Government & ministers,4
 Planning Authority,"CC-013, CC-014, CC-015, CC-068",Regulators & authorities,4
 The Shift News,"CC-071, CC-081, CC-122, CC-139",Media,4
 Water Services Corporation,"CC-009, CC-039, CC-041, CC-046",Public agencies & companies,4
 ADPD – The Green Party,"CC-065, CC-084, CC-105",Political parties,3
-BirdLife Malta,"CC-049, CC-050, CC-106",NGOs & unions,3
 Ministry for Gozo,"CC-031, CC-032, CC-078",Government & ministers,3
 Ministry for Tourism,"CC-083, CC-086, CC-087",Government & ministers,3
 Newsbook,"CC-007, CC-026, CC-059",Media,3
@@ -28,7 +29,6 @@ KPMG,"CC-062, CC-123",Business & industry,2
 Lovin Malta,"CC-058, CC-075",Media,2
 Malta Developers Association (MDA),"CC-018, CC-063",Business & industry,2
 Malta International Airport plc,"CC-030, CC-100",Business & industry,2
-Ministry for Finance,"CC-017, CC-095",Government & ministers,2
 Ministry for Health,"CC-090, CC-103",Government & ministers,2
 Momentum,"CC-012, CC-067",Political parties,2
 Moviment Graffitti,"CC-098, CC-130",NGOs & unions,2
@@ -59,6 +59,7 @@ Malta Tourism Authority,CC-087,Public agencies & companies,1
 MaltaToday,CC-047,Media,1
 "Ministry for Agriculture, Fisheries and Animal Rights",CC-048,Government & ministers,1
 Ministry for Public Cleanliness and Regeneration,CC-054,Government & ministers,1
+Mongabay,CC-144,Media,1
 Occupational Health and Safety Authority (OHSA),CC-091,Regulators & authorities,1
 Parliamentary Ombudsman,CC-102,"Courts, tribunals & oversight",1
 Public Works Department,CC-045,Government & ministers,1
