@@ -2,7 +2,7 @@ id: CC-130
 title: 'NGOs: ODZ racecourse policy ends protection'
 category: Planning & Housing
 subtopic: Permits & enforcement
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -55,3 +55,7 @@ location:
   lon: 14.50909
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-23
+    step: started
+    note: "Worker B, attempt 1: blocked on source. The NGOs' wording is verbatim and read (movimentgraffitti.org, 13 Oct 2026), but what it describes is the Planning Authority's draft framework for obstacle course racing in ODZ (issued 2 Sep 2026, consultation closed 14 Oct 2026), which is browser-only (pa.org.mt 403; Wayback unreachable). Newsbook (2 Sep 2026) paraphrases it as a one-time, non-renewable period of up to five years, with eligible sites and restoration; that is second-hand and cannot decide a rating. Needed: the draft text and consultation notice, in a browser."
