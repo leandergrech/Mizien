@@ -8292,8 +8292,9 @@
       "category": "Transport",
       "claim": "European Commission (2026 Country Report for Malta, 3 Jun 2026): 'In 2024, 58% of people in Malta reported never using public transport, below the EU average of 50.6%', citing a Eurostat news article.",
       "counter": "The sentence compares 58% with an EU average of 50.6% and calls 58% 'below' it, but 58 is above 50.6, so either the word or a figure is wrong; the check should establish which. The same Annex says Malta has extended free access to public transport (Tallinja card), added bus routes and park-and-ride, and that the effectiveness of these measures has been limited. CC-069 (82 million bus trips), CC-070 (overcrowded buses) and CC-071 (free buses) concern use of the same system.",
-      "status": "Not started",
-      "verdict": null,
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Public transport",
       "location": {
@@ -8303,17 +8304,52 @@
         "scope": "site",
         "icon": "bus"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-132A",
+          "text": "In 2024, 58% of people in Malta reported never using public transport",
+          "finding": "Eurostat: 58.6% (persons 16+) [3]; 58.0% in a press report of the March release ◆ [5].",
+          "rating": "Close",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-132B",
+          "text": "The EU average is 50.6%",
+          "finding": "Eurostat: 50.6% (EU-27, persons 16+) [2, 3].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-132C",
+          "text": "Malta’s figure is “below” the EU average",
+          "finding": "Malta is 8.0 points above the EU average, tied 7th highest of 27 [3].",
+          "rating": "Contradicted",
+          "tone": "red"
+        },
+        {
+          "id": "CC-132D",
+          "text": "The effectiveness of Malta’s public-transport measures “has been limited”",
+          "finding": "Not tested. Low use is consistent with it, but a single-year survey cannot measure the effect of any measure.",
+          "rating": "Not tested",
+          "tone": "grey"
+        }
+      ],
       "date": "2026-06-03",
       "quote": "In 2024, 58% of people in Malta reported never using public transport, below the EU average of 50.6%",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-26",
+      "outputs": {
+        "report": "claim-files/CC-132/report.pdf",
+        "flyer_pdf": "claim-files/CC-132/flyer.pdf",
+        "flyer_png": "claim-files/CC-132/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-132/claim.yml",
       "similar": [
         {

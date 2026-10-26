@@ -2,9 +2,9 @@ id: CC-132
 title: 'EU: 58% in Malta never use public transport'
 category: Transport
 subtopic: Public transport
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
   text: 'European Commission (2026 Country Report for Malta, 3 Jun 2026): ''In 2024, 58% of people in Malta reported never
     using public transport, below the EU average of 50.6%'', citing a Eurostat news article.'
@@ -30,23 +30,67 @@ tests: Eurostat's data behind the news article in footnote 145 (the share of peo
   passenger counts; Malta Public Transport ridership; CC-069 data.
 why_low_hanging: A single survey percentage that can be compared with an EU average in a Eurostat table.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: Eurostat and the Council register are reachable. The Eurostat news page cited is JavaScript-rendered
   or may need the dissemination API.'
-caveats: Candidate from the weekly intake of 25 Oct 2026. The claimant is the Commission's staff; the survey is Eurostat's,
-  so the check should compare the Commission's sentence with Eurostat's own figures and wording. What 'never' means in the
-  survey question (reference period) must be stated. The check should state plainly whether the 'below' is a wording slip,
-  without any claim about intent.
+caveats: No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading or Contradicted). Malta's share is 58.6% in Eurostat's table read on 26 Oct 2026 (the report says 58%; a March press report gave 58.0%, second-hand); we could not retrieve the March vintage. The survey question and reference period of 'never' are not verified (Eurostat metadata not retrievable). Tests the sentence's figures only, not transport policy.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Eurostat ilc_atst01 and ilc_atst02, 2024, persons 16+ (data/cc-132/, retrieved 26 Oct 2026)
+- Eurostat news article, 11 Mar 2026 (ddn-20260311-2)
+- Commission SWD(2026) 218 Annex 8, Council register copy, printed p. 73
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-10-26'
 location:
   place: Valletta bus terminus, Floriana
   lat: 35.89563
   lon: 14.50827
   scope: site
   icon: bus
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-132A
+    text: "In 2024, 58% of people in Malta reported never using public transport"
+    finding: "Eurostat: 58.6% (persons 16+) [3]; 58.0% in a press report of the March release ◆ [5]."
+    rating: "Close"
+    tone: lime
+  - id: CC-132B
+    text: "The EU average is 50.6%"
+    finding: "Eurostat: 50.6% (EU-27, persons 16+) [2, 3]."
+    rating: "Supported"
+    tone: green
+  - id: CC-132C
+    text: "Malta’s figure is “below” the EU average"
+    finding: "Malta is 8.0 points above the EU average, tied 7th highest of 27 [3]."
+    rating: "Contradicted"
+    tone: red
+  - id: CC-132D
+    text: "The effectiveness of Malta’s public-transport measures “has been limited”"
+    finding: "Not tested. Low use is consistent with it, but a single-year survey cannot measure the effect of any measure."
+    rating: "Not tested"
+    tone: grey
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 58.6%
+  caption: of people in Malta never used public transport in 2024 (EU 50.6%; the report says 'below')
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-26
+    step: started
+    note: "Worker A. Read the sentence in the Council register copy of SWD(2026) 218 Annex 8 (printed p. 73, footnote 145) and Eurostat's news item of 11 Mar 2026."
+  - date: 2026-10-26
+    step: wording
+    note: "Verbatim wording confirmed in the Commission document: 'In 2024, 58% of people in Malta reported never using public transport, below the EU average of 50.6%'."
+  - date: 2026-10-26
+    step: note
+    note: "Eurostat ilc_atst01 (updated 17 Sep 2026): Malta 58.6%, EU-27 50.6%, Malta tied 7th of 27. ilc_atst02 read for reasons. A press report of the March release gave 58.0% (second-hand)."
+  - date: 2026-10-26
+    step: version
+    version: "1.0"
+    note: "First issue. Largely supported (high confidence on the figures): EU figure exact, Malta 58.6% vs 58% reported, 'below' wrong (Malta is 8.0 points above). No right of reply needed."
