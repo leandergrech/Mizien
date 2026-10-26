@@ -5513,11 +5513,11 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-135",
-          "score": 0.28,
+          "score": 0.29,
           "terms": [
             "demand",
             "growth",
-            "infrastructure"
+            "population"
           ]
         }
       ]
@@ -7131,11 +7131,11 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-135",
-          "score": 0.47,
+          "score": 0.42,
           "terms": [
+            "population",
             "rose",
-            "selected",
-            "monetary"
+            "selected"
           ]
         },
         {
@@ -8728,9 +8728,10 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "title": "IMF: peak electricity demand up 43% in five years",
       "category": "Climate & Energy",
       "claim": "International Monetary Fund staff (Selected Issues paper 'Taking Stock of Infrastructure in Malta', Feb 2025): peak electricity demand rose 'from 465 MW in 2018 to 663 MW in 2023 (an increase of 43 percent)', 'significantly outpaced the growth in population and tourists in the peak summer season (an increase of 13 percent over the same period)'.",
-      "counter": "The paper itself adds that the rise 'may be related' to the increase in the mean temperature of the hottest month from 27.3 to 29.6 degrees Celsius, says capacity in energy and water supply is currently adequate, and reports that the authorities project peak demand about 30 percent higher by 2040 under a high-temperature and high-population scenario. CC-027 (July 2026 power cuts), CC-028 (Enemalta network downtime) and the Malta Chamber's statement (CC-137) concern the same demand and network.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "NSO Electricity Supply releases: maximum demand 465 MW (Aug 2018) and 663 MW (Jul 2023), +42.6%. Eurostat demo_gind plus tour_occ_nim (August nights / 31, the paper's method): residents plus tourists +13.3% to +13.5% 2018-2023. Final electricity consumption grew +13.4% (nrg_cb_e), so energy kept pace with people while the peak did not. But the end years are the coolest (2018) and hottest (2023) summers of 2017-2025 at Luqa (GHCN-Daily, hottest-month mean 26.9 and 29.4 C); other windows give +28% to +37%, the 2017-2025 trend line +24% over five years, and the peak fell to 593 MW in 2024 before 637 MW in 2025. The paper itself says the rise 'may be related' to temperature, says capacity is adequate for now, and reports the authorities' projection of about 30% more peak demand by 2040 (not tested).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Electricity & grid",
       "location": {
@@ -8740,35 +8741,84 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "institution",
         "icon": "pylon"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "International Monetary Fund",
       "bodies": [
         "imf"
       ],
+      "subclaims": [
+        {
+          "id": "CC-135A",
+          "text": "Peak electricity demand was 465 MW in 2018",
+          "finding": "NSO: maximum demand 465 MW in August 2018, the highest month of the year [2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-135B",
+          "text": "Peak electricity demand was 663 MW in 2023",
+          "finding": "NSO: 663 MW in July 2023, the highest month of the year [4].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-135C",
+          "text": "An increase of 43 percent",
+          "finding": "663 / 465 − 1 = 42.6% [2, 4].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-135D",
+          "text": "Population and tourists in the peak summer season grew 13 percent over the same period",
+          "finding": "Reproduced with the IMF’s method: 13.3% to 13.5% depending on the population count; residents alone about 14% [7, 8].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-135E",
+          "text": "Peak demand has increased rapidly and significantly outpaced population and tourists",
+          "finding": "Holds in every window tested (peak +24% to +37% on other end years and the trend); 2018 and 2023 are the coolest and hottest summers, so 43% is the largest measure [2–6, 10].",
+          "rating": "Accurate, end-year caveat",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-135F",
+          "text": "Hottest-month mean temperature rose from 27.3 °C to 29.6 °C",
+          "finding": "Luqa station: 26.9 °C to 29.4 °C (+2.5 °C against +2.3 °C); the IMF’s source not seen [10].",
+          "rating": "Broadly confirmed",
+          "tone": "lime"
+        }
+      ],
       "date": "2025-02",
-      "quote": "Peak electricity demand has increased rapidly in recent years, rising from 465 MW in 2018 to 663 MW in 2023 (an increase of 43 percent).",
-      "version": null,
-      "outputs": {},
+      "quote": "Peak electricity demand has increased rapidly in recent years, rising from 465 MW in 2018 to 663 MW in 2023 (an increase of 43 percent). This increase has significantly outpaced the growth in population and tourists in the peak summer season (an increase of 13 percent over the same period).",
+      "version": "1.0",
+      "last_reviewed": "2026-10-26",
+      "outputs": {
+        "report": "claim-files/CC-135/report.pdf",
+        "flyer_pdf": "claim-files/CC-135/flyer.pdf",
+        "flyer_png": "claim-files/CC-135/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-135/claim.yml",
       "similar": [
         {
           "id": "CC-112",
-          "score": 0.47,
+          "score": 0.42,
           "terms": [
+            "population",
             "rose",
-            "selected",
-            "monetary"
+            "selected"
           ]
         },
         {
           "id": "CC-089",
-          "score": 0.28,
+          "score": 0.29,
           "terms": [
             "demand",
             "growth",
-            "infrastructure"
+            "population"
           ]
         }
       ]
