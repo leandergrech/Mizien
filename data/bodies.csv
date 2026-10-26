@@ -4,7 +4,7 @@ opm,Office of the Prime Minister,organisation,government,government-of-malta,,,
 robert-abela,Robert Abela,person,government,opm,Prime Minister,"Robert Abela, Prime Minister|Prime Minister Robert Abela",
 ministry-environment,Ministry for the Environment,organisation,government,government-of-malta,,"Ministry for the Environment|Ministry for the Environment, Energy and Public Cleanliness|Ministry for the Environment, Energy and Public Cleanliness (Minister Dalli)|Minister for the Environment|Energy Ministry (Minister Miriam Dalli)",Named in claims under its 2022–2024 and later titles.
 miriam-dalli,Miriam Dalli,person,government,ministry-environment,Minister for the Environment and Energy,"Miriam Dalli, Energy Minister|Miriam Dalli, Environment Minister|Ministry for the Environment, Energy and Public Cleanliness (Minister Dalli)",
-ministry-finance,Ministry for Finance,organisation,government,government-of-malta,,,
+ministry-finance,Ministry for Finance,organisation,government,government-of-malta,,Ministry for Finance (Pre-Budget Document 2027),
 clyde-caruana,Clyde Caruana,person,government,ministry-finance,Minister for Finance,"Clyde Caruana, Minister for Finance (Budget Speech 2026)|Clyde Caruana, Minister for Finance (Pre-Budget Document 2027)",
 ministry-transport,Ministry for Transport,organisation,government,government-of-malta,,Ministry for Transport,
 chris-bonett,Chris Bonett,person,government,ministry-transport,Transport Minister,"Chris Bonett, Transport Minister",
@@ -83,3 +83,4 @@ council-eu,Council of the European Union,organisation,eu,,,Council of the Europe
 din-l-art-helwa,Din l-Art Ħelwa,organisation,civil_society,,,Din l-Art Ħelwa,heritage NGO
 ccpi,Climate Change Performance Index (CCPI),organisation,research,,Annual ranking of national climate performance; country texts rest on anonymous national experts,Climate Change Performance Index (CCPI),
 afp,Agence France-Presse (AFP),organisation,media,,,Agence France-Presse (AFP),foreign news agency; copy read on eNCA
+mongabay,Mongabay,organisation,media,,,Mongabay,foreign environmental news site

@@ -1,0 +1,52 @@
+id: CC-140
+title: 'Pre-Budget Document: energy import dependency about 98%, highest in the EU'
+category: Climate & Energy
+subtopic: Electricity & grid
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Ministry for Finance, Pre-Budget Consultation Document 2027 (September 2026, launched 30 Sep 2026), p. 66: ''Eurostat
+    statistics show that Malta''s energy import dependency is approximately 98.0 per cent, the highest in the European Union.''
+    No reference year is given.'
+  speaker: Ministry for Finance (Pre-Budget Document 2027)
+  date: '2026-09-30'
+  wording_status: Verbatim found
+  sources:
+  - title: Pre-Budget Consultation Document 2027
+    publisher: Ministry for Finance
+    date: '2026-09-30'
+    url: https://finance.gov.mt/wp-content/uploads/2026/09/PRE-BUDGET-2027-DOC.pdf
+    note: The claim. Read through WebFetch on 26 Oct 2026 (finance.gov.mt returns 403 to curl and scripts); page number from
+      the extracted page markers and may be off by one. MaltaToday (30 Sep 2026) reports the Finance Minister repeating the
+      figure at the launch.
+  quote: Malta's energy import dependency is approximately 98.0 per cent, the highest in the European Union
+counter_evidence: 'Context, not tested: Malta imports all its fossil fuels and part of its electricity through the interconnector;
+  Eurostat''s import-dependency indicator (net imports over gross available energy) counts bunker fuels for international
+  shipping and aviation in some definitions, which weigh heavily for Malta. Cyprus and Luxembourg have usually been close
+  to Malta at the top of the ranking. The document uses the figure to argue for keeping energy subsidies (CC-095).'
+tests: Eurostat nrg_ind_id (energy import dependency by product), all Member States, latest year and the past five; check
+  which definition the 98% matches (with or without international maritime bunkers) and whether Malta is first in every year;
+  Eurostat energy balances (nrg_bal_c) to rebuild the ratio.
+why_low_hanging: One number and one ranking, both testable directly against a Eurostat table.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat dissemination API reachable. The document itself is 403 to scripts but readable through WebFetch;
+  the maintainer may supply the PDF.'
+caveats: 'Candidate from the top-up intake of 26 Oct 2026 (maintainer session). Wording read through WebFetch, not from a
+  downloaded copy: confirm the sentence and page in the PDF before the report. The tag is provisional (the ranking may depend
+  on whether bunker fuels are counted).'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: cross
