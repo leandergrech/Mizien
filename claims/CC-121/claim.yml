@@ -2,7 +2,7 @@ id: CC-121
 title: 'Din l-Art Ħelwa: Excelsior extension harms the bastions'
 category: Planning & Housing
 subtopic: Heritage & character
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -57,3 +57,7 @@ location:
   lon: 14.5049
   scope: site
   icon: fort
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-15
+    step: started
+    note: "Worker A, attempt 1: blocked on source. The Shift (8 Sep 2026) quotes Din l-Art Ħelwa only as saying Malta 'cannot keep sacrificing its heritage for more hotel rooms' and 'Our bastions are not a backdrop for development'; the 'unacceptable visual impact', Area of High Landscape Value and open-space wording is known only from a search summary of MaltaToday (403). dinlarthelwa.org news and press-release lists carry no Excelsior release. Needed: the appeal text or the NGO's press release."
