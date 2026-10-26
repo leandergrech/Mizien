@@ -1,0 +1,31 @@
+check,value,unit,source,note
+"Europe (World Bank list of 44 states), density rank 1: Monaco",18537,people/km2,"World Bank EN.POP.DNST (people per sq. km of land area), lastupdated 8 Oct 2026, retrieved 26 Oct 2026",year 2024
+"Europe (World Bank list of 44 states), density rank 2: Malta",1805,people/km2,"World Bank EN.POP.DNST (people per sq. km of land area), lastupdated 8 Oct 2026, retrieved 26 Oct 2026",year 2024
+"Europe (World Bank list of 44 states), density rank 3: San Marino",555,people/km2,"World Bank EN.POP.DNST (people per sq. km of land area), lastupdated 8 Oct 2026, retrieved 26 Oct 2026",year 2024
+"Europe (World Bank list of 44 states), density rank 4: Netherlands",534,people/km2,"World Bank EN.POP.DNST (people per sq. km of land area), lastupdated 8 Oct 2026, retrieved 26 Oct 2026",year 2024
+"Europe (World Bank list of 44 states), density rank 5: Belgium",389,people/km2,"World Bank EN.POP.DNST (people per sq. km of land area), lastupdated 8 Oct 2026, retrieved 26 Oct 2026",year 2024
+Monaco density as a multiple of Malta's,10.3,x,"World Bank EN.POP.DNST (people per sq. km of land area), lastupdated 8 Oct 2026, retrieved 26 Oct 2026",2024 values
+EU Member States in the World Bank data,27,states,"World Bank EN.POP.DNST (people per sq. km of land area), lastupdated 8 Oct 2026, retrieved 26 Oct 2026",
+Malta density as a multiple of the next EU state (Netherlands),3.4,x,"World Bank EN.POP.DNST (people per sq. km of land area), lastupdated 8 Oct 2026, retrieved 26 Oct 2026",Malta vs Netherlands
+Eurostat 2024: Malta density,1817.4,people/km2,"Eurostat demo_r_d3dens (updated 25 Feb 2026), retrieved 26 Oct 2026",total area basis; flag none
+Eurostat 2024: next densest country,NL 529.5,people/km2,"Eurostat demo_r_d3dens (updated 25 Feb 2026), retrieved 26 Oct 2026","countries in the dataset: EU, EFTA, candidates"
+Eurostat 2024: EU-27 density,109.7,people/km2,"Eurostat demo_r_d3dens (updated 25 Feb 2026), retrieved 26 Oct 2026",Eurostat flag ep (provisional)
+Eurostat: Malta rank among countries in the dataset,1,rank,"Eurostat demo_r_d3dens (updated 25 Feb 2026), retrieved 26 Oct 2026",
+Approved dwelling units 2025,12325,units,"Planning Authority, Approved Dwelling Units 2007-2025 (transcribed in data/cc-013/pa_approved_dwellings.csv, read 3 Oct 2026)",
+Approved dwelling units 2024,8716,units,"Planning Authority, Approved Dwelling Units 2007-2025 (transcribed in data/cc-013/pa_approved_dwellings.csv, read 3 Oct 2026)",
+Change 2024 to 2025,41.4,%,"Planning Authority, Approved Dwelling Units 2007-2025 (transcribed in data/cc-013/pa_approved_dwellings.csv, read 3 Oct 2026)",
+Approved dwelling units 2013 (low),2679,units,"Planning Authority, Approved Dwelling Units 2007-2025 (transcribed in data/cc-013/pa_approved_dwellings.csv, read 3 Oct 2026)",
+Approved dwelling units 2018 (peak before 2025),12829,units,"Planning Authority, Approved Dwelling Units 2007-2025 (transcribed in data/cc-013/pa_approved_dwellings.csv, read 3 Oct 2026)",
+Approved 2025 as a multiple of 2013,4.6,x,"Planning Authority, Approved Dwelling Units 2007-2025 (transcribed in data/cc-013/pa_approved_dwellings.csv, read 3 Oct 2026)",
+2025 vs 2018 peak,-3.9,%,"Planning Authority, Approved Dwelling Units 2007-2025 (transcribed in data/cc-013/pa_approved_dwellings.csv, read 3 Oct 2026)",2025 is below the 2018 and 2019 peaks
+Years in 2007-2025 with more approved units than 2025,"2018, 2019",years,"Planning Authority, Approved Dwelling Units 2007-2025 (transcribed in data/cc-013/pa_approved_dwellings.csv, read 3 Oct 2026)",
+Change 2022 to 2025 (three years),28.4,%,"Planning Authority, Approved Dwelling Units 2007-2025 (transcribed in data/cc-013/pa_approved_dwellings.csv, read 3 Oct 2026)",
+Approved units 2015-2025 (eleven years) per year,9104,units/yr,"Planning Authority, Approved Dwelling Units 2007-2025 (transcribed in data/cc-013/pa_approved_dwellings.csv, read 3 Oct 2026)",
+Approved units 2007-2014 per year,4996,units/yr,"Planning Authority, Approved Dwelling Units 2007-2025 (transcribed in data/cc-013/pa_approved_dwellings.csv, read 3 Oct 2026)",
+Malta: population change 1 Jan 2012 to 1 Jan 2022,24.6,%,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 26 Oct 2026","417,546 -> 520,174"
+Malta: population change 1 Jan 2013 to 1 Jan 2023,28.6,%,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 26 Oct 2026","421,464 -> 542,051"
+Malta: population change 1 Jan 2014 to 1 Jan 2024,31.6,%,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 26 Oct 2026","428,156 -> 563,443"
+Malta: population change 1 Jan 2015 to 1 Jan 2025,30.9,%,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 26 Oct 2026","438,805 -> 574,250"
+Malta: population change 1 Jan 2016 to 1 Jan 2026,30.8,%,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 26 Oct 2026","449,635 -> 588,254"
+EU-27: population change 1 Jan 2015 to 1 Jan 2025,1.9,%,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 26 Oct 2026",
+Ten-year windows 2012-2022 .. 2016-2026 with growth below 30%,"2012-2022, 2013-2023",windows,"Eurostat demo_gind (updated 30 Sep 2026), retrieved 26 Oct 2026",

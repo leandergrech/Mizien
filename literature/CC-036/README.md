@@ -20,3 +20,6 @@ Add `references.bib` and `notes.md` as in `literature/CC-001/`.
 - Web search finds the chapter and quotes a different passage (construction "noise, vibrations, dust generation and damage to
   property"), not the "coarser fraction / nuisance" sentence.
 Needed: the passage and page number from the chapter, read in a browser.
+
+## Attempt 2 (12 Oct 2026, worker C)
+Tried: ERA PDF via curl (403), with browser User-Agent (403), WebFetch (403), Wayback (connection reset), two web searches (chapter URL found, no passage text). Still needed: passage read in a browser.

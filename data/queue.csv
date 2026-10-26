@@ -22,7 +22,7 @@ CC-032,B,2026-10-04,intake 4 Oct 2026,1,2026-10-06,
 CC-033,C,2026-10-04,intake 4 Oct 2026,1,2026-10-05,"source: D3PG's statement is reported only in indirect speech (TVM News 24 Sep 2018, EN and MT; 'much cleaner' is TVM's paraphrase, no quotation marks); D3PG press release not found; tried: TVM EN/MT, web search (two queries), d3pg.com (empty page), Wayback (reset), Wärtsilä case study (not the speaker)"
 CC-034,A,2026-10-04,intake 4 Oct 2026; unblocked by maintainer 5 Oct 2026 (primary-source.md),1,2026-10-06,
 CC-035,B,2026-10-04,intake 4 Oct 2026,1,2026-10-06,
-CC-036,C,2026-10-04,intake 4 Oct 2026,1,2026-10-05,"network: era.org.mt (403 to scripts); web.archive.org (its copy of the ERA PDF, snapshot 22 Jun 2021, is truncated at 1 MiB of 1.4 MB, no readable text, then the host went offline); tried: ERA URL, Wayback, web search (finds the chapter but no passage text)"
+CC-036,C,2026-10-04,intake 4 Oct 2026,2,2026-10-12,"network: era.org.mt (403 to curl and WebFetch); web.archive.org (connection reset); tried: ERA URL with and without browser User-Agent, Wayback, WebFetch, two web searches (return the chapter URL but no passage text, no 'nuisance' wording); needs a browser copy of the chapter or the passage text"
 CC-037,A,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
 CC-038,B,2026-10-04,intake 4 Oct 2026,1,2026-10-07,"source: authorities' own wording not found; Italpress/MNA (7 Feb 2026) gives the Met Office only as indirect speech ('Meteorological officials said the dust originated in the Sahara'), no quotation marks, no ERA statement; MaltaToday original 403, Wayback reset; tried: claim URL, Wayback, 3 web searches, Italpress, Guide Me Malta, TVM search, Newsbook/airquality.gov.mt/maltaweather.com (refused or unreachable)"
 CC-039,C,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
@@ -59,7 +59,7 @@ CC-069,C,2026-10-04,intake 4 Oct 2026,1,2026-10-08,"source: no Malta Public Tran
 CC-070,A,2026-10-04,intake 4 Oct 2026,1,2026-10-14,"source: Transport Malta's own wording not obtained. The figures come from a parliamentary-question reply tabled in July 2026 (Independent, 15 Jul 2026, 403 to scripts and WebFetch; Wayback reset): no cases in 22,118 inspections in 2024, one in 30,572 in 2025, four in 16,026 in Jan-May 2026 (search summaries only, second-hand). Lovin Malta (20 Jul 2026, read) says 'only one overcrowded bus during more than 52,000 inspections ... across 2024 and 2025' in its own words and quotes TM only on the video; the claim record's 'one bus ... in the incident under scrutiny' does not match: the one case spans 2024-25. Need the PQ number and reply text (parlament.mt, browser-only) or the Independent article; tried: Independent (403, WebFetch 403), Wayback (reset), Lovin Malta (read), TVM RSS search (nothing), Newsbook search (timed out), Shift search (nothing), 2 web searches"
 CC-071,B,2026-10-04,intake 4 Oct 2026,1,2026-10-10,
 CC-072,C,2026-10-04,intake 4 Oct 2026,1,2026-10-09,"source: no verbatim wording for 'a EUR 15 million scheme ... taking vehicles off the road'. The EUR 15m is TVM News' indirect speech (29 Mar 2025, EN and MT): Bonett said ALL the measures together would cost 'a maximum of' EUR 15m (EUR 10-15m this year), not one scheme; the only quoted ministry text (statement, EN) lists the EUR 25,000 licence grant without a cost. The Shift (21 Apr, 27 Jun 2025) cites unnamed sources; Italpress/MNA says the Finance Ministry had allocated EUR 5m. Need the ministry press release or press-conference transcript of 29 Mar 2025 (gov.mt/reshapingourmobility.com browser-only) showing who said EUR 15m and for what; tried: Shift URL, TVM EN/MT, Newsbook search (article page 404), Lovin Malta search, Italpress, transport.gov.mt (403), reshapingourmobility.com (empty to scripts), 3 web searches"
-CC-073,A,2026-10-04,intake 4 Oct 2026,0,,
+CC-073,A,2026-10-04,intake 4 Oct 2026,1,2026-10-13,"source: Minister Bonett's 20 Jul 2026 social-media video is known only from Newsbook's indirect speech (no quotation marks); the underlying figures (3,008,367 to 5,061,576 voyages, +68.2%; active operators 2,049 to 2,419, +18.1%, per search summary, second-hand) come from a PQ reply to PN MP Adrian Delia (parlament.mt 20260721_014o_par.pdf, 403 to curl and WebFetch); Business Now (23 Jul 2026, WebFetch summary only, second-hand) quotes the minister on demand but not the 68%; Newsbook's 15.2% operator growth differs from the 18.1% in the PQ summary; need the PQ text and the video transcript in a browser; tried: Newsbook (read in full), parlament.mt PDF (403), Business Now (403 to curl; WebFetch summary), 3 web searches, TVM and Lovin site search (nothing)"
 CC-074,B,2026-10-04,intake 4 Oct 2026,1,2026-10-11,"source: Transport Malta's own statement wording not found in quotation marks. TVM News (9 Jan 2025) gives '8,144' grants and 'over EUR 69 million' for the last 3 years only as indirect speech ('Transport Malta said that ...'), no quotation marks; Newsbook and a later TVM piece (Mar 2025) give different figures (nearly 9,000 grants, nearly EUR 70 million, 2022-2024), so the figures need the original statement; need the Transport Malta/DOI press release text in a browser; tried: claim URL (transport.gov.mt 403 even with browser UA), Wayback (reset), 2 web searches, TVM (read), Newsbook (read), Shift and Lovin Malta site search (no hit)"
 CC-075,C,2026-10-04,intake 4 Oct 2026,0,2026-10-06,
 CC-076,A,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
@@ -68,7 +68,7 @@ CC-078,C,2026-10-04,intake 4 Oct 2026,1,2026-10-09,"source: browser-only (https:
 CC-079,A,2026-10-04,intake 4 Oct 2026,1,2026-10-10,
 CC-080,B,2026-10-04,intake 4 Oct 2026,1,2026-10-11,"source: WasteServ's own wording not found in quotation marks and the record's date looks wrong. Newsbook (announcement of the tender, bids to 10 Jun 2025, so about 11 Mar 2025, not Apr 2026) gives '74,000 tonnes' and 'renewable electricity and high-quality compost' as indirect speech ('According to WasteServ'); only the CEO's sentence on 'net environmental benefits' is in quotation marks; the contract/works statement of 2026 (publicservice.gov.mt 'Works begin on new EUR 75 million organic processing plant', 403) and the Independent 2 Feb 2026 (403) are unread; need the WasteServ/DOI statement text in a browser and the statement date; tried: claim URL (Newsbook, read), publicservice.gov.mt (403), TVM (read, no 74,000 figure), 1 web search"
 CC-081,C,2026-10-04,intake 4 Oct 2026,1,2026-10-05,"source: the text of The Shift News article of 19 Feb 2026 (theshiftnews.com/2026/02/19/maltas-waste-management-is-going-in-reverse/) pasted into literature/CC-081/primary-source.md (page returns 404 to us). tried: direct URL, Wayback (not archived), wp-json slug/search, site search, WebFetch, web search (summary only). Numbers already reproduce: Eurostat env_wasmun landfilled/treated 78.6% (2023), 79.2% (2024); landfilled/generated 73.6%, 72.1% (see CC-111)."
-CC-082,A,2026-10-04,intake 4 Oct 2026,0,,
+CC-082,A,2026-10-04,intake 4 Oct 2026,1,2026-10-13,"source: Newsbook (5 May 2020) gives the 35 quarries (32 for rehabilitation + 3 recycling only) as its own report of Environment Minister Aaron Farrugia's reply to a PQ from PN MP Kevin Cutajar, in indirect speech with no quotation marks; the speaker is the Minister (PQ), not ERA, and the date is 2020, not undated; need the PQ number and answer text (parlament.mt, 403, browser-only) and the date of the sitting; tried: Newsbook (read in full), Wayback (reset), parlament.mt (403), 2 web searches (only ERA's later figure of 31 permitted, 6 recycling-only, via MaltaToday search summary, second-hand)"
 CC-083,B,2026-10-04,intake 4 Oct 2026,1,2026-10-12,"source: Ian Borg's own words in quotation marks found only in part (Malta Business Weekly, 12 Feb 2026, reproducing the DOI release: 'We have reached unprecedented levels of growth as the implementation of our long-term tourism strategy is clearly leaving its mark'); 'over 4 million arrivals' is not in his words (the outlet says about 4 million) and 'future-proof' is the outlet's text; the NSO inbound-tourism release (arrivals, expenditure, nights) that tests it is browser-only and the gov.mt release is 403; Eurostat tour_occ_ninat covers establishments only (Malta 2025: 12.5m nights, 2019: 9.9m, retrieved 12 Oct 2026); need the gov.mt release PR260230 and the NSO release text in a browser; tried: gov.mt (403), Wayback (reset), 3 web searches, Malta Business Weekly (read), Eurostat API"
 CC-084,C,2026-10-04,intake 4 Oct 2026,1,2026-10-05,"source: an ADPD/Sandra Gauci statement (English release, social post, video or interview) saying in their own words that tourist numbers tripled / are three times 2010's. tried: claim-record Lovin Malta URL (no figures in it), ADPD wp-json search and scan of all posts since 1 Feb 2026, Newsbook, web search. Only the outlet's paraphrase (Newsbook, 14 Feb 2026) carries the tripling."
 CC-085,A,2026-10-04,intake 4 Oct 2026,1,2026-10-10,
@@ -79,17 +79,17 @@ CC-089,B,2026-10-04,intake 4 Oct 2026,1,2026-10-13,
 CC-090,C,2026-10-04,intake 4 Oct 2026,1,2026-10-10,"source: the Ministry for Health's own wording is not in quotation marks in any readable copy. Newsbook (13 Aug 2026, read in full; the claim record's date 'Jul 2025' is wrong: the figures are for week 30 of 2026, 20-26 Jul) says the ministry 'confirmed the figures to this newsroom' (indirect speech); Italpress/MNA (14 Aug 2026) is a three-sentence paraphrase ('health authorities have confirmed'); Momentum (26 Aug 2026) says the ministry 'confirmed' it on 13 Aug (party's paraphrase). Need the ministry's statement or reply to Newsbook (gov.mt press release or e-mailed text, browser-only) with the exact words, and the NSO/Directorate deaths-by-week series for week 30; tried: Newsbook URL, Wayback (reset), Italpress, Momentum, gov.mt (403), TVM News search, 2 web searches"
 CC-091,A,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
 CC-092,B,2026-10-04,intake 4 Oct 2026,1,2026-10-10,
-CC-093,C,2026-10-04,intake 4 Oct 2026,0,,
+CC-093,C,2026-10-04,intake 4 Oct 2026,1,2026-10-12,"source: PN's own manifesto wording not obtained (MaltaToday breakdown is 403; pn.org.mt browser-only); tried: claim record URL, web search for the pledge's key words (no Maltese result); needs the manifesto text/page for the urban-parks pledge"
 CC-094,A,2026-10-04,intake 4 Oct 2026,0,2026-10-06,
 CC-095,B,2026-10-04,intake 4 Oct 2026; done by an orchestrated session 10 Oct 2026,1,2026-10-10,
-CC-096,C,2026-10-04,intake 4 Oct 2026,0,,
+CC-096,C,2026-10-04,intake 4 Oct 2026,1,2026-10-17,"source: the Government's or Aquaculture Directorate's own wording is not available. The only text carrying the claim is the European MSP Platform practice page, whose 31 May 2017 timeline entry ('moved from Delimara and Marsaxlokk to the established South-East Aquaculture Zone 6 km offshore') is an unattributed news-style summary, not a government statement, and 'stricter environmental conditions' is not in it; MaltaToday 'Fish farms meet deadline to relocate offshore' (2017) and Transport Malta Notice to Mariners 33 of 2017 are 403 (seen only as search summaries, second-hand); need the 2017 Fisheries/Environment ministry press release or the Notice text; tried: MSP Platform page (read in full), MaltaToday, transport.gov.mt, Wayback (reset), 3 web searches"
 CC-097,A,2026-10-04,intake 4 Oct 2026,1,2026-10-05,"source: Securital and ERA responses or DIER conciliation outcome; heat OHS rules/OHSA guidance and any contractor SOP in force July 2026; Malta Met Office heat warnings mid-July 2026. tried: gwu.org.mt, newsbook, web search"
-CC-098,B,2026-10-04,intake 4 Oct 2026,1,2026-10-15,
+CC-098,B,2026-10-04,intake 4 Oct 2026,1,2026-10-14,"source: Graffitti's wording IS verbatim (release 24 Jun 2026, read), but the incident rests on its video (Facebook reels, not viewable) and the concession terms, officials' legal powers and any MTA response are not readable; need in a browser: the video, concession terms (MTA/Lands Authority), MTA statement; tried: Graffitti site (read), Shift (read), MaltaToday (403), Wayback, 4 web searches"
 CC-099,C,2026-10-04,intake 4 Oct 2026,0,2026-10-06,
 CC-100,A,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
 CC-101,A,2026-10-04,weekly intake,0,2026-10-06,
 CC-102,A,2026-10-04,weekly intake,0,2026-10-05,
-CC-103,B,2026-10-04,weekly intake,0,,
+CC-103,B,2026-10-04,weekly intake,1,2026-10-18,"deadline: the promised publication is due by about 21 Nov 2026 (three months from the 21 Aug 2026 FOI notice); the check cannot start before then. Wording found (not a source blocker): Momentum (26 Aug 2026) reproduces notice ref. 260383 from the Department of Health, Chief Medical Officer, 'Request/Complaint Not Accepted', 'publicly available or will be published within three months'; the notice does not name the Ministry for Health and was a reply to Momentum's request. Eligible again from late Nov 2026 once the maintainer clears this Blocker"
 CC-104,C,2026-10-04,weekly intake,1,2026-10-05,"source: full text of petition 1150/2024 (Buttigieg/Agius) or the PN press release of 11-12 Oct 2024; Commission reply PETI-CM-778413. tried: EP petitions portal (summary only; notice PDF empty), newsbook (paraphrase), eppgroup.eu (general quotes), web search"
 CC-105,A,2026-10-04,weekly intake,1,2026-10-05,
 CC-106,B,2026-10-04,weekly intake,1,2026-10-05,
@@ -102,26 +102,26 @@ CC-113,A,2026-10-05,weekly intake,0,2026-10-06,
 CC-114,B,2026-10-05,weekly intake,0,2026-10-06,
 CC-115,C,2026-10-05,weekly intake,1,2026-10-05,
 CC-116,A,2026-10-05,weekly intake,1,2026-10-14,
-CC-117,C,2026-10-11,weekly intake,0,,
+CC-117,C,2026-10-11,weekly intake,1,2026-10-13,
 CC-118,C,2026-10-11,weekly intake,1,2026-10-15,
-CC-119,A,2026-10-11,weekly intake,0,,
+CC-119,A,2026-10-11,weekly intake,1,2026-10-12,
 CC-120,C,2026-10-11,weekly intake,0,2026-10-14,
-CC-121,A,2026-10-11,weekly intake,0,,
-CC-122,B,2026-10-11,weekly intake,0,,
-CC-123,C,2026-10-11,weekly intake,0,,
+CC-121,A,2026-10-11,weekly intake,1,2026-10-15,"source: Din l-Art Ħelwa's own wording of the appeal ('unacceptable visual impact' on the Grade 1 bastions, Area of High Landscape Value, 1,200 m2 open space) not found in quotation marks. The Shift (8 Sep 2026, read in full) quotes only 'cannot keep sacrificing its heritage for more hotel rooms', Calleja on 'profound historical irony' and 'Our bastions are not a backdrop for development'; the claim's wording and the Area of High Landscape Value point appear only in a search summary of MaltaToday 144250 (403, also to WebFetch); dinlarthelwa.org news and press-release lists (read 15 Oct 2026) carry no Excelsior release; need the appeal text or press release (DLĦ, MaltaToday in a browser); tried: The Shift, MaltaToday, dinlarthelwa.org (news, press releases, site search), Wayback (reset), 2 web searches"
+CC-122,B,2026-10-11,weekly intake,1,2026-10-14,
+CC-123,C,2026-10-11,weekly intake,1,2026-10-16,
 CC-124,B,2026-10-18,weekly intake,1,2026-10-19,
 CC-125,B,2026-10-18,weekly intake,1,2026-10-20,
-CC-126,A,2026-10-18,weekly intake,0,,
-CC-127,B,2026-10-18,weekly intake,0,,
-CC-128,C,2026-10-18,weekly intake,0,,
+CC-126,A,2026-10-18,weekly intake,1,2026-10-19,
+CC-127,B,2026-10-18,weekly intake,1,2026-10-21,
+CC-128,C,2026-10-18,weekly intake,1,2026-10-19,
 CC-129,A,2026-10-18,weekly intake,1,2026-10-20,
-CC-130,B,2026-10-18,weekly intake,0,,
+CC-130,B,2026-10-18,weekly intake,1,2026-10-23,"source: the Planning Authority's draft 'Planning and Design Framework for Obstacle Course Racing for Phase 2' (issued 2 Sep 2026, consultation closed 14 Oct 2026) is browser-only (pa.org.mt 403); its provisions (five-year one-off period, eligible ODZ locations, restoration) are known only from Newsbook's paraphrase (2 Sep 2026), which is not enough to rate the NGOs' words; need the draft text and consultation notice in a browser; tried: Graffitti statement (read in full, verbatim), pa.org.mt and /consultation (403), Wayback (reset), Newsbook (2 articles read), TVM search, 3 web searches"
 CC-131,B,2026-10-25,weekly intake,0,,
 CC-132,A,2026-10-25,weekly intake,1,2026-10-26,
 CC-133,B,2026-10-25,weekly intake,0,,
 CC-134,C,2026-10-25,weekly intake,1,2026-10-26,
 CC-135,A,2026-10-25,weekly intake,0,,
-CC-136,B,2026-10-25,weekly intake,0,,
+CC-136,B,2026-10-25,weekly intake,0,2026-10-26,
 CC-137,C,2026-10-25,weekly intake,0,,
 CC-138,A,2026-10-25,weekly intake,0,,
 CC-139,B,2026-10-25,weekly intake,0,,

@@ -2,9 +2,9 @@ id: CC-136
 title: 'AFP: Malta the most densely populated country in Europe'
 category: Tourism & Population
 subtopic: Population & labour
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
   text: 'AFP (6 Jun 2026): ''The tiny Mediterranean island is the most densely populated country in Europe, and approvals
     for new buildings are soaring despite scandals dogging the development sector''; ''The country''s population has grown
@@ -22,30 +22,67 @@ claim:
       are not part of the check.
   quote: The tiny Mediterranean island is the most densely populated country in Europe, and approvals for new buildings are
     soaring despite scandals dogging the development sector.
-counter_evidence: '''Country in Europe'' differs from ''EU Member State'': Monaco and Vatican City are generally listed as
-  denser than Malta (to verify against UN or World Bank data). IMF staff put Malta''s ten-year population rise at 25 percent
-  (CC-112); NSO counts 588,254 residents at end-2025 (CC-088). KPMG reports 8,716 residential units approved in 2024, up 7.4%
-  (CC-123), and the PA''s annual reports give permit series (CC-013).'
+counter_evidence: 'World Bank EN.POP.DNST (2024, land area): Monaco 18,537 people per km2, Malta 1,805, San Marino 555, Netherlands 534; Malta is second of 44 European states and 3.4 times the next EU state. Eurostat demo_r_d3dens (2024): Malta 1,817, Netherlands 530, EU-27 110. Vatican City is in neither dataset and was not tested. Planning Authority approved dwelling units: 12,325 in 2025 (+41% on 2024, 4.6 times 2013) but below the 2018 (12,829) and 2019 peaks. Eurostat demo_gind: population +30.9% (1 Jan 2015-2025) and +30.8% (2016-2026).'
 tests: Eurostat population density (demo_r_d3dens or demo_gind with area) for Malta and EU states; UN or World Bank density
   for European microstates; NSO population 2015-2025; Planning Authority permit and dwelling-approval series (annual reports,
   CC-013 data) for 'soaring'.
 why_low_hanging: Three checkable statements (density rank, permits trend, population change) with open data.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: the article and Eurostat are reachable; PA series are partly transcribed in data/cc-013/.'
-caveats: Candidate from the weekly intake of 25 Oct 2026. A foreign wire service; held to the same standard as a local outlet.
-  The article is a feature with campaigners' views; only AFP's own factual statements are checked. 'Soaring' needs a stated
-  measure (permits, units, floor area) and period. The AFP original was not read; eNCA carries the wire copy.
+caveats: 'Largely supported: no right of reply needed. A foreign wire service, held to the same standard as a local outlet. Only AFP''s own factual statements are rated (density, approvals, population); the feature''s quoted opinions and the reference to scandals are not. Monaco is about ten times denser than Malta, so "in Europe" holds for the EU, not literally for Europe. The approvals series counts dwelling units (Planning Authority file 403 to scripts; transcription from CC-013 used, second reading). The AFP original was not read; the eNCA wire copy was.'
 right_of_reply:
-  sent: null
-  deadline: null
-  response: null
-evidence_shown: null
-outputs: {}
+  sent:
+  deadline:
+  response:
+evidence_shown:
+  - World Bank EN.POP.DNST, retrieved 26 Oct 2026 (data/cc-136/worldbank_density.csv)
+  - Eurostat demo_r_d3dens and demo_gind, retrieved 26 Oct 2026 (data/cc-136/; checks in data/cc-136/checks.csv)
+  - Planning Authority approved dwelling units 2007-2025 (data/cc-013/pa_approved_dwellings.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-136A
+    text: "Malta is the most densely populated country in Europe"
+    said_by: "AFP [1]"
+    finding: "1,805 people per km² (2024): first in the EU (3.4× the Netherlands), second in the World Bank’s 44 European states after Monaco (18,537). Vatican City not tested."
+    rating: "True for eu; monaco denser"
+    tone: amber
+  - id: CC-136B
+    text: "Approvals for new buildings are soaring"
+    said_by: "AFP [1]"
+    finding: "Dwelling units approved: 12,325 in 2025 (+41%), 4.6× the 2013 level, below the 2018–2019 peaks. No measure given in the article; dwelling units used."
+    rating: "Largely accurate"
+    tone: green
+  - id: CC-136C
+    text: "Population has grown nearly 30 percent over a decade"
+    said_by: "AFP [1]"
+    finding: "+30.9% (2015–2025) and +30.8% (2016–2026); 28.6% to 2023."
+    rating: "Accurate"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-10-26'
+thumbnail:
+  figure: 1,805/km²
+  caption: "people per km² in Malta in 2024: densest in the EU, second to Monaco in Europe"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-26
+    step: started
+    note: Claim taken by worker B. AFP feature read in full in the eNCA wire copy (verbatim wording found, AFP's own voice); the AFP original was not read.
+  - date: 2026-10-26
+    step: note
+    note: World Bank density (44 European states), Eurostat demo_r_d3dens and demo_gind downloaded; Planning Authority approvals taken from the CC-013 transcription (pa.org.mt 403). Calculations in tools/cc-136-report/calc.py.
+  - date: 2026-10-26
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (high confidence); no right of reply needed.

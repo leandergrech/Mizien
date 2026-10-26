@@ -1,0 +1,42 @@
+check,value,unit,source,note
+Malta municipal recycling rate 2020,10.9,%,"Eurostat, retrieved 13 Oct 2026 cei_wm011",EU-27 48.5%
+Malta municipal recycling rate 2021,13.6,%,"Eurostat, retrieved 13 Oct 2026 cei_wm011",EU-27 49.7%
+Malta municipal recycling rate 2022,12.5,%,"Eurostat, retrieved 13 Oct 2026 cei_wm011",EU-27 49.1%
+Malta municipal recycling rate 2023,17.4,%,"Eurostat, retrieved 13 Oct 2026 cei_wm011",EU-27 47.9%
+Malta municipal recycling rate 2024,16.7,%,"Eurostat, retrieved 13 Oct 2026 cei_wm011",EU-27 48.1%
+Gap to the 50% target in 2020,-39.1,pp,calculated,"target by 2020, Directive 2008/98/EC (as stated on the Commission page)"
+Years 2020-2024 at or above 50%,0,years,calculated,
+"Malta's 2020 rank, lowest first",1,of 27,"Eurostat, retrieved 13 Oct 2026 cei_wm011","lowest: MT 10.9%, RO 12.2%, CY 17.0%"
+States below 50% in 2020 (Eurostat),20,of 27,"Eurostat, retrieved 13 Oct 2026 cei_wm011","BG, CY, CZ, DK, EE, EL, ES, FI, FR, HR, HU, IE, LT, LV, MT, PL, PT, RO, SE, SK; the Commission names 12 states (BG, CZ, DE, EL, ES, HR, CY, HU, MT, PL, PT, RO): its count rests on the member states' reported compliance data and calculation methods, not on this indicator"
+Malta total packaging recycling rate 2020,40.0,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 55%: missed by 15.0 pp
+Malta total packaging recycling rate 2021,36.8,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 55%: missed by 18.2 pp
+Malta total packaging recycling rate 2022,30.8,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 55%: missed by 24.2 pp
+Malta total packaging recycling rate 2023,43.4,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 55%: missed by 11.6 pp
+"Years 2020-2023 below target, total packaging",4,of 4,calculated,"years: 2020, 2021, 2022, 2023"
+Malta paper and cardboard packaging recycling rate 2020,47.8,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 60%: missed by 12.2 pp
+Malta paper and cardboard packaging recycling rate 2021,45.3,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 60%: missed by 14.7 pp
+Malta paper and cardboard packaging recycling rate 2022,40.6,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 60%: missed by 19.4 pp
+Malta paper and cardboard packaging recycling rate 2023,53.6,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 60%: missed by 6.4 pp
+"Years 2020-2023 below target, paper and cardboard packaging",4,of 4,calculated,"years: 2020, 2021, 2022, 2023"
+Malta metal packaging recycling rate 2020,57.2,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 50%: met by 7.2 pp
+Malta metal packaging recycling rate 2021,27.1,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 50%: missed by 22.9 pp
+Malta metal packaging recycling rate 2022,13.0,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 50%: missed by 37.0 pp
+Malta metal packaging recycling rate 2023,15.2,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 50%: missed by 34.8 pp
+"Years 2020-2023 below target, metal packaging",3,of 4,calculated,"years: 2021, 2022, 2023"
+Malta glass packaging recycling rate 2020,62.5,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 60%: met by 2.5 pp
+Malta glass packaging recycling rate 2021,60.4,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 60%: met by 0.4 pp
+Malta glass packaging recycling rate 2022,43.3,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 60%: missed by 16.7 pp
+Malta glass packaging recycling rate 2023,65.2,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 60%: met by 5.2 pp
+"Years 2020-2023 below target, glass packaging",1,of 4,calculated,years: 2022
+Malta plastic packaging recycling rate 2020,10.2,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 22.5%: missed by 12.3 pp
+Malta plastic packaging recycling rate 2021,15.4,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 22.5%: missed by 7.1 pp
+Malta plastic packaging recycling rate 2022,13.8,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 22.5%: missed by 8.7 pp
+Malta plastic packaging recycling rate 2023,31.9,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 22.5%: met by 9.4 pp
+"Years 2020-2023 below target, plastic packaging",3,of 4,calculated,"years: 2020, 2021, 2022"
+Malta wood packaging recycling rate 2020,0.0,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 15%: missed by 15.0 pp
+Malta wood packaging recycling rate 2021,0.0,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 15%: missed by 15.0 pp
+Malta wood packaging recycling rate 2022,0.0,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 15%: missed by 15.0 pp
+Malta wood packaging recycling rate 2023,0.0,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",target 15%: missed by 15.0 pp
+"Years 2020-2023 below target, wood packaging",4,of 4,calculated,"years: 2020, 2021, 2022, 2023"
+Member states below 55% total packaging recycling in 2023 (Eurostat),3,of 23,"Eurostat, retrieved 13 Oct 2026 env_waspac","RO 41.0%, MT 43.4%, EL 48.0%"
+Malta's 2023 total packaging rate vs EU-27,43.4,%,"Eurostat, retrieved 13 Oct 2026 env_waspac",EU-27 67.4

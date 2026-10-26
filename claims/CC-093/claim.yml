@@ -2,7 +2,7 @@ id: CC-093
 title: 'PN: buy land for urban parks'
 category: Governance & Promises
 subtopic: Manifestos & pledges
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -38,3 +38,7 @@ location:
   lon: 14.50978
   scope: institution
   icon: parliament
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-12
+    step: started
+    note: "Worker C, attempt 1: blocked on source. The MaltaToday manifesto breakdown is refused (403) and pn.org.mt is browser-only; a web search for the pledge found nothing in a readable outlet. Needed: the PN 2026 manifesto text for the urban-parks land-purchase pledge."

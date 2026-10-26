@@ -1,13 +1,19 @@
 # CC-136: AFP: Malta the most densely populated country in Europe
 
-**Status:** literature not yet collected.
+**Status:** checked (report v1.0, 26 Oct 2026). Verdict: Largely supported (high confidence).
 
-## To collect
+## Primary source (the claim)
 
-Eurostat population density (demo_r_d3dens or demo_gind with area) for Malta and EU states; UN or World Bank density for European microstates; NSO population 2015-2025; Planning Authority permit and dwelling-approval series (annual reports, CC-013 data) for 'soaring'.
+- AFP (Ella Ide), 6 Jun 2026, wire copy on eNCA, read in full on 25 Oct and 26 Oct 2026:
+  https://www.enca.com/lifestyle/picturesque-malta-set-implode-concrete-jungle-devours-all
+  AFP's original was not read. Wayback is unreachable from the cloud environment (connection reset): archive by hand.
 
-## Known leads
+## Routes tried
 
-See `data/sources.csv` (filter on CC-136) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
+eNCA copy (read); Wayback (reset); no other outlet searched, as the wire copy carries the wording.
 
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+## Evidence
+
+- World Bank EN.POP.DNST, Eurostat demo_r_d3dens and demo_gind: data/cc-136/ (fetch.py, retrieved 26 Oct 2026).
+- Planning Authority approved dwelling units: data/cc-013/pa_approved_dwellings.csv (pa.org.mt 403 to scripts).
+- Calculations: tools/cc-136-report/calc.py; outputs data/cc-136/checks.csv.
