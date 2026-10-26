@@ -1423,7 +1423,7 @@
       "similar": [
         {
           "id": "CC-104",
-          "score": 0.39,
+          "score": 0.4,
           "terms": [
             "noise",
             "implements",
@@ -2134,7 +2134,7 @@
       "similar": [
         {
           "id": "CC-100",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "airport",
             "international",
@@ -5169,10 +5169,10 @@
       "similar": [
         {
           "id": "CC-122",
-          "score": 0.52,
+          "score": 0.53,
           "terms": [
             "beds",
-            "hotel",
+            "tourists",
             "occupancy"
           ]
         }
@@ -5488,7 +5488,7 @@
       "similar": [
         {
           "id": "CC-135",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "demand",
             "growth",
@@ -6238,7 +6238,7 @@
       "similar": [
         {
           "id": "CC-030",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "airport",
             "international",
@@ -6324,7 +6324,7 @@
         },
         {
           "id": "CC-118",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "surface",
             "bodies",
@@ -6476,7 +6476,7 @@
       "similar": [
         {
           "id": "CC-020",
-          "score": 0.39,
+          "score": 0.4,
           "terms": [
             "noise",
             "implements",
@@ -7043,7 +7043,7 @@
       "similar": [
         {
           "id": "CC-131",
-          "score": 0.41,
+          "score": 0.4,
           "terms": [
             "waste",
             "rate",
@@ -7442,9 +7442,10 @@
       "title": "EU: Malta missed recycling targets (reasoned opinion)",
       "category": "Waste",
       "claim": "European Commission (July 2026 infringement package, 8 Jul 2026): Malta missed the 50% municipal waste preparing-for-reuse-and-recycling target for 2020 and the targets for total packaging, paper and cardboard and metals (2020 to 2023), and the Commission has sent a reasoned opinion (INFR(2024)2135), the second stage of infringement proceedings.",
-      "counter": "The Council's draft recommendation of 3 July 2026 (CC-118 source) gives Malta's municipal recycling rate as 16.7% in 2024 against an EU average of 48%, and says Malta 'is now at risk of having missed the 2025 target of 55%'. The Ministry's 'strong progress in waste separation' statement (CC-004) and the 2026 country report (CC-111) speak to the same indicators. A reasoned opinion is the Commission's position, not a court finding; no Maltese response has been found.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Eurostat reproduces the findings: municipal recycling rate 10.9% in 2020 (target 50%; lowest of the EU-27), 16.7% in 2024 (EU-27 48.1%). Packaging 2020-2023: total 40.0/36.8/30.8/43.4% (target 55%), paper and cardboard 47.8/45.3/40.6/53.6% (60%), metals 57.2/27.1/13.0/15.2% (50%), so metals met the target in 2020. Eurostat also shows plastics (2020-2022), wood (0.0%) and glass (2022, 43.3%) below the page's targets, which the Commission does not list for Malta (unexplained; decision text not read). A reasoned opinion is the Commission's position, not a court finding; no Maltese response found.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Recycling & separation",
       "location": {
@@ -7454,29 +7455,53 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
-      "date": "2026-07-08",
-      "quote": "",
-      "version": null,
-      "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-117/claim.yml",
-      "similar": [
+      "subclaims": [
         {
-          "id": "CC-129",
-          "score": 0.25,
-          "terms": [
-            "infringement",
-            "commission",
-            "package"
-          ]
+          "id": "CC-117A",
+          "text": "A reasoned opinion (INFR(2024)2135) was sent to Malta, the second stage, after July 2024 notices",
+          "finding": "Stated on the Commission’s page and reported by Newsbook [2]. We did not see the decision text; no Maltese response found.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-117B",
+          "text": "Malta missed the 50% municipal preparing-for-reuse-and-recycling target for 2020",
+          "finding": "Eurostat: 10.9% in 2020, lowest of the EU-27; never above 17.4% to 2024.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-117C",
+          "text": "Malta missed the targets for total packaging, and paper and cardboard (2020–2023)",
+          "finding": "Total 40.0 / 36.8 / 30.8 / 43.4% against 55%; paper and cardboard 47.8 / 45.3 / 40.6 / 53.6% against 60%.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-117D",
+          "text": "Malta missed the metals target (2020–2023)",
+          "finding": "27.1 / 13.0 / 15.2% against 50% in 2021–2023; 57.2% in 2020 was above target.",
+          "rating": "Accurate, one year met",
+          "tone": "amber"
         }
-      ]
+      ],
+      "date": "2026-07-08",
+      "quote": "Malta (INFR(2024)2135) ... for failing to meet several waste recycling targets ... Bulgaria, Czechia, Germany, Greece, Spain, Croatia, Cyprus, Hungary, Malta, Poland, Portugal and Romania have failed to meet the 50% target of preparing for reuse and recycling of municipal waste ... which was to be reached by 2020. ... Malta missed the targets for total packaging, paper and cardboard and metals.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-13",
+      "outputs": {
+        "report": "claim-files/CC-117/report.pdf",
+        "flyer_pdf": "claim-files/CC-117/flyer.pdf",
+        "flyer_png": "claim-files/CC-117/flyer.png"
+      },
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-117/claim.yml"
     },
     {
       "id": "CC-118",
@@ -7560,7 +7585,7 @@
       "similar": [
         {
           "id": "CC-101",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "surface",
             "bodies",
@@ -7768,9 +7793,9 @@
       "title": "The Shift: applications for 30,000 more hotel beds",
       "category": "Tourism & Population",
       "claim": "The Shift News (8 Sep 2026): planning applications validated before the new tourism regulations took effect on 15 June include proposals for an estimated 30,000 additional hotel beds; filling them year-round would need roughly 1.8 to 2.2 million extra tourists a year, or about 7.7 million extra guest nights at 70% occupancy.",
-      "counter": "Applications validated are not permits or built beds. CC-085 (finished or in progress) records a Planning Authority pipeline of about 27,672 beds in the Malta Tourism Authority count and about 35,000 collective beds in open permits in a follow-up study, with the Authority's own count not shared. The 70% occupancy and 1.8 to 2.2 million tourist conversions rest on assumptions about length of stay and bed counts that the article does not set out in the text read.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "The arithmetic reproduces (30,000 x 365 x 70% = 7.67 million nights; 1.83 to 2.19 million arrivals at 6 and 5 nights, 100% occupancy; at 70% occupancy 1.28 to 1.53 million). Eurostat: 58,099 bed-places in 2025 (collective accommodation, wider than hotels), so 30,000 beds would be +52%; non-residents stayed 4.6 nights per arrival at establishments in 2025 (article assumes 5 to 6). Other pipeline measures differ in scope and date: MTA list 27,672 beds (end April 2024) and about 35,000 collective beds in open permits (2022), both Deloitte for MHRA, read; 6,239 beds in 44 pending compliance certificates to Oct 2025 (second-hand). No source, list or method for the 30,000 is published.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [],
       "subtopic": "Tourism numbers & capacity",
       "location": {
@@ -7780,25 +7805,60 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "The Shift News",
       "bodies": [
         "the-shift"
       ],
+      "subclaims": [
+        {
+          "id": "CC-122A",
+          "text": "Applications validated by 15 June 2026 include about 30,000 additional hotel beds",
+          "finding": "Unnamed source; no list or method; MTA gave no figure and PA did not reply (the outlet’s account). Same order as other pipeline measures, which differ in scope and date [4][5].",
+          "rating": "Not substantiated",
+          "tone": "orange"
+        },
+        {
+          "id": "CC-122B",
+          "text": "At 70% occupancy, about 7.7 million extra guest nights a year",
+          "finding": "30,000 × 365 × 0.70 = 7.67 million. Follows from A; no more certain than A.",
+          "rating": "Reproduces",
+          "tone": "green"
+        },
+        {
+          "id": "CC-122C",
+          "text": "Filling the beds all year at 5–6 nights needs 1.8–2.2 million extra arrivals",
+          "finding": "Reproduces at 100% occupancy (1.83–2.19 million). At 70%, 1.28–1.53 million; at the 4.6-night 2025 stay, 2.38 million (100%).",
+          "rating": "Reproduces",
+          "tone": "green"
+        },
+        {
+          "id": "CC-122D",
+          "text": "Context: 2022 Deloitte study, 4.7 million tourists a year by 2027 at under seven nights",
+          "finding": "The outlet’s paraphrase of a study checked in CC-085, which found 4.7 million is a bed-filling scenario at 2019 occupancy; not rated here.",
+          "rating": "Not rated",
+          "tone": "grey"
+        }
+      ],
       "date": "2026-09-08",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "\"The Shift is informed that Planning Authority applications validated by 15 June 2026 include proposals for approximately 30,000 additional hotel beds.\" \"Based on an average stay of between five and six nights, filling all 30,000 new beds throughout the year would require between 1.8 million and 2.2 million additional tourist arrivals annually.\" \"At 70% occupancy, the proposed capacity would generate approximately 7.7 million additional tourist nights annually.\" (The Shift News, 29 Aug 2026; repeated 8 Sep 2026)",
+      "version": "1.0",
+      "last_reviewed": "2026-10-14",
+      "outputs": {
+        "report": "claim-files/CC-122/report.pdf",
+        "flyer_pdf": "claim-files/CC-122/flyer.pdf",
+        "flyer_png": "claim-files/CC-122/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-122/claim.yml",
       "similar": [
         {
           "id": "CC-085",
-          "score": 0.52,
+          "score": 0.53,
           "terms": [
             "beds",
-            "hotel",
+            "tourists",
             "occupancy"
           ]
         }
@@ -8073,9 +8133,9 @@
       "title": "PN: Labour promised a gas pipeline by 2026",
       "category": "Climate & Energy",
       "claim": "Partit Nazzjonalista (statement, 22 Jun 2026): after the Prime Minister announced a gas supply agreement with BP, the Government 'has signed an agreement for just nine months' without giving the price, and 'the Labour Government had promised that by this year Malta would have a pipeline for gas supply so that the country would no longer depend on the tanker in Marsaxlokk. But here too, it has failed.'",
-      "counter": "Italpress/MNA (22 Jun 2026) reports the deal covers fuel for Delimara until the end of May 2027 and that the SOCAR Trading contract expires on 13 August 2026; from 13 August to the end of May is about nine and a half months, from the announcement about eleven, so 'nine months' depends on the start date. Enemalta is reported to have said the contract is priced against the TTF benchmark and that a process with seven international bidders preceded it. The Energy Minister is reported to have called it a temporary measure on expert advice (MaltaToday, search summary). Labour's 2026 manifesto (pledge MP-PL-2026-16-7 in data/manifesto_pledges.csv) says hydrogen-ready gas pipeline studies are complete; the earlier pipeline promise's wording has not been located.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Enemalta (21 Jun 2026) says the BP supply runs till the end of May 2027 (9.6 months from the SOCAR expiry on 13 Aug 2026, 11.3 from the announcement) and that the price is linked to the TTF index, so the formula’s reference was disclosed though no price was (The Shift, 22 Jun 2026: expected cost not disclosed). No Labour statement dating the pipeline to 2026 was found; the pipeline promoter’s page (updated 22 Dec 2022) gives indicative construction from 2028 and commissioning in 2030; earlier targets of 2024 and 2025 are second-hand (Global Energy Monitor summary).",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [],
       "subtopic": "Electricity & grid",
       "location": {
@@ -8085,17 +8145,52 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "Partit Nazzjonalista",
       "bodies": [
         "pn"
       ],
+      "subclaims": [
+        {
+          "id": "CC-126A",
+          "text": "The Government “has signed an agreement for just nine months”",
+          "finding": "Supply to end of May 2027: 9.6 months from SOCAR’s expiry, 11.3 from the announcement [2, 3]; start date unpublished.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-126B",
+          "text": "“without providing any details about the price”",
+          "finding": "No price published; TTF link disclosed [2, 3, 4].",
+          "rating": "Largely accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-126C",
+          "text": "“The Labour Government had promised that by this year Malta would have a pipeline for gas supply so that the country would no longer depend on the tanker in Marsaxlokk”",
+          "finding": "No statement dating the pipeline to 2026 found; second-hand targets 2024 and 2025 ◆; promoter: 2030 [5, 10, 11].",
+          "rating": "Not shown",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-126D",
+          "text": "“But here too, it has failed” (no pipeline in place)",
+          "finding": "Pipeline not built; construction not started; promoter lists indicative 2030 [5, 8].",
+          "rating": "Supported",
+          "tone": "green"
+        }
+      ],
       "date": "2026-06-22",
-      "quote": "The Government must immediately publish the price, conditions and all guarantees linked to the new LNG supply agreement with BP.",
-      "version": null,
-      "outputs": {},
+      "quote": "The Labour Government had promised that by this year Malta would have a pipeline for gas supply so that the country would no longer depend on the tanker in Marsaxlokk. But here too, it has failed.",
+      "version": "1.0",
+      "last_reviewed": "2026-10-19",
+      "outputs": {
+        "report": "claim-files/CC-126/report.pdf",
+        "flyer_pdf": "claim-files/CC-126/flyer.pdf",
+        "flyer_png": "claim-files/CC-126/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-126/claim.yml"
     },
     {
@@ -8325,18 +8420,7 @@
         "flyer_pdf": "claim-files/CC-129/flyer.pdf",
         "flyer_png": "claim-files/CC-129/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-129/claim.yml",
-      "similar": [
-        {
-          "id": "CC-117",
-          "score": 0.25,
-          "terms": [
-            "infringement",
-            "commission",
-            "package"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-129/claim.yml"
     },
     {
       "id": "CC-130",
@@ -8410,7 +8494,7 @@
         },
         {
           "id": "CC-111",
-          "score": 0.41,
+          "score": 0.4,
           "terms": [
             "waste",
             "rate",
@@ -8424,15 +8508,6 @@
             "average",
             "citing",
             "jun"
-          ]
-        },
-        {
-          "id": "CC-134",
-          "score": 0.25,
-          "terms": [
-            "average",
-            "jun",
-            "commission"
           ]
         }
       ]
@@ -8514,7 +8589,7 @@
         },
         {
           "id": "CC-134",
-          "score": 0.26,
+          "score": 0.25,
           "terms": [
             "average",
             "transport",
@@ -8614,20 +8689,11 @@
       "similar": [
         {
           "id": "CC-132",
-          "score": 0.26,
+          "score": 0.25,
           "terms": [
             "average",
             "transport",
             "jun"
-          ]
-        },
-        {
-          "id": "CC-131",
-          "score": 0.25,
-          "terms": [
-            "average",
-            "jun",
-            "commission"
           ]
         }
       ]
@@ -8673,7 +8739,7 @@
         },
         {
           "id": "CC-089",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "demand",
             "growth",
