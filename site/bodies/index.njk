@@ -1,85 +1,86 @@
 ---
 layout: base.njk
 title: Who said it
-description: Every claim on Miżien is matched to the body or person who made it. Government, agencies, regulators, parties, NGOs, business and media, with their claims and the bodies their claims connect to.
+description: Every claim on Miżien is matched to the body or person who made it. Government, agencies, regulators, parties, NGOs, business and media as a tree, each with its claims and the verdicts so far.
 permalink: /bodies/
-styles: [who.css]
+styles: [lens.css, who.css]
 ---
 {%- import "macros.njk" as m -%}
-<nav class="crumbs" aria-label="Breadcrumb">
-  <ol><li><a href="/">Home</a></li><li aria-current="page">Who said it</li></ol>
-</nav>
+{#- One row of the tree: a body with its strip; a body with offices or people under it is a <details> whose summary is
+    the row, so the tree opens and closes without JavaScript. The name is a link to the body page; assets/who-tree.js
+    turns a click on it into a selection that fills the panel instead. -#}
+{%- macro row(n, pledges, bodies) -%}
+{%- set b = n.body -%}
+{%- set s = b | whoSummary(pledges, bodies) -%}
+{%- set inner -%}
+  <span class="wt-frame{% if b.kind == 'person' %} is-person{% endif %}" aria-hidden="true">{% bodyglyph b %}</span>
+  <span class="wt-text"><a class="wt-name" href="{{ b.path }}" data-id="{{ b.id }}">{{ b.name }}</a>
+  {%- if b.role %} <span class="wt-role">{{ b.role }}</span>{% endif %}</span>
+  <span class="wt-n">{{ s.total }}<span class="visually-hidden"> claims, {{ s.checked }} checked</span></span>
+  <span class="wt-strip" aria-hidden="true">{% for q in s.squares %}<i class="v-{{ q.slug }}"></i>{% endfor %}{% for i in range(0, s.waiting) %}<i class="is-open"></i>{% endfor %}</span>
+{%- endset -%}
+{%- if n.children.length %}
+<li class="wt-item has-kids" data-id="{{ b.id }}" data-search="{{ b.name }} {{ b.role or '' }} {{ (b.aliases or []) | join(' ') }}">
+  <details class="wt-branch" data-id="{{ b.id }}">
+    <summary class="wt-row"><span class="wt-caret" aria-hidden="true"></span>{{ inner | safe }}</summary>
+    <ul class="wt-kids">{% for c in n.children %}{{ row(c, pledges, bodies) }}{% endfor %}</ul>
+  </details>
+</li>
+{%- else %}
+<li class="wt-item" data-id="{{ b.id }}" data-search="{{ b.name }} {{ b.role or '' }} {{ (b.aliases or []) | join(' ') }}">
+  <div class="wt-row"><span class="wt-caret is-none" aria-hidden="true"></span>{{ inner | safe }}</div>
+</li>
+{%- endif %}
+{%- endmacro -%}
+{%- set tree = mizien.bodies | whoTree(mizien.body_types) -%}
 
-<article class="page prose-page bodies-index">
-  <header class="page-head">
+<div class="who-stage" id="who-stage">
+  <header class="who-head">
     <p class="kicker">Who said it</p>
     <h1>Bodies and people</h1>
-    <p class="lead">Every claim is matched to the body or person who made it: {{ mizien.bodies | where("kind", "organisation") | length }}
-      bodies and {{ mizien.bodies | where("kind", "person") | length }} people so far, from government and its agencies to
-      parties, NGOs, business and the media. Every side is held to the same standard.</p>
+    <p class="who-lead">{{ mizien.bodies | where("kind", "organisation") | length }} bodies and {{ mizien.bodies | where("kind", "person") | length }} people,
+      each with the claims Miżien has matched to it. Pick one to see its claims and the verdicts so far. Every side is held to the same standard.</p>
   </header>
 
-  <aside class="notice" aria-label="What these pages show">
-    <p><strong>A record, not a score.</strong> Claims are picked because they are public and can be checked, not to
-      sample anyone's statements fairly. A body with more claims here has simply been checked more often; the bars
-      summarise the checks so far, not anyone's accuracy in general. <a href="/methodology/connections/#bodies">How
-      claims are matched to bodies</a>.</p>
-  </aside>
+  <div class="who-cols">
+    <section class="who-tree" aria-labelledby="h-tree">
+      <h2 id="h-tree" class="visually-hidden">The register</h2>
+      <p class="who-search">
+        <label for="who-q" class="visually-hidden">Search a name, alias or role</label>
+        <input id="who-q" type="search" placeholder="Search a name, alias or role" autocomplete="off" spellcheck="false" hidden>
+        <span class="who-key-line"><i class="v-contradicted"></i><i class="v-misleading"></i><i class="v-not-substantiated"></i><i class="v-largely-supported"></i><i class="v-supported"></i><i class="is-open"></i>
+          one square per claim, Contradicted to Supported, hollow when not yet checked · <a href="/methodology/connections/#summaries">how it is read</a></span>
+      </p>
+      <ul class="wt" id="who-tree">
+        {%- for g in tree %}
+        <li class="wt-kind" data-type="{{ g.type.id }}" style="--kind: {{ g.type.colour }}">
+          <details class="wt-branch" open data-id="{{ g.type.id }}">
+            <summary class="wt-row wt-kind-row"><span class="wt-caret" aria-hidden="true"></span>
+              <span class="wt-frame is-kind" aria-hidden="true">{% glyph g.type.label %}</span>
+              <span class="wt-text"><span class="wt-name">{{ g.type.label }}</span></span>
+              <span class="wt-n">{{ g.n }} <span class="small">bod{% if g.n == 1 %}y{% else %}ies{% endif %}</span></span></summary>
+            <ul class="wt-kids">{% for n in g.roots %}{{ row(n, mizien.pledges, mizien.bodies) }}{% endfor %}</ul>
+          </details>
+        </li>
+        {%- endfor %}
+      </ul>
+      <p class="small who-foot">{% icon "pattern" %}<span><a href="/bodies/patterns/">Patterns by kind of body</a> · <a href="/pledges/#h-stack">Pledges, election by election</a> ·
+        <a href="/explore/?group=speaker">the same register as a constellation in Explore</a> · <a href="/methodology/connections/#bodies">how claims are matched to bodies</a></span></p>
+    </section>
 
-  <section class="who-key" aria-labelledby="h-key">
-    <h2 id="h-key" class="visually-hidden">How to read the cards</h2>
-    <ul>
-      <li><b>Verdict bar</b> from {{ 5 }} checked claims: how many checks ended in each verdict, as counts.</li>
-      <li><b>Tentative balance</b> at 3 or 4: where the checks so far sit between Contradicted and Supported, recent
-        claims counting more (by the date of the claim, not of the check). Work in progress, not a rating.
-        <a href="/methodology/connections/#summaries">How it is worked out</a>.</li>
-      <li><b>Pledges</b> keep their own labels (on track, off track, not measurable…), always shown, never mixed into the
-        verdicts.</li>
-    </ul>
-  </section>
+    <aside class="who-panel-wrap" id="who-panel" aria-live="polite" aria-label="Selected body">
+      <div class="wp wp-empty" id="wp-empty">
+        <p class="wp-kicker">A record, not a score</p>
+        <p>Pick a body or person on the left. Claims are chosen because they are public and can be checked, not to
+          sample anyone's statements fairly, so a body with more claims here has simply been checked more often. Each
+          verdict is about one statement as worded on its date.</p>
+        <p class="small">Without JavaScript, each name opens the body's own page, which shows the same.</p>
+      </div>
+      <div class="wp" id="wp-body" hidden></div>
+    </aside>
+  </div>
+</div>
 
-  {%- set ps = mizien.pledges | pledgeStack(mizien.claims) %}
-  {%- if ps %}
-  <section class="pstack-sec" aria-labelledby="h-pledges">
-    <h2 id="h-pledges">Pledges, election by election</h2>
-    <p>Pledges are made in bursts, around elections, so each disk is an election cycle: the election and the
-      legislature after it, the newest on top. Campaign pledges (manifestos, campaign promises) sit on the outer ring,
-      commitments made in office inside. Each square is a pledge, coloured by its label, with a dot inside in the colour
-      of the verdict on the facts it rests on, where those were checked. Pledges on the same topic sit at the same place on
-      every disk, so similar pledges line up; lines join them across the cycles,
-      coloured by the average verdict of their facts (dashed: none checked yet). Targets set by agencies (not political
-      promises) are listed on their bodies' cards, apart from the pledges.</p>
-    {%- include "pledge-stack.njk" %}
-  </section>
-  {%- endif %}
-
-  <p class="see-also">{% icon "pattern" %}<span><a href="/bodies/patterns/">Patterns by kind of body</a>: which pattern
-    tags, verdicts and topics turn up in claims by each kind of body, and what each side said, when, on each issue.</span></p>
-
-  <p class="small">On the <a href="/explore/?group=speaker">claims web</a>, group the claims by <em>Who said it</em> to see the same
-    register as a constellation: each kind of body is a hub, each body orbits it, and people sit beside the body they spoke for.</p>
-
-  {%- for t in mizien.body_types %}
-  {%- set orgs = mizien.bodies | where("type", t.id) | where("kind", "organisation") %}
-  {%- set people = mizien.bodies | where("type", t.id) | where("kind", "person") %}
-  {%- if orgs.length or people.length %}
-  <section aria-labelledby="h-{{ t.id }}">
-    <h2 id="h-{{ t.id }}">{{ t.label }}</h2>
-    <ul class="body-grid">
-      {%- for o in orgs %}
-      {%- set s = o | whoSummary(mizien.pledges, mizien.bodies) %}
-      <li class="body-card who-card">
-        <a class="bc-name" href="{{ o.path }}">{{ o.name }}</a>
-        {%- if o.parent %}<span class="bc-parent">part of {{ o.parent.name }}</span>{% endif %}
-        <span class="bc-count">{{ s.total }} claim{% if s.total != 1 %}s{% endif %} · {{ s.checked }} checked</span>
-        {%- set big = false %}{% include "who-meter.njk" %}
-        {%- if o.people.length %}
-        <span class="bc-people">{% for x in o.people %}<a href="{{ x.path }}">{{ x.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</span>
-        {%- endif %}
-      </li>
-      {%- endfor %}
-    </ul>
-  </section>
-  {%- endif %}
-  {%- endfor %}
-</article>
+<script type="application/json" id="who-data">{{ mizien.bodies | whoPanel(mizien.pledges) | safe }}</script>
+<script src="/assets/tray.js" defer></script>
+<script src="/assets/who-tree.js" defer></script>

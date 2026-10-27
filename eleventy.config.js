@@ -3,7 +3,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { HtmlBasePlugin } from "@11ty/eleventy";
 import markdownIt from "markdown-it";
-import { whoSummary, pledgeStack } from "./site/_lib/who.js";
+import { whoSummary, pledgeStack, whoTree, whoPanel } from "./site/_lib/who.js";
 import { loadGlyphs } from "./scripts/glyphs.mjs";
 
 // GitHub Pages project site lives under /Mizien/. Set PATH_PREFIX=/ for a custom domain or local root.
@@ -143,6 +143,9 @@ export default function (eleventyConfig) {
   // "Who said it": verdict bar or tentative balance per body, and the stack of pledges by year (site/_lib/who.js)
   eleventyConfig.addFilter("whoSummary", (body, pledges, bodies) => whoSummary(body, pledges, bodies));
   eleventyConfig.addFilter("pledgeStack", (pledges, claims, ids) => pledgeStack(pledges, claims, ids));
+  // the register as a tree (kind > body > office > person) and the panel data for /bodies/ (site/_lib/who.js)
+  eleventyConfig.addFilter("whoTree", (bodies, types) => whoTree(bodies, types));
+  eleventyConfig.addFilter("whoPanel", (bodies, pledges) => JSON.stringify(whoPanel(bodies, pledges)).replace(/</g, "\\u003c"));
   eleventyConfig.addFilter("pluck", (list, key) => (list || []).map((x) => x[key]));
   eleventyConfig.addFilter("tagged", (list, tag) => (list || []).filter((x) => (x.tags || []).includes(tag)));
 }

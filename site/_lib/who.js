@@ -50,6 +50,53 @@ export function whoSummary(body, pledgeList, bodies) {
   };
 }
 
+// ---- the tree and the panel (site/bodies/index.njk, assets/who-tree.js)
+// whoTree(bodies, types): the register as a tree, kind of body > organisation > office > person, read from each body's
+//   parent. A body sits under its parent whatever the parent's kind; a body whose parent is not in the register sits
+//   at the top of its kind. Within a level: organisations first, then people, each alphabetically. Every body in the
+//   site data has at least one claim (its own, its offices' or its people'), so nothing is folded away yet.
+export function whoTree(bodies, types) {
+  const byId = Object.fromEntries((bodies || []).map((b) => [b.id, b]));
+  const kids = {};
+  for (const b of bodies || []) {
+    const pid = b.parent && byId[b.parent.id] ? b.parent.id : null;
+    (kids[pid || "@" + b.type] ||= []).push(b);
+  }
+  const sortRows = (l) => l.sort((a, b) => (a.kind === "person") - (b.kind === "person") || a.name.localeCompare(b.name));
+  const node = (b, depth) => ({ body: b, depth, children: sortRows(kids[b.id] || []).map((c) => node(c, depth + 1)) });
+  const count = (n) => 1 + n.children.reduce((s, c) => s + count(c), 0);
+  return (types || []).map((t) => {
+    const roots = sortRows(kids["@" + t.id] || []).map((b) => node(b, 1));
+    const n = roots.reduce((s, r) => s + count(r), 0);
+    return { type: t, roots, n, claims: roots.reduce((s, r) => s + (r.body.claims || []).length, 0) };
+  }).filter((g) => g.n);
+}
+// whoPanel(bodies, pledges): what the panel on Who said it needs for every body, as one JSON object by id. Kept
+//   small: the claims (newest first) with their labels, the counts, the pledge chips and the links to the other views.
+export function whoPanel(bodies, pledgeList) {
+  const out = {};
+  for (const b of bodies || []) {
+    const s = whoSummary(b, pledgeList, bodies);
+    const chip = (p, kind) => ({ id: p.id, path: p.path, title: p.title, status: p.status, colour: p.colour, ink: p.ink, as_of: p.as_of, kind });
+    out[b.id] = {
+      id: b.id, name: b.name, kind: b.kind, type: b.type, type_label: b.type_label, role: b.role, note: b.note, path: b.path,
+      parent: b.parent ? { id: b.parent.id, name: b.parent.name, path: b.parent.path } : null,
+      people: (b.people || []).map((x) => ({ id: x.id, name: x.name, role: x.role, path: x.path })),
+      offices: (b.offices || []).map((x) => ({ id: x.id, name: x.name, path: x.path })),
+      total: s.total, checked: s.checked, waiting: s.waiting, few: s.few, fewMin: s.fewMin,
+      counts: s.counts.map((v) => ({ name: v.name, slug: v.slug, n: v.n })),
+      pledges: [...s.targets.map((p) => chip(p, "target")), ...s.pledges.map((p) => chip(p, "pledge"))],
+      links: (b.links || []).length,
+      claims: (b.claims || []).slice().sort((x, y) => String(y.date || "").localeCompare(String(x.date || ""))).map((c) => ({
+        id: c.id, title: c.title, path: c.path, date: c.date, category: c.category, status: c.status,
+        label: c.label, slug: c.label_slug, kind: c.label_kind,
+        by: (c.by || []).filter((x) => x.id !== b.id).map((x) => x.name),
+      })),
+    };
+  }
+  return out;
+}
+
 // ---- the pledge stack
 function verdictColour(avg) {   // an average on the 0..1 scale -> the colour of the nearest verdict
   let best = ORDER[0], d = 9;
