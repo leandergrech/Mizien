@@ -1,25 +1,18 @@
-/* "Who said it" (site/bodies/): verdict bars, the tentative balance, pledge chips, the pledge stack, links to the views. */
+/* "Who said it" (site/bodies/): the verdict strip, pledge chips, the tree-and-panel stage, the pledge stack, links to the views. */
 .who-card { gap: 6px; }
 .who-card .bc-count { order: 0; }
 .wm { margin: 2px 0 0; }
 .wm p { margin: 0; }
-.wm-bar { display: flex; gap: 2px; height: 12px; border-radius: 6px; overflow: hidden; background: var(--paper-line); }
-.wm-bar span { min-width: 4px; background: var(--v); }
+/* the strip: one square per claim, filled in verdict order, hollow when not yet checked; wraps for bodies with many claims */
+.wm-strip { display: flex; flex-wrap: wrap; gap: 2px; max-width: 100%; }
+.wm-strip i { width: 9px; height: 9px; border-radius: 2px; background: var(--v); box-sizing: border-box; }
+.wm-strip i.is-open { background: none; border: 1.5px solid var(--paper-muted); opacity: .75; }
 .wm-key { display: flex; flex-wrap: wrap; gap: 2px 10px; margin-top: 5px !important; font-size: 12.5px; color: var(--paper-muted); }
 .wm-key span { display: inline-flex; align-items: center; gap: 4px; }
-.wm-key i { width: 9px; height: 9px; border-radius: 50%; background: var(--v); }
+.wm-key i { width: 9px; height: 9px; border-radius: 2px; background: var(--v); box-sizing: border-box; }
+.wm-key i.is-open { background: none; border: 1.5px solid var(--paper-muted); }
 .wm-key b { color: var(--paper-ink); }
-/* tentative: a dashed scale from Contradicted to Supported with a hollow marker; dots show progress towards a bar */
-.wm-scale { position: relative; height: 10px; margin: 6px 6px 0; border-radius: 5px; opacity: .8;
-  background: linear-gradient(to right, #8e2f25, #b5483a 25%, #d9772b 50%, #8db36b 75%, #2e7d4f); }
-.wm-scale::after { content: ""; position: absolute; inset: -3px; border: 1.5px dashed var(--paper-muted); opacity: .5; border-radius: 8px; }
-.wm-mark { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--paper);
-  border: 2.5px dashed var(--paper-ink); box-sizing: border-box; }
-.wm-ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--paper-muted); margin-top: 3px !important; }
-.wm-note { font-size: 12.5px; color: var(--paper-muted); }
-.wm-dots { display: inline-flex; gap: 3px; vertical-align: -1px; margin-right: 4px; }
-.wm-dots i { width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--paper-muted); box-sizing: border-box; }
-.wm-dots i.on { background: var(--paper-link); border-color: var(--paper-link); }
+.wm-few { font-style: italic; }
 .wm-pledges { display: flex; flex-wrap: wrap; gap: 5px; margin: 4px 0 0; }
 .pl-chip { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border-radius: 999px; background: var(--pl, #b0b8c1); color: var(--pl-ink, #fff) !important;
   font: 700 11.5px/1.5 var(--sans); text-decoration: none; white-space: nowrap; }
@@ -34,7 +27,7 @@ a.pl-chip:hover { filter: brightness(1.1); text-decoration: underline; }
 
 /* body page: the summary panel under the title, and links into the views */
 .who-panel { margin: 14px 0 0; padding: 14px 16px; border: 1px solid var(--paper-line); border-radius: 12px; background: var(--paper); max-width: 640px; }
-.who-panel .wm-bar { height: 16px; }
+.who-panel .wm-strip i { width: 12px; height: 12px; }
 .who-panel .wm-key { font-size: 13px; }
 .who-tools { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 12px; }
 .who-tools a, .who-pin { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--paper-line);
