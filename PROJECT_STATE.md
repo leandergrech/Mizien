@@ -1511,3 +1511,10 @@ Report v1.0 and flyer. **Verdict: Largely supported (high); no right of reply ne
 - Unverified: the Commission's data vintage for Graph A16.3 (differs from Eurostat's PTIR_LT_AVG by up to 0.2); why national-accounts income per head and EU-SILC median income diverge in Malta since 2014 (population +31%); Malta's B7G 2021-2024 is provisional. DG ECFIN DP 228 charts read for direction only. Gan & Hill (2009), Stone (2006): abstracts only.
 - Archive: the Council register URL is already in archive/manifest.csv; the new Eurostat dataset pages and the DP 228 page (sources.csv refs 972-979) need archiving (archive_sources.py not run in this run to avoid touching other workers' manifest rows; Wayback resets connections).
 - Tip added to methodology/data-sources.md: tipsho60 is the price-to-income ratio; check it against EU-SILC median income.
+
+## Worker A run, 27 Oct 2026
+
+- **CC-143 completed** (Commission SWD(2026) 702: Malta's groundwater status worse between the second and third plans). Report v1.0 and flyer drafted. **Verdict: Largely supported (moderate).** No right of reply needed. 86.7% to 73.3% is 13 to 11 of 15 bodies and "a fifth" is 3 of 15; both agree with SWD(2019) 48 and the EEA WISE 2022 file. "Due to overabstraction" is the Commission's attribution and was not tested (monitoring grew from 3 to 7 bodies; Eurostat's estimated abstraction fell 2015-2021).
+- Unverified: second-plan status by body (EEA WISE server in maintenance on 27 Oct 2026, 2016 reporting not fetched); the 80% nitrates figure per body; the Maltese RBMPs (era.org.mt). Sources.csv refs 990-992 are new: if another PR also took these numbers, renumber on merge. The SWD(2026) PDF copy, the Cellar PDF and the WISE query need archiving by hand (archive_sources.py not run; web.archive.org resets connections).
+- Tip: reportlab/matplotlib are installed for `python3.13` (not the default `python` 3.11) in the cloud image; run the report scripts with `python3.13`.
+- **Not taken:** CC-135 (open PR #154); CC-138, CC-141 not reached (one claim per run). Other A claims carry `source:` blockers or are Drafted.

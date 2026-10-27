@@ -1,0 +1,29 @@
+id,value,unit,document,page,url,retrieved,note
+swd26_gwb_total,15,bodies,"SWD(2026) 702, Malta",8,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"PDF page 8 (printed 7); number of GWBs unchanged"
+swd26_quant_good_pct_2nd,86.7,%,"SWD(2026) 702, Malta",8,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"quoted: decreased from 86.7% to 73.3% due to overabstraction"
+swd26_quant_good_pct_3rd,73.3,%,"SWD(2026) 702, Malta",8,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,
+swd26_quant_poor_n_2nd,2,bodies,"SWD(2026) 702, Malta",8,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"increase from 2 GWBs in poor quantitative status in the second RBMP to 4 in the third"
+swd26_quant_poor_n_3rd,4,bodies,"SWD(2026) 702, Malta",8,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"26.7% of GWBs; reason: water balance / lowering of the water table"
+swd26_quant_not_monitored_n,8,bodies,"SWD(2026) 702, Malta",8,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"not subject to quantitative monitoring: 53.3% of GWBs and 85.5% of GWB area"
+swd26_quant_monitored_2nd,3,bodies,"SWD(2026) 702, Malta",17,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"3 GWBs (20%) in the second RBMP to 7 (46.7%) in the third; footnote 9: e-reporting said 2, Malta later said 3"
+swd26_quant_monitored_3rd,7,bodies,"SWD(2026) 702, Malta",17,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"43 monitoring sites (from 38)"
+swd26_quant_area_poor_pct_monitored,95.9,%,"SWD(2026) 702, Malta",18,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"of the monitored GW area (85.5% of total) in poor quantitative status"
+swd26_quant_good_n_3rd,11,bodies,"SWD(2026) 702, Malta",18,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"In 2021, 11 out of 15 GWBs (73.3%) good quantitative status"
+swd26_chem_good_2015_text,0.2,fraction,"SWD(2026) 702, Malta",9,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"quoted: no GWBs had a good chemical status in 2021, while a fifth ... in 2015"
+swd26_chem_poor_n_2015,12,bodies,"SWD(2026) 702, Malta",28,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"all 15 poor in 2021 compared with 12 of 15 in 2015 (Figure 12)"
+swd26_chem_poor_n_2021,15,bodies,"SWD(2026) 702, Malta",28,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,
+swd26_nitrate_fail_pct,80,%,"SWD(2026) 702, Malta",9,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"top pollutants causing failure: nitrates in 80% of GWBs, chloride 73.3%, sodium 53.3%"
+swd26_chloride_fail_pct,73.3,%,"SWD(2026) 702, Malta",9,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,
+swd26_sodium_fail_pct,53.3,%,"SWD(2026) 702, Malta",9,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,
+swd26_saline_fail_pct_summary,46.7,%,"SWD(2026) 702, Malta",9,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"'saline or other intrusion' (46.7%) in the summary table"
+swd26_saline_fail_n_section42,5,bodies,"SWD(2026) 702, Malta",28,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"section 4.2: 5 GWBs also affected by saline or other intrusions"
+swd26_saline_fail_n_section33,7,bodies,"SWD(2026) 702, Malta",18,https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf,2026-10-27,"section 3.3: Malta reported 7 of 15 failed good chemical status for saline intrusion"
+swd19_quant_good_n_2nd,13,bodies,"SWD(2019) 48, Malta",79,http://publications.europa.eu/resource/celex/52019SC0048,2026-10-27,"13 of 15 (87%) good quantitative status; two (13%) failing"
+swd19_quant_poor_n_2nd,2,bodies,"SWD(2019) 48, Malta",79,http://publications.europa.eu/resource/celex/52019SC0048,2026-10-27,"water balance test failed"
+swd19_quant_poor_n_1st,4,bodies,"SWD(2019) 48, Malta",79,http://publications.europa.eu/resource/celex/52019SC0048,2026-10-27,"four (27%) in the first RBMP; area share 84% to 80%"
+swd19_quant_area_poor_pct_2nd,80,%,"SWD(2019) 48, Malta",79,http://publications.europa.eu/resource/celex/52019SC0048,2026-10-27,"about 80% of the total RBD area failing good quantitative status"
+swd19_quant_monitored_2nd,3,bodies,"SWD(2019) 48, Malta",13,http://publications.europa.eu/resource/celex/52019SC0048,2026-10-27,"only 3 of 15 monitored (c. 80% of area); status assessed by a water-balance model; section 5.1.1 (p. 77 printed) says two monitored, 13 not"
+swd19_chem_good_n_2nd,3,bodies,"SWD(2019) 48, Malta",86,http://publications.europa.eu/resource/celex/52019SC0048,2026-10-27,"3 of 15 (20%) good chemical status; 12 (80%) failing; 97% of area failing"
+swd19_chem_poor_n_2nd,12,bodies,"SWD(2019) 48, Malta",86,http://publications.europa.eu/resource/celex/52019SC0048,2026-10-27,
+swd19_chem_poor_n_1st,13,bodies,"SWD(2019) 48, Malta",86,http://publications.europa.eu/resource/celex/52019SC0048,2026-10-27,"from 13 (87%) in the first RBMP to 12 (80%)"
+swd19_wfd_pubdate,2016-02-16,date,"SWD(2019) 48, Malta",13,http://publications.europa.eu/resource/celex/52019SC0048,2026-10-27,"Malta published its second RBMP on 16 February 2016"
