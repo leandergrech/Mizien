@@ -1,21 +1,17 @@
 // "Who said it" summaries (site/bodies/): computed at build time from the same claim data as the rest of the site, so
 // the counts here, in Explore and on the timeline never disagree.
 //
-// whoSummary(body): what a body's card and page show about its checked claims.
-//   - 5 or more checked claims: a verdict bar (counts per verdict, never percentages).
-//   - 3 or 4: a tentative balance, shown as work in progress until there are enough checks for a bar. Each checked
-//     claim is placed on the verdict scale (Contradicted 0 ... Supported 1) and weighted by the freshness of the
-//     claim itself (the date it was made, not the date of the check): the weight halves every two years of age. An
-//     undated claim counts as three years older than the body's oldest dated checked claim (maintainer decision,
-//     6 Oct 2026), so the balance depends only on the claims and changes only when they do, not with the build date.
-//   - fewer: a count only ("1 of 5 checks so far").
+// whoSummary(body): what a body's row, panel and page show about its claims, as one verdict strip for every body
+//   (maintainer decision, 27 Oct 2026, replacing the three-tier bar / tentative balance / count of 6 Oct 2026):
+//   one square per claim, the checked ones filled in verdict order from Contradicted to Supported, the rest hollow.
+//   Counts, never percentages. Below 5 checks the strip carries the note "too few to summarise".
 //   Pledge labels are always shown, apart from the verdicts.
-// pledgeStack(pledges, claims, ids?): the pledges as dots on stacked disks, one disk per year the pledge was made
-//   (newest on top). Pledges on the same topic sit at the same angle, so similar pledges line up vertically; lines join
-//   similar pledges made in different years, coloured by the average verdict of the facts checked in them.
+// pledgeStack(pledges, claims, ids?): the pledges as dots on stacked disks, one disk per election cycle (newest on top).
+//   Pledges on the same topic sit at the same angle, so similar pledges line up vertically; lines join similar pledges
+//   made in different years, coloured by the average verdict of the facts checked in them.
 
-export const BAR_MIN = 5, TENTATIVE_MIN = 3, HALF_LIFE_YEARS = 2, UNDATED_YEARS = 3;
-const ORDER = ["Supported", "Largely supported", "Not substantiated", "Misleading", "Contradicted"];
+export const FEW_MIN = 5;
+const ORDER = ["Contradicted", "Misleading", "Not substantiated", "Largely supported", "Supported"];
 const SLUG = { "Supported": "supported", "Largely supported": "largely-supported", "Not substantiated": "not-substantiated", "Misleading": "misleading", "Contradicted": "contradicted" };
 const VALUE = { "Supported": 1, "Largely supported": 0.75, "Not substantiated": 0.5, "Misleading": 0.25, "Contradicted": 0 };
 const COLOUR = { "Supported": "#2e7d4f", "Largely supported": "#8db36b", "Not substantiated": "#d9772b", "Misleading": "#b5483a", "Contradicted": "#8e2f25" };
@@ -27,12 +23,6 @@ export function claimDate(s) {
   if (!m) return null;
   return new Date(Date.UTC(+m[1], m[2] ? +m[2] - 1 : 6, m[3] ? +m[3] : m[2] ? 15 : 1));
 }
-// Weight of a claim made on `date`, seen from `now`. An undated claim takes `undated` (a Date) as its date.
-export function freshness(date, now = new Date(), undated = null) {
-  const d = claimDate(date) || undated;
-  const years = d ? Math.max(0, (now - d) / (365.25 * 864e5)) : UNDATED_YEARS;
-  return Math.pow(0.5, years / HALF_LIFE_YEARS);
-}
 
 // A body's pledges are those it made itself or through its offices and people (the pledge's "made by"), so a party's
 // manifesto pledge stays with the party even when a ministry later reports on it.
@@ -41,7 +31,7 @@ export function family(body, bodies) {
   for (const b of bodies || []) if ((b.ancestors || []).some((a) => a.id === body.id)) ids.add(b.id);
   return ids;
 }
-export function whoSummary(body, pledgeList, bodies, now = new Date()) {
+export function whoSummary(body, pledgeList, bodies) {
   const mine = family(body, bodies);
   const own = (pledgeList || []).filter((p) => (p.pledge?.made_by_ids || []).some((x) => mine.has(x)));
   const pl = Object.fromEntries(own.filter((p) => p.pledge.kind !== "target").map((p) => [p.id, p]));   // institutional targets are listed apart
@@ -49,20 +39,62 @@ export function whoSummary(body, pledgeList, bodies, now = new Date()) {
   const claims = body?.claims || [];
   const checked = claims.filter((c) => c.verdict && VALUE[c.verdict] != null);
   const counts = ORDER.map((v) => ({ name: v, slug: SLUG[v], colour: COLOUR[v], n: checked.filter((c) => c.verdict === v).length })).filter((x) => x.n);
+  // the strip: one entry per claim, checked ones first in verdict order, then the rest (pledge-only and unchecked)
+  const squares = counts.flatMap((v) => Array.from({ length: v.n }, () => ({ slug: v.slug, name: v.name })));
   const pledges = Object.values(pl).map((p) => ({ id: p.id, title: p.title, path: p.path, ...p.pledge }));
-  // undated claims: three years before the oldest dated checked claim; with none dated, all weigh the same
-  const dated = checked.map((c) => claimDate(c.date)).filter(Boolean);
-  const oldest = dated.length ? new Date(Math.min(...dated)) : null;
-  const undated = oldest ? new Date(oldest.getTime() - UNDATED_YEARS * 365.25 * 864e5) : now;
-  let sw = 0, sv = 0;
-  for (const c of checked) { const w = freshness(c.date, now, undated); sw += w; sv += w * VALUE[c.verdict]; }
-  const tier = checked.length >= BAR_MIN ? "bar" : checked.length >= TENTATIVE_MIN ? "tentative" : "few";
   return {
-    total: claims.length, checked: checked.length, waiting: claims.length - checked.length, tier, counts,
-    score: sw ? sv / sw : null, need: Math.max(0, BAR_MIN - checked.length), barMin: BAR_MIN,
+    total: claims.length, checked: checked.length, waiting: claims.length - checked.length, counts, squares,
+    few: checked.length < FEW_MIN, fewMin: FEW_MIN,
     dates: checked.map((c) => claimDate(c.date)).filter(Boolean).sort((a, b) => a - b),
     pledges, targets,
   };
+}
+
+// ---- the tree and the panel (site/bodies/index.njk, assets/who-tree.js)
+// whoTree(bodies, types): the register as a tree, kind of body > organisation > office > person, read from each body's
+//   parent. A body sits under its parent whatever the parent's kind; a body whose parent is not in the register sits
+//   at the top of its kind. Within a level: organisations first, then people, each alphabetically. Every body in the
+//   site data has at least one claim (its own, its offices' or its people'), so nothing is folded away yet.
+export function whoTree(bodies, types) {
+  const byId = Object.fromEntries((bodies || []).map((b) => [b.id, b]));
+  const kids = {};
+  for (const b of bodies || []) {
+    const pid = b.parent && byId[b.parent.id] ? b.parent.id : null;
+    (kids[pid || "@" + b.type] ||= []).push(b);
+  }
+  const sortRows = (l) => l.sort((a, b) => (a.kind === "person") - (b.kind === "person") || a.name.localeCompare(b.name));
+  const node = (b, depth) => ({ body: b, depth, children: sortRows(kids[b.id] || []).map((c) => node(c, depth + 1)) });
+  const count = (n) => 1 + n.children.reduce((s, c) => s + count(c), 0);
+  return (types || []).map((t) => {
+    const roots = sortRows(kids["@" + t.id] || []).map((b) => node(b, 1));
+    const n = roots.reduce((s, r) => s + count(r), 0);
+    return { type: t, roots, n, claims: roots.reduce((s, r) => s + (r.body.claims || []).length, 0) };
+  }).filter((g) => g.n);
+}
+// whoPanel(bodies, pledges): what the panel on Who said it needs for every body, as one JSON object by id. Kept
+//   small: the claims (newest first) with their labels, the counts, the pledge chips and the links to the other views.
+export function whoPanel(bodies, pledgeList) {
+  const out = {};
+  for (const b of bodies || []) {
+    const s = whoSummary(b, pledgeList, bodies);
+    const chip = (p, kind) => ({ id: p.id, path: p.path, title: p.title, status: p.status, colour: p.colour, ink: p.ink, as_of: p.as_of, kind });
+    out[b.id] = {
+      id: b.id, name: b.name, kind: b.kind, type: b.type, type_label: b.type_label, role: b.role, note: b.note, path: b.path,
+      parent: b.parent ? { id: b.parent.id, name: b.parent.name, path: b.parent.path } : null,
+      people: (b.people || []).map((x) => ({ id: x.id, name: x.name, role: x.role, path: x.path })),
+      offices: (b.offices || []).map((x) => ({ id: x.id, name: x.name, path: x.path })),
+      total: s.total, checked: s.checked, waiting: s.waiting, few: s.few, fewMin: s.fewMin,
+      counts: s.counts.map((v) => ({ name: v.name, slug: v.slug, n: v.n })),
+      pledges: [...s.targets.map((p) => chip(p, "target")), ...s.pledges.map((p) => chip(p, "pledge"))],
+      links: (b.links || []).length,
+      claims: (b.claims || []).slice().sort((x, y) => String(y.date || "").localeCompare(String(x.date || ""))).map((c) => ({
+        id: c.id, title: c.title, path: c.path, date: c.date, category: c.category, status: c.status,
+        label: c.label, slug: c.label_slug, kind: c.label_kind,
+        by: (c.by || []).filter((x) => x.id !== b.id).map((x) => x.name),
+      })),
+    };
+  }
+  return out;
 }
 
 // ---- the pledge stack

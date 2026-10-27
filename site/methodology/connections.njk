@@ -121,30 +121,21 @@ permalink: /methodology/connections/
 
   <section aria-labelledby="summaries">
     <h2 id="summaries">How a body's checks are summarised</h2>
-    <p>Each body's card on <a href="/bodies/">Who said it</a>, and the top of its page, sums up the verdicts on the
-      claims made by the body, its offices and the people who spoke for it. What is shown depends on how many of those
-      claims have a verdict (pledge labels are not verdicts and are never counted here):</p>
-    <ul>
-      <li><strong>Five or more checked claims: a verdict bar.</strong> One segment per verdict, as long as the number of
-        checks that ended in it. Counts are shown, never percentages.</li>
-      <li><strong>Three or four: a tentative balance.</strong> Until there are enough checks for a bar, a marker shows
-        where the checks so far sit on a line from Contradicted to Supported, with dots counting the checks towards five.
-        It is marked as tentative, and it is work in progress, not a rating.</li>
-      <li><strong>Fewer than three:</strong> the number of checks only, as too few to summarise.</li>
-    </ul>
-    <p><strong>How the balance is worked out.</strong> Each verdict is placed on the line: Contradicted 0, Misleading
-      0.25, Not substantiated 0.5, Largely supported 0.75, Supported 1. The balance is the average of these, with more
-      recent claims counting more: a claim's weight halves for every two years between it and the body's most recent
-      checked claim. Age is measured from the date the <em>claim</em> was made, not the date it was checked, because the
-      balance is about what was said, when. A claim with no recorded date counts as three years older than the body's
-      oldest dated checked claim; if none of the checked claims is dated, they all count the same. So the balance moves
-      only when claims or verdicts change, never by itself with the passing of time.</p>
-    <p>Draft verdicts are counted, as they are shown on the claim pages, marked as drafts. A body with few checks can
-      change a great deal with one new check; that is why there is no bar below five.</p>
+    <p>Each body's row on <a href="/bodies/">Who said it</a>, its panel there, and the top of its page carry the same
+      <strong>verdict strip</strong>: one square for each claim made by the body, its offices and the people who spoke
+      for it. The checked claims are filled in, in verdict order from Contradicted on the left to Supported on the right;
+      claims not yet checked are hollow squares after them. The strip is read by counting the squares, never by length,
+      and the key under it gives the counts. Percentages are never shown. Pledge labels are not verdicts and are never
+      counted in the strip.</p>
+    <p>Below five checked claims the strip carries the note <em>too few to summarise</em>: a body with few checks can
+      change a great deal with one new check, so the squares are a record of what has been checked, not a summary of
+      the body. Draft verdicts are counted, as they are shown on the claim pages, marked as drafts. (Until 27 October
+      2026 the page drew three different things by threshold: a bar from five checks, a weighted "tentative balance" at
+      three or four, and a count below that. One strip replaced them so every body reads the same way.)</p>
     <p><strong>Pledges</strong> keep their own labels (on track, off track, not measurable and so on;
-      <a href="{{ site.repo }}/blob/main/methodology/verdict-scale.md#pledges">how pledges are labelled</a>), shown on every card that has
+      <a href="{{ site.repo }}/blob/main/methodology/verdict-scale.md#pledges">how pledges are labelled</a>), shown as chips under the strip wherever a body has
       them and never mixed into the verdicts. A pledge belongs to the body that made it, or whose office or person made
-      it. On <em>Pledges, election by election</em>, each election cycle is a disk (the election and the legislature
+      it. On <a href="/pledges/#h-stack"><em>Pledges, election by election</em></a> (on the Pledges page, and for one body on its page), each election cycle is a disk (the election and the legislature
       after it), with campaign pledges on the outer ring and commitments made in office inside; pledges on the same topic
       sit at the same place on every disk, and lines join pledges from different cycles that share wording, a subtopic or a topic,
       coloured by the average verdict on the facts behind them. A line says the pledges are worth reading together, not

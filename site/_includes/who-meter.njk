@@ -1,30 +1,17 @@
-{#- The verdict summary for one body (site/_lib/who.js, whoSummary): a bar from 5 checked claims, a tentative balance
-    at 3 or 4, a count below that. Expects s (the summary) and big (true on the body page). -#}
-{%- if s.tier == "bar" %}
-<div class="wm wm-bar-wrap">
-  <div class="wm-bar" role="img" aria-label="Verdicts on {{ s.checked }} checked claims: {% for v in s.counts %}{{ v.name }} {{ v.n }}{% if not loop.last %}, {% endif %}{% endfor %}">
-    {%- for v in s.counts %}<span class="v-{{ v.slug }}" style="flex: {{ v.n }}" title="{{ v.name }}: {{ v.n }}"></span>{% endfor %}
+{#- The verdict strip for one body (site/_lib/who.js, whoSummary): one square per claim, the checked ones filled in verdict
+    order from Contradicted to Supported, the rest hollow. The same strip on the index rows, the panel and the body page.
+    Expects s (the summary) and big (true on the body page and in the panel: the key spells the verdict names). -#}
+<div class="wm">
+  <div class="wm-strip" role="img" aria-label="{% if s.checked %}Verdicts on {{ s.checked }} of {{ s.total }} claims: {% for v in s.counts %}{{ v.name }} {{ v.n }}{% if not loop.last %}, {% endif %}{% endfor %}{% if s.waiting %}; {{ s.waiting }} not yet checked{% endif %}{% else %}{{ s.total }} claim{% if s.total != 1 %}s{% endif %}, none checked yet{% endif %}">
+    {%- for q in s.squares %}<i class="v-{{ q.slug }}" title="{{ q.name }}"></i>{% endfor %}
+    {%- for i in range(0, s.waiting) %}<i class="is-open" title="Not yet checked"></i>{% endfor %}
   </div>
-  <p class="wm-key">{% for v in s.counts %}<span><i class="v-{{ v.slug }}"></i>{% if big %}{{ v.name }} {% endif %}<b>{{ v.n }}</b></span>{% endfor %}</p>
+  <p class="wm-key">
+    {%- for v in s.counts %}<span><i class="v-{{ v.slug }}"></i>{% if big %}{{ v.name }} {% endif %}<b>{{ v.n }}</b></span>{% endfor %}
+    {%- if s.waiting %}<span><i class="is-open"></i>{% if big %}not yet checked {% endif %}<b>{{ s.waiting }}</b></span>{% endif %}
+    {%- if s.few %}<span class="wm-few">{% if s.checked %}{{ s.checked }} of {{ s.fewMin }} checks: too few to summarise{% else %}no checks yet{% endif %}</span>{% endif %}
+  </p>
 </div>
-{%- elif s.tier == "tentative" %}
-<div class="wm wm-tent" role="img" aria-label="Tentative balance from {{ s.checked }} checked claims, at {{ (s.score * 100) | round }} on a scale from Contradicted (0) to Supported (100); recent claims count more. {{ s.need }} more checks before a verdict bar.">
-  <div class="wm-scale"><span class="wm-mark" style="left: {{ (s.score * 100) | round(1) }}%"></span></div>
-  <p class="wm-ends"><span>Contradicted</span><span>Supported</span></p>
-  <p class="wm-note">Tentative, from {{ s.checked }} checks{% if big %}; recent claims count more{% endif %} ·
-    <span class="wm-dots" aria-hidden="true">{% for i in range(0, s.barMin) %}<i{% if i < s.checked %} class="on"{% endif %}></i>{% endfor %}</span>
-    {{ s.need }} more for a verdict bar</p>
-</div>
-{%- else %}
-<div class="wm wm-few">
-  {%- if s.checked == 0 %}
-  <p class="wm-note">No checks yet{% if big %}: a summary appears from 3 checked claims{% endif %}</p>
-  {%- else %}
-  <p class="wm-note"><span class="wm-dots" aria-hidden="true">{% for i in range(0, s.barMin) %}<i{% if i < s.checked %} class="on"{% endif %}></i>{% endfor %}</span>
-    {{ s.checked }} of {{ s.barMin }} checks: too few to summarise</p>
-  {%- endif %}
-</div>
-{%- endif %}
 {%- if s.targets and s.targets.length %}
 <p class="wm-pledges">{% for p in s.targets %}<a class="pl-chip is-target" href="{{ p.path }}" style="--pl: {{ p.colour }}; --pl-ink: {{ p.ink }}" title="{{ p.id }} {{ p.title }}: an institutional target, {{ p.status }}, as of {{ p.as_of }}">{% glyph "pledge:" + p.status %}Target: {{ p.status }}{% if big %} <span>{{ p.id }}</span>{% endif %}</a>{% endfor %}</p>
 {%- endif %}

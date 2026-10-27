@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 10 October 2026 (later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
+*Last updated: 27 October 2026 (Who said it rebuilt as a tree-and-panel stage with one verdict strip; decisions below; earlier: 10 October 2026: later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
 
 ## What the project is
 
@@ -15,6 +15,34 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
+
+## Who said it: stage, one strip, identity images (27 October 2026)
+
+Maintainer decisions of 27 October 2026 (assessment and plan in the Claude doc "Who said it: assessment and plan"):
+
+1. **One verdict strip for every body**, replacing the three-tier summary of 6 October (bar from five checks, weighted
+   tentative balance at three or four, count below): one square per claim, the checked ones filled in verdict order from
+   Contradicted to Supported, the rest hollow, counts in a key, "too few to summarise" below five checks. The tentative
+   balance and its freshness weighting are **retired** (`site/_lib/who.js`, `_includes/who-meter.njk`, `assets/who.css`;
+   method text in `methodology/verdict-scale.md` and `/methodology/connections/#summaries`).
+2. **`/bodies/` is a stage, as Explore**: the register as a collapsible tree (kind of body > organisation > office >
+   person, from `Parent` in `data/bodies.csv`; `whoTree` in `who.js`) on the left, built at build time as nested
+   `<details>`/`<ul>` so it works without JavaScript (each name links to the body page); the selected body in a docked
+   paper panel on the right (`assets/who-tree.js` fills it from `#who-data`, `whoPanel` in `who.js`): identity frame,
+   strip, pledge chips, links to the claims web, timeline, feed and the pinned tray, the claims newest first. URL state
+   `?sel=<id>` and `?q=<text>`; the search box matches name, role and the register's aliases (`aliases` added to
+   `body_pages` in `build_site_data.py`). On phones the panel is a bottom sheet. Bodies with no claim at all would be
+   folded under "n more" (decision), but every body in the site data has at least one claim, so nothing is folded yet.
+3. **Identity images, all sides evenly** (reverses the 6 October "no emblem of their own" rule): a portrait for a person,
+   a logo or emblem for an organisation, in the same round frame for every body, the kind glyph as the fallback. Logo
+   policy: official logos for public bodies (government, agencies, regulators); Commons-only (free licence) for parties,
+   NGOs, business and media. **Not yet built**: needs `Image`, `ImageSource`, `ImageLicence` columns in
+   `data/bodies.csv`, `scripts/body_images.py`, a validator rule (no image without source and licence) and a credits page.
+   The frames (`.wt-frame`, `.wp-frame`) are in place for them.
+4. **The pledge stack moved to `/pledges/#h-stack`** (still per body on each body page); the Who said it index no
+   longer carries it.
+5. **Next (phase 4, not built)**: `Since`/`Until` on person rows and `Successor` on organisations so a person shows
+   under the office held on each claim's date; a quarterly check of office-holders and licences; `body_queue.csv`.
 
 ## Session wrap-up: consolidation and sheets (10 October 2026)
 
