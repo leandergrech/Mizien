@@ -1,0 +1,30 @@
+check,value,unit,source,note
+"Good quantitative status, 2nd plan: 13 of 15",86.7,%,SWD(2019) 48,claim: 86.7%
+"Good quantitative status, 3rd plan: 11 of 15",73.3,%,SWD(2026) 702,claim: 73.3%
+Change in good quantitative status,-13.3,percentage points,calculated,13.3 points = 2 bodies
+One groundwater body is,6.7,percentage points,calculated,with 15 bodies
+"Poor quantitative status, 3rd plan: 4 of 15",26.7,%,SWD(2026) 702,document: 26.7%
+Poor quantitative status: 2nd + good = 15,15.0,bodies,SWD(2019) 48,
+Poor quantitative status: 3rd + good = 15,15.0,bodies,SWD(2026) 702,
+SWD(2026) and SWD(2019) agree on 2 poor bodies in the 2nd plan,True,check,both documents,
+"Poor quantitative status, 1st / 2nd / 3rd plan",4 / 2 / 4,bodies,SWD(2019) 48 p. 79; SWD(2026) 702 p. 8,the 3rd plan is back at the 1st plan's count
+"Poor quantitative status, 1st / 2nd / 3rd plan",26.7 / 13.3 / 26.7,%,calculated,
+"Good chemical status, 2nd plan: 3 of 15",20.0,%,SWD(2019) 48,claim: 'a fifth'
+"Good chemical status, 2nd plan: 15 - 12 poor",3.0,bodies,SWD(2026) 702,SWD(2026) section 4.2 says 12 of 15 poor in 2015
+"Poor chemical status, 1st / 2nd / 3rd plan",13 / 12 / 15,bodies,SWD(2019) 48 p. 86; SWD(2026) 702 p. 28,
+Nitrates cause failure in 80% of 15 bodies,12.0,bodies,SWD(2026) 702,whole number expected: 12
+Chloride 73.3% / sodium 53.3% / saline 46.7% of 15 bodies,10.99 / 7.99 / 7.01,bodies,SWD(2026) 702,
+Saline-intrusion bodies: summary table vs section 4.2 text,7 vs 5 (section 3.3 says 7),bodies,SWD(2026) 702,the document is not consistent with itself on this point; not part of the claim
+"Quantitative monitoring, 2nd to 3rd plan",3 to 7 of 15 bodies,bodies,SWD(2026) 702,SWD(2019) 48 itself gives both 2 (section 5.1.1) and 3 (p. 13) monitored bodies
+"Unmonitored for quantity, 3rd plan",53.3,% of bodies,SWD(2026) 702,document: 53.3%
+WISE bodies reported,15,bodies,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06 (data/cc-101/)",
+WISE good quantitative status,11,bodies,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06 (data/cc-101/)",matches SWD(2026): 11
+WISE poor quantitative status,4,bodies,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06 (data/cc-101/)","Malta Mean Sea Level, Pwales Coastal, Marfa Coastal, Gozo Mean Sea Level"
+WISE poor chemical status,15,bodies,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06 (data/cc-101/)",matches SWD(2026): all 15
+"WISE assessment year(s), quantitative",2021,year,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06 (data/cc-101/)",
+WISE counts equal the SWD(2026) counts,True,check,"EEA WISE WFD 2022 reporting, retrieved 2026-10-06 (data/cc-101/)",
+"Fresh groundwater abstraction, 2015 / 2021",41.63 / 37.28,million m3,"Eurostat env_wat_abs, retrieved 2026-10-06 (data/cc-101/)",all flagged e (estimated)
+Change 2015 to 2021,-10.4,%,calculated,
+Mean 2010-2015 / mean 2016-2021,42.7 / 40.14,million m3,"Eurostat env_wat_abs, retrieved 2026-10-06 (data/cc-101/)",
+Change in the six-year means,-6.0,%,calculated,
+"Highest and lowest year, 2010-2024",2013: 45.75; 2022: 34.38,million m3,"Eurostat env_wat_abs, retrieved 2026-10-06 (data/cc-101/)",

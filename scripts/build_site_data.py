@@ -871,6 +871,7 @@ def write_site_data(records: list, out: dict, reg: dict, claim_bodies: dict, pro
                              for t, pairs in l["themes"].items()], "pairs": l["pairs"]} for l in p["links"]]
         body_pages.append({
             **body_ref(b), "type": b["type"], "type_label": register.TYPES[b["type"]], "note": b["note"],
+            "aliases": [a for a in b["aliases"] if a != b["name"]],   # the search box on Who said it matches these too
             "parent": body_ref(reg[b["parent"]]) if b["parent"] else None,
             "ancestors": [body_ref(reg[x]) for x in reversed(connections.lineage(bid, reg)[1:])],
             "people": [body_ref(reg[x]) for x in p["people"]], "offices": [body_ref(reg[x]) for x in p["offices"]],

@@ -2,9 +2,9 @@ id: CC-143
 title: 'EU: Malta''s groundwater status got worse between the second and third plans'
 category: Water
 subtopic: Water supply & groundwater
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
   text: 'European Commission, Staff Working Document SWD(2026) 702 final, Malta (2 Oct 2026), pp. 8-9: since the second river
     basin management plan ''the percentage of GWBs with a good quantitative status has decreased from 86.7% to 73.3% due to
@@ -19,32 +19,117 @@ claim:
     publisher: European Commission (copy on the Austrian Parliament website)
     date: '2026-10-02'
     url: https://www.parlament.gv.at/dokument/XXVIII/EU/94981/imfname_11680004.pdf
-    note: The claim. PDF downloaded and read with pdftotext on 26 Oct 2026; quantitative status on p. 8, chemical status on
-      p. 9.
+    note: The claim. PDF downloaded and read with pdftotext on 26 Oct 2026 and again on 27 Oct 2026; quantitative status on
+      p. 8, chemical status on p. 9 of the PDF (printed pages 7 and 8); sections 3.3 and 4.2 on pp. 17-18 and 28; section 3.6
+      on p. 21.
+  - title: Second River Basin Management Plans - Member State Malta, SWD(2019) 48 final
+    publisher: European Commission
+    date: 2019-02-26
+    url: http://publications.europa.eu/resource/celex/52019SC0048
+    note: Independent earlier text for the second plan. 13 of 15 groundwater bodies good for quantity, 2 poor (first plan 4
+      poor), pp. 79 and 83 of the PDF; 3 of 15 good for chemistry, 12 poor (first plan 13 poor), p. 86; 3 of 15 bodies monitored
+      for quantity, water-balance model, p. 13. Cellar PDF read 27 Oct 2026.
+  - title: WISE Water Framework Directive database, 2022 reporting, Malta groundwater bodies
+    publisher: European Environment Agency
+    date: 2022
+    url: https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_GroundWaterBody_WM/MapServer/0
+    note: Status of each of the 15 bodies (assessment year 2021) as reported by Malta; downloaded 6 Oct 2026 for CC-101 and
+      re-used (data/cc-101/wise_2022_groundwater_status.csv). The server was in maintenance on 27 Oct 2026.
+  - title: Water abstraction by source and sector (env_wat_abs), Malta
+    publisher: Eurostat
+    date: 2026-09-16
+    url: https://ec.europa.eu/eurostat/databrowser/view/env_wat_abs/default/table
+    note: Estimated fresh groundwater abstraction 2010-2024 (every year flagged e); downloaded 6 Oct 2026 (data/cc-101/).
   quote: no GWBs had a good chemical status in 2021, while a fifth of GWBs had a good chemical status in 2015
-counter_evidence: 'Context, not tested: with 15 groundwater bodies, one body is 6.7 points, so 86.7% to 73.3% is 13 to 11
-  bodies and ''a fifth'' is 3 bodies. The Commission notes that 8 of 15 bodies are not under quantitative monitoring. WSC
-  reports lower groundwater production (CC-009) and plans cuts in abstraction (CC-039); the Energy and Water Agency''s licensing
-  framework excludes WSC sources (CC-108). Nitrate levels in the Mean Sea Level Aquifer are reviewed in CC-047.'
+counter_evidence: 'The counts are correct, but the cause and the size of the real change are less certain than the sentence suggests.
+  The same Commission document says quantitative monitoring rose from 3 to 7 groundwater bodies and that 8 of 15 are still not
+  monitored (p. 8, 17), and warns for protected areas that "comparability of data between the cycles might be low" (p. 19);
+  it reports the water balance and lowering of the water table as the reason for the four poor bodies and describes recharge
+  as falling with rainfall (p. 21). Eurostat''s estimates of groundwater abstraction fall from 41.6 million m3 (2015) to 37.3
+  million m3 (2021), all flagged as estimated. The first plan also had four bodies in poor quantitative status (SWD(2019) 48),
+  so the third plan returns to that count after a second-plan low of two. The document is not consistent with itself on
+  saline intrusion (7 bodies in the summary table and section 3.3, 5 in section 4.2); this is outside the claim. WSC reports
+  lower groundwater production (CC-009) and plans cuts in abstraction (CC-039); nitrate levels in the Mean Sea Level Aquifer
+  are reviewed in CC-047.'
 tests: Malta's 2nd and 3rd RBMPs (status tables by groundwater body); EEA WISE-SoW groundwater status data; the Nitrates Directive
   country report (July 2026) and peer-reviewed work on the Maltese aquifers (e.g. the sources in CC-047); check the counts
   behind each percentage and whether the methods changed between cycles.
 why_low_hanging: Counts of 15 named water bodies in two reporting cycles, testable against the EEA status data.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: the document and EEA WISE data are reachable; the RBMP is on era.org.mt (403 to scripts).'
-caveats: Candidate from the top-up intake of 26 Oct 2026. A change in status can reflect a change in assessment method; the
-  check must say which.
+caveats: 'Largely supported: no right of reply needed. The verdict covers the Commission''s counts (86.7% to 73.3% good quantitative
+  status; none good for chemistry in 2021 against a fifth in 2015; nitrates in 80% of bodies) and is moderate because "due to
+  overabstraction" is the Commission''s attribution, which we could not test: monitoring changed between the cycles and the
+  document itself says comparability between cycles "might be low" (for protected areas). The status of each body in the second
+  plan (EEA WISE 2016 reporting) could not be downloaded on 27 Oct 2026 (server in maintenance), so we cannot say which two bodies
+  changed. Nitrates in 80% (12 bodies) is the document''s figure, not tested per body. This is a Commission staff assessment of
+  Malta''s plan, not a finding in infringement proceedings.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - Commission SWD(2026) 702 final, Malta, pp. 8-9, 17-19, 21, 28 of the PDF (parlament.gv.at copy, read 27 Oct 2026)
+  - Commission SWD(2019) 48 final, Malta, pp. 13, 79, 83, 86 of the PDF (Cellar PDF, read 27 Oct 2026)
+  - EEA WISE WFD 2022 reporting and Eurostat env_wat_abs (data/cc-101/, retrieved 6 Oct 2026; checks in data/cc-143/checks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-143A
+    text: "The share of groundwater bodies in good quantitative status fell from 86.7% to 73.3%"
+    said_by: "European Commission [1]"
+    finding: "13 of 15 to 11 of 15. The 2019 document gives 13 good in the second plan [2]; the EEA’s database gives 11 good in the third [3]. The first plan had 11 good (4 poor) [2]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-143B
+    text: "The fall is due to overabstraction"
+    said_by: "European Commission [1]"
+    finding: "The document reports water balance and lowering of the water table as the reason for the four poor bodies and describes “systemic” overabstraction [1]. We could not test it: abstraction is only estimated by Eurostat and fell 2015–2021 [4]; the second-plan method (water-balance model) and the third-plan method were not compared; monitoring changed [1, 2]."
+    rating: "Not tested"
+    tone: grey
+  - id: CC-143C
+    text: "No groundwater body had good chemical status in 2021, while a fifth did in 2015"
+    said_by: "European Commission [1]"
+    finding: "All 15 bodies poor in the EEA’s database [3]; 3 of 15 good (20%) in the second plan [2]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-143D
+    text: "Nitrates cause failure in 80% of the 15 groundwater bodies"
+    said_by: "European Commission [1]"
+    finding: "80% is 12 of 15 (calculated). The document’s figure; we did not have the pollutant by body. Independent monitoring of nitrate is in Claim Check 047."
+    rating: "Consistent"
+    tone: lime
+version: '1.0'
+last_reviewed: '2026-10-27'
+thumbnail:
+  figure: '13 to 11'
+  caption: of 15 groundwater bodies in good quantitative status, second to third plan (none good for chemistry)
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-27
+    step: started
+    note: Check started by worker A. Commission SWD(2026) 702 (parlament.gv.at copy) and SWD(2019) 48 (Cellar) reached from the
+      cloud network; EEA WISE was in maintenance (HTTP 502) and web.archive.org reset connections.
+  - date: 2026-10-27
+    step: wording
+    note: Verbatim wording confirmed in SWD(2026) 702, PDF pp. 8-9 (summary table, quantitative and chemical status rows) and
+      pp. 17-18 and 28 (sections 3.3 and 4.2).
+  - date: 2026-10-27
+    step: note
+    note: Second-plan figures read in SWD(2019) 48 (13 of 15 good for quantity, 2 poor, first plan 4 poor; 3 of 15 good for
+      chemistry, first plan 13 poor). Third-plan status by body taken from the WISE 2022 file downloaded for CC-101 (6 Oct 2026);
+      Eurostat env_wat_abs re-used from CC-101. Every figure recomputed in tools/cc-143-report/calc.py (data/cc-143/checks.csv).
+  - date: 2026-10-27
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.
