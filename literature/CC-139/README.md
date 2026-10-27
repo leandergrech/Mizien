@@ -1,13 +1,12 @@
-# CC-139: The Shift: unpaid planning fines at EUR 16.5 million
+# CC-139: routes tried (worker B, 27 Oct 2026)
 
-**Status:** literature not yet collected.
+Blocked on the primary source (the parliamentary reply). Routes tried:
 
-## To collect
+- The Shift, 8 Jan 2026 (claim URL): read in full. The reply is described, not reproduced; no PQ number, no table.
+- The Shift, 4 Jun 2025 and 3 Oct 2025: read. They give the 161 figure (outlet analysis of earlier PQs; sites with daily fines since 1997) and 'at least 150' at the cap, and describe daily fines of EUR 2 rising to EUR 50 with a EUR 50,000 cap (outlet's description of the law, not checked against the Act).
+- parlament.mt: 403 (Cloudflare). MaltaToday: 403. legislation.mt: redirect, no text. Wayback: connection reset.
+- TVM News site search: no hit. Three web searches: nothing carrying the 2026 reply; leads in data/sources.csv (MaltaToday on EUR 674,740 uncollected from 2022-2023 notices, Malta Daily on fines pending after ten years).
 
-The parliamentary question and reply (parlament.mt, browser-only) and the Planning Authority's annual reports (fines imposed, collected and outstanding); the Development Planning Act provisions on daily fines and the cap; CC-014 data; any earlier published figure for unpaid fines (the trend implied by 'climb').
+Not searched: Newsbook, Lovin Malta and The Malta Independent for the January 2026 reply beyond web-search results; Issuu PA annual reports for fines imposed and collected.
 
-## Known leads
-
-See `data/sources.csv` (filter on CC-139) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+Needed from the maintainer: the PQ number and answer (Ivan Bartolo, about Dec 2025/Jan 2026) and the Development Planning Act provision on daily fines and the EUR 50,000 cap.
