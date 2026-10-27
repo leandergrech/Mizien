@@ -9083,9 +9083,10 @@
       "title": "EU: Malta's groundwater status got worse between the second and third plans",
       "category": "Water",
       "claim": "European Commission, Staff Working Document SWD(2026) 702 final, Malta (2 Oct 2026), pp. 8-9: since the second river basin management plan 'the percentage of GWBs with a good quantitative status has decreased from 86.7% to 73.3% due to overabstraction'; and 'no GWBs had a good chemical status in 2021, while a fifth of GWBs had a good chemical status in 2015', with nitrates causing failure in 80% of the 15 groundwater bodies.",
-      "counter": "Context, not tested: with 15 groundwater bodies, one body is 6.7 points, so 86.7% to 73.3% is 13 to 11 bodies and 'a fifth' is 3 bodies. The Commission notes that 8 of 15 bodies are not under quantitative monitoring. WSC reports lower groundwater production (CC-009) and plans cuts in abstraction (CC-039); the Energy and Water Agency's licensing framework excludes WSC sources (CC-108). Nitrate levels in the Mean Sea Level Aquifer are reviewed in CC-047.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "The counts are correct, but the cause and the size of the real change are less certain than the sentence suggests. The same Commission document says quantitative monitoring rose from 3 to 7 groundwater bodies and that 8 of 15 are still not monitored (p. 8, 17), and warns for protected areas that \"comparability of data between the cycles might be low\" (p. 19); it reports the water balance and lowering of the water table as the reason for the four poor bodies and describes recharge as falling with rainfall (p. 21). Eurostat's estimates of groundwater abstraction fall from 41.6 million m3 (2015) to 37.3 million m3 (2021), all flagged as estimated. The first plan also had four bodies in poor quantitative status (SWD(2019) 48), so the third plan returns to that count after a second-plan low of two. The document is not consistent with itself on saline intrusion (7 bodies in the summary table and section 3.3, 5 in section 4.2); this is outside the claim. WSC reports lower groundwater production (CC-009) and plans cuts in abstraction (CC-039); nitrate levels in the Mean Sea Level Aquifer are reviewed in CC-047.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Water supply & groundwater",
       "location": {
@@ -9095,17 +9096,52 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-143A",
+          "text": "The share of groundwater bodies in good quantitative status fell from 86.7% to 73.3%",
+          "finding": "13 of 15 to 11 of 15. The 2019 document gives 13 good in the second plan [2]; the EEA’s database gives 11 good in the third [3]. The first plan had 11 good (4 poor) [2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-143B",
+          "text": "The fall is due to overabstraction",
+          "finding": "The document reports water balance and lowering of the water table as the reason for the four poor bodies and describes “systemic” overabstraction [1]. We could not test it: abstraction is only estimated by Eurostat and fell 2015–2021 [4]; the second-plan method (water-balance model) and the third-plan method were not compared; monitoring changed [1, 2].",
+          "rating": "Not tested",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-143C",
+          "text": "No groundwater body had good chemical status in 2021, while a fifth did in 2015",
+          "finding": "All 15 bodies poor in the EEA’s database [3]; 3 of 15 good (20%) in the second plan [2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-143D",
+          "text": "Nitrates cause failure in 80% of the 15 groundwater bodies",
+          "finding": "80% is 12 of 15 (calculated). The document’s figure; we did not have the pollutant by body. Independent monitoring of nitrate is in Claim Check 047.",
+          "rating": "Consistent",
+          "tone": "lime"
+        }
+      ],
       "date": "2026-10-02",
       "quote": "no GWBs had a good chemical status in 2021, while a fifth of GWBs had a good chemical status in 2015",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-27",
+      "outputs": {
+        "report": "claim-files/CC-143/report.pdf",
+        "flyer_pdf": "claim-files/CC-143/flyer.pdf",
+        "flyer_png": "claim-files/CC-143/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-143/claim.yml",
       "similar": [
         {
