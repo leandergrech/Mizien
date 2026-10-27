@@ -5505,11 +5505,11 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-135",
-          "score": 0.28,
+          "score": 0.29,
           "terms": [
             "demand",
             "growth",
-            "infrastructure"
+            "population"
           ]
         }
       ]
@@ -7114,11 +7114,11 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "similar": [
         {
           "id": "CC-135",
-          "score": 0.42,
+          "score": 0.37,
           "terms": [
+            "population",
             "rose",
-            "selected",
-            "monetary"
+            "selected"
           ]
         }
       ]
@@ -8659,9 +8659,10 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "title": "EU: Malta's price-to-income ratio has declined",
       "category": "Planning & Housing",
       "claim": "European Commission (2026 Country Report for Malta, 3 Jun 2026): nominal property prices 'have risen steadily since 2014 and consistently outpace EU average growth', but 'with income growth exceeding these gains, the price-to-income ratio has actually declined, tempering the impact on overall affordability'.",
-      "counter": "The same passage says rental prices continue to climb, boosted by high demand from foreign workers and tourists. The report gives no start year or percentage for the decline. CC-013 (PA: permits keep prices in check) and CC-018 (MDA: IMF 'confirms' its view) rest on house price series; CC-123 (KPMG) on permits. The Commission uses nominal prices in one sentence and a ratio in the next, so the series and period must be fixed before testing.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Eurostat (retrieved 26 Oct 2026): standardised price-to-income ratio tipsho60 for Malta -11.5% 2014-2024 and -23.1% 2007-2024 (peak 2008); EU-27 +5.8% since 2014; Malta 2024 recomputed exactly from prc_hpi_a, B7G and population; the Commission's Graph A16.3 (MT 96.9 and 92.7 in 2023-2024) matches within 0.2. Nominal house prices rose every year 2015-2025 (3.4-6.7%), +83.6% 2014-2025 against EU +65.6%, but EU-27 annual growth was higher in 2020, 2021 and 2022, so 'consistently outpace' is true only cumulatively. Income: adjusted household disposable income per head +95.7% 2014-2024 (prices +73.3%; Malta 2021-2024 provisional); EU-SILC median equivalised income +62.6% over income years 2014-2024, so on median income the ratio rose 6.6% since 2014 (fell 12.3% since 2007). Rents (HICP actual rentals) +15.2% in 2023, +8.9% in 2024, +1.7% in 2025. The ratio is an average measure and says nothing about renters or lower-income households.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Housing & affordability",
       "location": {
@@ -8671,17 +8672,59 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-133A",
+          "text": "Nominal property prices have risen steadily since 2014",
+          "finding": "Up every year 2015–2025, by 3.4% to 6.7%; +83.6% in all [3].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-133B",
+          "text": "…and consistently outpace EU average growth",
+          "finding": "Cumulatively ahead every year (+83.6% vs +65.6% by 2025), but EU-27 annual growth was higher in 2020, 2021 and 2022 [3].",
+          "rating": "Overstated",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-133C",
+          "text": "Income growth exceeding these gains",
+          "finding": "Yes for household adjusted disposable income per head (+95.7% vs prices +73.3%, 2014–2024); no for median household income (+62.6%) [3, 4, 5].",
+          "rating": "Depends on measure",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-133D",
+          "text": "The price-to-income ratio has actually declined",
+          "finding": "Eurostat ratio −11.5% since 2014 and −23.1% since 2007; recomputed; matches the Commission’s Graph A16.3 [1, 2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-133E",
+          "text": "…tempering the impact on overall affordability",
+          "finding": "A fair reading of an average ratio and of borrowing capacity [8]; it does not cover renters or lower-income households [1, 6, 9].",
+          "rating": "Fair, limited",
+          "tone": "lime"
+        }
+      ],
       "date": "2026-06-03",
       "quote": "However, with income growth exceeding these gains, the price-to-income ratio has actually declined, tempering the impact on overall affordability",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-26",
+      "outputs": {
+        "report": "claim-files/CC-133/report.pdf",
+        "flyer_pdf": "claim-files/CC-133/flyer.pdf",
+        "flyer_png": "claim-files/CC-133/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-133/claim.yml"
     },
     {
@@ -8759,9 +8802,10 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "title": "IMF: peak electricity demand up 43% in five years",
       "category": "Climate & Energy",
       "claim": "International Monetary Fund staff (Selected Issues paper 'Taking Stock of Infrastructure in Malta', Feb 2025): peak electricity demand rose 'from 465 MW in 2018 to 663 MW in 2023 (an increase of 43 percent)', 'significantly outpaced the growth in population and tourists in the peak summer season (an increase of 13 percent over the same period)'.",
-      "counter": "The paper itself adds that the rise 'may be related' to the increase in the mean temperature of the hottest month from 27.3 to 29.6 degrees Celsius, says capacity in energy and water supply is currently adequate, and reports that the authorities project peak demand about 30 percent higher by 2040 under a high-temperature and high-population scenario. CC-027 (July 2026 power cuts), CC-028 (Enemalta network downtime) and the Malta Chamber's statement (CC-137) concern the same demand and network.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "NSO Electricity Supply releases: maximum demand 465 MW (Aug 2018) and 663 MW (Jul 2023), +42.6%. Eurostat demo_gind plus tour_occ_nim (August nights / 31, the paper's method): residents plus tourists +13.3% to +13.5% 2018-2023. Final electricity consumption grew +13.4% (nrg_cb_e), so energy kept pace with people while the peak did not. But the end years are the coolest (2018) and hottest (2023) summers of 2017-2025 at Luqa (GHCN-Daily, hottest-month mean 26.9 and 29.4 C); other windows give +28% to +37%, the 2017-2025 trend line +24% over five years, and the peak fell to 593 MW in 2024 before 637 MW in 2025. The paper itself says the rise 'may be related' to temperature, says capacity is adequate for now, and reports the authorities' projection of about 30% more peak demand by 2040 (not tested).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Electricity & grid",
       "location": {
@@ -8771,35 +8815,84 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "institution",
         "icon": "pylon"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "International Monetary Fund",
       "bodies": [
         "imf"
       ],
+      "subclaims": [
+        {
+          "id": "CC-135A",
+          "text": "Peak electricity demand was 465 MW in 2018",
+          "finding": "NSO: maximum demand 465 MW in August 2018, the highest month of the year [2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-135B",
+          "text": "Peak electricity demand was 663 MW in 2023",
+          "finding": "NSO: 663 MW in July 2023, the highest month of the year [4].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-135C",
+          "text": "An increase of 43 percent",
+          "finding": "663 / 465 − 1 = 42.6% [2, 4].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-135D",
+          "text": "Population and tourists in the peak summer season grew 13 percent over the same period",
+          "finding": "Reproduced with the IMF’s method: 13.3% to 13.5% depending on the population count; residents alone about 14% [7, 8].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-135E",
+          "text": "Peak demand has increased rapidly and significantly outpaced population and tourists",
+          "finding": "Holds in every window tested (peak +24% to +37% on other end years and the trend); 2018 and 2023 are the coolest and hottest summers, so 43% is the largest measure [2–6, 10].",
+          "rating": "Accurate, end-year caveat",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-135F",
+          "text": "Hottest-month mean temperature rose from 27.3 °C to 29.6 °C",
+          "finding": "Luqa station: 26.9 °C to 29.4 °C (+2.5 °C against +2.3 °C); the IMF’s source not seen [10].",
+          "rating": "Broadly confirmed",
+          "tone": "lime"
+        }
+      ],
       "date": "2025-02",
-      "quote": "Peak electricity demand has increased rapidly in recent years, rising from 465 MW in 2018 to 663 MW in 2023 (an increase of 43 percent).",
-      "version": null,
-      "outputs": {},
+      "quote": "Peak electricity demand has increased rapidly in recent years, rising from 465 MW in 2018 to 663 MW in 2023 (an increase of 43 percent). This increase has significantly outpaced the growth in population and tourists in the peak summer season (an increase of 13 percent over the same period).",
+      "version": "1.0",
+      "last_reviewed": "2026-10-26",
+      "outputs": {
+        "report": "claim-files/CC-135/report.pdf",
+        "flyer_pdf": "claim-files/CC-135/flyer.pdf",
+        "flyer_png": "claim-files/CC-135/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-135/claim.yml",
       "similar": [
         {
           "id": "CC-112",
-          "score": 0.42,
+          "score": 0.37,
           "terms": [
+            "population",
             "rose",
-            "selected",
-            "monetary"
+            "selected"
           ]
         },
         {
           "id": "CC-089",
-          "score": 0.28,
+          "score": 0.29,
           "terms": [
             "demand",
             "growth",
-            "infrastructure"
+            "population"
           ]
         }
       ]
@@ -9094,9 +9187,10 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
       "title": "EU: Malta's groundwater status got worse between the second and third plans",
       "category": "Water",
       "claim": "European Commission, Staff Working Document SWD(2026) 702 final, Malta (2 Oct 2026), pp. 8-9: since the second river basin management plan 'the percentage of GWBs with a good quantitative status has decreased from 86.7% to 73.3% due to overabstraction'; and 'no GWBs had a good chemical status in 2021, while a fifth of GWBs had a good chemical status in 2015', with nitrates causing failure in 80% of the 15 groundwater bodies.",
-      "counter": "Context, not tested: with 15 groundwater bodies, one body is 6.7 points, so 86.7% to 73.3% is 13 to 11 bodies and 'a fifth' is 3 bodies. The Commission notes that 8 of 15 bodies are not under quantitative monitoring. WSC reports lower groundwater production (CC-009) and plans cuts in abstraction (CC-039); the Energy and Water Agency's licensing framework excludes WSC sources (CC-108). Nitrate levels in the Mean Sea Level Aquifer are reviewed in CC-047.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "The counts are correct, but the cause and the size of the real change are less certain than the sentence suggests. The same Commission document says quantitative monitoring rose from 3 to 7 groundwater bodies and that 8 of 15 are still not monitored (p. 8, 17), and warns for protected areas that \"comparability of data between the cycles might be low\" (p. 19); it reports the water balance and lowering of the water table as the reason for the four poor bodies and describes recharge as falling with rainfall (p. 21). Eurostat's estimates of groundwater abstraction fall from 41.6 million m3 (2015) to 37.3 million m3 (2021), all flagged as estimated. The first plan also had four bodies in poor quantitative status (SWD(2019) 48), so the third plan returns to that count after a second-plan low of two. The document is not consistent with itself on saline intrusion (7 bodies in the summary table and section 3.3, 5 in section 4.2); this is outside the claim. WSC reports lower groundwater production (CC-009) and plans cuts in abstraction (CC-039); nitrate levels in the Mean Sea Level Aquifer are reviewed in CC-047.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Water supply & groundwater",
       "location": {
@@ -9106,17 +9200,52 @@ body{background:#0e2a1f;color:#eef3ef}.eyebrow,.logo small{color:#a9c2b1}h1{colo
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-143A",
+          "text": "The share of groundwater bodies in good quantitative status fell from 86.7% to 73.3%",
+          "finding": "13 of 15 to 11 of 15. The 2019 document gives 13 good in the second plan [2]; the EEA’s database gives 11 good in the third [3]. The first plan had 11 good (4 poor) [2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-143B",
+          "text": "The fall is due to overabstraction",
+          "finding": "The document reports water balance and lowering of the water table as the reason for the four poor bodies and describes “systemic” overabstraction [1]. We could not test it: abstraction is only estimated by Eurostat and fell 2015–2021 [4]; the second-plan method (water-balance model) and the third-plan method were not compared; monitoring changed [1, 2].",
+          "rating": "Not tested",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-143C",
+          "text": "No groundwater body had good chemical status in 2021, while a fifth did in 2015",
+          "finding": "All 15 bodies poor in the EEA’s database [3]; 3 of 15 good (20%) in the second plan [2].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-143D",
+          "text": "Nitrates cause failure in 80% of the 15 groundwater bodies",
+          "finding": "80% is 12 of 15 (calculated). The document’s figure; we did not have the pollutant by body. Independent monitoring of nitrate is in Claim Check 047.",
+          "rating": "Consistent",
+          "tone": "lime"
+        }
+      ],
       "date": "2026-10-02",
       "quote": "no GWBs had a good chemical status in 2021, while a fifth of GWBs had a good chemical status in 2015",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-27",
+      "outputs": {
+        "report": "claim-files/CC-143/report.pdf",
+        "flyer_pdf": "claim-files/CC-143/flyer.pdf",
+        "flyer_png": "claim-files/CC-143/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-143/claim.yml",
       "similar": [
         {

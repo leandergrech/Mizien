@@ -2,9 +2,9 @@ id: CC-135
 title: 'IMF: peak electricity demand up 43% in five years'
 category: Climate & Energy
 subtopic: Electricity & grid
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
   text: 'International Monetary Fund staff (Selected Issues paper ''Taking Stock of Infrastructure in Malta'', Feb 2025):
     peak electricity demand rose ''from 465 MW in 2018 to 663 MW in 2023 (an increase of 43 percent)'', ''significantly outpaced
@@ -18,35 +18,82 @@ claim:
     publisher: International Monetary Fund
     date: Feb 2025
     url: https://meetings.imf.org/-/media/Files/Publications/Selected-Issues-Papers/2025/English/SIPEA2025007.ashx
-    note: The claim. PDF downloaded and text read on 25 Oct 2026 (HTTP 200); information as of 17 Dec 2024. Selected Issues
-      papers carry the author's (Alexander Pitt) and IMF staff views, not the Board's.
+    note: The claim. PDF downloaded and text read on 25 Oct 2026 (HTTP 200); para. 5, footnote 3 and the chart's notes re-read
+      via WebFetch on 26 Oct 2026 (curl 403 that day); information as of 17 Dec 2024. Selected Issues papers carry the author's
+      (Alexander Pitt) and IMF staff views, not the Board's.
   quote: Peak electricity demand has increased rapidly in recent years, rising from 465 MW in 2018 to 663 MW in 2023 (an increase
-    of 43 percent).
-counter_evidence: The paper itself adds that the rise 'may be related' to the increase in the mean temperature of the hottest
-  month from 27.3 to 29.6 degrees Celsius, says capacity in energy and water supply is currently adequate, and reports that
-  the authorities project peak demand about 30 percent higher by 2040 under a high-temperature and high-population scenario.
-  CC-027 (July 2026 power cuts), CC-028 (Enemalta network downtime) and the Malta Chamber's statement (CC-137) concern the
-  same demand and network.
+    of 43 percent). This increase has significantly outpaced the growth in population and tourists in the peak summer season
+    (an increase of 13 percent over the same period).
+counter_evidence: "NSO Electricity Supply releases: maximum demand 465 MW (Aug 2018) and 663 MW (Jul 2023), +42.6%. Eurostat demo_gind plus tour_occ_nim (August nights / 31, the paper's method): residents plus tourists +13.3% to +13.5% 2018-2023. Final electricity consumption grew +13.4% (nrg_cb_e), so energy kept pace with people while the peak did not. But the end years are the coolest (2018) and hottest (2023) summers of 2017-2025 at Luqa (GHCN-Daily, hottest-month mean 26.9 and 29.4 C); other windows give +28% to +37%, the 2017-2025 trend line +24% over five years, and the peak fell to 593 MW in 2024 before 637 MW in 2025. The paper itself says the rise 'may be related' to temperature, says capacity is adequate for now, and reports the authorities' projection of about 30% more peak demand by 2040 (not tested)."
 tests: Enemalta or Regulator for Energy and Water Services peak load figures for 2018-2023 (and 2024-2026); the paper's own
   source for the series; Eurostat population and NSO tourist nights for the summer months (the 13 percent); Malta Met Office
   temperature records; whether the 663 MW is gross or net, and demand met including the interconnector.
 why_low_hanging: Three numbers (465, 663, 13 percent) that can be recomputed from load data, population and tourist series.
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'Medium: the IMF paper is reachable (meetings.imf.org); load data may be browser-only (Enemalta, REWS).'
-caveats: Candidate from the weekly intake of 25 Oct 2026; the paper is from February 2025 and its data end in 2023. A staff
-  paper's view, not the IMF Board's. The 13 percent combines two series (resident population and peak-season tourists); the
-  check needs the paper's construction of it.
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High: NSO releases read via WebFetch (nso.gov.mt refuses curl); Eurostat and NOAA GHCN-Daily download by script.'
+caveats: "Largely supported: no right of reply needed. Every figure matches the NSO and Eurostat, but 2018 and 2023 are the coolest and hottest summers of 2017-2025, so the 43% is the largest of the measures (about 24% on the trend line). The NSO figures were transcribed via a web reader; Table 7 was read only for 2017-2021, and the 2024 release implies the 2023 monthly series was revised (whether 663 MW changed is unknown). Tourists are Eurostat's accommodation-establishment nights, not the NSO frontier survey. Temperatures are from NOAA's Luqa record, not the IMF's unnamed source. A staff paper's view, not the IMF Board's."
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Enemalta, Marsa
   lat: 35.88129
   lon: 14.49686
   scope: institution
   icon: pylon
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-135A
+    text: "Peak electricity demand was 465 MW in 2018"
+    finding: "NSO: maximum demand 465 MW in August 2018, the highest month of the year [2]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-135B
+    text: "Peak electricity demand was 663 MW in 2023"
+    finding: "NSO: 663 MW in July 2023, the highest month of the year [4]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-135C
+    text: "An increase of 43 percent"
+    finding: "663 / 465 − 1 = 42.6% [2, 4]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-135D
+    text: "Population and tourists in the peak summer season grew 13 percent over the same period"
+    finding: "Reproduced with the IMF’s method: 13.3% to 13.5% depending on the population count; residents alone about 14% [7, 8]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-135E
+    text: "Peak demand has increased rapidly and significantly outpaced population and tourists"
+    finding: "Holds in every window tested (peak +24% to +37% on other end years and the trend); 2018 and 2023 are the coolest and hottest summers, so 43% is the largest measure [2–6, 10]."
+    rating: "Accurate, end-year caveat"
+    tone: lime
+  - id: CC-135F
+    text: "Hottest-month mean temperature rose from 27.3 °C to 29.6 °C"
+    finding: "Luqa station: 26.9 °C to 29.4 °C (+2.5 °C against +2.3 °C); the IMF’s source not seen [10]."
+    rating: "Broadly confirmed"
+    tone: lime
+version: '1.0'
+last_reviewed: '2026-10-26'
+thumbnail:
+  figure: 663 MW
+  caption: "peak electricity demand in July 2023, up 42.6% on 2018 while residents and tourists grew 13.4%"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-26
+    step: wording
+    note: IMF SIP/2025/007 para. 5, footnote 3 and the chart notes re-read via WebFetch (curl 403); verbatim wording confirmed, including the tourist method (nights in the peak month / 31).
+  - date: 2026-10-26
+    step: note
+    note: NSO Electricity Supply releases 2021-2025 read (Table 7 for 2017-2021); Eurostat demo_gind, tour_occ_nim and nrg_cb_e and NOAA GHCN-Daily (Luqa) downloaded (tools/cc-135-report/fetch.py) and recomputed (calc.py, data/cc-135/checks.csv). 465, 663, 43% and 13% all reproduce; 2018 and 2023 are the coolest and hottest summers of 2017-2025. Two PNAS papers verified in Crossref (abstracts only).
+  - date: 2026-10-26
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (high confidence); no right of reply needed.

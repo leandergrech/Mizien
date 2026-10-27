@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 10 October 2026 (later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
+*Last updated: 27 October 2026 (Who said it rebuilt as a tree-and-panel stage with one verdict strip; decisions below; earlier: 10 October 2026: later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
 
 ## What the project is
 
@@ -15,6 +15,34 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
+
+## Who said it: stage, one strip, identity images (27 October 2026)
+
+Maintainer decisions of 27 October 2026 (assessment and plan in the Claude doc "Who said it: assessment and plan"):
+
+1. **One verdict strip for every body**, replacing the three-tier summary of 6 October (bar from five checks, weighted
+   tentative balance at three or four, count below): one square per claim, the checked ones filled in verdict order from
+   Contradicted to Supported, the rest hollow, counts in a key, "too few to summarise" below five checks. The tentative
+   balance and its freshness weighting are **retired** (`site/_lib/who.js`, `_includes/who-meter.njk`, `assets/who.css`;
+   method text in `methodology/verdict-scale.md` and `/methodology/connections/#summaries`).
+2. **`/bodies/` is a stage, as Explore**: the register as a collapsible tree (kind of body > organisation > office >
+   person, from `Parent` in `data/bodies.csv`; `whoTree` in `who.js`) on the left, built at build time as nested
+   `<details>`/`<ul>` so it works without JavaScript (each name links to the body page); the selected body in a docked
+   paper panel on the right (`assets/who-tree.js` fills it from `#who-data`, `whoPanel` in `who.js`): identity frame,
+   strip, pledge chips, links to the claims web, timeline, feed and the pinned tray, the claims newest first. URL state
+   `?sel=<id>` and `?q=<text>`; the search box matches name, role and the register's aliases (`aliases` added to
+   `body_pages` in `build_site_data.py`). On phones the panel is a bottom sheet. Bodies with no claim at all would be
+   folded under "n more" (decision), but every body in the site data has at least one claim, so nothing is folded yet.
+3. **Identity images, all sides evenly** (reverses the 6 October "no emblem of their own" rule): a portrait for a person,
+   a logo or emblem for an organisation, in the same round frame for every body, the kind glyph as the fallback. Logo
+   policy: official logos for public bodies (government, agencies, regulators); Commons-only (free licence) for parties,
+   NGOs, business and media. **Not yet built**: needs `Image`, `ImageSource`, `ImageLicence` columns in
+   `data/bodies.csv`, `scripts/body_images.py`, a validator rule (no image without source and licence) and a credits page.
+   The frames (`.wt-frame`, `.wp-frame`) are in place for them.
+4. **The pledge stack moved to `/pledges/#h-stack`** (still per body on each body page); the Who said it index no
+   longer carries it.
+5. **Next (phase 4, not built)**: `Since`/`Until` on person rows and `Successor` on organisations so a person shows
+   under the office held on each claim's date; a quarterly check of office-holders and licences; `body_queue.csv`.
 
 ## Session wrap-up: consolidation and sheets (10 October 2026)
 
@@ -1511,3 +1539,22 @@ Report v1.0 and flyer. **Verdict: Largely supported (high); no right of reply ne
 - Unverified: NSO 2024 figures (backfilling +58.0%, recycling -13.6%) read via WebFetch only, tables 403 (second-hand, ◆); no regulator finding on whether Malta's quarry deposits meet the 2018 backfilling definition was found (search log in literature/CC-131/notes.md); how Malta codes excavated rock (W121 vs soils W126) unknown; Eurostat cei_wm040 withdrawn (reason not found).
 - Archive: the Country Report has a Wayback copy (same sha256); the JRC report and the 2015 factsheet need archiving by hand (web.archive.org reset).
 - **For the maintainer (not changed, CC-134 is worker C's):** CC-134's record and report say the environmental-tax sentence is on PDF p. 44 in Annex 10 and the Annex 3 table on p. 77. In the Council register copy (same sha256) the sentence is on PDF p. 77 in Annex 8 and the Annex 3 table ('Environmental taxes (% of GDP)') on PDF p. 44: the page numbers are swapped and the annex is 8. A correction entry for CC-134 may be needed.
+## Worker A, 26 Oct 2026: CC-135 (IMF: peak electricity demand up 43% in five years)
+
+Run on the maintainer's request (not the scheduled run). Report v1.0 and flyer. **Verdict: Largely supported (high); no right of reply needed.** NSO Electricity Supply releases: maximum demand 465 MW (Aug 2018) and 663 MW (Jul 2023), +42.6%. The IMF's 13% reproduces from Eurostat demo_gind plus tour_occ_nim with the paper's stated method (August nights / 31): 13.3-13.5% depending on the population count; residents alone about 14%, tourists about 3%. Final electricity consumption +13.4% (nrg_cb_e), so energy kept pace with people while the peak did not. Caveat: 2018 and 2023 are the coolest and hottest summers of 2017-2025 at Luqa (NOAA GHCN-Daily; hottest-month mean 26.9 and 29.4 C vs the IMF's 27.3 and 29.6), so 43% is the largest measure; other windows give 28-37%, the 2017-2025 trend 24% over five years. Annual peaks 2017-2025 (NSO): 488, 465, 504, 482, 565, 581, 663, 593, 637 MW, in `data/cc-135/nso_max_demand.csv` for CC-027 and CC-137.
+- **Unverified:** NSO figures were read via WebFetch (nso.gov.mt 403 to curl); Table 7 only for 2017-2021 (NR 177/2022), 2022-2025 from release text. The 2024 release implies a revised 2023 annual average (about 470 vs 446 MW first published); whether 663 MW was revised is unknown. The IMF paper returned 403 to curl on 26 Oct (200 on 25 Oct) and was re-read via WebFetch. NSO frontier-survey tourists not tested.
+- **Archive by hand:** meetings.imf.org SIP PDF and the five nso.gov.mt pages are robots_refused; the NOAA GHCN-Daily file is robots_disallowed; the two PNAS DOIs returned HTTP errors to the archiver (run with --no-save; web.archive.org resets connections).
+- **Not taken:** CC-132 and CC-138 (worker A, not attempted in this run).
+## Worker B, 26 Oct 2026 (run on request): CC-133 (Commission: Malta's price-to-income ratio has declined)
+
+- **CC-133 completed.** Report v1.0 and flyer. **Verdict: Largely supported (moderate); no right of reply needed.** Wording on PDF p. 8 of the Council register copy; Annex 16 (pp. 113-116) says the ratio 'has declined since 2007' and its Graph A16.3 gives MT 96.9 / 92.7 (2023/2024, 2000-25 avg = 100). Eurostat tipsho60 (income = adjusted household GDI per head): Malta -11.5% 2014-2024, -23.1% since 2007 (EU-27 +5.8% since 2014); recomputed exactly. Nominal prices up every year 2015-2025 (+83.6% vs EU +65.6%), but EU-27 annual growth was higher in 2020-2022, so 'consistently outpace' holds only cumulatively. On EU-SILC median equivalised income (+62.6%, income years 2014-2024) the ratio rose 6.6% since 2014: the main caveat.
+- Unverified: the Commission's data vintage for Graph A16.3 (differs from Eurostat's PTIR_LT_AVG by up to 0.2); why national-accounts income per head and EU-SILC median income diverge in Malta since 2014 (population +31%); Malta's B7G 2021-2024 is provisional. DG ECFIN DP 228 charts read for direction only. Gan & Hill (2009), Stone (2006): abstracts only.
+- Archive: the Council register URL is already in archive/manifest.csv; the new Eurostat dataset pages and the DP 228 page (sources.csv refs 972-979) need archiving (archive_sources.py not run in this run to avoid touching other workers' manifest rows; Wayback resets connections).
+- Tip added to methodology/data-sources.md: tipsho60 is the price-to-income ratio; check it against EU-SILC median income.
+
+## Worker A run, 27 Oct 2026
+
+- **CC-143 completed** (Commission SWD(2026) 702: Malta's groundwater status worse between the second and third plans). Report v1.0 and flyer drafted. **Verdict: Largely supported (moderate).** No right of reply needed. 86.7% to 73.3% is 13 to 11 of 15 bodies and "a fifth" is 3 of 15; both agree with SWD(2019) 48 and the EEA WISE 2022 file. "Due to overabstraction" is the Commission's attribution and was not tested (monitoring grew from 3 to 7 bodies; Eurostat's estimated abstraction fell 2015-2021).
+- Unverified: second-plan status by body (EEA WISE server in maintenance on 27 Oct 2026, 2016 reporting not fetched); the 80% nitrates figure per body; the Maltese RBMPs (era.org.mt). Sources.csv refs 990-992 are new: if another PR also took these numbers, renumber on merge. The SWD(2026) PDF copy, the Cellar PDF and the WISE query need archiving by hand (archive_sources.py not run; web.archive.org resets connections).
+- Tip: reportlab/matplotlib are installed for `python3.13` (not the default `python` 3.11) in the cloud image; run the report scripts with `python3.13`.
+- **Not taken:** CC-135 (open PR #154); CC-138, CC-141 not reached (one claim per run). Other A claims carry `source:` blockers or are Drafted.

@@ -2,9 +2,9 @@ id: CC-133
 title: 'EU: Malta''s price-to-income ratio has declined'
 category: Planning & Housing
 subtopic: Housing & affordability
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
   text: 'European Commission (2026 Country Report for Malta, 3 Jun 2026): nominal property prices ''have risen steadily since
     2014 and consistently outpace EU average growth'', but ''with income growth exceeding these gains, the price-to-income
@@ -18,35 +18,77 @@ claim:
     publisher: European Commission (transmitted to the Council, 8 Jun 2026)
     date: '2026-06-03'
     url: https://data.consilium.europa.eu/doc/document/ST-10135-2026-ADD-1/en/pdf
-    note: The claim. Passage read in the summary section on housing (the report refers to Annex 16 for the chart 'House prices,
-      rents and price-to-income evolution in MT and EU27 since 2005'). Document read in full from the Council register copy
-      (HTTP 200, text extracted) on 25 Oct 2026.
+    note: The claim. Passage read in the summary section on housing (PDF p. 8); Annex 16 (PDF pp. 113-116) says the ratio
+      'has declined since 2007' and gives Graphs A16.1 (source Eurostat) and A16.3. Document read in full from the Council
+      register copy (HTTP 200, text extracted, graph pages rendered) on 25-26 Oct 2026.
   quote: However, with income growth exceeding these gains, the price-to-income ratio has actually declined, tempering the
     impact on overall affordability
-counter_evidence: 'The same passage says rental prices continue to climb, boosted by high demand from foreign workers and
-  tourists. The report gives no start year or percentage for the decline. CC-013 (PA: permits keep prices in check) and CC-018
-  (MDA: IMF ''confirms'' its view) rest on house price series; CC-123 (KPMG) on permits. The Commission uses nominal prices
-  in one sentence and a ratio in the next, so the series and period must be fixed before testing.'
+counter_evidence: "Eurostat (retrieved 26 Oct 2026): standardised price-to-income ratio tipsho60 for Malta -11.5% 2014-2024 and -23.1% 2007-2024 (peak 2008); EU-27 +5.8% since 2014; Malta 2024 recomputed exactly from prc_hpi_a, B7G and population; the Commission's Graph A16.3 (MT 96.9 and 92.7 in 2023-2024) matches within 0.2. Nominal house prices rose every year 2015-2025 (3.4-6.7%), +83.6% 2014-2025 against EU +65.6%, but EU-27 annual growth was higher in 2020, 2021 and 2022, so 'consistently outpace' is true only cumulatively. Income: adjusted household disposable income per head +95.7% 2014-2024 (prices +73.3%; Malta 2021-2024 provisional); EU-SILC median equivalised income +62.6% over income years 2014-2024, so on median income the ratio rose 6.6% since 2014 (fell 12.3% since 2007). Rents (HICP actual rentals) +15.2% in 2023, +8.9% in 2024, +1.7% in 2025. The ratio is an average measure and says nothing about renters or lower-income households."
 tests: Eurostat house price index (nominal and deflated; data-sources.md warns about tipsho20 and tipsho10) and Eurostat or
   ECB price-to-income indicators for Malta and the EU since 2014; NSO household income and property price index; Central Bank
   of Malta residential property price index; the report's Annex 16 chart data; CC-013 data.
 why_low_hanging: A direction-of-change claim that can be tested on published price and income series.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: Eurostat dissemination API and the Council register are reachable; NSO and Central Bank pages may be
   browser-only.'
-caveats: Candidate from the weekly intake of 25 Oct 2026. The claim is about the ratio of prices to income, not about whether
-  housing is affordable for any group. Specify the period (since 2014 or since 2005) before checking.
+caveats: "Largely supported: no right of reply needed. True on the indicator the Commission names (Eurostat's standardised price-to-income ratio, income = adjusted household disposable income per head); on EU-SILC median household income the ratio rose about 7% since 2014, though it fell since 2007. 'Consistently outpace EU average growth' fails year by year in 2020-2022. Malta's household income for 2021-2024 is provisional. The claim is about a ratio of prices to average income, not about whether housing is affordable for renters or any group. The Commission's data vintage for Graph A16.3 is not stated."
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-133A
+    text: "Nominal property prices have risen steadily since 2014"
+    finding: "Up every year 2015–2025, by 3.4% to 6.7%; +83.6% in all [3]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-133B
+    text: "…and consistently outpace EU average growth"
+    finding: "Cumulatively ahead every year (+83.6% vs +65.6% by 2025), but EU-27 annual growth was higher in 2020, 2021 and 2022 [3]."
+    rating: "Overstated"
+    tone: amber
+  - id: CC-133C
+    text: "Income growth exceeding these gains"
+    finding: "Yes for household adjusted disposable income per head (+95.7% vs prices +73.3%, 2014–2024); no for median household income (+62.6%) [3, 4, 5]."
+    rating: "Depends on measure"
+    tone: amber
+  - id: CC-133D
+    text: "The price-to-income ratio has actually declined"
+    finding: "Eurostat ratio −11.5% since 2014 and −23.1% since 2007; recomputed; matches the Commission’s Graph A16.3 [1, 2]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-133E
+    text: "…tempering the impact on overall affordability"
+    finding: "A fair reading of an average ratio and of borrowing capacity [8]; it does not cover renters or lower-income households [1, 6, 9]."
+    rating: "Fair, limited"
+    tone: lime
+version: '1.0'
+last_reviewed: '2026-10-26'
+thumbnail:
+  figure: '−11.5%'
+  caption: "change in Malta's house price-to-income ratio, 2014-2024 (EU-27 +5.8%)"
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-26
+    step: wording
+    note: Commission 2026 Country Report for Malta (Council register copy ST-10135-2026-ADD-1, 126 pp.) read; the summary sentence is on PDF p. 8 and Annex 16 ('declined since 2007', Graphs A16.1 and A16.3) on pp. 113-116. Verbatim wording confirmed.
+  - date: 2026-10-26
+    step: note
+    note: Eurostat tipsho60, prc_hpi_a, nasa_10_nf_tr, nama_10_pe, ilc_di03 and prc_hicp_aind downloaded (tools/cc-133-report/fetch.py) and tested (calc.py, data/cc-133/checks.csv). Ratio decline confirmed and recomputed; EU-27 prices rose faster in 2020-2022; median household income (EU-SILC) grew slower than prices since 2014. Commission discussion paper 228 read; Gan and Hill (2009) and Stone (2006) DOIs verified in Crossref (abstracts only).
+  - date: 2026-10-26
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.
