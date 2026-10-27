@@ -1,13 +1,8 @@
-# CC-131: EU: Malta recovers 100% of construction waste
+# CC-131: Malta's construction and demolition waste recovery rate 'is 100' (European Commission, Country Report 2026)
 
-**Status:** literature not yet collected.
-
-## To collect
-
-The JRC 2024 assessment (what the 100 measures: recovery as defined in the Waste Framework Directive, including backfilling, or recycling); Eurostat waste statistics for mineral construction and demolition waste (generation and treatment by operation: recovery, backfilling, disposal), Malta against the EU; ERA and NSO waste statistics; Commission reports on the Article 11 target; data in CC-082 and CC-111.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-131) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+Verbatim wording read in the Commission's Council-register copy (ST-10135-2026-ADD-1, Annex 8, PDF p. 76; Table A8.1 on
+p. 79); the unit (per cent) confirmed from the page image, Table A8.1 and the cited JRC report's Table 10. No blocker.
+Routes: the claim record's URL (HTTP 200); the JRC report linked from footnote 152 (HTTP 200); Eurostat API; Commission
+factsheet on C&D waste in Malta (2015); EUR-Lex texts via the Publications Office. era.org.mt and nso.gov.mt returned 403
+(read through WebFetch only). See `notes.md` and `references.bib`. Report: `claims/CC-131/`; calculations
+`tools/cc-131-report/calc.py`. `open-access/` holds the JRC report (CC BY 4.0).

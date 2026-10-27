@@ -1,0 +1,4 @@
+# data/cc-131
+
+- `eurostat_cdw.csv`: Eurostat env_wastrt (treatment of W121 mineral waste from construction and demolition and W126 soils, by operation: TRT, RCV_R_B, RCV_R, RCV_B, RCV_E, DSP_L_OTH and its parts; hazardous + non-hazardous and non-hazardous only; tonnes) and env_wasgen (generation, all NACE activities plus households), Malta, EU27_2020 and the 27 Member States, 2010-2022, with status flags. Source URL, retrieval date (26 Oct 2026) and dataset update date in each row. Made by `tools/cc-131-report/fetch.py`.
+- `checks.csv`: every figure the report uses, from `tools/cc-131-report/calc.py`. Recovery rate = RCV_R_B / TRT for W121 non-hazardous (the definition behind the JRC 2024 Table 10 and the withdrawn Eurostat indicator cei_wm040). Rows G1-G3 use the NSO's 2024 release text (read through WebFetch; second-hand) and are approximate.

@@ -1,13 +1,9 @@
 # CC-135: IMF: peak electricity demand up 43% in five years
 
-**Status:** literature not yet collected.
+Verbatim wording read in the IMF Selected Issues Paper SIP/2025/007 (*Taking Stock of Infrastructure in Malta*, A. Pitt,
+Feb 2025), para. 5 and chart, p. 4. No blocker.
 
-## To collect
-
-Enemalta or Regulator for Energy and Water Services peak load figures for 2018-2023 (and 2024-2026); the paper's own source for the series; Eurostat population and NSO tourist nights for the summer months (the 13 percent); Malta Met Office temperature records; whether the 663 MW is gross or net, and demand met including the interconnector.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-135) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+Routes: the claim record's URL on meetings.imf.org. The intake downloaded the PDF with curl (HTTP 200) on 25 Oct 2026;
+on 26 Oct 2026 curl returned 403, and the text was read through WebFetch (paragraph 5, footnote 3, the chart's notes and
+sources, paragraphs 2, 4, 6-8). See `notes.md` and `references.bib`. Report: `claims/CC-135/`; calculations
+`tools/cc-135-report/calc.py`; data `data/cc-135/`.

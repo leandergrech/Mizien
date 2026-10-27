@@ -1,0 +1,57 @@
+check,value,unit,source,note
+"A2010 Malta recovery rate, mineral C&D waste (W121, non-hazardous) 2010",15.854,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,recovered 119946 t of 756584 t treated
+"A2012 Malta recovery rate, mineral C&D waste (W121, non-hazardous) 2012",99.697,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,recovered 506027 t of 507563 t treated
+"A2014 Malta recovery rate, mineral C&D waste (W121, non-hazardous) 2014",99.832,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,recovered 786983 t of 788308 t treated
+"A2016 Malta recovery rate, mineral C&D waste (W121, non-hazardous) 2016",99.975,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,recovered 1030038 t of 1030298 t treated
+"A2018 Malta recovery rate, mineral C&D waste (W121, non-hazardous) 2018",99.991,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,recovered 1759799 t of 1759966 t treated
+"A2020 Malta recovery rate, mineral C&D waste (W121, non-hazardous) 2020",100.000,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,recovered 2947799 t of 2947811 t treated
+"A2022 Malta recovery rate, mineral C&D waste (W121, non-hazardous) 2022",100.000,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,recovered 2062364 t of 2062368 t treated
+A-unit Unit of the Commission's '100' (Table A8.1 row and JRC Table 10 heading),percent,text,JRC 2024 report p. 42,JRC 2024 Table 10: 'Overall recovery rate for CDW across the EU Member States (in %)'
+"B2014 EU-27 recovery rate, W121 non-hazardous 2014",86.793,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,hazardous + non-hazardous: 86.13
+"B2016 EU-27 recovery rate, W121 non-hazardous 2016",87.253,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,hazardous + non-hazardous: 86.55
+"B2018 EU-27 recovery rate, W121 non-hazardous 2018",87.863,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,hazardous + non-hazardous: 87.00
+"B2020 EU-27 recovery rate, W121 non-hazardous 2020",90.939,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,hazardous + non-hazardous: 89.98
+"B2022 EU-27 recovery rate, W121 non-hazardous 2022",91.430,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,hazardous + non-hazardous: 90.54
+"B2020-mean Simple mean of Member States with data, recovery rate 2020",90.681,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,27 states; median 95.3
+B2020-100 Member States whose rate rounds to 100 in 2020,3,count,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,EL MT NL
+B2020-min Lowest recovery rate 2020,63.499,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,FI
+"B2020-70 Member States at or above the 70% target, 2020",26,count,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,of 27 with data
+"B2022-mean Simple mean of Member States with data, recovery rate 2022",92.471,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,26 states; median 95.0
+B2022-100 Member States whose rate rounds to 100 in 2022,4,count,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,EL IE MT NL
+B2022-min Lowest recovery rate 2022,70.404,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,FI
+"B2022-70 Member States at or above the 70% target, 2022",26,count,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,of 26 with data
+"B-gap2020 Malta minus EU-27, recovery rate 2020 (current Eurostat vintage)",9.061,percentage points,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,Commission: 100 vs 89 (11 points)
+"B-gap2022 Malta minus EU-27, recovery rate 2022",8.570,percentage points,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,
+C1 JRC Table 10 2020 values matched by current Eurostat W121 non-hazardous (within 1 point),25,count,JRC 2024 Table 10 (typed from the PDF) vs env_wastrt,of 27; differ: EU27_2020 JRC 89 now 90.9; FR JRC 74 now 81.7
+"C2 France recovery rate 2020, current vintage (JRC Table 10: 74)",81.693,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,revised since the JRC extraction
+D-MT-2010 Malta 2010: recycling | backfilling share of treated W121,15.783,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 0.1%; landfill and other disposal 84.1%
+D-MT-2012 Malta 2012: recycling | backfilling share of treated W121,22.279,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 77.4%; landfill and other disposal 0.3%
+D-MT-2014 Malta 2014: recycling | backfilling share of treated W121,34.657,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 65.2%; landfill and other disposal 0.2%
+D-MT-2016 Malta 2016: recycling | backfilling share of treated W121,19.246,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 80.7%; landfill and other disposal 0.0%
+D-MT-2018 Malta 2018: recycling | backfilling share of treated W121,22.321,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 77.7%; landfill and other disposal 0.0%
+D-MT-2020 Malta 2020: recycling | backfilling share of treated W121,41.795,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 58.2%; landfill and other disposal 0.0%
+D-MT-2022 Malta 2022: recycling | backfilling share of treated W121,67.256,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 32.7%; landfill and other disposal 0.0%
+D-EU27_2020-2014 EU-27 2014: recycling | backfilling share of treated W121,79.738,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 7.1%; landfill and other disposal 12.7%
+D-EU27_2020-2016 EU-27 2016: recycling | backfilling share of treated W121,80.346,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 6.9%; landfill and other disposal 12.2%
+D-EU27_2020-2018 EU-27 2018: recycling | backfilling share of treated W121,79.403,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 8.5%; landfill and other disposal 11.8%
+D-EU27_2020-2020 EU-27 2020: recycling | backfilling share of treated W121,78.694,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 12.2%; landfill and other disposal 8.6%
+D-EU27_2020-2022 EU-27 2022: recycling | backfilling share of treated W121,80.290,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,backfilling 11.1%; landfill and other disposal 8.2%
+D-rank2020 Malta rank on recycling share of W121 2020 (1 = highest),21,rank,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,of 27; EU-27 aggregate 78.7%
+D-brank2020 Malta rank on backfilling share of W121 2020 (1 = highest),4,rank,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,"of 26; top: HU 88, DK 73, PT 63, MT 58"
+D-rank2022 Malta rank on recycling share of W121 2022 (1 = highest),18,rank,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,of 26; EU-27 aggregate 80.3%
+D-brank2022 Malta rank on backfilling share of W121 2022 (1 = highest),7,rank,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,"of 25; top: HU 77, DK 62, PT 55, IE 50"
+E2010 Malta W121 landfill and other disposal 2010,636638.000,tonnes,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,84.1% of treated; backfilling 534 t
+E2012 Malta W121 landfill and other disposal 2012,1536.000,tonnes,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,0.3% of treated; backfilling 392945 t
+F2018 Malta W121 treated / generated 2018,93.739,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,generated 1877525 t; treated 1759966 t
+F2020 Malta W121 treated / generated 2020,99.186,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,generated 2972009 t; treated 2947811 t
+F2022 Malta W121 treated / generated 2022,102.924,%,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,generated 2003771 t; treated 2062368 t
+F-soil2018 Malta soils (W126) generated | treated 2018 (outside the indicator),44.000,tonnes,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,treated 0 t; recovered 0 t
+F-soil2020 Malta soils (W126) generated | treated 2020 (outside the indicator),12863.000,tonnes,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,treated 12858 t; recovered 0 t
+F-soil2022 Malta soils (W126) generated | treated 2022 (outside the indicator),80.000,tonnes,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,treated 80 t; recovered 0 t
+G1 NSO-implied 2022 (revised) backfilling | recycling of mineral C&D waste,658150.000,tonnes,"NSO NR 023/2026, 17 Feb 2026 (release text read via WebFetch; tables not read)",recycling 1450404 t
+G2 NSO-implied 2024 backfilling | recycling of mineral C&D waste,1039877.000,tonnes,"NSO NR 023/2026, 17 Feb 2026 (release text read via WebFetch; tables not read)",recycling 1253149 t
+G3 NSO-implied 2024 backfilling share of (recycling + backfilling),45.350,%,"NSO NR 023/2026, 17 Feb 2026 (release text read via WebFetch; tables not read)","2022 (revised): 31.2%; approximate, from rounded percentages"
+"H-MT-2020 Eurostat status flags, MT W121 non-hazardous treatment 2020",none,flags,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,e = estimated
+"H-MT-2022 Eurostat status flags, MT W121 non-hazardous treatment 2022","e,none",flags,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,e = estimated
+"H-EU27_2020-2020 Eurostat status flags, EU27_2020 W121 non-hazardous treatment 2020",none,flags,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,e = estimated
+"H-EU27_2020-2022 Eurostat status flags, EU27_2020 W121 non-hazardous treatment 2022",none,flags,Eurostat env_wastrt / env_wasgen; retrieved see eurostat_cdw.csv,e = estimated
