@@ -1558,3 +1558,10 @@ Run on the maintainer's request (not the scheduled run). Report v1.0 and flyer. 
 - Unverified: second-plan status by body (EEA WISE server in maintenance on 27 Oct 2026, 2016 reporting not fetched); the 80% nitrates figure per body; the Maltese RBMPs (era.org.mt). Sources.csv refs 990-992 are new: if another PR also took these numbers, renumber on merge. The SWD(2026) PDF copy, the Cellar PDF and the WISE query need archiving by hand (archive_sources.py not run; web.archive.org resets connections).
 - Tip: reportlab/matplotlib are installed for `python3.13` (not the default `python` 3.11) in the cloud image; run the report scripts with `python3.13`.
 - **Not taken:** CC-135 (open PR #154); CC-138, CC-141 not reached (one claim per run). Other A claims carry `source:` blockers or are Drafted.
+
+## Worker B run, 28 Oct 2026
+
+- **CC-144 completed** (Mongabay: Malta has the highest hunter density in Europe). Report v1.0 and flyer drafted. **Verdict: Largely supported (moderate).** No right of reply needed. The sentence is the outlet's own and does not name a denominator: per km2 Malta is first (47.5 on FACE's 2009-10 count of 15,000, 9.5x Ireland; still first at 10,000 or 5,000 hunters), per 1,000 inhabitants it is 5th of 35 (36.2; Ireland 83.3).
+- Unverified: a current official hunter count (wbru.gov.mt 403; the 10,091 land-licence figure is second-hand, marked ◆); a current country-by-country table (FACE's is 2009-10); the 2015 Biological Conservation paper linked by Mongabay (closed access, not read); microstates absent from FACE's table.
+- Tip: reportlab/matplotlib needed `/usr/local/bin/python -m pip install --force-reinstall --no-deps pillow` to work with the default `python` in this image (PIL clash).
+- **Not taken:** CC-139 (open PR #156). Other B claims carry `source:` blockers, are Drafted, or have attempts recorded.

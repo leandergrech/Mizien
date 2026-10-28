@@ -806,7 +806,7 @@
         },
         {
           "id": "CC-054",
-          "score": 0.25,
+          "score": 0.26,
           "terms": [
             "green",
             "space",
@@ -1345,7 +1345,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.39,
+          "score": 0.4,
           "terms": [
             "square",
             "metres",
@@ -3302,7 +3302,7 @@
       "similar": [
         {
           "id": "CC-050",
-          "score": 0.3,
+          "score": 0.29,
           "terms": [
             "hunting",
             "birdlife",
@@ -3371,7 +3371,7 @@
       "similar": [
         {
           "id": "CC-049",
-          "score": 0.3,
+          "score": 0.29,
           "terms": [
             "hunting",
             "birdlife",
@@ -3565,7 +3565,7 @@
       "similar": [
         {
           "id": "CC-019",
-          "score": 0.39,
+          "score": 0.4,
           "terms": [
             "square",
             "metres",
@@ -3574,7 +3574,7 @@
         },
         {
           "id": "CC-121",
-          "score": 0.36,
+          "score": 0.37,
           "terms": [
             "square",
             "metres",
@@ -3583,7 +3583,7 @@
         },
         {
           "id": "CC-011",
-          "score": 0.25,
+          "score": 0.26,
           "terms": [
             "green",
             "space",
@@ -5366,20 +5366,20 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-088/claim.yml",
       "similar": [
         {
+          "id": "CC-106",
+          "score": 0.37,
+          "terms": [
+            "population",
+            "estimated"
+          ]
+        },
+        {
           "id": "CC-076",
           "score": 0.36,
           "terms": [
             "stood",
             "end",
             "net"
-          ]
-        },
-        {
-          "id": "CC-106",
-          "score": 0.36,
-          "terms": [
-            "population",
-            "estimated"
           ]
         }
       ]
@@ -6591,7 +6591,7 @@
       "similar": [
         {
           "id": "CC-088",
-          "score": 0.36,
+          "score": 0.37,
           "terms": [
             "population",
             "estimated"
@@ -7765,7 +7765,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.36,
+          "score": 0.37,
           "terms": [
             "square",
             "metres",
@@ -9256,10 +9256,11 @@
       "id": "CC-144",
       "title": "Mongabay: Malta has the highest hunter density in Europe",
       "category": "Nature & Wildlife",
-      "claim": "Mongabay (Spoorthy Raman, 5 Oct 2026), reporting the shooting of migratory birds after the storm of 14 Sep 2026: 'Malta has the highest density of hunters in all of Europe.' The sentence links to a 2015 paper in Biological Conservation (ScienceDirect pii S0006320715300252).",
-      "counter": "Context, not tested: density depends on the denominator (land area, population, or huntable area) and on which countries count as 'Europe'. The cited paper is from 2015; licence numbers have changed since. FACE (the European hunters' federation) publishes hunter numbers per country.",
-      "status": "Not started",
-      "verdict": null,
+      "claim": "Mongabay (Spoorthy Raman, 5 Oct 2026), in the outlet's own voice (not a quotation), reporting the shooting of migratory birds after the storm of 14 Sep 2026: 'Malta has the highest density of hunters in all of Europe.' The sentence does not say density per what; it links to a 2015 paper in Biological Conservation (Veríssimo & Campbell, doi:10.1016/j.biocon.2015.07.018). The next sentence quotes Antonia Micallef of BirdLife Malta: 'Over 10,000 hunters [are] active at any one time.'",
+      "counter": "Per km2 the claim holds: on FACE's 2009-10 table (35 countries) Malta has 47.5 hunters per km2 (15,000 hunters; Eurostat area 316 km2), 9.5 times the next country (Ireland 5.0); it stays first at 10,000 (31.6) or 5,000 (15.8) hunters. Per inhabitant it does not: 5th of 35 (36.2 per 1,000) behind Ireland 83.3, Finland 59.2, Cyprus 56.2, Norway 40.4; about 17.7 per 1,000 at 10,000 hunters. FACE's table is 2009-10; no current official count was readable (WBRU reports 403). The WBRU 2025 figure of 10,091 land licences and a 2018 Statista/DJV per-capita chart are second-hand. The cited 2015 paper is closed access and was not read.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Hunting & birds",
       "location": {
@@ -9269,26 +9270,54 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "Mongabay",
       "bodies": [
         "mongabay"
       ],
+      "subclaims": [
+        {
+          "id": "CC-144A",
+          "text": "“Malta has the highest density of hunters in all of Europe”, read per area",
+          "finding": "47.5 per km² on FACE’s count, 9.5× the next country; first at every count from 5,000 to 15,000 [3][4].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-144B",
+          "text": "The same sentence read per inhabitant",
+          "finding": "Fifth of 35 on FACE’s table (36 per 1,000; Ireland 83); 18 per 1,000 at 10,000 hunters [3][4].",
+          "rating": "Not first",
+          "tone": "red"
+        },
+        {
+          "id": "CC-144C",
+          "text": "“Over 10,000 hunters [are] active at any one time” (BirdLife Malta, quoted)",
+          "finding": "Consistent in order of magnitude with FACE (15,000) and the WBRU licence count ◆ (10,091); no current official total read. Not a claim about density; context only.",
+          "rating": "Not rated",
+          "tone": "grey"
+        }
+      ],
       "date": "2026-10-05",
       "quote": "Malta has the highest density of hunters in all of Europe.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-28",
+      "outputs": {
+        "report": "claim-files/CC-144/report.pdf",
+        "flyer_pdf": "claim-files/CC-144/flyer.pdf",
+        "flyer_png": "claim-files/CC-144/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-144/claim.yml",
       "similar": [
         {
           "id": "CC-145",
-          "score": 0.43,
+          "score": 0.56,
           "terms": [
             "hunters",
-            "mongabay",
-            "birds"
+            "active",
+            "mongabay"
           ]
         }
       ]
@@ -9325,11 +9354,11 @@
       "similar": [
         {
           "id": "CC-144",
-          "score": 0.43,
+          "score": 0.56,
           "terms": [
             "hunters",
-            "mongabay",
-            "birds"
+            "active",
+            "mongabay"
           ]
         }
       ]
