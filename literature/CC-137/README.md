@@ -1,13 +1,6 @@
-# CC-137: Malta Chamber: July power cuts were predictable
+# CC-137: Malta Chamber, July 2026 power cuts predictable (worker C, 28 Oct 2026)
 
-**Status:** literature not yet collected.
-
-## To collect
-
-Enemalta and REWS records of distribution network investment (annual reports, regulator decisions) against peak demand 2018-2026; outage records (Enemalta reliability indices, EU benchmarks for Malta); Eurostat population; peak-load series (CC-135); the Government's account of the July 2026 cuts (CC-027).
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-137) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+**Status:** checked, report v1.0 drafted. Verdict: Not substantiated (low), pending right of reply.
+Routes tried for wording: Business Now URL via WebFetch (curl 403); MaltaToday (403, search summary only); Wayback (connection reset).
+The Chamber's quoted phrases are read through a web reader, not a saved copy; check against the page.
+Investment: NAO review of 15 Jul 2024 (nao.gov.mt page and PDF 403), MaltaToday 403, Malta Business Weekly 503; The Shift (16 Jul 2024) read via WebFetch.

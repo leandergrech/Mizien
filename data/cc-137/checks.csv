@@ -1,0 +1,28 @@
+check,value,unit,source,note
+A-2017 Annual peak demand,488,MW,NSO Electricity Supply releases (nso_max_demand.csv),
+A-2018 Annual peak demand,465,MW,NSO Electricity Supply releases (nso_max_demand.csv),
+A-2019 Annual peak demand,504,MW,NSO Electricity Supply releases (nso_max_demand.csv),
+A-2020 Annual peak demand,482,MW,NSO Electricity Supply releases (nso_max_demand.csv),
+A-2021 Annual peak demand,565,MW,NSO Electricity Supply releases (nso_max_demand.csv),
+A-2022 Annual peak demand,581,MW,NSO Electricity Supply releases (nso_max_demand.csv),
+A-2023 Annual peak demand,663,MW,NSO Electricity Supply releases (nso_max_demand.csv),
+A-2024 Annual peak demand,593,MW,NSO Electricity Supply releases (nso_max_demand.csv),
+A-2025 Annual peak demand,637,MW,NSO Electricity Supply releases (nso_max_demand.csv),
+A1 Peak demand growth 2018-2023,42.581,%,NSO Electricity Supply releases (nso_max_demand.csv),465 to 663 MW
+"A2 Residents plus peak-month tourists, growth 2018-2023",13.408,%,Eurostat demo_gind / tour_occ_nim / nrg_cb_e (eurostat_pop_tourism_electricity.csv),tourists = peak-month nights / 31
+"A3 Residents alone (annual average), growth 2018-2023",14.227,%,Eurostat demo_gind / tour_occ_nim / nrg_cb_e (eurostat_pop_tourism_electricity.csv),
+A4 Final electricity consumption growth 2018-2023,13.354,%,Eurostat demo_gind / tour_occ_nim / nrg_cb_e (eurostat_pop_tourism_electricity.csv),
+A5 Linear trend in annual peak 2017-2022 (data available before the 2023 peak),21.229,MW per year,NSO Electricity Supply releases (nso_max_demand.csv),
+A6-2023 Trend 2017-2022 extrapolated to 2023,588.467,MW,NSO Electricity Supply releases (nso_max_demand.csv),actual 663 MW (+12.7%)
+A6-2025 Trend 2017-2022 extrapolated to 2025,630.924,MW,NSO Electricity Supply releases (nso_max_demand.csv),actual 637 MW (+1.0%)
+A7 Linear trend in annual peak 2017-2025,23.283,MW per year,NSO Electricity Supply releases (nso_max_demand.csv),
+"A8 Years with a higher peak than the year before, 2018-2025",5,of 8,NSO Electricity Supply releases (nso_max_demand.csv),
+A9 Peak demand per person present 2018,0.892,kW,NSO Electricity Supply releases (nso_max_demand.csv); Eurostat demo_gind / tour_occ_nim / nrg_cb_e (eurostat_pop_tourism_electricity.csv),
+A10 Peak demand per person present 2023,1.121,kW,NSO Electricity Supply releases (nso_max_demand.csv); Eurostat demo_gind / tour_occ_nim / nrg_cb_e (eurostat_pop_tourism_electricity.csv),
+A11 Change in peak per person present 2018-2023,25.724,%,NSO Electricity Supply releases (nso_max_demand.csv); Eurostat demo_gind / tour_occ_nim / nrg_cb_e (eurostat_pop_tourism_electricity.csv),
+"A12 Peak demand growth 2018-2023 explained by people present, if peak per person had stayed at 2018 level",527.347,MW,NSO Electricity Supply releases (nso_max_demand.csv); Eurostat demo_gind / tour_occ_nim / nrg_cb_e (eurostat_pop_tourism_electricity.csv),counterfactual peak 2023
+A13 Part of the 198 MW rise accounted for by growth in people present,31.489,%,NSO Electricity Supply releases (nso_max_demand.csv); Eurostat demo_gind / tour_occ_nim / nrg_cb_e (eurostat_pop_tourism_electricity.csv),
+B-2018 Hottest-month mean temperature at Luqa,26.940,C,NOAA GHCN-Daily MT000016597 Luqa (ghcnd_luqa_monthly.csv),
+B-2023 Hottest-month mean temperature at Luqa,29.430,C,NOAA GHCN-Daily MT000016597 Luqa (ghcnd_luqa_monthly.csv),
+B-2024 Hottest-month mean temperature at Luqa,28.720,C,NOAA GHCN-Daily MT000016597 Luqa (ghcnd_luqa_monthly.csv),
+B-2025 Hottest-month mean temperature at Luqa,28.070,C,NOAA GHCN-Daily MT000016597 Luqa (ghcnd_luqa_monthly.csv),
