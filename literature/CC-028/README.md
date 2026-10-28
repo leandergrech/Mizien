@@ -16,3 +16,4 @@ Add `references.bib` and `notes.md` as in `literature/CC-001/`.
 - TVMnews (31 Jul 2026) and Newsbook (31 Jul 2026) report Enemalta telling the MCESD that medium-voltage downtime fell about 76% since 2023 (EUR 141m programme, peak demand 663 to 741 MW). Both paraphrase; the only words in quotation marks are Ryan Fava's "investing ahead of demand delivers tangible benefits".
 - No press release on enemalta.com.mt (WordPress API searched). MaltaToday (143550, 143596) is behind Cloudflare.
 - Needed from the maintainer: the Enemalta/MCESD statement or MaltaToday text with the exact wording, and the metric and base period (SAIDI-type or interruption minutes).
+- 28 Oct 2026 (worker A, attempt 2): still blocked. Only secondary coverage found; no release or MCESD minutes. Needed: the statement with metric and base period.
