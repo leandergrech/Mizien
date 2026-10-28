@@ -2,13 +2,14 @@ id: CC-144
 title: 'Mongabay: Malta has the highest hunter density in Europe'
 category: Nature & Wildlife
 subtopic: Hunting & birds
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Mongabay (Spoorthy Raman, 5 Oct 2026), reporting the shooting of migratory birds after the storm of 14 Sep 2026:
-    ''Malta has the highest density of hunters in all of Europe.'' The sentence links to a 2015 paper in Biological Conservation
-    (ScienceDirect pii S0006320715300252).'
+  text: 'Mongabay (Spoorthy Raman, 5 Oct 2026), in the outlet''s own voice (not a quotation), reporting the shooting of migratory
+    birds after the storm of 14 Sep 2026: ''Malta has the highest density of hunters in all of Europe.'' The sentence does
+    not say density per what; it links to a 2015 paper in Biological Conservation (Veríssimo & Campbell, doi:10.1016/j.biocon.2015.07.018).
+    The next sentence quotes Antonia Micallef of BirdLife Malta: ''Over 10,000 hunters [are] active at any one time.'''
   speaker: Mongabay
   date: '2026-10-05'
   wording_status: Verbatim found
@@ -20,28 +21,72 @@ claim:
     note: The claim. Read in full with curl on 26 Oct 2026 (HTTP 200); last modified 23 Oct 2026. The density sentence is
       the outlet's own, with a link to the 2015 paper; the incident figures are attributed to BirdLife Malta.
   quote: Malta has the highest density of hunters in all of Europe.
-counter_evidence: 'Context, not tested: density depends on the denominator (land area, population, or huntable area) and on
-  which countries count as ''Europe''. The cited paper is from 2015; licence numbers have changed since. FACE (the European
-  hunters'' federation) publishes hunter numbers per country.'
+counter_evidence: 'Per km2 the claim holds: on FACE''s 2009-10 table (35 countries) Malta has 47.5 hunters per km2 (15,000
+  hunters; Eurostat area 316 km2), 9.5 times the next country (Ireland 5.0); it stays first at 10,000 (31.6) or 5,000 (15.8)
+  hunters. Per inhabitant it does not: 5th of 35 (36.2 per 1,000) behind Ireland 83.3, Finland 59.2, Cyprus 56.2, Norway 40.4;
+  about 17.7 per 1,000 at 10,000 hunters. FACE''s table is 2009-10; no current official count was readable (WBRU reports 403).
+  The WBRU 2025 figure of 10,091 land licences and a 2018 Statista/DJV per-capita chart are second-hand. The cited 2015 paper
+  is closed access and was not read.'
 tests: The 2015 Biological Conservation paper (verify via Crossref); FACE hunter census figures; Malta's Wild Birds Regulation
   Unit annual reports (hunting licences issued) and Eurostat land area and population; compute hunters per km2 and per 1,000
   people for EU and other European countries.
 why_low_hanging: A ranking that can be recomputed from licence counts and land area.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'Medium: Mongabay readable; FACE and WBRU figures may need a browser.'
-caveats: Candidate from the top-up intake of 26 Oct 2026. Foreign media. Test the density ranking only; make no claim about
-  hunters as people.
+caveats: 'No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading or
+  Contradicted). Density ranking only; nothing about hunters as people or the legality of any shooting. The sentence does
+  not state its denominator: per area is supported, per head is not. Comparison table is from 2009-10; Malta''s current count
+  is NGO-sourced (BirdLife Malta via Mongabay) or second-hand.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- FACE Annual Report 2009-2010 p.16, Hunters in Europe table (data/cc-144/face_hunters_2009_10.csv)
+- Eurostat demo_pjan and demo_r_d3area, Malta (data/cc-144/malta_inputs.csv)
+- 'Recalculation: data/cc-144/checks.csv, ranking_2010.csv (tools/cc-144-report/calc.py)'
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-144A
+    text: "“Malta has the highest density of hunters in all of Europe”, read per area"
+    finding: "47.5 per km² on FACE’s count, 9.5× the next country; first at every count from 5,000 to 15,000 [3][4]."
+    rating: "Supported"
+    tone: green
+  - id: CC-144B
+    text: "The same sentence read per inhabitant"
+    finding: "Fifth of 35 on FACE’s table (36 per 1,000; Ireland 83); 18 per 1,000 at 10,000 hunters [3][4]."
+    rating: "Not first"
+    tone: red
+  - id: CC-144C
+    text: "“Over 10,000 hunters [are] active at any one time” (BirdLife Malta, quoted)"
+    finding: "Consistent in order of magnitude with FACE (15,000) and the WBRU licence count ◆ (10,091); no current official total read. Not a claim about density; context only."
+    rating: "Not rated"
+    tone: grey
+version: '1.0'
+last_reviewed: '2026-10-28'
+thumbnail:
+  figure: 47 per km²
+  caption: Malta hunters per km² on FACE’s count, 9.5× the next country (but 5th per head)
+history:
+- date: 2026-10-28
+  step: started
+  note: Located the outlet's own sentence and Micallef's quotation (Mongabay read in full). Crossref identifies the linked
+    paper as Veríssimo & Campbell 2015 (closed access, not read). Found FACE 2009-10 country table; Eurostat population and
+    area; WBRU reports 403 (browser-only).
+- date: 2026-10-28
+  step: version
+  version: '1.0'
+  note: 'First issue. Largely supported (moderate): first per km2 by 9.5x, fifth per head; counts old or second-hand. No right
+    of reply needed.'
