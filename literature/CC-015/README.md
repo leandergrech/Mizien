@@ -14,3 +14,4 @@ Add `references.bib` and `notes.md` as in `literature/CC-001/`.
 
 ## Attempt log
 - 4 Oct 2026 (worker A): blocked. Newsbook (24 Sep 2026) reports the remark only as paraphrase; the Maltese Herald video report returned 403 and Wayback was unreachable. Needed: his exact words (recording or transcript) in `primary-source.md`. A recording/transcript would settle the wording; the dates are then a document check.
+- 28 Oct 2026 (worker A, attempt 2): still blocked. The Shift (26 Sep 2026) has 'three weeks' only in the campaigners' paraphrase; search found no verbatim wording; MaltaToday returns 403. Needed: recording or transcript.

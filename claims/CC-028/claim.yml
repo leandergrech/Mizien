@@ -42,3 +42,6 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-05
     step: started
     note: "Worker A, attempt 1: blocked on source. TVM News and Newsbook (31 Jul 2026) report Enemalta telling the MCESD that medium-voltage downtime fell about 76% since 2023 (EUR 141 million programme), both in paraphrase; the only quoted words are 'investing ahead of demand delivers tangible benefits'. No press release on enemalta.com.mt; MaltaToday unreachable to scripts. Needed: the statement with its exact wording, the metric and the base period."
+  - date: 2026-10-28
+    step: note
+    note: "Worker A, attempt 2 (28 Oct 2026): still blocked on source. A web search found only secondary coverage (a MaltaToday headline, 403 to scripts, and AI-generated digests that give the figure as a fall of 76% since 2023 on the medium-voltage network); no Enemalta release or MCESD minutes with exact wording, metric and base period. Needed: the statement itself."

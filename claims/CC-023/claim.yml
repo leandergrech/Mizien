@@ -43,3 +43,6 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-04
     step: started
     note: "Worker A, attempt 1: blocked on source. No statement found saying the second interconnector is on track for 2026; Newsbook (5 Jul 2021) has Minister Dalli giving 2025 (200 MW, Ragusa). Needed: the dated primary statement."
+  - date: 2026-10-28
+    step: note
+    note: "Worker A, attempt 2 (28 Oct 2026): still blocked on source. A search surfaces a MaltaToday article headlined 'Malta's second interconnector on track for completion in 2026' (item 137267, date unconfirmed), which returns 403 to scripts; only a search summary (second-hand) attributes the 2026 timing to Minister Dalli. Newsbook (5 Jul 2021) gives only 2025, unquoted. Nexans (29 Jun 2026) reports cable manufacturing complete (lead, not read in full). Needed: the MaltaToday text or a dated ministry statement."

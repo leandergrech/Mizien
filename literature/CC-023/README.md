@@ -14,3 +14,4 @@ Add `references.bib` and `notes.md` as in `literature/CC-001/`.
 
 ## Attempt log
 - 4 Oct 2026 (worker A): blocked. Newsbook 5 Jul 2021 has Minister Dalli saying a second interconnector by 2025 (200 MW, Ragusa). No statement found saying "on track for 2026"; supply the dated primary statement.
+- 28 Oct 2026 (worker A, attempt 2): still blocked. Lead: MaltaToday item 137267 (403; search summary only, second-hand). Newsbook gives 2025 unquoted. Needed: MaltaToday text or dated ministry statement.

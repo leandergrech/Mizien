@@ -49,3 +49,6 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-04
     step: started
     note: "Worker A, attempt 1: blocked on source. Newsbook (24 Sep 2026) gives the 'three weeks' remark only in paraphrase; The Maltese Herald's video report returned 403 and Wayback was unreachable. Needed: his exact words (a recording or transcript) in literature/CC-015/primary-source.md; the dates are then a document check."
+  - date: 2026-10-28
+    step: note
+    note: "Worker A, attempt 2 (28 Oct 2026): still blocked on source. The Shift News (26 Sep 2026) carries the 'three weeks' remark only inside the campaigners' paraphrase; its one direct quote ('we can do business whenever you want') is from the 2019 chat, not the 'three weeks' remark. A web search found MaltaToday coverage of the conference (403 to scripts) with no 'three weeks' wording. Needed: a recording or transcript of his words, in literature/CC-015/primary-source.md."
