@@ -1565,3 +1565,9 @@ Run on the maintainer's request (not the scheduled run). Report v1.0 and flyer. 
 - Unverified: a current official hunter count (wbru.gov.mt 403; the 10,091 land-licence figure is second-hand, marked ◆); a current country-by-country table (FACE's is 2009-10); the 2015 Biological Conservation paper linked by Mongabay (closed access, not read); microstates absent from FACE's table.
 - Tip: reportlab/matplotlib needed `/usr/local/bin/python -m pip install --force-reinstall --no-deps pillow` to work with the default `python` in this image (PIL clash).
 - **Not taken:** CC-139 (open PR #156). Other B claims carry `source:` blockers, are Drafted, or have attempts recorded.
+
+## Worker C, 28 Oct 2026: CC-137 (Malta Chamber: July power cuts were predictable)
+- **CC-137 completed.** Report v1.0 and flyer drafted. **Verdict: Not substantiated (low confidence)**, pending right of reply (maintainer handles it). Foreseeability holds (2017-2022 trend gives 631 MW for 2025, actual 637 MW; peaks rose in 5 of 8 years), but people present explain only about 31% of the 2018-2023 rise (peak +42.6%, people +13.4%); 'investment was not enough' has no figure in the statement.
+- **Unverified:** the Chamber's words were read through a web reader only (Business Now 403 to curl). The NAO review of July 2024 (nao.gov.mt 403) is known only from The Shift and search summaries (EUR 15m a year to EUR 5.7m in 2023, marked second-hand in the report). Enemalta capital spending 2019-2026 and the July 2026 peak (741 MW, CC-027) not obtained. Wayback unreachable (connection reset).
+- **Maintainer:** open PR #157 (worker C, CC-036 blocked) names CC-137 only as 'not taken'; treated as not a collision. If you can, supply the NAO review PDF as literature/CC-137/primary-source.md to firm up the investment limb.
+

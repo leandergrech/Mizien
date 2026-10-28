@@ -8937,8 +8937,8 @@
       "category": "Climate & Energy",
       "claim": "The Malta Chamber of Commerce, Enterprise and Industry (21 Jul 2026, on the July power cuts): 'this increase was predictable – given the trends in increase in population'; 'It is evident that the investment carried out was not enough'; and the cuts are 'linked directly with the country's economic growth model'.",
       "counter": "CC-027 records the Government attributing the July 2026 cuts to heat-driven demand rather than generation, and CC-028 Enemalta saying it is investing ahead of demand. The IMF found peak demand up 43% in 2018-2023, outpacing population and tourists (CC-135), and attributed part of it to higher temperatures. The Opposition's proposal for automatic compensation and a network investment plan is a proposal, not a claim (not tested). No figure for the investment carried out or needed was found in the Chamber's words.",
-      "status": "Not started",
-      "verdict": null,
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [],
       "subtopic": "Electricity & grid",
       "location": {
@@ -8948,17 +8948,52 @@
         "scope": "institution",
         "icon": "pylon"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Low",
       "speaker": "The Malta Chamber of Commerce, Enterprise and Industry",
       "bodies": [
         "malta-chamber"
       ],
+      "subclaims": [
+        {
+          "id": "CC-137A",
+          "text": "“this increase was predictable”",
+          "finding": "The 2017–2022 trend gave 631 MW for 2025 (actual 637); peaks rose in 5 of 8 years [2].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-137B",
+          "text": "“given the trends in increase in population”",
+          "finding": "People present +13.4% against peak demand +42.6%; they account for about 31% of the 2018–2023 rise [2][3].",
+          "rating": "Partly",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-137C",
+          "text": "“It is evident that the investment carried out was not enough”",
+          "finding": "No figure for investment made or needed in the statement; NAO findings known second-hand only ◆ [5][6].",
+          "rating": "Not substantiated",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-137D",
+          "text": "Cuts “linked directly with the country’s economic growth model”",
+          "finding": "A characterisation; not rated.",
+          "rating": "Not rated",
+          "tone": "grey"
+        }
+      ],
       "date": "2026-07-21",
       "quote": "It is evident that the investment carried out was not enough.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-28",
+      "outputs": {
+        "report": "claim-files/CC-137/report.pdf",
+        "flyer_pdf": "claim-files/CC-137/flyer.pdf",
+        "flyer_png": "claim-files/CC-137/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-137/claim.yml",
       "similar": [
         {

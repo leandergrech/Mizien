@@ -2,9 +2,9 @@ id: CC-137
 title: 'Malta Chamber: July power cuts were predictable'
 category: Climate & Energy
 subtopic: Electricity & grid
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Low
 claim:
   text: 'The Malta Chamber of Commerce, Enterprise and Industry (21 Jul 2026, on the July power cuts): ''this increase was
     predictable – given the trends in increase in population''; ''It is evident that the investment carried out was not enough'';
@@ -38,21 +38,60 @@ tests: Enemalta and REWS records of distribution network investment (annual repo
 why_low_hanging: 'Testable parts: investment against demand growth, and whether the rise in demand tracks population. ''Economic
   growth model'' is a characterisation to be compared with the numbers.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'Medium: Business Now readable via WebFetch only; Enemalta and REWS data may be browser-only.'
-caveats: Candidate from the weekly intake of 25 Oct 2026. The claimant is a business body and holds the same standard as the
-  Government. The Chamber's statements on the growth model are opinion; check the measurable parts (investment, demand, outages).
-  Related to CC-027, CC-028, CC-097 and CC-115.
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'Medium: Business Now readable via WebFetch only; NSO and Eurostat data reused from CC-135; NAO review and Enemalta investment data browser-only (403).'
+caveats: "Not substantiated: pending right of reply. The rise in demand was foreseeable (the 2017-2022 trend gives 631 MW for 2025; actual 637 MW) but population and tourists explain only about 31% of the 2018-2023 rise in the peak. 'Investment was not enough' has no figure in the Chamber's statement, and the National Audit Office review (July 2024) and Enemalta spending data could not be opened (403): the EUR 15 million and EUR 5.7 million figures are second-hand (The Shift, search summaries). The Chamber's words were read only through a web reader; check them against the page. The growth-model characterisation is not rated. Related to CC-027, CC-028, CC-097, CC-115, CC-135."
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: Enemalta, Marsa
   lat: 35.88129
   lon: 14.49686
   scope: institution
   icon: pylon
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-137A
+    text: "“this increase was predictable”"
+    finding: "The 2017–2022 trend gave 631 MW for 2025 (actual 637); peaks rose in 5 of 8 years [2]."
+    rating: "Supported"
+    tone: green
+  - id: CC-137B
+    text: "“given the trends in increase in population”"
+    finding: "People present +13.4% against peak demand +42.6%; they account for about 31% of the 2018–2023 rise [2][3]."
+    rating: "Partly"
+    tone: amber
+  - id: CC-137C
+    text: "“It is evident that the investment carried out was not enough”"
+    finding: "No figure for investment made or needed in the statement; NAO findings known second-hand only ◆ [5][6]."
+    rating: "Not substantiated"
+    tone: amber
+  - id: CC-137D
+    text: "Cuts “linked directly with the country’s economic growth model”"
+    finding: "A characterisation; not rated."
+    rating: "Not rated"
+    tone: grey
+version: '1.0'
+last_reviewed: '2026-10-28'
+thumbnail:
+  figure: 31%
+  caption: of the 2018-2023 rise in peak electricity demand explained by more people present (peak +42.6%, people +13.4%)
+history:
+- date: 2026-10-28
+  step: started
+  note: Business Now statement re-read through a web reader (the sentence on investment and the date confirmed; 'predictable' and population, tourists and temperature named). NAO review of July 2024 (nao.gov.mt, MaltaToday, Malta Business Weekly) returned 403 or 503; its figures are known only from The Shift and search summaries. Wayback unreachable (connection reset).
+- date: 2026-10-28
+  step: note
+  note: Peak demand, population, tourists and temperature series reused from CC-135 (data/cc-137/, same sources and retrieval dates) and recomputed in tools/cc-137-report/calc.py. 2018-2023 peak +42.6% against people present +13.4%; people present account for about 31% of the rise; the 2017-2022 trend gives 631 MW for 2025 against an actual 637 MW.
+- date: 2026-10-28
+  step: version
+  version: '1.0'
+  note: 'First issue. Not substantiated (low confidence): foreseeability supported, population only a partial explanation, sufficiency of investment untestable on documents read. Pending right of reply.'
