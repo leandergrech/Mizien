@@ -47,3 +47,7 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-29
+    step: started
+    note: "Worker C, attempt 1. Verbatim wording confirmed in the SWD(2026) 702 PDF (sentence on PDF p. 11; also in section 4.4). Figure 4 (PDF p. 14) is in million p.e.: about 0.72 generated and about 0.05 achieving biological treatment (read off the chart), so the 7% is a share of load, not of volume. Not done: the underlying EEA Waterbase 2022 table could not be queried (discodata.eea.europa.eu returned 403 to scripts), so no figure has been recomputed. A search summary of the Commission's 2020 chapter for Malta (second-hand) gives 94.2% of load not compliant in 2020. Needed: the Waterbase UWWTD 2022 table for Malta or the Commission implementation-report chapter, read in a browser."
