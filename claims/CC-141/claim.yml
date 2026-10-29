@@ -44,3 +44,7 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-29
+    step: started
+    note: "Worker A, attempt 1: blocked on network. The Pre-Budget Consultation Document 2027 PDF (finance.gov.mt) returned 403 to scripts and WebFetch and Wayback reset the connection on 29 Oct 2026, so the sentence and its page could not be confirmed first-hand; blog and consultancy summaries are second-hand. Needed: the PDF read in a browser (sentence, page)."
