@@ -9072,9 +9072,10 @@
       "title": "Pre-Budget Document: energy import dependency about 98%, highest in the EU",
       "category": "Climate & Energy",
       "claim": "Ministry for Finance, Pre-Budget Consultation Document 2027 (September 2026, launched 30 Sep 2026), p. 66: 'Eurostat statistics show that Malta's energy import dependency is approximately 98.0 per cent, the highest in the European Union.' No reference year is given.",
-      "counter": "Context, not tested: Malta imports all its fossil fuels and part of its electricity through the interconnector; Eurostat's import-dependency indicator (net imports over gross available energy) counts bunker fuels for international shipping and aviation in some definitions, which weigh heavily for Malta. Cyprus and Luxembourg have usually been close to Malta at the top of the ranking. The document uses the figure to argue for keeping energy subsidies (CC-095).",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Eurostat nrg_ind_id: Malta 98.4% in 2024 (97.0-99.0% in 2019-2024), first of 27 in every year 2016-2024 (2015: Cyprus 97.32%, Malta 97.30%). Not tested: Malta imports all its fossil fuels; the indicator counts bunkers (68.5% of gross available energy in 2024). Context, not tested: Malta imports all its fossil fuels and part of its electricity through the interconnector; Eurostat's import-dependency indicator (net imports over gross available energy) counts bunker fuels for international shipping and aviation in some definitions, which weigh heavily for Malta. Cyprus and Luxembourg have usually been close to Malta at the top of the ranking. The document uses the figure to argue for keeping energy subsidies (CC-095).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [
         "Selective metric"
       ],
@@ -9086,17 +9087,38 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "Ministry for Finance (Pre-Budget Document 2027)",
       "bodies": [
         "ministry-finance"
       ],
+      "subclaims": [
+        {
+          "id": "CC-140A",
+          "text": "Malta’s energy import dependency is approximately 98.0 per cent",
+          "finding": "Eurostat: 98.4% in 2024; 97.0–99.0% in 2019–2024. No year is stated; none gives exactly 98.0.",
+          "rating": "Mostly accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-140B",
+          "text": "It is the highest in the European Union",
+          "finding": "Eurostat: first of 27 in every year 2016–2024 (next in 2024: Luxembourg 91.0%).",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
       "date": "2026-09-30",
       "quote": "Malta's energy import dependency is approximately 98.0 per cent, the highest in the European Union",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-10-30",
+      "outputs": {
+        "report": "claim-files/CC-140/report.pdf",
+        "flyer_pdf": "claim-files/CC-140/flyer.pdf",
+        "flyer_png": "claim-files/CC-140/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-140/claim.yml",
       "similar": [
         {
