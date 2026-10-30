@@ -1571,3 +1571,9 @@ Run on the maintainer's request (not the scheduled run). Report v1.0 and flyer. 
 - **Unverified:** the Chamber's words were read through a web reader only (Business Now 403 to curl). The NAO review of July 2024 (nao.gov.mt 403) is known only from The Shift and search summaries (EUR 15m a year to EUR 5.7m in 2023, marked second-hand in the report). Enemalta capital spending 2019-2026 and the July 2026 peak (741 MW, CC-027) not obtained. Wayback unreachable (connection reset).
 - **Maintainer:** open PR #157 (worker C, CC-036 blocked) names CC-137 only as 'not taken'; treated as not a collision. If you can, supply the NAO review PDF as literature/CC-137/primary-source.md to firm up the investment limb.
 
+
+## Worker C run 2026-10-30: CC-140 (Pre-Budget Document: energy import dependency 98%)
+| CC-140 Pre-Budget Document: energy import dependency | Report v1.0 and flyer (30 Oct 2026). **Verdict: Largely supported (high).** Eurostat nrg_ind_id: Malta 98.4% in 2024 (97.0-99.0% in 2019-2024), first of 27 every year 2016-2024 (2015: Cyprus 97.32% vs Malta 97.30%); rebuilt from nrg_bal_c to 0.1 point. No reference year in the document; bunkers are 68.5% of Malta's gross available energy (2024). No right of reply needed. |
+- CC-036 and CC-142 already had open worker PRs (#157, #163), so were skipped this run; CC-145 is next for worker C.
+- finance.gov.mt PDF still 403 to curl and WebFetch on 30 Oct: the sentence is not re-read, the maintainer should still confirm it (p. 66) in a browser.
+- Tools: report_html.py needs `/usr/bin/python3` here (the default `python` lacks a working PIL for it).
