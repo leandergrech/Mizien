@@ -46,3 +46,6 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+  - date: 2026-10-31
+    step: started
+    note: "Worker C, attempt 1: blocked, no report written. Mongabay (5 Oct 2026) returns 403 to scripts and WebFetch returns only a summary, so Antonia Micallef's quoted words could not be re-read verbatim in this run (the intake read them on 26 Oct). BirdLife Malta's own releases of 14 and 16 Sep 2026 (read in full) say the Turtle-dove season was closed after the autumn quota of 500 was 'reportedly reached' and refer to 'thousands of hunters', but contain neither the '10,000 hunters' nor the '21 protected birds' figure; the Mongabay line that hunters shot more than 500 doves is not in them. The licence denominator (WBRU Game Reporting Data 2025) is 403 and seen only in a search summary (10,091 general licences, second-hand). Needed: the Mongabay text or Micallef's email, BirdLife's own 14-21 Sep casualty list, and the WBRU 2025 report from a browser."
