@@ -130,4 +130,4 @@ CC-141,A,2026-10-26,top-up intake,0,,
 CC-142,C,2026-10-26,top-up intake,0,,
 CC-143,A,2026-10-26,top-up intake,1,2026-10-27,
 CC-144,B,2026-10-26,top-up intake,1,2026-10-28,
-CC-145,C,2026-10-26,top-up intake,0,,
+CC-145,C,2026-10-26,top-up intake,1,2026-10-31,"network: news.mongabay.com (403 to curl; WebFetch returns only a summary), wbru.gov.mt (403 to scripts), web.archive.org (reset); source: Micallef's quoted words are not re-read verbatim by this run, the '21 birds' count has no BirdLife release of its own (BirdLife's 14 and 16 Sep releases, read in full, do not contain it), and the licence denominator (WBRU Game Reporting Data 2025) is seen only in a search summary; tried: Mongabay via curl/WebFetch, BirdLife Malta releases of 14, 15, 16, 24 and 29 Sep 2026, WBRU 2024 and 2025 game-reporting PDFs, 2 web searches, Crossref; needs the Mongabay text or Micallef's email, and the WBRU 2025 report from a browser"
