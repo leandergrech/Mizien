@@ -1,0 +1,50 @@
+id: CC-150
+title: 'Labour Party: 412 million kg of waste diverted from landfill in five years'
+category: Waste
+subtopic: Landfill & treatment
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Partit Laburista (statement of 21 Jan 2026, headed that the Government is delivering a ''historic transformation
+    in waste management''): around 412 million kilograms of waste have been diverted from landfills over five years.'
+  speaker: Partit Laburista
+  date: '2026-01-21'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: PL says Government is delivering a historic transformation in waste management
+    publisher: The Malta Independent
+    date: '2026-01-21'
+    url: https://www.independent.com.mt/articles/2026-01-21/local/PL-says-Government-is-delivering-a-historic-transformation-in-waste-management-6736286533
+    note: The claim as reported; figure seen in a search summary only (page returned 403 on 1 Nov 2026). The party's own release
+      not yet found.
+  - title: Malta records strong progress in waste separation
+    publisher: Government of Malta (Department of Information)
+    date: '2026-01-19'
+    url: https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/2026/01/19/PR260072en.aspx
+    note: Related official release two days earlier (same theme as CC-004); figures not read.
+counter_evidence: 'A cumulative kilogram figure has no baseline or denominator: diverted compared with what, over which five
+  years, and counted at which point (separation at source, treatment, export)? Malta ranked 24th of 27 for municipal recycling
+  in 2023 (Eurostat, as reported by The Shift/Business Now; second-hand), and the Commission found missed recycling targets
+  (CC-117). Total waste generated per head also matters.'
+tests: WasteServ and NSO municipal waste tables (landfilled, recycled, treated) 2020-2025; Eurostat env_wasmun; reconstruct
+  "diverted" under stated definitions; compare with landfill tonnes at Magħtab and Għallis.
+why_low_hanging: Annual landfill tonnage is published; a cumulative figure can be tested against it.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: NSO/WasteServ tables partly browser-only; Eurostat reachable.'
+caveats: 'Candidate from weekly intake 1 Nov 2026. The claimant is the governing party, not the Ministry: look for the party''s
+  release and any ministry figure it relies on. Figure unverified beyond a search summary.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

@@ -356,3 +356,101 @@ CC-144,CC-145,T25,Hunting pressure and enforcement,Shared driver,Weak (indicativ
 CC-006,CC-049,T25,Hunting pressure and enforcement,Shared driver,Weak (indicative)
 CC-006,CC-050,T25,Hunting pressure and enforcement,Shared driver,Weak (indicative)
 CC-049,CC-050,T25,Hunting pressure and enforcement,Shared driver,Weak (indicative)
+CC-003,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-007,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-008,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-016,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-021,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-026,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-035,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-069,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-071,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-072,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-076,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-109,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-110,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-115,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-132,CC-152,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-002,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-002,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-004,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-004,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-008,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-008,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-017,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-017,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-063,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-063,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-079,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-079,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-080,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-080,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-081,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-081,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-082,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-082,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-111,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-111,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-117,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-117,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-131,CC-150,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-131,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-150,CC-151,T5,Waste and construction,Shared material flow,Weak (indicative)
+CC-003,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-003,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-004,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-004,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-007,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-007,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-010,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-010,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-022,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-022,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-025,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-025,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-026,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-026,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-051,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-051,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-079,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-079,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-110,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-110,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-114,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-114,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-131,CC-146,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-131,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-146,CC-147,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-013,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-014,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-017,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-018,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-019,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-058,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-060,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-062,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-123,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-133,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-136,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-139,CC-149,T8,"Planning, housing and land take",Shared driver,Weak (indicative)
+CC-026,CC-146,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-026,CC-147,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-026,CC-148,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-031,CC-146,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-031,CC-147,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-031,CC-148,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-109,CC-146,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-109,CC-147,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-109,CC-148,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-114,CC-146,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-114,CC-147,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-114,CC-148,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-146,CC-147,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-146,CC-148,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-147,CC-148,T16,Shared emissions figures,Shared data,Weak (indicative)
+CC-101,CC-153,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-117,CC-153,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-128,CC-153,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-129,CC-153,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-142,CC-153,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-143,CC-153,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)

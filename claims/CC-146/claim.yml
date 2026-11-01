@@ -1,0 +1,58 @@
+id: CC-146
+title: 'Central Bank of Malta: rising emissions intensity is a ''statistical illusion'''
+category: Climate & Energy
+subtopic: Emissions & targets
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Central Bank of Malta (Aaron G. Grech, chief officer, Economics Division; reported by MaltaToday, April 2026): the
+    claim that Malta''s greenhouse-gas emissions intensity is rising is ''a statistical illusion'' driven by methodology (international
+    aviation and shipping counted in the Eurostat measure), not a real deterioration. Reported figures: under the UN-based
+    measure intensity was nearly a quarter better in 2023 than in 2018; adjusted for aviation outside Maltese airspace it
+    reached a historic low in 2024, about a quarter of its 2005 level.'
+  speaker: Central Bank of Malta (Aaron G. Grech)
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'PN: Malta only EU state to increase emissions intensity since 2013'
+    publisher: MaltaToday
+    date: 2026-04
+    url: https://www.maltatoday.com.mt/news/national/139395/pn_malta_only_eu_state_to_increase_emissions_intensity_since_2013
+    note: 'Locates the dispute (PN''s Eurostat figure of +17% since 2013 against -34% for the EU, and the Central Bank''s
+      reply as summarised by a search engine). Not read in full (WebFetch blocked): the Central Bank''s own words and the
+      report title still to be found.'
+  - title: 'Central Bank of Malta: Statistics and Staff Insights'
+    publisher: Central Bank of Malta
+    date: n/d
+    url: https://www.centralbankmalta.org/statistics-staff-insights
+    note: 'Lead, not retrieved: where the Economics Division publishes staff notes. The exact report is not yet identified.'
+counter_evidence: 'Attributed context: the PN (CC-114) cites Eurostat air emissions accounts showing intensity up 17% since
+  2013 while the EU average fell 34%. The Climate Action Authority factsheet (CC-147) makes a similar methodological argument.
+  Eurostat/UN accounting differences (residence vs territory principle, bunkers and aviation) are real; whether they explain
+  the whole divergence is the point to test. The Central Bank says Malta still faces important policy gaps.'
+tests: 'Eurostat air emissions accounts (env_ac_ainah_r2) and ESA GDP: recompute emissions per euro of GVA, with and without
+  NACE H51 (air transport) and H50 (water transport); Malta UNFCCC inventory (NIR 2026) by sector; the EU 2013-2024 comparison.
+  Compare the Central Bank method with Eurostat metadata.'
+why_low_hanging: Public datasets reproduce both measures; the dispute is about definition, a good test of how metric choice
+  drives a headline.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Queue
+data_readiness: High on data (Eurostat, Malta NIR via UNFCCC); the Central Bank report itself not yet located (centralbankmalta.org
+  not tested).
+caveats: 'Candidate from weekly intake 1 Nov 2026. Date of the Central Bank report not confirmed (April 2026 per MaltaToday
+  coverage). Wording unverified: locate the report. The same dispute underlies CC-114 (PN): check both on the same dataset.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross
