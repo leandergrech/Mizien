@@ -1,0 +1,55 @@
+id: CC-152
+title: 'ERA: Malta at significant risk of missing its 2030 nitrogen-oxide target'
+category: Air
+subtopic: Air quality & health
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Environment and Resources Authority (draft revised National Air Pollution Control Programme, issued for consultation
+    in June 2026; reported by Italpress/Malta News Agency on 17 Jul 2026): Malta ''remains at significant risk of failing
+    to meet'' its legally binding 2030 NOx emissions target; with the measures in place NOx is forecast at 3.88 kilotonnes
+    in 2030 against a ceiling of 1.98 kilotonnes; road transport was 42.6% and maritime activity 15.5% of national NOx in
+    2023.'
+  speaker: Environment and Resources Authority (ERA)
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta at risk of missing 2030 NOx emissions target, ERA warns
+    publisher: Italpress (Malta News Agency)
+    date: '2026-07-17'
+    url: https://www.italpress.com/?p=716573
+    note: The claim as reported; figures read on 1 Nov 2026. The wording in quotation marks is the agency's summary, not a
+      verified ERA quotation.
+  - title: Malta set to miss 2030 traffic-induced NOx emission reduction target
+    publisher: MaltaToday
+    date: n/d (June-July 2026)
+    url: https://www.maltatoday.com.mt/news/national/143188/malta_set_to_miss_2030_trafficinduced_nox_emission_reduction_target
+    note: Second report of the same programme; 403 on 1 Nov 2026.
+counter_evidence: This is a regulator's own forecast against a legal limit, so it is a claim against interest rather than
+  a boast. Forecasts depend on activity assumptions (vehicle fleet, shipping, power generation). The Commission opened an
+  infringement over the late NAPCP update (CC-129). The 2030 ceiling is a percentage cut on 2005 emissions under Directive
+  (EU) 2016/2284.
+tests: Directive (EU) 2016/2284 Annex II (Malta 2030 NOx reduction commitment) and the 2005 base; Malta NECD inventory and
+  projections submitted to the EEA (2025 and 2026 submissions); the draft NAPCP on era.org.mt; road-transport NOx from fleet
+  data (Transport Malta, NSO).
+why_low_hanging: A legal ceiling and ERA's own projection can both be read from the EEA NECD database.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium to high: EEA reachable; ERA site returned 403 to curl earlier in October, so the draft programme may
+  need the maintainer.'
+caveats: Candidate from weekly intake 1 Nov 2026. Date of ERA's consultation text unconfirmed (June 2026 per the agency).
+  Link to CC-129 and CC-109.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

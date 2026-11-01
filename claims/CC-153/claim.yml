@@ -1,0 +1,46 @@
+id: CC-153
+title: 'EU: Malta missed the deadline for its draft National Building Renovation Plan'
+category: Planning & Housing
+subtopic: Development & construction
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (March 2026 infringements package): Malta, with 18 other Member States, received a letter of
+    formal notice (INFR(2026)2027) for not submitting its draft National Building Renovation Plan, due by 31 December 2025,
+    and has two months to respond.'
+  speaker: European Commission
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'March infringements package: key decisions on energy'
+    publisher: EU Reporter (republishing Commission press release)
+    date: '2026-03-13'
+    url: https://www.eureporter.co/politics/european-commission/2026/03/13/march-infringements-package-key-decisions-on-energy/
+    note: 'Lead: listing seen in a search summary only (403 on 1 Nov 2026). The Commission''s own package page and the case
+      INFR(2026)2027 still to be read. A LinkedIn post says proceedings were escalated in October 2026; unverified.'
+counter_evidence: 'A letter of formal notice is the first step and states the Commission''s view, not a ruling; Malta may
+  have submitted the plan since (status not found). The deadline comes from the recast Energy Performance of Buildings Directive
+  (EU) 2024/1275. Malta has not necessarily failed on renovation itself: this is a reporting-deadline claim.'
+tests: Commission infringement decisions register (INFR(2026)2027 status); Commission press release of the March 2026 package;
+  Malta's NBRP submission on the Commission energy portal; Directive (EU) 2024/1275 Art. 3; Malta's long-term renovation strategy
+  and building-stock data (Eurostat, BPIE).
+why_low_hanging: The register entry and the deadline are public; ec.europa.eu is reachable.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium to high: ec.europa.eu reachable here; EU Reporter blocked.'
+caveats: 'Candidate from weekly intake 1 Nov 2026. Exact date of the package and the case number come from search summaries;
+  confirm on the Commission page. EU speaker, about a Maltese obligation: placed at the national marker.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

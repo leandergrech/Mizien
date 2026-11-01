@@ -274,7 +274,7 @@
       "similar": [
         {
           "id": "CC-025",
-          "score": 0.39,
+          "score": 0.38,
           "terms": [
             "capita",
             "emissions"
@@ -357,7 +357,18 @@
         "flyer_pdf": "claim-files/CC-004/flyer.pdf",
         "flyer_png": "claim-files/CC-004/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-004/claim.yml",
+      "similar": [
+        {
+          "id": "CC-150",
+          "score": 0.47,
+          "terms": [
+            "waste",
+            "diverted",
+            "landfill"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-005",
@@ -688,7 +699,7 @@
         },
         {
           "id": "CC-056",
-          "score": 0.27,
+          "score": 0.28,
           "terms": [
             "trees",
             "project"
@@ -1423,7 +1434,7 @@
       "similar": [
         {
           "id": "CC-104",
-          "score": 0.39,
+          "score": 0.4,
           "terms": [
             "noise",
             "implements",
@@ -1775,7 +1786,7 @@
       "similar": [
         {
           "id": "CC-003",
-          "score": 0.39,
+          "score": 0.38,
           "terms": [
             "capita",
             "emissions"
@@ -1859,11 +1870,20 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-026/claim.yml",
       "similar": [
         {
-          "id": "CC-114",
-          "score": 0.33,
+          "id": "CC-148",
+          "score": 0.55,
           "terms": [
             "greenhouse",
             "emissions",
+            "gas"
+          ]
+        },
+        {
+          "id": "CC-114",
+          "score": 0.28,
+          "terms": [
+            "emissions",
+            "greenhouse",
             "gas"
           ]
         }
@@ -2794,7 +2814,7 @@
         },
         {
           "id": "CC-107",
-          "score": 0.25,
+          "score": 0.26,
           "terms": [
             "net",
             "zero"
@@ -2968,7 +2988,7 @@
       "similar": [
         {
           "id": "CC-043",
-          "score": 0.67,
+          "score": 0.68,
           "terms": [
             "flag",
             "blue",
@@ -3010,7 +3030,7 @@
       "similar": [
         {
           "id": "CC-042",
-          "score": 0.67,
+          "score": 0.68,
           "terms": [
             "flag",
             "blue",
@@ -3051,7 +3071,7 @@
       "similar": [
         {
           "id": "CC-045",
-          "score": 0.3,
+          "score": 0.31,
           "terms": [
             "tunnels",
             "every",
@@ -3130,7 +3150,7 @@
       "similar": [
         {
           "id": "CC-044",
-          "score": 0.3,
+          "score": 0.31,
           "terms": [
             "tunnels",
             "every",
@@ -3574,7 +3594,7 @@
         },
         {
           "id": "CC-121",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "square",
             "metres",
@@ -3756,7 +3776,7 @@
         },
         {
           "id": "CC-010",
-          "score": 0.27,
+          "score": 0.28,
           "terms": [
             "trees",
             "project"
@@ -3926,7 +3946,7 @@
       "similar": [
         {
           "id": "CC-074",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "grants",
             "eur"
@@ -4024,18 +4044,7 @@
         "flyer_pdf": "claim-files/CC-062/flyer.pdf",
         "flyer_png": "claim-files/CC-062/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-062/claim.yml",
-      "similar": [
-        {
-          "id": "CC-123",
-          "score": 0.26,
-          "terms": [
-            "kpmg",
-            "commissioned",
-            "construction"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-062/claim.yml"
     },
     {
       "id": "CC-063",
@@ -4092,8 +4101,8 @@
           "id": "CC-082",
           "score": 0.26,
           "terms": [
-            "waste",
-            "construction"
+            "construction",
+            "waste"
           ]
         }
       ]
@@ -4209,7 +4218,7 @@
         },
         {
           "id": "CC-084",
-          "score": 0.27,
+          "score": 0.28,
           "terms": [
             "adpd",
             "sandra",
@@ -4342,18 +4351,18 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-069/claim.yml",
       "similar": [
         {
-          "id": "CC-070",
-          "score": 0.34,
-          "terms": [
-            "bus",
-            "transport"
-          ]
-        },
-        {
           "id": "CC-073",
           "score": 0.34,
           "terms": [
             "trips",
+            "transport"
+          ]
+        },
+        {
+          "id": "CC-070",
+          "score": 0.33,
+          "terms": [
+            "bus",
             "transport"
           ]
         }
@@ -4391,7 +4400,7 @@
       "similar": [
         {
           "id": "CC-069",
-          "score": 0.34,
+          "score": 0.33,
           "terms": [
             "bus",
             "transport"
@@ -4469,18 +4478,7 @@
         "flyer_pdf": "claim-files/CC-071/flyer.pdf",
         "flyer_png": "claim-files/CC-071/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-071/claim.yml",
-      "similar": [
-        {
-          "id": "CC-115",
-          "score": 0.26,
-          "terms": [
-            "cost",
-            "traffic",
-            "congestion"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-071/claim.yml"
     },
     {
       "id": "CC-072",
@@ -4584,7 +4582,7 @@
       "similar": [
         {
           "id": "CC-060",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "grants",
             "eur"
@@ -4965,7 +4963,18 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-081/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-081/claim.yml",
+      "similar": [
+        {
+          "id": "CC-150",
+          "score": 0.26,
+          "terms": [
+            "landfill",
+            "waste",
+            "management"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-082",
@@ -5001,16 +5010,16 @@
           "id": "CC-131",
           "score": 0.34,
           "terms": [
-            "waste",
-            "construction"
+            "construction",
+            "waste"
           ]
         },
         {
           "id": "CC-063",
           "score": 0.26,
           "terms": [
-            "waste",
-            "construction"
+            "construction",
+            "waste"
           ]
         }
       ]
@@ -5078,7 +5087,7 @@
       "similar": [
         {
           "id": "CC-065",
-          "score": 0.27,
+          "score": 0.28,
           "terms": [
             "adpd",
             "sandra",
@@ -5480,7 +5489,7 @@
       "similar": [
         {
           "id": "CC-135",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "demand",
             "growth",
@@ -5521,7 +5530,7 @@
       "similar": [
         {
           "id": "CC-103",
-          "score": 0.5,
+          "score": 0.51,
           "terms": [
             "deaths",
             "heat",
@@ -6383,7 +6392,18 @@
         "flyer_pdf": "claim-files/CC-102/flyer.pdf",
         "flyer_png": "claim-files/CC-102/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-102/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-102/claim.yml",
+      "similar": [
+        {
+          "id": "CC-151",
+          "score": 0.28,
+          "terms": [
+            "environment",
+            "parliamentary",
+            "rate"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-103",
@@ -6417,7 +6437,7 @@
       "similar": [
         {
           "id": "CC-090",
-          "score": 0.5,
+          "score": 0.51,
           "terms": [
             "deaths",
             "heat",
@@ -6459,7 +6479,7 @@
       "similar": [
         {
           "id": "CC-020",
-          "score": 0.39,
+          "score": 0.4,
           "terms": [
             "noise",
             "implements",
@@ -6709,7 +6729,7 @@
         },
         {
           "id": "CC-039",
-          "score": 0.25,
+          "score": 0.26,
           "terms": [
             "net",
             "zero"
@@ -7089,7 +7109,7 @@
       "similar": [
         {
           "id": "CC-135",
-          "score": 0.37,
+          "score": 0.38,
           "terms": [
             "population",
             "rose",
@@ -7263,11 +7283,20 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-114/claim.yml",
       "similar": [
         {
-          "id": "CC-026",
-          "score": 0.33,
+          "id": "CC-148",
+          "score": 0.36,
           "terms": [
-            "greenhouse",
             "emissions",
+            "greenhouse",
+            "member"
+          ]
+        },
+        {
+          "id": "CC-026",
+          "score": 0.28,
+          "terms": [
+            "emissions",
+            "greenhouse",
             "gas"
           ]
         }
@@ -7322,18 +7351,7 @@
         "flyer_pdf": "claim-files/CC-115/flyer.pdf",
         "flyer_png": "claim-files/CC-115/flyer.png"
       },
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-115/claim.yml",
-      "similar": [
-        {
-          "id": "CC-071",
-          "score": 0.26,
-          "terms": [
-            "cost",
-            "traffic",
-            "congestion"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-115/claim.yml"
     },
     {
       "id": "CC-116",
@@ -7480,7 +7498,7 @@
       "similar": [
         {
           "id": "CC-131",
-          "score": 0.31,
+          "score": 0.32,
           "terms": [
             "recycling",
             "waste",
@@ -7571,7 +7589,7 @@
       "similar": [
         {
           "id": "CC-143",
-          "score": 0.6,
+          "score": 0.61,
           "terms": [
             "good",
             "status",
@@ -7765,7 +7783,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "square",
             "metres",
@@ -7917,12 +7935,12 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-123/claim.yml",
       "similar": [
         {
-          "id": "CC-062",
-          "score": 0.26,
+          "id": "CC-149",
+          "score": 0.34,
           "terms": [
-            "kpmg",
-            "commissioned",
-            "construction"
+            "nso",
+            "data",
+            "approved"
           ]
         }
       ]
@@ -8247,20 +8265,11 @@
       "similar": [
         {
           "id": "CC-128",
-          "score": 0.4,
+          "score": 0.38,
           "terms": [
             "plan",
             "flood",
-            "management"
-          ]
-        },
-        {
-          "id": "CC-143",
-          "score": 0.28,
-          "terms": [
-            "second",
-            "plan",
-            "management"
+            "document"
           ]
         },
         {
@@ -8270,6 +8279,15 @@
             "farming",
             "agricultural",
             "land"
+          ]
+        },
+        {
+          "id": "CC-143",
+          "score": 0.27,
+          "terms": [
+            "second",
+            "plan",
+            "management"
           ]
         }
       ]
@@ -8349,20 +8367,11 @@
       "similar": [
         {
           "id": "CC-127",
-          "score": 0.4,
+          "score": 0.38,
           "terms": [
             "plan",
             "flood",
-            "management"
-          ]
-        },
-        {
-          "id": "CC-143",
-          "score": 0.3,
-          "terms": [
-            "plan",
-            "document",
-            "swd"
+            "document"
           ]
         },
         {
@@ -8372,6 +8381,24 @@
             "directive",
             "document",
             "swd"
+          ]
+        },
+        {
+          "id": "CC-143",
+          "score": 0.29,
+          "terms": [
+            "plan",
+            "document",
+            "swd"
+          ]
+        },
+        {
+          "id": "CC-153",
+          "score": 0.26,
+          "terms": [
+            "march",
+            "plan",
+            "deadline"
           ]
         }
       ]
@@ -8528,8 +8555,8 @@
           "id": "CC-082",
           "score": 0.34,
           "terms": [
-            "waste",
-            "construction"
+            "construction",
+            "waste"
           ]
         },
         {
@@ -8543,7 +8570,7 @@
         },
         {
           "id": "CC-117",
-          "score": 0.31,
+          "score": 0.32,
           "terms": [
             "recycling",
             "waste",
@@ -8620,7 +8647,7 @@
       "similar": [
         {
           "id": "CC-134",
-          "score": 0.25,
+          "score": 0.26,
           "terms": [
             "average",
             "transport",
@@ -8763,7 +8790,7 @@
       "similar": [
         {
           "id": "CC-132",
-          "score": 0.25,
+          "score": 0.26,
           "terms": [
             "average",
             "transport",
@@ -8854,7 +8881,7 @@
       "similar": [
         {
           "id": "CC-112",
-          "score": 0.37,
+          "score": 0.38,
           "terms": [
             "population",
             "rose",
@@ -8863,7 +8890,7 @@
         },
         {
           "id": "CC-089",
-          "score": 0.29,
+          "score": 0.28,
           "terms": [
             "demand",
             "growth",
@@ -9282,7 +9309,7 @@
       "similar": [
         {
           "id": "CC-118",
-          "score": 0.6,
+          "score": 0.61,
           "terms": [
             "good",
             "status",
@@ -9291,7 +9318,7 @@
         },
         {
           "id": "CC-128",
-          "score": 0.3,
+          "score": 0.29,
           "terms": [
             "plan",
             "document",
@@ -9300,7 +9327,7 @@
         },
         {
           "id": "CC-127",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "second",
             "plan",
@@ -9370,7 +9397,7 @@
       "similar": [
         {
           "id": "CC-145",
-          "score": 0.56,
+          "score": 0.57,
           "terms": [
             "hunters",
             "active",
@@ -9411,11 +9438,372 @@
       "similar": [
         {
           "id": "CC-144",
-          "score": 0.56,
+          "score": 0.57,
           "terms": [
             "hunters",
             "active",
             "mongabay"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-146",
+      "title": "Central Bank of Malta: rising emissions intensity is a 'statistical illusion'",
+      "category": "Climate & Energy",
+      "claim": "Central Bank of Malta (Aaron G. Grech, chief officer, Economics Division; reported by MaltaToday, April 2026): the claim that Malta's greenhouse-gas emissions intensity is rising is 'a statistical illusion' driven by methodology (international aviation and shipping counted in the Eurostat measure), not a real deterioration. Reported figures: under the UN-based measure intensity was nearly a quarter better in 2023 than in 2018; adjusted for aviation outside Maltese airspace it reached a historic low in 2024, about a quarter of its 2005 level.",
+      "counter": "Attributed context: the PN (CC-114) cites Eurostat air emissions accounts showing intensity up 17% since 2013 while the EU average fell 34%. The Climate Action Authority factsheet (CC-147) makes a similar methodological argument. Eurostat/UN accounting differences (residence vs territory principle, bunkers and aviation) are real; whether they explain the whole divergence is the point to test. The Central Bank says Malta still faces important policy gaps.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Selective metric"
+      ],
+      "subtopic": "Emissions & targets",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Central Bank of Malta (Aaron G. Grech)",
+      "bodies": [
+        "central-bank-malta"
+      ],
+      "date": "",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-146/claim.yml",
+      "similar": [
+        {
+          "id": "CC-147",
+          "score": 0.26,
+          "terms": [
+            "intensity",
+            "aviation",
+            "emissions"
+          ]
+        },
+        {
+          "id": "CC-148",
+          "score": 0.26,
+          "terms": [
+            "quarter",
+            "emissions",
+            "greenhouse"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-147",
+      "title": "Climate Action Authority factsheet: intensity fell 19% excluding air and maritime transport",
+      "category": "Climate & Energy",
+      "claim": "Climate Action Authority (Malta, factsheet on air emissions accounts, published about February 2026): aviation has a disproportionate weight in Malta's emissions-intensity figure; excluding air and maritime transport, emissions per euro of output fell by 19% between 2020 and 2024, whereas Eurostat's published figures show growth of 87.2% over the same years.",
+      "counter": "Eurostat air emissions accounts include emissions by resident units wherever they occur (e.g. Maltese-registered airlines and ships), so the Eurostat figure moves with aviation and shipping; excluding them changes the measure rather than correcting it. The PN (CC-114) and the Central Bank (CC-146) argue on the same data from opposite sides. A 19% fall over 2020-2024 starts from the Covid year 2020, when output and emissions were both depressed.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Selective metric"
+      ],
+      "subtopic": "Emissions & targets",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Climate Action Authority",
+      "bodies": [
+        "climate-action-authority"
+      ],
+      "date": "2026-02-01",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-147/claim.yml",
+      "similar": [
+        {
+          "id": "CC-146",
+          "score": 0.26,
+          "terms": [
+            "intensity",
+            "aviation",
+            "emissions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-148",
+      "title": "Eurostat: Malta had the sharpest drop in greenhouse-gas emissions in Q1 2025",
+      "category": "Climate & Energy",
+      "claim": "Eurostat (quarterly greenhouse-gas emissions release, reported by MaltaDaily on 19 Aug 2025): in the first quarter of 2025 Malta's emissions fell 6.2% on the same quarter of 2024, the largest fall among Member States, while EU emissions rose 3.4% to 900 million tonnes of CO2-equivalent; emissions rose in 20 Member States and fell in seven.",
+      "counter": "A single quarter, year on year, is volatile for a small economy with a single power station and large aviation and shipping weights (see CC-146, CC-147). Eurostat reported Malta as having the largest EU rise in emissions on an annual basis in another release (CC-026). Quarterly figures are provisional and revised.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Selective metric"
+      ],
+      "subtopic": "Emissions & targets",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Eurostat",
+      "bodies": [
+        "eurostat"
+      ],
+      "date": "2025-08-19",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-148/claim.yml",
+      "similar": [
+        {
+          "id": "CC-026",
+          "score": 0.55,
+          "terms": [
+            "greenhouse",
+            "emissions",
+            "gas"
+          ]
+        },
+        {
+          "id": "CC-114",
+          "score": 0.36,
+          "terms": [
+            "emissions",
+            "greenhouse",
+            "member"
+          ]
+        },
+        {
+          "id": "CC-146",
+          "score": 0.26,
+          "terms": [
+            "quarter",
+            "emissions",
+            "greenhouse"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-149",
+      "title": "MaltaToday: 12,325 new dwellings approved in 2025, a record 226 outside development zones",
+      "category": "Planning & Housing",
+      "claim": "MaltaToday ('Building mad: 12,325 new dwellings approved in 2025', early 2026, citing Planning Authority data published by the NSO): approvals of new dwellings reached 12,325 in 2025, 41% more than the year before and the third-highest annual total ever; 226 new dwelling units were approved in areas outside development zones (ODZ), a record.",
+      "counter": "Approvals are permits granted, not dwellings built or occupied; permits lapse, are revised or are appealed. The outlet's ranking (\"third-highest ever\") and the ODZ record depend on the series start and on whether the NSO counts apartments created by redevelopment net of demolitions. KPMG (CC-123) reports a different approval total for a different period.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Development & construction",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "MaltaToday",
+      "bodies": [
+        "maltatoday"
+      ],
+      "date": "",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-149/claim.yml",
+      "similar": [
+        {
+          "id": "CC-123",
+          "score": 0.34,
+          "terms": [
+            "nso",
+            "data",
+            "approved"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-150",
+      "title": "Labour Party: 412 million kg of waste diverted from landfill in five years",
+      "category": "Waste",
+      "claim": "Partit Laburista (statement of 21 Jan 2026, headed that the Government is delivering a 'historic transformation in waste management'): around 412 million kilograms of waste have been diverted from landfills over five years.",
+      "counter": "A cumulative kilogram figure has no baseline or denominator: diverted compared with what, over which five years, and counted at which point (separation at source, treatment, export)? Malta ranked 24th of 27 for municipal recycling in 2023 (Eurostat, as reported by The Shift/Business Now; second-hand), and the Commission found missed recycling targets (CC-117). Total waste generated per head also matters.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Landfill & treatment",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Partit Laburista",
+      "bodies": [
+        "pl"
+      ],
+      "date": "2026-01-21",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-150/claim.yml",
+      "similar": [
+        {
+          "id": "CC-004",
+          "score": 0.47,
+          "terms": [
+            "waste",
+            "diverted",
+            "landfill"
+          ]
+        },
+        {
+          "id": "CC-081",
+          "score": 0.26,
+          "terms": [
+            "landfill",
+            "waste",
+            "management"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-151",
+      "title": "Environment Minister: bottle and can machines collected over 85% in 2025",
+      "category": "Waste",
+      "claim": "Ministry for the Environment (Environment Minister's reply to a parliamentary question, reported by The Malta Independent on 9 Feb 2026): the BCRS (beverage container refund scheme) machines recorded a collection rate of over 85% in 2025, up from about 84% in 2024.",
+      "counter": "A deposit-return collection rate is containers returned divided by containers placed on the market, so the numerator and the denominator both need a source. \"Machines\" may exclude manual or bring-site returns. It measures collection, not recycling. The EU Single-Use Plastics Directive target is 90% separate collection of plastic bottles by 2029.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [
+        "Input-as-outcome"
+      ],
+      "subtopic": "Recycling & separation",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Ministry for the Environment",
+      "bodies": [
+        "ministry-environment"
+      ],
+      "date": "2026-02-09",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-151/claim.yml",
+      "similar": [
+        {
+          "id": "CC-102",
+          "score": 0.28,
+          "terms": [
+            "environment",
+            "parliamentary",
+            "rate"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CC-152",
+      "title": "ERA: Malta at significant risk of missing its 2030 nitrogen-oxide target",
+      "category": "Air",
+      "claim": "Environment and Resources Authority (draft revised National Air Pollution Control Programme, issued for consultation in June 2026; reported by Italpress/Malta News Agency on 17 Jul 2026): Malta 'remains at significant risk of failing to meet' its legally binding 2030 NOx emissions target; with the measures in place NOx is forecast at 3.88 kilotonnes in 2030 against a ceiling of 1.98 kilotonnes; road transport was 42.6% and maritime activity 15.5% of national NOx in 2023.",
+      "counter": "This is a regulator's own forecast against a legal limit, so it is a claim against interest rather than a boast. Forecasts depend on activity assumptions (vehicle fleet, shipping, power generation). The Commission opened an infringement over the late NAPCP update (CC-129). The 2030 ceiling is a percentage cut on 2005 emissions under Directive (EU) 2016/2284.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Air quality & health",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "Environment and Resources Authority (ERA)",
+      "bodies": [
+        "era"
+      ],
+      "date": "",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-152/claim.yml"
+    },
+    {
+      "id": "CC-153",
+      "title": "EU: Malta missed the deadline for its draft National Building Renovation Plan",
+      "category": "Planning & Housing",
+      "claim": "European Commission (March 2026 infringements package): Malta, with 18 other Member States, received a letter of formal notice (INFR(2026)2027) for not submitting its draft National Building Renovation Plan, due by 31 December 2025, and has two months to respond.",
+      "counter": "A letter of formal notice is the first step and states the Commission's view, not a ruling; Malta may have submitted the plan since (status not found). The deadline comes from the recast Energy Performance of Buildings Directive (EU) 2024/1275. Malta has not necessarily failed on renovation itself: this is a reporting-deadline claim.",
+      "status": "Not started",
+      "verdict": null,
+      "tags": [],
+      "subtopic": "Development & construction",
+      "location": {
+        "place": "City Gate, Valletta (national claim)",
+        "lat": 35.89623,
+        "lon": 14.50909,
+        "scope": "national",
+        "icon": "cross"
+      },
+      "priority": "Queue",
+      "wording_status": "Paraphrase: locate quote",
+      "confidence": null,
+      "speaker": "European Commission",
+      "bodies": [
+        "european-commission"
+      ],
+      "date": "",
+      "quote": "",
+      "version": null,
+      "outputs": {},
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-153/claim.yml",
+      "similar": [
+        {
+          "id": "CC-128",
+          "score": 0.26,
+          "terms": [
+            "march",
+            "plan",
+            "deadline"
           ]
         }
       ]
@@ -11920,6 +12308,692 @@
       "theme": "T25",
       "link_type": "Shared driver",
       "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-007",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-008",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-016",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-021",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-026",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-035",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-069",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-071",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-072",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-076",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-109",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-110",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-115",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-132",
+      "to": "CC-152",
+      "theme": "T4",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-002",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-002",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-008",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-008",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-017",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-017",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-063",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-063",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-079",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-079",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-080",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-080",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-081",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-081",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-082",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-082",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-111",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-111",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-117",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-117",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-131",
+      "to": "CC-150",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-131",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-150",
+      "to": "CC-151",
+      "theme": "T5",
+      "link_type": "Shared material flow",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-003",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-004",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-007",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-007",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-010",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-010",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-022",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-022",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-025",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-025",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-026",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-026",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-051",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-051",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-079",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-079",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-110",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-110",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-114",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-114",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-131",
+      "to": "CC-146",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-131",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-146",
+      "to": "CC-147",
+      "theme": "T6",
+      "link_type": "Rhetorical pattern",
+      "strength": "Pattern, not causal"
+    },
+    {
+      "from": "CC-013",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-014",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-017",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-018",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-019",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-058",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-060",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-062",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-123",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-133",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-136",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-139",
+      "to": "CC-149",
+      "theme": "T8",
+      "link_type": "Shared driver",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-026",
+      "to": "CC-146",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-026",
+      "to": "CC-147",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-026",
+      "to": "CC-148",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-031",
+      "to": "CC-146",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-031",
+      "to": "CC-147",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-031",
+      "to": "CC-148",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-109",
+      "to": "CC-146",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-109",
+      "to": "CC-147",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-109",
+      "to": "CC-148",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-114",
+      "to": "CC-146",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-114",
+      "to": "CC-147",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-114",
+      "to": "CC-148",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-146",
+      "to": "CC-147",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-146",
+      "to": "CC-148",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-147",
+      "to": "CC-148",
+      "theme": "T16",
+      "link_type": "Shared data",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-101",
+      "to": "CC-153",
+      "theme": "T19",
+      "link_type": "Shared mechanism",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-117",
+      "to": "CC-153",
+      "theme": "T19",
+      "link_type": "Shared mechanism",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-128",
+      "to": "CC-153",
+      "theme": "T19",
+      "link_type": "Shared mechanism",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-129",
+      "to": "CC-153",
+      "theme": "T19",
+      "link_type": "Shared mechanism",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-142",
+      "to": "CC-153",
+      "theme": "T19",
+      "link_type": "Shared mechanism",
+      "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-143",
+      "to": "CC-153",
+      "theme": "T19",
+      "link_type": "Shared mechanism",
+      "strength": "Weak (indicative)"
     }
   ],
   "themes": [
@@ -12003,7 +13077,8 @@
         "CC-109",
         "CC-110",
         "CC-115",
-        "CC-132"
+        "CC-132",
+        "CC-152"
       ]
     },
     {
@@ -12026,7 +13101,9 @@
         "CC-082",
         "CC-111",
         "CC-117",
-        "CC-131"
+        "CC-131",
+        "CC-150",
+        "CC-151"
       ]
     },
     {
@@ -12049,7 +13126,9 @@
         "CC-079",
         "CC-110",
         "CC-114",
-        "CC-131"
+        "CC-131",
+        "CC-146",
+        "CC-147"
       ]
     },
     {
@@ -12090,7 +13169,8 @@
         "CC-123",
         "CC-133",
         "CC-136",
-        "CC-139"
+        "CC-139",
+        "CC-149"
       ]
     },
     {
@@ -12213,7 +13293,10 @@
         "CC-026",
         "CC-031",
         "CC-109",
-        "CC-114"
+        "CC-114",
+        "CC-146",
+        "CC-147",
+        "CC-148"
       ]
     },
     {
@@ -12259,7 +13342,8 @@
         "CC-128",
         "CC-129",
         "CC-142",
-        "CC-143"
+        "CC-143",
+        "CC-153"
       ]
     },
     {
@@ -12374,7 +13458,7 @@
         {
           "id": "european-commission",
           "named": 0,
-          "pairs": 27,
+          "pairs": 30,
           "themes": [
             "T16",
             "T23",
@@ -12389,12 +13473,32 @@
         {
           "id": "infrastructure-malta",
           "named": 2,
-          "pairs": 9,
+          "pairs": 10,
           "themes": [
             "T1",
             "T2",
             "T4",
             "T5"
+          ]
+        },
+        {
+          "id": "era",
+          "named": 1,
+          "pairs": 12,
+          "themes": [
+            "T1",
+            "T2",
+            "T4",
+            "T5"
+          ]
+        },
+        {
+          "id": "climate-action-authority",
+          "named": 1,
+          "pairs": 7,
+          "themes": [
+            "T16",
+            "T6"
           ]
         },
         {
@@ -12409,16 +13513,6 @@
           ]
         },
         {
-          "id": "era",
-          "named": 1,
-          "pairs": 5,
-          "themes": [
-            "T1",
-            "T2",
-            "T5"
-          ]
-        },
-        {
           "id": "newsbook",
           "named": 0,
           "pairs": 8,
@@ -12426,6 +13520,36 @@
             "T16",
             "T4",
             "T6"
+          ]
+        },
+        {
+          "id": "pl",
+          "named": 1,
+          "pairs": 5,
+          "themes": [
+            "T5",
+            "T7"
+          ]
+        },
+        {
+          "id": "central-bank-malta",
+          "named": 0,
+          "pairs": 7,
+          "themes": [
+            "T16",
+            "T6"
+          ]
+        },
+        {
+          "id": "the-shift",
+          "named": 0,
+          "pairs": 7,
+          "themes": [
+            "T10",
+            "T23",
+            "T4",
+            "T5",
+            "T8"
           ]
         },
         {
@@ -12449,15 +13573,12 @@
           "themes": []
         },
         {
-          "id": "the-shift",
-          "named": 0,
-          "pairs": 6,
+          "id": "wasteserv",
+          "named": 1,
+          "pairs": 3,
           "themes": [
-            "T10",
-            "T23",
-            "T4",
             "T5",
-            "T8"
+            "T6"
           ]
         },
         {
@@ -12470,28 +13591,11 @@
           ]
         },
         {
-          "id": "pl",
-          "named": 1,
-          "pairs": 2,
-          "themes": [
-            "T7"
-          ]
-        },
-        {
           "id": "transport-malta",
           "named": 1,
           "pairs": 1,
           "themes": [
             "T23"
-          ]
-        },
-        {
-          "id": "wasteserv",
-          "named": 1,
-          "pairs": 1,
-          "themes": [
-            "T5",
-            "T6"
           ]
         },
         {
@@ -12501,12 +13605,6 @@
           "themes": [
             "T25"
           ]
-        },
-        {
-          "id": "climate-action-authority",
-          "named": 1,
-          "pairs": 0,
-          "themes": []
         },
         {
           "id": "council-eu",
@@ -12588,6 +13686,15 @@
           "themes": []
         },
         {
+          "id": "mda",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T5",
+            "T8"
+          ]
+        },
+        {
           "id": "momentum",
           "named": 1,
           "pairs": 0,
@@ -12650,11 +13757,10 @@
           ]
         },
         {
-          "id": "mda",
+          "id": "maltatoday",
           "named": 0,
           "pairs": 2,
           "themes": [
-            "T5",
             "T8"
           ]
         },
@@ -12665,6 +13771,14 @@
           "themes": [
             "T1",
             "T2"
+          ]
+        },
+        {
+          "id": "eurostat",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
           ]
         },
         {
@@ -12722,7 +13836,7 @@
         {
           "id": "ministry-environment",
           "named": 1,
-          "pairs": 2,
+          "pairs": 3,
           "themes": [
             "T4",
             "T5"
@@ -12750,6 +13864,16 @@
           "pairs": 1,
           "themes": [
             "T20"
+          ]
+        },
+        {
+          "id": "era",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T1",
+            "T4",
+            "T5"
           ]
         },
         {
@@ -12793,15 +13917,6 @@
           "themes": [
             "T1",
             "T8"
-          ]
-        },
-        {
-          "id": "era",
-          "named": 0,
-          "pairs": 2,
-          "themes": [
-            "T1",
-            "T5"
           ]
         },
         {
@@ -12902,11 +14017,27 @@
           ]
         },
         {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
           "id": "newsbook",
           "named": 0,
           "pairs": 1,
           "themes": [
             "T4"
+          ]
+        },
+        {
+          "id": "pl",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T5"
           ]
         },
         {
@@ -12964,7 +14095,7 @@
         {
           "id": "ministry-environment",
           "named": 1,
-          "pairs": 2,
+          "pairs": 3,
           "themes": [
             "T4",
             "T5"
@@ -12992,6 +14123,16 @@
           "pairs": 1,
           "themes": [
             "T20"
+          ]
+        },
+        {
+          "id": "era",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T1",
+            "T4",
+            "T5"
           ]
         },
         {
@@ -13035,15 +14176,6 @@
           "themes": [
             "T1",
             "T8"
-          ]
-        },
-        {
-          "id": "era",
-          "named": 0,
-          "pairs": 2,
-          "themes": [
-            "T1",
-            "T5"
           ]
         },
         {
@@ -13128,11 +14260,27 @@
           ]
         },
         {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
           "id": "newsbook",
           "named": 0,
           "pairs": 1,
           "themes": [
             "T4"
+          ]
+        },
+        {
+          "id": "pl",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T5"
           ]
         },
         {
@@ -13172,7 +14320,7 @@
         {
           "id": "european-commission",
           "named": 0,
-          "pairs": 10,
+          "pairs": 13,
           "themes": [
             "T4",
             "T5",
@@ -13183,16 +14331,25 @@
         {
           "id": "era",
           "named": 1,
-          "pairs": 3,
+          "pairs": 6,
           "themes": [
             "T2",
+            "T4",
             "T5"
+          ]
+        },
+        {
+          "id": "climate-action-authority",
+          "named": 1,
+          "pairs": 5,
+          "themes": [
+            "T6"
           ]
         },
         {
           "id": "infrastructure-malta",
           "named": 0,
-          "pairs": 5,
+          "pairs": 6,
           "themes": [
             "T2",
             "T4",
@@ -13202,9 +14359,45 @@
         {
           "id": "opm",
           "named": 1,
-          "pairs": 2,
+          "pairs": 3,
           "themes": [
             "T4",
+            "T5"
+          ]
+        },
+        {
+          "id": "pl",
+          "named": 1,
+          "pairs": 3,
+          "themes": [
+            "T5",
+            "T7"
+          ]
+        },
+        {
+          "id": "wasteserv",
+          "named": 1,
+          "pairs": 3,
+          "themes": [
+            "T5",
+            "T6"
+          ]
+        },
+        {
+          "id": "central-bank-malta",
+          "named": 0,
+          "pairs": 5,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
+          "id": "ministry-finance",
+          "named": 0,
+          "pairs": 5,
+          "themes": [
+            "T14",
+            "T20",
             "T5"
           ]
         },
@@ -13217,16 +14410,6 @@
           ]
         },
         {
-          "id": "ministry-finance",
-          "named": 0,
-          "pairs": 4,
-          "themes": [
-            "T14",
-            "T20",
-            "T5"
-          ]
-        },
-        {
           "id": "newsbook",
           "named": 0,
           "pairs": 4,
@@ -13236,35 +14419,12 @@
           ]
         },
         {
-          "id": "pl",
-          "named": 1,
-          "pairs": 1,
-          "themes": [
-            "T7"
-          ]
-        },
-        {
           "id": "project-green",
           "named": 1,
           "pairs": 1,
           "themes": [
             "T2"
           ]
-        },
-        {
-          "id": "wasteserv",
-          "named": 1,
-          "pairs": 1,
-          "themes": [
-            "T5",
-            "T6"
-          ]
-        },
-        {
-          "id": "climate-action-authority",
-          "named": 1,
-          "pairs": 0,
-          "themes": []
         },
         {
           "id": "ministry-agriculture",
@@ -13297,6 +14457,14 @@
             "T20",
             "T6",
             "T7"
+          ]
+        },
+        {
+          "id": "the-shift",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T5"
           ]
         },
         {
@@ -13356,6 +14524,14 @@
           ]
         },
         {
+          "id": "mda",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T5"
+          ]
+        },
+        {
           "id": "ministry-cleanliness",
           "named": 0,
           "pairs": 1,
@@ -13369,14 +14545,6 @@
           "pairs": 1,
           "themes": [
             "T4"
-          ]
-        },
-        {
-          "id": "the-shift",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T5"
           ]
         },
         {
@@ -13432,6 +14600,22 @@
           ]
         },
         {
+          "id": "climate-action-authority",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
+          "id": "central-bank-malta",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
           "id": "ministry-finance",
           "named": 0,
           "pairs": 2,
@@ -13449,10 +14633,11 @@
           ]
         },
         {
-          "id": "climate-action-authority",
+          "id": "pl",
           "named": 0,
-          "pairs": 1,
+          "pairs": 2,
           "themes": [
+            "T5",
             "T6"
           ]
         },
@@ -13513,14 +14698,6 @@
           ]
         },
         {
-          "id": "pl",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T6"
-          ]
-        },
-        {
           "id": "pn",
           "named": 0,
           "pairs": 1,
@@ -13557,7 +14734,7 @@
         {
           "id": "ministry-environment",
           "named": 0,
-          "pairs": 4,
+          "pairs": 5,
           "themes": [
             "T14",
             "T20",
@@ -13679,6 +14856,22 @@
           ]
         },
         {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "pl",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T5"
+          ]
+        },
+        {
           "id": "pn",
           "named": 0,
           "pairs": 1,
@@ -13713,6 +14906,15 @@
       "role": "Minister for Finance",
       "links": [
         {
+          "id": "ministry-environment",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T14",
+            "T5"
+          ]
+        },
+        {
           "id": "opm",
           "named": 1,
           "pairs": 0,
@@ -13734,15 +14936,6 @@
           "themes": [
             "T5",
             "T8"
-          ]
-        },
-        {
-          "id": "ministry-environment",
-          "named": 0,
-          "pairs": 2,
-          "themes": [
-            "T14",
-            "T5"
           ]
         },
         {
@@ -13802,6 +14995,22 @@
           ]
         },
         {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "pl",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T5"
+          ]
+        },
+        {
           "id": "the-shift",
           "named": 0,
           "pairs": 1,
@@ -13850,6 +15059,14 @@
           "pairs": 1,
           "themes": [
             "T23"
+          ]
+        },
+        {
+          "id": "era",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T4"
           ]
         },
         {
@@ -13944,7 +15161,31 @@
           ]
         },
         {
+          "id": "central-bank-malta",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "climate-action-authority",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
           "id": "european-commission",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "eurostat",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -13984,7 +15225,31 @@
           ]
         },
         {
+          "id": "central-bank-malta",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "climate-action-authority",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
           "id": "european-commission",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "eurostat",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -14406,20 +15671,31 @@
       "role": null,
       "links": [
         {
-          "id": "european-commission",
+          "id": "ministry-environment",
           "named": 0,
-          "pairs": 5,
+          "pairs": 6,
           "themes": [
+            "T2",
             "T4",
             "T5"
           ]
         },
         {
-          "id": "ministry-environment",
+          "id": "era",
           "named": 0,
           "pairs": 5,
           "themes": [
+            "T1",
             "T2",
+            "T4",
+            "T5"
+          ]
+        },
+        {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 5,
+          "themes": [
             "T4",
             "T5"
           ]
@@ -14464,11 +15740,10 @@
           ]
         },
         {
-          "id": "era",
+          "id": "pl",
           "named": 0,
           "pairs": 2,
           "themes": [
-            "T1",
             "T2",
             "T5"
           ]
@@ -14528,14 +15803,6 @@
           "pairs": 1,
           "themes": [
             "T4"
-          ]
-        },
-        {
-          "id": "pl",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T2"
           ]
         },
         {
@@ -14646,6 +15913,15 @@
       "role": null,
       "links": [
         {
+          "id": "ministry-environment",
+          "named": 1,
+          "pairs": 5,
+          "themes": [
+            "T5",
+            "T6"
+          ]
+        },
+        {
           "id": "european-commission",
           "named": 0,
           "pairs": 6,
@@ -14655,17 +15931,26 @@
           ]
         },
         {
-          "id": "ministry-environment",
-          "named": 1,
-          "pairs": 2,
+          "id": "pl",
+          "named": 0,
+          "pairs": 4,
           "themes": [
+            "T5",
             "T6"
           ]
         },
         {
           "id": "climate-action-authority",
           "named": 0,
-          "pairs": 1,
+          "pairs": 3,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
+          "id": "central-bank-malta",
+          "named": 0,
+          "pairs": 2,
           "themes": [
             "T6"
           ]
@@ -14708,14 +15993,6 @@
           "pairs": 1,
           "themes": [
             "T5"
-          ]
-        },
-        {
-          "id": "pl",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T6"
           ]
         },
         {
@@ -14765,6 +16042,14 @@
           "themes": []
         },
         {
+          "id": "climate-action-authority",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
           "id": "era",
           "named": 0,
           "pairs": 2,
@@ -14781,7 +16066,7 @@
           ]
         },
         {
-          "id": "climate-action-authority",
+          "id": "central-bank-malta",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -15041,6 +16326,14 @@
           ]
         },
         {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
           "id": "planning-authority",
           "named": 0,
           "pairs": 1,
@@ -15268,9 +16561,10 @@
         {
           "id": "ministry-environment",
           "named": 1,
-          "pairs": 4,
+          "pairs": 7,
           "themes": [
             "T2",
+            "T4",
             "T5",
             "T6"
           ]
@@ -15278,10 +16572,31 @@
         {
           "id": "european-commission",
           "named": 0,
-          "pairs": 3,
+          "pairs": 6,
           "themes": [
+            "T4",
             "T5",
             "T6"
+          ]
+        },
+        {
+          "id": "infrastructure-malta",
+          "named": 0,
+          "pairs": 5,
+          "themes": [
+            "T1",
+            "T2",
+            "T4",
+            "T5"
+          ]
+        },
+        {
+          "id": "pl",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T2",
+            "T5"
           ]
         },
         {
@@ -15291,30 +16606,38 @@
           "themes": []
         },
         {
-          "id": "infrastructure-malta",
+          "id": "ministry-transport",
           "named": 0,
-          "pairs": 2,
+          "pairs": 3,
           "themes": [
-            "T1",
-            "T2",
-            "T5"
+            "T4"
           ]
         },
         {
           "id": "opm",
           "named": 0,
-          "pairs": 2,
+          "pairs": 3,
           "themes": [
             "T1",
+            "T4",
             "T5"
           ]
         },
         {
-          "id": "pl",
+          "id": "climate-action-authority",
           "named": 0,
           "pairs": 2,
           "themes": [
-            "T2"
+            "T4",
+            "T6"
+          ]
+        },
+        {
+          "id": "newsbook",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T4"
           ]
         },
         {
@@ -15343,6 +16666,46 @@
           ]
         },
         {
+          "id": "central-bank-malta",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
+          "id": "eea",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
+          ]
+        },
+        {
+          "id": "government-of-malta",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
+          ]
+        },
+        {
+          "id": "malta-chamber",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
+          ]
+        },
+        {
+          "id": "malta-public-transport",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
+          ]
+        },
+        {
           "id": "mda",
           "named": 0,
           "pairs": 1,
@@ -15367,6 +16730,14 @@
           ]
         },
         {
+          "id": "nso",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
+          ]
+        },
+        {
           "id": "pn",
           "named": 0,
           "pairs": 1,
@@ -15388,6 +16759,14 @@
           "pairs": 1,
           "themes": [
             "T1"
+          ]
+        },
+        {
+          "id": "the-shift",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
           ]
         },
         {
@@ -15451,6 +16830,14 @@
         },
         {
           "id": "kpmg",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "maltatoday",
           "named": 0,
           "pairs": 2,
           "themes": [
@@ -15533,6 +16920,14 @@
         },
         {
           "id": "kpmg",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "maltatoday",
           "named": 0,
           "pairs": 2,
           "themes": [
@@ -15651,7 +17046,7 @@
         {
           "id": "ministry-environment",
           "named": 1,
-          "pairs": 2,
+          "pairs": 6,
           "themes": [
             "T6"
           ]
@@ -15659,7 +17054,28 @@
         {
           "id": "european-commission",
           "named": 0,
+          "pairs": 7,
+          "themes": [
+            "T16",
+            "T4",
+            "T6",
+            "T7"
+          ]
+        },
+        {
+          "id": "newsbook",
+          "named": 0,
           "pairs": 4,
+          "themes": [
+            "T16",
+            "T4",
+            "T6"
+          ]
+        },
+        {
+          "id": "government-of-malta",
+          "named": 0,
+          "pairs": 3,
           "themes": [
             "T4",
             "T6",
@@ -15675,16 +17091,33 @@
           ]
         },
         {
-          "id": "government-of-malta",
+          "id": "pl",
           "named": 0,
-          "pairs": 2,
+          "pairs": 3,
           "themes": [
-            "T4",
+            "T6",
             "T7"
           ]
         },
         {
-          "id": "newsbook",
+          "id": "wasteserv",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
+          "id": "central-bank-malta",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T16",
+            "T6"
+          ]
+        },
+        {
+          "id": "era",
           "named": 0,
           "pairs": 2,
           "themes": [
@@ -15693,12 +17126,37 @@
           ]
         },
         {
-          "id": "pl",
+          "id": "pn",
           "named": 0,
           "pairs": 2,
           "themes": [
+            "T16",
             "T6",
             "T7"
+          ]
+        },
+        {
+          "id": "project-green",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
+          "id": "eurostat",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "ministry-gozo",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
           ]
         },
         {
@@ -15715,31 +17173,6 @@
           "pairs": 1,
           "themes": [
             "T4"
-          ]
-        },
-        {
-          "id": "pn",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T6",
-            "T7"
-          ]
-        },
-        {
-          "id": "project-green",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T6"
-          ]
-        },
-        {
-          "id": "wasteserv",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T6"
           ]
         }
       ]
@@ -15871,10 +17304,29 @@
         {
           "id": "ministry-environment",
           "named": 1,
-          "pairs": 3,
+          "pairs": 5,
           "themes": [
+            "T5",
             "T6",
             "T7"
+          ]
+        },
+        {
+          "id": "era",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T2",
+            "T5"
+          ]
+        },
+        {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T5",
+            "T6"
           ]
         },
         {
@@ -15886,20 +17338,30 @@
           ]
         },
         {
+          "id": "wasteserv",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T5",
+            "T6"
+          ]
+        },
+        {
           "id": "climate-action-authority",
           "named": 0,
-          "pairs": 2,
+          "pairs": 3,
           "themes": [
             "T6",
             "T7"
           ]
         },
         {
-          "id": "era",
+          "id": "infrastructure-malta",
           "named": 0,
           "pairs": 2,
           "themes": [
-            "T2"
+            "T2",
+            "T5"
           ]
         },
         {
@@ -15911,7 +17373,7 @@
           ]
         },
         {
-          "id": "european-commission",
+          "id": "central-bank-malta",
           "named": 0,
           "pairs": 1,
           "themes": [
@@ -15927,11 +17389,11 @@
           ]
         },
         {
-          "id": "infrastructure-malta",
+          "id": "mda",
           "named": 0,
           "pairs": 1,
           "themes": [
-            "T2"
+            "T5"
           ]
         },
         {
@@ -15943,6 +17405,14 @@
           ]
         },
         {
+          "id": "ministry-finance",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T5"
+          ]
+        },
+        {
           "id": "newsbook",
           "named": 0,
           "pairs": 1,
@@ -15951,11 +17421,19 @@
           ]
         },
         {
-          "id": "wasteserv",
+          "id": "opm",
           "named": 0,
           "pairs": 1,
           "themes": [
-            "T6"
+            "T5"
+          ]
+        },
+        {
+          "id": "the-shift",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T5"
           ]
         },
         {
@@ -16011,6 +17489,16 @@
           "named": 1,
           "pairs": 0,
           "themes": []
+        },
+        {
+          "id": "climate-action-authority",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T16",
+            "T6",
+            "T7"
+          ]
         },
         {
           "id": "ep-peti-study",
@@ -16073,12 +17561,12 @@
           ]
         },
         {
-          "id": "climate-action-authority",
+          "id": "central-bank-malta",
           "named": 0,
           "pairs": 1,
           "themes": [
-            "T6",
-            "T7"
+            "T16",
+            "T6"
           ]
         },
         {
@@ -16095,6 +17583,14 @@
           "pairs": 1,
           "themes": [
             "T1"
+          ]
+        },
+        {
+          "id": "eurostat",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
           ]
         },
         {
@@ -16803,6 +18299,30 @@
           ]
         },
         {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "ministry-environment",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T5"
+          ]
+        },
+        {
+          "id": "pl",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T5"
+          ]
+        },
+        {
           "id": "the-shift",
           "named": 0,
           "pairs": 1,
@@ -16920,6 +18440,14 @@
           ]
         },
         {
+          "id": "era",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
+          ]
+        },
+        {
           "id": "government-of-malta",
           "named": 0,
           "pairs": 1,
@@ -17003,6 +18531,14 @@
         },
         {
           "id": "european-commission",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "maltatoday",
           "named": 0,
           "pairs": 2,
           "themes": [
@@ -17122,6 +18658,14 @@
           "named": 1,
           "pairs": 0,
           "themes": []
+        },
+        {
+          "id": "era",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
+          ]
         },
         {
           "id": "european-commission",
@@ -17250,6 +18794,14 @@
           ]
         },
         {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
           "id": "mda",
           "named": 0,
           "pairs": 1,
@@ -17366,6 +18918,14 @@
           ]
         },
         {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
           "id": "newsbook",
           "named": 0,
           "pairs": 1,
@@ -17394,9 +18954,42 @@
         {
           "id": "european-commission",
           "named": 0,
-          "pairs": 3,
+          "pairs": 4,
           "themes": [
-            "T3"
+            "T3",
+            "T8"
+          ]
+        },
+        {
+          "id": "kpmg",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "planning-authority",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "afp",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "amphora-media",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
           ]
         },
         {
@@ -17405,6 +18998,62 @@
           "pairs": 1,
           "themes": [
             "T3"
+          ]
+        },
+        {
+          "id": "government-of-malta",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "housing-authority",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "lovin-malta",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "mda",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "ministry-finance",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "opm",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
+          "id": "the-shift",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
           ]
         },
         {
@@ -17436,6 +19085,16 @@
           ]
         },
         {
+          "id": "climate-action-authority",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T16",
+            "T4",
+            "T6"
+          ]
+        },
+        {
           "id": "ministry-environment",
           "named": 0,
           "pairs": 4,
@@ -17453,12 +19112,20 @@
           ]
         },
         {
-          "id": "climate-action-authority",
+          "id": "central-bank-malta",
           "named": 0,
           "pairs": 2,
           "themes": [
-            "T4",
+            "T16",
             "T6"
+          ]
+        },
+        {
+          "id": "era",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T4"
           ]
         },
         {
@@ -17500,6 +19167,14 @@
           "pairs": 1,
           "themes": [
             "T9"
+          ]
+        },
+        {
+          "id": "eurostat",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
           ]
         },
         {
@@ -17604,6 +19279,14 @@
           ]
         },
         {
+          "id": "ministry-environment",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T5"
+          ]
+        },
+        {
           "id": "ministry-transport",
           "named": 0,
           "pairs": 2,
@@ -17634,6 +19317,14 @@
           "pairs": 1,
           "themes": [
             "T8"
+          ]
+        },
+        {
+          "id": "era",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
           ]
         },
         {
@@ -17678,6 +19369,14 @@
           ]
         },
         {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
           "id": "mda",
           "named": 0,
           "pairs": 1,
@@ -17691,14 +19390,6 @@
           "pairs": 1,
           "themes": [
             "T10"
-          ]
-        },
-        {
-          "id": "ministry-environment",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T5"
           ]
         },
         {
@@ -17723,6 +19414,14 @@
           "pairs": 1,
           "themes": [
             "T8"
+          ]
+        },
+        {
+          "id": "pl",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T5"
           ]
         },
         {
@@ -17762,7 +19461,7 @@
         {
           "id": "ministry-environment",
           "named": 0,
-          "pairs": 10,
+          "pairs": 13,
           "themes": [
             "T4",
             "T5",
@@ -17790,13 +19489,46 @@
           ]
         },
         {
+          "id": "climate-action-authority",
+          "named": 0,
+          "pairs": 8,
+          "themes": [
+            "T16",
+            "T4",
+            "T6",
+            "T7"
+          ]
+        },
+        {
           "id": "newsbook",
           "named": 0,
-          "pairs": 7,
+          "pairs": 8,
           "themes": [
+            "T16",
             "T21",
             "T4",
             "T6"
+          ]
+        },
+        {
+          "id": "era",
+          "named": 0,
+          "pairs": 6,
+          "themes": [
+            "T4",
+            "T5",
+            "T6"
+          ]
+        },
+        {
+          "id": "pn",
+          "named": 0,
+          "pairs": 6,
+          "themes": [
+            "T16",
+            "T3",
+            "T6",
+            "T7"
           ]
         },
         {
@@ -17827,16 +19559,6 @@
           ]
         },
         {
-          "id": "pn",
-          "named": 0,
-          "pairs": 5,
-          "themes": [
-            "T3",
-            "T6",
-            "T7"
-          ]
-        },
-        {
           "id": "the-shift",
           "named": 0,
           "pairs": 5,
@@ -17848,13 +19570,30 @@
           ]
         },
         {
-          "id": "climate-action-authority",
+          "id": "central-bank-malta",
           "named": 0,
           "pairs": 4,
           "themes": [
-            "T4",
-            "T6",
-            "T7"
+            "T16",
+            "T6"
+          ]
+        },
+        {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T3",
+            "T8"
+          ]
+        },
+        {
+          "id": "pl",
+          "named": 0,
+          "pairs": 4,
+          "themes": [
+            "T5",
+            "T6"
           ]
         },
         {
@@ -17874,15 +19613,6 @@
           ]
         },
         {
-          "id": "era",
-          "named": 0,
-          "pairs": 3,
-          "themes": [
-            "T5",
-            "T6"
-          ]
-        },
-        {
           "id": "fee-malta",
           "named": 0,
           "pairs": 3,
@@ -17898,14 +19628,6 @@
             "T21",
             "T4",
             "T8"
-          ]
-        },
-        {
-          "id": "maltatoday",
-          "named": 0,
-          "pairs": 3,
-          "themes": [
-            "T3"
           ]
         },
         {
@@ -17962,6 +19684,14 @@
           ]
         },
         {
+          "id": "ministry-gozo",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
           "id": "planning-authority",
           "named": 0,
           "pairs": 2,
@@ -18011,27 +19741,11 @@
           ]
         },
         {
-          "id": "ministry-gozo",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T16"
-          ]
-        },
-        {
           "id": "nso",
           "named": 0,
           "pairs": 1,
           "themes": [
             "T4"
-          ]
-        },
-        {
-          "id": "pl",
-          "named": 0,
-          "pairs": 1,
-          "themes": [
-            "T6"
           ]
         },
         {
@@ -18074,6 +19788,14 @@
           "pairs": 1,
           "themes": [
             "T14"
+          ]
+        },
+        {
+          "id": "era",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
           ]
         },
         {
@@ -18175,6 +19897,14 @@
           "pairs": 1,
           "themes": [
             "T22"
+          ]
+        },
+        {
+          "id": "era",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T4"
           ]
         },
         {
@@ -18680,6 +20410,14 @@
           ]
         },
         {
+          "id": "maltatoday",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T8"
+          ]
+        },
+        {
           "id": "mda",
           "named": 0,
           "pairs": 1,
@@ -18743,6 +20481,166 @@
           "pairs": 1,
           "themes": [
             "T25"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "central-bank-malta",
+      "name": "Central Bank of Malta",
+      "kind": "organisation",
+      "type": "regulator",
+      "parent": null,
+      "role": null,
+      "links": [
+        {
+          "id": "ministry-environment",
+          "named": 0,
+          "pairs": 5,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 3,
+          "themes": [
+            "T16",
+            "T6"
+          ]
+        },
+        {
+          "id": "climate-action-authority",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T16",
+            "T6"
+          ]
+        },
+        {
+          "id": "newsbook",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T16",
+            "T6"
+          ]
+        },
+        {
+          "id": "wasteserv",
+          "named": 0,
+          "pairs": 2,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
+          "id": "era",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
+          "id": "eurostat",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "government-of-malta",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
+          "id": "ministry-gozo",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "pl",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T6"
+          ]
+        },
+        {
+          "id": "pn",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16",
+            "T6"
+          ]
+        },
+        {
+          "id": "project-green",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eurostat",
+      "name": "Eurostat",
+      "kind": "organisation",
+      "type": "eu",
+      "parent": "european-commission",
+      "role": null,
+      "links": [
+        {
+          "id": "central-bank-malta",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "climate-action-authority",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "ministry-gozo",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "newsbook",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
+          ]
+        },
+        {
+          "id": "pn",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T16"
           ]
         }
       ]

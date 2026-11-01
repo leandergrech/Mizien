@@ -1,0 +1,49 @@
+id: CC-147
+title: 'Climate Action Authority factsheet: intensity fell 19% excluding air and maritime transport'
+category: Climate & Energy
+subtopic: Emissions & targets
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Climate Action Authority (Malta, factsheet on air emissions accounts, published about February 2026): aviation has
+    a disproportionate weight in Malta''s emissions-intensity figure; excluding air and maritime transport, emissions per
+    euro of output fell by 19% between 2020 and 2024, whereas Eurostat''s published figures show growth of 87.2% over the
+    same years.'
+  speaker: Climate Action Authority
+  date: '2026-02-01'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: FACTSHEET AEA (air emissions accounts)
+    publisher: Climate Action Authority (climateaction.gov.mt)
+    date: 2026-02
+    url: https://climateaction.gov.mt/wp-content/uploads/2026/02/FACTSHEET-AEA.pdf
+    note: The claim. Figures taken from a search-engine summary of the PDF; WebFetch returned HTTP 403 on 1 Nov 2026. Exact
+      wording, date and denominator still to be read. Upload path implies February 2026.
+counter_evidence: Eurostat air emissions accounts include emissions by resident units wherever they occur (e.g. Maltese-registered
+  airlines and ships), so the Eurostat figure moves with aviation and shipping; excluding them changes the measure rather
+  than correcting it. The PN (CC-114) and the Central Bank (CC-146) argue on the same data from opposite sides. A 19% fall
+  over 2020-2024 starts from the Covid year 2020, when output and emissions were both depressed.
+tests: 'Eurostat env_ac_ainah_r2 (emissions by NACE) and national accounts GVA by NACE: recompute the 87.2% and the 19%; sensitivity
+  to the start year; Malta National Inventory Report by sector.'
+why_low_hanging: Both numbers can be rebuilt from public Eurostat tables.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Queue
+data_readiness: 'High on data; the factsheet PDF returned 403 to WebFetch: ask the maintainer to supply the text if the worker
+  cannot read it.'
+caveats: Candidate from weekly intake 1 Nov 2026. Exact publication date and wording unverified. Treat the 87.2% and 19% as
+  the factsheet reports them until recomputed.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

@@ -1,0 +1,47 @@
+id: CC-148
+title: 'Eurostat: Malta had the sharpest drop in greenhouse-gas emissions in Q1 2025'
+category: Climate & Energy
+subtopic: Emissions & targets
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Eurostat (quarterly greenhouse-gas emissions release, reported by MaltaDaily on 19 Aug 2025): in the first quarter
+    of 2025 Malta''s emissions fell 6.2% on the same quarter of 2024, the largest fall among Member States, while EU emissions
+    rose 3.4% to 900 million tonnes of CO2-equivalent; emissions rose in 20 Member States and fell in seven.'
+  speaker: Eurostat
+  date: '2025-08-19'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta tops EU greenhouse gas emission reductions, charts in first quarter of 2025
+    publisher: MaltaDaily
+    date: '2025-08-19'
+    url: https://maltadaily.mt/articles/malta-tops-eu-greenhouse-gas-emission-reductions-charts-in-first-quarter-of-2025
+    note: Locates the claim; figures read in full on 1 Nov 2026. The Eurostat news item itself still to be found. The article
+      also records Minister Miriam Dalli commenting.
+counter_evidence: A single quarter, year on year, is volatile for a small economy with a single power station and large aviation
+  and shipping weights (see CC-146, CC-147). Eurostat reported Malta as having the largest EU rise in emissions on an annual
+  basis in another release (CC-026). Quarterly figures are provisional and revised.
+tests: Eurostat quarterly air emissions accounts (dataset to confirm, env_ac_aigg_q); annual env_ac_ainah_r2 for 2024 and,
+  when published, 2025; Malta electricity generation by fuel and tourist numbers Q1 2024 vs Q1 2025 (NSO, Eurostat nrg_cb_pem);
+  the later revision of the Q1 2025 figure.
+why_low_hanging: A single dataset gives the answer; tests whether a quarter says anything about the trend.
+tags:
+- Selective metric
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Eurostat (ec.europa.eu) reachable.'
+caveats: 'Candidate from weekly intake 1 Nov 2026. Older than 60 days (Aug 2025) but the question is current: Q1 2025 data
+  are now annual 2025 data. The speaker is Eurostat; the commentary by the Minister is not part of this claim.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

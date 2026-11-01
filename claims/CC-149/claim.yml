@@ -1,0 +1,52 @@
+id: CC-149
+title: 'MaltaToday: 12,325 new dwellings approved in 2025, a record 226 outside development zones'
+category: Planning & Housing
+subtopic: Development & construction
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'MaltaToday (''Building mad: 12,325 new dwellings approved in 2025'', early 2026, citing Planning Authority data published
+    by the NSO): approvals of new dwellings reached 12,325 in 2025, 41% more than the year before and the third-highest annual
+    total ever; 226 new dwelling units were approved in areas outside development zones (ODZ), a record.'
+  speaker: MaltaToday
+  date: null
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Building mad: 12,325 new dwellings approved in 2025'
+    publisher: MaltaToday
+    date: n/d (early 2026)
+    url: https://www.maltatoday.com.mt/news/national/143438/building_mad_12325_new_dwellings_approved_in_2025
+    note: The claim as framed by the outlet (headline and summary seen in search results; page returned 403 on 1 Nov 2026).
+  - title: Economy - Residential Building Permits
+    publisher: National Statistics Office
+    date: '2026'
+    url: https://nso.gov.mt/economy-residential-building-permits/
+    note: 'Primary figures per search summary: 2,213 permits and 12,325 new dwellings in 2025; Planning Authority is the data
+      source; Northern Harbour highest (577 permits, 3,509 dwellings). 403 to WebFetch on 1 Nov 2026.'
+counter_evidence: Approvals are permits granted, not dwellings built or occupied; permits lapse, are revised or are appealed.
+  The outlet's ranking ("third-highest ever") and the ODZ record depend on the series start and on whether the NSO counts
+  apartments created by redevelopment net of demolitions. KPMG (CC-123) reports a different approval total for a different
+  period.
+tests: 'NSO residential building permits series (2005-2025): verify 12,325, +41%, ranking and the ODZ count; Planning Authority
+  permit database and annual report; NSO completions/commencements; ODZ classification of the 226 units.'
+why_low_hanging: The NSO publishes the series; the ranking and "record" can be recomputed.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: nso.gov.mt and maltatoday.com.mt return 403 to curl and WebFetch; Planning Authority data may need
+  a browser. Ask the maintainer for the NSO release text if refused.'
+caveats: Candidate from weekly intake 1 Nov 2026. Publication date of the MaltaToday article unconfirmed. The numbers are
+  the NSO's; the superlatives are the outlet's. Do not judge individual permits.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross
