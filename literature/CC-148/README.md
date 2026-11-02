@@ -1,6 +1,6 @@
 # CC-148: Eurostat: Malta had the sharpest drop in greenhouse-gas emissions in Q1 2025
 
-**Status:** literature not yet collected.
+**Status:** checked 2 Nov 2026 (report v1.0). Routes: Eurostat news item (found via web search and ddn-date probing), Eurostat API. See notes.md.
 
 ## To collect
 

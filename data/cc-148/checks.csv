@@ -1,0 +1,13 @@
+Group,Source,Quantity,Value,Note
+A,Eurostat news item 14 Aug 2025 (as published),Malta Q1 2025 vs Q1 2024,-6.2%,verbatim; news item read
+A,Eurostat news item,Finland / Denmark,-4.4% / -4.3%,verbatim
+A,Eurostat news item,Countries up / down,20 / 7,verbatim
+A,Eurostat news item,EU Q1 2025,"900 Mt CO2-eq, +3.4%",verbatim
+B,current vintage env_ac_aigg_q (updated 14 Aug 2026),Malta Q1 2025 vs Q1 2024,-5.05%,calc.py
+B,current vintage,Finland Q1 2025 vs Q1 2024,-10.07%,calc.py
+B,current vintage,Malta rank (1 = largest fall),2,calc.py
+B,current vintage,EU27 Q1 2025 vs Q1 2024,4.19%,calc.py
+B,current vintage,Member States up / down,20 / 7,calc.py
+C,current vintage,Malta annual total change 2024 / 2025,29.15% / 1.0%,"sum of four quarters, calc.py"
+C,current vintage,EU27 annual total change 2024 / 2025,-1.07% / 0.96%,"sum of four quarters, calc.py"
+C,current vintage,Malta Q1 2026 vs Q1 2025,4.21%,flag i
