@@ -134,8 +134,8 @@ CC-145,C,2026-10-26,top-up intake,0,,
 CC-146,B,2026-11-01,weekly intake,0,,
 CC-147,A,2026-11-01,weekly intake,1,2026-11-02,
 CC-148,B,2026-11-01,weekly intake,0,2026-11-02,
-CC-149,C,2026-11-01,weekly intake,0,,
+CC-149,C,2026-11-01,weekly intake,1,2026-11-02,"source: browser-only (https://nso.gov.mt/economy-residential-building-permits/ and MaltaToday article): both 403 to scripts and WebFetch, Wayback no copy; 12,325, +41%, 2,703 greenfield and 10,745 apartments are search-summary text only (second-hand); the 226 ODZ figure is not in any readable text; NSO quarterly releases (q2-q4 2025) also 403; need the NSO annual 2025 release text and the MaltaToday article from a browser; tried: NSO annual and Q4 pages (curl, WebFetch), Wayback, 2 web searches"
 CC-150,A,2026-11-01,weekly intake,0,,
 CC-151,B,2026-11-01,weekly intake,0,,
-CC-152,C,2026-11-01,weekly intake,0,,
+CC-152,C,2026-11-01,weekly intake,1,2026-11-02,"source: ERA's own draft National Air Pollution Control Programme (First Update, consultation 5 Jun-17 Jul 2026) not readable; the only text is Italpress/MNA 17 Jul 2026, whose quotation marks are the agency's wording (no ERA or named speaker quoted, read in full in English and Italian); tried: Italpress EN/IT, era.org.mt update page and ?p=60488 (403), gov.mt consultation NL-0022-2026 (403), Wayback (404, no snapshot), 2 web searches; need the programme text/PDF from era.org.mt in a browser"
 CC-153,A,2026-11-01,weekly intake,0,,
