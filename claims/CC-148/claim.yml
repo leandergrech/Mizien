@@ -2,46 +2,91 @@ id: CC-148
 title: 'Eurostat: Malta had the sharpest drop in greenhouse-gas emissions in Q1 2025'
 category: Climate & Energy
 subtopic: Emissions & targets
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
+  quote: '“The largest reductions in greenhouse gases were estimated for Malta (-6.2%), Finland (-4.4%) and Denmark (-4.3%).”'
   text: 'Eurostat (quarterly greenhouse-gas emissions release, reported by MaltaDaily on 19 Aug 2025): in the first quarter
     of 2025 Malta''s emissions fell 6.2% on the same quarter of 2024, the largest fall among Member States, while EU emissions
     rose 3.4% to 900 million tonnes of CO2-equivalent; emissions rose in 20 Member States and fell in seven.'
   speaker: Eurostat
   date: '2025-08-19'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
+  - title: 'EU economy greenhouse gas emissions: +3.4% in Q1 2025'
+    publisher: Eurostat
+    date: 14 Aug 2025
+    url: https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250814-1
+    note: The primary wording; read in full 2 Nov 2026. Malta (-6.2%), Finland (-4.4%), Denmark (-4.3%); EU 900 Mt, +3.4%; 20 up, 7 down.
+  - title: Air emissions accounts for greenhouse gases by NACE Rev. 2 activity, quarterly (env_ac_aigg_q)
+    publisher: Eurostat
+    date: updated 14 Aug 2026
+    url: https://ec.europa.eu/eurostat/databrowser/view/env_ac_aigg_q
+    note: 'Primary evidence; downloaded 2 Nov 2026 (data/cc-148/q_all_nsa.json). Current vintage: Malta -5.0%, Finland -10.1%.'
   - title: Malta tops EU greenhouse gas emission reductions, charts in first quarter of 2025
     publisher: MaltaDaily
     date: '2025-08-19'
     url: https://maltadaily.mt/articles/malta-tops-eu-greenhouse-gas-emission-reductions-charts-in-first-quarter-of-2025
-    note: Locates the claim; figures read in full on 1 Nov 2026. The Eurostat news item itself still to be found. The article
+    note: Locates the claim; figures read in full on 1 Nov 2026. The article
       also records Minister Miriam Dalli commenting.
-counter_evidence: A single quarter, year on year, is volatile for a small economy with a single power station and large aviation
-  and shipping weights (see CC-146, CC-147). Eurostat reported Malta as having the largest EU rise in emissions on an annual
-  basis in another release (CC-026). Quarterly figures are provisional and revised.
+counter_evidence: 'In the current Eurostat dataset (updated 14 Aug 2026) Malta''s Q1 2025 fall is 5.0% and second to Finland''s 10.1%; the EU rise is 4.2% (903.7 Mt). Summing four quarters, Malta''s 2025 emissions were 1.0% above 2024 and Q1 2026 is 4.2% above Q1 2025. The Q1 2025 level is 87% above Q1 2023 in this series (cause not investigated).'
 tests: Eurostat quarterly air emissions accounts (dataset to confirm, env_ac_aigg_q); annual env_ac_ainah_r2 for 2024 and,
   when published, 2025; Malta electricity generation by fuel and tourist numbers Q1 2024 vs Q1 2025 (NSO, Eurostat nrg_cb_pem);
   the later revision of the Q1 2025 figure.
 why_low_hanging: A single dataset gives the answer; tests whether a quarter says anything about the trend.
 tags:
 - Selective metric
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: Eurostat (ec.europa.eu) reachable.'
-caveats: 'Candidate from weekly intake 1 Nov 2026. Older than 60 days (Aug 2025) but the question is current: Q1 2025 data
-  are now annual 2025 data. The speaker is Eurostat; the commentary by the Minister is not part of this claim.'
+caveats: 'Rated: Eurostat’s own wording (news item, 14 Aug 2025). MaltaDaily’s headline and the Minister’s comment are not rated. Accurate to the August 2025 estimate; the ranking and size were later revised. The August 2025 vintage of the dataset could not be retrieved. No right of reply needed (verdict Largely supported).'
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+thumbnail:
+  figure: −6.2%
+  caption: Malta's Q1 2025 emissions fall, Eurostat's estimate (−5.0% after revision)
+version: '1.0'
+last_reviewed: '2026-11-02'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-148A
+    text: "Malta’s emissions fell, estimated −6.2% in Q1 2025 on Q1 2024"
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-148B
+    text: "This was the largest reduction among EU countries"
+    rating: "Revised"
+    tone: orange
+  - id: CC-148C
+    text: "EU emissions rose 3.4% to about 900 Mt CO₂-eq"
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-148D
+    text: "Increases in 20 countries, decreases in 7"
+    rating: "Supported"
+    tone: green
+history:
+  - date: 2026-11-02
+    step: started
+    note: Located Eurostat's news item ddn-20250814-1 and read it in full; verbatim wording found. Downloaded env_ac_aigg_q (all Member States, NSA) and compared with the release.
+  - date: 2026-11-02
+    step: note
+    note: 'Current vintage gives Malta -5.0% (2nd, behind Finland -10.1%), EU +4.2%, 20 up / 7 down. Malta 2025 full year +1.0%, Q1 2026 +4.2%. Scripted in tools/cc-148-report/calc.py.'
+  - date: 2026-11-02
+    step: version
+    version: "1.0"
+    note: First issue. Largely supported (moderate confidence); no right of reply needed.

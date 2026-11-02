@@ -2961,3 +2961,15 @@ CC-147,CC-147:28,"Start-year sensitivity 2020 -> 2024: intensity, all / excludin
 CC-147,CC-147:29,"Start-year sensitivity 2021 -> 2024: intensity, all / excluding air transport only (CLV subtraction)",+78.5 / -13.7,%,"Eurostat env_ac_ainah_r2, nama_10_a64, retrieved 2 Nov 2026",,
 CC-147,CC-147:30,"Start-year sensitivity 2022 -> 2024: intensity, all / excluding air transport only (CLV subtraction)",+56.8 / -15.2,%,"Eurostat env_ac_ainah_r2, nama_10_a64, retrieved 2 Nov 2026",,
 CC-147,CC-147:31,"Start-year sensitivity 2023 -> 2024: intensity, all / excluding air transport only (CLV subtraction)",+21.5 / -7.6,%,"Eurostat env_ac_ainah_r2, nama_10_a64, retrieved 2 Nov 2026",,
+CC-148,CC-148:2,Group: A,,,,,Source: Eurostat news item 14 Aug 2025 (as published); Quantity: Malta Q1 2025 vs Q1 2024; Value: -6.2%; Note: verbatim; news item read
+CC-148,CC-148:3,Group: A,,,,,Source: Eurostat news item; Quantity: Finland / Denmark; Value: -4.4% / -4.3%; Note: verbatim
+CC-148,CC-148:4,Group: A,,,,,Source: Eurostat news item; Quantity: Countries up / down; Value: 20 / 7; Note: verbatim
+CC-148,CC-148:5,Group: A,,,,,"Source: Eurostat news item; Quantity: EU Q1 2025; Value: 900 Mt CO2-eq, +3.4%; Note: verbatim"
+CC-148,CC-148:6,Group: B,,,,,Source: current vintage env_ac_aigg_q (updated 14 Aug 2026); Quantity: Malta Q1 2025 vs Q1 2024; Value: -5.05%; Note: calc.py
+CC-148,CC-148:7,Group: B,,,,,Source: current vintage; Quantity: Finland Q1 2025 vs Q1 2024; Value: -10.07%; Note: calc.py
+CC-148,CC-148:8,Group: B,,,,,Source: current vintage; Quantity: Malta rank (1 = largest fall); Value: 2; Note: calc.py
+CC-148,CC-148:9,Group: B,,,,,Source: current vintage; Quantity: EU27 Q1 2025 vs Q1 2024; Value: 4.19%; Note: calc.py
+CC-148,CC-148:10,Group: B,,,,,Source: current vintage; Quantity: Member States up / down; Value: 20 / 7; Note: calc.py
+CC-148,CC-148:11,Group: C,,,,,"Source: current vintage; Quantity: Malta annual total change 2024 / 2025; Value: 29.15% / 1.0%; Note: sum of four quarters, calc.py"
+CC-148,CC-148:12,Group: C,,,,,"Source: current vintage; Quantity: EU27 annual total change 2024 / 2025; Value: -1.07% / 0.96%; Note: sum of four quarters, calc.py"
+CC-148,CC-148:13,Group: C,,,,,Source: current vintage; Quantity: Malta Q1 2026 vs Q1 2025; Value: 4.21%; Note: flag i
