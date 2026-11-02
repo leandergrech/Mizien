@@ -2,48 +2,107 @@ id: CC-147
 title: 'Climate Action Authority factsheet: intensity fell 19% excluding air and maritime transport'
 category: Climate & Energy
 subtopic: Emissions & targets
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Climate Action Authority (Malta, factsheet on air emissions accounts, published about February 2026): aviation has
-    a disproportionate weight in Malta''s emissions-intensity figure; excluding air and maritime transport, emissions per
-    euro of output fell by 19% between 2020 and 2024, whereas Eurostat''s published figures show growth of 87.2% over the
-    same years.'
+  text: 'Climate Action Authority (Malta), factsheet ''An analysis of Malta''s GHG Emissions by Economic Activity'' (February
+    2026, p. 5): when Malta''s GHG intensity is worked out excluding air and maritime transport, intensity per euro generated
+    between 2024 and 2020 ''in fact reduced by 19%'' rather than increased as per Eurostat''s figures, which ''summed up''
+    show a growth rate of 87.2%. (p. 3: aviation has a ''disporportionate statistical weighing'' on the final emission results.)'
   speaker: Climate Action Authority
   date: '2026-02-01'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
-  - title: FACTSHEET AEA (air emissions accounts)
+  - title: 'FACTSHEET AEA: An analysis of Malta’s GHG Emissions by Economic Activity'
     publisher: Climate Action Authority (climateaction.gov.mt)
     date: 2026-02
     url: https://climateaction.gov.mt/wp-content/uploads/2026/02/FACTSHEET-AEA.pdf
-    note: The claim. Figures taken from a search-engine summary of the PDF; WebFetch returned HTTP 403 on 1 Nov 2026. Exact
-      wording, date and denominator still to be read. Upload path implies February 2026.
-counter_evidence: Eurostat air emissions accounts include emissions by resident units wherever they occur (e.g. Maltese-registered
-  airlines and ships), so the Eurostat figure moves with aviation and shipping; excluding them changes the measure rather
-  than correcting it. The PN (CC-114) and the Central Bank (CC-146) argue on the same data from opposite sides. A 19% fall
-  over 2020-2024 starts from the Covid year 2020, when output and emissions were both depressed.
-tests: 'Eurostat env_ac_ainah_r2 (emissions by NACE) and national accounts GVA by NACE: recompute the 87.2% and the 19%; sensitivity
-  to the start year; Malta National Inventory Report by sector.'
-why_low_hanging: Both numbers can be rebuilt from public Eurostat tables.
+    note: 'The claim (p. 5; aviation weight p. 3; residence principle p. 1). The Authority’s own address returns HTTP 403
+      to scripts; read in full 2 Nov 2026 in the Internet Archive capture of 15 Apr 2026 (web.archive.org/web/20260415130840/...).
+      PDF metadata: created 4 Feb 2026.'
+  - title: Air emissions accounts by NACE (env_ac_ainah_r2), bridging table (env_ac_aibrid_r2), gross value added (nama_10_a64)
+    publisher: Eurostat
+    date: 2026-11-02 (retrieved)
+    url: https://ec.europa.eu/eurostat/databrowser/
+    note: Malta and EU-27; used to rebuild the 87.2% and the 19% (data/cc-147/).
+  quote: Moreover, when the GHG intensity for Malta is worked out excluding air transport and maritime transport, one may
+    note that GHG intensity per every euro generated between 2024 and 2020 in fact reduced by 19% rather than increased as
+    per Eurostat’s figures which summed up show a growth rate of 87.2%.
+counter_evidence: 'Eurostat''s all-activities series gives +86.2% for 2020-2024 (factsheet +87.2%); air transport is 68% of
+  Malta''s 2024 residence-basis emissions (EU-27 4%). Excluding air and water transport gives -22.2% (air only -21.2%); territory-basis
+  emissions per euro give -22.2%; the EU-27 all-activities measure fell 15.1%. The fall holds for start years 2017-2023 (-28%
+  to -8%) but is smaller from later starts, and air transport''s value added was negative in the 2020 base year (-EUR 219
+  million). The exact 19% could not be reproduced (the factsheet''s workings are not published); our 2024 emissions excluding
+  air and water transport are 8.5 kt below the factsheet chart (data vintage). Removing aviation changes the measure rather
+  than correcting it: the factsheet itself says the Eurostat accounts follow the residence principle.'
+tests: 'Done: Eurostat env_ac_ainah_r2, env_ac_aibrid_r2, nama_10_a64 rebuilt in tools/cc-147-report/calc.py.'
+why_low_hanging: 'Done: Claim Check 147 report and flyer.'
 tags:
 - Selective metric
-tags_provisional: true
-priority: Queue
-data_readiness: 'High on data; the factsheet PDF returned 403 to WebFetch: ask the maintainer to supply the text if the worker
-  cannot read it.'
-caveats: Candidate from weekly intake 1 Nov 2026. Exact publication date and wording unverified. Treat the 87.2% and 19% as
-  the factsheet reports them until recomputed.
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: No right of reply needed (verdict Largely supported; a reply is sought only for Not substantiated, Misleading or
+  Contradicted). The 19% is the Authority's own calculation; our rebuild gives about -22%. Read in the Internet Archive capture
+  of the PDF (15 Apr 2026), not at the Authority's own address (403). Eurostat 2024 values carry flag i. The factsheet's other
+  figures (9.6% vs 190.9% on p. 5; +16.6% in 2013-2024 on p. 4) are not rated and were not reproduced.
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Eurostat env_ac_ainah_r2, env_ac_aibrid_r2, nama_10_a64, Malta and EU-27, retrieved 2 Nov 2026 (data/cc-147/eurostat_aea.csv,
+  checks.csv)
+- Climate Action Authority factsheet FACTSHEET-AEA.pdf (Internet Archive capture of 15 Apr 2026)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-147A
+    text: "Aviation has a disproportionate weight in Malta’s emissions-intensity figure"
+    finding: "Air transport is 68% of 2024 residence-basis emissions (EU-27: 4%) and rose 7.2-fold since 2020 [2]."
+    rating: "Supported"
+    tone: green
+  - id: CC-147B
+    text: "Eurostat’s published figures show growth of 87.2% in 2020–2024"
+    finding: "We get +86.2% from Eurostat tables; the remaining point is plausibly data vintage or the Authority’s exact definition [2]."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-147C
+    text: "Excluding air and maritime transport, emissions per euro fell by 19% in 2020–2024"
+    finding: "We get −22% (CLV subtraction) and −22% on a territorial basis; the fall holds for all start years 2017–2023 but is smaller from later starts; the exact 19% could not be reproduced and the 2020 base is unusual [2]."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-147D
+    text: "This is “in fact” the correct result “rather than” Eurostat’s"
+    finding: "Framing: two measures, both valid, for different questions; the factsheet itself says so on page 1 [1]. Not rated separately."
+    rating: "Not rated"
+    tone: grey
+version: '1.0'
+last_reviewed: '2026-11-02'
+thumbnail:
+  figure: 68%
+  caption: of Malta’s 2024 greenhouse-gas emissions (residence basis) came from air transport
+history:
+- date: '2026-11-02'
+  step: started
+  note: 'Worker A took the claim. Factsheet PDF refused at the Authority’s address (403); found the Internet Archive capture
+    of 15 Apr 2026 and read all 7 pages: the 19% / 87.2% sentence is on p. 5, verbatim.'
+- date: '2026-11-02'
+  step: note
+  note: 'Eurostat env_ac_ainah_r2, env_ac_aibrid_r2 and nama_10_a64 (Malta, EU-27) downloaded and recomputed: +86.2% all activities
+    (factsheet +87.2%); -22.2% excluding air and water transport (factsheet -19%); territory basis -22.2%; EU-27 -15.1%; start-year
+    sensitivity 2017-2023; air transport 68% of 2024 emissions.'
+- date: '2026-11-02'
+  step: version
+  version: '1.0'
+  note: 'First issue. Verdict: Largely supported (moderate); no right of reply needed.'
