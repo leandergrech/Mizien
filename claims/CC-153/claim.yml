@@ -2,45 +2,82 @@ id: CC-153
 title: 'EU: Malta missed the deadline for its draft National Building Renovation Plan'
 category: Planning & Housing
 subtopic: Development & construction
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
   text: 'European Commission (March 2026 infringements package): Malta, with 18 other Member States, received a letter of
     formal notice (INFR(2026)2027) for not submitting its draft National Building Renovation Plan, due by 31 December 2025,
     and has two months to respond.'
   speaker: European Commission
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  date: '2026-03-12'
+  wording_status: Verbatim found
   sources:
+  - title: 'March infringements package: Commission calls on Member States to submit their draft National Building Renovation Plans'
+    publisher: European Commission, Representation in Malta
+    date: '2026-03-12'
+    url: https://malta.representation.ec.europa.eu/news/march-infringements-package-2026-03-12_en
+    note: The claim in the Commission's own words. Read in full 3 Nov 2026 (HTTP 200).
   - title: 'March infringements package: key decisions on energy'
     publisher: EU Reporter (republishing Commission press release)
     date: '2026-03-13'
     url: https://www.eureporter.co/politics/european-commission/2026/03/13/march-infringements-package-key-decisions-on-energy/
-    note: 'Lead: listing seen in a search summary only (403 on 1 Nov 2026). The Commission''s own package page and the case
+    note: 'Lead only, not used (Cloudflare 403 on 3 Nov 2026); listing seen in a search summary on 1 Nov 2026. The Commission''s own package page and the case
       INFR(2026)2027 still to be read. A LinkedIn post says proceedings were escalated in October 2026; unverified.'
-counter_evidence: 'A letter of formal notice is the first step and states the Commission''s view, not a ruling; Malta may
-  have submitted the plan since (status not found). The deadline comes from the recast Energy Performance of Buildings Directive
-  (EU) 2024/1275. Malta has not necessarily failed on renovation itself: this is a reporting-deadline claim.'
-tests: Commission infringement decisions register (INFR(2026)2027 status); Commission press release of the March 2026 package;
-  Malta's NBRP submission on the Commission energy portal; Directive (EU) 2024/1275 Art. 3; Malta's long-term renovation strategy
-  and building-stock data (Eurostat, BPIE).
-why_low_hanging: The register entry and the deadline are public; ec.europa.eu is reachable.
+  quote: 'The European Commission decided to open infringement procedures by sending a letter of formal notice to ... Malta (INFR(2026)2027) ... as they failed to submit their draft National Building Renovation Plan (NBRP) to the Commission by the deadline of 31 December 2025.'
+counter_evidence: 'No evidence against the statement. Context: Malta has no entry on the Commission''s plan page (read 3 Nov 2026), which lists 18 Member States and the Walloon Region; a letter of formal notice is a first step and states the Commission''s view, not a ruling; the page may lag behind submissions and the register stage of INFR(2026)2027 could not be read. An escalation in October 2026 is mentioned only in search summaries (second-hand, unverified).'
+tests: 'Done: Commission notice, Directive Art. 3 and plan register compared (tools/cc-153-report/calc.py).'
+why_low_hanging: 'Done: Claim Check 153 report and flyer.'
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'Medium to high: ec.europa.eu reachable here; EU Reporter blocked.'
-caveats: 'Candidate from weekly intake 1 Nov 2026. Exact date of the package and the case number come from search summaries;
-  confirm on the Commission page. EU speaker, about a Maltese obligation: placed at the national marker.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: High
+caveats: 'No right of reply needed (verdict Supported; a reply is sought only for Not substantiated, Misleading or Contradicted). The check covers the March 2026 notice, case number, deadline and response period; it does not say whether Malta has since submitted a draft (not documented either way) and does not rate renovation performance. Directive text read in German at gesetze.legal (EUR-Lex refused).'
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-153A
+    text: "Malta, with 18 other Member States, received a letter of formal notice (INFR(2026)2027) in March 2026"
+    finding: "The Commission’s item of 12 March 2026 names 19 States; Malta is INFR(2026)2027 [1]."
+    rating: "Supported"
+    tone: green
+  - id: CC-153B
+    text: "The notice was for not submitting the draft National Building Renovation Plan, due by 31 December 2025"
+    finding: "The Commission’s text says so; Article 3 of Directive 2024/1275 sets the date [1][2]."
+    rating: "Supported"
+    tone: green
+  - id: CC-153C
+    text: "Malta has two months to respond"
+    finding: "Stated in the Commission’s item [1]. Whether Malta has responded is not documented."
+    rating: "Supported"
+    tone: green
+version: '1.0'
+last_reviewed: '2026-11-03'
+thumbnail:
+  figure: '19'
+  caption: Member States, Malta included, sent letters of formal notice for missing the 31 Dec 2025 renovation-plan deadline
+history:
+- date: '2026-11-03'
+  step: started
+  note: 'Worker A took the claim. EU Reporter refused (403); found the Commission Representation in Malta page of 12 Mar 2026 with the verbatim wording and all 19 case numbers; EUR-Lex refused, Article 3(3) read in German at gesetze.legal.'
+- date: '2026-11-03'
+  step: note
+  note: 'Read the Commission plan page (19 entries, Malta absent) and the 14 Jul 2026 assessment; counts in data/cc-153/checks.csv. No Maltese statement on submission found; register stage not reached.'
+- date: '2026-11-03'
+  step: version
+  version: '1.0'
+  note: 'First issue. Verdict: Supported (high); no right of reply needed.'
