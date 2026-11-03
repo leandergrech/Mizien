@@ -11,3 +11,6 @@ Eurostat air emissions accounts (env_ac_ainah_r2) and ESA GDP: recompute emissio
 See `data/sources.csv` (filter on CC-146) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
 
 Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+
+## Attempt 1 (3 Nov 2026, worker B)
+Blocked (network). Tried: claim URL (MaltaToday, 403), centralbankmalta.org (403), Malta Independent opinion of 19 Apr 2026 (403, WebFetch 403), climateaction.gov.mt factsheet (403), Wayback (reset), MaltaToday uberflip edition (paywalled), 3 web searches (summaries only). Leads: see data/sources.csv.
