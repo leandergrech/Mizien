@@ -2,7 +2,7 @@ id: CC-151
 title: 'Environment Minister: bottle and can machines collected over 85% in 2025'
 category: Waste
 subtopic: Recycling & separation
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -44,3 +44,7 @@ location:
   lon: 14.50909
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-03
+    step: started
+    note: "Worker B, attempt 1: blocked on source. The parliamentary reply (Minister Miriam Dalli to MP Ian Vassallo, about 9-10 Feb 2026) is known only as indirect speech in MaltaDaily, Newsbook and Lovin Malta: about 283 million containers placed on the market in 2025, more than 85% accepted by BCRS machines (rate confirmed by the operator), over 98% of vouchers redeemed. No 2024 comparator appears in the reply as reported. Independent, MaltaToday and parlament.mt are 403. Needed: the PQ number and reply text from parlament.mt in a browser."

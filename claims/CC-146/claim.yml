@@ -56,3 +56,7 @@ location:
   lon: 14.50909
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-03
+    step: started
+    note: "Worker B, attempt 1: blocked on network. The Central Bank's own wording of 'statistical illusion' was not obtained: centralbankmalta.org, independent.com.mt, maltatoday.com.mt and climateaction.gov.mt return 403 to scripts and WebFetch, and the Wayback Machine resets. Only search summaries of the MaltaToday report were seen (second-hand). Leads: Malta Independent opinion of 19 Apr 2026 and CBM Discussion Paper DP 6/25. Needed: the report or article text from a browser."
