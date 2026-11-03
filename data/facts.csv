@@ -2973,3 +2973,15 @@ CC-148,CC-148:10,Group: B,,,,,Source: current vintage; Quantity: Member States u
 CC-148,CC-148:11,Group: C,,,,,"Source: current vintage; Quantity: Malta annual total change 2024 / 2025; Value: 29.15% / 1.0%; Note: sum of four quarters, calc.py"
 CC-148,CC-148:12,Group: C,,,,,"Source: current vintage; Quantity: EU27 annual total change 2024 / 2025; Value: -1.07% / 0.96%; Note: sum of four quarters, calc.py"
 CC-148,CC-148:13,Group: C,,,,,Source: current vintage; Quantity: Malta Q1 2026 vs Q1 2025; Value: 4.21%; Note: flag i
+CC-153,CC-153:2,Member States sent a letter of formal notice,19,count,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",Malta + 18 others,
+CC-153,CC-153:3,Malta's case number,INFR(2026)2027,id,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",,
+CC-153,CC-153:4,Months to respond (as stated),2,months,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",,
+CC-153,CC-153:5,Draft-plan deadline (as stated),2025-12-31,date,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",Directive (EU) 2024/1275 Art. 3: first draft by 31 Dec 2025 (German text read at gesetze.legal; EUR-Lex refused),
+CC-153,CC-153:6,Entries on Commission NBRP page,19,count,Commission DG Energy NBRP page (read 3 Nov 2026),18 Member States + Walloon Region,
+CC-153,CC-153:7,Malta has an entry on the Commission NBRP page,no,,Commission DG Energy NBRP page (read 3 Nov 2026),,
+CC-153,CC-153:8,Entries dated on or before 31 Dec 2025,6,count,Commission DG Energy NBRP page (read 3 Nov 2026),"Belgium (Walloon Region), Bulgaria, Croatia, Finland, Romania, Spain",
+CC-153,CC-153:9,Entries dated after 31 Dec 2025,13,count,Commission DG Energy NBRP page (read 3 Nov 2026),,
+CC-153,CC-153:10,Entries dated after the 12 Mar 2026 notice,10,count,Commission DG Energy NBRP page (read 3 Nov 2026),,
+CC-153,CC-153:11,Notified states with an entry on the page by 3 Nov 2026,"Austria, Belgium, Cyprus, Estonia, France, Germany, Greece, Latvia, Netherlands, Portugal, Sweden",list,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026); Commission DG Energy NBRP page (read 3 Nov 2026)",,
+CC-153,CC-153:12,Notified states with no entry on the page,"Czechia, Hungary, Ireland, Italy, Luxembourg, Malta, Poland, Slovakia",list,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026); Commission DG Energy NBRP page (read 3 Nov 2026)",includes Malta; page may lag submissions,
+CC-153,CC-153:13,Days from deadline to notice,71,days,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",,

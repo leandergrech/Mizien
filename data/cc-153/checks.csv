@@ -1,0 +1,13 @@
+check,value,unit,source,note
+Member States sent a letter of formal notice,19,count,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",Malta + 18 others
+Malta's case number,INFR(2026)2027,id,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",
+Months to respond (as stated),2,months,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",
+Draft-plan deadline (as stated),2025-12-31,date,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",Directive (EU) 2024/1275 Art. 3: first draft by 31 Dec 2025 (German text read at gesetze.legal; EUR-Lex refused)
+Entries on Commission NBRP page,19,count,Commission DG Energy NBRP page (read 3 Nov 2026),18 Member States + Walloon Region
+Malta has an entry on the Commission NBRP page,no,,Commission DG Energy NBRP page (read 3 Nov 2026),
+Entries dated on or before 31 Dec 2025,6,count,Commission DG Energy NBRP page (read 3 Nov 2026),"Belgium (Walloon Region), Bulgaria, Croatia, Finland, Romania, Spain"
+Entries dated after 31 Dec 2025,13,count,Commission DG Energy NBRP page (read 3 Nov 2026),
+Entries dated after the 12 Mar 2026 notice,10,count,Commission DG Energy NBRP page (read 3 Nov 2026),
+Notified states with an entry on the page by 3 Nov 2026,"Austria, Belgium, Cyprus, Estonia, France, Germany, Greece, Latvia, Netherlands, Portugal, Sweden",list,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026); Commission DG Energy NBRP page (read 3 Nov 2026)",
+Notified states with no entry on the page,"Czechia, Hungary, Ireland, Italy, Luxembourg, Malta, Poland, Slovakia",list,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026); Commission DG Energy NBRP page (read 3 Nov 2026)",includes Malta; page may lag submissions
+Days from deadline to notice,71,days,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",

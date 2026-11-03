@@ -1,13 +1,5 @@
 # CC-153: EU: Malta missed the deadline for its draft National Building Renovation Plan
 
-**Status:** literature not yet collected.
+**Status:** checked (v1.0, 3 Nov 2026): Supported. Official documents only (grade C); no peer-reviewed literature applies, so there is no references.bib.
 
-## To collect
-
-Commission infringement decisions register (INFR(2026)2027 status); Commission press release of the March 2026 package; Malta's NBRP submission on the Commission energy portal; Directive (EU) 2024/1275 Art. 3; Malta's long-term renovation strategy and building-stock data (Eurostat, BPIE).
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-153) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+Primary wording: Commission Representation in Malta, 12 Mar 2026 (read in full). Routes tried: the record's EU Reporter link (403), the Commission's own pages (read), EUR-Lex (refused), Wayback (reset), web searches. See notes.md for the search log and what is unverified.
