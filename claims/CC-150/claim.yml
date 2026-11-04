@@ -2,7 +2,7 @@ id: CC-150
 title: 'Labour Party: 412 million kg of waste diverted from landfill in five years'
 category: Waste
 subtopic: Landfill & treatment
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -48,3 +48,7 @@ location:
   lon: 14.50909
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-04
+    step: started
+    note: "Worker A, attempt 1: blocked on source. Neither the Labour Party's release of 21 Jan 2026 nor the ministry release of 19 Jan 2026 (gov.mt PR260072) could be read: the Independent, gov.mt and a publicservice.gov.mt copy return 403, the Wayback Machine and pl.org.mt were unreachable, Newsbook search found nothing. The 412 million kg figure is seen only in web-search summaries (second-hand). Needed: the PL release and the gov.mt release text, from a browser."
