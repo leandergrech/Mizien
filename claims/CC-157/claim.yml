@@ -1,0 +1,59 @@
+id: CC-157
+title: 'Business Now (reporting a Nature Communications study): extreme heat could cut Malta''s GDP by over 2.5% by 2055-64'
+category: Health & Safety
+subtopic: Heat & health
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Business Now (Nicola Zammit, 18 Jul 2025, citing Euronews and the Nature Communications study by David García-León
+    and colleagues): ''GDP impacts from extreme heat exceeding -2.5 per cent by the 2055-2064 period'' for Malta, if there
+    is no further adaptation or mitigation.'
+  speaker: Business Now
+  date: '2025-07-18'
+  wording_status: Verbatim found
+  sources:
+  - title: Extreme heat set to leave 2.5% dent in Malta's GDP by mid-century
+    publisher: Business Now
+    date: '2025-07-18'
+    url: https://businessnow.mt/extreme-heat-set-to-leave-2-5-dent-in-maltas-gdp-by-mid-century/
+    note: The outlet's sentence; no link to the paper. Read 8 Nov 2026 via WebFetch (summarised).
+  - title: 'Heatwaves in Europe: which countries face the biggest GDP and labour productivity losses'
+    publisher: Euronews
+    date: '2025-07-15'
+    url: https://www.euronews.com/business/2025/07/15/heatwaves-in-europe-which-countries-face-the-biggest-gdp-and-labour-productivity-losses
+    note: Lead, not retrieved; cited by Business Now.
+  - title: Current and projected regional economic impacts of heatwaves in Europe (García-León et al.)
+    publisher: Nature Communications 12, 5807
+    date: '2021-10-04'
+    url: https://doi.org/10.1038/s41467-021-26050-z
+    note: 'The study the claim rests on, per search summaries (second-hand): published in 2021, not 2025; whether it contains
+      the Malta figure is unverified.'
+  quote: GDP impacts from extreme heat exceeding -2.5 per cent by the 2055-2064 period
+counter_evidence: 'Context, not tested: coverage of the García-León et al. study gives European averages of 0.77% of GDP (2035-45)
+  rising beyond 1.14% in the 2060s, and a north-south gradient with Cyprus at 3-3.5% by 2060 (press summaries, second-hand).
+  Whether Malta (one region in the study) is above 2.5% needs the paper''s regional data. The scenario (no further adaptation
+  or mitigation) is a stated condition.'
+tests: The paper (open access) and its regional data for Malta (NUTS 2 MT00) and scenario; any later update by the authors
+  or the JRC; compare with Malta's own heat-impact estimates.
+why_low_hanging: The paper is open access and the regional projections are published.
+tags:
+- Conditional-turned-unconditional
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: doi.org and nature.com may be refused; Euronews and Crossref lookups may work; Business Now readable.'
+caveats: 'Candidate from the weekly intake of 8 Nov 2026 (older than 60 days; kept because it is a foreign researchers'' projection
+  about Malta). Claimant: the outlet''s reading of the study; the study date (2021) does not match the 2025 ''projection''
+  framing, so confirm whether a later paper is meant. Projection, not a forecast.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

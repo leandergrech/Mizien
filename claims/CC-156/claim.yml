@@ -1,0 +1,49 @@
+id: CC-156
+title: 'Business Now: Maltese bathing waters ''downgraded from best in Europe to bang average'''
+category: Water
+subtopic: Bathing water & sewage
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Business Now (Robert Fenech, 17 Aug 2026): ''Maltese waters have suffered a downgrade from best in Europe to bang
+    average''. The article reports that 86 of 87 registered beaches were rated excellent in 2016 against 77 in 2025, and that
+    56 of 87 were excellent in week 13 of 2026.'
+  speaker: Business Now
+  date: '2026-08-17'
+  wording_status: Verbatim found
+  sources:
+  - title: Water quality of Maltese beaches registers stark decline
+    publisher: Business Now
+    date: '2026-08-17'
+    url: https://businessnow.mt/water-quality-of-maltese-beaches-registers-stark-decline/
+    note: The claim in the outlet's own subtitle; figures from the Environmental Health Directorate's weekly updates and an
+      EEA chart, as the article says. Read 8 Nov 2026 via WebFetch (summarised).
+  quote: Maltese waters have suffered a downgrade from best in Europe to bang average
+counter_evidence: 'Context, not tested: the article itself notes the EU classifies even average results as a high level of
+  safety (E. coli and intestinal enterococci). The 2016 and 2025 figures are season classifications; the 2026 figure is a
+  weekly update, so the two are not like for like. The Commission''s own figure for Malta (CC-005, ''92% excellent'') differs
+  in framing.'
+tests: EEA bathing-water dataset (season classifications for Malta, 2016-2025, and Malta's rank among EU states each year);
+  Environmental Health Directorate results; classification rules of Directive 2006/7/EC (statistical, four-year assessment,
+  versus weekly sampling).
+why_low_hanging: The EEA publishes season classifications for every site; the comparison is a table.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: EEA bathing-water data reachable.'
+caveats: Candidate from the weekly intake of 8 Nov 2026. A media statement of the outlet's own reading of public data; compare
+  like with like (weekly sample versus season classification). No right of reply expected unless the verdict is Misleading
+  or Contradicted.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

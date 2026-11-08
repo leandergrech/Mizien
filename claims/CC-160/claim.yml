@@ -1,0 +1,56 @@
+id: CC-160
+title: 'NGO coalition: lighting at Dwejra until midnight is incompatible with the Local Plan''s Dark Sky policy'
+category: Nature & Wildlife
+subtopic: Dark skies
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Joint press release of ten NGOs including BirdLife Malta, Din l-Art Ħelwa, Friends of the Earth Malta, Moviment Graffitti
+    and the Astronomical Society of Malta (4 Feb 2026): ''Permitting lighting until midnight at Dwejra is utterly incompatible
+    with the Gozo and Comino Local Plan, whose policy on Dark Sky Heritage Areas (GZ-DARK-1) states unambiguously that there
+    should be no lighting in this site.'''
+  speaker: Joint NGO statement on Dwejra (BirdLife Malta, Din l-Art Ħelwa and others)
+  date: '2026-02-04'
+  wording_status: Verbatim found
+  sources:
+  - title: 'Dwejra is to be lit up: Government''s ''Protection'' Law Is a Blatant Betrayal of Dwejra and a Fraud on the Public
+      (joint press release)'
+    publisher: BirdLife Malta (on behalf of ten signatory organisations)
+    date: '2026-02-04'
+    url: https://birdlifemalta.org/wp-content/uploads/2026/02/Dwejra-is-to-be-lit-up_Governments-Protection-Law-Is-a-Blatant-Betrayal-of-Dwejra-and-a-Fraud-on-the-Public.pdf
+    note: The claim in the signatories' own words; PDF text extracted and read in full 8 Nov 2026.
+  - title: NGOs call on public to object to artificial lighting in Dwejra
+    publisher: MaltaToday
+    date: 2026-02
+    url: https://www.maltatoday.com.mt/news/national/139564/ngos_call_on_public_to_object_to_artificial_lighting_in_dwejra
+    note: Lead, not retrieved (403 on 8 Nov 2026); seen in a search result.
+  quote: Permitting lighting until midnight at Dwejra is utterly incompatible with the Gozo and Comino Local Plan, whose policy
+    on Dark Sky Heritage Areas (GZ-DARK-1) states unambiguously that there should be no lighting in this site.
+counter_evidence: 'Context, not tested: the release also says the draft law prohibits ''new permanent external lighting fixtures''
+  unless permitted by the Authority and allows certain types of lighting; it does not quote the draft text. The Government''s
+  reasoning and the final text of the legal notice are not in this source. The release is strongly worded; only the checkable
+  statement (what the Local Plan policy and the draft provide) is tested.'
+tests: Gozo and Comino Local Plan policy GZ-DARK-1 (text) and the draft Dwejra protection regulations / legal notice and ERA's
+  consultation (what lighting is allowed, until what hour); shearwater light-attraction literature and dark-sky measurements
+  for context (CC-053).
+why_low_hanging: Two public texts can be compared line by line.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: the press release is readable; the Local Plan (pa.org.mt) and the ERA/gov.mt consultation pages may
+  be refused (403): the maintainer may need to supply the policy text and the draft.'
+caveats: 'Candidate from the weekly intake of 8 Nov 2026. A coalition claim made in an advocacy release: check the legal texts,
+  not the rhetoric. Hold the NGOs and the Government to the same standard; also read the Government''s rationale.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Dwejra, San Lawrenz, Gozo
+  lat: 36.0489
+  lon: 14.1889
+  scope: site
+  icon: cliffs

@@ -1,0 +1,55 @@
+id: CC-161
+title: 'Ombudsman: nightlife noise, ''residents complain without effective remedy'''
+category: Noise
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Parliamentary Ombudsman (Office of the Ombudsman, 3 Mar 2026, ''Curbing uncontrolled and abusive noise in entertainment
+    and other places: Part 2 - A human rights issue''): ''Residents complain without effective remedy'' where regular nightlife
+    establishments are licensed near homes and the authorities acknowledge excessive noise.'
+  speaker: Parliamentary Ombudsman
+  date: '2026-03-03'
+  wording_status: Verbatim found
+  sources:
+  - title: 'Curbing uncontrolled and abusive noise in entertainment and other places: Part 2 - A human rights issue'
+    publisher: Office of the Ombudsman, Malta
+    date: '2026-03-03'
+    url: https://ombudsman.org.mt/news-and-events/curbing-uncontrolled-and-abusive-noise-in-entertainment-and-other-places-part-2-a-human-rights-issue/
+    note: The claim in the Ombudsman's own words; read 8 Nov 2026 via WebFetch (summarised). The article cites ECtHR Moreno
+      Gómez v Spain (4143/2002) and Cuenca Zarzoso v Spain (23383/12) and the WHO Environmental Noise Guidelines (2018); no
+      complaint counts.
+  - title: Curbing uncontrolled and abusive noise in entertainment and other places - Part 1 - Structural regulatory weaknesses
+    publisher: European Network of Ombudsmen
+    date: '2026'
+    url: https://eno.ombudsman.europa.eu/home/news/maincontent/curbing-uncontrolled-and-abusive.html
+    note: Lead, not retrieved; Part 1 of the same series.
+  quote: Residents complain without effective remedy
+counter_evidence: 'Context, not tested: the article gives no complaint or enforcement counts, so the statement is a conclusion
+  drawn from licensing practice and case law. Press reports mention noise complaints against Sliema bars thrown out after
+  prosecution errors (Lovin Malta, search result, second-hand) and an Ombudsman intervention on boat parties, which point
+  both ways on remedies. CC-020, CC-104, CC-105 and CC-120 are related noise checks.'
+tests: Part 1 of the series (regulatory weaknesses); noise-complaint and enforcement statistics from the Planning Authority,
+  ERA, police and local councils (parliamentary questions); outcome of cases cited; WHO Environmental Noise Guidelines (2018)
+  thresholds for night-time noise.
+why_low_hanging: Enforcement outcomes can be tested against published statistics and parliamentary replies.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Low-medium: the Ombudsman pages readable; complaint and enforcement counts may be browser-only (parlament.mt);
+  a data request may be needed.'
+caveats: Candidate from the weekly intake of 8 Nov 2026. The claim is a qualitative finding; the check must define 'effective
+  remedy' with measurable outcomes (complaints, closures, fines, time to resolve) or it will be untestable. Criticise the
+  statement, not the Ombudsman or venue owners.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Parliament House, Valletta
+  lat: 35.89614
+  lon: 14.50978
+  scope: institution
+  icon: parliament

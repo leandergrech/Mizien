@@ -1,0 +1,48 @@
+id: CC-158
+title: 'National Audit Office: ClimateScanner review shows ''significant strides'' in Malta''s climate action'
+category: Governance & Promises
+subtopic: Accountability
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'National Audit Office (7 Oct 2025): its review of Malta''s climate action using the ClimateScanner framework ''shows
+    that Malta has made significant strides in climate action'', and the Climate Action Authority welcomed its note of ''strong
+    progress''.'
+  speaker: National Audit Office
+  date: '2025-10-07'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: A review of Malta's climate action using the ClimateScanner framework
+    publisher: National Audit Office, Malta
+    date: '2025-10-07'
+    url: https://nao.gov.mt/2025/10/07/a-review-of-maltas-climate-action-using-the-climatescanner-framework/
+    note: Locates the claim. WebFetch returned 403 on 8 Nov 2026; the quoted sentences were seen only in a search summary
+      (second-hand). Wording to be read in the NAO report.
+counter_evidence: 'Context, not tested: the same summary says the review also found gaps in data quality, use of performance
+  metrics and the Climate Action Authority''s resources; an overall ClimateScanner score of 6.92 out of 10 appears in a search
+  summary (unconfirmed). A June 2025 NAO performance audit found that Government had not yet quantified the cost of adapting
+  to climate change.'
+tests: The NAO report and its ClimateScanner scoring method (INTOSAI WGEA); what the score measures (governance, public policy,
+  climate finance), not emissions outcomes; Malta's emissions record from Eurostat/EEA (CC-025, CC-094, CC-109 are related
+  checks).
+why_low_hanging: The report is public and the framework is documented; the check separates process scores from outcomes.
+tags:
+- Input-as-outcome
+tags_provisional: true
+priority: Queue
+data_readiness: 'Low-medium: nao.gov.mt returned 403 to WebFetch; may need a browser or the Wayback copy; WGEA documents reachable.'
+caveats: 'Candidate from the weekly intake of 8 Nov 2026 (older than 60 days). The claimant is an independent audit body;
+  the check is whether a favourable process assessment is read as an outcome. Wording not verbatim yet: locate it in the report.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross
