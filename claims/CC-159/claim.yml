@@ -1,0 +1,54 @@
+id: CC-159
+title: 'IMF: Malta''s population density is ''fifteen times greater than the EU average'''
+category: Tourism & Population
+subtopic: Population & labour
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'International Monetary Fund (2025 Article IV staff report, Country Report No. 26/29, February 2026): ''With a population
+    density fifteen times greater than the EU average, straining infrastructure, housing and public services, Malta cannot
+    rely indefinitely on population growth to maintain momentum.'' Its table projects a population of 553,000 (2024), 563,000
+    (2025), 573,000 (2026) and 584,000 (2027).'
+  speaker: International Monetary Fund
+  date: '2026-02-06'
+  wording_status: Verbatim found
+  sources:
+  - title: 'Malta: 2025 Article IV Consultation: Press Release and Staff Report (IMF Country Report No. 26/29)'
+    publisher: International Monetary Fund
+    date: '2026-02-06'
+    url: https://www.imf.org/-/media/files/publications/cr/2026/english/1mltea2026001-source-pdf.pdf
+    note: 'The claim in the IMF staff''s own words; text extracted and read 8 Nov 2026 (sentence and population table in the
+      main text). Table source line: "Authorities'' data, Eurostat, and IMF staff estimates and projections".'
+  - title: IMF Executive Board Concludes 2025 Article IV Consultation with Malta (Press Release No. 26/034)
+    publisher: International Monetary Fund
+    date: '2026-02-06'
+    url: https://www.imf.org/en/news/articles/2026/02/06/pr26034-malta-imf-executive-board-concludes-2025-article-iv-consultation
+    note: Board summary; says the labour-driven growth model has strained infrastructure and public services.
+  quote: With a population density fifteen times greater than the EU average, straining infrastructure, housing and public
+    services, Malta cannot rely indefinitely on population growth to maintain momentum.
+counter_evidence: 'Context, not tested: Eurostat reports Malta as the densest EU state (about 1,800 persons per km2 in 2024,
+  per a search summary) against an EU average near 110, which would give a ratio nearer sixteen or seventeen; the IMF''s population
+  path (584,000 in 2027) can be compared with the NSO''s 588,254 (CC-088). CC-112 (IMF, population up 25% in a decade) and
+  CC-136 (AFP, densest in Europe) are related. The sentence links density to strain on services, which is a judgement.'
+tests: Eurostat demo_r_d3dens and demo_gind/demo_pjan (Malta and EU-27 density and population, latest year); recompute the
+  ratio with a stated year and land-area basis; compare the IMF population table with NSO and Eurostat figures.
+why_low_hanging: Eurostat density and population series are open and the ratio is a single division.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: IMF PDF and Eurostat API reachable.'
+caveats: Candidate from the weekly intake of 8 Nov 2026. The check covers the density ratio and the population path, not the
+  causal claim about strain on services (a judgement the IMF supports with other evidence in the report).
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

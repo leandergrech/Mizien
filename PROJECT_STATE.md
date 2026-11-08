@@ -1597,3 +1597,28 @@ Run on the maintainer's request (not the scheduled run). Report v1.0 and flyer. 
 
 | CC-148 Eurostat Q1 2025 emissions | Report v1.0 and flyer (2 Nov 2026, worker B, branch `claude/cc-148-eurostat-q1-emissions-20261102`). **Verdict: Largely supported (moderate).** Eurostat news item ddn-20250814-1 read in full (Malta -6.2
 | CC-148 Eurostat Q1 2025 emissions | Report v1.0 and flyer (2 Nov 2026, worker B). **Verdict: Largely supported (moderate).** Eurostat news item ddn-20250814-1 read in full (Malta -6.2%, Finland -4.4%, Denmark -4.3%; EU +3.4%, 20 up/7 down). Current env_ac_aigg_q (updated 14 Aug 2026): Malta -5.0% (2nd, Finland -10.1%), EU +4.2%; Malta 2025 full year +1.0%, Q1 2026 +4.2%. August 2025 vintage not retrievable; 2023-24 step in Malta's series not investigated. No right of reply needed. |
+
+
+## Weekly intake 2026-11-08
+
+**Claims added (8, CC-154 to CC-161; all `Not started`):**
+- CC-154 European Commission: finch-trapping derogation 'remains in breach of EU law' (Nature & Wildlife / Hunting & birds; EU; verbatim via Italpress; worker B).
+- CC-155 European Commission at the EP petitions hearing: Maltese seawater readings show 'continued breach of EU rules' (Water / Bathing water & sewage; EU; paraphrase, EPP Group account only; worker B).
+- CC-156 Business Now: bathing waters 'downgraded from best in Europe to bang average' (Water / Bathing water & sewage; media; verbatim; worker B).
+- CC-157 Business Now reporting a Nature Communications study: extreme heat could cut Malta's GDP by over 2.5% by 2055-64 (Health & Safety / Heat & health; foreign researchers via media; verbatim of the outlet's sentence; worker A).
+- CC-158 National Audit Office: ClimateScanner review shows 'significant strides' (Governance & Promises / Accountability; oversight; paraphrase, nao.gov.mt 403; worker B).
+- CC-159 IMF: population density 'fifteen times greater than the EU average' (Tourism & Population / Population & labour; international; verbatim, read in the staff report; worker A).
+- CC-160 Ten-NGO coalition: Dwejra lighting until midnight incompatible with the Local Plan's Dark Sky policy (Nature & Wildlife / Dark skies; NGOs; verbatim, press release read in full; worker B).
+- CC-161 Ombudsman: nightlife noise, 'residents complain without effective remedy' (Noise; oversight; verbatim; worker C).
+
+Fewer than 10: searches returned few specific, checkable, sourced statements from the last 60 days. Four items are older (CC-154 Oct 2025, CC-157 Jul 2025, CC-158 Oct 2025) and are marked so in their caveats. Two FreeMalta items (stop-work orders, 22% green space) were rejected: the site states its writer is a fictional AI persona. A Xemxija ridge item was dropped (date unknown, MaltaToday 403).
+- **Queue loads (open, unblocked) before / after:** A 3 / 5, B 0 / 5, C 4 / 5 (blocked rows not counted: A 16, B 15, C 18).
+- **Coverage after (claims by speaker type, 161 claims):** EU 31, government 20, media 17, regulator 15, party 13, business 12, agency 9, civil society 9, research 4, oversight 3, unclassified-by-type 28. Local (Maltese) speakers still outnumber EU/international/foreign speakers; EU/international intake this week: 3 (CC-154, 155, 159) plus one foreign-research claim (CC-157). Least covered: noise, dark skies, health & safety, foreign governments/NGOs/media (none found this week; Guardian/Politico-type searches returned nothing usable).
+- **Taxonomy:** no new category; existing subtopics reused; no renames.
+- **Patterns:** no new pattern tag. CC-157 tagged `Conditional-turned-unconditional` and CC-158 `Input-as-outcome` (provisional). Candidate pattern for a later week: 'Rank-slip framing' (a ranking or class share quoted without denominator or period: CC-156 with CC-075, CC-124) , only 2-3 claims so far.
+- **Themes / edges:** CC-155, 156 added to T3; CC-154, 155 to T19; CC-159 to T22; CC-154 to T25; CC-157 to T11; CC-161 to T13; CC-160 to T24; CC-158, 161 to T12 (text extended). New theme T26 'Dark skies and night lighting' (CC-053, CC-160). 53 new edges, all `Weak (indicative)` (T12: `Pattern, not causal`). T3 edges link new claims to their closest members only, as in earlier intakes.
+- **Register:** added Business Now, National Audit Office and the Dwejra NGO coalition to `data/bodies.csv`.
+- **Locations:** CC-160 at Dwejra (36.0489, 14.1889) is approximate: Nominatim was refused, so please check against OpenStreetMap. Other claims reuse national / Parliament House places.
+- **Retag candidates for finished claims (not changed):** none.
+- **Network:** `net_check.py` ok except web.archive.org (connection reset) and api.crossref.org (429). `build_site_data.py` needs a venv (`python -m venv /tmp/v && /tmp/v/bin/pip install -r scripts/requirements.txt pyyaml`) because system Pillow is broken.
+- **Needs maintainer (queue rows with `source:` blockers, unchanged this week):** 015, 023, 027, 028, 033, 038, 041, 043, 044, 046, 048, 049, 052, 054, 056, 057, 058, 059, 060, 061, 064, 066, 067, 068, 069, 070, 072, 073, 074, 077, 078, 080, 081, 082, 083, 084, 087, 090, 093, 096, 097, 098, 104, 121, 130, 139, 151 (prefix CC-). Details are in the Blocker cells of `data/queue.csv`. New: CC-158 (nao.gov.mt 403: report text), CC-160 (Gozo and Comino Local Plan GZ-DARK-1 text and the draft Dwejra legal notice, pa.org.mt/gov.mt 403 expected).

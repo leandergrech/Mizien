@@ -1,0 +1,50 @@
+id: CC-155
+title: 'Commission (EP petitions hearing): Maltese seawater readings show ''continued breach of EU rules'''
+category: Water
+subtopic: Bathing water & sewage
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (DG Environment representative, European Parliament Petitions Committee hearing on untreated
+    sewage discharges in Maltese coastal waters, reported 24 Mar 2026 by the EPP Group): the latest readings from Maltese
+    seawater show a ''continued breach of EU rules''; the Commission will consider further action to guarantee clean seas
+    in Malta.'
+  speaker: European Commission
+  date: '2026-03-24'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Sewage keeps flowing into the sea, European Commission confirms in EP hearing
+    publisher: EPP Group in the European Parliament (MEP Peter Agius)
+    date: '2026-03-24'
+    url: https://www.eppgroup.eu/what-we-do/with-eu-countries/malta/sewage-keeps-flowing-into-the-sea-european-commission-confirms-in-ep-hearing
+    note: 'Locates the claim: a party-group release summarising the hearing; the Commission''s words appear only as a short
+      quoted fragment. Read 8 Nov 2026 via WebFetch. Second-hand: the hearing recording / PETI minutes are the primary source
+      and have not been seen.'
+counter_evidence: 'Context, not tested: the release gives no readings, volumes or dates, and names Mellieħa and Żabbar as
+  confirmed discharge points. The petition (by Benjamin Mifsud Scicluna for Flimkien għal Ambjent Aħjar) blames overdevelopment
+  and insufficient wastewater capacity. CC-142 records the Commission''s figure that only 7% of Malta''s urban wastewater
+  meets the Directive''s standard; CC-005 and CC-043 concern the bathing-water classification.'
+tests: Recording and minutes of the PETI hearing (EP Multimedia Centre / PETI agenda) for the Commission's exact words; Commission
+  and EEA bathing-water data for Malta; Urban Waste Water Treatment Directive implementation reports and infringement entries
+  for Malta; the petition file number.
+why_low_hanging: The hearing is recorded and bathing-water and wastewater data are open.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: EPP page readable; the EP recording and petition file may need a browser; EEA and Commission pages
+  reachable.'
+caveats: Candidate from the weekly intake of 8 Nov 2026. The claimant is the Commission; the only source found is the EPP
+  Group's account, so the wording is not yet verbatim. Note that the EPP release is political (the group's MEP requested enforcement).
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross

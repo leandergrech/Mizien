@@ -1,0 +1,52 @@
+id: CC-154
+title: 'Commission: Malta''s finch-trapping derogation ''remains in breach of EU law'''
+category: Nature & Wildlife
+subtopic: Hunting & birds
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'European Commission (DG Environment letter of 27 Oct 2025 to BirdLife Malta, reported by Italpress on 2 Nov 2025):
+    Malta''s finch-trapping derogation ''remains in breach of European Union law''; the February 2025 formal notice ''remains
+    valid'' and the Commission ''may refer the case back to the ECJ''.'
+  speaker: European Commission
+  date: '2025-10-27'
+  wording_status: Verbatim found
+  sources:
+  - title: EU Commission, Malta's finch trapping still breaches EU law
+    publisher: Italpress (MNA)
+    date: '2025-11-02'
+    url: https://www.italpress.com/?p=598716
+    note: 'Locates the claim: the Commission''s letter (signed by Nicola Notaro, DG Environment, to BirdLife Malta''s CEO)
+      quoted directly. Read 8 Nov 2026 via WebFetch. The letter itself has not been seen.'
+  quote: remains in breach of European Union law
+counter_evidence: 'Context, not tested: the letter assesses the finch-trapping rules adopted on 17 Oct 2025 against the Court
+  of Justice judgment in case C-23/23; it says the Commission is still ''assessing'' the new rules and had asked Minister
+  Camilleri for details on implementation. A letter of formal notice is a first step and states the Commission''s view, not
+  a ruling. The Government''s position on the new rules is not in this source.'
+tests: Text of the 17 Oct 2025 trapping rules (legislation.mt / Government Gazette) against the operative findings of CJEU
+  C-23/23 and Art. 9 of Directive 2009/147/EC; the Commission's infringement register entry for INFR(2025)2128 (stage and
+  date); any later Commission decision (referral or closure). Do not comment on court proceedings beyond the published judgment.
+why_low_hanging: The judgment, the rules and the infringement register are all public documents; the check is a comparison
+  of texts.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'High: Italpress readable; EUR-Lex may be refused (use curia/ec.europa.eu or the Representation in Malta pages);
+  the Commission''s own letter is not published, so the check rests on Italpress''s direct quotation unless BirdLife supplies
+  the letter.'
+caveats: 'Candidate from the weekly intake of 8 Nov 2026 (older than 60 days, but the infringement is live). The Commission''s
+  letter was addressed to BirdLife Malta; look for the letter or a Commission press release. Is hunting-related: criticise
+  statements, not hunters. Check both sides: also read the Government''s reasoning for the 17 Oct 2025 rules.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50909
+  scope: national
+  icon: cross
