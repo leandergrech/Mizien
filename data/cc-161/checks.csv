@@ -1,0 +1,7 @@
+check,value,unit,source,note
+"Valletta: reports to police about excessive noise, Jan 2021-Jun 2022",31,reports,"Lovin Malta 6 Oct 2022 (PQ, second-hand)",14 after 23:00 (45%)
+"St Julian's: reports to police about excessive noise, Jan 2021-Jun 2022",28,reports,"Lovin Malta 6 Oct 2022 (PQ, second-hand)",10 after 23:00 (36%)
+"Sliema: reports to police about excessive noise, Jan 2021-Jun 2022",24,reports,"Lovin Malta 6 Oct 2022 (PQ, second-hand)",8 after 23:00 (33%)
+"St Paul's Bay: reports to police about excessive noise, Jan 2021-Jun 2022",15,reports,"Lovin Malta 6 Oct 2022 (PQ, second-hand)",2 after 23:00 (13%)
+Four localities: reports after 23:00 as share of reports,35,%,calculated from police_noise_reports.csv,"34 of 98; second-hand; an input count, not an outcome"
+Four localities: reports a month (18 months),5.4,reports/month,calculated,"four localities together; reports received, not complaints to other bodies"

@@ -1598,6 +1598,7 @@ Run on the maintainer's request (not the scheduled run). Report v1.0 and flyer. 
 
 | CC-148 Eurostat Q1 2025 emissions | Report v1.0 and flyer (2 Nov 2026, worker B, branch `claude/cc-148-eurostat-q1-emissions-20261102`). **Verdict: Largely supported (moderate).** Eurostat news item ddn-20250814-1 read in full (Malta -6.2
 | CC-148 Eurostat Q1 2025 emissions | Report v1.0 and flyer (2 Nov 2026, worker B). **Verdict: Largely supported (moderate).** Eurostat news item ddn-20250814-1 read in full (Malta -6.2%, Finland -4.4%, Denmark -4.3%; EU +3.4%, 20 up/7 down). Current env_ac_aigg_q (updated 14 Aug 2026): Malta -5.0% (2nd, Finland -10.1%), EU +4.2%; Malta 2025 full year +1.0%, Q1 2026 +4.2%. August 2025 vintage not retrievable; 2023-24 step in Malta's series not investigated. No right of reply needed. |
+| CC-161 Ombudsman nightlife noise | Report v1.0 and flyer (9 Nov 2026, worker C). **Verdict: Not substantiated (low).** Wording read in full (Parts 1 and 2). No public outcome data found for 'without effective remedy'; the only count (98 police reports in four localities, Jan 2021-Jun 2022) is second-hand via Lovin Malta (PQ text not read) and an input, not an outcome. Boat-party case (Notice to Mariners 115/2025) is a related remedy. Right of reply (Ombudsman) pending, maintainer. Unverified/leads: PQ text (parlament.mt), PA/ERA/MTA/police complaint-outcome data, EP study on noise in Malta. web.archive.org was unreachable: Part 1 and 2 need archiving by hand. |
 
 
 ## Weekly intake 2026-11-08

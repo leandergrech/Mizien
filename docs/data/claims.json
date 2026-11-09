@@ -10182,9 +10182,9 @@
       "title": "Ombudsman: nightlife noise, 'residents complain without effective remedy'",
       "category": "Noise",
       "claim": "Parliamentary Ombudsman (Office of the Ombudsman, 3 Mar 2026, 'Curbing uncontrolled and abusive noise in entertainment and other places: Part 2 - A human rights issue'): 'Residents complain without effective remedy' where regular nightlife establishments are licensed near homes and the authorities acknowledge excessive noise.",
-      "counter": "Context, not tested: the article gives no complaint or enforcement counts, so the statement is a conclusion drawn from licensing practice and case law. Press reports mention noise complaints against Sliema bars thrown out after prosecution errors (Lovin Malta, search result, second-hand) and an Ombudsman intervention on boat parties, which point both ways on remedies. CC-020, CC-104, CC-105 and CC-120 are related noise checks.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Not testable with public outcome data: Part 2 gives no complaint or enforcement counts and none were found for nightlife venues. Ombudsman case note of 15 Jul 2025: Transport Malta issued Notice to Mariners 115 of 2025 (11 Jul 2025) after residents complained about boat parties, a remedy in a related case. Police received 98 reports of excessive noise in Valletta, St Julian's, Sliema and St Paul's Bay, Jan 2021 to Jun 2022 (second-hand: Lovin Malta, 6 Oct 2022, reporting a parliamentary answer); an input count, not an outcome.",
+      "status": "Drafted",
+      "verdict": "Not substantiated",
       "tags": [],
       "location": {
         "place": "Parliament House, Valletta",
@@ -10193,17 +10193,45 @@
         "scope": "institution",
         "icon": "parliament"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Low",
       "speaker": "Parliamentary Ombudsman",
       "bodies": [
         "ombudsman"
       ],
+      "subclaims": [
+        {
+          "id": "CC-161A",
+          "text": "“regular (not exceptional) nightlife establishments are licenced to operate close to residential areas”",
+          "finding": "Stated without data in [1]; Part 1 describes noise spilling into residential areas [2]. No register of venues and dwellings found.",
+          "rating": "Untested",
+          "tone": "grey"
+        },
+        {
+          "id": "CC-161B",
+          "text": "“Public authorities know and acknowledge excessive noise”",
+          "finding": "The Ombudsman’s office and Transport Malta (for boats) have acknowledged noise problems [2, 3]. We did not read statements from the police, Planning Authority or ERA on nightlife noise.",
+          "rating": "Partly shown",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-161C",
+          "text": "“Residents complain without effective remedy”",
+          "finding": "Mechanism documented [2]; no outcome data published; one remedy in a related case [3]; police-report counts ◆ are inputs, not outcomes [4].",
+          "rating": "Not substantiated",
+          "tone": "orange"
+        }
+      ],
       "date": "2026-03-03",
       "quote": "Residents complain without effective remedy",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-11-09",
+      "outputs": {
+        "report": "claim-files/CC-161/report.pdf",
+        "flyer_pdf": "claim-files/CC-161/flyer.pdf",
+        "flyer_png": "claim-files/CC-161/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-161/claim.yml",
       "similar": [
         {
