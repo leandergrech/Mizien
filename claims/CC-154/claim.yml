@@ -2,13 +2,16 @@ id: CC-154
 title: 'Commission: Malta''s finch-trapping derogation ''remains in breach of EU law'''
 category: Nature & Wildlife
 subtopic: Hunting & birds
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'European Commission (DG Environment letter of 27 Oct 2025 to BirdLife Malta, reported by Italpress on 2 Nov 2025):
-    Malta''s finch-trapping derogation ''remains in breach of European Union law''; the February 2025 formal notice ''remains
-    valid'' and the Commission ''may refer the case back to the ECJ''.'
+  text: 'European Commission (DG Environment, letter to BirdLife Malta, Ref. Ares(2025)8980114, signed by Nicola Notaro, e-signed
+    24 Oct 2025; Italpress dates it 27 Oct): the Commission ''did not endorse'' Malta''s finch-trapping derogation framework; its
+    February 2025 request that Malta implement the Court ruling in C-23/23 ''still stands''; its services are ''currently
+    assessing'' the new ''research derogation'' adopted on 17 Oct 2025; and it ''may decide to take additional enforcement
+    steps such as referring Malta back to the Court of Justice''. Italpress headline: the derogation ''remains in breach of
+    European Union law'' (the outlet''s wording, not in the letter).'
   speaker: European Commission
   date: '2025-10-27'
   wording_status: Verbatim found
@@ -17,36 +20,90 @@ claim:
     publisher: Italpress (MNA)
     date: '2025-11-02'
     url: https://www.italpress.com/?p=598716
-    note: 'Locates the claim: the Commission''s letter (signed by Nicola Notaro, DG Environment, to BirdLife Malta''s CEO)
-      quoted directly. Read 8 Nov 2026 via WebFetch. The letter itself has not been seen.'
-  quote: remains in breach of European Union law
-counter_evidence: 'Context, not tested: the letter assesses the finch-trapping rules adopted on 17 Oct 2025 against the Court
-  of Justice judgment in case C-23/23; it says the Commission is still ''assessing'' the new rules and had asked Minister
-  Camilleri for details on implementation. A letter of formal notice is a first step and states the Commission''s view, not
-  a ruling. The Government''s position on the new rules is not in this source.'
-tests: Text of the 17 Oct 2025 trapping rules (legislation.mt / Government Gazette) against the operative findings of CJEU
-  C-23/23 and Art. 9 of Directive 2009/147/EC; the Commission's infringement register entry for INFR(2025)2128 (stage and
-  date); any later Commission decision (referral or closure). Do not comment on court proceedings beyond the published judgment.
-why_low_hanging: The judgment, the rules and the infringement register are all public documents; the check is a comparison
-  of texts.
-tags: []
-tags_provisional: true
-priority: Queue
+    note: 'Locates the claim; indirect speech. The words ''remains in breach of European Union law'', ''remains valid'' and ''may refer the case back to the ECJ'' are the outlet''s, not the letter''s. Read in full 9 Nov 2026.'
+  - title: Letter to BirdLife Malta, Ref. Ares(2025)8980114 (DG Environment, Nicola Notaro)
+    publisher: European Commission (copy published by BirdLife Malta)
+    date: '2025-10-24'
+    url: https://birdlifemalta.org/wp-content/uploads/2025/10/Ares20259162948.pdf
+    note: 'The speaker''s own words. Full text read 9 Nov 2026; e-signed 24 Oct 2025.'
+  - title: 'Case C-23/23, Commission v Malta, judgment of 19 Sep 2024'
+    publisher: Court of Justice of the EU (EUR-Lex)
+    date: '2024-09-19'
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62023CJ0023
+    note: Operative part read.
+  quote: That request still stands.
+counter_evidence: 'The letter does not say the derogation "remains in breach"; it says the Commission did not endorse the framework,
+  that the new derogation "seems similar" to the 2024 one, and that it is "currently assessing" it. The Government''s reasoning for
+  the 17 Oct 2025 rules was not read. BirdLife Malta reports a new formal notice INFR(2025)2128 of 21 Nov 2025 (second-hand);
+  not read.'
+tests: 'Done: letter compared word for word with Italpress and BirdLife Malta; CJEU C-23/23 operative part read. Not tested - the 17 Oct 2025 rules against Art. 9 of Directive 2009/147/EC (rules not read).'
+why_low_hanging: The letter, the judgment and the infringement register are public documents.
+tags:
+- Conditional-turned-unconditional
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: Italpress readable; EUR-Lex may be refused (use curia/ec.europa.eu or the Representation in Malta pages);
   the Commission''s own letter is not published, so the check rests on Italpress''s direct quotation unless BirdLife supplies
   the letter.'
-caveats: 'Candidate from the weekly intake of 8 Nov 2026 (older than 60 days, but the infringement is live). The Commission''s
-  letter was addressed to BirdLife Malta; look for the letter or a Commission press release. Is hunting-related: criticise
-  statements, not hunters. Check both sides: also read the Government''s reasoning for the 17 Oct 2025 rules.'
+caveats: 'Rated on the Commission''s own letter, read in BirdLife Malta''s published copy (not a Commission copy; the PDF file name carries
+  a different Ares number from the reference printed in the letter). The record''s quoted phrases came from Italpress, not the letter;
+  the claim was restated. Letter date: signature line 24 Oct 2025, Italpress 27 Oct (unexplained). The 17 Oct 2025 rules, the
+  Government''s position and the November 2025 formal notice (known only from BirdLife Malta) were not read. Hunting-related: the
+  statement is rated, not hunters or NGOs. No right of reply needed.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- Commission letter Ref. Ares(2025)8980114, e-signed 24 Oct 2025 (BirdLife Malta copy, read in full)
+- Italpress/MNA, 2 Nov 2025
+- CJEU judgment C-23/23, 19 Sep 2024, operative part (EUR-Lex)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-154A
+    text: "The formal notice sent to Malta in February 2025 still stands"
+    said_by: "European Commission [2]"
+    finding: "Letter: “That request still stands.” BirdLife Malta’s report agrees [3]. The record’s “remains valid” is Italpress’s paraphrase [1]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-154B
+    text: "The Commission is assessing the new derogation and may refer Malta back to the Court"
+    said_by: "European Commission [2]"
+    finding: "Letter: services “currently assessing”; the Commission “may decide to take additional enforcement steps such as referring Malta back to the Court of Justice”. The record’s “may refer the case back to the ECJ” is Italpress’s wording [1]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-154C
+    text: "The derogation “remains in breach of European Union law”"
+    said_by: "Italpress headline [1]; not in the letter [2]"
+    finding: "Headline wording, not rated as the Commission’s. Background: CJEU 2024 judgment [4]; later formal notice reported by BirdLife Malta ◆ [5]."
+    rating: "Not rated"
+    tone: grey
+version: '1.0'
+last_reviewed: '2026-11-09'
+thumbnail:
+  figure: 0
+  caption: occurrences of 'in breach' in the Commission's letter on Malta's finch-trapping derogation (it says 'still stands' and 'assessing')
+history:
+- date: '2026-11-09'
+  step: started
+  note: Worker B took the claim. Italpress read in full; its quoted phrases are the outlet's own text (only 'research derogation' is in quotation marks).
+- date: '2026-11-09'
+  step: wording
+  note: 'Verbatim found: the Commission letter Ares(2025)8980114 (e-signed 24 Oct 2025), published by BirdLife Malta, read in full. The record''s text was restated from it.'
+- date: '2026-11-09'
+  step: note
+  note: 'CJEU C-23/23 operative part read on EUR-Lex. The 17 Oct 2025 rules, the Government''s position and the new notice INFR(2025)2128 were not read (second-hand via BirdLife Malta only). Search log in literature/CC-154/notes.md.'
+- date: '2026-11-09'
+  step: version
+  note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.
+  version: '1.0'
