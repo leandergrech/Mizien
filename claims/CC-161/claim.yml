@@ -1,9 +1,9 @@
 id: CC-161
 title: 'Ombudsman: nightlife noise, ''residents complain without effective remedy'''
 category: Noise
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Low
 claim:
   text: 'Parliamentary Ombudsman (Office of the Ombudsman, 3 Mar 2026, ''Curbing uncontrolled and abusive noise in entertainment
     and other places: Part 2 - A human rights issue''): ''Residents complain without effective remedy'' where regular nightlife
@@ -16,40 +16,69 @@ claim:
     publisher: Office of the Ombudsman, Malta
     date: '2026-03-03'
     url: https://ombudsman.org.mt/news-and-events/curbing-uncontrolled-and-abusive-noise-in-entertainment-and-other-places-part-2-a-human-rights-issue/
-    note: The claim in the Ombudsman's own words; read 8 Nov 2026 via WebFetch (summarised). The article cites ECtHR Moreno
+    note: The claim in the Ombudsman's own words; read in full 9 Nov 2026. The article cites ECtHR Moreno
       Gómez v Spain (4143/2002) and Cuenca Zarzoso v Spain (23383/12) and the WHO Environmental Noise Guidelines (2018); no
       complaint counts.
   - title: Curbing uncontrolled and abusive noise in entertainment and other places - Part 1 - Structural regulatory weaknesses
     publisher: European Network of Ombudsmen
     date: '2026'
     url: https://eno.ombudsman.europa.eu/home/news/maincontent/curbing-uncontrolled-and-abusive.html
-    note: Lead, not retrieved; Part 1 of the same series.
+    note: Part 1 of the same series (2 Mar 2026), read in full 9 Nov 2026. Lists five laws and the enforcing bodies; calls the framework 'fragmented and weak'; no figures.
   quote: Residents complain without effective remedy
-counter_evidence: 'Context, not tested: the article gives no complaint or enforcement counts, so the statement is a conclusion
-  drawn from licensing practice and case law. Press reports mention noise complaints against Sliema bars thrown out after
-  prosecution errors (Lovin Malta, search result, second-hand) and an Ombudsman intervention on boat parties, which point
-  both ways on remedies. CC-020, CC-104, CC-105 and CC-120 are related noise checks.'
+counter_evidence: 'Not testable with public outcome data: Part 2 gives no complaint or enforcement counts and none were found for nightlife venues. Ombudsman case note of 15 Jul 2025: Transport Malta issued Notice to Mariners 115 of 2025 (11 Jul 2025) after residents complained about boat parties, a remedy in a related case. Police received 98 reports of excessive noise in Valletta, St Julian''s, Sliema and St Paul''s Bay, Jan 2021 to Jun 2022 (second-hand: Lovin Malta, 6 Oct 2022, reporting a parliamentary answer); an input count, not an outcome.'
 tests: Part 1 of the series (regulatory weaknesses); noise-complaint and enforcement statistics from the Planning Authority,
   ERA, police and local councils (parliamentary questions); outcome of cases cited; WHO Environmental Noise Guidelines (2018)
   thresholds for night-time noise.
 why_low_hanging: Enforcement outcomes can be tested against published statistics and parliamentary replies.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'Low-medium: the Ombudsman pages readable; complaint and enforcement counts may be browser-only (parlament.mt);
   a data request may be needed.'
-caveats: Candidate from the weekly intake of 8 Nov 2026. The claim is a qualitative finding; the check must define 'effective
-  remedy' with measurable outcomes (complaints, closures, fines, time to resolve) or it will be untestable. Criticise the
-  statement, not the Ombudsman or venue owners.
+caveats: Draft pending right of reply from the Office of the Ombudsman. 'Effective remedy' is defined operationally by this check (Section 3), not by the Ombudsman. The Ombudsman's casework may hold evidence we cannot see; the verdict rates how far the statement has been shown publicly, not the Ombudsman's competence or motives. Police counts are second-hand (parliamentary answer not read). Spanish judgments are described as in the Ombudsman's note and were not read.
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: claims/CC-161/report.pdf
+  flyer_pdf: claims/CC-161/flyer.pdf
+  flyer_png: claims/CC-161/flyer.png
+version: "1.0"
+last_reviewed: '2026-11-09'
+thumbnail:
+  figure: '0'
+  caption: outcome figures in the Ombudsman's note on nightlife-noise remedies
+history:
+  - date: 2026-11-09
+    step: started
+    note: "Read Parts 1 and 2 of the Ombudsman's note, the boat-party case note and a news report of a parliamentary answer on police noise reports; searched for complaint and enforcement counts (log in literature/CC-161/notes.md)."
+  - date: 2026-11-09
+    step: version
+    version: "1.0"
+    note: "First issue. Not substantiated (low confidence); draft pending right of reply from the Office of the Ombudsman."
+
 location:
   place: Parliament House, Valletta
   lat: 35.89614
   lon: 14.50978
   scope: institution
   icon: parliament
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-161A
+    text: "“regular (not exceptional) nightlife establishments are licenced to operate close to residential areas”"
+    finding: "Stated without data in [1]; Part 1 describes noise spilling into residential areas [2]. No register of venues and dwellings found."
+    rating: "Untested"
+    tone: grey
+  - id: CC-161B
+    text: "“Public authorities know and acknowledge excessive noise”"
+    finding: "The Ombudsman’s office and Transport Malta (for boats) have acknowledged noise problems [2, 3]. We did not read statements from the police, Planning Authority or ERA on nightlife noise."
+    rating: "Partly shown"
+    tone: amber
+  - id: CC-161C
+    text: "“Residents complain without effective remedy”"
+    finding: "Mechanism documented [2]; no outcome data published; one remedy in a related case [3]; police-report counts ◆ are inputs, not outcomes [4]."
+    rating: "Not substantiated"
+    tone: orange
