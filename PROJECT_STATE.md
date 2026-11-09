@@ -1529,6 +1529,13 @@ Second intake of the day (the 79-claim bulk intake ran earlier). Six candidates 
 - **CC-127 completed** (Commission SWD(2026) 702: Malta lowest organic share in the EU). Report v1.0 and flyer drafted. **Verdict: Supported (high).** No right of reply needed. Eurostat sdg_02_40/org_cropar: Malta 0.62% (66 ha) in 2022, lowest in every year 2012-2024; EU-27 9.1% (2020, last aggregate).
 - Unverified: the 10 700 ha / 34% denominator is unsourced in the document (surveys give 8 880-9 800 ha; share stays under 1%); Austria/Greece missing from the latest Eurostat release (last values far above Malta); no 2022 EU aggregate; the Publications Office report in the p. 29 footnote was not opened; Commission's own copy of the document not located. Web.archive.org unreachable (connection reset), so the Austrian Parliament PDF needs archiving by hand.
 - **Not taken:** CC-103 (open PR #137), CC-122 (open PR #130), CC-130 (one claim per run). Other B claims carry source: blockers.
+## Worker A, 9 Nov 2026: CC-159 (IMF: Malta's density 'fifteen times greater than the EU average')
+
+Report v1.0 and flyer. **Verdict: Largely supported (high); no right of reply needed.** Eurostat: Malta 1,817 vs EU-27 110 per km2 in 2024 = 16.6 times (15.1 in 2021); 13.9 to 17.2 on other definitions of the average (World Bank land-area basis 13.5 to 16.6). IMF Table 1 population equals Eurostat 1 January for 2022-23 and is about 2% lower for 2024-25 (2.6% for 2026). The strain-on-services clause is a judgement and is not rated.
+- **Unverified:** the IMF gives no year or definition for 'fifteen times'; the report was read for the sentence and Table 1 only.
+- **Archive by hand:** imf.org PDF (403 to scripts) and the Wayback host (connection reset on 9 Nov 2026).
+- **Skipped:** CC-138, CC-141, CC-150 (open queue PRs #162, #174 mention them); CC-157 not started (one claim per run).
+
 ## Worker B, 26 Oct 2026: CC-136 (AFP: Malta the most densely populated country in Europe)
 
 Report v1.0 and flyer. **Verdict: Largely supported (high); no right of reply needed.** Malta 1,805 people per km2 (World Bank 2024): 3.4 times the next EU state but Monaco (18,537) is about ten times denser, so "in Europe" holds for the EU, not literally for Europe; Vatican City not in the datasets, untested. Population +30.9% (2015-2025), approvals 12,325 dwelling units in 2025 (+41%, below the 2018-2019 peaks; PA series is the CC-013 transcription, pa.org.mt 403). AFP original not read (eNCA wire copy). Sources need archiving by hand (Wayback unreachable). Not taken: CC-103 (PR #137), CC-122 (PR #130), CC-127 (PR #144), CC-130 (PR #145); CC-131, CC-133, CC-139 remain eligible for the next B run.
