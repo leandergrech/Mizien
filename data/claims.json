@@ -10064,9 +10064,10 @@
       "title": "IMF: Malta's population density is 'fifteen times greater than the EU average'",
       "category": "Tourism & Population",
       "claim": "International Monetary Fund (2025 Article IV staff report, Country Report No. 26/29, February 2026): 'With a population density fifteen times greater than the EU average, straining infrastructure, housing and public services, Malta cannot rely indefinitely on population growth to maintain momentum.' Its table projects a population of 553,000 (2024), 563,000 (2025), 573,000 (2026) and 584,000 (2027).",
-      "counter": "Context, not tested: Eurostat reports Malta as the densest EU state (about 1,800 persons per km2 in 2024, per a search summary) against an EU average near 110, which would give a ratio nearer sixteen or seventeen; the IMF's population path (584,000 in 2027) can be compared with the NSO's 588,254 (CC-088). CC-112 (IMF, population up 25% in a decade) and CC-136 (AFP, densest in Europe) are related. The sentence links density to strain on services, which is a judgement.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Eurostat demo_r_d3dens: Malta 1,817.4 people per km2 in 2024 against 109.7 for the EU-27 (ratio 16.6; 15.1 in 2021, 15.6 in 2022); 17.2 times the median of the other 26 states and 13.9 times their unweighted mean; 17.0 times the EU-27 excluding Malta (1 Jan 2025). World Bank (land area, 2024): Malta 1,805, 16.6 times the median other EU state, 13.5 times the mean, 3.4 times the Netherlands. IMF Table 1 population equals Eurostat 1 January for 2022 (520,000) and 2023 (542,000); 2024 (553,000) and 2025 (563,000) are 1.9% and 2.0% below, and 2026 (573,000) 2.6% below Eurostat (588,254).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Population & labour",
       "location": {
@@ -10076,17 +10077,45 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "International Monetary Fund",
       "bodies": [
         "imf"
       ],
+      "subclaims": [
+        {
+          "id": "CC-159A",
+          "text": "Malta’s population density is fifteen times the EU average",
+          "finding": "16.6× the EU-27 aggregate in 2024 (1,817 vs 110 per km²); 15.1× in 2021; 13.9–17.2× on other definitions of the average. No year or definition stated.",
+          "rating": "Largely accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-159B",
+          "text": "Population (Table 1): 553,000 (2024), 563,000 (2025), 573,000 (2026), 584,000 (2027)",
+          "finding": "IMF 2022–23 equal Eurostat; 2024 and 2025 are 1.9% and 2.0% below Eurostat’s 1 January values, 2026 is 2.6% below. 2027 has no outturn.",
+          "rating": "Close; slightly low",
+          "tone": "green"
+        },
+        {
+          "id": "CC-159C",
+          "text": "Density strains infrastructure, housing and services, so Malta cannot rely indefinitely on population growth",
+          "finding": "A policy judgement, not a measurement. Not rated.",
+          "rating": "Not rated",
+          "tone": "grey"
+        }
+      ],
       "date": "2026-02-06",
       "quote": "With a population density fifteen times greater than the EU average, straining infrastructure, housing and public services, Malta cannot rely indefinitely on population growth to maintain momentum.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-11-09",
+      "outputs": {
+        "report": "claim-files/CC-159/report.pdf",
+        "flyer_pdf": "claim-files/CC-159/flyer.pdf",
+        "flyer_png": "claim-files/CC-159/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-159/claim.yml",
       "similar": [
         {
