@@ -10047,9 +10047,10 @@
       "title": "Business Now (reporting a Nature Communications study): extreme heat could cut Malta's GDP by over 2.5% by 2055-64",
       "category": "Health & Safety",
       "claim": "Business Now (Nicola Zammit, 18 Jul 2025, citing Euronews and the Nature Communications study by David García-León and colleagues): 'GDP impacts from extreme heat exceeding -2.5 per cent by the 2055-2064 period' for Malta, if there is no further adaptation or mitigation.",
-      "counter": "Context, not tested: coverage of the García-León et al. study gives European averages of 0.77% of GDP (2035-45) rising beyond 1.14% in the 2060s, and a north-south gradient with Cyprus at 3-3.5% by 2060 (press summaries, second-hand). Whether Malta (one region in the study) is above 2.5% needs the paper's regional data. The scenario (no further adaptation or mitigation) is a stated condition.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "García-León et al. (2021, Nature Communications 12:5807; full text read, CC BY 4.0) Fig. 4b shows Malta at about -2.8% of GDP a year in 2055-2064 (measured from the figure, +/-0.1 pp; 4th of 29 entries after Cyprus, Croatia, Portugal), beyond the 2.5% in the claim. Conditions: RCP8.5 with two regional climate models, no further adaptation (e.g. air conditioning), fixed economic structure; the paper says the climate signal is very similar across emission scenarios to 2050 and that losses rise even under stringent mitigation. Malta is not named in the text; no country table or Malta range is published. The study dates from 2021, not 2025. Euronews wording (second-hand): 'reaching or exceeding -2.5% of GDP'.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [
         "Conditional-turned-unconditional"
       ],
@@ -10061,17 +10062,45 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "Moderate",
       "speaker": "Business Now",
       "bodies": [
         "business-now"
       ],
+      "subclaims": [
+        {
+          "id": "CC-157A",
+          "text": "The study projects a Malta GDP loss from extreme heat exceeding 2.5% in 2055–2064",
+          "finding": "Figure 4b: about −2.8% (±0.1 pp, measured) [3].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-157B",
+          "text": "Condition: if there is no further adaptation or mitigation",
+          "finding": "Correct for the RCP8.5 run with no extra adaptation; other scenarios not read; authors expect rising losses also under stringent mitigation [3].",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-157C",
+          "text": "The sentence’s framing as a current projection",
+          "finding": "Study is from 2021; no newer paper searched for.",
+          "rating": "Not rated",
+          "tone": "grey"
+        }
+      ],
       "date": "2025-07-18",
       "quote": "GDP impacts from extreme heat exceeding -2.5 per cent by the 2055-2064 period",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-11-10",
+      "outputs": {
+        "report": "claim-files/CC-157/report.pdf",
+        "flyer_pdf": "claim-files/CC-157/flyer.pdf",
+        "flyer_png": "claim-files/CC-157/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-157/claim.yml"
     },
     {

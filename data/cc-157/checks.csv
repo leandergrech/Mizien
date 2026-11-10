@@ -1,0 +1,8 @@
+check,value,unit,source,note
+"Malta, GDP impact of heatwaves, 2055-2064 (read from Fig. 4b)",-2.82,% of GDP,García-León et al. 2021 Fig. 4b,"dot-plot reading, uncertainty about +/-0.1 pp; multi-model average, RCP8.5 climate, no further adaptation"
+Claim threshold,-2.5,% of GDP,Business Now / Euronews wording,'exceeding -2.5 per cent'
+Margin of Malta's reading beyond the threshold,-0.32,pp,calc,negative = larger loss than 2.5%
+"Malta's rank among plotted entries (1 = largest loss), 2055-2064",4,of 29,Fig. 4b,plotted entries include 'EFTA' as one group
+"Cyprus (largest loss), 2055-2064",-3.37,% of GDP,Fig. 4b,
+"Median plotted entry, 2055-2064",-0.67,% of GDP,Fig. 4b,
+"Europe aggregate, 2055-2064 (stated in the paper)",-1.14,% of GDP,"García-León et al. 2021 text, p. 5",'beyond 1.14% (s.d. 0.25%) in the 2060's'; average 1981-2010 0.21%
