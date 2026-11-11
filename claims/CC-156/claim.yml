@@ -2,9 +2,9 @@ id: CC-156
 title: 'Business Now: Maltese bathing waters ''downgraded from best in Europe to bang average'''
 category: Water
 subtopic: Bathing water & sewage
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
   text: 'Business Now (Robert Fenech, 17 Aug 2026): ''Maltese waters have suffered a downgrade from best in Europe to bang
     average''. The article reports that 86 of 87 registered beaches were rated excellent in 2016 against 77 in 2025, and that
@@ -20,30 +20,69 @@ claim:
     note: The claim in the outlet's own subtitle; figures from the Environmental Health Directorate's weekly updates and an
       EEA chart, as the article says. Read 8 Nov 2026 via WebFetch (summarised).
   quote: Maltese waters have suffered a downgrade from best in Europe to bang average
-counter_evidence: 'Context, not tested: the article itself notes the EU classifies even average results as a high level of
-  safety (E. coli and intestinal enterococci). The 2016 and 2025 figures are season classifications; the 2026 figure is a
-  weekly update, so the two are not like for like. The Commission''s own figure for Malta (CC-005, ''92% excellent'') differs
-  in framing.'
+counter_evidence: 'Against the wording: in 2016 Malta was third of 22 EU coastal states (EEA), behind Slovenia (16 sites, 100%) and
+  Cyprus (112 sites, 99.1%), so ''best in Europe'' is loose. In 2025 Malta was 11th of 22 at 88.5% against a pooled EU coastal
+  share of 88.3%, with Croatia at 88.3% 12th, so rank is fragile. Every Maltese site met at least the minimum standard in both
+  seasons. The article''s week-13 2026 figure is a weekly count, not a season classification (second-hand, untested).'
 tests: EEA bathing-water dataset (season classifications for Malta, 2016-2025, and Malta's rank among EU states each year);
   Environmental Health Directorate results; classification rules of Directive 2006/7/EC (statistical, four-year assessment,
   versus weekly sampling).
 why_low_hanging: The EEA publishes season classifications for every site; the comparison is a table.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: EEA bathing-water data reachable.'
-caveats: Candidate from the weekly intake of 8 Nov 2026. A media statement of the outlet's own reading of public data; compare
-  like with like (weekly sample versus season classification). No right of reply expected unless the verdict is Misleading
-  or Contradicted.
+caveats: Checked 11 Nov 2026 (worker B). An outlet's own reading of public data; no right of reply needed. The subtitle was
+  read exactly through a summarising fetch tool; the week-13 figure (56 of 87 excellent) is second-hand and untested (the
+  Environmental Health Directorate's weekly file returns 403). 'Best in Europe' is a loose rendering of third of 22 EU coastal
+  states in 2016; the fall is in the share rated excellent, not in safety.
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report_pdf: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-11-11'
+thumbnail:          # headline figure for the claim's thumbnail (from its flyer results)
+  figure: 3rd → 11th
+  caption: Malta's rank among 22 EU coastal states for excellent bathing water, 2016 → 2025
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-156A
+    text: "Malta was once ‘best in Europe’ for bathing water"
+    finding: "2016: 98.9% excellent, third of 22 coastal states, behind Slovenia (16 sites) and Cyprus; top five until 2022 [2]."
+    rating: "Largely supported"
+    tone: lime
+  - id: CC-156B
+    text: "86 of 87 beaches were excellent in 2016 against 77 in 2025"
+    finding: "EEA: 86 in 2016 and 77 in 2025 [2, 3, 5]."
+    rating: "Supported"
+    tone: green
+  - id: CC-156C
+    text: "Malta is now ‘bang average’"
+    finding: "88.5% against the pooled EU coastal 88.3%; 11th of 22 [2]. Average on the share rated excellent; every site passes the minimum standard."
+    rating: "Supported"
+    tone: green
+  - id: CC-156D
+    text: "56 of 87 excellent in week 13 of 2026 ◆"
+    finding: "Not tested: the Directorate’s weekly file could not be opened, and a weekly count is not a season classification, so it is not comparable with B."
+    rating: "Not tested"
+    tone: grey
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-11
+    step: started
+    note: "Worker B. Subtitle wording confirmed exactly (Business Now, 17 Aug 2026, read through a summarising fetch tool). EEA DiscoMap service queried for every EU-27 bathing water, seasons 2015-2025; Malta's counts match Claim Check 005 (86 in 2016, 77 in 2025)."
+  - date: 2026-11-11
+    step: version
+    version: "1.0"
+    note: "First issue. Largely supported (high on figures, medium on 'best in Europe'): Malta 3rd of 22 EU coastal states in 2016 (98.9%), 11th in 2025 (88.5% vs 88.3% EU coastal). Week-13 2026 figure untested (EHD weekly file 403). No right of reply needed."

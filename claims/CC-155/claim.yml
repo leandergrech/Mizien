@@ -2,7 +2,7 @@ id: CC-155
 title: 'Commission (EP petitions hearing): Maltese seawater readings show ''continued breach of EU rules'''
 category: Water
 subtopic: Bathing water & sewage
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -48,3 +48,7 @@ location:
   lon: 14.50909
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-11
+    step: started
+    note: "Worker B, attempt 1: blocked on source. The EPP Group release (24 Mar 2026) and Malta Daily give the DG Environment representative only in indirect speech (no quotation marks); the PETI hearing recording or minutes (23-24 Mar 2026) were not found: the europarl doceo agenda and minutes URLs return empty responses to scripts, and the February 2026 PETI minutes list no Flimkien għal Ambjent Aħjar petition. Needed: the EP Multimedia Centre recording or PETI minutes, with the petition number, opened in a browser."
