@@ -131,7 +131,7 @@ CC-142,C,2026-10-26,top-up intake,0,,
 CC-143,A,2026-10-26,top-up intake,1,2026-10-27,
 CC-144,B,2026-10-26,top-up intake,1,2026-10-28,
 CC-145,C,2026-10-26,top-up intake,0,,
-CC-146,B,2026-11-01,weekly intake,1,2026-11-03,"network: centralbankmalta.org, independent.com.mt, maltatoday.com.mt, climateaction.gov.mt (403 to curl and WebFetch); web.archive.org (reset); the Central Bank's own wording of 'statistical illusion' not obtained (MaltaToday report is a search summary only; MaltaToday uberflip edition paywalled); lead: Malta Independent opinion 19 Apr 2026 'Clarifying statistical confusions on the Maltese economy's emissions intensity' (probably the Central Bank author's own text, 403) and CBM Discussion Paper DP-6-25 (aircraft registry, 403); tried: MaltaToday, CBM site, Independent, Wayback, climateaction.gov.mt, 3 web searches; needs the article/report text from a browser"
+CC-146,B,2026-11-01,weekly intake,2,2026-11-11,"network: centralbankmalta.org, independent.com.mt, maltatoday.com.mt, climateaction.gov.mt (403 to curl and WebFetch); web.archive.org (reset); the Central Bank's own wording of 'statistical illusion' not obtained (MaltaToday report is a search summary only; MaltaToday uberflip edition paywalled); lead: Malta Independent opinion 19 Apr 2026 'Clarifying statistical confusions on the Maltese economy's emissions intensity' (probably the Central Bank author's own text, 403) and CBM Discussion Paper DP-6-25 (aircraft registry, 403); tried: MaltaToday, CBM site, Independent, Wayback, climateaction.gov.mt, 3 web searches; (attempt 2, 11 Nov 2026: search summaries now name the paper as CBM Discussion Paper 1/26 by Aaron G. Grech, 15 Apr 2026, but its PDF and the MaltaToday edition (uberflip, paywalled) return 403/login) needs the paper text or article/report text from a browser"
 CC-147,A,2026-11-01,weekly intake,1,2026-11-02,
 CC-148,B,2026-11-01,weekly intake,0,2026-11-02,
 CC-149,C,2026-11-01,weekly intake,0,,
@@ -140,8 +140,8 @@ CC-151,B,2026-11-01,weekly intake,1,2026-11-03,"source: the PQ reply text (Ian V
 CC-152,C,2026-11-01,weekly intake,0,,
 CC-153,A,2026-11-01,weekly intake,1,2026-11-03,
 CC-154,B,2026-11-08,weekly intake,0,2026-11-09,
-CC-155,B,2026-11-08,weekly intake,0,,
-CC-156,B,2026-11-08,weekly intake,0,,
+CC-155,B,2026-11-08,weekly intake,1,2026-11-11,"source: the Commission's own words not obtained. EPP Group release (24 Mar 2026) and Malta Daily give the DG Environment representative only in indirect speech (no quotation marks; read in full 11 Nov 2026); PETI hearing recording/minutes for 23-24 Mar 2026 not found (europarl doceo agenda and PV URLs return empty 202 to scripts and WebFetch; the Feb 2026 PETI minutes list no Flimkien għal Ambjent Aħjar petition item); need the EP Multimedia Centre recording or PETI minutes in a browser, with the petition number; tried: EPP page, Malta Daily, 2 web searches, europarl doceo, WebFetch"
+CC-156,B,2026-11-08,weekly intake,1,2026-11-11,
 CC-157,A,2026-11-08,weekly intake,0,2026-11-10,
 CC-158,B,2026-11-08,weekly intake,0,,
 CC-159,A,2026-11-08,weekly intake,0,,

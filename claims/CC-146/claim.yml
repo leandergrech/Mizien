@@ -60,3 +60,6 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-11-03
     step: started
     note: "Worker B, attempt 1: blocked on network. The Central Bank's own wording of 'statistical illusion' was not obtained: centralbankmalta.org, independent.com.mt, maltatoday.com.mt and climateaction.gov.mt return 403 to scripts and WebFetch, and the Wayback Machine resets. Only search summaries of the MaltaToday report were seen (second-hand). Leads: Malta Independent opinion of 19 Apr 2026 and CBM Discussion Paper DP 6/25. Needed: the report or article text from a browser."
+  - date: 2026-11-11
+    note: "Worker B, attempt 2: still blocked on network. Search summaries now identify the paper as a Central Bank of Malta discussion paper by Aaron G. Grech dated 15 April 2026 ('Is Malta's economy becoming more emissions-intensive?', designation unconfirmed); its PDF (centralbankmalta.org) returns 403, the MaltaToday edition (uberflip) is a login page. The 'statistical illusion' wording is still known only from search summaries (second-hand). Needed: the paper text or article from a browser."
+    step: note

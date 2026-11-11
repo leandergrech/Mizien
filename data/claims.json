@@ -9977,7 +9977,7 @@
       "category": "Water",
       "claim": "European Commission (DG Environment representative, European Parliament Petitions Committee hearing on untreated sewage discharges in Maltese coastal waters, reported 24 Mar 2026 by the EPP Group): the latest readings from Maltese seawater show a 'continued breach of EU rules'; the Commission will consider further action to guarantee clean seas in Malta.",
       "counter": "Context, not tested: the release gives no readings, volumes or dates, and names Mellieħa and Żabbar as confirmed discharge points. The petition (by Benjamin Mifsud Scicluna for Flimkien għal Ambjent Aħjar) blames overdevelopment and insufficient wastewater capacity. CC-142 records the Commission's figure that only 7% of Malta's urban wastewater meets the Directive's standard; CC-005 and CC-043 concern the bathing-water classification.",
-      "status": "Not started",
+      "status": "In progress",
       "verdict": null,
       "tags": [],
       "subtopic": "Bathing water & sewage",
@@ -10006,9 +10006,10 @@
       "title": "Business Now: Maltese bathing waters 'downgraded from best in Europe to bang average'",
       "category": "Water",
       "claim": "Business Now (Robert Fenech, 17 Aug 2026): 'Maltese waters have suffered a downgrade from best in Europe to bang average'. The article reports that 86 of 87 registered beaches were rated excellent in 2016 against 77 in 2025, and that 56 of 87 were excellent in week 13 of 2026.",
-      "counter": "Context, not tested: the article itself notes the EU classifies even average results as a high level of safety (E. coli and intestinal enterococci). The 2016 and 2025 figures are season classifications; the 2026 figure is a weekly update, so the two are not like for like. The Commission's own figure for Malta (CC-005, '92% excellent') differs in framing.",
-      "status": "Not started",
-      "verdict": null,
+      "counter": "Against the wording: in 2016 Malta was third of 22 EU coastal states (EEA), behind Slovenia (16 sites, 100%) and Cyprus (112 sites, 99.1%), so 'best in Europe' is loose. In 2025 Malta was 11th of 22 at 88.5% against a pooled EU coastal share of 88.3%, with Croatia at 88.3% 12th, so rank is fragile. Every Maltese site met at least the minimum standard in both seasons. The article's week-13 2026 figure is a weekly count, not a season classification (second-hand, untested).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Bathing water & sewage",
       "location": {
@@ -10018,17 +10019,52 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "Business Now",
       "bodies": [
         "business-now"
       ],
+      "subclaims": [
+        {
+          "id": "CC-156A",
+          "text": "Malta was once ‘best in Europe’ for bathing water",
+          "finding": "2016: 98.9% excellent, third of 22 coastal states, behind Slovenia (16 sites) and Cyprus; top five until 2022 [2].",
+          "rating": "Largely supported",
+          "tone": "lime"
+        },
+        {
+          "id": "CC-156B",
+          "text": "86 of 87 beaches were excellent in 2016 against 77 in 2025",
+          "finding": "EEA: 86 in 2016 and 77 in 2025 [2, 3, 5].",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-156C",
+          "text": "Malta is now ‘bang average’",
+          "finding": "88.5% against the pooled EU coastal 88.3%; 11th of 22 [2]. Average on the share rated excellent; every site passes the minimum standard.",
+          "rating": "Supported",
+          "tone": "green"
+        },
+        {
+          "id": "CC-156D",
+          "text": "56 of 87 excellent in week 13 of 2026 ◆",
+          "finding": "Not tested: the Directorate’s weekly file could not be opened, and a weekly count is not a season classification, so it is not comparable with B.",
+          "rating": "Not tested",
+          "tone": "grey"
+        }
+      ],
       "date": "2026-08-17",
       "quote": "Maltese waters have suffered a downgrade from best in Europe to bang average",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-11-11",
+      "outputs": {
+        "report_pdf": "claim-files/CC-156/report.pdf",
+        "flyer_pdf": "claim-files/CC-156/flyer.pdf",
+        "flyer_png": "claim-files/CC-156/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-156/claim.yml",
       "similar": [
         {
