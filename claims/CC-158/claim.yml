@@ -2,7 +2,7 @@ id: CC-158
 title: 'National Audit Office: ClimateScanner review shows ''significant strides'' in Malta''s climate action'
 category: Governance & Promises
 subtopic: Accountability
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -46,3 +46,7 @@ location:
   lon: 14.50909
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-12
+    step: started
+    note: "Worker B, attempt 1: blocked on source. NAO report page (nao.gov.mt), its Wayback copy, climateaction.gov.mt, MaltaToday and preventionweb all refused scripts (403 or connection reset). 'Significant strides', the Auditor General's 'strong progress' and the 6.92 out of 10 score appear only in search summaries (second-hand), so the wording is not verified. Needed: the NAO report text and PDF (scoring method, pillar scores, recommendations) read in a browser."
