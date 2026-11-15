@@ -1,0 +1,48 @@
+id: CC-166
+title: 'MHRA: €8 eco-contribution is too sharp ''even when compared with other Mediterranean and European destinations'''
+category: Tourism & Population
+subtopic: Tourism numbers & capacity
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Malta Hotels and Restaurants Association (reported by Lovin Malta, 27 Oct 2026): the increase of the eco-contribution
+    to €8 per person per night is too sharp, ''even when compared with other Mediterranean and European destinations'', and
+    the combined cost increases in Budget 2027 could make Malta ''less attractive not only to price-sensitive tourists''.'
+  speaker: Malta Hotels and Restaurants Association (MHRA)
+  date: '2026-10-27'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: MHRA Warns Budget Measures Could Hurt Malta's Tourism Competitiveness
+    publisher: Lovin Malta
+    date: '2026-10-27'
+    url: https://lovinmalta.com/news/mhra-warns-budget-measures-could-hurt-maltas-tourism-competitiveness/
+    note: Reports the MHRA position; the fragments in quotation marks are the outlet's, and the page has no full MHRA quotation
+      (read 15 Nov 2026). The MHRA's own statement was not found.
+counter_evidence: Tourist levies elsewhere differ in form (per night, seasonal, by class, capped, or day-visitor fees), so
+  a fair comparison needs like-for-like accommodation. The Malta Chamber of Commerce welcomed the rise provided that revenue
+  is reinvested in tourism (per a search summary). The Government links the rise to pressure on infrastructure (CC-164).
+tests: Official texts of comparable levies (Balearic Islands sustainable tourism tax, Greek climate resilience fee, Catalonia/Barcelona
+  tourist tax, Italian city taxes, Croatian and Cypriot levies) expressed per person per night by accommodation class and
+  as a share of the average nightly rate (NSO and Eurostat accommodation data); evidence on price elasticity of tourist demand
+  to levies (peer-reviewed).
+why_low_hanging: Levy schedules are published in law; the comparison is a table.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: foreign legal texts are on official sites (reachability varies); NSO and Eurostat reachable.'
+caveats: Candidate from the weekly intake of 15 Nov 2026. Business-association claim, held to the same standard as the Government's.
+  'Too sharp' is a judgement; the checkable part is the comparison with other destinations. Competitiveness effects are forecasts
+  and are not testable until data exist.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: cross

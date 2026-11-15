@@ -508,3 +508,82 @@ CC-102,CC-161,T12,Oversight and disclosure,Rhetorical pattern,"Pattern, not caus
 CC-103,CC-161,T12,Oversight and disclosure,Rhetorical pattern,"Pattern, not causal"
 CC-158,CC-161,T12,Oversight and disclosure,Rhetorical pattern,"Pattern, not causal"
 CC-053,CC-160,T26,Dark skies and night lighting,Shared mechanism,Weak (indicative)
+CC-003,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-007,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-008,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-016,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-021,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-026,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-035,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-069,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-071,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-072,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-076,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-109,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-110,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-115,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-132,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-152,CC-168,T4,"Transport, air and climate",Shared driver,Weak (indicative)
+CC-003,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-004,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-007,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-010,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-022,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-025,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-026,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-051,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-079,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-110,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-114,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-131,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-146,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-147,CC-167,T6,Selective-metric pattern,Rhetorical pattern,"Pattern, not causal"
+CC-003,CC-162,T7,2030 carbon target,Shared target,Weak (indicative)
+CC-011,CC-162,T7,2030 carbon target,Shared target,Weak (indicative)
+CC-024,CC-162,T7,2030 carbon target,Shared target,Weak (indicative)
+CC-025,CC-162,T7,2030 carbon target,Shared target,Weak (indicative)
+CC-094,CC-162,T7,2030 carbon target,Shared target,Weak (indicative)
+CC-109,CC-162,T7,2030 carbon target,Shared target,Weak (indicative)
+CC-114,CC-162,T7,2030 carbon target,Shared target,Weak (indicative)
+CC-083,CC-164,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-083,CC-165,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-083,CC-166,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-084,CC-164,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-084,CC-165,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-084,CC-166,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-085,CC-164,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-085,CC-165,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-085,CC-166,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-086,CC-164,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-086,CC-165,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-086,CC-166,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-089,CC-164,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-089,CC-165,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-089,CC-166,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-098,CC-164,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-098,CC-165,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-098,CC-166,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-100,CC-164,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-100,CC-165,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-100,CC-166,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-112,CC-164,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-112,CC-165,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-112,CC-166,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-122,CC-164,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-122,CC-165,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-122,CC-166,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-164,CC-165,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-164,CC-166,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-165,CC-166,T10,Tourism pressure and carrying capacity,Shared driver,Weak (indicative)
+CC-101,CC-162,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-117,CC-162,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-128,CC-162,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-129,CC-162,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-142,CC-162,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-143,CC-162,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-153,CC-162,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-154,CC-162,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-155,CC-162,T19,EU findings of unmet obligations,Shared mechanism,Weak (indicative)
+CC-164,CC-165,T27,Tourist eco-contribution and what it buys,Shared target,Weak (indicative)
+CC-164,CC-166,T27,Tourist eco-contribution and what it buys,Shared target,Weak (indicative)
+CC-165,CC-166,T27,Tourist eco-contribution and what it buys,Shared target,Weak (indicative)

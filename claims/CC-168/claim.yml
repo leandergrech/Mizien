@@ -1,0 +1,58 @@
+id: CC-168
+title: 'PN: traffic congestion costs the economy about €770 million a year, rising to about €900 million by 2030'
+category: Transport
+subtopic: Cars & traffic
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Nationalist Party leader Alex Borg (22 May 2026, reported by The Malta Independent under the headline ''Traffic is
+    no longer an inconvenience; it is a burden on the economy''): traffic congestion costs Malta''s economy about €770 million
+    (2025), growing towards €900 million by 2030. Party statements in February 2026 cite the National Transport Master Plan''s
+    €770 million (2025) and €917 million (2030).'
+  speaker: Nationalist Party (PN)
+  date: '2026-05-22'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Traffic is no longer an inconvenience; it is a burden on the economy, Borg says
+    publisher: The Malta Independent
+    date: '2026-05-22'
+    url: https://www.independent.com.mt/articles/2026-05-22/local-news/Traffic-is-no-longer-an-inconvenience-it-is-a-burden-on-the-economy-Borg-says-6736289951
+    note: Locates the statement; the page returned 403 to WebFetch on 15 Nov 2026, so the figure and exact wording are from
+      a search summary and not read.
+  - title: Malta tops European ranking for traffic, PN says government solutions 'have solved nothing'
+    publisher: The Malta Independent
+    date: '2026-02-13'
+    url: https://www.independent.com.mt/articles/2026-02-13/local-news/Malta-tops-European-ranking-for-traffic-PN-says-government-solutions-have-solved-nothing-6736287227
+    note: Per a search summary, a PN MP cites the Master Plan figures of €770 million and €917 million. Not read.
+counter_evidence: Per search summaries, the figures are the National Transport Master Plan's own estimates (€770 million for
+  2025, about €917 million for 2030), which exclude environmental costs (a further €195.4 million a year, per an Amphora Media
+  election guide, second-hand). An older University of Malta study put total external traffic costs at €274 million (2012
+  data), not comparable. The statement is older than 60 days; it is included because the figure recurs in current opposition
+  statements.
+tests: 'The National Transport Master Plan (Transport Malta): definition and method of the congestion cost (value of time,
+  fuel, reliability), base year, growth assumptions; compare with international congestion-cost methods and with Eurostat/NSO
+  vehicle and GDP series; check whether the PN''s rounding (€900 million vs €917 million) and wording (annual cost ''now''
+  vs 2030 projection) match the source.'
+why_low_hanging: The party figure traces to one government document; the check is whether it is quoted at the right year and
+  scope.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Low-medium: both Independent pages returned 403; the Master Plan host is untested. The maintainer may need
+  to paste the PN statement.'
+caveats: 'Candidate from the weekly intake of 15 Nov 2026. Opposition claim; the figure is a government estimate quoted by
+  the PN, so the check is about use and scope as much as accuracy. Wording not read: do not start a report until the speaker''s
+  own words are found.'
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: cross

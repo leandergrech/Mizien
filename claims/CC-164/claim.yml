@@ -1,0 +1,62 @@
+id: CC-164
+title: 'Budget 2027: eco-contribution to €8 a night (€10 short lets) to raise about €182 million'
+category: Tourism & Population
+subtopic: Tourism numbers & capacity
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Finance Minister Clyde Caruana (Budget 2027 speech, 26 Oct 2026), as reported by Newsbook and The Malta Independent:
+    from 1 January 2027 the environmental contribution on tourist stays rises from €1.50 to €8 per person per night in collective
+    accommodation (capped at €64 per person) and to €10 in short lets (capped at €80), and the revised rates are projected
+    to raise about €182 million. Other outlets report different revenue figures (about €80 million, MaltaToday; €213 million,
+    Amphora Media).'
+  speaker: Clyde Caruana, Minister for Finance (Budget Speech 2027)
+  date: '2026-10-26'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: 'Budget 2027: Eco-tax rises to €8 a night for hotel guests and €10 for short-lets'
+    publisher: Newsbook
+    date: '2026-10-26'
+    url: https://newsbook.com.mt/en/budget-2027-eco-tax-rises-to-e8-a-night-for-hotel-guests-and-e10-for-short-lets/
+    note: Rates and the €182 million projection are in the outlet's own narration; its only direct Caruana quote is about
+      pressure on infrastructure (read 15 Nov 2026).
+  - title: 'Budget 2027: Higher eco-contributions for tourists staying in Malta, visiting Comino'
+    publisher: The Malta Independent
+    date: '2026-10-26'
+    url: https://www.independent.com.mt/articles/2026-10-26/local-news/Budget-2027-Higher-eco-contributions-for-tourists-staying-in-Malta-visiting-Comino-6736294107
+    note: 'Per a search summary: about €182 million. Not read.'
+  - title: 'Budget 2027: follow the announcements, analysis and measures as they unfold'
+    publisher: MaltaToday
+    date: '2026-10-26'
+    url: https://www.maltatoday.com.mt/news/budget-2027/145265/live__budget_2027_follow_the_announcements_analysis_and_measures_as_they_unfold
+    note: 'Per a search summary: government expects about €80 million; MHRA warning. Page returned 403 to WebFetch earlier
+      in this series; not read.'
+counter_evidence: 'Outlets disagree on the yield: about €182 million (Newsbook, Malta Independent), about €80 million (MaltaToday,
+  per a search summary) and €213 million (Amphora Media, from the Budget Estimates; see CC-165). The new rates were a budget
+  proposal at the time of reporting; a secondary source says no law had yet adopted them and that €1.50 was in force. Caruana
+  tied the rise to pressure on infrastructure (Newsbook).'
+tests: Budget speech text and Estimates 2027 (revenue line for the eco-contribution; finance.gov.mt); NSO accommodation statistics
+  (guest nights in collective accommodation, 2025) multiplied by rate and cap, with exemptions (for example English-language
+  schools); the 2026 receipts; the legal notice or Finance Bill when published.
+why_low_hanging: Yield is a transparent multiplication of published guest-night data by the stated rate and caps.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: NSO and Eurostat tourism data reachable; the Budget speech and Estimates on finance.gov.mt returned
+  403, so the maintainer may need to paste the passages.'
+caveats: Candidate from the weekly intake of 15 Nov 2026. The figure is reported by outlets; Caruana's own wording on the
+  revenue was not found, so wording is a paraphrase. The check covers the rate and the revenue projection, not whether the
+  measure is good policy. CC-165 and CC-166 concern the same measure.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: Parliament House, Valletta
+  lat: 35.89614
+  lon: 14.50978
+  scope: institution
+  icon: parliament

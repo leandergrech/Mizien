@@ -1,0 +1,51 @@
+id: CC-165
+title: 'Amphora Media: ''Malta Will Charge Tourists €213 Million; Most Will Be Spent On Marketing'''
+category: Tourism & Population
+subtopic: Tourism numbers & capacity
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Amphora Media (13 Nov 2026, headline): ''Malta Will Charge Tourists €213 Million; Most Will Be Spent On Marketing
+    Malta To More Tourists''. The article says the Budget Estimates expect €213 million from the eco-contribution in 2027
+    (against €21 million projected for 2026), that marketing took 85% of the Malta Tourism Authority''s spending in 2025,
+    and that the money raises the Tourism Ministry''s spending to €217 million in 2027.'
+  speaker: Amphora Media
+  date: '2026-11-13'
+  wording_status: Verbatim found
+  sources:
+  - title: Malta Will Charge Tourists €213 Million; Most Will Be Spent On Marketing Malta To More Tourists
+    publisher: Amphora Media
+    date: '2026-11-13'
+    url: https://www.amphora.media/2026/11/malta-will-charge-tourists-e213-million-most-will-be-spent-on-marketing-malta-to-more-tourists
+    note: The claim in the outlet's own words (headline); figures read through the page text on 15 Nov 2026 via a summarising
+      tool, so check each against the Estimates.
+  quote: Malta Will Charge Tourists €213 Million; Most Will Be Spent On Marketing Malta To More Tourists
+counter_evidence: Other outlets put the yield of the higher rates at about €182 million (Newsbook, Malta Independent) or about
+  €80 million (MaltaToday) (see CC-164); the €213 million may include other tourism charges (a €10 cruise-passenger contribution
+  and a €5 Comino fee were also announced, per search summaries). 'Most will be spent on marketing' rests on the 2025 share
+  of MTA spending, not on a 2027 allocation. The Malta Chamber and the MHRA asked for part of the revenue to be reinvested
+  in tourism.
+tests: 'Estimates 2027: revenue line for the eco-contribution and expenditure votes for the Tourism Ministry and the Malta
+  Tourism Authority; MTA annual report 2025 for the marketing share of spending; whether the revenue is earmarked or goes
+  to the Consolidated Fund; what is included in €213 million.'
+why_low_hanging: Two budget documents and one annual report can confirm or refute each number.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: Estimates on finance.gov.mt returned 403; MTA annual report host not yet tested.'
+caveats: Candidate from the weekly intake of 15 Nov 2026. The claimant is the outlet's analysis; the Government has not (as
+  far as found) said how the revenue will be spent. 'Most will be spent on marketing' is an inference to test, not a government
+  statement.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: cross

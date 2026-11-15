@@ -1,0 +1,58 @@
+id: CC-163
+title: 'Eurobarometer: 77% of Maltese call pollution a serious threat, the highest in the EU (58% EU average)'
+category: Air
+subtopic: Air quality & health
+status: Not started
+verdict: null
+verdict_confidence: null
+claim:
+  text: 'Eurobarometer survey on the environment (fieldwork in Malta 5-24 February 2026; results reported in June 2026 by
+    the Malta News Agency and MaltaToday): 77% of Maltese respondents described contamination of air, soil and water as a
+    serious threat, the highest share in the EU, against a bloc average of 58%; 72% called the loss of natural areas a major
+    threat to biodiversity.'
+  speaker: European Commission
+  date: '2026-06-01'
+  wording_status: 'Paraphrase: locate quote'
+  sources:
+  - title: Malta tops EU for concern over loss of natural areas
+    publisher: Malta News Agency
+    date: 2026-06
+    url: https://www.maltanewsagency.com/2026/06/malta-tops-eu-for-concern-over-loss-of-natural-areas/
+    note: Reports the 77% vs 58% and 72% figures; names no survey edition and no fieldwork dates (page read 15 Nov 2026).
+      Exact day of publication not shown in the text read.
+  - title: Malta tops EU concern over land use and environmental threats
+    publisher: MaltaToday
+    date: 2026-06
+    url: https://www.maltatoday.com.mt/news/national/142430/malta_tops_eu_concern_over_land_use_and_environmental_threats
+    note: 'Per a search summary: 77% ''very much'' a significant threat, EU average 58%; fieldwork 5-24 Feb 2026. Page returned
+      403 to WebFetch; not read.'
+counter_evidence: 'Perception, not measurement. Malta''s measured pollution is a different question: annual PM2.5 and NO2
+  means (EEA), bathing-water classes (CC-156) and the Commission''s findings on sewage (CC-155) can be set beside the survey,
+  but a high concern score does not show high pollution. Outlets word the response differently (''serious threat'' MNA; ''very
+  much'' significant, MaltaToday).'
+tests: Locate the Eurobarometer report and data tables (Special Eurobarometer on the environment/biodiversity, data.europa.eu
+  or europa.eu/eurobarometer); confirm the 77% and 58% figures, the country ranking, the exact question wording, answer scale,
+  sample size and fieldwork dates; then compare with EEA air-quality status for Malta (PM2.5, NO2, O3 against WHO 2021 guidelines)
+  and with soil and water indicators.
+why_low_hanging: The ranking and percentages can be read directly from the published survey tables.
+tags: []
+tags_provisional: true
+priority: Queue
+data_readiness: 'Medium: Eurobarometer report is on europa.eu / data.europa.eu (reachability to be confirmed by the worker);
+  the figures here come from two outlets, one unread.'
+caveats: Candidate from the weekly intake of 15 Nov 2026. The survey edition and whether the Commission commissioned it are
+  unverified (the outlets name only 'a Eurobarometer survey'); the speaker is recorded as the Commission pending that check.
+  The check covers what the survey says and how it compares with measured pollution; it does not treat concern as evidence
+  of exposure.
+right_of_reply:
+  sent: null
+  deadline: null
+  response: null
+evidence_shown: null
+outputs: {}
+location:
+  place: City Gate, Valletta (national claim)
+  lat: 35.89623
+  lon: 14.50907
+  scope: national
+  icon: cross
