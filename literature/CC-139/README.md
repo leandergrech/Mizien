@@ -28,3 +28,7 @@ Add `references.bib` and `notes.md` as in `literature/CC-001/`.
 
 ## Needed from the maintainer
 The PQ number and reply text (Minister Clint Camilleri to Ivan Bartolo, about Jan 2026), and the Development Planning Act provision on daily fines and the EUR 50,000 cap.
+
+## Read in a browser (maintainer session, 16 Nov 2026)
+- Development Planning Act (Cap. 552), legislation.mt (PDF via the site's viewer, 140 pp.): **art. 100(4)**, a person who does not comply with an unappealed enforcement notice "shall be liable to a daily fine to be regulated by regulations made by the Minister, not being more that fifty euro (€50) per day" (sic), from the date in the notice. The Act has no EUR 50,000 ceiling on accumulated daily fines; its only EUR 50,000 is the cap on a compromise fine for offences (art. 105). Any cap on daily fines must be in the regulations (not yet identified or read).
+- parlament.mt: Cloudflare block ("Sorry, you have been blocked") for this environment's IP, also in a real browser. The PQ reply still needs a person.
