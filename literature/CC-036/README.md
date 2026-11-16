@@ -1,6 +1,6 @@
 # CC-036: Construction dust 'a nuisance, not a health issue'
 
-**Status:** literature not yet collected.
+**Status:** done (v1.0, 16 Nov 2026). See `references.bib` and `notes.md`. The chapter PDF is a maintainer copy kept locally (`era-soer-2018-ch2-ambient-air.pdf`, not committed; sha256 in archive/manifest.csv).
 
 ## To collect
 
