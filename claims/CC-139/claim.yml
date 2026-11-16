@@ -52,6 +52,9 @@ location:
   scope: institution
   icon: ravelin
 history:   # research log: the date each step of the research was done (not when the site changed)
-  - date: 2026-11-06
+  - date: 2026-10-27
     step: started
-    note: "Worker B, attempt 1: blocked on source. The Shift (8 Jan 2026) read in full; it attributes the EUR 16.5 million and 2,341 cases to figures tabled by Minister Clint Camilleri in reply to MP Ivan Bartolo, but gives no question number and the reply text was not found (parlament.mt returns 403 to scripts; no other outlet found with the figures). The '161 at the cap' figure comes from a separate Shift analysis of 4 Jun 2025 (sites since 1997), not from this reply. Needed: the PQ number and reply text."
+    note: "Worker B, attempt 1: blocked on source. The Shift (8 Jan 2026) read in full: it attributes EUR 16.5 million and 2,341 cases (since 2013) to figures tabled by the Planning Minister in answer to PN MP Ivan Bartolo, but the reply is on parlament.mt (403, browser-only) and no other outlet found carries it. The article's '161 illegal developments at the EUR 50,000 cap' links to The Shift's own June 2025 analysis of earlier parliamentary questions, not to the 2026 reply; the October 2025 Shift article gives 'at least 150'. The law on daily fines and the cap is unread. Needed: the PQ number and reply text with its table, and the Development Planning Act provision, read in a browser."
+  - date: 2026-11-06
+    step: note
+    note: "Worker B, attempt 2 (attempt 1, of 27 Oct 2026, was then still in open PR #156): blocked on source. The Shift (8 Jan 2026) read in full; it attributes the EUR 16.5 million and 2,341 cases to figures tabled by Minister Clint Camilleri in reply to MP Ivan Bartolo, but gives no question number and the reply text was not found (parlament.mt returns 403 to scripts; no other outlet found with the figures). The '161 at the cap' figure comes from a separate Shift analysis of 4 Jun 2025 (sites since 1997), not from this reply. Needed: the PQ number and reply text."
