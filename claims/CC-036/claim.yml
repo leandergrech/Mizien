@@ -2,7 +2,7 @@ id: CC-036
 title: Construction dust 'a nuisance, not a health issue'
 category: Air
 subtopic: Air quality & health
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -42,3 +42,6 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-10-12
     step: note
     note: "Worker C, attempt 2: still blocked on network. era.org.mt returns 403 to curl and WebFetch (with and without a browser User-Agent); web.archive.org resets the connection. Two web searches found the chapter URL but no text with the 'nuisance' wording. Needed: the passage from Chapter 2 Ambient Air of the 2018 State of the Environment Report, read in a browser."
+  - date: 2026-10-27
+    step: note
+    note: "Worker C, attempt 3: still blocked. era.org.mt returns 403 to curl with a browser User-Agent; web.archive.org resets the connection; one web search returned no text of the Chapter 2 passage (only coverage of the report launch and unrelated dust studies). No wording was obtained, so no report or verdict. Needed: the passage on construction dust from Chapter 2 Ambient Air of the 2018 State of the Environment Report, copied from a browser."
