@@ -10336,8 +10336,9 @@
       "category": "Climate & Energy",
       "claim": "European Commission (EU Climate Action Progress Report 2026, COM(2026) 601, adopted 9 Nov 2026): 'Before any use of ESR flexibilities by Member States to meet their targets, Germany, Ireland and Malta show the largest projected gaps to the 2030 target.' A figure note adds: 'Malta's gap to target is 49 and 61 percentage points, exceeding its 19% reduction target. This means Malta is projected to emit more in 2030 than in 2005.' The report also names Malta among nine Member States that it concludes 'are not making sufficient progress towards their ESR obligations' and will be asked for a corrective action plan.",
       "counter": "The 2025 edition of the report (COM(2025) 668, 6 Nov 2025) made the same finding with the same 49 and 61 point gap: see CC-094, which this record follows up. The 2026 edition says projections are before flexibilities (banking, borrowing, transfers, ETS flexibility), and that the nine Member States are judged after assuming full use of them. The Climate Action Authority's per-capita claim (CC-003) and the Central Bank's 'statistical illusion' (CC-146) concern other measures. Malta's own position on the 2026 projections was not found.",
-      "status": "Not started",
-      "verdict": null,
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
       "tags": [],
       "subtopic": "Emissions & targets",
       "location": {
@@ -10347,17 +10348,52 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
+      "priority": "Done (v1.0)",
       "wording_status": "Verbatim found",
-      "confidence": null,
+      "confidence": "High",
       "speaker": "European Commission",
       "bodies": [
         "european-commission"
       ],
+      "subclaims": [
+        {
+          "id": "CC-162A",
+          "text": "“Malta’s gap to target is 49 and 61 percentage points”",
+          "finding": "48.7 (planned measures) and 61.1 (existing) from Malta’s projections, the legal 2005 level and the −19% target [3, 4, 9, 10].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-162B",
+          "text": "“…Malta is projected to emit more in 2030 than in 2005”",
+          "finding": "+29.7% and +42.1% on 2005; 2025 emissions are +37.1% already [2, 4].",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-162C",
+          "text": "Germany, Ireland and Malta show the largest projected 2030 gaps before flexibilities",
+          "finding": "Reproduced on the 2025 submissions (Malta 48.7, Ireland 20.3, Germany 13.2 points). Updates from Germany and Ireland in 2026 not recomputed [3, 4].",
+          "rating": "Accurate (2025 data)",
+          "tone": "green"
+        },
+        {
+          "id": "CC-162D",
+          "text": "Malta among Member States with excess emissions in 2026–2030, and asked for a corrective action plan",
+          "finding": "Covered to 2025 after the ETS flexibility; −1.42 Mt over 2021–2030 after Malta’s own flexibilities (planned measures). That the Commission will request a plan is its statement of intent; no transfers reported is its statement [1, 2, 4, 11, 12].",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
       "date": "2026-11-09",
       "quote": "Malta's gap to target is 49 and 61 percentage points, exceeding its 19% reduction target. This means Malta is projected to emit more in 2030 than in 2005.",
-      "version": null,
-      "outputs": {},
+      "version": "1.0",
+      "last_reviewed": "2026-11-16",
+      "outputs": {
+        "report": "claim-files/CC-162/report.pdf",
+        "flyer_pdf": "claim-files/CC-162/flyer.pdf",
+        "flyer_png": "claim-files/CC-162/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-162/claim.yml",
       "similar": [
         {

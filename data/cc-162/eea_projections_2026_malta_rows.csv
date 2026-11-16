@@ -1,0 +1,5 @@
+sheet,year,submission_year,category,scenario,gas,gapfilled_value
+Totals,2027,2025,Total excluding LULUCF,WAM,ESR emissions (ktCO2e),1312.29672481
+Totals,2027,2025,Total excluding LULUCF,WEM,ESR emissions (ktCO2e),1471.9373805
+Gas,2030,2025,2. Industrial processes,WAM,HFC (kt CO2e),156.79586163
+Gas,2030,2025,2. Industrial processes,WEM,HFC (kt CO2e),191.22415113
