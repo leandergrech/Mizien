@@ -2,7 +2,7 @@ id: CC-166
 title: 'MHRA: €8 eco-contribution is too sharp ''even when compared with other Mediterranean and European destinations'''
 category: Tourism & Population
 subtopic: Tourism numbers & capacity
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -46,3 +46,7 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-16
+    step: started
+    note: "Worker C, attempt 1: blocked on source. Lovin Malta (27 Oct 2026, read in full) gives the 'too sharp' comparison as indirect speech without quotation marks; the MHRA's own statement was not found (mhra.org.mt has no post after 2021; MaltaToday's report is 403). Needed: the MHRA statement or press release of about 26-27 Oct 2026 with its exact words. No report or verdict started."
