@@ -1,0 +1,22 @@
+country,year,value,series,unit,status_note,source,url,retrieved
+Malta,2005,1007.421,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2006,1053.871,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2007,1104.313,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2008,1050.827,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2009,988.248,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2010,1063.945,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2011,1016.132,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2012,1077.945,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2013,1250.779,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2014,1291.392,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2015,1300.741,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2016,1329.995,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2017,1428.48,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2018,1383.374,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2019,1427.261,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2020,1311.233,ESD,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2021,1323.379,ESR,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2022,1458.953,ESR,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2023,1409.915,ESR,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2024,1429.64,ESR,kt CO2e,,"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16
+Malta,2025,1399.71,ESR,kt CO2e,approximated (proxy),"EEA GHG_ESD-ESR_2026_updated01102026.xlsx, sheet GHG_ESD",https://sdi.eea.europa.eu/catalogue/srv/api/records/be4056d8-9d3e-4cca-b995-3c684637f29e,2026-11-16

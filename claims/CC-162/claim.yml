@@ -2,9 +2,9 @@ id: CC-162
 title: 'European Commission: Malta ''is projected to emit more in 2030 than in 2005'' (Climate Action Progress Report 2026)'
 category: Climate & Energy
 subtopic: Emissions & targets
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
   text: 'European Commission (EU Climate Action Progress Report 2026, COM(2026) 601, adopted 9 Nov 2026): ''Before any use
     of ESR flexibilities by Member States to meet their targets, Germany, Ireland and Malta show the largest projected gaps
@@ -40,22 +40,65 @@ tests: 'Reproduce the gap: Malta''s reported ESR projections (WEM and WAM) again
   available to Malta; compare with the 2025 edition (CC-094) and say what changed.'
 why_low_hanging: The gap is arithmetic on published projections and allocations; EEA and Eurostat data are reachable.
 tags: []
-tags_provisional: true
-priority: Queue
+tags_provisional: false
+priority: Done (v1.0)
 data_readiness: 'High: the Council PDF (data.consilium.europa.eu) and EEA/Eurostat were reachable on 15 Nov 2026.'
-caveats: 'Candidate from the weekly intake of 15 Nov 2026. A statement by an EU institution about Malta; checked on the same
-  terms as local claims. It restates the finding of CC-094 for the 2026 edition: if CC-094 is finished, the check should test
-  what changed rather than repeat it. The report''s two gap figures (49 and 61 points) correspond to the two policy scenarios
-  shown in Figure 13; confirm which is which from the staff working document.'
+caveats: "Supported verdict: no right of reply needed. A statement by an EU institution about Malta, checked on the same terms as local claims. It repeats the finding of CC-094 for the 2026 edition; the check tests the 2026 data and what changed. Malta's projections in the EEA 2026 dataset are still its March 2025 submission, so the 49 and 61 points rest on the same data as in 2025. Not recomputed: the cross-country ranking with the 2026 updates of Germany, Ireland and others (the EEA sheets give no effort-sharing totals for them); the staff working document SWD(2026) 331 was not obtained. The 2023 emissions value was revised by 35 kt between editions of the EEA dataset (reason not found). Whether Malta will buy allocations, and at what cost, is not public."
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+- 'European Commission, COM(2026) 601 final as transmitted to the Council (doc. 15659/26), printed pp. 45-47 (literature/CC-162/open-access/COM-2026-601-final_Council-15659-26_EN.pdf)'
+- 'EEA effort-sharing emissions 2005-2025 and GHG projections 2026 dataset, retrieved 16 Nov 2026 (data/cc-162/); EEA 2025 projections and legal inputs reused from CC-094 (data/cc-094/); checks in data/cc-162/checks.csv'
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-162A
+    text: "“Malta’s gap to target is 49 and 61 percentage points”"
+    finding: "48.7 (planned measures) and 61.1 (existing) from Malta’s projections, the legal 2005 level and the −19% target [3, 4, 9, 10]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-162B
+    text: "“…Malta is projected to emit more in 2030 than in 2005”"
+    finding: "+29.7% and +42.1% on 2005; 2025 emissions are +37.1% already [2, 4]."
+    rating: "Accurate"
+    tone: green
+  - id: CC-162C
+    text: "Germany, Ireland and Malta show the largest projected 2030 gaps before flexibilities"
+    finding: "Reproduced on the 2025 submissions (Malta 48.7, Ireland 20.3, Germany 13.2 points). Updates from Germany and Ireland in 2026 not recomputed [3, 4]."
+    rating: "Accurate (2025 data)"
+    tone: green
+  - id: CC-162D
+    text: "Malta among Member States with excess emissions in 2026–2030, and asked for a corrective action plan"
+    finding: "Covered to 2025 after the ETS flexibility; −1.42 Mt over 2021–2030 after Malta’s own flexibilities (planned measures). That the Commission will request a plan is its statement of intent; no transfers reported is its statement [1, 2, 4, 11, 12]."
+    rating: "Accurate"
+    tone: green
+thumbnail:
+  figure: '+30%'
+  caption: "Malta's projected effort-sharing emissions in 2030 vs 2005 with planned measures (+42% without; target -19%)"
+version: '1.0'
+last_reviewed: '2026-11-16'
+history:
+  - date: 2026-11-16
+    step: started
+    note: "Claim taken by worker B. Primary wording was already recorded (COM(2026) 601, read in the Council copy). Reachable: Council PDF, EEA datastore (public share), Crossref. Wayback reset (not needed)."
+  - date: 2026-11-16
+    step: wording
+    note: "Verbatim wording confirmed in COM(2026) 601 final (Council doc. 15659/26): chapter 3, printed p. 45 (largest gaps), p. 46 (note to Figure 13), pp. 46-47 (nine Member States, corrective action plans). 'Is projected' is the Commission's wording."
+  - date: 2026-11-16
+    step: note
+    note: "EEA 2026 datasets downloaded (effort-sharing emissions 2005-2025; GHG projections 2026). Malta has no 2026 submission: Malta 2027 totals and the 2030 F-gas WEM-WAM difference are identical to the 2025 dataset. 49 and 61 points reproduce (48.7 and 61.1) with the CC-094 inputs. 2025 approximated emissions 1,399.7 kt (+37.1% on 2005). 2021-2030 balance -1.96 Mt, -1.42 Mt after Malta's own flexibilities (planned measures). Comparison with the 2025 report: same Malta figures; excess list 6 -> 8 Member States; conclusion on insufficient progress now drawn (nine, corrective action plans). Not recomputed: ranking with 2026 updates for DE, IE and others. Calculations: tools/cc-162-report/calc.py."
+  - date: 2026-11-16
+    step: version
+    version: '1.0'
+    note: "First issue. No right of reply needed for a Supported verdict."
