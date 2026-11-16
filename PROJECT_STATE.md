@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 27 October 2026 (Who said it rebuilt as a tree-and-panel stage with one verdict strip; decisions below; earlier: 10 October 2026: later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
+*Last updated: 16 November 2026 (open PRs consolidated: eleven worker queue records, the CC-159 check and two Dependabot updates, see the section below; earlier: 27 October 2026: Who said it rebuilt as a tree-and-panel stage with one verdict strip; decisions below; earlier: 10 October 2026: later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
 
 ## What the project is
 
@@ -15,6 +15,34 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
+
+## Maintainer session 2026-11-16: open PRs consolidated
+
+The maintainer asked this session to address every open PR. All fourteen had a green "Site" check but were stranded (no
+`gh` in the worker runs, as on 26 Oct). They were merged, oldest first, into `claude/gifted-noether-jzhko8` with merge
+commits, and that branch goes to `main` as one PR; GitHub then marks each source PR as merged.
+
+- **Queue records (blocked, no report):** #156 CC-139, #157 CC-036 (now Attempts 3: `needs maintainer`), #162 CC-141 and
+  CC-138, #163 CC-142, #165 CC-145, #171 CC-152 and CC-149, #174 CC-150, #182 CC-158, #183 CC-160, #185 CC-164 and
+  CC-167, #187 CC-166. What each needs is in its `data/queue.csv` Blocker.
+- **Completed check:** #177 CC-159 (IMF: density "fifteen times" the EU average), Largely supported (high), no right of
+  reply needed. Reviewed before merging: the sentence is verbatim on PDF p. 8 and Table 1 (p. 32) matches the record
+  (PDF fetched 16 Nov, SHA-256 a71cc037...622e); live Eurostat `demo_r_d3dens` still gives 1,817.4 vs 109.7 for 2024
+  (16.6x); `calc.py` reproduces `checks.csv` exactly; `report_html.py CC-159` ok.
+- **CC-139 was attempted twice** (27 Oct in #156, 6 Nov on `main`): the 6 Nov run did not skip it although #156 was
+  open. Merged as Attempts 2, Last attempt 6 Nov, both history entries kept (the later one as `note`), both route lists
+  in `literature/CC-139/README.md`; sources.csv ref 980 dropped as a duplicate of 1040 (same Shift article).
+- **sources.csv Refs renumbered** (branches had taken the same numbers): CC-142 1018-1020 -> 1078-1080; CC-145
+  1021-1023 -> 1081-1083; CC-152/149 1033-1034 -> 1084-1085; CC-150 1040 -> 1086; CC-159 1055-1057 -> 1087-1089; CC-158
+  1064 -> 1090; CC-160 1064-1066 -> 1091-1093; CC-164 1076-1077 -> 1094-1095; CC-166 1078 -> 1096. No file cited the
+  old numbers.
+- **Dependabot:** #167 (maplibre-gl 6.12.0 -> 6.16.0, @11ty/eleventy 3.1.6 -> 3.1.7, markdown-it 14.3.2 -> 15.0.3, a
+  major version) and #166 (actions/setup-python and setup-node v7.0.0 -> v7.1.0). The built site was compared with and
+  without #167: every page is byte-identical, only the vendored MapLibre files differ; Explore's map view rendered with
+  no console errors on both.
+- **Root cause still open:** worker runs without `gh` leave PRs open, and a later run can re-take a claim whose PR it
+  cannot see. The 26 Oct note (merge through `gh api` or curl after polling check-runs) still applies; the routine is
+  unchanged (`methodology/worker-routine.md` is the maintainer's to edit).
 
 ## Who said it: stage, one strip, identity images (27 October 2026)
 
