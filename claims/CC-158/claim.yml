@@ -2,51 +2,122 @@ id: CC-158
 title: 'National Audit Office: ClimateScanner review shows ''significant strides'' in Malta''s climate action'
 category: Governance & Promises
 subtopic: Accountability
-status: In progress
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: High
 claim:
-  text: 'National Audit Office (7 Oct 2025): its review of Malta''s climate action using the ClimateScanner framework ''shows
-    that Malta has made significant strides in climate action'', and the Climate Action Authority welcomed its note of ''strong
-    progress''.'
+  text: 'National Audit Office (press release, 7 Oct 2025): ''This Review, which presents the overall situation as at September
+    2025, shows that Malta has made significant strides in climate action.'' The report (Oct 2025, PDF p. 14): ''Malta registered
+    an overall ClimateScanner score of 6.92 out of 10, which in accordance with this assessment methodology is considered as
+    representing strong progress vis-à-vis climate action.'' The Climate Action Authority (7 Oct 2025) welcomed the report,
+    noting feedback that ''highlights Malta''s notable and significant progress in tackling climate change''.'
   speaker: National Audit Office
   date: '2025-10-07'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
-  - title: A review of Malta's climate action using the ClimateScanner framework
+  - title: A review of Malta's climate action using the ClimateScanner framework (press release)
     publisher: National Audit Office, Malta
     date: '2025-10-07'
     url: https://nao.gov.mt/2025/10/07/a-review-of-maltas-climate-action-using-the-climatescanner-framework/
-    note: Locates the claim. WebFetch returned 403 on 8 Nov 2026; the quoted sentences were seen only in a search summary
-      (second-hand). Wording to be read in the NAO report.
-counter_evidence: 'Context, not tested: the same summary says the review also found gaps in data quality, use of performance
-  metrics and the Climate Action Authority''s resources; an overall ClimateScanner score of 6.92 out of 10 appears in a search
-  summary (unconfirmed). A June 2025 NAO performance audit found that Government had not yet quantified the cost of adapting
-  to climate change.'
+    note: The claim in the NAO's own words. nao.gov.mt refuses scripts; read in full from a browser copy supplied by the maintainer
+      on 16 Nov 2026 (sha256 in archive/manifest.csv).
+  - title: A review of Malta's climate action using the ClimateScanner framework (report, 73 pp.)
+    publisher: National Audit Office, Malta
+    date: 2025-10
+    url: https://nao.gov.mt/2025/10/07/a-review-of-maltas-climate-action-using-the-climatescanner-framework/
+    note: PDF linked from the press-release page; browser copy supplied by the maintainer, text extracted and read 16 Nov 2026
+      (scores and 'strong progress' PDF p. 14; conclusions p. 33; item ratings in the Appendix, pp. 38-73).
+  - title: Climate Action Authority welcomes the NAO report highlighting "strong progress" in climate action
+    publisher: Climate Action Authority
+    date: '2025-10-07'
+    url: https://climateaction.gov.mt/?p=4273
+    note: The CAA's restatement; browser copy supplied by the maintainer, read in full 16 Nov 2026.
+  quote: This Review, which presents the overall situation as at September 2025, shows that Malta has made significant strides
+    in climate action.
+counter_evidence: 'The scores are reproduced exactly: all 18 rated components follow from the Appendix item ratings (18 advanced,
+  26 intermediate, 14 early, none at no progress; F3 not applicable), the axes are their means (6.55, 8.00, 6.20) and 6.92 is
+  the mean of the axes; 12 of 18 components reach 6.66. The ClimateScanner Handbook (May 2024, p. 11) marks components at
+  6.66 or more as strengths, defines no overall score or ''strong progress'' label, scores an ''intermediate'' item (many aspects
+  present, room for improvement) at 6.66, and says the tool assesses whether mechanisms exist, not their effectiveness; the
+  NAO report says the same (PDF p. 14, para 1.4.1), the press release does not. Outcomes, which the tool does not score: Malta''s
+  effort-sharing emissions were 41% above 2005 in 2024, over the yearly limit by 220, 257 and 301 kt in 2022-2024, and projected
+  +30% in 2030 with planned measures against a -19% target (EEA; CC-094). Total emissions fell 27% 2005-2024 (EU-27 33.5%) and
+  rose 18% from the 2016 low (Eurostat; CC-025). The NAO report does not mention the effort-sharing gap (text searched).'
 tests: The NAO report and its ClimateScanner scoring method (INTOSAI WGEA); what the score measures (governance, public policy,
   climate finance), not emissions outcomes; Malta's emissions record from Eurostat/EEA (CC-025, CC-094, CC-109 are related
   checks).
 why_low_hanging: The report is public and the framework is documented; the check separates process scores from outcomes.
 tags:
 - Input-as-outcome
-tags_provisional: true
-priority: Queue
-data_readiness: 'Low-medium: nao.gov.mt returned 403 to WebFetch; may need a browser or the Wayback copy; WGEA documents reachable.'
-caveats: 'Candidate from the weekly intake of 8 Nov 2026 (older than 60 days). The claimant is an independent audit body;
-  the check is whether a favourable process assessment is read as an outcome. Wording not verbatim yet: locate it in the report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'Medium: nao.gov.mt and climateaction.gov.mt refuse scripts (browser copies from the maintainer); the ClimateScanner
+  Handbook is downloadable; emissions data reused from CC-094 and CC-025.'
+caveats: 'Largely supported: no right of reply needed. The NAO''s scores and its ''strong progress'' label are correct and a fair
+  reading of the method; the caveat is scope: ClimateScanner records whether policies, institutions and plans exist, not emissions
+  results, which the report says and the press release does not. The Climate Action Authority''s restatement (''progress in
+  tackling climate change'') goes further than the review (sub-claim D). Item counts were taken from text extracted from the
+  Appendix and checked by reproducing every component score. The report PDF''s own URL was not recorded.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - NAO report Appendix item ratings and ClimateScanner Handbook (May 2024) p. 11 (data/cc-158/components.csv; checks in data/cc-158/checks.csv)
+  - EEA effort-sharing emissions 2005-2024 and EU allocations (data/cc-094/eea_esr_emissions.csv, data/cc-094/esr_legal_inputs.csv,
+    retrieved 6 Oct 2026)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-11-16'
+thumbnail:
+  figure: '6.92'
+  caption: 'ClimateScanner score out of 10, reproduced; it measures policies in place, not emissions (effort-sharing +41% on 2005)'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-158A
+    text: "Malta’s overall ClimateScanner score is 6.92 out of 10 (axes 6.55, 8.00, 6.20)"
+    said_by: "NAO [2]"
+    finding: "All 18 component scores follow from the appendix item ratings; the axes are their averages, and 6.92 is the average of the axes."
+    rating: "Accurate"
+    tone: green
+  - id: CC-158B
+    text: "6.92 “is considered as representing strong progress” under the methodology"
+    said_by: "NAO [2]"
+    finding: "The Handbook marks components at 6.66 or more as strengths, but defines no overall score or label. The NAO applies the same mark to the average. 6.66 is the “intermediate” tier."
+    rating: "Fair reading"
+    tone: green
+  - id: CC-158C
+    text: "The review “shows that Malta has made significant strides in climate action”"
+    said_by: "NAO [1]"
+    finding: "True of policies, institutions and plans, which is what the tool records. The report says it does not measure results, but the press release does not. Effort-sharing emissions are 41% above 2005."
+    rating: "True of policies"
+    tone: amber
+  - id: CC-158D
+    text: "The feedback “highlights Malta’s notable and significant progress in tackling climate change”"
+    said_by: "CAA [3]"
+    finding: "The review rated whether policies exist. “Tackling climate change” suggests results it did not assess. The CAA quotes the NAO’s “strong progress” sentence correctly."
+    rating: "Goes further"
+    tone: orange
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-11-12
     step: started
     note: "Worker B, attempt 1: blocked on source. NAO report page (nao.gov.mt), its Wayback copy, climateaction.gov.mt, MaltaToday and preventionweb all refused scripts (403 or connection reset). 'Significant strides', the Auditor General's 'strong progress' and the 6.92 out of 10 score appear only in search summaries (second-hand), so the wording is not verified. Needed: the NAO report text and PDF (scoring method, pillar scores, recommendations) read in a browser."
+  - date: 2026-11-16
+    step: note
+    note: Maintainer supplied browser copies of the NAO press release, the NAO report PDF and the Climate Action Authority note. Wording verbatim found ('significant strides' in the press release; 6.92 and 'strong progress' on PDF p. 14). ClimateScanner Handbook (May 2024) downloaded and its scoring rules read (p. 11).
+  - date: 2026-11-16
+    step: note
+    note: All 18 component scores, the three axis scores and 6.92 recomputed from the Appendix item ratings (tools/cc-158-report/calc.py); outcomes set beside them from the EEA and Eurostat data saved for CC-094 and CC-025. Report text searched for effort-sharing, ESR, target and 2030.
+  - date: 2026-11-16
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (high confidence); no right of reply needed.

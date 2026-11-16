@@ -4201,21 +4201,21 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-065/claim.yml",
       "similar": [
         {
-          "id": "CC-084",
-          "score": 0.28,
-          "terms": [
-            "adpd",
-            "sandra",
-            "gauci"
-          ]
-        },
-        {
           "id": "CC-116",
           "score": 0.28,
           "terms": [
             "unesco",
             "buffer",
             "zone"
+          ]
+        },
+        {
+          "id": "CC-084",
+          "score": 0.27,
+          "terms": [
+            "adpd",
+            "sandra",
+            "gauci"
           ]
         }
       ]
@@ -5038,7 +5038,7 @@
       "similar": [
         {
           "id": "CC-131",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "construction",
             "waste"
@@ -5125,7 +5125,7 @@
       "similar": [
         {
           "id": "CC-065",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "adpd",
             "sandra",
@@ -5882,7 +5882,7 @@
       "similar": [
         {
           "id": "CC-162",
-          "score": 0.83,
+          "score": 0.82,
           "terms": [
             "projected",
             "emit",
@@ -8308,7 +8308,7 @@
       "similar": [
         {
           "id": "CC-128",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "plan",
             "flood",
@@ -8410,7 +8410,7 @@
       "similar": [
         {
           "id": "CC-127",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "plan",
             "flood",
@@ -8428,7 +8428,7 @@
         },
         {
           "id": "CC-142",
-          "score": 0.27,
+          "score": 0.25,
           "terms": [
             "directive",
             "document",
@@ -8535,7 +8535,18 @@
       "quote": "Nine NGOs have formally submitted their strong objections to the Planning Authority (PA) against a proposed planning policy that will spell the end of ODZ protection, threaten hundreds of farmers, and potentially cause great harm to nature.",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-130/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-130/claim.yml",
+      "similar": [
+        {
+          "id": "CC-160",
+          "score": 0.25,
+          "terms": [
+            "policy",
+            "ngos",
+            "moviment"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-131",
@@ -8598,7 +8609,7 @@
       "similar": [
         {
           "id": "CC-082",
-          "score": 0.33,
+          "score": 0.34,
           "terms": [
             "construction",
             "waste"
@@ -9173,7 +9184,7 @@
       "similar": [
         {
           "id": "CC-141",
-          "score": 0.5,
+          "score": 0.49,
           "terms": [
             "pre",
             "budget",
@@ -9214,7 +9225,7 @@
       "similar": [
         {
           "id": "CC-140",
-          "score": 0.5,
+          "score": 0.49,
           "terms": [
             "pre",
             "budget",
@@ -9255,7 +9266,7 @@
       "similar": [
         {
           "id": "CC-128",
-          "score": 0.27,
+          "score": 0.25,
           "terms": [
             "directive",
             "document",
@@ -9504,7 +9515,7 @@
       "similar": [
         {
           "id": "CC-147",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "intensity",
             "aviation",
@@ -9513,7 +9524,7 @@
         },
         {
           "id": "CC-148",
-          "score": 0.26,
+          "score": 0.25,
           "terms": [
             "quarter",
             "greenhouse",
@@ -9601,7 +9612,7 @@
         },
         {
           "id": "CC-146",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "intensity",
             "aviation",
@@ -9698,7 +9709,7 @@
         },
         {
           "id": "CC-146",
-          "score": 0.26,
+          "score": 0.25,
           "terms": [
             "quarter",
             "greenhouse",
@@ -10163,10 +10174,11 @@
       "id": "CC-158",
       "title": "National Audit Office: ClimateScanner review shows 'significant strides' in Malta's climate action",
       "category": "Governance & Promises",
-      "claim": "National Audit Office (7 Oct 2025): its review of Malta's climate action using the ClimateScanner framework 'shows that Malta has made significant strides in climate action', and the Climate Action Authority welcomed its note of 'strong progress'.",
-      "counter": "Context, not tested: the same summary says the review also found gaps in data quality, use of performance metrics and the Climate Action Authority's resources; an overall ClimateScanner score of 6.92 out of 10 appears in a search summary (unconfirmed). A June 2025 NAO performance audit found that Government had not yet quantified the cost of adapting to climate change.",
-      "status": "In progress",
-      "verdict": null,
+      "claim": "National Audit Office (press release, 7 Oct 2025): 'This Review, which presents the overall situation as at September 2025, shows that Malta has made significant strides in climate action.' The report (Oct 2025, PDF p. 14): 'Malta registered an overall ClimateScanner score of 6.92 out of 10, which in accordance with this assessment methodology is considered as representing strong progress vis-à-vis climate action.' The Climate Action Authority (7 Oct 2025) welcomed the report, noting feedback that 'highlights Malta's notable and significant progress in tackling climate change'.",
+      "counter": "The scores are reproduced exactly: all 18 rated components follow from the Appendix item ratings (18 advanced, 26 intermediate, 14 early, none at no progress; F3 not applicable), the axes are their means (6.55, 8.00, 6.20) and 6.92 is the mean of the axes; 12 of 18 components reach 6.66. The ClimateScanner Handbook (May 2024, p. 11) marks components at 6.66 or more as strengths, defines no overall score or 'strong progress' label, scores an 'intermediate' item (many aspects present, room for improvement) at 6.66, and says the tool assesses whether mechanisms exist, not their effectiveness; the NAO report says the same (PDF p. 14, para 1.4.1), the press release does not. Outcomes, which the tool does not score: Malta's effort-sharing emissions were 41% above 2005 in 2024, over the yearly limit by 220, 257 and 301 kt in 2022-2024, and projected +30% in 2030 with planned measures against a -19% target (EEA; CC-094). Total emissions fell 27% 2005-2024 (EU-27 33.5%) and rose 18% from the 2016 low (Eurostat; CC-025). The NAO report does not mention the effort-sharing gap (text searched).",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [
         "Input-as-outcome"
       ],
@@ -10178,17 +10190,52 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "National Audit Office",
       "bodies": [
         "national-audit-office"
       ],
+      "subclaims": [
+        {
+          "id": "CC-158A",
+          "text": "Malta’s overall ClimateScanner score is 6.92 out of 10 (axes 6.55, 8.00, 6.20)",
+          "finding": "All 18 component scores follow from the appendix item ratings; the axes are their averages, and 6.92 is the average of the axes.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-158B",
+          "text": "6.92 “is considered as representing strong progress” under the methodology",
+          "finding": "The Handbook marks components at 6.66 or more as strengths, but defines no overall score or label. The NAO applies the same mark to the average. 6.66 is the “intermediate” tier.",
+          "rating": "Fair reading",
+          "tone": "green"
+        },
+        {
+          "id": "CC-158C",
+          "text": "The review “shows that Malta has made significant strides in climate action”",
+          "finding": "True of policies, institutions and plans, which is what the tool records. The report says it does not measure results, but the press release does not. Effort-sharing emissions are 41% above 2005.",
+          "rating": "True of policies",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-158D",
+          "text": "The feedback “highlights Malta’s notable and significant progress in tackling climate change”",
+          "finding": "The review rated whether policies exist. “Tackling climate change” suggests results it did not assess. The CAA quotes the NAO’s “strong progress” sentence correctly.",
+          "rating": "Goes further",
+          "tone": "orange"
+        }
+      ],
       "date": "2025-10-07",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "This Review, which presents the overall situation as at September 2025, shows that Malta has made significant strides in climate action.",
+      "version": "1.0",
+      "last_reviewed": "2026-11-16",
+      "outputs": {
+        "report": "claim-files/CC-158/report.pdf",
+        "flyer_pdf": "claim-files/CC-158/flyer.pdf",
+        "flyer_png": "claim-files/CC-158/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-158/claim.yml"
     },
     {
@@ -10289,7 +10336,18 @@
       "quote": "Permitting lighting until midnight at Dwejra is utterly incompatible with the Gozo and Comino Local Plan, whose policy on Dark Sky Heritage Areas (GZ-DARK-1) states unambiguously that there should be no lighting in this site.",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-160/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-160/claim.yml",
+      "similar": [
+        {
+          "id": "CC-130",
+          "score": 0.25,
+          "terms": [
+            "policy",
+            "ngos",
+            "moviment"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-161",
@@ -10427,7 +10485,7 @@
       "similar": [
         {
           "id": "CC-094",
-          "score": 0.83,
+          "score": 0.82,
           "terms": [
             "projected",
             "emit",
@@ -14808,6 +14866,13 @@
       "theme": "T27",
       "link_type": "Shared target",
       "strength": "Weak (indicative)"
+    },
+    {
+      "from": "CC-094",
+      "to": "CC-158",
+      "theme": "T7",
+      "link_type": "Shared target",
+      "strength": "Weak (indicative)"
     }
   ],
   "themes": [
@@ -14965,7 +15030,8 @@
         "CC-094",
         "CC-109",
         "CC-114",
-        "CC-162"
+        "CC-162",
+        "CC-158"
       ]
     },
     {
@@ -22309,6 +22375,14 @@
           ]
         },
         {
+          "id": "national-audit-office",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T7"
+          ]
+        },
+        {
           "id": "nso",
           "named": 0,
           "pairs": 1,
@@ -23391,6 +23465,14 @@
           "pairs": 2,
           "themes": [
             "T12"
+          ]
+        },
+        {
+          "id": "european-commission",
+          "named": 0,
+          "pairs": 1,
+          "themes": [
+            "T7"
           ]
         },
         {
