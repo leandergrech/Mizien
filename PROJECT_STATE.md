@@ -40,6 +40,14 @@ commits, and that branch goes to `main` as one PR; GitHub then marks each source
   major version) and #166 (actions/setup-python and setup-node v7.0.0 -> v7.1.0). The built site was compared with and
   without #167: every page is byte-identical, only the vendored MapLibre files differ; Explore's map view rendered with
   no console errors on both.
+- **Browser pass (same day):** headless Chromium tried the 25 blocked source URLs of this batch. Read: Mongabay
+  (CC-145 wording: BirdLife's own quoted words), EEA WISE Malta UWWT profile and the Commission's 2020 UWWTD chapter
+  (CC-142), Cap. 552 on legislation.mt (CC-139: art. 100(4) daily fine up to EUR 50/day by regulations; no EUR 50,000
+  cap in the Act). CC-142 and CC-145 Blockers cleared, `primary-source.md` added. Everything else is Cloudflare:
+  a hard IP block ("Sorry, you have been blocked") on era.org.mt, finance.gov.mt, budget.gov.mt, gov.mt,
+  publicservice.gov.mt, nso.gov.mt, nao.gov.mt, climateaction.gov.mt, wbru.gov.mt, parlament.mt; a Turnstile
+  challenge ("Performing security verification", did not clear in 25 s) on maltatoday.com.mt, independent.com.mt and
+  pa.org.mt. No attempt was made to get past either; these need a person. web.archive.org still resets.
 - **Root cause still open:** worker runs without `gh` leave PRs open, and a later run can re-take a claim whose PR it
   cannot see. The 26 Oct note (merge through `gh api` or curl after polling check-runs) still applies; the routine is
   unchanged (`methodology/worker-routine.md` is the maintainer's to edit).
