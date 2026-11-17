@@ -1,0 +1,15 @@
+check,value,unit,source,note
+"Energy intensity of GDP (published, GAE/GDP, CLV10), 2019-2024",-27.1,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",Survey: -27.1%
+"EU-27 energy intensity (published), 2019-2024",-15.9,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",
+Malta intensity level 2024 vs EU-27 (published),1.95,ratio,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",bunkers inflate Malta's level
+"International maritime bunkers share of GAE, 2024",68.5,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",
+"Real GDP, 2019-2024 (current vintage)",28.4,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",
+"Gross available energy, 2019-2024",-3.1,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",
+"International maritime bunkers, 2019-2024",-7.2,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",
+"Gross inland consumption (excludes bunkers), 2019-2024",7.0,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",
+"Final energy consumption, 2019-2024",10.4,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",
+"GAE per GDP (current GDP vintage), 2019-2024",-24.5,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",
+"Gross inland consumption per GDP, 2019-2024",-16.6,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",intensity without bunkers
+"Final energy per GDP, 2019-2024",-14.0,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",
+"Population, 2019-2024",12.9,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",
+"Final energy per person, 2019-2024",-2.2,%,"Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind (data/cc-167/eurostat_malta_energy_gdp.csv)",
