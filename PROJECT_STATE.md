@@ -16,6 +16,13 @@ grouped by topic with links between them. The repository is public and doubles a
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
 
+## Laptop session 2026-11-17: CC-141 checked
+
+- **CC-141 (Pre-Budget Document 2027, lowest fertility rate in the EU27): Supported, high.** Sentence confirmed in the
+  Minister's foreword (printed p. 6, PDF p. 8) from the maintainer's copy. Eurostat demo_find: Malta 1.01 in 2024, lowest
+  of 27 (Spain 1.10), and lowest every year 2017-2024. The API flags the EU-27 aggregate for 2022-2024 as not for
+  publication; 1.34 (2024) is from Statistics Explained. No right of reply needed.
+
 ## Maintainer session 2026-11-16: open PRs consolidated
 
 The maintainer asked this session to address every open PR. All fourteen had a green "Site" check but were stranded (no
