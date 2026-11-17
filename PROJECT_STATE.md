@@ -16,6 +16,14 @@ grouped by topic with links between them. The repository is public and doubles a
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
 
+## Laptop session 2026-11-17: CC-167 checked
+
+- **CC-167 (Economic Survey, energy intensity 'declined considerably'): Largely supported, moderate.** The Survey's
+  -27.1% matches Eurostat's nrg_ind_ei exactly, but that indicator is gross available energy over GDP, and 69% of Malta's
+  GAE is international marine bunkers. Without bunkers intensity fell 14-17% (EU -16%); GDP +28%, final energy +10%.
+- **Note for CC-146/147 and any intensity claim:** Malta's Eurostat energy-intensity level is about twice the EU's because
+  of bunkers; always recompute without them.
+
 ## Maintainer session 2026-11-16: open PRs consolidated
 
 The maintainer asked this session to address every open PR. All fourteen had a green "Site" check but were stranded (no
