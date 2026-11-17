@@ -2,7 +2,7 @@ id: CC-164
 title: 'Budget 2027: eco-contribution to €8 a night (€10 short lets) to raise about €182 million'
 category: Tourism & Population
 subtopic: Tourism numbers & capacity
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -60,3 +60,7 @@ location:
   lon: 14.50978
   scope: institution
   icon: parliament
+history:
+- date: '2026-11-16'
+  step: started
+  note: "Attempt 1 (16 Nov 2026), blocked on source. Rates (EUR 8 / EUR 10, caps EUR 64 / EUR 80) and the EUR 182 million projection read in Newsbook, TVMnews and Lovin Malta, all in the outlets' own narration; Caruana is quoted verbatim only on tourism growth and pressure on infrastructure. Budget Speech text on finance.gov.mt is 403 and the Wayback copy unreachable. Needed: the speech passage on the eco-contribution. No report or verdict started."

@@ -11,3 +11,6 @@ Eurostat nrg_ind_ei (energy intensity of GDP) and nrg_bal_c / nrg_bal_s (final e
 See `data/sources.csv` (filter on CC-167) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
 
 Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+
+## Attempt 1 (16 Nov 2026): blocked on source
+Primary wording not obtained; no report started. Routes tried are listed in the CC-167 row of data/queue.csv. Leads (not retrieved) are in data/sources.csv.
