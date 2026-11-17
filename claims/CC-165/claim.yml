@@ -2,7 +2,7 @@ id: CC-165
 title: 'Amphora Media: ''Malta Will Charge Tourists €213 Million; Most Will Be Spent On Marketing'''
 category: Tourism & Population
 subtopic: Tourism numbers & capacity
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -49,3 +49,7 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-17
+    step: started
+    note: "Worker B, attempt 1: blocked on source. The headline is verbatim (Amphora Media, 13 Nov 2026) but rating it needs the Budget Estimates 2027, which finance.gov.mt and budget.gov.mt refuse to scripts. Other outlets' summaries mention a Finance Ministry estimate of about EUR 182 million a year for the accommodation eco-contribution (second-hand), so the EUR 213 million total cannot be reconciled without the Estimates. Needed: the Estimates lines for the eco-contribution revenue, the Ministry for Tourism and the Malta Tourism Authority, and the MTA's 2025 marketing share."
