@@ -16,6 +16,14 @@ grouped by topic with links between them. The repository is public and doubles a
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
 
+## Laptop session 2026-11-17: CC-160 still blocked
+
+- **CC-160 (NGOs: Dwejra lighting until midnight incompatible with GZ-DARK-1): no verdict.** The draft regulations
+  confirm a midnight switch-off (reg. 7(2)(b)), and Map 13.8 puts Dwejra inside GZ-DARK-1. The policy wording itself,
+  the crux ("no lighting" or "strongly discouraged"), is not in the maintainer's files (map only) and pa.org.mt shows a
+  security check. **Needs the maintainer:** the GZ-DARK-1 paragraph from the Gozo and Comino Local Plan (2006) policy
+  document, Chapter 13.
+
 ## Maintainer session 2026-11-16: open PRs consolidated
 
 The maintainer asked this session to address every open PR. All fourteen had a green "Site" check but were stranded (no
