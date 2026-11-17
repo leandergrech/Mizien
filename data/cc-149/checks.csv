@@ -1,0 +1,7 @@
+check,value,unit,source,note
+Approved new dwellings 2025 (sum of quarters),12325,dwellings,"NSO Q4 news releases, Table 1 (data/cc-149/nso_new_dwellings_quarterly.csv)","NSO salient point: 12,325"
+Approved new dwellings 2024 (sum of quarters),8716,dwellings,"NSO Q4 news releases, Table 1 (data/cc-149/nso_new_dwellings_quarterly.csv)",
+Change 2024 to 2025,41.4,%,"NSO Q4 news releases, Table 1 (data/cc-149/nso_new_dwellings_quarterly.csv)",MaltaToday: 41%
+Approved new dwellings 2023,8112,dwellings,"NSO Q4 news releases, Table 1 (data/cc-149/nso_new_dwellings_quarterly.csv)",
+Approved new dwellings 2022,9523,dwellings,"NSO Q4 news releases, Table 1 (data/cc-149/nso_new_dwellings_quarterly.csv)",
+Years above 2025 among those on file,"2018, 2019",years,"NSO Q4 news releases, Table 1 (data/cc-149/nso_new_dwellings_quarterly.csv); 2018-2019 second-hand (data/cc-149/annual_second_hand.csv)",2007-2017 and 2020-2021 not on file
