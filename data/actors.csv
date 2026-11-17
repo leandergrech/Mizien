@@ -1,8 +1,8 @@
 Body / actor,Claim IDs,Type,Claims (count)
 European Commission,"CC-005, CC-094, CC-101, CC-109, CC-110, CC-111, CC-117, CC-125, CC-127, CC-128, CC-129, CC-131, CC-132, CC-133, CC-134, CC-142, CC-143, CC-153, CC-154, CC-155, CC-162, CC-163",EU & international,22
 Government of Malta,"CC-006, CC-021, CC-023, CC-024, CC-025, CC-041, CC-043, CC-045, CC-060, CC-061, CC-096",Government & ministers,11
+Ministry for the Environment,"CC-003, CC-004, CC-010, CC-022, CC-027, CC-029, CC-048, CC-051, CC-150, CC-151",Government & ministers,10
 Environment and Resources Authority (ERA),"CC-002, CC-034, CC-036, CC-038, CC-051, CC-052, CC-057, CC-082, CC-152",Regulators & authorities,9
-Ministry for the Environment,"CC-003, CC-004, CC-010, CC-022, CC-027, CC-029, CC-048, CC-051, CC-151",Government & ministers,9
 Partit Nazzjonalista (Nationalist Party),"CC-012, CC-042, CC-092, CC-093, CC-104, CC-107, CC-114, CC-126, CC-168",Political parties,9
 Office of the Prime Minister,"CC-012, CC-016, CC-017, CC-027, CC-055, CC-064, CC-068, CC-138",Government & ministers,8
 Ministry for Finance,"CC-017, CC-095, CC-140, CC-141, CC-164, CC-167",Government & ministers,6
@@ -18,7 +18,6 @@ International Monetary Fund,"CC-112, CC-135, CC-159",EU & international,3
 Ministry for Gozo,"CC-031, CC-032, CC-078",Government & ministers,3
 Ministry for Tourism,"CC-083, CC-086, CC-087",Government & ministers,3
 Newsbook,"CC-007, CC-026, CC-059",Media,3
-Partit Laburista (Labour Party),"CC-010, CC-011, CC-150",Political parties,3
 Transport Malta,"CC-070, CC-074, CC-077",Regulators & authorities,3
 WasteServ,"CC-004, CC-079, CC-080",Public agencies & companies,3
 Business Now,"CC-156, CC-157",Media,2
@@ -40,6 +39,7 @@ Moviment Graffitti,"CC-098, CC-130",NGOs & unions,2
 National Statistics Office (NSO),"CC-076, CC-088",Research & statistics,2
 Parliamentary Ombudsman,"CC-102, CC-161","Courts, tribunals & oversight",2
 Parliamentary Secretariat for Public Works,"CC-032, CC-044",Government & ministers,2
+Partit Laburista (Labour Party),"CC-010, CC-011",Political parties,2
 Project Green,"CC-010, CC-054",Public agencies & companies,2
 PwC Malta,"CC-089, CC-099",Business & industry,2
 "The Malta Chamber of Commerce, Enterprise and Industry","CC-115, CC-137",Business & industry,2

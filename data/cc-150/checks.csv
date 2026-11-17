@@ -1,0 +1,9 @@
+check,value,unit,source,note
+Claim: diverted from landfill over five years,412000,tonnes,"Minister Dalli, PR260072EN, 19 Jan 2026",412 million kg
+"Separately collected paper, metals, glass, mixed packaging and organic, 2020-2024",424403,tonnes,"NSO, Municipal Waste: 2024 (NR 225/2025), Tables 1, 2 and 4 (data/cc-150/nso_municipal_waste.csv)","103% of the claim; gross collection, before rejects"
+"Municipal waste recycled, recovered or reused, 2020-2024",270202,tonnes,"NSO, Municipal Waste: 2024 (NR 225/2025), Tables 1, 2 and 4 (data/cc-150/nso_municipal_waste.csv)",66% of the claim
+"Municipal waste generated minus landfilled, 2020-2024",345669,tonnes,"NSO, Municipal Waste: 2024 (NR 225/2025), Tables 1, 2 and 4 (data/cc-150/nso_municipal_waste.csv)",84% of the claim; includes treatment losses
+"Landfill below the 2019 level, summed 2020-2024",286186,tonnes,"NSO, Municipal Waste: 2024 (NR 225/2025), Tables 1, 2 and 4 (data/cc-150/nso_municipal_waste.csv)",69% of the claim; 2019 is the peak year
+Municipal waste landfilled 2024,255107,tonnes,"NSO, Municipal Waste: 2024 (NR 225/2025), Tables 1, 2 and 4 (data/cc-150/nso_municipal_waste.csv)",share of generated 72%
+Municipal waste landfilled 2020,273729,tonnes,"NSO, Municipal Waste: 2024 (NR 225/2025), Tables 1, 2 and 4 (data/cc-150/nso_municipal_waste.csv)",
+Organic waste collected 2024,29522,tonnes,"NSO, Municipal Waste: 2024 (NR 225/2025), Tables 1, 2 and 4 (data/cc-150/nso_municipal_waste.csv)",Minister: 30 million kg in 2025
