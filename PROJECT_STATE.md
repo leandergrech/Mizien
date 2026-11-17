@@ -16,6 +16,14 @@ grouped by topic with links between them. The repository is public and doubles a
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
 
+## Laptop session 2026-11-17: CC-164 checked
+
+- **CC-164 (Budget 2027 eco-contribution, EUR 182 million): Largely supported, moderate.** Rates, caps and 'madwar EUR 182
+  miljun' verbatim in the Maltese speech (pp. 26-27). NSO 2025 nights at the new rates give EUR 176-193 million before caps.
+  The 'EUR 80 million' in a MaltaToday search summary is the work-permit fee yield. Helps CC-165: the Estimates figure
+  (EUR 213m vs EUR 21m) fits EUR 182m as extra accommodation revenue plus cruise and Comino fees; the Estimates themselves
+  are still unread.
+
 ## Maintainer session 2026-11-16: open PRs consolidated
 
 The maintainer asked this session to address every open PR. All fourteen had a green "Site" check but were stranded (no

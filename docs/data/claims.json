@@ -818,21 +818,12 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-011/claim.yml",
       "similar": [
         {
-          "id": "CC-092",
-          "score": 0.28,
-          "terms": [
-            "zero",
-            "net",
-            "space"
-          ]
-        },
-        {
-          "id": "CC-054",
+          "id": "CC-164",
           "score": 0.26,
           "terms": [
-            "green",
-            "space",
-            "open"
+            "minn",
+            "kull",
+            "persuna"
           ]
         }
       ]
@@ -1357,7 +1348,7 @@
       "similar": [
         {
           "id": "CC-054",
-          "score": 0.41,
+          "score": 0.4,
           "terms": [
             "square",
             "metres",
@@ -1863,7 +1854,7 @@
       "similar": [
         {
           "id": "CC-148",
-          "score": 0.55,
+          "score": 0.59,
           "terms": [
             "greenhouse",
             "largest",
@@ -1872,7 +1863,7 @@
         },
         {
           "id": "CC-114",
-          "score": 0.26,
+          "score": 0.28,
           "terms": [
             "emissions",
             "greenhouse",
@@ -3325,7 +3316,7 @@
       "similar": [
         {
           "id": "CC-050",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "hunting",
             "birdlife",
@@ -3394,7 +3385,7 @@
       "similar": [
         {
           "id": "CC-049",
-          "score": 0.28,
+          "score": 0.27,
           "terms": [
             "hunting",
             "birdlife",
@@ -3588,7 +3579,7 @@
       "similar": [
         {
           "id": "CC-019",
-          "score": 0.41,
+          "score": 0.4,
           "terms": [
             "square",
             "metres",
@@ -3602,15 +3593,6 @@
             "square",
             "metres",
             "space"
-          ]
-        },
-        {
-          "id": "CC-011",
-          "score": 0.26,
-          "terms": [
-            "green",
-            "space",
-            "open"
           ]
         }
       ]
@@ -4201,21 +4183,21 @@
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-065/claim.yml",
       "similar": [
         {
-          "id": "CC-084",
-          "score": 0.28,
-          "terms": [
-            "adpd",
-            "sandra",
-            "gauci"
-          ]
-        },
-        {
           "id": "CC-116",
-          "score": 0.28,
+          "score": 0.26,
           "terms": [
             "unesco",
             "buffer",
             "zone"
+          ]
+        },
+        {
+          "id": "CC-084",
+          "score": 0.25,
+          "terms": [
+            "adpd",
+            "sandra",
+            "gauci"
           ]
         }
       ]
@@ -5125,7 +5107,7 @@
       "similar": [
         {
           "id": "CC-065",
-          "score": 0.28,
+          "score": 0.25,
           "terms": [
             "adpd",
             "sandra",
@@ -5216,7 +5198,7 @@
       "similar": [
         {
           "id": "CC-122",
-          "score": 0.48,
+          "score": 0.49,
           "terms": [
             "beds",
             "occupancy",
@@ -5351,7 +5333,17 @@
       "quote": "",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-087/claim.yml"
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-087/claim.yml",
+      "similar": [
+        {
+          "id": "CC-164",
+          "score": 0.25,
+          "terms": [
+            "short",
+            "lets"
+          ]
+        }
+      ]
     },
     {
       "id": "CC-088",
@@ -5764,15 +5756,6 @@
             "afforestation",
             "zero",
             "net"
-          ]
-        },
-        {
-          "id": "CC-011",
-          "score": 0.28,
-          "terms": [
-            "zero",
-            "net",
-            "space"
           ]
         }
       ]
@@ -7133,7 +7116,7 @@
       "similar": [
         {
           "id": "CC-135",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "population",
             "selected",
@@ -7307,7 +7290,7 @@
       "similar": [
         {
           "id": "CC-148",
-          "score": 0.36,
+          "score": 0.37,
           "terms": [
             "greenhouse",
             "emissions",
@@ -7325,7 +7308,7 @@
         },
         {
           "id": "CC-026",
-          "score": 0.26,
+          "score": 0.28,
           "terms": [
             "emissions",
             "greenhouse",
@@ -7464,7 +7447,7 @@
       "similar": [
         {
           "id": "CC-065",
-          "score": 0.28,
+          "score": 0.26,
           "terms": [
             "unesco",
             "buffer",
@@ -7902,7 +7885,7 @@
       "similar": [
         {
           "id": "CC-085",
-          "score": 0.48,
+          "score": 0.49,
           "terms": [
             "beds",
             "occupancy",
@@ -8904,7 +8887,7 @@
       "similar": [
         {
           "id": "CC-112",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "population",
             "selected",
@@ -9173,7 +9156,7 @@
       "similar": [
         {
           "id": "CC-141",
-          "score": 0.5,
+          "score": 0.49,
           "terms": [
             "pre",
             "budget",
@@ -9214,7 +9197,7 @@
       "similar": [
         {
           "id": "CC-140",
-          "score": 0.5,
+          "score": 0.49,
           "terms": [
             "pre",
             "budget",
@@ -9680,7 +9663,7 @@
       "similar": [
         {
           "id": "CC-026",
-          "score": 0.55,
+          "score": 0.59,
           "terms": [
             "greenhouse",
             "largest",
@@ -9689,7 +9672,7 @@
         },
         {
           "id": "CC-114",
-          "score": 0.36,
+          "score": 0.37,
           "terms": [
             "greenhouse",
             "emissions",
@@ -10481,10 +10464,11 @@
       "id": "CC-164",
       "title": "Budget 2027: eco-contribution to €8 a night (€10 short lets) to raise about €182 million",
       "category": "Tourism & Population",
-      "claim": "Finance Minister Clyde Caruana (Budget 2027 speech, 26 Oct 2026), as reported by Newsbook and The Malta Independent: from 1 January 2027 the environmental contribution on tourist stays rises from €1.50 to €8 per person per night in collective accommodation (capped at €64 per person) and to €10 in short lets (capped at €80), and the revised rates are projected to raise about €182 million. Other outlets report different revenue figures (about €80 million, MaltaToday; €213 million, Amphora Media).",
-      "counter": "Outlets disagree on the yield: about €182 million (Newsbook, Malta Independent), about €80 million (MaltaToday, per a search summary) and €213 million (Amphora Media, from the Budget Estimates; see CC-165). The new rates were a budget proposal at the time of reporting; a secondary source says no law had yet adopted them and that €1.50 was in force. Caruana tied the rise to pressure on infrastructure (Newsbook).",
-      "status": "In progress",
-      "verdict": null,
+      "claim": "Clyde Caruana, Minister for Finance, Budget Speech 2027 (26 Oct 2026, in Maltese, pp. 26-27): 'Mill-1 ta' Jannar li ġej, l-eko-kontribuzzjoni li trid titħallas minn dawk li jirrisjedu f'akkomodazzjoni kollettiva se tkun dik ta' €8 kull lejl sa massimu ta' €64 kull persuna. Ir-rata tal-eko-kontribuzzjoni għal dawk li jirrisjedu f'appartamenti hekk magħrufa bħala short lets se tkun dik ta' €10 kull lejl sa massimu ta' €80 kull persuna. Id-dħul minn dawn ir-reviżjonijiet mistenni jkun madwar €182 miljun.' (Our translation: from 1 January the eco-contribution in collective accommodation will be €8 a night up to €64 a person, and in short lets €10 a night up to €80; the revenue from these revisions is expected to be around €182 million.)",
+      "counter": "A forecast, tested for plausibility. NSO Inbound Tourism December 2025: 13.49 million nights in collective and 8.96 million in other rented accommodation in 2025; at the new rates that is EUR 198 million (all ages, no caps), about EUR 176 million for adults (assumed under-18 share 11%) and about EUR 193 million scaled to the 28 million nights the speech expects in 2026; the 8-night caps (38% of tourists stay 7+ nights) and the English-school exemption lower these. The speech does not say whether EUR 182 million is total or additional; Amphora Media reports the Estimates at EUR 213 million in 2027 against EUR 21 million in 2026 (second-hand), which fits EUR 182 million as extra accommodation revenue plus the new cruise and Comino fees. The 'about EUR 80 million' attributed to MaltaToday is the speech's work-permit fee yield; MaltaToday's own blog says EUR 214 million.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
       "tags": [],
       "subtopic": "Tourism numbers & capacity",
       "location": {
@@ -10494,35 +10478,110 @@
         "scope": "institution",
         "icon": "parliament"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Clyde Caruana, Minister for Finance (Budget Speech 2027)",
       "bodies": [
         "clyde-caruana"
       ],
+      "subclaims": [
+        {
+          "id": "CC-164A",
+          "text": "€8 a night (cap €64) in collective accommodation and €10 (cap €80) in short lets from 1 Jan 2027",
+          "finding": "In the speech, p. 27, exactly.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-164B",
+          "text": "Revenue from the revisions “around €182 million”",
+          "finding": "Our estimate from NSO nights is €176–193 million before caps. The reported Estimates fit it as extra revenue.",
+          "rating": "Plausible",
+          "tone": "green"
+        },
+        {
+          "id": "CC-164C",
+          "text": "About €80 million (as summarised for MaltaToday)",
+          "finding": "In the speech €80 million is the work-permit fee yield; MaltaToday’s own blog says €214 million.",
+          "rating": "Mix-up",
+          "tone": "amber"
+        }
+      ],
+      "pledge": {
+        "status": "Not yet due",
+        "slug": "pledge-not-yet-due",
+        "colour": "#475cad",
+        "ink": "#ffffff",
+        "as_of": "17 November 2026",
+        "as_of_iso": "2026-11-17",
+        "made_on": "26 October 2026",
+        "made_mid": "2026-10-26",
+        "deadline_mid": "2027-01-01",
+        "deadline": "1 January 2027",
+        "term_end": null,
+        "target": "Eco-contribution of EUR 8 a night (cap EUR 64) in collective accommodation and EUR 10 (cap EUR 80) in short lets from 1 January 2027; revenue around EUR 182 million",
+        "vehicle": "Budget Speech 2027, pp. 26-27",
+        "occasion": "Budget Speech 2027",
+        "note": "Not yet in force when checked; no legal notice read. Revisit after 1 January 2027 and when 2027 receipts are published.",
+        "made_by": [
+          {
+            "id": "clyde-caruana",
+            "name": "Clyde Caruana",
+            "kind": "person",
+            "role": "Minister for Finance",
+            "path": "/bodies/clyde-caruana/"
+          }
+        ],
+        "made_by_ids": [
+          "clyde-caruana"
+        ],
+        "pure": false,
+        "overlaps": [],
+        "kind": "government",
+        "kind_label": "Government commitment",
+        "cycle": "2026",
+        "cycle_label": "2026–",
+        "follows": [],
+        "follows_search": null,
+        "drift": null,
+        "source_of_commitment": null
+      },
       "date": "2026-10-26",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "Id-dħul minn dawn ir-reviżjonijiet mistenni jkun madwar €182 miljun.",
+      "version": "1.0",
+      "last_reviewed": "2026-11-17",
+      "outputs": {
+        "report": "claim-files/CC-164/report.pdf",
+        "flyer_pdf": "claim-files/CC-164/flyer.pdf",
+        "flyer_png": "claim-files/CC-164/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-164/claim.yml",
       "similar": [
         {
-          "id": "CC-165",
-          "score": 0.35,
+          "id": "CC-011",
+          "score": 0.26,
           "terms": [
-            "raise",
-            "tourists",
-            "million"
+            "minn",
+            "kull",
+            "persuna"
           ]
         },
         {
           "id": "CC-166",
-          "score": 0.31,
+          "score": 0.26,
           "terms": [
-            "contribution",
             "eco",
-            "person"
+            "contribution",
+            "night"
+          ]
+        },
+        {
+          "id": "CC-087",
+          "score": 0.25,
+          "terms": [
+            "short",
+            "lets"
           ]
         }
       ]
@@ -10555,18 +10614,7 @@
       "quote": "Malta Will Charge Tourists €213 Million; Most Will Be Spent On Marketing Malta To More Tourists",
       "version": null,
       "outputs": {},
-      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-165/claim.yml",
-      "similar": [
-        {
-          "id": "CC-164",
-          "score": 0.35,
-          "terms": [
-            "raise",
-            "tourists",
-            "million"
-          ]
-        }
-      ]
+      "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-165/claim.yml"
     },
     {
       "id": "CC-166",
@@ -10600,11 +10648,11 @@
       "similar": [
         {
           "id": "CC-164",
-          "score": 0.31,
+          "score": 0.26,
           "terms": [
-            "contribution",
             "eco",
-            "person"
+            "contribution",
+            "night"
           ]
         }
       ]
@@ -23606,6 +23654,13 @@
       "b": "CC-108",
       "why": [
         "same subtopic (Water supply & groundwater)",
+        "share a theme"
+      ]
+    },
+    {
+      "a": "CC-086",
+      "b": "CC-164",
+      "why": [
         "share a theme"
       ]
     },
