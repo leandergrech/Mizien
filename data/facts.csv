@@ -2973,6 +2973,15 @@ CC-148,CC-148:10,Group: B,,,,,Source: current vintage; Quantity: Member States u
 CC-148,CC-148:11,Group: C,,,,,"Source: current vintage; Quantity: Malta annual total change 2024 / 2025; Value: 29.15% / 1.0%; Note: sum of four quarters, calc.py"
 CC-148,CC-148:12,Group: C,,,,,"Source: current vintage; Quantity: EU27 annual total change 2024 / 2025; Value: -1.07% / 0.96%; Note: sum of four quarters, calc.py"
 CC-148,CC-148:13,Group: C,,,,,Source: current vintage; Quantity: Malta Q1 2026 vs Q1 2025; Value: 4.21%; Note: flag i
+CC-152,CC-152:2,2030 NOx ceiling from 2005 base and 79% commitment,1.984,kt,"ERA draft NAPCP first update (June 2026), Tables 1 and 4; Directive 2016/2284 Annex II",ERA table: 1.98,
+CC-152,CC-152:3,2030 With Measures projection divided by ceiling,1.96,ratio,"ERA draft NAPCP first update (June 2026), Tables 1 and 4",ERA: 'almost double',
+CC-152,CC-152:4,Cut still needed from 2023 to reach the 2030 ceiling,53.1,%,"ERA draft NAPCP first update (June 2026), Tables 1 and 4",,
+CC-152,CC-152:5,2023 NOx below 2005 (ERA),55.3,%,"ERA draft NAPCP first update (June 2026), Tables 1 and 4",ERA: 55.2%,
+CC-152,CC-152:6,2030 ceiling on Eurostat's 2005 base,2.02,kt,Eurostat env_air_emis (updated 7 Sep 2026),later inventory,
+CC-152,CC-152:7,NOx 2024 (Eurostat),4.43,kt,Eurostat env_air_emis (updated 7 Sep 2026),,
+CC-152,CC-152:8,Range of NOx 2017-2024 (Eurostat),4.12-4.59,kt,Eurostat env_air_emis (updated 7 Sep 2026),flat since 2017,
+CC-152,CC-152:9,Road transport share 2023 (Eurostat 1A3b1-4),41.4,%,Eurostat env_air_emis (updated 7 Sep 2026),ERA: 42.6%,
+CC-152,CC-152:10,National navigation share 2023 (Eurostat 1A3dii),15.3,%,Eurostat env_air_emis (updated 7 Sep 2026),ERA: 15.5%,
 CC-153,CC-153:2,Member States sent a letter of formal notice,19,count,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",Malta + 18 others,
 CC-153,CC-153:3,Malta's case number,INFR(2026)2027,id,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",,
 CC-153,CC-153:4,Months to respond (as stated),2,months,"Commission Representation in Malta, 12 Mar 2026 (read 3 Nov 2026)",,
