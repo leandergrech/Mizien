@@ -16,6 +16,12 @@ grouped by topic with links between them. The repository is public and doubles a
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
 
+## Laptop session 2026-11-17: CC-166 still blocked
+
+- **CC-166 (MHRA, EUR 8 eco-contribution 'too sharp'): no report.** The maintainer's MaltaToday copy quotes the MHRA only
+  as 'too sharp' (a judgement); the European comparison, the checkable part, is the outlets' paraphrase. **Needs the
+  maintainer:** the MHRA's own Budget 2027 reaction (press release, email to media or social post), about 26 Oct 2026.
+
 ## Maintainer session 2026-11-16: open PRs consolidated
 
 The maintainer asked this session to address every open PR. All fourteen had a green "Site" check but were stranded (no
