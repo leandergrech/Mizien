@@ -1,0 +1,13 @@
+item,value,unit,source
+tourists_total_2025,4022309.9,tourists,NSO NR 020/2026 Table 1
+nights_total_2025,25438422.6,nights,NSO NR 020/2026 Table 2
+nights_collective_2025,13493899.0,nights,NSO NR 020/2026 Table 2
+tourists_collective_2025,2441757.1,tourists,NSO NR 020/2026 Table 2
+nights_other_rented_2025,8957135.5,nights,NSO NR 020/2026 Table 2
+tourists_other_rented_2025,1251229.4,tourists,NSO NR 020/2026 Table 2
+nights_non_rented_2025,2987388.1,nights,NSO NR 020/2026 Table 2
+tourists_age_0_24_2025,888460.3,tourists,NSO NR 020/2026 Table 1
+tourists_stay_7plus_2025,1526050.5,tourists,NSO NR 020/2026 Table 1
+average_stay_2025,6.3,nights,NSO NR 020/2026 Table 1
+nights_2026_speech,28000000,nights,"Budget Speech 2027, p. 26 ('mat-28 miljun lejl')"
+tourists_2026_speech,4500000,tourists,"Budget Speech 2027, p. 26 ('qbiżna l-4.5 miljun turist')"
