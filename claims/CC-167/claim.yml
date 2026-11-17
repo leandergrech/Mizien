@@ -2,7 +2,7 @@ id: CC-167
 title: 'Ministry for Finance Economic Survey 2026: energy intensity ''fell considerably'' between 2019 and 2024'
 category: Climate & Energy
 subtopic: Emissions & targets
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -47,3 +47,7 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+history:
+- date: '2026-11-16'
+  step: started
+  note: 'Attempt 1 (16 Nov 2026), blocked on source. The Economic Survey 2026 PDF (finance.gov.mt) is 403 and the Wayback copy unreachable; the energy-intensity sentence is known only from a search summary (second-hand). Needed: the sentence, table and definition of energy intensity from the PDF. No report or verdict started.'

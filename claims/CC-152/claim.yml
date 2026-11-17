@@ -2,7 +2,7 @@ id: CC-152
 title: 'ERA: Malta at significant risk of missing its 2030 nitrogen-oxide target'
 category: Air
 subtopic: Air quality & health
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -53,3 +53,7 @@ location:
   lon: 14.50909
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-02
+    step: started
+    note: "Worker C, attempt 1: blocked on source. ERA's draft revised NAPCP (consultation 5 Jun-17 Jul 2026) is on era.org.mt and gov.mt (both 403, no Wayback snapshot). Italpress/MNA (17 Jul 2026) reports the claim in the agency's own wording with no ERA speaker quoted. Needed: the programme text (NOx projection 3.88 kt vs 1.98 kt ceiling, 'significant risk' wording)."
