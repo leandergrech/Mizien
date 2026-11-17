@@ -16,6 +16,20 @@ grouped by topic with links between them. The repository is public and doubles a
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
 
+## Laptop session 2026-11-17: CC-138 checked
+
+- **CC-138 (OPM, White Rocks national park): Not substantiated, moderate; pledge label Not yet due.** The OPM's own
+  wording was found on departmentofinformation.gov.mt (PR261268, 29 Jul 2026, Maltese) in the built-in browser; the
+  site is Cloudflare 403 to scripts. L.N. 209 of 2026 has five regulations, none restricting development, and keeps
+  existing permits (reg. 4); no manager is named. Compared with Ċirkewwa (L.N. 51 of 2026) and Majjistral (S.L. 549.48,
+  549.83) in `data/cc-138/park_instruments.csv`. L.N. 210-309 of 2026 searched in full: none concerns White Rocks.
+  Manifesto pledges MP-PL-2026-14-1 and 14-12 linked to CC-138 with verbatim wording.
+- **Needs a human:** archive PR261268 by hand; read the site's zoning on pa.org.mt (security check), which could move
+  the verdict; decide when to send the right of reply to the OPM (not sent).
+- **Tip for blocked government statements:** press releases are at
+  `departmentofinformation.gov.mt/press-release/<year>/pr<yy><nnnn>`; in the browser, a same-origin fetch loop over a
+  number range finds a release by keyword (about six releases a day in 2026).
+
 ## Maintainer session 2026-11-16: open PRs consolidated
 
 The maintainer asked this session to address every open PR. All fourteen had a green "Site" check but were stranded (no
