@@ -1,0 +1,10 @@
+check,value,unit,source,note
+2030 NOx ceiling from 2005 base and 79% commitment,1.984,kt,"ERA draft NAPCP first update (June 2026), Tables 1 and 4; Directive 2016/2284 Annex II",ERA table: 1.98
+2030 With Measures projection divided by ceiling,1.96,ratio,"ERA draft NAPCP first update (June 2026), Tables 1 and 4",ERA: 'almost double'
+Cut still needed from 2023 to reach the 2030 ceiling,53.1,%,"ERA draft NAPCP first update (June 2026), Tables 1 and 4",
+2023 NOx below 2005 (ERA),55.3,%,"ERA draft NAPCP first update (June 2026), Tables 1 and 4",ERA: 55.2%
+2030 ceiling on Eurostat's 2005 base,2.02,kt,Eurostat env_air_emis (updated 7 Sep 2026),later inventory
+NOx 2024 (Eurostat),4.43,kt,Eurostat env_air_emis (updated 7 Sep 2026),
+Range of NOx 2017-2024 (Eurostat),4.12-4.59,kt,Eurostat env_air_emis (updated 7 Sep 2026),flat since 2017
+Road transport share 2023 (Eurostat 1A3b1-4),41.4,%,Eurostat env_air_emis (updated 7 Sep 2026),ERA: 42.6%
+National navigation share 2023 (Eurostat 1A3dii),15.3,%,Eurostat env_air_emis (updated 7 Sep 2026),ERA: 15.5%

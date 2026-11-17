@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 27 October 2026 (Who said it rebuilt as a tree-and-panel stage with one verdict strip; decisions below; earlier: 10 October 2026: later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
+*Last updated: 16 November 2026 (open PRs consolidated: eleven worker queue records, the CC-159 check and two Dependabot updates, see the section below; earlier: 27 October 2026: Who said it rebuilt as a tree-and-panel stage with one verdict strip; decisions below; earlier: 10 October 2026: later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
 
 ## What the project is
 
@@ -15,6 +15,49 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
+
+## Laptop session 2026-11-17: CC-152 checked
+
+- **CC-152 (ERA, significant risk of missing the 2030 NOx ceiling): Supported, high.** Wording verbatim from the
+  maintainer's copy of the draft NAPCP (PDF p. 14). Ceiling 1.98 kt = 2005 base 9.45 x 0.21 (Directive 2016/2284 Annex II,
+  read on EUR-Lex in a browser); projection 3.88 kt; Eurostat NOx flat at 4.1-4.6 kt since 2017. No right of reply.
+- **Tip:** EUR-Lex returns an empty page to scripts and WebFetch; the built-in browser reads it.
+
+## Maintainer session 2026-11-16: open PRs consolidated
+
+The maintainer asked this session to address every open PR. All fourteen had a green "Site" check but were stranded (no
+`gh` in the worker runs, as on 26 Oct). They were merged, oldest first, into `claude/gifted-noether-jzhko8` with merge
+commits, and that branch goes to `main` as one PR; GitHub then marks each source PR as merged.
+
+- **Queue records (blocked, no report):** #156 CC-139, #157 CC-036 (now Attempts 3: `needs maintainer`), #162 CC-141 and
+  CC-138, #163 CC-142, #165 CC-145, #171 CC-152 and CC-149, #174 CC-150, #182 CC-158, #183 CC-160, #185 CC-164 and
+  CC-167, #187 CC-166. What each needs is in its `data/queue.csv` Blocker.
+- **Completed check:** #177 CC-159 (IMF: density "fifteen times" the EU average), Largely supported (high), no right of
+  reply needed. Reviewed before merging: the sentence is verbatim on PDF p. 8 and Table 1 (p. 32) matches the record
+  (PDF fetched 16 Nov, SHA-256 a71cc037...622e); live Eurostat `demo_r_d3dens` still gives 1,817.4 vs 109.7 for 2024
+  (16.6x); `calc.py` reproduces `checks.csv` exactly; `report_html.py CC-159` ok.
+- **CC-139 was attempted twice** (27 Oct in #156, 6 Nov on `main`): the 6 Nov run did not skip it although #156 was
+  open. Merged as Attempts 2, Last attempt 6 Nov, both history entries kept (the later one as `note`), both route lists
+  in `literature/CC-139/README.md`; sources.csv ref 980 dropped as a duplicate of 1040 (same Shift article).
+- **sources.csv Refs renumbered** (branches had taken the same numbers): CC-142 1018-1020 -> 1078-1080; CC-145
+  1021-1023 -> 1081-1083; CC-152/149 1033-1034 -> 1084-1085; CC-150 1040 -> 1086; CC-159 1055-1057 -> 1087-1089; CC-158
+  1064 -> 1090; CC-160 1064-1066 -> 1091-1093; CC-164 1076-1077 -> 1094-1095; CC-166 1078 -> 1096. No file cited the
+  old numbers.
+- **Dependabot:** #167 (maplibre-gl 6.12.0 -> 6.16.0, @11ty/eleventy 3.1.6 -> 3.1.7, markdown-it 14.3.2 -> 15.0.3, a
+  major version) and #166 (actions/setup-python and setup-node v7.0.0 -> v7.1.0). The built site was compared with and
+  without #167: every page is byte-identical, only the vendored MapLibre files differ; Explore's map view rendered with
+  no console errors on both.
+- **Browser pass (same day):** headless Chromium tried the 25 blocked source URLs of this batch. Read: Mongabay
+  (CC-145 wording: BirdLife's own quoted words), EEA WISE Malta UWWT profile and the Commission's 2020 UWWTD chapter
+  (CC-142), Cap. 552 on legislation.mt (CC-139: art. 100(4) daily fine up to EUR 50/day by regulations; no EUR 50,000
+  cap in the Act). CC-142 and CC-145 Blockers cleared, `primary-source.md` added. Everything else is Cloudflare:
+  a hard IP block ("Sorry, you have been blocked") on era.org.mt, finance.gov.mt, budget.gov.mt, gov.mt,
+  publicservice.gov.mt, nso.gov.mt, nao.gov.mt, climateaction.gov.mt, wbru.gov.mt, parlament.mt; a Turnstile
+  challenge ("Performing security verification", did not clear in 25 s) on maltatoday.com.mt, independent.com.mt and
+  pa.org.mt. No attempt was made to get past either; these need a person. web.archive.org still resets.
+- **Root cause still open:** worker runs without `gh` leave PRs open, and a later run can re-take a claim whose PR it
+  cannot see. The 26 Oct note (merge through `gh api` or curl after polling check-runs) still applies; the routine is
+  unchanged (`methodology/worker-routine.md` is the maintainer's to edit).
 
 ## Who said it: stage, one strip, identity images (27 October 2026)
 
@@ -1531,6 +1574,13 @@ Second intake of the day (the 79-claim bulk intake ran earlier). Six candidates 
 - **CC-127 completed** (Commission SWD(2026) 702: Malta lowest organic share in the EU). Report v1.0 and flyer drafted. **Verdict: Supported (high).** No right of reply needed. Eurostat sdg_02_40/org_cropar: Malta 0.62% (66 ha) in 2022, lowest in every year 2012-2024; EU-27 9.1% (2020, last aggregate).
 - Unverified: the 10 700 ha / 34% denominator is unsourced in the document (surveys give 8 880-9 800 ha; share stays under 1%); Austria/Greece missing from the latest Eurostat release (last values far above Malta); no 2022 EU aggregate; the Publications Office report in the p. 29 footnote was not opened; Commission's own copy of the document not located. Web.archive.org unreachable (connection reset), so the Austrian Parliament PDF needs archiving by hand.
 - **Not taken:** CC-103 (open PR #137), CC-122 (open PR #130), CC-130 (one claim per run). Other B claims carry source: blockers.
+## Worker A, 9 Nov 2026: CC-159 (IMF: Malta's density 'fifteen times greater than the EU average')
+
+Report v1.0 and flyer. **Verdict: Largely supported (high); no right of reply needed.** Eurostat: Malta 1,817 vs EU-27 110 per km2 in 2024 = 16.6 times (15.1 in 2021); 13.9 to 17.2 on other definitions of the average (World Bank land-area basis 13.5 to 16.6). IMF Table 1 population equals Eurostat 1 January for 2022-23 and is about 2% lower for 2024-25 (2.6% for 2026). The strain-on-services clause is a judgement and is not rated.
+- **Unverified:** the IMF gives no year or definition for 'fifteen times'; the report was read for the sentence and Table 1 only.
+- **Archive by hand:** imf.org PDF (403 to scripts) and the Wayback host (connection reset on 9 Nov 2026).
+- **Skipped:** CC-138, CC-141, CC-150 (open queue PRs #162, #174 mention them); CC-157 not started (one claim per run).
+
 ## Worker B, 26 Oct 2026: CC-136 (AFP: Malta the most densely populated country in Europe)
 
 Report v1.0 and flyer. **Verdict: Largely supported (high); no right of reply needed.** Malta 1,805 people per km2 (World Bank 2024): 3.4 times the next EU state but Monaco (18,537) is about ten times denser, so "in Europe" holds for the EU, not literally for Europe; Vatican City not in the datasets, untested. Population +30.9% (2015-2025), approvals 12,325 dwelling units in 2025 (+41%, below the 2018-2019 peaks; PA series is the CC-013 transcription, pa.org.mt 403). AFP original not read (eNCA wire copy). Sources need archiving by hand (Wayback unreachable). Not taken: CC-103 (PR #137), CC-122 (PR #130), CC-127 (PR #144), CC-130 (PR #145); CC-131, CC-133, CC-139 remain eligible for the next B run.
@@ -1655,3 +1705,6 @@ Fewer than 10: web search returned summaries only and most Maltese outlets (Malt
 - **Needs maintainer (`source:` / `needs maintainer` blockers):** unchanged from 8 Nov (015, 023, 027, 028, 033, 038, 041, 043, 044, 046, 048, 049, 052, 054, 056-061, 064, 066-070, 072-074, 077, 078, 080-084, 087, 090, 093, 096-098, 104, 121, 130, 139, 151; details in `data/queue.csv`). New candidates likely to need pasted text: CC-167 (Economic Survey sentence, finance.gov.mt 403), CC-168 (PN statement, Independent 403), CC-164 (Budget speech wording on revenue), CC-165 (Estimates 2027 revenue line).
 
 **CC-162 (worker B, 16 Nov 2026):** Commission CAPR 2026 sentence on Malta. Report v1.0 and flyer; **Supported (high)**, no right of reply needed. 49/61 points reproduce (48.7/61.1); Malta has no 2026 submission in the EEA 2026 projections dataset (unchanged from CC-094); 2025 approximated emissions +37.1% on 2005; 2021-2030 balance -1.96 Mt (-1.42 Mt after Malta's flexibilities). Not done: ranking with the 2026 updates of DE/IE (EEA sheets lack ESR totals); SWD(2026) 331 not obtained. Archive: the Council PDF still needs archiving by hand (Wayback unreachable; archive_sources.py not run). Inputs reused from data/cc-094/.
+
+## Worker B run 2026-10-27: CC-139 blocked on source
+CC-139 (Shift, unpaid planning fines): attempt 1 blocked. The January 2026 parliamentary reply (Ivan Bartolo to the Planning Minister) is on parlament.mt (403) and no readable outlet carries it; the '161 at the cap' figure comes from The Shift's own June 2025 analysis, not that reply; the Development Planning Act daily-fine provision is unread. Needs the PQ number and text read in a browser. Not taken: CC-131 (PR #153 open). Python note: system Pillow is broken in the cloud image; use a venv (`python -m venv v && v/bin/pip install -r scripts/requirements.txt pyyaml pillow reportlab`) before build_site_data.py.
