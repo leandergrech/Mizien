@@ -16,6 +16,14 @@ grouped by topic with links between them. The repository is public and doubles a
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
 
+## Laptop session 2026-11-17: CC-149 checked
+
+- **CC-149 (MaltaToday, 12,325 dwellings approved in 2025): Largely supported, moderate.** NSO Q4 release tables
+  (2022-2025) read in the built-in browser and summed: 12,325 in 2025, 8,716 in 2024 (+41.4%). 2018-2019 higher per press
+  reports (second-hand). ODZ record (226) is Planning Authority data, not read.
+- **Tip:** nso.gov.mt xlsx tables refuse scripts but load in the browser; a small in-page unzip (DecompressionStream
+  'deflate-raw') reads them without saving files. NSO releases before 2022 are not on the current site.
+
 ## Maintainer session 2026-11-16: open PRs consolidated
 
 The maintainer asked this session to address every open PR. All fourteen had a green "Site" check but were stranded (no
