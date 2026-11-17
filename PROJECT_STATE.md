@@ -16,6 +16,14 @@ grouped by topic with links between them. The repository is public and doubles a
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
 
+## Laptop session 2026-11-17: CC-145 checked
+
+- **CC-145 (BirdLife Malta, over 10,000 hunters; 21 injured birds): Largely supported, moderate.** WBRU 2025 report
+  (maintainer copy): 10,091 general licences to hunt birds on land; 636 (6.3%) filed any game report. "Active at any one
+  time" is not measured anywhere; the 21-bird count is BirdLife's own and unpublished. No right of reply needed.
+- **Follow-up for CC-144:** its 10,091 figure (data/cc-144/malta_inputs.csv) was marked second-hand; it is now confirmed
+  from the WBRU report itself (p. 1). Record it as a clarification on CC-144 when next touched.
+
 ## Maintainer session 2026-11-16: open PRs consolidated
 
 The maintainer asked this session to address every open PR. All fourteen had a green "Site" check but were stranded (no
