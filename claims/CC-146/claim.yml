@@ -2,7 +2,7 @@ id: CC-146
 title: 'Central Bank of Malta: rising emissions intensity is a ''statistical illusion'''
 category: Climate & Energy
 subtopic: Emissions & targets
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -63,3 +63,6 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-11-11
     note: "Worker B, attempt 2: still blocked on network. Search summaries now identify the paper as a Central Bank of Malta discussion paper by Aaron G. Grech dated 15 April 2026 ('Is Malta's economy becoming more emissions-intensive?', designation unconfirmed); its PDF (centralbankmalta.org) returns 403, the MaltaToday edition (uberflip) is a login page. The 'statistical illusion' wording is still known only from search summaries (second-hand). Needed: the paper text or article from a browser."
     step: note
+  - date: 2026-11-18
+    step: note
+    note: "Worker B, attempt 3: still no verbatim wording. The Central Bank's news page, discussion-paper and CRFDR PDFs return 403, the MaltaToday edition is a login page, a TVM search finds nothing, and a web search returns only summaries (second-hand). Not rated. Needs the maintainer to supply the paper or article text from a browser."

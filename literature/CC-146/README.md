@@ -14,3 +14,6 @@ Add `references.bib` and `notes.md` as in `literature/CC-001/`.
 
 ## Attempt 1 (3 Nov 2026, worker B)
 Blocked (network). Tried: claim URL (MaltaToday, 403), centralbankmalta.org (403), Malta Independent opinion of 19 Apr 2026 (403, WebFetch 403), climateaction.gov.mt factsheet (403), Wayback (reset), MaltaToday uberflip edition (paywalled), 3 web searches (summaries only). Leads: see data/sources.csv.
+
+## Attempt 3 (18 Nov 2026, worker B)
+Blocked (source). Tried: centralbankmalta.org news page 94/2026/11378, DP-1-26 and CRFDR-2026 PDFs (403), MaltaToday uberflip (301/login), TVM site search (no hit), 1 web search (summaries only). Needs the paper or article text from a browser.
