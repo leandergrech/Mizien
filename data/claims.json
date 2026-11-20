@@ -2583,7 +2583,7 @@
       "similar": [
         {
           "id": "CC-038",
-          "score": 0.26,
+          "score": 0.27,
           "terms": [
             "dust",
             "pm10"
@@ -2708,7 +2708,7 @@
       "similar": [
         {
           "id": "CC-036",
-          "score": 0.26,
+          "score": 0.27,
           "terms": [
             "dust",
             "pm10"
@@ -3886,7 +3886,7 @@
       "similar": [
         {
           "id": "CC-127",
-          "score": 0.27,
+          "score": 0.26,
           "terms": [
             "farming",
             "agricultural",
@@ -4472,7 +4472,7 @@
       "similar": [
         {
           "id": "CC-168",
-          "score": 0.29,
+          "score": 0.3,
           "terms": [
             "traffic",
             "cost",
@@ -4816,6 +4816,14 @@
             "passenger",
             "trips"
           ]
+        },
+        {
+          "id": "CC-100",
+          "score": 0.25,
+          "terms": [
+            "passenger",
+            "previous"
+          ]
         }
       ]
     },
@@ -4951,15 +4959,6 @@
             "plant",
             "wasteserv",
             "tonnes"
-          ]
-        },
-        {
-          "id": "CC-150",
-          "score": 0.25,
-          "terms": [
-            "organic",
-            "waste",
-            "wasteserv"
           ]
         }
       ]
@@ -6261,6 +6260,14 @@
             "plc",
             "company"
           ]
+        },
+        {
+          "id": "CC-078",
+          "score": 0.25,
+          "terms": [
+            "passenger",
+            "previous"
+          ]
         }
       ]
     },
@@ -7106,8 +7113,8 @@
           "score": 0.36,
           "terms": [
             "population",
-            "selected",
-            "rose"
+            "rose",
+            "selected"
           ]
         },
         {
@@ -7277,7 +7284,7 @@
       "similar": [
         {
           "id": "CC-148",
-          "score": 0.36,
+          "score": 0.37,
           "terms": [
             "greenhouse",
             "emissions",
@@ -7357,11 +7364,11 @@
       "similar": [
         {
           "id": "CC-168",
-          "score": 0.45,
+          "score": 0.44,
           "terms": [
-            "economy",
             "congestion",
-            "traffic"
+            "traffic",
+            "economy"
           ]
         }
       ]
@@ -7591,7 +7598,7 @@
       "similar": [
         {
           "id": "CC-143",
-          "score": 0.62,
+          "score": 0.61,
           "terms": [
             "good",
             "status",
@@ -8275,21 +8282,21 @@
           ]
         },
         {
-          "id": "CC-058",
-          "score": 0.27,
-          "terms": [
-            "farming",
-            "agricultural",
-            "land"
-          ]
-        },
-        {
           "id": "CC-143",
           "score": 0.27,
           "terms": [
             "second",
             "management",
             "plan"
+          ]
+        },
+        {
+          "id": "CC-058",
+          "score": 0.26,
+          "terms": [
+            "farming",
+            "agricultural",
+            "land"
           ]
         }
       ]
@@ -8877,8 +8884,8 @@
           "score": 0.36,
           "terms": [
             "population",
-            "selected",
-            "rose"
+            "rose",
+            "selected"
           ]
         },
         {
@@ -9400,7 +9407,7 @@
       "similar": [
         {
           "id": "CC-118",
-          "score": 0.62,
+          "score": 0.61,
           "terms": [
             "good",
             "status",
@@ -9779,7 +9786,7 @@
         },
         {
           "id": "CC-114",
-          "score": 0.36,
+          "score": 0.37,
           "terms": [
             "greenhouse",
             "emissions",
@@ -9957,15 +9964,6 @@
             "waste",
             "away",
             "landfill"
-          ]
-        },
-        {
-          "id": "CC-080",
-          "score": 0.25,
-          "terms": [
-            "organic",
-            "waste",
-            "wasteserv"
           ]
         }
       ]
@@ -10927,15 +10925,14 @@
     },
     {
       "id": "CC-167",
-      "title": "Ministry for Finance Economic Survey 2026: energy intensity 'fell considerably' between 2019 and 2024",
+      "title": "Ministry for Finance Economic Survey 2026: energy intensity 'declined considerably' between 2019 and 2024",
       "category": "Climate & Energy",
-      "claim": "Ministry for Finance (Economic Survey 2026, published 26 Oct 2026): Malta's energy intensity fell considerably between 2019 and 2024, which points to better efficiency relative to economic activity, even though final energy consumption rose in 2024.",
-      "counter": "Energy intensity (energy per unit of GDP) can fall because GDP grows faster than energy use, without any efficiency gain, as the survey itself seems to concede in noting that final consumption rose. A related dispute over emissions intensity is recorded in CC-146 (Central Bank) and CC-147 (Climate Action Authority) against Eurostat's rise of 87.2% for the same economy.",
-      "status": "In progress",
-      "verdict": null,
-      "tags": [
-        "Selective metric"
-      ],
+      "claim": "Ministry for Finance, Economic Survey (October 2026), chapter 2 overview, p. 34: 'While final energy consumption increased in 2024, energy intensity declined considerably between 2019 and 2024, indicating improved energy efficiency relative to economic activity.' Section 2.6.3 (pp. 64-65): 'Between 2019 and 2024, the economy's energy intensity declined by 27.1 per cent.'",
+      "counter": "Eurostat nrg_ind_ei (energy intensity of GDP, chain-linked 2010 volumes): Malta 266.6 to 194.3 kgoe per thousand euro, 2019-2024, -27.1% exactly (EU-27 -15.9%). The indicator is gross available energy over GDP, and 69% of Malta's gross available energy in 2024 was international marine bunkers (2,100 of 3,065 ktoe; nrg_bal_s), which fell 7% over the period. Excluding bunkers, gross inland consumption per GDP fell 16.6% and final energy per GDP 14.0% (current GDP vintage). Real GDP rose 28.4%, gross inland consumption 7.0%, final energy 10.4%, population 12.9%; final energy per person fell 2.2%.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Largely supported",
+      "tags": [],
       "subtopic": "Emissions & targets",
       "location": {
         "place": "City Gate, Valletta (national claim)",
@@ -10944,17 +10941,45 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "Moderate",
       "speaker": "Ministry for Finance",
       "bodies": [
         "ministry-finance"
       ],
+      "subclaims": [
+        {
+          "id": "CC-167A",
+          "text": "Energy intensity declined by 27.1% between 2019 and 2024",
+          "finding": "Matches Eurostat’s published indicator exactly. That indicator includes ship bunkers (69% of the energy).",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-167B",
+          "text": "It “declined considerably … indicating improved energy efficiency relative to economic activity”",
+          "finding": "Without bunkers, −14% to −17%, close to the EU’s −16%. The fall is driven by GDP growth: energy use rose 7–10%.",
+          "rating": "Fair, overstated",
+          "tone": "amber"
+        },
+        {
+          "id": "CC-167C",
+          "text": "Final energy consumption increased in 2024",
+          "finding": "0.602 Mtoe in 2024, up 3.8% on 2023 (Eurostat).",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
       "date": "2026-10-26",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "quote": "While final energy consumption increased in 2024, energy intensity declined considerably between 2019 and 2024, indicating improved energy efficiency relative to economic activity.",
+      "version": "1.0",
+      "last_reviewed": "2026-11-17",
+      "outputs": {
+        "report": "claim-files/CC-167/report.pdf",
+        "flyer_pdf": "claim-files/CC-167/flyer.pdf",
+        "flyer_png": "claim-files/CC-167/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-167/claim.yml"
     },
     {
@@ -10989,16 +11014,16 @@
       "similar": [
         {
           "id": "CC-115",
-          "score": 0.45,
+          "score": 0.44,
           "terms": [
-            "economy",
             "congestion",
-            "traffic"
+            "traffic",
+            "economy"
           ]
         },
         {
           "id": "CC-071",
-          "score": 0.29,
+          "score": 0.3,
           "terms": [
             "traffic",
             "cost",

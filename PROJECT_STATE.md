@@ -97,6 +97,12 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
 - **CC-166 (MHRA, EUR 8 eco-contribution 'too sharp'): no report.** The maintainer's MaltaToday copy quotes the MHRA only
   as 'too sharp' (a judgement); the European comparison, the checkable part, is the outlets' paraphrase. **Needs the
   maintainer:** the MHRA's own Budget 2027 reaction (press release, email to media or social post), about 26 Oct 2026.
+## Laptop session 2026-11-17: CC-167 checked
+- **CC-167 (Economic Survey, energy intensity 'declined considerably'): Largely supported, moderate.** The Survey's
+  -27.1% matches Eurostat's nrg_ind_ei exactly, but that indicator is gross available energy over GDP, and 69% of Malta's
+  GAE is international marine bunkers. Without bunkers intensity fell 14-17% (EU -16%); GDP +28%, final energy +10%.
+- **Note for CC-146/147 and any intensity claim:** Malta's Eurostat energy-intensity level is about twice the EU's because
+  of bunkers; always recompute without them.
 
 ## Maintainer session 2026-11-16: open PRs consolidated
 

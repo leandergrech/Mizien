@@ -1,53 +1,92 @@
 id: CC-167
-title: 'Ministry for Finance Economic Survey 2026: energy intensity ''fell considerably'' between 2019 and 2024'
+title: 'Ministry for Finance Economic Survey 2026: energy intensity ''declined considerably'' between 2019 and 2024'
 category: Climate & Energy
 subtopic: Emissions & targets
-status: In progress
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Ministry for Finance (Economic Survey 2026, published 26 Oct 2026): Malta''s energy intensity fell considerably between
-    2019 and 2024, which points to better efficiency relative to economic activity, even though final energy consumption rose
-    in 2024.'
+  text: 'Ministry for Finance, Economic Survey (October 2026), chapter 2 overview, p. 34: ''While final energy consumption
+    increased in 2024, energy intensity declined considerably between 2019 and 2024, indicating improved energy efficiency
+    relative to economic activity.'' Section 2.6.3 (pp. 64-65): ''Between 2019 and 2024, the economy''s energy intensity declined
+    by 27.1 per cent.'''
   speaker: Ministry for Finance
   date: '2026-10-26'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
-  - title: Economic Survey 2026
+  - title: Economic Survey, October 2026
     publisher: Ministry for Finance, Malta
     date: '2026-10-26'
     url: https://finance.gov.mt/wp-content/uploads/2026/10/Economic-Survey-2026-Final.pdf
-    note: Locates the claim from a search summary only; the PDF returned 403 to WebFetch on 15 Nov 2026 and was not read.
-      The exact sentence, table and definition of 'energy intensity' are unknown.
-counter_evidence: Energy intensity (energy per unit of GDP) can fall because GDP grows faster than energy use, without any
-  efficiency gain, as the survey itself seems to concede in noting that final consumption rose. A related dispute over emissions
-  intensity is recorded in CC-146 (Central Bank) and CC-147 (Climate Action Authority) against Eurostat's rise of 87.2% for
-  the same economy.
-tests: Eurostat nrg_ind_ei (energy intensity of GDP) and nrg_bal_c / nrg_bal_s (final energy consumption) for Malta, 2019-2024,
-  with chain-linked volumes; decompose the change into GDP growth and energy use; compare with the EU; compare with the emissions-intensity
-  series used in CC-146/147.
+    note: The claim. finance.gov.mt refuses scripts; maintainer's copy (164 pp.) read 17 Nov 2026 (sha256 in archive/manifest.csv);
+      p. 34 (PDF p. 48) and pp. 64-65.
+  quote: While final energy consumption increased in 2024, energy intensity declined considerably between 2019 and 2024, indicating
+    improved energy efficiency relative to economic activity.
+counter_evidence: 'Eurostat nrg_ind_ei (energy intensity of GDP, chain-linked 2010 volumes): Malta 266.6 to 194.3 kgoe per
+  thousand euro, 2019-2024, -27.1% exactly (EU-27 -15.9%). The indicator is gross available energy over GDP, and 69% of
+  Malta''s gross available energy in 2024 was international marine bunkers (2,100 of 3,065 ktoe; nrg_bal_s), which fell 7%
+  over the period. Excluding bunkers, gross inland consumption per GDP fell 16.6% and final energy per GDP 14.0% (current
+  GDP vintage). Real GDP rose 28.4%, gross inland consumption 7.0%, final energy 10.4%, population 12.9%; final energy per
+  person fell 2.2%.'
+tests: Eurostat nrg_ind_ei, nrg_bal_s (GAE, bunkers, GIC, final consumption), nama_10_gdp (chain-linked volumes) and demo_gind
+  for Malta, 2015-2024; intensity recomputed with and without bunkers.
 why_low_hanging: Eurostat energy-balance and intensity series are open and the change is a ratio of two series.
-tags:
-- Selective metric
-tags_provisional: true
-priority: Queue
-data_readiness: 'Medium: Eurostat reachable; finance.gov.mt returned 403, so the survey sentence needs to be pasted into literature/CC-167/primary-source.md.'
-caveats: 'Candidate from the weekly intake of 15 Nov 2026. Wording comes from a search summary and must be located in the
-  Survey before a report starts. Provisional tag ''Selective metric'' (a favourable ratio cited beside a rising absolute):
-  confirm or drop after reading the passage.'
+tags: []
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High: Eurostat API; the Survey from the maintainer''s copy.'
+caveats: 'Largely supported: no right of reply needed. The 27.1% is Eurostat''s official indicator, used correctly; it includes
+  fuel sold to international shipping, which inflates the fall for Malta. Provisional tag ''Selective metric'' dropped: the
+  Survey itself notes that consumption rose. Related: CC-146, CC-147 (emissions intensity).'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp, demo_gind for Malta 2015-2024 (data/cc-167/eurostat_malta_energy_gdp.csv; checks in data/cc-167/checks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-11-17'
+thumbnail:
+  figure: '−27.1%'
+  caption: 'Energy intensity 2019-2024 on Eurostat''s indicator, which includes ship bunkers; -16.6% without them'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-167A
+    text: "Energy intensity declined by 27.1% between 2019 and 2024"
+    said_by: "Ministry for Finance [1]"
+    finding: "Matches Eurostat’s published indicator exactly. That indicator includes ship bunkers (69% of the energy)."
+    rating: "Accurate"
+    tone: green
+  - id: CC-167B
+    text: "It “declined considerably … indicating improved energy efficiency relative to economic activity”"
+    said_by: "Ministry for Finance [1]"
+    finding: "Without bunkers, −14% to −17%, close to the EU’s −16%. The fall is driven by GDP growth: energy use rose 7–10%."
+    rating: "Fair, overstated"
+    tone: amber
+  - id: CC-167C
+    text: "Final energy consumption increased in 2024"
+    said_by: "Ministry for Finance [1]"
+    finding: "0.602 Mtoe in 2024, up 3.8% on 2023 (Eurostat)."
+    rating: "Accurate"
+    tone: green
 history:
 - date: '2026-11-16'
   step: started
   note: 'Attempt 1 (16 Nov 2026), blocked on source. The Economic Survey 2026 PDF (finance.gov.mt) is 403 and the Wayback copy unreachable; the energy-intensity sentence is known only from a search summary (second-hand). Needed: the sentence, table and definition of energy intensity from the PDF. No report or verdict started.'
+- date: '2026-11-17'
+  step: note
+  note: "Maintainer's copy of the Economic Survey (164 pp.) read: wording verbatim on p. 34 and the 27.1% on pp. 64-65. Eurostat nrg_ind_ei, nrg_bal_s, nama_10_gdp and demo_gind downloaded; the 27.1% reproduced; intensity recomputed without international marine bunkers (tools/cc-167-report/calc.py)."
+- date: '2026-11-17'
+  step: version
+  version: '1.0'
+  note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.
