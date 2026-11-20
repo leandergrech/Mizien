@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 16 November 2026 (laptop session: maintainer copies filed, CC-158 checked; earlier the same day, open PRs consolidated: eleven worker queue records, the CC-159 check and two Dependabot updates, see the section below; earlier: 27 October 2026: Who said it rebuilt as a tree-and-panel stage with one verdict strip; decisions below; earlier: 10 October 2026: later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
+*Last updated: 20 November 2026 (batch consolidation of PRs #188-#202 onto main; laptop sessions 16-17 Nov: maintainer copies filed, ten claims checked (CC-036, CC-138, CC-141, CC-145, CC-149, CC-150, CC-152, CC-158, CC-164, CC-167), CC-160 and CC-166 still blocked; earlier: 16 November 2026 (laptop session: maintainer copies filed, CC-158 checked; earlier the same day, open PRs consolidated: eleven worker queue records, the CC-159 check and two Dependabot updates, see the section below; earlier: 27 October 2026: Who said it rebuilt as a tree-and-panel stage with one verdict strip; decisions below; earlier: 10 October 2026: later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.))*
 
 ## What the project is
 
@@ -15,6 +15,13 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
+
+## Batch consolidation (20 November 2026)
+
+- PRs #188 to #202 merged onto main in one branch (claude/batch-20261120), oldest first, with merge commits. Keyed CSVs
+  (queue, sources, manifesto pledges, archive manifest) were merged row by row; generated files (claims.json, sheets,
+  README table, design preview) were rebuilt after each merge; PROJECT_STATE sections from every branch are kept.
+- After this lands, close the superseded worker queue PRs #156-#187 if GitHub has not marked them merged.
 
 ## Laptop session 2026-11-16: maintainer copies filed; CC-158 checked
 
@@ -33,6 +40,7 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
   report says so; the press release does not. Outcomes (reused from CC-094/CC-025): effort-sharing emissions +41% on 2005
   in 2024 and over the yearly limit 2022-24; the report does not mention this. CAA restatement rated 'goes further'.
   Added to theme T7 with an edge to CC-094. Archive by hand: nao.gov.mt and climateaction.gov.mt (both refuse scripts).
+
 ## Laptop session 2026-11-16: CC-036 checked
 - **CC-036 (ERA: construction and quarry dust 'more of a nuisance rather than a health-related issue'): Not substantiated
   (moderate); pending right of reply.** Wording verbatim from the maintainer's copy of SoER 2018 ch. 2 (p. 15). ERA's
@@ -42,6 +50,7 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
   Sources rows 1100-1107 (1098-1099 are taken by CC-158 on its own branch). Draft verdict on the site only until the
   right-of-reply deadline. EEA discodata: some query forms return 403 from the Azure gateway; `SELECT * ... LIKE 'PM%'`
   worked (added to notes).
+
 ## Laptop session 2026-11-17: CC-138 checked
 - **CC-138 (OPM, White Rocks national park): Not substantiated, moderate; pledge label Not yet due.** The OPM's own
   wording was found on departmentofinformation.gov.mt (PR261268, 29 Jul 2026, Maltese) in the built-in browser; the
@@ -54,49 +63,58 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
 - **Tip for blocked government statements:** press releases are at
   `departmentofinformation.gov.mt/press-release/<year>/pr<yy><nnnn>`; in the browser, a same-origin fetch loop over a
   number range finds a release by keyword (about six releases a day in 2026).
+
 ## Laptop session 2026-11-17: CC-141 checked
 - **CC-141 (Pre-Budget Document 2027, lowest fertility rate in the EU27): Supported, high.** Sentence confirmed in the
   Minister's foreword (printed p. 6, PDF p. 8) from the maintainer's copy. Eurostat demo_find: Malta 1.01 in 2024, lowest
   of 27 (Spain 1.10), and lowest every year 2017-2024. The API flags the EU-27 aggregate for 2022-2024 as not for
   publication; 1.34 (2024) is from Statistics Explained. No right of reply needed.
+
 ## Laptop session 2026-11-17: CC-145 checked
 - **CC-145 (BirdLife Malta, over 10,000 hunters; 21 injured birds): Largely supported, moderate.** WBRU 2025 report
   (maintainer copy): 10,091 general licences to hunt birds on land; 636 (6.3%) filed any game report. "Active at any one
   time" is not measured anywhere; the 21-bird count is BirdLife's own and unpublished. No right of reply needed.
 - **Follow-up for CC-144:** its 10,091 figure (data/cc-144/malta_inputs.csv) was marked second-hand; it is now confirmed
   from the WBRU report itself (p. 1). Record it as a clarification on CC-144 when next touched.
+
 ## Laptop session 2026-11-17: CC-149 checked
 - **CC-149 (MaltaToday, 12,325 dwellings approved in 2025): Largely supported, moderate.** NSO Q4 release tables
   (2022-2025) read in the built-in browser and summed: 12,325 in 2025, 8,716 in 2024 (+41.4%). 2018-2019 higher per press
   reports (second-hand). ODZ record (226) is Planning Authority data, not read.
 - **Tip:** nso.gov.mt xlsx tables refuse scripts but load in the browser; a small in-page unzip (DecompressionStream
   'deflate-raw') reads them without saving files. NSO releases before 2022 are not on the current site.
+
 ## Laptop session 2026-11-17: CC-150 checked
 - **CC-150 (Environment Minister, 412 million kg diverted from landfill): Not substantiated, moderate.** The figure is
   the Minister's own quote (PR260072EN, 19 Jan 2026); speaker moved from the Labour Party, which repeated it. NSO
   municipal waste tables 2020-2024: 424 kt collected separately (gross), 270 kt recycled/recovered/reused, separate
   collection +6% since 2019. Draft pending right of reply to the Ministry (not sent). Related: CC-004 (same release).
+
 ## Laptop session 2026-11-17: CC-152 checked
 - **CC-152 (ERA, significant risk of missing the 2030 NOx ceiling): Supported, high.** Wording verbatim from the
   maintainer's copy of the draft NAPCP (PDF p. 14). Ceiling 1.98 kt = 2005 base 9.45 x 0.21 (Directive 2016/2284 Annex II,
   read on EUR-Lex in a browser); projection 3.88 kt; Eurostat NOx flat at 4.1-4.6 kt since 2017. No right of reply.
 - **Tip:** EUR-Lex returns an empty page to scripts and WebFetch; the built-in browser reads it.
+
 ## Laptop session 2026-11-17: CC-160 still blocked
 - **CC-160 (NGOs: Dwejra lighting until midnight incompatible with GZ-DARK-1): no verdict.** The draft regulations
   confirm a midnight switch-off (reg. 7(2)(b)), and Map 13.8 puts Dwejra inside GZ-DARK-1. The policy wording itself,
   the crux ("no lighting" or "strongly discouraged"), is not in the maintainer's files (map only) and pa.org.mt shows a
   security check. **Needs the maintainer:** the GZ-DARK-1 paragraph from the Gozo and Comino Local Plan (2006) policy
   document, Chapter 13.
+
 ## Laptop session 2026-11-17: CC-164 checked
 - **CC-164 (Budget 2027 eco-contribution, EUR 182 million): Largely supported, moderate.** Rates, caps and 'madwar EUR 182
   miljun' verbatim in the Maltese speech (pp. 26-27). NSO 2025 nights at the new rates give EUR 176-193 million before caps.
   The 'EUR 80 million' in a MaltaToday search summary is the work-permit fee yield. Helps CC-165: the Estimates figure
   (EUR 213m vs EUR 21m) fits EUR 182m as extra accommodation revenue plus cruise and Comino fees; the Estimates themselves
   are still unread.
+
 ## Laptop session 2026-11-17: CC-166 still blocked
 - **CC-166 (MHRA, EUR 8 eco-contribution 'too sharp'): no report.** The maintainer's MaltaToday copy quotes the MHRA only
   as 'too sharp' (a judgement); the European comparison, the checkable part, is the outlets' paraphrase. **Needs the
   maintainer:** the MHRA's own Budget 2027 reaction (press release, email to media or social post), about 26 Oct 2026.
+
 ## Laptop session 2026-11-17: CC-167 checked
 - **CC-167 (Economic Survey, energy intensity 'declined considerably'): Largely supported, moderate.** The Survey's
   -27.1% matches Eurostat's nrg_ind_ei exactly, but that indicator is gross available energy over GDP, and 69% of Malta's
@@ -1651,10 +1669,12 @@ Second intake of the day (the 79-claim bulk intake ran earlier). Six candidates 
 - **CC-126 completed** (Not substantiated, moderate; pending right of reply to PN, not sent). Term: BP supply to end of May 2027 = 9.6 months from SOCAR expiry (13 Aug), 11.3 from the 21 Jun announcement; no price published but Enemalta disclosed a TTF link; pipeline unbuilt (promoter page, updated Dec 2022: construction 2028, commissioning 2030). The dated promise 'by this year' was not found; Labour's 2013/2017/2022 manifestos and Government statements were not opened in the original; the 2017 pledge and the 2024/2025 targets are second-hand (marked ◆).
 - **Maintainer:** if a Labour or Government statement dating the pipeline to 2026 exists (manifesto text, gov.mt, MaltaToday 2019/2020 items, all 403 to scripts), add it to `literature/CC-126/primary-source.md` and re-run; the verdict could move to Largely supported. Archive the Enemalta release, PN statement, Shift article and promoter page by hand (Wayback unreachable).
 - **Not taken:** CC-073, CC-082 (open PR #126), CC-119 (open PR #123), CC-121 (open PR #132); CC-129 not reached (one claim per run).
+
 ## Worker B run, 21 Oct 2026
 - **CC-127 completed** (Commission SWD(2026) 702: Malta lowest organic share in the EU). Report v1.0 and flyer drafted. **Verdict: Supported (high).** No right of reply needed. Eurostat sdg_02_40/org_cropar: Malta 0.62% (66 ha) in 2022, lowest in every year 2012-2024; EU-27 9.1% (2020, last aggregate).
 - Unverified: the 10 700 ha / 34% denominator is unsourced in the document (surveys give 8 880-9 800 ha; share stays under 1%); Austria/Greece missing from the latest Eurostat release (last values far above Malta); no 2022 EU aggregate; the Publications Office report in the p. 29 footnote was not opened; Commission's own copy of the document not located. Web.archive.org unreachable (connection reset), so the Austrian Parliament PDF needs archiving by hand.
 - **Not taken:** CC-103 (open PR #137), CC-122 (open PR #130), CC-130 (one claim per run). Other B claims carry source: blockers.
+
 ## Worker A, 9 Nov 2026: CC-159 (IMF: Malta's density 'fifteen times greater than the EU average')
 
 Report v1.0 and flyer. **Verdict: Largely supported (high); no right of reply needed.** Eurostat: Malta 1,817 vs EU-27 110 per km2 in 2024 = 16.6 times (15.1 in 2021); 13.9 to 17.2 on other definitions of the average (World Bank land-area basis 13.5 to 16.6). IMF Table 1 population equals Eurostat 1 January for 2022-23 and is about 2% lower for 2024-25 (2.6% for 2026). The strain-on-services clause is a judgement and is not rated.
@@ -1672,12 +1692,14 @@ Report v1.0 and flyer. **Verdict: Largely supported (high); no right of reply ne
 - Unverified: NSO 2024 figures (backfilling +58.0%, recycling -13.6%) read via WebFetch only, tables 403 (second-hand, ◆); no regulator finding on whether Malta's quarry deposits meet the 2018 backfilling definition was found (search log in literature/CC-131/notes.md); how Malta codes excavated rock (W121 vs soils W126) unknown; Eurostat cei_wm040 withdrawn (reason not found).
 - Archive: the Country Report has a Wayback copy (same sha256); the JRC report and the 2015 factsheet need archiving by hand (web.archive.org reset).
 - **For the maintainer (not changed, CC-134 is worker C's):** CC-134's record and report say the environmental-tax sentence is on PDF p. 44 in Annex 10 and the Annex 3 table on p. 77. In the Council register copy (same sha256) the sentence is on PDF p. 77 in Annex 8 and the Annex 3 table ('Environmental taxes (% of GDP)') on PDF p. 44: the page numbers are swapped and the annex is 8. A correction entry for CC-134 may be needed.
+
 ## Worker A, 26 Oct 2026: CC-135 (IMF: peak electricity demand up 43% in five years)
 
 Run on the maintainer's request (not the scheduled run). Report v1.0 and flyer. **Verdict: Largely supported (high); no right of reply needed.** NSO Electricity Supply releases: maximum demand 465 MW (Aug 2018) and 663 MW (Jul 2023), +42.6%. The IMF's 13% reproduces from Eurostat demo_gind plus tour_occ_nim with the paper's stated method (August nights / 31): 13.3-13.5% depending on the population count; residents alone about 14%, tourists about 3%. Final electricity consumption +13.4% (nrg_cb_e), so energy kept pace with people while the peak did not. Caveat: 2018 and 2023 are the coolest and hottest summers of 2017-2025 at Luqa (NOAA GHCN-Daily; hottest-month mean 26.9 and 29.4 C vs the IMF's 27.3 and 29.6), so 43% is the largest measure; other windows give 28-37%, the 2017-2025 trend 24% over five years. Annual peaks 2017-2025 (NSO): 488, 465, 504, 482, 565, 581, 663, 593, 637 MW, in `data/cc-135/nso_max_demand.csv` for CC-027 and CC-137.
 - **Unverified:** NSO figures were read via WebFetch (nso.gov.mt 403 to curl); Table 7 only for 2017-2021 (NR 177/2022), 2022-2025 from release text. The 2024 release implies a revised 2023 annual average (about 470 vs 446 MW first published); whether 663 MW was revised is unknown. The IMF paper returned 403 to curl on 26 Oct (200 on 25 Oct) and was re-read via WebFetch. NSO frontier-survey tourists not tested.
 - **Archive by hand:** meetings.imf.org SIP PDF and the five nso.gov.mt pages are robots_refused; the NOAA GHCN-Daily file is robots_disallowed; the two PNAS DOIs returned HTTP errors to the archiver (run with --no-save; web.archive.org resets connections).
 - **Not taken:** CC-132 and CC-138 (worker A, not attempted in this run).
+
 ## Worker B, 26 Oct 2026 (run on request): CC-133 (Commission: Malta's price-to-income ratio has declined)
 
 - **CC-133 completed.** Report v1.0 and flyer. **Verdict: Largely supported (moderate); no right of reply needed.** Wording on PDF p. 8 of the Council register copy; Annex 16 (pp. 113-116) says the ratio 'has declined since 2007' and its Graph A16.3 gives MT 96.9 / 92.7 (2023/2024, 2000-25 avg = 100). Eurostat tipsho60 (income = adjusted household GDI per head): Malta -11.5% 2014-2024, -23.1% since 2007 (EU-27 +5.8% since 2014); recomputed exactly. Nominal prices up every year 2015-2025 (+83.6% vs EU +65.6%), but EU-27 annual growth was higher in 2020-2022, so 'consistently outpace' holds only cumulatively. On EU-SILC median equivalised income (+62.6%, income years 2014-2024) the ratio rose 6.6% since 2014: the main caveat.
