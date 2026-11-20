@@ -81,6 +81,12 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
   maintainer's copy of the draft NAPCP (PDF p. 14). Ceiling 1.98 kt = 2005 base 9.45 x 0.21 (Directive 2016/2284 Annex II,
   read on EUR-Lex in a browser); projection 3.88 kt; Eurostat NOx flat at 4.1-4.6 kt since 2017. No right of reply.
 - **Tip:** EUR-Lex returns an empty page to scripts and WebFetch; the built-in browser reads it.
+## Laptop session 2026-11-17: CC-160 still blocked
+- **CC-160 (NGOs: Dwejra lighting until midnight incompatible with GZ-DARK-1): no verdict.** The draft regulations
+  confirm a midnight switch-off (reg. 7(2)(b)), and Map 13.8 puts Dwejra inside GZ-DARK-1. The policy wording itself,
+  the crux ("no lighting" or "strongly discouraged"), is not in the maintainer's files (map only) and pa.org.mt shows a
+  security check. **Needs the maintainer:** the GZ-DARK-1 paragraph from the Gozo and Comino Local Plan (2006) policy
+  document, Chapter 13.
 
 ## Maintainer session 2026-11-16: open PRs consolidated
 
