@@ -1,0 +1,24 @@
+check,value,unit,source,note
+Share of deposited quarry dust below 10 um: minimum,11.0,%,"Vella & Camilleri (2005), Xjenza 10:47-54, Tables 2-3 (data/cc-036/vella2005_size_fractions.csv)",10 samples
+Share of deposited quarry dust below 10 um: maximum,22.9,%,"Vella & Camilleri (2005), Xjenza 10:47-54, Tables 2-3 (data/cc-036/vella2005_size_fractions.csv)",ERA: 'between 11 and 22 %'
+"Share of deposited quarry dust above 10 um (coarse, mostly deposits)",77.1-89.0,%,"Vella & Camilleri (2005), Xjenza 10:47-54, Tables 2-3 (data/cc-036/vella2005_size_fractions.csv)",
+PM10 emitted by softstone quarries a year (as cited by ERA),1200,t,"Vella & Camilleri (2005), abstract; ERA SoER 2018 ch. 2 p. 15",
+PM10 emission rate in the dry months vs guideline values,"11,500 vs 100-350",mg/m2/day,"Vella & Camilleri (2005), abstract",the authors' comparison
+Zejtun (background) 2025: coarse PM10-2.5 (PM10 minus PM2.5),16.3,ug/m3,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",PM10 25.2; coarse share 65%
+"Zejtun (background): coarse share of PM10, mean of 11 years 2014-2025",62.0,%,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",
+Msida (traffic) 2023: coarse PM10-2.5 (PM10 minus PM2.5),29.8,ug/m3,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",PM10 43.7; coarse share 68%
+"Msida (traffic): coarse share of PM10, mean of 11 years 2013-2023",64.0,%,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",
+Gharb (rural background) 2025: coarse PM10-2.5 (PM10 minus PM2.5),9.6,ug/m3,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",PM10 17.2; coarse share 56%
+"Gharb (rural background): coarse share of PM10, mean of 13 years 2013-2025",53.0,%,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",
+Attard (background) 2024: coarse PM10-2.5 (PM10 minus PM2.5),20.6,ug/m3,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",PM10 32.7; coarse share 63%
+"Attard (background): coarse share of PM10, mean of 1 years 2024-2024",63.0,%,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",
+St Paul's Bay (traffic) 2025: coarse PM10-2.5 (PM10 minus PM2.5),18.2,ug/m3,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",PM10 26.7; coarse share 68%
+"St Paul's Bay (traffic): coarse share of PM10, mean of 4 years 2022-2025",67.0,%,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",
+"Msida (traffic, new site) 2025: coarse PM10-2.5 (PM10 minus PM2.5)",27.1,ug/m3,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",PM10 37.6; coarse share 72%
+"Msida (traffic, new site): coarse share of PM10, mean of 2 years 2024-2025",70.0,%,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",
+"Coarse share of PM10, all station-years with both measured",47-72,%,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv)",42 station-years
+Stations whose latest verified PM10 annual mean exceeds the WHO 2021 guideline (15 ug/m3),7 of 7,,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv); WHO Global Air Quality Guidelines (2021), Table 0.1","Kordin (industrial) 2016: 37.3; Zejtun (background) 2025: 25.2; Msida (traffic) 2023: 43.7; Gharb (rural background) 2025: 17.2; Attard (background) 2024: 32.7; St Paul's Bay (traffic) 2025: 26.7; Msida (traffic, new site) 2025: 37.6"
+Coarse PM10-2.5 alone at Msida (2023) vs the WHO PM10 guideline,2.0,x,"EEA Air Quality Statistics, annual means, retrieved 16 Nov 2026 (data/cc-036/eea_mt_pm_annual.csv); WHO Global Air Quality Guidelines (2021), Table 0.1",coarse fraction alone is about twice the guideline for all PM10
+"Desert-dust PM10, natural mortality per 10 ug/m3 (lag 0-1), 13 Southern European cities",0.65 (0.24-1.06),%,"Stafoggia et al. (2016), EHP 124:413-419, doi:10.1289/ehp.1409164 (abstract)",
+"Non-desert PM10, natural mortality per 10 ug/m3 (lag 0-1)",0.55 (0.24-0.87),%,"Stafoggia et al. (2016), EHP 124:413-419, doi:10.1289/ehp.1409164 (abstract)",
+EPA determinations for PM10-2.5 rated 'suggestive' (none causal or likely causal),8,outcome-exposure pairs,"US EPA ISA for PM (2019), Table ES-1 (data/cc-036/epa_isa2019_coarse.csv)",

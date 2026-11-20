@@ -1,0 +1,10 @@
+outcome,exposure,pm10_2_5,pm2_5,source
+Respiratory effects,short-term,Suggestive of but not sufficient to infer,Likely to be causal,"US EPA ISA for Particulate Matter (Dec 2019), EPA/600/R-19/188, Table ES-1 (PDF pp. 120-122), read 16 Nov 2026"
+Respiratory effects,long-term,Inadequate,Likely to be causal,Table ES-1
+Cardiovascular effects,short-term,Suggestive of but not sufficient to infer,Causal,Table ES-1
+Cardiovascular effects,long-term,Suggestive of but not sufficient to infer,Causal,Table ES-1
+Metabolic effects,long-term,Suggestive of but not sufficient to infer,Suggestive of but not sufficient to infer,Table ES-1
+Nervous system effects,long-term,Suggestive of but not sufficient to infer,Likely to be causal,Table ES-1
+Cancer,long-term,Suggestive of but not sufficient to infer,Likely to be causal,Table ES-1
+Mortality,short-term,Suggestive of but not sufficient to infer,Causal,Table ES-1
+Mortality,long-term,Suggestive of but not sufficient to infer,Causal,Table ES-1

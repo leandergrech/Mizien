@@ -33,6 +33,15 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
   report says so; the press release does not. Outcomes (reused from CC-094/CC-025): effort-sharing emissions +41% on 2005
   in 2024 and over the yearly limit 2022-24; the report does not mention this. CAA restatement rated 'goes further'.
   Added to theme T7 with an edge to CC-094. Archive by hand: nao.gov.mt and climateaction.gov.mt (both refuse scripts).
+## Laptop session 2026-11-16: CC-036 checked
+- **CC-036 (ERA: construction and quarry dust 'more of a nuisance rather than a health-related issue'): Not substantiated
+  (moderate); pending right of reply.** Wording verbatim from the maintainer's copy of SoER 2018 ch. 2 (p. 15). ERA's
+  11-22% PM10 share and 1,200 t/yr match its cited study (Vella & Camilleri 2005, read in full from OAR@UM), which
+  concludes possible health impacts. US EPA ISA 2019: coarse PM 'suggestive' for mortality, heart and lung effects; WHO
+  AQG 2021 PM10 15 ug/m3; EEA verified data: 47-72% of Malta's PM10 is coarse, every station above the WHO guideline.
+  Sources rows 1100-1107 (1098-1099 are taken by CC-158 on its own branch). Draft verdict on the site only until the
+  right-of-reply deadline. EEA discodata: some query forms return 403 from the Azure gateway; `SELECT * ... LIKE 'PM%'`
+  worked (added to notes).
 
 ## Maintainer session 2026-11-16: open PRs consolidated
 

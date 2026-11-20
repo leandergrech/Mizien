@@ -1,0 +1,11 @@
+table,sample,operation,moisture,pct_below_10um,source,retrieved
+2,Quarry 1,cutting,humid,13.2,"Vella & Camilleri (2005), Xjenza 10:47-54, Table 2 (OAR@UM PDF)",2026-11-16
+2,Quarry 1,dressing,humid,18.3,"Vella & Camilleri (2005), Table 2",2026-11-16
+2,Quarry 2,cutting,humid,16.7,"Vella & Camilleri (2005), Table 2",2026-11-16
+2,Quarry 2,cutting,humid,16.1,"Vella & Camilleri (2005), Table 2",2026-11-16
+2,Quarry 2,cutting,dry stone,14.6,"Vella & Camilleri (2005), Table 2 (value in parenthesis)",2026-11-16
+2,Quarry 3,dressing,humid,21.3,"Vella & Camilleri (2005), Table 2",2026-11-16
+2,Quarry 3,cutting,humid,22.9,"Vella & Camilleri (2005), Table 2",2026-11-16
+3,Quarry 1,access road,wet,11.0,"Vella & Camilleri (2005), Table 3",2026-11-16
+3,Quarry 2,access road,wet,21.8,"Vella & Camilleri (2005), Table 3",2026-11-16
+3,Quarry 3,access road,wet,13.2,"Vella & Camilleri (2005), Table 3",2026-11-16
