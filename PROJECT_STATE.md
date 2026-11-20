@@ -59,6 +59,12 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
   Minister's foreword (printed p. 6, PDF p. 8) from the maintainer's copy. Eurostat demo_find: Malta 1.01 in 2024, lowest
   of 27 (Spain 1.10), and lowest every year 2017-2024. The API flags the EU-27 aggregate for 2022-2024 as not for
   publication; 1.34 (2024) is from Statistics Explained. No right of reply needed.
+## Laptop session 2026-11-17: CC-145 checked
+- **CC-145 (BirdLife Malta, over 10,000 hunters; 21 injured birds): Largely supported, moderate.** WBRU 2025 report
+  (maintainer copy): 10,091 general licences to hunt birds on land; 636 (6.3%) filed any game report. "Active at any one
+  time" is not measured anywhere; the 21-bird count is BirdLife's own and unpublished. No right of reply needed.
+- **Follow-up for CC-144:** its 10,091 figure (data/cc-144/malta_inputs.csv) was marked second-hand; it is now confirmed
+  from the WBRU report itself (p. 1). Record it as a clarification on CC-144 when next touched.
 
 ## Maintainer session 2026-11-16: open PRs consolidated
 

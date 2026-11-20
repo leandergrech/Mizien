@@ -1,15 +1,15 @@
 id: CC-145
-title: 'BirdLife Malta: over 10,000 hunters active; 21 protected birds shot in a week'
+title: 'BirdLife Malta: over 10,000 hunters ''active at any one time''; 21 protected birds with shooting injuries collected in a week'
 category: Nature & Wildlife
 subtopic: Hunting & birds
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
   text: 'BirdLife Malta (Antonia Micallef, public engagement executive, by email to Mongabay, published 5 Oct 2026): ''Over
     10,000 hunters [are] active at any one time'', and ''Between 14 and 21 September alone, BirdLife Malta collected 21 protected
-    birds with confirmed shooting injuries''; BirdLife also says hunters shot more than 500 European turtle-doves after the
-    storm, against an autumn quota of 500.'
+    birds with confirmed shooting injuries''. (Mongabay''s own text, not in quotation marks, adds that the autumn turtle-dove
+    quota of 500 was reached soon after the storm; not tested.)'
   speaker: BirdLife Malta
   date: '2026-10-05'
   wording_status: Verbatim found
@@ -18,34 +18,62 @@ claim:
     publisher: Mongabay
     date: '2026-10-05'
     url: https://news.mongabay.com/short-article/2026/10/hunters-reportedly-kill-hundreds-of-migratory-birds-stranded-by-thunderstorm-in-malta/
-    note: 'Locates the claim: BirdLife Malta''s words quoted directly by Mongabay (read in full on 26 Oct 2026). BirdLife''s
-      own release, if any, not yet found.'
+    note: BirdLife Malta's words quoted directly by Mongabay (square brackets Mongabay's); read in full in a browser 16 Nov
+      2026 (literature/CC-145/primary-source.md).
   quote: Over 10,000 hunters [are] active at any one time
-counter_evidence: 'Context, not tested: ''active at any one time'' is not a licence count; licences issued and hunters out
-  on a given day differ. The 21 injured birds are BirdLife''s own collection records. The turtle-dove figure ''more than 500''
-  would rest on the hunters'' own carcass-tag reports and BirdLife''s observations; BirdLife says the season closed on
-  14 September once the quota was reached, and that hunting of turtle-doves continued afterwards.'
-tests: WBRU annual reports and the government's autumn 2026 season notices (licences, reported turtle-dove catch, closure
-  date); police and BirdLife records of protected birds shot (CC-049 is the 2025 Raptor Camp claim); the Ornis Committee minutes.
+counter_evidence: 'WBRU Game Reporting Data - 2025 Report (pp. 1-2): 10,091 general licences for hunting birds on land in
+  2025 (one per licensee in the category; 7,913 spring, 3,301 rabbit, 4,099 live-capturing licences, overlapping). 636 land
+  licensees (6.3%) filed any game report; 1,265 individuals filed 5,924 reports across all categories. Reports are required
+  only when game is bagged, so neither figure measures hunters in the field. No source counts hunters active at the same
+  time. The 21 injured birds are BirdLife''s own record; its releases of 14 and 16 Sep 2026 give cases but no total, and
+  no police or WBRU count for the week was found (Government press releases 1 Sep-6 Oct 2026 searched).'
+tests: WBRU 2025 licence and game-reporting tables; BirdLife's own September releases; Government press releases for the
+  turtle-dove closure or casualty counts.
 why_low_hanging: Licence numbers and the reported catch are published by the regulator.
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'Medium: WBRU and gov.mt pages may need a browser; Mongabay readable.'
-caveats: Candidate from the top-up intake of 26 Oct 2026. The claimant is BirdLife Malta speaking to a foreign outlet; look
-  for BirdLife's own release. Criticise statements, not hunters.
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'Medium: wbru.gov.mt refuses scripts (maintainer''s browser copy of the 2025 report); BirdLife''s count is
+  unpublished.'
+caveats: 'Largely supported: no right of reply needed. The licence count (10,091, 2025) supports ''over 10,000 hunters'';
+  ''active at any one time'' is not measured by any source. The 21-bird count is BirdLife''s own and is unverifiable until
+  published; it counts birds collected with injuries, not birds shot. 2026 licence counts not yet published. Criticise statements,
+  not hunters.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - WBRU Game Reporting Data - 2025 Report, licence and reporting tables pp. 1-2 (data/cc-145/wbru_2025_licences.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-11-17'
+thumbnail:
+  figure: '10,091'
+  caption: 'General licences to hunt birds on land in 2025 (WBRU); how many hunt at once is not measured'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-145A
+    text: "“Over 10,000 hunters [are] active at any one time”"
+    said_by: "BirdLife Malta [1]"
+    finding: "10,091 general licences to hunt birds on land in 2025 (WBRU). No data on how many hunt at once."
+    rating: "Number right"
+    tone: green
+  - id: CC-145B
+    text: "“Between 14 and 21 September alone, BirdLife Malta collected 21 protected birds with confirmed shooting injuries”"
+    said_by: "BirdLife Malta [1]"
+    finding: "BirdLife’s own record. No list or official count is published."
+    rating: "Not verifiable"
+    tone: amber
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-31
     step: started
@@ -53,3 +81,10 @@ history:   # research log: the date each step of the research was done (not when
   - date: 2026-11-16
     step: note
     note: "Maintainer session: the Mongabay article (5 Oct 2026) read in full in a browser. BirdLife Malta's own words are quoted: 'Over 10,000 hunters [are] active at any one time' and 'Between 14 and 21 September alone, BirdLife Malta collected 21 protected birds with confirmed shooting injuries' (literature/CC-145/primary-source.md). Queue blocker cleared; the WBRU 2025 game-reporting report is still refused (Cloudflare block)."
+  - date: 2026-11-17
+    step: note
+    note: "WBRU Game Reporting Data - 2025 Report (maintainer's browser copy, 43 pp.) read: 10,091 land licences, 636 land licensees reporting (6.3%), 1,265 individuals and 5,924 reports overall (tables typed into data/cc-145). Government press releases 1 Sep-6 Oct 2026 searched in a browser for the turtle-dove closure or casualty counts: none. Title corrected to BirdLife's wording (birds collected with injuries, not birds shot)."
+  - date: 2026-11-17
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.
