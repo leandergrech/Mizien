@@ -71,6 +71,11 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
   reports (second-hand). ODZ record (226) is Planning Authority data, not read.
 - **Tip:** nso.gov.mt xlsx tables refuse scripts but load in the browser; a small in-page unzip (DecompressionStream
   'deflate-raw') reads them without saving files. NSO releases before 2022 are not on the current site.
+## Laptop session 2026-11-17: CC-150 checked
+- **CC-150 (Environment Minister, 412 million kg diverted from landfill): Not substantiated, moderate.** The figure is
+  the Minister's own quote (PR260072EN, 19 Jan 2026); speaker moved from the Labour Party, which repeated it. NSO
+  municipal waste tables 2020-2024: 424 kt collected separately (gross), 270 kt recycled/recovered/reused, separate
+  collection +6% since 2019. Draft pending right of reply to the Ministry (not sent). Related: CC-004 (same release).
 
 ## Maintainer session 2026-11-16: open PRs consolidated
 
