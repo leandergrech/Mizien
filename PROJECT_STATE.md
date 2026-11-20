@@ -65,6 +65,12 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
   time" is not measured anywhere; the 21-bird count is BirdLife's own and unpublished. No right of reply needed.
 - **Follow-up for CC-144:** its 10,091 figure (data/cc-144/malta_inputs.csv) was marked second-hand; it is now confirmed
   from the WBRU report itself (p. 1). Record it as a clarification on CC-144 when next touched.
+## Laptop session 2026-11-17: CC-149 checked
+- **CC-149 (MaltaToday, 12,325 dwellings approved in 2025): Largely supported, moderate.** NSO Q4 release tables
+  (2022-2025) read in the built-in browser and summed: 12,325 in 2025, 8,716 in 2024 (+41.4%). 2018-2019 higher per press
+  reports (second-hand). ODZ record (226) is Planning Authority data, not read.
+- **Tip:** nso.gov.mt xlsx tables refuse scripts but load in the browser; a small in-page unzip (DecompressionStream
+  'deflate-raw') reads them without saving files. NSO releases before 2022 are not on the current site.
 
 ## Maintainer session 2026-11-16: open PRs consolidated
 
