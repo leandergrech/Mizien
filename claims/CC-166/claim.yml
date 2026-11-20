@@ -2,7 +2,7 @@ id: CC-166
 title: 'MHRA: €8 eco-contribution is too sharp ''even when compared with other Mediterranean and European destinations'''
 category: Tourism & Population
 subtopic: Tourism numbers & capacity
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -46,3 +46,10 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-16
+    step: started
+    note: "Worker C, attempt 1: blocked on source. Lovin Malta (27 Oct 2026, read in full) gives the 'too sharp' comparison as indirect speech without quotation marks; the MHRA's own statement was not found (mhra.org.mt has no post after 2021; MaltaToday's report is 403). Needed: the MHRA statement or press release of about 26-27 Oct 2026 with its exact words. No report or verdict started."
+  - date: 2026-11-17
+    step: note
+    note: "Laptop session: maintainer's copy of MaltaToday (Eva Brannon, 26 Oct 2026, 'Tourism sector bearing the burden while government spending grows, MHRA warns') read in full. The MHRA's own words in quotation marks are only 'too sharp' (on the rise to EUR 8) and one sentence on destination quality ('Visitors and residents must see tangible improvements in destination quality rather than the contribution becoming another source of general revenue'). The comparison ('even by European standards' in MaltaToday; 'even when compared with other Mediterranean and European destinations' in Lovin Malta) is in each outlet's own words. The MHRA also accepted that 'a reasonable increase' would be justified to sustain energy support (outlet's words). One web search found no MHRA statement. Still blocked: the comparative claim, the only checkable part, is not in the MHRA's verbatim words. Needed: the MHRA's Budget 2027 reaction statement (press release, email to media or social post)."

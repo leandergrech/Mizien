@@ -22,7 +22,7 @@ CC-032,B,2026-10-04,intake 4 Oct 2026,1,2026-10-06,
 CC-033,C,2026-10-04,intake 4 Oct 2026,1,2026-10-05,"source: D3PG's statement is reported only in indirect speech (TVM News 24 Sep 2018, EN and MT; 'much cleaner' is TVM's paraphrase, no quotation marks); D3PG press release not found; tried: TVM EN/MT, web search (two queries), d3pg.com (empty page), Wayback (reset), Wärtsilä case study (not the speaker)"
 CC-034,A,2026-10-04,intake 4 Oct 2026; unblocked by maintainer 5 Oct 2026 (primary-source.md),1,2026-10-06,
 CC-035,B,2026-10-04,intake 4 Oct 2026,1,2026-10-06,
-CC-036,C,2026-10-04,intake 4 Oct 2026,2,2026-10-12,"network: era.org.mt (403 to curl and WebFetch); web.archive.org (connection reset); tried: ERA URL with and without browser User-Agent, Wayback, WebFetch, two web searches (return the chapter URL but no passage text, no 'nuisance' wording); needs a browser copy of the chapter or the passage text"
+CC-036,C,2026-10-04,intake 4 Oct 2026,3,2026-11-16,
 CC-037,A,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
 CC-038,B,2026-10-04,intake 4 Oct 2026,1,2026-10-07,"source: authorities' own wording not found; Italpress/MNA (7 Feb 2026) gives the Met Office only as indirect speech ('Meteorological officials said the dust originated in the Sahara'), no quotation marks, no ERA statement; MaltaToday original 403, Wayback reset; tried: claim URL, Wayback, 3 web searches, Italpress, Guide Me Malta, TVM search, Newsbook/airquality.gov.mt/maltaweather.com (refused or unreachable)"
 CC-039,C,2026-10-04,intake 4 Oct 2026,1,2026-10-05,
@@ -123,34 +123,34 @@ CC-134,C,2026-10-25,weekly intake,1,2026-10-26,
 CC-135,A,2026-10-25,weekly intake,1,2026-10-26,
 CC-136,B,2026-10-25,weekly intake,0,2026-10-26,
 CC-137,C,2026-10-25,weekly intake,0,2026-10-28,
-CC-138,A,2026-10-25,weekly intake,0,,
-CC-139,B,2026-10-25,weekly intake,1,2026-11-06,"source: the parliamentary reply (Minister Clint Camilleri to MP Ivan Bartolo, tabled about Jan 2026) not obtained; The Shift (8 Jan 2026) is the only readable report of the EUR 16.5m and 2,341 figures; the '161 at the cap' figure is from a separate Shift analysis (4 Jun 2025, since 1997); tried: Shift (both articles), web search x2, parlament.mt 403, Wayback reset, TVM/Lovin search, legislation.mt (Cap. 552 readable, not yet read for cap)"
+CC-138,A,2026-10-25,weekly intake,1,2026-11-17,
+CC-139,B,2026-10-25,weekly intake,2,2026-11-06,"source: the parliamentary reply (Minister Clint Camilleri to MP Ivan Bartolo, tabled about Jan 2026) not obtained; The Shift (8 Jan 2026) is the only readable report of the EUR 16.5m and 2,341 figures; the '161 at the cap' figure is from a separate Shift analysis (4 Jun 2025, since 1997); tried: Shift (both articles), web search x2, parlament.mt 403, Wayback reset, TVM/Lovin search, legislation.mt (Cap. 552 readable, not yet read for cap); attempt 1 (27 Oct 2026) also tried: The Shift 3 Oct 2025, MaltaToday (403), legislation.mt (302), 3 web searches; needs the PQ number and reply text with its table, and the Development Planning Act (Cap. 552) provision on daily fines and the EUR 50,000 cap; 16 Nov 2026 (maintainer session): Cap. 552 art. 100(4) read (daily fine up to EUR 50/day, set by regulations; no EUR 50,000 cap in the Act); still needed: the PQ reply and the regulations that set any cap"
 CC-140,C,2026-10-26,top-up intake,1,2026-10-30,
-CC-141,A,2026-10-26,top-up intake,0,,
-CC-142,C,2026-10-26,top-up intake,0,,
+CC-141,A,2026-10-26,top-up intake,1,2026-11-17,
+CC-142,C,2026-10-26,top-up intake,1,2026-10-29,
 CC-143,A,2026-10-26,top-up intake,1,2026-10-27,
 CC-144,B,2026-10-26,top-up intake,1,2026-10-28,
-CC-145,C,2026-10-26,top-up intake,0,,
+CC-145,C,2026-10-26,top-up intake,1,2026-11-17,
 CC-146,B,2026-11-01,weekly intake,3,2026-11-18,"needs maintainer: supply the Central Bank of Malta paper by Aaron G. Grech (15 Apr 2026, probably Discussion Paper 1/26; PDF 403 to scripts) or the MaltaToday report / Malta Independent opinion of 19 Apr 2026 text from a browser, with the exact wording of 'statistical illusion' (save as literature/CC-146/primary-source.md). Attempt 3 (18 Nov 2026) tried: CBM news page 94/2026/11378, DP-1-26 and CRFDR-2026 PDFs (403), MaltaToday uberflip (301/login), TVM site search (no hit), 1 web search (summaries only, no new text). Earlier: network: centralbankmalta.org, independent.com.mt, maltatoday.com.mt, climateaction.gov.mt (403 to curl and WebFetch); web.archive.org (reset); the Central Bank's own wording of 'statistical illusion'"
 CC-147,A,2026-11-01,weekly intake,1,2026-11-02,
 CC-148,B,2026-11-01,weekly intake,0,2026-11-02,
-CC-149,C,2026-11-01,weekly intake,0,,
-CC-150,A,2026-11-01,weekly intake,0,,
+CC-149,C,2026-11-01,weekly intake,1,2026-11-17,
+CC-150,A,2026-11-01,weekly intake,1,2026-11-17,
 CC-151,B,2026-11-01,weekly intake,1,2026-11-03,"source: the PQ reply text (Ian Vassallo question, Minister Miriam Dalli, 9 Feb 2026) not obtained; every readable copy is indirect speech with no quotation marks (MaltaDaily 10 Feb 2026, Newsbook MT 11 Feb 2026, Lovin Malta 17 Feb 2026); the reply gives a collection rate 'over 85%' of about 283 million containers confirmed by the operator, but no 2024 comparator (Lovin Malta's 81% and the claim's 84% are outlet/other-source figures); Independent and MaltaToday 403, parlament.mt 403; need the PQ number and reply text from parlament.mt in a browser; tried: Independent, MaltaToday, MaltaDaily, Newsbook, Lovin Malta, TVM site search, parlament.mt, 2 web searches"
-CC-152,C,2026-11-01,weekly intake,0,,
+CC-152,C,2026-11-01,weekly intake,1,2026-11-17,
 CC-153,A,2026-11-01,weekly intake,1,2026-11-03,
 CC-154,B,2026-11-08,weekly intake,0,2026-11-09,
 CC-155,B,2026-11-08,weekly intake,1,2026-11-11,"source: the Commission's own words not obtained. EPP Group release (24 Mar 2026) and Malta Daily give the DG Environment representative only in indirect speech (no quotation marks; read in full 11 Nov 2026); PETI hearing recording/minutes for 23-24 Mar 2026 not found (europarl doceo agenda and PV URLs return empty 202 to scripts and WebFetch; the Feb 2026 PETI minutes list no Flimkien għal Ambjent Aħjar petition item); need the EP Multimedia Centre recording or PETI minutes in a browser, with the petition number; tried: EPP page, Malta Daily, 2 web searches, europarl doceo, WebFetch"
 CC-156,B,2026-11-08,weekly intake,1,2026-11-11,
 CC-157,A,2026-11-08,weekly intake,0,2026-11-10,
-CC-158,B,2026-11-08,weekly intake,0,,
-CC-159,A,2026-11-08,weekly intake,0,,
-CC-160,B,2026-11-08,weekly intake,0,,
+CC-158,B,2026-11-08,weekly intake,1,2026-11-16,
+CC-159,A,2026-11-08,weekly intake,1,2026-11-09,
+CC-160,B,2026-11-08,weekly intake,1,2026-11-17,"source: the text of Gozo and Comino Local Plan policy GZ-DARK-1 (Chapter 13 of the 2006 Local Plan policy document) is the crux and is still unread; the draft regulations (midnight switch-off, reg. 7(2)(b)) and Map 13.8 (Dwejra inside GZ-DARK-1) are now read from the maintainer's copies; need the GZ-DARK-1 policy paragraph from the Local Plan document (pa.org.mt, Cloudflare check); tried: pa.org.mt in the built-in browser (security check), UM OAR copy (map pages only), BirdLife blog, web search (paraphrases only)"
 CC-161,C,2026-11-08,weekly intake,0,2026-11-09,
 CC-162,B,2026-11-15,weekly intake,1,2026-11-16,
-CC-163,B,2026-11-15,weekly intake,0,,
-CC-164,A,2026-11-15,weekly intake,0,,
-CC-165,B,2026-11-15,weekly intake,0,,
-CC-166,C,2026-11-15,weekly intake,0,,
-CC-167,A,2026-11-15,weekly intake,0,,
-CC-168,B,2026-11-15,weekly intake,0,,
+CC-163,B,2026-11-15,weekly intake,1,2026-11-17,"source: the Special Eurobarometer on biodiversity (Commission release 3 Jun 2026; fieldwork Feb-Mar 2026, c. 26,500 interviews) with the Malta country table is not obtainable: europa.eu/eurobarometer is a script-driven site with no readable report link, data.europa.eu has no 2026 edition yet, MaltaToday 403; the 77% (Malta) vs 58% (EU) and 72% figures are known only from MNA/Italpress (14 Jun 2026, read, outlet text) and search summaries (second-hand); the Commission release gives EU-wide 94% for pollution as a threat, a different scale, so question wording and answer scale are unverified; tried: MNA (read), Commission-sourced reprints (European Sting, Insight EU), data.europa.eu search, europa.eu/eurobarometer pages, 2 web searches; needs the report PDF/country tables in a browser"
+CC-164,A,2026-11-15,weekly intake,1,2026-11-17,
+CC-165,B,2026-11-15,weekly intake,1,2026-11-17,"source: the Budget Estimates 2027 (finance.gov.mt 403 to scripts; budget.gov.mt 403) behind the €213 million, €21 million (2026) and €217 million figures; Amphora's article is read (verbatim headline found) but its figures were read via a summarising tool; search summaries of other outlets give a €182 million Finance Ministry estimate for the accommodation eco-contribution, so the €213 million build-up is unverified; tried: finance.gov.mt, budget.gov.mt, Amphora, KPMG/PwC/TVM budget summaries via search, 1 web search; needs the Estimates page (Ministry for Tourism, MTA vote, eco-contribution revenue line) in a browser"
+CC-166,C,2026-11-15,weekly intake,1,2026-11-17,"source: the MHRA's own statement not found; MaltaToday (maintainer copy, read 17 Nov 2026) quotes only 'too sharp' and one sentence on destination quality; the European comparison is the outlets' paraphrase (MaltaToday 'even by European standards'; Lovin Malta 'even when compared with other Mediterranean and European destinations'); need the MHRA Budget 2027 reaction text; tried: MaltaToday copy, Lovin Malta, mhra.org.mt (no posts after 2021), web search"
+CC-167,A,2026-11-15,weekly intake,1,2026-11-17,
+CC-168,B,2026-11-15,weekly intake,1,2026-11-17,"source: Alex Borg's own words (22 May 2026) not obtained in quotation marks: The Malta Independent 403; Newsbook and search summaries give him only in indirect speech ('Traffic costs Malta €770 million annually, projected to reach €900 million, Borg has argued'); the figures match the National Transport Master Plan (€770 million 2025, €917 million 2030, Lovin Malta, outlet text) but the PN's €900 million is not the plan's €917 million and one Newsbook piece says 'currently'; need the Independent article text or a PN release/transcript; tried: Independent (403), Newsbook (search summaries), Lovin Malta (search), 1 web search"

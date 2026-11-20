@@ -2,13 +2,15 @@ id: CC-141
 title: 'Pre-Budget Document: Malta has the lowest fertility rate in the EU'
 category: Tourism & Population
 subtopic: Population & labour
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
-  text: 'Ministry for Finance, Pre-Budget Consultation Document 2027 (September 2026, launched 30 Sep 2026), p. 6: ''Malta''s
-    fertility rate is the lowest in the EU27, while an ageing population will continue to place pressure on pensions, healthcare
-    and long-term care in the years ahead.'''
+  text: 'Ministry for Finance, Pre-Budget Consultation Document 2027 (September 2026, launched 30 Sep 2026), Minister''s foreword,
+    p. 6 (PDF p. 8): ''Malta''s fertility rate is the lowest in the EU27, while an ageing population will continue to place
+    pressure on pensions, healthcare and long-term care in the years ahead.'' Section 5.2 (p. 97) adds: ''Malta registered
+    the lowest total fertility rate among the European Union Member States in 2024, at 1.01 live births per woman, compared
+    with the EU average of 1.34''.'
   speaker: Ministry for Finance (Pre-Budget Document 2027)
   date: '2026-09-30'
   wording_status: Verbatim found
@@ -17,30 +19,66 @@ claim:
     publisher: Ministry for Finance
     date: '2026-09-30'
     url: https://finance.gov.mt/wp-content/uploads/2026/09/PRE-BUDGET-2027-DOC.pdf
-    note: The claim. Read through WebFetch on 26 Oct 2026 (finance.gov.mt returns 403 to scripts); the same wording was returned
-      by two separate extractions. Page number from the extracted page markers.
+    note: The claim. finance.gov.mt refuses scripts; full PDF (156 pp.) read from the maintainer's browser copy on 16-17 Nov
+      2026 (sha256 in archive/manifest.csv). Foreword signed by Clyde Caruana, Minister of Finance.
   quote: Malta's fertility rate is the lowest in the EU27
-counter_evidence: 'Context, not tested: Eurostat''s total fertility rate has put Malta at or near the bottom of the EU in
-  recent years, with Spain and Italy close; the ranking can change with each release and with the year chosen. The document
-  gives no year.'
-tests: Eurostat demo_find (total fertility rate) for all Member States, latest year and the past five; NSO births releases
-  for the latest Maltese figure; whether the claim holds in the latest year Eurostat has published.
+counter_evidence: 'Eurostat demo_find (updated 13 Nov 2026): Malta''s total fertility rate was 1.01 in 2024, the lowest of
+  the 27 Member States (Spain 1.10, Lithuania 1.11), and Malta has been lowest in every year from 2017 to 2024 (gap to second
+  0.03-0.09). From 2001 to 2016 it ranked 3rd to 18th from the bottom. Eurostat Statistics Explained gives the EU-27 rate
+  as 1.34 in 2024 (the API flags the EU-27 value for 2022-2024 as not for publication). The foreword gives no year; the
+  document''s section 5.2 gives 2024 and figures that match Eurostat.'
+tests: Eurostat demo_find (total fertility rate) for all Member States, 2000-2024, ranked by year; Eurostat Statistics Explained
+  for the EU-27 figure. The second half of the sentence (ageing and pressure on services) is not tested.
 why_low_hanging: A single ranking against one Eurostat table.
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'High: Eurostat reachable; the document is readable through WebFetch only.'
-caveats: Candidate from the top-up intake of 26 Oct 2026. Population is in scope because the document ties it to pressure
-  on services; the check tests the ranking only, not the policy argument. Confirm the sentence in the PDF.
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High: Eurostat API reachable; the document from the maintainer''s browser copy.'
+caveats: 'Supported: no right of reply needed. Only the ranking is tested. Eurostat''s 2024 figures may be revised and 2025
+  is not yet published. The total fertility rate is a period measure.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - Eurostat demo_find total fertility rate, EU-27 Member States 2000-2024 (data/cc-141/eurostat_demo_find_tfr.csv; ranks in data/cc-141/ranks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-11-17'
+thumbnail:
+  figure: '1.01'
+  caption: 'Malta''s total fertility rate in 2024, the EU''s lowest; lowest every year since 2017 (Eurostat)'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50907
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-141A
+    text: "“Malta’s fertility rate is the lowest in the EU27”"
+    said_by: "Minister for Finance [1]"
+    finding: "Lowest in 2024 (1.01) and in every year since 2017 (Eurostat)."
+    rating: "Accurate"
+    tone: green
+  - id: CC-141B
+    text: "Malta 1.01 in 2024 against an EU average of 1.34"
+    said_by: "Ministry for Finance [1]"
+    finding: "Both figures match Eurostat [2, 3]."
+    rating: "Accurate"
+    tone: green
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-10-29
+    step: started
+    note: "Worker A, attempt 1: blocked on network. The Pre-Budget Consultation Document 2027 PDF (finance.gov.mt) returned 403 to scripts and WebFetch and Wayback reset the connection on 29 Oct 2026, so the sentence and its page could not be confirmed first-hand; blog and consultancy summaries are second-hand. Needed: the PDF read in a browser (sentence, page)."
+  - date: 2026-11-17
+    step: note
+    note: "Maintainer's browser copy of the Pre-Budget Document 2027 read: sentence confirmed in the Minister's foreword, printed p. 6 (PDF p. 8); section 5.2 (p. 97) gives 2024, 1.01 and EU 1.34. Eurostat demo_find TFR 2000-2024 downloaded (updated 13 Nov 2026) and Member States ranked by year (tools/cc-141-report/calc.py); EU-27 2024 from Eurostat Statistics Explained."
+  - date: 2026-11-17
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Supported (high confidence); no right of reply needed.

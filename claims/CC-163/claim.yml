@@ -2,7 +2,7 @@ id: CC-163
 title: 'Eurobarometer: 77% of Maltese call pollution a serious threat, the highest in the EU (58% EU average)'
 category: Air
 subtopic: Air quality & health
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -56,3 +56,7 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-17
+    step: started
+    note: "Worker B, attempt 1: blocked on source. The survey is the Special Eurobarometer on biodiversity published 3 Jun 2026 (fieldwork Feb-Mar 2026 in the EU27, about 26,500 face-to-face interviews, per the Commission release as reprinted). The 77% (Malta) against 58% (EU) figures for pollution and 72% for loss of natural areas were read only in the Malta News Agency/Italpress report of 14 Jun 2026 (outlet text, not the survey) and in search summaries. The Commission release reports a different EU-wide figure for pollution (94%), so the question wording and answer scale behind 58% are unverified. The report and Malta country table were not reachable. Needed: the report PDF or tables (question text, scale, Malta and EU27 values, sample size)."

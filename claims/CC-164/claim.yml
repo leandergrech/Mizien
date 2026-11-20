@@ -2,61 +2,111 @@ id: CC-164
 title: 'Budget 2027: eco-contribution to €8 a night (€10 short lets) to raise about €182 million'
 category: Tourism & Population
 subtopic: Tourism numbers & capacity
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Largely supported
+verdict_confidence: Moderate
 claim:
-  text: 'Finance Minister Clyde Caruana (Budget 2027 speech, 26 Oct 2026), as reported by Newsbook and The Malta Independent:
-    from 1 January 2027 the environmental contribution on tourist stays rises from €1.50 to €8 per person per night in collective
-    accommodation (capped at €64 per person) and to €10 in short lets (capped at €80), and the revised rates are projected
-    to raise about €182 million. Other outlets report different revenue figures (about €80 million, MaltaToday; €213 million,
-    Amphora Media).'
+  text: 'Clyde Caruana, Minister for Finance, Budget Speech 2027 (26 Oct 2026, in Maltese, pp. 26-27): ''Mill-1 ta'' Jannar
+    li ġej, l-eko-kontribuzzjoni li trid titħallas minn dawk li jirrisjedu f''akkomodazzjoni kollettiva se tkun dik ta'' €8
+    kull lejl sa massimu ta'' €64 kull persuna. Ir-rata tal-eko-kontribuzzjoni għal dawk li jirrisjedu f''appartamenti hekk
+    magħrufa bħala short lets se tkun dik ta'' €10 kull lejl sa massimu ta'' €80 kull persuna. Id-dħul minn dawn ir-reviżjonijiet
+    mistenni jkun madwar €182 miljun.'' (Our translation: from 1 January the eco-contribution in collective accommodation
+    will be €8 a night up to €64 a person, and in short lets €10 a night up to €80; the revenue from these revisions is expected
+    to be around €182 million.)'
   speaker: Clyde Caruana, Minister for Finance (Budget Speech 2027)
   date: '2026-10-26'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
+  - title: Diskors tal-Baġit 2027 (Budget Speech 2027)
+    publisher: Ministry for Finance
+    date: '2026-10-26'
+    url: https://finance.gov.mt/
+    note: The claim in the Minister's own words (Maltese), printed pp. 26-27. finance.gov.mt refuses scripts; maintainer's
+      copy (80 pp.) read 17 Nov 2026 (sha256 in archive/manifest.csv). The PDF's own URL was not recorded.
   - title: 'Budget 2027: Eco-tax rises to €8 a night for hotel guests and €10 for short-lets'
     publisher: Newsbook
     date: '2026-10-26'
     url: https://newsbook.com.mt/en/budget-2027-eco-tax-rises-to-e8-a-night-for-hotel-guests-and-e10-for-short-lets/
-    note: Rates and the €182 million projection are in the outlet's own narration; its only direct Caruana quote is about
-      pressure on infrastructure (read 15 Nov 2026).
-  - title: 'Budget 2027: Higher eco-contributions for tourists staying in Malta, visiting Comino'
-    publisher: The Malta Independent
-    date: '2026-10-26'
-    url: https://www.independent.com.mt/articles/2026-10-26/local-news/Budget-2027-Higher-eco-contributions-for-tourists-staying-in-Malta-visiting-Comino-6736294107
-    note: 'Per a search summary: about €182 million. Not read.'
-  - title: 'Budget 2027: follow the announcements, analysis and measures as they unfold'
-    publisher: MaltaToday
-    date: '2026-10-26'
-    url: https://www.maltatoday.com.mt/news/budget-2027/145265/live__budget_2027_follow_the_announcements_analysis_and_measures_as_they_unfold
-    note: 'Per a search summary: government expects about €80 million; MHRA warning. Page returned 403 to WebFetch earlier
-      in this series; not read.'
-counter_evidence: 'Outlets disagree on the yield: about €182 million (Newsbook, Malta Independent), about €80 million (MaltaToday,
-  per a search summary) and €213 million (Amphora Media, from the Budget Estimates; see CC-165). The new rates were a budget
-  proposal at the time of reporting; a secondary source says no law had yet adopted them and that €1.50 was in force. Caruana
-  tied the rise to pressure on infrastructure (Newsbook).'
-tests: Budget speech text and Estimates 2027 (revenue line for the eco-contribution; finance.gov.mt); NSO accommodation statistics
-  (guest nights in collective accommodation, 2025) multiplied by rate and cap, with exemptions (for example English-language
-  schools); the 2026 receipts; the legal notice or Finance Bill when published.
+    note: Rates and EUR 182 million in the outlet's own narration (read 15 Nov 2026).
+  quote: Id-dħul minn dawn ir-reviżjonijiet mistenni jkun madwar €182 miljun.
+counter_evidence: 'A forecast, tested for plausibility. NSO Inbound Tourism December 2025: 13.49 million nights in collective
+  and 8.96 million in other rented accommodation in 2025; at the new rates that is EUR 198 million (all ages, no caps), about
+  EUR 176 million for adults (assumed under-18 share 11%) and about EUR 193 million scaled to the 28 million nights the speech
+  expects in 2026; the 8-night caps (38% of tourists stay 7+ nights) and the English-school exemption lower these. The speech
+  does not say whether EUR 182 million is total or additional; Amphora Media reports the Estimates at EUR 213 million in 2027
+  against EUR 21 million in 2026 (second-hand), which fits EUR 182 million as extra accommodation revenue plus the new cruise
+  and Comino fees. The ''about EUR 80 million'' attributed to MaltaToday is the speech''s work-permit fee yield; MaltaToday''s
+  own blog says EUR 214 million.'
+tests: Budget Speech 2027 text; NSO inbound tourism nights by accommodation type and age, 2025; the speech's 2026 night total;
+  the Estimates figure as reported (second-hand).
 why_low_hanging: Yield is a transparent multiplication of published guest-night data by the stated rate and caps.
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'Medium: NSO and Eurostat tourism data reachable; the Budget speech and Estimates on finance.gov.mt returned
-  403, so the maintainer may need to paste the passages.'
-caveats: Candidate from the weekly intake of 15 Nov 2026. The figure is reported by outlets; Caruana's own wording on the
-  revenue was not found, so wording is a paraphrase. The check covers the rate and the revenue projection, not whether the
-  measure is good policy. CC-165 and CC-166 concern the same measure.
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'Medium: speech from the maintainer''s copy; NSO tables in a browser; Budget Estimates not read.'
+caveats: 'Largely supported: no right of reply needed. Rates and wording exact; EUR 182 million is a projection consistent
+  with NSO guest nights; its basis (total or additional) is not stated. The previous rate (EUR 1.50, per outlets) is not in
+  the speech and was not checked. CC-165 and CC-166 concern the same measure.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - Budget Speech 2027 pp. 26-27; NSO Inbound Tourism December 2025 (data/cc-164/nso_inbound_2025.csv; estimate in data/cc-164/checks.csv)
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-11-17'
+thumbnail:
+  figure: '€182m'
+  caption: 'Projected eco-contribution revenue from the 2027 rates; NSO guest nights give EUR 176-193 million before caps'
+pledge:
+  status: Not yet due
+  kind: government   # a commitment made in office (budget speech) (methodology/verdict-scale.md, Pledges)
+  as_of: '2026-11-17'
+  made_by: [clyde-caruana]
+  made_on: '2026-10-26'
+  vehicle: Budget Speech 2027, pp. 26-27
+  deadline: '2027-01-01'
+  target: Eco-contribution of EUR 8 a night (cap EUR 64) in collective accommodation and EUR 10 (cap EUR 80) in short lets
+    from 1 January 2027; revenue around EUR 182 million
+  note: Not yet in force when checked; no legal notice read. Revisit after 1 January 2027 and when 2027 receipts are published.
 location:
   place: Parliament House, Valletta
   lat: 35.89614
   lon: 14.50978
   scope: institution
   icon: parliament
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-164A
+    text: "€8 a night (cap €64) in collective accommodation and €10 (cap €80) in short lets from 1 Jan 2027"
+    said_by: "Caruana [1]"
+    finding: "In the speech, p. 27, exactly."
+    rating: "Accurate"
+    tone: green
+  - id: CC-164B
+    text: "Revenue from the revisions “around €182 million”"
+    said_by: "Caruana [1]"
+    finding: "Our estimate from NSO nights is €176–193 million before caps. The reported Estimates fit it as extra revenue."
+    rating: "Plausible"
+    tone: green
+  - id: CC-164C
+    text: "About €80 million (as summarised for MaltaToday)"
+    said_by: "Search summary"
+    finding: "In the speech €80 million is the work-permit fee yield; MaltaToday’s own blog says €214 million."
+    rating: "Mix-up"
+    tone: amber
+history:
+- date: '2026-11-16'
+  step: started
+  note: "Attempt 1 (16 Nov 2026), blocked on source. Rates (EUR 8 / EUR 10, caps EUR 64 / EUR 80) and the EUR 182 million projection read in Newsbook, TVMnews and Lovin Malta, all in the outlets' own narration; Caruana is quoted verbatim only on tourism growth and pressure on infrastructure. Budget Speech text on finance.gov.mt is 403 and the Wayback copy unreachable. Needed: the speech passage on the eco-contribution. No report or verdict started."
+- date: '2026-11-17'
+  step: note
+  note: "Maintainer's copy of the Maltese Budget Speech 2027 read: rates, caps and 'madwar €182 miljun' verbatim on pp. 26-27; the speech's EUR 80 million is the work-permit fee yield. MaltaToday live blog and Malta Independent copies read. NSO Inbound Tourism December 2025 tables read in the browser; yield estimated (tools/cc-164-report/calc.py). Budget Estimates not readable (finance.gov.mt)."
+- date: '2026-11-17'
+  step: version
+  version: '1.0'
+  note: First issue. Verdict Largely supported (moderate confidence); no right of reply needed.

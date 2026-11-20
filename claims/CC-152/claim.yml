@@ -1,55 +1,97 @@
 id: CC-152
-title: 'ERA: Malta at significant risk of missing its 2030 nitrogen-oxide target'
+title: 'ERA: Malta at significant risk of missing its 2030 nitrogen-oxide ceiling'
 category: Air
 subtopic: Air quality & health
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Supported
+verdict_confidence: High
 claim:
-  text: 'Environment and Resources Authority (draft revised National Air Pollution Control Programme, issued for consultation
-    in June 2026; reported by Italpress/Malta News Agency on 17 Jul 2026): Malta ''remains at significant risk of failing
-    to meet'' its legally binding 2030 NOx emissions target; with the measures in place NOx is forecast at 3.88 kilotonnes
-    in 2030 against a ceiling of 1.98 kilotonnes; road transport was 42.6% and maritime activity 15.5% of national NOx in
-    2023.'
+  text: 'Environment and Resources Authority, draft First Update of Malta''s National Air Pollution Control Programme (consultation
+    5 Jun-17 Jul 2026), section 3.1 (PDF p. 14): ''Currently, Malta meets all the emission reduction commitments for 2020
+    based on the estimated emissions for the year 2023. However, projections reported in 2025 indicate a significant risk
+    of non-compliance with the NOx ceiling for 2030.'' Table 4 (PDF p. 63): NOx projected at 3.88 kt in 2030 (With Measures)
+    against a 2030 ceiling of 1.98 kt; road transport 42.6% and national navigation 15.5% of NOx in 2023. Reported by Italpress/Malta
+    News Agency on 17 Jul 2026.'
   speaker: Environment and Resources Authority (ERA)
-  date: null
-  wording_status: 'Paraphrase: locate quote'
+  date: '2026-06-05'
+  wording_status: Verbatim found
   sources:
+  - title: First Update of Malta's National Air Pollution Control Programme (NAPCP), consultation draft
+    publisher: Environment and Resources Authority
+    date: '2026-06-05'
+    url: https://era.org.mt/first-update-of-maltas-national-air-pollution-control-programme-napcp/
+    note: The claim in ERA's own words. era.org.mt refuses scripts; 102-page draft and the consultation page read from the
+      maintainer's browser copies on 17 Nov 2026 (sha256 in archive/manifest.csv).
   - title: Malta at risk of missing 2030 NOx emissions target, ERA warns
     publisher: Italpress (Malta News Agency)
     date: '2026-07-17'
     url: https://www.italpress.com/?p=716573
-    note: The claim as reported; figures read on 1 Nov 2026. The wording in quotation marks is the agency's summary, not a
-      verified ERA quotation.
-  - title: Malta set to miss 2030 traffic-induced NOx emission reduction target
-    publisher: MaltaToday
-    date: n/d (June-July 2026)
-    url: https://www.maltatoday.com.mt/news/national/143188/malta_set_to_miss_2030_trafficinduced_nox_emission_reduction_target
-    note: Second report of the same programme; 403 on 1 Nov 2026.
-counter_evidence: This is a regulator's own forecast against a legal limit, so it is a claim against interest rather than
-  a boast. Forecasts depend on activity assumptions (vehicle fleet, shipping, power generation). The Commission opened an
-  infringement over the late NAPCP update (CC-129). The 2030 ceiling is a percentage cut on 2005 emissions under Directive
-  (EU) 2016/2284.
-tests: Directive (EU) 2016/2284 Annex II (Malta 2030 NOx reduction commitment) and the 2005 base; Malta NECD inventory and
-  projections submitted to the EEA (2025 and 2026 submissions); the draft NAPCP on era.org.mt; road-transport NOx from fleet
-  data (Transport Malta, NSO).
-why_low_hanging: A legal ceiling and ERA's own projection can both be read from the EEA NECD database.
+    note: Reports the programme in the agency's own words (its quotation marks are not ERA's).
+  quote: projections reported in 2025 indicate a significant risk of non-compliance with the NOx ceiling for 2030
+counter_evidence: 'Directive (EU) 2016/2284 Annex II (EUR-Lex, read 17 Nov 2026): Malta NOx -42% (2020-2029) and -79% (from
+  2030) on 2005, the second-steepest after Luxembourg (83%); on ERA''s 2005 base of 9.45 kt the 2030 ceiling is 1.98 kt (Eurostat''s
+  later base 9.62 kt gives 2.02). ERA''s With Measures projection 3.88 kt is 1.96 times the ceiling; the With Additional Measures
+  scenario still leaves NOx ''almost double''. Eurostat env_air_emis: NOx fell from 9.70 kt (2008) to 4.59 kt (2017) and has
+  stayed at 4.12-4.58 kt since (4.43 kt in 2024); road transport 41.4% and national navigation 15.3% of NOx in 2023 (ERA:
+  42.6% and 15.5%). A regulator''s warning against its own country''s interest.'
+tests: Directive (EU) 2016/2284 Annex II; ERA's draft NAPCP Tables 1 and 4; Eurostat env_air_emis NOx total and by sector.
+why_low_hanging: A legal ceiling and ERA's own projection can both be read and recomputed.
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: 'Medium to high: EEA reachable; ERA site returned 403 to curl earlier in October, so the draft programme may
-  need the maintainer.'
-caveats: Candidate from weekly intake 1 Nov 2026. Date of ERA's consultation text unconfirmed (June 2026 per the agency).
-  Link to CC-129 and CC-109.
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'High: Eurostat and EUR-Lex (browser) reachable; the ERA draft from the maintainer''s copy.'
+caveats: 'Supported: no right of reply needed. The programme read is the consultation draft (placeholders remain); the final
+  may change. Inventory recalculations change past values by up to 0.2 kt. Related: CC-129 (Commission action over the late
+  programme), CC-109.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
-evidence_shown: null
-outputs: {}
+evidence_shown:
+  - ERA draft NAPCP Table 4 (data/cc-152/era_napcp_table4.csv); Eurostat NOx 2005-2024 (data/cc-152/eurostat_nox_malta.csv); checks in data/cc-152/checks.csv
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-11-17'
+thumbnail:
+  figure: '3.88 kt'
+  caption: 'NOx projected for 2030 with existing measures, against a legal ceiling of 1.98 kt (ERA; Directive 2016/2284)'
 location:
   place: City Gate, Valletta (national claim)
   lat: 35.89623
   lon: 14.50909
   scope: national
   icon: cross
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-152A
+    text: "“a significant risk of non-compliance with the NOx ceiling for 2030”"
+    said_by: "ERA [2]"
+    finding: "Projection 1.96 times the ceiling; emissions flat at 4.1–4.6 kt since 2017."
+    rating: "Accurate"
+    tone: green
+  - id: CC-152B
+    text: "3.88 kt projected in 2030 against a 1.98 kt ceiling"
+    said_by: "ERA [2]"
+    finding: "Ceiling = 9.45 kt × (1 − 0.79), as in Annex II of the directive."
+    rating: "Accurate"
+    tone: green
+  - id: CC-152C
+    text: "Road transport 42.6% and national navigation 15.5% of NOx in 2023"
+    said_by: "ERA [2]"
+    finding: "Eurostat’s later inventory: 41.4% and 15.3%."
+    rating: "Accurate"
+    tone: green
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-02
+    step: started
+    note: "Worker C, attempt 1: blocked on source. ERA's draft revised NAPCP (consultation 5 Jun-17 Jul 2026) is on era.org.mt and gov.mt (both 403, no Wayback snapshot). Italpress/MNA (17 Jul 2026) reports the claim in the agency's own wording with no ERA speaker quoted. Needed: the programme text (NOx projection 3.88 kt vs 1.98 kt ceiling, 'significant risk' wording)."
+  - date: 2026-11-17
+    step: note
+    note: "Maintainer's copy of ERA's draft NAPCP first update (102 pp.) read: wording verbatim found (PDF pp. 11, 14, 63); Table 4 typed into data/cc-152. Directive 2016/2284 Annex II read on EUR-Lex in a browser (Malta NOx -79% from 2030). Eurostat env_air_emis NOx 2005-2024 and 2023-2024 sector split downloaded; ceiling and ratios recomputed (tools/cc-152-report/calc.py)."
+  - date: 2026-11-17
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Supported (high confidence); no right of reply needed.

@@ -1,44 +1,102 @@
 id: CC-036
-title: Construction dust 'a nuisance, not a health issue'
+title: "ERA: construction and quarry dust 'more of a nuisance rather than a health-related issue'"
 category: Air
 subtopic: Air quality & health
-status: Not started
-verdict: null
-verdict_confidence: null
+status: Drafted
+verdict: Not substantiated
+verdict_confidence: Moderate
 claim:
-  text: 'ERA (State of the Environment Report 2018): dust from construction is a coarser fraction and more of a
-    nuisance than a health-related issue.'
+  text: 'Environment and Resources Authority, State of the Environment Report 2018, Chapter 2 Ambient Air, p. 15: ''A source
+    of a coarser fraction of dust is mineral extraction and construction, which is considered to be more of a nuisance rather
+    than a health-related issue.'' The same paragraph: ''A minor percentage of this dust is in the PM10 size range, estimated
+    to range between 11 and 22 %.'''
   speaker: Environment and Resources Authority (ERA)
   date: '2018'
-  wording_status: 'Paraphrase: locate quote'
+  wording_status: Verbatim found
   sources:
   - title: 'State of the Environment Report 2018, Chapter 2: Ambient Air'
     publisher: ERA
     date: '2018'
     url: https://era.org.mt/wp-content/uploads/2019/05/3_Chapter2_AmbientAir_9Aug18.pdf
-    note: Primary report.
-counter_evidence: Peer-reviewed work links construction-site PM10 and PM2.5 to health effects; Malta's PM10 exceedances.
+    note: 'Primary report. era.org.mt refuses scripts; chapter read in full from a browser copy supplied by the maintainer on
+      16 Nov 2026 (sha256 in archive/manifest.csv). The sentence is in section 2.4.3, PDF p. 15.'
+  quote: A source of a coarser fraction of dust is mineral extraction and construction, which is considered to be more of
+    a nuisance rather than a health-related issue.
+counter_evidence: 'ERA gives no source for the judgement. Its cited study (Vella & Camilleri 2005, Xjenza 10:47-54) measured
+  11.0-22.9% of deposited quarry dust below 10 um (ERA''s 11-22%), estimated about 1,200 t of PM10 a year from quarries 0.2-2
+  km from homes, and concluded there may be impacts on the health of the general population and of quarry workers. The US
+  EPA ISA (2019) rates coarse PM (PM10-2.5) ''suggestive of, but not sufficient to infer'' a causal relationship for short-term
+  respiratory and cardiovascular effects and for mortality (fine PM: causal or likely causal); reviews and time-series studies
+  find associations with deaths and admissions (Brunekreef & Forsberg 2005; Adar et al. 2014; Meister et al. 2012), and desert
+  (mineral) dust PM10 is associated with mortality in Southern Europe (Stafoggia et al. 2016: +0.65% per 10 ug/m3). In Malta
+  47-72% of PM10 at monitoring stations is coarse (EEA, verified annual means), and every station''s latest PM10 annual mean
+  exceeds the WHO 2021 guideline of 15 ug/m3. In the statement''s favour: 77-89% of the dust by mass is larger than 10 um and
+  settles; the evidence on coarse PM is weaker than on fine PM.'
 tests: Literature on construction dust health effects; PM10/PM2.5 ratios at Msida.
 why_low_hanging: A specific, attributable statement that public data can test.
 tags: []
-tags_provisional: true
-priority: Queue
-data_readiness: Medium
-caveats: 'Candidate from the 4 Oct 2026 intake: wording paraphrased from a locator source; read the primary text
-  before any report.'
+tags_provisional: false
+priority: Done (v1.0)
+data_readiness: 'Medium: era.org.mt refuses scripts (browser copy from the maintainer); EEA air-quality statistics and the
+  health reviews are open.'
+caveats: 'Not substantiated: pending right of reply. True of particles larger than 10 um, which settle as nuisance dust; not
+  shown for the PM10 share of the same dust, which ERA''s own source links to possible health effects. Confidence is moderate
+  because the evidence on coarse PM is itself rated suggestive, and no study of limestone construction dust and health in Malta
+  was found. Coarse PM in the EEA data includes sea salt and Saharan dust, so it does not measure construction''s share.'
 right_of_reply:
   sent: null
   deadline: null
   response: null
 evidence_shown: null
-outputs: {}
+outputs:
+  report: report.pdf
+  flyer_pdf: flyer.pdf
+  flyer_png: flyer.png
+version: '1.0'
+last_reviewed: '2026-11-16'
+thumbnail:
+  figure: 1,200 t
+  caption: of PM10 a year from Malta's quarries, per the study ERA cites, which says it may affect health
 location:
   place: Environment and Resources Authority, Marsa
   lat: 35.88617
   lon: 14.49732
   scope: institution
   icon: era
+subclaims:   # parts of the claim tested separately (the report's sub-claim table), numbered parent + letter;
+             # kept in step with the report by scripts/subclaims.py; tone is the colour of the report's chip
+  - id: CC-036A
+    text: "Mineral extraction and construction are a source of a coarser fraction of dust"
+    said_by: "ERA [1]"
+    finding: "77–89% of deposited quarry dust by mass is larger than 10 µm in the study ERA cites."
+    rating: "Accurate"
+    tone: green
+  - id: CC-036B
+    text: "This dust “is considered to be more of a nuisance rather than a health-related issue”"
+    said_by: "ERA [1]"
+    finding: "No source is given. True of particles over 10 µm. Not shown for the PM10 share: its cited study concludes possible health effects, and the evidence for coarse PM is “suggestive”."
+    rating: "Not shown"
+    tone: orange
+  - id: CC-036C
+    text: "A minor percentage of this dust, 11–22%, is PM10"
+    said_by: "ERA [1]"
+    finding: "Matches the 11.0–22.9% of deposited dust measured in its source. By mass this is a minority, but about 1,200 t of PM10 a year from quarries."
+    rating: "Accurate"
+    tone: green
 history:   # research log: the date each step of the research was done (not when the site changed)
   - date: 2026-10-12
     step: note
     note: "Worker C, attempt 2: still blocked on network. era.org.mt returns 403 to curl and WebFetch (with and without a browser User-Agent); web.archive.org resets the connection. Two web searches found the chapter URL but no text with the 'nuisance' wording. Needed: the passage from Chapter 2 Ambient Air of the 2018 State of the Environment Report, read in a browser."
+  - date: 2026-10-27
+    step: note
+    note: "Worker C, attempt 3: still blocked. era.org.mt returns 403 to curl with a browser User-Agent; web.archive.org resets the connection; one web search returned no text of the Chapter 2 passage (only coverage of the report launch and unrelated dust studies). No wording was obtained, so no report or verdict. Needed: the passage on construction dust from Chapter 2 Ambient Air of the 2018 State of the Environment Report, copied from a browser."
+  - date: 2026-11-16
+    step: note
+    note: Maintainer supplied a browser copy of the chapter. Wording verbatim found (section 2.4.3, PDF p. 15). ERA's cited study (Vella & Camilleri 2005) read in full from the University of Malta repository; its size fractions match ERA's 11-22% and its conclusion points to possible health effects.
+  - date: 2026-11-16
+    step: note
+    note: Health evidence collected (US EPA ISA 2019 Table ES-1; WHO AQG 2021; Brunekreef & Forsberg 2005; Adar et al. 2014; Meister et al. 2012; Stafoggia et al. 2016; DOIs checked in Crossref, abstracts read). EEA verified PM10 and PM2.5 annual means for Malta downloaded; coarse share computed in tools/cc-036-report/calc.py.
+  - date: 2026-11-16
+    step: version
+    version: '1.0'
+    note: First issue. Verdict Not substantiated (moderate confidence); pending right of reply.

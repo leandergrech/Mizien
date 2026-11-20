@@ -1,0 +1,44 @@
+check,value,unit,source,note
+G1 Legal regulatory framework: score from item ratings,7.773,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 7.77; 3 items; matches
+G2 Government structure: score from item ratings,9.165,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 9.17; 4 items; matches
+G3 Long-term strategy: score from item ratings,6.663,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 6.66; 3 items; matches
+G4 Risk management: score from item ratings,6.663,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 6.66; 3 items; matches
+G5 Horizontal and vertical coordination: score from item ratings,5.83,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 5.83; 4 items; matches
+G6 Stakeholder engagement: score from item ratings,6.663,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 6.66; 3 items; matches
+G7 Inclusiveness: score from item ratings,5.55,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 5.55; 3 items; matches
+G8 Monitoring mechanisms: score from item ratings,4.995,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 5.00; 2 items; matches
+G9 Transparency: score from item ratings,7.773,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 7.77; 3 items; matches
+G10 Oversight and climate litigation: score from item ratings,4.44,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 4.44; 3 items; matches
+P1 Nationally Determined Contribution: score from item ratings,10.0,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 10.00; 3 items; matches
+P2 Mitigation strategy: score from item ratings,7.773,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 7.77; 3 items; matches
+P3 National adaptation plans: score from item ratings,8.887,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 8.89; 3 items; matches
+P4 Mitigation sector (energy): score from item ratings,6.66,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 6.66; 4 items; matches
+P5 Adaptation sector (disaster risk; water): score from item ratings,6.66,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 6.66; 4 items; matches
+F1 Domestic climate finance: score from item ratings,4.162,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 4.16; 4 items; matches
+F2 International climate finance (provider countries): score from item ratings,10.0,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 10.00; 3 items; matches
+F4 Domestic and international private climate finance mechanisms: score from item ratings,4.44,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 4.44; 3 items; matches
+Components whose published score is reproduced from their item ratings,18 of 18,,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",
+Governance axis: mean of its component scores,6.551,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 6.55; 10 components
+Public Policies axis: mean of its component scores,7.996,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 8.00; 5 components
+Finance axis: mean of its component scores,6.2,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 6.20; 3 components
+Overall: mean of the three axis scores,6.916,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",NAO 6.92 (PDF p. 14)
+Overall: mean of the 18 rated component scores (alternative),6.894,of 10,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",the Handbook defines component and axis scores only
+Components at or above 6.66 ('strengths'),12 of 18,,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",G1 G2 G3 G4 G6 G9 P1 P2 P3 P4 P5 F2
+Components at or below 3.33 ('challenges'),0,,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",
+Items rated advanced (P5 counted once),18,items,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",
+Items rated intermediate (P5 counted once),26,items,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",
+Items rated early (P5 counted once),14,items,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",
+Items rated no progress (P5 counted once),0,items,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",
+"Score of an item rated 'intermediate stage' (many aspects present, room for improvement)",6.66,of 10,"ClimateScanner Handbook (May 2024), p. 10; NAO Table 1 (PDF p. 14)",equal to the threshold for a strength
+Overall score above the 'intermediate' value,0.26,points,"NAO ClimateScanner review (Oct 2025), Appendix (data/cc-158/components.csv)",
+Malta effort-sharing emissions 2022 vs the legal 2005 base,43.0,%,"EEA GHG_ESD-ESR_2025.xlsx via data/cc-094/eea_esr_emissions.csv, retrieved 6 Oct 2026; Implementing Decisions (EU) 2020/2126 and 2026/895; Regulation (EU) 2023/857 (data/cc-094/esr_legal_inputs.csv)",1459.7 kt vs 1020.6 kt
+Malta 2022: effort-sharing emissions minus the annual allocation,220.3,kt CO2e,"EEA GHG_ESD-ESR_2025.xlsx via data/cc-094/eea_esr_emissions.csv, retrieved 6 Oct 2026; Implementing Decisions (EU) 2020/2126 and 2026/895; Regulation (EU) 2023/857 (data/cc-094/esr_legal_inputs.csv)",allocation 1239.4 kt
+Malta effort-sharing emissions 2023 vs the legal 2005 base,41.6,%,"EEA GHG_ESD-ESR_2025.xlsx via data/cc-094/eea_esr_emissions.csv, retrieved 6 Oct 2026; Implementing Decisions (EU) 2020/2126 and 2026/895; Regulation (EU) 2023/857 (data/cc-094/esr_legal_inputs.csv)",1445.0 kt vs 1020.6 kt
+Malta 2023: effort-sharing emissions minus the annual allocation,257.2,kt CO2e,"EEA GHG_ESD-ESR_2025.xlsx via data/cc-094/eea_esr_emissions.csv, retrieved 6 Oct 2026; Implementing Decisions (EU) 2020/2126 and 2026/895; Regulation (EU) 2023/857 (data/cc-094/esr_legal_inputs.csv)",allocation 1187.9 kt
+Malta effort-sharing emissions 2024 vs the legal 2005 base,40.8,%,"EEA GHG_ESD-ESR_2025.xlsx via data/cc-094/eea_esr_emissions.csv, retrieved 6 Oct 2026; Implementing Decisions (EU) 2020/2126 and 2026/895; Regulation (EU) 2023/857 (data/cc-094/esr_legal_inputs.csv)",1437.4 kt vs 1020.6 kt
+Malta 2024: effort-sharing emissions minus the annual allocation,301.2,kt CO2e,"EEA GHG_ESD-ESR_2025.xlsx via data/cc-094/eea_esr_emissions.csv, retrieved 6 Oct 2026; Implementing Decisions (EU) 2020/2126 and 2026/895; Regulation (EU) 2023/857 (data/cc-094/esr_legal_inputs.csv)",allocation 1136.3 kt
+Malta 2030 effort-sharing target vs 2005,-19.0,%,Implementing Decisions (EU) 2020/2126 and 2026/895; Regulation (EU) 2023/857 (data/cc-094/esr_legal_inputs.csv),
+Malta 2030 projection with planned measures vs 2005 (from CC-094),29.7,%,"EEA GHG projections 2025 submission via data/cc-094/checks.csv, retrieved 6 Oct 2026",
+Malta total GHG change 2005-2024,-27.4,%,"Eurostat env_air_gge (total excl. LULUCF, incl. international aviation memo), via data/cc-025/eurostat_gdp_ghg_pop.csv, retrieved 5 Oct 2026",2.987 -> 2.170 Mt CO2e
+EU-27 total GHG change 2005-2024,-33.5,%,"Eurostat env_air_gge (total excl. LULUCF, incl. international aviation memo), via data/cc-025/eurostat_gdp_ghg_pop.csv, retrieved 5 Oct 2026",4537.092 -> 3017.188 Mt CO2e
+Malta total GHG change 2016 (lowest year) to 2024,18.0,%,"Eurostat env_air_gge (total excl. LULUCF, incl. international aviation memo), via data/cc-025/eurostat_gdp_ghg_pop.csv, retrieved 5 Oct 2026",
