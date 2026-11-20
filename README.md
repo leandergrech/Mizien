@@ -199,7 +199,7 @@ Supported · Largely supported · **Not substantiated** · Misleading · Contrad
 | CC-163 | Air | Eurobarometer: 77% of Maltese call pollution a serious threat, the highest in the EU (58% EU average) | Not started | - |
 | CC-164 | Tourism & Population | Budget 2027: eco-contribution to €8 a night (€10 short lets) to raise about €182 million | Not started | - |
 | CC-165 | Tourism & Population | Amphora Media: 'Malta Will Charge Tourists €213 Million; Most Will Be Spent On Marketing' | Not started | - |
-| CC-166 | Tourism & Population | MHRA: €8 eco-contribution is too sharp 'even when compared with other Mediterranean and European destinations' | Not started | - |
+| CC-166 | Tourism & Population | MHRA: €8 eco-contribution is too sharp 'even when compared with other Mediterranean and European destinations' | In progress | - |
 | CC-167 | Climate & Energy | Ministry for Finance Economic Survey 2026: energy intensity 'fell considerably' between 2019 and 2024 | Not started | - |
 | CC-168 | Transport | PN: traffic congestion costs the economy about €770 million a year, rising to about €900 million by 2030 | Not started | - |
 
