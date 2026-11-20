@@ -2,7 +2,7 @@ id: CC-168
 title: 'PN: traffic congestion costs the economy about €770 million a year, rising to about €900 million by 2030'
 category: Transport
 subtopic: Cars & traffic
-status: Not started
+status: In progress
 verdict: null
 verdict_confidence: null
 claim:
@@ -56,3 +56,7 @@ location:
   lon: 14.50907
   scope: national
   icon: cross
+history:   # research log: the date each step of the research was done (not when the site changed)
+  - date: 2026-11-17
+    step: started
+    note: "Worker B, attempt 1: blocked on source. Borg's statement of 22 May 2026 is reported by The Malta Independent (403 to scripts) and by Newsbook only in indirect speech; no readable text puts the figures in his own quoted words. The EUR 770 million (2025) and EUR 917 million (2030) figures come from the National Transport Master Plan as reported by Lovin Malta (outlet text); the PN's rounded EUR 900 million differs from the plan's EUR 917 million. Needed: the Independent article text or a PN release or transcript, and the Master Plan page for the congestion cost."
