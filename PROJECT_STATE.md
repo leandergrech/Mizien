@@ -93,6 +93,10 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
   The 'EUR 80 million' in a MaltaToday search summary is the work-permit fee yield. Helps CC-165: the Estimates figure
   (EUR 213m vs EUR 21m) fits EUR 182m as extra accommodation revenue plus cruise and Comino fees; the Estimates themselves
   are still unread.
+## Laptop session 2026-11-17: CC-166 still blocked
+- **CC-166 (MHRA, EUR 8 eco-contribution 'too sharp'): no report.** The maintainer's MaltaToday copy quotes the MHRA only
+  as 'too sharp' (a judgement); the European comparison, the checkable part, is the outlets' paraphrase. **Needs the
+  maintainer:** the MHRA's own Budget 2027 reaction (press release, email to media or social post), about 26 Oct 2026.
 
 ## Maintainer session 2026-11-16: open PRs consolidated
 
