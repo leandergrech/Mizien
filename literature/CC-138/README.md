@@ -1,13 +1,10 @@
-# CC-138: OPM: White Rocks national park protected from development
+# CC-138: OPM: White Rocks national park notice and protection from development
 
-**Status:** literature not yet collected.
+**Status:** checked (v1.0, 17 Nov 2026). Not substantiated (moderate); pledge not yet due.
 
-## To collect
+This is a check of legal texts, not of scientific literature: the evidence is the notice itself, the Act it is made
+under and comparable park instruments. See `notes.md` for what was read and how, and `data/sources.csv` (filter on
+CC-138) for every source.
 
-The gazetted text and the Schedule map (L.N. 209 of 2026); Environment Protection Act (Cap. 549) articles 54-55 and what designation as a national park adds; Planning Authority development control policy for the site (permits, outline permits, Local Plan zoning); the OPM or Project Green statement in its own words.
-
-## Known leads
-
-See `data/sources.csv` (filter on CC-138) for the source that located this claim and its context. It locates the claim; it is not the scientific evidence.
-
-Add `references.bib` and `notes.md` as in `literature/CC-001/`.
+Local copies (git-ignored, not committed): `maltatoday-white-rocks-national-park-legal-notice-2026-07-29.pdf`
+(maintainer's browser copy, recorded in `archive/manifest.csv`).
