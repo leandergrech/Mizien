@@ -87,6 +87,12 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
   the crux ("no lighting" or "strongly discouraged"), is not in the maintainer's files (map only) and pa.org.mt shows a
   security check. **Needs the maintainer:** the GZ-DARK-1 paragraph from the Gozo and Comino Local Plan (2006) policy
   document, Chapter 13.
+## Laptop session 2026-11-17: CC-164 checked
+- **CC-164 (Budget 2027 eco-contribution, EUR 182 million): Largely supported, moderate.** Rates, caps and 'madwar EUR 182
+  miljun' verbatim in the Maltese speech (pp. 26-27). NSO 2025 nights at the new rates give EUR 176-193 million before caps.
+  The 'EUR 80 million' in a MaltaToday search summary is the work-permit fee yield. Helps CC-165: the Estimates figure
+  (EUR 213m vs EUR 21m) fits EUR 182m as extra accommodation revenue plus cruise and Comino fees; the Estimates themselves
+  are still unread.
 
 ## Maintainer session 2026-11-16: open PRs consolidated
 
