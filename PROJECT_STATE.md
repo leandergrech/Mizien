@@ -54,6 +54,11 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
 - **Tip for blocked government statements:** press releases are at
   `departmentofinformation.gov.mt/press-release/<year>/pr<yy><nnnn>`; in the browser, a same-origin fetch loop over a
   number range finds a release by keyword (about six releases a day in 2026).
+## Laptop session 2026-11-17: CC-141 checked
+- **CC-141 (Pre-Budget Document 2027, lowest fertility rate in the EU27): Supported, high.** Sentence confirmed in the
+  Minister's foreword (printed p. 6, PDF p. 8) from the maintainer's copy. Eurostat demo_find: Malta 1.01 in 2024, lowest
+  of 27 (Spain 1.10), and lowest every year 2017-2024. The API flags the EU-27 aggregate for 2022-2024 as not for
+  publication; 1.34 (2024) is from Statistics Explained. No right of reply needed.
 
 ## Maintainer session 2026-11-16: open PRs consolidated
 
