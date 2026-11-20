@@ -76,6 +76,11 @@ for Education press release on San Ġwann sports facilities (PR260772, 2 May 202
   the Minister's own quote (PR260072EN, 19 Jan 2026); speaker moved from the Labour Party, which repeated it. NSO
   municipal waste tables 2020-2024: 424 kt collected separately (gross), 270 kt recycled/recovered/reused, separate
   collection +6% since 2019. Draft pending right of reply to the Ministry (not sent). Related: CC-004 (same release).
+## Laptop session 2026-11-17: CC-152 checked
+- **CC-152 (ERA, significant risk of missing the 2030 NOx ceiling): Supported, high.** Wording verbatim from the
+  maintainer's copy of the draft NAPCP (PDF p. 14). Ceiling 1.98 kt = 2005 base 9.45 x 0.21 (Directive 2016/2284 Annex II,
+  read on EUR-Lex in a browser); projection 3.88 kt; Eurostat NOx flat at 4.1-4.6 kt since 2017. No right of reply.
+- **Tip:** EUR-Lex returns an empty page to scripts and WebFetch; the built-in browser reads it.
 
 ## Maintainer session 2026-11-16: open PRs consolidated
 

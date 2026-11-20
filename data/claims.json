@@ -274,7 +274,7 @@
       "similar": [
         {
           "id": "CC-025",
-          "score": 0.4,
+          "score": 0.37,
           "terms": [
             "capita",
             "emissions"
@@ -1415,7 +1415,7 @@
       "similar": [
         {
           "id": "CC-104",
-          "score": 0.37,
+          "score": 0.38,
           "terms": [
             "noise",
             "directive",
@@ -1758,7 +1758,7 @@
       "similar": [
         {
           "id": "CC-003",
-          "score": 0.4,
+          "score": 0.37,
           "terms": [
             "capita",
             "emissions"
@@ -5423,7 +5423,7 @@
         },
         {
           "id": "CC-106",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "population",
             "estimated"
@@ -5875,8 +5875,8 @@
           "id": "CC-162",
           "score": 0.82,
           "terms": [
-            "projected",
             "emit",
+            "projected",
             "target"
           ]
         }
@@ -6497,7 +6497,7 @@
       "similar": [
         {
           "id": "CC-020",
-          "score": 0.37,
+          "score": 0.38,
           "terms": [
             "noise",
             "directive",
@@ -6629,7 +6629,7 @@
       "similar": [
         {
           "id": "CC-088",
-          "score": 0.37,
+          "score": 0.36,
           "terms": [
             "population",
             "estimated"
@@ -7299,7 +7299,7 @@
         },
         {
           "id": "CC-147",
-          "score": 0.32,
+          "score": 0.31,
           "terms": [
             "intensity",
             "increased",
@@ -9706,7 +9706,7 @@
       "similar": [
         {
           "id": "CC-114",
-          "score": 0.32,
+          "score": 0.31,
           "terms": [
             "intensity",
             "increased",
@@ -10028,12 +10028,13 @@
     },
     {
       "id": "CC-152",
-      "title": "ERA: Malta at significant risk of missing its 2030 nitrogen-oxide target",
+      "title": "ERA: Malta at significant risk of missing its 2030 nitrogen-oxide ceiling",
       "category": "Air",
-      "claim": "Environment and Resources Authority (draft revised National Air Pollution Control Programme, issued for consultation in June 2026; reported by Italpress/Malta News Agency on 17 Jul 2026): Malta 'remains at significant risk of failing to meet' its legally binding 2030 NOx emissions target; with the measures in place NOx is forecast at 3.88 kilotonnes in 2030 against a ceiling of 1.98 kilotonnes; road transport was 42.6% and maritime activity 15.5% of national NOx in 2023.",
-      "counter": "This is a regulator's own forecast against a legal limit, so it is a claim against interest rather than a boast. Forecasts depend on activity assumptions (vehicle fleet, shipping, power generation). The Commission opened an infringement over the late NAPCP update (CC-129). The 2030 ceiling is a percentage cut on 2005 emissions under Directive (EU) 2016/2284.",
-      "status": "In progress",
-      "verdict": null,
+      "claim": "Environment and Resources Authority, draft First Update of Malta's National Air Pollution Control Programme (consultation 5 Jun-17 Jul 2026), section 3.1 (PDF p. 14): 'Currently, Malta meets all the emission reduction commitments for 2020 based on the estimated emissions for the year 2023. However, projections reported in 2025 indicate a significant risk of non-compliance with the NOx ceiling for 2030.' Table 4 (PDF p. 63): NOx projected at 3.88 kt in 2030 (With Measures) against a 2030 ceiling of 1.98 kt; road transport 42.6% and national navigation 15.5% of NOx in 2023. Reported by Italpress/Malta News Agency on 17 Jul 2026.",
+      "counter": "Directive (EU) 2016/2284 Annex II (EUR-Lex, read 17 Nov 2026): Malta NOx -42% (2020-2029) and -79% (from 2030) on 2005, the second-steepest after Luxembourg (83%); on ERA's 2005 base of 9.45 kt the 2030 ceiling is 1.98 kt (Eurostat's later base 9.62 kt gives 2.02). ERA's With Measures projection 3.88 kt is 1.96 times the ceiling; the With Additional Measures scenario still leaves NOx 'almost double'. Eurostat env_air_emis: NOx fell from 9.70 kt (2008) to 4.59 kt (2017) and has stayed at 4.12-4.58 kt since (4.43 kt in 2024); road transport 41.4% and national navigation 15.3% of NOx in 2023 (ERA: 42.6% and 15.5%). A regulator's warning against its own country's interest.",
+      "status": "Drafted",
+      "reply": "not-needed",
+      "verdict": "Supported",
       "tags": [],
       "subtopic": "Air quality & health",
       "location": {
@@ -10043,17 +10044,45 @@
         "scope": "national",
         "icon": "cross"
       },
-      "priority": "Queue",
-      "wording_status": "Paraphrase: locate quote",
-      "confidence": null,
+      "priority": "Done (v1.0)",
+      "wording_status": "Verbatim found",
+      "confidence": "High",
       "speaker": "Environment and Resources Authority (ERA)",
       "bodies": [
         "era"
       ],
-      "date": "",
-      "quote": "",
-      "version": null,
-      "outputs": {},
+      "subclaims": [
+        {
+          "id": "CC-152A",
+          "text": "“a significant risk of non-compliance with the NOx ceiling for 2030”",
+          "finding": "Projection 1.96 times the ceiling; emissions flat at 4.1–4.6 kt since 2017.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-152B",
+          "text": "3.88 kt projected in 2030 against a 1.98 kt ceiling",
+          "finding": "Ceiling = 9.45 kt × (1 − 0.79), as in Annex II of the directive.",
+          "rating": "Accurate",
+          "tone": "green"
+        },
+        {
+          "id": "CC-152C",
+          "text": "Road transport 42.6% and national navigation 15.5% of NOx in 2023",
+          "finding": "Eurostat’s later inventory: 41.4% and 15.3%.",
+          "rating": "Accurate",
+          "tone": "green"
+        }
+      ],
+      "date": "2026-06-05",
+      "quote": "projections reported in 2025 indicate a significant risk of non-compliance with the NOx ceiling for 2030",
+      "version": "1.0",
+      "last_reviewed": "2026-11-17",
+      "outputs": {
+        "report": "claim-files/CC-152/report.pdf",
+        "flyer_pdf": "claim-files/CC-152/flyer.pdf",
+        "flyer_png": "claim-files/CC-152/flyer.png"
+      },
       "record": "https://github.com/leandergrech/Mizien/blob/main/claims/CC-152/claim.yml"
     },
     {
@@ -10672,8 +10701,8 @@
           "id": "CC-094",
           "score": 0.82,
           "terms": [
-            "projected",
             "emit",
+            "projected",
             "target"
           ]
         }
