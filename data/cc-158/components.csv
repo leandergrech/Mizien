@@ -1,0 +1,20 @@
+axis,component,name,nao_score,items_advanced,items_intermediate,items_early,items_none,items_not_applicable,pdf_page,source,retrieved
+Governance,G1,Legal regulatory framework,7.77,1,2,0,0,0,38,"NAO, A review of Malta's climate action using the ClimateScanner framework (Oct 2025), Appendix (item ratings and component score)",2026-11-16
+Governance,G2,Government structure,9.17,3,1,0,0,0,39,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Governance,G3,Long-term strategy,6.66,1,1,1,0,0,40,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Governance,G4,Risk management,6.66,1,1,1,0,0,41,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Governance,G5,Horizontal and vertical coordination,5.83,1,1,2,0,0,42,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Governance,G6,Stakeholder engagement,6.66,1,1,1,0,0,44,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Governance,G7,Inclusiveness,5.55,0,2,1,0,0,46,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Governance,G8,Monitoring mechanisms,5.00,0,1,1,0,0,48,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Governance,G9,Transparency,7.77,1,2,0,0,0,49,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Governance,G10,Oversight and climate litigation,4.44,0,1,2,0,0,51,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Public Policies,P1,Nationally Determined Contribution,10.00,3,0,0,0,0,52,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Public Policies,P2,Mitigation strategy,7.77,1,2,0,0,0,53,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Public Policies,P3,National adaptation plans,8.89,2,1,0,0,0,54,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Public Policies,P4,Mitigation sector (energy),6.66,0,4,0,0,0,56,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Public Policies,P5,Adaptation sector (disaster risk; water),6.66,0,4,0,0,0,58,"NAO ClimateScanner review (Oct 2025), Appendix; assessed twice (disaster risk management p. 58, water management p. 62), both 6.66 from four items at the intermediate stage",2026-11-16
+Finance,F1,Domestic climate finance,4.16,0,1,3,0,0,66,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Finance,F2,International climate finance (provider countries),10.00,3,0,0,0,0,69,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16
+Finance,F3,International climate finance (recipient countries),,0,0,0,0,1,70,"NAO ClimateScanner review (Oct 2025), Appendix: not applicable",2026-11-16
+Finance,F4,Domestic and international private climate finance mechanisms,4.44,0,1,2,0,0,71,"NAO ClimateScanner review (Oct 2025), Appendix",2026-11-16

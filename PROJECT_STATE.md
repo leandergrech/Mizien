@@ -3,7 +3,7 @@
 Read this first when resuming work. It records decisions, conventions and what is outstanding, so a new session can
 continue without re-deriving anything. Update it at the end of every work session.
 
-*Last updated: 16 November 2026 (open PRs consolidated: eleven worker queue records, the CC-159 check and two Dependabot updates, see the section below; earlier: 27 October 2026: Who said it rebuilt as a tree-and-panel stage with one verdict strip; decisions below; earlier: 10 October 2026: later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
+*Last updated: 16 November 2026 (laptop session: maintainer copies filed, CC-158 checked; earlier the same day, open PRs consolidated: eleven worker queue records, the CC-159 check and two Dependabot updates, see the section below; earlier: 27 October 2026: Who said it rebuilt as a tree-and-panel stage with one verdict strip; decisions below; earlier: 10 October 2026: later the same day: claim checks CC-079, CC-085, CC-092 and CC-095 drafted and merged; consolidation session: open PRs #105 (CC-062) and #113 (CC-058) and the old CC-002 follow-up brought in; research logs for 25 blocked checks; the tracker sheets generated from the records, workbook rebuilt; theme T16; archiver fixed; 2,170 vs 2,198 kt explained; CC-001 bibliography verified; Explore lane labels fixed. Earlier, 8 Oct: PRs #98–#108 merged and deployed; fact ledger sketch merged; pledges pages; see the sections below.)*
 
 ## What the project is
 
@@ -15,6 +15,24 @@ grouped by topic with links between them. The repository is public and doubles a
 
 https://github.com/leandergrech/Mizien (public). Site: https://leandergrech.github.io/Mizien/ (GitHub Pages from
 `main`, `/docs`). The repo URL is printed on the CC-001 report cover and flyer.
+
+## Laptop session 2026-11-16: maintainer copies filed; CC-158 checked
+
+The maintainer supplied browser copies of the blocked sources of this batch. They are filed locally (PDFs are
+git-ignored) under `literature/CC-NNN/` on the maintainer's laptop and recorded in `archive/manifest.csv` as
+`maintainer_copy` with sha256 (branch `claude/maintainer-copies-20261116`): CC-036, CC-138, CC-141, CC-145, CC-149,
+CC-150, CC-152, CC-158, CC-160, CC-164, CC-166, CC-167. **Cloud workers cannot see these files**, so those claims are
+worked from the laptop, not by the routines. Still missing: CC-139 (the parliamentary reply and its table). A Ministry
+for Education press release on San Ġwann sports facilities (PR260772, 2 May 2026) matched no claim and sits in
+`literature/unsorted/`.
+
+- **CC-158 (NAO ClimateScanner, 'significant strides'): Largely supported (high); no right of reply needed.** Wording
+  verbatim from the NAO press release and report. All 18 component scores, the axes (6.55, 8.00, 6.20) and 6.92
+  recomputed from the Appendix item ratings. ClimateScanner Handbook (May 2024, p. 11, downloaded from sites.tcu.gov.br)
+  marks components at 6.66+ as strengths, defines no overall score, and scores existence of policies, not results. The
+  report says so; the press release does not. Outcomes (reused from CC-094/CC-025): effort-sharing emissions +41% on 2005
+  in 2024 and over the yearly limit 2022-24; the report does not mention this. CAA restatement rated 'goes further'.
+  Added to theme T7 with an edge to CC-094. Archive by hand: nao.gov.mt and climateaction.gov.mt (both refuse scripts).
 
 ## Maintainer session 2026-11-16: open PRs consolidated
 
